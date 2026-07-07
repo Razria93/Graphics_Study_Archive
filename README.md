@@ -11,6 +11,7 @@ Graphics Study Portfolio는 DirectX11 기반 그래픽스 학습 예제와 개�
 - [Topic Index](TOPICS.md)
 - [Docs](Docs/README.md)
 - [Portfolio Ray Tracer](Docs/portfolio-raytracer.md)
+- [Public 공개 준비 기준](Docs/public-readiness.md)
 - [Notice](NOTICE.md)
 
 ## 저장소 구성
@@ -41,7 +42,8 @@ Graphics Study Portfolio는 DirectX11 기반 그래픽스 학습 예제와 개�
 - 각 예제는 독립적인 Visual Studio solution 기준으로 확인합니다.
 - Part1~Part4를 하나의 master solution 또는 하나의 실행 파일로 통합하지 않습니다.
 - 이 저장소는 private portfolio archive로 관리합니다.
-- 외부 공개 가능한 자료는 별도 public repo로 분리합니다.
+- public repo는 지금 미리 구성하지 않고, private archive 정리와 검증 기록이 안정화된 뒤 공개 가능한 subset을 추려 별도로 구성합니다.
+- 외부 공개 가능한 자료는 [Public 공개 준비 기준](Docs/public-readiness.md)에 따라 `public 후보`, `private 전용`, `검토 필요`, `제외`로 구분합니다.
 - 강의 원본 영상, 슬라이드, 퀴즈, 정답은 포함하지 않습니다.
 - 강의 기반 학습 코드는 재배포나 교육 목적으로 사용하지 않습니다.
 - 빌드 또는 실행을 직접 확인하지 않은 항목은 `미확인`으로 남깁니다.

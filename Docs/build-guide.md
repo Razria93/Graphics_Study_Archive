@@ -26,6 +26,21 @@
 | Part4     | `Part4_Chapter14-20/Examples/Examples.sln`              | 미확인       | 미확인         | 미확인 | 미확인 | Ex1402_Blur, Ex1501_ParticleSystem 우선 |
 | Portfolio | `Portfolio_RayTracer/16-01_Sampling`                    | 미확인       | 미확인         | 미확인 | 미확인 | 대표 ray tracer                         |
 
+## Raw reference 연결
+
+검증 대상은 archive 경로를 기준으로 기록하되, 최초 후보 확인 시에는 raw reference 위치를 참고합니다. raw 폴더의 build output, `.vs/`, `.user`, `imgui.ini`는 archive로 옮기지 않습니다.
+
+| Archive 대상 | Raw reference | 우선 확인 |
+| --- | --- | --- |
+| `Portfolio_RayTracer/16-01_Sampling` | `C:\ComputerGraphics\_00_Graphics_Portfolio\16-01_Sampling` | `12_Raytracing_Refactoring.sln`, asset path, texture license |
+| `Part1_Chapter01-02/01_DX11InitAndImGui` | `C:\ComputerGraphics\Part1_Chapter01-02` | `.sln` 위치, DX11/ImGui 실행 화면 |
+| `Part1_Chapter03/03_Raytracing_*` | `C:\ComputerGraphics\Part1_Chapter03` | ray tracing P0 예제 후보 |
+| `Part2_Chapter04/04_Rasterization_Step5_DepthBuffer` | `C:\ComputerGraphics\Part2_Chapter04` | depth buffer 예제 후보 |
+| `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | `C:\ComputerGraphics\Part2_Chapter05-08` | shader/model/texture 경로 |
+| `Part3_Chapter09/09_UserInteraction_Step2_MousePicking` | `C:\ComputerGraphics\Part3_Chapter09` | picking 예제 후보 |
+| `Part3_Chapter10-13/12_PBR_Step2_PBRModels` | `C:\ComputerGraphics\Part3_Chapter10_13`, `C:\ComputerGraphics\Part3_Chapter10_13_2` | PBR asset 출처와 중복/후속 관계 |
+| `Part4_Chapter14-20/Examples/Examples.sln` | `C:\ComputerGraphics\Part4_HongLabGraphics`, `C:\ComputerGraphics\Part4_HongLabGraphics_2` | Ex1402_Blur, Ex1501_ParticleSystem 후보 |
+
 ## Archive 이름 재검증
 
 Archive에서 chapter-range folder name을 적용한 예제는 정리 후 다시 확인합니다. 이때 `.sln`, `.vcxproj`, shader path, asset path가 기존 폴더 구조에 의존하는지 함께 확인합니다.

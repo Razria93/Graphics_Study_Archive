@@ -8,6 +8,16 @@ Part1 ray tracing study examples를 바탕으로 확장한 software ray tracer �
 - Build/run: 미확인
 - 캡처: 예정
 
+## Archive/Public 검토
+
+| 항목 | 상태 |
+| --- | --- |
+| Raw reference | `C:\ComputerGraphics\_00_Graphics_Portfolio`, `C:\ComputerGraphics\Part1_Chapter03` |
+| Import status | 검토 필요 |
+| Public readiness | 검토 필요 |
+| Build/run status | 미확인 |
+| Next action | 대표 대상 `16-01_Sampling`의 위치, build path, 강의 기반 코드 범위 확인 |
+
 ## 대표 대상
 
 - `16-01_Sampling`

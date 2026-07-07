@@ -26,6 +26,13 @@ obj/
 # Runtime/local state
 imgui.ini
 
+# Local-only notes and review drafts
+local/
+private-notes/
+copyright-review.local.md
+public-readiness.local.md
+*.local.md
+
 # OS/editor
 .DS_Store
 Thumbs.db
