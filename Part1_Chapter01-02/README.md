@@ -16,7 +16,8 @@ DirectX11 setup, ImGui, bloom 예제를 정리할 폴더입니다.
 | Import status | 검토 필요 |
 | Public readiness | 검토 필요 |
 | Build/run status | 미확인 |
-| Next action | 대표 setup/bloom 예제 후보와 asset 의존성 확인 |
+| Import manifest | [Docs/import-manifests/Part1_Chapter01-02.md](../Docs/import-manifests/Part1_Chapter01-02.md) |
+| Next action | manifest 기준으로 `01_DX11InitAndImGui` 선별 복사 여부 결정 |
 
 ## 예정 예제
 

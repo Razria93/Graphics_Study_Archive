@@ -37,7 +37,7 @@
 | `C:\ComputerGraphics\_00_Graphics_Portfolio\15-01_Texturing` | `Portfolio_RayTracer` reference | 검토 필요 | 검토 필요 | 미확인 | texture sampling reference. texture asset 출처 확인 필요 | 미확인 | texture dependency와 license 확인 |
 | `C:\ComputerGraphics\_00_Graphics_Portfolio\_TextureRaw` | 없음 | 검토 필요 | 검토 필요 | 해당 없음 | raw texture reference. 통째 이동 금지, 출처/라이선스 확인 필요 | 미확인 | 필요한 asset만 출처 확인 후 별도 판단 |
 | `C:\ComputerGraphics\Part1_Chapter03` | `Part1_Chapter03` | 검토 필요 | 검토 필요 | 미확인 | CPU ray tracing study code의 강의 기반 범위 확인 필요 | 미확인 | P0 ray tracing 예제 후보만 선별 |
-| `C:\ComputerGraphics\Part1_Chapter01-02` | `Part1_Chapter01-02` | 검토 필요 | 검토 필요 | 미확인 | DX11/ImGui setup, bloom 예제의 코드/asset 출처 확인 필요 | 미확인 | 대표 setup/bloom 예제 후보 확인 |
+| `C:\ComputerGraphics\Part1_Chapter01-02` | `Part1_Chapter01-02` | 검토 필요 | 검토 필요 | 미확인 | `02_Bloom` 입력 이미지 출처/라이선스 확인 필요 | 미확인 | [Part1 manifest](import-manifests/Part1_Chapter01-02.md) 기준으로 선별 복사 여부 결정 |
 | `C:\ComputerGraphics\Part2_Chapter04` | `Part2_Chapter04` | 검토 필요 | 검토 필요 | 미확인 | software rasterization study code 범위 확인 필요 | 미확인 | depth buffer 대표 예제 후보 확인 |
 | `C:\ComputerGraphics\Part2_Chapter05-08` | `Part2_Chapter05-08` | 검토 필요 | 검토 필요 | 미확인 | D3D11 pipeline, shader, model/texture asset 출처 확인 필요 | 미확인 | lighting/bloom 후보와 asset 의존성 확인 |
 | `C:\ComputerGraphics\Part3_Chapter09` | `Part3_Chapter09` | 검토 필요 | 검토 필요 | 미확인 | picking 예제의 코드/asset 출처 확인 필요 | 미확인 | mouse picking 대표 예제 후보 확인 |

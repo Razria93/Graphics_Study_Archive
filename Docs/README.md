@@ -9,6 +9,7 @@ Private portfolio archive용 문서 입구입니다. 원본 자료를 그대로 
 - [Demo Index](../DEMOS.md): 대표 데모와 캡처/영상 후보
 - [Topic Index](../TOPICS.md): 그래픽스 개념별 예제 연결
 - [Portfolio Ray Tracer](portfolio-raytracer.md): 대표 ray tracing 작업물
+- [Part Import 작업 방식](part-import-workflow.md): raw Part 예제를 archive로 선별 정리하는 절차
 - [Raw to Archive 대응표](raw-to-archive-map.md): raw/reference 폴더와 archive target 대응
 - [Archive Import 후보 검토표](archive-import-candidates.md): raw에서 archive로 넘길 후보 분류
 - [Public 공개 준비 기준](public-readiness.md): public 후보, 제외 대상, 공개 전 체크리스트
@@ -19,6 +20,7 @@ Private portfolio archive용 문서 입구입니다. 원본 자료를 그대로 
 - [Build Verification Table](build-guide.md): 예제별 build/run 확인표
 - [Detailed Demo Index](demo-index.md): 상세 데모 목록
 - [Detailed Topic Index](topic-index.md): 상세 토픽 목록
+- [Import Manifests](import-manifests/): raw에서 archive로 가져올 후보별 포함/제외 목록
 - [Notes](notes/): 예제별 note
 - [Captures](captures/): 캡처 자산 위치
 - [Videos](videos/): 영상 자산 위치
