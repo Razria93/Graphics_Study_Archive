@@ -7,6 +7,7 @@ Private portfolio archive용 문서 입구입니다. `Docs`는 Part/Chapter 중�
 | 위치 | 역할 |
 | --- | --- |
 | [Part1_Chapter01-02](Part1_Chapter01-02/README.md) | Part/Chapter 중심 예제 문서 |
+| [Part1_Chapter03](Part1_Chapter03/README.md) | CPU ray tracing Step별 예제 문서 |
 | [Portfolio_RayTracer](Portfolio_RayTracer/README.md) | 대표 ray tracing 작업물 문서 |
 | [_repo](_repo/) | repo 운영 문서, workflow, tracking, reference, manifests, templates |
 

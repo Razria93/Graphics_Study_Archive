@@ -6,7 +6,11 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Part1 Ch01-02 | `01_DX11InitAndImGui` | 완료 | 성공 | 완료 | 불필요 | 보류 | Debug/Release 실행 성공, capture 보류 |
 | Part1 Ch01-02 | `02_Bloom` | 완료 | 성공 | 완료 | 완료 | 보류 | Debug/Release 실행 성공, capture 보류 |
-| Part1 Ch03 | `03_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
+| Part1 Ch03 | `03_Raytracing_Step4_DrawingSphere` | 예정 | 미확인 | 미확인 | 미확인 | 보류 | 1차 우선 |
+| Part1 Ch03 | `03_Raytracing_Step5_PhongShading` | 예정 | 미확인 | 미확인 | 미확인 | 보류 | 1차 우선 |
+| Part1 Ch03 | `03_Raytracing_Step6_PerspectiveView` | 예정 | 미확인 | 미확인 | 미확인 | 보류 | 1차 우선 |
+| Part1 Ch03 | `Step7-9, Step11` | 예정 | 미확인 | 미확인 | 미확인 | 보류 | 2차 후보 |
+| Part1 Ch03 | `Step10, Step12-14` | 보류 | 미확인 | 미확인 | 미확인 | 보류 | asset 검토 필요 |
 | Part2 Ch04 | `04_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
 | Part2 Ch05-08 | `05_*` - `08_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
 | Part3 Ch09 | `09_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
@@ -17,7 +21,7 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 
 | 필드 | 값 |
 | --- | --- |
-| Code split | 예정 / 진행 중 / 완료 |
+| Code split | 예정 / 진행 중 / 완료 / 보류 |
 | Build/run | 미확인 / 성공 / 실패 |
 | Diff review | 미확인 / 진행 중 / 완료 |
 | Refactor | 미확인 / 불필요 / 필요 / 완료 |

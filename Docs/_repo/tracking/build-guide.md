@@ -20,6 +20,7 @@
 | Part1     | `Part1_Chapter01-02/02_Bloom`                           | 성공        | 성공          | 성공  | 보류  | 사용자가 Debug/Release 실행 정상 확인, 촬영 보류 |
 | Part1     | `Part1_Chapter03/03_Raytracing_Step4_DrawingSphere`     | 미확인       | 미확인         | 미확인 | 미확인 | ray-sphere intersection               |
 | Part1     | `Part1_Chapter03/03_Raytracing_Step5_PhongShading`      | 미확인       | 미확인         | 미확인 | 미확인 | Phong shading                         |
+| Part1     | `Part1_Chapter03/03_Raytracing_Step6_PerspectiveView`   | 미확인       | 미확인         | 미확인 | 보류  | perspective camera rays               |
 | Part2     | `Part2_Chapter04/04_Rasterization_Step5_DepthBuffer`    | 미확인       | 미확인         | 미확인 | 미확인 | depth buffer                          |
 | Part2     | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 미확인       | 미확인         | 미확인 | 미확인 | MVP and lighting                      |
 | Part3     | `Part3_Chapter09/09_UserInteraction_Step2_MousePicking` | 미확인       | 미확인         | 미확인 | 미확인 | picking ray                           |
@@ -36,7 +37,9 @@
 | `Portfolio_RayTracer/16-01_Sampling` | `C:\ComputerGraphics\_00_Graphics_Portfolio\16-01_Sampling` | `12_Raytracing_Refactoring.sln`, asset path, texture license |
 | `Part1_Chapter01-02/01_DX11InitAndImGui` | `C:\ComputerGraphics\Part1_Chapter01-02` | `.sln` 위치, DX11/ImGui 실행 화면 |
 | `Part1_Chapter01-02/02_Bloom` | `C:\ComputerGraphics\Part1_Chapter01-02\02_Bloom` | `image_1_360.JPG`, CPU bloom 처리 결과, raw result 제외 |
-| `Part1_Chapter03/03_Raytracing_*` | `C:\ComputerGraphics\Part1_Chapter03` | ray tracing P0 예제 후보 |
+| `Part1_Chapter03/03_Raytracing_Step4_DrawingSphere` | `C:\ComputerGraphics\Part1_Chapter03\03_Raytracing_Step4_DrawingSphere` | ray-sphere intersection |
+| `Part1_Chapter03/03_Raytracing_Step5_PhongShading` | `C:\ComputerGraphics\Part1_Chapter03\03_Raytracing_Step5_PhongShading` | Phong shading |
+| `Part1_Chapter03/03_Raytracing_Step6_PerspectiveView` | `C:\ComputerGraphics\Part1_Chapter03\03_Raytracing_Step6_PerspectiveView` | perspective ray/camera |
 | `Part2_Chapter04/04_Rasterization_Step5_DepthBuffer` | `C:\ComputerGraphics\Part2_Chapter04` | depth buffer 예제 후보 |
 | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | `C:\ComputerGraphics\Part2_Chapter05-08` | shader/model/texture 경로 |
 | `Part3_Chapter09/09_UserInteraction_Step2_MousePicking` | `C:\ComputerGraphics\Part3_Chapter09` | picking 예제 후보 |
