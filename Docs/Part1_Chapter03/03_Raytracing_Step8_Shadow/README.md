@@ -60,11 +60,10 @@ if (IsInShadow(hit))
 | Source comment cleanup | 완료 |
 | Debug x64 build | 성공 |
 | Release x64 build | 성공 |
-| Run verification | 미확인 |
+| Run verification | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
 ## Follow-up
 
-- 사용자가 Debug/Release 실행 화면을 확인하면 `status.md`, build tracking, migration board에 run 성공을 반영합니다.
 - 다음 작업 후보는 `03_Raytracing_Step8_Shadow_Square` 또는 `03_Raytracing_Step9_BarycentricCordinates`입니다.
