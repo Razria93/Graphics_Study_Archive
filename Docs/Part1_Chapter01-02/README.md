@@ -8,8 +8,8 @@ DirectX11 초기화, ImGui, Bloom 예제를 챕터 단위로 정리하는 문서
 
 | 예제 | 상태 | Build/run | Capture |
 | --- | --- | --- | --- |
-| [01_DX11InitAndImGui](01_DX11InitAndImGui/README.md) | [진행 중](01_DX11InitAndImGui/status.md) | 미확인 | 예정 |
-| [02_Bloom](02_Bloom/README.md) | [진행 중](02_Bloom/status.md) | 미확인 | 예정 |
+| [01_DX11InitAndImGui](01_DX11InitAndImGui/README.md) | [capture 보류](01_DX11InitAndImGui/status.md) | 성공 | 보류 |
+| [02_Bloom](02_Bloom/README.md) | [capture 보류](02_Bloom/status.md) | 성공 | 보류 |
 
 ## 관련 운영 문서
 

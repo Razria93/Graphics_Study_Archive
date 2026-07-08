@@ -73,9 +73,9 @@ deviceContext->Unmap(canvasTexture, NULL);
 ## 실행 결과
 
 - Build/run status: Debug/Release 실행 성공
-- Capture: 예정
-- Raw/original diff review: 진행 중
-- Refactor check: 진행 중
+- Capture: 보류
+- Raw/original diff review: 완료
+- Refactor check: 완료
 
 ## 공개 가능성
 

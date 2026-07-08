@@ -14,11 +14,11 @@
 
 | 항목 | 상태 | 메모 |
 | --- | --- | --- |
-| Code/document split | 진행 중 | code files 선별 반영, 기본 입력 이미지 1개 private archive 반영, raw result/capture assets 제외, source comments local-only 분리 |
+| Code/document split | 완료 | code files 선별 반영, 기본 입력 이미지 1개 private archive 반영, raw result/capture assets 제외, source comments local-only 분리 |
 | Build/run | 성공 | `Debug x64` MSBuild 성공. 사용자가 Debug/Release 실행 정상 확인 |
-| Raw/original diff review | 진행 중 | 장문 주석 제거, 입력 asset 범위 축소, fallback 보조 경로 추가를 확인 |
-| Refactor review | 진행 중 | 장문 주석 제거, `stbi_image_free`, Debug x64 OpenMP, 입력 누락 시 fallback 반영 |
-| Ready for capture | 예 | 사용자가 Debug/Release 실행 정상 확인. 영상/사진 촬영 가능 |
+| Raw/original diff review | 완료 | 장문 주석 제거, 입력 asset 범위 축소, fallback 보조 경로 추가 확인 |
+| Refactor review | 완료 | `stbi_image_free`, Debug x64 OpenMP, 입력 누락 시 fallback 반영 완료 |
+| Ready for capture | 보류 | 사용자가 Debug/Release 실행 정상 확인. 촬영은 현재 보류 |
 
 ## User memo sources
 
@@ -38,6 +38,5 @@
 
 ## Next action
 
-1. 영상/사진 촬영 후 capture 링크 또는 파일명을 기록합니다.
-2. raw/original과 archive refactor 차이를 사용자가 검토합니다.
-3. public 후보 여부는 입력 이미지 권리 검토 후 판단합니다.
+1. 촬영 재개 시 실행 결과 링크 또는 capture 파일명을 기록합니다.
+2. public 후보 여부는 입력 이미지 권리 검토 후 판단합니다.

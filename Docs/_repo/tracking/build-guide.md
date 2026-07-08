@@ -16,8 +16,8 @@
 
 | Part      | 예제                                                      | Debug x64 | Release x64 | 실행  | 캡처  | 비고                                    |
 | --------- | ------------------------------------------------------- | --------- | ----------- | --- | --- | ------------------------------------- |
-| Part1     | `Part1_Chapter01-02/01_DX11InitAndImGui`                | 성공        | 성공          | 성공  | 미확인 | 사용자가 Debug/Release 실행 정상 확인 |
-| Part1     | `Part1_Chapter01-02/02_Bloom`                           | 성공        | 성공          | 성공  | 미확인 | 사용자가 Debug/Release 실행 정상 확인 |
+| Part1     | `Part1_Chapter01-02/01_DX11InitAndImGui`                | 성공        | 성공          | 성공  | 보류  | 사용자가 Debug/Release 실행 정상 확인, 촬영 보류 |
+| Part1     | `Part1_Chapter01-02/02_Bloom`                           | 성공        | 성공          | 성공  | 보류  | 사용자가 Debug/Release 실행 정상 확인, 촬영 보류 |
 | Part1     | `Part1_Chapter03/03_Raytracing_Step4_DrawingSphere`     | 미확인       | 미확인         | 미확인 | 미확인 | ray-sphere intersection               |
 | Part1     | `Part1_Chapter03/03_Raytracing_Step5_PhongShading`      | 미확인       | 미확인         | 미확인 | 미확인 | Phong shading                         |
 | Part2     | `Part2_Chapter04/04_Rasterization_Step5_DepthBuffer`    | 미확인       | 미확인         | 미확인 | 미확인 | depth buffer                          |

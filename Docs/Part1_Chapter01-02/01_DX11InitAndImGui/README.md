@@ -151,9 +151,9 @@ DX11 초기화 예제는 단순히 창을 띄우는 코드가 아니라 이후 �
 ## 실행 결과
 
 - Build/run status: Debug/Release 실행 성공
-- Capture: 예정
-- Raw/original diff review: 미확인
-- Refactor check: 미확인
+- Capture: 보류
+- Raw/original diff review: 완료
+- Refactor check: 불필요
 
 ## 공개 가능성
 
