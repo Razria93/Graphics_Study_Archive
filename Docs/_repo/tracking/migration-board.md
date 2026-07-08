@@ -11,7 +11,8 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part1 Ch03 | `03_Raytracing_Step6_PerspectiveView` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 정상 확인 |
 | Part1 Ch03 | `03_Raytracing_Step7_Triangle` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 정상 확인 |
 | Part1 Ch03 | `03_Raytracing_Step8_Shadow` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 정상 확인 |
-| Part1 Ch03 | `Step8 Shadow Square, Step9, Step11` | 예정 | 미확인 | 미확인 | 미확인 | 보류 | 2차 후보 |
+| Part1 Ch03 | `03_Raytracing_Step8_Shadow_Square` | 완료 | build 성공 / run 미확인 | 진행 중 | 완료 | 보류 | 사용자 실행 확인 대기 |
+| Part1 Ch03 | `Step9, Step11` | 예정 | 미확인 | 미확인 | 미확인 | 보류 | 2차 후보 |
 | Part1 Ch03 | `Step10, Step12-14` | 보류 | 미확인 | 미확인 | 미확인 | 보류 | asset 검토 필요 |
 | Part2 Ch04 | `04_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
 | Part2 Ch05-08 | `05_*` - `08_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |

@@ -23,6 +23,7 @@
 | Part1 | `Part1_Chapter03/03_Raytracing_Step6_PerspectiveView` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 정상 확인 |
 | Part1 | `Part1_Chapter03/03_Raytracing_Step7_Triangle` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 정상 확인 |
 | Part1 | `Part1_Chapter03/03_Raytracing_Step8_Shadow` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 정상 확인 |
+| Part1 | `Part1_Chapter03/03_Raytracing_Step8_Shadow_Square` | 성공 | 성공 | 미확인 | 보류 | MSBuild warning 0 / error 0, 사용자 실행 확인 대기 |
 | Part2 | `Part2_Chapter04/04_Rasterization_Step5_DepthBuffer` | 미확인 | 미확인 | 미확인 | 미확인 | depth buffer |
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 미확인 | 미확인 | 미확인 | 미확인 | MVP and lighting |
 | Part3 | `Part3_Chapter09/09_UserInteraction_Step2_MousePicking` | 미확인 | 미확인 | 미확인 | 미확인 | picking ray |
@@ -42,6 +43,7 @@
 | `Part1_Chapter03/03_Raytracing_Step6_PerspectiveView` | `C:\ComputerGraphics\Part1_Chapter03\03_Raytracing_Step6_PerspectiveView` | perspective ray/camera |
 | `Part1_Chapter03/03_Raytracing_Step7_Triangle` | `C:\ComputerGraphics\Part1_Chapter03\03_Raytracing_Step7_Triangle` | ray-triangle intersection |
 | `Part1_Chapter03/03_Raytracing_Step8_Shadow` | `C:\ComputerGraphics\Part1_Chapter03\03_Raytracing_Step8_Shadow` | shadow ray, floor shadow |
+| `Part1_Chapter03/03_Raytracing_Step8_Shadow_Square` | `C:\ComputerGraphics\Part1_Chapter03\03_Raytracing_Step8_Shadow_Square` | square primitive wrapper |
 | `Part2_Chapter04/04_Rasterization_Step5_DepthBuffer` | `C:\ComputerGraphics\Part2_Chapter04` | depth buffer 예제 후보 |
 | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | `C:\ComputerGraphics\Part2_Chapter05-08` | shader/model/texture 경로 |
 | `Part3_Chapter09/09_UserInteraction_Step2_MousePicking` | `C:\ComputerGraphics\Part3_Chapter09` | picking 예제 후보 |

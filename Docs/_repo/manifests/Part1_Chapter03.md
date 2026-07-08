@@ -9,9 +9,9 @@
 | Source | `C:\ComputerGraphics\Part1_Chapter03` |
 | Target | `Part1_Chapter03` |
 | Docs target | `Docs/Part1_Chapter03` |
-| Import status | Step4-8 반영 |
+| Import status | Step4-8 Shadow Square 반영 |
 | Public readiness | 검토 필요 |
-| Build/run status | Step4-8 Debug/Release build/run 성공 |
+| Build/run status | Step4-8 Shadow Debug/Release build/run 성공, Shadow Square Debug/Release build 성공 및 run 미확인 |
 | 작업 방식 | Ch03 전체 계획 + Step별 import |
 
 ## Raw 구조 요약
@@ -20,13 +20,13 @@
 | --- | --- | --- |
 | `03_Raytracing_Step1_Vector(GLM)/` | GLM vector 기초 | 후보 |
 | `03_Raytracing_Step2_CircleScreenSpace/` | screen-space circle | 후보 |
-| `03_Raytracing_Step3_CircleWorldSpace/` | world-space circle | 후보 |
+| `03_Raytracing_Step3_CircleWorldSpace/` | screen-space to world-space 확장 | 후보 |
 | `03_Raytracing_Step4_DrawingSphere/` | ray-sphere intersection | 반영 완료 |
 | `03_Raytracing_Step5_PhongShading/` | Phong shading | 반영 완료 |
 | `03_Raytracing_Step6_PerspectiveView/` | camera/perspective ray | 반영 완료 |
 | `03_Raytracing_Step7_Triangle/` | ray-triangle intersection | 반영 완료 |
 | `03_Raytracing_Step8_Shadow/` | shadow ray | 반영 완료 |
-| `03_Raytracing_Step8_Shadow_Square/` | shadow + square scene | 2차 후보 |
+| `03_Raytracing_Step8_Shadow_Square/` | shadow + square scene | 반영 완료 |
 | `03_Raytracing_Step9_BarycentricCordinates/` | barycentric coordinate | 2차 후보 |
 | `03_Raytracing_Step10_Texturing/` | texture mapping | asset 검토 필요 |
 | `03_Raytracing_Step11_Supersampling/` | anti-aliasing / supersampling | 2차 후보 |
@@ -69,6 +69,7 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 | Step6 PerspectiveView | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
 | Step7 Triangle | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
 | Step8 Shadow | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
+| Step8 Shadow Square | 완료 | 완료 | 성공 | 성공 | 미확인 | 보류 |
 
 ## Related raw docs
 
@@ -80,7 +81,7 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 | `Chapter03_Raytracing_Step5_PhongShading.md` | Step5 |
 | `Chapter03_Raytracing_Step6_PerspectiveView.md` | Step6 |
 | `Chapter03_Raytracing_Step7_Triangle.md` | Step7 |
-| `Chapter03_Raytracing_Step8_Shadow.md` | Step8 |
+| `Chapter03_Raytracing_Step8_Shadow.md` | Step8 Shadow / Shadow Square |
 | `Chapter03_Raytracing_Step9_BarycentricCordinates.md` | Step9 |
 | `Chapter03_Raytracing_Step10_Texturing.md` | Step10 |
 | `Chapter03_Raytracing_Step11_Supersampling.md` | Step11 |
@@ -90,5 +91,6 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 
 ## Next action
 
-1. 다음 import 후보는 `03_Raytracing_Step8_Shadow_Square` 또는 `03_Raytracing_Step9_BarycentricCordinates`입니다.
-2. Step10 이후 texture/skybox asset은 별도 asset review를 거친 뒤 진행합니다.
+1. Shadow Square Debug/Release 실행 확인 결과를 기록합니다.
+2. 다음 import 후보는 `03_Raytracing_Step9_BarycentricCordinates`입니다.
+3. Step10 이후 texture/skybox asset은 별도 asset review를 거친 뒤 진행합니다.
