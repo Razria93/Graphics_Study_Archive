@@ -49,9 +49,9 @@
 
 | 자산 | 목적 | 상태 |
 | --- | --- | --- |
-| `captures/Portfolio_RayTracer/portfolio_raytracer_final.png` | 대표 final render | 예정 |
-| `captures/Portfolio_RayTracer/portfolio_raytracer_wireframe.png` | intersection/debug view | 예정 |
-| `videos/Portfolio_RayTracer/portfolio_raytracer_overview.mp4` | 짧은 overview | 예정 |
+| `Docs/_assets/captures/Portfolio_RayTracer/portfolio_raytracer_final.png` | 대표 final render | 예정 |
+| `Docs/_assets/captures/Portfolio_RayTracer/portfolio_raytracer_wireframe.png` | intersection/debug view | 예정 |
+| `Docs/_assets/videos/Portfolio_RayTracer/portfolio_raytracer_overview.mp4` | 짧은 overview | 예정 |
 
 ## 후속 작업
 
@@ -60,4 +60,4 @@
 - texture 파일과 `_TextureRaw`의 출처/라이선스를 확인합니다.
 - `16-01_Sampling` build/run을 확인합니다.
 - archive 기준으로 대표 final image를 새로 캡처합니다.
-- `notes/Portfolio_RayTracer/` 아래 architecture note를 추가합니다.
+- `Docs/Portfolio_RayTracer/` 아래 architecture note를 추가합니다.

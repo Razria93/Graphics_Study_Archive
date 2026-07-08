@@ -1,33 +1,26 @@
 # Docs
 
-Private portfolio archive용 문서 입구입니다. 원본 자료를 그대로 복사하지 않고, 제출/검토에 필요한 설명과 검증 결과를 이곳에 정리합니다.
+Private portfolio archive용 문서 입구입니다. `Docs`는 Part/Chapter 중심 예제 문서를 우선하고, repo 운영 문서는 `_repo` 아래로 분리합니다.
 
-## Entry Points
+## 주요 위치
 
-- [Root README](../README.md): 저장소 목표와 전체 구성
-- [Build Guide](../BUILD.md): 공통 빌드 기준과 제외 파일
-- [Demo Index](../DEMOS.md): 대표 데모와 캡처/영상 후보
-- [Topic Index](../TOPICS.md): 그래픽스 개념별 예제 연결
-- [Portfolio Ray Tracer](portfolio-raytracer.md): 대표 ray tracing 작업물
-- [Part Import 작업 방식](part-import-workflow.md): raw Part 예제를 archive로 선별 정리하는 절차
-- [Raw to Archive 대응표](raw-to-archive-map.md): raw/reference 폴더와 archive target 대응
-- [Archive Import 후보 검토표](archive-import-candidates.md): raw에서 archive로 넘길 후보 분류
-- [Public 공개 준비 기준](public-readiness.md): public 후보, 제외 대상, 공개 전 체크리스트
-- [Notice](../NOTICE.md): 제한 공유와 출처 기준
+| 위치 | 역할 |
+| --- | --- |
+| [Part1_Chapter01-02](Part1_Chapter01-02/README.md) | Part/Chapter 중심 예제 문서 |
+| [Portfolio_RayTracer](Portfolio_RayTracer/README.md) | 대표 ray tracing 작업물 문서 |
+| [_repo](_repo/) | repo 운영 문서, workflow, tracking, reference, manifests, templates |
 
-## Docs Directory
+## 자주 보는 문서
 
-- [Build Verification Table](build-guide.md): 예제별 build/run 확인표
-- [Detailed Demo Index](demo-index.md): 상세 데모 목록
-- [Detailed Topic Index](topic-index.md): 상세 토픽 목록
-- [Import Manifests](import-manifests/): raw에서 archive로 가져올 후보별 포함/제외 목록
-- [Notes](notes/): 예제별 note
-- [Captures](captures/): 캡처 자산 위치
-- [Videos](videos/): 영상 자산 위치
+- [Migration Workflow](_repo/workflow/migration-workflow.md)
+- [Migration Board](_repo/tracking/migration-board.md)
+- [Public 공개 준비 기준](_repo/workflow/public-readiness.md)
+- [Raw to Archive 대응표](_repo/reference/raw-to-archive-map.md)
+- [Asset Notes](_repo/reference/assets.md)
 
 ## 운영 메모
 
+- 예제별 최종 문서는 `Docs/Part*_Chapter*/ExampleName/README.md`에 둡니다.
+- 작업 상태는 `Docs/Part*_Chapter*/ExampleName/status.md`와 [Migration Board](_repo/tracking/migration-board.md)에 기록합니다.
+- 코드에서 분리한 원문 메모, raw 문서 원문, 개인 검토 초안은 tracked 문서가 아니라 `.gitignore`에 등록된 `local/` 아래에 둡니다.
 - private repo 정리가 끝나기 전에는 public repo를 별도로 만들지 않습니다.
-- raw에서 private archive로 가져올 후보는 `archive 후보`, `private 전용`, `검토 필요`, `제외` 중 하나로 표시합니다.
-- public 공개 가능성이 있는 산출물은 `public 후보`, `private 전용`, `검토 필요`, `제외` 중 하나로 표시합니다.
-- 구체적인 비공개 자료 목록이나 개인 검토 메모는 tracked 문서가 아니라 `.gitignore`에 등록된 local-only 문서로 관리합니다.

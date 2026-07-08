@@ -1,22 +1,22 @@
 # 데모 인덱스
 
-이 문서는 private portfolio archive에서 정리할 예제, 캡처, 영상, note를 연결합니다.
+이 문서는 private portfolio archive에서 정리할 예제, 캡처, 영상, chapter 문서를 연결합니다.
 
 ## 우선 데모
 
-| Part | 데모 | 개념 | 캡처/영상 | 빌드 상태 | Note |
+| Part | 데모 | 개념 | 캡처/영상 | 빌드 상태 | Chapter 문서 |
 | --- | --- | --- | --- | --- | --- |
-| Part1 | `01_DX11InitAndImGui` | DX11 window, ImGui panel | `Docs/captures/Part1/part1_dx11_imgui.png` 예정 | 미확인 | 예정 |
-| Part1 | `02_Bloom` | Post-process bloom | `Docs/captures/Part1/part1_bloom.png` 예정 | 미확인 | 예정 |
-| Part1 | `03_Raytracing_Step4_DrawingSphere` | Ray-sphere intersection | `Docs/captures/Part1/part1_ray_sphere.png` 예정 | 미확인 | `Docs/notes/Part1/03_Raytracing_Step4_DrawingSphere.md` 예정 |
-| Part1 | `03_Raytracing_Step5_PhongShading` | Phong shading | `Docs/captures/Part1/part1_phong_shading.png` 예정 | 미확인 | `Docs/notes/Part1/03_Raytracing_Step5_PhongShading.md` 예정 |
-| Part2 | `04_Rasterization_Step5_DepthBuffer` | Depth buffer | `Docs/captures/Part2/part2_depth_buffer.png` 예정 | 미확인 | 예정 |
-| Part2 | `06_GraphicsPipeline_Step6_Lighting` | MVP and lighting | `Docs/captures/Part2/part2_mvp_lighting.png` 예정 | 미확인 | 예정 |
-| Part3 | `09_UserInteraction_Step2_MousePicking` | Picking ray | `Docs/captures/Part3/part3_mouse_picking.png` 예정 | 미확인 | 예정 |
-| Part3 | `12_PBR_Step2_PBRModels` | PBR material | `Docs/captures/Part3/part3_pbr_models.png` 예정 | 미확인 | 예정 |
-| Part4 | `Ex1402_Blur` | Compute shader blur | `Docs/captures/Part4/part4_compute_blur.png` 예정 | 미확인 | 예정 |
-| Part4 | `Ex1501_ParticleSystem` | Particle simulation | `Docs/videos/Part4/part4_particle_system.mp4` 예정 | 미확인 | 예정 |
-| Portfolio | `16-01_Sampling` | Ray tracing representative result | `Docs/captures/Portfolio_RayTracer/portfolio_raytracer_final.png` 예정 | 미확인 | `Docs/portfolio-raytracer.md` |
+| Part1 | `01_DX11InitAndImGui` | DX11 window, ImGui panel | 예정 | 미확인 | `Docs/Part1_Chapter01-02/01_DX11InitAndImGui/README.md` |
+| Part1 | `02_Bloom` | Post-process bloom | 예정 | 미확인 | `Docs/Part1_Chapter01-02/02_Bloom/README.md` 예정 |
+| Part1 | `03_Raytracing_Step4_DrawingSphere` | Ray-sphere intersection | 예정 | 미확인 | `Docs/Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/README.md` 예정 |
+| Part1 | `03_Raytracing_Step5_PhongShading` | Phong shading | 예정 | 미확인 | `Docs/Part1_Chapter03/03_Raytracing_Step5_PhongShading/README.md` 예정 |
+| Part2 | `04_Rasterization_Step5_DepthBuffer` | Depth buffer | 예정 | 미확인 | `Docs/Part2_Chapter04/04_Rasterization_Step5_DepthBuffer/README.md` 예정 |
+| Part2 | `06_GraphicsPipeline_Step6_Lighting` | MVP and lighting | 예정 | 미확인 | `Docs/Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting/README.md` 예정 |
+| Part3 | `09_UserInteraction_Step2_MousePicking` | Picking ray | 예정 | 미확인 | `Docs/Part3_Chapter09/09_UserInteraction_Step2_MousePicking/README.md` 예정 |
+| Part3 | `12_PBR_Step2_PBRModels` | PBR material | 예정 | 미확인 | `Docs/Part3_Chapter10-13/12_PBR_Step2_PBRModels/README.md` 예정 |
+| Part4 | `Ex1402_Blur` | Compute shader blur | 예정 | 미확인 | `Docs/Part4_Chapter14-20/Ex1402_Blur/README.md` 예정 |
+| Part4 | `Ex1501_ParticleSystem` | Particle simulation | 예정 | 미확인 | `Docs/Part4_Chapter14-20/Ex1501_ParticleSystem/README.md` 예정 |
+| Portfolio | `16-01_Sampling` | Ray tracing representative result | 예정 | 미확인 | `Docs/Portfolio_RayTracer/README.md` |
 
 ## 캡처/영상 기준
 
@@ -28,5 +28,6 @@
 
 ## 캡처/영상 위치
 
-- 캡처: `Docs/captures/{Part}/{topic_or_example}.png`
-- 영상: `Docs/videos/{Part}/{topic_or_example}.mp4`
+- 우선 기록 위치: `Docs/Part*_Chapter*/ExampleName/README.md`
+- 보조 캡처 파일 위치: `Docs/_assets/captures/{Part_Chapter}/{example_or_topic}.png`
+- 보조 영상 파일 위치: `Docs/_assets/videos/{Part_Chapter}/{example_or_topic}.mp4`

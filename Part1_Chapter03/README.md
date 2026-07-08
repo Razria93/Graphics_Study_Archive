@@ -1,4 +1,4 @@
-﻿# Part1 Chapter03
+# Part1 Chapter03
 
 CPU ray tracing 기초 예제를 정리할 폴더입니다.
 

@@ -4,6 +4,8 @@
 
 대상 흐름은 `C:\ComputerGraphics` raw/reference에서 `C:\Graphics_Study_Archive` private archive로 선별 이동하는 것입니다. public repo 구성은 이 단계에서 하지 않습니다.
 
+예제 문서는 산출물 종류별 폴더가 아니라 `Docs/Part*_Chapter*/ExampleName/README.md`에 정리합니다. 원문 메모와 draft는 `local/`에 두고, 실제 캡처/영상 파일은 필요할 때 `Docs/_assets/` 아래에 둡니다.
+
 ## 기본 원칙
 
 - `C:\ComputerGraphics`는 읽기 전용 참고 자료로만 사용합니다.
@@ -35,20 +37,25 @@
    - archive 폴더명 변경으로 깨질 수 있는 상대 경로를 기록합니다.
    - 확인 전에는 build/run 상태를 `미확인`으로 둡니다.
 
-5. Build/run 확인
+5. Source/comment 정리
+   - 기존 장문 학습 주석은 제거하고 필요한 내용은 note로 재작성합니다.
+   - 코드에는 섹션 구분, 구현 의도, lifetime/path 주의처럼 유지보수에 필요한 주석만 남깁니다.
+   - 코드 동작을 바꾸는 리팩터링은 별도 build/run 확인 단위로 진행합니다.
+
+6. Build/run 확인
    - Visual Studio에서 `Debug x64`를 먼저 확인합니다.
    - 대표 예제만 `Release x64`를 추가 확인합니다.
-   - 실패하면 실패 원인과 다음 조치를 [build-guide.md](build-guide.md)에 기록합니다.
+   - 실패하면 실패 원인과 다음 조치를 [build-guide.md](../tracking/build-guide.md)에 기록합니다.
 
-6. Demo/capture 정리
+7. Demo/capture 정리
    - raw capture를 그대로 가져오지 않습니다.
    - archive 기준으로 직접 실행한 결과를 새로 캡처합니다.
    - 강의 화면, 슬라이드, 유료 자료, 문제/해설 캡처는 제외합니다.
 
-7. 상태 갱신
+8. 상태 갱신
    - Part README의 `Archive/Public 검토` 표를 갱신합니다.
-   - [archive-import-candidates.md](archive-import-candidates.md)의 해당 row를 갱신합니다.
-   - public 공개 가능성은 [public-readiness.md](public-readiness.md)를 통과한 뒤에만 판단합니다.
+   - [migration-board.md](../tracking/migration-board.md)의 해당 row를 갱신합니다.
+   - public 공개 가능성은 [public-readiness.md](public-readiness.md)를 기준으로 판단합니다.
 
 ## Part1 Chapter01-02 시작 기준
 

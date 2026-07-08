@@ -1,4 +1,4 @@
-﻿# Part4 Chapter14-20
+# Part4 Chapter14-20
 
 Compute shader, simulation, advanced effects 예제를 정리할 폴더입니다.
 

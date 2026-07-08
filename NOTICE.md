@@ -23,4 +23,4 @@
 - 빌드/실행을 직접 확인하지 않은 항목은 `미확인`으로 기록합니다.
 - 캡처와 영상은 학습 결과를 보여주는 용도로만 사용합니다.
 - 출처나 공개 가능 여부가 불명확한 asset은 public repo로 옮기지 않습니다.
-- public 공개 후보와 제외 기준은 [Docs/public-readiness.md](Docs/public-readiness.md)에 기록합니다.
+- public 공개 후보와 제외 기준은 [Docs/_repo/workflow/public-readiness.md](Docs/_repo/workflow/public-readiness.md)에 기록합니다.

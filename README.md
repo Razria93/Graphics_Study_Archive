@@ -10,14 +10,16 @@ Graphics Study Portfolio는 DirectX11 기반 그래픽스 학습 예제와 개�
 - [Demo Index](DEMOS.md)
 - [Topic Index](TOPICS.md)
 - [Docs](Docs/README.md)
-- [Portfolio Ray Tracer](Docs/portfolio-raytracer.md)
-- [Public 공개 준비 기준](Docs/public-readiness.md)
+- [Part1 Chapter01-02 Docs](Docs/Part1_Chapter01-02/README.md)
+- [Portfolio Ray Tracer](Docs/Portfolio_RayTracer/README.md)
+- [Public 공개 준비 기준](Docs/_repo/workflow/public-readiness.md)
 - [Notice](NOTICE.md)
 
 ## 저장소 구성
 
 | 폴더 | 주요 내용 | 상태 |
 | --- | --- | --- |
+| `Docs/Part*_Chapter*/` | Part/Chapter 중심 예제 문서 | 정리 중 |
 | `Part1_Chapter01-02` | DirectX11 setup, ImGui, bloom | private 정리 예정 |
 | `Part1_Chapter03` | CPU ray tracing fundamentals | private 정리 예정 |
 | `Part2_Chapter04` | Software rasterization | private 정리 예정 |
@@ -31,11 +33,12 @@ Graphics Study Portfolio는 DirectX11 기반 그래픽스 학습 예제와 개�
 
 | 데모 | 개념 | 자산 |
 | --- | --- | --- |
-| Portfolio Ray Tracer final render | Ray tracing extension | `Docs/captures/Portfolio_RayTracer/portfolio_raytracer_final.png` 예정 |
-| Part1 ray sphere | Ray-sphere intersection | `Docs/captures/Part1/part1_ray_sphere.png` 예정 |
-| Part2 depth buffer | Rasterization and depth test | `Docs/captures/Part2/part2_depth_buffer.png` 예정 |
-| Part3 PBR models | PBR material workflow | `Docs/captures/Part3/part3_pbr_models.png` 예정 |
-| Part4 particle system | Compute/simulation demo | `Docs/videos/Part4/part4_particle_system.mp4` 예정 |
+| Portfolio Ray Tracer final render | Ray tracing extension | `Docs/Portfolio_RayTracer/README.md`에서 정리 예정 |
+| Part1 DX11 init | DX11 window, ImGui panel | `Docs/Part1_Chapter01-02/01_DX11InitAndImGui/README.md` |
+| Part1 ray sphere | Ray-sphere intersection | `Docs/Part1_Chapter03/...` 예정 |
+| Part2 depth buffer | Rasterization and depth test | `Docs/Part2_Chapter04/...` 예정 |
+| Part3 PBR models | PBR material workflow | `Docs/Part3_Chapter10-13/...` 예정 |
+| Part4 particle system | Compute/simulation demo | `Docs/Part4_Chapter14-20/...` 예정 |
 
 ## 저장소 운영 기준
 
@@ -43,7 +46,7 @@ Graphics Study Portfolio는 DirectX11 기반 그래픽스 학습 예제와 개�
 - Part1~Part4를 하나의 master solution 또는 하나의 실행 파일로 통합하지 않습니다.
 - 이 저장소는 private portfolio archive로 관리합니다.
 - public repo는 지금 미리 구성하지 않고, private archive 정리와 검증 기록이 안정화된 뒤 공개 가능한 subset을 추려 별도로 구성합니다.
-- 외부 공개 가능한 자료는 [Public 공개 준비 기준](Docs/public-readiness.md)에 따라 `public 후보`, `private 전용`, `검토 필요`, `제외`로 구분합니다.
+- 외부 공개 가능한 자료는 [Public 공개 준비 기준](Docs/_repo/workflow/public-readiness.md)에 따라 `public 후보`, `private 전용`, `검토 필요`, `제외`로 구분합니다.
 - 강의 원본 영상, 슬라이드, 퀴즈, 정답은 포함하지 않습니다.
 - 강의 기반 학습 코드는 재배포나 교육 목적으로 사용하지 않습니다.
 - 빌드 또는 실행을 직접 확인하지 않은 항목은 `미확인`으로 남깁니다.
