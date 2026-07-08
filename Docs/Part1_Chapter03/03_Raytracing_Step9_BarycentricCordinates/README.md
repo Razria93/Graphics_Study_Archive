@@ -48,12 +48,11 @@ return color0 * hit.barycentric.x + color1 * hit.barycentric.y + color2 * hit.ba
 | Source comment cleanup | 완료 |
 | Debug x64 build | 성공 |
 | Release x64 build | 성공 |
-| Run verification | 미확인 |
+| Run verification | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
 ## Follow-up
 
-- 사용자가 Debug/Release 실행 화면을 확인하면 run status를 성공으로 갱신합니다.
 - 다음 후보는 `03_Raytracing_Step11_Supersampling`입니다.
 - `Step10 Texturing`은 texture asset 검토가 필요하므로 별도 asset review 후 진행합니다.
