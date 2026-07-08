@@ -11,7 +11,7 @@
 | Docs target | `Docs/Part1_Chapter03` |
 | Import status | Step4-7 반영 |
 | Public readiness | 검토 필요 |
-| Build/run status | Step4-6 Debug/Release build/run 성공, Step7 Debug/Release build 성공/run 미확인 |
+| Build/run status | Step4-7 Debug/Release build/run 성공 |
 | 작업 방식 | Ch03 전체 계획 + Step별 import |
 
 ## Raw 구조 요약
@@ -105,7 +105,7 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 | Local notes | `local/Part1_Chapter03/03_Raytracing_Step7_Triangle/` |
 | Debug x64 build | 성공 |
 | Release x64 build | 성공 |
-| Run | 미확인 |
+| Run | 성공 |
 | Capture | 보류 |
 
 ## Related raw docs
@@ -128,6 +128,6 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 
 ## Next action
 
-1. Step7 실행 확인을 사용자 검증으로 넘깁니다.
-2. 다음 import 후보는 `03_Raytracing_Step8_Shadow`입니다.
+1. 다음 import 후보는 `03_Raytracing_Step8_Shadow`입니다.
+2. Step7 촬영은 보류 상태를 유지하되, 사용자가 영상/캡처를 완료하면 demo tracking 문서에 반영합니다.
 3. Step10 이후 texture/skybox asset은 별도 asset review를 거친 뒤 진행합니다.

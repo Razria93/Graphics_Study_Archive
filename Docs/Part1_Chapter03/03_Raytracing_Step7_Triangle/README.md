@@ -58,11 +58,11 @@ if (dot(normal2, faceNormal) < 0.0f) return false;
 | Source comment cleanup | 핵심 구현부 정리 완료 |
 | Debug x64 build | 성공 |
 | Release x64 build | 성공 |
-| Run verification | 미확인 |
+| Run verification | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
 ## Follow-up
 
-- 사용자가 직접 Debug/Release 실행 화면을 확인하면 `Run verification`을 갱신합니다.
+- 사용자가 Debug/Release 실행 화면 정상 동작을 확인했습니다.
 - Step8 Shadow import 전에 Step7의 closest hit와 surface normal이 shadow ray 계산에 어떻게 쓰일지 비교합니다.
