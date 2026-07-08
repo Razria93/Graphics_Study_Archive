@@ -10,7 +10,8 @@ Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, tex
 - Step별로 code/project files만 선별 반영합니다.
 - source의 장문 학습 주석은 `local/Part1_Chapter03/<Step>/`로 분리합니다.
 - raw result/capture는 가져오지 않습니다.
-- 출처/라이선스가 불명확한 texture, skybox, environment map은 별도 검토 전까지 제외합니다.
+- 강의용으로 제공된 open-source 성격의 입력 asset은 private archive 실행에 필요한 경우 포함할 수 있습니다.
+- public 공개 전에는 asset 출처/라이선스 표기 가능 여부를 다시 확인합니다.
 - 촬영은 현재 보류 상태로 기록합니다.
 
 ## Step 상태
@@ -27,7 +28,7 @@ Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, tex
 | Step8 Shadow | shadow ray | 완료 | 성공 | 진행 중 | 완료 | 보류 |
 | Step8 Shadow Square | square primitive wrapper | 완료 | 성공 | 진행 중 | 완료 | 보류 |
 | Step9 BarycentricCordinates | barycentric coordinate | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step10 Texturing | texture mapping | asset 검토 필요 | 미확인 | 미확인 | 미확인 | 보류 |
+| Step10 Texturing | texture mapping | 완료 | build 성공 / run 미확인 | 진행 중 | 완료 | 보류 |
 | Step11 Supersampling | anti-aliasing | 2차 후보 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step12 Reflection | reflection | asset 검토 필요 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step13 Transparency | transparency/refraction | asset 검토 필요 | 미확인 | 미확인 | 미확인 | 보류 |
@@ -42,6 +43,7 @@ Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, tex
 5. `03_Raytracing_Step8_Shadow`
 6. `03_Raytracing_Step8_Shadow_Square`
 7. `03_Raytracing_Step9_BarycentricCordinates`
+8. `03_Raytracing_Step10_Texturing`
 
 ## 관련 운영 문서
 
