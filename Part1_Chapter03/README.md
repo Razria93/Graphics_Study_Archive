@@ -5,7 +5,7 @@ CPU ray tracing fundamentals 예제를 Step 단위로 정리한 archive 폴더�
 ## 상태
 
 - 학습 코드 정리: Step4-8 Shadow Square 반영
-- Build/run: Step4-8 Shadow Debug/Release build/run 성공, Shadow Square Debug/Release build 성공 및 run 미확인
+- Build/run: Step4-8 Shadow Square Debug/Release build/run 성공
 - 캡처: 보류
 
 ## Archive/Public 검토
@@ -15,10 +15,10 @@ CPU ray tracing fundamentals 예제를 Step 단위로 정리한 archive 폴더�
 | Raw reference | `C:\ComputerGraphics\Part1_Chapter03` |
 | Import status | Step4-8 Shadow Square 반영 |
 | Public readiness | 검토 필요 |
-| Build/run status | Step4-8 Shadow build/run 성공, Shadow Square build 성공 / run 미확인 |
+| Build/run status | Step4-8 Shadow Square build/run 성공 |
 | Import manifest | [Docs/_repo/manifests/Part1_Chapter03.md](../Docs/_repo/manifests/Part1_Chapter03.md) |
 | Chapter docs | [Docs/Part1_Chapter03](../Docs/Part1_Chapter03/README.md) |
-| Next action | Shadow Square 실행 확인 또는 Step9 import 검토 |
+| Next action | Step9 import 검토 |
 
 ## 반영된 Step
 

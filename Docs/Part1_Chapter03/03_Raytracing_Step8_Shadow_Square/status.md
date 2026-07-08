@@ -9,7 +9,7 @@
 | Source comment cleanup | 완료 | source에는 실행 흐름에 필요한 최소 구조만 유지 |
 | Debug x64 build | 성공 | MSBuild, warning 0 / error 0 |
 | Release x64 build | 성공 | MSBuild, warning 0 / error 0 |
-| Run verification | 미확인 | 사용자 실행 확인 전 |
+| Run verification | 성공 | 사용자가 Debug/Release 실행 정상 확인 |
 | Capture | 보류 | 사용자 촬영 단계에서 진행 |
 | Public readiness | 검토 필요 | private archive 기준 반영, public 공개 전 별도 검토 |
 
