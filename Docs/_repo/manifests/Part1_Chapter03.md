@@ -9,9 +9,9 @@
 | Source | `C:\ComputerGraphics\Part1_Chapter03` |
 | Target | `Part1_Chapter03` |
 | Docs target | `Docs/Part1_Chapter03` |
-| Import status | Step4-7 반영 |
+| Import status | Step4-8 반영 |
 | Public readiness | 검토 필요 |
-| Build/run status | Step4-7 Debug/Release build/run 성공 |
+| Build/run status | Step4-7 Debug/Release build/run 성공, Step8 Debug/Release build 성공 및 run 미확인 |
 | 작업 방식 | Ch03 전체 계획 + Step별 import |
 
 ## Raw 구조 요약
@@ -25,7 +25,7 @@
 | `03_Raytracing_Step5_PhongShading/` | Phong shading | 반영 완료 |
 | `03_Raytracing_Step6_PerspectiveView/` | camera/perspective ray | 반영 완료 |
 | `03_Raytracing_Step7_Triangle/` | ray-triangle intersection | 반영 완료 |
-| `03_Raytracing_Step8_Shadow/` | shadow ray | 2차 후보 |
+| `03_Raytracing_Step8_Shadow/` | shadow ray | 반영 완료 |
 | `03_Raytracing_Step8_Shadow_Square/` | shadow + square scene | 2차 후보 |
 | `03_Raytracing_Step9_BarycentricCordinates/` | barycentric coordinate | 2차 후보 |
 | `03_Raytracing_Step10_Texturing/` | texture mapping | asset 검토 필요 |
@@ -60,53 +60,15 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 - 출처/라이선스 미확인 texture, skybox, environment map
 - helper script 또는 생성 도구는 별도 검토 전까지 제외
 
-## Step4 반영 기록
+## Step4-8 반영 기록
 
-| 항목 | 상태 |
-| --- | --- |
-| Code import | 완료 |
-| Source comment cleanup | 핵심 구현부 정리 |
-| Local notes | `local/Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/` |
-| Debug x64 build | 성공 |
-| Release x64 build | 성공 |
-| Run | 성공 |
-| Capture | 보류 |
-
-## Step5 반영 기록
-
-| 항목 | 상태 |
-| --- | --- |
-| Code import | 완료 |
-| Source comment cleanup | 핵심 구현부 정리 |
-| Local notes | `local/Part1_Chapter03/03_Raytracing_Step5_PhongShading/` |
-| Debug x64 build | 성공 |
-| Release x64 build | 성공 |
-| Run | 성공 |
-| Capture | 보류 |
-
-## Step6 반영 기록
-
-| 항목 | 상태 |
-| --- | --- |
-| Code import | 완료 |
-| Source comment cleanup | 핵심 구현부 정리 |
-| Local notes | `local/Part1_Chapter03/03_Raytracing_Step6_PerspectiveView/` |
-| Debug x64 build | 성공 |
-| Release x64 build | 성공 |
-| Run | 성공 |
-| Capture | 보류 |
-
-## Step7 반영 기록
-
-| 항목 | 상태 |
-| --- | --- |
-| Code import | 완료 |
-| Source comment cleanup | 핵심 구현부 정리 |
-| Local notes | `local/Part1_Chapter03/03_Raytracing_Step7_Triangle/` |
-| Debug x64 build | 성공 |
-| Release x64 build | 성공 |
-| Run | 성공 |
-| Capture | 보류 |
+| Step | Code import | Source comment cleanup | Debug x64 build | Release x64 build | Run | Capture |
+| --- | --- | --- | --- | --- | --- | --- |
+| Step4 DrawingSphere | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
+| Step5 PhongShading | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
+| Step6 PerspectiveView | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
+| Step7 Triangle | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
+| Step8 Shadow | 완료 | 완료 | 성공 | 성공 | 미확인 | 보류 |
 
 ## Related raw docs
 
@@ -123,11 +85,11 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 | `Chapter03_Raytracing_Step10_Texturing.md` | Step10 |
 | `Chapter03_Raytracing_Step11_Supersampling.md` | Step11 |
 | `@ Raytacing vs Rasterization.md` | Ch03 개념 보조 |
-| `@ Phong & Blinn-Phong 의 이해.md` | Step5 개념 보조 |
+| `@ Phong & Blinn-Phong 에 대해.md` | Step5 개념 보조 |
 | `@ Texturing & Sampling.md` | Step10+ 개념 보조 |
 
 ## Next action
 
-1. 다음 import 후보는 `03_Raytracing_Step8_Shadow`입니다.
-2. Step7 촬영은 보류 상태를 유지하되, 사용자가 영상/캡처를 완료하면 demo tracking 문서에 반영합니다.
+1. Step8 Shadow Debug/Release 실행 확인 결과를 기록합니다.
+2. 다음 import 후보는 `03_Raytracing_Step8_Shadow_Square` 또는 `03_Raytracing_Step9_BarycentricCordinates`입니다.
 3. Step10 이후 texture/skybox asset은 별도 asset review를 거친 뒤 진행합니다.

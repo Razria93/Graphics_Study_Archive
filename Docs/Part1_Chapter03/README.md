@@ -9,8 +9,8 @@ Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, tex
 - raw `Part1_Chapter03` 폴더를 통째로 복사하지 않습니다.
 - Step별로 code/project files만 선별 반영합니다.
 - source의 장문 학습 주석은 `local/Part1_Chapter03/<Step>/`로 분리합니다.
-- raw result/capture와 출처/라이선스 미확인 asset은 기본 제외합니다.
-- Step10 이후 texture/skybox 관련 asset은 별도 검토 후 반영합니다.
+- raw result/capture는 가져오지 않습니다.
+- 출처/라이선스가 불명확한 texture, skybox, environment map은 별도 검토 전까지 제외합니다.
 - 촬영은 현재 보류 상태로 기록합니다.
 
 ## Step 상태
@@ -24,20 +24,22 @@ Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, tex
 | Step5 PhongShading | Phong shading | 완료 | 성공 | 진행 중 | 완료 | 보류 |
 | Step6 PerspectiveView | perspective camera rays | 완료 | 성공 | 진행 중 | 완료 | 보류 |
 | Step7 Triangle | ray-triangle intersection | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step8 Shadow | shadow ray | 2차 후보 | 미확인 | 미확인 | 미확인 | 보류 |
+| Step8 Shadow | shadow ray | 완료 | build 성공 / run 미확인 | 진행 중 | 완료 | 보류 |
 | Step8 Shadow Square | shadow scene variation | 2차 후보 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step9 BarycentricCordinates | barycentric coordinate | 2차 후보 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step10 Texturing | texture mapping | asset 검토 필요 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step11 Supersampling | anti-aliasing | 2차 후보 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step12 Reflection | reflection | asset 검토 필요 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step13 Transparency | transparency/refraction | asset 검토 필요 | 미확인 | 미확인 | 미확인 | 보류 |
-| Step14 CubeEnvironment | cube environment | 별도 검토 | 미확인 | 미확인 | 미확인 | 보류 |
+| Step14 CubeEnvironment | cube environment | 별도 asset 검토 | 미확인 | 미확인 | 미확인 | 보류 |
 
-## 1차 작업 순서
+## 현재 진행 순서
 
 1. `03_Raytracing_Step4_DrawingSphere`
 2. `03_Raytracing_Step5_PhongShading`
 3. `03_Raytracing_Step6_PerspectiveView`
+4. `03_Raytracing_Step7_Triangle`
+5. `03_Raytracing_Step8_Shadow`
 
 ## 관련 운영 문서
 
