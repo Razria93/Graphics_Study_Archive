@@ -13,13 +13,14 @@ DirectX11 setup, ImGui, bloom 예제를 정리할 폴더입니다.
 | 항목 | 상태 |
 | --- | --- |
 | Raw reference | `C:\ComputerGraphics\Part1_Chapter01-02` |
-| Import status | 부분 반영 |
+| Import status | 01/02 부분 반영 |
 | Public readiness | 검토 필요 |
 | Build/run status | 미확인 |
 | Import manifest | [Docs/_repo/manifests/Part1_Chapter01-02.md](../Docs/_repo/manifests/Part1_Chapter01-02.md) |
 | Chapter docs | [Docs/Part1_Chapter01-02](../Docs/Part1_Chapter01-02/README.md) |
 | 01 note | [Docs/Part1_Chapter01-02/01_DX11InitAndImGui](../Docs/Part1_Chapter01-02/01_DX11InitAndImGui/README.md) |
-| Next action | `01_DX11InitAndImGui` Debug x64 build 확인 |
+| 02 note | [Docs/Part1_Chapter01-02/02_Bloom](../Docs/Part1_Chapter01-02/02_Bloom/README.md) |
+| Next action | `01_DX11InitAndImGui`, `02_Bloom` Debug x64 build 확인 |
 
 ## 예정 예제
 

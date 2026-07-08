@@ -88,6 +88,8 @@ local-only 문서에는 다음을 둡니다.
 
 ## 반복 작업 순서
 
+작업 시작 전에는 [Chapter Start Checklist](chapter-start-checklist.md)를 먼저 확인합니다.
+
 1. raw/source 구조 확인
 2. archive에 필요한 코드 파일만 선별
 3. 소스 주석과 `.md` 메모 출처 확인
