@@ -23,7 +23,7 @@ Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, tex
 | Step4 DrawingSphere | ray-sphere intersection | 완료 | 성공 | 진행 중 | 완료 | 보류 |
 | Step5 PhongShading | Phong shading | 완료 | 성공 | 진행 중 | 완료 | 보류 |
 | Step6 PerspectiveView | perspective camera rays | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step7 Triangle | ray-triangle intersection | 2차 후보 | 미확인 | 미확인 | 미확인 | 보류 |
+| Step7 Triangle | ray-triangle intersection | 완료 | build 성공 / run 미확인 | 진행 중 | 완료 | 보류 |
 | Step8 Shadow | shadow ray | 2차 후보 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step8 Shadow Square | shadow scene variation | 2차 후보 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step9 BarycentricCordinates | barycentric coordinate | 2차 후보 | 미확인 | 미확인 | 미확인 | 보류 |
