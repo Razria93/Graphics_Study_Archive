@@ -2,7 +2,7 @@
 
 CPU ray tracing 예제를 Step 단위로 정리하는 문서 공간입니다.
 
-Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, texturing, supersampling, reflection/environment로 이어지는 단계형 구현입니다. 전체 구조는 Ch03 기준으로 관리하되, 실제 import와 검증은 Step별로 진행합니다.
+Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, texturing, supersampling, reflection/environment로 이어지는 단계형 구현입니다. 전체 구조는 Chapter03 기준으로 관리하되, 실제 import와 검증은 Step별로 진행합니다.
 
 ## 작업 원칙
 
@@ -20,9 +20,9 @@ Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, tex
 | Step1 Vector(GLM) | vector basics | 예정 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step2 CircleScreenSpace | screen-space circle | 예정 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step3 CircleWorldSpace | world-space circle | 예정 | 미확인 | 미확인 | 미확인 | 보류 |
-| Step4 DrawingSphere | ray-sphere intersection | 1차 우선 | 미확인 | 미확인 | 미확인 | 보류 |
-| Step5 PhongShading | Phong shading | 1차 우선 | 미확인 | 미확인 | 미확인 | 보류 |
-| Step6 PerspectiveView | perspective camera rays | 1차 우선 | 미확인 | 미확인 | 미확인 | 보류 |
+| Step4 DrawingSphere | ray-sphere intersection | 완료 | build 성공 / run 미확인 | 진행 중 | 완료 | 보류 |
+| Step5 PhongShading | Phong shading | 1차 예정 | 미확인 | 미확인 | 미확인 | 보류 |
+| Step6 PerspectiveView | perspective camera rays | 1차 예정 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step7 Triangle | ray-triangle intersection | 2차 후보 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step8 Shadow | shadow ray | 2차 후보 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step8 Shadow Square | shadow scene variation | 2차 후보 | 미확인 | 미확인 | 미확인 | 보류 |
