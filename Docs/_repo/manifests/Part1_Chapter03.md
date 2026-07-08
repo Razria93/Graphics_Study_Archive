@@ -11,7 +11,7 @@
 | Docs target | `Docs/Part1_Chapter03` |
 | Import status | Step4-10 반영 |
 | Public readiness | 검토 필요 |
-| Build/run status | Step4-9 Debug/Release build/run 성공, Step10 Debug/Release build 성공 및 run 미확인 |
+| Build/run status | Step4-10 Debug/Release build/run 성공 |
 | 작업 방식 | Ch03 전체 계획 + Step별 import |
 
 ## Raw 구조 요약
@@ -72,7 +72,7 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 | Step8 Shadow | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
 | Step8 Shadow Square | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
 | Step9 BarycentricCordinates | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
-| Step10 Texturing | 완료 | 완료 | 성공 | 성공 | 미확인 | 보류 |
+| Step10 Texturing | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
 
 ## Asset record
 
@@ -100,6 +100,5 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 
 ## Next action
 
-1. Step10 Debug/Release 실행 확인 결과를 기록합니다.
-2. 다음 코드 후보는 `03_Raytracing_Step11_Supersampling`입니다.
-3. Step12 이후 reflection/skybox 관련 asset은 별도 asset review를 거친 뒤 진행합니다.
+1. 다음 코드 후보는 `03_Raytracing_Step11_Supersampling`입니다.
+2. Step12 이후 reflection/skybox 관련 asset은 별도 asset review를 거친 뒤 진행합니다.

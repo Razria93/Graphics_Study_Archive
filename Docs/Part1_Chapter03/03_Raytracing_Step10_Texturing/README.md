@@ -57,11 +57,10 @@ return InterpolateBilinear(dx, dy, c00, c10, c01, c11);
 | Required texture asset | 포함 |
 | Debug x64 build | 성공 |
 | Release x64 build | 성공 |
-| Run verification | 미확인 |
+| Run verification | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
 ## Follow-up
 
-- 사용자가 Debug/Release 실행 화면을 확인하면 run status를 성공으로 갱신합니다.
 - 다음 코드 후보는 `03_Raytracing_Step11_Supersampling`입니다.
