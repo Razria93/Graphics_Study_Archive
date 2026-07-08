@@ -60,12 +60,12 @@ if (hit.d >= 0.0f && (closestHit.d < 0.0f || closestHit.d > hit.d))
 | Source comment cleanup | 핵심 구현부 정리 완료 |
 | Debug x64 build | 성공 |
 | Release x64 build | 성공 |
-| Run verification | 미확인 |
+| Run verification | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
 ## Follow-up
 
-- 사용자가 직접 Debug/Release 실행 화면을 확인하면 `Run verification`을 갱신합니다.
+- 사용자가 Debug/Release 실행 화면 정상 동작을 확인했습니다.
 - 촬영 단계에서 가까운 sphere와 먼 sphere의 크기 차이가 보이는 구도를 확인합니다.
 - Step7 Triangle import 전에 `Object` abstraction이 triangle intersection으로 확장되는 지점을 비교합니다.

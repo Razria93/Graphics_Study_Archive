@@ -54,12 +54,12 @@ pixels[size_t(i + width * j)] = vec4(traceRay(pixelRay), 1.0f);
 | Source comment cleanup | 핵심 구현부 정리 완료 |
 | Debug x64 build | 성공 |
 | Release x64 build | 성공 |
-| Run verification | 미확인 |
+| Run verification | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
 ## Follow-up
 
-- 사용자가 직접 Debug/Release 실행 화면을 확인하면 `Run verification`을 갱신합니다.
+- 사용자가 Debug/Release 실행 화면 정상 동작을 확인했습니다.
 - 촬영 단계로 넘어가기 전 sphere 위치/radius/color 조작 결과를 확인합니다.
 - Step5 PhongShading import 전에 Step4와의 코드 차이를 비교해 조명 계산이 추가되는 지점을 기록합니다.

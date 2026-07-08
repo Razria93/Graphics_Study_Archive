@@ -11,7 +11,7 @@
 | Docs target | `Docs/Part1_Chapter03` |
 | Import status | Step4-6 반영 |
 | Public readiness | 검토 필요 |
-| Build/run status | Step4-6 Debug/Release build 성공, run 미확인 |
+| Build/run status | Step4-6 Debug/Release build/run 성공 |
 | 작업 방식 | Ch03 전체 계획 + Step별 import |
 
 ## Raw 구조 요약
@@ -69,7 +69,7 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 | Local notes | `local/Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/` |
 | Debug x64 build | 성공 |
 | Release x64 build | 성공 |
-| Run | 미확인 |
+| Run | 성공 |
 | Capture | 보류 |
 
 ## Step5 반영 기록
@@ -81,7 +81,7 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 | Local notes | `local/Part1_Chapter03/03_Raytracing_Step5_PhongShading/` |
 | Debug x64 build | 성공 |
 | Release x64 build | 성공 |
-| Run | 미확인 |
+| Run | 성공 |
 | Capture | 보류 |
 
 ## Step6 반영 기록
@@ -93,7 +93,7 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 | Local notes | `local/Part1_Chapter03/03_Raytracing_Step6_PerspectiveView/` |
 | Debug x64 build | 성공 |
 | Release x64 build | 성공 |
-| Run | 미확인 |
+| Run | 성공 |
 | Capture | 보류 |
 
 ## Related raw docs
@@ -116,6 +116,6 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 
 ## Next action
 
-1. Step4-6 실행 확인을 사용자 검증으로 넘깁니다.
-2. Step7 Triangle 이후 2차 후보를 import할지, Step4-6을 먼저 실행/촬영할지 결정합니다.
+1. Step7 Triangle 이후 2차 후보를 import할지, Step4-6을 먼저 촬영할지 결정합니다.
+2. 촬영은 보류 상태를 유지하되, 사용자가 영상/캡처를 완료하면 demo tracking 문서에 반영합니다.
 3. Step10 이후 texture/skybox asset은 별도 asset review를 거친 뒤 진행합니다.

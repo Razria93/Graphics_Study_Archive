@@ -57,12 +57,12 @@ Step4에서는 hit 여부와 distance 중심으로 sphere를 표현했다면, St
 | Source comment cleanup | 핵심 구현부 정리 완료 |
 | Debug x64 build | 성공 |
 | Release x64 build | 성공 |
-| Run verification | 미확인 |
+| Run verification | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
 ## Follow-up
 
-- 사용자가 직접 Debug/Release 실행 화면을 확인하면 `Run verification`을 갱신합니다.
+- 사용자가 Debug/Release 실행 화면 정상 동작을 확인했습니다.
 - 촬영 단계에서 light position, diffuse color, specular power, specular coeff 조절 결과를 남깁니다.
 - Step6 PerspectiveView import 전에 Step5와 비교해 camera ray가 어떻게 달라지는지 기록합니다.

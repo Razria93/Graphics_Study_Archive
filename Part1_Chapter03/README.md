@@ -5,7 +5,7 @@ CPU ray tracing fundamentals 예제를 Step 단위로 정리한 archive 폴더�
 ## 상태
 
 - 학습 코드 정리: Step4-6 반영
-- Build/run: Step4-6 Debug/Release build 성공, GUI 실행 미확인
+- Build/run: Step4-6 Debug/Release build 및 실행 성공
 - 캡처: 보류
 
 ## Archive/Public 검토
@@ -15,7 +15,7 @@ CPU ray tracing fundamentals 예제를 Step 단위로 정리한 archive 폴더�
 | Raw reference | `C:\ComputerGraphics\Part1_Chapter03` |
 | Import status | Step4-6 반영 |
 | Public readiness | 검토 필요 |
-| Build/run status | Step4-6 build 성공, run 미확인 |
+| Build/run status | Step4-6 build/run 성공 |
 | Import manifest | [Docs/_repo/manifests/Part1_Chapter03.md](../Docs/_repo/manifests/Part1_Chapter03.md) |
 | Chapter docs | [Docs/Part1_Chapter03](../Docs/Part1_Chapter03/README.md) |
 | Next action | Step7 이후 2차 후보 검토 |

@@ -9,7 +9,7 @@
 | Source comment cleanup | 진행 | `Raytracer.h`, `Sphere.h`, `Hit.h`, `main.cpp` 정리 |
 | Debug x64 build | 성공 | MSBuild, warning 0 / error 0 |
 | Release x64 build | 성공 | MSBuild, warning 0 / error 0 |
-| Run verification | 미확인 | GUI 실행은 사용자 확인 필요 |
+| Run verification | 성공 | 사용자가 Debug/Release 실행 정상 확인 |
 | Capture | 보류 | 사용자 촬영 단계에서 진행 |
 | Public readiness | 검토 필요 | private archive 기준 반영, public 공개 전 재검토 |
 
