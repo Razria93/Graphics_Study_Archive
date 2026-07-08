@@ -21,7 +21,7 @@ Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, tex
 | Step2 CircleScreenSpace | screen-space circle | 예정 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step3 CircleWorldSpace | world-space circle | 예정 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step4 DrawingSphere | ray-sphere intersection | 완료 | build 성공 / run 미확인 | 진행 중 | 완료 | 보류 |
-| Step5 PhongShading | Phong shading | 1차 예정 | 미확인 | 미확인 | 미확인 | 보류 |
+| Step5 PhongShading | Phong shading | 완료 | build 성공 / run 미확인 | 진행 중 | 완료 | 보류 |
 | Step6 PerspectiveView | perspective camera rays | 1차 예정 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step7 Triangle | ray-triangle intersection | 2차 후보 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step8 Shadow | shadow ray | 2차 후보 | 미확인 | 미확인 | 미확인 | 보류 |
