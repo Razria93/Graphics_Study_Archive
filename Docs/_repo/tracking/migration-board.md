@@ -4,7 +4,7 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 
 | Part | Example | Code split | Build/run | Diff review | Refactor | Capture ready | Note |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Part1 Ch01-02 | `01_DX11InitAndImGui` | 진행 중 | 미확인 | 미확인 | 미확인 | 아니오 | source comment 정리 및 chapter docs 시작 |
+| Part1 Ch01-02 | `01_DX11InitAndImGui` | 진행 중 | 미확인 | 미확인 | 미확인 | 아니오 | source comments local-only 분리, migration draft 작성 |
 | Part1 Ch01-02 | `02_Bloom` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
 | Part1 Ch03 | `03_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
 | Part2 Ch04 | `04_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |

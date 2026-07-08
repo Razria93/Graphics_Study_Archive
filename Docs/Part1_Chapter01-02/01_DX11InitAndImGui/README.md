@@ -1,5 +1,7 @@
 # 01_DX11InitAndImGui
 
+> 문서 상태: migration draft입니다. build/run, raw/original diff review, refactor check 전까지 최종 제출 문서로 보지 않습니다.
+
 ## 목표
 
 DirectX11 device/swap chain을 초기화하고, CPU에서 갱신한 작은 canvas texture를 full-screen quad로 표시하며, ImGui overlay로 배경색을 조정하는 기본 실행 예제입니다.
@@ -150,6 +152,8 @@ DX11 초기화 예제는 단순히 창을 띄우는 코드가 아니라 이후 �
 
 - Build/run status: 미확인
 - Capture: 예정
+- Raw/original diff review: 미확인
+- Refactor check: 미확인
 
 ## 공개 가능성
 
@@ -163,3 +167,12 @@ DX11 초기화 예제는 단순히 창을 띄우는 코드가 아니라 이후 �
 - [Part Import 작업 방식](../../_repo/workflow/part-import-workflow.md)
 - [Chapter Study 정리 방식](../../_repo/workflow/chapter-study-workflow.md)
 - [Part1 import manifest](../../_repo/manifests/Part1_Chapter01-02.md)
+
+## Local-only 작업 재료
+
+다음 파일은 `local/` 아래에 있으며 git에 포함하지 않습니다.
+
+- `local/Part1_Chapter01-02/01_DX11InitAndImGui/source-comments.md`
+- `local/Part1_Chapter01-02/01_DX11InitAndImGui/raw-md-notes.md`
+- `local/Part1_Chapter01-02/01_DX11InitAndImGui/memo-review.md`
+- `local/Part1_Chapter01-02/01_DX11InitAndImGui/final-doc-plan.md`
