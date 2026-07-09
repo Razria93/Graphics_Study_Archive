@@ -68,7 +68,7 @@ light type별 계산을 `Common.hlsli`의 함수로 분리해 pixel shader 본�
 ## 실행 결과
 
 - Build status: Debug x64, Release x64 성공
-- Run status: 미확인
+- Run status: Debug x64, Release x64 성공
 - Capture status: 보류
 
 ## 공개 가능성

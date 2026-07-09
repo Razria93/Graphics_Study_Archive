@@ -39,8 +39,8 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part2 Ch05-08 | `06_GraphicsPipeline_Step4_Shaders` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, shader semantics and pixel shader constant buffer |
 | Part2 Ch05-08 | `06_GraphicsPipeline_Step5_Texturing` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, texture asset public readiness 검토 필요 |
 | Part2 Ch05-08 | `06_GraphicsPipeline_Step5_Texturing_LightingSelf` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, raw project filename은 `06_GraphicsPipeline_Step5_Texturing.*` 재사용, asset public readiness 검토 필요 |
-| Part2 Ch05-08 | `06_GraphicsPipeline_Step6_Lighting` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | Blinn-Phong, directional/point/spot light, asset public readiness 검토 필요 |
-| Part2 Ch05-08 | `05_*` - `08_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Step6 Lighting 이후 후보 |
+| Part2 Ch05-08 | `06_GraphicsPipeline_Step6_Lighting` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, Blinn-Phong, directional/point/spot light, asset public readiness 검토 필요 |
+| Part2 Ch05-08 | `05_*` - `08_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | 다음 후보는 `07_Modeling_*` 또는 `06_GraphicsPipeline` 남은 항목 확인 |
 | Part3 Ch09 | `09_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
 | Part3 Ch10-13 | `10_*` - `13_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
 | Part4 Ch14-20 | `14_*` - `20_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
