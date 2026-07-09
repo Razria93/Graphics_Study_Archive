@@ -52,7 +52,7 @@ matrix multiplication은 교환법칙이 성립하지 않으므로 transform을 
 ## 실행 결과
 
 - Build status: Debug x64, Release x64 성공
-- Run status: 미확인
+- Run status: Debug x64, Release x64 성공
 - Capture status: 보류
 
 ## 공개 가능성

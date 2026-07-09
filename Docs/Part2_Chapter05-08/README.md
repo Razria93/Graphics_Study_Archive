@@ -14,7 +14,7 @@ D3D11 graphics pipeline로 넘어가기 전후의 matrix transform, lighting, mo
 
 | Example | Code split | Build/run | Diff review | Capture | Note |
 | --- | --- | --- | --- | --- | --- |
-| [`05_AffineTransformations_Step1_Matrix(GLM)`](05_AffineTransformations_Step1_Matrix(GLM)/README.md) | 완료 | 빌드 성공 / 실행 미확인 | 진행 중 | 보류 | GLM column-major matrix, transform composition |
+| [`05_AffineTransformations_Step1_Matrix(GLM)`](05_AffineTransformations_Step1_Matrix(GLM)/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인, GLM column-major matrix |
 
 ## Related Docs
 
