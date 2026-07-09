@@ -50,7 +50,7 @@ position은 위치이므로 translation 영향을 받도록 `w = 1`을 사용하
 ## 실행 결과
 
 - Build status: Debug x64, Release x64 성공
-- Run status: 미확인
+- Run status: Debug x64, Release x64 성공
 - Capture status: 보류
 
 ## 공개 가능성
