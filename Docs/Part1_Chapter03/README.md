@@ -32,7 +32,7 @@ Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, tex
 | Step11 Supersampling | anti-aliasing | 완료 | 성공 | 진행 중 | 완료 | 보류 |
 | Step12 Reflection | reflection | 완료 | 성공 | 진행 중 | 완료 | 보류 |
 | Step13 Transparency | transparency/refraction | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step14 CubeEnvironment | cube environment | 별도 asset 검토 | 미확인 | 미확인 | 미확인 | 보류 |
+| Step14 CubeEnvironment | cube environment scaffold | 완료 | build 성공/run 미확인 | 진행 중 | 완료 | 보류 |
 
 ## 현재 진행 순서
 
@@ -47,6 +47,7 @@ Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, tex
 9. `03_Raytracing_Step11_Supersampling`
 10. `03_Raytracing_Step12_Reflection`
 11. `03_Raytracing_Step13_Transparency`
+12. `03_Raytracing_Step14_CubeEnvironment`
 
 ## 관련 운영 문서
 

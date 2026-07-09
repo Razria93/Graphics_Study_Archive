@@ -9,9 +9,9 @@
 | Source | `C:\ComputerGraphics\Part1_Chapter03` |
 | Target | `Part1_Chapter03` |
 | Docs target | `Docs/Part1_Chapter03` |
-| Import status | Step4-13 반영 |
+| Import status | Step4-14 반영 |
 | Public readiness | 검토 필요 |
-| Build/run status | Step4-13 Debug/Release build/run 성공 |
+| Build/run status | Step4-13 Debug/Release build/run 성공, Step14 build 성공/run 미확인 |
 | 작업 방식 | Ch03 전체 계획 + Step별 import |
 
 ## Raw 구조 요약
@@ -32,7 +32,7 @@
 | `03_Raytracing_Step11_Supersampling/` | anti-aliasing / supersampling | 반영 완료 |
 | `03_Raytracing_Step12_Reflection/` | reflection | 반영 완료 |
 | `03_Raytracing_Step13_Transparency/` | transparency/refraction | 반영 완료 |
-| `03_Raytracing_Step14_CubeEnvironment/` | cube environment / skybox | 별도 asset 검토 |
+| `03_Raytracing_Step14_CubeEnvironment/` | cube environment scaffold | 반영 완료, environment asset 미포함 |
 
 ## Include candidates
 
@@ -61,7 +61,7 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 - public 공개 전 출처/라이선스 표기가 불명확한 asset
 - helper script 또는 생성 도구는 별도 검토 전까지 제외
 
-## Step4-13 반영 기록
+## Step4-14 반영 기록
 
 | Step | Code import | Source comment cleanup | Debug x64 build | Release x64 build | Run | Capture |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -76,6 +76,7 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 | Step11 Supersampling | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
 | Step12 Reflection | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
 | Step13 Transparency | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
+| Step14 CubeEnvironment | 완료 | 완료 | 성공 | 성공 | 미확인 | 보류 |
 
 ## Asset record
 
@@ -85,6 +86,7 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 | Step11 Supersampling | `shadertoy_abstract1.jpg` | 포함 | 공개 전 출처/라이선스 확인 |
 | Step12 Reflection | `shadertoy_abstract1.jpg`, `back.jpg` | 포함 | 공개 전 출처/라이선스 확인 |
 | Step13 Transparency | `shadertoy_abstract1.jpg`, `back.jpg` | 포함 | 공개 전 출처/라이선스 확인 |
+| Step14 CubeEnvironment | `skybox/`, `SaintPetersBasilica/` | 미포함 | asset subset/attribution 별도 검토 |
 
 ## Related raw docs
 
@@ -106,5 +108,5 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 
 ## Next action
 
-1. `03_Raytracing_Step14_CubeEnvironment` asset/import 범위를 검토합니다.
-2. Step14 cube environment 관련 asset은 별도 asset review를 거친 뒤 진행합니다.
+1. 사용자가 `03_Raytracing_Step14_CubeEnvironment` Debug/Release 실행을 확인하면 status와 tracking 문서를 성공으로 갱신합니다.
+2. 실제 cube environment 구현을 진행할 경우 asset subset과 attribution 문서를 먼저 확정합니다.
