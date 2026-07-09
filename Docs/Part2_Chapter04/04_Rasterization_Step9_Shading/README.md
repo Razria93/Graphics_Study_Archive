@@ -59,7 +59,7 @@ Blinn-Phong 방식에서는 반사 벡터 대신 halfway vector와 normal의 유
 ## 실행 결과
 
 - Build status: Debug x64, Release x64 성공
-- Run status: 미확인
+- Run status: Debug/Release 실행 확인 완료
 - Capture status: 보류
 
 ## 공개 가능성

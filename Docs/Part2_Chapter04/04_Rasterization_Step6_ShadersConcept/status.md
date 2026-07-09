@@ -45,5 +45,5 @@
 
 ## Next Action
 
-- Step8 실행 확인 결과 커밋
-- 다음 후보 `04_Rasterization_Step9_Shading` 진행
+- Step9 실행 확인 결과 커밋
+- 다음 후보 `04_Rasterization_Step10_Lights` 진행
