@@ -14,6 +14,10 @@
 
 각 예제는 독립적인 Visual Studio solution을 기준으로 확인합니다. private archive 정리 과정에서 폴더명을 바꾼 경우, 빌드 실패 시 `.sln`, `.vcxproj`, shader path, asset path 중 어느 항목이 기존 경로에 의존하는지 먼저 확인합니다.
 
+## Third-party headers
+
+STB image headers는 clean checkout 빌드 재현성을 위해 repo 내부 [ThirdParty/stb](ThirdParty/stb/README.md)에 포함합니다. `stb_image.h` 또는 `stb_image_write.h`를 사용하는 예제는 해당 폴더를 project include path에 추가합니다.
+
 ## 권장 확인 순서
 
 1. 대상 예제 폴더의 `.sln`을 Visual Studio로 엽니다.
