@@ -2,7 +2,7 @@
 
 ## Chapter purpose
 
-Step14는 cube environment / skybox asset을 다루기 위한 scaffold 단계입니다. 현재 raw source의 `Raytracer.h`는 실제 cube map sampling 구현 전 상태이며, archive에서는 build/run 가능한 빈 environment scaffold로 정리합니다.
+Step14는 cube environment / skybox asset을 다루는 단계입니다. raw source의 `Raytracer.h`는 실제 cube map sampling 구현 전 상태였기 때문에, archive에서는 `SaintPetersBasilica` 6면 이미지를 ray direction 기준으로 샘플링하는 최소 environment renderer로 정리했습니다.
 
 ## Core keywords
 
@@ -16,26 +16,29 @@ Step14는 cube environment / skybox asset을 다루기 위한 scaffold 단계입
 
 ## Current implementation
 
-현재 archive 코드는 `Raytracer::Render()`에서 고정 background color를 채우는 buildable scaffold입니다.
+현재 archive 코드는 `Raytracer::Render()`에서 camera ray direction을 만들고, 해당 direction이 향하는 cube face를 선택해 environment texture를 샘플링합니다.
 
 ```cpp
-std::fill(pixels.begin(), pixels.end(), glm::vec4(0.02f, 0.03f, 0.05f, 1.0f));
+const glm::vec3 rayDir = glm::normalize(pixelPosWorld - eyePos);
+const glm::vec3 color = SampleEnvironment(rayDir);
 ```
 
-raw Step14의 `skybox/`와 `SaintPetersBasilica/` asset 묶음은 현재 source에서 직접 참조되지 않습니다. 따라서 이번 이관에서는 대용량 environment assets를 복사하지 않고, asset review 대상으로 기록합니다.
+raw Step14의 `skybox/`와 `SaintPetersBasilica/` asset 묶음은 실행 확인을 위해 private archive에 포함했습니다. 다만 public 공개 전에는 attribution/license를 별도로 확인해야 하며, 현재 archive source가 어떤 asset을 실제로 읽는지는 코드 경로 기준으로 다시 확인합니다.
+
+`Example.h`는 실행 위치에 따라 `VS.hlsl`, `PS.hlsl`을 못 찾는 문제를 줄이기 위해 project folder와 repo root 기준 fallback 경로를 확인합니다. `Raytracer.h`도 `SaintPetersBasilica` texture를 같은 방식으로 찾습니다.
 
 ## Asset handling
 
 | Asset group | Archive status | Note |
 | --- | --- | --- |
-| `skybox/*.jpg` | 미포함 | raw에 포함되어 있으나 현재 Step14 source에서 직접 사용하지 않음 |
-| `skybox/*_diffuseIBL.dds` | 미포함 | IBL 후보 asset, public 공개 전 license 확인 필요 |
-| `skybox/*_specularIBL.dds` | 미포함 | IBL 후보 asset, public 공개 전 license 확인 필요 |
-| `SaintPetersBasilica/*.jpg` | 미포함 | Humus / CC BY 3.0 attribution 필요 |
-| `SaintPetersBasilica/*_blurred.jpg` | 미포함 | 생성/가공 asset으로 별도 검토 필요 |
+| `skybox/*.jpg` | 포함 | private archive 실행 확인용, public 공개 전 출처/라이선스 확인 |
+| `skybox/*_diffuseIBL.dds` | 포함 | IBL 후보 asset, public 공개 전 license 확인 필요 |
+| `skybox/*_specularIBL.dds` | 포함 | IBL 후보 asset, public 공개 전 license 확인 필요 |
+| `SaintPetersBasilica/*.jpg` | 포함 | Humus / CC BY 3.0 attribution 필요 |
+| `SaintPetersBasilica/*_blurred.jpg` | 포함 | 생성/가공 asset, public 공개 전 attribution/license 확인 필요 |
 | `SaintPetersBasilica/image_blurring.py` | 미포함 | helper script, 현재 build에 불필요 |
 
-`SaintPetersBasilica/readme.txt`는 Humus author와 Creative Commons Attribution 3.0 Unported license를 명시합니다. asset을 archive/public에 포함할 때는 attribution 문서와 함께 별도 반영합니다.
+`SaintPetersBasilica/readme.txt`는 Humus author와 Creative Commons Attribution 3.0 Unported license를 명시합니다. public 공개 후보로 넘길 때는 attribution 문서와 함께 별도 반영합니다.
 
 ## Current status
 
@@ -43,8 +46,9 @@ raw Step14의 `skybox/`와 `SaintPetersBasilica/` asset 묶음은 현재 source�
 | --- | --- |
 | Code split | 완료 |
 | Source comment cleanup | 완료 |
-| Required texture asset | 없음 |
-| Environment asset import | 보류 |
+| Required texture asset | `skybox/`, `SaintPetersBasilica/` 포함 |
+| Environment asset import | 완료(private archive), public 검토 필요 |
+| Environment sampling | 구현 |
 | Debug x64 build | 성공 |
 | Release x64 build | 성공 |
 | Run verification | 미확인 |
@@ -54,4 +58,4 @@ raw Step14의 `skybox/`와 `SaintPetersBasilica/` asset 묶음은 현재 source�
 ## Follow-up
 
 - 사용자가 Debug/Release 실행을 확인하면 status와 tracking 문서를 갱신합니다.
-- 실제 cube environment 구현을 진행할 경우 asset subset과 attribution 문서를 먼저 확정합니다.
+- 출력이 계속 비어 있으면 asset 존재 여부보다 실행 working directory, shader compile, texture loading 경로를 우선 확인합니다.

@@ -32,7 +32,7 @@
 | `03_Raytracing_Step11_Supersampling/` | anti-aliasing / supersampling | 반영 완료 |
 | `03_Raytracing_Step12_Reflection/` | reflection | 반영 완료 |
 | `03_Raytracing_Step13_Transparency/` | transparency/refraction | 반영 완료 |
-| `03_Raytracing_Step14_CubeEnvironment/` | cube environment scaffold | 반영 완료, environment asset 미포함 |
+| `03_Raytracing_Step14_CubeEnvironment/` | cube environment sampling | 반영 완료, environment asset private archive 포함 |
 
 ## Include candidates
 
@@ -86,7 +86,7 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 | Step11 Supersampling | `shadertoy_abstract1.jpg` | 포함 | 공개 전 출처/라이선스 확인 |
 | Step12 Reflection | `shadertoy_abstract1.jpg`, `back.jpg` | 포함 | 공개 전 출처/라이선스 확인 |
 | Step13 Transparency | `shadertoy_abstract1.jpg`, `back.jpg` | 포함 | 공개 전 출처/라이선스 확인 |
-| Step14 CubeEnvironment | `skybox/`, `SaintPetersBasilica/` | 미포함 | asset subset/attribution 별도 검토 |
+| Step14 CubeEnvironment | `skybox/`, `SaintPetersBasilica/` | 포함(private archive) | attribution/license 별도 검토 |
 
 ## Related raw docs
 
@@ -109,4 +109,4 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 ## Next action
 
 1. 사용자가 `03_Raytracing_Step14_CubeEnvironment` Debug/Release 실행을 확인하면 status와 tracking 문서를 성공으로 갱신합니다.
-2. 실제 cube environment 구현을 진행할 경우 asset subset과 attribution 문서를 먼저 확정합니다.
+2. Step14 출력이 계속 비어 있으면 asset 존재 여부가 아니라 working directory, shader compile, texture loading 경로를 우선 확인합니다.

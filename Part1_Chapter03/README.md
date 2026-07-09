@@ -16,7 +16,7 @@ CPU ray tracing fundamentals 예제를 step 단위로 정리한 archive 폴더�
 | Import status | Step4-14 반영 |
 | Public readiness | 검토 필요 |
 | Build/run status | Step4-13 build/run 성공, Step14 build 성공/run 미확인 |
-| Texture asset | `shadertoy_abstract1.jpg`, `back.jpg` 포함, public 공개 전 출처/라이선스 확인 |
+| Texture/environment asset | `shadertoy_abstract1.jpg`, `back.jpg`, Step14 `skybox/`, `SaintPetersBasilica/` 포함, public 공개 전 출처/라이선스 확인 |
 | Import manifest | [Docs/_repo/manifests/Part1_Chapter03.md](../Docs/_repo/manifests/Part1_Chapter03.md) |
 | Chapter docs | [Docs/Part1_Chapter03](../Docs/Part1_Chapter03/README.md) |
 | Next action | Step14 run 검증 |
@@ -38,4 +38,4 @@ CPU ray tracing fundamentals 예제를 step 단위로 정리한 archive 폴더�
 
 ## Asset 검토 필요 Step
 
-- Step14 environment asset subset은 미포함 상태로 별도 검토 필요
+- Step14 environment asset subset은 private archive에 포함, public 공개 전 attribution/license 검토 필요
