@@ -7,7 +7,7 @@
 - Scope: software rasterization examples
 - Import status: 진행 중
 - Public readiness: 검토 필요
-- Build/run status: Step1, TriangleToCircle, Step2, Step3, Step4, Step5, Step6 성공 / Step7 빌드 성공, 실행 미확인 / 이후 미확인
+- Build/run status: Step1, TriangleToCircle, Step2, Step3, Step4, Step5, Step6, Step7 성공 / 이후 미확인
 
 ## Step Inventory
 
@@ -20,7 +20,7 @@
 | `04_Rasterization_Step4_Animation2D` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
 | `04_Rasterization_Step5_DepthBuffer` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
 | `04_Rasterization_Step6_ShadersConcept` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
-| `04_Rasterization_Step7_BackfaceCulling` | 반영 완료 | 빌드 성공 / 실행 미확인 | 검토 필요 | signed area 기반 backface culling |
+| `04_Rasterization_Step7_BackfaceCulling` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
 | `04_Rasterization_Step8_PerspectiveProjection` | 대기 | 미확인 | 검토 필요 | perspective projection |
 | `04_Rasterization_Step9_Shading` | 대기 | 미확인 | 검토 필요 | rasterization shading |
 | `04_Rasterization_Step10_Lights` | 대기 | 미확인 | 검토 필요 | lighting |
@@ -57,6 +57,6 @@ Step별로 아래 파일만 선별 반영합니다.
 
 ## Current Focus
 
-1. 현재 후보는 `04_Rasterization_Step7_BackfaceCulling` 실행 확인입니다.
-2. 사용자가 Debug/Release 실행 확인을 완료하면 status 문서와 Part2 README를 갱신합니다.
-3. 다음 import 후보는 `04_Rasterization_Step8_PerspectiveProjection`입니다.
+1. 현재 후보는 `04_Rasterization_Step8_PerspectiveProjection` import입니다.
+2. Debug/Release 실행 확인 전까지 새 Step의 run status는 `미확인`으로 유지합니다.
+3. capture/video는 사용자 촬영 단계에서 별도로 기록합니다.

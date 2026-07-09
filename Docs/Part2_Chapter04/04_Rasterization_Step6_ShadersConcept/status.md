@@ -45,5 +45,5 @@
 
 ## Next Action
 
-- 실행 확인 결과 커밋
-- 다음 후보 `04_Rasterization_Step7_BackfaceCulling` 진행
+- Step7 실행 확인 결과 커밋
+- 다음 후보 `04_Rasterization_Step8_PerspectiveProjection` 진행
