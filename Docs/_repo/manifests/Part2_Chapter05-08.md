@@ -61,6 +61,18 @@
 | --- | --- | --- | --- | --- |
 | `06_GraphicsPipeline_Step6_Lighting` | 諛섏쁺 ?꾨즺 | ?깃났 | 寃???꾩슂 | ?ъ슜??Debug/Release ?ㅽ뻾 ?뺤씤, Blinn-Phong, directional/point/spot light, `Common.hlsli`, texture asset public readiness 寃???꾩슂 |
 
+## Modeling Variant Import Rule
+
+- `*_Lecture`는 강의에서 제안한 reference solution으로 보고 제외하지 않습니다.
+- `*_Complete`는 사용자 풀이 또는 사용자 완성본으로 보고 제외하지 않습니다.
+- archive 이름은 제출물 관점에서 `Lecture` / `Complete` 대신 `ReferenceSolution` / `UserSolution`처럼 의미가 드러나는 이름으로 바꿀 수 있습니다.
+- backup, debug, 중간 실험 폴더는 기본 제외 후보로 둡니다.
+- 현재 확인된 쌍:
+  - `07_Modeling_Step5_Sphere_Lecture` -> `07_Modeling_Step5_Sphere_ReferenceSolution`
+  - `07_Modeling_Step5-3_Sphere_Complete` -> `07_Modeling_Step5_Sphere_UserSolution`
+  - `07_Modeling_Step8_SphereMapping_Lecture` -> `07_Modeling_Step8_SphereMapping_ReferenceSolution`
+  - `07_Modeling_Step8-2_SphereMapping_Complete` -> `07_Modeling_Step8_SphereMapping_UserSolution`
+
 ## Current Next Action
 
 1. ?댄썑 `07_Modeling_*` ?먮뒗 `06_GraphicsPipeline`???⑥? ?꾨낫瑜??뺤씤?⑸땲??

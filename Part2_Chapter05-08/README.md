@@ -26,6 +26,13 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 - Procedural mesh generation
 - Cubemapping, environment mapping, and bloom
 
+## Modeling variant 기준
+
+- `*_Lecture`: 강의에서 제안한 reference solution으로 보존
+- `*_Complete`: 사용자 풀이 또는 사용자 완성본으로 보존
+- archive 이름은 `ReferenceSolution` / `UserSolution`처럼 제출물 관점의 이름으로 조정 가능
+- `*_Backup*`, `*_Debug`, 단순 중간 실험 폴더는 기본 제외 후보
+
 ## 진행 중인 예제
 
 | Example | 상태 |
