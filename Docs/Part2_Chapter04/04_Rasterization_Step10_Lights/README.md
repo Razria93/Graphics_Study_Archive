@@ -69,7 +69,7 @@ spot light는 빛의 방향과 fragment 방향이 가까울수록 강해지며, 
 ## 실행 결과
 
 - Build status: Debug x64, Release x64 성공
-- Run status: 미확인
+- Run status: Debug x64, Release x64 성공
 - Capture status: 보류
 
 ## 공개 가능성

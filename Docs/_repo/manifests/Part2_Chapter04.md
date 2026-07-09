@@ -7,7 +7,7 @@
 - Scope: software rasterization examples
 - Import status: 진행 중
 - Public readiness: 검토 필요
-- Build/run status: Step1, TriangleToCircle, Step2, Step3, Step4, Step5, Step6, Step7, Step8, Step9 성공 / Step10 빌드 성공, 실행 미확인
+- Build/run status: Step1, TriangleToCircle, Step2, Step3, Step4, Step5, Step6, Step7, Step8, Step9, Step10 성공
 
 ## Step Inventory
 
@@ -23,7 +23,7 @@
 | `04_Rasterization_Step7_BackfaceCulling` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
 | `04_Rasterization_Step8_PerspectiveProjection` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
 | `04_Rasterization_Step9_Shading` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
-| `04_Rasterization_Step10_Lights` | 반영 완료 | 빌드 성공 / 실행 미확인 | 검토 필요 | directional/point/spot light |
+| `04_Rasterization_Step10_Lights` | 반영 완료 | 성공 | 검토 필요 | directional/point/spot light, 사용자 Debug/Release 실행 확인 |
 
 ## Include Candidates
 
@@ -57,6 +57,6 @@ Step별로 아래 파일만 선별 반영합니다.
 
 ## Current Focus
 
-1. 현재 후보는 `04_Rasterization_Step10_Lights` 실행 확인입니다.
-2. 사용자가 Debug/Release 실행 확인을 완료하면 status 문서와 Part2 README를 갱신합니다.
-3. Part2 Chapter04 전체 import 상태를 정리합니다.
+1. Part2 Chapter04 전체 import 상태를 정리합니다.
+2. 다음 Part2 범위의 raw 구조와 import 후보를 확인합니다.
+3. capture/video는 사용자 촬영 단계에서 별도로 기록합니다.
