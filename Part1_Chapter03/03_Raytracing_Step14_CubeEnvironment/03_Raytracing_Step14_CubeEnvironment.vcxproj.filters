@@ -15,6 +15,9 @@
     <ClCompile Include="main.cpp">
       <Filter>SourceFiles</Filter>
     </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>SourceFiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Example.h">
@@ -26,9 +29,32 @@
     <ClInclude Include="Object.h">
       <Filter>HeaderFiles</Filter>
     </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>HeaderFiles</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="VS.hlsl" />
     <FxCompile Include="PS.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="SaintPetersBasilica\negx.jpg">
+      <Filter>ResourceFiles</Filter>
+    </Image>
+    <Image Include="SaintPetersBasilica\negy.jpg">
+      <Filter>ResourceFiles</Filter>
+    </Image>
+    <Image Include="SaintPetersBasilica\negz.jpg">
+      <Filter>ResourceFiles</Filter>
+    </Image>
+    <Image Include="SaintPetersBasilica\posx.jpg">
+      <Filter>ResourceFiles</Filter>
+    </Image>
+    <Image Include="SaintPetersBasilica\posy.jpg">
+      <Filter>ResourceFiles</Filter>
+    </Image>
+    <Image Include="SaintPetersBasilica\posz.jpg">
+      <Filter>ResourceFiles</Filter>
+    </Image>
   </ItemGroup>
 </Project>

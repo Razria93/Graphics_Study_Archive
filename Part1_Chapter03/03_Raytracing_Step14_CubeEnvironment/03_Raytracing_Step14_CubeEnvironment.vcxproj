@@ -126,11 +126,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Example.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Raytracer.h" />
+    <ClInclude Include="Texture.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="PS.hlsl">
@@ -145,6 +147,14 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
     </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="SaintPetersBasilica\negx.jpg" />
+    <Image Include="SaintPetersBasilica\negy.jpg" />
+    <Image Include="SaintPetersBasilica\negz.jpg" />
+    <Image Include="SaintPetersBasilica\posx.jpg" />
+    <Image Include="SaintPetersBasilica\posy.jpg" />
+    <Image Include="SaintPetersBasilica\posz.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

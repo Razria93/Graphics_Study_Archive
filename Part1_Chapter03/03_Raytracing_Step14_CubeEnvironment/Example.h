@@ -7,6 +7,8 @@
 #include <iostream>
 #include <d3d11.h>
 #include <d3dcompiler.h>
+#include <array>
+#include <string>
 #include <vector>
 #include <chrono>
 #include <algorithm>
@@ -72,7 +74,10 @@ public:
 		ID3DBlob *pixelBlob = nullptr;
 		ID3DBlob *errorBlob = nullptr;
 
-		if (FAILED(D3DCompileFromFile(L"VS.hlsl", 0, 0, "main", "vs_5_0", 0, 0, &vertexBlob, &errorBlob)))
+		const std::wstring vertexShaderPath = ResolveRuntimeFilePath(L"VS.hlsl");
+		const std::wstring pixelShaderPath = ResolveRuntimeFilePath(L"PS.hlsl");
+
+		if (FAILED(D3DCompileFromFile(vertexShaderPath.c_str(), 0, 0, "main", "vs_5_0", 0, 0, &vertexBlob, &errorBlob)))
 		{
 			if (errorBlob)
 			{
@@ -81,13 +86,19 @@ public:
 			}
 		}
 
-		if (FAILED(D3DCompileFromFile(L"PS.hlsl", 0, 0, "main", "ps_5_0", 0, 0, &pixelBlob, &errorBlob)))
+		if (FAILED(D3DCompileFromFile(pixelShaderPath.c_str(), 0, 0, "main", "ps_5_0", 0, 0, &pixelBlob, &errorBlob)))
 		{
 			if (errorBlob)
 			{
 				std::cout << "Pixel shader compile error\n"
 						  << (char *)errorBlob->GetBufferPointer() << std::endl;
 			}
+		}
+
+		if (!vertexBlob || !pixelBlob)
+		{
+			std::cout << "Shader compile failed. Check runtime working directory." << std::endl;
+			exit(-1);
 		}
 
 		device->CreateVertexShader(vertexBlob->GetBufferPointer(), vertexBlob->GetBufferSize(), NULL, &vertexShader);
@@ -102,6 +113,25 @@ public:
 
 		device->CreateInputLayout(ied, 2, vertexBlob->GetBufferPointer(), vertexBlob->GetBufferSize(), &layout);
 		deviceContext->IASetInputLayout(layout);
+	}
+
+	std::wstring ResolveRuntimeFilePath(const std::wstring &filename)
+	{
+		const std::array<std::wstring, 3> prefixes = {
+			L"",
+			L"Part1_Chapter03\\03_Raytracing_Step14_CubeEnvironment\\",
+			L"..\\..\\Part1_Chapter03\\03_Raytracing_Step14_CubeEnvironment\\"};
+
+		for (const auto &prefix : prefixes)
+		{
+			const std::wstring path = prefix + filename;
+			if (GetFileAttributesW(path.c_str()) != INVALID_FILE_ATTRIBUTES)
+			{
+				return path;
+			}
+		}
+
+		return filename;
 	}
 
 	void Initialize(HWND window, int width, int height)
