@@ -62,6 +62,7 @@
 | `06_GraphicsPipeline_Step6_Lighting` | 諛섏쁺 ?꾨즺 | ?깃났 | 寃???꾩슂 | ?ъ슜??Debug/Release ?ㅽ뻾 ?뺤씤, Blinn-Phong, directional/point/spot light, `Common.hlsli`, texture asset public readiness 寃???꾩슂 |
 | `06_GraphicsPipeline_Step7_ResizingViewport` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, viewport resizing, Release HLSL shader type 설정 보강 후 성공, texture asset public readiness 검토 필요 |
 | `06_GraphicsPipeline_Step8_ResizingWindow` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, window resize, swap chain `ResizeBuffers()`, render target/depth stencil 재생성, texture asset public readiness 검토 필요 |
+| `06_GraphicsPipeline_Step9_PhongVsBlinnPhong` | 반영 완료 | build 성공 / run 미확인 | 검토 필요 | Phong vs Blinn-Phong specular, `useBlinnPhong`, texture asset public readiness 검토 필요 |
 
 ## Modeling Variant Import Rule
 
