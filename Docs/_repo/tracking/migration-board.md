@@ -14,7 +14,7 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part1 Ch03 | `03_Raytracing_Step8_Shadow_Square` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 정상 확인 |
 | Part1 Ch03 | `03_Raytracing_Step9_BarycentricCordinates` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 정상 확인 |
 | Part1 Ch03 | `03_Raytracing_Step10_Texturing` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 정상 확인, texture asset 포함 |
-| Part1 Ch03 | `Step11` | 예정 | 미확인 | 미확인 | 미확인 | 보류 | 2차 후보 |
+| Part1 Ch03 | `03_Raytracing_Step11_Supersampling` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 정상 확인, texture asset 포함 |
 | Part1 Ch03 | `Step12-14` | 보류 | 미확인 | 미확인 | 미확인 | 보류 | asset 검토 필요 |
 | Part2 Ch04 | `04_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
 | Part2 Ch05-08 | `05_*` - `08_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |

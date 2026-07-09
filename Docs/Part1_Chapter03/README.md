@@ -1,14 +1,14 @@
 # Part1 Chapter03 Docs
 
-CPU ray tracing 예제를 Step 단위로 정리하는 문서 공간입니다.
+CPU ray tracing 예제를 step 단위로 정리하는 문서 공간입니다.
 
-Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, texturing, supersampling, reflection/environment로 이어지는 단계형 구현입니다. 전체 구조는 Chapter03 기준으로 관리하되, 실제 import와 검증은 Step별로 진행합니다.
+Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, texturing, supersampling, reflection/environment로 이어지는 단계형 구현입니다. 전체 구조는 Chapter03 기준으로 관리하되, 실제 import와 검증은 step별로 진행합니다.
 
 ## 작업 원칙
 
 - raw `Part1_Chapter03` 폴더를 통째로 복사하지 않습니다.
 - Step별로 code/project files만 선별 반영합니다.
-- source의 장문 학습 주석은 `local/Part1_Chapter03/<Step>/`로 분리합니다.
+- source의 장문 학습 주석은 제거하고, 필요한 구조 주석만 새로 작성합니다.
 - raw result/capture는 가져오지 않습니다.
 - 강의용으로 제공된 open-source 성격의 입력 asset은 private archive 실행에 필요한 경우 포함할 수 있습니다.
 - public 공개 전에는 asset 출처/라이선스 표기 가능 여부를 다시 확인합니다.
@@ -29,7 +29,7 @@ Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, tex
 | Step8 Shadow Square | square primitive wrapper | 완료 | 성공 | 진행 중 | 완료 | 보류 |
 | Step9 BarycentricCordinates | barycentric coordinate | 완료 | 성공 | 진행 중 | 완료 | 보류 |
 | Step10 Texturing | texture mapping | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step11 Supersampling | anti-aliasing | 2차 후보 | 미확인 | 미확인 | 미확인 | 보류 |
+| Step11 Supersampling | anti-aliasing | 완료 | 성공 | 진행 중 | 완료 | 보류 |
 | Step12 Reflection | reflection | asset 검토 필요 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step13 Transparency | transparency/refraction | asset 검토 필요 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step14 CubeEnvironment | cube environment | 별도 asset 검토 | 미확인 | 미확인 | 미확인 | 보류 |
@@ -44,6 +44,7 @@ Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, tex
 6. `03_Raytracing_Step8_Shadow_Square`
 7. `03_Raytracing_Step9_BarycentricCordinates`
 8. `03_Raytracing_Step10_Texturing`
+9. `03_Raytracing_Step11_Supersampling`
 
 ## 관련 운영 문서
 
