@@ -15,7 +15,7 @@ Software rasterization 예제를 정리할 폴더입니다.
 | Raw reference | `C:\ComputerGraphics\Part2_Chapter04` |
 | Import status | 진행 중 |
 | Public readiness | 검토 필요 |
-| Build/run status | Step1, TriangleToCircle, Step2, Step3, Step4, Step5 성공 / 나머지 미확인 |
+| Build/run status | Step1, TriangleToCircle, Step2, Step3, Step4, Step5 성공 / Step6 빌드 성공, 실행 미확인 / 나머지 미확인 |
 | Next action | 다음 rasterization Step import |
 
 ## 예정 주제
@@ -36,3 +36,4 @@ Software rasterization 예제를 정리할 폴더입니다.
 | `04_Rasterization_Step3_Transformations2D` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `04_Rasterization_Step4_Animation2D` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `04_Rasterization_Step5_DepthBuffer` | archive 반영 완료, Debug/Release 실행 확인 완료 |
+| `04_Rasterization_Step6_ShadersConcept` | archive 반영 완료, Debug/Release 빌드 성공, 실행 미확인 |

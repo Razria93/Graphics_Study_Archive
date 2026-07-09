@@ -7,7 +7,7 @@
 - Scope: software rasterization examples
 - Import status: 진행 중
 - Public readiness: 검토 필요
-- Build/run status: Step1, TriangleToCircle, Step2, Step3, Step4, Step5 성공 / 이후 미확인
+- Build/run status: Step1, TriangleToCircle, Step2, Step3, Step4, Step5 성공 / Step6 빌드 성공, 실행 미확인 / 이후 미확인
 
 ## Step Inventory
 
@@ -19,7 +19,7 @@
 | `04_Rasterization_Step3_Transformations2D` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
 | `04_Rasterization_Step4_Animation2D` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
 | `04_Rasterization_Step5_DepthBuffer` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
-| `04_Rasterization_Step6_ShadersConcept` | 대기 | 미확인 | 검토 필요 | shader concept |
+| `04_Rasterization_Step6_ShadersConcept` | 반영 완료 | 빌드 성공 / 실행 미확인 | 검토 필요 | CPU-side shader stage concept |
 | `04_Rasterization_Step7_BackfaceCulling` | 대기 | 미확인 | 검토 필요 | backface culling |
 | `04_Rasterization_Step8_PerspectiveProjection` | 대기 | 미확인 | 검토 필요 | perspective projection |
 | `04_Rasterization_Step9_Shading` | 대기 | 미확인 | 검토 필요 | rasterization shading |
@@ -57,6 +57,6 @@ Step별로 아래 파일만 선별 반영합니다.
 
 ## Current Focus
 
-1. 다음 후보는 `04_Rasterization_Step6_ShadersConcept`입니다.
-2. Debug/Release 실행 확인 전까지 각 Step의 build/run status는 `미확인`으로 유지합니다.
+1. `04_Rasterization_Step6_ShadersConcept` Debug/Release 실행 확인이 필요합니다.
+2. 확인 전까지 Step6 run status는 `미확인`으로 유지합니다.
 3. 사용자가 실행 확인을 완료하면 status 문서와 Part2 README를 갱신합니다.
