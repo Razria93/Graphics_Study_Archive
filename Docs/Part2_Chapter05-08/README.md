@@ -21,7 +21,7 @@ D3D11 graphics pipeline로 넘어가기 전후의 matrix transform, lighting, mo
 | [`06_GraphicsPipeline_Step1_COM`](06_GraphicsPipeline_Step1_COM/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인, D3D11 device creation and WRL ComPtr |
 | [`06_GraphicsPipeline_Step2_InitializingD3D`](06_GraphicsPipeline_Step2_InitializingD3D/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인, D3D11 initialization, swap chain, colored cube |
 | [`06_GraphicsPipeline_Step3_ModelViewProj`](06_GraphicsPipeline_Step3_ModelViewProj/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인, Model/View/Projection matrix and constant buffer |
-| [`06_GraphicsPipeline_Step4_Shaders`](06_GraphicsPipeline_Step4_Shaders/README.md) | 완료 | 빌드 성공 / 실행 미확인 | 진행 중 | 보류 | Shader semantics and pixel shader constant buffer |
+| [`06_GraphicsPipeline_Step4_Shaders`](06_GraphicsPipeline_Step4_Shaders/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인, shader semantics and pixel shader constant buffer |
 
 ## Related Docs
 

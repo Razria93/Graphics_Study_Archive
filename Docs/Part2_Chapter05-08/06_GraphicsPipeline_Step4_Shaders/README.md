@@ -56,7 +56,7 @@ CPU에서 만든 constant buffer를 pixel shader stage에 연결합니다. 이 �
 ## 실행 결과
 
 - Build status: Debug x64, Release x64 성공
-- Run status: 미확인
+- Run status: Debug x64, Release x64 성공
 - Capture status: 보류
 
 ## 공개 가능성
