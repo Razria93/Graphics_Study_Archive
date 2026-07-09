@@ -15,7 +15,7 @@ Software rasterization 예제를 정리하는 문서 공간입니다.
 | Example | Code split | Build/run | Diff review | Capture | Note |
 | --- | --- | --- | --- | --- | --- |
 | [`04_Rasterization_Step1_Triangle`](04_Rasterization_Step1_Triangle/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인 완료 |
-| [`04_Rasterization_Step1_TriangleToCircle`](04_Rasterization_Step1_TriangleToCircle/README.md) | 완료 | 미확인 | 진행 중 | 보류 | triangle fan으로 circle approximation |
+| [`04_Rasterization_Step1_TriangleToCircle`](04_Rasterization_Step1_TriangleToCircle/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인 완료 |
 
 ## Related Docs
 
