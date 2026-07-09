@@ -57,11 +57,10 @@ color += traceRay(reflectedRay, depth - 1) * hit.obj->reflection;
 | Required texture asset | 포함 |
 | Debug x64 build | 성공 |
 | Release x64 build | 성공 |
-| Run verification | 미확인 |
+| Run verification | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
 ## Follow-up
 
-- 사용자가 Debug/Release 실행을 확인하면 status와 tracking 문서를 갱신합니다.
 - 다음 코드 후보는 `03_Raytracing_Step13_Transparency`입니다.

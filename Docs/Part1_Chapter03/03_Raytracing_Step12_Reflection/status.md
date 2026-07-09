@@ -10,7 +10,7 @@
 | Source comment cleanup | 완료 | source에는 실행 흐름에 필요한 최소 구조만 유지 |
 | Debug x64 build | 성공 | MSBuild, warning 0 / error 0 |
 | Release x64 build | 성공 | MSBuild, warning 0 / error 0 |
-| Run verification | 미확인 | 사용자 실행 확인 전 |
+| Run verification | 성공 | 사용자가 Debug/Release 실행 정상 확인 |
 | Capture | 보류 | 사용자 촬영 단계에서 진행 |
 | Public readiness | 검토 필요 | private archive 포함 가능, public 공개 전 출처/라이선스 확인 |
 
@@ -27,4 +27,4 @@
 - `back.jpg`는 raw project item에는 포함되어 있으나 현재 정리된 `Raytracer.h`에서는 직접 사용하지 않습니다.
 - sandboxed build는 output directory 생성 권한 문제로 실패했으며, escalated MSBuild에서 Debug/Release 모두 성공했습니다.
 - vcpkg applocal은 `pwsh.exe` 시도 후 Windows PowerShell fallback으로 완료되었습니다.
-- run 확인 전까지 tracking 문서의 실행 상태는 `미확인`으로 유지합니다.
+- 사용자가 Debug/Release 실행을 정상 확인했습니다.

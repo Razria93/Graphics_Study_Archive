@@ -11,7 +11,7 @@
 | Docs target | `Docs/Part1_Chapter03` |
 | Import status | Step4-12 반영 |
 | Public readiness | 검토 필요 |
-| Build/run status | Step4-11 Debug/Release build/run 성공, Step12 build 성공/run 미확인 |
+| Build/run status | Step4-12 Debug/Release build/run 성공 |
 | 작업 방식 | Ch03 전체 계획 + Step별 import |
 
 ## Raw 구조 요약
@@ -74,7 +74,7 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 | Step9 BarycentricCordinates | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
 | Step10 Texturing | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
 | Step11 Supersampling | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
-| Step12 Reflection | 완료 | 완료 | 성공 | 성공 | 미확인 | 보류 |
+| Step12 Reflection | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
 
 ## Asset record
 
@@ -104,5 +104,5 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 
 ## Next action
 
-1. 사용자가 `03_Raytracing_Step12_Reflection` Debug/Release 실행을 확인하면 status와 tracking 문서를 성공으로 갱신합니다.
+1. `03_Raytracing_Step13_Transparency` asset/import 범위를 검토합니다.
 2. Step13 이후 transparency/skybox 관련 asset은 별도 asset review를 거친 뒤 진행합니다.
