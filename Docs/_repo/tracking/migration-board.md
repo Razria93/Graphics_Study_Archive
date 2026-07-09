@@ -28,6 +28,7 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part2 Ch04 | `04_Rasterization_Step7_BackfaceCulling` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인 |
 | Part2 Ch04 | `04_Rasterization_Step8_PerspectiveProjection` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인 |
 | Part2 Ch04 | `04_Rasterization_Step9_Shading` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인 |
+| Part2 Ch04 | `04_Rasterization_Step10_Lights` | 완료 | 빌드 성공 / 실행 미확인 | 진행 중 | 완료 | 보류 | directional/point/spot light |
 | Part2 Ch05-08 | `05_*` - `08_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
 | Part3 Ch09 | `09_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
 | Part3 Ch10-13 | `10_*` - `13_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
