@@ -60,6 +60,7 @@
 | Raw example | Archive status | Build/run | Public readiness | Note |
 | --- | --- | --- | --- | --- |
 | `06_GraphicsPipeline_Step6_Lighting` | 諛섏쁺 ?꾨즺 | ?깃났 | 寃???꾩슂 | ?ъ슜??Debug/Release ?ㅽ뻾 ?뺤씤, Blinn-Phong, directional/point/spot light, `Common.hlsli`, texture asset public readiness 寃???꾩슂 |
+| `06_GraphicsPipeline_Step7_ResizingViewport` | 반영 완료 | build 성공 / run 미확인 | 검토 필요 | viewport resizing, Release HLSL shader type 설정 보강 후 성공, texture asset public readiness 검토 필요 |
 
 ## Modeling Variant Import Rule
 

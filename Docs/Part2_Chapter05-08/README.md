@@ -35,3 +35,4 @@ D3D11 graphics pipeline로 넘어가기 전후의 matrix transform, lighting, mo
 | --- | --- | --- | --- | --- | --- |
 | [`06_GraphicsPipeline_Step5_Texturing_LightingSelf`](06_GraphicsPipeline_Step5_Texturing_LightingSelf/README.md) | 완료 | build 성공 / run 미확인 | 진행 중 | 보류 | texture sampling with lighting, `crate2_diffuse.png`, `wall.jpg`, asset public readiness 검토 필요 |
 | [`06_GraphicsPipeline_Step6_Lighting`](06_GraphicsPipeline_Step6_Lighting/README.md) | 완료 | build 성공 / run 미확인 | 진행 중 | 보류 | Blinn-Phong, directional/point/spot light, `Common.hlsli`, asset public readiness 검토 필요 |
+| [`06_GraphicsPipeline_Step7_ResizingViewport`](06_GraphicsPipeline_Step7_ResizingViewport/README.md) | 완료 | build 성공 / run 미확인 | 진행 중 | 보류 | viewport resizing, ImGui control panel 영역 제외, Release shader project 설정 보강 |
