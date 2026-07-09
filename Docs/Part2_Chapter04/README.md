@@ -18,6 +18,7 @@ Software rasterization 예제를 Step 단위로 정리하는 문서 공간입니
 | [`04_Rasterization_Step1_TriangleToCircle`](04_Rasterization_Step1_TriangleToCircle/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인 완료 |
 | [`04_Rasterization_Step2_Circle`](04_Rasterization_Step2_Circle/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인 완료 |
 | [`04_Rasterization_Step3_Transformations2D`](04_Rasterization_Step3_Transformations2D/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인 완료 |
+| [`04_Rasterization_Step4_Animation2D`](04_Rasterization_Step4_Animation2D/README.md) | 완료 | 빌드 성공 / 실행 미확인 | 진행 중 | 보류 | angle update 기반 2D orbit animation |
 
 ## Related Docs
 

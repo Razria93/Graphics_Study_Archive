@@ -34,4 +34,4 @@ Software rasterization 예제를 정리할 폴더입니다.
 | `04_Rasterization_Step1_TriangleToCircle` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `04_Rasterization_Step2_Circle` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `04_Rasterization_Step3_Transformations2D` | archive 반영 완료, Debug/Release 실행 확인 완료 |
-
+| `04_Rasterization_Step4_Animation2D` | archive 반영 완료, Debug/Release 빌드 성공, 실행 미확인 |

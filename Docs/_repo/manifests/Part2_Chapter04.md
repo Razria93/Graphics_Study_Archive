@@ -1,10 +1,5 @@
 # Import Manifest: Part2 Chapter04
 
-## Current Status Override
-
-- Build/run status: Step1, TriangleToCircle, Step2, Step3 성공 / 나머지 미확인
-- `04_Rasterization_Step3_Transformations2D`: 반영 완료 / build-run 성공 / public readiness 검토 필요
-
 ## Source / Target
 
 - Source: `C:\ComputerGraphics\Part2_Chapter04`
@@ -12,7 +7,7 @@
 - Scope: software rasterization examples
 - Import status: 진행 중
 - Public readiness: 검토 필요
-- Build/run status: Step1, TriangleToCircle 성공 / 나머지 미확인
+- Build/run status: Step1, TriangleToCircle, Step2, Step3 성공 / Step4 빌드 성공, 실행 미확인 / 이후 미확인
 
 ## Step Inventory
 
@@ -20,22 +15,15 @@
 | --- | --- | --- | --- | --- |
 | `04_Rasterization_Step1_Triangle` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
 | `04_Rasterization_Step1_TriangleToCircle` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
-| `04_Rasterization_Step2_Circle` | 대기 | 미확인 | 검토 필요 | circle rasterization |
-| `04_Rasterization_Step3_Transformations2D` | 대기 | 미확인 | 검토 필요 | 2D transform |
-| `04_Rasterization_Step4_Animation2D` | 대기 | 미확인 | 검토 필요 | 2D animation |
+| `04_Rasterization_Step2_Circle` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
+| `04_Rasterization_Step3_Transformations2D` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
+| `04_Rasterization_Step4_Animation2D` | 반영 완료 | 빌드 성공 / 실행 미확인 | 검토 필요 | angle update 기반 2D orbit animation |
 | `04_Rasterization_Step5_DepthBuffer` | 대기 | 미확인 | 검토 필요 | depth buffer |
 | `04_Rasterization_Step6_ShadersConcept` | 대기 | 미확인 | 검토 필요 | shader concept |
 | `04_Rasterization_Step7_BackfaceCulling` | 대기 | 미확인 | 검토 필요 | backface culling |
 | `04_Rasterization_Step8_PerspectiveProjection` | 대기 | 미확인 | 검토 필요 | perspective projection |
 | `04_Rasterization_Step9_Shading` | 대기 | 미확인 | 검토 필요 | rasterization shading |
 | `04_Rasterization_Step10_Lights` | 대기 | 미확인 | 검토 필요 | lighting |
-
-## Current Status Overrides
-
-- `04_Rasterization_Step2_Circle`: 반영 완료 / build-run 미확인 / public readiness 검토 필요
-
-- `04_Rasterization_Step2_Circle`: 반영 완료 / build-run 성공 / public readiness 검토 필요
-- `04_Rasterization_Step3_Transformations2D`: 반영 완료 / build-run 미확인 / public readiness 검토 필요
 
 ## Include Candidates
 
@@ -47,7 +35,7 @@ Step별로 아래 파일만 선별 반영합니다.
 - `*.cpp`
 - `*.h`
 - `*.hlsl`
-- 실행에 필수인 asset이 있는 경우 별도 검토 후 반영
+- 실행에 필수 asset이 있는 경우 별도 검토 후 반영
 
 ## Exclude Patterns
 
@@ -63,12 +51,12 @@ Step별로 아래 파일만 선별 반영합니다.
 
 ## Comment / Memo Handling
 
-- source 안의 장문 학습 메모와 강의 안내성 주석은 archive source에 그대로 두지 않습니다.
+- source 안의 장문 학습 메모와 강의 안내용 주석은 archive source에 그대로 유지하지 않습니다.
 - 실행 흐름 이해에 필요한 짧은 주석만 새로 남깁니다.
-- 원문 메모의 위치와 의미는 `local/Part2_Chapter04/<ExampleName>/` 아래에 기록합니다.
+- 원문 메모의 위치와 내용은 `local/Part2_Chapter04/<ExampleName>/` 아래에 기록합니다.
 
 ## Current Focus
 
-1. 다음 후보는 `04_Rasterization_Step2_Circle`입니다.
-2. Debug/Release 실행 확인 전까지 각 Step의 build/run status는 `미확인`으로 유지합니다.
+1. `04_Rasterization_Step4_Animation2D` Debug/Release 실행 확인이 필요합니다.
+2. 확인 전까지 Step4 run status는 `미확인`으로 유지합니다.
 3. 사용자가 실행 확인을 완료하면 status 문서와 Part2 README를 갱신합니다.
