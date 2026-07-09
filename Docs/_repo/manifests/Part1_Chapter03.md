@@ -11,7 +11,7 @@
 | Docs target | `Docs/Part1_Chapter03` |
 | Import status | Step4-14 반영 |
 | Public readiness | 검토 필요 |
-| Build/run status | Step4-13 Debug/Release build/run 성공, Step14 build 성공/run 미확인 |
+| Build/run status | Step4-14 Debug/Release build/run 성공 |
 | 작업 방식 | Ch03 전체 계획 + Step별 import |
 
 ## Raw 구조 요약
@@ -76,7 +76,7 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 | Step11 Supersampling | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
 | Step12 Reflection | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
 | Step13 Transparency | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
-| Step14 CubeEnvironment | 완료 | 완료 | 성공 | 성공 | 미확인 | 보류 |
+| Step14 CubeEnvironment | 완료 | 완료 | 성공 | 성공 | 성공 | 보류 |
 
 ## Asset record
 
@@ -108,5 +108,5 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 
 ## Next action
 
-1. 사용자가 `03_Raytracing_Step14_CubeEnvironment` Debug/Release 실행을 확인하면 status와 tracking 문서를 성공으로 갱신합니다.
-2. Step14 출력이 계속 비어 있으면 asset 존재 여부가 아니라 working directory, shader compile, texture loading 경로를 우선 확인합니다.
+1. Step14 raw `Render()`가 비어 있던 의도와 강의 맥락은 추후 확인합니다.
+2. Part1 Ch03 전체 capture는 사용자 촬영 단계에서 진행합니다.

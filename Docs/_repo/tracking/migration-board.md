@@ -17,7 +17,7 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part1 Ch03 | `03_Raytracing_Step11_Supersampling` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 정상 확인, texture asset 포함 |
 | Part1 Ch03 | `03_Raytracing_Step12_Reflection` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 정상 확인, `shadertoy_abstract1.jpg`, `back.jpg` 포함 |
 | Part1 Ch03 | `03_Raytracing_Step13_Transparency` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 정상 확인, `shadertoy_abstract1.jpg`, `back.jpg` 포함 |
-| Part1 Ch03 | `03_Raytracing_Step14_CubeEnvironment` | 완료 | build 성공/run 미확인 | 진행 중 | 완료 | 보류 | environment sampling 구현, environment asset private archive 포함 |
+| Part1 Ch03 | `03_Raytracing_Step14_CubeEnvironment` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, raw 빈 Render 이슈 추후 확인 |
 | Part2 Ch04 | `04_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
 | Part2 Ch05-08 | `05_*` - `08_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
 | Part3 Ch09 | `09_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |

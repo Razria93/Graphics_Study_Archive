@@ -5,7 +5,7 @@ CPU ray tracing fundamentals 예제를 step 단위로 정리한 archive 폴더�
 ## 상태
 
 - 학습 코드 정리: Step4-14 반영
-- Build/run: Step4-13 Debug/Release build/run 성공, Step14 build 성공/run 미확인
+- Build/run: Step4-14 Debug/Release build/run 성공
 - Capture: 보류
 
 ## Archive/Public 검토
@@ -15,11 +15,11 @@ CPU ray tracing fundamentals 예제를 step 단위로 정리한 archive 폴더�
 | Raw reference | `C:\ComputerGraphics\Part1_Chapter03` |
 | Import status | Step4-14 반영 |
 | Public readiness | 검토 필요 |
-| Build/run status | Step4-13 build/run 성공, Step14 build 성공/run 미확인 |
+| Build/run status | Step4-14 build/run 성공 |
 | Texture/environment asset | `shadertoy_abstract1.jpg`, `back.jpg`, Step14 `skybox/`, `SaintPetersBasilica/` 포함, public 공개 전 출처/라이선스 확인 |
 | Import manifest | [Docs/_repo/manifests/Part1_Chapter03.md](../Docs/_repo/manifests/Part1_Chapter03.md) |
 | Chapter docs | [Docs/Part1_Chapter03](../Docs/Part1_Chapter03/README.md) |
-| Next action | Step14 run 검증 |
+| Next action | Part1 Ch03 capture 보류, 다음 Part 작업 준비 |
 
 ## 반영된 Step
 

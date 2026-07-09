@@ -51,11 +51,17 @@ raw Step14의 `skybox/`와 `SaintPetersBasilica/` asset 묶음은 실행 확인�
 | Environment sampling | 구현 |
 | Debug x64 build | 성공 |
 | Release x64 build | 성공 |
-| Run verification | 미확인 |
+| Run verification | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
+## Known issue record
+
+초기 archive 이관본은 raw `Raytracer::Render()`가 비어 있는 scaffold를 기준으로 정리되어 화면에 의미 있는 environment image를 출력하지 못했습니다. 이후 리소스를 추가했지만 출력이 바뀌지 않았고, 원인은 리소스 누락만이 아니라 texture loading과 cube environment sampling 코드가 `pixels` write path에 연결되어 있지 않았기 때문입니다.
+
+현재 archive는 실행 확인을 위해 `SaintPetersBasilica` 6면 이미지를 직접 샘플링하는 최소 구현을 추가했습니다. raw Step14가 비어 있던 정확한 의도와 강의 맥락은 추후 별도 확인합니다.
+
 ## Follow-up
 
-- 사용자가 Debug/Release 실행을 확인하면 status와 tracking 문서를 갱신합니다.
-- 출력이 계속 비어 있으면 asset 존재 여부보다 실행 working directory, shader compile, texture loading 경로를 우선 확인합니다.
+- capture는 사용자 촬영 단계에서 진행합니다.
+- raw Step14의 빈 `Render()` 상태와 강의 맥락은 추후 확인합니다.
