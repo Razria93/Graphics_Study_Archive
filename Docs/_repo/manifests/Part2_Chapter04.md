@@ -25,6 +25,10 @@
 | `04_Rasterization_Step9_Shading` | 대기 | 미확인 | 검토 필요 | rasterization shading |
 | `04_Rasterization_Step10_Lights` | 대기 | 미확인 | 검토 필요 | lighting |
 
+## Current Status Overrides
+
+- `04_Rasterization_Step2_Circle`: 반영 완료 / build-run 미확인 / public readiness 검토 필요
+
 ## Include Candidates
 
 Step별로 아래 파일만 선별 반영합니다.
