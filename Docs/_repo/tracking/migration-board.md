@@ -18,7 +18,7 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Part2 Ch05-08 | `05_AffineTransformations_*` | 완료 | 성공 | 진행 중 | 완료 | 보류 | Step1-Step4 사용자 Debug/Release 실행 확인 |
 | Part2 Ch05-08 | `06_GraphicsPipeline_Step1_COM`-`Step9_PhongVsBlinnPhong` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, texture asset public readiness 검토 필요 |
-| Part2 Ch05-08 | `07_Modeling_Step1_DrawingWireFrames` | 완료 | 미확인 | 진행 중 | 완료 | 보류 | procedural box mesh, solid/wireframe rasterizer state, 사용자 실행 확인 필요 |
+| Part2 Ch05-08 | `07_Modeling_Step1_DrawingWireFrames` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, procedural box mesh, solid/wireframe rasterizer state |
 | Part2 Ch05-08 | `07_Modeling_Step2_DrawingNormals` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | 다음 후보 |
 | Part2 Ch05-08 | `07_Modeling_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | mesh generation/modeling |
 | Part2 Ch05-08 | `08_ShaderToys_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | shader toy effects |
