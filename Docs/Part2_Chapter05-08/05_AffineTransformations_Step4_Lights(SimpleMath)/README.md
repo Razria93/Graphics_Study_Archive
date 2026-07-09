@@ -53,7 +53,7 @@ normal matrix는 translation 성분을 제거한 뒤 inverse transpose를 적용
 ## 실행 결과
 
 - Build status: Debug x64, Release x64 성공
-- Run status: 미확인
+- Run status: Debug x64, Release x64 성공
 - Capture status: 보류
 
 ## 공개 가능성
