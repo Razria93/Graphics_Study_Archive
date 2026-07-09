@@ -14,7 +14,7 @@ Software rasterization 예제를 정리하는 문서 공간입니다.
 
 | Example | Code split | Build/run | Diff review | Capture | Note |
 | --- | --- | --- | --- | --- | --- |
-| [`04_Rasterization_Step1_Triangle`](04_Rasterization_Step1_Triangle/README.md) | 진행 중 | 미확인 | 진행 중 | 보류 | triangle rasterization 기본 흐름 |
+| [`04_Rasterization_Step1_Triangle`](04_Rasterization_Step1_Triangle/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인 완료 |
 
 ## Related Docs
 
