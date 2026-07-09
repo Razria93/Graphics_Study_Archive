@@ -4,19 +4,19 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 
 ## 상태
 
-- 학습 코드 정리: private 검토 후 결정
-- Build/run: 미확인
-- 캡처: 예정
+- 학습 코드 정리: Step 단위 진행 중
+- Build/run: Step1 Matrix(GLM) 빌드 성공, 실행 미확인
+- 캡처: 보류
 
 ## Archive/Public 검토
 
 | 항목 | 상태 |
 | --- | --- |
 | Raw reference | `C:\ComputerGraphics\Part2_Chapter05-08` |
-| Import status | 검토 필요 |
+| Import status | 진행 중 |
 | Public readiness | 검토 필요 |
-| Build/run status | 미확인 |
-| Next action | lighting/bloom 대표 예제 후보와 shader/asset 의존성 확인 |
+| Build/run status | Step1 Matrix(GLM) 빌드 성공, 실행 미확인 |
+| Next action | `05_AffineTransformations_Step1_Matrix(GLM)` Debug/Release 실행 확인 |
 
 ## 예정 주제
 
@@ -25,4 +25,10 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 - Texturing and lighting
 - Procedural mesh generation
 - Cubemapping, environment mapping, and bloom
+
+## 진행 중인 예제
+
+| Example | 상태 |
+| --- | --- |
+| `05_AffineTransformations_Step1_Matrix(GLM)` | archive 반영 완료, Debug/Release 빌드 확인 완료, 실행 미확인 |
 
