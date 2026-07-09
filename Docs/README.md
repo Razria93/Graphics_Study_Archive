@@ -21,6 +21,8 @@ Private graphics study/archive repo의 문서 입구입니다.
 - [Public 공개 준비 기준](_repo/workflow/public-readiness.md)
 - [Raw to Archive 대응표](_repo/reference/raw-to-archive-map.md)
 - [Asset Notes](_repo/reference/assets.md)
+- [Local Study Review Workflow](_repo/workflow/local-study-review-workflow.md)
+- [Study Review Template](_repo/templates/study-review-template.md)
 
 ## 운영 메모
 
