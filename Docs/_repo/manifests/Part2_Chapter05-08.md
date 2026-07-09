@@ -1,40 +1,41 @@
-﻿# Import Manifest: Part2 Chapter05-08
+# Import Manifest: Part2 Chapter05-08
 
 ## Source / Target
 
 - Source: `C:\ComputerGraphics\Part2_Chapter05-08`
 - Target: `Part2_Chapter05-08`
 - Scope: affine transformations, D3D11 graphics pipeline, modeling, shader toys
-- Import status: 吏꾪뻾 以?- Public readiness: 寃???꾩슂
-- Build/run status: Step1 Matrix(GLM), Step2 Lights(GLM), Step3 DirectXMath, Step4 Lights(SimpleMath), Pipeline Step1 COM, Pipeline Step2 InitializingD3D, Pipeline Step3 ModelViewProj, Pipeline Step4 Shaders, Pipeline Step5 Texturing ?깃났
+- Import status: 진행 중
+- Public readiness: 검토 필요
+- Build/run status: `05_*`, `06_GraphicsPipeline_Step1`-`Step9` 사용자 Debug/Release 실행 확인 완료. `07_Modeling_Step1_DrawingWireFrames`는 import 완료, build/run 미확인.
 
 ## Step Inventory
 
 | Raw example | Archive status | Build/run | Public readiness | Note |
 | --- | --- | --- | --- | --- |
-| `05_AffineTransformations_Step1_Matrix(GLM)` | 諛섏쁺 ?꾨즺 | ?깃났 | 寃???꾩슂 | ?ъ슜??Debug/Release ?ㅽ뻾 ?뺤씤, GLM column-major matrix |
-| `05_AffineTransformations_Step2_Lights(GLM)` | 諛섏쁺 ?꾨즺 | ?깃났 | 寃???꾩슂 | ?ъ슜??Debug/Release ?ㅽ뻾 ?뺤씤, GLM model/normal matrix |
-| `05_AffineTransformations_Step3_DirectXMath` | 諛섏쁺 ?꾨즺 | ?깃났 | 寃???꾩슂 | ?ъ슜??Debug/Release ?ㅽ뻾 ?뺤씤, DirectXMath/SimpleMath |
-| `05_AffineTransformations_Step4_Lights(SimpleMath)` | 諛섏쁺 ?꾨즺 | ?깃났 | 寃???꾩슂 | ?ъ슜??Debug/Release ?ㅽ뻾 ?뺤씤, SimpleMath lighting |
-| `06_GraphicsPipeline_Step1_COM` | 諛섏쁺 ?꾨즺 | ?깃났 | 寃???꾩슂 | ?ъ슜??Debug/Release ?ㅽ뻾 ?뺤씤, D3D11 device creation, WRL ComPtr |
-| `06_GraphicsPipeline_Step2_InitializingD3D` | 諛섏쁺 ?꾨즺 | ?깃났 | 寃???꾩슂 | ?ъ슜??Debug/Release ?ㅽ뻾 ?뺤씤, D3D11 initialization, swap chain, colored cube |
-| `06_GraphicsPipeline_Step3_ModelViewProj` | 諛섏쁺 ?꾨즺 | ?깃났 | 寃???꾩슂 | ?ъ슜??Debug/Release ?ㅽ뻾 ?뺤씤, Model/View/Projection matrix and constant buffer |
-| `06_GraphicsPipeline_Step4_Shaders` | 諛섏쁺 ?꾨즺 | ?깃났 | 寃???꾩슂 | ?ъ슜??Debug/Release ?ㅽ뻾 ?뺤씤, shader semantics and pixel shader constant buffer |
-| `06_GraphicsPipeline_Step5_Texturing` | 諛섏쁺 ?꾨즺 | ?깃났 | 寃???꾩슂 | ?ъ슜??Debug/Release ?ㅽ뻾 ?뺤씤, texture sampling, `crate2_diffuse.png`, `wall.jpg` |
-| `06_GraphicsPipeline_Step5_Texturing_LightingSelf` | 諛섏쁺 ?꾨즺 | ?깃났 | 寃???꾩슂 | ?ъ슜??Debug/Release ?ㅽ뻾 ?뺤씤, texture sampling with lighting, raw project filename? `06_GraphicsPipeline_Step5_Texturing.*` ?ъ궗??|
-| `06_GraphicsPipeline_*` | ?덉젙 | 誘명솗??| 寃???꾩슂 | Step5 Texturing_LightingSelf ?댄썑 D3D11 pipeline |
-| `07_Modeling_*` | ?덉젙 | 誘명솗??| 寃???꾩슂 | mesh generation/modeling |
-| `08_ShaderToys_*` | ?덉젙 | 誘명솗??| 寃???꾩슂 | shader toy effects |
+| `05_AffineTransformations_Step1_Matrix(GLM)` | 반영 완료 | 성공 | 검토 필요 | GLM column-major matrix |
+| `05_AffineTransformations_Step2_Lights(GLM)` | 반영 완료 | 성공 | 검토 필요 | GLM model/normal matrix |
+| `05_AffineTransformations_Step3_DirectXMath` | 반영 완료 | 성공 | 검토 필요 | DirectXMath/SimpleMath |
+| `05_AffineTransformations_Step4_Lights(SimpleMath)` | 반영 완료 | 성공 | 검토 필요 | SimpleMath lighting |
+| `06_GraphicsPipeline_Step1_COM` | 반영 완료 | 성공 | 검토 필요 | D3D11 device creation, WRL ComPtr |
+| `06_GraphicsPipeline_Step2_InitializingD3D` | 반영 완료 | 성공 | 검토 필요 | D3D11 initialization, swap chain |
+| `06_GraphicsPipeline_Step3_ModelViewProj` | 반영 완료 | 성공 | 검토 필요 | Model/View/Projection matrix |
+| `06_GraphicsPipeline_Step4_Shaders` | 반영 완료 | 성공 | 검토 필요 | shader semantics and pixel shader constant buffer |
+| `06_GraphicsPipeline_Step5_Texturing` | 반영 완료 | 성공 | 검토 필요 | `crate2_diffuse.png`, `wall.jpg` 포함 |
+| `06_GraphicsPipeline_Step5_Texturing_LightingSelf` | 반영 완료 | 성공 | 검토 필요 | raw project filename은 `06_GraphicsPipeline_Step5_Texturing.*` 재사용 |
+| `06_GraphicsPipeline_Step6_Lighting` | 반영 완료 | 성공 | 검토 필요 | Blinn-Phong, directional/point/spot light |
+| `06_GraphicsPipeline_Step7_ResizingViewport` | 반영 완료 | 성공 | 검토 필요 | viewport resizing |
+| `06_GraphicsPipeline_Step8_ResizingWindow` | 반영 완료 | 성공 | 검토 필요 | `ResizeBuffers()`, render target/depth stencil 재생성 |
+| `06_GraphicsPipeline_Step9_PhongVsBlinnPhong` | 반영 완료 | 성공 | 검토 필요 | Phong vs Blinn-Phong specular |
+| `07_Modeling_Step1_DrawingWireFrames` | 반영 완료 | 미확인 | 검토 필요 | `MeshData`, `MakeBox()`, solid/wireframe rasterizer state, texture assets 포함 |
+| `07_Modeling_*` | 예정 | 미확인 | 검토 필요 | mesh generation/modeling |
+| `08_ShaderToys_*` | 예정 | 미확인 | 검토 필요 | shader toy effects |
 
 ## Include Candidates
 
-- `.sln`
-- `.vcxproj`
-- `.vcxproj.filters`
-- `*.cpp`
-- `*.h`
-- `*.hlsl`
-- ?ㅽ뻾???꾩닔??asset???덈뒗 寃쎌슦 蹂꾨룄 寃????諛섏쁺
+- `.sln`, `.vcxproj`, `.vcxproj.filters`
+- `*.cpp`, `*.h`, `*.hlsl`, `*.hlsli`
+- 실행에 필요한 기본 asset. 단, public readiness는 별도 검토합니다.
 
 ## Exclude Patterns
 
@@ -45,24 +46,16 @@
 - `*.user`
 - `*.suo`
 - `imgui.ini`
-- `.clang-format` ?덉젣蹂??щ낯
+- `.clang-format`
 - raw result/capture/video
-- 媛뺤쓽 ?먮낯 ?곸긽, ?щ씪?대뱶, ?댁쫰, ?뺣떟, ?좊즺 ?먮즺
+- 강의 원본 영상, 슬라이드, 퀴즈, 정답, 유료 자료
 
 ## Comment / Memo Handling
 
-- source ?덉쓽 ?λЦ 異쒕젰 寃곌낵 二쇱꽍怨??숈뒿 硫붾え??archive source??洹몃?濡??좎??섏? ?딆뒿?덈떎.
-- ?ㅽ뻾 ?먮쫫 ?댄빐???꾩슂??吏㏃? 二쇱꽍留??덈줈 ?④퉩?덈떎.
-- ?먮Ц 硫붾え???꾩튂? ?붿???`local/Part2_Chapter05-08/<ExampleName>/` ?꾨옒??湲곕줉?⑸땲??
-
-## Recent Import Notes
-
-| Raw example | Archive status | Build/run | Public readiness | Note |
-| --- | --- | --- | --- | --- |
-| `06_GraphicsPipeline_Step6_Lighting` | 諛섏쁺 ?꾨즺 | ?깃났 | 寃???꾩슂 | ?ъ슜??Debug/Release ?ㅽ뻾 ?뺤씤, Blinn-Phong, directional/point/spot light, `Common.hlsli`, texture asset public readiness 寃???꾩슂 |
-| `06_GraphicsPipeline_Step7_ResizingViewport` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, viewport resizing, Release HLSL shader type 설정 보강 후 성공, texture asset public readiness 검토 필요 |
-| `06_GraphicsPipeline_Step8_ResizingWindow` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, window resize, swap chain `ResizeBuffers()`, render target/depth stencil 재생성, texture asset public readiness 검토 필요 |
-| `06_GraphicsPipeline_Step9_PhongVsBlinnPhong` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, Phong vs Blinn-Phong specular, `useBlinnPhong`, texture asset public readiness 검토 필요 |
+- source 내부의 장문 학습 메모와 출력 결과 주석은 archive source에 그대로 두지 않습니다.
+- 실행 흐름 이해에 필요한 짧은 주석만 새로 남깁니다.
+- 원문 메모의 위치와 요약은 `local/Part2_Chapter05-08/<ExampleName>/` 아래에 기록합니다.
+- local 문서는 `.gitignore` 대상이므로 commit에 포함하지 않습니다.
 
 ## Modeling Variant Import Rule
 
@@ -78,4 +71,6 @@
 
 ## Current Next Action
 
-1. ?댄썑 `07_Modeling_*` ?먮뒗 `06_GraphicsPipeline`???⑥? ?꾨낫瑜??뺤씤?⑸땲??
+1. `07_Modeling_Step1_DrawingWireFrames` Debug/Release build/run을 사용자 환경에서 확인합니다.
+2. 확인 후 status/build tracking 문서에 성공 여부를 기록합니다.
+3. 다음 후보는 `07_Modeling_Step2_DrawingNormals`입니다.
