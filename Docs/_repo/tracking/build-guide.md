@@ -39,7 +39,7 @@
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step2_InitializingD3D` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, first Debug build failed on HLSL UTF-8 BOM and passed after no BOM save |
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step3_ModelViewProj` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, Model/View/Projection matrix and constant buffer |
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step4_Shaders` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, shader semantics and pixel shader constant buffer |
-| Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing` | 성공 | 성공 | 미확인 | 보류 | Texture sampling, asset public readiness 검토 필요 |
+| Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, texture asset public readiness 검토 필요 |
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 미확인 | 미확인 | 미확인 | 미확인 | MVP and lighting |
 | Part3 | `Part3_Chapter09/09_UserInteraction_Step2_MousePicking` | 미확인 | 미확인 | 미확인 | 미확인 | picking ray |
 | Part3 | `Part3_Chapter10-13/12_PBR_Step2_PBRModels` | 미확인 | 미확인 | 미확인 | 미확인 | PBR models |

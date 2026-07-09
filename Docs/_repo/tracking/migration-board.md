@@ -37,7 +37,7 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part2 Ch05-08 | `06_GraphicsPipeline_Step2_InitializingD3D` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, D3D11 initialization, swap chain, colored cube |
 | Part2 Ch05-08 | `06_GraphicsPipeline_Step3_ModelViewProj` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, Model/View/Projection matrix and constant buffer |
 | Part2 Ch05-08 | `06_GraphicsPipeline_Step4_Shaders` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, shader semantics and pixel shader constant buffer |
-| Part2 Ch05-08 | `06_GraphicsPipeline_Step5_Texturing` | 완료 | 빌드 성공 / 실행 미확인 | 진행 중 | 완료 | 보류 | Texture sampling, asset public readiness 검토 필요 |
+| Part2 Ch05-08 | `06_GraphicsPipeline_Step5_Texturing` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, texture asset public readiness 검토 필요 |
 | Part2 Ch05-08 | `05_*` - `08_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Step5 Texturing_LightingSelf 이후 후보 |
 | Part3 Ch09 | `09_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
 | Part3 Ch10-13 | `10_*` - `13_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
