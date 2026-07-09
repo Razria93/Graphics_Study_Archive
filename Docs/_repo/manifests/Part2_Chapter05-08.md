@@ -7,7 +7,7 @@
 - Scope: affine transformations, D3D11 graphics pipeline, modeling, shader toys
 - Import status: 진행 중
 - Public readiness: 검토 필요
-- Build/run status: Step1 Matrix(GLM), Step2 Lights(GLM), Step3 DirectXMath, Step4 Lights(SimpleMath), Pipeline Step1 COM, Pipeline Step2 InitializingD3D, Pipeline Step3 ModelViewProj, Pipeline Step4 Shaders 성공
+- Build/run status: Step1 Matrix(GLM), Step2 Lights(GLM), Step3 DirectXMath, Step4 Lights(SimpleMath), Pipeline Step1 COM, Pipeline Step2 InitializingD3D, Pipeline Step3 ModelViewProj, Pipeline Step4 Shaders 성공 / Pipeline Step5 Texturing 빌드 성공, 실행 미확인
 
 ## Step Inventory
 
@@ -21,7 +21,8 @@
 | `06_GraphicsPipeline_Step2_InitializingD3D` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, D3D11 initialization, swap chain, colored cube |
 | `06_GraphicsPipeline_Step3_ModelViewProj` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, Model/View/Projection matrix and constant buffer |
 | `06_GraphicsPipeline_Step4_Shaders` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, shader semantics and pixel shader constant buffer |
-| `06_GraphicsPipeline_*` | 예정 | 미확인 | 검토 필요 | Step5 이후 D3D11 pipeline |
+| `06_GraphicsPipeline_Step5_Texturing` | 반영 완료 | 빌드 성공 / 실행 미확인 | 검토 필요 | Texture sampling, `crate2_diffuse.png`, `wall.jpg` |
+| `06_GraphicsPipeline_*` | 예정 | 미확인 | 검토 필요 | Step5 Texturing_LightingSelf 이후 D3D11 pipeline |
 | `07_Modeling_*` | 예정 | 미확인 | 검토 필요 | mesh generation/modeling |
 | `08_ShaderToys_*` | 예정 | 미확인 | 검토 필요 | shader toy effects |
 
@@ -56,5 +57,5 @@
 
 ## Current Focus
 
-1. 다음 후보 `06_GraphicsPipeline_Step5_Texturing`의 raw 구조와 dependency를 확인합니다.
-2. source/project/shader/asset을 선별 반영하고 장문 주석은 `local/`로 분리합니다.
+1. 사용자가 `06_GraphicsPipeline_Step5_Texturing` Debug/Release 실행 확인을 완료하면 status 문서와 Part2 README를 갱신합니다.
+2. 다음 후보 `06_GraphicsPipeline_Step5_Texturing_LightingSelf` 또는 `06_GraphicsPipeline_Step6_Lighting` 중 진행 범위를 결정합니다.

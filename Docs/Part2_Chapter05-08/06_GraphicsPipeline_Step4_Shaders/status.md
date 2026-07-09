@@ -32,5 +32,5 @@
 
 ## 후속 작업
 
-- 다음 후보 `06_GraphicsPipeline_Step5_Texturing`의 raw 구조와 dependency를 확인합니다.
+- 다음 후보 `06_GraphicsPipeline_Step5_Texturing`은 archive 반영 및 Debug/Release build 확인까지 완료했으며, 사용자 실행 확인을 기다립니다.
 - capture/video는 사용자 촬영 단계에서 별도로 기록합니다.
