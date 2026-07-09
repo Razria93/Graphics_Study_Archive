@@ -56,6 +56,17 @@
 - 실행 흐름 이해에 필요한 짧은 주석만 새로 남깁니다.
 - 원문 메모의 위치와 요지는 `local/Part2_Chapter05-08/<ExampleName>/` 아래에 기록합니다.
 
+## Recent Import Notes
+
+| Raw example | Archive status | Build/run | Public readiness | Note |
+| --- | --- | --- | --- | --- |
+| `06_GraphicsPipeline_Step6_Lighting` | 반영 완료 | build 성공 / run 미확인 | 검토 필요 | Blinn-Phong, directional/point/spot light, `Common.hlsli`, texture asset public readiness 검토 필요 |
+
+## Current Next Action
+
+1. `06_GraphicsPipeline_Step6_Lighting` 사용자 Debug/Release 실행 확인을 기다립니다.
+2. 이후 `07_Modeling_*` 또는 `06_GraphicsPipeline`의 남은 후보를 확인합니다.
+
 ## Current Focus
 
 1. 다음 후보 `06_GraphicsPipeline_Step6_Lighting` 진행 범위를 결정합니다.

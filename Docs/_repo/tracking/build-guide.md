@@ -41,7 +41,7 @@
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step4_Shaders` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, shader semantics and pixel shader constant buffer |
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, texture asset public readiness 검토 필요 |
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, `pwsh.exe` 미탐지 후 Windows PowerShell fallback, asset public readiness 검토 필요 |
-| Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 미확인 | 미확인 | 미확인 | 미확인 | MVP and lighting |
+| Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 성공 | 성공 | 미확인 | 보류 | Blinn-Phong, directional/point/spot light, `pwsh.exe` 미탐지 후 Windows PowerShell fallback, asset public readiness 검토 필요 |
 | Part3 | `Part3_Chapter09/09_UserInteraction_Step2_MousePicking` | 미확인 | 미확인 | 미확인 | 미확인 | picking ray |
 | Part3 | `Part3_Chapter10-13/12_PBR_Step2_PBRModels` | 미확인 | 미확인 | 미확인 | 미확인 | PBR models |
 | Part4 | `Part4_Chapter14-20/Examples/Examples.sln` | 미확인 | 미확인 | 미확인 | 미확인 | Ex1402_Blur, Ex1501_ParticleSystem 우선 |
@@ -77,7 +77,7 @@
 | `Part2_Chapter05-08/06_GraphicsPipeline_Step4_Shaders` | `C:\ComputerGraphics\Part2_Chapter05-08\06_GraphicsPipeline_Step4_Shaders` | Shader semantics and pixel shader constant buffer |
 | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing` | `C:\ComputerGraphics\Part2_Chapter05-08\06_GraphicsPipeline_Step5_Texturing` | Texture sampling, `crate2_diffuse.png`, `wall.jpg` |
 | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf` | `C:\ComputerGraphics\Part2_Chapter05-08\06_GraphicsPipeline_Step5_Texturing_LightingSelf` | Texture sampling with lighting, raw project filename reuses `06_GraphicsPipeline_Step5_Texturing.*`, `crate2_diffuse.png`, `wall.jpg` |
-| `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | `C:\ComputerGraphics\Part2_Chapter05-08` | shader/model/texture 경로 |
+| `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | `C:\ComputerGraphics\Part2_Chapter05-08\06_GraphicsPipeline_Step6_Lighting` | Blinn-Phong, directional/point/spot light, `Common.hlsli`, `crate2_diffuse.png`, `wall.jpg` |
 | `Part3_Chapter09/09_UserInteraction_Step2_MousePicking` | `C:\ComputerGraphics\Part3_Chapter09` | picking 예제 후보 |
 | `Part3_Chapter10-13/12_PBR_Step2_PBRModels` | `C:\ComputerGraphics\Part3_Chapter10_13`, `C:\ComputerGraphics\Part3_Chapter10_13_2` | PBR asset 출처와 중복/보존 관계 |
 | `Part4_Chapter14-20/Examples/Examples.sln` | `C:\ComputerGraphics\Part4_HongLabGraphics`, `C:\ComputerGraphics\Part4_HongLabGraphics_2` | Ex1402_Blur, Ex1501_ParticleSystem 후보 |
