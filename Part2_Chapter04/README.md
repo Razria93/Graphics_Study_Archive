@@ -31,4 +31,5 @@ Software rasterization 예제를 정리할 폴더입니다.
 | Example | 상태 |
 | --- | --- |
 | `04_Rasterization_Step1_Triangle` | archive 반영 완료, Debug/Release 실행 확인 완료 |
+| `04_Rasterization_Step1_TriangleToCircle` | archive 반영 완료, build/run 미확인 |
 

@@ -14,7 +14,7 @@
 | Raw example | Archive status | Build/run | Public readiness | Note |
 | --- | --- | --- | --- | --- |
 | `04_Rasterization_Step1_Triangle` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
-| `04_Rasterization_Step1_TriangleToCircle` | 대기 | 미확인 | 검토 필요 | Step1 변형 후보 |
+| `04_Rasterization_Step1_TriangleToCircle` | 반영 완료 | 미확인 | 검토 필요 | triangle fan으로 circle approximation |
 | `04_Rasterization_Step2_Circle` | 대기 | 미확인 | 검토 필요 | circle rasterization |
 | `04_Rasterization_Step3_Transformations2D` | 대기 | 미확인 | 검토 필요 | 2D transform |
 | `04_Rasterization_Step4_Animation2D` | 대기 | 미확인 | 검토 필요 | 2D animation |
