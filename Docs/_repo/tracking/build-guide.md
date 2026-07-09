@@ -33,7 +33,7 @@
 | Part2 | `Part2_Chapter04/04_Rasterization_Step5_DepthBuffer` | 미확인 | 미확인 | 미확인 | 미확인 | depth buffer |
 | Part2 | `Part2_Chapter05-08/05_AffineTransformations_Step1_Matrix(GLM)` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, GLM matrix transform console example |
 | Part2 | `Part2_Chapter05-08/05_AffineTransformations_Step2_Lights(GLM)` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, GLM model/normal matrix lighting |
-| Part2 | `Part2_Chapter05-08/05_AffineTransformations_Step3_DirectXMath` | 성공 | 성공 | 미확인 | 보류 | DirectXMath load/store, SimpleMath comparison |
+| Part2 | `Part2_Chapter05-08/05_AffineTransformations_Step3_DirectXMath` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, DirectXMath/SimpleMath |
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 미확인 | 미확인 | 미확인 | 미확인 | MVP and lighting |
 | Part3 | `Part3_Chapter09/09_UserInteraction_Step2_MousePicking` | 미확인 | 미확인 | 미확인 | 미확인 | picking ray |
 | Part3 | `Part3_Chapter10-13/12_PBR_Step2_PBRModels` | 미확인 | 미확인 | 미확인 | 미확인 | PBR models |

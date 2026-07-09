@@ -54,7 +54,7 @@ DirectXMath에서는 저장용 타입과 연산용 SIMD 타입을 구분합니�
 ## 실행 결과
 
 - Build status: Debug x64, Release x64 성공
-- Run status: 미확인
+- Run status: Debug x64, Release x64 성공
 - Capture status: 보류
 
 ## 공개 가능성

@@ -5,7 +5,7 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 ## 상태
 
 - 학습 코드 정리: Step 단위 진행 중
-- Build/run: Step1 Matrix(GLM), Step2 Lights(GLM) 성공 / Step3 DirectXMath 빌드 성공, 실행 미확인
+- Build/run: Step1 Matrix(GLM), Step2 Lights(GLM), Step3 DirectXMath 성공
 - 캡처: 보류
 
 ## Archive/Public 검토
@@ -15,8 +15,8 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 | Raw reference | `C:\ComputerGraphics\Part2_Chapter05-08` |
 | Import status | 진행 중 |
 | Public readiness | 검토 필요 |
-| Build/run status | Step1 Matrix(GLM), Step2 Lights(GLM) 성공 / Step3 DirectXMath 빌드 성공, 실행 미확인 |
-| Next action | `05_AffineTransformations_Step3_DirectXMath` Debug/Release 실행 확인 |
+| Build/run status | Step1 Matrix(GLM), Step2 Lights(GLM), Step3 DirectXMath 성공 |
+| Next action | `05_AffineTransformations_Step4_Lights(SimpleMath)` raw 구조 확인 |
 
 ## 예정 주제
 
@@ -32,5 +32,5 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 | --- | --- |
 | `05_AffineTransformations_Step1_Matrix(GLM)` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `05_AffineTransformations_Step2_Lights(GLM)` | archive 반영 완료, Debug/Release 실행 확인 완료 |
-| `05_AffineTransformations_Step3_DirectXMath` | archive 반영 완료, Debug/Release 빌드 확인 완료, 실행 미확인 |
+| `05_AffineTransformations_Step3_DirectXMath` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 
