@@ -73,8 +73,8 @@ pixel shader 역할을 하는 함수로 fragment color 결정을 분리합니다
 
 ## 실행 결과
 
-- Build/run status: 빌드 성공 / 실행 미확인
-- 확인 내용: MSBuild Debug x64, Release x64 성공. 실행 확인은 사용자 확인 필요
+- Build/run status: 성공
+- 확인 내용: MSBuild Debug x64, Release x64 성공. 사용자 Debug/Release 실행 확인 완료
 - Capture status: 보류
 
 ## 공개 가능성

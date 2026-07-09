@@ -7,7 +7,7 @@
 - Scope: software rasterization examples
 - Import status: 진행 중
 - Public readiness: 검토 필요
-- Build/run status: Step1, TriangleToCircle, Step2, Step3, Step4, Step5 성공 / Step6 빌드 성공, 실행 미확인 / 이후 미확인
+- Build/run status: Step1, TriangleToCircle, Step2, Step3, Step4, Step5, Step6 성공 / Step7 빌드 성공, 실행 미확인 / 이후 미확인
 
 ## Step Inventory
 
@@ -19,8 +19,8 @@
 | `04_Rasterization_Step3_Transformations2D` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
 | `04_Rasterization_Step4_Animation2D` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
 | `04_Rasterization_Step5_DepthBuffer` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
-| `04_Rasterization_Step6_ShadersConcept` | 반영 완료 | 빌드 성공 / 실행 미확인 | 검토 필요 | CPU-side shader stage concept |
-| `04_Rasterization_Step7_BackfaceCulling` | 대기 | 미확인 | 검토 필요 | backface culling |
+| `04_Rasterization_Step6_ShadersConcept` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인 완료 |
+| `04_Rasterization_Step7_BackfaceCulling` | 반영 완료 | 빌드 성공 / 실행 미확인 | 검토 필요 | signed area 기반 backface culling |
 | `04_Rasterization_Step8_PerspectiveProjection` | 대기 | 미확인 | 검토 필요 | perspective projection |
 | `04_Rasterization_Step9_Shading` | 대기 | 미확인 | 검토 필요 | rasterization shading |
 | `04_Rasterization_Step10_Lights` | 대기 | 미확인 | 검토 필요 | lighting |
@@ -35,7 +35,7 @@ Step별로 아래 파일만 선별 반영합니다.
 - `*.cpp`
 - `*.h`
 - `*.hlsl`
-- 실행에 필수 asset이 있는 경우 별도 검토 후 반영
+- 실행에 필수인 asset이 있는 경우 별도 검토 후 반영
 
 ## Exclude Patterns
 
@@ -51,12 +51,12 @@ Step별로 아래 파일만 선별 반영합니다.
 
 ## Comment / Memo Handling
 
-- source 안의 장문 학습 메모와 강의 안내용 주석은 archive source에 그대로 유지하지 않습니다.
+- source 안의 장문 학습 메모와 강의 안내성 주석은 archive source에 그대로 유지하지 않습니다.
 - 실행 흐름 이해에 필요한 짧은 주석만 새로 남깁니다.
-- 원문 메모의 위치와 내용은 `local/Part2_Chapter04/<ExampleName>/` 아래에 기록합니다.
+- 원문 메모의 위치와 요지는 `local/Part2_Chapter04/<ExampleName>/` 아래에 기록합니다.
 
 ## Current Focus
 
-1. `04_Rasterization_Step6_ShadersConcept` Debug/Release 실행 확인이 필요합니다.
-2. 확인 전까지 Step6 run status는 `미확인`으로 유지합니다.
-3. 사용자가 실행 확인을 완료하면 status 문서와 Part2 README를 갱신합니다.
+1. 현재 후보는 `04_Rasterization_Step7_BackfaceCulling` 실행 확인입니다.
+2. 사용자가 Debug/Release 실행 확인을 완료하면 status 문서와 Part2 README를 갱신합니다.
+3. 다음 import 후보는 `04_Rasterization_Step8_PerspectiveProjection`입니다.
