@@ -57,7 +57,7 @@ rasterizer stage에 viewport를 적용해 이후 draw call이 지정된 영역�
 ## 실행 결과
 
 - Build status: Debug x64, Release x64 성공
-- Run status: 미확인
+- Run status: Debug x64, Release x64 성공
 - Capture status: 보류
 
 ## 공개 가능성
