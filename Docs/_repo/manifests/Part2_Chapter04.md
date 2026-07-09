@@ -29,6 +29,8 @@
 
 - `04_Rasterization_Step2_Circle`: 반영 완료 / build-run 미확인 / public readiness 검토 필요
 
+- `04_Rasterization_Step2_Circle`: 반영 완료 / build-run 성공 / public readiness 검토 필요
+
 ## Include Candidates
 
 Step별로 아래 파일만 선별 반영합니다.

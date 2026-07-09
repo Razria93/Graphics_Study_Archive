@@ -19,6 +19,10 @@ Software rasterization 예제를 정리하는 문서 공간입니다.
 
 | [`04_Rasterization_Step2_Circle`](04_Rasterization_Step2_Circle/README.md) | 완료 | 미확인 | 진행 중 | 보류 | indexed triangle list로 circle 구성 |
 
+## Current Status Overrides
+
+- `04_Rasterization_Step2_Circle`: 완료 / 성공 / 사용자 Debug/Release 실행 확인 완료
+
 ## Related Docs
 
 - [Import manifest](../_repo/manifests/Part2_Chapter04.md)
