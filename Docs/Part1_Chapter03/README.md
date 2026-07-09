@@ -30,7 +30,7 @@ Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, tex
 | Step9 BarycentricCordinates | barycentric coordinate | 완료 | 성공 | 진행 중 | 완료 | 보류 |
 | Step10 Texturing | texture mapping | 완료 | 성공 | 진행 중 | 완료 | 보류 |
 | Step11 Supersampling | anti-aliasing | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step12 Reflection | reflection | asset 검토 필요 | 미확인 | 미확인 | 미확인 | 보류 |
+| Step12 Reflection | reflection | 완료 | build 성공/run 미확인 | 진행 중 | 완료 | 보류 |
 | Step13 Transparency | transparency/refraction | asset 검토 필요 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step14 CubeEnvironment | cube environment | 별도 asset 검토 | 미확인 | 미확인 | 미확인 | 보류 |
 
@@ -45,6 +45,7 @@ Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, tex
 7. `03_Raytracing_Step9_BarycentricCordinates`
 8. `03_Raytracing_Step10_Texturing`
 9. `03_Raytracing_Step11_Supersampling`
+10. `03_Raytracing_Step12_Reflection`
 
 ## 관련 운영 문서
 
