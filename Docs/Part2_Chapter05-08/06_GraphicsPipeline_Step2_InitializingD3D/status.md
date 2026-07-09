@@ -32,5 +32,5 @@
 
 ## 후속 작업
 
-- 다음 후보는 raw 실제 폴더명 기준 `06_GraphicsPipeline_Step3_ModelViewProj`입니다.
+- `06_GraphicsPipeline_Step3_ModelViewProj`는 사용자 Debug/Release 실행 확인까지 완료했습니다.
 - capture/video는 사용자 촬영 단계에서 별도로 기록합니다.

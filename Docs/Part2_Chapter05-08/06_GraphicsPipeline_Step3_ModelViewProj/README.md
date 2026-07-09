@@ -53,7 +53,7 @@ constant buffer를 GPU에 갱신하고 vertex shader stage에 연결합니다. �
 ## 실행 결과
 
 - Build status: Debug x64, Release x64 성공
-- Run status: 미확인
+- Run status: Debug x64, Release x64 성공
 - Capture status: 보류
 
 ## 공개 가능성
