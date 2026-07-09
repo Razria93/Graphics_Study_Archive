@@ -17,8 +17,8 @@
 
 | Raw reference | Archive target | 용도 | Import status | 비고 |
 | --- | --- | --- | --- | --- |
-| `C:\ComputerGraphics\Part1_Chapter01-02` | `Part1_Chapter01-02` | DirectX11 setup, ImGui, bloom 참고 | 검토 필요 | build/run 미확인 |
-| `C:\ComputerGraphics\Part1_Chapter03` | `Part1_Chapter03` | CPU ray tracing fundamentals 참고 | 검토 필요 | Portfolio_RayTracer와 연결 가능 |
+| `C:\ComputerGraphics\Part1_Chapter01-02` | `Part1_Chapter01-02` | DirectX11 setup, ImGui, bloom 참고 | 반영 완료 | Debug/Release 실행 성공, 촬영 보류 |
+| `C:\ComputerGraphics\Part1_Chapter03` | `Part1_Chapter03` | CPU ray tracing fundamentals 참고 | scaffold 작성 | Step별 import 예정 |
 | `C:\ComputerGraphics\Part2_Chapter04` | `Part2_Chapter04` | Software rasterization 참고 | 검토 필요 | build/run 미확인 |
 | `C:\ComputerGraphics\Part2_Chapter05-08` | `Part2_Chapter05-08` | D3D11 pipeline, modeling, shader toys 참고 | 검토 필요 | build/run 미확인 |
 | `C:\ComputerGraphics\Part3_Chapter09` | `Part3_Chapter09` | User interaction, picking 참고 | 검토 필요 | build/run 미확인 |

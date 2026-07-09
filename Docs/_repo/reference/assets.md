@@ -23,3 +23,9 @@
 - archive 기준으로 직접 실행한 결과를 새로 캡처하거나, 권리 문제가 없는 결과물만 기록합니다.
 - 강의 화면, 강의 음성, 슬라이드, 유료 자료, 문제/해설 캡처는 포함하지 않습니다.
 - 외부 texture/model/image asset이 화면에 포함되는 경우 출처와 라이선스를 확인하기 전까지 `검토 필요`로 둡니다.
+
+## Third-party source headers
+
+- STB image headers는 runtime asset이 아니라 build dependency입니다.
+- clean checkout 재현성을 위해 `ThirdParty/stb`에 vendoring합니다.
+- STB headers 자체의 public 공개 여부는 파일 header의 public domain 표기를 기준으로 하되, public repo 구성 시 third-party notice를 다시 확인합니다.

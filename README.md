@@ -11,6 +11,7 @@ Graphics Study Portfolio는 DirectX11 기반 그래픽스 학습 예제와 개�
 - [Topic Index](TOPICS.md)
 - [Docs](Docs/README.md)
 - [Part1 Chapter01-02 Docs](Docs/Part1_Chapter01-02/README.md)
+- [Part1 Chapter03 Docs](Docs/Part1_Chapter03/README.md)
 - [Portfolio Ray Tracer](Docs/Portfolio_RayTracer/README.md)
 - [Public 공개 준비 기준](Docs/_repo/workflow/public-readiness.md)
 - [Notice](NOTICE.md)
@@ -20,8 +21,8 @@ Graphics Study Portfolio는 DirectX11 기반 그래픽스 학습 예제와 개�
 | 폴더 | 주요 내용 | 상태 |
 | --- | --- | --- |
 | `Docs/Part*_Chapter*/` | Part/Chapter 중심 예제 문서 | 정리 중 |
-| `Part1_Chapter01-02` | DirectX11 setup, ImGui, bloom | private 정리 예정 |
-| `Part1_Chapter03` | CPU ray tracing fundamentals | private 정리 예정 |
+| `Part1_Chapter01-02` | DirectX11 setup, ImGui, bloom | 실행 확인 완료, 촬영 보류 |
+| `Part1_Chapter03` | CPU ray tracing fundamentals | scaffold 작성 |
 | `Part2_Chapter04` | Software rasterization | private 정리 예정 |
 | `Part2_Chapter05-08` | D3D11 pipeline, modeling, shader toys | private 정리 예정 |
 | `Part3_Chapter09` | User interaction and picking | private 정리 예정 |

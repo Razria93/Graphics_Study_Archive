@@ -25,6 +25,7 @@ obj/
 
 # Runtime/local state
 imgui.ini
+result.png
 
 # Local-only notes and review drafts
 local/

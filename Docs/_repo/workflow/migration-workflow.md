@@ -88,6 +88,8 @@ local-only 문서에는 다음을 둡니다.
 
 ## 반복 작업 순서
 
+작업 시작 전에는 [Chapter Start Checklist](chapter-start-checklist.md)를 먼저 확인합니다.
+
 1. raw/source 구조 확인
 2. archive에 필요한 코드 파일만 선별
 3. 소스 주석과 `.md` 메모 출처 확인
@@ -107,3 +109,22 @@ commit은 사용자가 명시적으로 요청할 때만 수행합니다. 단, �
 - 예제 1개의 build/run 확인 기록
 - Part 하나의 migration-board 상태 갱신
 - 공통 workflow/template 변경
+
+## Branch 마감 PR 초안
+
+작업 브랜치를 닫기 전에는 local-only PR draft를 작성합니다. PR draft는 GitHub PR 본문으로 옮기기 위한 작업 보조 문서이며, git에는 포함하지 않습니다.
+
+```text
+local/pr/<branch-or-part-name>.md
+```
+
+PR draft는 아래 항목을 같은 순서로 작성합니다.
+
+- 요약
+- 범위
+- 체크리스트
+- Build / Run
+- Known issues
+- 후속 작업
+
+PR 생성 전에는 `git status --short`, `git log --oneline main..HEAD`, `git diff --stat main...HEAD`를 확인하고, local `main`과 `origin/main`의 차이가 있으면 먼저 base branch 상태를 정리합니다.
