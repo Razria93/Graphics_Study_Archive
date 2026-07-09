@@ -7,14 +7,14 @@
 - Scope: affine transformations, D3D11 graphics pipeline, modeling, shader toys
 - Import status: 진행 중
 - Public readiness: 검토 필요
-- Build/run status: Step1 Matrix(GLM) 성공
+- Build/run status: Step1 Matrix(GLM) 성공 / Step2 Lights(GLM) 빌드 성공, 실행 미확인
 
 ## Step Inventory
 
 | Raw example | Archive status | Build/run | Public readiness | Note |
 | --- | --- | --- | --- | --- |
 | `05_AffineTransformations_Step1_Matrix(GLM)` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, GLM column-major matrix |
-| `05_AffineTransformations_Step2_Lights(GLM)` | 예정 | 미확인 | 검토 필요 | lighting with GLM |
+| `05_AffineTransformations_Step2_Lights(GLM)` | 반영 완료 | 빌드 성공 / 실행 미확인 | 검토 필요 | GLM model/normal matrix lighting |
 | `05_AffineTransformations_Step3_DirectXMath` | 예정 | 미확인 | 검토 필요 | DirectXMath comparison |
 | `05_AffineTransformations_Step4_Lights(SimpleMath)` | 예정 | 미확인 | 검토 필요 | SimpleMath lighting |
 | `06_GraphicsPipeline_*` | 예정 | 미확인 | 검토 필요 | D3D11 pipeline |
@@ -52,6 +52,6 @@
 
 ## Current Focus
 
-1. 다음 후보 `05_AffineTransformations_Step2_Lights(GLM)`의 raw 구조를 확인합니다.
-2. shader/asset dependency가 있는지 먼저 확인한 뒤 archive 반영 범위를 결정합니다.
-3. capture/video는 사용자 촬영 단계에서 별도로 기록합니다.
+1. `05_AffineTransformations_Step2_Lights(GLM)` Debug/Release 실행을 확인합니다.
+2. 사용자가 Debug/Release 실행 확인을 완료하면 status 문서와 Part2 README를 갱신합니다.
+3. 다음 후보는 `05_AffineTransformations_Step3_DirectXMath`입니다.
