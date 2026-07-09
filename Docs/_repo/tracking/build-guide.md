@@ -43,7 +43,7 @@
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, `pwsh.exe` 미탐지 후 Windows PowerShell fallback, asset public readiness 검토 필요 |
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, Blinn-Phong, directional/point/spot light, `pwsh.exe` 미탐지 후 Windows PowerShell fallback, asset public readiness 검토 필요 |
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step7_ResizingViewport` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, viewport resizing, Release HLSL shader type 설정 보강 후 성공, asset public readiness 검토 필요 |
-| Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow` | 성공 | 성공 | 미확인 | 보류 | window resize, `ResizeBuffers()`, render target/depth stencil 재생성, Release HLSL shader type 설정 보강 |
+| Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, window resize, `ResizeBuffers()`, render target/depth stencil 재생성, Release HLSL shader type 설정 보강 |
 | Part3 | `Part3_Chapter09/09_UserInteraction_Step2_MousePicking` | 미확인 | 미확인 | 미확인 | 미확인 | picking ray |
 | Part3 | `Part3_Chapter10-13/12_PBR_Step2_PBRModels` | 미확인 | 미확인 | 미확인 | 미확인 | PBR models |
 | Part4 | `Part4_Chapter14-20/Examples/Examples.sln` | 미확인 | 미확인 | 미확인 | 미확인 | Ex1402_Blur, Ex1501_ParticleSystem 우선 |
