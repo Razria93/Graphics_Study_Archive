@@ -28,3 +28,9 @@ D3D11 graphics pipeline로 넘어가기 전후의 matrix transform, lighting, mo
 
 - [Import manifest](../_repo/manifests/Part2_Chapter05-08.md)
 - [Migration board](../_repo/tracking/migration-board.md)
+
+## Recent Import Notes
+
+| Example | Code split | Build/run | Diff review | Capture | Note |
+| --- | --- | --- | --- | --- | --- |
+| [`06_GraphicsPipeline_Step5_Texturing_LightingSelf`](06_GraphicsPipeline_Step5_Texturing_LightingSelf/README.md) | 완료 | build 성공 / run 미확인 | 진행 중 | 보류 | texture sampling with lighting, `crate2_diffuse.png`, `wall.jpg`, asset public readiness 검토 필요 |
