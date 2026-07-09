@@ -21,18 +21,18 @@ Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, tex
 | Step1 Vector(GLM) | vector basics | 예정 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step2 CircleScreenSpace | screen-space circle | 예정 | 미확인 | 미확인 | 미확인 | 보류 |
 | Step3 CircleWorldSpace | world-space circle | 예정 | 미확인 | 미확인 | 미확인 | 보류 |
-| Step4 DrawingSphere | ray-sphere intersection | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step5 PhongShading | Phong shading | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step6 PerspectiveView | perspective camera rays | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step7 Triangle | ray-triangle intersection | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step8 Shadow | shadow ray | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step8 Shadow Square | square primitive wrapper | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step9 BarycentricCordinates | barycentric coordinate | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step10 Texturing | texture mapping | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step11 Supersampling | anti-aliasing | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step12 Reflection | reflection | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step13 Transparency | transparency/refraction | 완료 | 성공 | 진행 중 | 완료 | 보류 |
-| Step14 CubeEnvironment | cube environment scaffold | 완료 | build 성공/run 미확인 | 진행 중 | 완료 | 보류 |
+| Step4 DrawingSphere | ray-sphere intersection | 완료 | 성공 | 완료 | 완료 | 보류 |
+| Step5 PhongShading | Phong shading | 완료 | 성공 | 완료 | 완료 | 보류 |
+| Step6 PerspectiveView | perspective camera rays | 완료 | 성공 | 완료 | 완료 | 보류 |
+| Step7 Triangle | ray-triangle intersection | 완료 | 성공 | 완료 | 완료 | 보류 |
+| Step8 Shadow | shadow ray | 완료 | 성공 | 완료 | 완료 | 보류 |
+| Step8 Shadow Square | square primitive wrapper | 완료 | 성공 | 완료 | 완료 | 보류 |
+| Step9 BarycentricCordinates | barycentric coordinate | 완료 | 성공 | 완료 | 완료 | 보류 |
+| Step10 Texturing | texture mapping | 완료 | 성공 | 완료 | 완료 | 보류 |
+| Step11 Supersampling | anti-aliasing | 완료 | 성공 | 완료 | 완료 | 보류 |
+| Step12 Reflection | reflection | 완료 | 성공 | 완료 | 완료 | 보류 |
+| Step13 Transparency | transparency/refraction | 완료 | 성공 | 완료 | 완료 | 보류 |
+| Step14 CubeEnvironment | cube environment sampling | 완료 | 성공 | 완료 | 완료 | 보류 |
 
 ## 현재 진행 순서
 
