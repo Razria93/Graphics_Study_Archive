@@ -36,7 +36,7 @@
 | Part2 | `Part2_Chapter05-08/05_AffineTransformations_Step3_DirectXMath` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, DirectXMath/SimpleMath |
 | Part2 | `Part2_Chapter05-08/05_AffineTransformations_Step4_Lights(SimpleMath)` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, SimpleMath lighting |
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step1_COM` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, D3D11 device creation and WRL ComPtr |
-| Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step2_InitializingD3D` | 성공 | 성공 | 미확인 | 보류 | D3D11 initialization, first Debug build failed on HLSL UTF-8 BOM and passed after no BOM save |
+| Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step2_InitializingD3D` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, first Debug build failed on HLSL UTF-8 BOM and passed after no BOM save |
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 미확인 | 미확인 | 미확인 | 미확인 | MVP and lighting |
 | Part3 | `Part3_Chapter09/09_UserInteraction_Step2_MousePicking` | 미확인 | 미확인 | 미확인 | 미확인 | picking ray |
 | Part3 | `Part3_Chapter10-13/12_PBR_Step2_PBRModels` | 미확인 | 미확인 | 미확인 | 미확인 | PBR models |

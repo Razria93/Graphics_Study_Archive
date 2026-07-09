@@ -7,7 +7,7 @@
 - Scope: affine transformations, D3D11 graphics pipeline, modeling, shader toys
 - Import status: 진행 중
 - Public readiness: 검토 필요
-- Build/run status: Step1 Matrix(GLM), Step2 Lights(GLM), Step3 DirectXMath, Step4 Lights(SimpleMath), Pipeline Step1 COM 성공 / Pipeline Step2 InitializingD3D 빌드 성공, 실행 미확인
+- Build/run status: Step1 Matrix(GLM), Step2 Lights(GLM), Step3 DirectXMath, Step4 Lights(SimpleMath), Pipeline Step1 COM, Pipeline Step2 InitializingD3D 성공
 
 ## Step Inventory
 
@@ -18,7 +18,7 @@
 | `05_AffineTransformations_Step3_DirectXMath` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, DirectXMath/SimpleMath |
 | `05_AffineTransformations_Step4_Lights(SimpleMath)` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, SimpleMath lighting |
 | `06_GraphicsPipeline_Step1_COM` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, D3D11 device creation, WRL ComPtr |
-| `06_GraphicsPipeline_Step2_InitializingD3D` | 반영 완료 | 빌드 성공 / 실행 미확인 | 검토 필요 | D3D11 initialization, swap chain, colored cube |
+| `06_GraphicsPipeline_Step2_InitializingD3D` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, D3D11 initialization, swap chain, colored cube |
 | `06_GraphicsPipeline_*` | 예정 | 미확인 | 검토 필요 | Step3 이후 D3D11 pipeline |
 | `07_Modeling_*` | 예정 | 미확인 | 검토 필요 | mesh generation/modeling |
 | `08_ShaderToys_*` | 예정 | 미확인 | 검토 필요 | shader toy effects |
@@ -54,5 +54,5 @@
 
 ## Current Focus
 
-1. 사용자가 `06_GraphicsPipeline_Step2_InitializingD3D` Debug/Release 실행 확인을 완료하면 status 문서와 Part2 README를 갱신합니다.
-2. 다음 후보 `06_GraphicsPipeline_Step3_ConstantBuffer`의 raw 구조와 dependency를 확인합니다.
+1. 다음 후보 `06_GraphicsPipeline_Step3_ConstantBuffer`의 raw 구조와 dependency를 확인합니다.
+2. source/project/shader/asset을 선별 반영하고 장문 주석은 `local/`로 분리합니다.
