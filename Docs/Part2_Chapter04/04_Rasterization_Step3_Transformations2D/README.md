@@ -1,5 +1,11 @@
 # 04 Rasterization Step3 Transformations2D
 
+## Current Status Override
+
+- Build/run status: 성공
+- Verification: 사용자 Debug/Release 실행 확인 완료
+- Capture status: 보류
+
 ## 목적
 
 CPU에서 mesh vertex buffer에 2D transformation을 적용한 뒤, 변환된 geometry를 rasterize하는 예제입니다.

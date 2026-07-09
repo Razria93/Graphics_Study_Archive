@@ -1,5 +1,10 @@
 # Import Manifest: Part2 Chapter04
 
+## Current Status Override
+
+- Build/run status: Step1, TriangleToCircle, Step2, Step3 성공 / 나머지 미확인
+- `04_Rasterization_Step3_Transformations2D`: 반영 완료 / build-run 성공 / public readiness 검토 필요
+
 ## Source / Target
 
 - Source: `C:\ComputerGraphics\Part2_Chapter04`

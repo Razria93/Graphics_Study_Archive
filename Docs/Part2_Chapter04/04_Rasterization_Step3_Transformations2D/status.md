@@ -11,9 +11,9 @@
 | 항목 | 상태 | 메모 |
 | --- | --- | --- |
 | Code/document split | 완료 | selected source/project files 반영, 장문 주석 1차 정리 |
-| Build/run | 미확인 | 사용자 Debug/Release 실행 확인 필요 |
+| Build/run | 성공 | 사용자 Debug/Release 실행 확인 완료 |
 | Raw/original diff review | 진행 중 | 주석 정리, commented-out transform 실험 코드 제거, `Mesh.cpp` UTF-8 재작성 |
-| Refactor review | 미확인 | build/run 확인 후 필요 시 검토 |
+| Refactor review | 미확인 | 현재 실행 확인 완료, 추가 품질 검토는 후속 작업 |
 | Ready for capture | 아니오 | 촬영 보류 |
 
 ## Included Files
@@ -45,6 +45,5 @@
 
 ## Next Action
 
-- Debug x64 build/run 확인
-- Release x64 build/run 확인
-- 확인 결과를 이 문서와 `Docs/Part2_Chapter04/README.md`에 반영
+- import 변경분 커밋
+- 다음 후보 `04_Rasterization_Step4_Animation2D` 진행
