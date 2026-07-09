@@ -10,8 +10,8 @@
 | Raw diff review | 진행 중 |
 | Debug build | 성공 |
 | Release build | 성공 |
-| Debug run | 미확인 |
-| Release run | 미확인 |
+| Debug run | 성공 |
+| Release run | 성공 |
 | Capture/video | 보류 |
 | Public readiness | 검토 필요 |
 
@@ -30,7 +30,7 @@
 - Release x64: 성공
 - Release build note: raw project의 HLSL Release shader type 설정이 Step7/Step8과 같은 형태로 누락되어 있었고, archive `.vcxproj`에 Release `ShaderType`과 필요한 `ShaderModel` 설정을 추가했습니다.
 - MSBuild note: `pwsh.exe` 미탐지 후 Windows PowerShell fallback이 발생했지만 최종 빌드는 경고 0개, 오류 0개로 완료되었습니다.
-- 실행 확인: 사용자 확인 대기
+- 실행 확인: 사용자 Debug/Release 실행 확인 완료
 
 ## 후속 작업
 

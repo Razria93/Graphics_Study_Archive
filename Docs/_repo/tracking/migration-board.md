@@ -42,8 +42,8 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part2 Ch05-08 | `06_GraphicsPipeline_Step6_Lighting` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, Blinn-Phong, directional/point/spot light, asset public readiness 검토 필요 |
 | Part2 Ch05-08 | `06_GraphicsPipeline_Step7_ResizingViewport` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, viewport resizing, Release HLSL shader type 설정 보강 후 build 성공 |
 | Part2 Ch05-08 | `06_GraphicsPipeline_Step8_ResizingWindow` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, window resize, swap chain `ResizeBuffers()`, render target/depth stencil 재생성 |
-| Part2 Ch05-08 | `06_GraphicsPipeline_Step9_PhongVsBlinnPhong` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | Phong vs Blinn-Phong specular, Release HLSL shader type 설정 보강 |
-| Part2 Ch05-08 | `05_*` - `08_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | 다음 후보는 `07_Modeling_*` 또는 `06_GraphicsPipeline` 남은 항목 확인 |
+| Part2 Ch05-08 | `06_GraphicsPipeline_Step9_PhongVsBlinnPhong` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, Phong vs Blinn-Phong specular, Release HLSL shader type 설정 보강 |
+| Part2 Ch05-08 | `07_Modeling_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | 06 GraphicsPipeline Step1-Step9 실행 확인 완료 후 다음 후보 |
 | Part3 Ch09 | `09_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
 | Part3 Ch10-13 | `10_*` - `13_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
 | Part4 Ch14-20 | `14_*` - `20_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 |  |
