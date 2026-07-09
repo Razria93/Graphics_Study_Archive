@@ -67,7 +67,7 @@ ImGui::Checkbox("usePerspectiveCorrectInterpolation",
 ## 실행 결과
 
 - Build status: Debug x64, Release x64 성공
-- Run status: 미확인
+- Run status: Debug/Release 실행 확인 완료
 - Capture status: 보류
 
 ## 공개 가능성

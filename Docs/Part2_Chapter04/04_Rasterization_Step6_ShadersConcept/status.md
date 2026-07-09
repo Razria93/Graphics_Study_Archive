@@ -45,5 +45,5 @@
 
 ## Next Action
 
-- Step7 실행 확인 결과 커밋
-- 다음 후보 `04_Rasterization_Step8_PerspectiveProjection` 진행
+- Step8 실행 확인 결과 커밋
+- 다음 후보 `04_Rasterization_Step9_Shading` 진행
