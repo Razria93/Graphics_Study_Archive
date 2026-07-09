@@ -20,7 +20,7 @@
 | `C:\ComputerGraphics\Part1_Chapter01-02` | `Part1_Chapter01-02` | DirectX11 setup, ImGui, bloom 참고 | 반영 완료 | Debug/Release 실행 성공, 촬영 보류 |
 | `C:\ComputerGraphics\Part1_Chapter03` | `Part1_Chapter03` | CPU ray tracing fundamentals 참고 | scaffold 작성 | Step별 import 예정 |
 | `C:\ComputerGraphics\Part2_Chapter04` | `Part2_Chapter04` | Software rasterization 참고 | 반영 완료 | Step1-Step10 Debug/Release 실행 성공, 촬영 보류 |
-| `C:\ComputerGraphics\Part2_Chapter05-08` | `Part2_Chapter05-08` | D3D11 pipeline, modeling, shader toys 참고 | 진행 중 | Step1-Step4 실행 성공 / Pipeline Step1 COM, Step2 InitializingD3D, Step3 ModelViewProj, Step4 Shaders, Step5 Texturing 실행 성공 / Step5 Texturing LightingSelf build 성공, run 미확인 |
+| `C:\ComputerGraphics\Part2_Chapter05-08` | `Part2_Chapter05-08` | D3D11 pipeline, modeling, shader toys 참고 | 진행 중 | Step1-Step4 실행 성공 / Pipeline Step1 COM, Step2 InitializingD3D, Step3 ModelViewProj, Step4 Shaders, Step5 Texturing, Step5 Texturing LightingSelf 실행 성공 |
 | `C:\ComputerGraphics\Part3_Chapter09` | `Part3_Chapter09` | User interaction, picking 참고 | 검토 필요 | build/run 미확인 |
 | `C:\ComputerGraphics\Part3_Chapter10_13` | `Part3_Chapter10-13` | Geometry pipeline, texturing, PBR, shadows 참고 | 검토 필요 | archive에서는 chapter-range 이름 사용 |
 | `C:\ComputerGraphics\Part3_Chapter10_13_2` | `Part3_Chapter10-13` | Part3 후속/중복 가능 자료 참고 | 검토 필요 | 중복/대체 관계 확인 필요 |

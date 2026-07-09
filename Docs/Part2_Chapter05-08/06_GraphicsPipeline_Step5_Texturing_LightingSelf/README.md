@@ -71,7 +71,7 @@ texture sample 결과를 단순 색상으로 끝내지 않고, 조명 성분과 
 ## 실행 결과
 
 - Build status: Debug x64, Release x64 성공
-- Run status: 미확인
+- Run status: Debug x64, Release x64 성공
 - Capture status: 보류
 
 ## 공개 가능성

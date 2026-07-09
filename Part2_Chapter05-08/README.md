@@ -16,7 +16,7 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 | Import status | 진행 중 |
 | Public readiness | 검토 필요 |
 | Build/run status | Step1 Matrix(GLM), Step2 Lights(GLM), Step3 DirectXMath, Step4 Lights(SimpleMath), Pipeline Step1 COM, Pipeline Step2 InitializingD3D, Pipeline Step3 ModelViewProj, Pipeline Step4 Shaders, Pipeline Step5 Texturing 성공 |
-| Next action | `06_GraphicsPipeline_Step5_Texturing_LightingSelf` 사용자 실행 확인 후 `06_GraphicsPipeline_Step6_Lighting` 진행 |
+| Next action | `06_GraphicsPipeline_Step6_Lighting` 진행 |
 
 ## 예정 주제
 
@@ -39,5 +39,5 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 | `06_GraphicsPipeline_Step3_ModelViewProj` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `06_GraphicsPipeline_Step4_Shaders` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `06_GraphicsPipeline_Step5_Texturing` | archive 반영 완료, Debug/Release 실행 확인 완료 |
-| `06_GraphicsPipeline_Step5_Texturing_LightingSelf` | archive 반영 완료, Debug/Release build 성공, 실행 미확인 |
+| `06_GraphicsPipeline_Step5_Texturing_LightingSelf` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 

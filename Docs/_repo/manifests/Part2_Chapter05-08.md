@@ -22,7 +22,7 @@
 | `06_GraphicsPipeline_Step3_ModelViewProj` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, Model/View/Projection matrix and constant buffer |
 | `06_GraphicsPipeline_Step4_Shaders` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, shader semantics and pixel shader constant buffer |
 | `06_GraphicsPipeline_Step5_Texturing` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, texture sampling, `crate2_diffuse.png`, `wall.jpg` |
-| `06_GraphicsPipeline_Step5_Texturing_LightingSelf` | 반영 완료 | build 성공 / run 미확인 | 검토 필요 | texture sampling with lighting, raw project filename은 `06_GraphicsPipeline_Step5_Texturing.*` 재사용 |
+| `06_GraphicsPipeline_Step5_Texturing_LightingSelf` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, texture sampling with lighting, raw project filename은 `06_GraphicsPipeline_Step5_Texturing.*` 재사용 |
 | `06_GraphicsPipeline_*` | 예정 | 미확인 | 검토 필요 | Step5 Texturing_LightingSelf 이후 D3D11 pipeline |
 | `07_Modeling_*` | 예정 | 미확인 | 검토 필요 | mesh generation/modeling |
 | `08_ShaderToys_*` | 예정 | 미확인 | 검토 필요 | shader toy effects |
@@ -58,6 +58,5 @@
 
 ## Current Focus
 
-1. `06_GraphicsPipeline_Step5_Texturing_LightingSelf` 사용자 Debug/Release 실행 확인을 기다립니다.
-2. 다음 후보 `06_GraphicsPipeline_Step6_Lighting` 진행 범위를 결정합니다.
+1. 다음 후보 `06_GraphicsPipeline_Step6_Lighting` 진행 범위를 결정합니다.
 2. 선택한 후보의 raw 구조와 dependency를 확인합니다.
