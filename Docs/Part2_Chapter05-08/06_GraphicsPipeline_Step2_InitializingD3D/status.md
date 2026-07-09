@@ -32,5 +32,5 @@
 
 ## 후속 작업
 
-- 다음 후보 `06_GraphicsPipeline_Step3_ConstantBuffer`의 raw 구조와 dependency를 확인합니다.
+- 다음 후보는 raw 실제 폴더명 기준 `06_GraphicsPipeline_Step3_ModelViewProj`입니다.
 - capture/video는 사용자 촬영 단계에서 별도로 기록합니다.
