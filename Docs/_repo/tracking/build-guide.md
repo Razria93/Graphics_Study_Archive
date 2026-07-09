@@ -38,6 +38,7 @@
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step1_COM` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, D3D11 device creation and WRL ComPtr |
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step2_InitializingD3D` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, first Debug build failed on HLSL UTF-8 BOM and passed after no BOM save |
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step3_ModelViewProj` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, Model/View/Projection matrix and constant buffer |
+| Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step4_Shaders` | 성공 | 성공 | 미확인 | 보류 | Shader semantics and pixel shader constant buffer |
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 미확인 | 미확인 | 미확인 | 미확인 | MVP and lighting |
 | Part3 | `Part3_Chapter09/09_UserInteraction_Step2_MousePicking` | 미확인 | 미확인 | 미확인 | 미확인 | picking ray |
 | Part3 | `Part3_Chapter10-13/12_PBR_Step2_PBRModels` | 미확인 | 미확인 | 미확인 | 미확인 | PBR models |
@@ -71,6 +72,7 @@
 | `Part2_Chapter05-08/06_GraphicsPipeline_Step1_COM` | `C:\ComputerGraphics\Part2_Chapter05-08\06_GraphicsPipeline_Step1_COM` | D3D11 device creation, WRL ComPtr |
 | `Part2_Chapter05-08/06_GraphicsPipeline_Step2_InitializingD3D` | `C:\ComputerGraphics\Part2_Chapter05-08\06_GraphicsPipeline_Step2_InitializingD3D` | D3D11 initialization, swap chain, shader compilation |
 | `Part2_Chapter05-08/06_GraphicsPipeline_Step3_ModelViewProj` | `C:\ComputerGraphics\Part2_Chapter05-08\06_GraphicsPipeline_Step3_ModelViewProj` | Model/View/Projection matrix and constant buffer |
+| `Part2_Chapter05-08/06_GraphicsPipeline_Step4_Shaders` | `C:\ComputerGraphics\Part2_Chapter05-08\06_GraphicsPipeline_Step4_Shaders` | Shader semantics and pixel shader constant buffer |
 | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | `C:\ComputerGraphics\Part2_Chapter05-08` | shader/model/texture 경로 |
 | `Part3_Chapter09/09_UserInteraction_Step2_MousePicking` | `C:\ComputerGraphics\Part3_Chapter09` | picking 예제 후보 |
 | `Part3_Chapter10-13/12_PBR_Step2_PBRModels` | `C:\ComputerGraphics\Part3_Chapter10_13`, `C:\ComputerGraphics\Part3_Chapter10_13_2` | PBR asset 출처와 중복/보존 관계 |
