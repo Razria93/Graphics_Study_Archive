@@ -6,7 +6,7 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 
 - 학습 코드 정리: Step 단위 진행 중
 - Build/run: `05_*`, `06_GraphicsPipeline_Step1`-`Step9`, `07_Modeling_Step1_DrawingWireFrames`-`Step3_Grid`, `07_Modeling_Step5_Sphere_*`, `07_Modeling_Step6_Subdivision` 사용자 Debug/Release 실행 확인 완료
-- 현재 후보: `07_Modeling_Step7_FaceNormals`
+- 현재 후보: `07_Modeling_Step7_FaceNormals` import 완료, build/run 미확인
 - 캡처: 보류
 
 ## Archive/Public 검토
@@ -17,7 +17,7 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 | Import status | 진행 중 |
 | Public readiness | 검토 필요 |
 | Build/run status | `07_Modeling_Step6_Subdivision`까지 실행 확인 완료 |
-| Next action | `07_Modeling_Step7_FaceNormals` import |
+| Next action | `07_Modeling_Step7_FaceNormals` Debug/Release 실행 확인 |
 
 ## 예정 주제
 
@@ -59,3 +59,4 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 | `07_Modeling_Step5_Sphere_UserSolution` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `07_Modeling_Step5_Sphere_ReferenceSolution` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `07_Modeling_Step6_Subdivision` | archive 반영 완료, Debug/Release 실행 확인 완료 |
+| `07_Modeling_Step7_FaceNormals` | archive 반영 완료, Debug/Release 실행 미확인 |
