@@ -21,7 +21,7 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part2 Ch05-08 | `07_Modeling_Step1_DrawingWireFrames` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, procedural box mesh, solid/wireframe rasterizer state |
 | Part2 Ch05-08 | `07_Modeling_Step2_DrawingNormals` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, normal line mesh, Draw Normals/Normal scale |
 | Part2 Ch05-08 | `07_Modeling_Step3_Grid` | 완료 | 성공 | 진행 중 | 완료 | 보류 | 사용자 Debug/Release 실행 확인, `Initialize()` 반환 누락 수정 |
-| Part2 Ch05-08 | `07_Modeling_Step4_Cylinder` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | 다음 후보 |
+| Part2 Ch05-08 | `07_Modeling_Step4_Cylinder` | 완료 | 미확인 | 진행 중 | 완료 | 보류 | procedural cylinder mesh, side indices, normal line mesh |
 | Part2 Ch05-08 | `07_Modeling_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | mesh generation/modeling |
 | Part2 Ch05-08 | `08_ShaderToys_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | shader toy effects |
 | Part3 Ch09 | `09_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |
