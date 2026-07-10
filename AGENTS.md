@@ -17,6 +17,7 @@
 - 강의 기반 학습 코드는 재배포나 교육 목적으로 사용하지 않습니다.
 - 외부 공개 가능한 산출물은 별도 public repo로 분리합니다.
 - `.vs/`, `x64/`, `Debug/`, `Release/`, `.user`, `.suo`, `imgui.ini`는 추가하지 않습니다.
+- 예제 import 마무리에는 `Docs/_repo/workflow/import-integrity-checklist.md`를 기준으로 XML namespace, HLSL/HLSLI BOM, binary asset hash, raw/project diff를 확인합니다.
 - 새 기능 작업보다 documentation, verification records, reproducible demo links를 우선합니다.
 - build/run을 직접 확인하지 않았다면 `미확인`으로 기록합니다.
 
