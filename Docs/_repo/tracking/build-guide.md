@@ -27,7 +27,7 @@
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step7_FaceNormals` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인 |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, sphere mapping, seam correction |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_ReferenceSolution` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, sphere mapping reference |
-| Part2 | `Part2_Chapter05-08/07_Modeling_Step9_ModelFiles` | 미확인 | 미확인 | 미확인 | 보류 | Assimp dependency, Zelda model load, texture binding, normal debug 확인 필요 |
+| Part2 | `Part2_Chapter05-08/07_Modeling_Step9_ModelFiles` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, Assimp dependency, Zelda model load, texture binding |
 
 ## Raw Reference Links
 

@@ -4,7 +4,7 @@
 
 - Archive source: `Part2_Chapter05-08/07_Modeling_Step9_ModelFiles`
 - Raw reference: `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step9_ModelFiles`
-- Status: import 완료, build/run 미확인
+- Status: import 완료, build/run 성공
 - Capture: 보류
 
 ## Migration
@@ -18,8 +18,8 @@
 | Path cleanup | 완료 | raw 절대 경로 `c:/zelda/source/`를 archive 상대 경로 `f3d-data/zelda/`로 변경 |
 | Source comment split | local note 생성 / source 정리 보류 | raw 재현성을 우선해 source comment는 유지. local-only 문서에 위치와 정리 방향 기록 |
 | Integrity check | 완료 | XML namespace 정상, HLSL/HLSLI BOM 없음, selected model/texture asset hash raw와 일치 |
-| Build/run | 미확인 | 사용자 Visual Studio Debug/Release 확인 필요 |
-| Dependency | 검토 필요 | Assimp/vcpkg 환경 필요. 사용자 환경에서 build 시 확인 |
+| Build/run | 성공 | 사용자 Visual Studio Debug/Release 실행 확인 |
+| Dependency | 확인 완료 | Assimp/vcpkg 환경에서 사용자 Debug/Release 실행 확인 |
 | Public readiness | 검토 필요 | model/texture asset과 외부 dependency 공개 전 별도 검토 |
 
 ## Local-only Notes
@@ -31,15 +31,14 @@
 
 ## Execution Checklist
 
-- Debug x64 build
-- Debug x64 run
-- Release x64 build
-- Release x64 run
-- Assimp dependency 정상 연결 확인
-- Zelda model 정상 표시 확인
-- model texture 정상 표시 확인
-- `Use Texture` toggle 확인
-- `Wireframe` toggle 확인
-- `Draw Normals` toggle 확인
-- `Normal scale` slider 확인
-
+- Debug x64 build: 확인 완료
+- Debug x64 run: 확인 완료
+- Release x64 build: 확인 완료
+- Release x64 run: 확인 완료
+- Assimp dependency 정상 연결: 확인 완료
+- Zelda model 정상 표시: 확인 완료
+- model texture 정상 표시: 확인 완료
+- `Use Texture` toggle: 확인 완료
+- `Wireframe` toggle: 확인 완료
+- `Draw Normals` toggle: 확인 완료
+- `Normal scale` slider: 확인 완료
