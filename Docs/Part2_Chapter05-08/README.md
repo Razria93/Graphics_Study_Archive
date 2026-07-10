@@ -45,3 +45,12 @@ D3D11 graphics pipeline에서 modeling과 shader toy로 넘어가는 예제들�
 
 - [Import manifest](../_repo/manifests/Part2_Chapter05-08.md)
 - [Migration board](../_repo/tracking/migration-board.md)
+
+## Recent Import Notes
+
+| Example | 상태 |
+| --- | --- |
+| `07_Modeling_Step5_Sphere_UserSolution` | archive 반영 완료, Debug/Release 실행 미확인 |
+| `07_Modeling_Step5_Sphere_ReferenceSolution` | archive 반영 완료, Debug/Release 실행 미확인 |
+
+Tracking note: [Part2 Step5 Sphere Tracking](../_repo/tracking/part2-step5-sphere.md)
