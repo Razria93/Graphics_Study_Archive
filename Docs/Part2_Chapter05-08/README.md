@@ -30,6 +30,7 @@ D3D11 graphics pipeline에서 modeling과 shader toy로 넘어가는 예제들�
 | [`06_GraphicsPipeline_Step8_ResizingWindow`](06_GraphicsPipeline_Step8_ResizingWindow/README.md) | 완료 | 성공 | 진행 중 | 보류 | swap chain resize, render target/depth stencil 재생성 |
 | [`06_GraphicsPipeline_Step9_PhongVsBlinnPhong`](06_GraphicsPipeline_Step9_PhongVsBlinnPhong/README.md) | 완료 | 성공 | 진행 중 | 보류 | Phong vs Blinn-Phong specular |
 | [`07_Modeling_Step1_DrawingWireFrames`](07_Modeling_Step1_DrawingWireFrames/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인, procedural box mesh, solid/wireframe rasterizer state |
+| [`07_Modeling_Step2_DrawingNormals`](07_Modeling_Step2_DrawingNormals/README.md) | 완료 | 미확인 | 진행 중 | 보류 | normal line mesh, `Draw Normals`, `Normal scale` |
 
 ## Modeling Variant 기준
 

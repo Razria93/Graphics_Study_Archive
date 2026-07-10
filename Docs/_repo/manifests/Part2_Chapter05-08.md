@@ -28,6 +28,7 @@
 | `06_GraphicsPipeline_Step8_ResizingWindow` | 반영 완료 | 성공 | 검토 필요 | `ResizeBuffers()`, render target/depth stencil 재생성 |
 | `06_GraphicsPipeline_Step9_PhongVsBlinnPhong` | 반영 완료 | 성공 | 검토 필요 | Phong vs Blinn-Phong specular |
 | `07_Modeling_Step1_DrawingWireFrames` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, `MeshData`, `MakeBox()`, solid/wireframe rasterizer state, texture assets 포함 |
+| `07_Modeling_Step2_DrawingNormals` | 반영 완료 | 미확인 | 검토 필요 | normal line mesh, `Mesh`, `NormalVertexShader`, `NormalPixelShader`, texture assets 포함 |
 | `07_Modeling_*` | 예정 | 미확인 | 검토 필요 | mesh generation/modeling |
 | `08_ShaderToys_*` | 예정 | 미확인 | 검토 필요 | shader toy effects |
 
@@ -71,5 +72,5 @@
 
 ## Current Next Action
 
-1. 다음 후보는 `07_Modeling_Step2_DrawingNormals`입니다.
-2. raw source와 관련 memo를 확인한 뒤 source 주석 분리, local study review, 최소 tracked docs를 작성합니다.
+1. `07_Modeling_Step2_DrawingNormals` Debug/Release build/run을 사용자 환경에서 확인합니다.
+2. 다음 후보는 `07_Modeling_Step3_Grid`입니다.
