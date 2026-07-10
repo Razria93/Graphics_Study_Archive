@@ -58,7 +58,7 @@ indices.push_back(i + 1 + offset);
   - `imgui.ini`
   - `x64/`, build output
 - Asset public readiness: 검토 필요
-- Source comments: raw 장문 학습 주석은 source에서 제거하고 local-only 문서로 분리했습니다.
+- Source comments: raw 재현성 복구를 우선하여 source 주석 정리는 보류했습니다. 현재 메모 위치와 최종 정리 방향은 local-only 문서에 기록했습니다.
 
 ## 확인 상태
 

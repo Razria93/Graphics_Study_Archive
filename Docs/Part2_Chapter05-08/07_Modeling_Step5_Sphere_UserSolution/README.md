@@ -57,7 +57,7 @@ int offset_half = int(vertices.size());
   - `imgui.ini`
   - `x64/`, build output
 - Asset public readiness: 검토 필요
-- Source comments: raw 재현성을 우선하여 현재 source 주석은 유지했습니다. 마지막 정리 단계에서 local-only note로 분리할 수 있습니다.
+- Source comments: raw 재현성을 우선하여 현재 source 주석은 유지했습니다. 메모 위치와 최종 정리 방향은 local-only 문서에 기록했습니다.
 
 ## 확인 상태
 
