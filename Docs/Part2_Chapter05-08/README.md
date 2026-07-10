@@ -35,7 +35,7 @@ D3D11 graphics pipeline에서 modeling과 shader toy로 넘어가는 예제들�
 | [`07_Modeling_Step4_Cylinder`](07_Modeling_Step4_Cylinder/README.md) | 완료 | 미확인 | 진행 중 | 보류 | procedural cylinder mesh, side indices, normal overlay |
 | [`07_Modeling_Step5_Sphere_UserSolution`](07_Modeling_Step5_Sphere_UserSolution/README.md) | 완료 | 성공 | 진행 중 | 보류 | user solution, top/bottom half sphere composition |
 | [`07_Modeling_Step5_Sphere_ReferenceSolution`](07_Modeling_Step5_Sphere_ReferenceSolution/README.md) | 완료 | 성공 | 진행 중 | 보류 | reference solution, stack/slice sphere generation |
-| [`07_Modeling_Step6_Subdivision`](07_Modeling_Step6_Subdivision/README.md) | 완료 | 미확인 | 진행 중 | 보류 | subdivision sphere, vertex projection |
+| [`07_Modeling_Step6_Subdivision`](07_Modeling_Step6_Subdivision/README.md) | 완료 | 성공 | 진행 중 | 보류 | subdivision sphere, vertex projection |
 
 ## Modeling Variant 기준
 
@@ -55,6 +55,6 @@ D3D11 graphics pipeline에서 modeling과 shader toy로 넘어가는 예제들�
 | --- | --- |
 | `07_Modeling_Step5_Sphere_UserSolution` | archive 반영 완료, Debug/Release 실행 성공 |
 | `07_Modeling_Step5_Sphere_ReferenceSolution` | archive 반영 완료, Debug/Release 실행 성공 |
-| `07_Modeling_Step6_Subdivision` | archive 반영 완료, Debug/Release 실행 미확인 |
+| `07_Modeling_Step6_Subdivision` | archive 반영 완료, Debug/Release 실행 성공 |
 
 Tracking note: [Part2 Step5 Sphere Tracking](../_repo/tracking/part2-step5-sphere.md)
