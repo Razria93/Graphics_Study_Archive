@@ -17,7 +17,7 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 | Import status | 진행 중 |
 | Public readiness | 검토 필요 |
 | Build/run status | `08_ShaderToys_Step1_RimLighting`까지 실행 확인 완료 |
-| Next action | `08_ShaderToys_Step2_Cubemapping` import 후보 확인 |
+| Next action | `08_ShaderToys_Step2_Cubemapping` Debug/Release 실행 확인 |
 
 ## 예정 주제
 
@@ -64,3 +64,4 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 | `07_Modeling_Step8_SphereMapping_ReferenceSolution` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `07_Modeling_Step9_ModelFiles` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `08_ShaderToys_Step1_RimLighting` | archive 반영 완료, Debug/Release 실행 성공 |
+| `08_ShaderToys_Step2_Cubemapping` | archive 반영 완료, Debug/Release 실행 미확인 |

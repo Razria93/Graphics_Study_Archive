@@ -29,6 +29,7 @@
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_ReferenceSolution` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, sphere mapping reference |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step9_ModelFiles` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, Assimp dependency, Zelda model load, texture binding |
 | Part2 | `Part2_Chapter05-08/08_ShaderToys_Step1_RimLighting` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, rim lighting, `stanford_dragon.stl` |
+| Part2 | `Part2_Chapter05-08/08_ShaderToys_Step2_Cubemapping` | 미확인 | 미확인 | 미확인 | 보류 | cubemap skybox, DDS load, Zelda model 확인 필요 |
 
 ## Raw Reference Links
 
@@ -42,3 +43,4 @@
 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_ReferenceSolution` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step8_SphereMapping_Lecture` | sphere mapping reference solution, `ojwD8.jpg`, `wall.jpg`, `crate2_diffuse.png` |
 | `Part2_Chapter05-08/07_Modeling_Step9_ModelFiles` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step9_ModelFiles` | Assimp model loading, `f3d-data/zelda/zeldaPosed001.fbx`, selected diffuse textures |
 | `Part2_Chapter05-08/08_ShaderToys_Step1_RimLighting` | `C:\ComputerGraphics\Part2_Chapter05-08\08_ShaderToys_Step1_RimLighting` | rim lighting, `stanford_dragon.stl`, texture assets |
+| `Part2_Chapter05-08/08_ShaderToys_Step2_Cubemapping` | `C:\ComputerGraphics\Part2_Chapter05-08\08_ShaderToys_Step2_Cubemapping` | cubemap skybox, `skybox/skybox.dds`, Zelda model, DirectXTK DDS loader |

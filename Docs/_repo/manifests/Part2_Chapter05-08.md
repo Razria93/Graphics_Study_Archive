@@ -39,6 +39,7 @@
 | `07_Modeling_Step8_SphereMapping_ReferenceSolution` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, `07_Modeling_Step8_SphereMapping_Lecture` 기반 reference solution |
 | `07_Modeling_Step9_ModelFiles` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, Assimp model loading, Zelda FBX와 diffuse texture 선별 포함 |
 | `08_ShaderToys_Step1_RimLighting` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, rim lighting, `stanford_dragon.stl` 포함 |
+| `08_ShaderToys_Step2_Cubemapping` | 반영 완료 | 미확인 | 검토 필요 | cubemap skybox, `skybox.dds`, Zelda model 포함 |
 | `07_Modeling_*` | 예정 | 미확인 | 검토 필요 | mesh generation/modeling |
 | `08_ShaderToys_*` | 예정 | 미확인 | 검토 필요 | shader toy effects |
 
@@ -82,4 +83,4 @@
 
 ## Current Next Action
 
-1. 다음 후보는 `08_ShaderToys_Step2_Cubemapping`입니다.
+1. 다음 확인은 `08_ShaderToys_Step2_Cubemapping` Debug/Release 실행입니다.
