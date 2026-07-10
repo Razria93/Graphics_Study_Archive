@@ -6,8 +6,8 @@
 
 | Archive target | Raw reference | Build/run | Note |
 | --- | --- | --- | --- |
-| `Part2_Chapter05-08/07_Modeling_Step5_Sphere_UserSolution` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step5-3_Sphere_Complete` | 미확인 | 사용자 풀이. top/bottom half sphere를 합치는 방식 |
-| `Part2_Chapter05-08/07_Modeling_Step5_Sphere_ReferenceSolution` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step5_Sphere_Lecture` | 미확인 | 강의 reference solution. stack/slice loop로 sphere 전체 생성 |
+| `Part2_Chapter05-08/07_Modeling_Step5_Sphere_UserSolution` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step5-3_Sphere_Complete` | 성공 | 사용자 풀이. top/bottom half sphere를 합치는 방식 |
+| `Part2_Chapter05-08/07_Modeling_Step5_Sphere_ReferenceSolution` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step5_Sphere_Lecture` | 성공 | 강의 reference solution. stack/slice loop로 sphere 전체 생성 |
 
 ## Included Assets
 
@@ -29,10 +29,10 @@ Asset hash는 raw와 archive가 일치함을 확인했습니다. Public 공개 �
 
 ## Build/Run Checklist
 
-- UserSolution Debug x64 build/run
-- UserSolution Release x64 build/run
-- ReferenceSolution Debug x64 build/run
-- ReferenceSolution Release x64 build/run
-- sphere mesh 표시 확인
-- texture/lighting 확인
-- `Wireframe`, `Draw Normals`, `Normal scale` 확인
+- UserSolution Debug x64 build/run: 확인 완료
+- UserSolution Release x64 build/run: 확인 완료
+- ReferenceSolution Debug x64 build/run: 확인 완료
+- ReferenceSolution Release x64 build/run: 확인 완료
+- sphere mesh 표시: 확인 완료
+- texture/lighting: 확인 완료
+- `Wireframe`, `Draw Normals`, `Normal scale`: 확인 완료

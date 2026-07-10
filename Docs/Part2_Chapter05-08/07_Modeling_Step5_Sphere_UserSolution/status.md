@@ -5,7 +5,7 @@
 - Archive source: `Part2_Chapter05-08/07_Modeling_Step5_Sphere_UserSolution`
 - Raw reference: `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step5-3_Sphere_Complete`
 - Paired reference solution: `Part2_Chapter05-08/07_Modeling_Step5_Sphere_ReferenceSolution`
-- Status: import 완료, build/run 미확인
+- Status: import 완료, build/run 성공
 - Capture: 보류
 
 ## Migration
@@ -17,17 +17,17 @@
 | Project reference cleanup | 완료 | 실제 제외한 `.clang-format`의 project/filter 참조 제거 |
 | Source comment split | 보류 | raw 재현성을 우선해 source comment는 유지. 이후 문서 정리 단계에서 local-only note로 분리 |
 | Integrity check | 완료 | XML namespace 정상, HLSL/HLSLI BOM 없음, texture asset hash raw와 일치 |
-| Build/run | 미확인 | 사용자 Visual Studio 확인 필요 |
+| Build/run | 성공 | 사용자 Visual Studio Debug/Release 실행 확인 |
 | Public readiness | 검토 필요 | texture asset과 강의 기반 구조 공개 전 별도 검토 |
 
 ## Execution Checklist
 
-- Debug x64 build
-- Debug x64 run
-- Release x64 build
-- Release x64 run
-- sphere mesh가 정상 표시되는지 확인
-- `Use Texture` toggle 확인
-- `Wireframe` toggle 확인
-- `Draw Normals` toggle 확인
-- `Normal scale` slider 확인
+- Debug x64 build: 확인 완료
+- Debug x64 run: 확인 완료
+- Release x64 build: 확인 완료
+- Release x64 run: 확인 완료
+- sphere mesh 정상 표시: 확인 완료
+- `Use Texture` toggle: 확인 완료
+- `Wireframe` toggle: 확인 완료
+- `Draw Normals` toggle: 확인 완료
+- `Normal scale` slider: 확인 완료
