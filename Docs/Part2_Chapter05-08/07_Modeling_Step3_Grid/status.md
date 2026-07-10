@@ -5,7 +5,7 @@
 - Archive source: `Part2_Chapter05-08/07_Modeling_Step3_Grid`
 - Raw reference: `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step3_Grid`
 - Excluded raw reference: `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step3_Grid_Backup`
-- Status: import 완료, build/run 미확인
+- Status: import 완료, build/run 확인 완료
 - Capture: 보류
 
 ## Migration
@@ -16,7 +16,7 @@
 | Raw-only exclusion | 완료 | `.vs/`, generated folder, `.clang-format`, `.vcxproj.user`, `imgui.ini`, build output, backup folder 제외 |
 | Source comment split | 완료 | raw 장문 주석 제거, local-only 문서 생성 |
 | Related raw docs review | 부분 완료 | Step3 Grid raw docs 2개 참고 |
-| Build/run | 미확인 | 사용자 Visual Studio 확인 필요 |
+| Build/run | 완료 | 사용자 Debug/Release 실행 확인 완료. Release `Initialization failed` 원인은 `ExampleApp::Initialize()`의 `return true` 누락으로 확인했고, 다음 Step 구현을 기준으로 반환을 추가함 |
 | Public readiness | 검토 필요 | texture asset과 강의 기반 구조 공개 전 별도 검토 |
 
 ## Local-only Notes

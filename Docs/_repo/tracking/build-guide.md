@@ -20,7 +20,7 @@
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step1_COM`-`Step9_PhongVsBlinnPhong` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인 |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step1_DrawingWireFrames` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, solid/wireframe toggle |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step2_DrawingNormals` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, normal line mesh, Draw Normals/Normal scale |
-| Part2 | `Part2_Chapter05-08/07_Modeling_Step3_Grid` | 미확인 | 미확인 | 미확인 | 보류 | grid mesh, Use Texture, Draw Normals/Normal scale 확인 필요 |
+| Part2 | `Part2_Chapter05-08/07_Modeling_Step3_Grid` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, `Initialize()` 반환 누락 수정 |
 
 ## Raw Reference Links
 

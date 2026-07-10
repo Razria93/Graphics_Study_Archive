@@ -68,12 +68,12 @@ v.texcoord.y = 1 - (dy * j / height);
 | 항목 | 상태 |
 | --- | --- |
 | Code split | 완료 |
-| Build Debug x64 | 미확인 |
-| Build Release x64 | 미확인 |
-| Run Debug/Release | 미확인 |
+| Build Debug x64 | 확인 완료 |
+| Build Release x64 | 확인 완료 |
+| Run Debug/Release | 확인 완료 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
 ## 다음 확인
 
-Visual Studio에서 Debug x64와 Release x64를 각각 빌드/실행하고, textured grid, `Use Texture`, `Draw Normals`, `Normal scale` 동작을 확인합니다.
+Visual Studio에서 Debug x64와 Release x64 실행을 확인했습니다. Release `Initialization failed`는 다음 Step의 구현과 대조해 `ExampleApp::Initialize()`의 `return true` 누락을 수정했습니다.
