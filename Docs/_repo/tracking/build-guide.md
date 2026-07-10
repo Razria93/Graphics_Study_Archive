@@ -25,8 +25,8 @@
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step5_Sphere_*` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인 |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step6_Subdivision` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인 |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step7_FaceNormals` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인 |
-| Part2 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution` | 미확인 | 미확인 | 미확인 | 보류 | sphere mapping, seam correction, Use Texture, Wireframe, Draw Normals/Normal scale 확인 필요 |
-| Part2 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_ReferenceSolution` | 미확인 | 미확인 | 미확인 | 보류 | sphere mapping reference, Use Texture, Wireframe, Draw Normals/Normal scale 확인 필요 |
+| Part2 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, sphere mapping, seam correction |
+| Part2 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_ReferenceSolution` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, sphere mapping reference |
 
 ## Raw Reference Links
 

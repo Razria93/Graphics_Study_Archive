@@ -7,7 +7,7 @@
 - Scope: affine transformations, D3D11 graphics pipeline, modeling, shader toys
 - Import status: 진행 중
 - Public readiness: 검토 필요
-- Build/run status: `05_*`, `06_GraphicsPipeline_Step1`-`Step9`, `07_Modeling_Step1_DrawingWireFrames`-`Step3_Grid`, `07_Modeling_Step5_Sphere_*`, `07_Modeling_Step6_Subdivision`, `07_Modeling_Step7_FaceNormals` 사용자 Debug/Release 실행 확인 완료. `07_Modeling_Step4_Cylinder`와 `07_Modeling_Step8_SphereMapping_*`는 import 완료, build/run 미확인.
+- Build/run status: `05_*`, `06_GraphicsPipeline_Step1`-`Step9`, `07_Modeling_Step1_DrawingWireFrames`-`Step3_Grid`, `07_Modeling_Step5_Sphere_*`, `07_Modeling_Step6_Subdivision`, `07_Modeling_Step7_FaceNormals`, `07_Modeling_Step8_SphereMapping_*` 사용자 Debug/Release 실행 확인 완료. `07_Modeling_Step4_Cylinder`는 import 완료, build/run 미확인.
 
 ## Step Inventory
 
@@ -35,8 +35,8 @@
 | `07_Modeling_Step5_Sphere_ReferenceSolution` | 반영 완료 | 성공 | 검토 필요 | `07_Modeling_Step5_Sphere_Lecture` 기반 reference solution |
 | `07_Modeling_Step6_Subdivision` | 반영 완료 | 성공 | 검토 필요 | subdivision sphere, vertex projection |
 | `07_Modeling_Step7_FaceNormals` | 반영 완료 | 성공 | 검토 필요 | face normal, flat shading |
-| `07_Modeling_Step8_SphereMapping_UserSolution` | 반영 완료 | 미확인 | 검토 필요 | `07_Modeling_Step8-2_SphereMapping_Complete` 기반 사용자 풀이, seam correction |
-| `07_Modeling_Step8_SphereMapping_ReferenceSolution` | 반영 완료 | 미확인 | 검토 필요 | `07_Modeling_Step8_SphereMapping_Lecture` 기반 reference solution |
+| `07_Modeling_Step8_SphereMapping_UserSolution` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, `07_Modeling_Step8-2_SphereMapping_Complete` 기반 사용자 풀이, seam correction |
+| `07_Modeling_Step8_SphereMapping_ReferenceSolution` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, `07_Modeling_Step8_SphereMapping_Lecture` 기반 reference solution |
 | `07_Modeling_*` | 예정 | 미확인 | 검토 필요 | mesh generation/modeling |
 | `08_ShaderToys_*` | 예정 | 미확인 | 검토 필요 | shader toy effects |
 
@@ -80,6 +80,4 @@
 
 ## Current Next Action
 
-1. `07_Modeling_Step8_SphereMapping_UserSolution` Debug/Release build/run을 사용자 환경에서 확인합니다.
-2. `07_Modeling_Step8_SphereMapping_ReferenceSolution` Debug/Release build/run을 사용자 환경에서 확인합니다.
-3. 다음 후보는 `07_Modeling_Step9_ModelFiles`입니다.
+1. 다음 후보는 `07_Modeling_Step9_ModelFiles`입니다.
