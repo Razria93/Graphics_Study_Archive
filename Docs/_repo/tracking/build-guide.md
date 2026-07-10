@@ -19,7 +19,7 @@
 | Part2 | `Part2_Chapter05-08/05_AffineTransformations_*` | 성공 | 성공 | 성공 | 보류 | Step1-Step4 사용자 Debug/Release 실행 확인 |
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step1_COM`-`Step9_PhongVsBlinnPhong` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인 |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step1_DrawingWireFrames` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, solid/wireframe toggle |
-| Part2 | `Part2_Chapter05-08/07_Modeling_Step2_DrawingNormals` | 미확인 | 미확인 | 미확인 | 보류 | normal line mesh, Draw Normals/Normal scale 확인 필요 |
+| Part2 | `Part2_Chapter05-08/07_Modeling_Step2_DrawingNormals` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, normal line mesh, Draw Normals/Normal scale |
 
 ## Raw Reference Links
 

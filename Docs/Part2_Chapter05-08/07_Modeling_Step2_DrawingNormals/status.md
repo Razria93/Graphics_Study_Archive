@@ -4,7 +4,7 @@
 
 - Archive source: `Part2_Chapter05-08/07_Modeling_Step2_DrawingNormals`
 - Raw reference: `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step2_DrawingNormals`
-- Status: import 완료, build/run 미확인
+- Status: import 완료, Debug/Release 실행 확인 완료
 - Capture: 보류
 
 ## Migration
@@ -15,7 +15,7 @@
 | Raw-only exclusion | 완료 | `.vs/`, generated folder, `.clang-format`, `.vcxproj.user`, `imgui.ini`, build output 제외 |
 | Source comment split | 완료 | raw 장문 주석 제거, local-only 문서 생성 |
 | Related raw docs review | 부분 완료 | `무제 1.md`의 normal visualization memo 참고 |
-| Build/run | 미확인 | 사용자 Visual Studio 확인 필요 |
+| Build/run | 성공 | 사용자 Debug/Release 실행 확인 |
 | Public readiness | 검토 필요 | texture asset과 강의 기반 구조 공개 전 별도 검토 |
 
 ## Local-only Notes
@@ -27,10 +27,8 @@
 
 ## Execution Checklist
 
-- Debug x64 build
-- Debug x64 run
-- Release x64 build
-- Release x64 run
-- ImGui `Draw Normals` toggle 확인
-- `Normal scale` slider 확인
-- normal line mesh가 box 표면 normal 방향으로 표시되는지 확인
+- Debug x64 build/run 성공
+- Release x64 build/run 성공
+- ImGui `Draw Normals` toggle 확인 완료
+- `Normal scale` slider 확인 완료
+- normal line mesh가 box 표면 normal 방향으로 표시되는지 확인 완료
