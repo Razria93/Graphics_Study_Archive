@@ -7,7 +7,7 @@
 - Scope: affine transformations, D3D11 graphics pipeline, modeling, shader toys
 - Import status: 진행 중
 - Public readiness: 검토 필요
-- Build/run status: `05_*`, `06_GraphicsPipeline_Step1`-`Step9`, `07_Modeling_Step1_DrawingWireFrames`-`Step3_Grid`, `07_Modeling_Step5_Sphere_*`, `07_Modeling_Step6_Subdivision`, `07_Modeling_Step7_FaceNormals`, `07_Modeling_Step8_SphereMapping_*`, `07_Modeling_Step9_ModelFiles`, `08_ShaderToys_Step1_RimLighting` 사용자 Debug/Release 실행 확인 완료. `07_Modeling_Step4_Cylinder`는 import 완료, build/run 미확인.
+- Build/run status: `05_*`, `06_GraphicsPipeline_Step1`-`Step9`, `07_Modeling_Step1_DrawingWireFrames`-`Step3_Grid`, `07_Modeling_Step5_Sphere_*`, `07_Modeling_Step6_Subdivision`, `07_Modeling_Step7_FaceNormals`, `07_Modeling_Step8_SphereMapping_*`, `07_Modeling_Step9_ModelFiles`, `08_ShaderToys_Step1_RimLighting`, `08_ShaderToys_Step2_Cubemapping` 사용자 Debug/Release 실행 확인 완료. `07_Modeling_Step4_Cylinder`는 import 완료, build/run 미확인.
 
 ## Step Inventory
 
@@ -39,7 +39,7 @@
 | `07_Modeling_Step8_SphereMapping_ReferenceSolution` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, `07_Modeling_Step8_SphereMapping_Lecture` 기반 reference solution |
 | `07_Modeling_Step9_ModelFiles` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, Assimp model loading, Zelda FBX와 diffuse texture 선별 포함 |
 | `08_ShaderToys_Step1_RimLighting` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, rim lighting, `stanford_dragon.stl` 포함 |
-| `08_ShaderToys_Step2_Cubemapping` | 반영 완료 | 미확인 | 검토 필요 | cubemap skybox, `skybox.dds`, Zelda model 포함 |
+| `08_ShaderToys_Step2_Cubemapping` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, cubemap skybox, `skybox.dds`, Zelda model 포함 |
 | `07_Modeling_*` | 예정 | 미확인 | 검토 필요 | mesh generation/modeling |
 | `08_ShaderToys_*` | 예정 | 미확인 | 검토 필요 | shader toy effects |
 
@@ -83,4 +83,4 @@
 
 ## Current Next Action
 
-1. 다음 확인은 `08_ShaderToys_Step2_Cubemapping` Debug/Release 실행입니다.
+1. 다음 후보는 `08_ShaderToys_Step3_EnvironmentMapping`입니다.

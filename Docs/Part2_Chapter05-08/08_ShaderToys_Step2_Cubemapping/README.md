@@ -1,4 +1,4 @@
-# 08 ShaderToys Step2 Cubemapping
+﻿# 08 ShaderToys Step2 Cubemapping
 
 ## 목적
 
@@ -81,12 +81,12 @@ float4 main(PixelShaderInput input) : SV_TARGET
 | 항목 | 상태 |
 | --- | --- |
 | Code import | 완료 |
-| Build Debug x64 | 미확인 |
-| Build Release x64 | 미확인 |
-| Run Debug/Release | 미확인 |
+| Build Debug x64 | 성공 |
+| Build Release x64 | 성공 |
+| Run Debug/Release | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
-## 다음 확인
+## 실행 확인
 
-Visual Studio에서 Debug x64와 Release x64 build/run을 확인합니다. 실행 시 skybox cubemap 표시, Zelda model load, texture binding, `Use Texture`, `Wireframe`, `Draw Normals`, `m_viewRot` 조작을 확인합니다.
+사용자가 Visual Studio에서 Debug x64와 Release x64 build/run을 확인했습니다. skybox cubemap 표시, Zelda model load, texture binding, `Use Texture`, `Wireframe`, `Draw Normals`, `m_viewRot` 조작 확인은 실행 확인 범위에 포함합니다.

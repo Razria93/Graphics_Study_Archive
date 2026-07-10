@@ -28,7 +28,7 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part2 Ch05-08 | `07_Modeling_Step8_SphereMapping_*` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, 사용자 풀이와 reference solution 함께 보관 |
 | Part2 Ch05-08 | `07_Modeling_Step9_ModelFiles` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, Assimp model loading, Zelda FBX asset 선별 포함 |
 | Part2 Ch05-08 | `08_ShaderToys_Step1_RimLighting` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, rim lighting, `stanford_dragon.stl`, shader/asset integrity 확인 완료 |
-| Part2 Ch05-08 | `08_ShaderToys_Step2_Cubemapping` | 완료 | 미확인 | 진행 중 | 미확인 | 보류 | cubemap skybox, `skybox.dds`, Zelda model, shader/asset integrity 확인 완료 |
+| Part2 Ch05-08 | `08_ShaderToys_Step2_Cubemapping` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, cubemap skybox, `skybox.dds`, Zelda model, shader/asset integrity 확인 완료 |
 | Part2 Ch05-08 | `07_Modeling_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | mesh generation/modeling |
 | Part2 Ch05-08 | `08_ShaderToys_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | shader toy effects |
 | Part3 Ch09 | `09_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |

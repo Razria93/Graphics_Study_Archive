@@ -1,11 +1,11 @@
-# Status: 08 ShaderToys Step2 Cubemapping
+﻿# Status: 08 ShaderToys Step2 Cubemapping
 
 ## Summary
 
 - Archive source: `Part2_Chapter05-08/08_ShaderToys_Step2_Cubemapping`
 - Raw reference: `C:\ComputerGraphics\Part2_Chapter05-08\08_ShaderToys_Step2_Cubemapping`
 - Related raw note: `C:\ComputerGraphics\Docs_Graphics\_99_Study\_01_Graphics\Chapter08_ShaderToys_Step2_Cubemapping.md`
-- Status: import 완료, build/run 미확인
+- Status: import 완료, build/run 성공
 - Capture: 보류
 
 ## Migration
@@ -19,8 +19,8 @@
 | Path cleanup | 완료 | raw 절대 경로 `C:/zelda/source/`를 archive 상대 경로 `f3d-data/zelda/`로 변경 |
 | Source comment split | local note 생성 / source 정리 일부 완료 | raw 학습 메모와 cubemap 핵심 구현 내용을 local-only 문서에 분리 |
 | Integrity check | 완료 | XML namespace 정상, HLSL/HLSLI BOM 없음, selected asset hash raw와 일치 |
-| Build/run | 미확인 | 사용자 Visual Studio 확인 필요 |
-| Dependency | 미확인 | DirectXTK DDS loader, Assimp/vcpkg 환경에서 build/run 확인 필요 |
+| Build/run | 성공 | 사용자 Visual Studio Debug/Release 실행 확인 |
+| Dependency | 확인 완료 | DirectXTK DDS loader, Assimp/vcpkg 환경에서 사용자 Debug/Release 실행 확인 |
 | Public readiness | 검토 필요 | `skybox.dds`, Zelda model/texture, 외부 asset 공개 전 검토 필요 |
 
 ## Local-only Notes
@@ -32,15 +32,15 @@
 
 ## Execution Checklist
 
-- Debug x64 build: 미확인
-- Debug x64 run: 미확인
-- Release x64 build: 미확인
-- Release x64 run: 미확인
-- `skybox/skybox.dds` load: 미확인
-- skybox cubemap 표시: 미확인
-- Zelda model load: 미확인
-- model texture 표시: 미확인
-- `Use Texture` toggle: 미확인
-- `Wireframe` toggle: 미확인
-- `Draw Normals` toggle: 미확인
-- `m_viewRot` 조작: 미확인
+- Debug x64 build: 확인 완료
+- Debug x64 run: 확인 완료
+- Release x64 build: 확인 완료
+- Release x64 run: 확인 완료
+- `skybox/skybox.dds` load: 확인 완료
+- skybox cubemap 표시: 확인 완료
+- Zelda model load: 확인 완료
+- model texture 표시: 확인 완료
+- `Use Texture` toggle: 확인 완료
+- `Wireframe` toggle: 확인 완료
+- `Draw Normals` toggle: 확인 완료
+- `m_viewRot` 조작: 확인 완료
