@@ -20,6 +20,7 @@
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step1_COM`-`Step9_PhongVsBlinnPhong` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인 |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step1_DrawingWireFrames` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, solid/wireframe toggle |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step2_DrawingNormals` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, normal line mesh, Draw Normals/Normal scale |
+| Part2 | `Part2_Chapter05-08/07_Modeling_Step3_Grid` | 미확인 | 미확인 | 미확인 | 보류 | grid mesh, Use Texture, Draw Normals/Normal scale 확인 필요 |
 
 ## Raw Reference Links
 
@@ -27,3 +28,4 @@
 | --- | --- | --- |
 | `Part2_Chapter05-08/07_Modeling_Step1_DrawingWireFrames` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step1_DrawingWireFrames` | `MeshData`, `MakeBox()`, rasterizer solid/wire state, `crate2_diffuse.png`, `wall.jpg` |
 | `Part2_Chapter05-08/07_Modeling_Step2_DrawingNormals` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step2_DrawingNormals` | normal line mesh, `Mesh.h`, `NormalVertexShader.hlsl`, `NormalPixelShader.hlsl` |
+| `Part2_Chapter05-08/07_Modeling_Step3_Grid` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step3_Grid` | `MakeGrid()`, `ojwD8.jpg`, backup folder 제외 |
