@@ -108,7 +108,7 @@ bool ExampleApp::Initialize()
 	    m_basicInputLayout);
 	AppBase::CreatePixelShader(L"NormalPixelShader.hlsl", m_normalPixelShader);
 
-
+	return true;
 }
 
 void ExampleApp::Update(float dt)
