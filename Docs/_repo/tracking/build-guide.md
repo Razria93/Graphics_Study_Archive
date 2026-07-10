@@ -27,6 +27,7 @@
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step7_FaceNormals` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인 |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, sphere mapping, seam correction |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_ReferenceSolution` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, sphere mapping reference |
+| Part2 | `Part2_Chapter05-08/07_Modeling_Step9_ModelFiles` | 미확인 | 미확인 | 미확인 | 보류 | Assimp dependency, Zelda model load, texture binding, normal debug 확인 필요 |
 
 ## Raw Reference Links
 
@@ -38,3 +39,4 @@
 | `Part2_Chapter05-08/07_Modeling_Step4_Cylinder` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step4_Cylinder` | `MakeCylinder()`, side indices, normal line mesh, backup folder 제외 |
 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step8-2_SphereMapping_Complete` | sphere mapping, seam correction, `ojwD8.jpg`, `wall.jpg`, `crate2_diffuse.png` |
 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_ReferenceSolution` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step8_SphereMapping_Lecture` | sphere mapping reference solution, `ojwD8.jpg`, `wall.jpg`, `crate2_diffuse.png` |
+| `Part2_Chapter05-08/07_Modeling_Step9_ModelFiles` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step9_ModelFiles` | Assimp model loading, `f3d-data/zelda/zeldaPosed001.fbx`, selected diffuse textures |
