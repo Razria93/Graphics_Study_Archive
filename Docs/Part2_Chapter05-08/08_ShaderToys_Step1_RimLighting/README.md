@@ -1,4 +1,4 @@
-# 08 ShaderToys Step1 RimLighting
+﻿# 08 ShaderToys Step1 RimLighting
 
 ## 목적
 
@@ -66,12 +66,12 @@ color = useSmoothstep ?
 | 항목 | 상태 |
 | --- | --- |
 | Code import | 완료 |
-| Build Debug x64 | 미확인 |
-| Build Release x64 | 미확인 |
-| Run Debug/Release | 미확인 |
+| Build Debug x64 | 성공 |
+| Build Release x64 | 성공 |
+| Run Debug/Release | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
-## 다음 확인
+## 실행 확인
 
-Visual Studio에서 Debug x64와 Release x64 build/run을 확인합니다. 실행 시 `Rim Strength`, `Rim Color`, `Rim Power`, `Use Smoothstep`, `Use Texture`, `Wireframe`, `Draw Normals` 동작을 함께 확인합니다.
+사용자가 Visual Studio에서 Debug x64와 Release x64 build/run을 확인했습니다. `Rim Strength`, `Rim Color`, `Rim Power`, `Use Smoothstep`, `Use Texture`, `Wireframe`, `Draw Normals` 확인은 실행 확인 범위에 포함합니다.

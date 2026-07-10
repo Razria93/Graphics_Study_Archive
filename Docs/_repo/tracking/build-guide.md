@@ -28,7 +28,7 @@
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, sphere mapping, seam correction |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_ReferenceSolution` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, sphere mapping reference |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step9_ModelFiles` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, Assimp dependency, Zelda model load, texture binding |
-| Part2 | `Part2_Chapter05-08/08_ShaderToys_Step1_RimLighting` | 미확인 | 미확인 | 미확인 | 보류 | rim lighting, `stanford_dragon.stl`, Rim Strength/Color/Power GUI 확인 필요 |
+| Part2 | `Part2_Chapter05-08/08_ShaderToys_Step1_RimLighting` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, rim lighting, `stanford_dragon.stl` |
 
 ## Raw Reference Links
 

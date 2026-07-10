@@ -40,7 +40,7 @@ D3D11 graphics pipeline에서 modeling과 shader toy로 넘어가는 예제들�
 | [`07_Modeling_Step8_SphereMapping_UserSolution`](07_Modeling_Step8_SphereMapping_UserSolution/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인, user solution, sphere mapping seam correction |
 | [`07_Modeling_Step8_SphereMapping_ReferenceSolution`](07_Modeling_Step8_SphereMapping_ReferenceSolution/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인, reference solution, sphere mapping |
 | [`07_Modeling_Step9_ModelFiles`](07_Modeling_Step9_ModelFiles/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인, Assimp model loading, Zelda FBX asset |
-| [`08_ShaderToys_Step1_RimLighting`](08_ShaderToys_Step1_RimLighting/README.md) | 완료 | 미확인 | 진행 중 | 보류 | rim lighting, Fresnel-like edge highlight, `stanford_dragon.stl` |
+| [`08_ShaderToys_Step1_RimLighting`](08_ShaderToys_Step1_RimLighting/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인, rim lighting, `stanford_dragon.stl` |
 
 ## Modeling Variant 기준
 
@@ -65,6 +65,6 @@ D3D11 graphics pipeline에서 modeling과 shader toy로 넘어가는 예제들�
 | `07_Modeling_Step8_SphereMapping_UserSolution` | archive 반영 완료, Debug/Release 실행 성공 |
 | `07_Modeling_Step8_SphereMapping_ReferenceSolution` | archive 반영 완료, Debug/Release 실행 성공 |
 | `07_Modeling_Step9_ModelFiles` | archive 반영 완료, Debug/Release 실행 성공 |
-| `08_ShaderToys_Step1_RimLighting` | archive 반영 완료, Debug/Release 실행 미확인 |
+| `08_ShaderToys_Step1_RimLighting` | archive 반영 완료, Debug/Release 실행 성공 |
 
 Tracking note: [Part2 Step5 Sphere Tracking](../_repo/tracking/part2-step5-sphere.md)
