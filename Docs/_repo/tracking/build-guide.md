@@ -1,4 +1,4 @@
-# Build Verification Table
+﻿# Build Verification Table
 
 이 문서는 예제별 build/run 확인 결과를 archive 경로 기준으로 기록합니다. 직접 확인하지 않은 항목은 `미확인`으로 둡니다.
 
@@ -28,6 +28,7 @@
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, sphere mapping, seam correction |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_ReferenceSolution` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, sphere mapping reference |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step9_ModelFiles` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, Assimp dependency, Zelda model load, texture binding |
+| Part2 | `Part2_Chapter05-08/08_ShaderToys_Step1_RimLighting` | 미확인 | 미확인 | 미확인 | 보류 | rim lighting, `stanford_dragon.stl`, Rim Strength/Color/Power GUI 확인 필요 |
 
 ## Raw Reference Links
 
@@ -40,3 +41,4 @@
 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step8-2_SphereMapping_Complete` | sphere mapping, seam correction, `ojwD8.jpg`, `wall.jpg`, `crate2_diffuse.png` |
 | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_ReferenceSolution` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step8_SphereMapping_Lecture` | sphere mapping reference solution, `ojwD8.jpg`, `wall.jpg`, `crate2_diffuse.png` |
 | `Part2_Chapter05-08/07_Modeling_Step9_ModelFiles` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step9_ModelFiles` | Assimp model loading, `f3d-data/zelda/zeldaPosed001.fbx`, selected diffuse textures |
+| `Part2_Chapter05-08/08_ShaderToys_Step1_RimLighting` | `C:\ComputerGraphics\Part2_Chapter05-08\08_ShaderToys_Step1_RimLighting` | rim lighting, `stanford_dragon.stl`, texture assets |

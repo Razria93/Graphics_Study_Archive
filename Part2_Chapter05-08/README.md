@@ -1,4 +1,4 @@
-# Part2 Chapter05-08
+﻿# Part2 Chapter05-08
 
 D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니다.
 
@@ -63,3 +63,4 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 | `07_Modeling_Step8_SphereMapping_UserSolution` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `07_Modeling_Step8_SphereMapping_ReferenceSolution` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `07_Modeling_Step9_ModelFiles` | archive 반영 완료, Debug/Release 실행 확인 완료 |
+| `08_ShaderToys_Step1_RimLighting` | archive 반영 완료, Debug/Release 실행 미확인 |
