@@ -146,10 +146,10 @@ void ExampleApp::Render()
 		m_meshGroupCharacter.Render(m_context);
 	}
 
-	// 후처리 필터 시작하기 전에 Texture2DMS에 렌더링 된 결과를 Texture2D로 복사
+	// 후처리 필터 시작하기 전에 back buffer에 렌더링 된 결과를 Texture2D로 복사
 	ComPtr<ID3D11Texture2D> backBuffer;
 	m_swapChain->GetBuffer(0, IID_PPV_ARGS(backBuffer.GetAddressOf()));
-	m_context->ResolveSubresource(m_tempTexture.Get(), 0, backBuffer.Get(), 0, DXGI_FORMAT_R8G8B8A8_UNORM);
+	m_context->CopyResource(m_tempTexture.Get(), backBuffer.Get());
 
 	// 후처리 필터
 	// Filter들은 위의 Mesh들과는 다르게 별도의 RTV를 가지고 있음

@@ -29,9 +29,10 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 
 ## Modeling variant 기준
 
-- `*_Lecture`: 강의에서 제안한 reference solution으로 보존
+- `*_Lecture`: private archive에서 비교용으로 선별한 reference solution 후보로 보존
 - `*_Complete`: 사용자 풀이 또는 사용자 완성본으로 보존
 - archive 이름은 `ReferenceSolution` / `UserSolution`처럼 제출물 관점의 이름으로 조정 가능
+- `ReferenceSolution`은 public 공개 후보가 아니며, 공개 전 별도 권리/출처 검토 필요
 - `*_Backup*`, `*_Debug`, 단순 중간 실험 폴더는 기본 제외 후보
 
 ## 진행 중인 예제

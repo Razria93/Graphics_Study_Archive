@@ -524,7 +524,8 @@ void AppBase::CreateTexture(
     int width, height, channels;
 
     unsigned char *img =
-        stbi_load(filename.c_str(), &width, &height, &channels, 0);
+        stbi_load(filename.c_str(), &width, &height, &channels, 4);
+    channels = 4;
 
     
 
@@ -558,4 +559,4 @@ void AppBase::CreateTexture(
                                        textureResourceView.GetAddressOf());
 }
 
-} 
+}

@@ -19,7 +19,7 @@ scene을 바로 back buffer에만 그리지 않고, 렌더링 결과를 texture�
 
 1. `Stonewall_diffuseIBL.dds` / `Stonewall_specularIBL.dds`로 IBL cubemap을 초기화합니다.
 2. sphere와 Zelda character mesh 중 하나를 선택해 scene을 렌더링합니다.
-3. back buffer의 MSAA render result를 `ResolveSubresource()`로 `Texture2D`에 복사합니다.
+3. back buffer의 render result를 `CopyResource()`로 후처리용 `Texture2D`에 복사합니다.
 4. `ImageFilter` chain에서 sampling, threshold, downsample, blur X/Y, upsample을 순서대로 실행합니다.
 5. 마지막 `CombinePixelShader`에서 bloom texture와 원본 scene texture를 더합니다.
 6. GUI에서 `Bloom Threshold`, `Bloom Strength`, mesh selection, material controls를 조작합니다.
@@ -27,10 +27,7 @@ scene을 바로 back buffer에만 그리지 않고, 렌더링 결과를 texture�
 ## 핵심 코드
 
 ```cpp
-m_context->ResolveSubresource(
-    m_tempTexture.Get(), 0,
-    backBuffer.Get(), 0,
-    DXGI_FORMAT_R8G8B8A8_UNORM);
+m_context->CopyResource(m_tempTexture.Get(), backBuffer.Get());
 
 for (auto &f : m_filters)
 {
