@@ -33,6 +33,7 @@
 | Part2 | `Part2_Chapter05-08/08_ShaderToys_Step3_EnvironmentMapping` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, environment mapping, `NightPath.dds`, Zelda model, `Use Reflection` |
 | Part2 | `Part2_Chapter05-08/08_ShaderToys_Step4_ImageBasedLighting` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, image-based lighting, Atrium diffuse/specular IBL DDS, material slider |
 | Part2 | `Part2_Chapter05-08/08_ShaderToys_Step5_FresnelEffect` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, Fresnel effect, Stonewall diffuse/specular IBL DDS, `Material FresnelR0` |
+| Part2 | `Part2_Chapter05-08/08_ShaderToys_Step6_BloomEffect` | 미확인 | 미확인 | 미확인 | 보류 | bloom post-processing, threshold/blur/combine filter, sphere/character 확인 필요 |
 
 ## Raw Reference Links
 
@@ -50,3 +51,4 @@
 | `Part2_Chapter05-08/08_ShaderToys_Step3_EnvironmentMapping` | `C:\ComputerGraphics\Part2_Chapter05-08\08_ShaderToys_Step3_EnvironmentMapping` | environment mapping, `CubemapTextures/HumusTextures/NightPath.dds`, Zelda model, DirectXTK DDS loader |
 | `Part2_Chapter05-08/08_ShaderToys_Step4_ImageBasedLighting` | `C:\ComputerGraphics\Part2_Chapter05-08\08_ShaderToys_Step4_ImageBasedLighting` | image-based lighting, `CubemapTextures/Atrium_diffuseIBL.dds`, `CubemapTextures/Atrium_specularIBL.dds`, DirectXTK DDS loader |
 | `Part2_Chapter05-08/08_ShaderToys_Step5_FresnelEffect` | `C:\ComputerGraphics\Part2_Chapter05-08\08_ShaderToys_Step5_FresnelEffect` | Fresnel effect, `CubemapTextures/Stonewall_diffuseIBL.dds`, `CubemapTextures/Stonewall_specularIBL.dds`, DirectXTK DDS loader |
+| `Part2_Chapter05-08/08_ShaderToys_Step6_BloomEffect` | `C:\ComputerGraphics\Part2_Chapter05-08\08_ShaderToys_Step6_BloomEffect` | bloom post-processing, `ImageFilter`, `Threshold/Blur/Combine` shaders, Zelda model, DirectXTK DDS loader |

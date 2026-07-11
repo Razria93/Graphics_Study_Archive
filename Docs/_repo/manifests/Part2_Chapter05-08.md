@@ -7,7 +7,7 @@
 - Scope: affine transformations, D3D11 graphics pipeline, modeling, shader toys
 - Import status: 진행 중
 - Public readiness: 검토 필요
-- Build/run status: `05_*`, `06_GraphicsPipeline_Step1`-`Step9`, `07_Modeling_Step1_DrawingWireFrames`-`Step3_Grid`, `07_Modeling_Step5_Sphere_*`, `07_Modeling_Step6_Subdivision`, `07_Modeling_Step7_FaceNormals`, `07_Modeling_Step8_SphereMapping_*`, `07_Modeling_Step9_ModelFiles`, `08_ShaderToys_Step1_RimLighting`-`Step5_FresnelEffect` 사용자 Debug/Release 실행 확인 완료. `07_Modeling_Step4_Cylinder`는 import 완료, build/run 미확인.
+- Build/run status: `05_*`, `06_GraphicsPipeline_Step1`-`Step9`, `07_Modeling_Step1_DrawingWireFrames`-`Step3_Grid`, `07_Modeling_Step5_Sphere_*`, `07_Modeling_Step6_Subdivision`, `07_Modeling_Step7_FaceNormals`, `07_Modeling_Step8_SphereMapping_*`, `07_Modeling_Step9_ModelFiles`, `08_ShaderToys_Step1_RimLighting`-`Step5_FresnelEffect` 사용자 Debug/Release 실행 확인 완료. `07_Modeling_Step4_Cylinder`, `08_ShaderToys_Step6_BloomEffect`는 import 완료, build/run 미확인.
 
 ## Step Inventory
 
@@ -43,6 +43,7 @@
 | `08_ShaderToys_Step3_EnvironmentMapping` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, environment mapping, `NightPath.dds`, Zelda model 포함 |
 | `08_ShaderToys_Step4_ImageBasedLighting` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, image-based lighting, Atrium diffuse/specular IBL DDS 포함 |
 | `08_ShaderToys_Step5_FresnelEffect` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, Schlick Fresnel, Stonewall diffuse/specular IBL DDS 포함 |
+| `08_ShaderToys_Step6_BloomEffect` | 반영 완료 | 미확인 | 검토 필요 | bloom post-processing, filter chain, Zelda model 포함 |
 | `07_Modeling_*` | 예정 | 미확인 | 검토 필요 | mesh generation/modeling |
 | `08_ShaderToys_*` | 예정 | 미확인 | 검토 필요 | shader toy effects |
 
@@ -86,4 +87,4 @@
 
 ## Current Next Action
 
-1. 다음 후보는 `08_ShaderToys_Step6_BloomEffect`입니다.
+1. `08_ShaderToys_Step6_BloomEffect` Debug/Release 실행 확인이 필요합니다.

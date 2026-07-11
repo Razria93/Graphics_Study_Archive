@@ -17,7 +17,7 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 | Import status | 진행 중 |
 | Public readiness | 검토 필요 |
 | Build/run status | `08_ShaderToys_Step5_FresnelEffect`까지 실행 확인 완료 |
-| Next action | `08_ShaderToys_Step6_BloomEffect` 후보 확인 |
+| Next action | `08_ShaderToys_Step6_BloomEffect` Debug/Release 실행 확인 |
 
 ## 예정 주제
 
@@ -68,3 +68,4 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 | `08_ShaderToys_Step3_EnvironmentMapping` | archive 반영 완료, Debug/Release 실행 성공 |
 | `08_ShaderToys_Step4_ImageBasedLighting` | archive 반영 완료, Debug/Release 실행 성공 |
 | `08_ShaderToys_Step5_FresnelEffect` | archive 반영 완료, Debug/Release 실행 성공 |
+| `08_ShaderToys_Step6_BloomEffect` | archive 반영 완료, Debug/Release 실행 미확인 |
