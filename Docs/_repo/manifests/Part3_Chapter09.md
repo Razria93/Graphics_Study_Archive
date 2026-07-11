@@ -6,7 +6,7 @@
 - Target: `Part3_Chapter09`
 - Docs target: `Docs/Part3_Chapter09`
 - Scope: user interaction, first-person camera, mouse picking, ray collision, quaternion/trackball controls
-- Import status: Step4 imported
+- Import status: Step5 imported
 - Build/run status: 미확인
 - Public readiness: 검토 필요
 
@@ -21,7 +21,7 @@
 | `09_UserInteraction_Step3_MousePickingRayCollision_Debug` | 제외 / reference-only | none | debug variant |
 | `09_UserInteraction_Step3_MousePickingRayCollision_Solution` | 반영 완료 | `09_UserInteraction_Step3_MousePickingRayCollision` | archive 실행 기준, public 후보 아님 |
 | `09_UserInteraction_Step4_QuaternianRotation` | 반영 완료 | same | raw spelling 유지, quaternion rotation |
-| `09_UserInteraction_Step5_VirtualTrackball` | archive 후보 | same | mainline virtual trackball 작업본 |
+| `09_UserInteraction_Step5_VirtualTrackball` | 반영 완료 | same | mainline virtual trackball 작업본 |
 | `09_UserInteraction_Step5_VirtualTrackball_Debug` | 제외 / reference-only | none | 회전 벡터 계산 실험, debug 출력 흔적 |
 | `09_UserInteraction_Step6_MouseDragMove` | archive 후보 | same | mouse drag movement |
 | `Assets` | 선별 포함 | `Part3_Chapter09/Assets` | 실행에 필요한 asset만 포함 |
@@ -161,8 +161,31 @@ Notes:
 
 Build/run remains `미확인` until user verifies Debug/Release.
 
+## Step5 Import Result
+
+Imported:
+
+- `09_UserInteraction_Step5_VirtualTrackball` source/project/shader files
+- existing selected Step1 skybox assets reused
+- existing Step3 `Assets/Textures/earth.jpg` reused
+
+Excluded:
+
+- `09_UserInteraction_Step5_VirtualTrackball_Debug`
+- `.vs/`, generated folder, `x64/`, `.vcxproj.user`, `imgui.ini`, `.clang-format`
+
+Adjusted:
+
+- Removed `.clang-format` from archive project/filter references because the file is intentionally excluded.
+
+Notes:
+
+- `_Debug` differs only in `ExampleApp.cpp` and contains extra intermediate vector/debug output flow, so mainline is used as the archive runnable code.
+
+Build/run remains `미확인` until user verifies Debug/Release.
+
 ## Current Next Action
 
-1. User verifies `09_UserInteraction_Step4_QuaternianRotation` Debug/Release build/run.
-2. Record the verification result in Step4 `status.md` and tracking docs.
-3. Continue to `09_UserInteraction_Step5_VirtualTrackball`.
+1. User verifies `09_UserInteraction_Step5_VirtualTrackball` Debug/Release build/run.
+2. Record the verification result in Step5 `status.md` and tracking docs.
+3. Continue to `09_UserInteraction_Step6_MouseDragMove`.
