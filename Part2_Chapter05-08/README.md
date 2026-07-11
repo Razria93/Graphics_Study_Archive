@@ -5,7 +5,7 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 ## 상태
 
 - 학습 코드 정리: Step 단위 진행 중
-- Build/run: `05_*`, `06_GraphicsPipeline_Step1`-`Step9`, `07_Modeling_Step1_DrawingWireFrames`-`Step3_Grid`, `07_Modeling_Step5_Sphere_*`, `07_Modeling_Step6_Subdivision`, `07_Modeling_Step7_FaceNormals`, `07_Modeling_Step8_SphereMapping_*`, `07_Modeling_Step9_ModelFiles`, `08_ShaderToys_Step1_RimLighting`-`Step7_Shadertoy` 사용자 Debug/Release 실행 확인 완료
+- Build/run: archive 대상 예제 전체 사용자 Debug/Release 실행 확인 완료
 - 현재 후보: Part2 Chapter05-08 마무리 상태 점검
 - 캡처: 보류
 
@@ -16,8 +16,8 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 | Raw reference | `C:\ComputerGraphics\Part2_Chapter05-08` |
 | Import status | code import 완료 / verification 진행 중 |
 | Public readiness | 검토 필요 |
-| Build/run status | `07_Modeling_Step4_Cylinder`를 제외한 archive 대상 예제 실행 확인 완료 |
-| Next action | `07_Modeling_Step4_Cylinder` Debug/Release 실행 상태 확정 후 Part2 마무리 정리 |
+| Build/run status | archive 대상 예제 전체 실행 확인 완료 |
+| Next action | Part2 Chapter05-08 code import 마무리 정리 |
 
 ## 예정 주제
 
@@ -55,7 +55,7 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 | `07_Modeling_Step1_DrawingWireFrames` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `07_Modeling_Step2_DrawingNormals` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `07_Modeling_Step3_Grid` | archive 반영 완료, Debug/Release 실행 확인 완료 |
-| `07_Modeling_Step4_Cylinder` | archive 반영 완료, Debug/Release 실행 미확인 |
+| `07_Modeling_Step4_Cylinder` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `07_Modeling_Step5_Sphere_UserSolution` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `07_Modeling_Step5_Sphere_ReferenceSolution` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `07_Modeling_Step6_Subdivision` | archive 반영 완료, Debug/Release 실행 확인 완료 |

@@ -21,7 +21,7 @@
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step1_DrawingWireFrames` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, solid/wireframe toggle |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step2_DrawingNormals` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, normal line mesh, Draw Normals/Normal scale |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step3_Grid` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, `Initialize()` 반환 누락 수정 |
-| Part2 | `Part2_Chapter05-08/07_Modeling_Step4_Cylinder` | 미확인 | 미확인 | 미확인 | 보류 | cylinder mesh, Use Texture, Wireframe, Draw Normals/Normal scale 확인 필요 |
+| Part2 | `Part2_Chapter05-08/07_Modeling_Step4_Cylinder` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, cylinder mesh, Use Texture, Wireframe, Draw Normals/Normal scale |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step5_Sphere_*` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인 |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step6_Subdivision` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인 |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step7_FaceNormals` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인 |

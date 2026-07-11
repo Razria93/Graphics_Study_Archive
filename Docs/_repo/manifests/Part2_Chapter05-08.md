@@ -5,9 +5,9 @@
 - Source: `C:\ComputerGraphics\Part2_Chapter05-08`
 - Target: `Part2_Chapter05-08`
 - Scope: affine transformations, D3D11 graphics pipeline, modeling, shader toys
-- Import status: code import 완료 / verification 진행 중
+- Import status: code import 완료 / build-run verification 완료
 - Public readiness: 검토 필요
-- Build/run status: `05_*`, `06_GraphicsPipeline_Step1`-`Step9`, `07_Modeling_Step1_DrawingWireFrames`-`Step3_Grid`, `07_Modeling_Step5_Sphere_*`, `07_Modeling_Step6_Subdivision`, `07_Modeling_Step7_FaceNormals`, `07_Modeling_Step8_SphereMapping_*`, `07_Modeling_Step9_ModelFiles`, `08_ShaderToys_Step1_RimLighting`-`Step7_Shadertoy` 사용자 Debug/Release 실행 확인 완료. `07_Modeling_Step4_Cylinder`는 import 완료, build/run 미확인.
+- Build/run status: archive 대상 예제 전체 사용자 Debug/Release 실행 확인 완료.
 
 ## Step Inventory
 
@@ -30,7 +30,7 @@
 | `07_Modeling_Step1_DrawingWireFrames` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, `MeshData`, `MakeBox()`, solid/wireframe rasterizer state, texture assets 포함 |
 | `07_Modeling_Step2_DrawingNormals` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, normal line mesh, `Mesh`, `NormalVertexShader`, `NormalPixelShader`, texture assets 포함 |
 | `07_Modeling_Step3_Grid` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, `MakeGrid()`, procedural grid mesh, `ojwD8.jpg`, backup folder 제외, `Initialize()` 반환 누락 수정 |
-| `07_Modeling_Step4_Cylinder` | 반영 완료 | 미확인 | 검토 필요 | `MakeCylinder()`, procedural cylinder mesh, texture assets 포함, backup folder 제외 |
+| `07_Modeling_Step4_Cylinder` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, `MakeCylinder()`, procedural cylinder mesh, texture assets 포함, backup folder 제외 |
 | `07_Modeling_Step5_Sphere_UserSolution` | 반영 완료 | 성공 | 검토 필요 | `07_Modeling_Step5-3_Sphere_Complete` 기반 사용자 풀이 |
 | `07_Modeling_Step5_Sphere_ReferenceSolution` | 반영 완료 | 성공 | 검토 필요 | `07_Modeling_Step5_Sphere_Lecture` 기반 reference solution |
 | `07_Modeling_Step6_Subdivision` | 반영 완료 | 성공 | 검토 필요 | subdivision sphere, vertex projection |
@@ -86,5 +86,5 @@
 
 ## Current Next Action
 
-1. `07_Modeling_Step4_Cylinder` Debug/Release 실행 상태를 확정합니다.
-2. Part2 Chapter05-08 code import 완료 상태와 남은 verification 항목을 정리합니다.
+1. Part2 Chapter05-08 code import 완료 상태를 정리합니다.
+2. 다음 import 범위는 Part3로 넘어가기 전에 브랜치/PR 마무리 기준을 확인합니다.

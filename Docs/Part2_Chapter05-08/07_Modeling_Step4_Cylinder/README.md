@@ -65,12 +65,12 @@ indices.push_back(i + 1 + offset);
 | 항목 | 상태 |
 | --- | --- |
 | Code split | 완료 |
-| Build Debug x64 | 미확인 |
-| Build Release x64 | 미확인 |
-| Run Debug/Release | 미확인 |
+| Build Debug x64 | 성공 |
+| Build Release x64 | 성공 |
+| Run Debug/Release | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
-## 다음 확인
+## 실행 확인
 
-Visual Studio에서 Debug x64와 Release x64를 각각 빌드/실행하고, cylinder mesh, texture, lighting, `Wireframe`, `Draw Normals`, `Normal scale` 동작을 확인합니다.
+사용자가 Visual Studio에서 Debug x64와 Release x64 build/run을 확인했습니다. 확인 범위에는 cylinder mesh, texture, lighting, `Wireframe`, `Draw Normals`, `Normal scale` 동작이 포함됩니다.

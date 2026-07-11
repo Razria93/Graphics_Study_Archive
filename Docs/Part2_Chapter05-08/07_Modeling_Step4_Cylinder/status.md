@@ -5,7 +5,7 @@
 - Archive source: `Part2_Chapter05-08/07_Modeling_Step4_Cylinder`
 - Raw reference: `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step4_Cylinder`
 - Excluded raw reference: `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step4_Cylinder_Backup`
-- Status: import 완료, build/run 미확인
+- Status: import 완료, build/run 성공
 - Capture: 보류
 
 ## Migration
@@ -18,7 +18,7 @@
 | Project asset setup | raw 기준으로 복구 | `crate2_diffuse.png`, `wall.jpg`는 raw project와 동일하게 `Image` item으로 유지. 자동 output 복사 설정은 제거 |
 | Asset integrity | 완료 | texture asset은 raw 원본 binary와 동일하게 복구 |
 | Related raw docs review | 완료 | Step4 전용 study note는 확인되지 않았고, portfolio planning 문서의 후보 언급만 확인 |
-| Build/run | 미확인 | 사용자 Visual Studio 확인 필요 |
+| Build/run | 성공 | 사용자 Visual Studio Debug/Release 실행 확인 |
 | Public readiness | 검토 필요 | texture asset과 강의 기반 구조 공개 전 별도 검토 |
 
 ## Local-only Notes
@@ -30,12 +30,12 @@
 
 ## Execution Checklist
 
-- Debug x64 build
-- Debug x64 run
-- Release x64 build
-- Release x64 run
-- cylinder mesh가 정상 표시되는지 확인
-- `Use Texture` toggle 확인
-- `Wireframe` toggle 확인
-- `Draw Normals` toggle 확인
-- `Normal scale` slider 확인
+- Debug x64 build: 확인 완료
+- Debug x64 run: 확인 완료
+- Release x64 build: 확인 완료
+- Release x64 run: 확인 완료
+- cylinder mesh가 정상 표시되는지 확인 완료
+- `Use Texture` toggle 확인 완료
+- `Wireframe` toggle 확인 완료
+- `Draw Normals` toggle 확인 완료
+- `Normal scale` slider 확인 완료

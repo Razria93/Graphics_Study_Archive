@@ -20,7 +20,7 @@
 | `C:\ComputerGraphics\Part1_Chapter01-02` | `Part1_Chapter01-02` | DirectX11 setup, ImGui, bloom 참고 | 반영 완료 | Debug/Release 실행 성공, 촬영 보류 |
 | `C:\ComputerGraphics\Part1_Chapter03` | `Part1_Chapter03` | CPU ray tracing fundamentals 참고 | 반영 완료 | Step4-Step14 실행 확인 완료 |
 | `C:\ComputerGraphics\Part2_Chapter04` | `Part2_Chapter04` | Software rasterization 참고 | 반영 완료 | Step1-Step10 Debug/Release 실행 성공 |
-| `C:\ComputerGraphics\Part2_Chapter05-08` | `Part2_Chapter05-08` | D3D11 pipeline, modeling, shader toys 참고 | 진행 중 | `05_*`, `06_*`, `07_Modeling_Step1_DrawingWireFrames`-`Step3_Grid`, `07_Modeling_Step5_*`-`Step9` 실행 성공. `07_Modeling_Step4_Cylinder` import 완료/실행 미확인. `08_ShaderToys_Step1_RimLighting`-`Step7_Shadertoy` import 완료/build-run 성공 |
+| `C:\ComputerGraphics\Part2_Chapter05-08` | `Part2_Chapter05-08` | D3D11 pipeline, modeling, shader toys 참고 | 진행 중 | archive 대상 예제 전체 import 완료/build-run 성공 |
 | `C:\ComputerGraphics\Docs_Graphics` | `Docs/`, `local/` | 학습 노트, 계획 문서 참고 | 진행 중 | private-only 메모는 local로 분리 |
 | `C:\ComputerGraphics\Part3_Chapter09` | `Part3_Chapter09` | User interaction, picking 참고 | 검토 필요 | Part2 이후 진행 |
 | `C:\ComputerGraphics\Part3_Chapter10_13` | `Part3_Chapter10-13` | Geometry pipeline, texturing, PBR, shadows 참고 | 검토 필요 | archive에서는 chapter-range 이름 사용 |
