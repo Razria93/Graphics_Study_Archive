@@ -5,7 +5,7 @@ Advanced rendering 예제를 정리하는 폴더입니다.
 ## 상태
 
 - 학습 코드 정리: private 검토 후 결정
-- Build/run: Step1-Step5 and 11-Step1-Step2 성공, 11-Step3 미확인
+- Build/run: Step1-Step5 and 11-Step1-Step3 성공
 - 캡처: 보류
 
 ## Archive/Public 검토
@@ -15,8 +15,8 @@ Advanced rendering 예제를 정리하는 폴더입니다.
 | Raw reference | `C:\ComputerGraphics\Part3_Chapter10_13`, `C:\ComputerGraphics\Part3_Chapter10_13_2` |
 | Import status | Step1-Step5 and 11-Step1-Step3 imported |
 | Public readiness | 검토 필요 |
-| Build/run status | Step1-Step5 and 11-Step1-Step2 성공, 11-Step3 미확인 |
-| Next action | `11_TexturingTechniques_Step3_HeightMapping` Debug/Release 실행 확인 |
+| Build/run status | Step1-Step5 and 11-Step1-Step3 성공 |
+| Next action | `11_TexturingTechniques_Step4_HDRI` import |
 
 ## Raw 기준
 
