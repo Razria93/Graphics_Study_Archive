@@ -8,7 +8,7 @@
 - Docs target: `Docs/Part3_Chapter10-13`
 - Branch: `archive/part3`
 - Import status: Step1-Step5 imported
-- Build/run status: Step1-Step4 성공
+- Build/run status: Step1-Step5 성공
 - Public readiness: 검토 필요
 
 ## Raw Source Decision
@@ -26,7 +26,7 @@
 | `10_GeometryPipeline_Step2_Billboards` | primary | 반영 완료 | 성공 | 검토 필요 | billboard, TreeBillboards selected assets 포함, Release shader setting 보정 |
 | `10_GeometryPipeline_Step3_NormalLines` | primary | 반영 완료 | 성공 | 검토 필요 | normal lines, Release shader setting 보정 |
 | `10_GeometryPipeline_Step4_Fireball` | primary | 반영 완료 | 성공 | 검토 필요 | fireball shader, fireball texture 포함, Release shader setting 보정 |
-| `10_GeometryPipeline_Step5_Tessellation` | primary | 반영 완료 | 미확인 | 검토 필요 | tessellation, Release shader setting 보정 |
+| `10_GeometryPipeline_Step5_Tessellation` | primary | 반영 완료 | 성공 | 검토 필요 | tessellation, Release shader setting 보정 |
 | `11_TexturingTechniques_Step1_Mipmaps` | primary | planned | 미확인 | 검토 필요 | mipmaps |
 | `11_TexturingTechniques_Step2_NormalMapping` | primary | planned | 미확인 | 검토 필요 | normal mapping |
 | `11_TexturingTechniques_Step3_HeightMapping` | primary | planned | 미확인 | 검토 필요 | height mapping |
@@ -66,4 +66,4 @@
 
 ## Next Action
 
-사용자가 `10_GeometryPipeline_Step5_Tessellation` Debug/Release 실행을 확인한 뒤 status/tracking 문서를 갱신합니다.
+다음 import 대상은 `11_TexturingTechniques_Step1_Mipmaps`입니다.

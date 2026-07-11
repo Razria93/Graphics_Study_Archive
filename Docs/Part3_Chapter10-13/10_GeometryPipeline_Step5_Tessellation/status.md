@@ -3,10 +3,10 @@
 ## Current Status
 
 - Code split: 완료
-- Build/run: 미확인
+- Build/run: 성공
 - Diff review: 진행 중
 - Refactor: 미확인
-- Capture ready: 아니오
+- Capture ready: 보류
 - Public readiness: 검토 필요
 
 ## Source Decision
@@ -45,12 +45,12 @@ Excluded:
 
 ## Build/Run Verification
 
-사용자 확인 전까지 아래 항목은 `미확인`으로 유지합니다.
+사용자가 Debug x64와 Release x64 실행을 모두 확인했습니다.
 
 | Configuration | Status | Note |
 | --- | --- | --- |
-| Debug x64 | 미확인 | 사용자 실행 확인 필요 |
-| Release x64 | 미확인 | 사용자 실행 확인 필요 |
+| Debug x64 | 성공 | 사용자 실행 확인 |
+| Release x64 | 성공 | 사용자 실행 확인 |
 
 ## Static Verification
 
@@ -63,4 +63,4 @@ Excluded:
 
 ## Follow-up
 
-- 사용자가 Debug x64와 Release x64 실행을 확인한 뒤 build/run 상태를 갱신합니다.
+- 다음 import 대상은 `11_TexturingTechniques_Step1_Mipmaps`입니다.

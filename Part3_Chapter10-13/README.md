@@ -5,7 +5,7 @@ Advanced rendering 예제를 정리하는 폴더입니다.
 ## 상태
 
 - 학습 코드 정리: private 검토 후 결정
-- Build/run: Step1-Step4 성공
+- Build/run: Step1-Step5 성공
 - 캡처: 보류
 
 ## Archive/Public 검토
@@ -15,8 +15,8 @@ Advanced rendering 예제를 정리하는 폴더입니다.
 | Raw reference | `C:\ComputerGraphics\Part3_Chapter10_13`, `C:\ComputerGraphics\Part3_Chapter10_13_2` |
 | Import status | Step1-Step5 imported |
 | Public readiness | 검토 필요 |
-| Build/run status | Step1-Step4 성공 |
-| Next action | `10_GeometryPipeline_Step5_Tessellation` Debug/Release 실행 확인 |
+| Build/run status | Step1-Step5 성공 |
+| Next action | `11_TexturingTechniques_Step1_Mipmaps` 선별 import |
 
 ## Raw 기준
 
