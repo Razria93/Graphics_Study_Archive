@@ -74,9 +74,10 @@
 
 ## Modeling Variant Import Rule
 
-- `*_Lecture`는 강의에서 제안한 reference solution으로 보고 제외하지 않습니다.
+- `*_Lecture` 이름으로 남아 있던 폴더는 강의 원본 자료가 아니라 private archive에서 비교용으로 선별한 reference solution 후보로만 다룹니다.
 - `*_Complete`는 사용자 풀이 또는 사용자 완성본으로 보고 제외하지 않습니다.
 - archive 이름은 제출물 관점에서 `Lecture` / `Complete` 대신 `ReferenceSolution` / `UserSolution`처럼 의미가 드러나는 이름으로 바꿀 수 있습니다.
+- `ReferenceSolution`은 public 공개 후보가 아니며, 공개 전 별도 권리/출처 검토가 필요합니다.
 - backup, debug, 중간 실험 폴더는 기본 제외 후보로 둡니다.
 - 현재 확인된 쌍:
   - `07_Modeling_Step5_Sphere_Lecture` -> `07_Modeling_Step5_Sphere_ReferenceSolution`
