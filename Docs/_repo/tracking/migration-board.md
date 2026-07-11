@@ -40,5 +40,5 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part3 Ch09 | `09_UserInteraction_Step4_QuaternianRotation` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, raw spelling 유지, Euler X/Y/Z GUI는 raw에서도 미적용 |
 | Part3 Ch09 | `09_UserInteraction_Step5_VirtualTrackball` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, mainline source/project 반영, `_Debug` variant 제외 |
 | Part3 Ch09 | `09_UserInteraction_Step6_MouseDragMove` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, mouse drag object movement |
-| Part3 Ch10-13 | `10_*`-`13_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |
+| Part3 Ch10-13 | `10_*`-`13_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | primary raw 기준 확정, `_2`는 reference-only 비교용 |
 | Part4 Ch14-20 | `14_*`-`20_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |

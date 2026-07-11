@@ -141,6 +141,6 @@ Part3는 1차로 code import, asset selection, build/run 확인을 우선합니�
 
 ## Current Next Action
 
-1. `Docs/Part3_Chapter09/README.md`와 `Docs/_repo/manifests/Part3_Chapter09.md`를 생성합니다.
-2. `09_UserInteraction_Step1_FirstPersonView`의 파일/asset 후보를 분류합니다.
-3. 파일 복사는 후보 분류와 제외 목록 확인 뒤 진행합니다.
+1. `10_GeometryPipeline_Step1_GeometryShader`를 primary raw에서 선별 import합니다.
+2. `10_GeometryPipeline_Step1_GeometryShader_Solution`은 바로 섞지 않고 reference solution 후보로 분리 여부를 판단합니다.
+3. import 후 XML namespace, HLSL/HLSLI BOM, asset hash, raw/archive diff를 확인합니다.
