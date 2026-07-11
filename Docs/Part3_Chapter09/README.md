@@ -8,7 +8,7 @@ User interaction 예제를 archive 기준으로 정리하는 문서입니다.
 - Archive source: `Part3_Chapter09`
 - Topic: first-person camera, mouse picking, picking ray collision, quaternion rotation, virtual trackball, mouse drag movement
 - Import status: Step4 imported
-- Build/run: Step1-Step3 성공, Step4 미확인
+- Build/run: Step1-Step4 성공
 - Capture: 보류
 - Public readiness: 검토 필요
 
@@ -22,7 +22,7 @@ User interaction 예제를 archive 기준으로 정리하는 문서입니다.
 | `09_UserInteraction_Step3_MousePickingRayCollision` | 제외 / reference-only | 미확인 | 제외 | 미완성 작업본 |
 | `09_UserInteraction_Step3_MousePickingRayCollision_Debug` | 제외 / reference-only | 미확인 | 제외 | debug variant |
 | `09_UserInteraction_Step3_MousePickingRayCollision_Solution` | 반영 완료 | 성공 | 검토 필요 | archive 실행 기준, `earth.jpg` 포함 |
-| `09_UserInteraction_Step4_QuaternianRotation` | 반영 완료 | 미확인 | 검토 필요 | raw spelling 유지, quaternion rotation |
+| `09_UserInteraction_Step4_QuaternianRotation` | 반영 완료 | 성공 | 검토 필요 | raw spelling 유지, quaternion rotation, Euler X/Y/Z GUI 미적용 |
 | `09_UserInteraction_Step5_VirtualTrackball` | 예정 | 미확인 | 검토 필요 | virtual trackball 작업본 |
 | `09_UserInteraction_Step5_VirtualTrackball_Debug` | 제외 / reference-only | 미확인 | 제외 | debug 출력/실험 흔적 |
 | `09_UserInteraction_Step6_MouseDragMove` | 예정 | 미확인 | 검토 필요 | mouse drag movement |
@@ -45,5 +45,7 @@ Step2는 사용자가 Debug/Release 실행을 모두 확인했습니다.
 Step3는 mainline과 `_Debug` variant가 미완성이므로 `_Solution` variant를 archive 실행 기준으로 반영했습니다.
 Step3는 사용자가 Debug/Release 실행을 모두 확인했습니다.
 Step4는 raw spelling `QuaternianRotation`을 유지하고, 문서에서는 quaternion rotation으로 설명합니다.
+Step4는 사용자가 Debug/Release 실행을 모두 확인했습니다.
+Step4의 `X(alpha)`, `Y(beta)`, `Z(gamma)` GUI는 raw 원본에서도 현재 transform 경로에 미적용입니다.
 
-다음 단계는 Step4 Debug/Release 실행 확인입니다.
+다음 단계는 `09_UserInteraction_Step5_VirtualTrackball` import입니다.

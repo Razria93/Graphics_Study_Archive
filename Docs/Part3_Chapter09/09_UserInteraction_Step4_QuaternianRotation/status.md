@@ -6,7 +6,7 @@
 | --- | --- |
 | Source import | 완료 |
 | Asset import | 완료 |
-| Build/run | 미확인 |
+| Build/run | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
@@ -28,13 +28,22 @@
 
 ## User Verification
 
-Debug/Release build/run은 아직 사용자가 확인하지 않았습니다.
+사용자가 Debug/Release build/run을 모두 확인했습니다.
 
-확인 후 기록할 항목:
+| 항목 | 상태 |
+| --- | --- |
+| Debug x64 build/run | 성공 |
+| Release x64 build/run | 성공 |
+| quaternion rotation 조작 | 확인 |
+| ray-sphere collision continuity | 확인 |
+| skybox와 earth texture 표시 | 확인 |
 
-- Debug x64 build/run
-- Release x64 build/run
-- quaternion rotation 조작
-- ray-sphere collision continuity
-- skybox와 earth texture 표시 여부
+## Behavior Notes
 
+- `X(alpha)`, `Y(beta)`, `Z(gamma)` GUI는 raw 원본에서도 Euler angle slider로 남아 있지만 현재 transform 적용 경로에서는 사용되지 않습니다.
+- 실제 회전은 `quatX`, `quatY`, `quatZ`, `quatTheta`를 사용해 quaternion으로 적용됩니다.
+- 이동 GUI는 raw 원본에도 없습니다.
+
+## Next Action
+
+다음 import 대상은 `09_UserInteraction_Step5_VirtualTrackball`입니다.
