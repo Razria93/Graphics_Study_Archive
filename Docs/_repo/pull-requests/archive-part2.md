@@ -1,9 +1,9 @@
-# PR: Part2 graphics examples archive import
+# PR: Part2 Rasterization/D3D11 archive import 정리
 
 ## Title
 
 ```text
-docs: Part2 graphics examples archive import
+docs: Part2 Rasterization/D3D11 archive import 정리
 ```
 
 ## Body
