@@ -3,7 +3,7 @@
 ## Current Status
 
 - Code split: 완료
-- Build/run: 미확인
+- Build/run: 성공
 - Diff review: 진행 중
 - Refactor: 미확인
 - Capture ready: 아니오
@@ -56,12 +56,12 @@ Excluded:
 
 ## Build/Run Verification
 
-The source behavior changed after the previous Debug/Release confirmation. Re-run is required.
+OriginalExamples 의도 기준으로 `Mipmaps Level` GUI와 `SampleLevel(..., mipmapLevel)` 흐름을 복구한 뒤 사용자가 Debug/Release 실행을 확인했습니다.
 
 | Configuration | Status | Note |
 | --- | --- | --- |
-| Debug x64 | 미확인 | OriginalExamples 의도 복구 후 사용자 실행 확인 필요 |
-| Release x64 | 미확인 | OriginalExamples 의도 복구 후 사용자 실행 확인 필요 |
+| Debug x64 | 성공 | 사용자 실행 확인 |
+| Release x64 | 성공 | 사용자 실행 확인 |
 
 ## Static Verification
 
@@ -69,10 +69,10 @@ The source behavior changed after the previous Debug/Release confirmation. Re-ru
 - `.vcxproj` XML parse: 통과
 - `.vcxproj.filters` XML parse: 통과
 - Release x64 shader setting check: 통과
-- HLSL/HLSLI BOM check: 확인 필요
+- HLSL/HLSLI BOM check: 통과
 - Source hash check: `ExampleApp.cpp` and `BasicPixelShader.hlsl` now match OriginalExamples behavior
 - Selected asset hash check: 새 asset 없음
 
 ## Follow-up
 
-- 사용자가 Debug x64와 Release x64 실행을 다시 확인한 뒤 build/run 상태를 갱신합니다.
+- 다음 import 대상은 `11_TexturingTechniques_Step2_NormalMapping`입니다.

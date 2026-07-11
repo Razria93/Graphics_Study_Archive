@@ -8,7 +8,7 @@
 - Docs target: `Docs/Part3_Chapter10-13`
 - Branch: `archive/part3`
 - Import status: Step1-Step5 and 11-Step1 imported
-- Build/run status: Step1-Step5 성공, 11-Step1 재확인 필요
+- Build/run status: Step1-Step5 and 11-Step1 성공
 - Public readiness: 검토 필요
 
 ## Raw Source Decision
@@ -27,7 +27,7 @@
 | `10_GeometryPipeline_Step3_NormalLines` | primary | 반영 완료 | 성공 | 검토 필요 | normal lines, Release shader setting 보정 |
 | `10_GeometryPipeline_Step4_Fireball` | primary | 반영 완료 | 성공 | 검토 필요 | fireball shader, fireball texture 포함, Release shader setting 보정 |
 | `10_GeometryPipeline_Step5_Tessellation` | primary | 반영 완료 | 성공 | 검토 필요 | tessellation, Release shader setting 보정 |
-| `11_TexturingTechniques_Step1_Mipmaps` | primary + OriginalExamples intent | 반영 완료 | 미확인 | 검토 필요 | `Mipmaps Level` GUI 복구, `SampleLevel(..., mipmapLevel)`, `captured.png` 제외, Release shader setting 보정 |
+| `11_TexturingTechniques_Step1_Mipmaps` | primary + OriginalExamples intent | 반영 완료 | 성공 | 검토 필요 | `Mipmaps Level` GUI 복구, `SampleLevel(..., mipmapLevel)`, 사용자 Debug/Release 실행 확인 |
 | `11_TexturingTechniques_Step2_NormalMapping` | primary | planned | 미확인 | 검토 필요 | normal mapping |
 | `11_TexturingTechniques_Step3_HeightMapping` | primary | planned | 미확인 | 검토 필요 | height mapping |
 | `11_TexturingTechniques_Step4_HDRI` | primary | planned | 미확인 | 검토 필요 | HDRI |
@@ -66,4 +66,4 @@
 
 ## Next Action
 
-사용자가 `11_TexturingTechniques_Step1_Mipmaps` Debug/Release 실행을 다시 확인한 뒤 status/tracking 문서를 갱신합니다.
+다음 import 대상은 `11_TexturingTechniques_Step2_NormalMapping`입니다.

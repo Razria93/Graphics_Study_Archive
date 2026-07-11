@@ -22,6 +22,6 @@
 
 ## Verification
 
-- Static verification: 진행 중
-- Debug x64 run: 미확인
-- Release x64 run: 미확인
+- Static verification: 통과
+- Debug x64 run: 성공
+- Release x64 run: 성공
