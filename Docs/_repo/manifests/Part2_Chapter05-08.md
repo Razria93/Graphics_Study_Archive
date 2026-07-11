@@ -5,7 +5,7 @@
 - Source: `C:\ComputerGraphics\Part2_Chapter05-08`
 - Target: `Part2_Chapter05-08`
 - Scope: affine transformations, D3D11 graphics pipeline, modeling, shader toys
-- Import status: 진행 중
+- Import status: code import 완료 / verification 진행 중
 - Public readiness: 검토 필요
 - Build/run status: `05_*`, `06_GraphicsPipeline_Step1`-`Step9`, `07_Modeling_Step1_DrawingWireFrames`-`Step3_Grid`, `07_Modeling_Step5_Sphere_*`, `07_Modeling_Step6_Subdivision`, `07_Modeling_Step7_FaceNormals`, `07_Modeling_Step8_SphereMapping_*`, `07_Modeling_Step9_ModelFiles`, `08_ShaderToys_Step1_RimLighting`-`Step7_Shadertoy` 사용자 Debug/Release 실행 확인 완료. `07_Modeling_Step4_Cylinder`는 import 완료, build/run 미확인.
 
@@ -45,8 +45,6 @@
 | `08_ShaderToys_Step5_FresnelEffect` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, Schlick Fresnel, Stonewall diffuse/specular IBL DDS 포함 |
 | `08_ShaderToys_Step6_BloomEffect` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, bloom post-processing, filter chain, Zelda model 포함 |
 | `08_ShaderToys_Step7_Shadertoy` | 반영 완료 | 성공 | 검토 필요 | 사용자 Debug/Release 실행 확인, Shadertoy fullscreen shader, `shadertoytexture0.jpg`, shader profile 보정 |
-| `07_Modeling_*` | 예정 | 미확인 | 검토 필요 | mesh generation/modeling |
-| `08_ShaderToys_*` | 예정 | 미확인 | 검토 필요 | shader toy effects |
 
 ## Include Candidates
 
@@ -88,4 +86,5 @@
 
 ## Current Next Action
 
-1. 다음 ShaderToys 후보를 확인합니다.
+1. `07_Modeling_Step4_Cylinder` Debug/Release 실행 상태를 확정합니다.
+2. Part2 Chapter05-08 code import 완료 상태와 남은 verification 항목을 정리합니다.
