@@ -48,6 +48,6 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part3 Ch10-13 | `11_TexturingTechniques_Step1_Mipmaps` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | OriginalExamples 의도 기준 `Mipmaps Level` GUI 복구, 사용자 Debug/Release 실행 확인 |
 | Part3 Ch10-13 | `11_TexturingTechniques_Step2_NormalMapping` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | primary raw 기준 normal map/TBN 구현, 사용자 Debug/Release 실행 확인 |
 | Part3 Ch10-13 | `11_TexturingTechniques_Step3_HeightMapping` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | height texture 기반 vertex displacement, 사용자 Debug/Release 실행 확인 |
-| Part3 Ch10-13 | `11_TexturingTechniques_Step4_HDRI` | 완료 | 미확인 | 진행 중 | 미확인 | 아니오 | EXR/HDRI texture loading, referenced EXR asset raw에서 미발견 |
+| Part3 Ch10-13 | `11_TexturingTechniques_Step4_HDRI` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | replacement EXR 반영, 사용자 Debug/Release 실행 확인 |
 | Part3 Ch10-13 | `11_TexturingTechniques_Step5_HDRPipeline`-`13_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | primary raw 기준 진행, `_2`는 reference-only 비교용 |
 | Part4 Ch14-20 | `14_*`-`20_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |
