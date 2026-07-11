@@ -15,8 +15,8 @@ Advanced rendering 예제를 정리할 폴더입니다.
 | Raw reference | `C:\ComputerGraphics\Part3_Chapter10_13`, `C:\ComputerGraphics\Part3_Chapter10_13_2` |
 | Import status | Step1-Step2 imported |
 | Public readiness | 검토 필요 |
-| Build/run status | Step1 성공 |
-| Next action | `10_GeometryPipeline_Step2_Billboards` Debug/Release 실행 확인 |
+| Build/run status | Step1-Step2 성공 |
+| Next action | `10_GeometryPipeline_Step3_NormalLines` 선별 import |
 
 ## Raw 기준
 
