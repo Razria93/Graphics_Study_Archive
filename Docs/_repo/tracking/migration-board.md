@@ -33,7 +33,7 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part2 Ch05-08 | `08_ShaderToys_Step4_ImageBasedLighting` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, image-based lighting, Atrium diffuse/specular IBL DDS, shader/asset integrity 확인 완료 |
 | Part2 Ch05-08 | `08_ShaderToys_Step5_FresnelEffect` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, Fresnel effect, Stonewall diffuse/specular IBL DDS, shader/asset integrity 확인 완료 |
 | Part2 Ch05-08 | `08_ShaderToys_Step6_BloomEffect` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, bloom post-processing, threshold/blur/combine filter, shader/asset integrity 확인 완료 |
-| Part2 Ch05-08 | `08_ShaderToys_Step7_Shadertoy` | 완료 | 미확인 | 진행 중 | 미확인 | 보류 | Shadertoy fullscreen shader, `StarPixelShader`, `shadertoytexture0.jpg`, shader/asset integrity 확인 완료 |
+| Part2 Ch05-08 | `08_ShaderToys_Step7_Shadertoy` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, Shadertoy fullscreen shader, `StarPixelShader`, shader profile 보정 |
 | Part2 Ch05-08 | `07_Modeling_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | mesh generation/modeling |
 | Part2 Ch05-08 | `08_ShaderToys_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | shader toy effects |
 | Part3 Ch09 | `09_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |

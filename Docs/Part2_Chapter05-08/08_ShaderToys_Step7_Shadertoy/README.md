@@ -86,6 +86,7 @@ cbuffer SamplingPixelConstantData : register(b0)
 - Project cleanup:
   - archive에 포함하지 않는 `.clang-format` project/filter 참조를 제거했습니다.
   - 비활성 예시 주석의 `c:/zelda/` 절대 경로를 archive 상대 경로 예시로 바꿨습니다.
+  - raw/original project에서 누락된 `SeascapePixelShader.hlsl` / `StarPixelShader.hlsl` Release x64 shader profile을 archive에서 보정했습니다.
 - Asset/shader public readiness: 검토 필요
 
 ## 확인 상태
@@ -93,11 +94,15 @@ cbuffer SamplingPixelConstantData : register(b0)
 | 항목 | 상태 |
 | --- | --- |
 | Code import | 완료 |
-| Build Debug x64 | 미확인 |
-| Build Release x64 | 미확인 |
-| Run Debug/Release | 미확인 |
+| Build Debug x64 | 성공 |
+| Build Release x64 | 성공 |
+| Run Debug/Release | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
+
+## 실행 확인
+
+사용자가 Visual Studio에서 Debug x64와 Release x64 build/run을 확인했습니다. Release x64 shader profile 누락은 `SeascapePixelShader.hlsl` / `StarPixelShader.hlsl`에 Pixel Shader 5.0 설정을 추가해 해결했고, Debug 실행 중 발생한 `assimp-vc143-mtd.dll` 탐색 오류는 Clean/Rebuild 후 정상 동작을 확인했습니다.
 
 ## Public Readiness Notes
 
