@@ -8,8 +8,8 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 - Reference-only raw source: `C:\ComputerGraphics\Part3_Chapter10_13_2`
 - Archive source: `Part3_Chapter10-13`
 - Topic: geometry shader, billboards, tessellation, mipmaps, normal/height mapping, HDR, PBR, mirror, shadow mapping, PCF, PCSS
-- Import status: Step1-Step5 and 11-Step1-Step5 imported
-- Build/run: Step1-Step5 and 11-Step1-Step5 성공
+- Import status: Step1-Step5, 11-Step1-Step5, and 12-Step1 imported
+- Build/run: Step1-Step5 and 11-Step1-Step5 성공, 12-Step1 미확인
 - Capture: 보류
 - Public readiness: 검토 필요
 
@@ -34,7 +34,7 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 | `11_TexturingTechniques_Step3_HeightMapping` | 반영 완료 | 성공 | 검토 필요 | height texture 기반 vertex displacement, 사용자 Debug/Release 실행 확인 |
 | `11_TexturingTechniques_Step4_HDRI` | 반영 완료 | 성공 | 검토 필요 | replacement EXR 반영, 사용자 Debug/Release 실행 확인 |
 | `11_TexturingTechniques_Step5_HDRPipeline` | 반영 완료 | 성공 | 검토 필요 | HDR DDS replacement assets 반영, 사용자 Debug/Release 실행 확인 |
-| `12_PBR_Step1_UnrealPBR` | archive 후보 | 미확인 | 검토 필요 | Unreal-style PBR shader |
+| `12_PBR_Step1_UnrealPBR` | 반영 완료 | 미확인 | 검토 필요 | Unreal-style PBR shader, Sample HDRI DDS and worn-painted-metal PBR textures 포함 |
 | `12_PBR_Step2_PBRModels` | archive 후보 | 미확인 | 검토 필요 | PBR model assets |
 | `13_LightAndShadow_Step1_Mirror` | archive 후보 | 미확인 | 검토 필요 | mirror/stencil |
 | `13_LightAndShadow_Step2_PipelineStateObject` | archive 후보 | 미확인 | 검토 필요 | pipeline state abstraction |
@@ -57,4 +57,4 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 
 ## Next Action
 
-1. 다음 import 대상은 `12_PBR_Step1_UnrealPBR`입니다.
+1. `12_PBR_Step1_UnrealPBR` Debug/Release 실행 확인이 필요합니다.
