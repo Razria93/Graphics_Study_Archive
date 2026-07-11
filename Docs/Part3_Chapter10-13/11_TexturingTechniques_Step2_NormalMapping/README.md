@@ -33,5 +33,5 @@ raw asset archive, generated output, capture image는 포함하지 않았습니�
 ## Verification
 
 - Static verification: 통과
-- Debug x64 run: 미확인
-- Release x64 run: 미확인
+- Debug x64 run: 성공
+- Release x64 run: 성공
