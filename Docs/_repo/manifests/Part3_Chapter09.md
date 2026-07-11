@@ -6,8 +6,8 @@
 - Target: `Part3_Chapter09`
 - Docs target: `Docs/Part3_Chapter09`
 - Scope: user interaction, first-person camera, mouse picking, ray collision, quaternion/trackball controls
-- Import status: Step5 imported
-- Build/run status: 미확인
+- Import status: Step1-Step6 imported
+- Build/run status: Step1-Step6 성공
 - Public readiness: 검토 필요
 
 ## Raw Inventory
@@ -23,7 +23,7 @@
 | `09_UserInteraction_Step4_QuaternianRotation` | 반영 완료 | same | raw spelling 유지, quaternion rotation |
 | `09_UserInteraction_Step5_VirtualTrackball` | 반영 완료 | same | mainline virtual trackball 작업본 |
 | `09_UserInteraction_Step5_VirtualTrackball_Debug` | 제외 / reference-only | none | 회전 벡터 계산 실험, debug 출력 흔적 |
-| `09_UserInteraction_Step6_MouseDragMove` | archive 후보 | same | mouse drag movement |
+| `09_UserInteraction_Step6_MouseDragMove` | 반영 완료 | same | mouse drag movement |
 | `Assets` | 선별 포함 | `Part3_Chapter09/Assets` | 실행에 필요한 asset만 포함 |
 | `copy_dlls.py` | 검토 필요 | none | 실행에 필요할 때만 포함 |
 
@@ -184,8 +184,26 @@ Notes:
 
 Build/run remains `미확인` until user verifies Debug/Release.
 
+## Step6 Import Result
+
+Imported:
+
+- `09_UserInteraction_Step6_MouseDragMove` source/project/shader files
+- existing selected Step1 skybox assets reused
+- existing Step3 `Assets/Textures/earth.jpg` reused
+
+Excluded:
+
+- `.vs/`, generated folder, `x64/`, `.vcxproj.user`, `imgui.ini`, `.clang-format`
+
+Adjusted:
+
+- Removed `.clang-format` from archive project/filter references because the file is intentionally excluded.
+
+Build/run was verified by user for Debug/Release.
+
 ## Current Next Action
 
-1. User verifies `09_UserInteraction_Step5_VirtualTrackball` Debug/Release build/run.
-2. Record the verification result in Step5 `status.md` and tracking docs.
-3. Continue to `09_UserInteraction_Step6_MouseDragMove`.
+1. Review Chapter09 import completion status.
+2. Prepare Part3 Chapter10-13 import using `Part3_Chapter10_13` as primary raw reference.
+3. Keep `Part3_Chapter10_13_2` as reference-only comparison material.
