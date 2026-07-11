@@ -6,7 +6,7 @@
 - Target: `Part3_Chapter09`
 - Docs target: `Docs/Part3_Chapter09`
 - Scope: user interaction, first-person camera, mouse picking, ray collision, quaternion/trackball controls
-- Import status: Step2 imported
+- Import status: Step3 imported
 - Build/run status: 미확인
 - Public readiness: 검토 필요
 
@@ -17,9 +17,9 @@
 | `09_UserInteraction_Step1_FirstPersonView` | 반영 완료 | same | first-person camera, skybox cubemap, ground texture, selected assets 포함 |
 | `09_UserInteraction_Step2_MousePicking` | 반영 완료 | same | mainline mouse picking 작업본, `_Debug` 제외 |
 | `09_UserInteraction_Step2_MousePicking_Debug` | 제외 / reference-only | none | debug/memo 실험 흔적, `memo.txt` 포함 |
-| `09_UserInteraction_Step3_MousePickingRayCollision` | archive 후보 | same | 사용자 작업본, source memo 분리 필요 |
+| `09_UserInteraction_Step3_MousePickingRayCollision` | 제외 / reference-only | none | 미완성 작업본, source memo 분리 후보 |
 | `09_UserInteraction_Step3_MousePickingRayCollision_Debug` | 제외 / reference-only | none | debug variant |
-| `09_UserInteraction_Step3_MousePickingRayCollision_Solution` | reference solution 후보 | `09_UserInteraction_Step3_MousePickingRayCollision_ReferenceSolution` | public 후보 아님 |
+| `09_UserInteraction_Step3_MousePickingRayCollision_Solution` | 반영 완료 | `09_UserInteraction_Step3_MousePickingRayCollision` | archive 실행 기준, public 후보 아님 |
 | `09_UserInteraction_Step4_QuaternianRotation` | archive 후보 | same | raw spelling 유지 여부는 import 시 확인 |
 | `09_UserInteraction_Step5_VirtualTrackball` | archive 후보 | same | mainline virtual trackball 작업본 |
 | `09_UserInteraction_Step5_VirtualTrackball_Debug` | 제외 / reference-only | none | 회전 벡터 계산 실험, debug 출력 흔적 |
@@ -113,8 +113,33 @@ Adjusted:
 
 Build/run remains `미확인` until user verifies Debug/Release.
 
+## Step3 Import Result
+
+Imported:
+
+- `09_UserInteraction_Step3_MousePickingRayCollision_Solution` source/project/shader files as archive `09_UserInteraction_Step3_MousePickingRayCollision`
+- existing selected Step1 skybox assets reused
+- `Assets/Textures/earth.jpg`
+
+Excluded:
+
+- `09_UserInteraction_Step3_MousePickingRayCollision` mainline incomplete work variant
+- `09_UserInteraction_Step3_MousePickingRayCollision_Debug`
+- `.vs/`, generated folder, `x64/`, `.vcxproj.user`, `imgui.ini`, `.clang-format`
+
+Adjusted:
+
+- Removed `.clang-format` from archive project/filter references because the file is intentionally excluded.
+
+Notes:
+
+- mainline `ExampleApp.cpp` contains source comments/TODOs that should be separated or rewritten during the later documentation cleanup pass.
+- `_Solution` is used as the archive runnable code because the other two variants were not complete.
+
+Build/run remains `미확인` until user verifies Debug/Release.
+
 ## Current Next Action
 
-1. User verifies `09_UserInteraction_Step2_MousePicking` Debug/Release build/run.
-2. Record the verification result in Step2 `status.md` and tracking docs.
-3. Continue to `09_UserInteraction_Step3_MousePickingRayCollision`.
+1. User verifies `09_UserInteraction_Step3_MousePickingRayCollision` Debug/Release build/run.
+2. Record the verification result in Step3 `status.md` and tracking docs.
+3. Continue to `09_UserInteraction_Step4_QuaternianRotation`.
