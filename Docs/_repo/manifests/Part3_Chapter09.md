@@ -6,7 +6,7 @@
 - Target: `Part3_Chapter09`
 - Docs target: `Docs/Part3_Chapter09`
 - Scope: user interaction, first-person camera, mouse picking, ray collision, quaternion/trackball controls
-- Import status: Step1 imported
+- Import status: Step2 imported
 - Build/run status: 미확인
 - Public readiness: 검토 필요
 
@@ -15,7 +15,7 @@
 | Raw folder/file | Import decision | Archive name | Note |
 | --- | --- | --- | --- |
 | `09_UserInteraction_Step1_FirstPersonView` | 반영 완료 | same | first-person camera, skybox cubemap, ground texture, selected assets 포함 |
-| `09_UserInteraction_Step2_MousePicking` | archive 후보 | same | mainline mouse picking 작업본 |
+| `09_UserInteraction_Step2_MousePicking` | 반영 완료 | same | mainline mouse picking 작업본, `_Debug` 제외 |
 | `09_UserInteraction_Step2_MousePicking_Debug` | 제외 / reference-only | none | debug/memo 실험 흔적, `memo.txt` 포함 |
 | `09_UserInteraction_Step3_MousePickingRayCollision` | archive 후보 | same | 사용자 작업본, source memo 분리 필요 |
 | `09_UserInteraction_Step3_MousePickingRayCollision_Debug` | 제외 / reference-only | none | debug variant |
@@ -94,8 +94,27 @@ Adjusted:
 
 Build/run remains `미확인` until user verifies Debug/Release.
 
+## Step2 Import Result
+
+Imported:
+
+- `09_UserInteraction_Step2_MousePicking` source/project/shader files
+- existing selected Step1 assets reused
+
+Excluded:
+
+- `09_UserInteraction_Step2_MousePicking_Debug`
+- `memo.txt`
+- `.vs/`, generated folder, `x64/`, `.vcxproj.user`, `imgui.ini`, `.clang-format`
+
+Adjusted:
+
+- Removed `.clang-format` from archive project/filter references because the file is intentionally excluded.
+
+Build/run remains `미확인` until user verifies Debug/Release.
+
 ## Current Next Action
 
-1. User verifies `09_UserInteraction_Step1_FirstPersonView` Debug/Release build/run.
-2. Record the verification result in Step1 `status.md` and tracking docs.
-3. Continue to `09_UserInteraction_Step2_MousePicking`.
+1. User verifies `09_UserInteraction_Step2_MousePicking` Debug/Release build/run.
+2. Record the verification result in Step2 `status.md` and tracking docs.
+3. Continue to `09_UserInteraction_Step3_MousePickingRayCollision`.
