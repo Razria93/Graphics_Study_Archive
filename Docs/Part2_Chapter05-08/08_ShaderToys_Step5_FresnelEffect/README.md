@@ -73,12 +73,12 @@ ImGui::SliderFloat3("Material FresnelR0",
 | 항목 | 상태 |
 | --- | --- |
 | Code import | 완료 |
-| Build Debug x64 | 미확인 |
-| Build Release x64 | 미확인 |
-| Run Debug/Release | 미확인 |
+| Build Debug x64 | 성공 |
+| Build Release x64 | 성공 |
+| Run Debug/Release | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
-## 실행 확인 예정
+## 실행 확인
 
-Visual Studio에서 Debug x64와 Release x64 build/run을 확인합니다. 확인 범위에는 Stonewall IBL cubemap load, sphere render, Fresnel specular 변화, `Material FresnelR0`, material diffuse/specular/shininess slider, `Use Texture`, `Wireframe`, `Draw Normals`, `m_viewRot` 조작을 포함합니다.
+사용자가 Visual Studio에서 Debug x64와 Release x64 build/run을 확인했습니다. Stonewall IBL cubemap load, sphere render, Fresnel specular 변화, `Material FresnelR0`, material diffuse/specular/shininess slider, `Use Texture`, `Wireframe`, `Draw Normals`, `m_viewRot` 조작 확인은 실행 확인 범위에 포함합니다.
