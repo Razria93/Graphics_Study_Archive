@@ -46,6 +46,7 @@ D3D11 graphics pipeline에서 modeling과 shader toy로 넘어가는 예제들�
 | [`08_ShaderToys_Step4_ImageBasedLighting`](08_ShaderToys_Step4_ImageBasedLighting/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인, image-based lighting, diffuse/specular IBL, Atrium cubemap |
 | [`08_ShaderToys_Step5_FresnelEffect`](08_ShaderToys_Step5_FresnelEffect/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인, Fresnel effect, Schlick approximation, Stonewall IBL |
 | [`08_ShaderToys_Step6_BloomEffect`](08_ShaderToys_Step6_BloomEffect/README.md) | 완료 | 성공 | 진행 중 | 보류 | 사용자 Debug/Release 실행 확인, bloom, post-processing, threshold/blur/combine filter |
+| [`08_ShaderToys_Step7_Shadertoy`](08_ShaderToys_Step7_Shadertoy/README.md) | 완료 | 미확인 | 진행 중 | 보류 | Shadertoy fullscreen shader, `StarPixelShader`, public license 검토 필요 |
 
 ## Modeling Variant 기준
 
@@ -76,5 +77,6 @@ D3D11 graphics pipeline에서 modeling과 shader toy로 넘어가는 예제들�
 | `08_ShaderToys_Step4_ImageBasedLighting` | archive 반영 완료, Debug/Release 실행 성공 |
 | `08_ShaderToys_Step5_FresnelEffect` | archive 반영 완료, Debug/Release 실행 성공 |
 | `08_ShaderToys_Step6_BloomEffect` | archive 반영 완료, Debug/Release 실행 성공 |
+| `08_ShaderToys_Step7_Shadertoy` | archive 반영 완료, Debug/Release 실행 미확인 |
 
 Tracking note: [Part2 Step5 Sphere Tracking](../_repo/tracking/part2-step5-sphere.md)
