@@ -3,28 +3,25 @@
 ## Current Status
 
 - Code split: 완료
-- Build/run: 성공
+- Build/run: 미확인
 - Diff review: 진행 중
 - Refactor: 미확인
-- Capture ready: 보류
+- Capture ready: 아니오
 - Public readiness: 검토 필요
 
 ## Source Decision
 
 Primary raw folder `C:\ComputerGraphics\Part3_Chapter10_13\11_TexturingTechniques_Step1_Mipmaps`를 기준으로 import했습니다.
 
-`C:\ComputerGraphics\Part3_Chapter10_13_2\11_TexturingTechniques_Step1_Mipmaps`는 reference-only snapshot으로 확인했습니다. 파일 목록은 거의 같지만 `BasicPixelShader.hlsl`, `D3D11Utils.cpp`, `ExampleApp.cpp`가 primary와 다릅니다.
+이후 예제 의도를 확인하기 위해 `C:\ComputerGraphics\OriginalExamples\Part3_Chapter10_13\11_TexturingTechniques_Step1_Mipmaps`도 비교했습니다. OriginalExamples 기준으로 Step1 Mipmaps의 핵심은 GUI의 `Mipmaps Level` slider로 `mipmapLevel`을 조절하고, pixel shader에서 `SampleLevel(..., mipmapLevel)`로 직접 mip level을 선택하는 것입니다.
 
 ## Example Focus
 
-이 예제는 texture mipmap의 LOD를 pixel shader에서 직접 선택하는 흐름을 보여줍니다.
+이 예제는 texture mipmap의 LOD를 GUI에서 직접 선택하는 흐름을 보여줍니다.
 
-- `dist = length(input.posWorld - eyeWorld)`로 카메라와 fragment의 거리를 계산합니다.
-- 거리값을 `lod`로 변환합니다.
-- `g_texture0.SampleLevel(g_sampler, input.texcoord, lod)`를 사용해 자동 mip 선택 대신 지정한 mip level로 sampling합니다.
-- 정수 사이의 `lod` 값은 인접 mip level 사이를 보간해서 sampling됩니다.
-
-즉, 여기서 보여주는 것은 geometry나 tessellation의 LOD가 아니라 diffuse texture sampling에 사용할 mipmap LOD입니다.
+- `ExampleApp::UpdateGUI()`에서 `Mipmaps Level` slider가 `m_mainSphere.m_basicPixelConstantData.mipmapLevel`을 조절합니다.
+- `BasicPixelShader.hlsl`에서 `g_texture0.SampleLevel(g_sampler, input.texcoord, mipmapLevel)`을 사용합니다.
+- 즉, 여기서 보여주는 것은 geometry나 tessellation LOD가 아니라 diffuse texture sampling에 사용할 mipmap LOD입니다.
 
 ## Import Scope
 
@@ -55,16 +52,16 @@ Excluded:
 - `.vcxproj` and `.vcxproj.filters` references to `.clang-format` were removed to avoid dangling project items.
 - Release x64 shader settings were added where raw project items only specified Debug x64 settings.
 - The added Release settings cover billboard shaders, normal shaders, fireball shader, TessellatedQuad VS/HS/DS/PS shader items, and missing vertex shader model entries.
-- `BasicPixelShader.hlsl` line 57 had an extra `)` in primary raw. The archive copy keeps the primary LOD experiment but removes the syntax error.
+- Primary raw had a distance-based `lod` experiment and a disabled mipmap GUI slider. To match the Step1 Mipmaps example intent, `ExampleApp.cpp` and `BasicPixelShader.hlsl` were restored to the OriginalExamples behavior.
 
 ## Build/Run Verification
 
-사용자가 Debug x64와 Release x64 실행을 모두 확인했습니다.
+The source behavior changed after the previous Debug/Release confirmation. Re-run is required.
 
 | Configuration | Status | Note |
 | --- | --- | --- |
-| Debug x64 | 성공 | 사용자 실행 확인 |
-| Release x64 | 성공 | 사용자 실행 확인 |
+| Debug x64 | 미확인 | OriginalExamples 의도 복구 후 사용자 실행 확인 필요 |
+| Release x64 | 미확인 | OriginalExamples 의도 복구 후 사용자 실행 확인 필요 |
 
 ## Static Verification
 
@@ -72,10 +69,10 @@ Excluded:
 - `.vcxproj` XML parse: 통과
 - `.vcxproj.filters` XML parse: 통과
 - Release x64 shader setting check: 통과
-- HLSL/HLSLI BOM check: 통과
-- Source hash check: 통과, `.vcxproj`/`.filters`는 `.clang-format` 참조 제거와 Release shader setting 보정으로 제외
+- HLSL/HLSLI BOM check: 확인 필요
+- Source hash check: `ExampleApp.cpp` and `BasicPixelShader.hlsl` now match OriginalExamples behavior
 - Selected asset hash check: 새 asset 없음
 
 ## Follow-up
 
-- 다음 import 대상은 `11_TexturingTechniques_Step2_NormalMapping`입니다.
+- 사용자가 Debug x64와 Release x64 실행을 다시 확인한 뒤 build/run 상태를 갱신합니다.

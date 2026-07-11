@@ -45,6 +45,6 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part3 Ch10-13 | `10_GeometryPipeline_Step3_NormalLines` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, Release shader setting 보정 |
 | Part3 Ch10-13 | `10_GeometryPipeline_Step4_Fireball` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, fireball texture 포함, Release shader setting 보정 |
 | Part3 Ch10-13 | `10_GeometryPipeline_Step5_Tessellation` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, reference snapshot과 tessellation 핵심 파일 차이 있음, Release shader setting 보정 |
-| Part3 Ch10-13 | `11_TexturingTechniques_Step1_Mipmaps` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, `SampleLevel` 기반 mipmap LOD, `captured.png` 제외, Release shader setting 보정 |
+| Part3 Ch10-13 | `11_TexturingTechniques_Step1_Mipmaps` | 완료 | 미확인 | 진행 중 | 미확인 | 아니오 | OriginalExamples 의도 기준 `Mipmaps Level` GUI 복구, `SampleLevel(..., mipmapLevel)`, 실행 재확인 필요 |
 | Part3 Ch10-13 | `11_TexturingTechniques_Step2_NormalMapping`-`13_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | primary raw 기준 진행, `_2`는 reference-only 비교용 |
 | Part4 Ch14-20 | `14_*`-`20_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |
