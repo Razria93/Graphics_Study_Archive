@@ -3,7 +3,7 @@
 ## Current Status
 
 - Code split: 완료
-- Build/run: 미확인
+- Build/run: 성공
 - Diff review: 진행 중
 - Refactor: 미확인
 - Capture ready: 아니오
@@ -41,15 +41,16 @@ Excluded:
 
 - `.clang-format` file was excluded.
 - `.vcxproj` and `.vcxproj.filters` references to `.clang-format` were removed to avoid dangling project items.
+- Release x64 build failed because the billboard vertex/pixel/geometry shader project items only specified Debug x64 shader settings. Added Release x64 `ShaderType`/`ShaderModel 5.0` for `BillboardPointsVertexShader.hlsl`, `BillboardPointsPixelShader.hlsl`, and `BillboardPointsGeometryShader.hlsl`.
 
 ## Build/Run Verification
 
-사용자 확인 전까지 아래 항목은 `미확인`입니다.
+사용자가 Debug x64와 Release x64 실행을 모두 확인했습니다.
 
 | Configuration | Status | Note |
 | --- | --- | --- |
-| Debug x64 | 미확인 | 사용자 실행 확인 필요 |
-| Release x64 | 미확인 | 사용자 실행 확인 필요 |
+| Debug x64 | 성공 | 사용자 실행 확인 |
+| Release x64 | 성공 | Release shader setting 보정 후 사용자 실행 확인 |
 
 ## Static Verification
 
@@ -62,5 +63,4 @@ Excluded:
 
 ## Follow-up
 
-- Debug/Release 실행 확인 후 `Build/run` 상태를 갱신합니다.
-- build/run 문제가 발생하면 primary raw와 `_Solution` variant를 비교합니다.
+- 다음 import 대상은 `10_GeometryPipeline_Step2_Billboards`입니다.

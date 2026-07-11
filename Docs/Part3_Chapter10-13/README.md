@@ -9,7 +9,7 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 - Archive source: `Part3_Chapter10-13`
 - Topic: geometry shader, billboards, tessellation, mipmaps, normal/height mapping, HDR, PBR, mirror, shadow mapping, PCF, PCSS
 - Import status: Step1 imported
-- Build/run: 미확인
+- Build/run: Step1 성공
 - Capture: 보류
 - Public readiness: 검토 필요
 
@@ -30,7 +30,7 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 
 | Example | Import decision | Build/run | Public readiness | Note |
 | --- | --- | --- | --- | --- |
-| `10_GeometryPipeline_Step1_GeometryShader` | 반영 완료 | 미확인 | 검토 필요 | primary-only 기본 작업본, selected assets 포함 |
+| `10_GeometryPipeline_Step1_GeometryShader` | 반영 완료 | 성공 | 검토 필요 | primary-only 기본 작업본, selected assets 포함, Release shader setting 보정 |
 | `10_GeometryPipeline_Step1_GeometryShader_Solution` | reference solution 후보 | 미확인 | 검토 필요 | 필요 시 `ReferenceSolution` 이름으로 분리 |
 | `10_GeometryPipeline_Step2_Billboards` | archive 후보 | 미확인 | 검토 필요 | billboard geometry shader |
 | `10_GeometryPipeline_Step3_NormalLines` | archive 후보 | 미확인 | 검토 필요 | normal visualization |
@@ -64,6 +64,6 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 
 ## Next Action
 
-1. 사용자가 `10_GeometryPipeline_Step1_GeometryShader` Debug/Release 실행을 확인합니다.
-2. 실행 확인 뒤 status 문서와 tracking board를 갱신합니다.
-3. 다음 import 대상은 `10_GeometryPipeline_Step2_Billboards`입니다.
+1. `10_GeometryPipeline_Step2_Billboards`를 primary raw에서 선별 import합니다.
+2. 실행에 필요한 billboard/tree asset을 확인합니다.
+3. import 후 XML namespace, HLSL/HLSLI BOM, asset hash, raw/archive diff를 확인합니다.

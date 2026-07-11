@@ -8,7 +8,7 @@
 - Docs target: `Docs/Part3_Chapter10-13`
 - Branch: `archive/part3`
 - Import status: Step1 imported
-- Build/run status: 미확인
+- Build/run status: Step1 성공
 - Public readiness: 검토 필요
 
 ## Raw Source Decision
@@ -21,7 +21,7 @@
 
 | Example | Raw basis | Import status | Build/run | Public readiness | Note |
 | --- | --- | --- | --- | --- | --- |
-| `10_GeometryPipeline_Step1_GeometryShader` | primary | 반영 완료 | 미확인 | 검토 필요 | primary-only 기본 작업본, selected assets 포함 |
+| `10_GeometryPipeline_Step1_GeometryShader` | primary | 반영 완료 | 성공 | 검토 필요 | primary-only 기본 작업본, selected assets 포함, Release shader setting 보정 |
 | `10_GeometryPipeline_Step1_GeometryShader_Solution` | primary/reference | reference 후보 | 미확인 | 검토 필요 | 필요 시 `ReferenceSolution`으로 분리 |
 | `10_GeometryPipeline_Step2_Billboards` | primary | planned | 미확인 | 검토 필요 | billboard |
 | `10_GeometryPipeline_Step3_NormalLines` | primary | planned | 미확인 | 검토 필요 | normal lines |
@@ -66,4 +66,4 @@
 
 ## Next Action
 
-사용자가 `10_GeometryPipeline_Step1_GeometryShader` Debug/Release 실행을 확인한 뒤 status/tracking 문서를 갱신합니다.
+`10_GeometryPipeline_Step2_Billboards`를 primary raw에서 선별 import합니다.
