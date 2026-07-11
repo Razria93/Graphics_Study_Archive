@@ -93,12 +93,12 @@ return ((sampling.x + sampling.y + sampling.z) / 3) > threshold
 | 항목 | 상태 |
 | --- | --- |
 | Code import | 완료 |
-| Build Debug x64 | 미확인 |
-| Build Release x64 | 미확인 |
-| Run Debug/Release | 미확인 |
+| Build Debug x64 | 성공 |
+| Build Release x64 | 성공 |
+| Run Debug/Release | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
-## 실행 확인 예정
+## 실행 확인
 
-Visual Studio에서 Debug x64와 Release x64 build/run을 확인합니다. 확인 범위에는 sphere/character 전환, Zelda model load, Stonewall IBL load, bloom threshold/strength slider, filter chain 적용, blur/combine 결과, `Use Texture`, `Wireframe`, `Draw Normals`, `m_viewRot` 조작을 포함합니다.
+사용자가 Visual Studio에서 Debug x64와 Release x64 build/run을 확인했습니다. sphere/character 전환, Zelda model load, Stonewall IBL load, bloom threshold/strength slider, filter chain 적용, blur/combine 결과, `Use Texture`, `Wireframe`, `Draw Normals`, `m_viewRot` 조작 확인은 실행 확인 범위에 포함합니다.
