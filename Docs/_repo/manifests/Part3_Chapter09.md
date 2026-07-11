@@ -70,7 +70,7 @@ Dependency notes:
 - `Common.hlsli` is included as a non-build item in the raw project.
 - Raw project uses C++17.
 - Shader profile settings exist for Debug/Release x64 and should be preserved.
-- Build/run remains `미확인` until user verifies Debug/Release.
+- Build/run was verified by user for Debug/Release.
 
 ## Variant Rules
 
@@ -92,7 +92,7 @@ Adjusted:
 - Removed `.clang-format` from archive project/filter references because the file is intentionally excluded.
 - Added `Part3_Chapter09/Directory.Build.props` for repo-local `ThirdParty/stb` include path.
 
-Build/run remains `미확인` until user verifies Debug/Release.
+Build/run was verified by user for Debug/Release.
 
 ## Step2 Import Result
 
@@ -111,7 +111,7 @@ Adjusted:
 
 - Removed `.clang-format` from archive project/filter references because the file is intentionally excluded.
 
-Build/run remains `미확인` until user verifies Debug/Release.
+Build/run was verified by user for Debug/Release.
 
 ## Step3 Import Result
 
@@ -136,7 +136,7 @@ Notes:
 - mainline `ExampleApp.cpp` contains source comments/TODOs that should be separated or rewritten during the later documentation cleanup pass.
 - `_Solution` is used as the archive runnable code because the other two variants were not complete.
 
-Build/run remains `미확인` until user verifies Debug/Release.
+Build/run was verified by user for Debug/Release.
 
 ## Step4 Import Result
 
@@ -159,7 +159,7 @@ Notes:
 - Raw spelling `QuaternianRotation` is preserved for folder/project consistency.
 - Documentation uses the standard term quaternion rotation.
 
-Build/run remains `미확인` until user verifies Debug/Release.
+Build/run was verified by user for Debug/Release.
 
 ## Step5 Import Result
 
@@ -182,7 +182,7 @@ Notes:
 
 - `_Debug` differs only in `ExampleApp.cpp` and contains extra intermediate vector/debug output flow, so mainline is used as the archive runnable code.
 
-Build/run remains `미확인` until user verifies Debug/Release.
+Build/run was verified by user for Debug/Release.
 
 ## Step6 Import Result
 
