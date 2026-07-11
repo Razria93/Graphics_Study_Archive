@@ -6,7 +6,7 @@
 | --- | --- |
 | Source import | 완료 |
 | Asset import | 완료 |
-| Build/run | 미확인 |
+| Build/run | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
@@ -26,12 +26,15 @@
 
 ## User Verification
 
-Debug/Release build/run은 아직 사용자가 확인하지 않았습니다.
+사용자가 Debug/Release build/run을 모두 확인했습니다.
 
-확인 후 기록할 항목:
+| 항목 | 상태 |
+| --- | --- |
+| Debug x64 build/run | 성공 |
+| Release x64 build/run | 성공 |
+| first-person camera 조작 | 확인 |
+| skybox와 ground texture 표시 | 확인 |
 
-- Debug x64 build/run
-- Release x64 build/run
-- first-person camera 조작
-- skybox와 ground texture 표시 여부
+## Next Action
 
+다음 import 대상은 `09_UserInteraction_Step2_MousePicking`입니다.
