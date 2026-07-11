@@ -23,6 +23,7 @@
 | Source comment split | local note 생성 / source 정리 일부 완료 | raw 학습 메모와 bloom filter chain 내용을 local-only 문서에 분리 |
 | Integrity check | 완료 | XML namespace 정상, HLSL/HLSLI BOM 없음, selected asset hash raw와 일치 |
 | Build/run | 성공 | 사용자 Visual Studio Debug/Release 실행 확인 |
+| Back buffer copy | 확인 완료 | `CopyResource()` 변경 후 clean/rebuild, Debug/Release 실행 및 blur 조작 정상 확인 |
 | Dependency | 확인 완료 | DirectXTK DDS loader, Assimp/vcpkg 환경에서 사용자 Debug/Release 실행 확인 |
 | Public readiness | 검토 필요 | Stonewall IBL DDS, Zelda model/texture, 외부 asset 공개 전 검토 필요 |
 
