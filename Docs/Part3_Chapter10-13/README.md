@@ -8,8 +8,8 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 - Reference-only raw source: `C:\ComputerGraphics\Part3_Chapter10_13_2`
 - Archive source: `Part3_Chapter10-13`
 - Topic: geometry shader, billboards, tessellation, mipmaps, normal/height mapping, HDR, PBR, mirror, shadow mapping, PCF, PCSS
-- Import status: Step1-Step5 and 11-Step1-Step3 imported
-- Build/run: Step1-Step5 and 11-Step1-Step3 성공
+- Import status: Step1-Step5 and 11-Step1-Step4 imported
+- Build/run: Step1-Step5 and 11-Step1-Step3 성공, 11-Step4 미확인
 - Capture: 보류
 - Public readiness: 검토 필요
 
@@ -39,7 +39,7 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 | `11_TexturingTechniques_Step1_Mipmaps` | 반영 완료 | 성공 | 검토 필요 | OriginalExamples 의도 기준 `Mipmaps Level` GUI 복구, 사용자 Debug/Release 실행 확인 |
 | `11_TexturingTechniques_Step2_NormalMapping` | 반영 완료 | 성공 | 검토 필요 | primary raw 기준 normal map/TBN 구현, 사용자 Debug/Release 실행 확인 |
 | `11_TexturingTechniques_Step3_HeightMapping` | 반영 완료 | 성공 | 검토 필요 | height texture 기반 vertex displacement, 사용자 Debug/Release 실행 확인 |
-| `11_TexturingTechniques_Step4_HDRI` | archive 후보 | 미확인 | 검토 필요 | HDRI/cubemap |
+| `11_TexturingTechniques_Step4_HDRI` | 반영 완료 | 미확인 | 검토 필요 | EXR/HDRI texture loading, referenced EXR asset raw에서 미발견 |
 | `11_TexturingTechniques_Step5_HDRPipeline` | archive 후보 | 미확인 | 검토 필요 | HDR pipeline |
 | `12_PBR_Step1_UnrealPBR` | archive 후보 | 미확인 | 검토 필요 | Unreal-style PBR shader |
 | `12_PBR_Step2_PBRModels` | archive 후보 | 미확인 | 검토 필요 | PBR model assets |
@@ -64,6 +64,6 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 
 ## Next Action
 
-1. 다음 import 대상은 `11_TexturingTechniques_Step4_HDRI`입니다.
-2. source/project/shader/필요 asset을 선별 반영합니다.
-3. import integrity checklist를 기준으로 정적 검증 후 사용자 Debug/Release 실행 확인을 받습니다.
+1. 사용자가 `11_TexturingTechniques_Step4_HDRI` Debug/Release 실행을 확인합니다.
+2. EXR asset 누락으로 실행 실패하면 원본 asset 위치나 대체 기준을 확인합니다.
+3. 다음 import 대상은 `11_TexturingTechniques_Step5_HDRPipeline`입니다.
