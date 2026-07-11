@@ -467,9 +467,9 @@ void ExampleApp::UpdateGUI() {
         m_mainSphere.m_drawNormalsDirtyFlag = true;
     }
 
-    // ImGui::SliderFloat("Mipmaps Level",
-    //                    &m_mainSphere.m_basicPixelConstantData.mipmapLevel, 0.0f,
-    //                    10.0f);
+    ImGui::SliderFloat("Mipmaps Level",
+                       &m_mainSphere.m_basicPixelConstantData.mipmapLevel, 0.0f,
+                       10.0f);
 
     // int flag = 0;
     // flag += ImGui::SliderFloat4("Edges",

@@ -50,14 +50,7 @@ struct PixelShaderOutput
 PixelShaderOutput main(PixelShaderInput input)
 {
     float3 toEye = normalize(eyeWorld - input.posWorld);
-    float dist = length(input.posWorld - eyeWorld);
-    float distMin = 0.5;
-    float distMax = 2.0;
-    // float lod = 2 * (1 - (distMax - dist) / (distMax - distMin));
-    float lod = 2 * saturate(dist - distMin) / (distMax - distMin);
-    // 분수값을 구성하는 방법이 이렇게 다름
-    // 멀어져야 1에 가깝게 할지, 가까워져야 1에 가깝게 할지
-    
+
     float3 color = float3(0.0, 0.0, 0.0);
 
     int i = 0;
@@ -105,9 +98,7 @@ PixelShaderOutput main(PixelShaderInput input)
     if (useTexture)
     {
         // diffuse *= g_texture0.Sample(g_sampler, input.texcoord);
-        // 민맵의 레벨에 따라서 샘플링할 대상을 정함
-        // 만약 정수 사이의 값을 넣게 되면 두개에서 샘플링한다음 보간해서 샘플링할 것을 만들어서 가져옴
-        diffuse *= g_texture0.SampleLevel(g_sampler, input.texcoord, lod);
+        diffuse *= g_texture0.SampleLevel(g_sampler, input.texcoord, mipmapLevel);
 
         // Specular texture를 별도로 사용할 수도 있습니다.
     }
