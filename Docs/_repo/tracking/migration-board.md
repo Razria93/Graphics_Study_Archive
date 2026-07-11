@@ -36,7 +36,7 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part2 Ch05-08 | `08_ShaderToys_Step7_Shadertoy` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, Shadertoy fullscreen shader, `StarPixelShader`, shader profile 보정 |
 | Part3 Ch09 | `09_UserInteraction_Step1_FirstPersonView` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, first-person camera, skybox cubemap, ground texture |
 | Part3 Ch09 | `09_UserInteraction_Step2_MousePicking` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, mainline source/project 반영, `_Debug` variant 제외 |
-| Part3 Ch09 | `09_UserInteraction_Step3_MousePickingRayCollision` | 완료 | 미확인 | 진행 중 | 미확인 | 아니오 | `_Solution` 기준 source/project 반영, mainline/`_Debug` 미완성 variant 제외, 사용자 Debug/Release 확인 대기 |
-| Part3 Ch09 | `09_UserInteraction_Step4_QuaternianRotation`-`Step6_MouseDragMove` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Step3 확인 후 순차 import |
+| Part3 Ch09 | `09_UserInteraction_Step3_MousePickingRayCollision` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, `_Solution` 기준 source/project 반영, mainline/`_Debug` 미완성 variant 제외 |
+| Part3 Ch09 | `09_UserInteraction_Step4_QuaternianRotation`-`Step6_MouseDragMove` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Step4 QuaternianRotation부터 순차 import |
 | Part3 Ch10-13 | `10_*`-`13_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |
 | Part4 Ch14-20 | `14_*`-`20_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |
