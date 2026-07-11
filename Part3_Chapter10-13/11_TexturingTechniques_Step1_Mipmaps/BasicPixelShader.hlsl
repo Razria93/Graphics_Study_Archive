@@ -54,7 +54,7 @@ PixelShaderOutput main(PixelShaderInput input)
     float distMin = 0.5;
     float distMax = 2.0;
     // float lod = 2 * (1 - (distMax - dist) / (distMax - distMin));
-    float lod = 2 * saturate(dist - distMin) / (distMax - distMin));
+    float lod = 2 * saturate(dist - distMin) / (distMax - distMin);
     // 분수값을 구성하는 방법이 이렇게 다름
     // 멀어져야 1에 가깝게 할지, 가까워져야 1에 가깝게 할지
     

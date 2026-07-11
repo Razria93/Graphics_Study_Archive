@@ -13,10 +13,10 @@ Advanced rendering 예제를 정리하는 폴더입니다.
 | 항목 | 상태 |
 | --- | --- |
 | Raw reference | `C:\ComputerGraphics\Part3_Chapter10_13`, `C:\ComputerGraphics\Part3_Chapter10_13_2` |
-| Import status | Step1-Step5 imported |
+| Import status | Step1-Step5 and 11-Step1 imported |
 | Public readiness | 검토 필요 |
 | Build/run status | Step1-Step5 성공 |
-| Next action | `11_TexturingTechniques_Step1_Mipmaps` 선별 import |
+| Next action | `11_TexturingTechniques_Step1_Mipmaps` Debug/Release 실행 확인 |
 
 ## Raw 기준
 
