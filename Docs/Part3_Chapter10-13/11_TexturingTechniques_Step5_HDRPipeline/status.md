@@ -3,7 +3,7 @@
 ## Current Status
 
 - Code split: 완료
-- Build/run: 미확인
+- Build/run: 성공
 - Diff review: 진행 중
 - Refactor: 미확인
 - Capture ready: 아니오
@@ -62,8 +62,8 @@ Excluded:
 
 | Configuration | Status | Note |
 | --- | --- | --- |
-| Debug x64 | 미확인 | replacement DDS/PBR asset 반영 후 실행 확인 필요 |
-| Release x64 | 미확인 | replacement DDS/PBR asset 반영 후 실행 확인 필요 |
+| Debug x64 | 성공 | 사용자 실행 확인 |
+| Release x64 | 성공 | 사용자 실행 확인 |
 
 ## Static Verification
 
@@ -76,5 +76,5 @@ Excluded:
 
 ## Follow-up
 
-- 사용자가 Debug x64와 Release x64 실행을 확인합니다.
+- Debug x64와 Release x64 실행 확인이 완료되었습니다.
 - public repo로 옮길 때는 replacement HDR/PBR asset의 license/source를 별도 검토합니다.
