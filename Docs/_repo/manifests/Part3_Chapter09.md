@@ -6,7 +6,7 @@
 - Target: `Part3_Chapter09`
 - Docs target: `Docs/Part3_Chapter09`
 - Scope: user interaction, first-person camera, mouse picking, ray collision, quaternion/trackball controls
-- Import status: planned
+- Import status: Step1 imported
 - Build/run status: 미확인
 - Public readiness: 검토 필요
 
@@ -14,7 +14,7 @@
 
 | Raw folder/file | Import decision | Archive name | Note |
 | --- | --- | --- | --- |
-| `09_UserInteraction_Step1_FirstPersonView` | archive 후보 | same | first-person camera, skybox cubemap, ground texture |
+| `09_UserInteraction_Step1_FirstPersonView` | 반영 완료 | same | first-person camera, skybox cubemap, ground texture, selected assets 포함 |
 | `09_UserInteraction_Step2_MousePicking` | archive 후보 | same | mainline mouse picking 작업본 |
 | `09_UserInteraction_Step2_MousePicking_Debug` | 제외 / reference-only | none | debug/memo 실험 흔적, `memo.txt` 포함 |
 | `09_UserInteraction_Step3_MousePickingRayCollision` | archive 후보 | same | 사용자 작업본, source memo 분리 필요 |
@@ -79,8 +79,23 @@ Dependency notes:
 - `ReferenceSolution` is private archive comparison material, not a public-ready candidate.
 - Source comments are not fully cleaned in phase 1 unless they contradict current code behavior.
 
+## Step1 Import Result
+
+Imported:
+
+- `09_UserInteraction_Step1_FirstPersonView` source/project/shader files
+- selected skybox cubemap DDS assets
+- selected ground texture asset
+
+Adjusted:
+
+- Removed `.clang-format` from archive project/filter references because the file is intentionally excluded.
+- Added `Part3_Chapter09/Directory.Build.props` for repo-local `ThirdParty/stb` include path.
+
+Build/run remains `미확인` until user verifies Debug/Release.
+
 ## Current Next Action
 
-1. Import `09_UserInteraction_Step1_FirstPersonView` source/project files.
-2. Include only the selected Step1 assets listed above.
-3. Run import integrity checks before user build/run verification.
+1. User verifies `09_UserInteraction_Step1_FirstPersonView` Debug/Release build/run.
+2. Record the verification result in Step1 `status.md` and tracking docs.
+3. Continue to `09_UserInteraction_Step2_MousePicking`.
