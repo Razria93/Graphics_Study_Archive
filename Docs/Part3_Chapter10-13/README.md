@@ -8,8 +8,8 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 - Reference-only raw source: `C:\ComputerGraphics\Part3_Chapter10_13_2`
 - Archive source: `Part3_Chapter10-13`
 - Topic: geometry shader, billboards, tessellation, mipmaps, normal/height mapping, HDR, PBR, mirror, shadow mapping, PCF, PCSS
-- Import status: Step1-Step2 imported
-- Build/run: Step1-Step2 성공
+- Import status: Step1-Step3 imported
+- Build/run: Step1-Step3 성공
 - Capture: 보류
 - Public readiness: 검토 필요
 
@@ -33,7 +33,7 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 | `10_GeometryPipeline_Step1_GeometryShader` | 반영 완료 | 성공 | 검토 필요 | primary-only 기본 작업본, selected assets 포함, Release shader setting 보정 |
 | `10_GeometryPipeline_Step1_GeometryShader_Solution` | reference solution 후보 | 미확인 | 검토 필요 | 필요 시 `ReferenceSolution` 이름으로 분리 |
 | `10_GeometryPipeline_Step2_Billboards` | 반영 완료 | 성공 | 검토 필요 | billboard geometry shader, TreeBillboards selected assets 포함, Release shader setting 보정 |
-| `10_GeometryPipeline_Step3_NormalLines` | archive 후보 | 미확인 | 검토 필요 | normal visualization |
+| `10_GeometryPipeline_Step3_NormalLines` | 반영 완료 | 성공 | 검토 필요 | normal visualization, Release shader setting 보정 |
 | `10_GeometryPipeline_Step4_Fireball` | archive 후보 | 미확인 | 검토 필요 | geometry/fireball shader |
 | `10_GeometryPipeline_Step5_Tessellation` | archive 후보 | 미확인 | 검토 필요 | hull/domain shader |
 | `11_TexturingTechniques_Step1_Mipmaps` | archive 후보 | 미확인 | 검토 필요 | mipmap sampling |
@@ -64,6 +64,6 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 
 ## Next Action
 
-1. `10_GeometryPipeline_Step3_NormalLines`를 primary raw에서 선별 import합니다.
-2. normal visualization shader와 asset 의존성을 확인합니다.
+1. `10_GeometryPipeline_Step4_Fireball`을 primary raw에서 선별 import합니다.
+2. fireball shader와 texture asset 의존성을 확인합니다.
 3. import 후 XML namespace, HLSL/HLSLI BOM, asset hash, raw/archive diff를 확인합니다.

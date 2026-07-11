@@ -7,8 +7,8 @@
 - Archive target: `Part3_Chapter10-13`
 - Docs target: `Docs/Part3_Chapter10-13`
 - Branch: `archive/part3`
-- Import status: Step1-Step2 imported
-- Build/run status: Step1-Step2 성공
+- Import status: Step1-Step3 imported
+- Build/run status: Step1-Step3 성공
 - Public readiness: 검토 필요
 
 ## Raw Source Decision
@@ -24,7 +24,7 @@
 | `10_GeometryPipeline_Step1_GeometryShader` | primary | 반영 완료 | 성공 | 검토 필요 | primary-only 기본 작업본, selected assets 포함, Release shader setting 보정 |
 | `10_GeometryPipeline_Step1_GeometryShader_Solution` | primary/reference | reference 후보 | 미확인 | 검토 필요 | 필요 시 `ReferenceSolution`으로 분리 |
 | `10_GeometryPipeline_Step2_Billboards` | primary | 반영 완료 | 성공 | 검토 필요 | billboard, TreeBillboards selected assets 포함, Release shader setting 보정 |
-| `10_GeometryPipeline_Step3_NormalLines` | primary | planned | 미확인 | 검토 필요 | normal lines |
+| `10_GeometryPipeline_Step3_NormalLines` | primary | 반영 완료 | 성공 | 검토 필요 | normal lines, Release shader setting 보정 |
 | `10_GeometryPipeline_Step4_Fireball` | primary | planned | 미확인 | 검토 필요 | fireball shader |
 | `10_GeometryPipeline_Step5_Tessellation` | primary | planned | 미확인 | 검토 필요 | tessellation |
 | `11_TexturingTechniques_Step1_Mipmaps` | primary | planned | 미확인 | 검토 필요 | mipmaps |
@@ -66,4 +66,4 @@
 
 ## Next Action
 
-`10_GeometryPipeline_Step3_NormalLines`를 primary raw에서 선별 import합니다.
+`10_GeometryPipeline_Step4_Fireball`을 primary raw에서 선별 import합니다.

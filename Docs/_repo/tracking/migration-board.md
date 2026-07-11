@@ -42,5 +42,6 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part3 Ch09 | `09_UserInteraction_Step6_MouseDragMove` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, mouse drag object movement |
 | Part3 Ch10-13 | `10_GeometryPipeline_Step1_GeometryShader` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, Release shader setting 보정 |
 | Part3 Ch10-13 | `10_GeometryPipeline_Step2_Billboards` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, Release shader setting 보정, TreeBillboards selected assets 포함 |
-| Part3 Ch10-13 | `10_GeometryPipeline_Step3_NormalLines`-`13_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | primary raw 기준 진행, `_2`는 reference-only 비교용 |
+| Part3 Ch10-13 | `10_GeometryPipeline_Step3_NormalLines` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, Release shader setting 보정 |
+| Part3 Ch10-13 | `10_GeometryPipeline_Step4_Fireball`-`13_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | primary raw 기준 진행, `_2`는 reference-only 비교용 |
 | Part4 Ch14-20 | `14_*`-`20_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |
