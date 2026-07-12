@@ -34,6 +34,7 @@ bool ExampleApp::Initialize() {
         m_light.spotPower = 6.0f;
         m_light.fallOffEnd = 20.0f;
         m_light.type = 0x02 | 0x10; // Spot with shadow
+        m_light.position = m_lightCenter + m_lightOffset;
     }
 
     // 별도의 거울 물체를 만들지 않고 바닥을 거울로 구현
@@ -95,13 +96,17 @@ bool ExampleApp::Initialize() {
         //     "../Assets/Models/medieval_vagrant_knights/", "scene.gltf",
         //     true);
 
-        string path = "../Assets/Characters/armored-female-future-soldier/";
-        auto meshes = GeometryGenerator::ReadFromFile(path, "angel_armor.fbx");
-        meshes[0].albedoTextureFilename = path + "/angel_armor_albedo.jpg";
-        meshes[0].emissiveTextureFilename = path + "/angel_armor_e.jpg";
-        meshes[0].metallicTextureFilename = path + "/angel_armor_metalness.jpg";
-        meshes[0].normalTextureFilename = path + "/angel_armor_normal.jpg";
-        meshes[0].roughnessTextureFilename = path + "/angel_armor_roughness.jpg";
+        // 컴퓨터가 느릴 때는 간단한 물체로 테스트 하세요.
+        vector<MeshData> meshes = {GeometryGenerator::MakeSphere(0.4f, 50, 50)};
+
+        // string path = "../Assets/Characters/armored-female-future-soldier/";
+        // auto meshes = GeometryGenerator::ReadFromFile(path,
+        // "angel_armor.fbx"); meshes[0].albedoTextureFilename = path +
+        // "/angel_armor_albedo.jpg"; meshes[0].emissiveTextureFilename = path +
+        // "/angel_armor_e.jpg"; meshes[0].metallicTextureFilename = path +
+        // "/angel_armor_metalness.jpg"; meshes[0].normalTextureFilename = path
+        // + "/angel_armor_normal.jpg"; meshes[0].roughnessTextureFilename =
+        //     path + "/angel_armor_roughness.jpg";
 
         Vector3 center(0.0f, 0.0f, 2.0f);
         m_mainObj = make_shared<BasicMeshGroup>(m_device, m_context, meshes);
@@ -230,12 +235,11 @@ void ExampleApp::Update(float dt) {
                                       reflectionRow);
 
     // 조명 업데이트
-    static Vector3 lightDev = Vector3(0.8f, 0.0f, 0.0f);
     if (m_lightRotate) { // 조명 회전
-        lightDev = Vector3::Transform(
-            lightDev, Matrix::CreateRotationY(dt * 3.141592f * 0.5f));
+        m_lightOffset = Vector3::Transform(
+            m_lightOffset, Matrix::CreateRotationY(dt * 3.141592f * 0.5f));
     }
-    m_light.position = Vector3(0.0f, 1.5f, 2.0f) + lightDev;
+    m_light.position = m_lightCenter + m_lightOffset;
     Vector3 focusPosition = Vector3(0.0f, 0.0f, 1.7f);
     m_light.direction = focusPosition - m_light.position;
     m_light.direction.Normalize();
@@ -556,15 +560,15 @@ void ExampleApp::DepthPass(TextureBuffer &textureBuffer,
 void ExampleApp::Render() {
 
     // 카메라 시점에서 깊이값 렌더링 (MainPass 주석처리할 것)
-    DepthPass(m_mainBuffer, m_depthEyeViewProjConstBuffer);
+    // DepthPass(m_mainBuffer, m_depthEyeViewProjConstBuffer);
     
     // 조명 시점에서 깊이값 렌더링 (MainPass 주석처리할 것)
     //DepthPass(m_mainBuffer, m_lightEyeViewProjConstBuffer);
     
     // 조명 시점의 깊이값을 그림자맵으로 렌더링
-    //DepthPass(m_shadowBuffer, m_lightEyeViewProjConstBuffer);
+    DepthPass(m_shadowBuffer, m_lightEyeViewProjConstBuffer);
 
-    //MainPass(); // 기본 렌더링 (반사 포함)
+    MainPass(); // 기본 렌더링 (반사 포함)
 
     // 디버깅하기 위해서 backbuffer 에 직접 렌더링할 때는 주석 처리
     m_postProcess.Render(m_context);
@@ -642,7 +646,10 @@ void ExampleApp::UpdateGUI() {
 
     ImGui::SetNextItemOpen(true, ImGuiCond_Once);
     if (ImGui::TreeNode("Point Light")) {
-        ImGui::SliderFloat3("Position", &m_light.position.x, -5.0f, 5.0f);
+        if (ImGui::SliderFloat3("Position", &m_light.position.x, -5.0f,
+                                5.0f)) {
+            m_lightCenter = m_light.position - m_lightOffset;
+        }
         ImGui::TreePop();
     }
 

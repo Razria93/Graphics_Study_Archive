@@ -38,7 +38,7 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 | `12_PBR_Step2_PBRModels` | 반영 완료 | 성공 | 검토 필요 | PBR model loading, `armored-female-future-soldier` asset 반영, 사용자 Debug/Release 실행 확인 |
 | `13_LightAndShadow_Step1_Mirror` | 반영 완료 | 성공 | 검토 필요 | mirror/stencil, Sample HDRI DDS and UV grid texture reused, character asset enabled |
 | `13_LightAndShadow_Step2_PipelineStateObject` | 반영 완료 | 성공 | 검토 필요 | pipeline state abstraction, character asset enabled |
-| `13_LightAndShadow_Step2_Shadow` | 반영 완료 | 미확인 | 검토 필요 | shadow map baseline, character asset enabled |
+| `13_LightAndShadow_Step2_Shadow` | 반영 완료 | 미확인 | 검토 필요 | shadow map baseline, sphere main object, final scene path, point-light position GUI minimal 보완 |
 | `13_LightAndShadow_Step3_DepthBufferAndFog` | archive 후보 | 미확인 | 검토 필요 | depth/fog |
 | `13_LightAndShadow_Step4_ShadowMapping` | archive 후보 | 미확인 | 검토 필요 | shadow mapping |
 | `13_LightAndShadow_Step5_SoftShadowPCF` | archive 후보 | 미확인 | 검토 필요 | PCF soft shadow |

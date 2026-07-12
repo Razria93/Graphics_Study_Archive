@@ -42,6 +42,8 @@ class ExampleApp : public AppBase {
     bool m_usePerspectiveProjection = true;
 
     Light m_light;
+    Vector3 m_lightCenter = Vector3(0.0f, 1.5f, 2.0f);
+    Vector3 m_lightOffset = Vector3(0.8f, 0.0f, 0.0f);
 
     // 거울이 아닌 물체들의 리스트 (for문으로 그리기 위함)
     vector<shared_ptr<BasicMeshGroup>> m_basicList;
