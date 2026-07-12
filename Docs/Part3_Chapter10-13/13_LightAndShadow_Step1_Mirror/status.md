@@ -31,6 +31,8 @@
 | `Assets/Textures/Cubemaps/HDRI/SampleDiffuseHDR.dds` | 재사용 | previous Part3 import |
 | `Assets/Textures/Cubemaps/HDRI/SampleBrdf.dds` | 재사용 | previous Part3 import |
 | `Assets/Textures/blender_uv_grid_2k.png` | 재사용 | previous Part3 import |
+| `Assets/Characters/armored-female-future-soldier/angel_armor.fbx` | 사용 | box baseline 대신 character main object로 전환 |
+| `Assets/Characters/armored-female-future-soldier/angel_armor_*.jpg` | 사용 | PBR texture set |
 
 ## User Verification
 

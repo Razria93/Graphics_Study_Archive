@@ -34,7 +34,7 @@
 | `11_TexturingTechniques_Step5_HDRPipeline` | primary | 반영 완료 | 성공 | 검토 필요 | HDR DDS replacement assets 반영, 사용자 Debug/Release 실행 확인 |
 | `12_PBR_Step1_UnrealPBR` | primary | 반영 완료 | 성공 | 검토 필요 | Unreal-style PBR shader, Sample HDRI DDS and worn-painted-metal PBR textures 포함, 사용자 Debug/Release 실행 확인 |
 | `12_PBR_Step2_PBRModels` | primary | 반영 완료 | 성공 | 검토 필요 | PBR model loading, `armored-female-future-soldier` asset 반영, 사용자 Debug/Release 실행 확인 |
-| `13_LightAndShadow_Step1_Mirror` | primary | 반영 완료 | 미확인 | 검토 필요 | mirror/stencil, Sample HDRI DDS and UV grid texture reused |
+| `13_LightAndShadow_Step1_Mirror` | primary | 반영 완료 | 미확인 | 검토 필요 | mirror/stencil, Sample HDRI DDS and UV grid texture reused, character asset enabled |
 | `13_LightAndShadow_Step2_PipelineStateObject` | primary | planned | 미확인 | 검토 필요 | pipeline state |
 | `13_LightAndShadow_Step2_Shadow` | primary | planned | 미확인 | 검토 필요 | shadow baseline |
 | `13_LightAndShadow_Step3_DepthBufferAndFog` | primary | planned | 미확인 | 검토 필요 | depth/fog |

@@ -36,7 +36,7 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 | `11_TexturingTechniques_Step5_HDRPipeline` | 반영 완료 | 성공 | 검토 필요 | HDR DDS replacement assets 반영, 사용자 Debug/Release 실행 확인 |
 | `12_PBR_Step1_UnrealPBR` | 반영 완료 | 성공 | 검토 필요 | Unreal-style PBR shader, Sample HDRI DDS and worn-painted-metal PBR textures 포함, 사용자 Debug/Release 실행 확인 |
 | `12_PBR_Step2_PBRModels` | 반영 완료 | 성공 | 검토 필요 | PBR model loading, `armored-female-future-soldier` asset 반영, 사용자 Debug/Release 실행 확인 |
-| `13_LightAndShadow_Step1_Mirror` | 반영 완료 | 미확인 | 검토 필요 | mirror/stencil, Sample HDRI DDS and UV grid texture reused |
+| `13_LightAndShadow_Step1_Mirror` | 반영 완료 | 미확인 | 검토 필요 | mirror/stencil, Sample HDRI DDS and UV grid texture reused, character asset enabled |
 | `13_LightAndShadow_Step2_PipelineStateObject` | archive 후보 | 미확인 | 검토 필요 | pipeline state abstraction |
 | `13_LightAndShadow_Step2_Shadow` | archive 후보 | 미확인 | 검토 필요 | shadow baseline |
 | `13_LightAndShadow_Step3_DepthBufferAndFog` | archive 후보 | 미확인 | 검토 필요 | depth/fog |

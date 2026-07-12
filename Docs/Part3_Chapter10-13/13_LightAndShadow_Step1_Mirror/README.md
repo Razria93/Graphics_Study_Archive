@@ -27,6 +27,7 @@
 - `.vs/`, `x64/`, `.vcxproj.user`, `imgui.ini`, `.clang-format`는 archive 대상에서 제외했습니다.
 - Release build shader compile 재현성을 위해 `CubeMappingPS.hlsl` Release shader model을 `5.0`으로 맞추고, 일부 shader의 Release shader model 누락을 보정했습니다.
 - 실행에 필요한 HDRI DDS와 `blender_uv_grid_2k.png`는 이전 Part3 import에서 이미 archive에 포함된 asset을 재사용합니다.
+- main object는 raw/origin 기본 활성 상태였던 box 대신, 주석으로 제공되어 있던 `armored-female-future-soldier` character asset 로딩 경로를 활성화했습니다.
 
 ## Next Check
 
