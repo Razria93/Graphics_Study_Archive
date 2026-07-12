@@ -5,7 +5,7 @@
 - Archive example: `Part3_Chapter10-13/13_LightAndShadow_Step1_Mirror`
 - Primary raw source: `C:\ComputerGraphics\Part3_Chapter10_13\13_LightAndShadow_Step1_Mirror`
 - Reference-only raw source: `C:\ComputerGraphics\Part3_Chapter10_13_2\13_LightAndShadow_Step1_Mirror`
-- Build/run status: 미확인
+- Build/run status: 성공
 - Capture status: 보류
 - Public readiness: 검토 필요
 
@@ -31,6 +31,6 @@
 
 ## Next Check
 
-- Visual Studio에서 Debug x64 build/run 확인
-- Visual Studio에서 Release x64 build/run 확인
-- mirror/stencil 동작이 화면에 정상적으로 나타나는지 확인
+- Debug x64 build/run 확인 완료
+- Release x64 build/run 확인 완료
+- mirror/stencil 동작은 character main object 기준으로 확인 완료
