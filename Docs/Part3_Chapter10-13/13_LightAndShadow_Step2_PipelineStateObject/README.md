@@ -5,7 +5,7 @@
 - Archive example: `Part3_Chapter10-13/13_LightAndShadow_Step2_PipelineStateObject`
 - Primary raw source: `C:\ComputerGraphics\Part3_Chapter10_13\13_LightAndShadow_Step2_PipelineStateObject`
 - Origin reference: `C:\ComputerGraphics\OriginalExamples\Part3_Chapter10_13\13_LightAndShadow_Step2_PipelineStateObject`
-- Build/run status: 미확인
+- Build/run status: 성공
 - Capture status: 보류
 - Public readiness: 검토 필요
 
@@ -29,6 +29,6 @@
 
 ## Next Check
 
-- Visual Studio에서 Debug x64 build/run 확인
-- Visual Studio에서 Release x64 build/run 확인
-- character main object 기준으로 mirror/pipeline state 동작 확인
+- Debug x64 build/run 확인 완료
+- Release x64 build/run 확인 완료
+- character main object 기준으로 mirror/pipeline state 동작 확인 완료
