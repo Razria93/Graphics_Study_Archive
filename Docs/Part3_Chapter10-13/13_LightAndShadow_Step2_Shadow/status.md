@@ -7,7 +7,7 @@
 | Code import | 완료 |
 | Raw basis | `C:\ComputerGraphics\Part3_Chapter10_13\13_LightAndShadow_Step2_Shadow` |
 | Origin reference | `C:\ComputerGraphics\OriginalExamples\Part3_Chapter10_13\13_LightAndShadow_Step2_Shadow` |
-| Build/run | 미확인 |
+| Build/run | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
@@ -35,9 +35,9 @@
 
 ## User Verification
 
-- Debug x64: 미확인
-- Release x64: 미확인
-- Runtime behavior: 미확인
+- Debug x64: 성공
+- Release x64: 성공
+- Runtime behavior: final shadow scene 실행 확인, point-light position GUI 동작 확인, `UseShadow`는 raw/origin 수준으로 유지
 
 ## Build Notes
 
