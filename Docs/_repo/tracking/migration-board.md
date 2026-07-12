@@ -51,5 +51,6 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part3 Ch10-13 | `11_TexturingTechniques_Step4_HDRI` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | replacement EXR 반영, 사용자 Debug/Release 실행 확인 |
 | Part3 Ch10-13 | `11_TexturingTechniques_Step5_HDRPipeline` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | HDR DDS replacement assets 반영, 사용자 Debug/Release 실행 확인 |
 | Part3 Ch10-13 | `12_PBR_Step1_UnrealPBR` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | Sample HDRI DDS and worn-painted-metal PBR textures 포함, 사용자 Debug/Release 실행 확인 |
-| Part3 Ch10-13 | `12_PBR_Step2_PBRModels`-`13_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | primary raw 기준 진행, `_2`는 reference-only 비교용 |
+| Part3 Ch10-13 | `12_PBR_Step2_PBRModels` | 완료 | 미확인 | 진행 중 | 미확인 | 아니오 | character model asset 누락 기록, runtime 확인 전 asset 확보 또는 대체 경로 판단 필요 |
+| Part3 Ch10-13 | `13_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | primary raw 기준 진행, `_2`는 reference-only 비교용 |
 | Part4 Ch14-20 | `14_*`-`20_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |
