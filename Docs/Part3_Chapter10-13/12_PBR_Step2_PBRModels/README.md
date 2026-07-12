@@ -24,7 +24,7 @@ Reused from previous archive imports:
 - `Assets/Textures/Cubemaps/HDRI/SampleDiffuseHDR.dds`
 - `Assets/Textures/Cubemaps/HDRI/SampleBrdf.dds`
 
-Referenced but currently missing in raw/archive:
+Character asset included for runtime verification:
 
 - `Assets/Characters/armored-female-future-soldier/angel_armor.fbx`
 - `Assets/Characters/armored-female-future-soldier/angel_armor_albedo.jpg`
@@ -33,16 +33,16 @@ Referenced but currently missing in raw/archive:
 - `Assets/Characters/armored-female-future-soldier/angel_armor_normal.jpg`
 - `Assets/Characters/armored-female-future-soldier/angel_armor_roughness.jpg`
 
-The missing character asset is not present in `C:\ComputerGraphics` at the time of import. It must be supplied or the example path must be intentionally changed before runtime verification.
+The character asset is private archive material and requires license/source review before any public subset is prepared.
 
 ## Verification
 
 - Static verification: 통과
-- Debug x64 run: 미확인
-- Release x64 run: 미확인
+- Debug x64 run: 성공
+- Release x64 run: 성공
 
 ## Notes
 
 - `.clang-format` project reference was removed because the file is not archived.
 - Release x64 shader model settings were normalized to `5.0` for `CubeMappingPS`, `CubeMappingVS`, `NormalPS`, and `NormalVS`.
-- The code currently keeps the raw `armored-female-future-soldier` path unchanged. No fallback model path was introduced in this import.
+- The code keeps the raw `armored-female-future-soldier` path unchanged. No fallback model path was introduced in this import.

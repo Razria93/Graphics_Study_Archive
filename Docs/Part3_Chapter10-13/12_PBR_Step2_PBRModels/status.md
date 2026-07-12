@@ -3,7 +3,7 @@
 ## Current Status
 
 - Code split: 완료
-- Build/run: 미확인
+- Build/run: 성공
 - Diff review: 진행 중
 - Refactor: 미확인
 - Capture ready: 아니오
@@ -52,7 +52,7 @@ Already available from previous imports:
 - `SampleDiffuseHDR.dds`
 - `SampleBrdf.dds`
 
-Missing:
+Included for runtime verification:
 
 - `Assets/Characters/armored-female-future-soldier/angel_armor.fbx`
 - `Assets/Characters/armored-female-future-soldier/angel_armor_albedo.jpg`
@@ -66,16 +66,16 @@ Missing:
 - `.clang-format` file was excluded.
 - `.vcxproj` and `.vcxproj.filters` references to `.clang-format` were removed.
 - Release x64 shader model settings were normalized to `5.0` for missing or inconsistent entries.
-- Missing character asset was recorded instead of replacing the model path during import.
+- Character asset was added under the raw path instead of replacing the model path.
 
 ## Build/Run Verification
 
-사용자 실행 확인 전입니다.
+사용자 실행 확인 완료입니다.
 
 | Configuration | Status | Note |
 | --- | --- | --- |
-| Debug x64 | 미확인 | character asset 누락 확인 필요 |
-| Release x64 | 미확인 | character asset 누락 확인 필요 |
+| Debug x64 | 성공 | 사용자 실행 확인 |
+| Release x64 | 성공 | 사용자 실행 확인 |
 
 ## Static Verification
 
@@ -84,9 +84,8 @@ Missing:
 - `.vcxproj.filters` XML parse: 통과
 - Release x64 shader setting check: 통과
 - HLSL/HLSLI BOM check: 통과
-- Selected asset check: character asset 누락 기록
+- Selected asset check: 통과
 
 ## Follow-up
 
-- `armored-female-future-soldier` asset을 확보하거나, raw 의도와 비교해 대체 model path 사용 여부를 결정해야 합니다.
 - public repo로 옮기기 전 model/texture asset license/source를 별도 검토합니다.
