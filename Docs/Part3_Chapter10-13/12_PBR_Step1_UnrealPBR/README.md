@@ -1,4 +1,4 @@
-# 12_PBR_Step1_UnrealPBR
+﻿# 12_PBR_Step1_UnrealPBR
 
 ## Chapter Focus
 
@@ -10,7 +10,7 @@
 
 - Primary raw: `C:\ComputerGraphics\Part3_Chapter10_13\12_PBR_Step1_UnrealPBR`
 - Reference raw: `C:\ComputerGraphics\Part3_Chapter10_13_2\12_PBR_Step1_UnrealPBR`
-- 이번 단계에서는 primary raw의 solution/project/source를 기준으로 import했습니다.
+- Primary raw의 solution/project/source를 기준으로 import했습니다.
 - 실행에 필요한 HDRI DDS와 `worn-painted-metal-ue` PBR texture set만 공용 asset으로 선별 포함했습니다.
 - raw의 `.vs/`, `x64/`, generated project output, `.vcxproj.user`, `.clang-format`, `imgui.ini`는 제외했습니다.
 - 장문 학습 주석과 문서 정리는 2차 문서 정리 단계에서 별도로 처리합니다.
@@ -35,8 +35,8 @@ All selected assets are private archive material and require license/source revi
 ## Verification
 
 - Static verification: 통과
-- Debug x64 run: 미확인
-- Release x64 run: 미확인
+- Debug x64 run: 성공
+- Release x64 run: 성공
 
 ## Notes
 

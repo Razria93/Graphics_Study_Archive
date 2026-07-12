@@ -8,7 +8,7 @@
 - Docs target: `Docs/Part3_Chapter10-13`
 - Branch: `archive/part3`
 - Import status: Step1-Step5, 11-Step1-Step5, and 12-Step1 imported
-- Build/run status: Step1-Step5 and 11-Step1-Step5 성공, 12-Step1 미확인
+- Build/run status: Step1-Step5, 11-Step1-Step5, and 12-Step1 성공
 - Public readiness: 검토 필요
 
 ## Raw Source Decision
@@ -32,7 +32,7 @@
 | `11_TexturingTechniques_Step3_HeightMapping` | primary | 반영 완료 | 성공 | 검토 필요 | height texture 기반 vertex displacement, 사용자 Debug/Release 실행 확인 |
 | `11_TexturingTechniques_Step4_HDRI` | primary | 반영 완료 | 성공 | 검토 필요 | referenced EXR 미발견 이슈 후 replacement EXR 반영, 사용자 Debug/Release 실행 확인 |
 | `11_TexturingTechniques_Step5_HDRPipeline` | primary | 반영 완료 | 성공 | 검토 필요 | HDR DDS replacement assets 반영, 사용자 Debug/Release 실행 확인 |
-| `12_PBR_Step1_UnrealPBR` | primary | 반영 완료 | 미확인 | 검토 필요 | Unreal-style PBR shader, Sample HDRI DDS and worn-painted-metal PBR textures 포함 |
+| `12_PBR_Step1_UnrealPBR` | primary | 반영 완료 | 성공 | 검토 필요 | Unreal-style PBR shader, Sample HDRI DDS and worn-painted-metal PBR textures 포함, 사용자 Debug/Release 실행 확인 |
 | `12_PBR_Step2_PBRModels` | primary | planned | 미확인 | 검토 필요 | PBR models |
 | `13_LightAndShadow_Step1_Mirror` | primary | planned | 미확인 | 검토 필요 | mirror/stencil |
 | `13_LightAndShadow_Step2_PipelineStateObject` | primary | planned | 미확인 | 검토 필요 | pipeline state |
@@ -66,4 +66,4 @@
 
 ## Next Action
 
-`12_PBR_Step1_UnrealPBR` Debug/Release 실행 확인이 필요합니다.
+다음 import 대상은 `12_PBR_Step2_PBRModels`입니다.

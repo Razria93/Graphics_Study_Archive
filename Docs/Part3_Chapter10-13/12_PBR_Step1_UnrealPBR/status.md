@@ -1,12 +1,12 @@
-# Status: 12_PBR_Step1_UnrealPBR
+﻿# Status: 12_PBR_Step1_UnrealPBR
 
 ## Current Status
 
 - Code split: 완료
-- Build/run: 미확인
+- Build/run: 성공
 - Diff review: 진행 중
 - Refactor: 미확인
-- Capture ready: 아니오
+- Capture ready: 보류
 - Public readiness: 검토 필요
 
 ## Source Decision
@@ -55,12 +55,12 @@ Excluded:
 
 ## Build/Run Verification
 
-사용자 실행 확인 전입니다.
+사용자 실행 확인 완료입니다.
 
 | Configuration | Status | Note |
 | --- | --- | --- |
-| Debug x64 | 미확인 | 사용자 실행 확인 필요 |
-| Release x64 | 미확인 | 사용자 실행 확인 필요 |
+| Debug x64 | 성공 | 사용자 실행 확인 |
+| Release x64 | 성공 | 사용자 실행 확인 |
 
 ## Static Verification
 
@@ -73,5 +73,4 @@ Excluded:
 
 ## Follow-up
 
-- Debug x64와 Release x64 실행 확인 후 status와 migration board를 갱신합니다.
 - public repo로 옮기기 전 HDRI/PBR asset license/source를 별도 검토합니다.
