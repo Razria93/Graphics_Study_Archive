@@ -5,7 +5,7 @@
 - Archive example: `Part3_Chapter10-13/13_LightAndShadow_Step3_DepthBufferAndFog`
 - Primary raw source: `C:\ComputerGraphics\Part3_Chapter10_13\13_LightAndShadow_Step3_DepthBufferAndFog`
 - Origin reference: `C:\ComputerGraphics\OriginalExamples\Part3_Chapter10_13\13_LightAndShadow_Step3_DepthBufferAndFog`
-- Build/run status: 미확인
+- Build/run status: 성공
 - Capture status: 보류
 - Public readiness: 검토 필요
 
@@ -29,9 +29,9 @@
 - Release build shader compile 재현성을 위해 `.clang-format` project reference를 제거하고, Release shader model 누락/`5.1` 설정을 `5.0` 기준으로 보정했습니다.
 - 실행에 필요한 HDRI/cubemap/texture assets는 이전 Part3 import의 shared `Assets` 폴더를 재사용합니다.
 
-## Next Check
+## Verification
 
-- Visual Studio에서 Debug x64 build/run 확인
-- Visual Studio에서 Release x64 build/run 확인
-- `DepthScale` GUI 조작 확인
-- `Fog` GUI 조작 확인
+- Debug x64 build/run: 성공
+- Release x64 build/run: 성공
+- Runtime behavior: 사용자 실행 확인
+- `DepthScale`/`Fog` GUI는 후속 문서 정리 단계에서 세부 동작을 다시 확인합니다.
