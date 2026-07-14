@@ -1,4 +1,4 @@
-﻿# Migration Board
+# Migration Board
 
 Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refactor 확인, capture 준비 상태를 추적합니다.
 
@@ -34,6 +34,31 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part2 Ch05-08 | `08_ShaderToys_Step5_FresnelEffect` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, Fresnel effect, Stonewall diffuse/specular IBL DDS, shader/asset integrity 확인 완료 |
 | Part2 Ch05-08 | `08_ShaderToys_Step6_BloomEffect` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, bloom post-processing, threshold/blur/combine filter, shader/asset integrity 확인 완료 |
 | Part2 Ch05-08 | `08_ShaderToys_Step7_Shadertoy` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, Shadertoy fullscreen shader, `StarPixelShader`, shader profile 보정 |
-| Part3 Ch09 | `09_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |
-| Part3 Ch10-13 | `10_*`-`13_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |
+| Part3 Ch09 | `09_UserInteraction_Step1_FirstPersonView` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, first-person camera, skybox cubemap, ground texture |
+| Part3 Ch09 | `09_UserInteraction_Step2_MousePicking` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, mainline source/project 반영, `_Debug` variant 제외 |
+| Part3 Ch09 | `09_UserInteraction_Step3_MousePickingRayCollision` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, `_Solution` 기준 source/project 반영, mainline/`_Debug` 미완성 variant 제외 |
+| Part3 Ch09 | `09_UserInteraction_Step4_QuaternianRotation` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, raw spelling 유지, Euler X/Y/Z GUI는 raw에서도 미적용 |
+| Part3 Ch09 | `09_UserInteraction_Step5_VirtualTrackball` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, mainline source/project 반영, `_Debug` variant 제외 |
+| Part3 Ch09 | `09_UserInteraction_Step6_MouseDragMove` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, mouse drag object movement |
+| Part3 Ch10-13 | `10_GeometryPipeline_Step1_GeometryShader` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, Release shader setting 보정 |
+| Part3 Ch10-13 | `10_GeometryPipeline_Step2_Billboards` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, Release shader setting 보정, TreeBillboards selected assets 포함 |
+| Part3 Ch10-13 | `10_GeometryPipeline_Step3_NormalLines` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, Release shader setting 보정 |
+| Part3 Ch10-13 | `10_GeometryPipeline_Step4_Fireball` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, fireball texture 포함, Release shader setting 보정 |
+| Part3 Ch10-13 | `10_GeometryPipeline_Step5_Tessellation` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, reference snapshot과 tessellation 핵심 파일 차이 있음, Release shader setting 보정 |
+| Part3 Ch10-13 | `11_TexturingTechniques_Step1_Mipmaps` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | OriginalExamples 의도 기준 `Mipmaps Level` GUI 복구, 사용자 Debug/Release 실행 확인 |
+| Part3 Ch10-13 | `11_TexturingTechniques_Step2_NormalMapping` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | primary raw 기준 normal map/TBN 구현, 사용자 Debug/Release 실행 확인 |
+| Part3 Ch10-13 | `11_TexturingTechniques_Step3_HeightMapping` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | height texture 기반 vertex displacement, 사용자 Debug/Release 실행 확인 |
+| Part3 Ch10-13 | `11_TexturingTechniques_Step4_HDRI` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | replacement EXR 반영, 사용자 Debug/Release 실행 확인 |
+| Part3 Ch10-13 | `11_TexturingTechniques_Step5_HDRPipeline` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | HDR DDS replacement assets 반영, 사용자 Debug/Release 실행 확인 |
+| Part3 Ch10-13 | `12_PBR_Step1_UnrealPBR` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | Sample HDRI DDS and worn-painted-metal PBR textures 포함, 사용자 Debug/Release 실행 확인 |
+| Part3 Ch10-13 | `12_PBR_Step2_PBRModels` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | character model asset 반영, 사용자 Debug/Release 실행 확인 |
+| Part3 Ch10-13 | `13_LightAndShadow_Step1_Mirror` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | mirror/stencil, Sample HDRI DDS and UV grid texture reused, character asset enabled, 사용자 Debug/Release 실행 확인 |
+| Part3 Ch10-13 | `13_LightAndShadow_Step2_PipelineStateObject` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | pipeline state abstraction, character asset enabled, 사용자 Debug/Release 실행 확인 |
+| Part3 Ch10-13 | `13_LightAndShadow_Step2_Shadow` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | shadow map baseline, sphere main object, final scene path, point-light position GUI minimal 보완, 사용자 Debug/Release 실행 확인 |
+| Part3 Ch10-13 | `13_LightAndShadow_Step3_DepthBufferAndFog` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | depth buffer/fog post effect, Release shader setting 보정, `PostEffectsPS.hlsl` return 변수 오타 보정, 사용자 Debug/Release 실행 확인 |
+| Part3 Ch10-13 | `13_LightAndShadow_Step4_ShadowMapping` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | shadow mapping, primary raw shadow lookup 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
+| Part3 Ch10-13 | `13_LightAndShadow_Step5_SoftShadowPCF` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | PCF soft shadow, primary raw 64-sample PCF 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
+| Part3 Ch10-13 | `13_LightAndShadow_Step6_SoftShadowPCSS` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | PCSS soft shadow, primary raw PCSS 사용자 메모 포함 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
+| Part3 Ch10-13 | `13_LightAndShadow_Step7_Halo` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | halo post effect, primary raw `PostEffectsPS.hlsl` 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
+| Part3 Ch10-13 | `13_LightAndShadow_Step8_UnrealSphereLight` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | sphere light, primary raw `BasicPS.hlsl` representative point 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
 | Part4 Ch14-20 | `14_*`-`20_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |
