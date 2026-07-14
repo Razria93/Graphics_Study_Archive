@@ -30,6 +30,12 @@ Part4는 예제별 폴더가 아니라 `Examples` 단일 project에 `Ex1401`-`Ex
 | Ch19 | `Ex1901` | PhysX |
 | Ch20 | `Ex2001` | Gameplay integration |
 
+## Import Status
+
+| Example | Import | Build/run | Public readiness | Note |
+| --- | --- | --- | --- | --- |
+| [`Ex1401_Basic`](Ex1401_Basic/README.md) | 반영 완료 | 미확인 | 검토 필요 | compute shader dispatch, back buffer UAV, command argument `1401` |
+
 ## Import 기준
 
 - source/project/shader/필수 runtime asset만 선별합니다.

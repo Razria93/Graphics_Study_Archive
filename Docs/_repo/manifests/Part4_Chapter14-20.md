@@ -169,6 +169,8 @@ Shader/project 설정:
 - `Ex1401_CS.hlsl`은 `FxCompile` 대상이며 Debug/Release x64 모두 `Compute`, shader model `5.0`으로 설정되어 있습니다.
 - raw의 `Ex1401_Basic.cpp`, `Ex1401_Basic.h`, `main.cpp`, `.vcxproj`, `.filters`는 UTF-8 BOM이 있습니다.
 - raw의 `Ex1401_CS.hlsl`은 UTF-8/UTF-16 BOM이 없습니다. HLSL/HLSLI BOM 없음 규칙을 유지합니다.
+- raw `.vcxproj`의 personal vcpkg include path는 archive에서 제거하고, `VCPKG_ROOT`가 설정된 경우에만 `$(VCPKG_ROOT)\installed\x64-windows\include`를 참조하도록 보정했습니다.
+- 단일 project 전체를 빌드하므로 `Ex1901_PhysX`, `Ex2001_GamePlay`, `ModelLoader`의 PhysX/Assimp header dependency가 `Ex1401` build 확인에도 영향을 줄 수 있습니다.
 
 Raw comparison:
 
@@ -189,6 +191,7 @@ Raw comparison:
 
 ## Current Next Action
 
-1. 단일 `Examples` project 구조를 기준으로 source/project를 archive에 반영합니다.
-2. `.vs/`, `x64/`, `.user`, `imgui.ini`, `.clang-format`은 제외합니다.
-3. 첫 실행 확인 대상은 `Ex1401_Basic`이며, command argument `1401`로 실행합니다.
+1. 사용자 Debug x64 build/run 확인을 요청합니다.
+2. 사용자 Release x64 build/run 확인을 요청합니다.
+3. 확인 대상은 `Ex1401_Basic`이며, command argument `1401`로 실행합니다.
+4. build 실패 시 `VCPKG_ROOT`, Assimp, PhysX include/dependency 설정을 먼저 확인합니다.
