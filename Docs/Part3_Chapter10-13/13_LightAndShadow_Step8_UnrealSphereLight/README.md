@@ -6,7 +6,7 @@
 - Primary raw source: `C:\ComputerGraphics\Part3_Chapter10_13\13_LightAndShadow_Step8_UnrealSphereLight`
 - Origin reference: `C:\ComputerGraphics\OriginalExamples\Part3_Chapter10_13\13_LightAndShadow_Step8_UnrealSphereLight`
 - Reference-only snapshot: `C:\ComputerGraphics\Part3_Chapter10_13_2\13_LightAndShadow_Step8_UnrealSphereLight`
-- Build/run status: 미확인
+- Build/run status: 성공
 - Capture status: 보류
 - Public readiness: 검토 필요
 
@@ -32,7 +32,7 @@
 
 ## Verification
 
-- Debug x64 build/run: 미확인
-- Release x64 build/run: 미확인
-- Runtime behavior: 사용자 실행 확인 필요
-- Sphere light radius, representative highlight, light movement, material roughness/metallic GUI 동작은 실행 확인 후 기록합니다.
+- Debug x64 build/run: 성공
+- Release x64 build/run: 성공
+- Runtime behavior: 사용자 실행 확인
+- Sphere light radius, representative highlight, light movement, material roughness/metallic GUI 동작은 이후 문서 정리 단계에서 다시 세부 확인합니다.
