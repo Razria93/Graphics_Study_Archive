@@ -39,9 +39,9 @@ Part4는 예제별 폴더가 아니라 `Examples` 단일 project에 `Ex1401`-`Ex
 
 ## 다음 작업
 
-1. `Ex1401_Basic` dependency를 확인합니다.
-2. 단일 project 유지 또는 archive용 최소 project 구성을 결정합니다.
-3. 첫 예제 import 후 Debug/Release build/run 확인을 요청합니다.
+1. 단일 `Examples` project 구조를 기준으로 source/project를 archive에 반영합니다.
+2. `.vs/`, `x64/`, `.user`, `imgui.ini`, `.clang-format`은 제외합니다.
+3. 첫 실행 확인 대상은 `Ex1401_Basic`이며, command argument `1401`로 실행합니다.
 
 ## 관련 문서
 

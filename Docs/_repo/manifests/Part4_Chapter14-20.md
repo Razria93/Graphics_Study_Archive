@@ -115,6 +115,67 @@ Part4_HongLabGraphics/
 5. 각 예제마다 source/project/shader/asset 최소 반영
 6. build/run은 사용자가 확인하기 전까지 `미확인`으로 기록
 
+## Project Import Decision
+
+현재 판단은 `Examples` 단일 solution/project 구조를 유지하는 것입니다.
+
+이유:
+
+- raw `main.cpp`가 `Ex1401`부터 `Ex2001`까지 모든 예제 header를 include하고, command-line argument로 실행 예제를 선택합니다.
+- raw `.vcxproj`가 모든 example source와 shared source를 하나의 executable로 빌드합니다.
+- `Ex1401_Basic`만 분리하려면 `main.cpp`, `.vcxproj`, `.filters`에서 다른 예제 참조를 제거해야 하므로 raw와 archive 차이가 커집니다.
+- Part4는 후속 예제들이 shared infrastructure를 많이 재사용하므로, 초기에 project를 잘라내면 이후 예제 import마다 project를 다시 크게 수정할 가능성이 높습니다.
+
+따라서 1차 code import에서는 단일 project를 유지하고, 실행은 raw와 동일하게 command-line argument로 예제를 선택합니다. 예제별 문서와 status는 `Docs/Part4_Chapter14-20/<ExampleName>/` 아래에 분리합니다.
+
+## Ex1401 Dependency Review
+
+`Ex1401_Basic`은 compute shader가 back buffer UAV에 직접 쓰는 첫 compute shader 예제입니다.
+
+핵심 파일:
+
+- `Ex1401_Basic.cpp`
+- `Ex1401_Basic.h`
+- `Ex1401_CS.hlsl`
+- `main.cpp`
+- `Examples.sln`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+직접 include:
+
+- `Ex1401_Basic.cpp`
+  - `Ex1401_Basic.h`
+  - `GeometryGenerator.h`
+  - `GraphicsCommon.h`
+- `Ex1401_Basic.h`
+  - `AppBase.h`
+  - `Model.h`
+
+핵심 shared dependency:
+
+- `AppBase.*`
+- `D3D11Utils.*`
+- `GraphicsCommon.*`
+- `GraphicsPSO.*`
+- `GeometryGenerator.*`
+- `Model.*`, `ModelLoader.*`, `Mesh*.h`
+- `Camera.*`
+- `PostProcess.*`, `ImageFilter.*`
+- `ConstantBuffers.h`, `Buffers.h`, `Vertex.h`
+
+Shader/project 설정:
+
+- `Ex1401_CS.hlsl`은 `FxCompile` 대상이며 Debug/Release x64 모두 `Compute`, shader model `5.0`으로 설정되어 있습니다.
+- raw의 `Ex1401_Basic.cpp`, `Ex1401_Basic.h`, `main.cpp`, `.vcxproj`, `.filters`는 UTF-8 BOM이 있습니다.
+- raw의 `Ex1401_CS.hlsl`은 UTF-8/UTF-16 BOM이 없습니다. HLSL/HLSLI BOM 없음 규칙을 유지합니다.
+
+Raw comparison:
+
+- `Ex1401_Basic.cpp`, `Ex1401_Basic.h`, `Ex1401_CS.hlsl`은 `Part4_HongLabGraphics`와 `_2`/`OriginalExamples` 사이 hash가 다릅니다.
+- `_2`와 `OriginalExamples`의 `Ex1401` 관련 파일 hash는 같습니다.
+- 따라서 `Ex1401`도 main raw 작업본을 archive 기준으로 사용합니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
@@ -128,6 +189,6 @@ Part4_HongLabGraphics/
 
 ## Current Next Action
 
-1. `Ex1401_Basic`의 실제 dependency를 확인합니다.
-2. 단일 project를 그대로 가져올지, archive용 최소 project로 줄일지 결정합니다.
-3. 첫 import는 `Ex1401_Basic` 기준으로 진행합니다.
+1. 단일 `Examples` project 구조를 기준으로 source/project를 archive에 반영합니다.
+2. `.vs/`, `x64/`, `.user`, `imgui.ini`, `.clang-format`은 제외합니다.
+3. 첫 실행 확인 대상은 `Ex1401_Basic`이며, command argument `1401`로 실행합니다.
