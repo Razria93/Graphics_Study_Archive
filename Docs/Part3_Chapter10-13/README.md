@@ -8,7 +8,7 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 - Reference-only raw source: `C:\ComputerGraphics\Part3_Chapter10_13_2`
 - Archive source: `Part3_Chapter10-13`
 - Topic: geometry shader, billboards, tessellation, mipmaps, normal/height mapping, HDR, PBR, mirror, shadow mapping, PCF, PCSS
-- Import status: Step1-Step5, 11-Step1-Step5, 12-Step1-Step2, 13-Step1, 13-Step2 PipelineStateObject, 13-Step2 Shadow, 13-Step3, and 13-Step4 imported
+- Import status: Step1-Step5, 11-Step1-Step5, 12-Step1-Step2, 13-Step1, 13-Step2 PipelineStateObject, 13-Step2 Shadow, 13-Step3, 13-Step4, and 13-Step5 imported
 - Build/run: Step1-Step5, 11-Step1-Step5, 12-Step1-Step2, 13-Step1, 13-Step2 PipelineStateObject, 13-Step2 Shadow, 13-Step3, and 13-Step4 성공
 - Capture: 보류
 - Public readiness: 검토 필요
@@ -41,7 +41,7 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 | `13_LightAndShadow_Step2_Shadow` | 반영 완료 | 성공 | 검토 필요 | shadow map baseline, sphere main object, final scene path, point-light position GUI minimal 보완, 사용자 Debug/Release 실행 확인 |
 | `13_LightAndShadow_Step3_DepthBufferAndFog` | 반영 완료 | 성공 | 검토 필요 | depth buffer/fog post effect, Release shader setting 보정, `PostEffectsPS.hlsl` return 변수 오타 보정, 사용자 Debug/Release 실행 확인 |
 | `13_LightAndShadow_Step4_ShadowMapping` | 반영 완료 | 성공 | 검토 필요 | shadow mapping, primary raw shadow lookup 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
-| `13_LightAndShadow_Step5_SoftShadowPCF` | archive 후보 | 미확인 | 검토 필요 | PCF soft shadow |
+| `13_LightAndShadow_Step5_SoftShadowPCF` | 반영 완료 | 미확인 | 검토 필요 | PCF soft shadow, primary raw 64-sample PCF 구현본 반영, Release shader setting 보정 |
 | `13_LightAndShadow_Step6_SoftShadowPCSS` | archive 후보 | 미확인 | 검토 필요 | PCSS soft shadow |
 | `13_LightAndShadow_Step7_Halo` | archive 후보 | 미확인 | 검토 필요 | halo/post effect |
 | `13_LightAndShadow_Step8_UnrealSphereLight` | archive 후보 | 미확인 | 검토 필요 | sphere light |
@@ -57,4 +57,4 @@ Geometry pipeline, texturing techniques, PBR, light/shadow 예제를 archive 기
 
 ## Next Action
 
-1. 다음 import 대상은 `13_LightAndShadow_Step5_SoftShadowPCF`입니다.
+1. `13_LightAndShadow_Step5_SoftShadowPCF` Debug/Release 실행 확인.

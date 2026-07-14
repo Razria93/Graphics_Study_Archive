@@ -57,5 +57,6 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part3 Ch10-13 | `13_LightAndShadow_Step2_Shadow` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | shadow map baseline, sphere main object, final scene path, point-light position GUI minimal 보완, 사용자 Debug/Release 실행 확인 |
 | Part3 Ch10-13 | `13_LightAndShadow_Step3_DepthBufferAndFog` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | depth buffer/fog post effect, Release shader setting 보정, `PostEffectsPS.hlsl` return 변수 오타 보정, 사용자 Debug/Release 실행 확인 |
 | Part3 Ch10-13 | `13_LightAndShadow_Step4_ShadowMapping` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | shadow mapping, primary raw shadow lookup 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
-| Part3 Ch10-13 | `13_LightAndShadow_Step5_SoftShadowPCF`-`13_LightAndShadow_Step8_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | primary raw 기준 진행, `_2`는 reference-only 비교용, character 사용 여지가 있으면 character 우선 |
+| Part3 Ch10-13 | `13_LightAndShadow_Step5_SoftShadowPCF` | 완료 | 미확인 | 진행 중 | 미확인 | 아니오 | PCF soft shadow, primary raw 64-sample PCF 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 필요 |
+| Part3 Ch10-13 | `13_LightAndShadow_Step6_SoftShadowPCSS`-`13_LightAndShadow_Step8_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | primary raw 기준 진행, `_2`는 reference-only 비교용, character 사용 여지가 있으면 character 우선 |
 | Part4 Ch14-20 | `14_*`-`20_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |
