@@ -1,0 +1,133 @@
+# Import Plan: Part4 Chapter14-20
+
+## Source / Target
+
+- Primary raw source:
+  - `C:\ComputerGraphics\Part4_HongLabGraphics`
+- Reference-only raw source:
+  - `C:\ComputerGraphics\Part4_HongLabGraphics_2`
+  - `C:\ComputerGraphics\OriginalExamples\Part4_HongLabGraphics`
+- Archive target:
+  - `Part4_Chapter14-20`
+- Docs target:
+  - `Docs/Part4_Chapter14-20`
+- Branch: `archive/part4`
+- Import status: planning
+- Build/run status: 미확인
+- Public readiness: 검토 필요
+
+## Part4 Working Goal
+
+Part4는 `Examples` 단일 Visual Studio project 안에 `Ex1401`부터 `Ex2001`까지의 예제가 모여 있습니다. Part1-Part3처럼 예제별 solution을 그대로 옮기는 방식이 아니라, archive에서는 실행 단위와 문서 단위를 예제별로 분리하되 source/project 기준은 단일 project 구조를 유지할지 먼저 확인합니다.
+
+1차 목표는 code import, asset selection, build/run 확인입니다. 소스 내부 장문 학습 메모 정리와 최종 portfolio 문서 품질 개선은 전체 code import 이후 2차 문서 정리 단계에서 진행합니다.
+
+## Raw Folder Decision
+
+| Raw folder | Import decision | Note |
+| --- | --- | --- |
+| `C:\ComputerGraphics\Part4_HongLabGraphics` | primary source | 대부분 예제 파일이 `_2`/`OriginalExamples`보다 확장되어 있고, 2025-11-15 이후 수정 흔적이 있음 |
+| `C:\ComputerGraphics\Part4_HongLabGraphics_2` | reference-only snapshot | `OriginalExamples`와 거의 동일한 기준본. 일부 VS/project 관련 파일만 다름 |
+| `C:\ComputerGraphics\OriginalExamples\Part4_HongLabGraphics` | original/reference baseline | 강의 기준 baseline 확인용. 직접 import 기준 아님 |
+
+`Part4_HongLabGraphics`를 primary로 보는 이유:
+
+- `Ex1401_Basic`부터 `Ex2001_GamePlay`까지 대부분의 핵심 예제 파일이 `_2` 대비 다른 hash를 가집니다.
+- main raw 쪽 파일은 compute shader, fluid/smoke, foliage, PhysX, gameplay 예제에서 더 큰 구현량 또는 더 늦은 수정일을 보입니다.
+- `_2`와 `OriginalExamples`는 매우 가까운 baseline/snapshot 성격입니다. 두 폴더 사이의 차이는 `AnimationClip.h`, `BasicVS.hlsl`, `DepthOnlyVS.hlsl`, `Ex1901_Physx.h`, `Ex2001_GamePlay.h`, `FluidSimulationCPU.h`, `Examples.vcxproj` 정도로 제한적입니다.
+
+따라서 archive import는 `Part4_HongLabGraphics`를 기준으로 시작하고, build/run 실패 또는 의도 확인이 필요할 때 `_2`와 `OriginalExamples`를 비교합니다.
+
+## Source Layout
+
+Part4 raw source는 아래처럼 단일 project에 모여 있습니다.
+
+```text
+Part4_HongLabGraphics/
+  Assets/
+    Characters/
+    Foliage/
+    Textures/
+    x/
+  Examples/
+    Examples.sln
+    Examples.vcxproj
+    Examples.vcxproj.filters
+    Ex1401_Basic.cpp
+    Ex1401_Basic.h
+    Ex1401_CS.hlsl
+    ...
+    Ex2001_GamePlay.cpp
+    Ex2001_GamePlay.h
+```
+
+`Examples/Examples/`, `.vs/`, `x64/` 같은 폴더는 Visual Studio/build output 성격이므로 archive import 대상이 아닙니다.
+
+## Chapter / Example Inventory
+
+| Range | Raw examples | Import decision | Build/run | Public readiness | Note |
+| --- | --- | --- | --- | --- | --- |
+| Ch14 | `Ex1401_Basic`-`Ex1408_BitonicSort` | archive 후보 | 미확인 | 검토 필요 | compute shader basics, blur, matrix/vector, structured buffer, indirect args, sort |
+| Ch15 | `Ex1501_ParticleSystem`-`Ex1503_SphWater` | archive 후보 | 미확인 | 검토 필요 | particles, sprite fire, SPH water |
+| Ch16 | `Ex1601_StableFluids`-`Ex1606_HybridWater` | archive 후보 | 미확인 | 검토 필요 | stable fluids, curl noise, cloud, smoke, hybrid water |
+| Ch17 | `Ex1701_SkeletalAnimation` | archive 후보 | 미확인 | 검토 필요 | skeletal animation |
+| Ch18 | `Ex1801_Tree`-`Ex1803_Landscape` | archive 후보 | 미확인 | 검토 필요 | tree, grass, landscape/ocean |
+| Ch19 | `Ex1901_Physx` | archive 후보 | 미확인 | 검토 필요 | PhysX integration |
+| Ch20 | `Ex2001_GamePlay` | archive 후보 | 미확인 | 검토 필요 | gameplay integration |
+
+## Include Candidates
+
+- `Examples.sln`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+- `*.cpp`, `*.h`, `*.hlsl`, `*.hlsli`
+- 실행에 필요한 selected asset
+- `copy_dlls.py`는 실행 재현에 필요할 때만 검토합니다.
+
+## Exclude / Defer
+
+- `.vs/`
+- `x64/`
+- `Debug/`
+- `Release/`
+- `Examples/Examples/x64/`
+- `*.user`
+- `*.suo`
+- `imgui.ini`
+- `.clang-format`
+- raw result/capture/video
+- zip/archive asset 원본
+- 강의 원본 영상, 슬라이드, 퀴즈, 정답, 유료 자료
+
+## Asset Policy
+
+- `Assets/Characters`, `Assets/Foliage`, `Assets/Textures`, `Assets/x`는 통째로 복사하지 않습니다.
+- 각 예제 source에서 실제로 읽는 runtime asset만 선별합니다.
+- `.dds`, `.exr`, `.fbx`, `.hdr`는 repository LFS 규칙을 따릅니다.
+- public repo로 옮기기 전에는 외부 asset source/license/attribution을 별도 검토합니다.
+
+## Import Order
+
+1. `Docs/Part4_Chapter14-20` scaffold 생성
+2. `Ex1401_Basic` 기준으로 최소 project import 방식 확정
+3. 단일 solution 유지 vs 예제별 project 분리 여부를 build 결과 기준으로 판단
+4. Ch14 compute shader 예제부터 순차 import
+5. 각 예제마다 source/project/shader/asset 최소 반영
+6. build/run은 사용자가 확인하기 전까지 `미확인`으로 기록
+
+## Per-example Finish Check
+
+- raw result/capture/build output 미포함
+- `.vcxproj` XML namespace 정상
+- HLSL/HLSLI BOM 없음
+- shader include 파일이 build 대상이 아닌 include/document file로 남아 있는지 확인
+- selected asset hash raw와 일치
+- LFS 대상 asset은 pointer로 stage되는지 확인
+- raw와 다르게 바꾼 project/source 설정은 `status.md`에 이유 기록
+- Debug/Release build/run은 사용자가 확인하기 전까지 `미확인`으로 기록
+
+## Current Next Action
+
+1. `Ex1401_Basic`의 실제 dependency를 확인합니다.
+2. 단일 project를 그대로 가져올지, archive용 최소 project로 줄일지 결정합니다.
+3. 첫 import는 `Ex1401_Basic` 기준으로 진행합니다.

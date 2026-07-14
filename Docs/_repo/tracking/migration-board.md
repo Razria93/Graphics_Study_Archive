@@ -61,4 +61,4 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part3 Ch10-13 | `13_LightAndShadow_Step6_SoftShadowPCSS` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | PCSS soft shadow, primary raw PCSS 사용자 메모 포함 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
 | Part3 Ch10-13 | `13_LightAndShadow_Step7_Halo` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | halo post effect, primary raw `PostEffectsPS.hlsl` 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
 | Part3 Ch10-13 | `13_LightAndShadow_Step8_UnrealSphereLight` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | sphere light, primary raw `BasicPS.hlsl` representative point 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
-| Part4 Ch14-20 | `14_*`-`20_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |
+| Part4 Ch14-20 | `Ex1401_Basic`-`Ex2001_GamePlay` | 예정 | 미확인 | 진행 중 | 미확인 | 아니오 | raw 구조 검토 완료, `Part4_HongLabGraphics`를 primary source로 사용 |
