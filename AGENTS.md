@@ -18,6 +18,8 @@
 - 외부 공개 가능한 산출물은 별도 public repo로 분리합니다.
 - `.vs/`, `x64/`, `Debug/`, `Release/`, `.user`, `.suo`, `imgui.ini`는 추가하지 않습니다.
 - 예제 import 마무리에는 `Docs/_repo/workflow/import-integrity-checklist.md`를 기준으로 XML namespace, HLSL/HLSLI BOM, binary asset hash, raw/project diff를 확인합니다.
+- push, pull, merge, rebase, branch delete, history rewrite, LFS migration처럼 되돌리기 어려운 작업은 실행 전에 범위와 위험도를 먼저 보고하고, 사용자가 한 번에 여러 작업을 요청하면 작업을 분할할지 확인합니다. 세부 기준은 `Docs/_repo/workflow/ai-collaboration-safety.md`를 따릅니다.
+- repository 또는 project의 존속에 큰 문제가 될 수 있는 risk를 발견하면 작업을 멈추고 먼저 보고합니다.
 - 새 기능 작업보다 documentation, verification records, reproducible demo links를 우선합니다.
 - build/run을 직접 확인하지 않았다면 `미확인`으로 기록합니다.
 

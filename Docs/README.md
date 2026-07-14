@@ -23,6 +23,7 @@ Private graphics study/archive repo의 문서 입구입니다.
 - [Part Import Workflow](_repo/workflow/part-import-workflow.md)
 - [Import Integrity Checklist](_repo/workflow/import-integrity-checklist.md)
 - [Chapter Start Checklist](_repo/workflow/chapter-start-checklist.md)
+- [AI Collaboration Safety](_repo/workflow/ai-collaboration-safety.md)
 - [Session Troubleshooting Notes](_repo/workflow/session-troubleshooting.md)
 - [Migration Board](_repo/tracking/migration-board.md)
 - [Build Guide](_repo/tracking/build-guide.md)
