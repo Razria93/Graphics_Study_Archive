@@ -14,8 +14,8 @@
   - `Docs/Part3_Chapter09`
   - `Docs/Part3_Chapter10-13`
 - Branch: `archive/part3`
-- Import status: planned
-- Build/run status: 미확인
+- Import status: Chapter09 and Chapter10-13 imported
+- Build/run status: Chapter09 and Chapter10-13 Debug/Release 성공
 - Public readiness: 검토 필요
 
 ## Part3 Working Goal
@@ -139,8 +139,19 @@ Part3는 1차로 code import, asset selection, build/run 확인을 우선합니�
 - raw와 다르게 바꾼 project/source 설정은 `status.md`에 이유 기록
 - build/run은 사용자가 확인하기 전까지 `미확인`으로 기록
 
+## Final Import Check
+
+- Chapter09 archive 대상 예제 import 완료
+- Chapter10-13 archive 대상 예제 import 완료
+- 사용자 Debug/Release 실행 확인 기록 완료
+- tracked build output/local state file 없음 확인
+- HLSL/HLSLI BOM 없음 확인
+- `.vcxproj` XML parse 확인
+- `.clang-format` project reference 없음 확인
+- Release shader model `5.0` 기준 정리 확인
+
 ## Current Next Action
 
-1. `10_GeometryPipeline_Step1_GeometryShader`를 primary raw에서 선별 import합니다.
-2. `10_GeometryPipeline_Step1_GeometryShader_Solution`은 바로 섞지 않고 reference solution 후보로 분리 여부를 판단합니다.
-3. import 후 XML namespace, HLSL/HLSLI BOM, asset hash, raw/archive diff를 확인합니다.
+1. Part3 branch 마무리 커밋을 정리합니다.
+2. `Docs/_repo/pull-requests/archive-part3.md` 기준으로 PR을 구성합니다.
+3. merge 후 Part4 import branch로 이동합니다.
