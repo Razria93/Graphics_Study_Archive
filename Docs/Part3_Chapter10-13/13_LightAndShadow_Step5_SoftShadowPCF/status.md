@@ -8,7 +8,7 @@
 | Raw basis | `C:\ComputerGraphics\Part3_Chapter10_13\13_LightAndShadow_Step5_SoftShadowPCF` |
 | Origin reference | `C:\ComputerGraphics\OriginalExamples\Part3_Chapter10_13\13_LightAndShadow_Step5_SoftShadowPCF` |
 | Reference-only snapshot | `C:\ComputerGraphics\Part3_Chapter10_13_2\13_LightAndShadow_Step5_SoftShadowPCF` |
-| Build/run | 미확인 |
+| Build/run | 성공 |
 | Capture | 보류 |
 | Public readiness | 검토 필요 |
 
@@ -36,9 +36,9 @@
 
 ## User Verification
 
-- Debug x64: 미확인
-- Release x64: 미확인
-- Runtime behavior: 미확인
+- Debug x64: 성공
+- Release x64: 성공
+- Runtime behavior: 사용자 실행 확인
 
 ## Build Notes
 

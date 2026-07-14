@@ -8,7 +8,7 @@
 - Docs target: `Docs/Part3_Chapter10-13`
 - Branch: `archive/part3`
 - Import status: Step1-Step5, 11-Step1-Step5, 12-Step1-Step2, 13-Step1, 13-Step2 PipelineStateObject, 13-Step2 Shadow, 13-Step3, 13-Step4, and 13-Step5 imported
-- Build/run status: Step1-Step5, 11-Step1-Step5, 12-Step1-Step2, 13-Step1, 13-Step2 PipelineStateObject, 13-Step2 Shadow, 13-Step3, and 13-Step4 성공
+- Build/run status: Step1-Step5, 11-Step1-Step5, 12-Step1-Step2, 13-Step1, 13-Step2 PipelineStateObject, 13-Step2 Shadow, 13-Step3, 13-Step4, and 13-Step5 성공
 - Public readiness: 검토 필요
 
 ## Raw Source Decision
@@ -39,7 +39,7 @@
 | `13_LightAndShadow_Step2_Shadow` | primary + character option reviewed | 반영 완료 | 성공 | 검토 필요 | shadow map baseline, sphere main object, final scene path, point-light position GUI minimal 보완, 사용자 Debug/Release 실행 확인 |
 | `13_LightAndShadow_Step3_DepthBufferAndFog` | primary | 반영 완료 | 성공 | 검토 필요 | depth buffer/fog post effect, Release shader setting 보정, `PostEffectsPS.hlsl` return 변수 오타 보정, 사용자 Debug/Release 실행 확인 |
 | `13_LightAndShadow_Step4_ShadowMapping` | primary | 반영 완료 | 성공 | 검토 필요 | shadow mapping, primary raw shadow lookup 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
-| `13_LightAndShadow_Step5_SoftShadowPCF` | primary | 반영 완료 | 미확인 | 검토 필요 | PCF soft shadow, primary raw 64-sample PCF 구현본 반영, Release shader setting 보정 |
+| `13_LightAndShadow_Step5_SoftShadowPCF` | primary | 반영 완료 | 성공 | 검토 필요 | PCF soft shadow, primary raw 64-sample PCF 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
 | `13_LightAndShadow_Step6_SoftShadowPCSS` | primary | planned | 미확인 | 검토 필요 | PCSS |
 | `13_LightAndShadow_Step7_Halo` | primary | planned | 미확인 | 검토 필요 | halo |
 | `13_LightAndShadow_Step8_UnrealSphereLight` | primary | planned | 미확인 | 검토 필요 | sphere light |
@@ -66,4 +66,4 @@
 
 ## Next Action
 
-`13_LightAndShadow_Step5_SoftShadowPCF` Debug/Release 실행 확인 후 `13_LightAndShadow_Step6_SoftShadowPCSS` import를 진행합니다.
+다음 작업은 `13_LightAndShadow_Step6_SoftShadowPCSS` import입니다.
