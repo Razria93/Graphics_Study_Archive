@@ -6,10 +6,10 @@
 | --- | --- | --- |
 | Source/project import | 완료 | 단일 `Examples` project 구조 기준으로 반영 |
 | Required asset | 없음 | sort input 데이터를 코드에서 생성 |
-| Build/run | 미확인 | 결과 기록은 별도 커밋으로 분리 |
+| Build/run | 성공 | 사용자 Debug/Release 실행 확인 완료 |
 | Diff review | 진행 중 | `Part4_HongLabGraphics` main raw를 기준으로 사용 |
 | Refactor | 미확인 | 1차 import에서는 raw 구조 유지 |
-| Capture ready | 아니오 | console output 확인 예제 |
+| Capture ready | 보류 | console output 확인 예제. 촬영은 사용자 진행 |
 | Public readiness | 검토 필요 | 강의 기반 학습 예제. public subset 전 별도 검토 |
 
 ## Raw Reference
@@ -47,7 +47,7 @@
 
 ## Build / Run
 
-결과 기록은 별도 커밋으로 분리합니다.
+사용자가 Debug/Release x64 실행을 모두 확인했습니다.
 
 실행 command argument:
 
@@ -55,13 +55,34 @@
 1408
 ```
 
-확인 예정:
+확인 결과:
 
-- Debug x64 build/run
-- Release x64 build/run
-- `1024`부터 `1048576`까지 test case 출력
-- CPU/GPU result `OK`
-- exit code `0`
+- Debug x64 build/run 성공
+- Release x64 build/run 성공
+- `1024`부터 `1048576`까지 test case 출력 확인
+- 각 test case에서 CPU bitonic sort result `OK` 확인
+- 각 test case에서 GPU bitonic sort result `OK` 확인
+- Debug/Release 모두 exit code `0` 확인
+
+Debug output summary:
+
+```text
+Ex1408_BitonicSort::Initialize()
+Test Num Elements 1024 ... OK ... OK
+...
+Test Num Elements 1048576 ... OK ... OK
+exit code 0
+```
+
+Release output summary:
+
+```text
+Ex1408_BitonicSort::Initialize()
+Test Num Elements 1024 ... OK ... OK
+...
+Test Num Elements 1048576 ... OK ... OK
+exit code 0
+```
 
 ## Notes
 
