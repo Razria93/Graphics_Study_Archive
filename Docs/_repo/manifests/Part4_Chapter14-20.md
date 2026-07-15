@@ -128,6 +128,13 @@ Part4_HongLabGraphics/
 
 따라서 1차 code import에서는 단일 project를 유지하고, 실행은 raw와 동일하게 command-line argument로 예제를 선택합니다. 예제별 문서와 status는 `Docs/Part4_Chapter14-20/<ExampleName>/` 아래에 분리합니다.
 
+Part4 실행 확인 규칙:
+
+- 예제 이름의 `Ex` 뒤 4자리 숫자를 command argument로 넘깁니다.
+- Visual Studio에서는 project properties의 `Debugging > Command Arguments`에 값을 입력합니다.
+- 예: `Ex1401_Basic`은 `1401`, `Ex1402_Blur`는 `1402`, `Ex2001_GamePlay`는 `2001`.
+- Debug/Release를 확인할 때도 같은 command argument를 각각 설정하거나 유지했는지 확인합니다.
+
 ## Ex1401 Dependency Review
 
 `Ex1401_Basic`은 compute shader가 back buffer UAV에 직접 쓰는 첫 compute shader 예제입니다.
@@ -191,7 +198,8 @@ Raw comparison:
 
 ## Current Next Action
 
-1. 사용자 Debug x64 build/run 확인을 요청합니다.
-2. 사용자 Release x64 build/run 확인을 요청합니다.
-3. 확인 대상은 `Ex1401_Basic`이며, command argument `1401`로 실행합니다.
-4. build 실패 시 `VCPKG_ROOT`, Assimp, PhysX include/dependency 설정을 먼저 확인합니다.
+1. 다음 확인 대상은 `Ex1402_Blur`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1402`를 설정합니다.
+3. 사용자 Debug x64 build/run 확인을 요청합니다.
+4. 사용자 Release x64 build/run 확인을 요청합니다.
+5. build 실패 시 `VCPKG_ROOT`, Assimp, PhysX include/dependency 설정을 먼저 확인합니다.

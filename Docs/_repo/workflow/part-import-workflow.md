@@ -46,6 +46,7 @@
    - Visual Studio에서 `Debug x64`를 먼저 확인합니다.
    - 대표 예제만 `Release x64`를 추가 확인합니다.
    - 실패하면 실패 원인과 다음 조치를 [build-guide.md](../tracking/build-guide.md)에 기록합니다.
+   - Part4 `Examples` project는 단일 executable이므로 예제 이름의 `Ex` 뒤 4자리 숫자를 Visual Studio `Debugging > Command Arguments`에 넣어 실행합니다. 예: `Ex1401_Basic`은 `1401`, `Ex1402_Blur`는 `1402`.
 
 7. Demo/capture 정리
    - raw capture를 그대로 가져오지 않습니다.

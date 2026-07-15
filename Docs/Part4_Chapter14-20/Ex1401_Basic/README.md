@@ -30,7 +30,7 @@
 
 ## 실행 메모
 
-Part4는 단일 executable이 command-line argument로 예제를 선택합니다.
+Part4는 단일 executable이 command-line argument로 예제를 선택합니다. 예제 이름의 `Ex` 뒤 4자리 숫자를 Visual Studio `Debugging > Command Arguments`에 지정합니다.
 
 ```text
 Examples.exe 1401

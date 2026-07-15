@@ -18,6 +18,18 @@ Compute shader, simulation, animation, foliage, physics, gameplay 예제를 정�
 
 Part4는 예제별 폴더가 아니라 `Examples` 단일 project에 `Ex1401`-`Ex2001` 파일이 모여 있으므로, import 전에 project 구조를 어떻게 archive에 둘지 먼저 확정합니다.
 
+## 실행 방식
+
+Part4는 단일 executable이 command-line argument로 실행할 예제를 선택합니다. 예제 이름의 `Ex` 뒤 4자리 숫자를 Visual Studio `Debugging > Command Arguments`에 입력합니다.
+
+| Example | Command argument |
+| --- | --- |
+| `Ex1401_Basic` | `1401` |
+| `Ex1402_Blur` | `1402` |
+| `Ex2001_GamePlay` | `2001` |
+
+Debug/Release 확인 시 같은 command argument가 설정되어 있는지 먼저 확인합니다.
+
 ## 예정 범위
 
 | Chapter | Examples | Focus |
