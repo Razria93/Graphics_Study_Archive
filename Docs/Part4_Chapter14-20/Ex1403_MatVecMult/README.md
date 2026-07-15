@@ -50,6 +50,6 @@ Examples.exe 1403
 
 - Source/project import: 완료
 - Required asset: 없음
-- Build/run: 미확인
+- Build/run: 성공
 - Source comment split: 2차 문서 정리 단계로 보류
 - Public readiness: 검토 필요

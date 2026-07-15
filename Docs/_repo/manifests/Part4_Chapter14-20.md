@@ -232,6 +232,7 @@ Raw comparison:
 - `Ex1403_MatVecMultCS.hlsl`은 Debug/Release x64 모두 Compute, shader model `5.0`입니다.
 - archive의 `Ex1403` core files는 primary raw hash와 일치합니다.
 - `Ex1403_MatVecMult.cpp`와 `Ex1403_MatVecMultCS.hlsl`은 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
+- Debug/Release 모두 `Error GPU 0`, CPU/GPU result checksum 일치, exit code `0`으로 확인되었습니다.
 
 ## Per-example Finish Check
 
@@ -246,8 +247,8 @@ Raw comparison:
 
 ## Current Next Action
 
-1. 다음 확인 대상은 `Ex1403_MatVecMult`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1403`을 설정합니다.
+1. 다음 확인 대상은 `Ex1404_StructuredBuffer`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1404`를 설정합니다.
 3. 사용자 Debug x64 build/run 확인을 요청합니다.
 4. 사용자 Release x64 build/run 확인을 요청합니다.
 5. build 실패 시 `VCPKG_ROOT`, Assimp, PhysX include/dependency 설정을 먼저 확인합니다.
