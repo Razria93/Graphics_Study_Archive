@@ -317,6 +317,36 @@ Raw comparison:
 - archive의 `Ex1406` core files는 primary raw hash와 일치합니다.
 - `Ex1406_DensityField.cpp`, `Ex1406_DensitySourcingCS.hlsl`은 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
 
+## Ex1407 Dependency Review
+
+`Ex1407_IndirectArguments`는 `DrawInstancedIndirect()`와 indirect argument buffer를 확인하는 예제입니다. 시각 출력은 `Ex1406`의 density/sprite rendering 흐름을 재사용하고, draw call 인자를 GPU buffer에서 읽는 부분이 핵심입니다.
+
+핵심 파일:
+
+- `Ex1407_IndirectArguments.cpp`
+- `Ex1407_IndirectArguments.h`
+- `D3D11Utils.cpp`
+- `D3D11Utils.h`
+- `Ex1406_DensitySourcingCS.hlsl`
+- `Ex1406_DensityDissipationCS.hlsl`
+- `Ex1406_SpriteGS.hlsl`
+- `Ex1406_SpritePS.hlsl`
+- `Ex1404_StructuredBufferVS.hlsl`
+- `StructuredBuffer.h`
+- `Texture2D.h`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1407`을 `Ex1407_IndirectArguments`로 매핑합니다.
+- `Ex1407`은 별도 runtime asset을 요구하지 않고, particle/density 데이터를 코드에서 생성합니다.
+- `Ex1407`은 `Ex1406`의 density/sprite shader를 재사용합니다.
+- `CreateIndirectArgsBuffer()`는 `D3D11_RESOURCE_MISC_DRAWINDIRECT_ARGS` misc flag로 indirect argument buffer를 생성합니다.
+- archive의 `Ex1407_IndirectArguments.cpp`/`.h`는 primary raw hash와 일치합니다.
+- `Ex1407_IndirectArguments.cpp`/`.h`는 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
@@ -330,8 +360,8 @@ Raw comparison:
 
 ## Current Next Action
 
-1. 다음 확인 대상은 `Ex1406_DensityField`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1406`을 설정합니다.
+1. 다음 확인 대상은 `Ex1407_IndirectArguments`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1407`을 설정합니다.
 3. 사용자 Debug x64 build/run 확인을 요청합니다.
 4. 사용자 Release x64 build/run 확인을 요청합니다.
 5. build 실패 시 `VCPKG_ROOT`, Assimp, PhysX include/dependency 설정을 먼저 확인합니다.
