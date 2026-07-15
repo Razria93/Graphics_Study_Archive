@@ -260,6 +260,33 @@ Raw comparison:
 - archive의 `Ex1404` core files는 primary raw hash와 일치합니다.
 - 대부분의 `Ex1404` core files는 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
 
+## Ex1405 Dependency Review
+
+`Ex1405_ConsumeAppendBuffer`는 consume/append structured buffer의 counter 기반 particle update를 확인하는 예제입니다.
+
+핵심 파일:
+
+- `Ex1405_ConsumeAppendBuffer.cpp`
+- `Ex1405_ConsumeAppendBuffer.h`
+- `Ex1405_ConsumeAppendCS.hlsl`
+- `StructuredBuffer.h`
+- `Buffers.h`
+- `Ex1404_StructuredBufferVS.hlsl`
+- `Ex1404_StructuredBufferPS.hlsl`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1405`를 `Ex1405_ConsumeAppendBuffer`로 매핑합니다.
+- `Ex1405`는 별도 runtime asset을 요구하지 않고, particle 데이터를 코드에서 생성합니다.
+- `Ex1405_ConsumeAppendCS.hlsl`은 Debug/Release x64 모두 Compute, shader model `5.0`입니다.
+- `Ex1404_StructuredBufferVS.hlsl`은 Debug/Release x64 모두 Vertex, shader model `5.0`입니다.
+- `Ex1404_StructuredBufferPS.hlsl`은 Debug/Release x64 모두 Pixel, shader model `5.0`입니다.
+- archive의 `Ex1405` core files는 primary raw hash와 일치합니다.
+- 대부분의 `Ex1405` core files는 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
@@ -273,8 +300,8 @@ Raw comparison:
 
 ## Current Next Action
 
-1. 다음 확인 대상은 `Ex1404_StructuredBuffer`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1404`를 설정합니다.
+1. 다음 확인 대상은 `Ex1405_ConsumeAppendBuffer`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1405`를 설정합니다.
 3. 사용자 Debug x64 build/run 확인을 요청합니다.
 4. 사용자 Release x64 build/run 확인을 요청합니다.
 5. build 실패 시 `VCPKG_ROOT`, Assimp, PhysX include/dependency 설정을 먼저 확인합니다.
