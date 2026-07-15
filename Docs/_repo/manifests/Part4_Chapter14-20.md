@@ -212,6 +212,27 @@ Raw comparison:
 - archive의 `Ex1402` core files는 primary raw hash와 일치합니다.
 - 일부 `Ex1402` 파일은 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
 
+## Ex1403 Dependency Review
+
+`Ex1403_MatVecMult`는 matrix-vector multiplication을 compute shader로 수행하고 CPU 결과와 비교하는 예제입니다.
+
+핵심 파일:
+
+- `Ex1403_MatVecMult.cpp`
+- `Ex1403_MatVecMult.h`
+- `Ex1403_MatVecMultCS.hlsl`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1403`을 `Ex1403_MatVecMult`로 매핑합니다.
+- `Ex1403`은 별도 runtime asset을 요구하지 않고, matrix/vector 데이터를 코드에서 생성합니다.
+- `Ex1403_MatVecMultCS.hlsl`은 Debug/Release x64 모두 Compute, shader model `5.0`입니다.
+- archive의 `Ex1403` core files는 primary raw hash와 일치합니다.
+- `Ex1403_MatVecMult.cpp`와 `Ex1403_MatVecMultCS.hlsl`은 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
@@ -225,8 +246,8 @@ Raw comparison:
 
 ## Current Next Action
 
-1. 다음 확인 대상은 `Ex1402_Blur`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1402`를 설정합니다.
+1. 다음 확인 대상은 `Ex1403_MatVecMult`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1403`을 설정합니다.
 3. 사용자 Debug x64 build/run 확인을 요청합니다.
 4. 사용자 Release x64 build/run 확인을 요청합니다.
 5. build 실패 시 `VCPKG_ROOT`, Assimp, PhysX include/dependency 설정을 먼저 확인합니다.

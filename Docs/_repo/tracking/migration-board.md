@@ -64,3 +64,4 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part4 Ch14-20 | `Examples` project scaffold | 진행 중 | 성공 | 진행 중 | 미확인 | 보류 | 단일 project 구조 반영, `.clang-format` project reference 제거, Ex1401-Ex1402 Debug/Release 확인 |
 | Part4 Ch14 | `Ex1401_Basic` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader back buffer UAV 예제, 32x32 group checkerboard 출력, `Scale` GUI는 현재 shader path 미사용, command argument `1401` |
 | Part4 Ch14 | `Ex1402_Blur` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader separable blur, SRV/UAV ping-pong, Debug/Release 10 FPS 이하 확인, command argument `1402` |
+| Part4 Ch14 | `Ex1403_MatVecMult` | 완료 | 미확인 | 진행 중 | 미확인 | 아니오 | compute shader matrix-vector multiplication, CPU/GPU result 비교, command argument `1403` |
