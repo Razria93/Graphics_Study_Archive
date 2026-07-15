@@ -66,3 +66,4 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part4 Ch14 | `Ex1402_Blur` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader separable blur, SRV/UAV ping-pong, Debug/Release 10 FPS 이하 확인, command argument `1402` |
 | Part4 Ch14 | `Ex1403_MatVecMult` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader matrix-vector multiplication, `Error GPU 0`, CPU/GPU result 일치, command argument `1403` |
 | Part4 Ch14 | `Ex1404_StructuredBuffer` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader particle update, structured buffer rendering, Debug/Release 실행 확인, command argument `1404` |
+| Part4 Ch14 | `Ex1405_ConsumeAppendBuffer` | 완료 | 미확인 | 진행 중 | 미확인 | 아니오 | consume/append structured buffer, append count rendering, command argument `1405` |
