@@ -9,7 +9,7 @@ Compute shader, simulation, animation, foliage, physics, gameplay 예제를 정�
 | Raw source | `C:\ComputerGraphics\Part4_HongLabGraphics` |
 | Reference source | `C:\ComputerGraphics\Part4_HongLabGraphics_2`, `C:\ComputerGraphics\OriginalExamples\Part4_HongLabGraphics` |
 | Import status | `Examples` project 반영 완료, 예제별 확인 진행 중 |
-| Build/run | Ex1401-Ex1406 Debug/Release 확인 완료, Ex1407 확인 대기 |
+| Build/run | Ex1401-Ex1407 Debug/Release 확인 완료 |
 | Public readiness | 검토 필요 |
 
 ## Raw 판단
@@ -52,7 +52,7 @@ Debug/Release 확인 시 같은 command argument가 설정되어 있는지 먼�
 | [`Ex1404_StructuredBuffer`](Ex1404_StructuredBuffer/README.md) | 반영 완료 | 성공 | 검토 필요 | compute shader particle update, structured buffer rendering, command argument `1404` |
 | [`Ex1405_ConsumeAppendBuffer`](Ex1405_ConsumeAppendBuffer/README.md) | 반영 완료 | 성공 | 검토 필요 | consume/append structured buffer, append count rendering, command argument `1405` |
 | [`Ex1406_DensityField`](Ex1406_DensityField/README.md) | 반영 완료 | 성공 | 검토 필요 | density texture, sprite geometry shader, accumulate blend, command argument `1406` |
-| [`Ex1407_IndirectArguments`](Ex1407_IndirectArguments/README.md) | 반영 완료 | 미확인 | 검토 필요 | indirect argument buffer, `DrawInstancedIndirect`, command argument `1407` |
+| [`Ex1407_IndirectArguments`](Ex1407_IndirectArguments/README.md) | 반영 완료 | 성공 | 검토 필요 | indirect argument buffer, `DrawInstancedIndirect`, command argument `1407` |
 
 ## Import 기준
 
@@ -63,7 +63,7 @@ Debug/Release 확인 시 같은 command argument가 설정되어 있는지 먼�
 
 ## 다음 작업
 
-1. `Ex1407_IndirectArguments`를 command argument `1407`로 실행 확인합니다.
+1. `Ex1408_BitonicSort`의 source/shader/project 설정을 확인합니다.
 2. Debug/Release x64 실행 확인 전까지 build/run은 `미확인`으로 둡니다.
 3. 실행 확인 후 status와 migration board를 갱신합니다.
 
