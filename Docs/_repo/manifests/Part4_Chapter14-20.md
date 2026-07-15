@@ -234,6 +234,32 @@ Raw comparison:
 - `Ex1403_MatVecMult.cpp`와 `Ex1403_MatVecMultCS.hlsl`은 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
 - Debug/Release 모두 `Error GPU 0`, CPU/GPU result checksum 일치, exit code `0`으로 확인되었습니다.
 
+## Ex1404 Dependency Review
+
+`Ex1404_StructuredBuffer`는 compute shader가 structured buffer의 particle position을 갱신하고, vertex shader가 같은 buffer를 읽어 point list를 렌더링하는 예제입니다.
+
+핵심 파일:
+
+- `Ex1404_StructuredBuffer.cpp`
+- `Ex1404_StructuredBuffer.h`
+- `Ex1404_StructuredBufferCS.hlsl`
+- `Ex1404_StructuredBufferVS.hlsl`
+- `Ex1404_StructuredBufferPS.hlsl`
+- `StructuredBuffer.h`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1404`를 `Ex1404_StructuredBuffer`로 매핑합니다.
+- `Ex1404`는 별도 runtime asset을 요구하지 않고, particle 데이터를 코드에서 생성합니다.
+- `Ex1404_StructuredBufferCS.hlsl`은 Debug/Release x64 모두 Compute, shader model `5.0`입니다.
+- `Ex1404_StructuredBufferVS.hlsl`은 Debug/Release x64 모두 Vertex, shader model `5.0`입니다.
+- `Ex1404_StructuredBufferPS.hlsl`은 Debug/Release x64 모두 Pixel, shader model `5.0`입니다.
+- archive의 `Ex1404` core files는 primary raw hash와 일치합니다.
+- 대부분의 `Ex1404` core files는 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
