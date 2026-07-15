@@ -374,6 +374,33 @@ Raw comparison:
 - archive의 `Ex1408`/`BitonicSort` core files는 primary raw hash와 일치합니다.
 - `Ex1408_BitonicSort.cpp`, `BitonicSort.cpp`는 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
 
+## Ex1501 Dependency Review
+
+`Ex1501_ParticleSystem`은 CPU에서 particle simulation을 수행하고, structured buffer와 geometry shader sprite rendering으로 particle을 출력하는 예제입니다.
+
+핵심 파일:
+
+- `Ex1501_ParticleSystem.cpp`
+- `Ex1501_ParticleSystem.h`
+- `Ex1501_ParticleSystemVS.hlsl`
+- `Ex1501_ParticleSystemGS.hlsl`
+- `Ex1501_ParticleSystemPS.hlsl`
+- `GraphicsCommon.*`
+- `D3D11Utils.*`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1501`을 `Ex1501_ParticleSystem`으로 매핑합니다.
+- `Ex1501`은 별도 runtime asset을 요구하지 않고, particle 데이터를 코드에서 생성합니다.
+- `Ex1501_ParticleSystemVS.hlsl`은 Debug/Release x64 모두 Vertex, shader model `5.0`입니다.
+- `Ex1501_ParticleSystemGS.hlsl`은 Debug/Release x64 모두 Geometry, shader model `5.0`입니다.
+- `Ex1501_ParticleSystemPS.hlsl`은 Debug/Release x64 모두 Pixel, shader model `5.0`입니다.
+- archive의 `Ex1501` core files는 primary raw hash와 일치합니다.
+- `Ex1501_ParticleSystem.cpp`, `Ex1501_ParticleSystemVS.hlsl`은 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
@@ -387,8 +414,8 @@ Raw comparison:
 
 ## Current Next Action
 
-1. 다음 기록 대상은 `Ex1408_BitonicSort` 실행 확인 결과입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1408`을 설정합니다.
-3. 사용자 Debug x64 build/run 결과를 status에 반영합니다.
-4. 사용자 Release x64 build/run 결과를 status에 반영합니다.
+1. 다음 확인 대상은 `Ex1501_ParticleSystem`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1501`을 설정합니다.
+3. 사용자 Debug x64 build/run 확인을 요청합니다.
+4. 사용자 Release x64 build/run 확인을 요청합니다.
 5. build 실패 시 `VCPKG_ROOT`, Assimp, PhysX include/dependency 설정을 먼저 확인합니다.
