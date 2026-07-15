@@ -6,10 +6,10 @@
 | --- | --- | --- |
 | Source/project import | 완료 | 단일 `Examples` project 구조 기준으로 반영 |
 | Required asset | 없음 | staging texture를 코드에서 생성 |
-| Build/run | 미확인 | 사용자 Debug/Release 실행 확인 전 |
+| Build/run | 성공 | 사용자 Debug/Release 실행 확인 완료 |
 | Diff review | 진행 중 | `Part4_HongLabGraphics` main raw를 기준으로 사용 |
 | Refactor | 미확인 | 1차 import에서는 raw 구조 유지 |
-| Capture ready | 아니오 | build/run 확인 후 판단 |
+| Capture ready | 보류 | 촬영은 사용자 진행 |
 | Public readiness | 검토 필요 | 강의 기반 학습 예제. public subset 전 별도 검토 |
 
 ## Raw Reference
@@ -51,7 +51,7 @@
 
 ## Build / Run
 
-미확인.
+사용자가 Debug/Release x64 실행을 모두 확인했습니다.
 
 실행 command argument:
 
@@ -59,11 +59,12 @@
 1402
 ```
 
-확인 예정:
+확인 결과:
 
-- Debug x64 build/run
-- Release x64 build/run
-- blur 결과가 back buffer에 표시되는지 확인
+- Debug x64 build/run 성공
+- Release x64 build/run 성공
+- 두 구성 모두 10 FPS 이하로 동작 확인
+- 낮은 frame rate는 현재 활성 경로가 `Render()`에서 blur pass를 1000회 반복하는 성능 실험 구조이기 때문으로 기록
 
 ## Notes
 
