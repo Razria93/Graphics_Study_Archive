@@ -185,6 +185,33 @@ Raw comparison:
 - `_2`와 `OriginalExamples`의 `Ex1401` 관련 파일 hash는 같습니다.
 - 따라서 `Ex1401`도 main raw 작업본을 archive 기준으로 사용합니다.
 
+## Ex1402 Dependency Review
+
+`Ex1402_Blur`는 separable blur를 compute shader로 수행하는 예제입니다.
+
+핵심 파일:
+
+- `Ex1402_Blur.cpp`
+- `Ex1402_Blur.h`
+- `Ex1402_BlurXCS.hlsl`
+- `Ex1402_BlurYCS.hlsl`
+- `Ex1402_BlurXGroupCacheCS.hlsl`
+- `Ex1402_BlurYGroupCacheCS.hlsl`
+- `Ex1402_BlurXPS.hlsl`
+- `Ex1402_BlurYPS.hlsl`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1402`를 `Ex1402_Blur`로 매핑합니다.
+- `Ex1402`는 별도 runtime asset을 요구하지 않고, blur 입력용 staging texture를 코드에서 생성합니다.
+- `Ex1402_BlurXCS.hlsl`, `Ex1402_BlurYCS.hlsl`, `Ex1402_BlurXGroupCacheCS.hlsl`, `Ex1402_BlurYGroupCacheCS.hlsl`은 Debug/Release x64 모두 Compute, shader model `5.0`입니다.
+- `Ex1402_BlurXPS.hlsl`, `Ex1402_BlurYPS.hlsl`은 Debug/Release x64 모두 Pixel, shader model `5.0`입니다.
+- archive의 `Ex1402` core files는 primary raw hash와 일치합니다.
+- 일부 `Ex1402` 파일은 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
