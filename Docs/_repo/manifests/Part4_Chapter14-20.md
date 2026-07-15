@@ -347,6 +347,33 @@ Raw comparison:
 - archive의 `Ex1407_IndirectArguments.cpp`/`.h`는 primary raw hash와 일치합니다.
 - `Ex1407_IndirectArguments.cpp`/`.h`는 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
 
+## Ex1408 Dependency Review
+
+`Ex1408_BitonicSort`는 CPU/GPU bitonic sort 결과를 비교하는 console test 예제입니다. 화면 렌더링보다는 `Initialize()`에서 element count별 정렬 테스트를 수행하고 `OK` 결과를 확인하는 것이 핵심입니다.
+
+핵심 파일:
+
+- `Ex1408_BitonicSort.cpp`
+- `Ex1408_BitonicSort.h`
+- `Ex1408_BitonicSortCS.hlsl`
+- `BitonicSort.cpp`
+- `BitonicSort.h`
+- `BitonicSortCS.hlsl`
+- `StructuredBuffer.h`
+- `Timer.h`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1408`을 `Ex1408_BitonicSort`로 매핑합니다.
+- `Ex1408`은 별도 runtime asset을 요구하지 않고, sort input 데이터를 코드에서 생성합니다.
+- `Ex1408_BitonicSortCS.hlsl`은 Debug/Release x64 모두 Compute로 설정되어 있습니다.
+- `BitonicSortCS.hlsl`은 Debug/Release x64 모두 Compute, shader model `5.0`입니다.
+- archive의 `Ex1408`/`BitonicSort` core files는 primary raw hash와 일치합니다.
+- `Ex1408_BitonicSort.cpp`, `BitonicSort.cpp`는 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
@@ -360,8 +387,8 @@ Raw comparison:
 
 ## Current Next Action
 
-1. 다음 확인 대상은 `Ex1407_IndirectArguments`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1407`을 설정합니다.
-3. 사용자 Debug x64 build/run 확인을 요청합니다.
-4. 사용자 Release x64 build/run 확인을 요청합니다.
+1. 다음 기록 대상은 `Ex1408_BitonicSort` 실행 확인 결과입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1408`을 설정합니다.
+3. 사용자 Debug x64 build/run 결과를 status에 반영합니다.
+4. 사용자 Release x64 build/run 결과를 status에 반영합니다.
 5. build 실패 시 `VCPKG_ROOT`, Assimp, PhysX include/dependency 설정을 먼저 확인합니다.
