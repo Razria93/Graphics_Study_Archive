@@ -6,10 +6,10 @@
 | --- | --- | --- |
 | Source/project import | 완료 | 단일 `Examples` project 구조 기준으로 반영 |
 | Required asset | 없음 | compute shader가 back buffer UAV에 직접 출력 |
-| Build/run | 미확인 | 사용자 Debug/Release 실행 확인 전 |
+| Build/run | 성공 | 사용자 Debug/Release 실행 확인 완료 |
 | Diff review | 진행 중 | `Part4_HongLabGraphics` main raw를 기준으로 사용 |
 | Refactor | 미확인 | 1차 import에서는 raw 구조 유지 |
-| Capture ready | 아니오 | build/run 확인 후 판단 |
+| Capture ready | 보류 | 촬영은 사용자 진행 |
 | Public readiness | 검토 필요 | 강의 기반 학습 예제. public subset 전 별도 검토 |
 
 ## Raw Reference
@@ -43,17 +43,24 @@ Part4는 단일 Visual Studio project 구조이므로 `Ex1401_Basic`만 별도 p
 
 ## Build / Run
 
-미확인.
+사용자가 Debug/Release x64 실행을 모두 확인했습니다.
 
-실행 확인 시 command argument:
+실행 command argument:
 
 ```text
 1401
 ```
 
+확인 결과:
+
+- 화면 전체에 흰색/회색 checkerboard pattern이 출력됩니다.
+- `Ex1401_CS.hlsl`의 `SV_GroupID` 기반 분기와 일치하는 결과입니다.
+- `Scale` GUI는 constant buffer 전달 실험용으로 남아 있지만, 현재 활성 checkerboard shader path에서는 사용되지 않아 화면 변화가 없습니다.
+
 ## Notes
 
 - `Ex1401_CS.hlsl`은 Debug/Release x64 모두 compute shader, shader model `5.0`으로 설정되어 있습니다.
+- 현재 활성 shader path는 `numthreads(32, 32, 1)`와 `Dispatch(ceil(width / 32), ceil(height / 32), 1)` 조합으로 32x32 pixel group 단위 checkerboard를 생성합니다.
 - 단일 project 전체를 빌드하므로 `Ex1401` 실행 확인 중에도 PhysX/Assimp include 설정 문제가 먼저 나타날 수 있습니다.
 - raw `Ex1401_Basic.cpp`, `Ex1401_Basic.h`, `Ex1401_CS.hlsl`은 main raw와 `_2`/`OriginalExamples` 사이 hash가 다릅니다.
 - `_2`와 `OriginalExamples`의 `Ex1401` 관련 파일 hash는 같습니다.

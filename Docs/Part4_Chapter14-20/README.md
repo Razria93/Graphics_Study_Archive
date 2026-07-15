@@ -8,8 +8,8 @@ Compute shader, simulation, animation, foliage, physics, gameplay 예제를 정�
 | --- | --- |
 | Raw source | `C:\ComputerGraphics\Part4_HongLabGraphics` |
 | Reference source | `C:\ComputerGraphics\Part4_HongLabGraphics_2`, `C:\ComputerGraphics\OriginalExamples\Part4_HongLabGraphics` |
-| Import status | 계획 수립 |
-| Build/run | 미확인 |
+| Import status | `Examples` project 반영 완료, 예제별 확인 진행 중 |
+| Build/run | Ex1401 Debug/Release 확인 완료 |
 | Public readiness | 검토 필요 |
 
 ## Raw 판단
@@ -34,7 +34,7 @@ Part4는 예제별 폴더가 아니라 `Examples` 단일 project에 `Ex1401`-`Ex
 
 | Example | Import | Build/run | Public readiness | Note |
 | --- | --- | --- | --- | --- |
-| [`Ex1401_Basic`](Ex1401_Basic/README.md) | 반영 완료 | 미확인 | 검토 필요 | compute shader dispatch, back buffer UAV, command argument `1401` |
+| [`Ex1401_Basic`](Ex1401_Basic/README.md) | 반영 완료 | 성공 | 검토 필요 | compute shader dispatch, back buffer UAV, 32x32 group checkerboard, command argument `1401` |
 
 ## Import 기준
 
@@ -45,9 +45,9 @@ Part4는 예제별 폴더가 아니라 `Examples` 단일 project에 `Ex1401`-`Ex
 
 ## 다음 작업
 
-1. 단일 `Examples` project 구조를 기준으로 source/project를 archive에 반영합니다.
-2. `.vs/`, `x64/`, `.user`, `imgui.ini`, `.clang-format`은 제외합니다.
-3. 첫 실행 확인 대상은 `Ex1401_Basic`이며, command argument `1401`로 실행합니다.
+1. `Ex1402_Blur`의 source/shader/project 설정을 확인합니다.
+2. Debug/Release x64 실행 확인 전까지 build/run은 `미확인`으로 둡니다.
+3. 실행 확인 후 status와 migration board를 갱신합니다.
 
 ## 관련 문서
 
