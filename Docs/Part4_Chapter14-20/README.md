@@ -9,7 +9,7 @@ Compute shader, simulation, animation, foliage, physics, gameplay 예제를 정�
 | Raw source | `C:\ComputerGraphics\Part4_HongLabGraphics` |
 | Reference source | `C:\ComputerGraphics\Part4_HongLabGraphics_2`, `C:\ComputerGraphics\OriginalExamples\Part4_HongLabGraphics` |
 | Import status | `Examples` project 반영 완료, 예제별 확인 진행 중 |
-| Build/run | Ex1401-Ex1403 Debug/Release 확인 완료 |
+| Build/run | Ex1401-Ex1404 Debug/Release 확인 완료 |
 | Public readiness | 검토 필요 |
 
 ## Raw 판단
@@ -49,7 +49,7 @@ Debug/Release 확인 시 같은 command argument가 설정되어 있는지 먼�
 | [`Ex1401_Basic`](Ex1401_Basic/README.md) | 반영 완료 | 성공 | 검토 필요 | compute shader dispatch, back buffer UAV, 32x32 group checkerboard, command argument `1401` |
 | [`Ex1402_Blur`](Ex1402_Blur/README.md) | 반영 완료 | 성공 | 검토 필요 | compute shader separable blur, SRV/UAV ping-pong, 1000회 반복으로 10 FPS 이하 확인, command argument `1402` |
 | [`Ex1403_MatVecMult`](Ex1403_MatVecMult/README.md) | 반영 완료 | 성공 | 검토 필요 | compute shader matrix-vector multiplication, CPU/GPU 결과 일치, command argument `1403` |
-| [`Ex1404_StructuredBuffer`](Ex1404_StructuredBuffer/README.md) | 반영 완료 | 미확인 | 검토 필요 | compute shader particle update, structured buffer rendering, command argument `1404` |
+| [`Ex1404_StructuredBuffer`](Ex1404_StructuredBuffer/README.md) | 반영 완료 | 성공 | 검토 필요 | compute shader particle update, structured buffer rendering, command argument `1404` |
 
 ## Import 기준
 
@@ -60,7 +60,7 @@ Debug/Release 확인 시 같은 command argument가 설정되어 있는지 먼�
 
 ## 다음 작업
 
-1. `Ex1404_StructuredBuffer`를 command argument `1404`로 실행 확인합니다.
+1. `Ex1405_ConsumeAppendBuffer`의 source/shader/project 설정을 확인합니다.
 2. Debug/Release x64 실행 확인 전까지 build/run은 `미확인`으로 둡니다.
 3. 실행 확인 후 status와 migration board를 갱신합니다.
 

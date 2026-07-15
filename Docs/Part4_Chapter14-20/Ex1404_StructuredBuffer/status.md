@@ -6,10 +6,10 @@
 | --- | --- | --- |
 | Source/project import | 완료 | 단일 `Examples` project 구조 기준으로 반영 |
 | Required asset | 없음 | particle 데이터를 코드에서 생성 |
-| Build/run | 미확인 | 사용자 Debug/Release 실행 확인 전 |
+| Build/run | 성공 | 사용자 Debug/Release 실행 확인 완료 |
 | Diff review | 진행 중 | `Part4_HongLabGraphics` main raw를 기준으로 사용 |
 | Refactor | 미확인 | 1차 import에서는 raw 구조 유지 |
-| Capture ready | 아니오 | build/run 확인 후 판단 |
+| Capture ready | 보류 | 촬영은 사용자 진행 |
 | Public readiness | 검토 필요 | 강의 기반 학습 예제. public subset 전 별도 검토 |
 
 ## Raw Reference
@@ -46,7 +46,7 @@
 
 ## Build / Run
 
-미확인.
+사용자가 Debug/Release x64 실행을 모두 확인했습니다.
 
 실행 command argument:
 
@@ -54,12 +54,12 @@
 1404
 ```
 
-확인 예정:
+확인 결과:
 
-- Debug x64 build/run
-- Release x64 build/run
-- particle point cloud가 출력되는지 확인
-- compute shader update로 particle 위치가 움직이는지 확인
+- Debug x64 build/run 성공
+- Release x64 build/run 성공
+- particle point cloud 출력 확인
+- compute shader update에 따른 particle 이동/회전 확인
 
 ## Notes
 
