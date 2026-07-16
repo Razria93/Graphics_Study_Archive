@@ -540,7 +540,7 @@ Raw comparison:
 - `Ex1603`은 현재 실행 경로에서 별도 runtime asset을 요구하지 않습니다.
 - `CloudDensityCS.hlsl`, `CloudLightingCS.hlsl`은 Debug/Release x64에서 Compute, shader model `5.0`입니다.
 - archive의 `Ex1603_Cloud.cpp/.h`, `CloudDensityCS.hlsl`, `CloudLightingCS.hlsl`은 primary raw hash와 일치합니다.
-- Debug/Release x64 실행 확인 전까지 build/run은 `미확인`으로 기록합니다.
+- 사용자 확인 기준으로 Debug/Release x64 모두 실행 확인 완료입니다.
 
 ## Per-example Finish Check
 
@@ -555,8 +555,8 @@ Raw comparison:
 
 ## Current Next Action
 
-1. 다음 확인 대상은 `Ex1603_Cloud`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1603`을 설정합니다.
+1. 다음 확인 대상은 `Ex1604_RealtimeSmoke`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1604`를 설정합니다.
 3. 사용자 Debug x64 build/run 확인을 요청합니다.
 4. 사용자 Release x64 build/run 확인을 요청합니다.
 5. build 실패 시 `VCPKG_ROOT`, Assimp, PhysX include/dependency 설정을 먼저 확인합니다.
