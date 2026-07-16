@@ -488,6 +488,32 @@ Raw comparison:
 - `Ex1601`은 별도 runtime asset을 요구하지 않습니다.
 - Ex1601 compute shaders는 Debug/Release x64에서 Compute, shader model `5.0`입니다.
 - archive의 `Ex1601_StableFluids.cpp/.h`, `StableFluids.cpp/.h`는 primary raw hash와 일치합니다.
+- Debug/Release x64 실행 확인 전까지 build/run은 `미확인`으로 기록합니다.
+
+## Ex1602 Dependency Review
+
+`Ex1602_CurlNoise`는 compute shader에서 curl noise를 계산해 particle 위치를 갱신하고, sprite/density rendering으로 흐름을 누적해서 보여주는 예제입니다.
+
+핵심 파일:
+
+- `Ex1602_CurlNoise.cpp`
+- `Ex1602_CurlNoise.h`
+- `Ex1602_CurlNoiseCS.hlsl`
+- `TileableNoise.hlsli`
+- `Ex1404_StructuredBufferVS.hlsl`
+- `Ex1406_SpriteGS.hlsl`
+- `Ex1406_SpritePS.hlsl`
+- `Ex1406_DensityDissipationCS.hlsl`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1602`를 `Ex1602_CurlNoise`로 매핑합니다.
+- `Ex1602`는 별도 runtime asset을 요구하지 않습니다.
+- `Ex1602_CurlNoiseCS.hlsl`은 Debug/Release x64에서 Compute, shader model `5.0`입니다.
+- archive의 `Ex1602_CurlNoise.cpp/.h`, `Ex1602_CurlNoiseCS.hlsl`은 primary raw hash와 일치합니다.
 - 사용자 확인 기준으로 Debug/Release x64 모두 실행 확인 완료입니다.
 
 ## Per-example Finish Check
