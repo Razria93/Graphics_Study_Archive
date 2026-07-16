@@ -6,10 +6,10 @@
 | --- | --- | --- |
 | Source/project import | 완료 | 단일 `Examples` project 구조 기준으로 반영 |
 | Required asset | 없음 | particle 데이터를 코드에서 생성 |
-| Build/run | 미확인 | 사용자 Debug/Release 실행 확인 전 |
+| Build/run | 성공 | 사용자 Debug/Release 실행 확인 완료 |
 | Diff review | 진행 중 | `Part4_HongLabGraphics` main raw를 기준으로 사용 |
 | Refactor | 미확인 | 1차 import에서는 raw 구조 유지 |
-| Capture ready | 아니오 | build/run 확인 후 촬영 판단 |
+| Capture ready | 보류 | 촬영은 사용자 진행 |
 | Public readiness | 검토 필요 | 강의 기반 학습 예제. public subset 전 별도 검토 |
 
 ## Raw Reference
@@ -47,7 +47,7 @@
 
 ## Build / Run
 
-아직 사용자가 Debug/Release x64 실행을 확인하지 않았습니다.
+사용자가 Debug/Release x64 실행을 모두 확인했습니다.
 
 실행 command argument:
 
@@ -55,13 +55,13 @@
 1501
 ```
 
-확인 예정:
+확인 결과:
 
-- Debug x64 build/run
-- Release x64 build/run
-- particle sprite 자동 생성/이동
-- gravity와 wall/ground collision 동작
-- mouse left click 위치 particle spawn
+- Debug x64 build/run 성공
+- Release x64 build/run 성공
+- particle sprite 자동 생성/이동 확인
+- gravity와 wall/ground collision 동작 확인
+- mouse left click 위치 particle spawn 확인
 
 ## Notes
 
