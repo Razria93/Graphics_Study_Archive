@@ -460,6 +460,36 @@ Raw comparison:
 - archive의 `Ex1503`/`SphSimulation` core files는 primary raw hash와 일치합니다.
 - `Ex1503_SphWater.cpp`, `SphSimulation.cpp`는 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
 
+## Ex1601 Dependency Review
+
+`Ex1601_StableFluids`는 compute shader 기반 2D stable fluids 예제입니다. velocity, pressure, divergence, vorticity, density texture를 내부 resource로 만들고 `Sourcing -> Diffuse -> Projection -> Advection` pass를 순서대로 실행합니다.
+
+핵심 파일:
+
+- `Ex1601_StableFluids.cpp`
+- `Ex1601_StableFluids.h`
+- `StableFluids.cpp`
+- `StableFluids.h`
+- `Ex1601_AdvectionCS.hlsl`
+- `Ex1601_ApplyPressureCS.hlsl`
+- `Ex1601_ConfineVorticityCS.hlsl`
+- `Ex1601_ComputeVorticityCS.hlsl`
+- `Ex1601_DiffuseCS.hlsl`
+- `Ex1601_DivergenceCS.hlsl`
+- `Ex1601_JacobiCS.hlsl`
+- `Ex1601_SourcingCS.hlsl`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1601`을 `Ex1601_StableFluids`로 매핑합니다.
+- `Ex1601`은 별도 runtime asset을 요구하지 않습니다.
+- Ex1601 compute shaders는 Debug/Release x64에서 Compute, shader model `5.0`입니다.
+- archive의 `Ex1601_StableFluids.cpp/.h`, `StableFluids.cpp/.h`는 primary raw hash와 일치합니다.
+- Debug/Release x64 실행 확인 전까지 build/run은 `미확인`으로 기록합니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
@@ -473,8 +503,8 @@ Raw comparison:
 
 ## Current Next Action
 
-1. 다음 확인 대상은 `Ex1503_SphWater`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1503`을 설정합니다.
+1. 다음 확인 대상은 `Ex1601_StableFluids`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1601`을 설정합니다.
 3. 사용자 Debug x64 build/run 확인을 요청합니다.
 4. 사용자 Release x64 build/run 확인을 요청합니다.
 5. build 실패 시 `VCPKG_ROOT`, Assimp, PhysX include/dependency 설정을 먼저 확인합니다.
