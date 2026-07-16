@@ -12,7 +12,7 @@
 | Command argument | `1604` |
 | Working directory | `Part4_Chapter14-20` |
 | Runtime asset | `Assets/Textures/Cubemaps/HDRI/Sample*.dds` |
-| Build/run status | 미확인 |
+| Build/run status | Debug/Release 확인 완료 |
 
 확인할 동작:
 
@@ -62,4 +62,4 @@
 
 - `Ex1604_RealtimeSmoke.cpp/.h`, `Ex1604_SourcingCS.hlsl`, `Ex1604_AdvectionCS.hlsl`은 primary raw와 hash가 일치합니다.
 - Ex1604 compute shaders와 `VolumeSmokePS.hlsl`은 Debug/Release x64에서 shader model `5.0`으로 등록되어 있습니다.
-- Debug/Release x64 실행 확인 전까지 build/run은 `미확인`으로 둡니다.
+- 사용자 확인 기준으로 Debug/Release x64 모두 실행 확인 완료 상태입니다.
