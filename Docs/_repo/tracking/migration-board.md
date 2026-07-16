@@ -61,7 +61,7 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part3 Ch10-13 | `13_LightAndShadow_Step6_SoftShadowPCSS` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | PCSS soft shadow, primary raw PCSS 사용자 메모 포함 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
 | Part3 Ch10-13 | `13_LightAndShadow_Step7_Halo` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | halo post effect, primary raw `PostEffectsPS.hlsl` 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
 | Part3 Ch10-13 | `13_LightAndShadow_Step8_UnrealSphereLight` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | sphere light, primary raw `BasicPS.hlsl` representative point 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
-| Part4 Ch14-20 | `Examples` project scaffold | 진행 중 | 성공 | 진행 중 | 미확인 | 보류 | 단일 project 구조 반영, `.clang-format` project reference 제거, Ex1401-Ex1601 Debug/Release 확인, Ex1602 확인 대기 |
+| Part4 Ch14-20 | `Examples` project scaffold | 진행 중 | 성공 | 진행 중 | 미확인 | 보류 | 단일 project 구조 반영, `.clang-format` project reference 제거, Ex1401-Ex1602 Debug/Release 확인 |
 | Part4 Ch14 | `Ex1401_Basic` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader back buffer UAV 예제, 32x32 group checkerboard 출력, `Scale` GUI는 현재 shader path 미사용, command argument `1401` |
 | Part4 Ch14 | `Ex1402_Blur` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader separable blur, SRV/UAV ping-pong, Debug/Release 10 FPS 이하 확인, command argument `1402` |
 | Part4 Ch14 | `Ex1403_MatVecMult` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader matrix-vector multiplication, `Error GPU 0`, CPU/GPU result 일치, command argument `1403` |
@@ -74,4 +74,4 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part4 Ch15 | `Ex1502_SpriteFireEffect` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | textured fire sprite particles, `flare0.dds`, mouse spawn, Debug/Release 실행 확인, command argument `1502` |
 | Part4 Ch15 | `Ex1503_SphWater` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | CPU SPH water simulation, density/pressure interaction, Debug/Release 실행 확인, command argument `1503` |
 | Part4 Ch16 | `Ex1601_StableFluids` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader stable fluids, density/velocity/pressure textures, mouse source injection, Debug/Release 실행 확인, command argument `1601` |
-| Part4 Ch16 | `Ex1602_CurlNoise` | 완료 | 미확인 | 진행 중 | 미확인 | 보류 | compute shader curl noise, procedural particle motion, density trail accumulation, command argument `1602` |
+| Part4 Ch16 | `Ex1602_CurlNoise` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader curl noise, procedural particle motion, density trail accumulation, Debug/Release 실행 확인, command argument `1602` |
