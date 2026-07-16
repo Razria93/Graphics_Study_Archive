@@ -5,10 +5,10 @@
 | 항목 | 상태 |
 | --- | --- |
 | Code import | 반영 완료 |
-| Build Debug x64 | 미확인 |
-| Run Debug x64 | 미확인 |
-| Build Release x64 | 미확인 |
-| Run Release x64 | 미확인 |
+| Build Debug x64 | 성공 |
+| Run Debug x64 | 성공 |
+| Build Release x64 | 성공 |
+| Run Release x64 | 성공 |
 | Runtime asset | 없음 |
 | Public readiness | 검토 필요 |
 
@@ -18,7 +18,7 @@
 - `Examples.vcxproj`에는 `Ex1601_StableFluids.cpp`, `StableFluids.cpp`, 관련 headers와 Ex1601 compute shaders가 등록되어 있습니다.
 - `Ex1601_StableFluids.cpp/.h`, `StableFluids.cpp/.h`는 primary raw와 hash가 일치합니다.
 - 별도 이미지, 모델, DDS, EXR, HDR asset은 필요하지 않습니다.
-- Debug/Release x64 실행 확인 전까지 build/run은 `미확인`으로 유지합니다.
+- 사용자 확인 기준으로 Debug/Release x64 모두 실행 확인 완료입니다.
 
 ## 실행 확인 기준
 
