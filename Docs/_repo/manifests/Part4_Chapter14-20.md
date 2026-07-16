@@ -430,6 +430,36 @@ Raw comparison:
 - archive의 `flare0.dds`는 primary raw asset hash와 일치하며 repository LFS attributes 대상입니다.
 - `Ex1502_SpriteFireEffect.cpp`, `Ex1502_SpriteFireEffectVS.hlsl`은 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
 
+## Ex1503 Dependency Review
+
+`Ex1503_SphWater`는 CPU SPH simulation과 sprite particle rendering으로 물 입자 움직임을 확인하는 예제입니다.
+
+핵심 파일:
+
+- `Ex1503_SphWater.cpp`
+- `Ex1503_SphWater.h`
+- `Ex1503_SphWaterVS.hlsl`
+- `Ex1503_SphWaterPS.hlsl`
+- `Ex1501_ParticleSystemGS.hlsl`
+- `SphSimulation.cpp`
+- `SphSimulation.h`
+- `SphKernels.h`
+- `GraphicsCommon.*`
+- `D3D11Utils.*`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1503`을 `Ex1503_SphWater`로 매핑합니다.
+- `Ex1503`은 별도 runtime asset을 요구하지 않고, SPH particle 데이터를 코드에서 생성합니다.
+- `Ex1503_SphWaterVS.hlsl`은 Debug/Release x64 모두 Vertex, shader model `5.0`입니다.
+- `Ex1501_ParticleSystemGS.hlsl`은 Debug/Release x64 모두 Geometry, shader model `5.0`입니다.
+- `Ex1503_SphWaterPS.hlsl`은 Debug/Release x64 모두 Pixel, shader model `5.0`입니다.
+- archive의 `Ex1503`/`SphSimulation` core files는 primary raw hash와 일치합니다.
+- `Ex1503_SphWater.cpp`, `SphSimulation.cpp`는 `_2`/`OriginalExamples`와 hash가 다르므로, archive 기준은 `Part4_HongLabGraphics` primary raw입니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
@@ -443,8 +473,8 @@ Raw comparison:
 
 ## Current Next Action
 
-1. 다음 확인 대상은 `Ex1502_SpriteFireEffect`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1502`를 설정합니다.
+1. 다음 확인 대상은 `Ex1503_SphWater`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1503`을 설정합니다.
 3. 사용자 Debug x64 build/run 확인을 요청합니다.
 4. 사용자 Release x64 build/run 확인을 요청합니다.
 5. build 실패 시 `VCPKG_ROOT`, Assimp, PhysX include/dependency 설정을 먼저 확인합니다.
