@@ -542,6 +542,38 @@ Raw comparison:
 - archive의 `Ex1603_Cloud.cpp/.h`, `CloudDensityCS.hlsl`, `CloudLightingCS.hlsl`은 primary raw hash와 일치합니다.
 - 사용자 확인 기준으로 Debug/Release x64 모두 실행 확인 완료입니다.
 
+## Ex1604 Dependency Review
+
+`Ex1604_RealtimeSmoke`는 3D grid 기반 realtime smoke simulation 예제입니다. 저해상도 grid에서 pressure projection을 계산하고, 고해상도 grid에서 advection과 volume rendering을 수행합니다.
+
+핵심 파일:
+
+- `Ex1604_RealtimeSmoke.cpp`
+- `Ex1604_RealtimeSmoke.h`
+- `Ex1604_AdvectionCS.hlsl`
+- `Ex1604_ApplyPressureCS.hlsl`
+- `Ex1604_DiffUpSampleCS.hlsl`
+- `Ex1604_DivergenceCS.hlsl`
+- `Ex1604_DownSampleCS.hlsl`
+- `Ex1604_JacobiCS.hlsl`
+- `Ex1604_SourcingCS.hlsl`
+- `Ex1604_VorticityConfinementCS.hlsl`
+- `VolumeSmokePS.hlsl`
+- `Texture3D.h`
+- `Assets/Textures/Cubemaps/HDRI/Sample*.dds`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1604`를 `Ex1604_RealtimeSmoke`로 매핑합니다.
+- `Ex1604`는 `../Assets/Textures/Cubemaps/HDRI/Sample*.dds` runtime asset을 요구합니다.
+- root `Assets/Textures/Cubemaps/HDRI`에는 기존 Part3 archive `Sample*.dds` 4개를 재사용 복사했습니다.
+- archive의 `Ex1604_RealtimeSmoke.cpp/.h`, `Ex1604_SourcingCS.hlsl`, `Ex1604_AdvectionCS.hlsl`은 primary raw hash와 일치합니다.
+- Ex1604 compute shaders와 `VolumeSmokePS.hlsl`은 Debug/Release x64에서 shader model `5.0`입니다.
+- Debug/Release x64 실행 확인 전까지 build/run은 `미확인`으로 기록합니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
