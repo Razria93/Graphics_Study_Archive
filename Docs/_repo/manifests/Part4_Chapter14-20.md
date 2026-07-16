@@ -516,6 +516,32 @@ Raw comparison:
 - archive의 `Ex1602_CurlNoise.cpp/.h`, `Ex1602_CurlNoiseCS.hlsl`은 primary raw hash와 일치합니다.
 - 사용자 확인 기준으로 Debug/Release x64 모두 실행 확인 완료입니다.
 
+## Ex1603 Dependency Review
+
+`Ex1603_Cloud`는 compute shader로 3D density texture와 lighting texture를 생성하고, volume pixel shader로 박스 내부를 구름처럼 렌더링하는 예제입니다.
+
+핵심 파일:
+
+- `Ex1603_Cloud.cpp`
+- `Ex1603_Cloud.h`
+- `CloudDensityCS.hlsl`
+- `CloudLightingCS.hlsl`
+- `Texture3D.h`
+- `TileableNoise.hlsli`
+- `VolumeSmokePS.hlsl`
+- `GraphicsCommon.*`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1603`을 `Ex1603_Cloud`로 매핑합니다.
+- `Ex1603`은 현재 실행 경로에서 별도 runtime asset을 요구하지 않습니다.
+- `CloudDensityCS.hlsl`, `CloudLightingCS.hlsl`은 Debug/Release x64에서 Compute, shader model `5.0`입니다.
+- archive의 `Ex1603_Cloud.cpp/.h`, `CloudDensityCS.hlsl`, `CloudLightingCS.hlsl`은 primary raw hash와 일치합니다.
+- Debug/Release x64 실행 확인 전까지 build/run은 `미확인`으로 기록합니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
