@@ -9,7 +9,7 @@ Compute shader, simulation, animation, foliage, physics, gameplay 예제를 정�
 | Raw source | `C:\ComputerGraphics\Part4_HongLabGraphics` |
 | Reference source | `C:\ComputerGraphics\Part4_HongLabGraphics_2`, `C:\ComputerGraphics\OriginalExamples\Part4_HongLabGraphics` |
 | Import status | `Examples` project 반영 완료, 예제별 확인 진행 중 |
-| Build/run | Ex1401-Ex1604 Debug/Release 확인 완료 |
+| Build/run | Ex1401-Ex1604 Debug/Release 확인 완료, Ex1605 확인 대기 |
 | Public readiness | 검토 필요 |
 
 ## Raw 판단
@@ -61,6 +61,7 @@ Debug/Release 확인 시 같은 command argument가 설정되어 있는지 먼�
 | [`Ex1602_CurlNoise`](Ex1602_CurlNoise/README.md) | 반영 완료 | 성공 | 검토 필요 | compute shader curl noise, procedural particle motion, density trail accumulation, command argument `1602` |
 | [`Ex1603_Cloud`](Ex1603_Cloud/README.md) | 반영 완료 | 성공 | 검토 필요 | procedural cloud volume, 3D density/lighting textures, volume smoke rendering, command argument `1603` |
 | [`Ex1604_RealtimeSmoke`](Ex1604_RealtimeSmoke/README.md) | 반영 완료 | 성공 | 검토 필요 | realtime smoke simulation, low/high resolution 3D grids, Sample HDRI assets, command argument `1604` |
+| [`Ex1605_SmokeCpu`](Ex1605_SmokeCpu/README.md) | 반영 완료 | 미확인 | 검토 필요 | CPU fluid simulation, density texture upload, volume smoke rendering, command argument `1605` |
 
 ## Import 기준
 

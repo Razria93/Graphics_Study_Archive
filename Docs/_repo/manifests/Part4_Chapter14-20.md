@@ -574,6 +574,34 @@ Raw comparison:
 - Ex1604 compute shaders와 `VolumeSmokePS.hlsl`은 Debug/Release x64에서 shader model `5.0`입니다.
 - 사용자 확인 기준으로 Debug/Release x64 모두 실행 확인 완료입니다.
 
+## Ex1605 Dependency Review
+
+`Ex1605_SmokeCpu`는 CPU에서 3D fluid simulation density field를 갱신하고, 그 결과를 GPU 3D texture로 업로드해 volume smoke로 렌더링하는 예제입니다.
+
+핵심 파일:
+
+- `Ex1605_SmokeCpu.cpp`
+- `Ex1605_SmokeCpu.h`
+- `FluidSimulationCPU.cpp`
+- `FluidSimulationCPU.h`
+- `Texture3D.h`
+- `VolumeSmokePS.hlsl`
+- `Assets/Textures/Cubemaps/HDRI/Sample*.dds`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1605`를 `Ex1605_SmokeCpu`로 매핑합니다.
+- `Ex1605`는 `../Assets/Textures/Cubemaps/HDRI/Sample*.dds` runtime asset을 요구합니다.
+- 해당 HDRI sample asset은 Ex1604 기준 기록에서 root `Assets` 실행 경로에 이미 반영되어 있습니다.
+- archive의 `Ex1605_SmokeCpu.cpp/.h`, `FluidSimulationCPU.cpp/.h`, `VolumeSmokePS.hlsl`, `Texture3D.h`, `main.cpp`는 primary raw hash와 일치합니다.
+- `Examples.vcxproj`는 archive 환경 보정을 위해 raw의 개인 vcpkg include 경로와 `.clang-format` project item을 조정한 상태입니다.
+- `Examples.vcxproj`, `Examples.vcxproj.filters`의 XML namespace는 정상입니다.
+- `VolumeSmokePS.hlsl`, `Common.hlsli`는 UTF-8 BOM 없이 정상 코드 문자로 시작합니다.
+- Debug/Release x64 실행 확인 전까지 build/run은 미확인으로 둡니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
