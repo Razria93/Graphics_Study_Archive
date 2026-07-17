@@ -31,7 +31,7 @@ bool Ex1605_SmokeCpu::InitScene()
 	m_volumeConsts.m_cpu.densityAbsorption = 2.0f;
 	m_volumeConsts.Initialize(m_device);
 
-	m_fluid.Initialize(64, 64, 64);
+	m_fluid.Initialize(32, 32, 32);
 
 	Vector3 center(0.0f);
 	m_volumeModel = make_shared<Model>(
