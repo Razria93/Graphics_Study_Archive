@@ -634,13 +634,15 @@ Raw comparison:
 확인 내용:
 
 - `main.cpp`는 command argument `1606`을 `Ex1606_HybridWater`로 매핑합니다.
-- archive의 `Ex1606_HybridWater.cpp/.h`, Ex1606 shader files, `MarchingCubes.h`, `main.cpp`는 primary raw hash와 일치합니다.
+- archive의 Ex1606 shader files, `MarchingCubes.h`, `main.cpp`는 primary raw hash와 일치합니다.
+- `Ex1606_HybridWater.cpp`는 실행 확인용 성능 profile 적용으로 primary raw와 다릅니다. raw 기본값은 128^3 grid, 1024 * 1024 max particles, 3096 new particles, 2 substeps이며 archive 기준은 64^3 grid, 256 * 1024 max particles, 1024 new particles, 1 substep입니다.
+- `Ex1606_HybridWater.h`는 primary raw hash와 일치합니다.
 - `Examples.vcxproj`와 `Examples.vcxproj.filters`에는 Ex1606 source/shader/filter 항목이 등록되어 있습니다.
 - Ex1606 shader files는 Debug/Release x64에서 shader model `5.0`으로 등록되어 있습니다.
 - `Ex1606_Common.hlsli`는 shader include file이므로 `None` item으로 등록되어 있습니다.
 - Ex1606 HLSL/HLSLI 파일은 UTF-8 BOM 없이 정상 코드 문자로 시작합니다.
 - `InitCubemaps()`는 주석 처리되어 있고 noise texture는 `Texture3D::InitNoiseF16()`에서 생성하므로 현재 외부 runtime asset은 필요하지 않습니다.
-- Debug/Release x64 실행 확인 전까지 build/run은 미확인으로 둡니다.
+- 사용자 확인 기준으로 Debug/Release x64 모두 실행 확인 완료입니다.
 
 ## Per-example Finish Check
 
@@ -655,8 +657,8 @@ Raw comparison:
 
 ## Current Next Action
 
-1. 다음 확인 대상은 `Ex1606_HybridWater`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1606`을 설정합니다.
+1. 다음 확인 대상은 `Ex1701_SkeletalAnimation`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1701`을 설정합니다.
 3. 사용자 Debug x64 build/run 확인을 요청합니다.
 4. 사용자 Release x64 build/run 확인을 요청합니다.
 5. build 실패 시 `VCPKG_ROOT`, Assimp, PhysX include/dependency 설정을 먼저 확인합니다.

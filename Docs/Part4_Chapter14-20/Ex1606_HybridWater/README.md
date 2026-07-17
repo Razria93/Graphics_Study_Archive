@@ -12,7 +12,8 @@
 | Command argument | `1606` |
 | Working directory | `Part4_Chapter14-20` |
 | Runtime asset | 없음 |
-| Build/run status | 미확인 |
+| Build/run status | Debug/Release 확인 완료 |
+| Archive perf profile | 64^3 grid, 256K max particles, 1024 new particles, 1 substep |
 
 확인할 동작:
 
@@ -23,9 +24,9 @@
 
 ## 핵심 흐름
 
-1. `InitScene()`에서 128^3 grid texture를 velocity, pressure, divergence, density, boundary condition, signed distance 용도로 초기화합니다.
+1. `InitScene()`에서 64^3 grid texture를 velocity, pressure, divergence, density, boundary condition, signed distance 용도로 초기화합니다.
 2. `Texture3D::InitNoiseF16()`으로 procedural noise texture를 생성합니다.
-3. 최대 1024 * 1024개 particle buffer와 active particle counter를 초기화합니다.
+3. 최대 256 * 1024개 particle buffer와 active particle counter를 초기화합니다.
 4. `BitonicSort` buffer를 이용해 particle을 grid index 기준으로 정렬합니다.
 5. `Update()`에서 projection pass와 particle step을 substep 단위로 실행합니다.
 6. `Projection()`은 divergence, Jacobi pressure solve, pressure application을 수행합니다.
@@ -62,9 +63,11 @@
 
 ## Import 메모
 
-- `Ex1606_HybridWater.cpp/.h`, Ex1606 shader files, `MarchingCubes.h`, `main.cpp`는 primary raw와 hash가 일치합니다.
+- Ex1606 shader files, `MarchingCubes.h`, `main.cpp`는 primary raw와 hash가 일치합니다.
+- `Ex1606_HybridWater.cpp`는 primary raw 대비 실행 확인용 성능 profile을 낮춘 상태입니다. raw 기본값은 128^3 grid, 1024 * 1024 max particles, 3096 new particles, 2 substeps이며 archive 기준은 64^3 grid, 256 * 1024 max particles, 1024 new particles, 1 substep입니다.
+- `Ex1606_HybridWater.h`는 primary raw와 hash가 일치합니다.
 - `Examples.vcxproj`와 `Examples.vcxproj.filters`에는 Ex1606 source/shader/filter 항목이 등록되어 있습니다.
 - Ex1606 shader files는 Debug/Release x64에서 shader model `5.0`으로 등록되어 있습니다.
 - `Ex1606_Common.hlsli`는 `None` item으로 등록되어 shader include file로 사용됩니다.
 - Ex1606 HLSL/HLSLI 파일은 UTF-8 BOM 없이 정상 코드 문자로 시작합니다.
-- Debug/Release x64 실행 확인 전까지 build/run은 미확인 상태입니다.
+- 사용자 확인 기준으로 Debug/Release x64 모두 실행 확인 완료 상태입니다.
