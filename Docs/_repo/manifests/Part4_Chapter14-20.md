@@ -603,6 +603,45 @@ Raw comparison:
 - primary raw의 기본 grid는 64^3이지만, CPU simulation과 3D texture upload 비용이 커서 archive에서는 실행 확인용으로 32^3으로 낮췄습니다.
 - 사용자 확인 기준으로 Debug/Release x64 모두 실행 확인 완료입니다.
 
+## Ex1606 Dependency Review
+
+`Ex1606_HybridWater`는 particle 기반 water simulation과 grid 기반 projection을 함께 사용하는 hybrid water 예제입니다. 입자는 structured buffer로 관리하고, velocity/pressure/divergence/density/signed-distance는 3D texture grid에 저장합니다.
+
+핵심 파일:
+
+- `Ex1606_HybridWater.cpp`
+- `Ex1606_HybridWater.h`
+- `Ex1606_Common.hlsli`
+- `Ex1606_ApplyPressureCS.hlsl`
+- `Ex1606_DiffUpSampleCS.hlsl`
+- `Ex1606_DivergenceCS.hlsl`
+- `Ex1606_FirstIndexCS.hlsl`
+- `Ex1606_JacobiCS.hlsl`
+- `Ex1606_MarchingCubesGS.hlsl`
+- `Ex1606_MarchingCubesVS.hlsl`
+- `Ex1606_ParticleStepCS.hlsl`
+- `Ex1606_ParticleToGridCS.hlsl`
+- `Ex1606_SignedDistancePS.hlsl`
+- `Ex1606_StructuredBufferPS.hlsl`
+- `Ex1606_StructuredBufferVS.hlsl`
+- `MarchingCubes.h`
+- `BitonicSort.*`
+- `Texture3D.h`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1606`을 `Ex1606_HybridWater`로 매핑합니다.
+- archive의 `Ex1606_HybridWater.cpp/.h`, Ex1606 shader files, `MarchingCubes.h`, `main.cpp`는 primary raw hash와 일치합니다.
+- `Examples.vcxproj`와 `Examples.vcxproj.filters`에는 Ex1606 source/shader/filter 항목이 등록되어 있습니다.
+- Ex1606 shader files는 Debug/Release x64에서 shader model `5.0`으로 등록되어 있습니다.
+- `Ex1606_Common.hlsli`는 shader include file이므로 `None` item으로 등록되어 있습니다.
+- Ex1606 HLSL/HLSLI 파일은 UTF-8 BOM 없이 정상 코드 문자로 시작합니다.
+- `InitCubemaps()`는 주석 처리되어 있고 noise texture는 `Texture3D::InitNoiseF16()`에서 생성하므로 현재 외부 runtime asset은 필요하지 않습니다.
+- Debug/Release x64 실행 확인 전까지 build/run은 미확인으로 둡니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함

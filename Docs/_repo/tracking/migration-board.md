@@ -78,3 +78,4 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part4 Ch16 | `Ex1603_Cloud` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | procedural cloud volume, 3D density/lighting textures, volume smoke rendering, Debug/Release 실행 확인, command argument `1603` |
 | Part4 Ch16 | `Ex1604_RealtimeSmoke` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | realtime smoke simulation, low/high resolution 3D grids, Sample HDRI assets, Debug/Release 실행 확인, command argument `1604` |
 | Part4 Ch16 | `Ex1605_SmokeCpu` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | CPU fluid simulation, 32^3 density texture upload, volume smoke rendering, Debug/Release 실행 확인, command argument `1605` |
+| Part4 Ch16 | `Ex1606_HybridWater` | 완료 | 미확인 | 진행 중 | 미확인 | 보류 | hybrid particle/grid water, SDF raycasting, marching cubes, command argument `1606` |

@@ -62,6 +62,7 @@ Debug/Release 확인 시 같은 command argument가 설정되어 있는지 먼�
 | [`Ex1603_Cloud`](Ex1603_Cloud/README.md) | 반영 완료 | 성공 | 검토 필요 | procedural cloud volume, 3D density/lighting textures, volume smoke rendering, command argument `1603` |
 | [`Ex1604_RealtimeSmoke`](Ex1604_RealtimeSmoke/README.md) | 반영 완료 | 성공 | 검토 필요 | realtime smoke simulation, low/high resolution 3D grids, Sample HDRI assets, command argument `1604` |
 | [`Ex1605_SmokeCpu`](Ex1605_SmokeCpu/README.md) | 반영 완료 | 성공 | 검토 필요 | CPU fluid simulation, 32^3 density texture upload, volume smoke rendering, command argument `1605` |
+| [`Ex1606_HybridWater`](Ex1606_HybridWater/README.md) | 반영 완료 | 미확인 | 검토 필요 | hybrid particle/grid water, SDF raycasting, marching cubes, command argument `1606` |
 
 ## Import 기준
 
