@@ -600,7 +600,8 @@ Raw comparison:
 - `Examples.vcxproj`는 archive 환경 보정을 위해 raw의 개인 vcpkg include 경로와 `.clang-format` project item을 조정한 상태입니다.
 - `Examples.vcxproj`, `Examples.vcxproj.filters`의 XML namespace는 정상입니다.
 - `VolumeSmokePS.hlsl`, `Common.hlsli`는 UTF-8 BOM 없이 정상 코드 문자로 시작합니다.
-- Debug/Release x64 실행 확인 전까지 build/run은 미확인으로 둡니다.
+- primary raw의 기본 grid는 64^3이지만, CPU simulation과 3D texture upload 비용이 커서 archive에서는 실행 확인용으로 32^3으로 낮췄습니다.
+- 사용자 확인 기준으로 Debug/Release x64 모두 실행 확인 완료입니다.
 
 ## Per-example Finish Check
 
@@ -615,8 +616,8 @@ Raw comparison:
 
 ## Current Next Action
 
-1. 다음 확인 대상은 `Ex1605_SmokeCpu`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1605`를 설정합니다.
+1. 다음 확인 대상은 `Ex1606_HybridWater`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1606`을 설정합니다.
 3. 사용자 Debug x64 build/run 확인을 요청합니다.
 4. 사용자 Release x64 build/run 확인을 요청합니다.
 5. build 실패 시 `VCPKG_ROOT`, Assimp, PhysX include/dependency 설정을 먼저 확인합니다.

@@ -5,10 +5,10 @@
 | 항목 | 상태 |
 | --- | --- |
 | Code import | 반영 완료 |
-| Build Debug x64 | 미확인 |
-| Run Debug x64 | 미확인 |
-| Build Release x64 | 미확인 |
-| Run Release x64 | 미확인 |
+| Build Debug x64 | 성공 |
+| Run Debug x64 | 성공 |
+| Build Release x64 | 성공 |
+| Run Release x64 | 성공 |
 | Runtime asset | 반영 완료 |
 | Public readiness | 검토 필요 |
 
@@ -20,6 +20,8 @@
 - `Assets/Textures/Cubemaps/HDRI/Sample*.dds` 4개는 Ex1604 기준 기록에서 root `Assets` 실행 경로에 반영되어 있습니다.
 - `Examples.vcxproj`는 archive 환경 보정 때문에 primary raw와 hash가 다릅니다. 차이는 개인 vcpkg include path 제거, `VCPKG_ROOT` 조건부 include path, `.clang-format` project item 제거입니다.
 - HLSL/HLSLI BOM 확인 결과 `VolumeSmokePS.hlsl`, `Common.hlsli`는 `EF BB BF`로 시작하지 않습니다.
+- CPU simulation 병목 완화를 위해 grid resolution을 primary raw의 64^3에서 32^3으로 낮췄습니다.
+- 사용자 확인 기준으로 Debug/Release x64 모두 실행 확인 완료입니다.
 
 ## 실행 확인 기준
 

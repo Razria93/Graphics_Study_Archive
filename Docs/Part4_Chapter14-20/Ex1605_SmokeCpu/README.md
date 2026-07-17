@@ -12,7 +12,7 @@
 | Command argument | `1605` |
 | Working directory | `Part4_Chapter14-20` |
 | Runtime asset | `Assets/Textures/Cubemaps/HDRI/Sample*.dds` |
-| Build/run status | 미확인 |
+| Build/run status | Debug/Release 확인 완료 |
 
 확인할 동작:
 
@@ -23,7 +23,7 @@
 ## 핵심 흐름
 
 1. `InitScene()`에서 HDRI cubemap, volume shader, volume constant buffer를 초기화합니다.
-2. `FluidSimulationCPU::Initialize(64, 64, 64)`로 64^3 CPU simulation grid를 만듭니다.
+2. `FluidSimulationCPU::Initialize(32, 32, 32)`로 32^3 CPU simulation grid를 만듭니다.
 3. box mesh에 `DXGI_FORMAT_R32_FLOAT` 3D density texture를 연결합니다.
 4. `Update()`에서 CPU fluid simulation을 갱신합니다.
 5. 갱신된 `m_fluid.m_density`를 `densityTex.Upload()`로 GPU 3D texture에 업로드합니다.
@@ -52,4 +52,5 @@
 - `Examples.vcxproj`는 archive 환경 보정을 위해 raw의 개인 vcpkg include 경로와 `.clang-format` project item을 조정한 상태입니다.
 - `Examples.vcxproj`와 `Examples.vcxproj.filters`의 XML namespace는 정상입니다.
 - `VolumeSmokePS.hlsl`, `Common.hlsli`는 UTF-8 BOM 없이 정상 코드 문자로 시작합니다.
-- Debug/Release x64 실행 확인 전까지 build/run은 미확인 상태입니다.
+- primary raw의 기본 grid는 64^3이지만, CPU simulation과 3D texture upload 비용이 커서 archive에서는 실행 확인용으로 32^3으로 낮췄습니다.
+- 사용자 확인 기준으로 Debug/Release x64 모두 실행 확인 완료 상태입니다.
