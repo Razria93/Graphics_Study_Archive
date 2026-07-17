@@ -33,7 +33,7 @@ bool Ex1606_HybridWater::InitScene()
 
 	m_upScale = 1; // 구현 안됨
 
-	m_width = m_height = m_depth = 128;
+	m_width = m_height = m_depth = 64;
 
 	m_widthUp = m_width * m_upScale;
 	m_heightUp = m_height * m_upScale;
@@ -48,7 +48,7 @@ bool Ex1606_HybridWater::InitScene()
 	    Vector3(1.0f / m_widthUp, 1.0f / m_heightUp, 1.0f / m_depthUp);
 	m_fluidConsts.m_cpu.upScale = m_upScale;	// 사용 X
 	m_fluidConsts.m_cpu.sourceStrength = 0.8f;
-	m_fluidConsts.m_cpu.numNewParticles = 3096;
+	m_fluidConsts.m_cpu.numNewParticles = 1024;
 	m_fluidConsts.m_cpu.width = m_width;
 	m_fluidConsts.m_cpu.height = m_height;
 	m_fluidConsts.m_cpu.depth = m_depth;
@@ -120,7 +120,7 @@ bool Ex1606_HybridWater::InitScene()
 	AppBase::m_basicList.push_back(m_volumeModel);
 
 	// Particles
-	m_particles.m_cpu.resize(1024 * 1024); // 최대 입자 개수
+	m_particles.m_cpu.resize(256 * 1024); // 최대 입자 개수
 	std::mt19937 gen(0);
 	std::uniform_real_distribution<float> dp(-1.0f, 1.0f);
 	for (auto& p : m_particles.m_cpu)
@@ -204,7 +204,7 @@ void Ex1606_HybridWater::Update(float dt)
 	if (!AppBase::m_pauseAnimation)
 	{
 
-		const int numSubsteps = 2;
+		const int numSubsteps = 1;
 
 		for (int i = 0; i < numSubsteps; i++)
 		{
