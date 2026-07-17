@@ -644,6 +644,52 @@ Raw comparison:
 - `InitCubemaps()`는 주석 처리되어 있고 noise texture는 `Texture3D::InitNoiseF16()`에서 생성하므로 현재 외부 runtime asset은 필요하지 않습니다.
 - 사용자 확인 기준으로 Debug/Release x64 모두 실행 확인 완료입니다.
 
+## Ex1701 Dependency Review
+
+`Ex1701_SkeletalAnimation`은 skinned mesh와 skeletal animation clip을 로드해서 character animation을 재생하는 예제입니다. Part4에서는 command argument `1701`로 실행합니다.
+
+핵심 파일:
+
+- `Ex1701_SkeletalAnimation.cpp`
+- `Ex1701_SkeletalAnimation.h`
+- `AnimationClip.h`
+- `SkinnedMeshModel.h`
+- `SkeletalMeshActor.h`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+Runtime asset:
+
+- `Assets/Characters/Mixamo/character.fbx`
+- `Assets/Characters/Mixamo/CatwalkIdle.fbx`
+- `Assets/Characters/Mixamo/CatwalkIdleToWalkForward.fbx`
+- `Assets/Characters/Mixamo/CatwalkWalkForward.fbx`
+- `Assets/Characters/Mixamo/CatwalkWalkStop.fbx`
+- `Assets/Characters/Mixamo/BreakdanceFreezeVar2.fbx`
+- `Assets/Characters/Mixamo/Ch03_1001_Diffuse.png`
+- `Assets/Characters/Mixamo/Ch03_1001_Normal.png`
+- `Assets/Textures/PBR/stringy-marble-ue/stringy_marble_albedo.png`
+- `Assets/Textures/PBR/stringy-marble-ue/stringy_marble_ao.png`
+- `Assets/Textures/PBR/stringy-marble-ue/stringy_marble_Metallic.png`
+- `Assets/Textures/PBR/stringy-marble-ue/stringy_marble_Normal-dx.png`
+- `Assets/Textures/PBR/stringy-marble-ue/stringy_marble_Roughness.png`
+- `Assets/Textures/Cubemaps/HDRI/clear_pureskyEnvHDR.dds`
+- `Assets/Textures/Cubemaps/HDRI/clear_pureskySpecularHDR.dds`
+- `Assets/Textures/Cubemaps/HDRI/clear_pureskyDiffuseHDR.dds`
+- `Assets/Textures/Cubemaps/HDRI/clear_pureskyBrdf.dds`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1701`을 `Ex1701_SkeletalAnimation`으로 매핑합니다.
+- archive의 Ex1701 source/header files는 primary raw hash와 일치합니다.
+- `Examples.vcxproj`와 `Examples.vcxproj.filters`에는 Ex1701 source/header 항목이 등록되어 있습니다.
+- Ex1701은 별도 전용 HLSL 파일을 추가하지 않고 shared skinned/PBR shader path를 사용합니다.
+- 필요한 runtime asset만 선별 반영했고 raw result/capture/build output은 포함하지 않았습니다.
+- `.fbx`와 `.dds`는 LFS 추적 대상입니다.
+- `.png` texture는 현재 LFS 추적 대상이 아니므로 public 공개 전 license/source와 repo 용량을 별도 검토합니다.
+- Debug/Release build/run은 사용자 확인 전까지 `미확인`으로 기록합니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
