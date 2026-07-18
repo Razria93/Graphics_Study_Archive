@@ -728,6 +728,39 @@ Runtime asset:
 - `.jpg` foliage texture는 public 공개 전 license/source와 repo 용량을 별도 검토합니다.
 - Debug/Release build/run은 사용자 확인 기준으로 완료 기록했습니다.
 
+## Ex1802 Dependency Review
+
+`Ex1802_Grass`는 대량의 grass blades를 instancing으로 렌더링하고 vertex shader에서 wind deformation을 적용하는 예제입니다. Part4에서는 command argument `1802`로 실행합니다.
+
+대상 파일:
+
+- `Ex1802_Grass.cpp`
+- `Ex1802_Grass.h`
+- `Ex1802_GrassVS.hlsl`
+- `Ex1802_GrassPS.hlsl`
+- `GrassModel.h`
+- `GraphicsCommon.*`
+- `Vertex.h`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+Runtime asset:
+
+- `Assets/Textures/PBR/stringy-marble-ue/*`
+- `Assets/Textures/Cubemaps/HDRI/clear_puresky*.dds`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1802`를 `Ex1802_Grass`로 매핑합니다.
+- archive의 Ex1802 source/header/HLSL files는 primary raw hash와 일치합니다.
+- `GraphicsCommon.*`의 grass shader, input layout, PSO 등록은 primary raw와 일치합니다.
+- `GrassModel.h`와 `Vertex.h`의 grass vertex/instance layout은 primary raw와 일치합니다.
+- `Examples.vcxproj`와 `Examples.vcxproj.filters`에는 Ex1802 source/header/HLSL 항목이 등록되어 있습니다.
+- Ex1802는 신규 runtime asset을 요구하지 않고 기존 PBR ground textures와 HDRI cubemap을 재사용합니다.
+- raw result/capture/build output은 포함하지 않았습니다.
+- Debug/Release build/run은 사용자 확인 전까지 `미확인`으로 기록합니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
