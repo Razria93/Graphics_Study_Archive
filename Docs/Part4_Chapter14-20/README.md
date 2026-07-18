@@ -66,6 +66,7 @@ Debug/Release 확인 시 같은 command argument가 설정되어 있는지 먼�
 | [`Ex1701_SkeletalAnimation`](Ex1701_SkeletalAnimation/README.md) | 반영 완료 | 미확인 | 검토 필요 | skeletal animation, Mixamo character clips, PBR ground, HDRI cubemap, command argument `1701` |
 | [`Ex1801_Tree`](Ex1801_Tree/README.md) | 반영 완료 | 성공 | 검토 필요 | tree FBX model, selected foliage textures, PBR ground, HDRI cubemap, command argument `1801` |
 | [`Ex1802_Grass`](Ex1802_Grass/README.md) | 반영 완료 | 성공 | 검토 필요 | instanced grass rendering, wind deformation, reused PBR ground/HDRI assets, command argument `1802` |
+| [`Ex1803_Landscape`](Ex1803_Landscape/README.md) | 보정 반영 | 미확인 | 검토 필요 | terrain.raw height-field fallback, ocean plane, command argument `1803` |
 
 ## Import 기준
 

@@ -761,6 +761,37 @@ Runtime asset:
 - raw result/capture/build output은 포함하지 않았습니다.
 - Debug/Release build/run은 사용자 확인 기준으로 완료 기록했습니다.
 
+## Ex1803 Dependency Review
+
+`Ex1803_Landscape`는 terrain과 ocean plane을 함께 렌더링하는 landscape/ocean 예제입니다. Part4에서는 command argument `1803`으로 실행합니다.
+
+대상 파일:
+
+- `Ex1803_Landscape.cpp`
+- `Ex1803_Landscape.h`
+- `Ex1803_OceanPS.hlsl`
+- `OceanModel.h`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+Runtime asset:
+
+- `Assets/Textures/terrain.raw`
+- `Assets/Textures/Cubemaps/HDRI/clear_puresky*.dds`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1803`을 `Ex1803_Landscape`로 매핑합니다.
+- archive의 `Ex1803_Landscape.h`, `Ex1803_OceanPS.hlsl`, `OceanModel.h`는 primary raw hash와 일치합니다.
+- `Examples.vcxproj`와 `Examples.vcxproj.filters`에는 Ex1803 source/header/HLSL 항목이 등록되어 있습니다.
+- primary raw의 `Ex1803_Landscape.cpp`는 `../Assets/Terrain/snowy_mountain_with_slopes/uploads_files_4497957_untitled.fbx`와 `Texture.png`를 요구하지만, 현재 raw/reference repo에는 해당 terrain asset folder가 없습니다.
+- archive는 실행 재현성을 위해 raw에 실제로 포함된 `terrain.raw`를 선별 반영하고, 257x257 height-field mesh fallback을 `Ex1803_Landscape.cpp`에 추가했습니다.
+- `terrain.raw` hash는 primary raw asset과 일치합니다.
+- `.raw`는 LFS 추적 대상으로 추가했습니다.
+- raw result/capture/build output은 포함하지 않았습니다.
+- Debug/Release build/run은 사용자 확인 전까지 `미확인`으로 기록합니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
