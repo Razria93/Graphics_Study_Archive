@@ -1,5 +1,11 @@
 # Ex1701 SkeletalAnimation
 
+## Assimp 6.x compatibility note
+
+Mixamo FBX skeletal animation은 Assimp 6.x에서 FBX pivot 보존용 helper node가 생성될 수 있습니다. 이 예제는 단순 bone hierarchy를 전제로 하므로 `ModelLoader`에서 `AI_CONFIG_IMPORT_FBX_PRESERVE_PIVOTS=false`를 적용합니다.
+
+자세한 원인과 해결 기록은 [`assimp-6x-fbx-pivot.md`](assimp-6x-fbx-pivot.md)를 참고합니다.
+
 ## 목적
 
 `Ex1701_SkeletalAnimation`은 skinned mesh와 skeletal animation clip을 로드해서 character animation을 재생하는 예제입니다. Part4의 compute/simulation 예제 흐름에서 animation chapter로 넘어가는 첫 예제이며, mesh bone hierarchy, animation clip sampling, skinned vertex rendering, simple state transition을 한 화면에서 확인합니다.

@@ -143,6 +143,7 @@ void ModelLoader::Load(std::string basePath, std::string filename,
 	m_basePath = basePath; // 텍스춰 읽어들일 때 필요
 
 	Assimp::Importer importer;
+	importer.SetPropertyBool(AI_CONFIG_IMPORT_FBX_PRESERVE_PIVOTS, false);
 
 	const aiScene* pScene = importer.ReadFile(
 	    m_basePath + filename,
@@ -233,6 +234,7 @@ void ModelLoader::LoadAnimation(string basePath, string filename)
 	m_basePath = basePath;
 
 	Assimp::Importer importer;
+	importer.SetPropertyBool(AI_CONFIG_IMPORT_FBX_PRESERVE_PIVOTS, false);
 
 	const aiScene* pScene = importer.ReadFile(
 	    m_basePath + filename,

@@ -1,5 +1,12 @@
 # Ex1701 SkeletalAnimation Status
 
+## Assimp 6.x compatibility result
+
+- Assimp 6.x FBX import에서 `_$AssimpFbx$_Translation/Rotation` helper node가 생성되며 skeletal hierarchy가 예제 코드의 기대와 달라지는 문제가 있었습니다.
+- `ModelLoader::Load()`와 `ModelLoader::LoadAnimation()`에 `AI_CONFIG_IMPORT_FBX_PRESERVE_PIVOTS=false`를 적용해 단순 bone hierarchy로 읽도록 보정했습니다.
+- 사용자 확인 기준으로 Debug x64 / Release x64 모두 캐릭터 형태와 animation 재생이 정상입니다.
+- 상세 기록: [`assimp-6x-fbx-pivot.md`](assimp-6x-fbx-pivot.md)
+
 ## 현재 상태
 
 | 항목 | 상태 |
