@@ -1,8 +1,11 @@
 ﻿#include "Ex1803_Landscape.h"
 
 #include <DirectXCollision.h> // 구와 광선 충돌 계산에 사용
+#include <algorithm>
 #include <directxtk/DDSTextureLoader.h>
 #include <directxtk/SimpleMath.h>
+#include <fstream>
+#include <stdexcept>
 #include <tuple>
 #include <vector>
 
@@ -15,6 +18,93 @@ namespace hlab {
 using namespace std;
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
+
+namespace {
+
+float SampleHeight(const vector<uint8_t> &heightMap, const int width,
+                   const int x, const int z) {
+    const int clampedX = std::clamp(x, 0, width - 1);
+    const int clampedZ = std::clamp(z, 0, width - 1);
+    return float(heightMap[clampedZ * width + clampedX]) / 255.0f;
+}
+
+MeshData MakeTerrainFromRaw(const string &filename) {
+    constexpr int sourceWidth = 2049;
+    constexpr int gridSlices = 256;
+    constexpr float terrainSize = 20.0f;
+    constexpr float heightScale = 3.0f;
+
+    ifstream file(filename, ios::binary);
+    if (!file) {
+        throw runtime_error("Cannot open terrain heightmap: " + filename);
+    }
+
+    vector<uint8_t> heightMap(sourceWidth * sourceWidth);
+    file.read(reinterpret_cast<char *>(heightMap.data()), heightMap.size());
+    if (file.gcount() != static_cast<streamsize>(heightMap.size())) {
+        throw runtime_error("Invalid terrain heightmap size: " + filename);
+    }
+
+    MeshData mesh;
+    mesh.vertices.reserve((gridSlices + 1) * (gridSlices + 1));
+
+    const int sampleStep = (sourceWidth - 1) / gridSlices;
+    const float halfSize = terrainSize * 0.5f;
+
+    for (int z = 0; z <= gridSlices; ++z) {
+        for (int x = 0; x <= gridSlices; ++x) {
+            const int sourceX = x * sampleStep;
+            const int sourceZ = z * sampleStep;
+            const float u = float(x) / float(gridSlices);
+            const float v = float(z) / float(gridSlices);
+
+            const float h = SampleHeight(heightMap, sourceWidth, sourceX,
+                                         sourceZ) *
+                            heightScale;
+            const float hL = SampleHeight(heightMap, sourceWidth,
+                                          sourceX - sampleStep, sourceZ) *
+                             heightScale;
+            const float hR = SampleHeight(heightMap, sourceWidth,
+                                          sourceX + sampleStep, sourceZ) *
+                             heightScale;
+            const float hD = SampleHeight(heightMap, sourceWidth, sourceX,
+                                          sourceZ - sampleStep) *
+                             heightScale;
+            const float hU = SampleHeight(heightMap, sourceWidth, sourceX,
+                                          sourceZ + sampleStep) *
+                             heightScale;
+
+            Vertex vertex;
+            vertex.position =
+                Vector3(u * terrainSize - halfSize, h, v * terrainSize - halfSize);
+            vertex.normalModel = Vector3(hL - hR, 2.0f, hD - hU);
+            vertex.normalModel.Normalize();
+            vertex.texcoord = Vector2(u, v) * 16.0f;
+            vertex.tangentModel = Vector3(1.0f, 0.0f, 0.0f);
+            mesh.vertices.push_back(vertex);
+        }
+    }
+
+    for (int z = 0; z < gridSlices; ++z) {
+        for (int x = 0; x < gridSlices; ++x) {
+            const uint32_t i0 = uint32_t(z * (gridSlices + 1) + x);
+            const uint32_t i1 = i0 + 1;
+            const uint32_t i2 = i0 + uint32_t(gridSlices + 1);
+            const uint32_t i3 = i2 + 1;
+
+            mesh.indices.push_back(i0);
+            mesh.indices.push_back(i1);
+            mesh.indices.push_back(i2);
+            mesh.indices.push_back(i2);
+            mesh.indices.push_back(i1);
+            mesh.indices.push_back(i3);
+        }
+    }
+
+    return mesh;
+}
+
+} // namespace
 
 Ex1803_Landscape::Ex1803_Landscape() : AppBase() {}
 
@@ -35,12 +125,8 @@ bool Ex1803_Landscape::InitScene() {
 
     // Main Object
     {
-        auto meshes = GeometryGenerator::ReadFromFile(
-            "../Assets/Terrain/snowy_mountain_with_slopes/",
-            "uploads_files_4497957_untitled.fbx", false);
-        meshes[0].albedoTextureFilename =
-            "../Assets/Terrain/snowy_mountain_with_slopes/"
-            "Texture.png";
+        auto mesh = MakeTerrainFromRaw("../Assets/Textures/terrain.raw");
+        auto meshes = vector{mesh};
 
         // auto meshes = GeometryGenerator::ReadFromFile(
         //     "../Assets/Terrain/Chalaadi/", "2.fbx", false);
@@ -49,14 +135,15 @@ bool Ex1803_Landscape::InitScene() {
         // meshes[0].albedoTextureFilename =
         //     "../Assets/Terrain/Chalaadi/overlay.png";
 
-        Vector3 center(5.0f, 0.02f, -5.0f);
+        Vector3 center(0.0f, -1.0f, 0.0f);
         m_terrain = make_shared<Model>(m_device, m_context, meshes);
         m_terrain->m_materialConsts.GetCpu().invertNormalMapY =
             true; // GLTF는 true로
+        m_terrain->m_materialConsts.GetCpu().albedoFactor =
+            Vector3(0.38f, 0.44f, 0.34f);
         m_terrain->m_materialConsts.GetCpu().roughnessFactor = 0.97f;
         m_terrain->m_materialConsts.GetCpu().metallicFactor = 0.03f;
-        m_terrain->UpdateWorldRow(Matrix::CreateScale(10.0f, 10.0f, 10.0f) *
-                                  Matrix::CreateTranslation(center));
+        m_terrain->UpdateWorldRow(Matrix::CreateTranslation(center));
         m_terrain->m_castShadow = true;
         m_pickedModel = m_terrain;
 
