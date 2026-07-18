@@ -790,7 +790,7 @@ Runtime asset:
 - `terrain.raw` hash는 primary raw asset과 일치합니다.
 - `.raw`는 LFS 추적 대상으로 추가했습니다.
 - raw result/capture/build output은 포함하지 않았습니다.
-- Debug/Release build/run은 사용자 확인 전까지 `미확인`으로 기록합니다.
+- Debug/Release build/run은 사용자 확인 기준으로 완료 기록했습니다.
 
 ## Per-example Finish Check
 
@@ -805,8 +805,8 @@ Runtime asset:
 
 ## Current Next Action
 
-1. 다음 확인 대상은 `Ex1803_Landscape`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1803`을 설정합니다.
+1. 다음 확인 대상은 `Ex1901_Physics`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1901`을 설정합니다.
 3. 사용자 Debug x64 build/run 확인을 요청합니다.
 4. 사용자 Release x64 build/run 확인을 요청합니다.
-5. terrain/landscape texture 또는 height data 문제가 보이면 raw/runtime asset과 working directory 설정을 먼저 확인합니다.
+5. PhysX dependency 또는 runtime DLL 문제가 보이면 vcpkg/PhysX DLL, working directory, project dependency 설정을 먼저 확인합니다.
