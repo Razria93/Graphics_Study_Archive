@@ -820,6 +820,38 @@ Runtime asset/dependency:
 - raw result/capture/build output은 포함하지 않았습니다.
 - Debug/Release build/run은 사용자 확인 기준으로 완료 기록했습니다.
 
+## Ex2001 Dependency Review
+
+`Ex2001_GamePlay`는 character animation, PhysX rigid body simulation, billboard fire effect, PBR material, HDRI lighting, post processing을 하나의 scene에서 함께 확인하는 gameplay integration 예제입니다. Part4에서는 command argument `2001`로 실행합니다.
+
+대상 파일:
+
+- `Ex2001_GamePlay.cpp`
+- `Ex2001_GamePlay.h`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+Runtime asset/dependency:
+
+- `Assets/Characters/Mixamo/character.fbx`
+- `Assets/Characters/Mixamo/FightingIdleOnMichelle2.fbx`
+- `Assets/Characters/Mixamo/Fireball.fbx`
+- 기존 PBR ground textures
+- 기존 HDRI cubemap
+- PhysX headers, libraries, runtime DLL
+
+확인 내용:
+
+- `main.cpp`는 command argument `2001`을 `Ex2001_GamePlay`로 매핑합니다.
+- `Examples.vcxproj`와 `Examples.vcxproj.filters`에는 Ex2001 source/header 항목이 등록되어 있습니다.
+- archive의 `Ex2001_GamePlay.cpp/.h`는 primary raw hash와 일치합니다.
+- 최신 자료실본 `Part4_HongLabGraphics_v03`의 Ex2001은 주석/포맷 정리, `PX_RELEASE` 매크로 정의, PhysX include path 차이가 있습니다.
+- archive는 vcpkg include 구조에 맞춰 `physx/PxPhysicsAPI.h`를 유지합니다.
+- 별도 신규 runtime asset copy는 없습니다.
+- raw result/capture/build output은 포함하지 않았습니다.
+- Debug/Release build/run은 사용자 확인 전까지 `미확인`으로 기록합니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
