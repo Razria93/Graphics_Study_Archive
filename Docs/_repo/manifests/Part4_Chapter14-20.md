@@ -690,6 +690,44 @@ Runtime asset:
 - `.png` texture는 현재 LFS 추적 대상이 아니므로 public 공개 전 license/source와 repo 용량을 별도 검토합니다.
 - Debug/Release build/run은 사용자 확인 전까지 `미확인`으로 기록합니다.
 
+## Ex1801 Dependency Review
+
+`Ex1801_Tree`는 tree FBX model과 foliage texture를 로드해서 vegetation rendering을 확인하는 예제입니다. Part4에서는 command argument `1801`로 실행합니다.
+
+대상 파일:
+
+- `Ex1801_Tree.cpp`
+- `Ex1801_Tree.h`
+- `main.cpp`
+- `Examples.vcxproj`
+- `Examples.vcxproj.filters`
+
+Runtime asset:
+
+- `Assets/Foliage/Gledista_Triacanthos_FBX/Gledista_Triacanthos_3.fbx`
+- `Assets/Foliage/Gledista_Triacanthos_FBX/gleditsia triacanthos bark2 a1.jpg`
+- `Assets/Foliage/Gledista_Triacanthos_FBX/gleditsia triacanthos stem.jpg`
+- `Assets/Foliage/Gledista_Triacanthos_FBX/gleditsia triacanthos leaf color a1.jpg`
+- `Assets/Foliage/Gledista_Triacanthos_FBX/gleditsia triacanthos leaf mask.jpg`
+- `Assets/Foliage/Gledista_Triacanthos_FBX/gleditsia triacanthos beans color.jpg`
+- `Assets/Foliage/Gledista_Triacanthos_FBX/gleditsia triacanthos beans mask.jpg`
+- `Assets/Foliage/Gledista_Triacanthos_FBX/gleditsia triacanthos bark reflect.jpg`
+- `Assets/Textures/PBR/stringy-marble-ue/*`
+- `Assets/Textures/Cubemaps/HDRI/clear_puresky*.dds`
+
+확인 내용:
+
+- `main.cpp`는 command argument `1801`을 `Ex1801_Tree`로 매핑합니다.
+- archive의 Ex1801 source/header files는 primary raw hash와 일치합니다.
+- `Examples.vcxproj`와 `Examples.vcxproj.filters`에는 Ex1801 source/header 항목이 등록되어 있습니다.
+- `_2` 및 `OriginalExamples/Part4_HongLabGraphics_v03`의 Ex1801 files는 primary raw와 주로 formatting 차이가 있어 archive 기준으로 채택하지 않았습니다.
+- tree FBX가 참조하는 texture filename만 선별해서 같은 foliage folder root에 반영했습니다.
+- `ModelLoader::ReadTextureFilename()`은 material texture path에서 filename만 추출해 `basePath + fileName`으로 로드하므로, texture files는 FBX와 같은 folder root에 위치해야 합니다.
+- raw result/capture/build output은 포함하지 않았습니다.
+- `.fbx`는 LFS 추적 대상입니다.
+- `.jpg` foliage texture는 public 공개 전 license/source와 repo 용량을 별도 검토합니다.
+- Debug/Release build/run은 사용자 확인 전까지 `미확인`으로 기록합니다.
+
 ## Per-example Finish Check
 
 - raw result/capture/build output 미포함
@@ -703,8 +741,8 @@ Runtime asset:
 
 ## Current Next Action
 
-1. 다음 확인 대상은 `Ex1701_SkeletalAnimation`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1701`을 설정합니다.
+1. 다음 확인 대상은 `Ex1801_Tree`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1801`을 설정합니다.
 3. 사용자 Debug x64 build/run 확인을 요청합니다.
 4. 사용자 Release x64 build/run 확인을 요청합니다.
-5. build 실패 시 `VCPKG_ROOT`, Assimp, PhysX include/dependency 설정을 먼저 확인합니다.
+5. tree model 또는 foliage texture가 보이지 않으면 `Assets/Foliage/Gledista_Triacanthos_FBX`의 selected FBX/texture files와 working directory `$\(ProjectDir\)` 설정을 먼저 확인합니다.

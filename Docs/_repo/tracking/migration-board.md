@@ -80,3 +80,4 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part4 Ch16 | `Ex1605_SmokeCpu` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | CPU fluid simulation, 32^3 density texture upload, volume smoke rendering, Debug/Release 실행 확인, command argument `1605` |
 | Part4 Ch16 | `Ex1606_HybridWater` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | hybrid particle/grid water, 64^3 perf profile, SDF raycasting, marching cubes, Debug/Release 실행 확인, command argument `1606` |
 | Part4 Ch17 | `Ex1701_SkeletalAnimation` | 완료 | 미확인 | 진행 중 | 미확인 | 보류 | skeletal animation, Mixamo character clips, PBR ground, HDRI cubemap, command argument `1701` |
+| Part4 Ch18 | `Ex1801_Tree` | 완료 | 미확인 | 진행 중 | 미확인 | 보류 | tree FBX model, selected foliage textures, PBR ground, HDRI cubemap, command argument `1801` |
