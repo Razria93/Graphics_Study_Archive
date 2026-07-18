@@ -726,7 +726,7 @@ Runtime asset:
 - raw result/capture/build output은 포함하지 않았습니다.
 - `.fbx`는 LFS 추적 대상입니다.
 - `.jpg` foliage texture는 public 공개 전 license/source와 repo 용량을 별도 검토합니다.
-- Debug/Release build/run은 사용자 확인 전까지 `미확인`으로 기록합니다.
+- Debug/Release build/run은 사용자 확인 기준으로 완료 기록했습니다.
 
 ## Per-example Finish Check
 
@@ -741,8 +741,8 @@ Runtime asset:
 
 ## Current Next Action
 
-1. 다음 확인 대상은 `Ex1801_Tree`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1801`을 설정합니다.
+1. 다음 확인 대상은 `Ex1802_BillboardTrees`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1802`를 설정합니다.
 3. 사용자 Debug x64 build/run 확인을 요청합니다.
 4. 사용자 Release x64 build/run 확인을 요청합니다.
-5. tree model 또는 foliage texture가 보이지 않으면 `Assets/Foliage/Gledista_Triacanthos_FBX`의 selected FBX/texture files와 working directory `$\(ProjectDir\)` 설정을 먼저 확인합니다.
+5. tree billboard texture 또는 alpha cutout 문제가 보이면 raw/runtime asset과 shader compile 설정을 먼저 확인합니다.
