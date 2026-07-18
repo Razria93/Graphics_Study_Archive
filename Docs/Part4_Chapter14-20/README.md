@@ -65,7 +65,7 @@ Debug/Release 확인 시 같은 command argument가 설정되어 있는지 먼�
 | [`Ex1606_HybridWater`](Ex1606_HybridWater/README.md) | 반영 완료 | 성공 | 검토 필요 | hybrid particle/grid water, 64^3 perf profile, SDF raycasting, marching cubes, command argument `1606` |
 | [`Ex1701_SkeletalAnimation`](Ex1701_SkeletalAnimation/README.md) | 반영 완료 | 미확인 | 검토 필요 | skeletal animation, Mixamo character clips, PBR ground, HDRI cubemap, command argument `1701` |
 | [`Ex1801_Tree`](Ex1801_Tree/README.md) | 반영 완료 | 성공 | 검토 필요 | tree FBX model, selected foliage textures, PBR ground, HDRI cubemap, command argument `1801` |
-| [`Ex1802_Grass`](Ex1802_Grass/README.md) | 반영 완료 | 미확인 | 검토 필요 | instanced grass rendering, wind deformation, reused PBR ground/HDRI assets, command argument `1802` |
+| [`Ex1802_Grass`](Ex1802_Grass/README.md) | 반영 완료 | 성공 | 검토 필요 | instanced grass rendering, wind deformation, reused PBR ground/HDRI assets, command argument `1802` |
 
 ## Import 기준
 
@@ -76,8 +76,8 @@ Debug/Release 확인 시 같은 command argument가 설정되어 있는지 먼�
 
 ## 다음 작업
 
-1. 다음 확인 대상은 `Ex1802_Grass`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1802`를 설정합니다.
+1. 다음 확인 대상은 `Ex1803_Landscape`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1803`을 설정합니다.
 3. Debug/Release x64 실행 확인 전까지 build/run은 `미확인`으로 둡니다.
 
 ## 관련 문서

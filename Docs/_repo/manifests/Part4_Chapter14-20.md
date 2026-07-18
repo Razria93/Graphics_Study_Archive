@@ -759,7 +759,7 @@ Runtime asset:
 - `Examples.vcxproj`와 `Examples.vcxproj.filters`에는 Ex1802 source/header/HLSL 항목이 등록되어 있습니다.
 - Ex1802는 신규 runtime asset을 요구하지 않고 기존 PBR ground textures와 HDRI cubemap을 재사용합니다.
 - raw result/capture/build output은 포함하지 않았습니다.
-- Debug/Release build/run은 사용자 확인 전까지 `미확인`으로 기록합니다.
+- Debug/Release build/run은 사용자 확인 기준으로 완료 기록했습니다.
 
 ## Per-example Finish Check
 
@@ -774,8 +774,8 @@ Runtime asset:
 
 ## Current Next Action
 
-1. 다음 확인 대상은 `Ex1802_BillboardTrees`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1802`를 설정합니다.
+1. 다음 확인 대상은 `Ex1803_Landscape`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `1803`을 설정합니다.
 3. 사용자 Debug x64 build/run 확인을 요청합니다.
 4. 사용자 Release x64 build/run 확인을 요청합니다.
-5. tree billboard texture 또는 alpha cutout 문제가 보이면 raw/runtime asset과 shader compile 설정을 먼저 확인합니다.
+5. terrain/landscape texture 또는 height data 문제가 보이면 raw/runtime asset과 working directory 설정을 먼저 확인합니다.
