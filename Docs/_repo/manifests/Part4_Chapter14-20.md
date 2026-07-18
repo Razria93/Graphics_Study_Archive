@@ -818,7 +818,7 @@ Runtime asset/dependency:
 - archive는 vcpkg include 구조에 맞춰 `physx/PxPhysicsAPI.h`를 유지합니다.
 - 별도 신규 runtime asset copy는 없습니다.
 - raw result/capture/build output은 포함하지 않았습니다.
-- Debug/Release build/run은 사용자 확인 전까지 `미확인`으로 기록합니다.
+- Debug/Release build/run은 사용자 확인 기준으로 완료 기록했습니다.
 
 ## Per-example Finish Check
 
@@ -833,8 +833,8 @@ Runtime asset/dependency:
 
 ## Current Next Action
 
-1. 다음 확인 대상은 `Ex1901_Physics`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `1901`을 설정합니다.
+1. 다음 확인 대상은 `Ex2001_GamePlay`입니다.
+2. Visual Studio `Debugging > Command Arguments`에 `2001`을 설정합니다.
 3. 사용자 Debug x64 build/run 확인을 요청합니다.
 4. 사용자 Release x64 build/run 확인을 요청합니다.
-5. PhysX dependency 또는 runtime DLL 문제가 보이면 vcpkg/PhysX DLL, working directory, project dependency 설정을 먼저 확인합니다.
+5. PhysX/animation/runtime DLL 문제가 보이면 vcpkg runtime DLL, working directory, project dependency 설정을 먼저 확인합니다.
