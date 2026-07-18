@@ -7,6 +7,12 @@
 - 사용자 확인 기준으로 Debug x64 / Release x64 모두 캐릭터 형태와 animation 재생이 정상입니다.
 - 상세 기록: [`assimp-6x-fbx-pivot.md`](assimp-6x-fbx-pivot.md)
 
+## Final execution confirmation
+
+- Debug x64: 사용자 실행 확인 완료
+- Release x64: 사용자 실행 확인 완료
+- 확인 기준: command argument `1701`, 최소 변경 상태(`AI_CONFIG_IMPORT_FBX_PRESERVE_PIVOTS=false` only)에서 캐릭터 형태와 skeletal animation 정상 재생
+
 ## 현재 상태
 
 | 항목 | 상태 |
