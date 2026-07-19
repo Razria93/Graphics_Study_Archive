@@ -128,6 +128,7 @@ void Ex2001_GamePlay::CreateStack(const PxTransform& t, int numStacks,
 			m_newObj->m_materialConsts.GetCpu().albedoFactor = Vector3(0.8f);
 			AppBase::m_basicList.push_back(m_newObj);
 			this->m_objects.push_back(m_newObj);
+			this->m_dynamicObjects.push_back({body, m_newObj});
 		}
 	}
 	shape->release();
@@ -194,72 +195,119 @@ PxRigidDynamic* Ex2001_GamePlay::CreateDynamic(const PxTransform& t,
 	dynamic->setAngularDamping(0.5f);
 	dynamic->setLinearVelocity(velocity);
 	gScene->addActor(*dynamic);
+	this->m_dynamicObjects.push_back({dynamic, m_fireball});
 	return dynamic;
 }
 
 void Ex2001_GamePlay::UpdateLights(float dt) { AppBase::UpdateLights(dt); }
+
+int Ex2001_GamePlay::GetClipFrameCount(int clipId) const
+{
+	if (!m_character)
+		return 0;
+
+	const auto& clips = m_character->m_aniData.clips;
+	if (clipId < 0 || clipId >= static_cast<int>(clips.size()) ||
+	    clips[clipId].keys.empty())
+	{
+		return 0;
+	}
+
+	return static_cast<int>(clips[clipId].keys[0].size());
+}
+
+void Ex2001_GamePlay::FireProjectile()
+{
+	if (!gPhysics || !gScene || !gMaterial)
+		return;
+
+	const Vector3 characterBasePos(0.0f, 0.1f, 1.0f);
+	const Vector3 spawnRenderPos = characterBasePos + m_fireSpawnOffset;
+	const PxVec3 spawnPhysicsPos(
+	    spawnRenderPos.x / m_simToRenderScale,
+	    spawnRenderPos.y / m_simToRenderScale,
+	    spawnRenderPos.z / m_simToRenderScale);
+	const PxVec3 velocity(m_fireVelocity.x, m_fireVelocity.y,
+	                      m_fireVelocity.z);
+
+	PxRigidDynamic* dynamic = CreateDynamic(PxTransform(spawnPhysicsPos),
+	                                      PxSphereGeometry(2.0f), velocity);
+	if (dynamic)
+		m_fireProjectileSpawned = true;
+}
 
 void Ex2001_GamePlay::Update(float dt)
 {
 
 	AppBase::Update(dt);
 
-	static int frameCount = 0;
-	static int state = 0;
+	if (m_fireCooldown > 0.0f)
+		m_fireCooldown -= dt;
 
-	// TODO:
+	const bool firePressed = m_keyPressed['G'];
+	if (firePressed && !m_firePressedLastFrame && m_fireCooldown <= 0.0f)
+	{
+		m_animationState = 1;
+		m_animationFrame = 0;
+		m_fireProjectileSpawned = false;
+		m_fireCooldown = 0.35f;
+	}
+	m_firePressedLastFrame = firePressed;
 
-	m_character->UpdateAnimation(m_context, state, frameCount);
+	const int fireClipFrameCount = GetClipFrameCount(1);
+	if (fireClipFrameCount > 0 && m_fireNotifyFrame >= fireClipFrameCount)
+		m_fireNotifyFrame = fireClipFrameCount - 1;
 
-	frameCount += 1;
+	int clipFrameCount = GetClipFrameCount(m_animationState);
+	if (clipFrameCount <= 0 || m_animationFrame >= clipFrameCount)
+	{
+		m_animationState = 0;
+		m_animationFrame = 0;
+		m_fireProjectileSpawned = false;
+		clipFrameCount = GetClipFrameCount(m_animationState);
+	}
 
+	if (m_animationState == 1 && !m_fireProjectileSpawned &&
+	    m_animationFrame >= m_fireNotifyFrame)
+	{
+		FireProjectile();
+	}
+
+	if (clipFrameCount > 0)
+	{
+		m_character->UpdateAnimation(m_context, m_animationState,
+		                             m_animationFrame);
+		m_animationFrame += 1;
+	}
 	// 이하 물리엔진 관련
 
 	gScene->simulate(1.0f / 60.0f);
 	gScene->fetchResults(true);
 
-	// gScene->getActors()
-	// PxGeometryType::eBOX: , case PxGeometryType::eSPHERE:
-
-	PxU32 nbActors = gScene->getNbActors(PxActorTypeFlag::eRIGID_DYNAMIC |
-	                                     PxActorTypeFlag::eRIGID_STATIC);
-	std::vector<PxRigidActor*> actors(nbActors);
-	gScene->getActors(PxActorTypeFlag::eRIGID_DYNAMIC |
-	                      PxActorTypeFlag::eRIGID_STATIC,
-	                  reinterpret_cast<PxActor**>(&actors[0]), nbActors);
-
 	PxShape* shapes[MAX_NUM_ACTOR_SHAPES];
 
-	int count = 0;
-
-	for (PxU32 i = 0; i < nbActors; i++)
+	for (auto& [actor, object] : m_dynamicObjects)
 	{
-		const PxU32 nbShapes = actors[i]->getNbShapes();
+		if (!actor || !object)
+			continue;
+
+		const PxU32 nbShapes = actor->getNbShapes();
 		PX_ASSERT(nbShapes <= MAX_NUM_ACTOR_SHAPES);
-		actors[i]->getShapes(shapes, nbShapes);
+		actor->getShapes(shapes, nbShapes);
+
 		for (PxU32 j = 0; j < nbShapes; j++)
 		{
 			const PxMat44 shapePose(
-			    PxShapeExt::getGlobalPose(*shapes[j], *actors[i]));
+			    PxShapeExt::getGlobalPose(*shapes[j], *actor));
 
-			if (actors[i]->is<PxRigidDynamic>())
-			{
-
-				// bool speeping = actors[i]->is<PxRigidDynamic>() &&
-				//                 actors[i]->is<PxRigidDynamic>()->isSleeping();
-
-				m_objects[count]->UpdateWorldRow(
-				    Matrix(shapePose.front()) *
-				    Matrix::CreateScale(
-				        m_simToRenderScale) // PhysX to Render 스케일
-				);
-				m_objects[count]->UpdateConstantBuffers(m_device, m_context);
-
-				count++;
-			}
+			object->UpdateWorldRow(
+			    Matrix(shapePose.front()) *
+			    Matrix::CreateScale(
+			        m_simToRenderScale) // PhysX to Render 스케일
+			);
+			object->UpdateConstantBuffers(m_device, m_context);
 		}
 	}
-
 	/* PxContactPair 추출 하면 내 캐릭터가 어디에 닿았는지 찾을 수 있음
 	* void onContact(const PxContactPairHeader& pairHeader, const PxContactPair*
 	pairs, PxU32 nbPairs)
@@ -309,6 +357,21 @@ void Ex2001_GamePlay::UpdateGUI()
 		ImGui::TreePop();
 	}
 
+	ImGui::SetNextItemOpen(true, ImGuiCond_Once);
+	if (ImGui::TreeNode("Fireball"))
+	{
+		ImGui::SliderFloat3("Spawn Offset", &m_fireSpawnOffset.x, -3.0f,
+		                    3.0f);
+		ImGui::SliderFloat3("Velocity", &m_fireVelocity.x, -500.0f, 500.0f);
+
+		const int fireClipFrameCount = GetClipFrameCount(1);
+		const int maxNotifyFrame = fireClipFrameCount > 0 ? fireClipFrameCount - 1 : 0;
+		if (m_fireNotifyFrame > maxNotifyFrame)
+			m_fireNotifyFrame = maxNotifyFrame;
+		ImGui::SliderInt("Notify Frame", &m_fireNotifyFrame, 0,
+		                 maxNotifyFrame);
+		ImGui::TreePop();
+	}
 	ImGui::SetNextItemOpen(true, ImGuiCond_Once);
 	if (ImGui::TreeNode("Skybox"))
 	{

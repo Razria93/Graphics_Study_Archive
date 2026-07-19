@@ -1,5 +1,7 @@
 #pragma once
 
+#include <utility>
+
 #include "AppBase.h"
 #include "BillboardModel.h"
 #include "physx/PxPhysicsAPI.h"
@@ -45,6 +47,8 @@ class Ex2001_GamePlay : public AppBase {
                                   const PxVec3 &velocity = PxVec3(0));
     void CreateStack(const PxTransform &t, int numStacks, int numSlices,
                      PxReal halfExtent);
+    void FireProjectile();
+    int GetClipFrameCount(int clipId) const;
     void InitPhysics(bool interactive);
     void UpdateLights(float dt) override;
     void UpdateGUI() override;
@@ -66,9 +70,21 @@ class Ex2001_GamePlay : public AppBase {
 
     vector<shared_ptr<Model>>
         m_objects; // 물리 엔진과 동기화 시켜줄 때 사용 TODO: actor list로 변경
+    vector<std::pair<PxRigidDynamic *, shared_ptr<Model>>> m_dynamicObjects;
 
     shared_ptr<BillboardModel> m_fireball;
     shared_ptr<SkinnedMeshModel> m_character;
+
+    int m_animationState = 0;
+    int m_animationFrame = 0;
+    bool m_firePressedLastFrame = false;
+    bool m_fireProjectileSpawned = false;
+    int m_fireNotifyFrame = 120;
+    float m_fireCooldown = 0.0f;
+    DirectX::SimpleMath::Vector3 m_fireSpawnOffset =
+        DirectX::SimpleMath::Vector3(0.0f, 0.0f, -0.25f);
+    DirectX::SimpleMath::Vector3 m_fireVelocity =
+        DirectX::SimpleMath::Vector3(0.0f, 15.0f, -250.0f);
 };
 
 } // namespace hlab
