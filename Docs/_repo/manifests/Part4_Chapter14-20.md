@@ -12,8 +12,8 @@
 - Docs target:
   - `Docs/Part4_Chapter14-20`
 - Branch: `archive/part4`
-- Import status: planning
-- Build/run status: 미확인
+- Import status: 반영 완료
+- Build/run status: 성공
 - Public readiness: 검토 필요
 
 ## Part4 Working Goal
@@ -70,7 +70,7 @@ Part4_HongLabGraphics/
 | Ch14 | `Ex1401_Basic`-`Ex1408_BitonicSort` | archive 후보 | 미확인 | 검토 필요 | compute shader basics, blur, matrix/vector, structured buffer, indirect args, sort |
 | Ch15 | `Ex1501_ParticleSystem`-`Ex1503_SphWater` | archive 후보 | 미확인 | 검토 필요 | particles, sprite fire, SPH water |
 | Ch16 | `Ex1601_StableFluids`-`Ex1606_HybridWater` | archive 후보 | 미확인 | 검토 필요 | stable fluids, curl noise, cloud, smoke, hybrid water |
-| Ch17 | `Ex1701_SkeletalAnimation` | archive 후보 | 미확인 | 검토 필요 | skeletal animation |
+| Ch17 | `Ex1701_SkeletalAnimation` | 보정 반영 | 성공 | 검토 필요 | skeletal animation |
 | Ch18 | `Ex1801_Tree`-`Ex1803_Landscape` | archive 후보 | 미확인 | 검토 필요 | tree, grass, landscape/ocean |
 | Ch19 | `Ex1901_Physx` | archive 후보 | 미확인 | 검토 필요 | PhysX integration |
 | Ch20 | `Ex2001_GamePlay` | 보강 반영 | 성공 | 검토 필요 | gameplay integration |
@@ -688,7 +688,8 @@ Runtime asset:
 - 필요한 runtime asset만 선별 반영했고 raw result/capture/build output은 포함하지 않았습니다.
 - `.fbx`와 `.dds`는 LFS 추적 대상입니다.
 - `.png` texture는 현재 LFS 추적 대상이 아니므로 public 공개 전 license/source와 repo 용량을 별도 검토합니다.
-- Debug/Release build/run은 사용자 확인 전까지 `미확인`으로 기록합니다.
+- Assimp 6.x에서 FBX pivot helper node가 생성되어 character skeleton이 무너지는 문제가 있어 `AI_CONFIG_IMPORT_FBX_PRESERVE_PIVOTS=false` 최소 보정을 적용했습니다.
+- 사용자 확인 기준으로 Debug/Release x64 모두 character 형태와 skeletal animation 재생이 정상입니다.
 
 ## Ex1801 Dependency Review
 

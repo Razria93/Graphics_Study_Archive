@@ -8,8 +8,8 @@ Compute shader, simulation, animation, foliage, physics, gameplay 예제를 정�
 | --- | --- |
 | Raw source | `C:\ComputerGraphics\Part4_HongLabGraphics` |
 | Reference source | `C:\ComputerGraphics\Part4_HongLabGraphics_2`, `C:\ComputerGraphics\OriginalExamples\Part4_HongLabGraphics` |
-| Import status | `Examples` project 반영 완료, 예제별 확인 진행 중 |
-| Build/run | Ex1401-Ex1606 Debug/Release 확인 완료 |
+| Import status | `Examples` project 반영 완료, 예제별 확인 완료 |
+| Build/run | Ex1401-Ex2001 Debug/Release 확인 완료 |
 | Public readiness | 검토 필요 |
 
 ## Raw 판단
@@ -63,7 +63,7 @@ Debug/Release 확인 시 같은 command argument가 설정되어 있는지 먼�
 | [`Ex1604_RealtimeSmoke`](Ex1604_RealtimeSmoke/README.md) | 반영 완료 | 성공 | 검토 필요 | realtime smoke simulation, low/high resolution 3D grids, Sample HDRI assets, command argument `1604` |
 | [`Ex1605_SmokeCpu`](Ex1605_SmokeCpu/README.md) | 반영 완료 | 성공 | 검토 필요 | CPU fluid simulation, 32^3 density texture upload, volume smoke rendering, command argument `1605` |
 | [`Ex1606_HybridWater`](Ex1606_HybridWater/README.md) | 반영 완료 | 성공 | 검토 필요 | hybrid particle/grid water, 64^3 perf profile, SDF raycasting, marching cubes, command argument `1606` |
-| [`Ex1701_SkeletalAnimation`](Ex1701_SkeletalAnimation/README.md) | 반영 완료 | 미확인 | 검토 필요 | skeletal animation, Mixamo character clips, PBR ground, HDRI cubemap, command argument `1701` |
+| [`Ex1701_SkeletalAnimation`](Ex1701_SkeletalAnimation/README.md) | 보정 반영 | 성공 | 검토 필요 | skeletal animation, Assimp 6.x FBX pivot node compatibility, Mixamo character clips, PBR ground, HDRI cubemap, command argument `1701` |
 | [`Ex1801_Tree`](Ex1801_Tree/README.md) | 반영 완료 | 성공 | 검토 필요 | tree FBX model, selected foliage textures, PBR ground, HDRI cubemap, command argument `1801` |
 | [`Ex1802_Grass`](Ex1802_Grass/README.md) | 반영 완료 | 성공 | 검토 필요 | instanced grass rendering, wind deformation, reused PBR ground/HDRI assets, command argument `1802` |
 | [`Ex1803_Landscape`](Ex1803_Landscape/README.md) | 보정 반영 | 성공 | 검토 필요 | terrain.raw height-field fallback, ocean plane, command argument `1803` |
@@ -79,9 +79,9 @@ Debug/Release 확인 시 같은 command argument가 설정되어 있는지 먼�
 
 ## 다음 작업
 
-1. Ex2001 Debug/Release build/run 확인 결과를 기준으로 Part4 import 상태를 마무리합니다.
+1. Part4 branch 마무리용 PR 문서를 구성합니다.
 2. `captured.png` 같은 임시 실행 산출물은 commit 대상에서 제외합니다.
-3. Part4 branch 마무리 전 code/assets commit과 docs/status commit을 분리합니다.
+3. Part4 merge 이후 code import 완료 기준으로 Part1부터 문서 전체 재정리를 진행합니다.
 
 ## 관련 문서
 

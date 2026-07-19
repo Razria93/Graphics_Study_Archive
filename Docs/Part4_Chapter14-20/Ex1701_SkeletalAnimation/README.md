@@ -18,7 +18,7 @@ Mixamo FBX skeletal animation은 Assimp 6.x에서 FBX pivot 보존용 helper nod
 | Command argument | `1701` |
 | Working directory | `Part4_Chapter14-20` |
 | Runtime asset | Mixamo FBX/textures, PBR ground textures, HDRI cubemap |
-| Build/run status | 미확인 |
+| Build/run status | 성공 |
 | Public readiness | 검토 필요 |
 
 확인할 동작:
@@ -28,6 +28,12 @@ Mixamo FBX skeletal animation은 Assimp 6.x에서 FBX pivot 보존용 helper nod
 - ground plane, mirror/reflection, skybox/IBL 조명이 함께 렌더링되는지 확인합니다.
 - GUI의 material, mirror, post processing, env map 항목이 표시되는지 확인합니다.
 - Debug/Release x64 모두 command argument `1701`로 확인합니다.
+
+## 실행 확인 결과
+
+- Debug x64: 사용자 실행 확인 완료
+- Release x64: 사용자 실행 확인 완료
+- 확인 기준: `AI_CONFIG_IMPORT_FBX_PRESERVE_PIVOTS=false` 보정 후 character mesh가 정상 형태로 표시되고 skeletal animation이 재생됩니다.
 
 ## 핵심 흐름
 
@@ -73,4 +79,5 @@ Mixamo FBX skeletal animation은 Assimp 6.x에서 FBX pivot 보존용 helper nod
 - `Ex1701_SkeletalAnimation.cpp/.h`, `AnimationClip.h`, `SkinnedMeshModel.h`, `SkeletalMeshActor.h`, `main.cpp`는 primary raw와 hash가 일치합니다.
 - `Examples.vcxproj`와 `Examples.vcxproj.filters`에는 Ex1701 source/header 항목이 등록되어 있습니다.
 - Ex1701은 별도 Ex1701 전용 HLSL 파일을 추가하지 않고, shared skinned/PBR shader path를 사용합니다.
+- Assimp 6.x에서 생성되는 FBX pivot helper node로 인해 character skeleton이 무너지는 문제가 있어, importer 설정에서 pivot preservation을 끄는 최소 보정을 적용했습니다.
 - public 공개 전 Mixamo character/animation, PBR texture, HDRI cubemap의 license/source 검토가 필요합니다.

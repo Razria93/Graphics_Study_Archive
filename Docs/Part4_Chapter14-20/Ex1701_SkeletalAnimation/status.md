@@ -17,11 +17,11 @@
 
 | 항목 | 상태 |
 | --- | --- |
-| Code import | 반영 완료 |
-| Build Debug x64 | 미확인 |
-| Run Debug x64 | 미확인 |
-| Build Release x64 | 미확인 |
-| Run Release x64 | 미확인 |
+| Code import | 보정 반영 |
+| Build Debug x64 | 성공 |
+| Run Debug x64 | 성공 |
+| Build Release x64 | 성공 |
+| Run Release x64 | 성공 |
 | Runtime asset | 반영 완료 |
 | Public readiness | 검토 필요 |
 
@@ -48,5 +48,4 @@
 
 ## 보류 항목
 
-- Debug/Release 실행 확인 결과는 사용자 확인 후 기록합니다.
 - public 공개 가능 여부는 Mixamo/PBR/HDRI asset license/source 검토 후 판단합니다.
