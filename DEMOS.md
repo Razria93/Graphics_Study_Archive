@@ -6,14 +6,14 @@
 
 | Part | 데모 | 개념 | 캡처/영상 | 빌드 상태 | Chapter 문서 |
 | --- | --- | --- | --- | --- | --- |
-| Part1 | `01_DX11InitAndImGui` | DX11 window, ImGui panel | 예정 | 미확인 | `Docs/Part1_Chapter01-02/01_DX11InitAndImGui/README.md` |
-| Part1 | `02_Bloom` | Post-process bloom | 예정 | 미확인 | `Docs/Part1_Chapter01-02/02_Bloom/README.md` 예정 |
-| Part1 | `03_Raytracing_Step4_DrawingSphere` | Ray-sphere intersection | 예정 | 미확인 | `Docs/Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/README.md` 예정 |
-| Part1 | `03_Raytracing_Step5_PhongShading` | Phong shading | 예정 | 미확인 | `Docs/Part1_Chapter03/03_Raytracing_Step5_PhongShading/README.md` 예정 |
-| Part2 | `04_Rasterization_Step5_DepthBuffer` | Depth buffer | 예정 | 미확인 | `Docs/Part2_Chapter04/04_Rasterization_Step5_DepthBuffer/README.md` 예정 |
-| Part2 | `06_GraphicsPipeline_Step6_Lighting` | MVP and lighting | 예정 | 미확인 | `Docs/Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting/README.md` 예정 |
-| Part3 | `09_UserInteraction_Step2_MousePicking` | Picking ray | 예정 | 미확인 | `Docs/Part3_Chapter09/09_UserInteraction_Step2_MousePicking/README.md` 예정 |
-| Part3 | `12_PBR_Step2_PBRModels` | PBR material | 예정 | 미확인 | `Docs/Part3_Chapter10-13/12_PBR_Step2_PBRModels/README.md` 예정 |
+| Part1 | `01_DX11InitAndImGui` | DX11 window, ImGui panel | 보류 | 성공 | `Docs/Part1_Chapter01-02/01_DX11InitAndImGui/README.md` |
+| Part1 | `02_Bloom` | Post-process bloom | 보류 | 성공 | `Docs/Part1_Chapter01-02/02_Bloom/README.md` |
+| Part1 | `03_Raytracing_Step4_DrawingSphere` | Ray-sphere intersection | 보류 | 성공 | `Docs/Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/README.md` |
+| Part1 | `03_Raytracing_Step5_PhongShading` | Phong shading | 보류 | 성공 | `Docs/Part1_Chapter03/03_Raytracing_Step5_PhongShading/README.md` |
+| Part2 | `04_Rasterization_Step5_DepthBuffer` | Depth buffer | 보류 | 성공 | `Docs/Part2_Chapter04/04_Rasterization_Step5_DepthBuffer/README.md` |
+| Part2 | `06_GraphicsPipeline_Step6_Lighting` | MVP and lighting | 보류 | 성공 | `Docs/Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting/README.md` |
+| Part3 | `09_UserInteraction_Step2_MousePicking` | Picking ray | 보류 | 성공 | `Docs/Part3_Chapter09/09_UserInteraction_Step2_MousePicking/README.md` |
+| Part3 | `12_PBR_Step2_PBRModels` | PBR material | 보류 | 성공 | `Docs/Part3_Chapter10-13/12_PBR_Step2_PBRModels/README.md` |
 | Part4 | `Ex1402_Blur` | Compute shader blur | 보류 | 성공 | `Docs/Part4_Chapter14-20/Ex1402_Blur/README.md` |
 | Part4 | `Ex1501_ParticleSystem` | Particle simulation | 보류 | 성공 | `Docs/Part4_Chapter14-20/Ex1501_ParticleSystem/README.md` |
 | Part4 | `Ex1701_SkeletalAnimation` | Skeletal animation | 보류 | 성공 | `Docs/Part4_Chapter14-20/Ex1701_SkeletalAnimation/README.md` |

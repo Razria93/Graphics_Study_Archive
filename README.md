@@ -22,11 +22,11 @@ Graphics Study Portfolio는 DirectX11 기반 그래픽스 학습 예제와 개�
 | --- | --- | --- |
 | `Docs/Part*_Chapter*/` | Part/Chapter 중심 예제 문서 | 정리 중 |
 | `Part1_Chapter01-02` | DirectX11 setup, ImGui, bloom | 실행 확인 완료, 촬영 보류 |
-| `Part1_Chapter03` | CPU ray tracing fundamentals | scaffold 작성 |
-| `Part2_Chapter04` | Software rasterization | private 정리 예정 |
-| `Part2_Chapter05-08` | D3D11 pipeline, modeling, shader toys | private 정리 예정 |
-| `Part3_Chapter09` | User interaction and picking | private 정리 예정 |
-| `Part3_Chapter10-13` | Geometry pipeline, texturing, PBR, shadows | private 정리 예정 |
+| `Part1_Chapter03` | CPU ray tracing fundamentals | Step4-Step14 import 및 실행 확인 완료, 촬영 보류 |
+| `Part2_Chapter04` | Software rasterization | import 및 실행 확인 완료, 촬영 보류 |
+| `Part2_Chapter05-08` | D3D11 pipeline, modeling, shader toys | import 및 실행 확인 완료, 촬영 보류 |
+| `Part3_Chapter09` | User interaction and picking | import 및 실행 확인 완료, 촬영 보류 |
+| `Part3_Chapter10-13` | Geometry pipeline, texturing, PBR, shadows | import 및 실행 확인 완료, 촬영 보류 |
 | `Part4_Chapter14-20` | Compute shader, particles, fluids, animation, physics, gameplay | import 및 실행 확인 완료, 촬영 보류 |
 | `Portfolio_RayTracer` | Part1 ray tracing study extension | private 정리 예정 |
 
@@ -36,9 +36,9 @@ Graphics Study Portfolio는 DirectX11 기반 그래픽스 학습 예제와 개�
 | --- | --- | --- |
 | Portfolio Ray Tracer final render | Ray tracing extension | `Docs/Portfolio_RayTracer/README.md`에서 정리 예정 |
 | Part1 DX11 init | DX11 window, ImGui panel | `Docs/Part1_Chapter01-02/01_DX11InitAndImGui/README.md` |
-| Part1 ray sphere | Ray-sphere intersection | `Docs/Part1_Chapter03/...` 예정 |
-| Part2 depth buffer | Rasterization and depth test | `Docs/Part2_Chapter04/...` 예정 |
-| Part3 PBR models | PBR material workflow | `Docs/Part3_Chapter10-13/...` 예정 |
+| Part1 ray sphere | Ray-sphere intersection | `Docs/Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/README.md` |
+| Part2 depth buffer | Rasterization and depth test | `Docs/Part2_Chapter04/04_Rasterization_Step5_DepthBuffer/README.md` |
+| Part3 PBR models | PBR material workflow | `Docs/Part3_Chapter10-13/12_PBR_Step2_PBRModels/README.md` |
 | Part4 compute/simulation examples | Compute shader, particles, fluids, animation, physics | `Docs/Part4_Chapter14-20/README.md` |
 
 ## 저장소 운영 기준

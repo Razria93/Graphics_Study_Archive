@@ -67,12 +67,12 @@ Part4_HongLabGraphics/
 
 | Range | Raw examples | Import decision | Build/run | Public readiness | Note |
 | --- | --- | --- | --- | --- | --- |
-| Ch14 | `Ex1401_Basic`-`Ex1408_BitonicSort` | archive 후보 | 미확인 | 검토 필요 | compute shader basics, blur, matrix/vector, structured buffer, indirect args, sort |
-| Ch15 | `Ex1501_ParticleSystem`-`Ex1503_SphWater` | archive 후보 | 미확인 | 검토 필요 | particles, sprite fire, SPH water |
-| Ch16 | `Ex1601_StableFluids`-`Ex1606_HybridWater` | archive 후보 | 미확인 | 검토 필요 | stable fluids, curl noise, cloud, smoke, hybrid water |
+| Ch14 | `Ex1401_Basic`-`Ex1408_BitonicSort` | 반영 완료 | 성공 | 검토 필요 | compute shader basics, blur, matrix/vector, structured buffer, indirect args, sort |
+| Ch15 | `Ex1501_ParticleSystem`-`Ex1503_SphWater` | 반영 완료 | 성공 | 검토 필요 | particles, sprite fire, SPH water |
+| Ch16 | `Ex1601_StableFluids`-`Ex1606_HybridWater` | 반영 완료 | 성공 | 검토 필요 | stable fluids, curl noise, cloud, smoke, hybrid water |
 | Ch17 | `Ex1701_SkeletalAnimation` | 보정 반영 | 성공 | 검토 필요 | skeletal animation |
-| Ch18 | `Ex1801_Tree`-`Ex1803_Landscape` | archive 후보 | 미확인 | 검토 필요 | tree, grass, landscape/ocean |
-| Ch19 | `Ex1901_Physx` | archive 후보 | 미확인 | 검토 필요 | PhysX integration |
+| Ch18 | `Ex1801_Tree`-`Ex1803_Landscape` | 반영 완료 | 성공 | 검토 필요 | tree, grass, landscape/ocean |
+| Ch19 | `Ex1901_Physx` | 반영 완료 | 성공 | 검토 필요 | PhysX integration |
 | Ch20 | `Ex2001_GamePlay` | 보강 반영 | 성공 | 검토 필요 | gameplay integration |
 
 ## Include Candidates
@@ -108,12 +108,9 @@ Part4_HongLabGraphics/
 
 ## Import Order
 
-1. `Docs/Part4_Chapter14-20` scaffold 생성
-2. `Ex1401_Basic` 기준으로 최소 project import 방식 확정
-3. 단일 solution 유지 vs 예제별 project 분리 여부를 build 결과 기준으로 판단
-4. Ch14 compute shader 예제부터 순차 import
-5. 각 예제마다 source/project/shader/asset 최소 반영
-6. build/run은 사용자가 확인하기 전까지 `미확인`으로 기록
+1. `Examples` 단일 solution/project 구조로 Part4 code import를 완료했습니다.
+2. `Ex1401`-`Ex2001` Debug/Release build/run 확인을 완료했습니다.
+3. 이후 작업은 code import 완료 기준 문서 재정리, capture/video 기록, public subset 선별입니다.
 
 ## Project Import Decision
 
@@ -866,10 +863,10 @@ Runtime asset/dependency:
 - selected asset hash raw와 일치
 - LFS 대상 asset은 pointer로 stage되는지 확인
 - raw와 다르게 바꾼 project/source 설정은 `status.md`에 이유 기록
-- Debug/Release build/run은 사용자가 확인하기 전까지 `미확인`으로 기록
+- Debug/Release build/run은 사용자 확인 결과가 있는 항목만 `성공`으로 기록
 
 ## Current Next Action
 
-1. Ex2001 Debug/Release build/run 확인 결과를 기준으로 Part4 import 상태를 마무리합니다.
-2. `captured.png` 같은 임시 실행 산출물은 commit 대상에서 제외합니다.
-3. Part4 branch 마무리 전 code/assets commit과 docs/status commit을 분리합니다.
+1. code import 완료 기준으로 Part1부터 문서 전체 재정리를 진행합니다.
+2. capture/video 촬영 결과가 생기면 `DEMOS.md`와 예제별 README를 갱신합니다.
+3. public subset 후보는 private archive 정리 완료 후 별도 기준으로 선별합니다.

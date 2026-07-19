@@ -64,28 +64,28 @@ Part3는 1차로 code import, asset selection, build/run 확인을 우선합니�
 
 | Raw example | Import decision | Build/run | Public readiness | Note |
 | --- | --- | --- | --- | --- |
-| `10_GeometryPipeline_Step1_GeometryShader` | archive 후보 | 미확인 | 검토 필요 | `_2`에는 기본 폴더 없음 |
+| `10_GeometryPipeline_Step1_GeometryShader` | 반영 완료 | 성공 | 검토 필요 | `_2`에는 기본 폴더 없음 |
 | `10_GeometryPipeline_Step1_GeometryShader_Solution` | reference solution 후보 | 미확인 | 검토 필요 | public 후보 아님 |
-| `10_GeometryPipeline_Step2_Billboards` | archive 후보 | 미확인 | 검토 필요 | primary 쪽 billboard model matrix update 차이 확인됨 |
-| `10_GeometryPipeline_Step3_NormalLines` | archive 후보 | 미확인 | 검토 필요 | primary 쪽 `NormalGeometryShader.hlsl` 추가 |
-| `10_GeometryPipeline_Step4_Fireball` | archive 후보 | 미확인 | 검토 필요 | geometry/fireball shader |
-| `10_GeometryPipeline_Step5_Tessellation` | archive 후보 | 미확인 | 검토 필요 | hull/domain shader |
-| `11_TexturingTechniques_Step1_Mipmaps` | archive 후보 | 미확인 | 검토 필요 | `_2`와 mipmap slider 상태 차이 있음 |
-| `11_TexturingTechniques_Step2_NormalMapping` | archive 후보 | 미확인 | 검토 필요 | normal map workflow |
-| `11_TexturingTechniques_Step3_HeightMapping` | archive 후보 | 미확인 | 검토 필요 | height/tessellation workflow |
-| `11_TexturingTechniques_Step4_HDRI` | archive 후보 | 미확인 | 검토 필요 | HDRI/cubemap |
-| `11_TexturingTechniques_Step5_HDRPipeline` | archive 후보 | 미확인 | 검토 필요 | HDR/post-processing |
-| `12_PBR_Step1_UnrealPBR` | archive 후보 | 미확인 | 검토 필요 | PBR shader |
-| `12_PBR_Step2_PBRModels` | archive 후보 | 미확인 | 검토 필요 | `_2`와 code hash 동일 |
-| `13_LightAndShadow_Step1_Mirror` | archive 후보 | 미확인 | 검토 필요 | mirror/stencil |
-| `13_LightAndShadow_Step2_PipelineStateObject` | archive 후보 | 미확인 | 검토 필요 | PSO abstraction |
-| `13_LightAndShadow_Step2_Shadow` | archive 후보 | 미확인 | 검토 필요 | `_2`와 code hash 동일 |
-| `13_LightAndShadow_Step3_DepthBufferAndFog` | archive 후보 | 미확인 | 검토 필요 | depth/fog |
-| `13_LightAndShadow_Step4_ShadowMapping` | archive 후보 | 미확인 | 검토 필요 | shadow map |
-| `13_LightAndShadow_Step5_SoftShadowPCF` | archive 후보 | 미확인 | 검토 필요 | PCF |
-| `13_LightAndShadow_Step6_SoftShadowPCSS` | archive 후보 | 미확인 | 검토 필요 | PCSS |
-| `13_LightAndShadow_Step7_Halo` | archive 후보 | 미확인 | 검토 필요 | halo/post effect |
-| `13_LightAndShadow_Step8_UnrealSphereLight` | archive 후보 | 미확인 | 검토 필요 | sphere light |
+| `10_GeometryPipeline_Step2_Billboards` | 반영 완료 | 성공 | 검토 필요 | primary 쪽 billboard model matrix update 차이 확인됨 |
+| `10_GeometryPipeline_Step3_NormalLines` | 반영 완료 | 성공 | 검토 필요 | primary 쪽 `NormalGeometryShader.hlsl` 추가 |
+| `10_GeometryPipeline_Step4_Fireball` | 반영 완료 | 성공 | 검토 필요 | geometry/fireball shader |
+| `10_GeometryPipeline_Step5_Tessellation` | 반영 완료 | 성공 | 검토 필요 | hull/domain shader |
+| `11_TexturingTechniques_Step1_Mipmaps` | 반영 완료 | 성공 | 검토 필요 | `_2`와 mipmap slider 상태 차이 있음 |
+| `11_TexturingTechniques_Step2_NormalMapping` | 반영 완료 | 성공 | 검토 필요 | normal map workflow |
+| `11_TexturingTechniques_Step3_HeightMapping` | 반영 완료 | 성공 | 검토 필요 | height/tessellation workflow |
+| `11_TexturingTechniques_Step4_HDRI` | 반영 완료 | 성공 | 검토 필요 | HDRI/cubemap |
+| `11_TexturingTechniques_Step5_HDRPipeline` | 반영 완료 | 성공 | 검토 필요 | HDR/post-processing |
+| `12_PBR_Step1_UnrealPBR` | 반영 완료 | 성공 | 검토 필요 | PBR shader |
+| `12_PBR_Step2_PBRModels` | 반영 완료 | 성공 | 검토 필요 | `_2`와 code hash 동일 |
+| `13_LightAndShadow_Step1_Mirror` | 반영 완료 | 성공 | 검토 필요 | mirror/stencil |
+| `13_LightAndShadow_Step2_PipelineStateObject` | 반영 완료 | 성공 | 검토 필요 | PSO abstraction |
+| `13_LightAndShadow_Step2_Shadow` | 반영 완료 | 성공 | 검토 필요 | `_2`와 code hash 동일 |
+| `13_LightAndShadow_Step3_DepthBufferAndFog` | 반영 완료 | 성공 | 검토 필요 | depth/fog |
+| `13_LightAndShadow_Step4_ShadowMapping` | 반영 완료 | 성공 | 검토 필요 | shadow map |
+| `13_LightAndShadow_Step5_SoftShadowPCF` | 반영 완료 | 성공 | 검토 필요 | PCF |
+| `13_LightAndShadow_Step6_SoftShadowPCSS` | 반영 완료 | 성공 | 검토 필요 | PCSS |
+| `13_LightAndShadow_Step7_Halo` | 반영 완료 | 성공 | 검토 필요 | halo/post effect |
+| `13_LightAndShadow_Step8_UnrealSphereLight` | 반영 완료 | 성공 | 검토 필요 | sphere light |
 
 ## Include Candidates
 
@@ -152,6 +152,6 @@ Part3는 1차로 code import, asset selection, build/run 확인을 우선합니�
 
 ## Current Next Action
 
-1. Part3 branch 마무리 커밋을 정리합니다.
-2. `Docs/_repo/pull-requests/archive-part3.md` 기준으로 PR을 구성합니다.
-3. merge 후 Part4 import branch로 이동합니다.
+1. code import 완료 기준으로 Part1부터 문서 전체 재정리를 진행합니다.
+2. capture/video 촬영 결과가 생기면 `DEMOS.md`와 예제별 README를 갱신합니다.
+3. public subset 후보는 private archive 정리 완료 후 별도 기준으로 선별합니다.

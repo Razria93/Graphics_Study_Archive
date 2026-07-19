@@ -20,11 +20,11 @@
 | `C:\ComputerGraphics\Part1_Chapter01-02` | `Part1_Chapter01-02` | DirectX11 setup, ImGui, bloom 참고 | 반영 완료 | Debug/Release 실행 성공, 촬영 보류 |
 | `C:\ComputerGraphics\Part1_Chapter03` | `Part1_Chapter03` | CPU ray tracing fundamentals 참고 | 반영 완료 | Step4-Step14 실행 확인 완료 |
 | `C:\ComputerGraphics\Part2_Chapter04` | `Part2_Chapter04` | Software rasterization 참고 | 반영 완료 | Step1-Step10 Debug/Release 실행 성공 |
-| `C:\ComputerGraphics\Part2_Chapter05-08` | `Part2_Chapter05-08` | D3D11 pipeline, modeling, shader toys 참고 | 진행 중 | archive 대상 예제 전체 import 완료/build-run 성공 |
+| `C:\ComputerGraphics\Part2_Chapter05-08` | `Part2_Chapter05-08` | D3D11 pipeline, modeling, shader toys 참고 | 반영 완료 | archive 대상 예제 전체 import 완료/build-run 성공 |
 | `C:\ComputerGraphics\Docs_Graphics` | `Docs/`, `local/` | 학습 노트, 계획 문서 참고 | 진행 중 | private-only 메모는 local로 분리 |
 | `C:\ComputerGraphics\Part3_Chapter09` | `Part3_Chapter09` | User interaction, picking 참고 | 반영 완료 | Step1-Step6 Debug/Release 실행 확인 |
 | `C:\ComputerGraphics\Part3_Chapter10_13` | `Part3_Chapter10-13` | Geometry pipeline, texturing, PBR, shadows 참고 | 반영 완료 | primary raw source. `_2`는 reference-only snapshot |
-| `C:\ComputerGraphics\Part4_HongLabGraphics` | `Part4_Chapter14-20` | Compute shader, particles, fluids, smoke, cloud 참고 | 계획 수립 | primary raw source. `_2`와 `OriginalExamples`는 reference-only baseline |
+| `C:\ComputerGraphics\Part4_HongLabGraphics` | `Part4_Chapter14-20` | Compute shader, particles, fluids, animation, physics, gameplay 참고 | 반영 완료 | primary raw source. `_2`와 `OriginalExamples`는 reference-only baseline |
 | `C:\ComputerGraphics\_00_Graphics_Portfolio` | `Portfolio_RayTracer` | ray tracing portfolio extension 참고 | 검토 필요 | 대표 작업물 후보 |
 
 ## 다음 확인 순서

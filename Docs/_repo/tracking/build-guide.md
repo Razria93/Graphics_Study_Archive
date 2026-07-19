@@ -16,6 +16,9 @@
 
 | Part | Example | Debug x64 | Release x64 | 실행 | 캡처 | 비고 |
 | --- | --- | --- | --- | --- | --- | --- |
+| Part1 | `Part1_Chapter01-02/01_DX11InitAndImGui`, `02_Bloom` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인 |
+| Part1 | `Part1_Chapter03/03_Raytracing_Step4`-`Step14` | 성공 | 성공 | 성공 | 보류 | Step4-Step14 사용자 Debug/Release 실행 확인 |
+| Part2 | `Part2_Chapter04/04_Rasterization_Step1`-`Step10` | 성공 | 성공 | 성공 | 보류 | Step1-Step10 사용자 Debug/Release 실행 확인 |
 | Part2 | `Part2_Chapter05-08/05_AffineTransformations_*` | 성공 | 성공 | 성공 | 보류 | Step1-Step4 사용자 Debug/Release 실행 확인 |
 | Part2 | `Part2_Chapter05-08/06_GraphicsPipeline_Step1_COM`-`Step9_PhongVsBlinnPhong` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인 |
 | Part2 | `Part2_Chapter05-08/07_Modeling_Step1_DrawingWireFrames` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, solid/wireframe toggle |
@@ -35,6 +38,8 @@
 | Part2 | `Part2_Chapter05-08/08_ShaderToys_Step5_FresnelEffect` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, Fresnel effect, Stonewall diffuse/specular IBL DDS, `Material FresnelR0` |
 | Part2 | `Part2_Chapter05-08/08_ShaderToys_Step6_BloomEffect` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, bloom post-processing, threshold/blur/combine filter, sphere/character |
 | Part2 | `Part2_Chapter05-08/08_ShaderToys_Step7_Shadertoy` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, Shadertoy fullscreen shader, `shadertoytexture0.jpg`, `iTime` animation |
+| Part3 | `Part3_Chapter09` archive 대상 예제 | 성공 | 성공 | 성공 | 보류 | Chapter09 사용자 Debug/Release 실행 확인 |
+| Part3 | `Part3_Chapter10-13` archive 대상 예제 | 성공 | 성공 | 성공 | 보류 | Chapter10-13 사용자 Debug/Release 실행 확인 |
 | Part4 | `Part4_Chapter14-20/Examples` `Ex1401`-`Ex2001` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, `Debugging > Command Arguments`에 `Ex` 뒤 4자리 숫자 입력 |
 
 ## Part4 Verification Notes
