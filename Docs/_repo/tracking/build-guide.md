@@ -35,6 +35,17 @@
 | Part2 | `Part2_Chapter05-08/08_ShaderToys_Step5_FresnelEffect` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, Fresnel effect, Stonewall diffuse/specular IBL DDS, `Material FresnelR0` |
 | Part2 | `Part2_Chapter05-08/08_ShaderToys_Step6_BloomEffect` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, bloom post-processing, threshold/blur/combine filter, sphere/character |
 | Part2 | `Part2_Chapter05-08/08_ShaderToys_Step7_Shadertoy` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, Shadertoy fullscreen shader, `shadertoytexture0.jpg`, `iTime` animation |
+| Part4 | `Part4_Chapter14-20/Examples` `Ex1401`-`Ex2001` | 성공 | 성공 | 성공 | 보류 | 사용자 Debug/Release 실행 확인, `Debugging > Command Arguments`에 `Ex` 뒤 4자리 숫자 입력 |
+
+## Part4 Verification Notes
+
+- Part4는 `Examples.sln` 단일 solution으로 확인합니다.
+- Visual Studio에서 실행할 때 `Examples` project의 `Debugging > Command Arguments`에 예제 번호를 입력합니다.
+- 예: `Ex1401_Basic`은 `1401`, `Ex1701_SkeletalAnimation`은 `1701`, `Ex2001_GamePlay`는 `2001`입니다.
+- Debug x64와 Release x64를 각각 확인할 때 command argument가 유지되어 있는지 먼저 확인합니다.
+- Ex1605/Ex1606 같은 simulation-heavy 예제는 정상 실행 상태에서도 환경에 따라 frame rate가 크게 낮아질 수 있습니다.
+- Ex1701은 Assimp 6.x FBX pivot helper node compatibility 보정이 적용되어 있습니다.
+- Ex2001은 fireball spawn notify timing과 spawn offset을 GUI로 조정할 수 있습니다.
 
 ## Raw Reference Links
 

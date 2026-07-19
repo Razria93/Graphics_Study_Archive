@@ -51,6 +51,36 @@
 - `BasicPixelShader.hlsl`, `BasicVertexShader.hlsl`의 Debug/Release x64 shader type을 확인합니다.
 - `Common.hlsli` 같은 include shader는 build 대상이 아니라 문서/include 파일로 유지되는지 확인합니다.
 
+## Part4 Command Argument
+
+증상:
+
+- Part4에서 빌드는 성공하지만 예상한 예제가 실행되지 않습니다.
+- 비슷한 이름의 다른 solution/project를 열어 놓고 실행 결과를 비교하게 됩니다.
+- Debug에서는 맞는 예제가 뜨는데 Release에서는 다른 예제나 기본 실행 흐름으로 보입니다.
+
+대응:
+
+- `Part4_Chapter14-20/Examples.sln`을 열었는지 먼저 확인합니다.
+- `Examples` project의 `Debugging > Command Arguments`에 `Ex` 뒤 4자리 숫자를 입력합니다.
+- Debug x64와 Release x64를 각각 확인할 때 같은 command argument가 유지되는지 확인합니다.
+- 예: `Ex1401_Basic`은 `1401`, `Ex1701_SkeletalAnimation`은 `1701`, `Ex2001_GamePlay`는 `2001`입니다.
+
+## Part4 Runtime/Dependency Issues
+
+증상:
+
+- character mesh가 뭉개지거나 skeleton hierarchy가 예상과 다르게 보입니다.
+- `.fbx`, `.dds`, `.hdr`, `.raw` 같은 runtime asset이 없어서 build는 되지만 실행 중 실패합니다.
+- simulation-heavy 예제에서 frame rate가 크게 낮게 나옵니다.
+
+대응:
+
+- Ex1701 계열 skeletal animation 문제는 Assimp 6.x FBX pivot helper node 생성 여부를 먼저 확인합니다.
+- 현재 archive 기준은 `AI_CONFIG_IMPORT_FBX_PRESERVE_PIVOTS=false` 최소 보정을 사용합니다.
+- runtime asset은 raw 폴더 전체가 아니라 예제 실행에 필요한 파일만 선별하고, LFS 대상 확장자는 `.gitattributes` 기준을 확인합니다.
+- 성능 민감 예제는 정상 출력 여부와 기본 조작 가능 여부를 우선 확인하고, 해상도/grid size 조정은 별도 변경으로 기록합니다.
+
 ## Document Encoding / Patch Issues
 
 증상:
