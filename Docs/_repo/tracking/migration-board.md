@@ -84,4 +84,4 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part4 Ch18 | `Ex1802_Grass` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, instanced grass rendering, wind deformation, reused PBR ground/HDRI assets, command argument `1802` |
 | Part4 Ch18 | `Ex1803_Landscape` | 보정 반영 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, missing terrain FBX asset 대체, terrain.raw height-field fallback, ocean plane, command argument `1803` |
 | Part4 Ch19 | `Ex1901_Physics` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, PhysX rigid body simulation, render transform sync, command argument `1901` |
-| Part4 Ch20 | `Ex2001_GamePlay` | 완료 | 미확인 | 진행 중 | 미확인 | 보류 | gameplay integration, character animation, PhysX stack, fire billboard, command argument `2001` |
+| Part4 Ch20 | `Ex2001_GamePlay` | 보강 반영 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, missing animation FBX 보강, gameplay integration, character animation, PhysX stack, fireball notify spawn/GUI tuning, command argument `2001` |

@@ -73,7 +73,7 @@ Part4_HongLabGraphics/
 | Ch17 | `Ex1701_SkeletalAnimation` | archive 후보 | 미확인 | 검토 필요 | skeletal animation |
 | Ch18 | `Ex1801_Tree`-`Ex1803_Landscape` | archive 후보 | 미확인 | 검토 필요 | tree, grass, landscape/ocean |
 | Ch19 | `Ex1901_Physx` | archive 후보 | 미확인 | 검토 필요 | PhysX integration |
-| Ch20 | `Ex2001_GamePlay` | archive 후보 | 미확인 | 검토 필요 | gameplay integration |
+| Ch20 | `Ex2001_GamePlay` | 보강 반영 | 성공 | 검토 필요 | gameplay integration |
 
 ## Include Candidates
 
@@ -845,12 +845,16 @@ Runtime asset/dependency:
 
 - `main.cpp`는 command argument `2001`을 `Ex2001_GamePlay`로 매핑합니다.
 - `Examples.vcxproj`와 `Examples.vcxproj.filters`에는 Ex2001 source/header 항목이 등록되어 있습니다.
-- archive의 `Ex2001_GamePlay.cpp/.h`는 primary raw hash와 일치합니다.
+- archive의 `Ex2001_GamePlay.cpp/.h`는 primary raw를 기준으로 가져온 뒤, 강의 TODO였던 fireball gameplay input, notify-frame spawn, actor/object 직접 동기화를 최소 범위로 보강했습니다.
 - 최신 자료실본 `Part4_HongLabGraphics_v03`의 Ex2001은 주석/포맷 정리, `PX_RELEASE` 매크로 정의, PhysX include path 차이가 있습니다.
 - archive는 vcpkg include 구조에 맞춰 `physx/PxPhysicsAPI.h`를 유지합니다.
-- 별도 신규 runtime asset copy는 없습니다.
+- Release 실행 중 `FightingIdleOnMichelle2.fbx`, `Fireball.fbx` 누락을 확인했고, primary raw에서 두 animation FBX만 선별 반영했습니다.
+- 두 FBX asset hash는 primary raw와 일치합니다.
+- `G` 입력 시 Fireball animation clip으로 전환하고, GUI에서 지정한 notify frame에 PhysX dynamic fireball을 생성하도록 구현했습니다.
+- `Fireball` GUI에서 캐릭터 기준 spawn offset, projectile velocity, notify frame을 조절할 수 있도록 했습니다.
+- 사용자 실행 확인 결과, `Notify Frame = 120`, `Spawn Offset = (0.0, 0.0, -0.25)` 기준에서 위치와 타이밍이 의도와 유사하게 동작했습니다.
 - raw result/capture/build output은 포함하지 않았습니다.
-- Debug/Release build/run은 사용자 확인 전까지 `미확인`으로 기록합니다.
+- Debug/Release build/run은 사용자 확인 기준으로 완료 기록했습니다.
 
 ## Per-example Finish Check
 
@@ -865,8 +869,6 @@ Runtime asset/dependency:
 
 ## Current Next Action
 
-1. 다음 확인 대상은 `Ex2001_GamePlay`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `2001`을 설정합니다.
-3. 사용자 Debug x64 build/run 확인을 요청합니다.
-4. 사용자 Release x64 build/run 확인을 요청합니다.
-5. PhysX/animation/runtime DLL 문제가 보이면 vcpkg runtime DLL, working directory, project dependency 설정을 먼저 확인합니다.
+1. Ex2001 Debug/Release build/run 확인 결과를 기준으로 Part4 import 상태를 마무리합니다.
+2. `captured.png` 같은 임시 실행 산출물은 commit 대상에서 제외합니다.
+3. Part4 branch 마무리 전 code/assets commit과 docs/status commit을 분리합니다.

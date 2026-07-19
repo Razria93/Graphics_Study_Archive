@@ -68,7 +68,7 @@ Debug/Release 확인 시 같은 command argument가 설정되어 있는지 먼�
 | [`Ex1802_Grass`](Ex1802_Grass/README.md) | 반영 완료 | 성공 | 검토 필요 | instanced grass rendering, wind deformation, reused PBR ground/HDRI assets, command argument `1802` |
 | [`Ex1803_Landscape`](Ex1803_Landscape/README.md) | 보정 반영 | 성공 | 검토 필요 | terrain.raw height-field fallback, ocean plane, command argument `1803` |
 | [`Ex1901_Physics`](Ex1901_Physics/README.md) | 반영 완료 | 성공 | 검토 필요 | PhysX rigid body simulation, render transform sync, command argument `1901` |
-| [`Ex2001_GamePlay`](Ex2001_GamePlay/README.md) | 반영 완료 | 미확인 | 검토 필요 | gameplay integration, character animation, PhysX stack, fire billboard, command argument `2001` |
+| [`Ex2001_GamePlay`](Ex2001_GamePlay/README.md) | 보강 반영 | 성공 | 검토 필요 | gameplay integration, character animation, PhysX stack, fireball notify spawn/GUI tuning, missing animation FBX 보강, command argument `2001` |
 
 ## Import 기준
 
@@ -79,10 +79,9 @@ Debug/Release 확인 시 같은 command argument가 설정되어 있는지 먼�
 
 ## 다음 작업
 
-1. 다음 확인 대상은 `Ex2001_GamePlay`입니다.
-2. Visual Studio `Debugging > Command Arguments`에 `2001`을 설정합니다.
-3. PhysX/Assimp/runtime DLL 문제가 보이면 vcpkg runtime DLL, working directory, project dependency 설정을 먼저 확인합니다.
-4. Debug/Release x64 실행 확인 전까지 build/run은 `미확인`으로 둡니다.
+1. Ex2001 Debug/Release build/run 확인 결과를 기준으로 Part4 import 상태를 마무리합니다.
+2. `captured.png` 같은 임시 실행 산출물은 commit 대상에서 제외합니다.
+3. Part4 branch 마무리 전 code/assets commit과 docs/status commit을 분리합니다.
 
 ## 관련 문서
 
