@@ -27,7 +27,7 @@ Graphics Study Portfolio는 DirectX11 기반 그래픽스 학습 예제와 개�
 | `Part2_Chapter05-08` | D3D11 pipeline, modeling, shader toys | private 정리 예정 |
 | `Part3_Chapter09` | User interaction and picking | private 정리 예정 |
 | `Part3_Chapter10-13` | Geometry pipeline, texturing, PBR, shadows | private 정리 예정 |
-| `Part4_Chapter14-20` | Compute shader, particles, fluids, smoke, cloud | private 정리 예정 |
+| `Part4_Chapter14-20` | Compute shader, particles, fluids, animation, physics, gameplay | import 및 실행 확인 완료, 촬영 보류 |
 | `Portfolio_RayTracer` | Part1 ray tracing study extension | private 정리 예정 |
 
 ## 대표 데모 후보
@@ -39,12 +39,13 @@ Graphics Study Portfolio는 DirectX11 기반 그래픽스 학습 예제와 개�
 | Part1 ray sphere | Ray-sphere intersection | `Docs/Part1_Chapter03/...` 예정 |
 | Part2 depth buffer | Rasterization and depth test | `Docs/Part2_Chapter04/...` 예정 |
 | Part3 PBR models | PBR material workflow | `Docs/Part3_Chapter10-13/...` 예정 |
-| Part4 particle system | Compute/simulation demo | `Docs/Part4_Chapter14-20/...` 예정 |
+| Part4 compute/simulation examples | Compute shader, particles, fluids, animation, physics | `Docs/Part4_Chapter14-20/README.md` |
 
 ## 저장소 운영 기준
 
-- 각 예제는 독립적인 Visual Studio solution 기준으로 확인합니다.
-- Part1~Part4를 하나의 master solution 또는 하나의 실행 파일로 통합하지 않습니다.
+- Part1~Part3 예제는 독립적인 Visual Studio solution 기준으로 확인합니다.
+- Part4는 `Examples` 단일 project에서 command-line argument로 예제를 선택합니다.
+- Part1~Part4를 하나의 master solution으로 통합하지 않습니다.
 - 이 저장소는 private portfolio archive로 관리합니다.
 - public repo는 지금 미리 구성하지 않고, private archive 정리와 검증 기록이 안정화된 뒤 공개 가능한 subset을 추려 별도로 구성합니다.
 - 외부 공개 가능한 자료는 [Public 공개 준비 기준](Docs/_repo/workflow/public-readiness.md)에 따라 `public 후보`, `private 전용`, `검토 필요`, `제외`로 구분합니다.

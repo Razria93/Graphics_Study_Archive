@@ -12,7 +12,21 @@
 
 ## 빌드 기준
 
-각 예제는 독립적인 Visual Studio solution을 기준으로 확인합니다. private archive 정리 과정에서 폴더명을 바꾼 경우, 빌드 실패 시 `.sln`, `.vcxproj`, shader path, asset path 중 어느 항목이 기존 경로에 의존하는지 먼저 확인합니다.
+Part1~Part3 예제는 독립적인 Visual Studio solution을 기준으로 확인합니다. Part4는 `Part4_Chapter14-20/Examples.sln` 단일 solution에서 `Debugging > Command Arguments`로 실행할 예제를 선택합니다.
+
+private archive 정리 과정에서 폴더명을 바꾼 경우, 빌드 실패 시 `.sln`, `.vcxproj`, shader path, asset path 중 어느 항목이 기존 경로에 의존하는지 먼저 확인합니다.
+
+## Part4 실행 기준
+
+Part4는 `Examples.exe` 하나가 `Ex` 뒤 4자리 숫자를 command argument로 받아 예제를 선택합니다.
+
+| 예제 | Command argument |
+| --- | --- |
+| `Ex1401_Basic` | `1401` |
+| `Ex1701_SkeletalAnimation` | `1701` |
+| `Ex2001_GamePlay` | `2001` |
+
+Debug x64와 Release x64를 각각 확인할 때 같은 command argument가 유지되어 있는지 먼저 확인합니다.
 
 ## Third-party headers
 
@@ -43,4 +57,4 @@ STB image headers는 clean checkout 빌드 재현성을 위해 repo 내부 [Thir
 
 ## 현재 검증 상태
 
-아직 학습 코드가 archive에 정리되지 않았으므로 빌드/실행은 미확인입니다. 최초 검증 대상은 [Docs/_repo/tracking/build-guide.md](Docs/_repo/tracking/build-guide.md)의 P0 표를 기준으로 진행합니다.
+Part1~Part4 code import는 private archive 기준으로 진행 중이며, 예제별 상세 상태는 [Docs/_repo/tracking/build-guide.md](Docs/_repo/tracking/build-guide.md)와 [Docs/_repo/tracking/migration-board.md](Docs/_repo/tracking/migration-board.md)를 기준으로 확인합니다.

@@ -14,8 +14,10 @@
 | Part2 | `06_GraphicsPipeline_Step6_Lighting` | MVP and lighting | 예정 | 미확인 | `Docs/Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting/README.md` 예정 |
 | Part3 | `09_UserInteraction_Step2_MousePicking` | Picking ray | 예정 | 미확인 | `Docs/Part3_Chapter09/09_UserInteraction_Step2_MousePicking/README.md` 예정 |
 | Part3 | `12_PBR_Step2_PBRModels` | PBR material | 예정 | 미확인 | `Docs/Part3_Chapter10-13/12_PBR_Step2_PBRModels/README.md` 예정 |
-| Part4 | `Ex1402_Blur` | Compute shader blur | 예정 | 미확인 | `Docs/Part4_Chapter14-20/Ex1402_Blur/README.md` 예정 |
-| Part4 | `Ex1501_ParticleSystem` | Particle simulation | 예정 | 미확인 | `Docs/Part4_Chapter14-20/Ex1501_ParticleSystem/README.md` 예정 |
+| Part4 | `Ex1402_Blur` | Compute shader blur | 보류 | 성공 | `Docs/Part4_Chapter14-20/Ex1402_Blur/README.md` |
+| Part4 | `Ex1501_ParticleSystem` | Particle simulation | 보류 | 성공 | `Docs/Part4_Chapter14-20/Ex1501_ParticleSystem/README.md` |
+| Part4 | `Ex1701_SkeletalAnimation` | Skeletal animation | 보류 | 성공 | `Docs/Part4_Chapter14-20/Ex1701_SkeletalAnimation/README.md` |
+| Part4 | `Ex2001_GamePlay` | Animation/physics gameplay integration | 보류 | 성공 | `Docs/Part4_Chapter14-20/Ex2001_GamePlay/README.md` |
 | Portfolio | `16-01_Sampling` | Ray tracing representative result | 예정 | 미확인 | `Docs/Portfolio_RayTracer/README.md` |
 
 ## 캡처/영상 기준

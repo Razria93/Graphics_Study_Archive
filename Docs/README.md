@@ -14,6 +14,7 @@ Private graphics study/archive repo의 문서 입구입니다.
 | [Part2_Chapter05-08](Part2_Chapter05-08/README.md) | D3D11 pipeline, modeling, shader toy 예제 문서 |
 | [Part3_Chapter09](Part3_Chapter09/README.md) | User interaction, picking, virtual trackball 예제 문서 |
 | [Part3_Chapter10-13](Part3_Chapter10-13/README.md) | Geometry pipeline, texturing, PBR, shadow 예제 문서 |
+| [Part4_Chapter14-20](Part4_Chapter14-20/README.md) | Compute shader, particle/simulation, animation, foliage, physics, gameplay 예제 문서 |
 | [Portfolio_RayTracer](Portfolio_RayTracer/README.md) | 대표 ray tracing 작업물 문서 |
 | [_repo](_repo/) | repo 운영 문서, workflow, tracking, reference, manifests, templates |
 

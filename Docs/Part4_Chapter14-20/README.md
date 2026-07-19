@@ -1,0 +1,90 @@
+# Part4 Chapter14-20
+
+Compute shader, simulation, animation, foliage, physics, gameplay 예제를 정리하는 문서 공간입니다.
+
+## 현재 상태
+
+| 항목 | 상태 |
+| --- | --- |
+| Raw source | `C:\ComputerGraphics\Part4_HongLabGraphics` |
+| Reference source | `C:\ComputerGraphics\Part4_HongLabGraphics_2`, `C:\ComputerGraphics\OriginalExamples\Part4_HongLabGraphics` |
+| Import status | `Examples` project 반영 완료, 예제별 확인 완료 |
+| Build/run | Ex1401-Ex2001 Debug/Release 확인 완료 |
+| Public readiness | 검토 필요 |
+
+## Raw 판단
+
+`Part4_HongLabGraphics`를 primary source로 사용합니다. `_2`와 `OriginalExamples`는 baseline/reference snapshot으로만 봅니다.
+
+Part4는 예제별 폴더가 아니라 `Examples` 단일 project에 `Ex1401`-`Ex2001` 파일이 모여 있으므로, import 전에 project 구조를 어떻게 archive에 둘지 먼저 확정합니다.
+
+## 실행 방식
+
+Part4는 단일 executable이 command-line argument로 실행할 예제를 선택합니다. 예제 이름의 `Ex` 뒤 4자리 숫자를 Visual Studio `Debugging > Command Arguments`에 입력합니다.
+
+| Example | Command argument |
+| --- | --- |
+| `Ex1401_Basic` | `1401` |
+| `Ex1402_Blur` | `1402` |
+| `Ex2001_GamePlay` | `2001` |
+
+Debug/Release 확인 시 같은 command argument가 설정되어 있는지 먼저 확인합니다.
+
+## 예정 범위
+
+| Chapter | Examples | Focus |
+| --- | --- | --- |
+| Ch14 | `Ex1401`-`Ex1408` | Compute shader basics, structured buffers, indirect arguments, bitonic sort |
+| Ch15 | `Ex1501`-`Ex1503` | Particle system, sprite fire, SPH water |
+| Ch16 | `Ex1601`-`Ex1606` | Stable fluids, curl noise, cloud, smoke, hybrid water |
+| Ch17 | `Ex1701` | Skeletal animation |
+| Ch18 | `Ex1801`-`Ex1803` | Tree, grass, landscape/ocean |
+| Ch19 | `Ex1901` | PhysX |
+| Ch20 | `Ex2001` | Gameplay integration |
+
+## Import Status
+
+| Example | Import | Build/run | Public readiness | Note |
+| --- | --- | --- | --- | --- |
+| [`Ex1401_Basic`](Ex1401_Basic/README.md) | 반영 완료 | 성공 | 검토 필요 | compute shader dispatch, back buffer UAV, 32x32 group checkerboard, command argument `1401` |
+| [`Ex1402_Blur`](Ex1402_Blur/README.md) | 반영 완료 | 성공 | 검토 필요 | compute shader separable blur, SRV/UAV ping-pong, 1000회 반복으로 10 FPS 이하 확인, command argument `1402` |
+| [`Ex1403_MatVecMult`](Ex1403_MatVecMult/README.md) | 반영 완료 | 성공 | 검토 필요 | compute shader matrix-vector multiplication, CPU/GPU 결과 일치, command argument `1403` |
+| [`Ex1404_StructuredBuffer`](Ex1404_StructuredBuffer/README.md) | 반영 완료 | 성공 | 검토 필요 | compute shader particle update, structured buffer rendering, command argument `1404` |
+| [`Ex1405_ConsumeAppendBuffer`](Ex1405_ConsumeAppendBuffer/README.md) | 반영 완료 | 성공 | 검토 필요 | consume/append structured buffer, append count rendering, command argument `1405` |
+| [`Ex1406_DensityField`](Ex1406_DensityField/README.md) | 반영 완료 | 성공 | 검토 필요 | density texture, sprite geometry shader, accumulate blend, command argument `1406` |
+| [`Ex1407_IndirectArguments`](Ex1407_IndirectArguments/README.md) | 반영 완료 | 성공 | 검토 필요 | indirect argument buffer, `DrawInstancedIndirect`, command argument `1407` |
+| [`Ex1408_BitonicSort`](Ex1408_BitonicSort/README.md) | 반영 완료 | 성공 | 검토 필요 | compute shader bitonic sort, CPU/GPU result compare, Debug/Release `OK`, command argument `1408` |
+| [`Ex1501_ParticleSystem`](Ex1501_ParticleSystem/README.md) | 반영 완료 | 성공 | 검토 필요 | CPU particle update, structured buffer sprite rendering, mouse spawn, command argument `1501` |
+| [`Ex1502_SpriteFireEffect`](Ex1502_SpriteFireEffect/README.md) | 반영 완료 | 성공 | 검토 필요 | textured fire sprite particles, `flare0.dds`, mouse spawn, command argument `1502` |
+| [`Ex1503_SphWater`](Ex1503_SphWater/README.md) | 반영 완료 | 성공 | 검토 필요 | CPU SPH water simulation, density/pressure interaction, command argument `1503` |
+| [`Ex1601_StableFluids`](Ex1601_StableFluids/README.md) | 반영 완료 | 성공 | 검토 필요 | compute shader stable fluids, density/velocity/pressure textures, mouse source injection, command argument `1601` |
+| [`Ex1602_CurlNoise`](Ex1602_CurlNoise/README.md) | 반영 완료 | 성공 | 검토 필요 | compute shader curl noise, procedural particle motion, density trail accumulation, command argument `1602` |
+| [`Ex1603_Cloud`](Ex1603_Cloud/README.md) | 반영 완료 | 성공 | 검토 필요 | procedural cloud volume, 3D density/lighting textures, volume smoke rendering, command argument `1603` |
+| [`Ex1604_RealtimeSmoke`](Ex1604_RealtimeSmoke/README.md) | 반영 완료 | 성공 | 검토 필요 | realtime smoke simulation, low/high resolution 3D grids, Sample HDRI assets, command argument `1604` |
+| [`Ex1605_SmokeCpu`](Ex1605_SmokeCpu/README.md) | 반영 완료 | 성공 | 검토 필요 | CPU fluid simulation, 32^3 density texture upload, volume smoke rendering, command argument `1605` |
+| [`Ex1606_HybridWater`](Ex1606_HybridWater/README.md) | 반영 완료 | 성공 | 검토 필요 | hybrid particle/grid water, 64^3 perf profile, SDF raycasting, marching cubes, command argument `1606` |
+| [`Ex1701_SkeletalAnimation`](Ex1701_SkeletalAnimation/README.md) | 보정 반영 | 성공 | 검토 필요 | skeletal animation, Assimp 6.x FBX pivot node compatibility, Mixamo character clips, PBR ground, HDRI cubemap, command argument `1701` |
+| [`Ex1801_Tree`](Ex1801_Tree/README.md) | 반영 완료 | 성공 | 검토 필요 | tree FBX model, selected foliage textures, PBR ground, HDRI cubemap, command argument `1801` |
+| [`Ex1802_Grass`](Ex1802_Grass/README.md) | 반영 완료 | 성공 | 검토 필요 | instanced grass rendering, wind deformation, reused PBR ground/HDRI assets, command argument `1802` |
+| [`Ex1803_Landscape`](Ex1803_Landscape/README.md) | 보정 반영 | 성공 | 검토 필요 | terrain.raw height-field fallback, ocean plane, command argument `1803` |
+| [`Ex1901_Physics`](Ex1901_Physics/README.md) | 반영 완료 | 성공 | 검토 필요 | PhysX rigid body simulation, render transform sync, command argument `1901` |
+| [`Ex2001_GamePlay`](Ex2001_GamePlay/README.md) | 보강 반영 | 성공 | 검토 필요 | gameplay integration, character animation, PhysX stack, fireball notify spawn/GUI tuning, missing animation FBX 보강, command argument `2001` |
+
+## Import 기준
+
+- source/project/shader/필수 runtime asset만 선별합니다.
+- `Assets/` 전체 복사는 하지 않습니다.
+- `.vs/`, `x64/`, `Debug/`, `Release/`, `.user`, `.suo`, `imgui.ini`, `.clang-format`은 제외합니다.
+- `.dds`, `.exr`, `.fbx`, `.hdr`는 LFS 추적 기준을 따릅니다.
+
+## 다음 작업
+
+1. Part4 branch 마무리용 PR 문서를 구성합니다.
+2. `captured.png` 같은 임시 실행 산출물은 commit 대상에서 제외합니다.
+3. Part4 merge 이후 code import 완료 기준으로 Part1부터 문서 전체 재정리를 진행합니다.
+
+## 관련 문서
+
+- [Part4 Import Plan](../_repo/manifests/Part4_Chapter14-20.md)
+- [Raw to Archive Map](../_repo/reference/raw-to-archive-map.md)
+- [Import Integrity Checklist](../_repo/workflow/import-integrity-checklist.md)

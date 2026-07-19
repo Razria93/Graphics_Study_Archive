@@ -61,4 +61,27 @@ Part1부터 Part4까지 코드/문서 분리, 실행 확인, diff review, refact
 | Part3 Ch10-13 | `13_LightAndShadow_Step6_SoftShadowPCSS` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | PCSS soft shadow, primary raw PCSS 사용자 메모 포함 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
 | Part3 Ch10-13 | `13_LightAndShadow_Step7_Halo` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | halo post effect, primary raw `PostEffectsPS.hlsl` 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
 | Part3 Ch10-13 | `13_LightAndShadow_Step8_UnrealSphereLight` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | sphere light, primary raw `BasicPS.hlsl` representative point 구현본 반영, Release shader setting 보정, 사용자 Debug/Release 실행 확인 |
-| Part4 Ch14-20 | `14_*`-`20_*` | 예정 | 미확인 | 미확인 | 미확인 | 아니오 | Part2 이후 진행 |
+| Part4 Ch14-20 | `Examples` project scaffold | 진행 중 | 성공 | 진행 중 | 미확인 | 보류 | 단일 project 구조 반영, `.clang-format` project reference 제거, Ex1401-Ex1605 Debug/Release 확인 |
+| Part4 Ch14 | `Ex1401_Basic` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader back buffer UAV 예제, 32x32 group checkerboard 출력, `Scale` GUI는 현재 shader path 미사용, command argument `1401` |
+| Part4 Ch14 | `Ex1402_Blur` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader separable blur, SRV/UAV ping-pong, Debug/Release 10 FPS 이하 확인, command argument `1402` |
+| Part4 Ch14 | `Ex1403_MatVecMult` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader matrix-vector multiplication, `Error GPU 0`, CPU/GPU result 일치, command argument `1403` |
+| Part4 Ch14 | `Ex1404_StructuredBuffer` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader particle update, structured buffer rendering, Debug/Release 실행 확인, command argument `1404` |
+| Part4 Ch14 | `Ex1405_ConsumeAppendBuffer` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | consume/append structured buffer, Ex1404와 유사한 particle rendering, append count output, command argument `1405` |
+| Part4 Ch14 | `Ex1406_DensityField` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | density texture, sprite geometry shader, accumulate blend, Debug/Release 실행 확인, command argument `1406` |
+| Part4 Ch14 | `Ex1407_IndirectArguments` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | indirect argument buffer, `DrawInstancedIndirect`, Debug/Release 실행 확인, command argument `1407` |
+| Part4 Ch14 | `Ex1408_BitonicSort` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader bitonic sort, CPU/GPU result compare, Debug/Release `OK`, command argument `1408` |
+| Part4 Ch15 | `Ex1501_ParticleSystem` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | CPU particle update, structured buffer sprite rendering, mouse spawn, Debug/Release 실행 확인, command argument `1501` |
+| Part4 Ch15 | `Ex1502_SpriteFireEffect` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | textured fire sprite particles, `flare0.dds`, mouse spawn, Debug/Release 실행 확인, command argument `1502` |
+| Part4 Ch15 | `Ex1503_SphWater` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | CPU SPH water simulation, density/pressure interaction, Debug/Release 실행 확인, command argument `1503` |
+| Part4 Ch16 | `Ex1601_StableFluids` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader stable fluids, density/velocity/pressure textures, mouse source injection, Debug/Release 실행 확인, command argument `1601` |
+| Part4 Ch16 | `Ex1602_CurlNoise` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | compute shader curl noise, procedural particle motion, density trail accumulation, Debug/Release 실행 확인, command argument `1602` |
+| Part4 Ch16 | `Ex1603_Cloud` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | procedural cloud volume, 3D density/lighting textures, volume smoke rendering, Debug/Release 실행 확인, command argument `1603` |
+| Part4 Ch16 | `Ex1604_RealtimeSmoke` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | realtime smoke simulation, low/high resolution 3D grids, Sample HDRI assets, Debug/Release 실행 확인, command argument `1604` |
+| Part4 Ch16 | `Ex1605_SmokeCpu` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | CPU fluid simulation, 32^3 density texture upload, volume smoke rendering, Debug/Release 실행 확인, command argument `1605` |
+| Part4 Ch16 | `Ex1606_HybridWater` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | hybrid particle/grid water, 64^3 perf profile, SDF raycasting, marching cubes, Debug/Release 실행 확인, command argument `1606` |
+| Part4 Ch17 | `Ex1701_SkeletalAnimation` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, Assimp 6.x FBX pivot node compatibility 보정, skeletal animation, Mixamo character clips, PBR ground, HDRI cubemap, command argument `1701` |
+| Part4 Ch18 | `Ex1801_Tree` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, tree FBX model, selected foliage textures, PBR ground, HDRI cubemap, command argument `1801` |
+| Part4 Ch18 | `Ex1802_Grass` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, instanced grass rendering, wind deformation, reused PBR ground/HDRI assets, command argument `1802` |
+| Part4 Ch18 | `Ex1803_Landscape` | 보정 반영 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, missing terrain FBX asset 대체, terrain.raw height-field fallback, ocean plane, command argument `1803` |
+| Part4 Ch19 | `Ex1901_Physics` | 완료 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, PhysX rigid body simulation, render transform sync, command argument `1901` |
+| Part4 Ch20 | `Ex2001_GamePlay` | 보강 반영 | 성공 | 진행 중 | 미확인 | 보류 | 사용자 Debug/Release 실행 확인, missing animation FBX 보강, gameplay integration, character animation, PhysX stack, fireball notify spawn/GUI tuning, command argument `2001` |
