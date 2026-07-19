@@ -120,6 +120,7 @@ int main(int argc, char* argv[])
 		break;
 	default:
 		cout << argv[1] << " is not a valid example number" << endl;
+		return -1;
 	}
 
 	if (!app->Initialize())
