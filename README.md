@@ -1,54 +1,37 @@
-# Graphics Study Portfolio
+# Graphics Study Archive
 
-Graphics Study Portfolio는 DirectX11 기반 그래픽스 학습 예제와 개인 확장 작업을 Part 단위로 실행, 분석, 문서화한 private portfolio archive입니다.
+이 저장소는 DirectX11 graphics study examples와 개인 확장 작업을 private archive 형태로 정리하는 공간이다. 목표는 raw 자료를 그대로 공개하는 것이 아니라, 코드 확인, 문서 재작성, 검증 기록, demo evidence, GitHub Issue/PR 요약을 통해 설명 가능한 portfolio archive를 만드는 것이다.
 
-이 저장소의 목적은 새 엔진을 만드는 것이 아니라, 이미 구현한 예제를 빌드하고 시연하며 그래픽스 개념을 설명 가능한 형태로 정리하는 것입니다.
+## 구조
 
-## 빠른 링크
+| 위치 | 책임 |
+| --- | --- |
+| `Part*_Chapter*` | code/build 기준 예제 프로젝트 |
+| `Portfolio_RayTracer` | Part1 기반 ray tracing 확장 작업 |
+| `Docs/01_Examples` | 예제 설명 정본 |
+| `Docs/02_Topics` | graphics 개념 정본 |
+| `Docs/03_Verification` | build/run/capture 검증 정본 |
+| `Docs/04_Demos` | demo capture/video evidence 정본 |
+| `Docs/05_WorkLogs` | Issue/PR 작업 기록 정본 |
+| `Docs/06_Publication` | public subset 판단 정본 |
+| `Docs/07_Policies` | 문서화, 검증, demo, GitHub 운영, 공개 정책 |
+| `Docs/98_Tools` | templates, validator, troubleshooting |
+| `Docs/99_Legacy` | import 기록과 이전 Docs 구조 |
 
-- [Build Guide](BUILD.md)
-- [Demo Index](DEMOS.md)
-- [Topic Index](TOPICS.md)
+## 운영 원칙
+
+- root code folder는 이동하지 않는다.
+- 기존 `Docs/Part*` 문서는 `Docs/99_Legacy/PartDocs`에 보존하고 새 정본으로 사용하지 않는다.
+- 새 예제 설명은 `Docs/01_Examples`에 작성한다.
+- build/run/capture 최신 상태는 `Docs/03_Verification`에 기록한다.
+- public 공개 기준은 `Docs/07_Policies/publication-policy.md`를 따른다.
+- 직접 확인하지 않은 항목은 `미확인`으로 기록한다.
+
+## 먼저 볼 문서
+
 - [Docs](Docs/README.md)
-- [Part1 Chapter01-02 Docs](Docs/Part1_Chapter01-02/README.md)
-- [Part1 Chapter03 Docs](Docs/Part1_Chapter03/README.md)
-- [Portfolio Ray Tracer](Docs/Portfolio_RayTracer/README.md)
-- [Public 공개 준비 기준](Docs/_repo/workflow/public-readiness.md)
-- [Notice](NOTICE.md)
-
-## 저장소 구성
-
-| 폴더 | 주요 내용 | 상태 |
-| --- | --- | --- |
-| `Docs/Part*_Chapter*/` | Part/Chapter 중심 예제 문서 | 정리 중 |
-| `Part1_Chapter01-02` | DirectX11 setup, ImGui, bloom | 실행 확인 완료, 촬영 보류 |
-| `Part1_Chapter03` | CPU ray tracing fundamentals | Step4-Step14 import 및 실행 확인 완료, 촬영 보류 |
-| `Part2_Chapter04` | Software rasterization | import 및 실행 확인 완료, 촬영 보류 |
-| `Part2_Chapter05-08` | D3D11 pipeline, modeling, shader toys | import 및 실행 확인 완료, 촬영 보류 |
-| `Part3_Chapter09` | User interaction and picking | import 및 실행 확인 완료, 촬영 보류 |
-| `Part3_Chapter10-13` | Geometry pipeline, texturing, PBR, shadows | import 및 실행 확인 완료, 촬영 보류 |
-| `Part4_Chapter14-20` | Compute shader, particles, fluids, animation, physics, gameplay | import 및 실행 확인 완료, 촬영 보류 |
-| `Portfolio_RayTracer` | Part1 ray tracing study extension | private 정리 예정 |
-
-## 대표 데모 후보
-
-| 데모 | 개념 | 자산 |
-| --- | --- | --- |
-| Portfolio Ray Tracer final render | Ray tracing extension | `Docs/Portfolio_RayTracer/README.md`에서 정리 예정 |
-| Part1 DX11 init | DX11 window, ImGui panel | `Docs/Part1_Chapter01-02/01_DX11InitAndImGui/README.md` |
-| Part1 ray sphere | Ray-sphere intersection | `Docs/Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/README.md` |
-| Part2 depth buffer | Rasterization and depth test | `Docs/Part2_Chapter04/04_Rasterization_Step5_DepthBuffer/README.md` |
-| Part3 PBR models | PBR material workflow | `Docs/Part3_Chapter10-13/12_PBR_Step2_PBRModels/README.md` |
-| Part4 compute/simulation examples | Compute shader, particles, fluids, animation, physics | `Docs/Part4_Chapter14-20/README.md` |
-
-## 저장소 운영 기준
-
-- Part1~Part3 예제는 독립적인 Visual Studio solution 기준으로 확인합니다.
-- Part4는 `Examples` 단일 project에서 command-line argument로 예제를 선택합니다.
-- Part1~Part4를 하나의 master solution으로 통합하지 않습니다.
-- 이 저장소는 private portfolio archive로 관리합니다.
-- public repo는 지금 미리 구성하지 않고, private archive 정리와 검증 기록이 안정화된 뒤 공개 가능한 subset을 추려 별도로 구성합니다.
-- 외부 공개 가능한 자료는 [Public 공개 준비 기준](Docs/_repo/workflow/public-readiness.md)에 따라 `public 후보`, `private 전용`, `검토 필요`, `제외`로 구분합니다.
-- 강의 원본 영상, 슬라이드, 퀴즈, 정답은 포함하지 않습니다.
-- 강의 기반 학습 코드는 재배포나 교육 목적으로 사용하지 않습니다.
-- 빌드 또는 실행을 직접 확인하지 않은 항목은 `미확인`으로 남깁니다.
+- [Documentation Policy](Docs/07_Policies/documentation-policy.md)
+- [Documentation Workflow Policy](Docs/07_Policies/documentation-workflow-policy.md)
+- [Verification Policy](Docs/07_Policies/verification-policy.md)
+- [Publication Policy](Docs/07_Policies/publication-policy.md)
+- [Legacy Import Phase](Docs/99_Legacy/ImportPhase/README.md)

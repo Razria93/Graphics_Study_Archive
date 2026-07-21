@@ -1,42 +1,55 @@
-# Portfolio Archive 작업 가이드
+# Repository Guidelines
 
-이 저장소는 Graphics Study Portfolio 작업을 정리하는 private portfolio archive입니다.
+이 저장소는 DirectX11 graphics study examples와 개인 확장 작업을 private archive 형태로 정리하는 작업 공간이다. 목표는 raw 자료를 그대로 공개하는 것이 아니라, 코드 확인, 문서 재작성, 검증 기록, demo evidence, GitHub Issue/PR 요약을 통해 설명 가능한 portfolio archive를 만드는 것이다.
 
-## 목표
+## 공통 운영 원칙
 
-- DirectX11 graphics study examples와 개인 확장 작업을 제한 공유 가능한 portfolio archive 형태로 정리합니다.
-- 빌드 가능한 예제, demo captures, notes, graphics concepts를 중심에 둡니다.
-- `Portfolio_RayTracer`는 Part1 study work 기반의 software ray tracing 대표 작업물로 다룹니다.
+- 작업 전 `git status --short --branch`를 확인한다.
+- 사용자가 명시적으로 요청하기 전에는 commit, push, PR, Issue 생성/수정을 하지 않는다.
+- root의 `Part*_Chapter*`와 `Portfolio_RayTracer` 폴더는 코드와 build 기준으로 유지한다.
+- 문서 정본은 `Docs/01_Examples`부터 `Docs/07_Policies`까지의 산출물 축 구조를 기준으로 작성한다.
+- 기존 `Docs/Part*` 문서는 정본으로 사용하지 않고 `Docs/99_Legacy/PartDocs`의 전환기 참고 자료로만 사용한다.
+- raw/reference repo의 내용은 필요한 부분만 읽고, Git에 추적되는 Docs/AGENTS 문서에는 직접 이해한 설명으로 재작성한다.
+- 강의 원본 영상, 슬라이드, 퀴즈, 정답, 유료 자료, 강의 화면 캡처, 문제/해설 전문은 archive/public 후보로 확정하지 않는다.
+- `.vs/`, `x64/`, `Debug/`, `Release/`, `.user`, `.suo`, `imgui.ini`, 임시 캡처, raw result는 추가하지 않는다.
+- build/run/capture를 직접 확인하지 않은 항목은 `미확인`으로 기록한다.
+- push, pull, merge, rebase, branch delete, history rewrite, LFS import 같은 되돌리기 어려운 작업은 실행 전에 범위와 위험도를 보고한다.
 
-## 작업 규칙
+## 문서 위치
 
-- 변경 전 `git status`를 확인합니다.
-- 사용자가 명시적으로 요청하기 전에는 commit 또는 push를 하지 않습니다.
-- 비공개 원본 자료와 planning folders를 archive에 통째로 복사하지 않습니다.
-- 강의 원본 영상, 슬라이드, 퀴즈, 정답은 포함하지 않습니다.
-- 강의 기반 학습 코드는 재배포나 교육 목적으로 사용하지 않습니다.
-- 외부 공개 가능한 산출물은 별도 public repo로 분리합니다.
-- `.vs/`, `x64/`, `Debug/`, `Release/`, `.user`, `.suo`, `imgui.ini`는 추가하지 않습니다.
-- 예제 import 마무리에는 `Docs/_repo/workflow/import-integrity-checklist.md`를 기준으로 XML namespace, HLSL/HLSLI BOM, binary asset hash, raw/project diff를 확인합니다.
-- push, pull, merge, rebase, branch delete, history rewrite, LFS migration처럼 되돌리기 어려운 작업은 실행 전에 범위와 위험도를 먼저 보고하고, 사용자가 한 번에 여러 작업을 요청하면 작업을 분할할지 확인합니다. 세부 기준은 `Docs/_repo/workflow/ai-collaboration-safety.md`를 따릅니다.
-- repository 또는 project의 존속에 큰 문제가 될 수 있는 risk를 발견하면 작업을 멈추고 먼저 보고합니다.
-- 새 기능 작업보다 documentation, verification records, reproducible demo links를 우선합니다.
-- build/run을 직접 확인하지 않았다면 `미확인`으로 기록합니다.
+- `Docs/00_Index`: 전체 map과 진입점
+- `Docs/01_Examples`: 예제 설명 정본
+- `Docs/02_Topics`: graphics 개념 정본
+- `Docs/03_Verification`: build/run/capture 검증 정본
+- `Docs/04_Demos`: demo capture/video evidence 정본
+- `Docs/05_WorkLogs`: Issue/PR 작업 기록 정본
+- `Docs/06_Publication`: public subset 판단 정본
+- `Docs/07_Policies`: 문서화, 검증, demo, GitHub 운영, 공개 정책 정본
+- `Docs/98_Tools`: validator, templates, troubleshooting 같은 도구 문서
+- `Docs/99_Legacy`: import 기록과 이전 문서 구조
+- `Docs/_repo`: repo 내부 agent 진입점과 최소 운영 안내
+- `local/`: mini plan, raw 검토 메모, GitHub draft/public 사본, 원본 캡처/영상 후보
 
-## 문서 언어 규칙
+## AGENTS 계층 규칙
 
-- Portfolio documentation은 한국어를 기본 언어로 사용합니다.
-- example names, folder names, API names, graphics concepts, common technical keywords는 영어가 더 명확하면 영어로 유지합니다.
-- `README.md`, `BUILD.md`, `DEMOS.md`, `TOPICS.md` 같은 root docs는 한국어 중심으로 작성합니다.
-- commit summary는 아래 type prefix와 함께 한국어로 작성합니다.
-- PR title은 한국어 의도와 식별하기 쉬운 영어 technical keywords를 조합합니다.
-- 해외 제출이 필요해지면 root `README.md`에 English summary section을 먼저 추가합니다.
+- 작업 대상 폴더에 하위 `AGENTS.md`가 있으면 root `AGENTS.md`보다 하위 문서를 우선 적용한다.
+- 하위 `AGENTS.md`는 해당 폴더의 문서 책임, 금지사항, 검증 기준만 담는다.
+- 정책 원문은 `Docs/07_Policies`에 둔다.
+- import/history 원문은 `Docs/99_Legacy`에 둔다.
+- 에이전트는 파일 수정 전 해당 작업 범위의 README와 AGENTS를 먼저 확인한다.
+
+## 문체 규칙
+
+Git에 추적되는 Docs와 AGENTS 문서는 평서형 현재형으로 작성한다.
+
+- 사용: `정의한다`, `기록한다`, `둔다`, `사용한다`, `확인한다`
+- 금지: `합니다`, `해주세요`, `됩니다`, `좋습니다`, 대화체, 감상문체
+- GitHub public body는 명사형 bullet과 짧은 평서형을 사용한다.
+- local draft는 자유롭게 작성할 수 있으나, public 변환 시 `Metadata`, draft 문구, 내부 메모, 존댓말을 제거한다.
 
 ## 커밋 메시지
 
-가벼운 Conventional Commit 변형을 사용하고, 요약은 한국어로 작성합니다. 필요한 경우 영어 technical terms를 함께 씁니다.
-
-형식:
+가벼운 Conventional Commit 변형을 사용한다.
 
 ```text
 <type>: <Korean summary>
@@ -44,25 +57,8 @@
 
 허용 type:
 
-- `docs`: README, notes, DEMOS, TOPICS, portfolio documentation
-- `build`: build guides, build verification results, toolchain notes
-- `demo`: capture/video links, demo index updates
-- `chore`: repository settings, templates, `.gitignore`, maintenance
-- `fix`: incorrect links, status labels, wording, broken docs
-
-예시:
-
-```text
-docs: 포트폴리오 문서 scaffold 추가
-demo: Part1 ray tracing 캡처 항목 추가
-build: Part1 빌드 검증 결과 기록
-chore: GitHub 이슈 및 PR 템플릿 추가
-fix: 불필요한 캡처 이름 규칙 제거
-```
-
-## 구조
-
-- Root docs: `README.md`, `BUILD.md`, `DEMOS.md`, `TOPICS.md`
-- Detailed docs: `Docs/`
-- Example folders는 `Part3_Chapter10-13`, `Part4_Chapter14-20`처럼 chapter-range names를 사용합니다.
-- 원본 비교 자료는 제한 공유 범위를 검토한 뒤 포함 여부를 결정합니다.
+- `docs`: 문서, README, portfolio notes, Issue/PR body 기준
+- `build`: build guide, build verification, toolchain notes
+- `demo`: capture/video, demo map, demo evidence
+- `chore`: repo 설정, validator, template, 유지보수
+- `fix`: 잘못된 링크, 상태값, 문구, 깨진 문서 수정
