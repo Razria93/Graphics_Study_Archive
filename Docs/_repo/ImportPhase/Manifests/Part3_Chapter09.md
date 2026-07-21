@@ -1,5 +1,9 @@
 # Import Manifest: Part3 Chapter09
 
+> 이 문서는 import 당시 포함/제외 판단 기록입니다.
+> 최신 build/run/capture 상태의 기준 문서가 아닙니다.
+
+
 ## Source / Target
 
 - Source: `C:\ComputerGraphics\Part3_Chapter09`
@@ -204,6 +208,6 @@ Build/run was verified by user for Debug/Release.
 
 ## Current Next Action
 
-1. Review Chapter09 import completion status.
-2. Prepare Part3 Chapter10-13 import using `Part3_Chapter10_13` as primary raw reference.
-3. Keep `Part3_Chapter10_13_2` as reference-only comparison material.
+1. Chapter09 import completion status is recorded in this manifest.
+2. Chapter10-13 primary/reference source decisions are maintained in `Part3_Chapter10-13.md`.
+3. 최신 build/run/capture 상태는 `Docs/_repo/BuildRunVerificationMatrix.md`에서 관리합니다.

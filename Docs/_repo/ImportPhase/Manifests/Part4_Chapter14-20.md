@@ -1,4 +1,8 @@
-# Import Plan: Part4 Chapter14-20
+﻿# Import Plan: Part4 Chapter14-20
+
+> 이 문서는 import 당시 포함/제외 판단 기록입니다.
+> 최신 build/run/capture 상태의 기준 문서가 아닙니다.
+
 
 ## Source / Target
 
@@ -870,3 +874,4 @@ Runtime asset/dependency:
 1. code import 완료 기준으로 Part1부터 문서 전체 재정리를 진행합니다.
 2. capture/video 촬영 결과가 생기면 `DEMOS.md`와 예제별 README를 갱신합니다.
 3. public subset 후보는 private archive 정리 완료 후 별도 기준으로 선별합니다.
+

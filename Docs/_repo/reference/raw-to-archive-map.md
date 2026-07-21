@@ -1,8 +1,8 @@
-﻿# Raw to Archive Map
+# Raw to Archive Map
 
 이 문서는 `C:\ComputerGraphics` raw/reference repo를 `C:\Graphics_Study_Archive` private archive에서 어떻게 참고할지 정리합니다.
 
-실제 파일 복사 지시가 아닙니다. raw repo는 읽기 전용 참고 자료이며, archive로 옮길 수 있는 항목은 예제별 import manifest와 migration board에서 별도로 검토합니다.
+실제 파일 복사 지시가 아닙니다. raw repo는 읽기 전용 참고 자료이며, archive로 옮길 수 있는 항목은 예제별 import manifest와 import board에서 별도로 검토합니다.
 
 ## 운영 원칙
 
@@ -33,4 +33,4 @@
 2. 다음 raw 예제는 복사 전 파일/asset/result/capture를 분류합니다.
 3. source 내부 학습 메모는 local-only 문서로 분리합니다.
 4. archive 문서에는 실행 흐름, 핵심 코드, 검증 상태만 남깁니다.
-5. public 가능성은 [public-readiness.md](../workflow/public-readiness.md) 기준으로 나중에 별도 판단합니다.
+5. public 가능성은 [public-readiness.md](../workflow/documentation/public-readiness.md) 기준으로 나중에 별도 판단합니다.

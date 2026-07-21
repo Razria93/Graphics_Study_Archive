@@ -1,4 +1,8 @@
-﻿# Import Manifest: Part2 Chapter05-08
+# Import Manifest: Part2 Chapter05-08
+
+> 이 문서는 import 당시 포함/제외 판단 기록입니다.
+> 최신 build/run/capture 상태의 기준 문서가 아닙니다.
+
 
 ## Source / Target
 
@@ -85,7 +89,37 @@
   - `07_Modeling_Step8_SphereMapping_Lecture` -> `07_Modeling_Step8_SphereMapping_ReferenceSolution`
   - `07_Modeling_Step8-2_SphereMapping_Complete` -> `07_Modeling_Step8_SphereMapping_UserSolution`
 
+
+## Step5 Sphere Case Note
+
+`07_Modeling_Step5` 계열은 사용자 풀이와 reference solution을 함께 보관한 import case입니다.
+
+| Archive target | Raw reference | Build/run | Note |
+| --- | --- | --- | --- |
+| `Part2_Chapter05-08/07_Modeling_Step5_Sphere_UserSolution` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step5-3_Sphere_Complete` | 성공 | 사용자 풀이. top/bottom half sphere를 합치는 방식 |
+| `Part2_Chapter05-08/07_Modeling_Step5_Sphere_ReferenceSolution` | `C:\ComputerGraphics\Part2_Chapter05-08\07_Modeling_Step5_Sphere_Lecture` | 성공 | reference solution. stack/slice loop로 sphere 전체 생성 |
+
+Included assets:
+
+- `crate2_diffuse.png`
+- `wall.jpg`
+- `ojwD8.jpg`
+
+Integrity and run checks:
+
+- XML namespace 정상
+- HLSL/HLSLI BOM 없음
+- Binary asset hash raw와 일치
+- `.clang-format` project reference 제거
+- Raw-only output folders 제외
+- UserSolution Debug/Release build/run 확인 완료
+- ReferenceSolution Debug/Release build/run 확인 완료
+- sphere mesh, texture/lighting 확인 완료
+- `Wireframe`, `Draw Normals`, `Normal scale` 확인 완료
+
 ## Current Next Action
 
 1. Part2 Chapter05-08 code import 완료 상태를 정리합니다.
 2. 다음 import 범위는 Part3로 넘어가기 전에 브랜치/PR 마무리 기준을 확인합니다.
+
+

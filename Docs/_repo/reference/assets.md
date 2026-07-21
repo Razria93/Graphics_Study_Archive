@@ -1,11 +1,13 @@
 # Asset Notes
 
-캡처와 영상은 Part/Chapter 문서에서 먼저 기록하고, 실제 파일이 필요할 때 `Docs/_assets/` 아래에 둡니다.
+캡처와 영상은 Part/Chapter 문서에서 먼저 기록하고, 실제 파일이나 링크 기록이 필요할 때 `Docs/_assets/` 아래에 둡니다.
+
+세부 기준은 [Screenshot and Video Workflow](../workflow/documentation/screenshot-video-workflow.md)를 따릅니다.
 
 ## 권장 위치
 
 - 캡처: `Docs/_assets/captures/{Part_Chapter}/{example_or_topic}.png`
-- 영상: `Docs/_assets/videos/{Part_Chapter}/{example_or_topic}.mp4`
+- 영상 기록: `Docs/_assets/videos/{Part_Chapter}/{example_or_topic}.md`
 
 ## 예시
 
@@ -14,7 +16,7 @@
 - `Docs/_assets/captures/Part2_Chapter04/depth_buffer.png`
 - `Docs/_assets/captures/Part3_Chapter10-13/pbr_models.png`
 - `Docs/_assets/captures/Part4_Chapter14-20/compute_blur.png`
-- `Docs/_assets/videos/Part4_Chapter14-20/particle_system.mp4`
+- `Docs/_assets/videos/Part4_Chapter14-20/particle_system.md`
 - `Docs/_assets/captures/Portfolio_RayTracer/portfolio_raytracer_final.png`
 
 ## 공개 전 확인

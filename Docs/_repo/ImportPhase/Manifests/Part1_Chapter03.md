@@ -1,5 +1,9 @@
 # Import Manifest: Part1_Chapter03
 
+> 이 문서는 import 당시 포함/제외 판단 기록입니다.
+> 최신 build/run/capture 상태의 기준 문서가 아닙니다.
+
+
 이 문서는 `C:\ComputerGraphics\Part1_Chapter03` raw/reference 자료를 `C:\Graphics_Study_Archive\Part1_Chapter03` archive 폴더로 step별 선별 정리하기 위한 manifest입니다.
 
 ## Source / Target
@@ -110,3 +114,4 @@ Step별로 아래 파일 유형만 선별 반영합니다.
 
 1. Step14 raw `Render()`가 비어 있던 의도와 강의 맥락은 추후 확인합니다.
 2. Part1 Ch03 전체 capture는 사용자 촬영 단계에서 진행합니다.
+

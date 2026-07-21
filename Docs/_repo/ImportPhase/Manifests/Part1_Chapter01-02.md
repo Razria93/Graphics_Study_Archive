@@ -1,5 +1,9 @@
 # Import Manifest: Part1_Chapter01-02
 
+> 이 문서는 import 당시 포함/제외 판단 기록입니다.
+> 최신 build/run/capture 상태의 기준 문서가 아닙니다.
+
+
 이 문서는 `C:\ComputerGraphics\Part1_Chapter01-02` raw/reference 자료를 `C:\Graphics_Study_Archive\Part1_Chapter01-02` archive 폴더로 선별 정리하기 위한 manifest입니다.
 
 `01_DX11InitAndImGui`와 `02_Bloom`은 manifest 기준으로 code/project files를 선별 반영했습니다. `02_Bloom`의 기본 입력 이미지 1개는 private archive 실행 확인용으로 반영했고, raw 결과 이미지는 생성 경로 확인 전까지 복사하지 않습니다.
@@ -105,6 +109,8 @@
 ## Next action
 
 1. `01_DX11InitAndImGui`와 `02_Bloom`을 Visual Studio에서 `Debug x64`로 빌드할 수 있는지 확인합니다.
-2. 빌드/실행 결과를 [build-guide.md](../tracking/build-guide.md)에 기록합니다.
+2. 빌드/실행 결과를 [build-guide.md](../BuildRunVerificationMatrix.md)에 기록합니다.
 3. `02_Bloom` raw image assets은 출처/라이선스 확인 전까지 `검토 필요`로 둡니다.
-4. 직접 build/run 전까지 [build-guide.md](../tracking/build-guide.md)의 상태는 `미확인`으로 유지합니다.
+4. 직접 build/run 전까지 [build-guide.md](../BuildRunVerificationMatrix.md)의 상태는 `미확인`으로 유지합니다.
+
+

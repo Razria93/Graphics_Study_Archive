@@ -1,5 +1,9 @@
 # Import Manifest: Part2 Chapter04
 
+> 이 문서는 import 당시 포함/제외 판단 기록입니다.
+> 최신 build/run/capture 상태의 기준 문서가 아닙니다.
+
+
 ## Source / Target
 
 - Source: `C:\ComputerGraphics\Part2_Chapter04`
@@ -60,3 +64,4 @@ Step별로 아래 파일만 선별 반영합니다.
 1. Part2 Chapter04 전체 import 상태를 정리합니다.
 2. 다음 Part2 범위의 raw 구조와 import 후보를 확인합니다.
 3. capture/video는 사용자 촬영 단계에서 별도로 기록합니다.
+
