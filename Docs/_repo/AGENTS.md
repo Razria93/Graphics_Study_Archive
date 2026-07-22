@@ -14,5 +14,5 @@
 ## 금지사항
 
 - 새 documentation policy를 `_repo` 아래에 추가하지 않는다.
-- import phase 기록을 `_repo` 아래에 다시 만들지 않는다.
+- import history 기록을 `_repo` 아래에 다시 만들지 않는다.
 - 예제 설명, Topic, Verification, Demo, WorkLog, Publication 정본을 `_repo` 아래에 두지 않는다.

@@ -16,7 +16,7 @@
 | --- | --- | --- | --- |
 | 1 | 정책 이름과 GitHub workflow 정리 | 완료 | `07_Policies` 정책 파일명과 승인 흐름을 정리한다. |
 | 2 | `98_Tools/templates` 실사용 연결 정리 | 완료 | 실제 작업 단계에서 쓰는 템플릿만 남기고 책임을 명확히 한다. |
-| 3 | `ImportPhase`를 `ImportHistory`로 변경 | 대기 | import가 현재 단계가 아니라 과거 기록임을 이름에 반영한다. |
+| 3 | legacy import 기록 명칭 정리 | 완료 | import가 현재 단계가 아니라 과거 기록임을 이름에 반영한다. |
 | 4 | `_repo` 내부 안내 제거 | 대기 | 고유 정본이 없는 `_repo` 문서를 정책, tools, legacy, index로 흡수한다. |
 | 5 | `local/` inventory 작성 | 대기 | tracked Docs로 승격할 후보와 폐기/유지 대상을 구분한다. |
 | 6 | 문서 용어 통일 | 대기 | 루트 코드 폴더, Legacy 문서, Legacy PartDocs, local-only 작업장 용어를 통일한다. |
@@ -43,8 +43,8 @@
 - 완료: 정책 이름과 GitHub workflow 정리
 - 완료: `98_Tools/templates` 실사용 연결 정리
 - 완료: WorkLog 생성 흔적 정리
-- 다음 작업: `ImportPhase`를 `ImportHistory`로 변경
+- 다음 작업: `_repo` 내부 안내 제거
 
 ## 다음 작업 기준
 
-다음 작업은 `Docs/99_Legacy/ImportPhase` 계열을 `ImportHistory`로 바꾸고 관련 링크와 표현을 갱신하는 것이다. 이때 `ImportPhase`를 현재 진행 중 단계처럼 표현한 문구는 과거 import 기록으로 고친다.
+다음 작업은 `_repo` 내부 안내를 제거하고 고유 정본이 없는 문서를 `Docs/07_Policies`, `Docs/98_Tools`, `Docs/99_Legacy`, `Docs/00_Index` 기준으로 흡수하는 것이다. 먼저 `_repo` 참조를 검색하고, 남길 정보와 삭제할 정보를 구분한다.

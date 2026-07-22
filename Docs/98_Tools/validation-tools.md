@@ -14,7 +14,7 @@
 | --- | --- | --- |
 | 공백 검사 | trailing whitespace, EOF 문제 확인 | `git diff --check` |
 | 문체 검사 | 존댓말, 대화체, draft 문구 확인 | `Select-String` 또는 `rg` |
-| stale path 검사 | 오래된 `_repo/workflow`, `_repo/ImportPhase`, `Docs/Part*` 정본 경로 확인 | `rg` |
+| stale path 검사 | 오래된 `_repo/workflow`, legacy import 기록의 이전 경로, `Docs/Part*` 정본 경로 확인 | `rg` |
 | 정책 링크 검사 | rename된 정책 파일명과 Index 링크 확인 | `rg` |
 | stage 검사 | 커밋 대상 파일 범위 확인 | `git diff --cached --stat` |
 

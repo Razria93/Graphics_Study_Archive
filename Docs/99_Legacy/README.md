@@ -1,6 +1,6 @@
 # Legacy
 
-이 폴더는 import 기록, 이전 workflow, 기존 Part 문서 같은 과거 구조를 둔다. 새 정본 문서를 작성하지 않는다.
+이 폴더는 과거 import 기록, 이전 workflow, 기존 Part 문서 같은 legacy 구조를 둔다. 새 정본 문서를 작성하지 않는다.
 
 ## 책임
 
@@ -8,9 +8,9 @@
 - 다른 산출물의 원문을 복사하지 않고 링크로 연결한다.
 - 직접 확인하지 않은 상태는 미확인으로 기록한다.
 
-## 예정 항목
+## 항목
 
-- `ImportPhase/`
+- `ImportHistory/`
 - `PartDocs/`
 - `raw-to-archive-map.md`
 
@@ -18,4 +18,4 @@
 
 - 평서형 현재형을 사용한다.
 - 상세 정책은 Docs/07_Policies를 기준으로 한다.
-- 오래된 import-stage 문서는 Docs/99_Legacy를 기준으로 참조한다.
+- 오래된 import 기록 문서는 `Docs/99_Legacy/ImportHistory`를 기준으로 참조한다.

@@ -23,7 +23,7 @@ code 확인
 | 단계 | 참고 위치 | 저장 위치 |
 | --- | --- | --- |
 | 코드 확인 | root `Part*_Chapter*`, `Portfolio_RayTracer` | `local/mini-plans` |
-| 기존 문서 확인 | `Docs/99_Legacy/PartDocs`, `Docs/99_Legacy/ImportPhase` | `local/study-review` |
+| 기존 문서 확인 | `Docs/99_Legacy/PartDocs`, `Docs/99_Legacy/ImportHistory` | `local/study-review` |
 | 예제 설명 | code, local review | `Docs/01_Examples` |
 | 개념 설명 | examples, code, reference | `Docs/02_Topics` |
 | 검증 | solution, executable, assets | `Docs/03_Verification` |
