@@ -61,7 +61,13 @@ local/
   publication/
   github/
     draft/
+      issues/
+      prs/
+      comments/
     public/
+      issues/
+      prs/
+      comments/
     snapshots/
 ```
 

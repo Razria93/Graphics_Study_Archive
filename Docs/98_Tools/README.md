@@ -4,18 +4,23 @@
 
 ## 책임
 
-- 이 폴더의 책임에 맞는 문서만 둔다.
-- 다른 산출물의 원문을 복사하지 않고 링크로 연결한다.
-- 직접 확인하지 않은 상태는 미확인으로 기록한다.
+- tracked Docs 작성에 사용하는 template을 보관한다.
+- local-only validator와 GitHub body 검수 기준을 설명한다.
+- 세션 문제 해결 문서를 둔다.
+- 실제 작업 초안이나 게시 본문은 이 폴더에 두지 않는다.
 
-## 예정 항목
+## 문서 목록
 
-- `templates/`
-- `validation-tools.md`
-- `session-troubleshooting.md`
+- [Validation Tools](validation-tools.md)
+- [Session Troubleshooting](session-troubleshooting.md)
+- [Templates](templates/)
+
+## local tools 기준
+
+`local/tools`는 Git에 올리지 않는 실험용 도구 위치다. 반복 사용할 가치가 있고 민감 정보가 없으면 `Docs/98_Tools` 문서로 사용법을 정리한 뒤 별도 tracked script로 승격한다.
 
 ## 작성 기준
 
 - 평서형 현재형을 사용한다.
-- 상세 정책은 Docs/07_Policies를 기준으로 한다.
-- 오래된 import-stage 문서는 Docs/99_Legacy를 기준으로 참조한다.
+- 정책 원문은 `Docs/07_Policies`에 둔다.
+- legacy import 기록은 `Docs/99_Legacy`에 둔다.
