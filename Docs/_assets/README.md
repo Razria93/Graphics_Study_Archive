@@ -1,21 +1,25 @@
 # Assets
 
-이 폴더는 검토된 capture/image/video reference를 둔다. raw capture 후보는 먼저 `local/`에 둔다.
+이 폴더는 검토된 capture, video, diagram reference를 둔다. raw capture 후보와 게시 전 검토 자료는 먼저 `local/`에 둔다.
 
 ## 책임
 
-- 이 폴더의 책임에 맞는 문서만 둔다.
-- 다른 산출물의 원문을 복사하지 않고 링크로 연결한다.
-- 직접 확인하지 않은 상태는 미확인으로 기록한다.
+- 검토된 screenshot, video reference, diagram만 둔다.
+- evidence 파일은 `Docs/04_Demos`에서 설명하고 이 폴더에서는 파일 위치와 용도만 관리한다.
+- build/run 상태는 `Docs/03_Verification`으로 링크한다.
+- public 후보 판단은 `Docs/06_Publication`으로 분리한다.
 
-## 예정 항목
+## 폴더 역할
 
-- `captures/`
-- `videos/`
-- `diagrams/`
+| 폴더 | 역할 |
+| --- | --- |
+| [captures](captures/README.md) | screenshot evidence |
+| [videos](videos/README.md) | video evidence 또는 video link reference |
+| [diagrams](diagrams/README.md) | 직접 만든 diagram 또는 설명용 이미지 |
 
-## 작성 기준
+## 운영 기준
 
-- 평서형 현재형을 사용한다.
-- 상세 정책은 Docs/07_Policies를 기준으로 한다.
-- 오래된 import-stage 문서는 Docs/99_Legacy를 기준으로 참조한다.
+- 강의 화면 캡처, 유료 자료, 출처 불명 asset은 이 폴더에 두지 않는다.
+- 파일명은 Part/Chapter, 예제 또는 Topic이 드러나게 작성한다.
+- 큰 영상 파일은 repo에 직접 추가하기 전에 저장 방식을 검토한다.
+- 검토하지 않은 raw 파일은 `local/`에 둔다.
