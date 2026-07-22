@@ -9,7 +9,7 @@
 - Primary raw source: `C:\ComputerGraphics\Part3_Chapter10_13`
 - Reference-only raw source: `C:\ComputerGraphics\Part3_Chapter10_13_2`
 - Archive target: `Part3_Chapter10-13`
-- Docs target: `Docs/Part3_Chapter10-13`
+- Legacy docs target: `Docs/99_Legacy/PartDocs/Part3_Chapter10-13`
 - Branch: `archive/part3`
 - Import status: Step1-Step5, 11-Step1-Step5, 12-Step1-Step2, 13-Step1, 13-Step2 PipelineStateObject, 13-Step2 Shadow, 13-Step3, 13-Step4, 13-Step5, 13-Step6, 13-Step7, and 13-Step8 imported
 - Build/run status: Step1-Step5, 11-Step1-Step5, 12-Step1-Step2, 13-Step1, 13-Step2 PipelineStateObject, 13-Step2 Shadow, 13-Step3, 13-Step4, 13-Step5, 13-Step6, 13-Step7, and 13-Step8 성공

@@ -13,8 +13,8 @@
   - `C:\ComputerGraphics\OriginalExamples\Part4_HongLabGraphics`
 - Archive target:
   - `Part4_Chapter14-20`
-- Docs target:
-  - `Docs/Part4_Chapter14-20`
+- Legacy docs target:
+  - `Docs/99_Legacy/PartDocs/Part4_Chapter14-20`
 - Branch: `archive/part4`
 - Import status: 반영 완료
 - Build/run status: 성공
@@ -127,7 +127,7 @@ Part4_HongLabGraphics/
 - `Ex1401_Basic`만 분리하려면 `main.cpp`, `.vcxproj`, `.filters`에서 다른 예제 참조를 제거해야 하므로 raw와 archive 차이가 커집니다.
 - Part4는 후속 예제들이 shared infrastructure를 많이 재사용하므로, 초기에 project를 잘라내면 이후 예제 import마다 project를 다시 크게 수정할 가능성이 높습니다.
 
-따라서 1차 code import에서는 단일 project를 유지하고, 실행은 raw와 동일하게 command-line argument로 예제를 선택합니다. 예제별 문서와 status는 `Docs/Part4_Chapter14-20/<ExampleName>/` 아래에 분리합니다.
+따라서 1차 code import에서는 단일 project를 유지하고, 실행은 raw와 동일하게 command-line argument로 예제를 선택합니다. 예제별 문서와 status는 `Docs/99_Legacy/PartDocs/Part4_Chapter14-20/<ExampleName>/` 아래에 분리합니다.
 
 Part4 실행 확인 규칙:
 

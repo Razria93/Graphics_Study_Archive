@@ -12,7 +12,7 @@
 | --- | --- |
 | Source | `C:\ComputerGraphics\Part1_Chapter03` |
 | Target | `Part1_Chapter03` |
-| Docs target | `Docs/Part1_Chapter03` |
+| Legacy docs target | `Docs/99_Legacy/PartDocs/Part1_Chapter03` |
 | Import status | Step4-14 반영 |
 | Public readiness | 검토 필요 |
 | Build/run status | Step4-14 Debug/Release build/run 성공 |

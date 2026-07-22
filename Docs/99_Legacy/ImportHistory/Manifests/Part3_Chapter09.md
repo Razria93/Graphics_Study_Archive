@@ -8,7 +8,7 @@
 
 - Source: `C:\ComputerGraphics\Part3_Chapter09`
 - Target: `Part3_Chapter09`
-- Docs target: `Docs/Part3_Chapter09`
+- Legacy docs target: `Docs/99_Legacy/PartDocs/Part3_Chapter09`
 - Scope: user interaction, first-person camera, mouse picking, ray collision, quaternion/trackball controls
 - Import status: Step1-Step6 imported
 - Build/run status: Step1-Step6 성공
