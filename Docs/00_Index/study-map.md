@@ -6,14 +6,14 @@
 
 | 코드 폴더 | 문서화 상태 | 주 문서 위치 | 비고 |
 | --- | --- | --- | --- |
-| `Part1_Chapter01-02` | 예정 | `Docs/01_Examples/Part1_Chapter01-02` | 기초 수학, image/ray 기반 예제 |
-| `Part1_Chapter03` | 예정 | `Docs/01_Examples/Part1_Chapter03` | ray tracing 기초 확장 |
-| `Part2_Chapter04` | 예정 | `Docs/01_Examples/Part2_Chapter04` | rasterization 단계 |
-| `Part2_Chapter05-08` | 예정 | `Docs/01_Examples/Part2_Chapter05-08` | mesh, texture, lighting 기초 |
-| `Part3_Chapter09` | 예정 | `Docs/01_Examples/Part3_Chapter09` | user interaction, camera, scene interaction |
-| `Part3_Chapter10-13` | 예정 | `Docs/01_Examples/Part3_Chapter10-13` | shadow, normal mapping, PBR/IBL 후보 |
-| `Part4_Chapter14-20` | 예정 | `Docs/01_Examples/Part4_Chapter14-20` | compute, simulation, advanced graphics 후보 |
-| `Portfolio_RayTracer` | 예정 | `Docs/01_Examples/Portfolio_RayTracer` | Part1 ray tracing 확장 대표 작업물 |
+| `Part1_Chapter01-02` | 골격 작성 | `Docs/01_Examples/Part1_Chapter01-02` | 기초 수학, image/ray 기반 예제 |
+| `Part1_Chapter03` | 골격 작성 | `Docs/01_Examples/Part1_Chapter03` | ray tracing 기초 확장 |
+| `Part2_Chapter04` | 골격 작성 | `Docs/01_Examples/Part2_Chapter04` | rasterization 단계 |
+| `Part2_Chapter05-08` | 골격 작성 | `Docs/01_Examples/Part2_Chapter05-08` | mesh, texture, lighting 기초 |
+| `Part3_Chapter09` | 골격 작성 | `Docs/01_Examples/Part3_Chapter09` | user interaction, camera, scene interaction |
+| `Part3_Chapter10-13` | 골격 작성 | `Docs/01_Examples/Part3_Chapter10-13` | shadow, normal mapping, PBR/IBL 후보 |
+| `Part4_Chapter14-20` | 골격 작성 | `Docs/01_Examples/Part4_Chapter14-20` | compute, simulation, advanced graphics 후보 |
+| `Portfolio_RayTracer` | 골격 작성 | `Docs/01_Examples/Portfolio_RayTracer` | Part1 ray tracing 확장 대표 작업물 |
 
 ## 산출물 연결 기준
 

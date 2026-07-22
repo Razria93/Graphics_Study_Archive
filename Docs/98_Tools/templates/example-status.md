@@ -2,33 +2,34 @@
 
 ## Source
 
-- Raw reference:
-- Archive path:
-- Related raw docs:
+- Code path:
+- Legacy docs:
+- Raw/reference docs:
 
 ## Progress
 
 | 항목 | 상태 | 메모 |
 | --- | --- | --- |
-| Code/document split | 미확인 |  |
+| Code review | 미확인 |  |
+| Legacy docs review | 미확인 |  |
+| Topic link | 미확인 |  |
 | Build/run | 미확인 |  |
-| Raw/original diff review | 미확인 |  |
-| Refactor review | 미확인 |  |
-| Ready for capture | 아니오 |  |
+| Capture | 미확인 |  |
+| Public readiness | 검토 필요 |  |
 
-## User memo sources
+## Verification
 
-- Source comments:
-- Raw md notes:
-- Missing images:
+- Debug x64: 미확인
+- Release x64: 미확인
+- Run: 미확인
+- Known issue:
 
-## Local-only docs
+## Local-only sources
 
-- `local/PartX_ChapterYY/ExampleName/source-comments.md`
-- `local/PartX_ChapterYY/ExampleName/raw-md-notes.md`
-- `local/PartX_ChapterYY/ExampleName/memo-review.md`
-- `local/PartX_ChapterYY/ExampleName/final-doc-plan.md`
+- `local/source-comments/...`
+- `local/study-review/...`
+- `local/mini-plans/...`
 
-## Next action
+## Next Action
 
 -

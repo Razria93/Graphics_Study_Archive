@@ -2,36 +2,43 @@
 
 ## 목적
 
-## 핵심 키워드
+이 예제가 보여주는 핵심 결과를 짧게 설명한다.
 
--
+## 관련 Topic
 
-## 관련 이론 / 원리
+- Topic: `Docs/02_Topics/...`
+- 보조 Topic:
 
-## 핵심 코드 흐름
+## 코드 위치
 
-짧은 코드 조각과 함께 구현 흐름을 설명합니다. 전체 파일을 복제하지 않고, 실행 흐름을 이해하는 데 필요한 부분만 발췌합니다.
+- 코드 폴더:
+- solution:
+- 주요 source/header:
+- 주요 shader/asset:
 
-```cpp
-// 핵심 API 호출 또는 구현 흐름
-```
-
-## 구현 순서
+## 구현 흐름
 
 1.
+2.
+3.
 
 ## 실행 결과
 
 - Build/run status: 미확인
-- Capture status: 예정
+- Capture status: 미확인
+- Demo evidence:
 
-## Troubleshooting / 헷갈렸던 점
+## Known Issue
 
-## 공개 가능성
+- 없음 또는 미확인
+
+## Public 후보 여부
 
 - 상태: 검토 필요
 - 근거:
 
 ## 관련 문서
 
-- [Example status](status.md)
+- Verification:
+- Demo:
+- WorkLog:
