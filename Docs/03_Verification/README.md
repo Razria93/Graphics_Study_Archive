@@ -1,22 +1,50 @@
 # Verification
 
-이 폴더는 build, run, capture, known issue 최신 상태의 정본을 둔다.
+이 폴더는 build, run, capture, known issue의 최신 상태를 기록하는 정본 위치다. 문서 작성 여부와 실제 검증 여부를 분리해서 기록한다.
 
 ## 책임
 
-- 이 폴더의 책임에 맞는 문서만 둔다.
-- 다른 산출물의 원문을 복사하지 않고 링크로 연결한다.
-- 직접 확인하지 않은 상태는 미확인으로 기록한다.
+- 전체 build/run 상태는 `build-run-matrix.md`에 기록한다.
+- capture 상태는 `capture-matrix.md`와 `Docs/04_Demos`로 연결한다.
+- 실패, 보류, 미확인 항목은 `known-issues.md`에 남긴다.
+- 예제별 상세 검증은 Part/Chapter 하위 `verification-index.md`에서 시작한다.
+- legacy import 기록과 WorkLog는 참고 자료이며 최신 검증 정본이 아니다.
 
-## 예정 항목
+## 문서 목록
 
-- `build-run-matrix.md`
-- `capture-matrix.md`
-- `known-issues.md`
-- Part별 verification 문서
+| 문서 | 책임 |
+| --- | --- |
+| [Build Run Matrix](build-run-matrix.md) | Part/Chapter 단위 build/run 최신 상태 |
+| [Capture Matrix](capture-matrix.md) | capture evidence 상태 요약 |
+| [Known Issues](known-issues.md) | 실패, 보류, 미확인 사유 목록 |
+
+## Part/Chapter Verification
+
+| 범위 | 문서 위치 | 상태 |
+| --- | --- | --- |
+| Part1 Chapter01-02 | [Part1_Chapter01-02](Part1_Chapter01-02/verification-index.md) | 골격 작성 |
+| Part1 Chapter03 | [Part1_Chapter03](Part1_Chapter03/verification-index.md) | 골격 작성 |
+| Part2 Chapter04 | [Part2_Chapter04](Part2_Chapter04/verification-index.md) | 골격 작성 |
+| Part2 Chapter05-08 | [Part2_Chapter05-08](Part2_Chapter05-08/verification-index.md) | 골격 작성 |
+| Part3 Chapter09 | [Part3_Chapter09](Part3_Chapter09/verification-index.md) | 골격 작성 |
+| Part3 Chapter10-13 | [Part3_Chapter10-13](Part3_Chapter10-13/verification-index.md) | 골격 작성 |
+| Part4 Chapter14-20 | [Part4_Chapter14-20](Part4_Chapter14-20/verification-index.md) | 골격 작성 |
+| Portfolio RayTracer | [Portfolio_RayTracer](Portfolio_RayTracer/verification-index.md) | 골격 작성 |
+
+## 상태값
+
+| 상태 | 의미 |
+| --- | --- |
+| `미확인` | 직접 build/run/capture하지 않음 |
+| `성공` | 직접 확인한 성공 상태 |
+| `실패` | 직접 확인한 실패 상태 |
+| `부분 성공` | 실행 가능하지만 known issue가 남음 |
+| `보류` | 의도적으로 확인을 미룸 |
+| `제외` | 검증 대상에서 제외함 |
 
 ## 작성 기준
 
-- 평서형 현재형을 사용한다.
-- 상세 정책은 Docs/07_Policies를 기준으로 한다.
-- 오래된 import-stage 문서는 Docs/99_Legacy를 기준으로 참조한다.
+- Debug x64를 기본 검증 기준으로 둔다.
+- 대표 예제만 필요하면 Release x64를 확인한다.
+- 직접 확인하지 않은 항목은 `미확인`으로 둔다.
+- 실패 상태는 숨기지 않고 known issue로 남긴다.
