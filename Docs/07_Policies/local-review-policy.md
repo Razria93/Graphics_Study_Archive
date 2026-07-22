@@ -40,6 +40,8 @@ local/
 
 현재 `local/Part*_Chapter*`, `local/pr`, `local/prompts`는 이전 import/documentation 흐름에서 생긴 legacy local cache로 본다.
 
+현재 legacy local cache의 파일 수와 승격 후보는 `Docs/99_Legacy/local-inventory.md`를 기준으로 확인한다.
+
 처리 기준:
 
 - 기존 파일을 즉시 이동하지 않는다.

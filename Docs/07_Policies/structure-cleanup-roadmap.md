@@ -18,7 +18,7 @@
 | 2 | `98_Tools/templates` 실사용 연결 정리 | 완료 | 실제 작업 단계에서 쓰는 템플릿만 남기고 책임을 명확히 한다. |
 | 3 | legacy import 기록 명칭 정리 | 완료 | import가 현재 단계가 아니라 과거 기록임을 이름에 반영한다. |
 | 4 | `_repo` 내부 안내 제거 | 완료 | 고유 정본이 없는 `_repo` 문서를 정책, tools, legacy, index로 흡수한다. |
-| 5 | `local/` inventory 작성 | 대기 | tracked Docs로 승격할 후보와 폐기/유지 대상을 구분한다. |
+| 5 | `local/` inventory 작성 | 완료 | tracked Docs로 승격할 후보와 폐기/유지 대상을 구분한다. |
 | 6 | 문서 용어 통일 | 대기 | 루트 코드 폴더, Legacy 문서, Legacy PartDocs, local-only 작업장 용어를 통일한다. |
 | 7 | 문서 구조 최종 검수 | 대기 | 링크, 참조, 문체, 폴더 책임, stale 문서를 최종 점검한다. |
 
@@ -43,8 +43,8 @@
 - 완료: 정책 이름과 GitHub workflow 정리
 - 완료: `98_Tools/templates` 실사용 연결 정리
 - 완료: WorkLog 생성 흔적 정리
-- 다음 작업: `local/` inventory 작성
+- 다음 작업: 문서 용어 통일
 
 ## 다음 작업 기준
 
-다음 작업은 `local/` inventory를 작성하는 것이다. tracked Docs로 승격할 후보, local-only로 유지할 후보, 폐기 가능한 후보를 구분하고 실제 승격은 별도 승인 후 진행한다.
+다음 작업은 문서 용어 통일이다. 루트 코드 폴더, Legacy 문서, Legacy PartDocs, local-only 작업장, Demo evidence, GitHub draft 같은 반복 용어를 정의하고 상위 정책과 README를 먼저 맞춘다.
