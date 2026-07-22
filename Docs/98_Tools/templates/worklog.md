@@ -33,6 +33,9 @@
 - Issue:
 - PR:
 - Draft:
+- Public-ready:
+- Validator:
+- Posted:
 - Snapshot:
 
 ## Known Issue

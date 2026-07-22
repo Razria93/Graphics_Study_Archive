@@ -570,6 +570,22 @@ Get-OptionalMarkdownFiles -Path (Join-Path $PublicRoot "pr-comments") | ForEach-
 	Test-PrScreenshotComment -File $_
 }
 
+Get-OptionalMarkdownFiles -Path $PublicRoot -Recurse | ForEach-Object {
+	$RelativePath = (Get-RelativePath $_.FullName) -replace '\\', '/'
+	$Supported = (
+		$RelativePath -match '/prs/.+\.md$' -or
+		$RelativePath -match '/issues/topic/[^/]+\.md$' -or
+		$RelativePath -match '/issues/verification/[^/]+\.md$' -or
+		$RelativePath -match '/issues/plan-comments/plan_progress_summary_comment\.md$' -or
+		$RelativePath -match '/issues/plan-comments/[^/]+_worklog_comment\.md$' -or
+		$RelativePath -match '/pr-comments/[^/]+\.md$'
+	)
+
+	if (-not $Supported) {
+		Add-Warning $RelativePath "unsupported GitHub public body path; validator did not apply a body-specific schema"
+	}
+}
+
 Test-Templates
 
 if ($Warnings.Count -gt 0) {

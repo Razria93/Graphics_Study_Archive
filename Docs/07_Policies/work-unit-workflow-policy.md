@@ -75,7 +75,8 @@ local/
 
 - code/raw 조사 중 나온 원문 메모는 `local/`에 둔다.
 - GitHub 게시 전 본문은 `local/github/draft`에 둔다.
-- 게시 후 보존 사본은 `local/github/public` 또는 `local/github/snapshots`에 둔다.
+- 게시 직전 최종 후보는 `local/github/public`에 둔다.
+- 게시 후 실제 게시본과 리뷰 대응 사본은 `local/github/snapshots`에 둔다.
 - redaction, 공개 제외 판단 근거, 개인 메모는 tracked Docs에 두지 않는다.
 
 

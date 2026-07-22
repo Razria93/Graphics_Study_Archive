@@ -28,6 +28,28 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 - screenshot Markdown이 `Docs/_assets/captures`를 가리키는지 확인한다.
 - template에 특정 Issue 번호가 하드코딩되어 있지 않은지 확인한다.
 
+## 지원 범위
+
+현재 validator는 `local/github/public` 아래의 다음 Markdown을 검사한다.
+
+| 위치 | 검사 |
+| --- | --- |
+| `prs/**/*.md` | PR body |
+| `issues/topic/*.md` | Topic issue |
+| `issues/verification/*.md` | Verification issue |
+| `issues/plan-comments/plan_progress_summary_comment.md` | plan progress comment |
+| `issues/plan-comments/*_worklog_comment.md` | WorkLog comment |
+| `pr-comments/*.md` | PR screenshot comment |
+
+## 검사하지 않는 것
+
+- `draft`에서 `public`으로 복사했는지 여부
+- GitHub 게시 승인 여부
+- 실제 `gh` 게시 여부
+- `local/github/snapshots` 생성 여부
+- `Docs/05_WorkLogs`와 `issue-pr-index.md` 동기화 여부
+- build/run/capture 실제 성공 여부
+
 ## 주의
 
 - validator 통과는 GitHub 게시 승인이 아니다.

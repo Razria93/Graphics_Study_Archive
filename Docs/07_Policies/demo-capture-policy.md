@@ -14,6 +14,9 @@ Demo 계획과 evidence 설명의 정본은 `Docs/04_Demos`에 둔다. 검토된
 - capture가 어떤 예제와 Topic을 보여주는지 함께 기록한다.
 - 실행을 직접 확인하지 않은 demo는 `미확인`으로 둔다.
 - build/run 상태가 `성공` 또는 `부분 성공`일 때만 evidence를 `확보` 상태로 둔다.
+- screenshot evidence는 `Docs/_assets/captures`에 둔다.
+- video evidence는 `Docs/_assets/videos`에 둔다.
+- diagram 또는 설명용 그림은 `Docs/_assets/diagrams`에 둔다.
 
 ## 파일 기준
 

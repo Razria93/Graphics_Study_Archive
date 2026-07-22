@@ -5,10 +5,10 @@
 ## 공통 운영 원칙
 
 - 작업 전 `git status --short --branch`를 확인한다.
-- 사용자가 명시적으로 요청하기 전에는 commit, push, PR, Issue 생성/수정을 하지 않는다.
+- 사용자가 명시적으로 요청하거나 현재 대화에서 커밋까지 승인한 작업 단위가 아니면 commit, push, PR, Issue 생성/수정을 하지 않는다.
 - root의 `Part*_Chapter*`와 `Portfolio_RayTracer` 폴더는 코드와 build 기준으로 유지한다.
 - 문서 용어는 `Docs/07_Policies/terminology-policy.md`를 따른다.
-- 문서 정본은 `Docs/01_Examples`부터 `Docs/07_Policies`까지의 산출물 축 구조를 기준으로 작성한다.
+- 문서 정본은 `Docs/00_Index`부터 `Docs/07_Policies`까지의 산출물 축 구조와 `Docs/98_Tools`, `Docs/99_Legacy` 책임 경계를 기준으로 작성한다.
 - 기존 `Docs/Part*` 문서는 정본으로 사용하지 않고 `Docs/99_Legacy/PartDocs`의 전환기 참고 자료로만 사용한다.
 - raw/reference repo의 내용은 필요한 부분만 읽고, Git에 추적되는 Docs/AGENTS 문서에는 직접 이해한 설명으로 재작성한다.
 - 강의 원본 영상, 슬라이드, 퀴즈, 정답, 유료 자료, 강의 화면 캡처, 문제/해설 전문은 archive/public 후보로 확정하지 않는다.
@@ -32,8 +32,9 @@
 
 ## AGENTS 계층 규칙
 
-- 작업 대상 폴더에 하위 `AGENTS.md`가 있으면 root `AGENTS.md`보다 하위 문서를 우선 적용한다.
-- 하위 `AGENTS.md`는 해당 폴더의 문서 책임, 금지사항, 검증 기준만 담는다.
+- 상위 공통 안전 규칙은 항상 유지한다.
+- 작업 대상 폴더에 하위 `AGENTS.md`가 있으면 해당 폴더 범위의 추가/제한 규칙으로 적용한다.
+- 하위 `AGENTS.md`와 상위 규칙이 직접 충돌하면 하위 문서를 우선하되, commit, push, PR, Issue, merge, rebase, 삭제 같은 안전 게이트는 완화하지 않는다.
 - 정책 원문은 `Docs/07_Policies`에 둔다.
 - import/history 원문은 `Docs/99_Legacy`에 둔다.
 - 에이전트는 파일 수정 전 해당 작업 범위의 README와 AGENTS를 먼저 확인한다.

@@ -38,7 +38,7 @@ local/
 
 ## 기존 local 구조 처리
 
-현재 `local/Part*_Chapter*`, `local/pr`, `local/prompts`는 이전 import/documentation 흐름에서 생긴 legacy local cache로 본다.
+현재 `local/Part*_Chapter*`, `local/pr`는 이전 import/documentation 흐름에서 생긴 legacy local cache로 본다.
 
 현재 legacy local cache의 파일 수와 승격 후보는 `Docs/99_Legacy/local-inventory.md`를 기준으로 확인한다.
 
@@ -47,7 +47,7 @@ local/
 - 기존 파일을 즉시 이동하지 않는다.
 - 새 Work Unit에서 다시 읽을 때 필요한 내용만 `local/study-review` 또는 정본 문서로 재작성한다.
 - 기존 `local/pr` 초안은 새 GitHub draft 구조로 복사하지 않고, 필요할 때 `local/github/draft` 형식으로 다시 작성한다.
-- 기존 `local/prompts`는 새 세션 기준을 만들 때만 참고하고, 정본은 tracked policy 또는 root/AGENTS 문서에 둔다.
+- 삭제한 `local/prompts`와 `local/tools` 원본은 `Docs/99_Legacy/local-inventory.md`의 폐기 기록으로만 확인한다.
 - legacy local cache는 정리 대상이지만, 삭제는 별도 요청이 있을 때만 진행한다.
 
 ## 단계별 사용
@@ -59,8 +59,8 @@ local/
 | 이해 정리 | `local/study-review/` | tracked Docs로 옮기기 전 재작성 메모 |
 | 공개 판단 | `local/publication/` | 후보, 제외 사유, redaction 근거 검토 |
 | GitHub 초안 | `local/github/draft/` | Issue/PR/comment 게시 전 초안 |
-| GitHub 게시 후보 | `local/github/public/` | 게시 직전 문체와 섹션 검수 대상 |
-| 게시 후 보존 | `local/github/snapshots/` | 게시 후 사본 또는 리뷰 대응 기록 |
+| GitHub 게시 후보 | `local/github/public/` | 게시 직전 최종 후보와 validator 검수 대상 |
+| 게시 후 보존 | `local/github/snapshots/` | 실제 게시본 사본과 리뷰 대응 기록 |
 
 ## 승격 기준
 

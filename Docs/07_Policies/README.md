@@ -17,6 +17,7 @@
 | [Docs Authoring Flow Policy](docs-authoring-flow-policy.md) | 산출물 축 문서 작성 순서 |
 | [Work Unit Workflow Policy](work-unit-workflow-policy.md) | Work Unit 전체 진행 흐름 |
 | [GitHub Workflow Policy](github-workflow-policy.md) | Issue, PR, gh, push/pull/rebase/merge 승인 흐름 |
+| [AI Collaboration Decisions](ai-collaboration-decisions.md) | AI 협업 운영 결정과 선택 이유 |
 | [Structure Cleanup Roadmap](structure-cleanup-roadmap.md) | 문서 구조 정리 진행 상태와 다음 작업 기준 |
 | [Verification Policy](verification-policy.md) | build/run/capture 검증 기준 |
 | [Demo Capture Policy](demo-capture-policy.md) | screenshot/video evidence 관리 기준 |
