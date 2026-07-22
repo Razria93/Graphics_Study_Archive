@@ -51,7 +51,7 @@ Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, tex
 
 ## 관련 운영 문서
 
-- [Part1 Chapter03 import manifest](../_repo/manifests/Part1_Chapter03.md)
-- [Chapter Start Checklist](../_repo/workflow/chapter-start-checklist.md)
-- [Migration Workflow](../_repo/workflow/migration-workflow.md)
-- [Migration Board](../_repo/tracking/migration-board.md)
+- [Part1 Chapter03 import manifest](../../ImportHistory/Manifests/Part1_Chapter03.md)
+- [Chapter Start Checklist](../../ImportHistory/03_ImportChecklist.md)
+- [Migration Workflow](../../ImportHistory/02_ImportWorkflow.md)
+- [Migration Board](../../workflow-readme.md)

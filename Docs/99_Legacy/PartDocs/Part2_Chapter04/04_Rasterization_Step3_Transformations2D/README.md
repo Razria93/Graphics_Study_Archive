@@ -69,4 +69,4 @@ this->indexBuffer = circle.indices;
 ## 관련 문서
 
 - [Status](status.md)
-- [Part2 Chapter04 manifest](../../_repo/manifests/Part2_Chapter04.md)
+- [Part2 Chapter04 manifest](../../../ImportHistory/Manifests/Part2_Chapter04.md)

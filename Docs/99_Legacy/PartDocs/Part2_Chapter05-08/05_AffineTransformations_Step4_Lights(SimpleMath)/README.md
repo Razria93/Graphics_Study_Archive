@@ -64,4 +64,4 @@ normal matrix는 translation 성분을 제거한 뒤 inverse transpose를 적용
 ## 관련 문서
 
 - [Status](status.md)
-- [Part2 Chapter05-08 manifest](../../_repo/manifests/Part2_Chapter05-08.md)
+- [Part2 Chapter05-08 manifest](../../../ImportHistory/Manifests/Part2_Chapter05-08.md)

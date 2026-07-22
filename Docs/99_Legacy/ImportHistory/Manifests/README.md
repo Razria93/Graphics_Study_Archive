@@ -2,7 +2,7 @@
 
 이 폴더는 import 당시 Part별 포함/제외 판단 기록을 보관합니다.
 
-이 문서들은 최신 build/run/capture 상태의 기준 문서가 아닙니다. 최신 검증 상태는 `Docs/_repo/BuildRunVerificationMatrix.md` 또는 각 예제 `status.md`를 기준으로 봅니다.
+이 문서들은 최신 build/run/capture 상태의 기준 문서가 아니다. 최신 검증 상태는 `Docs/03_Verification/build-run-matrix.md`를 기준으로 본다.
 
 ## Documents
 

@@ -50,7 +50,7 @@
 6. Build/run 확인
    - Visual Studio에서 `Debug x64`를 먼저 확인합니다.
    - 필요한 예제는 `Release x64`를 추가 확인합니다.
-   - 실패하면 실패 원인과 다음 조치를 `BuildRunVerificationMatrix.md` 또는 예제 `status.md`에 기록합니다.
+   - 실패하면 실패 원인과 다음 조치를 `Docs/03_Verification/build-run-matrix.md` 또는 예제 `status.md`에 기록한다.
    - Part4 `Examples` project는 단일 executable이므로 예제 이름의 `Ex` 뒤 4자리 숫자를 Visual Studio `Debugging > Command Arguments`에 넣어 실행합니다.
 
 7. Demo/capture 정리
@@ -61,7 +61,7 @@
 8. 상태 갱신
    - Part README와 예제 `status.md`를 필요한 범위에서 갱신합니다.
    - import 당시 포함/제외 판단은 manifest에 기록합니다.
-   - 최신 build/run/capture 상태는 `BuildRunVerificationMatrix.md` 또는 예제 `status.md`를 기준으로 합니다.
+   - 최신 build/run/capture 상태는 `Docs/03_Verification/build-run-matrix.md` 또는 예제 `status.md`를 기준으로 한다.
 
 ## Manifest 기본 양식
 

@@ -70,4 +70,4 @@ Blinn-Phong 방식에서는 반사 벡터 대신 halfway vector와 normal의 유
 ## 관련 문서
 
 - [Status](status.md)
-- [Part2 Chapter04 manifest](../../_repo/manifests/Part2_Chapter04.md)
+- [Part2 Chapter04 manifest](../../../ImportHistory/Manifests/Part2_Chapter04.md)

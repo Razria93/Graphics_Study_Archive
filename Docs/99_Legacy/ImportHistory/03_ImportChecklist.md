@@ -48,7 +48,7 @@
 | duplicate snapshot folder | primary source와 비교 후 reference-only 유지 | 해당 Part/Chapter manifest |
 | zip/raw asset archive | tracked archive 기준 아님 | asset note 또는 manifest |
 
-기준 source를 선택한 이유는 manifest에 남기고, 최신 build/run/capture 상태는 `Docs/_repo/BuildRunVerificationMatrix.md`에서 관리합니다.
+기준 source를 선택한 이유는 manifest에 남기고, 최신 build/run/capture 상태는 `Docs/03_Verification/build-run-matrix.md`에서 관리한다.
 
 ## 작업 전 결정
 

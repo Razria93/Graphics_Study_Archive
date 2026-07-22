@@ -17,7 +17,6 @@
 | [98_Tools](98_Tools/README.md) | validator, templates, troubleshooting |
 | [99_Legacy](99_Legacy/README.md) | import 기록과 이전 문서 구조 |
 | [_assets](_assets/README.md) | 검토된 capture/image/video reference |
-| [_repo](_repo/README.md) | repo 내부 agent 진입점 |
 
 ## 운영 원칙
 
@@ -26,3 +25,4 @@
 - 예제 설명, 검증, demo, 작업 기록, publication 판단은 각 산출물 축 폴더에 작성한다.
 - 정책은 `Docs/07_Policies`에만 둔다.
 - import 기록과 이전 workflow는 `Docs/99_Legacy`에 둔다.
+- repo 내부 운영 안내는 root `AGENTS.md`, `Docs/README.md`, `Docs/07_Policies`를 기준으로 한다.

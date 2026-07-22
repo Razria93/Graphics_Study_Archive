@@ -210,4 +210,4 @@ Build/run was verified by user for Debug/Release.
 
 1. Chapter09 import completion status is recorded in this manifest.
 2. Chapter10-13 primary/reference source decisions are maintained in `Part3_Chapter10-13.md`.
-3. 최신 build/run/capture 상태는 `Docs/_repo/BuildRunVerificationMatrix.md`에서 관리합니다.
+3. 최신 build/run/capture 상태는 `Docs/03_Verification/build-run-matrix.md`에서 관리한다.

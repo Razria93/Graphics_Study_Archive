@@ -27,7 +27,6 @@
 - `Docs/07_Policies`: 문서화, 검증, demo, GitHub 운영, 공개 정책 정본
 - `Docs/98_Tools`: validator, templates, troubleshooting 같은 도구 문서
 - `Docs/99_Legacy`: import 기록과 이전 문서 구조
-- `Docs/_repo`: repo 내부 agent 진입점과 최소 운영 안내
 - `local/`: mini plan, raw 검토 메모, GitHub draft/public 사본, 원본 캡처/영상 후보
 
 ## AGENTS 계층 규칙

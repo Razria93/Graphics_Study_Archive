@@ -68,4 +68,4 @@ rasterizer stage에 viewport를 적용해 이후 draw call이 지정된 영역�
 ## 관련 문서
 
 - [Status](status.md)
-- [Part2 Chapter05-08 manifest](../../_repo/manifests/Part2_Chapter05-08.md)
+- [Part2 Chapter05-08 manifest](../../../ImportHistory/Manifests/Part2_Chapter05-08.md)

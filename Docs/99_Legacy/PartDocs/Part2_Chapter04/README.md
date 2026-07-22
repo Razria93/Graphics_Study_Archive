@@ -28,5 +28,5 @@ Software rasterization 예제를 Step 단위로 정리하는 문서 공간입니
 
 ## Related Docs
 
-- [Import manifest](../_repo/manifests/Part2_Chapter04.md)
-- [Migration board](../_repo/tracking/migration-board.md)
+- [Import manifest](../../ImportHistory/Manifests/Part2_Chapter04.md)
+- [Migration board](../../workflow-readme.md)

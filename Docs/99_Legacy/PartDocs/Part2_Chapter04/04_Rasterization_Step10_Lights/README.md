@@ -80,4 +80,4 @@ spot light는 빛의 방향과 fragment 방향이 가까울수록 강해지며, 
 ## 관련 문서
 
 - [Status](status.md)
-- [Part2 Chapter04 manifest](../../_repo/manifests/Part2_Chapter04.md)
+- [Part2 Chapter04 manifest](../../../ImportHistory/Manifests/Part2_Chapter04.md)

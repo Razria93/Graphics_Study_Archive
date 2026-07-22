@@ -96,5 +96,5 @@ deviceContext->Unmap(canvasTexture, NULL);
 ## 관련 문서
 
 - [Example status](status.md)
-- [Part1 import manifest](../../_repo/manifests/Part1_Chapter01-02.md)
-- [Chapter Study 정리 방식](../../_repo/workflow/chapter-study-workflow.md)
+- [Part1 import manifest](../../../ImportHistory/Manifests/Part1_Chapter01-02.md)
+- [Chapter Study 정리 방식](../../../../07_Policies/docs-authoring-flow-policy.md)

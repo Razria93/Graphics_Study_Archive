@@ -72,4 +72,4 @@ swap chain back buffer를 새 크기에 맞게 재생성하고, render target과
 ## 관련 문서
 
 - [Status](status.md)
-- [Part2 Chapter05-08 manifest](../../_repo/manifests/Part2_Chapter05-08.md)
+- [Part2 Chapter05-08 manifest](../../../ImportHistory/Manifests/Part2_Chapter05-08.md)

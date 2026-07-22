@@ -1,4 +1,4 @@
-﻿# Part2 Chapter05-08
+# Part2 Chapter05-08
 
 D3D11 graphics pipeline에서 modeling과 shader toy로 넘어가는 예제들을 정리하는 문서 공간입니다.
 
@@ -57,8 +57,8 @@ D3D11 graphics pipeline에서 modeling과 shader toy로 넘어가는 예제들�
 
 ## Related Docs
 
-- [Import manifest](../_repo/manifests/Part2_Chapter05-08.md)
-- [Migration board](../_repo/tracking/migration-board.md)
+- [Import manifest](../../ImportHistory/Manifests/Part2_Chapter05-08.md)
+- [Migration board](../../workflow-readme.md)
 
 ## Recent Import Notes
 
@@ -79,4 +79,4 @@ D3D11 graphics pipeline에서 modeling과 shader toy로 넘어가는 예제들�
 | `08_ShaderToys_Step6_BloomEffect` | archive 반영 완료, Debug/Release 실행 성공 |
 | `08_ShaderToys_Step7_Shadertoy` | archive 반영 완료, Debug/Release 실행 성공 |
 
-Tracking note: [Part2 Step5 Sphere Tracking](../_repo/tracking/part2-step5-sphere.md)
+Tracking note: [Part2 Step5 Sphere Tracking](../../workflow-readme.md)

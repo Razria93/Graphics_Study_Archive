@@ -65,4 +65,4 @@ DirectXMath에서는 저장용 타입과 연산용 SIMD 타입을 구분합니�
 ## 관련 문서
 
 - [Status](status.md)
-- [Part2 Chapter05-08 manifest](../../_repo/manifests/Part2_Chapter05-08.md)
+- [Part2 Chapter05-08 manifest](../../../ImportHistory/Manifests/Part2_Chapter05-08.md)

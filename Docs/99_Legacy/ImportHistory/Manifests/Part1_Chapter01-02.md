@@ -109,8 +109,6 @@
 ## Next action
 
 1. `01_DX11InitAndImGui`와 `02_Bloom`을 Visual Studio에서 `Debug x64`로 빌드할 수 있는지 확인합니다.
-2. 빌드/실행 결과를 [build-guide.md](../BuildRunVerificationMatrix.md)에 기록합니다.
+2. 빌드/실행 결과를 `Docs/03_Verification/build-run-matrix.md`에 기록한다.
 3. `02_Bloom` raw image assets은 출처/라이선스 확인 전까지 `검토 필요`로 둡니다.
-4. 직접 build/run 전까지 [build-guide.md](../BuildRunVerificationMatrix.md)의 상태는 `미확인`으로 유지합니다.
-
-
+4. 직접 build/run 전까지 `Docs/03_Verification/build-run-matrix.md`의 상태는 `미확인`으로 유지한다.

@@ -85,6 +85,6 @@ Debug/Release 확인 시 같은 command argument가 설정되어 있는지 먼�
 
 ## 관련 문서
 
-- [Part4 Import Plan](../_repo/manifests/Part4_Chapter14-20.md)
-- [Raw to Archive Map](../_repo/reference/raw-to-archive-map.md)
-- [Import Integrity Checklist](../_repo/workflow/import-integrity-checklist.md)
+- [Part4 Import Plan](../../ImportHistory/Manifests/Part4_Chapter14-20.md)
+- [Raw to Archive Map](../../raw-to-archive-map.md)
+- [Import Integrity Checklist](../../ImportHistory/03_ImportChecklist.md)
