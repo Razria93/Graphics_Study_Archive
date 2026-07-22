@@ -17,6 +17,7 @@
 | `WU-Part3` | 예정 | 예정 | 없음 | [WU-Part3](WU-Part3.md) |  |
 | `WU-Part4` | 예정 | 예정 | 없음 | [WU-Part4](WU-Part4.md) |  |
 | `WU-Publication` | 예정 | 예정 | 없음 | [WU-Publication](WU-Publication.md) | public subset 확정 후 판단 |
+| `WU-StructureCleanup` | 예정 | 예정 | 없음 | [WU-StructureCleanup](WU-StructureCleanup.md) | 브랜치 push/PR 여부 사용자 승인 필요 |
 
 ## 상태값
 

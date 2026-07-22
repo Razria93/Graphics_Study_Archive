@@ -9,6 +9,7 @@
 | `WU-Part3` | `Part3_Chapter09`, `Part3_Chapter10-13` | Interaction, PBR/IBL, Shadows | 예정 | demo 우선순위 높음 |
 | `WU-Part4` | `Part4_Chapter14-20` | Advanced graphics, compute/simulation 후보 | 예정 | 구조 확인 필요 |
 | `WU-Publication` | public subset 후보 정리 | Publication, redaction, excluded material | 예정 | public repo 생성 전 수행 |
+| `WU-StructureCleanup` | 산출물 축 문서 구조 정리 | Index, Examples, Topics, Verification, Demos, WorkLogs, Publication, Policies, Tools, Legacy | 마감 | 브랜치 마감 검토 단계 |
 
 ## 상태값
 

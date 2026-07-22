@@ -21,6 +21,7 @@
 | [WU Part3](WU-Part3.md) | Part3 interaction/PBR/shadow 작업 요약 |
 | [WU Part4](WU-Part4.md) | Part4 advanced graphics 작업 요약 |
 | [WU Publication](WU-Publication.md) | public subset 후보 정리 작업 요약 |
+| [WU Structure Cleanup](WU-StructureCleanup.md) | 산출물 축 문서 구조 정리 브랜치 마감 요약 |
 
 ## WorkLog에 남길 것
 
