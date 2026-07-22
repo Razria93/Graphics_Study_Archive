@@ -8,7 +8,7 @@ Work Unit은 코드 확인에서 시작해 예제 설명, Topic, Verification, D
 
 ## 기본 원칙
 
-- 코드 정본은 root의 `Part*_Chapter*`와 `Portfolio_RayTracer`에 둔다.
+- 코드 정본은 루트 코드 폴더에 둔다.
 - 문서 정본은 `Docs/01_Examples`부터 `Docs/06_Publication`까지의 산출물 축 폴더에 둔다.
 - 정책 정본은 `Docs/07_Policies`에 둔다.
 - 도구와 템플릿은 `Docs/98_Tools`에 둔다.
@@ -19,14 +19,14 @@ Work Unit은 코드 확인에서 시작해 예제 설명, Topic, Verification, D
 
 | 단계  | 작업                       | 읽는 위치                                                                       | 쓰는 위치                                    | 기준 정책                                        |
 | --- | ------------------------ | --------------------------------------------------------------------------- | ---------------------------------------- | -------------------------------------------- |
-| 0   | Work Unit 선택             | `Docs/00_Index`, root code folder                                           | `local/mini-plans` 또는 `Docs/05_WorkLogs` | 이 문서                                         |
+| 0   | Work Unit 선택             | `Docs/00_Index`, 루트 코드 폴더                                           | `local/mini-plans` 또는 `Docs/05_WorkLogs` | 이 문서                                         |
 | 1   | 코드 구조 확인                 | root `Part*_Chapter*`, `Portfolio_RayTracer`                                | 조사 메모는 `local/`                          | `agent-safety-policy.md`                     |
 | 2   | 기존 문서와 raw reference 확인  | `Docs/99_Legacy/PartDocs`, `Docs/99_Legacy/ImportHistory`, raw/reference repo | 검토 메모는 `local/`                          | `local-review-policy.md`                     |
-| 3   | 예제 목록과 대표 예제 결정          | code folder, legacy docs                                                    | `Docs/01_Examples`                       | `canonical-docs-policy.md`                    |
-| 4   | 예제 설명 작성                 | code folder, local review                                                   | `Docs/01_Examples`                       | `docs-authoring-flow-policy.md`           |
+| 3   | 예제 목록과 대표 예제 결정          | 루트 코드 폴더, Legacy PartDocs                                                    | `Docs/01_Examples`                       | `canonical-docs-policy.md`                    |
+| 4   | 예제 설명 작성                 | 루트 코드 폴더, local review                                                   | `Docs/01_Examples`                       | `docs-authoring-flow-policy.md`           |
 | 5   | graphics Topic 작성        | example docs, code, raw reference                                           | `Docs/02_Topics`                         | `canonical-docs-policy.md`                    |
 | 6   | build/run/capture 검증     | solution, executable, assets                                                | `Docs/03_Verification`                   | `verification-policy.md`                     |
-| 7   | demo evidence 정리         | 실행 결과, capture 후보                                                           | `Docs/04_Demos`, `Docs/_assets`          | `demo-capture-policy.md`, `assets-policy.md` |
+| 7   | Demo evidence 정리         | 실행 결과, capture 후보                                                           | `Docs/04_Demos`, `Docs/_assets`          | `demo-capture-policy.md`, `assets-policy.md` |
 | 8   | public subset 판단         | example, topic, demo, asset 정보                                              | `Docs/06_Publication`                    | `publication-policy.md`                      |
 | 9   | 작업 기록 마감                 | 변경된 Docs, 검증 결과                                                             | `Docs/05_WorkLogs`                       | `github-workflow-policy.md`                         |
 | 10  | GitHub Issue/PR draft 작성 | WorkLog, Example, Verification, Demo                                        | `local/github/draft`                     | `github-workflow-policy.md`                         |
@@ -47,9 +47,9 @@ Work Unit은 코드 확인에서 시작해 예제 설명, Topic, Verification, D
 | Tool         | `Docs/98_Tools`        | validator, template, troubleshooting           |
 | Legacy       | `Docs/99_Legacy`       | 이전 문서와 import 기록                               |
 
-## local 사용 기준
+## local-only 작업장 사용 기준
 
-`local/`은 tracked Docs로 승격하기 전 작업장이다.
+`local/`은 정본 문서로 승격하기 전 local-only 작업장이다.
 
 권장 구조:
 
@@ -89,6 +89,7 @@ local/
 | publication review | `Docs/98_Tools/templates/local-publication-review.md` |
 | WorkLog 마감 | `Docs/98_Tools/templates/worklog.md` |
 | 최종 검수 | `Docs/98_Tools/validation-tools.md` |
+
 ## Done 기준
 
 Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.

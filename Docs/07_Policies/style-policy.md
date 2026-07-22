@@ -7,6 +7,7 @@
 - 평서형 현재형으로 작성한다.
 - 존댓말, 대화체, 감상문체를 사용하지 않는다.
 - technical keywords, folder names, API names는 영어를 유지한다.
+- 반복 용어는 `terminology-policy.md`를 따른다.
 
 ## 사용 예
 

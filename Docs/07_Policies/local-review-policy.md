@@ -45,7 +45,7 @@ local/
 처리 기준:
 
 - 기존 파일을 즉시 이동하지 않는다.
-- 새 Work Unit에서 다시 읽을 때 필요한 내용만 `local/study-review` 또는 tracked Docs 정본으로 재작성한다.
+- 새 Work Unit에서 다시 읽을 때 필요한 내용만 `local/study-review` 또는 정본 문서로 재작성한다.
 - 기존 `local/pr` 초안은 새 GitHub draft 구조로 복사하지 않고, 필요할 때 `local/github/draft` 형식으로 다시 작성한다.
 - 기존 `local/prompts`는 새 세션 기준을 만들 때만 참고하고, 정본은 tracked policy 또는 root/AGENTS 문서에 둔다.
 - legacy local cache는 정리 대상이지만, 삭제는 별도 요청이 있을 때만 진행한다.

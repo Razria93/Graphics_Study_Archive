@@ -1,6 +1,6 @@
 # Graphics Study Archive
 
-이 저장소는 DirectX11 graphics study examples와 개인 확장 작업을 private archive 형태로 정리하는 공간이다. 목표는 raw 자료를 그대로 공개하는 것이 아니라, 코드 확인, 문서 재작성, 검증 기록, demo evidence, GitHub Issue/PR 요약을 통해 설명 가능한 portfolio archive를 만드는 것이다.
+이 저장소는 DirectX11 graphics study examples와 개인 확장 작업을 private archive 형태로 정리하는 공간이다. 목표는 raw 자료를 그대로 공개하는 것이 아니라, 코드 확인, 문서 재작성, 검증 기록, Demo evidence, GitHub Issue/PR 요약을 통해 설명 가능한 portfolio archive를 만드는 것이다.
 
 ## 구조
 
@@ -20,7 +20,7 @@
 
 ## 운영 원칙
 
-- root code folder는 이동하지 않는다.
+- 루트 코드 폴더는 이동하지 않는다.
 - 기존 `Docs/Part*` 문서는 `Docs/99_Legacy/PartDocs`에 보존하고 새 정본으로 사용하지 않는다.
 - 새 예제 설명은 `Docs/01_Examples`에 작성한다.
 - build/run/capture 최신 상태는 `Docs/03_Verification`에 기록한다.
@@ -31,6 +31,7 @@
 
 - [Docs](Docs/README.md)
 - [Canonical Docs Policy](Docs/07_Policies/canonical-docs-policy.md)
+- [Terminology Policy](Docs/07_Policies/terminology-policy.md)
 - [Docs Authoring Flow Policy](Docs/07_Policies/docs-authoring-flow-policy.md)
 - [Verification Policy](Docs/07_Policies/verification-policy.md)
 - [Publication Policy](Docs/07_Policies/publication-policy.md)

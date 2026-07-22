@@ -9,6 +9,7 @@
 - 상세 본문은 정본 위치에 두고 다른 문서에는 링크와 상태만 둔다.
 - 기존 `Docs/99_Legacy/PartDocs` 문서는 전환기 참고 자료로만 읽는다.
 - `local-only 작업장`의 원문 메모는 tracked Docs로 그대로 옮기지 않는다.
+- 반복 용어는 `terminology-policy.md`의 표준 용어를 따른다.
 
 ## 정본 위치
 

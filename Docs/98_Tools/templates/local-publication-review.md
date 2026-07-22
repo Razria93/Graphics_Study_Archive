@@ -37,5 +37,5 @@
 
 ## 주의
 
-- 이 파일은 tracked Docs 정본이 아니다.
+- 이 파일은 정본 문서가 아니다.
 - 최종 판단 요약만 `Docs/06_Publication` 또는 `Docs/05_WorkLogs`로 옮긴다.

@@ -74,7 +74,7 @@ Issue에 포함할 항목:
 
 ## PR 책임
 
-PR은 변경 범위, 검증 결과, demo evidence, known issue, follow-up을 요약한다. PR 본문 초안은 `local/github/draft/prs`에서 작성한다.
+PR은 변경 범위, 검증 결과, Demo evidence, known issue, follow-up을 요약한다. PR 본문 초안은 `local/github/draft/prs`에서 작성한다.
 
 PR에 포함할 항목:
 

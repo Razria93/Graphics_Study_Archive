@@ -1,12 +1,13 @@
 # Repository Guidelines
 
-이 저장소는 DirectX11 graphics study examples와 개인 확장 작업을 private archive 형태로 정리하는 작업 공간이다. 목표는 raw 자료를 그대로 공개하는 것이 아니라, 코드 확인, 문서 재작성, 검증 기록, demo evidence, GitHub Issue/PR 요약을 통해 설명 가능한 portfolio archive를 만드는 것이다.
+이 저장소는 DirectX11 graphics study examples와 개인 확장 작업을 private archive 형태로 정리하는 작업 공간이다. 목표는 raw 자료를 그대로 공개하는 것이 아니라, 코드 확인, 문서 재작성, 검증 기록, Demo evidence, GitHub Issue/PR 요약을 통해 설명 가능한 portfolio archive를 만드는 것이다.
 
 ## 공통 운영 원칙
 
 - 작업 전 `git status --short --branch`를 확인한다.
 - 사용자가 명시적으로 요청하기 전에는 commit, push, PR, Issue 생성/수정을 하지 않는다.
 - root의 `Part*_Chapter*`와 `Portfolio_RayTracer` 폴더는 코드와 build 기준으로 유지한다.
+- 문서 용어는 `Docs/07_Policies/terminology-policy.md`를 따른다.
 - 문서 정본은 `Docs/01_Examples`부터 `Docs/07_Policies`까지의 산출물 축 구조를 기준으로 작성한다.
 - 기존 `Docs/Part*` 문서는 정본으로 사용하지 않고 `Docs/99_Legacy/PartDocs`의 전환기 참고 자료로만 사용한다.
 - raw/reference repo의 내용은 필요한 부분만 읽고, Git에 추적되는 Docs/AGENTS 문서에는 직접 이해한 설명으로 재작성한다.
@@ -58,6 +59,6 @@ Git에 추적되는 Docs와 AGENTS 문서는 평서형 현재형으로 작성한
 
 - `docs`: 문서, README, portfolio notes, Issue/PR body 기준
 - `build`: build guide, build verification, toolchain notes
-- `demo`: capture/video, demo map, demo evidence
+- `demo`: capture/video, demo map, Demo evidence
 - `chore`: repo 설정, validator, template, 유지보수
 - `fix`: 잘못된 링크, 상태값, 문구, 깨진 문서 수정

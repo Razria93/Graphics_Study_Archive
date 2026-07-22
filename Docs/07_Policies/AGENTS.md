@@ -15,5 +15,6 @@
 
 - 평서형 현재형을 사용한다.
 - 존댓말, 대화체, 감상문체를 사용하지 않는다.
+- 반복 용어는 `terminology-policy.md`를 따른다.
 - technical keywords, folder names, API names, Git command names는 영어를 유지한다.
 - 사용자 승인 게이트가 필요한 작업은 `github-workflow-policy.md` 또는 `agent-safety-policy.md`로 연결한다.

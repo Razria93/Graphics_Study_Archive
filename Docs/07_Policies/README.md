@@ -25,10 +25,12 @@
 | [Local Review Policy](local-review-policy.md) | local-only 작업장과 raw/reference 검토 기준 |
 | [Agent Safety Policy](agent-safety-policy.md) | agent 작업 안전 규칙 |
 | [Style Policy](style-policy.md) | 문체와 표현 규칙 |
+| [Terminology Policy](terminology-policy.md) | 반복 용어와 표준 표현 |
 
 ## 운영 기준
 
 - 평서형 현재형을 사용한다.
+- 반복 용어는 `terminology-policy.md`를 따른다.
 - 정책 문서는 이 폴더에만 둔다.
 - 세부 작업 초안과 GitHub draft는 `local/`에 둔다.
 - 과거 import 기록은 `Docs/99_Legacy`를 기준으로 참조한다.

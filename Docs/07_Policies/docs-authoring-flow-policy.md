@@ -10,7 +10,7 @@
 4. 예제 설명은 `Docs/01_Examples`에 작성한다.
 5. 연결 Topic은 `Docs/02_Topics`에 작성하거나 갱신한다.
 6. build/run/capture 상태는 `Docs/03_Verification`에 기록한다.
-7. demo evidence와 시연 포인트는 `Docs/04_Demos`에 기록한다.
+7. Demo evidence와 시연 포인트는 `Docs/04_Demos`에 기록한다.
 8. public subset 판단은 `Docs/06_Publication`에 기록한다.
 9. 작업 과정과 마감 요약은 `Docs/05_WorkLogs`에 기록한다.
 10. 전체 map은 `Docs/00_Index`에서 필요한 범위만 갱신한다.
