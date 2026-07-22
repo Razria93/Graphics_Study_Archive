@@ -11,6 +11,7 @@
 | [WorkLog](worklog.md) | `Docs/05_WorkLogs` | tracked 정본 문서용 | Work Unit 마감 요약 |
 | [Local Study Review](local-study-review.md) | `local/study-review` | local-only 검토용 | raw/source 검토 메모 |
 | [Local Publication Review](local-publication-review.md) | `local/publication` 또는 `local/github/public` | local-only 검토용 | 공개 전 점검 메모 |
+| [PR Review Response](pr-review-response.md) | GitHub PR review comment 답변 | GitHub 게시용 짧은 댓글 | 대응, 검증, 비고 고정 형식 |
 
 ## 사용 기준
 

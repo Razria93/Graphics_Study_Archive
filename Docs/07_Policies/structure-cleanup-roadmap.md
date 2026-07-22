@@ -27,6 +27,7 @@
 | 작업 | 상태 | 사유 |
 | --- | --- | --- |
 | WorkLog 생성 흔적 정리 | 완료 | `Docs/05_WorkLogs/WU-*.md`에 생성 스크립트 흔적이 남아 있어 후속 검수 전에 수정했다. |
+| PR 리뷰 대응과 commit readiness 기준 추가 | 완료 | PR review comment 답변 형식과 작업 종료 후 커밋 가능 상태 보고 기준을 정책과 템플릿에 반영했다. |
 
 ## 작업 종료 보고 기준
 
@@ -41,7 +42,7 @@
 ## 현재 진행 상태
 
 - 핵심 보완 축 1-7은 완료했다.
-- 추가 보완: AI 협업 운영 규칙, GitHub body 전환 흐름, validator 책임 경계 정리를 진행한다.
+- 추가 보완: AI 협업 운영 규칙, GitHub body 전환 흐름, validator 책임 경계, PR 리뷰 대응, commit readiness 기준을 반영했다.
 - 남은 작업: 구조 정리 브랜치 push/PR/merge 여부를 사용자 승인 기준으로 판단한다.
 
 ## 다음 작업 기준
