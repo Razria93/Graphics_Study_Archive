@@ -17,39 +17,40 @@ Work Unit은 코드 확인에서 시작해 예제 설명, Topic, Verification, D
 
 ## 단계별 흐름
 
-| 단계  | 작업                       | 읽는 위치                                                                       | 쓰는 위치                                    | 기준 정책                                        |
-| --- | ------------------------ | --------------------------------------------------------------------------- | ---------------------------------------- | -------------------------------------------- |
-| 0   | Work Unit 선택             | `Docs/00_Index`, 루트 코드 폴더                                           | `local/mini-plans` 또는 `Docs/05_WorkLogs` | 이 문서                                         |
-| 1   | 코드 구조 확인                 | root `Part*_Chapter*`, `Portfolio_RayTracer`                                | 조사 메모는 `local/`                          | `agent-safety-policy.md`                     |
-| 2   | 기존 문서와 raw reference 확인  | `Docs/99_Legacy/PartDocs`, `Docs/99_Legacy/ImportHistory`, raw/reference repo | 검토 메모는 `local/`                          | `local-review-policy.md`                     |
-| 3   | 예제 목록과 대표 예제 결정          | 루트 코드 폴더, Legacy PartDocs                                                    | `Docs/01_Examples`                       | `canonical-docs-policy.md`                    |
-| 4   | 예제 설명 작성                 | 루트 코드 폴더, local review                                                   | `Docs/01_Examples`                       | `docs-authoring-flow-policy.md`           |
-| 5   | graphics Topic 작성        | example docs, code, raw reference                                           | `Docs/02_Topics`                         | `canonical-docs-policy.md`                    |
-| 6   | build/run/capture 검증     | solution, executable, assets                                                | `Docs/03_Verification`                   | `verification-policy.md`                     |
-| 7   | Demo evidence 정리         | 실행 결과, capture 후보                                                           | `Docs/04_Demos`, `Docs/_assets`          | `demo-capture-policy.md`, `assets-policy.md` |
-| 8   | public subset 판단         | example, topic, demo, asset 정보                                              | `Docs/06_Publication`                    | `publication-policy.md`                      |
-| 9   | 작업 기록 마감                 | 변경된 Docs, 검증 결과                                                             | `Docs/05_WorkLogs`                       | `github-workflow-policy.md`                         |
-| 10  | GitHub Issue/PR draft 작성 | WorkLog, Example, Verification, Demo                                        | `local/github/draft`                     | `github-workflow-policy.md`                         |
-| 11  | Index 갱신                 | 전체 산출물                                                                      | `Docs/00_Index`                          | `canonical-docs-policy.md`                    |
-| 12  | 최종 검수                    | 변경 파일 전체                                                                    | 검수 결과는 final report 또는 WorkLog           | `style-policy.md`, `../98_Tools/validation-tools.md` |
+| 단계 | 작업 | 읽는 위치 | 쓰는 위치 | 기준 정책 |
+| --- | --- | --- | --- | --- |
+| 0 | Work Unit 선택 | `Docs/00_Index`, 루트 코드 폴더 | `local/mini-plans` 또는 `Docs/05_WorkLogs` | 이 문서 |
+| 1 | 코드 구조 확인 | root `Part*_Chapter*`, `Portfolio_RayTracer` | 조사 메모는 `local/` | `agent-safety-policy.md` |
+| 2 | 기존 문서와 raw reference 확인 | `Docs/99_Legacy/PartDocs`, `Docs/99_Legacy/ImportHistory`, raw/reference repo | 검토 메모는 `local/` | `local-review-policy.md` |
+| 3 | 예제 목록과 대표 예제 결정 | 루트 코드 폴더, Legacy PartDocs | `Docs/01_Examples` | `canonical-docs-policy.md` |
+| 4 | 예제 설명 작성 | 루트 코드 폴더, local review | `Docs/01_Examples` | `docs-authoring-flow-policy.md` |
+| 5 | graphics Topic 작성 | example docs, code, raw reference | `Docs/02_Topics` | `canonical-docs-policy.md` |
+| 6 | build/run/capture 검증 | solution, executable, assets | `Docs/03_Verification` | `verification-policy.md` |
+| 7 | Demo evidence 정리 | 실행 결과, capture 후보 | `Docs/04_Demos`, `Docs/_assets` | `demo-capture-policy.md`, `assets-policy.md` |
+| 8 | public subset 판단 | example, topic, demo, asset 정보 | `Docs/06_Publication` | `publication-policy.md` |
+| 9 | 작업 기록 마감 | 변경된 Docs, 검증 결과 | `Docs/05_WorkLogs` | `github-workflow-policy.md` |
+| 10 | GitHub Issue/PR draft 작성 | WorkLog, Example, Verification, Demo | `local/github/draft` | `github-workflow-policy.md` |
+| 11 | GitHub public body 검수 | `local/github/draft`, WorkLog, Verification | `local/github/public` | `github-workflow-policy.md`, `../98_Tools/validators/README.md` |
+| 12 | Index 갱신 | 전체 산출물 | `Docs/00_Index`, `Docs/05_WorkLogs/issue-pr-index.md` | `canonical-docs-policy.md`, `github-workflow-policy.md` |
+| 13 | 최종 검수 | 변경 파일 전체 | 검수 결과는 final report 또는 WorkLog | `style-policy.md`, `../98_Tools/validation-tools.md` |
 
 ## 산출물별 책임
 
-| 산출물          | 정본 위치                  | 내용                                             |
-| ------------ | ---------------------- | ---------------------------------------------- |
-| 예제 설명        | `Docs/01_Examples`     | 예제 목적, 핵심 코드 위치, 관련 Topic/Verification/Demo 링크 |
-| Topic        | `Docs/02_Topics`       | 여러 예제를 관통하는 graphics 개념과 pipeline 설명           |
-| Verification | `Docs/03_Verification` | build/run/capture 상태, known issue, 확인 일자       |
-| Demo         | `Docs/04_Demos`        | capture/video evidence, 시연 포인트, 연결 개념          |
-| WorkLog      | `Docs/05_WorkLogs`     | 작업 범위, 변경 요약, 검증 요약, Issue/PR 연결, follow-up    |
-| Publication  | `Docs/06_Publication`  | public 후보, private 전용, 검토 필요, 제외 판단            |
-| Policy       | `Docs/07_Policies`     | 반복 적용되는 규칙                                     |
-| Tool         | `Docs/98_Tools`        | validator, template, troubleshooting           |
-| Legacy       | `Docs/99_Legacy`       | 이전 문서와 import 기록                               |
+| 산출물 | 정본 위치 | 내용 |
+| --- | --- | --- |
+| 예제 설명 | `Docs/01_Examples` | 예제 목적, 핵심 코드 위치, 관련 Topic/Verification/Demo 링크 |
+| Topic | `Docs/02_Topics` | 여러 예제를 관통하는 graphics 개념과 pipeline 설명 |
+| Verification | `Docs/03_Verification` | build/run/capture 상태, known issue, 확인 일자 |
+| Demo | `Docs/04_Demos` | capture/video evidence, 시연 포인트, 연결 개념 |
+| WorkLog | `Docs/05_WorkLogs` | 작업 범위, 변경 요약, 검증 요약, Issue/PR 연결, follow-up |
+| Publication | `Docs/06_Publication` | public 후보, private 전용, 검토 필요, 제외 판단 |
+| Policy | `Docs/07_Policies` | 반복 적용되는 규칙 |
+| Tool | `Docs/98_Tools` | validator, template, troubleshooting |
+| Legacy | `Docs/99_Legacy` | 이전 문서와 import 기록 |
 
-## local-only 작업장 사용 기준
+## local-only 자료 영역 사용 기준
 
-`local/`은 정본 문서로 승격하기 전 local-only 작업장이다.
+`local/`은 정본 문서로 승격하기 전 local-only 자료 영역이다.
 
 권장 구조:
 
@@ -79,7 +80,6 @@ local/
 - 게시 후 실제 게시본과 리뷰 대응 사본은 `local/github/snapshots`에 둔다.
 - redaction, 공개 제외 판단 근거, 개인 메모는 tracked Docs에 두지 않는다.
 
-
 ## Template 연결
 
 | 단계 | Template |
@@ -101,5 +101,8 @@ Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.
 - demo 필요 여부와 evidence 상태가 `Docs/04_Demos`에 기록되어 있다.
 - public subset 판단이 `Docs/06_Publication`에 기록되어 있다.
 - 작업 요약과 follow-up이 `Docs/05_WorkLogs`에 기록되어 있다.
+- GitHub Issue/PR을 운영하는 Work Unit이면 `local/github/public` 후보와 validator 결과가 준비되어 있다.
+- Plan Issue 누적 진행 댓글 또는 WorkLog 댓글 갱신 필요 여부가 판단되어 있다.
+- `Docs/05_WorkLogs/issue-pr-index.md`에 Issue/PR/Plan comment 상태가 반영되어 있다.
 - `Docs/00_Index` map이 필요한 범위만큼 갱신되어 있다.
 - 오래된 `Docs/99_Legacy` 문서를 정본처럼 링크하지 않는다.

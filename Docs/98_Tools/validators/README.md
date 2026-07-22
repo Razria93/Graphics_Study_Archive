@@ -37,9 +37,20 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 | `prs/**/*.md` | PR body |
 | `issues/topic/*.md` | Topic issue |
 | `issues/verification/*.md` | Verification issue |
-| `issues/plan-comments/plan_progress_summary_comment.md` | plan progress comment |
-| `issues/plan-comments/*_worklog_comment.md` | WorkLog comment |
-| `pr-comments/*.md` | PR screenshot comment |
+| `issues/plan-comments/plan_progress_summary_comment.md` | Plan Issue 첫 누적 진행 댓글 |
+| `issues/plan-comments/*_worklog_comment.md` | Work Unit 또는 PR 마감 댓글 |
+| `pr-comments/*.md` | PR screenshot 또는 Demo evidence comment |
+
+## Plan comment schema
+
+Plan Issue 관련 public body는 두 종류만 검사한다.
+
+| 파일 | 책임 | 주요 검사 |
+| --- | --- | --- |
+| `issues/plan-comments/plan_progress_summary_comment.md` | 전체 진행판 | `## Graphics Study 진행 요약`, `## 완료`, `## 진행 예정`, `## Related PRs` 구조와 Phase heading |
+| `issues/plan-comments/*_worklog_comment.md` | Work Unit 마감 기록 | `## Phase <n-n> progress record`, 완료 내용, 검증, 남은 제한, 관련 PR |
+
+Plan comment는 Docs 정본을 복제하지 않고 진행 상태와 링크만 요약한다. 상세 정책은 `Docs/07_Policies/github-workflow-policy.md`를 따른다.
 
 ## 검사하지 않는 것
 

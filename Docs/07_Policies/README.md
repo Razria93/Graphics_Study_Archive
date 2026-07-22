@@ -23,7 +23,7 @@
 | [Demo Capture Policy](demo-capture-policy.md) | screenshot/video evidence 관리 기준 |
 | [Publication Policy](publication-policy.md) | public subset 후보와 제외 기준 |
 | [Assets Policy](assets-policy.md) | capture, video, image, third-party asset 기준 |
-| [Local Review Policy](local-review-policy.md) | local-only 작업장과 raw/reference 검토 기준 |
+| [Local Review Policy](local-review-policy.md) | local-only 자료 영역과 raw/reference 검토 기준 |
 | [Agent Safety Policy](agent-safety-policy.md) | agent 작업 안전 규칙 |
 | [Style Policy](style-policy.md) | 문체와 표현 규칙 |
 | [Terminology Policy](terminology-policy.md) | 반복 용어와 표준 표현 |

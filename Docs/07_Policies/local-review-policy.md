@@ -1,10 +1,10 @@
 # Local Review Policy
 
-이 문서는 local-only 작업장과 raw/reference 검토 메모를 다루는 기준을 정의한다.
+이 문서는 local-only 자료 영역과 raw/reference 검토 메모를 다루는 기준을 정의한다.
 
 ## 책임
 
-`local/`은 Git에 올리지 않는 작업장이다. raw 문서 원문, source comment 분리 기록, 개인 검토 메모, GitHub draft, 게시 전 public body 후보를 먼저 이곳에 둔다.
+`local/`은 Git에 올리지 않는 자료 영역이다. raw 문서 원문, source comment 분리 기록, 개인 검토 메모, GitHub draft, 게시 전 public body 후보를 먼저 이곳에 둔다.
 
 ## Git 기준
 
@@ -38,9 +38,9 @@ local/
 
 ## 기존 local 구조 처리
 
-현재 `local/Part*_Chapter*`, `local/pr`는 이전 import/documentation 흐름에서 생긴 legacy local cache로 본다.
+현재 `local/Part*_Chapter*`, `local/pr`는 이전 import/documentation 흐름에서 생긴 legacy local 자료로 본다.
 
-현재 legacy local cache의 파일 수와 승격 후보는 `Docs/99_Legacy/local-inventory.md`를 기준으로 확인한다.
+현재 legacy local 자료의 파일 수와 승격 후보는 `Docs/99_Legacy/local-inventory.md`를 기준으로 확인한다.
 
 처리 기준:
 
@@ -48,7 +48,7 @@ local/
 - 새 Work Unit에서 다시 읽을 때 필요한 내용만 `local/study-review` 또는 정본 문서로 재작성한다.
 - 기존 `local/pr` 초안은 새 GitHub draft 구조로 복사하지 않고, 필요할 때 `local/github/draft` 형식으로 다시 작성한다.
 - 삭제한 `local/prompts`와 `local/tools` 원본은 `Docs/99_Legacy/local-inventory.md`의 폐기 기록으로만 확인한다.
-- legacy local cache는 정리 대상이지만, 삭제는 별도 요청이 있을 때만 진행한다.
+- legacy local 자료는 정리 대상이지만, 삭제는 별도 요청이 있을 때만 진행한다.
 
 ## 단계별 사용
 

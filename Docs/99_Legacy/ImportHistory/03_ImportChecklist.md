@@ -58,7 +58,7 @@
 이번 예제에서 반영할 것:
 - code/project files:
 - tracked docs:
-- local-only docs:
+- local-only 자료:
 
 이번 예제에서 제외할 것:
 - raw assets:
@@ -87,7 +87,7 @@
 | 파일 목록               | `rg --files <target>`                                     |
 | raw asset 유입        | image/result/capture/video가 들어왔는지 확인                      |
 | source comments     | 장문 메모가 남아 있는지 확인                                          |
-| local-only docs     | `git status --short --ignored local/...`                  |
+| local-only 자료     | `git status --short --ignored local/...`                  |
 | whitespace          | `git diff --check`                                        |
 | working tree        | `git status --short`                                      |
 | build/run           | 가능하면 `Debug x64` 확인, 불가하면 `미확인` 기록                        |

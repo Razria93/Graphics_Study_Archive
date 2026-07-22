@@ -12,7 +12,7 @@
 | Legacy 문서 | `Docs/99_Legacy` 아래의 과거 import 기록과 이전 문서 구조 | legacy docs, 이전 문서 |
 | Legacy PartDocs | `Docs/99_Legacy/PartDocs` 아래의 이전 Part별 문서 | 기존 `Docs/Part*`, legacy Part docs |
 | ImportHistory | `Docs/99_Legacy/ImportHistory` 아래의 과거 import 판단 기록 | ImportPhase, migration 기록 |
-| local-only 작업장 | Git에 추적하지 않는 `local/` 작업장 | local cache, local-only docs |
+| local-only 자료 영역 | Git에 추적하지 않는 `local/` 자료 영역 | local cache, local-only docs, local-only 작업장 |
 | raw/reference repo | 원본/미가공 자료를 읽기 전용으로 참고하는 저장소 | raw repo 단독 표현 |
 | Demo evidence | 시연 결과를 증명하는 capture/video evidence | demo evidence, capture evidence 혼용 |
 | GitHub draft | 게시 전 Issue/PR/comment 초안 | PR draft, Issue draft 단독 표현 |

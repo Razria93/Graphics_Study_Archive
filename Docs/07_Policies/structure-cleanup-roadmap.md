@@ -1,6 +1,6 @@
 # Structure Cleanup Roadmap
 
-이 문서는 Graphics Study Archive 문서 구조 정리 작업의 진행 기준을 정의한다. `Docs/00_Index`부터 `Docs/06_Publication`까지의 산출물 축 구조는 유지하고, 남은 작업은 운영 규칙, legacy 기록, local 작업장, 용어, 참조 관계를 잠그는 방향으로 진행한다.
+이 문서는 Graphics Study Archive 문서 구조 정리 작업의 진행 기준을 정의한다. `Docs/00_Index`부터 `Docs/06_Publication`까지의 산출물 축 구조는 유지하고, 남은 작업은 운영 규칙, legacy 기록, local 자료 영역, 용어, 참조 관계를 잠그는 방향으로 진행한다.
 
 ## 기준 결정
 
@@ -19,7 +19,7 @@
 | 3 | legacy import 기록 명칭 정리 | 완료 | import가 현재 단계가 아니라 과거 기록임을 이름에 반영한다. |
 | 4 | `_repo` 내부 안내 제거 | 완료 | 고유 정본이 없는 `_repo` 문서를 정책, tools, legacy, index로 흡수한다. |
 | 5 | `local/` inventory 작성 | 완료 | tracked Docs로 승격할 후보와 폐기/유지 대상을 구분한다. |
-| 6 | 문서 용어 통일 | 완료 | 루트 코드 폴더, Legacy 문서, Legacy PartDocs, local-only 작업장 용어를 통일한다. |
+| 6 | 문서 용어 통일 | 완료 | 루트 코드 폴더, Legacy 문서, Legacy PartDocs, local-only 자료 영역 용어를 통일한다. |
 | 7 | 문서 구조 최종 검수 | 완료 | 링크, 참조, 문체, 폴더 책임, stale 문서를 최종 점검한다. |
 
 ## 예외 처리 기록
