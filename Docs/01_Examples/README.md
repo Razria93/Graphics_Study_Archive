@@ -40,4 +40,4 @@
 - 평서형 현재형을 사용한다.
 - 코드 확인 전 항목은 `미확인`으로 둔다.
 - 강의 원문 표현이나 raw 메모를 그대로 옮기지 않는다.
-- 상세 정책은 [Documentation Workflow Policy](../07_Policies/documentation-workflow-policy.md)를 따른다.
+- 상세 정책은 [Docs Authoring Flow Policy](../07_Policies/docs-authoring-flow-policy.md)를 따른다.

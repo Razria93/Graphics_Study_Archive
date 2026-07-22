@@ -1,31 +1,31 @@
-# Documentation Workflow Policy
+# Docs Authoring Flow Policy
 
-이 문서는 산출물 축 구조에서 문서 작성 순서를 정의한다. 전체 Work Unit 흐름은 `work-unit-workflow-policy.md`를 기준으로 한다.
+이 문서는 산출물 축 구조에서 문서를 작성하는 순서를 정의한다. 전체 Work Unit 흐름은 `work-unit-workflow-policy.md`를 기준으로 한다.
 
 ## 작성 순서
 
-1. root 코드 폴더를 확인한다.
+1. 루트 코드 폴더를 확인한다.
 2. `Docs/99_Legacy/PartDocs`의 기존 문서를 참고 자료로 읽는다.
 3. raw/reference mapping은 필요한 범위만 읽는다.
 4. 예제 설명은 `Docs/01_Examples`에 작성한다.
-5. 연결 개념은 `Docs/02_Topics`에 작성하거나 갱신한다.
+5. 연결 Topic은 `Docs/02_Topics`에 작성하거나 갱신한다.
 6. build/run/capture 상태는 `Docs/03_Verification`에 기록한다.
 7. demo evidence와 시연 포인트는 `Docs/04_Demos`에 기록한다.
-8. Issue/PR 작업 과정과 마감 기록은 `Docs/05_WorkLogs`에 기록한다.
-9. public subset 판단은 `Docs/06_Publication`에 기록한다.
-10. 전체 map은 `Docs/00_Index`에서 갱신한다.
+8. public subset 판단은 `Docs/06_Publication`에 기록한다.
+9. 작업 과정과 마감 요약은 `Docs/05_WorkLogs`에 기록한다.
+10. 전체 map은 `Docs/00_Index`에서 필요한 범위만 갱신한다.
 
 ## 작성 위치 결정 규칙
 
 | 내용 | 작성 위치 |
 | --- | --- |
 | 예제 하나가 무엇을 보여주는지 | `Docs/01_Examples` |
-| 여러 예제를 관통하는 개념 | `Docs/02_Topics` |
-| 빌드와 실행 상태 | `Docs/03_Verification` |
-| 캡처와 영상 evidence | `Docs/04_Demos` |
-| 작업 과정과 리뷰 대응 | `Docs/05_WorkLogs` |
-| 공개 가능성 판단 | `Docs/06_Publication` |
-| 반복 적용되는 규칙 | `Docs/07_Policies` |
+| 여러 예제를 관통하는 graphics 개념 | `Docs/02_Topics` |
+| build/run/capture 상태 | `Docs/03_Verification` |
+| capture/video evidence와 시연 포인트 | `Docs/04_Demos` |
+| public 후보와 제외 판단 | `Docs/06_Publication` |
+| 작업 과정과 리뷰 대응 요약 | `Docs/05_WorkLogs` |
+| 반복 적용 규칙 | `Docs/07_Policies` |
 | 도구와 템플릿 | `Docs/98_Tools` |
 | 과거 구조와 import 기록 | `Docs/99_Legacy` |
 

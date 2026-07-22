@@ -30,8 +30,8 @@
 ## 먼저 볼 문서
 
 - [Docs](Docs/README.md)
-- [Documentation Policy](Docs/07_Policies/documentation-policy.md)
-- [Documentation Workflow Policy](Docs/07_Policies/documentation-workflow-policy.md)
+- [Canonical Docs Policy](Docs/07_Policies/canonical-docs-policy.md)
+- [Docs Authoring Flow Policy](Docs/07_Policies/docs-authoring-flow-policy.md)
 - [Verification Policy](Docs/07_Policies/verification-policy.md)
 - [Publication Policy](Docs/07_Policies/publication-policy.md)
 - [Legacy Import Phase](Docs/99_Legacy/ImportPhase/README.md)

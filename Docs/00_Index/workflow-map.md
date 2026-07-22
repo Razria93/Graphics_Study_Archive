@@ -36,8 +36,8 @@ code 확인
 ## 관련 정책
 
 - [Work Unit Workflow Policy](../07_Policies/work-unit-workflow-policy.md)
-- [Documentation Workflow Policy](../07_Policies/documentation-workflow-policy.md)
+- [Docs Authoring Flow Policy](../07_Policies/docs-authoring-flow-policy.md)
 - [Verification Policy](../07_Policies/verification-policy.md)
 - [Demo Capture Policy](../07_Policies/demo-capture-policy.md)
-- [Issue And PR Policy](../07_Policies/issue-pr-policy.md)
+- [GitHub Workflow Policy](../07_Policies/github-workflow-policy.md)
 - [Publication Policy](../07_Policies/publication-policy.md)

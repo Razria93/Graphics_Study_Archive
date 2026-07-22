@@ -22,15 +22,15 @@ Work Unit은 코드 확인에서 시작해 예제 설명, Topic, Verification, D
 | 0   | Work Unit 선택             | `Docs/00_Index`, root code folder                                           | `local/mini-plans` 또는 `Docs/05_WorkLogs` | 이 문서                                         |
 | 1   | 코드 구조 확인                 | root `Part*_Chapter*`, `Portfolio_RayTracer`                                | 조사 메모는 `local/`                          | `agent-safety-policy.md`                     |
 | 2   | 기존 문서와 raw reference 확인  | `Docs/99_Legacy/PartDocs`, `Docs/99_Legacy/ImportPhase`, raw/reference repo | 검토 메모는 `local/`                          | `local-review-policy.md`                     |
-| 3   | 예제 목록과 대표 예제 결정          | code folder, legacy docs                                                    | `Docs/01_Examples`                       | `documentation-policy.md`                    |
-| 4   | 예제 설명 작성                 | code folder, local review                                                   | `Docs/01_Examples`                       | `documentation-workflow-policy.md`           |
-| 5   | graphics Topic 작성        | example docs, code, raw reference                                           | `Docs/02_Topics`                         | `documentation-policy.md`                    |
+| 3   | 예제 목록과 대표 예제 결정          | code folder, legacy docs                                                    | `Docs/01_Examples`                       | `canonical-docs-policy.md`                    |
+| 4   | 예제 설명 작성                 | code folder, local review                                                   | `Docs/01_Examples`                       | `docs-authoring-flow-policy.md`           |
+| 5   | graphics Topic 작성        | example docs, code, raw reference                                           | `Docs/02_Topics`                         | `canonical-docs-policy.md`                    |
 | 6   | build/run/capture 검증     | solution, executable, assets                                                | `Docs/03_Verification`                   | `verification-policy.md`                     |
 | 7   | demo evidence 정리         | 실행 결과, capture 후보                                                           | `Docs/04_Demos`, `Docs/_assets`          | `demo-capture-policy.md`, `assets-policy.md` |
 | 8   | public subset 판단         | example, topic, demo, asset 정보                                              | `Docs/06_Publication`                    | `publication-policy.md`                      |
-| 9   | 작업 기록 마감                 | 변경된 Docs, 검증 결과                                                             | `Docs/05_WorkLogs`                       | `issue-pr-policy.md`                         |
-| 10  | GitHub Issue/PR draft 작성 | WorkLog, Example, Verification, Demo                                        | `local/github/draft`                     | `issue-pr-policy.md`                         |
-| 11  | Index 갱신                 | 전체 산출물                                                                      | `Docs/00_Index`                          | `documentation-policy.md`                    |
+| 9   | 작업 기록 마감                 | 변경된 Docs, 검증 결과                                                             | `Docs/05_WorkLogs`                       | `github-workflow-policy.md`                         |
+| 10  | GitHub Issue/PR draft 작성 | WorkLog, Example, Verification, Demo                                        | `local/github/draft`                     | `github-workflow-policy.md`                         |
+| 11  | Index 갱신                 | 전체 산출물                                                                      | `Docs/00_Index`                          | `canonical-docs-policy.md`                    |
 | 12  | 최종 검수                    | 변경 파일 전체                                                                    | 검수 결과는 final report 또는 WorkLog           | `style-policy.md`, `validation-tools.md`     |
 
 ## 산출물별 책임
