@@ -1,24 +1,30 @@
 # Docs Index
 
-이 폴더는 전체 문서 map과 진입점을 둔다. 상세 원문을 중복하지 않고 각 정본 문서로 연결한다.
+이 폴더는 Graphics Study Archive 문서의 첫 진입점이다. 산출물별 정본 위치, 작업 흐름, 검증과 demo 상태, publication 판단 위치를 map 문서로 연결한다.
 
 ## 책임
 
-- 이 폴더의 책임에 맞는 문서만 둔다.
-- 다른 산출물의 원문을 복사하지 않고 링크로 연결한다.
-- 직접 확인하지 않은 상태는 미확인으로 기록한다.
+- 세부 설명을 반복하지 않고 정본 문서로 연결한다.
+- Part/Chapter 기준이 아니라 산출물 축 기준으로 문서 위치를 안내한다.
+- 직접 확인하지 않은 상태는 `미확인`으로 기록한다.
+- 오래된 import 기록과 현재 정본 문서를 구분한다.
 
-## 예정 항목
+## 먼저 볼 문서
 
-- `study-map.md`
-- `topic-map.md`
-- `demo-map.md`
-- `verification-map.md`
-- `worklog-map.md`
-- `publication-map.md`
+| 문서 | 목적 |
+| --- | --- |
+| [Workflow Map](workflow-map.md) | Work Unit 진행 단계별 참고/저장 위치 확인 |
+| [Study Map](study-map.md) | 코드 폴더, 예제 문서, Topic, 검증, demo의 연결 확인 |
+| [Topic Map](topic-map.md) | 그래픽스 개념 문서의 분류와 작성 우선순위 확인 |
+| [Verification Map](verification-map.md) | build/run/capture/known issue 기록 위치 확인 |
+| [Demo Map](demo-map.md) | 캡처/영상 evidence와 대표 demo 후보 확인 |
+| [WorkLog Map](worklog-map.md) | Work Unit 요약과 Issue/PR 연결 방식 확인 |
+| [Publication Map](publication-map.md) | private archive와 public subset 후보 판단 위치 확인 |
 
-## 작성 기준
+## 기준 문서
 
-- 평서형 현재형을 사용한다.
-- 상세 정책은 Docs/07_Policies를 기준으로 한다.
-- 오래된 import-stage 문서는 Docs/99_Legacy를 기준으로 참조한다.
+- [Work Unit Workflow Policy](../07_Policies/work-unit-workflow-policy.md)
+- [Documentation Workflow Policy](../07_Policies/documentation-workflow-policy.md)
+- [Style Policy](../07_Policies/style-policy.md)
+- [Verification Policy](../07_Policies/verification-policy.md)
+- [Publication Policy](../07_Policies/publication-policy.md)
