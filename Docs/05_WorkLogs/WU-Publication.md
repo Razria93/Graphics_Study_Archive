@@ -2,26 +2,33 @@
 
 ## 범위
 
-- Work Unit: $(WU-Publication Publication WorkLog public subset 후보 정리 Publication, redaction, excluded material, issue/pr publication 후보[0])
-- 대상: public subset 후보 정리
-- 주요 Topic 후보: Publication, redaction, excluded material, issue/pr publication 후보
+- Work Unit: `WU-Publication`
+- 대상 코드: 없음
+- 대상 문서: `Docs/06_Publication`, `Docs/04_Demos`, `Docs/05_WorkLogs`, `local/github`
+- 주요 Topic 후보: Publication, redaction, excluded material, Issue/PR publication 후보
 
 ## 상태
 
 - 작업 상태: 예정
 - 검증 상태: 미확인
-- demo 상태: 미확인
+- Demo 상태: 미확인
 - Issue/PR 상태: 예정
+
+## 변경 요약
+
+- private archive에서 public subset 후보로 승격 가능한 문서와 evidence를 검토한다.
+- 제외 대상과 redaction 필요 항목을 `Docs/06_Publication` 기준으로 기록한다.
+- GitHub Issue/PR 게시 전 local draft와 snapshot을 관리한다.
 
 ## 갱신한 정본 문서
 
 | 산출물 | 문서 | 상태 |
 | --- | --- | --- |
-| Example | Docs/01_Examples | 골격 작성 |
-| Topic | Docs/02_Topics | 골격 작성 |
-| Verification | Docs/03_Verification | 골격 작성 |
-| Demo | Docs/04_Demos | 골격 작성 |
-| Publication | Docs/06_Publication | 예정 |
+| Example | `Docs/01_Examples` | 필요 시 참조 |
+| Topic | `Docs/02_Topics` | 필요 시 참조 |
+| Verification | `Docs/03_Verification` | 필요 시 참조 |
+| Demo | `Docs/04_Demos` | 예정 |
+| Publication | `Docs/06_Publication` | 예정 |
 
 ## 검증 요약
 
@@ -35,11 +42,15 @@
 
 - Issue: 예정
 - PR: 예정
-- Draft 위치: local/github/draft
-- 게시 후 snapshot: local/github/snapshots
+- Draft: `local/github/drafts`
+- Snapshot: `local/github/snapshots`
+
+## Known Issue
+
+- 미확인
 
 ## Follow-up
 
-- 코드와 legacy 문서를 확인한 뒤 Example 문서를 상세화한다.
-- 대표 Topic과 demo 후보를 확정한다.
-- build/run/capture 검증 후 상태를 갱신한다.
+- public 후보 문서와 제외 문서를 분리한다.
+- Demo evidence의 출처와 공개 가능성을 확인한다.
+- 게시 전 GitHub Issue/PR draft를 작성하고 사용자 승인을 받는다.
