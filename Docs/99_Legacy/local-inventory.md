@@ -56,13 +56,21 @@
 | `local/Part2_Chapter05-08/**/study-review.local.md` | `Docs/01_Examples`, `Docs/02_Topics` | Part2 문서화 Work Unit에서 필요한 내용만 재작성 후보 |
 | `local/pr/part1-archive-migration.md` | `Docs/05_WorkLogs/WU-Part1.md` | 과거 PR 요약 참고용, 원문 승격 금지 |
 
+## PR/Prompt 흡수 검토
+
+| local 문서 | 포함 내용 | 현행 흡수 위치 | 판단 |
+| --- | --- | --- | --- |
+| `local/pr/part1-archive-migration.md` | Part1 import 요약, 확인했다고 적힌 build/run 목록, capture 보류, asset/public 검토 필요, Step14 `Raytracer::Render()` 이슈, 리뷰 범위 | `Docs/05_WorkLogs/WU-Part1.md`, `Docs/03_Verification/Part1_Chapter01-02`, `Docs/03_Verification/Part1_Chapter03`, `Docs/07_Policies/github-workflow-policy.md` | 부분 흡수. PR 형식과 리뷰 기준은 흡수됨. build/run 확인 주장은 현재 세션의 직접 검증이 아니므로 `미확인`을 바꾸지 않는다. Part1 Work Unit 시작 시 참고한다. |
+| `local/prompts/archive-migration-session-prompt.md` | raw/archive/public 3단 구조, raw 읽기 전용, local-only 문서, 코드/문서 분리, import 당시 상태 단계 | `AGENTS.md`, `Docs/07_Policies/work-unit-workflow-policy.md`, `Docs/07_Policies/local-review-policy.md`, `Docs/07_Policies/publication-policy.md`, `Docs/99_Legacy/ImportHistory` | 대부분 흡수. `Docs/_repo/tracking`과 `Docs/Part*` 기준은 stale이므로 새 작업 기준으로 사용하지 않는다. |
+| `local/prompts/quick-start-prompt.md` | archive 세션 시작 체크리스트, raw read-only, import 우선순위, commit/push 금지 | `AGENTS.md`, `Docs/07_Policies/work-unit-workflow-policy.md`, `Docs/07_Policies/github-workflow-policy.md`, `Docs/07_Policies/local-review-policy.md` | 흡수 완료. stale `_repo` 경로와 import 중심 흐름 때문에 보존 참고용으로만 둔다. |
+
 ## local-only 유지
 
 | 대상 | 이유 |
 | --- | --- |
 | `source-comments.md` 전체 | source comment 원문과 raw 검토 흔적이므로 tracked Docs로 직접 옮기지 않는다. |
 | `raw-md-notes.md` 전체 | raw markdown note cache 성격이 강하므로 필요한 개념만 재작성한다. |
-| `local/prompts/*` | 과거 import 세션 기준이며 현행 정책과 어긋나는 stale 경로가 있다. |
+| `local/prompts/*` | 과거 import 세션 기준이며 현행 정책에 대부분 흡수됐다. stale 경로가 있으므로 새 세션 기준으로 사용하지 않는다. |
 | `memo-review.md` 전체 | 개인 검토 메모 성격이 강하므로 필요한 내용만 선별한다. |
 
 ## 폐기 후보
