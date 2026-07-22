@@ -1,42 +1,28 @@
 # Docs
 
-Private graphics study/archive repo의 문서 입구입니다.
+이 폴더는 Graphics Study Archive의 문서 산출물 공간이다. 문서 정본은 산출물 종류별 폴더에 둔다.
 
-`Docs`는 Part/Chapter 중심 예제 문서를 우선으로 두고, repo 운영 문서는 `_repo` 아래로 분리합니다.
+## 구조
 
-## 주요 위치
-
-| 위치 | 역할 |
+| 위치 | 책임 |
 | --- | --- |
-| [Part1_Chapter01-02](Part1_Chapter01-02/README.md) | DirectX11 setup, ImGui, bloom 예제 문서 |
-| [Part1_Chapter03](Part1_Chapter03/README.md) | CPU ray tracing step별 예제 문서 |
-| [Part2_Chapter04](Part2_Chapter04/README.md) | Software rasterization step별 예제 문서 |
-| [Part2_Chapter05-08](Part2_Chapter05-08/README.md) | D3D11 pipeline, modeling, shader toy 예제 문서 |
-| [Part3_Chapter09](Part3_Chapter09/README.md) | User interaction, picking, virtual trackball 예제 문서 |
-| [Part3_Chapter10-13](Part3_Chapter10-13/README.md) | Geometry pipeline, texturing, PBR, shadow 예제 문서 |
-| [Part4_Chapter14-20](Part4_Chapter14-20/README.md) | Compute shader, particle/simulation, animation, foliage, physics, gameplay 예제 문서 |
-| [Portfolio_RayTracer](Portfolio_RayTracer/README.md) | 대표 ray tracing 작업물 문서 |
-| [_repo](_repo/) | repo 운영 문서, workflow, tracking, reference, manifests, templates |
+| [00_Index](00_Index/README.md) | 전체 map과 문서 진입점 |
+| [01_Examples](01_Examples/README.md) | 예제 설명 정본 |
+| [02_Topics](02_Topics/README.md) | graphics 개념 정본 |
+| [03_Verification](03_Verification/README.md) | build/run/capture 검증 정본 |
+| [04_Demos](04_Demos/README.md) | demo capture/video evidence 정본 |
+| [05_WorkLogs](05_WorkLogs/README.md) | Issue/PR 작업 기록 정본 |
+| [06_Publication](06_Publication/README.md) | public subset 판단 정본 |
+| [07_Policies](07_Policies/README.md) | 문서화, 검증, demo, GitHub 운영, 공개 정책 정본 |
+| [98_Tools](98_Tools/README.md) | validator, templates, troubleshooting |
+| [99_Legacy](99_Legacy/README.md) | import 기록과 이전 문서 구조 |
+| [_assets](_assets/README.md) | 검토된 capture/image/video reference |
 
-## 자주 보는 문서
+## 운영 원칙
 
-- [Migration Workflow](_repo/workflow/migration-workflow.md)
-- [Part Import Workflow](_repo/workflow/part-import-workflow.md)
-- [Import Integrity Checklist](_repo/workflow/import-integrity-checklist.md)
-- [Chapter Start Checklist](_repo/workflow/chapter-start-checklist.md)
-- [AI Collaboration Safety](_repo/workflow/ai-collaboration-safety.md)
-- [Session Troubleshooting Notes](_repo/workflow/session-troubleshooting.md)
-- [Migration Board](_repo/tracking/migration-board.md)
-- [Build Guide](_repo/tracking/build-guide.md)
-- [Public 공개 준비 기준](_repo/workflow/public-readiness.md)
-- [Raw to Archive 대응표](_repo/reference/raw-to-archive-map.md)
-- [Asset Notes](_repo/reference/assets.md)
-- [Local Study Review Workflow](_repo/workflow/local-study-review-workflow.md)
-- [Study Review Template](_repo/templates/study-review-template.md)
-
-## 운영 메모
-
-- 예제별 tracked 문서는 `Docs/Part*_Chapter*/ExampleName/README.md`와 `status.md`에 둡니다.
-- 코드에서 분리한 원문 메모, raw 문서 원문 검토, 개인 검토 초안은 tracked 문서가 아니라 `local/` 아래에 둡니다.
-- build/run은 사용자가 직접 확인하기 전까지 `미확인`으로 기록합니다.
-- private repo 정리가 끝나기 전에는 public repo를 별도로 구성하지 않습니다.
+- root의 `Part*_Chapter*`와 `Portfolio_RayTracer`는 코드와 build 기준으로 유지한다.
+- 기존 `Docs/Part*` 문서는 `Docs/99_Legacy/PartDocs`로 내리고 정본으로 사용하지 않는다.
+- 예제 설명, 검증, demo, 작업 기록, publication 판단은 각 산출물 축 폴더에 작성한다.
+- 정책은 `Docs/07_Policies`에만 둔다.
+- import 기록과 이전 workflow는 `Docs/99_Legacy`에 둔다.
+- repo 내부 운영 안내는 root `AGENTS.md`, `Docs/README.md`, `Docs/07_Policies`를 기준으로 한다.

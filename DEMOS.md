@@ -1,35 +1,20 @@
-# 데모 인덱스
+# Demo Guide
 
-이 문서는 private portfolio archive에서 정리할 예제, 캡처, 영상, chapter 문서를 연결합니다.
+이 문서는 demo capture/video 운영의 root 안내 문서다. Demo evidence의 정본은 `Docs/04_Demos`에 둔다.
 
-## 우선 데모
+## 기준 위치
 
-| Part | 데모 | 개념 | 캡처/영상 | 빌드 상태 | Chapter 문서 |
-| --- | --- | --- | --- | --- | --- |
-| Part1 | `01_DX11InitAndImGui` | DX11 window, ImGui panel | 보류 | 성공 | `Docs/Part1_Chapter01-02/01_DX11InitAndImGui/README.md` |
-| Part1 | `02_Bloom` | Post-process bloom | 보류 | 성공 | `Docs/Part1_Chapter01-02/02_Bloom/README.md` |
-| Part1 | `03_Raytracing_Step4_DrawingSphere` | Ray-sphere intersection | 보류 | 성공 | `Docs/Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/README.md` |
-| Part1 | `03_Raytracing_Step5_PhongShading` | Phong shading | 보류 | 성공 | `Docs/Part1_Chapter03/03_Raytracing_Step5_PhongShading/README.md` |
-| Part2 | `04_Rasterization_Step5_DepthBuffer` | Depth buffer | 보류 | 성공 | `Docs/Part2_Chapter04/04_Rasterization_Step5_DepthBuffer/README.md` |
-| Part2 | `06_GraphicsPipeline_Step6_Lighting` | MVP and lighting | 보류 | 성공 | `Docs/Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting/README.md` |
-| Part3 | `09_UserInteraction_Step2_MousePicking` | Picking ray | 보류 | 성공 | `Docs/Part3_Chapter09/09_UserInteraction_Step2_MousePicking/README.md` |
-| Part3 | `12_PBR_Step2_PBRModels` | PBR material | 보류 | 성공 | `Docs/Part3_Chapter10-13/12_PBR_Step2_PBRModels/README.md` |
-| Part4 | `Ex1402_Blur` | Compute shader blur | 보류 | 성공 | `Docs/Part4_Chapter14-20/Ex1402_Blur/README.md` |
-| Part4 | `Ex1501_ParticleSystem` | Particle simulation | 보류 | 성공 | `Docs/Part4_Chapter14-20/Ex1501_ParticleSystem/README.md` |
-| Part4 | `Ex1701_SkeletalAnimation` | Skeletal animation | 보류 | 성공 | `Docs/Part4_Chapter14-20/Ex1701_SkeletalAnimation/README.md` |
-| Part4 | `Ex2001_GamePlay` | Animation/physics gameplay integration | 보류 | 성공 | `Docs/Part4_Chapter14-20/Ex2001_GamePlay/README.md` |
-| Portfolio | `16-01_Sampling` | Ray tracing representative result | 예정 | 미확인 | `Docs/Portfolio_RayTracer/README.md` |
+| 항목 | 위치 |
+| --- | --- |
+| demo 우선순위 | `Docs/04_Demos/demo-priority.md` |
+| capture 계획 | `Docs/04_Demos/capture-plan.md` |
+| video 계획 | `Docs/04_Demos/video-plan.md` |
+| capture 정책 | `Docs/07_Policies/demo-capture-policy.md` |
+| asset 기준 | `Docs/07_Policies/assets-policy.md` |
 
-## 캡처/영상 기준
+## 운영 기준
 
-- raw repo의 기존 캡처나 영상을 그대로 archive/public 후보로 사용하지 않습니다.
-- 데모 캡처와 영상은 archive 기준으로 직접 실행한 결과를 새로 기록합니다.
-- 강의 화면, 슬라이드, 유료 자료, 문제/해설 캡처는 포함하지 않습니다.
-- 외부 texture/model/image asset이 화면에 포함되는 경우 출처와 라이선스를 확인하기 전까지 `검토 필요`로 둡니다.
-- 빌드/실행을 직접 확인하지 않은 데모는 `미확인`으로 남깁니다.
-
-## 캡처/영상 위치
-
-- 우선 기록 위치: `Docs/Part*_Chapter*/ExampleName/README.md`
-- 보조 캡처 파일 위치: `Docs/_assets/captures/{Part_Chapter}/{example_or_topic}.png`
-- 보조 영상 파일 위치: `Docs/_assets/videos/{Part_Chapter}/{example_or_topic}.mp4`
+- raw capture 후보는 먼저 `local/`에 둔다.
+- 검토된 evidence만 tracked Docs 또는 `_assets`로 승격한다.
+- 강의 화면 캡처와 권리 불명확 자료는 public 후보로 두지 않는다.
+- demo는 연결 예제, Topic, Verification 상태를 함께 기록한다.
