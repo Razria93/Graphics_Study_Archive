@@ -17,6 +17,7 @@
 | [Docs Authoring Flow Policy](docs-authoring-flow-policy.md) | 산출물 축 문서 작성 순서 |
 | [Work Unit Workflow Policy](work-unit-workflow-policy.md) | Work Unit 전체 진행 흐름 |
 | [GitHub Workflow Policy](github-workflow-policy.md) | Issue, PR, gh, push/pull/rebase/merge 승인 흐름 |
+| [Structure Cleanup Roadmap](structure-cleanup-roadmap.md) | 문서 구조 정리 진행 상태와 다음 작업 기준 |
 | [Verification Policy](verification-policy.md) | build/run/capture 검증 기준 |
 | [Demo Capture Policy](demo-capture-policy.md) | screenshot/video evidence 관리 기준 |
 | [Publication Policy](publication-policy.md) | public subset 후보와 제외 기준 |
@@ -31,3 +32,4 @@
 - 정책 문서는 이 폴더에만 둔다.
 - 세부 작업 초안과 GitHub draft는 `local/`에 둔다.
 - 과거 import 기록은 `Docs/99_Legacy`를 기준으로 참조한다.
+- 구조 정리 작업 후에는 `structure-cleanup-roadmap.md`를 갱신한다.

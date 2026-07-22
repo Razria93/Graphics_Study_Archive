@@ -37,6 +37,7 @@ code 확인
 
 - [Work Unit Workflow Policy](../07_Policies/work-unit-workflow-policy.md)
 - [Docs Authoring Flow Policy](../07_Policies/docs-authoring-flow-policy.md)
+- [Structure Cleanup Roadmap](../07_Policies/structure-cleanup-roadmap.md)
 - [Verification Policy](../07_Policies/verification-policy.md)
 - [Demo Capture Policy](../07_Policies/demo-capture-policy.md)
 - [GitHub Workflow Policy](../07_Policies/github-workflow-policy.md)
