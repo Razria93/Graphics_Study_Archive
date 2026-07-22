@@ -31,6 +31,27 @@
 | Part4 Chapter14-20 | [Part4_Chapter14-20](Part4_Chapter14-20/verification-index.md) | 골격 작성 |
 | Portfolio RayTracer | [Portfolio_RayTracer](Portfolio_RayTracer/verification-index.md) | 골격 작성 |
 
+
+## 최종 검증 요약 예약
+
+`final-verification-summary.md`는 지금 생성하지 않는다. Part/Chapter별 `verification-index.md`, `build-run-matrix.md`, `capture-matrix.md`, `known-issues.md`가 충분히 채워진 뒤 최종 제출 또는 public subset 선별 직전에 작성한다.
+
+생성 조건:
+
+- P0 또는 대표 예제의 build/run 상태가 직접 확인되어 있다.
+- capture/video evidence 상태가 `확보`, `미확인`, `보류`, `제외`로 구분되어 있다.
+- known issue와 follow-up이 최신 상태로 정리되어 있다.
+- `Portfolio_RayTracer`와 Part1~Part4의 대표 검증 결과를 한 문서에서 비교할 필요가 있다.
+
+문서 책임:
+
+- 기능별 또는 Part별 검증 결과 요약
+- 대표 evidence 링크
+- 남은 제한과 미확인 항목
+- public subset 판단에 필요한 검증 근거
+
+상세 로그와 최신 상태의 정본은 계속 matrix와 각 `verification-index.md`에 둔다. `final-verification-summary.md`는 최종 요약 문서이며 검증 정본을 대체하지 않는다.
+
 ## 상태값
 
 | 상태 | 의미 |

@@ -35,6 +35,16 @@ Demo와 evidence 상태는 build/run 상태와 구분한다.
 - `보류`: 촬영 또는 공개 판단을 의도적으로 미룬 상태
 - `제외`: public/archive demo evidence로 사용하지 않기로 결정한 상태
 
+
+## 최종 요약 문서 기준
+
+`Docs/03_Verification/final-verification-summary.md`는 모든 검증 기록의 정본이 아니라 제출 직전 요약 문서다. Part/Chapter별 최신 상태는 `build-run-matrix.md`, `capture-matrix.md`, `known-issues.md`, 각 `verification-index.md`를 기준으로 유지한다.
+
+이 문서는 다음 시점에만 생성한다.
+
+- 대표 예제와 public 후보가 좁혀진 뒤
+- 직접 확인한 build/run/capture 결과가 충분히 모인 뒤
+- 제출 또는 public subset 선별을 위해 한 장짜리 검증 요약이 필요할 때
 ## 작성 기준
 
 - 확인하지 않은 항목을 성공처럼 쓰지 않는다.

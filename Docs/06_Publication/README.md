@@ -20,6 +20,28 @@
 | [Redaction Log](redaction-log.md) | 공개 전 제거 또는 재작성 필요 항목 |
 | [Publication Checklist](publication-checklist.md) | 공개 전 최종 점검표 |
 
+
+## 제출 요약 예약
+
+`submission-summary.md`는 지금 생성하지 않는다. public 후보와 대표 evidence가 확정된 뒤, 공개용 repo 또는 포트폴리오 제출 자료를 구성하기 직전에 작성한다.
+
+생성 조건:
+
+- `candidate-list.md`에서 public 후보가 P0 또는 대표 후보로 좁혀져 있다.
+- `Docs/03_Verification`에 대표 build/run/capture 검증 근거가 있다.
+- `Docs/04_Demos`와 `Docs/_assets`에 연결 가능한 demo evidence가 있다.
+- `redaction-log.md`와 `publication-checklist.md` 기준으로 공개 전 제거/재작성 대상이 정리되어 있다.
+
+문서 책임:
+
+- 3줄 요약
+- 이력서 또는 README용 한 문장
+- 대표 기능과 설명 포인트
+- 연결 evidence와 검증 근거
+- 공개 시 남길 제한 사항
+
+`submission-summary.md`는 public 제출용 요약 후보이며, private archive의 Example, Topic, Verification, Demo 문서를 그대로 복제하지 않는다.
+
 ## 상태값
 
 | 상태 | 의미 |
