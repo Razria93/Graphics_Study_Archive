@@ -33,4 +33,4 @@
 2. 다음 raw 예제는 복사 전 파일/asset/result/capture를 분류합니다.
 3. source 내부 학습 메모는 local-only 문서로 분리합니다.
 4. archive 문서에는 실행 흐름, 핵심 코드, 검증 상태만 남깁니다.
-5. public 가능성은 [public-readiness.md](../workflow/documentation/public-readiness.md) 기준으로 나중에 별도 판단합니다.
+5. public 가능성은 [publication-policy.md](../07_Policies/publication-policy.md) 기준으로 나중에 별도 판단합니다.

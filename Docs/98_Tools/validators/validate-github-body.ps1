@@ -195,11 +195,11 @@ function Test-CommonPublicRules {
 	$BannedPatterns = @(
 		[regex]::Escape($Nida),
 		[regex]::Escape($Nikka),
-		'^# PR',
-		'^## Branch$',
-		'^## Governance Rules$',
-		'^## Naming Rules$',
-		'^## Documentation Structure$',
+		'(?m)^# PR',
+		'(?m)^## Branch$',
+		'(?m)^## Governance Rules$',
+		'(?m)^## Naming Rules$',
+		'(?m)^## Documentation Structure$',
 		[regex]::Escape($PrPending),
 		([regex]::Escape($PrBody) + '.*' + [regex]::Escape($Attach)),
 		'local/github/draft',
@@ -207,7 +207,7 @@ function Test-CommonPublicRules {
 		'local/prompts',
 		'Docs/_repo',
 		'Docs/Part[0-9]',
-		'^## Metadata$',
+		'(?m)^## Metadata$',
 		'Status: Draft'
 	)
 
