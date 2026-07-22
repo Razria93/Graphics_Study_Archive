@@ -24,6 +24,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 
 - GitHub 게시 전 body에 draft/local-only 경로가 남아 있지 않은지 확인한다.
 - 필수 섹션이 빠지지 않았는지 확인한다.
+- GitHub body가 한국어 섹션 기준을 따르는지 확인한다.
 - screenshot Markdown이 `Docs/_assets/captures`를 가리키는지 확인한다.
 - template에 특정 Issue 번호가 하드코딩되어 있지 않은지 확인한다.
 

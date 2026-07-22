@@ -4,6 +4,7 @@
 
 ## 기본 문체
 
+- tracked Docs, AGENTS, README, GitHub Issue/PR/comment body는 한국어 중심으로 작성한다.
 - 평서형 현재형으로 작성한다.
 - 존댓말, 대화체, 감상문체를 사용하지 않는다.
 - technical keywords, folder names, API names는 영어를 유지한다.
@@ -27,4 +28,4 @@
 
 ## GitHub 본문
 
-GitHub public body는 명사형 bullet과 짧은 평서형을 사용한다. local draft 문구, 내부 메모, Metadata 섹션은 게시 전 제거한다.
+GitHub public body는 한국어 중심의 명사형 bullet과 짧은 평서형을 사용한다. local draft 문구, 내부 메모, Metadata 섹션은 게시 전 제거한다.

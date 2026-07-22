@@ -18,6 +18,7 @@
 - 출력은 실패와 경고를 구분한다.
 - 실패 조건은 문서화된 GitHub 게시 기준과 연결한다.
 - local-only 경로, stale `_repo` 경로, legacy PartDocs 경로를 public body에 허용하지 않는다.
+- GitHub Issue/PR/comment body의 섹션명과 본문은 한국어 중심으로 검사한다.
 
 ## 문체
 

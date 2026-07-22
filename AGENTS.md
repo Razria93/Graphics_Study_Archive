@@ -40,11 +40,13 @@
 
 ## 문체 규칙
 
-Git에 추적되는 Docs와 AGENTS 문서는 평서형 현재형으로 작성한다.
+Git에 추적되는 Docs와 AGENTS 문서는 한국어 중심의 평서형 현재형으로 작성한다.
 
 - 사용: `정의한다`, `기록한다`, `둔다`, `사용한다`, `확인한다`
 - 금지: `합니다`, `해주세요`, `됩니다`, `좋습니다`, 대화체, 감상문체
-- GitHub public body는 명사형 bullet과 짧은 평서형을 사용한다.
+- GitHub Issue/PR/comment body도 한국어 중심으로 작성한다.
+- technical keywords, folder names, API names, graphics concepts, command names는 영어가 더 명확하면 영어를 유지한다.
+- GitHub public body는 한국어 명사형 bullet과 짧은 평서형을 사용한다.
 - local draft는 자유롭게 작성할 수 있으나, public 변환 시 `Metadata`, draft 문구, 내부 메모, 존댓말을 제거한다.
 
 ## 커밋 메시지

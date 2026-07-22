@@ -109,9 +109,10 @@ function Test-ScreenshotsSection {
 	)
 
 	$NoneText = "- " + (New-Text @(0xC5C6, 0xC74C))
-	$Section = Get-Section -Lines $Lines -Heading "## Screenshots"
+	$ScreenshotsHeading = "## " + (New-Text @(0xC2A4, 0xD06C, 0xB9B0, 0xC0F7))
+	$Section = Get-Section -Lines $Lines -Heading $ScreenshotsHeading
 	if ($null -eq $Section) {
-		Add-Failure $Path "missing ## Screenshots section"
+		Add-Failure $Path "missing screenshots section"
 		return
 	}
 
@@ -473,35 +474,49 @@ function Test-Templates {
 	}
 }
 
+$SummarySection = New-Text @(0xC694, 0xC57D)
+$KeyChangesSection = New-Text @(0xC8FC, 0xC694, 0x20, 0xBCC0, 0xACBD)
+$VerificationSection = New-Text @(0xAC80, 0xC99D)
+$ScreenshotsSection = New-Text @(0xC2A4, 0xD06C, 0xB9B0, 0xC0F7)
+$UnverifiedLimitationsSection = New-Text @(0xBBF8, 0xD655, 0xC778, 0x20, 0x2F, 0x20, 0xC81C, 0xD55C)
+$DocumentationSection = New-Text @(0xBB38, 0xC11C)
+$RelatedIssuesSection = New-Text @(0xAD00, 0xB828, 0x20, 0xC774, 0xC288)
+$NextStepSection = New-Text @(0xB2E4, 0xC74C, 0x20, 0xB2E8, 0xACC4)
+$UnverifiedSection = New-Text @(0xBBF8, 0xD655, 0xC778)
+$RelatedPrSectionName = New-Text @(0xAD00, 0xB828, 0x20, 0x0050, 0x0052)
+$ScopeSection = New-Text @(0xBC94, 0xC704)
+$ConceptNotesSection = New-Text @(0xAC1C, 0xB150, 0x20, 0xBA54, 0xBAA8)
+$RelatedExamplesSection = New-Text @(0xAD00, 0xB828, 0x20, 0xC608, 0xC81C)
+
 $PrRequiredSections = @(
-	"Summary",
-	"Key Changes",
-	"Verification",
-	"Screenshots",
-	"Unverified / Limitations",
-	"Documentation",
-	"Related Issues",
-	"Next Step"
+	$SummarySection,
+	$KeyChangesSection,
+	$VerificationSection,
+	$ScreenshotsSection,
+	$UnverifiedLimitationsSection,
+	$DocumentationSection,
+	$RelatedIssuesSection,
+	$NextStepSection
 )
 
 $VerificationRequiredSections = @(
-	"Summary",
-	"Build Verification",
-	"Run Verification",
-	"Capture Verification",
-	"Screenshots",
-	"Unverified",
-	"Documentation",
-	"Related PR"
+	$SummarySection,
+	("Build " + $VerificationSection),
+	("Run " + $VerificationSection),
+	("Capture " + $VerificationSection),
+	$ScreenshotsSection,
+	$UnverifiedSection,
+	$DocumentationSection,
+	$RelatedPrSectionName
 )
 
 $TopicRequiredSections = @(
-	"Summary",
-	"Scope",
-	"Concept Notes",
-	"Related Examples",
-	"Documentation",
-	"Related PR"
+	$SummarySection,
+	$ScopeSection,
+	$ConceptNotesSection,
+	$RelatedExamplesSection,
+	$DocumentationSection,
+	$RelatedPrSectionName
 )
 
 function Get-OptionalMarkdownFiles {
