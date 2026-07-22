@@ -4,9 +4,9 @@
 
 ## 현재 상태
 
-- tracked Docs 전용 validator script는 아직 없다.
-- GitHub body validator는 `local/tools/validate-github-body.ps1`에 있는 local-only 도구다.
-- tracked script로 승격하기 전까지는 수동 검색과 `git diff --check`를 최소 검수로 사용한다.
+- GitHub body validator는 `validators/validate-github-body.ps1`에 둔다.
+- tracked Docs 전용 통합 validator script는 아직 없다.
+- GitHub 게시 전 body 검수는 tracked validator와 수동 검색을 함께 사용한다.
 
 ## 최소 검수
 
@@ -27,20 +27,27 @@
 | WorkLog 마감 | `templates/worklog.md`, `Docs/05_WorkLogs/AGENTS.md` |
 | local study review | `templates/local-study-review.md`, `Docs/07_Policies/local-review-policy.md` |
 | publication review | `templates/local-publication-review.md`, `Docs/06_Publication/AGENTS.md` |
-| GitHub body 검수 | `Docs/07_Policies/github-workflow-policy.md`, local validator |
+| GitHub body 검수 | `Docs/07_Policies/github-workflow-policy.md`, `validators/validate-github-body.ps1` |
 
-## tracked validator 승격 기준
+## tracked validator 기준
 
-local validator는 다음 조건을 만족할 때 tracked script 후보로 본다.
+tracked validator는 다음 조건을 만족해야 한다.
 
 - 반복 사용 가치가 있다.
 - 민감 정보와 로컬 절대 경로가 없다.
 - 입력/출력과 실패 조건이 명확하다.
 - `Docs/98_Tools`에 사용법이 문서화되어 있다.
-- 사용자 승인 후 tracked script로 추가한다.
+- remote 상태를 바꾸지 않는다.
+
+## GitHub body validator
+
+```powershell
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-body.ps1
+```
+
+기본 입력 위치는 `local/github/public`이다. GitHub에 게시하기 전 후보 Markdown을 이 위치에 둔 뒤 실행한다.
 
 ## 금지사항
 
-- local-only validator를 검토 없이 tracked script로 승격하지 않는다.
 - 검증하지 않은 문서를 validator 통과처럼 표현하지 않는다.
 - GitHub 게시나 remote 상태 변경은 validator 결과만으로 진행하지 않는다.

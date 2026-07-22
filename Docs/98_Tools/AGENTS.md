@@ -7,6 +7,7 @@
 ## 책임
 
 - template, validation 기준, troubleshooting 문서만 둔다.
+- 반복 실행 가능한 validator script는 `validators/`에 둔다.
 - 정책 원문은 `Docs/07_Policies`로 링크한다.
 - 산출물 정본은 `Docs/00_Index`부터 `Docs/06_Publication`에 둔다.
 - GitHub draft, raw/reference 원문, 개인 메모는 이 폴더에 두지 않는다.
@@ -18,6 +19,12 @@
 - local-only review template은 파일명에 `local-`을 붙인다.
 - 상태를 여러 산출물에서 다시 모으는 template은 만들지 않는다.
 - 상세 정책은 각 정책 문서로 연결한다.
+
+## Validator 기준
+
+- tracked validator는 remote 상태를 바꾸지 않는다.
+- local draft를 자동 수정하지 않고 실패와 경고만 보고한다.
+- GitHub 게시 전 body 검수는 `validators/validate-github-body.ps1`를 기준으로 한다.
 
 ## 문체
 
