@@ -1,0 +1,24 @@
+# Templates
+
+이 폴더는 반복 사용할 문서 양식을 둔다. 템플릿은 정본 문서를 대체하지 않고, 각 산출물 폴더의 책임에 맞는 최소 구조만 제공한다.
+
+## Template Index
+
+| 템플릿 | 사용 위치 | 성격 | 비고 |
+| --- | --- | --- | --- |
+| [Example README](example-readme.md) | `Docs/01_Examples` | tracked 정본 문서용 | 예제 설명과 링크 중심 |
+| [Topic](topic.md) | `Docs/02_Topics` | tracked 정본 문서용 | graphics concept 문서 골격 |
+| [WorkLog](worklog.md) | `Docs/05_WorkLogs` | tracked 정본 문서용 | Work Unit 마감 요약 |
+| [Local Study Review](local-study-review.md) | `local/study-review` | local-only 검토용 | raw/source 검토 메모 |
+| [Local Publication Review](local-publication-review.md) | `local/publication` 또는 `local/github/public` | local-only 검토용 | 공개 전 점검 메모 |
+
+## 사용 기준
+
+- tracked 정본 문서용 템플릿은 해당 산출물 폴더 책임만 담는다.
+- local-only 템플릿은 tracked Docs로 그대로 복사하지 않는다.
+- 상세 정책은 `Docs/07_Policies`를 기준으로 한다.
+- 문체 검수와 stale 경로 검수는 `../validation-tools.md`를 따른다.
+
+## 삭제된 템플릿
+
+상태 통합 템플릿은 삭제한다. 상태 정보를 Example, Verification, Demo, Publication, WorkLog에 다시 모으는 구조라 산출물 축 책임과 충돌한다.
