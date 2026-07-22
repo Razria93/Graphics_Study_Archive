@@ -4,9 +4,10 @@
 
 ## 책임
 
-- 이 폴더의 책임에 맞는 문서만 둔다.
-- 다른 산출물의 원문을 복사하지 않고 링크로 연결한다.
-- 직접 확인하지 않은 상태는 미확인으로 기록한다.
+- Work Unit 단위의 작업 범위와 변경 요약을 기록한다.
+- 어떤 Example, Topic, Verification, Demo, Publication 문서를 갱신했는지 연결한다.
+- 검증 결과, 미확인 항목, follow-up을 남긴다.
+- GitHub Issue/PR draft의 출발점이 되는 요약을 둔다.
 
 ## 예정 항목
 
@@ -17,5 +18,7 @@
 ## 작성 기준
 
 - 평서형 현재형을 사용한다.
-- 상세 정책은 Docs/07_Policies를 기준으로 한다.
-- 오래된 import-stage 문서는 Docs/99_Legacy를 기준으로 참조한다.
+- 예제 설명 정본을 이 폴더에 쓰지 않는다.
+- 검증 상세를 이 폴더에 복사하지 않는다.
+- GitHub draft 원문은 `local/github/draft`에 둔다.
+- 전체 흐름은 `Docs/07_Policies/work-unit-workflow-policy.md`를 따른다.
