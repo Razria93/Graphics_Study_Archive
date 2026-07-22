@@ -15,6 +15,8 @@
 - `.vs/`, `x64/`, `Debug/`, `Release/`, `.user`, `.suo`, `imgui.ini`, 임시 캡처, raw result는 추가하지 않는다.
 - build/run/capture를 직접 확인하지 않은 항목은 `미확인`으로 기록한다.
 - push, pull, merge, rebase, branch delete, history rewrite, LFS import 같은 되돌리기 어려운 작업은 실행 전에 범위와 위험도를 보고한다.
+- 포트폴리오 증빙용 브랜치는 보존 대상일 수 있으므로 로컬/원격 브랜치를 임의로 삭제하지 않는다.
+- PR merge는 사용자가 다르게 명시하지 않는 한 일반 merge commit 방식만 사용하고 squash merge, rebase merge, history rewrite를 사용하지 않는다.
 - 작업 종료 시에는 commit readiness를 보고하고, 커밋 가능 상태라면 Git Bash 기준 `git add` 대상과 권장 commit 메시지를 제안한다.
 
 ## 문서 위치
