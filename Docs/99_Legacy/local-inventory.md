@@ -13,10 +13,10 @@
 
 | 항목 | 값 |
 | --- | --- |
-| 전체 파일 수 | 97 |
+| 전체 파일 수 | 96 |
 | Markdown 파일 | 96 |
-| PowerShell 파일 | 1 |
-| 전체 크기 | 약 548 KB |
+| PowerShell 파일 | 0 |
+| 전체 크기 | 약 533 KB |
 | 최대 파일 크기 | 약 49 KB |
 
 ## 상위 폴더별 현황
@@ -29,7 +29,6 @@
 | `local/Part2_Chapter05-08` | 51 | Pipeline, modeling, ShaderToys 검토 메모 | `study-review.local.md`만 우선 참고 후보 |
 | `local/Part4_Chapter14-20` | 1 | Assimp/SkeletalAnimation 재현 메모 | tracked 문서와 대조 후 보완 후보 |
 | `local/pr` | 1 | Part1 전용 과거 PR draft | Part1 pilot 전까지 참고 후보로 보존 |
-| `local/tools` | 1 | GitHub body validator 원본 | tracked validator 승격 후 local copy 삭제 후보 |
 
 ## 파일 패턴별 현황
 
@@ -42,7 +41,6 @@
 | `raw-md-notes.md` | 2 | raw markdown note cache | tracked Docs 직접 승격 금지 |
 | `part1-archive-migration.md` | 1 | 과거 PR draft | `Docs/05_WorkLogs` 작성 시 요약 참고 |
 | `assimp-5.2.5-repro.local.md` | 1 | Assimp 5.2.5 재현 시도 기록 | `Ex1701_SkeletalAnimation` 보완 후보 |
-| `validate-github-body.ps1` | 1 | GitHub body validator 원본 | `Docs/98_Tools/validators`로 승격 완료, local copy 삭제 후보 |
 
 ## 승격 후보
 
@@ -76,6 +74,7 @@
 | --- | --- |
 | `local/prompts/archive-migration-session-prompt.md` | 현행 `AGENTS.md`와 정책 문서에 흡수됐고 stale `_repo` 경로가 남아 있다. |
 | `local/prompts/quick-start-prompt.md` | 현행 workflow와 GitHub 승인 정책에 흡수됐고 import 중심 경로가 남아 있다. |
+| `local/tools/validate-github-body.ps1` | `Docs/98_Tools/validators/validate-github-body.ps1`로 승격했고 tracked 사용법을 문서화했다. |
 
 추가 폐기 후보는 다음 조건을 만족하면 폐기 후보로 본다.
 
@@ -87,5 +86,5 @@
 
 - Work Unit을 시작할 때 관련 `local/Part*_Chapter*/.../study-review.local.md`를 먼저 확인한다.
 - `source-comments.md`는 코드 위치 확인용으로만 읽고 tracked Docs에 복사하지 않는다.
-- validator 승격은 `Docs/98_Tools/validation-tools.md` 기준으로 별도 작업에서 판단한다.
+- GitHub body validator는 `Docs/98_Tools/validators/validate-github-body.ps1`를 사용한다.
 - 이 inventory는 `local/` 파일을 실제 삭제하거나 이동하기 전에 다시 갱신한다.
