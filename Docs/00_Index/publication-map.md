@@ -7,8 +7,11 @@
 | 항목 | 위치 | 책임 |
 | --- | --- | --- |
 | 공개 기준 | `Docs/07_Policies/publication-policy.md` | public 후보/제외 기준 |
-| 후보 목록 | `Docs/06_Publication` | 공개 가능한 subset 후보 기록 |
-| 제외 사유 | `Docs/06_Publication` | 제외 대상과 이유 기록 |
+| 후보 목록 | `Docs/06_Publication/candidate-list.md` | 공개 가능한 subset 후보 기록 |
+| private-only | `Docs/06_Publication/private-only.md` | private archive에만 둘 항목 기록 |
+| 제외 사유 | `Docs/06_Publication/excluded-material.md` | 제외 대상과 이유 기록 |
+| redaction | `Docs/06_Publication/redaction-log.md` | 제거 또는 재작성 필요 항목 기록 |
+| 공개 전 체크리스트 | `Docs/06_Publication/publication-checklist.md` | 게시 전 최종 점검 |
 | 게시 전 검토 | `local/publication`, `local/github/public` | 민감 정보와 문체 최종 점검 |
 | 게시 후 요약 | `Docs/05_WorkLogs` | 게시된 Issue/PR/문서 요약 |
 
