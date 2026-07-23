@@ -9,7 +9,7 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 ## 기본 원칙
 
 - 코드 정본은 루트 코드 폴더에 둔다.
-- 문서 정본은 `Docs/01_Examples`부터 `Docs/06_Publication`까지의 산출물 축 폴더에 둔다.
+- 예제 README 정본은 코드 폴더에 두고, Topic부터 Publication까지의 문서 정본은 `Docs/02_Topics`부터 `Docs/06_Publication`까지의 산출물 축 폴더에 둔다.
 - 정책 정본은 `Docs/07_Policies`에 둔다.
 - 도구와 템플릿은 `Docs/98_Tools`에 둔다.
 - import 기록과 기존 Part 문서는 `Docs/99_Legacy`에 둔다.
@@ -26,9 +26,9 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | 4 | raw/reference와 origin 기준 확인 | raw/reference repo, origin 또는 원본 예제, `Docs/99_Legacy/ImportHistory` | 검토 메모는 `local/` | `canonical-docs-policy.md`, `local-review-policy.md` |
 | 5 | current/raw/origin diff 조사 | 현재 코드, raw/reference, origin 기준 | `local/study-review` | `docs-authoring-flow-policy.md` |
 | 6 | 챕터 목표와 핵심 구현 후보 추출 | code, source comment inventory, raw/origin docs | `local/study-review` 또는 `Docs/05_WorkLogs` | `docs-authoring-flow-policy.md` |
-| 7 | 예제 목록과 대표 예제 결정 | 루트 코드 폴더, source review, Legacy PartDocs | `Docs/01_Examples` | `canonical-docs-policy.md` |
+| 7 | 예제 목록과 대표 예제 결정 | 루트 코드 폴더, source review, Legacy PartDocs | 코드 폴더 README 계획 또는 `Docs/00_Index` | `canonical-docs-policy.md` |
 | 8 | 코드 주석 선별 정리 | source comment inventory | 루트 코드 폴더 | `agent-safety-policy.md`, `docs-authoring-flow-policy.md` |
-| 9 | 예제 설명 작성 | current/raw/origin 검토 결과 | `Docs/01_Examples` | `docs-authoring-flow-policy.md` |
+| 9 | 예제 README 작성 | current/raw/origin 검토 결과 | 대상 코드 폴더 `README.md` | `docs-authoring-flow-policy.md` |
 | 10 | graphics Topic 작성 | example docs, code, raw/reference 검토 결과 | `Docs/02_Topics` | `canonical-docs-policy.md` |
 | 11 | build/run/capture 검증 | solution, executable, assets | `Docs/03_Verification` | `verification-policy.md` |
 | 12 | Demo evidence 정리 | 실행 결과, capture 후보 | `Docs/04_Demos`, `Docs/_assets` | `demo-capture-policy.md`, `assets-policy.md` |
@@ -45,7 +45,7 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 
 | 산출물 | 정본 위치 | 내용 |
 | --- | --- | --- |
-| 예제 설명 | `Docs/01_Examples` | 예제 목적, 핵심 코드 위치, 관련 Topic/Verification/Demo 링크 |
+| 예제 README | 대상 코드 폴더 `README.md` | 예제 목적, 핵심 코드 위치, 관련 Topic/Verification/Demo 링크 |
 | Topic | `Docs/02_Topics` | 여러 예제를 관통하는 graphics 개념과 pipeline 설명 |
 | Verification | `Docs/03_Verification` | build/run/capture 상태, known issue, 확인 일자 |
 | Demo | `Docs/04_Demos` | capture/video evidence, 시연 포인트, 연결 개념 |
@@ -61,8 +61,8 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 
 | 대상 | 필수 산출물 | 선택 또는 대표 산출물 |
 | --- | --- | --- |
-| 모든 예제 | `Docs/01_Examples` index, `Docs/03_Verification` 상태 | 상세 Example README |
-| 대표 예제 | 상세 Example README, Topic 연결, Demo 후보, WorkLog source review 요약 | Publication 후보 상태 |
+| 모든 예제 | 코드 폴더 README, `Docs/03_Verification` 상태 | 상세 Topic/Demo 연결 |
+| 대표 예제 | 상세 코드 폴더 README, Topic 연결, Demo 후보, WorkLog source review 요약 | Publication 후보 상태 |
 | Part/Chapter | README, example-index, verification-index, demo-index | 대표 Topic, 대표 capture/video |
 | 공개 후보 | `Docs/06_Publication` 상태 기록 | public subset 문장 재작성 |
 
@@ -113,6 +113,13 @@ local/
 | WorkLog 마감 | `Docs/98_Tools/templates/worklog.md` |
 | 최종 검수 | `Docs/98_Tools/validation-tools.md` |
 
+## Docs/01_Examples 전환 기준
+
+- Docs/01_Examples는 전환기 링크 허브로만 사용한다.
+- 예제 설명 본문은 코드 폴더 README에 둔다.
+- build/run/capture 상세 상태는 Docs/03_Verification에 둔다.
+- 내부 source review와 stale 판단은 코드 폴더 README에 노출하지 않고 local/ 또는 WorkLog에 둔다.
+
 ## 사용자 검토 지점
 
 다음 지점에서는 작업자가 사용자에게 상태를 보고하고 진행 방향을 확인한다.
@@ -128,7 +135,7 @@ local/
 
 Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.
 
-- 예제 설명 정본이 `Docs/01_Examples`에 있다.
+- 예제 README 정본이 대상 코드 폴더에 있다.
 - 소스 주석 inventory와 raw/origin/current 비교 여부가 기록되어 있다.
 - 관련 Topic이 없으면 없다고 기록하고, 있으면 `Docs/02_Topics`에 연결한다.
 - build/run/capture 상태가 `Docs/03_Verification`에 기록되어 있다.
@@ -139,5 +146,5 @@ Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.
 - Plan Issue 누적 진행 댓글 또는 WorkLog 댓글 갱신 필요 여부가 판단되어 있다.
 - `Docs/05_WorkLogs/issue-pr-index.md`에 Issue/PR/Plan comment 상태가 반영되어 있다.
 - `Docs/00_Index` map이 필요한 범위만큼 갱신되어 있다.
-- 오래된 `Docs/99_Legacy` 문서를 정본처럼 링크하지 않는다.
+- 오래된 `Docs/99_Legacy` 문서와 기존 `Docs/01_Examples` 본문을 정본처럼 링크하지 않는다.
 - 사용자 검토 요청과 commit readiness 보고가 끝나 있다.

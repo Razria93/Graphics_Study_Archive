@@ -33,7 +33,7 @@
 5. current/raw/origin 차이를 조사하고 사용자가 채운 구현 후보와 원본 유지 코드를 구분한다.
 6. 챕터 목표, 핵심 개념, 핵심 코드, 결과물 후보, 학습 고민 흔적을 추출한다.
 7. 코드 주석은 사용자 검토 가능한 후보를 만든 뒤 선별 정리한다.
-8. 예제 설명은 `Docs/01_Examples`에 작성한다.
+8. 예제 README는 대상 코드 폴더 아래에 작성한다.
 9. 연결 Topic은 `Docs/02_Topics`에 작성하거나 갱신한다.
 10. build/run/capture 상태는 `Docs/03_Verification`에 기록한다.
 11. Demo evidence와 시연 포인트는 `Docs/04_Demos`에 기록한다.
@@ -93,7 +93,7 @@ source comment inventory는 tracked Docs가 아니라 local-only 검토 자료�
 
 | 내용 | 작성 위치 |
 | --- | --- |
-| 예제 하나가 무엇을 보여주는지 | `Docs/01_Examples` |
+| 예제 하나가 무엇을 보여주는지 | 대상 코드 폴더 `README.md` |
 | 여러 예제를 관통하는 graphics 개념 | `Docs/02_Topics` |
 | build/run/capture 상태 | `Docs/03_Verification` |
 | capture/video evidence와 시연 포인트 | `Docs/04_Demos` |
@@ -107,9 +107,17 @@ source comment inventory는 tracked Docs가 아니라 local-only 검토 자료�
 
 초기 Part1 pilot 문서는 산출물 축 구조를 검증하기 위한 초안으로 본다. 정식 Work Unit 완료로 보려면 대표 예제별로 source comment inventory, current/raw/origin 비교, 직접 검증 상태를 다시 확인한다. 기존 pilot 문서를 그대로 확장하지 않고, 이 정책의 작성 순서를 따라 필요한 문서만 보강한다.
 
+## Docs/01_Examples 전환 기준
+
+- Docs/01_Examples는 예제 설명 정본 위치가 아니다.
+- 기존 Docs/01_Examples 문서는 코드 폴더 README로 이관한다.
+- 전환기에는 redirect 또는 얇은 링크 허브만 허용한다.
+- status.md는 코드 폴더로 옮기지 않고 Docs/03_Verification으로 흡수한다.
+- 모든 예제 README 이관이 끝나면 Docs/01_Examples 제거를 검토한다.
+
 ## 금지사항
 
-- 새 예제 설명을 `Docs/99_Legacy/PartDocs`에 추가하지 않는다.
+- 새 예제 설명을 `Docs/99_Legacy/PartDocs`나 `Docs/01_Examples` 본문으로 추가하지 않는다.
 - 검증 상세를 예제 문서에 길게 복사하지 않는다.
 - demo 파일 원본을 검토 없이 tracked Docs에 추가하지 않는다.
 - GitHub draft 원문을 tracked Docs에 두지 않는다.
