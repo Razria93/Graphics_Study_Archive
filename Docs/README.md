@@ -1,28 +1,22 @@
 # Docs
 
-이 폴더는 Graphics Study Archive의 문서 산출물 공간이다. 문서 정본은 산출물 종류별 폴더에 둔다.
+이 폴더는 Graphics Study Archive의 문서 산출물과 운영 규칙을 관리한다. 예제별 README 정본은 코드 폴더 아래에 두고, `Docs/01_Examples`는 전환기 경로로만 유지한다.
 
-## 구조
-
-| 위치 | 책임 |
+| 폴더 | 역할 |
 | --- | --- |
-| [00_Index](00_Index/README.md) | 전체 map과 문서 진입점 |
-| [01_Examples](01_Examples/README.md) | 예제 설명 정본 |
-| [02_Topics](02_Topics/README.md) | graphics 개념 정본 |
-| [03_Verification](03_Verification/README.md) | build/run/capture 검증 정본 |
-| [04_Demos](04_Demos/README.md) | demo capture/video evidence 정본 |
-| [05_WorkLogs](05_WorkLogs/README.md) | Issue/PR 작업 기록 정본 |
-| [06_Publication](06_Publication/README.md) | public subset 판단 정본 |
-| [07_Policies](07_Policies/README.md) | 문서화, 검증, demo, GitHub 운영, 공개 정책 정본 |
-| [98_Tools](98_Tools/README.md) | validator, templates, troubleshooting |
-| [99_Legacy](99_Legacy/README.md) | import 기록과 이전 문서 구조 |
-| [_assets](_assets/README.md) | 검토된 capture/image/video reference |
+| [00_Index](00_Index/README.md) | 전체 지도와 작업 흐름 진입점 |
+| `01_Examples` | 전환기 경로. 예제 README 정본은 코드 폴더로 이관 중 |
+| [02_Topics](02_Topics/README.md) | 여러 예제를 관통하는 graphics concept 설명 |
+| [03_Verification](03_Verification/README.md) | build/run/capture 상태와 known issue |
+| [04_Demos](04_Demos/README.md) | demo capture/video 계획과 evidence 연결 |
+| [05_WorkLogs](05_WorkLogs/work-unit-index.md) | Work Unit 작업 경위와 follow-up |
+| [06_Publication](06_Publication/README.md) | public subset 후보와 제외 기준 |
+| [07_Policies](07_Policies/README.md) | 문서 작성과 GitHub 운영 정책 |
+| [98_Tools](98_Tools/README.md) | templates, validators, troubleshooting |
+| [99_Legacy](99_Legacy/README.md) | 과거 import 기록과 이전 문서 구조 |
 
-## 운영 원칙
+## 운영 기준
 
-- root의 `Part*_Chapter*`와 `Portfolio_RayTracer`는 코드와 build 기준으로 유지한다.
-- 기존 `Docs/Part*` 문서는 `Docs/99_Legacy/PartDocs`로 내리고 정본으로 사용하지 않는다.
-- 예제 설명, 검증, demo, 작업 기록, publication 판단은 각 산출물 축 폴더에 작성한다.
-- 정책은 `Docs/07_Policies`에만 둔다.
-- import 기록과 이전 workflow는 `Docs/99_Legacy`에 둔다.
-- repo 내부 운영 안내는 root `AGENTS.md`, `Docs/README.md`, `Docs/07_Policies`를 기준으로 한다.
+- 코드 폴더 README는 public-facing 예제 설명으로 작성한다.
+- 내부 검토 기록은 `Docs/05_WorkLogs` 또는 `local/`에 둔다.
+- 검증 상태는 직접 확인한 결과만 갱신한다.
