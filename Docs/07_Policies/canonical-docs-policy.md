@@ -10,6 +10,21 @@
 - 기존 `Docs/99_Legacy/PartDocs` 문서는 전환기 참고 자료로만 읽는다.
 - `local-only 자료 영역`의 원문 메모는 tracked Docs로 그대로 옮기지 않는다.
 - 반복 용어는 `terminology-policy.md`의 표준 용어를 따른다.
+- 현재 코드, raw/reference, origin 또는 원본 예제 기준, 직접 검증 결과를 기존 Docs보다 우선한다.
+
+## 신뢰도 기준
+
+| 자료 | 신뢰도 | 사용 방식 |
+| --- | --- | --- |
+| 현재 루트 코드 폴더 | 높음 | 실제 archive 상태와 구현 확인 기준 |
+| raw/reference code/docs | 높음 | 작성 의도와 원본 맥락 확인 기준 |
+| origin 또는 원본 예제 기준 | 높음 | 사용자가 채운 구현과 차이 확인 기준 |
+| 직접 build/run/capture 결과 | 높음 | Verification과 Demo 상태 판단 기준 |
+| `Docs/99_Legacy/PartDocs` | 낮음 | stale 검토 전까지 참고자료이며 정본 후보가 아님 |
+| 기존 tracked Docs | 낮음 | stale 검토 전까지 참고자료이며 정본 후보가 아님 |
+| local draft와 개인 메모 | 낮음 | tracked Docs로 그대로 승격 금지 |
+
+기존 Docs와 현재 코드가 충돌하면 현재 코드를 우선한다. 기존 Docs와 직접 검증 결과가 충돌하면 직접 검증 결과를 우선한다.
 
 ## 정본 위치
 
@@ -31,5 +46,7 @@
 - 평서형 현재형을 사용한다.
 - 존댓말, 대화체, 감상문체를 사용하지 않는다.
 - raw/reference 문서는 필요한 범위만 읽고 직접 이해한 설명으로 재작성한다.
+- raw/reference, origin, existing Docs를 비교한 여부를 Example, Topic, WorkLog 중 적절한 위치에 남긴다.
+- source comment inventory의 원문은 `local/study-review`에 두고, tracked Docs에는 분류 결과와 이관 여부만 요약한다.
 - 직접 확인하지 않은 build/run/capture 상태는 `미확인`으로 기록한다.
 - 공개 가능성 판단은 `Docs/06_Publication` 기준으로 분리한다.

@@ -4,7 +4,7 @@
 
 ## 목적
 
-Work Unit은 코드 확인에서 시작해 예제 설명, Topic, Verification, Demo, Publication, WorkLog, GitHub draft까지 이어지는 작업 단위다. 이 흐름은 산출물 축 구조를 실제 작업 순서에 연결한다.
+Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해 예제 설명, Topic, Verification, Demo, Publication, WorkLog, GitHub draft까지 이어지는 작업 단위다. 이 흐름은 산출물 축 구조를 실제 작업 순서에 연결한다.
 
 ## 기본 원칙
 
@@ -19,20 +19,27 @@ Work Unit은 코드 확인에서 시작해 예제 설명, Topic, Verification, D
 
 | 단계 | 작업 | 읽는 위치 | 쓰는 위치 | 기준 정책 |
 | --- | --- | --- | --- | --- |
-| 0 | Work Unit 선택 | `Docs/00_Index`, 루트 코드 폴더 | `local/mini-plans` 또는 `Docs/05_WorkLogs` | 이 문서 |
-| 1 | 코드 구조 확인 | root `Part*_Chapter*`, `Portfolio_RayTracer` | 조사 메모는 `local/` | `agent-safety-policy.md` |
-| 2 | 기존 문서와 raw reference 확인 | `Docs/99_Legacy/PartDocs`, `Docs/99_Legacy/ImportHistory`, raw/reference repo | 검토 메모는 `local/` | `local-review-policy.md` |
-| 3 | 예제 목록과 대표 예제 결정 | 루트 코드 폴더, Legacy PartDocs | `Docs/01_Examples` | `canonical-docs-policy.md` |
-| 4 | 예제 설명 작성 | 루트 코드 폴더, local review | `Docs/01_Examples` | `docs-authoring-flow-policy.md` |
-| 5 | graphics Topic 작성 | example docs, code, raw reference | `Docs/02_Topics` | `canonical-docs-policy.md` |
-| 6 | build/run/capture 검증 | solution, executable, assets | `Docs/03_Verification` | `verification-policy.md` |
-| 7 | Demo evidence 정리 | 실행 결과, capture 후보 | `Docs/04_Demos`, `Docs/_assets` | `demo-capture-policy.md`, `assets-policy.md` |
-| 8 | public subset 판단 | example, topic, demo, asset 정보 | `Docs/06_Publication` | `publication-policy.md` |
-| 9 | 작업 기록 마감 | 변경된 Docs, 검증 결과 | `Docs/05_WorkLogs` | `github-workflow-policy.md` |
-| 10 | GitHub Issue/PR draft 작성 | WorkLog, Example, Verification, Demo | `local/github/draft` | `github-workflow-policy.md` |
-| 11 | GitHub public body 검수 | `local/github/draft`, WorkLog, Verification | `local/github/public` | `github-workflow-policy.md`, `../98_Tools/validators/README.md` |
-| 12 | Index 갱신 | 전체 산출물 | `Docs/00_Index`, `Docs/05_WorkLogs/issue-pr-index.md` | `canonical-docs-policy.md`, `github-workflow-policy.md` |
-| 13 | 최종 검수 | 변경 파일 전체 | 검수 결과는 final report 또는 WorkLog | `style-policy.md`, `../98_Tools/validation-tools.md` |
+| 0 | Work Unit 선택과 조사 계획 작성 | `Docs/00_Index`, 루트 코드 폴더 | `local/mini-plans` 또는 `Docs/05_WorkLogs` | 이 문서 |
+| 1 | 사용자에게 조사 계획 보고 | `local/mini-plans`, 대상 코드 목록 | final report 또는 WorkLog 초안 | `github-workflow-policy.md` |
+| 2 | 코드 구조 확인 | root `Part*_Chapter*`, `Portfolio_RayTracer` | 조사 메모는 `local/` | `agent-safety-policy.md` |
+| 3 | 소스 주석 inventory 작성 | 관련 source/header/shader | `local/study-review` | `docs-authoring-flow-policy.md` |
+| 4 | raw/reference와 origin 기준 확인 | raw/reference repo, origin 또는 원본 예제, `Docs/99_Legacy/ImportHistory` | 검토 메모는 `local/` | `canonical-docs-policy.md`, `local-review-policy.md` |
+| 5 | current/raw/origin diff 조사 | 현재 코드, raw/reference, origin 기준 | `local/study-review` | `docs-authoring-flow-policy.md` |
+| 6 | 챕터 목표와 핵심 구현 후보 추출 | code, source comment inventory, raw/origin docs | `local/study-review` 또는 `Docs/05_WorkLogs` | `docs-authoring-flow-policy.md` |
+| 7 | 예제 목록과 대표 예제 결정 | 루트 코드 폴더, source review, Legacy PartDocs | `Docs/01_Examples` | `canonical-docs-policy.md` |
+| 8 | 코드 주석 선별 정리 | source comment inventory | 루트 코드 폴더 | `agent-safety-policy.md`, `docs-authoring-flow-policy.md` |
+| 9 | 예제 설명 작성 | current/raw/origin 검토 결과 | `Docs/01_Examples` | `docs-authoring-flow-policy.md` |
+| 10 | graphics Topic 작성 | example docs, code, raw/reference 검토 결과 | `Docs/02_Topics` | `canonical-docs-policy.md` |
+| 11 | build/run/capture 검증 | solution, executable, assets | `Docs/03_Verification` | `verification-policy.md` |
+| 12 | Demo evidence 정리 | 실행 결과, capture 후보 | `Docs/04_Demos`, `Docs/_assets` | `demo-capture-policy.md`, `assets-policy.md` |
+| 13 | public subset 판단 | example, topic, demo, asset 정보 | `Docs/06_Publication` | `publication-policy.md` |
+| 14 | 작업 기록 마감 | 변경된 Docs, 검증 결과 | `Docs/05_WorkLogs` | `github-workflow-policy.md` |
+| 15 | GitHub Issue/PR draft 작성 | WorkLog, Example, Verification, Demo | `local/github/draft` | `github-workflow-policy.md` |
+| 16 | GitHub public body 검수 | `local/github/draft`, WorkLog, Verification | `local/github/public` | `github-workflow-policy.md`, `../98_Tools/validators/README.md` |
+| 17 | Index 갱신 | 전체 산출물 | `Docs/00_Index`, `Docs/05_WorkLogs/issue-pr-index.md` | `canonical-docs-policy.md`, `github-workflow-policy.md` |
+| 18 | 최종 검수 | 변경 파일 전체 | 검수 결과는 final report 또는 WorkLog | `style-policy.md`, `../98_Tools/validation-tools.md` |
+| 19 | 사용자 검토 요청 | 변경 요약, 미확인 항목, follow-up | 대화 보고 또는 WorkLog | `github-workflow-policy.md` |
+| 20 | commit readiness 보고 | 변경 파일, 검증 결과, 권장 commit 메시지 | 대화 보고 | `github-workflow-policy.md` |
 
 ## 산출물별 책임
 
@@ -86,16 +93,30 @@ local/
 | --- | --- |
 | 예제 설명 작성 | `Docs/98_Tools/templates/example-readme.md` |
 | Topic 작성 | `Docs/98_Tools/templates/topic.md` |
+| Verification 기록 | `Docs/98_Tools/templates/verification-note.md` |
+| Demo 기록 | `Docs/98_Tools/templates/demo-note.md` |
 | local study review | `Docs/98_Tools/templates/local-study-review.md` |
 | publication review | `Docs/98_Tools/templates/local-publication-review.md` |
 | WorkLog 마감 | `Docs/98_Tools/templates/worklog.md` |
 | 최종 검수 | `Docs/98_Tools/validation-tools.md` |
+
+## 사용자 검토 지점
+
+다음 지점에서는 작업자가 사용자에게 상태를 보고하고 진행 방향을 확인한다.
+
+- Work Unit 범위와 조사 계획을 세운 직후
+- source comment inventory와 current/raw/origin diff에서 예상과 다른 차이를 발견했을 때
+- 코드 주석 제거 또는 재작성 후보가 생겼을 때
+- Example/Topic/Verification/Demo 초안 작성 후
+- GitHub Issue/PR draft를 게시하기 전
+- commit readiness를 보고할 때
 
 ## Done 기준
 
 Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.
 
 - 예제 설명 정본이 `Docs/01_Examples`에 있다.
+- 소스 주석 inventory와 raw/origin/current 비교 여부가 기록되어 있다.
 - 관련 Topic이 없으면 없다고 기록하고, 있으면 `Docs/02_Topics`에 연결한다.
 - build/run/capture 상태가 `Docs/03_Verification`에 기록되어 있다.
 - demo 필요 여부와 evidence 상태가 `Docs/04_Demos`에 기록되어 있다.
@@ -106,3 +127,4 @@ Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.
 - `Docs/05_WorkLogs/issue-pr-index.md`에 Issue/PR/Plan comment 상태가 반영되어 있다.
 - `Docs/00_Index` map이 필요한 범위만큼 갱신되어 있다.
 - 오래된 `Docs/99_Legacy` 문서를 정본처럼 링크하지 않는다.
+- 사용자 검토 요청과 commit readiness 보고가 끝나 있다.

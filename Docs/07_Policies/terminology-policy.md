@@ -14,6 +14,11 @@
 | ImportHistory | `Docs/99_Legacy/ImportHistory` 아래의 과거 import 판단 기록 | ImportPhase, migration 기록 |
 | local-only 자료 영역 | Git에 추적하지 않는 `local/` 자료 영역 | local cache, local-only docs, local-only 작업장 |
 | raw/reference repo | 원본/미가공 자료를 읽기 전용으로 참고하는 저장소 | raw repo 단독 표현 |
+| current code | 현재 archive repo의 루트 코드 폴더에 있는 작업 코드 | 현재 코드 단독 표현 |
+| raw/reference code | raw/reference repo에 남아 있는 원본/미가공 기준 코드 | raw code 단독 표현 |
+| origin 기준 | 사용자가 채우기 전 원본 예제 또는 `OriginalExamples` 기준점 | origin 단독 표현, 원본 단독 표현 |
+| current/raw/origin 비교 | current code, raw/reference code, origin 기준의 차이를 확인하는 작업 | diff 단독 표현 |
+| source comment inventory | 관련 source/header/shader 주석을 전수조사해 분류한 local-only 검토 기록 | 주석 삭제, 주석 정리 단독 표현 |
 | Demo evidence | 시연 결과를 증명하는 capture/video evidence | demo evidence, capture evidence 혼용 |
 | GitHub draft | 게시 전 Issue/PR/comment 초안 | PR draft, Issue draft 단독 표현 |
 | Public subset | 공개 후보로 선별 가능한 결과물 묶음 | public repo 내용, 공개 자료 단독 표현 |

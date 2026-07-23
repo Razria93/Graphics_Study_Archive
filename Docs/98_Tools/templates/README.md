@@ -6,10 +6,12 @@
 
 | 템플릿 | 사용 위치 | 성격 | 비고 |
 | --- | --- | --- | --- |
-| [Example README](example-readme.md) | `Docs/01_Examples` | tracked 정본 문서용 | 예제 설명과 링크 중심 |
-| [Topic](topic.md) | `Docs/02_Topics` | tracked 정본 문서용 | graphics concept 문서 골격 |
-| [WorkLog](worklog.md) | `Docs/05_WorkLogs` | tracked 정본 문서용 | Work Unit 마감 요약 |
-| [Local Study Review](local-study-review.md) | `local/study-review` | local-only 검토용 | raw/source 검토 메모 |
+| [Example README](example-readme.md) | `Docs/01_Examples` | tracked 정본 문서용 | 예제 설명, source 확인, 핵심 코드 연결 |
+| [Topic](topic.md) | `Docs/02_Topics` | tracked 정본 문서용 | graphics concept, source 확인, 구현 연결 |
+| [Verification Note](verification-note.md) | `Docs/03_Verification` | tracked 정본 문서용 | build/run/capture 확인 기록 |
+| [Demo Note](demo-note.md) | `Docs/04_Demos` | tracked 정본 문서용 | demo 목표와 evidence 후보 기록 |
+| [WorkLog](worklog.md) | `Docs/05_WorkLogs` | tracked 정본 문서용 | Work Unit 마감 요약과 source review 요약 |
+| [Local Study Review](local-study-review.md) | `local/study-review` | local-only 검토용 | raw/source 주석 inventory와 diff 검토 메모 |
 | [Local Publication Review](local-publication-review.md) | `local/publication` 또는 `local/github/public` | local-only 검토용 | 공개 전 점검 메모 |
 | [PR Review Response](pr-review-response.md) | GitHub PR review comment 답변 | GitHub 게시용 짧은 댓글 | 대응, 검증, 비고 고정 형식 |
 
