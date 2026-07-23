@@ -6,6 +6,15 @@
 
 공개 가능성 판단의 정본은 `Docs/06_Publication`에 둔다. 공개 정책 원문은 이 문서를 기준으로 한다.
 
+## 사용 범위
+
+`Docs/06_Publication`은 공개용 본문을 미리 작성하는 공간이 아니다. 이 폴더는 public subset 후보, private archive 전용 항목, 검토 필요 항목, 제외 대상을 상태로 기록한다.
+
+- 모든 예제마다 Publication 상세 문서를 만들지 않는다.
+- 공개 후보가 생긴 항목만 `candidate-list.md`, `private-only.md`, `excluded-material.md`, `redaction-log.md`에 기록한다.
+- 공개용 README나 제출 본문은 private archive 문서를 그대로 복사하지 않고, 공개 전 검토가 끝난 뒤 별도 public subset 문장으로 재작성한다.
+- Work Unit 초반에는 공개 확정 대신 `검토 필요` 상태를 기본값으로 둔다.
+
 ## public 후보
 
 - 직접 작성한 portfolio 설명

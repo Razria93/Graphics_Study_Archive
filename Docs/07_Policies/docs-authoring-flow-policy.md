@@ -54,6 +54,25 @@
 | 결과물 후보 | screenshot/video로 보여줄 수 있는 상태인지 확인 |
 | 기존 Docs | 코드와 설명이 충돌하는지 확인 |
 
+## source comment inventory 범위
+
+source comment inventory는 repo 전체 주석 조사가 아니다. 대상 Work Unit에 직접 관련된 파일만 확인한다.
+
+기본 범위:
+
+- 대상 예제의 source/header
+- 대상 예제의 shader
+- solution/project/include/lib path에 영향을 주는 project file
+- texture, model, shader, runtime file lookup에 영향을 주는 asset path 관련 파일
+- 사용자가 채운 구현 후보와 직접 연결되는 코드
+
+제외 기준:
+
+- 대상 예제와 직접 관련 없는 Part/Chapter 전체 주석
+- Legacy 문서 전체 문장 검토
+- raw/reference repo 전체 주석 조사
+- build output, generated file, IDE cache
+
 ## 주석 정리 기준
 
 소스 주석은 전체 삭제하지 않는다. 먼저 전수조사하고 다음 기준으로 분류한다.

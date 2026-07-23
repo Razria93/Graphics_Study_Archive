@@ -55,6 +55,19 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | Tool | `Docs/98_Tools` | validator, template, troubleshooting |
 | Legacy | `Docs/99_Legacy` | 이전 문서와 import 기록 |
 
+## 작성 깊이 기준
+
+모든 예제를 같은 깊이로 문서화하지 않는다. 예제는 빠짐없이 추적하되, 상세 문서는 대표 예제 중심으로 작성한다.
+
+| 대상 | 필수 산출물 | 선택 또는 대표 산출물 |
+| --- | --- | --- |
+| 모든 예제 | `Docs/01_Examples` index, `Docs/03_Verification` 상태 | 상세 Example README |
+| 대표 예제 | 상세 Example README, Topic 연결, Demo 후보, WorkLog source review 요약 | Publication 후보 상태 |
+| Part/Chapter | README, example-index, verification-index, demo-index | 대표 Topic, 대표 capture/video |
+| 공개 후보 | `Docs/06_Publication` 상태 기록 | public subset 문장 재작성 |
+
+Publication은 기본 산출물이 아니라 공개 후보가 생겼을 때 사용하는 판단 축이다. Topic과 Demo도 모든 예제에 깊게 붙이지 않고, 대표 예제와 설명 가치가 높은 개념에 우선 적용한다.
+
 ## local-only 자료 영역 사용 기준
 
 `local/`은 정본 문서로 승격하기 전 local-only 자료 영역이다.
