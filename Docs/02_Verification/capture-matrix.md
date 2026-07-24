@@ -10,7 +10,7 @@
 
 | 범위 | 최소 capture/result | 대표 capture/result | video | 상태 | 비고 |
 | --- | --- | --- | --- | --- | --- |
-| Part1_Chapter01-02 | 보류 | 보류 | 미확인 | 보류 | `02_Bloom` runtime result 생성 확인. 워터마크/권리 검토 전까지 `Docs/_assets` 승격 보류 |
+| Part1_Chapter01-02 | 보류 | 보류 | 미확인 | 보류 | `02_Bloom`은 ChatGPT 생성 입력 이미지로 runtime result 생성 확인. `Docs/_assets` 승격은 별도 검수 전까지 보류 |
 | Part1_Chapter03 | 미확인 | 미확인 | 미확인 | 미확인 | ray tracing 단계별 결과 후보 |
 | Part2_Chapter04 | 미확인 | 미확인 | 미확인 | 미확인 | rasterization, depth buffer 후보 |
 | Part2_Chapter05-08 | 미확인 | 미확인 | 미확인 | 미확인 | modeling, IBL, bloom 후보 |
@@ -29,4 +29,4 @@
 
 - screenshot과 result image는 EXIF, PNG text chunk, 파일 속성에 개인 식별자, 로컬 경로, 강의명, 출처 불명 정보가 남아 있지 않은지 확인한다.
 - video는 metadata와 함께 audio, subtitle/caption을 확인한다.
-- 외부 image, texture, model, HDRI를 입력으로 사용한 result image는 입력 asset의 출처와 라이선스 확인 전까지 보류로 둔다.
+- 외부 image, texture, model, HDRI를 입력으로 사용한 result image는 입력 asset의 출처와 라이선스 확인 전까지 `보류`로 둔다.

@@ -19,7 +19,7 @@
 | 기존 Docs stale 검토 | 확인 | pilot 초안과 Legacy PartDocs는 참고 전용으로 둔다. |
 | README 이관 | 확인 | `02_Bloom` README 정본을 코드 폴더로 이동했다. |
 | build/run | 확인 | Debug/Release x64 build와 run을 확인했다. |
-| capture/result | 보류 | `result.png` 생성은 확인했지만 워터마크/권리 검토 전까지 capture/result 승격을 보류한다. |
+| capture/result | 보류 | ChatGPT 생성 입력 이미지로 `result.png` 재생성 확인. `Docs/_assets` 승격은 별도 검수 전까지 보류한다. |
 | Issue/PR | 예정 | Part1 추가 예제 정리 후 draft 작성 여부를 결정한다. |
 
 ## 02_Bloom 작업 요약
@@ -47,11 +47,11 @@
 - `02_Bloom`은 새 문서화 workflow의 pilot으로 마감한다.
 - README, Topic, Verification, Demo, Publication 연결은 확인했다.
 - Debug/Release x64 build/run과 `result.png` 생성은 확인했다.
-- `result.png`는 강의/출처 표기와 입력 asset 검토가 필요하므로 capture/result 승격은 보류한다.
+- `result.png`는 ChatGPT 생성 입력 이미지로 재생성했고 육안상 식별자는 보이지 않는다. `Docs/_assets` 승격은 별도 검수 전까지 보류한다.
 - Part1 Work Unit 자체는 아직 진행 중이다.
 
 ## 다음 작업
 
 1. Part1의 다음 예제에 같은 workflow를 적용한다.
-2. `02_Bloom` 공개용 대표 capture/result가 필요하면 별도 캡처 또는 재구성 이미지를 만든다.
+2. `02_Bloom` result image를 `Docs/_assets`로 승격할지 별도 검수한다.
 3. Part1 단위 Issue/PR draft 작성 시점을 다시 판단한다.

@@ -22,10 +22,10 @@
 
 ## 보류 사유
 
-`result.png`는 생성 확인했지만 강의/출처 표기와 입력 asset 권리 검토가 필요하다. 따라서 `Docs/_assets`로 승격하지 않고 public capture/result 후보에서도 보류한다.
+`result.png`는 ChatGPT 생성 입력 이미지로 재생성했고 육안상 강의명/강사명/워터마크/개인 식별자는 보이지 않는다. 다만 `Docs/_assets` 승격과 public capture/result 판단은 별도 검수 전까지 보류한다.
 
 ## 후속 작업
 
 - Part1의 다음 예제에 같은 workflow를 적용한다.
-- 공개용 대표 capture/result가 필요하면 별도 캡처 또는 재구성 이미지를 만든다.
+- `02_Bloom` result image를 `Docs/_assets`로 승격할지 별도 검수한다.
 - Part1 단위 Issue/PR draft 작성 여부는 다음 예제 정리 후 판단한다.

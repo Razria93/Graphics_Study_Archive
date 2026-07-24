@@ -11,8 +11,8 @@
 
 | Demo 후보 | 연결 Example | 연결 Topic | Verification | Capture/Result | 상태 | 비고 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 최소 capture | `Part1_Chapter01-02/02_Bloom/README.md` | `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md` | `Docs/02_Verification/Part1_Chapter01-02/verification-index.md` | 없음 | 보류 | `result.png` 생성은 확인했으나 워터마크/권리 검토 전까지 tracked capture/result로 승격하지 않음 |
-| 대표 capture | `Part1_Chapter01-02/02_Bloom/README.md` | `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md` | `Docs/02_Verification/Part1_Chapter01-02/verification-index.md` | 없음 | 보류 | 공개용 대표 이미지는 별도 캡처 또는 재구성 필요 |
+| 최소 capture | `Part1_Chapter01-02/02_Bloom/README.md` | `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md` | `Docs/02_Verification/Part1_Chapter01-02/verification-index.md` | 없음 | 보류 | ChatGPT 생성 입력 이미지로 `result.png` 생성 확인. `Docs/_assets` 승격 전까지 보류 |
+| 대표 capture | `Part1_Chapter01-02/02_Bloom/README.md` | `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md` | `Docs/02_Verification/Part1_Chapter01-02/verification-index.md` | 없음 | 보류 | local result image는 적합하나 `Docs/_assets` 승격 검수 전까지 보류 |
 | video | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 미확인 | 필요 여부 검토 |
 
 ## 갱신 기준

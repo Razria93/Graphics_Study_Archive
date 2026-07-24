@@ -2,7 +2,7 @@
 
 ## 목적
 
-이 문서는 `02_Bloom` 예제를 기준으로 bloom 후처리의 개념과 DirectX11 texture 표시 흐름을 정리한다. 현재 archive의 `02_Bloom`은 GPU shader pass로 bloom을 계산하는 구조가 아니라, CPU에서 bloom 결과 이미지를 만든 뒤 DirectX11 texture로 업로드해 표시하는 구조다.
+이 문서는 `02_Bloom` 예제를 기준으로 bloom 후처리의 개념과 DirectX11 texture 표시 흐름을 정리한다. `02_Bloom`은 GPU shader pass로 bloom을 계산하는 구조가 아니라, CPU에서 bloom 결과 이미지를 만든 뒤 DirectX11 texture로 업로드해 표시하는 구조다.
 
 ## Bloom 처리 단계
 
@@ -53,7 +53,7 @@ CPU에서 계산한 픽셀은 `D3D11_USAGE_DYNAMIC` texture에 `Map/Unmap`으로
 
 - 현재 예제는 GPU multi-pass post-processing pipeline이 아니다.
 - HDR render target, tone mapping, emissive material 기반 bloom까지 다루지는 않는다.
-- Debug/Release x64 build/run은 확인했다. `result.png` 생성도 확인했지만 권리/출처 검토 전까지 capture/result 승격은 보류한다.
+- Debug/Release x64 build/run은 확인했다. ChatGPT 생성 입력 이미지로 `result.png`를 재생성했고, 육안상 강의명/강사명/워터마크/개인 식별자는 보이지 않는다.
 
 ## 연결 예제
 
