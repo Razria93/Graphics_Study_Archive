@@ -21,7 +21,7 @@
 | 단계 | 위치 | 책임 |
 | --- | --- | --- |
 | 초안 | `local/github/draft` | Issue/PR/comment 초안 작성 |
-| 게시 후보 | `local/github/public` | 게시 직전 문체와 민감 정보 검수 |
+| 게시 후보 | `Docs/07_GitHub` | 게시 직전 문체와 민감 정보 검수 |
 | 원격 게시 | GitHub remote | 사용자가 명시 요청한 경우만 진행 |
 | 게시 후 사본 | `local/github/snapshots` | 게시 본문과 리뷰 대응 사본 보존 |
 | 요약 | `Docs/04_WorkLogs` | 게시 번호, 검증 요약, follow-up 기록 |

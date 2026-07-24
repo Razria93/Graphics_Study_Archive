@@ -21,6 +21,12 @@
 | [WorkLog Map](worklog-map.md) | Work Unit 요약과 Issue/PR 연결 방식 확인 |
 | [Publication Map](publication-map.md) | private archive와 public subset 후보 판단 위치 확인 |
 
+## GitHub 게시 후보
+
+- [GitHub Bodies](../07_GitHub/README.md)는 Issue, PR, comment 게시 후보 정본이다.
+- [Publication Map](publication-map.md)은 public subset 공개 가능성 판단 위치다.
+- GitHub 게시 후보와 public subset 판단은 서로 다른 책임이다.
+
 ## 기준 문서
 
 - [Work Unit Workflow Policy](../06_Policies/work-unit-workflow-policy.md)

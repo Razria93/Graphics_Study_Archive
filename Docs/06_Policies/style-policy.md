@@ -28,4 +28,4 @@
 
 ## GitHub 본문
 
-GitHub public body는 한국어 중심의 명사형 bullet과 짧은 평서형을 사용한다. local draft 문구, 내부 메모, Metadata 섹션은 게시 전 제거한다.
+GitHub body는 한국어 중심의 명사형 bullet과 짧은 평서형을 사용한다. local draft 문구, 내부 메모, Metadata 섹션은 게시 전 제거한다.

@@ -12,8 +12,7 @@
 | 제외 사유 | `Docs/05_Publication/excluded-material.md` | 제외 대상과 이유 기록 |
 | redaction | `Docs/05_Publication/redaction-log.md` | 제거 또는 재작성 필요 항목 기록 |
 | 공개 전 체크리스트 | `Docs/05_Publication/publication-checklist.md` | 게시 전 최종 점검 |
-| 게시 전 검토 | `local/publication`, `local/github/public` | 민감 정보와 문체 최종 점검 |
-| 게시 후 요약 | `Docs/04_WorkLogs` | 게시된 Issue/PR/문서 요약 |
+| 공개 전 검토 | `local/publication` | public subset 후보의 민감 정보와 공개 가능성 점검 |
 
 ## 판단 상태
 

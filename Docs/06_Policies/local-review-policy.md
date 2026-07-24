@@ -4,7 +4,7 @@
 
 ## 책임
 
-`local/`은 Git에 올리지 않는 자료 영역이다. raw 문서 원문, source comment 분리 기록, 개인 검토 메모, GitHub draft, 게시 전 public body 후보를 먼저 이곳에 둔다.
+`local/`은 Git에 올리지 않는 자료 영역이다. raw 문서 원문, source comment 분리 기록, 개인 검토 메모, GitHub draft를 먼저 이곳에 둔다. GitHub 게시 후보 정본은 `Docs/07_GitHub`에 둔다.
 
 ## Git 기준
 
@@ -27,10 +27,6 @@ local/
   publication/
   github/
     draft/
-      issues/
-      prs/
-      comments/
-    public/
       issues/
       prs/
       comments/
@@ -62,7 +58,7 @@ local/
 | tracked 요약 후보 | `local/study-review/` -> `Docs/04_WorkLogs/reviews/` | 반복 조사 방지를 위한 결론만 요약 |
 | 공개 판단 | `local/publication/` | 후보, 제외 사유, redaction 근거 검토 |
 | GitHub 초안 | `local/github/draft/` | Issue/PR/comment 게시 전 초안 |
-| GitHub 게시 후보 | `local/github/public/` | 게시 직전 최종 후보와 validator 검수 대상 |
+| GitHub 게시 후보 | `Docs/07_GitHub/` | 게시 직전 최종 후보와 validator 검수 대상 |
 | 게시 후 보존 | `local/github/snapshots/` | 실제 게시본 사본과 리뷰 대응 기록 |
 
 ## tracked review summary 기준

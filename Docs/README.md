@@ -11,6 +11,7 @@
 | [04_WorkLogs](04_WorkLogs/work-unit-index.md) | Work Unit 작업 경위와 follow-up |
 | [05_Publication](05_Publication/README.md) | public subset 후보와 제외 기준 |
 | [06_Policies](06_Policies/README.md) | 문서 작성과 GitHub 운영 정책 |
+| [07_GitHub](07_GitHub/README.md) | GitHub Issue/PR/comment 게시 후보 body |
 | [98_Tools](98_Tools/README.md) | templates, validators, troubleshooting |
 | [99_Legacy](99_Legacy/README.md) | 과거 import 기록과 이전 문서 구조 |
 

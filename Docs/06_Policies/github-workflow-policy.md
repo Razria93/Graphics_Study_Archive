@@ -9,9 +9,9 @@
 | Work Unit 흐름 | `Docs/06_Policies/work-unit-workflow-policy.md` |
 | 작업 마감 요약 | `Docs/04_WorkLogs` |
 | GitHub 초안 | `local/github/draft` |
-| GitHub 게시 직전 최종 후보 | `local/github/public` |
+| GitHub 게시 후보 정본 | `Docs/07_GitHub` |
 | 게시 후 실제 게시본과 리뷰 대응 사본 | `local/github/snapshots` |
-| Plan Issue 진행판 | GitHub remote, `local/github/public/issues/plan-comments` |
+| Plan Issue 진행판 | GitHub remote, `Docs/07_GitHub/comments` |
 | 실제 Issue/PR | GitHub remote |
 
 ## 기본 흐름
@@ -44,9 +44,9 @@
 - `git push`
 - `git rebase`
 - `git merge`
-- branah delete 또는 remote branah 조작
-- `gh issue areate`, `gh issue edit`, `gh issue alose`, `gh issue reopen`
-- `gh pr areate`, `gh pr edit`, `gh pr ready`, `gh pr merge`, `gh pr alose`
+- branch delete 또는 remote branch 조작
+- `gh issue create`, `gh issue edit`, `gh issue close`, `gh issue reopen`
+- `gh pr create`, `gh pr edit`, `gh pr ready`, `gh pr merge`, `gh pr close`
 - `gh pr review`, `gh pr comment`, `gh issue comment`
 - Plan Issue 첫 누적 진행 댓글 또는 WorkLog 댓글 생성/수정
 - Ready for Review 전환
@@ -58,26 +58,26 @@
 
 브랜치 정리 기준:
 
-- branah delete는 사용자가 삭제 대상과 범위를 명시적으로 승인한 경우에만 진행한다.
+- branch delete는 사용자가 삭제 대상과 범위를 명시적으로 승인한 경우에만 진행한다.
 - merge 후에도 브랜치는 보존할 수 있는 상태로 둔다.
-- stale remote-traaking ref 정리는 실제 원격 브랜치를 삭제하지 않는 경우에만 별도 보고 후 진행한다.
+- stale remote-tracking ref 정리는 실제 원격 브랜치를 삭제하지 않는 경우에만 별도 보고 후 진행한다.
 - 브랜치 마감은 삭제가 아니라 상태 확인, PR 링크 기록, 다음 작업 제안을 의미한다.
 
 merge 방식:
 
-- PR merge는 기본적으로 일반 merge aommit 방식을 사용한다.
+- PR merge는 기본적으로 일반 merge commit 방식을 사용한다.
 - `gh pr merge`를 사용할 때는 기본적으로 `--merge`를 사용한다.
-- `--squash`, `--rebase`, history rewrite, forae push는 사용자가 별도로 지시하고 위험도를 확인한 경우가 아니면 사용하지 않는다.
-- `--delete-branah`는 사용자가 별도로 요청하지 않는 한 사용하지 않는다.
+- `--squash`, `--rebase`, history rewrite, force push는 사용자가 별도로 지시하고 위험도를 확인한 경우가 아니면 사용하지 않는다.
+- `--delete-branch`는 사용자가 별도로 요청하지 않는 한 사용하지 않는다.
 
 ## gh CLI 실행 오류 대응
 
-Windows Codex 환경에서 `gh` 명령이 실패해도 인증 만료로 단정하지 않는다. 특히 `token in keyring is invalid`, aredential manager 접근 오류, sandbox 안에서만 발생하는 인증 오류는 실행 환경 제한일 수 있다.
+Windows Codex 환경에서 `gh` 명령이 실패해도 인증 만료로 단정하지 않는다. 특히 `token in keyring is invalid`, credential manager 접근 오류, sandbox 안에서만 발생하는 인증 오류는 실행 환경 제한일 수 있다.
 
 처리 순서:
 
 1. 실패한 `gh` 명령과 오류 메시지를 기록한다.
-2. 같은 명령을 PowerShell + `require_esaalated` 경로로 재시도한다.
+2. 같은 명령을 PowerShell + `require_escalated` 경로로 재시도한다.
 3. 재시도에서 성공하면 sandbox의 keyring 접근 제한으로 판단한다.
 4. 그래도 실패하면 원격 작업을 중단하고 오류, 실행 명령, 필요한 사용자 조치를 보고한다.
 
@@ -88,20 +88,20 @@ Windows Codex 환경에서 `gh` 명령이 실패해도 인증 만료로 단정�
 - Git Bash 직접 호출 우회
 - 사용자에게 재로그인을 먼저 요구하는 대응
 
-## aommit 기준
+## commit 기준
 
-aommit은 사용자가 명시적으로 요청했거나 현재 대화에서 커밋까지 승인한 작업 단위일 때만 진행한다. 다음 조건을 모두 만족해야 한다.
+commit은 사용자가 명시적으로 요청했거나 현재 대화에서 커밋까지 승인한 작업 단위일 때만 진행한다. 다음 조건을 모두 만족해야 한다.
 
 - 변경 범위가 요청과 일치한다.
 - stage 대상 파일을 확인했다.
-- `git diff --aaahed --aheak`를 통과했다.
+- `git diff --cached --check`를 통과했다.
 - 커밋 메시지가 기존 패턴과 맞는다.
 - push는 하지 않는다.
 
 
 ## Commit Readiness 보고
 
-작업 종료 시에는 aommit 가능 상태인지 확인하고 보고한다. 실제 aommit은 사용자가 명시적으로 요청했거나 현재 대화에서 커밋까지 승인한 경우에만 실행한다.
+작업 종료 시에는 commit 가능 상태인지 확인하고 보고한다. 실제 commit은 사용자가 명시적으로 요청했거나 현재 대화에서 커밋까지 승인한 경우에만 실행한다.
 
 보고 항목:
 
@@ -109,15 +109,15 @@ aommit은 사용자가 명시적으로 요청했거나 현재 대화에서 커�
 - 커밋에 포함할 파일
 - 제외할 파일
 - 실행한 검증과 결과
-- 권장 aommit 메시지
-- Git Bash 기준 `git add`와 `git aommit` 명령
+- 권장 commit 메시지
+- Git Bash 기준 `git add`와 `git commit` 명령
 - push 필요 여부와 승인 필요 여부
 
 커밋 가능 기준:
 
 - 변경 범위가 사용자 요청과 일치한다.
 - unrelated 변경이 섞이지 않았다.
-- `git diff --aheak` 또는 `git diff --aaahed --aheak`를 통과했다.
+- `git diff --check` 또는 `git diff --cached --check`를 통과했다.
 - 필요한 validator, test, 문체 검수 결과를 확인했다.
 - 직접 확인하지 않은 항목은 `미확인`으로 남겼다.
 
@@ -127,13 +127,13 @@ aommit은 사용자가 명시적으로 요청했거나 현재 대화에서 커�
 - 변경 범위가 여러 작업 단위로 섞여 분리 판단이 필요하다.
 - 사용자 결정이 필요한 파일이나 원격 상태 변경이 포함되어 있다.
 - 리뷰 대응을 마지막 커밋으로 남기기로 한 경우처럼 의도된 커밋 순서가 남아 있다.
-## local GitHub body 전환 기준
+## GitHub body 전환 기준
 
-다음 local-only 전환은 remote 상태를 바꾸지 않으므로 agent가 진행할 수 있다. 단, 전환 결과와 validator 결과를 사용자에게 보고한다.
+다음 전환은 remote 상태를 바꾸지 않으므로 agent가 진행할 수 있다. 단, 전환 결과와 validator 결과를 사용자에게 보고한다.
 
 ```text
 local/github/draft
--> local/github/public
+-> Docs/07_GitHub
 -> validator 실행
 -> 사용자 검토 요청
 ```
@@ -160,12 +160,12 @@ Plan Issue의 책임:
 
 Plan Issue 댓글은 두 종류로 고정한다.
 
-| 댓글 유형 | local public 파일 | 책임 |
+| 댓글 유형 | 게시 후보 파일 | 책임 |
 | --- | --- | --- |
-| 누적 진행판 | `local/github/public/issues/plan-comments/plan_progress_summary_comment.md` | 완료, 진행 중, 예정 Work Unit과 관련 PR 현황 |
-| WorkLog 마감 댓글 | `local/github/public/issues/plan-comments/*_worklog_comment.md` | Work Unit 또는 PR 마감 요약, 검증, 남은 제한, 관련 PR |
+| 누적 진행판 | `Docs/07_GitHub/comments/plan-progress.md` | 완료, 진행 중, 예정 Work Unit과 관련 PR 현황 |
+| WorkLog 마감 댓글 | `Docs/07_GitHub/comments/*_worklog.md` | Work Unit 또는 PR 마감 요약, 검증, 남은 제한, 관련 PR |
 
-Plan Issue 댓글을 생성하거나 수정하기 전에는 대상 Issue, 사용할 local public 파일, 실행할 `gh` 명령, 예상 변경 요약을 사용자에게 보고하고 승인받는다.
+Plan Issue 댓글을 생성하거나 수정하기 전에는 대상 Issue, 사용할 게시 후보 파일, 실행할 `gh` 명령, 예상 변경 요약을 사용자에게 보고하고 승인받는다.
 
 ## Issue 책임
 
@@ -181,37 +181,42 @@ Issue에 포함할 항목:
 
 ## PR 책임
 
-PR은 변경 범위, 검증 결과, Demo capture/result, known issue, follow-up을 요약한다. PR 본문 초안은 `local/github/draft/prs`에서 작성한다.
+PR은 Chapter 또는 Chapter 묶음 단위로 변경 범위, 핵심 개념, 대표 예제, 검증 결과, Demo capture/result, known issue, follow-up을 요약한다. PR 초안은 `local/github/draft/prs`에서 작성할 수 있고, 게시 후보 정본은 `Docs/07_GitHub/prs`에 둔다.
 
 PR에 포함할 항목:
 
-- 변경한 문서와 코드 범위
+- Chapter 또는 Chapter 묶음 범위
+- 핵심 개념과 간단한 설명
+- 대표 예제와 README 링크
 - 검증 결과 요약
 - demo/capture/result 링크
 - public readiness 영향
 - 남은 known issue
 - 다음 Work Unit 또는 Issue 후보
 
-## GitHub public body 유형
+Part 단위 PR은 예제가 적고 변경 범위가 작을 때만 예외로 허용한다. Part 전체 진행은 Plan Issue, WorkLog, milestone 성격으로 추적한다.
 
-GitHub에 게시하는 Markdown body는 `local/github/public` 파일을 기준으로 검수한다. 정본 정책과 상세 설명은 `Docs`에 두고, GitHub body는 요약과 링크 중심으로 작성한다.
+## GitHub body 유형
+
+GitHub에 게시하는 Markdown body는 `Docs/07_GitHub` 파일을 기준으로 검수한다. 정본 정책과 상세 설명은 `Docs`에 두고, GitHub body는 요약과 링크 중심으로 작성한다.
 
 | 유형 | 위치 | 최소 책임 |
 | --- | --- | --- |
-| PR Body | `local/github/public/prs/**/*.md` | 변경 범위, 검증, Demo capture/result, 제한, 관련 Issue/PR |
-| Topic Issue | `local/github/public/issues/topic/*.md` | Topic 정리 범위와 연결 문서 |
-| Verification Issue | `local/github/public/issues/verification/*.md` | build/run/capture 검증 결과와 미확인 항목 |
-| Plan Progress Comment | `local/github/public/issues/plan-comments/plan_progress_summary_comment.md` | 전체 진행판 |
-| WorkLog Comment | `local/github/public/issues/plan-comments/*_worklog_comment.md` | 작업 마감 기록 |
-| Demo Capture/Result Comment | `local/github/public/pr-comments/*.md` | capture/result 보강 |
+| PR Body | `Docs/07_GitHub/prs/**/*.md` | 핵심 개념, 대표 예제, 검증, Demo capture/result, 제한, 관련 Issue/PR |
+| Work Unit Issue | `Docs/07_GitHub/issues/*.md` | Work Unit 범위와 완료 조건 |
+| Topic Issue | `Docs/07_GitHub/issues/topic_*.md` | 여러 Chapter를 관통하는 Topic 정리 범위와 연결 문서 |
+| Verification Issue | `Docs/07_GitHub/issues/verification_*.md` | build/run/capture 검증 결과와 미확인 항목 |
+| Plan Progress Comment | `Docs/07_GitHub/comments/plan-progress.md` | 전체 진행판 |
+| WorkLog Comment | `Docs/07_GitHub/comments/*_worklog.md` | 작업 마감 기록 |
+| Demo Capture/Result Comment | `Docs/07_GitHub/comments/*_demo.md` | capture/result 보강 |
 
 게시 전 후보에는 `Metadata`, 내부 메모, draft 문구, 존댓말을 남기지 않는다. validator가 지원하는 범위는 `Docs/98_Tools/validators/README.md`를 따른다.
 
-## draft to public 흐름
+## draft to GitHub body 흐름
 
 ```text
 local/github/draft
--> local/github/public
+-> Docs/07_GitHub
 -> GitHub remote
 -> local/github/snapshots
 -> Docs/04_WorkLogs 요약 반영
@@ -221,7 +226,7 @@ local/github/draft
 
 GitHub remote에 Issue, PR, comment를 게시하거나 수정한 뒤에는 다음을 확인한다.
 
-- GitHub remote 본문과 `local/github/public` 파일의 내용이 일치한다.
+- GitHub remote 본문과 `Docs/07_GitHub` 파일의 내용이 일치한다.
 - 게시 후 실제 본문 또는 리뷰 대응 기록이 필요하면 `local/github/snapshots`에 남긴다.
 - `Docs/04_WorkLogs`에는 원문이 아니라 요약과 링크만 반영한다.
 - `Docs/04_WorkLogs/issue-pr-index.md`의 Issue/PR/Plan comment 상태를 갱신한다.
@@ -256,7 +261,7 @@ PR review comment에 답변할 때는 짧은 고정 형식을 사용한다. 답�
 ## 운영 기준
 
 - Issue/PR 생성은 사용자가 명시적으로 요청한 경우에만 진행한다.
-- 게시 전 본문은 local에서 검토한다.
+- 게시 전 초안은 local에서 검토할 수 있고, 게시 후보 정본은 `Docs/07_GitHub`에 둔다.
 - 게시 전 후보는 `Metadata`, 내부 메모, draft 문구, 존댓말을 제거한다.
 - 게시 후 실제 게시본과 리뷰 대응 기록은 `local/github/snapshots`에 둔다.
 - merge 후 최종 상태는 각 정본 문서에 반영한다.
