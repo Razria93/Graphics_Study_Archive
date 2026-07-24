@@ -71,8 +71,8 @@ Texture resource를 pixel shader에서 읽으려면 `ShaderResourceView`가 필�
 
 | 항목 | 상태 | 비고 |
 | --- | --- | --- |
-| Debug x64 build/run | 미확인 | 직접 재검증 필요 |
-| Release x64 build/run | 미확인 | 직접 재검증 필요 |
+| Debug x64 build/run | 확인 | MSBuild 17.14로 빌드 후 실행 5초 이상 유지 확인 |
+| Release x64 build/run | 확인 | MSBuild 17.14로 빌드 후 실행 5초 이상 유지 확인 |
 | Capture | 미확인 | 최소 capture 후보로만 유지 |
 
 ## Related Docs

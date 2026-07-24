@@ -13,7 +13,7 @@
 
 | 범위 | solution 기준 | Debug x64 build | Debug x64 run | Release x64 build | Release x64 run | Capture | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Part1_Chapter01-02 | 예제별 `.sln` | 부분 확인 | 부분 확인 | 부분 확인 | 부분 확인 | 부분 확인 | `02_Bloom` 확인, `01_DX11InitAndImGui` 미확인. `02_Bloom` result image는 `Docs/_assets/captures`에 승격함 |
+| Part1_Chapter01-02 | 예제별 `.sln` | 부분 확인 | 부분 확인 | 부분 확인 | 부분 확인 | 부분 확인 | `01_DX11InitAndImGui`, `02_Bloom` 확인. `02_Bloom` result image는 `Docs/_assets/captures`에 승격함 |
 | Part1_Chapter03 | 예제별 `.sln` | 미확인 | 미확인 | 미확인 | 미확인 | 미확인 | ray tracing step 예제 |
 | Part2_Chapter04 | 예제별 `.sln` | 미확인 | 미확인 | 미확인 | 미확인 | 미확인 | rasterization step 예제 |
 | Part2_Chapter05-08 | 예제별 `.sln` | 미확인 | 미확인 | 미확인 | 미확인 | 미확인 | transform, pipeline, modeling, shader toy |

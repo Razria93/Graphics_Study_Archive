@@ -4,8 +4,19 @@
 
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `01_DX11InitAndImGui` | `Part1_Chapter01-02/01_DX11InitAndImGui/01_DX11InitAndImGui.sln` | 미확인 | 미확인 | 미확인 | 미확인 | 미확인 | 코드 폴더 README 정본화 완료. 이전 성공 기록은 있으나 직접 재검증 필요 |
+| `01_DX11InitAndImGui` | `Part1_Chapter01-02/01_DX11InitAndImGui/01_DX11InitAndImGui.sln` | 확인 | 확인 | 확인 | 확인 | 미확인 | Debug/Release x64 build/run 확인. Capture는 아직 미확인 |
 | `02_Bloom` | `Part1_Chapter01-02/02_Bloom/02_Bloom.sln` | 확인 | 확인 | 확인 | 확인 | 확인 | ChatGPT 생성 입력 이미지로 교체 후 Debug/Release x64 build/run과 `result.png` 생성 확인. result image를 `Docs/_assets/captures`에 승격함 |
+
+
+## 01_DX11InitAndImGui 검증 기록
+
+| 항목 | 결과 | 근거 |
+| --- | --- | --- |
+| Debug x64 build | 확인 | MSBuild 17.14, `01_DX11InitAndImGui.vcxproj -> x64/Debug/01_DX11InitAndImGui.exe` 생성 |
+| Debug x64 run | 확인 | 실행 후 5초 이상 프로세스 유지, 수동 종료 |
+| Release x64 build | 확인 | MSBuild 17.14, `01_DX11InitAndImGui.vcxproj -> x64/Release/01_DX11InitAndImGui.exe` 생성 |
+| Release x64 run | 확인 | 실행 후 5초 이상 프로세스 유지, 수동 종료 |
+| Capture | 미확인 | 최소 capture 후보만 등록함 |
 
 ## 02_Bloom 검증 기록
 
