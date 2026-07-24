@@ -4,7 +4,7 @@
 
 - Work Unit: `WU-Part2`
 - 대상 코드: `Part2_Chapter04`, `Part2_Chapter05-08`
-- 대상 문서: `Docs/01_Examples`, `Docs/02_Topics`, `Docs/03_Verification`, `Docs/04_Demos`, `Docs/06_Publication`
+- 대상 문서: `Docs/02_Topics`, `Docs/03_Verification`, `Docs/04_Demos`, `Docs/06_Publication`
 - 주요 Topic 후보: Rasterization, DirectX11Pipeline, TexturingAndMapping, LightingAndShading
 
 ## 상태
@@ -24,7 +24,7 @@
 
 | 산출물 | 문서 | 상태 |
 | --- | --- | --- |
-| Example | `Docs/01_Examples/Part2_Chapter04`, `Docs/01_Examples/Part2_Chapter05-08` | 예정 |
+| Example README | 코드 폴더 README | 예정 |
 | Topic | `Docs/02_Topics/Rasterization`, `Docs/02_Topics/DirectX11Pipeline`, `Docs/02_Topics/TexturingAndMapping`, `Docs/02_Topics/LightingAndShading` | 예정 |
 | Verification | `Docs/03_Verification/Part2_Chapter04`, `Docs/03_Verification/Part2_Chapter05-08` | 예정 |
 | Demo | `Docs/04_Demos` | 예정 |

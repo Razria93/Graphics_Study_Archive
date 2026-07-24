@@ -6,7 +6,7 @@
 
 | 템플릿 | 사용 위치 | 성격 | 비고 |
 | --- | --- | --- | --- |
-| [Example README](example-readme.md) | `Docs/01_Examples` | tracked 정본 문서용 | 예제 설명, source 확인, 핵심 코드 연결 |
+| [Example README](example-readme.md) | 코드 폴더 README | tracked 정본 문서용 | 예제 설명, source 확인, 핵심 코드 연결 |
 | [Topic](topic.md) | `Docs/02_Topics` | tracked 정본 문서용 | graphics concept, source 확인, 구현 연결 |
 | [Verification Note](verification-note.md) | `Docs/03_Verification` | tracked 정본 문서용 | build/run/capture 확인 기록 |
 | [Demo Note](demo-note.md) | `Docs/04_Demos` | tracked 정본 문서용 | demo 목표와 evidence 후보 기록 |

@@ -1,11 +1,10 @@
 # Docs
 
-이 폴더는 Graphics Study Archive의 문서 산출물과 운영 규칙을 관리한다. 예제별 README 정본은 코드 폴더 아래에 두고, `Docs/01_Examples`는 전환기 경로로만 유지한다.
+이 폴더는 Graphics Study Archive의 문서 산출물과 운영 규칙을 관리한다. 예제별 README 정본은 코드 폴더 아래에 둔다.
 
 | 폴더 | 역할 |
 | --- | --- |
 | [00_Index](00_Index/README.md) | 전체 지도와 작업 흐름 진입점 |
-| `01_Examples` | 전환기 경로. 예제 README 정본은 코드 폴더로 이관 중 |
 | [02_Topics](02_Topics/README.md) | 여러 예제를 관통하는 graphics concept 설명 |
 | [03_Verification](03_Verification/README.md) | build/run/capture 상태와 known issue |
 | [04_Demos](04_Demos/README.md) | demo capture/video 계획과 evidence 연결 |

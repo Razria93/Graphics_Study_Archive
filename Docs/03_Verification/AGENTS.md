@@ -8,7 +8,7 @@
 
 - build, run, capture, known issue의 최신 상태를 기록한다.
 - 문서 작성 상태와 실제 검증 상태를 섞지 않는다.
-- 예제 설명은 `Docs/01_Examples`로 링크한다.
+- 예제 설명은 대상 코드 폴더 README로 링크한다.
 - demo evidence는 `Docs/04_Demos`와 `Docs/_assets`로 링크한다.
 - raw/reference 원문, GitHub draft, 개인 메모는 이 폴더에 두지 않는다.
 

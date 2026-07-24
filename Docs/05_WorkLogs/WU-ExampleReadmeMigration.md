@@ -107,8 +107,8 @@ tracked review summary에는 상세 조사 원문을 복사하지 않는다. 다
 ## 02_Bloom 적용 상태
 
 - `Part1_Chapter01-02/02_Bloom/README.md`를 예제 README 정본으로 작성했다.
-- `Docs/01_Examples/Part1_Chapter01-02/02_Bloom/README.md`는 전환기 redirect로 축소했다.
-- `Docs/01_Examples/Part1_Chapter01-02/02_Bloom/status.md`는 코드 폴더로 옮기지 않았다.
+- `Docs/01_Examples/Part1_Chapter01-02/02_Bloom/README.md` 전환기 redirect는 `Docs/01_Examples` 폐기 단계에서 제거한다.
+- `Docs/01_Examples/Part1_Chapter01-02/02_Bloom/status.md`는 코드 폴더로 옮기지 않고 `Docs/01_Examples` 폐기 단계에서 제거한다.
 - build/run/capture 상태는 `Docs/03_Verification/Part1_Chapter01-02/verification-index.md`에 `미확인`으로 유지했다.
 - demo 계획은 `Docs/04_Demos/Part1_Chapter01-02/demo-index.md`에 유지한다.
 - publication 상태는 `Docs/06_Publication/candidate-list.md`에서 `검토 필요`로 유지한다.

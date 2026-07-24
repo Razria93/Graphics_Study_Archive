@@ -8,7 +8,7 @@
 | --- | --- |
 | `Part*_Chapter*` | code/build 기준 예제 프로젝트 |
 | `Portfolio_RayTracer` | Part1 기반 ray tracing 확장 작업 |
-| `Docs/01_Examples` | 예제 설명 정본 |
+| `Part*_Chapter*/ExampleName/README.md` | 예제 설명 정본 |
 | `Docs/02_Topics` | graphics 개념 정본 |
 | `Docs/03_Verification` | build/run/capture 검증 정본 |
 | `Docs/04_Demos` | demo capture/video evidence 정본 |
@@ -22,7 +22,7 @@
 
 - 루트 코드 폴더는 이동하지 않는다.
 - 기존 `Docs/Part*` 문서는 `Docs/99_Legacy/PartDocs`에 보존하고 새 정본으로 사용하지 않는다.
-- 새 예제 설명은 `Docs/01_Examples`에 작성한다.
+- 새 예제 설명은 대상 코드 폴더 README에 작성한다.
 - build/run/capture 최신 상태는 `Docs/03_Verification`에 기록한다.
 - public 공개 기준은 `Docs/07_Policies/publication-policy.md`를 따른다.
 - 직접 확인하지 않은 항목은 `미확인`으로 기록한다.

@@ -20,6 +20,6 @@
 ## 작성 기준
 
 - 여러 예제를 관통하는 개념만 `Docs/02_Topics`에 둔다.
-- 예제별 설명은 `Docs/01_Examples`에 둔다.
+- 예제별 설명은 대상 코드 폴더 README에 둔다.
 - build/run/capture 상태는 `Docs/03_Verification`에 둔다.
 - public 설명 후보는 `Docs/06_Publication`과 연결한다.

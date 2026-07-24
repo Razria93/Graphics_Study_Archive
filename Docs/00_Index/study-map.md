@@ -1,6 +1,6 @@
 # Study Map
 
-이 문서는 코드 기준 폴더와 문서 산출물 축의 연결을 요약한다. 예제별 README 정본은 코드 폴더 아래에 두고, `Docs/01_Examples`는 전환기 경로로만 유지한다.
+이 문서는 코드 기준 폴더와 문서 산출물 축의 연결을 요약한다. 예제별 README 정본은 코드 폴더 아래에 둔다.
 
 ## 코드 기준 폴더
 
@@ -31,4 +31,4 @@
 - 예제별 README는 코드 폴더 아래에 둔다.
 - 모든 예제는 최소 README와 verification 상태를 갖도록 한다.
 - 대표 예제만 Topic, Demo, Publication 문서를 깊게 연결한다.
-- legacy PartDocs와 기존 `Docs/01_Examples`는 참고 자료이며 현재 정본으로 보지 않는다.
+- legacy PartDocs는 참고 자료이며 현재 정본으로 보지 않는다.

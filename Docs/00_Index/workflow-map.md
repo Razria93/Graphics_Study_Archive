@@ -8,7 +8,7 @@
 루트 코드 폴더 확인
 -> Legacy 문서와 raw/reference repo 확인
 -> local mini plan
--> 01_Examples
+-> 코드 폴더 README
 -> 02_Topics
 -> 03_Verification
 -> 04_Demos
@@ -24,7 +24,7 @@
 | --- | --- | --- |
 | 코드 확인 | 루트 코드 폴더 | `local/mini-plans` |
 | 기존 문서 확인 | `Docs/99_Legacy/PartDocs`, `Docs/99_Legacy/ImportHistory` | `local/study-review` |
-| 예제 설명 | 루트 코드 폴더, local review | `Docs/01_Examples` |
+| 예제 설명 | 루트 코드 폴더, local review | 대상 코드 폴더 `README.md` |
 | 개념 설명 | Example 문서, 루트 코드 폴더, reference | `Docs/02_Topics` |
 | 검증 | solution, executable, assets | `Docs/03_Verification` |
 | 데모 | capture 후보, 검증 결과 | `Docs/04_Demos`, `Docs/_assets` |

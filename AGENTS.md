@@ -8,7 +8,7 @@
 - 사용자가 명시적으로 요청하거나 현재 대화에서 커밋까지 승인한 작업 단위가 아니면 commit, push, PR, Issue 생성/수정을 하지 않는다.
 - root의 `Part*_Chapter*`와 `Portfolio_RayTracer` 폴더는 코드와 build 기준으로 유지한다.
 - 문서 용어는 `Docs/07_Policies/terminology-policy.md`를 따른다.
-- 문서 정본은 `Docs/00_Index`부터 `Docs/07_Policies`까지의 산출물 축 구조와 `Docs/98_Tools`, `Docs/99_Legacy` 책임 경계를 기준으로 작성한다.
+- 문서 정본은 코드 폴더 README와 `Docs/00_Index`부터 `Docs/07_Policies`까지의 산출물 축 구조, `Docs/98_Tools`, `Docs/99_Legacy` 책임 경계를 기준으로 작성한다.
 - 기존 `Docs/Part*` 문서는 정본으로 사용하지 않고 `Docs/99_Legacy/PartDocs`의 전환기 참고 자료로만 사용한다.
 - raw/reference repo의 내용은 필요한 부분만 읽고, Git에 추적되는 Docs/AGENTS 문서에는 직접 이해한 설명으로 재작성한다.
 - 강의 원본 영상, 슬라이드, 퀴즈, 정답, 유료 자료, 강의 화면 캡처, 문제/해설 전문은 archive/public 후보로 확정하지 않는다.
@@ -22,7 +22,7 @@
 ## 문서 위치
 
 - `Docs/00_Index`: 전체 map과 진입점
-- `Docs/01_Examples`: 예제 설명 정본
+- 코드 폴더 README: 예제 설명 정본
 - `Docs/02_Topics`: graphics 개념 정본
 - `Docs/03_Verification`: build/run/capture 검증 정본
 - `Docs/04_Demos`: demo capture/video evidence 정본

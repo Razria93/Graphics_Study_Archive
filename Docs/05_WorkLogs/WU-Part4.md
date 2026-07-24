@@ -4,7 +4,7 @@
 
 - Work Unit: `WU-Part4`
 - 대상 코드: `Part4_Chapter14-20`
-- 대상 문서: `Docs/01_Examples`, `Docs/02_Topics`, `Docs/03_Verification`, `Docs/04_Demos`, `Docs/06_Publication`
+- 대상 문서: `Docs/02_Topics`, `Docs/03_Verification`, `Docs/04_Demos`, `Docs/06_Publication`
 - 주요 Topic 후보: ComputeAndSimulation, AnimationAndPhysics, advanced demo 후보
 
 ## 상태
@@ -24,7 +24,7 @@
 
 | 산출물 | 문서 | 상태 |
 | --- | --- | --- |
-| Example | `Docs/01_Examples/Part4_Chapter14-20` | 예정 |
+| Example README | 코드 폴더 README | 예정 |
 | Topic | `Docs/02_Topics/ComputeAndSimulation`, `Docs/02_Topics/AnimationAndPhysics` | 예정 |
 | Verification | `Docs/03_Verification/Part4_Chapter14-20` | 예정 |
 | Demo | `Docs/04_Demos` | 예정 |

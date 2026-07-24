@@ -125,13 +125,13 @@ tracked Docs에서 `local/` 파일로 직접 링크하지 않는다. local 문�
 
 초기 Part1 pilot 문서는 산출물 축 구조를 검증하기 위한 초안으로 본다. 정식 Work Unit 완료로 보려면 대표 예제별로 source comment inventory, current/raw/origin 비교, 직접 검증 상태를 다시 확인한다. 기존 pilot 문서를 그대로 확장하지 않고, 이 정책의 작성 순서를 따라 필요한 문서만 보강한다.
 
-## Docs/01_Examples 전환 기준
+## Docs/01_Examples 폐기 기준
 
-- Docs/01_Examples는 예제 설명 정본 위치가 아니다.
-- 기존 Docs/01_Examples 문서는 코드 폴더 README로 이관한다.
-- 전환기에는 redirect 또는 얇은 링크 허브만 허용한다.
+- Docs/01_Examples는 폐기된 예전 경로이며 예제 설명 정본 위치가 아니다.
+- 기존 Docs/01_Examples 문서는 코드 폴더 README로 이관했거나 폐기 기록으로만 남긴다.
+- 새 redirect 또는 링크 허브를 추가하지 않는다.
 - status.md는 코드 폴더로 옮기지 않고 Docs/03_Verification으로 흡수한다.
-- 모든 예제 README 이관이 끝나면 Docs/01_Examples 제거를 검토한다.
+- Docs/01_Examples는 제거된 경로로 취급한다.
 
 ## 금지사항
 

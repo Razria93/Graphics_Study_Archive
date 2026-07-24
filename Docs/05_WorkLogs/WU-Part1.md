@@ -36,7 +36,7 @@
 | 산출물 | 문서 | 상태 |
 | --- | --- | --- |
 | Example README | `Part1_Chapter01-02/02_Bloom/README.md` | 작성 |
-| Example redirect | `Docs/01_Examples/Part1_Chapter01-02/02_Bloom/README.md` | 전환기 안내 |
+| Example redirect | 제거 완료 | `Docs/01_Examples` 폐기에 따라 삭제 |
 | Verification | `Docs/03_Verification/Part1_Chapter01-02/verification-index.md` | `미확인` 유지 |
 | Topic | `Docs/02_Topics/DirectX11Pipeline/PostProcessingAndBloom.md` | 작성 |
 | Demo | `Docs/04_Demos/Part1_Chapter01-02/demo-index.md` | 후보 작성 |

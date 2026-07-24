@@ -70,7 +70,7 @@ screenshot 또는 video evidence를 추가하면 다음 문서를 함께 확인�
 - `Docs/04_Demos/capture-plan.md`
 - 해당 Part/Portfolio의 `Docs/04_Demos/*/demo-index.md`
 - `Docs/03_Verification/capture-matrix.md`
-- 관련 `Docs/01_Examples`와 `Docs/02_Topics`
+- 관련 코드 폴더 README와 `Docs/02_Topics`
 - `Docs/06_Publication`의 public 후보 또는 제외 판단
 
 ## 갱신 기준

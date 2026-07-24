@@ -87,7 +87,7 @@ local/
 local 문서는 다음 조건을 만족할 때만 tracked Docs로 승격한다.
 
 - 반복 참조 가치가 있다.
-- `Docs/01_Examples`부터 `Docs/06_Publication` 중 어느 정본에 들어갈지 명확하다.
+- 코드 폴더 README 또는 `Docs/02_Topics`부터 `Docs/06_Publication` 중 어느 정본에 들어갈지 명확하다.
 - private-only 정보와 raw 원문 표현이 제거되어 있다.
 - 직접 확인한 상태와 미확인 상태가 구분되어 있다.
 - 강의 원문 구조나 표현을 그대로 옮기지 않는다.

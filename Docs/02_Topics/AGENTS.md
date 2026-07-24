@@ -7,7 +7,7 @@
 ## 책임
 
 - 여러 예제를 관통하는 graphics concept를 설명한다.
-- 예제 하나의 구현 설명은 `Docs/01_Examples`로 링크한다.
+- 예제 하나의 구현 설명은 대상 코드 폴더 README로 링크한다.
 - build/run/capture 상태는 `Docs/03_Verification`, `Docs/04_Demos`로 링크한다.
 - publication 판단은 `Docs/06_Publication`으로 링크한다.
 - raw/reference 원문, source comment, GitHub draft, 개인 메모는 이 폴더에 두지 않는다.

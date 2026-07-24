@@ -22,7 +22,7 @@
 
 | 단계 | 검수 기준 |
 | --- | --- |
-| Example 작성 | `templates/example-readme.md`, `Docs/01_Examples/AGENTS.md` |
+| Example 작성 | `templates/example-readme.md`, 코드 폴더 README 정책 |
 | Topic 작성 | `templates/topic.md`, `Docs/02_Topics/AGENTS.md` |
 | WorkLog 마감 | `templates/worklog.md`, `Docs/05_WorkLogs/AGENTS.md` |
 | local study review | `templates/local-study-review.md`, `Docs/07_Policies/local-review-policy.md` |

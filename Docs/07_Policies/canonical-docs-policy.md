@@ -6,7 +6,7 @@
 
 - 같은 내용을 여러 위치에 본문으로 복제하지 않는다.
 - 예제별 README 정본은 코드 폴더 아래에 둔다.
-- `Docs/01_Examples`는 전환기 경로이며 장기적으로 폐기한다.
+- `Docs/01_Examples`는 폐기된 예전 경로이며 정본으로 사용하지 않는다.
 - Topic, Verification, Demo, WorkLog, Publication은 각자 다른 책임을 가진다.
 - 기존 `Docs/99_Legacy/PartDocs`와 초기 tracked Docs는 stale 검토 전까지 참고자료로만 사용한다.
 - raw/reference 문서는 필요한 범위만 읽고 직접 이해한 설명으로 재작성한다.

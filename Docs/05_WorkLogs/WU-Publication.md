@@ -24,7 +24,7 @@
 
 | 산출물 | 문서 | 상태 |
 | --- | --- | --- |
-| Example | `Docs/01_Examples` | 필요 시 참조 |
+| Example README | 코드 폴더 README | 필요 시 참조 |
 | Topic | `Docs/02_Topics` | 필요 시 참조 |
 | Verification | `Docs/03_Verification` | 필요 시 참조 |
 | Demo | `Docs/04_Demos` | 예정 |

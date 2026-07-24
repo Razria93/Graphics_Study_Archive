@@ -60,7 +60,7 @@
 
 처리:
 
-- 예제 설명은 `Docs/01_Examples`에 둔다.
+- 예제 설명은 대상 코드 폴더 README에 둔다.
 - 검증은 `Docs/03_Verification`에 둔다.
 - Demo evidence는 `Docs/04_Demos`에 둔다.
 - 작업 기록은 `Docs/05_WorkLogs`에 둔다.

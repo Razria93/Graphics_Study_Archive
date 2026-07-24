@@ -4,7 +4,7 @@
 
 - Work Unit: `WU-Part3`
 - 대상 코드: `Part3_Chapter09`, `Part3_Chapter10-13`
-- 대상 문서: `Docs/01_Examples`, `Docs/02_Topics`, `Docs/03_Verification`, `Docs/04_Demos`, `Docs/06_Publication`
+- 대상 문서: `Docs/02_Topics`, `Docs/03_Verification`, `Docs/04_Demos`, `Docs/06_Publication`
 - 주요 Topic 후보: Interaction, PBRAndIBL, Shadows, TexturingAndMapping
 
 ## 상태
@@ -24,7 +24,7 @@
 
 | 산출물 | 문서 | 상태 |
 | --- | --- | --- |
-| Example | `Docs/01_Examples/Part3_Chapter09`, `Docs/01_Examples/Part3_Chapter10-13` | 예정 |
+| Example README | 코드 폴더 README | 예정 |
 | Topic | `Docs/02_Topics/PBRAndIBL`, `Docs/02_Topics/Shadows`, `Docs/02_Topics/TexturingAndMapping` | 예정 |
 | Verification | `Docs/03_Verification/Part3_Chapter09`, `Docs/03_Verification/Part3_Chapter10-13` | 예정 |
 | Demo | `Docs/04_Demos` | 예정 |

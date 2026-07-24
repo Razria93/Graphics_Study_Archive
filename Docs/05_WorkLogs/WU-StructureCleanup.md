@@ -20,7 +20,7 @@
 | 산출물 | 문서 | 상태 |
 | --- | --- | --- |
 | Index | `Docs/00_Index` | 생성 |
-| Example | `Docs/01_Examples` | 골격 생성 |
+| Example README | 코드 폴더 README | 골격 생성 |
 | Topic | `Docs/02_Topics` | 골격 생성 |
 | Verification | `Docs/03_Verification` | 골격 생성 |
 | Demo | `Docs/04_Demos` | 골격 생성 |
@@ -59,4 +59,4 @@
 
 - 구조 정리 브랜치를 push할지, PR로 열지, main에 병합할지 사용자 승인 후 결정한다.
 - 다음 실작업은 Part 단위 Work Unit 중 하나를 pilot으로 선택한다.
-- pilot 진행 전 `Docs/01_Examples`, `Docs/02_Topics`, `Docs/03_Verification`, `Docs/04_Demos`의 양식이 과하지 않은지 다시 확인한다.
+- pilot 진행 전 코드 폴더 README, `Docs/02_Topics`, `Docs/03_Verification`, `Docs/04_Demos`의 양식이 과하지 않은지 다시 확인한다.

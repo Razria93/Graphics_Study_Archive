@@ -116,9 +116,9 @@ local/
 | WorkLog 마감 | `Docs/98_Tools/templates/worklog.md` |
 | 최종 검수 | `Docs/98_Tools/validation-tools.md` |
 
-## Docs/01_Examples 전환 기준
+## Docs/01_Examples 폐기 기준
 
-- Docs/01_Examples는 전환기 링크 허브로만 사용한다.
+- Docs/01_Examples는 폐기된 예전 링크 허브로 취급한다.
 - 예제 설명 본문은 코드 폴더 README에 둔다.
 - build/run/capture 상세 상태는 Docs/03_Verification에 둔다.
 - 내부 source review와 stale 판단은 코드 폴더 README에 노출하지 않는다.
@@ -150,5 +150,5 @@ Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.
 - Plan Issue 누적 진행 댓글 또는 WorkLog 댓글 갱신 필요 여부가 판단되어 있다.
 - `Docs/05_WorkLogs/issue-pr-index.md`에 Issue/PR/Plan comment 상태가 반영되어 있다.
 - `Docs/00_Index` map이 필요한 범위만큼 갱신되어 있다.
-- 오래된 `Docs/99_Legacy` 문서와 기존 `Docs/01_Examples` 본문을 정본처럼 링크하지 않는다.
+- 오래된 `Docs/99_Legacy` 문서와 폐기된 `Docs/01_Examples` 본문을 정본처럼 링크하지 않는다.
 - 사용자 검토 요청과 commit readiness 보고가 끝나 있다.
