@@ -10,7 +10,7 @@
 
 | 범위 | 최소 capture/result | 대표 capture/result | video | 상태 | 비고 |
 | --- | --- | --- | --- | --- | --- |
-| Part1_Chapter01-02 | 보류 | 보류 | 미확인 | 보류 | `02_Bloom`은 ChatGPT 생성 입력 이미지로 runtime result 생성 확인. `Docs/_assets` 승격은 별도 검수 전까지 보류 |
+| Part1_Chapter01-02 | 확보 | 확보 | 미확인 | 부분 확인 | `02_Bloom` result image를 `Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png`로 승격함. `01_DX11InitAndImGui`는 미확인 |
 | Part1_Chapter03 | 미확인 | 미확인 | 미확인 | 미확인 | ray tracing 단계별 결과 후보 |
 | Part2_Chapter04 | 미확인 | 미확인 | 미확인 | 미확인 | rasterization, depth buffer 후보 |
 | Part2_Chapter05-08 | 미확인 | 미확인 | 미확인 | 미확인 | modeling, IBL, bloom 후보 |

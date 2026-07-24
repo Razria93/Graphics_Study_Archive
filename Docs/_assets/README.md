@@ -14,7 +14,7 @@
 
 | 폴더 | 역할 |
 | --- | --- |
-| [captures](captures/README.md) | screenshot |
+| [captures](captures/README.md) | screenshot, result image |
 | [videos](videos/README.md) | video 또는 video link reference |
 | [diagrams](diagrams/README.md) | 직접 만든 diagram 또는 설명용 이미지 |
 

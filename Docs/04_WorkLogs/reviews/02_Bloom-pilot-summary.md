@@ -18,14 +18,14 @@
 - Debug x64 build/run: 확인
 - Release x64 build/run: 확인
 - runtime result image 생성: 확인
-- tracked capture/result 승격: 보류
+- tracked capture/result 승격: 확인
 
-## 보류 사유
+## 승격 결과
 
-`result.png`는 ChatGPT 생성 입력 이미지로 재생성했고 육안상 강의명/강사명/워터마크/개인 식별자는 보이지 않는다. 다만 `Docs/_assets` 승격과 public capture/result 판단은 별도 검수 전까지 보류한다.
+`result.png`는 ChatGPT 생성 입력 이미지로 재생성했고 육안상 강의명/강사명/워터마크/개인 식별자는 보이지 않는다. result image를 `Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png`로 승격했다. public capture/result 판단은 `Docs/05_Publication` 기준으로 별도 처리한다.
 
 ## 후속 작업
 
 - Part1의 다음 예제에 같은 workflow를 적용한다.
-- `02_Bloom` result image를 `Docs/_assets`로 승격할지 별도 검수한다.
+- `02_Bloom` result image의 public 후보 여부를 `Docs/05_Publication` 기준으로 검토한다.
 - Part1 단위 Issue/PR draft 작성 여부는 다음 예제 정리 후 판단한다.

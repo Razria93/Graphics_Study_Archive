@@ -13,7 +13,7 @@
 | VI-001 | Part4_Chapter14-20 | 미확인 | `Examples.sln` 단일 solution과 실행 argument 방식 확인 필요 | Part4 구조 확인 시 갱신 |
 | VI-002 | Portfolio_RayTracer | 미확인 | solution 또는 실행 진입점 확인 필요 | 프로젝트 구조 확인 시 갱신 |
 | VI-003 | Part1_Chapter01-02/02_Bloom | 관찰됨 | Debug/Release x64 build는 성공했지만 MSBuild 출력 끝에 `pwsh.exe`를 찾을 수 없다는 경고가 표시됨. 프로젝트 파일 내부의 명시적 post-build 명령에서는 원인을 찾지 못함 | 반복 발생 여부 확인. build/run 성공 상태는 유지 |
-| VI-004 | Part1_Chapter01-02/02_Bloom | 해소 | 기존 입력 이미지의 강의/출처 표기 문제는 ChatGPT 생성 입력 이미지로 교체해 해소함 | `Docs/_assets` 승격과 public capture/result 판단은 별도 검수에서 처리 |
+| VI-004 | Part1_Chapter01-02/02_Bloom | 해소 | 기존 입력 이미지의 강의/출처 표기 문제는 ChatGPT 생성 입력 이미지로 교체해 해소함 | result image를 `Docs/_assets/captures`에 승격함. public 판단은 `Docs/05_Publication`에서 처리 |
 
 ## 기록 기준
 
