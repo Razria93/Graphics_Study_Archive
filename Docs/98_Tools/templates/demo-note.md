@@ -56,3 +56,16 @@
 - video metadata/audio/subtitle: 미확인
 - external input asset source/license: 미확인
 - lecture name/instructor/watermark/personal identifier: 미확인
+
+## Generated Image Provenance
+
+- 생성 도구:
+- 생성 날짜:
+- 프롬프트 원문:
+- 작업용 원본 이미지:
+- provenance screenshot:
+- 원본 파일 SHA256:
+- 변환 입력 SHA256:
+- result image SHA256:
+- public 게시 가능성:
+- 비고:
