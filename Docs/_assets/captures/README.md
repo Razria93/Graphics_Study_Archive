@@ -1,6 +1,6 @@
 # Captures
 
-이 폴더는 검토된 screenshot과 result image를 둔다. raw 후보, 실패한 capture, 중복 capture는 `local/`에 둔다.
+이 폴더는 검토된 screenshot과 result image를 둔다. 검토 전 후보, 실패한 capture, 중복 capture는 이 폴더에 승격하지 않는다.
 
 ## 기준
 
@@ -25,6 +25,7 @@ portfolio_raytracer_topic.png
 
 | 파일 | 유형 | 연결 예제 | 상태 | 비고 |
 | --- | --- | --- | --- | --- |
+| `part1_chapter01-02_02_bloom_input.jpg` | input image | `Part1_Chapter01-02/02_Bloom` | 확인 | bloom 전 원본 비교 이미지 |
 | `part1_chapter01-02_02_bloom_result.png` | result image | `Part1_Chapter01-02/02_Bloom` | 확인 | ChatGPT 생성 입력 이미지 기반 `result.png`를 승격함 |
 
 ## 승격 체크

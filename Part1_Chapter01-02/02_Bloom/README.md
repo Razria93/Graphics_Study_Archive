@@ -47,7 +47,16 @@
 | Debug x64 build | 확인 | MSBuild 17.14로 `x64/Debug/02_Bloom.exe` 생성 확인 |
 | Debug x64 run | 확인 | 실행 후 5초 이상 유지, `result.png` 생성, 종료 코드 0 |
 | Release x64 build/run | 확인 | `x64/Release/02_Bloom.exe` 생성과 실행 확인 |
-| Capture | 확인 | ChatGPT 생성 입력 이미지로 `result.png` 재생성 확인 |
+| Capture | 확인 | original input과 bloom result 비교 이미지 연결 |
+
+## Capture/Result
+
+| Original Input | Bloom Result |
+| --- | --- |
+| ![Original input](../../Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg) | ![Bloom result](../../Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png) |
+
+- Original input: `Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg`
+- Bloom result: `Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png`
 
 ## Demo Points
 
