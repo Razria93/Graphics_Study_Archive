@@ -13,6 +13,7 @@ Demo 계획과 evidence 설명의 정본은 `Docs/03_Demos`에 둔다. 검토된
 - raw capture 후보, 실패한 capture, 중복 capture, 선별 전 영상은 먼저 `local/`에 둔다.
 - 검토된 capture 또는 video reference만 tracked Docs에 연결한다.
 - 강의 화면, 유료 자료, 문제/해설 캡처, 출처 불명 asset은 public 후보로 두지 않는다.
+- 강의명, 강사명, 워터마크, 개인 이름, 계정, 로컬 경로가 보이는 evidence는 승격하지 않는다.
 - capture가 어떤 예제와 Topic을 보여주는지 함께 기록한다.
 - 실행을 직접 확인하지 않은 demo는 `미확인`으로 둔다.
 - build/run 상태가 `성공` 또는 `부분 성공`일 때만 evidence를 `확보` 상태로 둔다.
@@ -30,6 +31,8 @@ Demo 계획과 evidence 설명의 정본은 `Docs/03_Demos`에 둔다. 검토된
 - `Docs/02_Verification/capture-matrix.md`에 capture 상태를 기록할 수 있다.
 - public 후보 여부 또는 private-only 사유를 `Docs/05_Publication`에서 판단할 수 있다.
 - 강의 화면, 유료 자료, 문제/해설, 출처 불명 asset이 포함되어 있지 않다.
+- 강의명, 강사명, 워터마크, 개인 식별자, 계정 정보, 로컬 절대 경로가 포함되어 있지 않다.
+- window title, overlay text, image watermark, terminal/IDE 주변 정보까지 확인했다.
 
 승격하지 않는 항목:
 
@@ -37,6 +40,7 @@ Demo 계획과 evidence 설명의 정본은 `Docs/03_Demos`에 둔다. 검토된
 - 같은 의미의 중복 capture
 - 화면 품질이 낮아 개념을 설명하기 어려운 capture
 - 권리 검토가 필요한 외부 asset 중심 capture
+- 강의명, 강사명, 워터마크, 개인 식별자가 포함된 capture
 - 문서에서 참조하지 않을 보관용 이미지
 
 ## 파일 기준
@@ -78,3 +82,4 @@ screenshot 또는 video evidence를 추가하면 다음 문서를 함께 확인�
 - screenshot을 추가하면 `Docs/03_Demos`, `Docs/02_Verification/capture-matrix.md`, `Docs/05_Publication`을 함께 확인한다.
 - video evidence를 추가하면 파일 크기, 저장 위치, 공개 가능성을 먼저 확인한다.
 - GitHub Issue/PR body에는 검증 완료 evidence만 연결한다.
+- evidence 승격 전에는 화면 안의 title, watermark, overlay, account, path를 수동으로 확인한다.

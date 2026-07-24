@@ -44,6 +44,8 @@ portfolio_raytracer_reflection.png
 | 화면 품질 | 보여줄 개념이 한눈에 보임 |
 | 파일명 | Part/Chapter/Portfolio와 예제 또는 Topic이 드러남 |
 | 권리 검토 | 강의 화면, 유료 자료, 출처 불명 asset이 아님 |
+| 식별자 제거 | 강의명, 강사명, 워터마크, 개인 이름, 계정, 로컬 경로가 보이지 않음 |
+| 화면 범위 | window title, overlay, terminal, IDE 주변 정보가 공개 가능 범위임 |
 | 연결 문서 | Example, Topic, Verification, Demo 문서와 연결됨 |
 | 공개 판단 | public 후보, private 전용, 검토 필요, 제외 중 하나로 판단 가능 |
 
@@ -72,7 +74,7 @@ portfolio_raytracer_reflection.png
 
 상태값은 다음을 따른다.
 
-- `확보`: 검토된 capture가 `Docs/_assets/captures`에 있고 문서에서 참조된다.
+- `확보`: 검토된 capture가 `Docs/_assets/captures`에 있고 문서에서 참조된다. 강의명, 강사명, 워터마크, 개인 식별자 검토를 통과해야 한다.
 - `미확인`: 아직 capture를 직접 확인하지 않았다.
 - `보류`: 촬영 또는 공개 판단을 의도적으로 미룬다.
 - `제외`: demo evidence로 사용하지 않는다.
@@ -80,5 +82,6 @@ portfolio_raytracer_reflection.png
 ## 갱신 기준
 
 - screenshot을 추가하면 `demo-priority.md`, Part별 `demo-index.md`, `Docs/02_Verification/capture-matrix.md`를 함께 확인한다.
+- tracked evidence로 승격하기 전에는 강의명, 강사명, 워터마크, 개인 식별자, 로컬 경로 노출 여부를 확인한다.
 - public 후보 여부는 `Docs/05_Publication`에서 별도로 판단한다.
 - GitHub 게시 후보를 만들 때는 `local/github/public` 본문이 `_assets`의 검토된 evidence만 참조하는지 확인한다.

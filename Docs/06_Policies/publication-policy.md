@@ -22,6 +22,7 @@
 - 독자적으로 재구성한 구현 설명
 - 일반적인 graphics concept 설명
 - 직접 실행해서 만든 capture/video 중 권리 문제가 없는 결과물
+- 강의명, 강사명, 워터마크, 개인 식별자가 제거된 demo evidence
 - 출처와 라이선스가 명확한 asset을 사용한 산출물
 - 직접 확인한 build/run 검증 요약
 
@@ -39,10 +40,12 @@
 - 강의 원본 영상, 슬라이드, 퀴즈, 정답
 - 유료 자료
 - 강의 화면 캡처
+- 강의명, 강사명, 강의 워터마크, 강의 브랜드 표기가 포함된 screenshot/video/result image
 - 문제/해설 전문
 - 강의 고유 구조를 그대로 재현한 문서
 - 출처와 라이선스가 불명확한 asset
 - 개인 메모, 계정 정보, 로컬 절대 경로, 제출 대상별 기록
+- window title, terminal, IDE, Obsidian 화면 등에 개인 이름이나 로컬 환경 정보가 노출된 evidence
 - raw/reference 원문 복사본
 
 
@@ -62,3 +65,4 @@
 - 후보 목록과 redaction log는 먼저 local에서 검토한다.
 - public repo는 private archive가 안정화된 뒤 별도 subset으로 구성한다.
 - public 후보는 private archive 문서를 그대로 복사하지 않고 공개용 문장으로 재작성한다.
+- public evidence 후보는 강의명, 강사명, 워터마크, 개인 식별자 제거 여부를 확인한 뒤 연결한다.
