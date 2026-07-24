@@ -35,6 +35,7 @@
 | build/run/capture 검증 | `Docs/03_Verification/` | 검증 상태와 known issue |
 | demo 계획과 evidence 설명 | `Docs/04_Demos/`, `Docs/_assets/` | capture/video 후보와 시연 포인트 |
 | 작업 마감 요약 | `Docs/05_WorkLogs/` | Work Unit 요약과 follow-up |
+| 조사 판단 요약 | `Docs/05_WorkLogs/reviews/` | local 상세 조사에서 재사용 가능한 결론과 승격/제외 분류 요약 |
 | public subset 판단 | `Docs/06_Publication/` | 공개 후보, 제외, redaction 기준 |
 | 반복 적용 정책 | `Docs/07_Policies/` | repo 운영과 문서 작성 규칙 |
 | 도구와 템플릿 | `Docs/98_Tools/` | validator, template, troubleshooting |
@@ -45,6 +46,7 @@
 - 문서는 한국어 평서형으로 작성한다.
 - 예제 README에는 public-facing 설명만 둔다.
 - raw/reference, origin, current code 비교와 source comment inventory는 README에 노출하지 않는다.
-- 상세 source comment inventory는 `local/`에 두고, tracked 문서에는 필요한 요약만 남긴다.
+- 상세 source comment inventory와 raw/current/origin 비교 원문은 `local/study-review/`에 둔다.
+- tracked review summary에는 승격한 항목, 승격하지 않은 항목의 분류, 후속 판단 기준만 남긴다.
 - build/run/capture 상태는 `Docs/03_Verification`에 기록한다.
 - 공개 가능성 판단은 `Docs/06_Publication`에서 분리한다.

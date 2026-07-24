@@ -89,6 +89,22 @@ source comment inventory는 repo 전체 주석 조사가 아니다. 대상 Work 
 
 source comment inventory는 tracked Docs가 아니라 local-only 검토 자료다. tracked Docs에는 주석 원문을 길게 옮기지 않고, 사용자가 무엇을 이해했는지와 어떤 구현 판단을 했는지만 재작성한다.
 
+
+## 내부 조사 기록 분리 기준
+
+README에서 제외한 내부 조사 내용은 두 단계로 분리한다.
+
+| 내용 | 위치 | 기준 |
+| --- | --- | --- |
+| current/raw/origin 비교 상세 | `local/study-review/` | 원문성, 경로, 민감 판단, 상세 비교표를 포함할 수 있다. |
+| source comment inventory 상세 | `local/study-review/` | 주석 원문과 학습 흔적은 tracked Docs로 직접 옮기지 않는다. |
+| 기존 Docs stale 판단 상세 | `local/study-review/` | 내부 판단 근거와 폐기 이유를 보관한다. |
+| 승격/제외 판단 요약 | `Docs/05_WorkLogs/reviews/` | 다음 작업자가 반복 조사하지 않아도 되는 결론만 남긴다. |
+| Work Unit 마감 요약 | `Docs/05_WorkLogs/` | 작업 범위, 산출물, follow-up을 요약한다. |
+
+tracked review summary에는 상세 조사 원문을 복사하지 않는다. 남기는 내용은 검토 범위, README/Topic/Verification/Demo로 승격한 항목, 승격하지 않은 항목의 분류, 후속 known issue, 반복 적용할 판단 기준으로 제한한다.
+
+tracked Docs에서 `local/` 파일로 직접 링크하지 않는다. local 문서에서 tracked 문서로 연결하는 것은 허용한다.
 ## 작성 위치 결정 규칙
 
 | 내용 | 작성 위치 |
@@ -99,6 +115,8 @@ source comment inventory는 tracked Docs가 아니라 local-only 검토 자료�
 | capture/video evidence와 시연 포인트 | `Docs/04_Demos` |
 | public 후보와 제외 판단 | `Docs/06_Publication` |
 | 작업 과정과 리뷰 대응 요약 | `Docs/05_WorkLogs` |
+| 정리된 조사 판단 요약 | `Docs/05_WorkLogs/reviews` |
+| 상세 조사 원문과 민감 판단 | `local/study-review` |
 | 반복 적용 규칙 | `Docs/07_Policies` |
 | 도구와 템플릿 | `Docs/98_Tools` |
 | 과거 구조와 import 기록 | `Docs/99_Legacy` |
@@ -121,6 +139,7 @@ source comment inventory는 tracked Docs가 아니라 local-only 검토 자료�
 - 검증 상세를 예제 문서에 길게 복사하지 않는다.
 - demo 파일 원본을 검토 없이 tracked Docs에 추가하지 않는다.
 - GitHub draft 원문을 tracked Docs에 두지 않는다.
+- tracked Docs에서 `local/` 파일로 직접 링크하지 않는다.
 - 정책 원문을 각 산출물 폴더 README에 반복하지 않는다.
 - existing Docs만 근거로 새 정본 문서를 확정하지 않는다.
 - raw/reference 또는 origin 문서 표현을 tracked Docs에 그대로 옮기지 않는다.

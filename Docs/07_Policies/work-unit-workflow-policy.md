@@ -25,7 +25,7 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | 3 | 소스 주석 inventory 작성 | 관련 source/header/shader | `local/study-review` | `docs-authoring-flow-policy.md` |
 | 4 | raw/reference와 origin 기준 확인 | raw/reference repo, origin 또는 원본 예제, `Docs/99_Legacy/ImportHistory` | 검토 메모는 `local/` | `canonical-docs-policy.md`, `local-review-policy.md` |
 | 5 | current/raw/origin diff 조사 | 현재 코드, raw/reference, origin 기준 | `local/study-review` | `docs-authoring-flow-policy.md` |
-| 6 | 챕터 목표와 핵심 구현 후보 추출 | code, source comment inventory, raw/origin docs | `local/study-review` 또는 `Docs/05_WorkLogs` | `docs-authoring-flow-policy.md` |
+| 6 | 챕터 목표와 핵심 구현 후보 추출 | code, source comment inventory, raw/origin docs | 상세는 `local/study-review`, 요약은 `Docs/05_WorkLogs/reviews` | `docs-authoring-flow-policy.md` |
 | 7 | 예제 목록과 대표 예제 결정 | 루트 코드 폴더, source review, Legacy PartDocs | 코드 폴더 README 계획 또는 `Docs/00_Index` | `canonical-docs-policy.md` |
 | 8 | 코드 주석 선별 정리 | source comment inventory | 루트 코드 폴더 | `agent-safety-policy.md`, `docs-authoring-flow-policy.md` |
 | 9 | 예제 README 작성 | current/raw/origin 검토 결과 | 대상 코드 폴더 `README.md` | `docs-authoring-flow-policy.md` |
@@ -50,6 +50,7 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | Verification | `Docs/03_Verification` | build/run/capture 상태, known issue, 확인 일자 |
 | Demo | `Docs/04_Demos` | capture/video evidence, 시연 포인트, 연결 개념 |
 | WorkLog | `Docs/05_WorkLogs` | 작업 범위, 변경 요약, 검증 요약, Issue/PR 연결, follow-up |
+| Review Summary | `Docs/05_WorkLogs/reviews` | 상세 local 조사에서 승격한 결론과 반복 가능한 판단 기준 |
 | Publication | `Docs/06_Publication` | public 후보, private 전용, 검토 필요, 제외 판단 |
 | Policy | `Docs/07_Policies` | 반복 적용되는 규칙 |
 | Tool | `Docs/98_Tools` | validator, template, troubleshooting |
@@ -94,7 +95,9 @@ local/
 
 사용 기준:
 
-- code/raw 조사 중 나온 원문 메모는 `local/`에 둔다.
+- code/raw 조사 중 나온 원문 메모와 상세 비교표는 `local/study-review/`에 둔다.
+- tracked Docs에는 `local/`로 직접 연결되는 링크를 만들지 않는다.
+- 다음 작업자가 반복 조사하지 않아도 되는 결론은 `Docs/05_WorkLogs/reviews/`에 요약한다.
 - GitHub 게시 전 본문은 `local/github/draft`에 둔다.
 - 게시 직전 최종 후보는 `local/github/public`에 둔다.
 - 게시 후 실제 게시본과 리뷰 대응 사본은 `local/github/snapshots`에 둔다.
@@ -118,7 +121,8 @@ local/
 - Docs/01_Examples는 전환기 링크 허브로만 사용한다.
 - 예제 설명 본문은 코드 폴더 README에 둔다.
 - build/run/capture 상세 상태는 Docs/03_Verification에 둔다.
-- 내부 source review와 stale 판단은 코드 폴더 README에 노출하지 않고 local/ 또는 WorkLog에 둔다.
+- 내부 source review와 stale 판단은 코드 폴더 README에 노출하지 않는다.
+- 상세 조사 기록은 `local/study-review/`에 두고, 재사용 가능한 판단 요약만 `Docs/05_WorkLogs/reviews/`에 둔다.
 
 ## 사용자 검토 지점
 
@@ -136,7 +140,7 @@ local/
 Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.
 
 - 예제 README 정본이 대상 코드 폴더에 있다.
-- 소스 주석 inventory와 raw/origin/current 비교 여부가 기록되어 있다.
+- 소스 주석 inventory와 raw/origin/current 비교 상세는 `local/study-review/`에 있고, 반복 가능한 판단 요약은 필요한 경우 `Docs/05_WorkLogs/reviews/`에 있다.
 - 관련 Topic이 없으면 없다고 기록하고, 있으면 `Docs/02_Topics`에 연결한다.
 - build/run/capture 상태가 `Docs/03_Verification`에 기록되어 있다.
 - demo 필요 여부와 evidence 상태가 `Docs/04_Demos`에 기록되어 있다.
