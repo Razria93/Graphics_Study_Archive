@@ -45,7 +45,7 @@ tracked validator는 다음 조건을 만족해야 한다.
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-body.ps1
 ```
 
-기본 입력 위치는 `local/github/public`이다. GitHub에 게시하기 전 후보 Markdown을 이 위치에 둔 뒤 실행한다.
+기본 입력 위치는 `Docs/07_GitHub`이다. GitHub에 게시하기 전 후보 Markdown을 이 위치에 둔 뒤 실행한다.
 
 지원 디렉터리와 미보장 범위는 `validators/README.md`를 기준으로 확인한다.
 

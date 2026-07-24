@@ -1,6 +1,6 @@
 # Local Publication Review
 
-이 템플릿은 `local/publication` 또는 `local/github/public`에서 사용한다. public subset 후보를 게시하거나 원격에 올리기 전에 검토하는 local-only 양식이다.
+이 템플릿은 `local/publication`에서 사용한다. public subset 후보를 외부 공개 대상으로 검토하기 전에 사용하는 local-only 양식이다.
 
 ## 대상
 

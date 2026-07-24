@@ -1,6 +1,7 @@
 param(
 	[string]$Root = (Resolve-Path (Join-Path $PSScriptRoot "..\..\..")).Path,
-	[string]$PublicRoot = (Join-Path $Root "local/github/public"),
+	[Alias("PublicRoot")]
+	[string]$GitHubRoot = (Join-Path $Root "Docs/07_GitHub"),
 	[string]$TemplatesRoot = (Join-Path $Root "Docs/98_Tools/templates")
 )
 
@@ -213,7 +214,7 @@ function Test-CommonPublicRules {
 
 	foreach ($Pattern in $BannedPatterns) {
 		if ($Content -match $Pattern) {
-			Add-Failure $Path "contains banned public-body pattern: $Pattern"
+			Add-Failure $Path "contains banned GitHub body pattern: $Pattern"
 		}
 	}
 }
@@ -475,7 +476,8 @@ function Test-Templates {
 }
 
 $SummarySection = New-Text @(0xC694, 0xC57D)
-$KeyChangesSection = New-Text @(0xC8FC, 0xC694, 0x20, 0xBCC0, 0xACBD)
+$CoreConceptsSection = New-Text @(0xD575, 0xC2EC, 0x20, 0xAC1C, 0xB150)
+$RepresentativeExamplesSection = New-Text @(0xB300, 0xD45C, 0x20, 0xC608, 0xC81C)
 $VerificationSection = New-Text @(0xAC80, 0xC99D)
 $ScreenshotsSection = New-Text @(0xC2A4, 0xD06C, 0xB9B0, 0xC0F7)
 $UnverifiedLimitationsSection = New-Text @(0xBBF8, 0xD655, 0xC778, 0x20, 0x2F, 0x20, 0xC81C, 0xD55C)
@@ -490,7 +492,8 @@ $RelatedExamplesSection = New-Text @(0xAD00, 0xB828, 0x20, 0xC608, 0xC81C)
 
 $PrRequiredSections = @(
 	$SummarySection,
-	$KeyChangesSection,
+	$CoreConceptsSection,
+	$RepresentativeExamplesSection,
 	$VerificationSection,
 	$ScreenshotsSection,
 	$UnverifiedLimitationsSection,
@@ -537,52 +540,65 @@ function Get-OptionalMarkdownFiles {
 	return Get-ChildItem $Path -File -Filter $Filter
 }
 
+function Test-IsGuidanceMarkdown {
+	param([System.IO.FileInfo]$File)
+
+	return ($File.Name -eq "README.md" -or $File.Name -eq "AGENTS.md")
+}
+
 $CheckedFileCount = 0
 
-Get-OptionalMarkdownFiles -Path (Join-Path $PublicRoot "prs") -Recurse | ForEach-Object {
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "prs") -Recurse | ForEach-Object {
+	if (Test-IsGuidanceMarkdown -File $_) {
+		return
+	}
+
 	++$CheckedFileCount
 	Test-PublicBody -File $_ -RequiredSections $PrRequiredSections -RequireScreenshots $true
 }
 
-Get-OptionalMarkdownFiles -Path (Join-Path $PublicRoot "issues/topic") | ForEach-Object {
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "topic_*.md" | ForEach-Object {
 	++$CheckedFileCount
 	Test-TopicIssue -File $_
 }
 
-Get-OptionalMarkdownFiles -Path (Join-Path $PublicRoot "issues/verification") | ForEach-Object {
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "verification_*.md" | ForEach-Object {
 	++$CheckedFileCount
 	Test-PublicBody -File $_ -RequiredSections $VerificationRequiredSections -RequireScreenshots $true
 }
 
-$PlanProgressPath = Join-Path $PublicRoot "issues/plan-comments/plan_progress_summary_comment.md"
+$PlanProgressPath = Join-Path $GitHubRoot "comments/plan-progress.md"
 if (Test-Path $PlanProgressPath) {
 	++$CheckedFileCount
 	Test-PlanProgressComment -File (Get-Item $PlanProgressPath)
 }
 
-Get-OptionalMarkdownFiles -Path (Join-Path $PublicRoot "issues/plan-comments") -Filter "*_worklog_comment.md" | ForEach-Object {
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "comments") -Filter "*_worklog.md" | ForEach-Object {
 	++$CheckedFileCount
 	Test-PlanFeatureComment -File $_
 }
 
-Get-OptionalMarkdownFiles -Path (Join-Path $PublicRoot "pr-comments") | ForEach-Object {
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "comments") -Filter "*_demo.md" | ForEach-Object {
 	++$CheckedFileCount
 	Test-PrScreenshotComment -File $_
 }
 
-Get-OptionalMarkdownFiles -Path $PublicRoot -Recurse | ForEach-Object {
+Get-OptionalMarkdownFiles -Path $GitHubRoot -Recurse | ForEach-Object {
+	if (Test-IsGuidanceMarkdown -File $_) {
+		return
+	}
+
 	$RelativePath = (Get-RelativePath $_.FullName) -replace '\\', '/'
 	$Supported = (
 		$RelativePath -match '/prs/.+\.md$' -or
-		$RelativePath -match '/issues/topic/[^/]+\.md$' -or
-		$RelativePath -match '/issues/verification/[^/]+\.md$' -or
-		$RelativePath -match '/issues/plan-comments/plan_progress_summary_comment\.md$' -or
-		$RelativePath -match '/issues/plan-comments/[^/]+_worklog_comment\.md$' -or
-		$RelativePath -match '/pr-comments/[^/]+\.md$'
+		$RelativePath -match '/issues/[^/]+\.md$' -or
+		$RelativePath -match '/comments/plan-progress\.md$' -or
+		$RelativePath -match '/comments/[^/]+_worklog\.md$' -or
+		$RelativePath -match '/comments/[^/]+_demo\.md$'
 	)
 
 	if (-not $Supported) {
-		Add-Warning $RelativePath "unsupported GitHub public body path; validator did not apply a body-specific schema"
+		Add-Warning $RelativePath "unsupported GitHub body path; validator did not apply a body-specific schema"
 	}
 }
 
@@ -597,4 +613,4 @@ if ($Failures.Count -gt 0) {
 	exit 1
 }
 
-Write-Output "GitHub public body validation passed."
+Write-Output "GitHub body validation passed."
