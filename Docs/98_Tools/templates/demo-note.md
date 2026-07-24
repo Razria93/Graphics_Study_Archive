@@ -13,6 +13,16 @@
 - 대표 capture/result:
 - video 필요 여부:
 
+## 사용자 요청 조건
+
+- 요청 유형: screenshot / video / result image
+- 찍어야 할 화면 또는 출력 파일:
+- before/after 또는 input/result 비교 필요 여부:
+- README 연결 대상 여부 또는 local 검토 후보 여부:
+- 피해야 할 노출 요소: 강의명, 강사명, 워터마크, 개인 식별자, 계정, 로컬 경로, 불필요한 IDE/terminal/browser UI
+- 권장 비율과 구도:
+- 권장 파일명:
+
 ## Capture/Result 후보
 
 | 항목 | 위치 | 상태 | 비고 |
@@ -50,14 +60,14 @@
 - `Docs/02_Verification/capture-matrix.md`
 - `Docs/_assets`
 
-## Metadata Check
+## Metadata 확인
 
 - screenshot/result image metadata: 미확인
 - video metadata/audio/subtitle: 미확인
 - external input asset source/license: 미확인
 - lecture name/instructor/watermark/personal identifier: 미확인
 
-## Generated Image Provenance
+## 생성 이미지 출처 기록
 
 - 생성 도구:
 - 생성 날짜:

@@ -62,6 +62,52 @@ capture/result
 - screenshot과 result image는 EXIF, PNG text chunk, 파일 속성 등 이미지 metadata에 개인 식별자, 로컬 경로, 강의명, 출처 불명 정보가 남아 있지 않은지 확인했다.
 - result image가 외부 image, texture, model, HDRI를 입력으로 사용했다면 입력 asset의 출처와 라이선스를 확인하기 전까지 보류로 둔다.
 
+## 검증 단계 요청 기준
+
+build/run 검증 단계에서 screenshot, video, result image가 필요한 예제라고 판단되면 작업자는 사용자에게 capture/result 요청 조건을 구체적으로 제시한다.
+
+요청에는 다음 항목을 포함한다.
+
+- 필요한 유형: screenshot, video, result image 중 무엇인지
+- 찍어야 할 화면이나 프로그램 출력물
+- before/after 또는 input/result 비교가 필요한지
+- README에 연결할 대표 capture/result인지, local 검토 후보인지
+- 피해야 할 노출 요소: 강의명, 강사명, 워터마크, 개인 식별자, 계정, 로컬 경로, 불필요한 IDE/terminal/browser UI
+- 권장 비율과 구도: 가능하면 16:9, 예제 결과가 중심에 보이는 화면
+- 파일명 기준: Part/Chapter/Example과 개념이 드러나는 이름
+
+예제 유형별 기본 요청 기준은 다음과 같다.
+
+| 예제 유형 | 우선 요청 | 기준 |
+| --- | --- | --- |
+| post-processing | input image와 result image | 처리 전후 차이를 README에서 세로로 비교한다. |
+| static rendering | screenshot | 최종 화면 한 장으로 핵심 개념을 설명할 수 있어야 한다. |
+| interaction, camera, control | video | 움직임이나 입력 반응이 설명의 핵심이면 video를 우선한다. |
+| simulation, animation, physics | video와 대표 screenshot | 시간 변화는 video로, 대표 상태는 screenshot으로 남긴다. |
+| file output 기반 예제 | result image | 프로그램이 출력한 파일을 우선 연결한다. |
+
+capture/result가 필요 없거나 시각적 설명 가치가 낮으면 `제외`로 기록하고 사유를 남긴다.
+
+## README 표시 기준
+
+capture/result가 확보된 예제는 코드 폴더 README의 `Capture/Result` 섹션에 대표 자료를 연결한다. screenshot이나 result image는 너무 작게 보이지 않도록 세로 배치를 기본으로 한다.
+
+권장 형식:
+
+```md
+## Capture/Result
+
+### Input
+
+![Input](../../Docs/_assets/captures/example_input.png)
+
+### Result
+
+![Result](../../Docs/_assets/captures/example_result.png)
+```
+
+input/result, before/after처럼 비교가 필요한 경우에도 한 줄 표보다 별도 소제목을 둔 세로 배치를 우선한다. video는 직접 embed보다 링크와 짧은 설명을 둔다.
+
 승격하지 않는 항목:
 
 - 실패한 실행 화면

@@ -51,9 +51,13 @@
 
 ## Capture/Result
 
-| Original Input | Bloom Result |
-| --- | --- |
-| ![Original input](../../Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg) | ![Bloom result](../../Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png) |
+### Original Input
+
+![Original input](../../Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg)
+
+### Bloom Result
+
+![Bloom result](../../Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png)
 
 - Original input: `Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg`
 - Bloom result: `Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png`

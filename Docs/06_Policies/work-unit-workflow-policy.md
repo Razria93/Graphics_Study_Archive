@@ -31,15 +31,16 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | 9 | 예제 README 작성 | current/raw/origin 검토 결과 | 대상 코드 폴더 `README.md` | `docs-authoring-flow-policy.md` |
 | 10 | graphics Topic 작성 | example docs, code, raw/reference 검토 결과 | `Docs/01_Topics` | `canonical-docs-policy.md` |
 | 11 | build/run/capture 검증 | solution, executable, assets | `Docs/02_Verification` | `verification-policy.md` |
-| 12 | Demo capture/result 정리 | 실행 결과, capture 후보 | `Docs/03_Demos`, `Docs/_assets` | `demo-capture-policy.md`, `assets-policy.md` |
-| 13 | public subset 판단 | example, topic, demo, asset 정보 | `Docs/05_Publication` | `publication-policy.md` |
-| 14 | 작업 기록 마감 | 변경된 Docs, 검증 결과 | `Docs/04_WorkLogs` | `github-workflow-policy.md` |
-| 15 | GitHub Issue/PR draft 작성 | WorkLog, Example, Verification, Demo | `local/github/draft` | `github-workflow-policy.md` |
-| 16 | GitHub public body 검수 | `local/github/draft`, WorkLog, Verification | `local/github/public` | `github-workflow-policy.md`, `../98_Tools/validators/README.md` |
-| 17 | Index 갱신 | 전체 산출물 | `Docs/00_Index`, `Docs/04_WorkLogs/issue-pr-index.md` | `canonical-docs-policy.md`, `github-workflow-policy.md` |
-| 18 | 최종 검수 | 변경 파일 전체 | 검수 결과는 final report 또는 WorkLog | `style-policy.md`, `../98_Tools/validation-tools.md` |
-| 19 | 사용자 검토 요청 | 변경 요약, 미확인 항목, follow-up | 대화 보고 또는 WorkLog | `github-workflow-policy.md` |
-| 20 | commit readiness 보고 | 변경 파일, 검증 결과, 권장 commit 메시지 | 대화 보고 | `github-workflow-policy.md` |
+| 12 | capture/result 요청 조건 판단 | 검증 결과, 예제 유형, demo 후보 | 사용자 요청 문구 또는 `Docs/03_Demos` 초안 | `demo-capture-policy.md` |
+| 13 | Demo capture/result 정리 | 실행 결과, capture 후보 | `Docs/03_Demos`, `Docs/_assets`, 코드 폴더 README | `demo-capture-policy.md`, `assets-policy.md` |
+| 14 | public subset 판단 | example, topic, demo, asset 정보 | `Docs/05_Publication` | `publication-policy.md` |
+| 15 | 작업 기록 마감 | 변경된 Docs, 검증 결과 | `Docs/04_WorkLogs` | `github-workflow-policy.md` |
+| 16 | GitHub Issue/PR draft 작성 | WorkLog, Example, Verification, Demo | `local/github/draft` | `github-workflow-policy.md` |
+| 17 | GitHub public body 검수 | `local/github/draft`, WorkLog, Verification | `local/github/public` | `github-workflow-policy.md`, `../98_Tools/validators/README.md` |
+| 18 | Index 갱신 | 전체 산출물 | `Docs/00_Index`, `Docs/04_WorkLogs/issue-pr-index.md` | `canonical-docs-policy.md`, `github-workflow-policy.md` |
+| 19 | 최종 검수 | 변경 파일 전체 | 검수 결과는 final report 또는 WorkLog | `style-policy.md`, `../98_Tools/validation-tools.md` |
+| 20 | 사용자 검토 요청 | 변경 요약, 미확인 항목, follow-up | 대화 보고 또는 WorkLog | `github-workflow-policy.md` |
+| 21 | commit readiness 보고 | 변경 파일, 검증 결과, 권장 commit 메시지 | 대화 보고 | `github-workflow-policy.md` |
 
 ## 산출물별 책임
 
@@ -131,6 +132,7 @@ local/
 - Work Unit 범위와 조사 계획을 세운 직후
 - source comment inventory와 current/raw/origin diff에서 예상과 다른 차이를 발견했을 때
 - 코드 주석 제거 또는 재작성 후보가 생겼을 때
+- build/run 검증 후 screenshot, video, result image가 필요하다고 판단했을 때
 - Example/Topic/Verification/Demo 초안 작성 후
 - GitHub Issue/PR draft를 게시하기 전
 - commit readiness를 보고할 때

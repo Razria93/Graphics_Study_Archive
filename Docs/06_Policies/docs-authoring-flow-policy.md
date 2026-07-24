@@ -36,12 +36,14 @@
 8. 예제 README는 대상 코드 폴더 아래에 작성한다.
 9. 연결 Topic은 `Docs/01_Topics`에 작성하거나 갱신한다.
 10. build/run/capture 상태는 `Docs/02_Verification`에 기록한다.
-11. Demo capture/result와 시연 포인트는 `Docs/03_Demos`에 기록한다.
-12. public subset 판단은 `Docs/05_Publication`에 기록한다.
-13. 작업 과정과 마감 요약은 `Docs/04_WorkLogs`에 기록한다.
-14. 전체 map은 `Docs/00_Index`에서 필요한 범위만 갱신한다.
-15. 사용자 검토 요청 전 문체, 링크, 중복, 금지 요소, `미확인` 표기를 검수한다.
-16. 사용자 검토 요청 후 commit readiness를 보고한다.
+11. 검증 단계에서 screenshot, video, result image가 필요한지 판단하고, 필요하면 사용자에게 촬영 또는 생성 조건을 구체적으로 요청한다.
+12. Demo capture/result와 시연 포인트는 `Docs/03_Demos`에 기록한다.
+13. 검토 완료된 대표 capture/result는 코드 폴더 README에 세로 배치로 연결한다.
+14. public subset 판단은 `Docs/05_Publication`에 기록한다.
+15. 작업 과정과 마감 요약은 `Docs/04_WorkLogs`에 기록한다.
+16. 전체 map은 `Docs/00_Index`에서 필요한 범위만 갱신한다.
+17. 사용자 검토 요청 전 문체, 링크, 중복, 금지 요소, `미확인` 표기를 검수한다.
+18. 사용자 검토 요청 후 commit readiness를 보고한다.
 
 ## current/raw/origin 비교 최소 범위
 
@@ -53,6 +55,18 @@
 | asset path | texture, model, shader, runtime file lookup 경로 확인 |
 | 결과물 후보 | screenshot/video로 보여줄 수 있는 상태인지 확인 |
 | 기존 Docs | 코드와 설명이 충돌하는지 확인 |
+
+## capture/result 요청 기준
+
+예제 문서화 중 build/run 확인 단계에 들어가면 capture/result 필요 여부를 함께 판단한다. 필요하다고 판단한 경우 사용자가 바로 실행할 수 있도록 다음 조건을 명시해 요청한다.
+
+- screenshot, video, result image 중 필요한 유형
+- 찍어야 할 화면, 입력 장면, 결과 파일
+- before/after 또는 input/result 비교 필요 여부
+- 강의명, 강사명, 워터마크, 개인 식별자, 계정, 로컬 경로를 피해야 한다는 조건
+- README에 연결할 대표 자료인지, local 검토 후보인지
+
+검토 완료된 screenshot 또는 result image는 코드 폴더 README에 세로 배치로 연결한다. capture/result가 필요 없으면 `Docs/03_Demos`와 `Docs/02_Verification`에 `제외` 사유를 남긴다.
 
 ## source comment inventory 범위
 
