@@ -21,8 +21,8 @@
 - 직접 작성한 학습 회고
 - 독자적으로 재구성한 구현 설명
 - 일반적인 graphics concept 설명
-- 직접 실행해서 만든 capture/video 중 권리 문제가 없는 결과물
-- 강의명, 강사명, 워터마크, 개인 식별자가 제거된 demo evidence
+- 직접 실행해서 만든 capture/result 중 권리 문제가 없는 결과물
+- 강의명, 강사명, 워터마크, 개인 식별자가 제거된 capture/result
 - 출처와 라이선스가 명확한 asset을 사용한 산출물
 - 직접 확인한 build/run 검증 요약
 
@@ -41,22 +41,21 @@
 - 유료 자료
 - 강의 화면 캡처
 - 강의명, 강사명, 강의 워터마크, 강의 브랜드 표기가 포함된 screenshot/video/result image
+- overlay, debug HUD, window title, browser tab, taskbar, notification에 개인 식별자나 로컬 환경 정보가 노출된 capture/result
 - 문제/해설 전문
 - 강의 고유 구조를 그대로 재현한 문서
 - 출처와 라이선스가 불명확한 asset
 - 개인 메모, 계정 정보, 로컬 절대 경로, 제출 대상별 기록
-- window title, terminal, IDE, Obsidian 화면 등에 개인 이름이나 로컬 환경 정보가 노출된 evidence
 - raw/reference 원문 복사본
-
 
 ## 제출 요약 문서 기준
 
-`Docs/05_Publication/submission-summary.md`는 public subset 후보가 확정된 뒤 작성하는 제출용 요약 후보 문서다. private archive의 상세 문서를 대체하지 않고, 공개 가능한 설명과 evidence 링크만 압축한다.
+`Docs/05_Publication/submission-summary.md`는 public subset 후보가 확정된 뒤 작성하는 제출용 요약 후보 문서다. private archive의 상세 문서를 대체하지 않고, 공개 가능한 설명과 capture/result 링크만 압축한다.
 
 이 문서는 다음 시점에만 생성한다.
 
 - public 후보와 제외 대상이 `candidate-list.md`, `private-only.md`, `excluded-material.md`에 정리된 뒤
-- 대표 verification과 demo evidence가 연결된 뒤
+- 대표 verification과 demo capture/result가 연결된 뒤
 - redaction과 공개 전 체크리스트 검토가 끝난 뒤
 
 ## 작성 기준
@@ -65,4 +64,4 @@
 - 후보 목록과 redaction log는 먼저 local에서 검토한다.
 - public repo는 private archive가 안정화된 뒤 별도 subset으로 구성한다.
 - public 후보는 private archive 문서를 그대로 복사하지 않고 공개용 문장으로 재작성한다.
-- public evidence 후보는 강의명, 강사명, 워터마크, 개인 식별자 제거 여부를 확인한 뒤 연결한다.
+- public capture/result 후보는 강의명, 강사명, 워터마크, 개인 식별자 제거 여부를 확인한 뒤 연결한다.
