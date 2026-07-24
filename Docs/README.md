@@ -5,17 +5,17 @@
 | 폴더 | 역할 |
 | --- | --- |
 | [00_Index](00_Index/README.md) | 전체 지도와 작업 흐름 진입점 |
-| [02_Topics](02_Topics/README.md) | 여러 예제를 관통하는 graphics concept 설명 |
-| [03_Verification](03_Verification/README.md) | build/run/capture 상태와 known issue |
-| [04_Demos](04_Demos/README.md) | demo capture/video 계획과 evidence 연결 |
-| [05_WorkLogs](05_WorkLogs/work-unit-index.md) | Work Unit 작업 경위와 follow-up |
-| [06_Publication](06_Publication/README.md) | public subset 후보와 제외 기준 |
-| [07_Policies](07_Policies/README.md) | 문서 작성과 GitHub 운영 정책 |
+| [01_Topics](01_Topics/README.md) | 여러 예제를 관통하는 graphics concept 설명 |
+| [02_Verification](02_Verification/README.md) | build/run/capture 상태와 known issue |
+| [03_Demos](03_Demos/README.md) | demo capture/video 계획과 evidence 연결 |
+| [04_WorkLogs](04_WorkLogs/work-unit-index.md) | Work Unit 작업 경위와 follow-up |
+| [05_Publication](05_Publication/README.md) | public subset 후보와 제외 기준 |
+| [06_Policies](06_Policies/README.md) | 문서 작성과 GitHub 운영 정책 |
 | [98_Tools](98_Tools/README.md) | templates, validators, troubleshooting |
 | [99_Legacy](99_Legacy/README.md) | 과거 import 기록과 이전 문서 구조 |
 
 ## 운영 기준
 
 - 코드 폴더 README는 public-facing 예제 설명으로 작성한다.
-- 내부 검토 기록은 `Docs/05_WorkLogs` 또는 `local/`에 둔다.
+- 내부 검토 기록은 `Docs/04_WorkLogs` 또는 `local/`에 둔다.
 - 검증 상태는 직접 확인한 결과만 갱신한다.

@@ -33,8 +33,8 @@
 | 후보 | 대상 정본 | 이유 | 상태 |
 | --- | --- | --- | --- |
 |  | 코드 폴더 README |  | 검토 필요 |
-|  | `Docs/02_Topics` |  | 검토 필요 |
-|  | `Docs/03_Verification` |  | 검토 필요 |
+|  | `Docs/01_Topics` |  | 검토 필요 |
+|  | `Docs/02_Verification` |  | 검토 필요 |
 
 ## local 유지 항목
 

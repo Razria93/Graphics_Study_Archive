@@ -7,10 +7,10 @@
 | 템플릿 | 사용 위치 | 성격 | 비고 |
 | --- | --- | --- | --- |
 | [Example README](example-readme.md) | 코드 폴더 README | tracked 정본 문서용 | 예제 설명, source 확인, 핵심 코드 연결 |
-| [Topic](topic.md) | `Docs/02_Topics` | tracked 정본 문서용 | graphics concept, source 확인, 구현 연결 |
-| [Verification Note](verification-note.md) | `Docs/03_Verification` | tracked 정본 문서용 | build/run/capture 확인 기록 |
-| [Demo Note](demo-note.md) | `Docs/04_Demos` | tracked 정본 문서용 | demo 목표와 evidence 후보 기록 |
-| [WorkLog](worklog.md) | `Docs/05_WorkLogs` | tracked 정본 문서용 | Work Unit 마감 요약과 source review 요약 |
+| [Topic](topic.md) | `Docs/01_Topics` | tracked 정본 문서용 | graphics concept, source 확인, 구현 연결 |
+| [Verification Note](verification-note.md) | `Docs/02_Verification` | tracked 정본 문서용 | build/run/capture 확인 기록 |
+| [Demo Note](demo-note.md) | `Docs/03_Demos` | tracked 정본 문서용 | demo 목표와 evidence 후보 기록 |
+| [WorkLog](worklog.md) | `Docs/04_WorkLogs` | tracked 정본 문서용 | Work Unit 마감 요약과 source review 요약 |
 | [Local Study Review](local-study-review.md) | `local/study-review` | local-only 검토용 | raw/source 주석 inventory와 diff 검토 메모 |
 | [Local Publication Review](local-publication-review.md) | `local/publication` 또는 `local/github/public` | local-only 검토용 | 공개 전 점검 메모 |
 | [PR Review Response](pr-review-response.md) | GitHub PR review comment 답변 | GitHub 게시용 짧은 댓글 | 대응, 검증, 비고 고정 형식 |
@@ -19,7 +19,7 @@
 
 - tracked 정본 문서용 템플릿은 해당 산출물 폴더 책임만 담는다.
 - local-only 템플릿은 tracked Docs로 그대로 복사하지 않는다.
-- 상세 정책은 `Docs/07_Policies`를 기준으로 한다.
+- 상세 정책은 `Docs/06_Policies`를 기준으로 한다.
 - 문체 검수와 stale 경로 검수는 `../validation-tools.md`를 따른다.
 
 ## 삭제된 템플릿

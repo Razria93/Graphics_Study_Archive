@@ -23,7 +23,7 @@
 
 ## 관련 Topic
 
-- Topic: `Docs/02_Topics/...`
+- Topic: `Docs/01_Topics/...`
 - 보조 Topic:
 
 ## 구현 흐름
@@ -46,10 +46,10 @@
 
 ## 상태 링크
 
-- Verification: `Docs/03_Verification/...`
-- Demo: `Docs/04_Demos/...`
-- Publication: `Docs/06_Publication/...`
-- WorkLog: `Docs/05_WorkLogs/...`
+- Verification: `Docs/02_Verification/...`
+- Demo: `Docs/03_Demos/...`
+- Publication: `Docs/05_Publication/...`
+- WorkLog: `Docs/04_WorkLogs/...`
 
 ## Known Issue
 
@@ -58,6 +58,6 @@
 ## 작성 기준
 
 - 상세 build/run 결과는 이 문서에 복제하지 않는다.
-- 상세 capture/video 설명은 `Docs/04_Demos`로 연결한다.
-- public 후보 판단은 `Docs/06_Publication`으로 연결한다.
+- 상세 capture/video 설명은 `Docs/03_Demos`로 연결한다.
+- public 후보 판단은 `Docs/05_Publication`으로 연결한다.
 - existing Docs만 근거로 작성 완료 처리하지 않는다.

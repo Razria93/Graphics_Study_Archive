@@ -1,6 +1,6 @@
 # Topic Map
 
-이 문서는 `Docs/02_Topics`에 둘 graphics concept 문서의 분류와 우선순위를 정의한다.
+이 문서는 `Docs/01_Topics`에 둘 graphics concept 문서의 분류와 우선순위를 정의한다.
 
 ## Topic 분류
 

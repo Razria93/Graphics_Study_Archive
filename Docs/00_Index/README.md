@@ -23,8 +23,8 @@
 
 ## 기준 문서
 
-- [Work Unit Workflow Policy](../07_Policies/work-unit-workflow-policy.md)
-- [Docs Authoring Flow Policy](../07_Policies/docs-authoring-flow-policy.md)
-- [Style Policy](../07_Policies/style-policy.md)
-- [Verification Policy](../07_Policies/verification-policy.md)
-- [Publication Policy](../07_Policies/publication-policy.md)
+- [Work Unit Workflow Policy](../06_Policies/work-unit-workflow-policy.md)
+- [Docs Authoring Flow Policy](../06_Policies/docs-authoring-flow-policy.md)
+- [Style Policy](../06_Policies/style-policy.md)
+- [Verification Policy](../06_Policies/verification-policy.md)
+- [Publication Policy](../06_Policies/publication-policy.md)

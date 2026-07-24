@@ -1,6 +1,6 @@
 # Topics Guide
 
-이 문서는 graphics Topic 정리의 root 안내 문서다. Topic 정본은 `Docs/02_Topics`에 둔다.
+이 문서는 graphics Topic 정리의 root 안내 문서다. Topic 정본은 `Docs/01_Topics`에 둔다.
 
 ## Topic 후보
 
@@ -19,7 +19,7 @@
 
 ## 작성 기준
 
-- 여러 예제를 관통하는 개념만 `Docs/02_Topics`에 둔다.
+- 여러 예제를 관통하는 개념만 `Docs/01_Topics`에 둔다.
 - 예제별 설명은 대상 코드 폴더 README에 둔다.
-- build/run/capture 상태는 `Docs/03_Verification`에 둔다.
-- public 설명 후보는 `Docs/06_Publication`과 연결한다.
+- build/run/capture 상태는 `Docs/02_Verification`에 둔다.
+- public 설명 후보는 `Docs/05_Publication`과 연결한다.

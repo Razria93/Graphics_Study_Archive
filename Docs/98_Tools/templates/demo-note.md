@@ -30,7 +30,7 @@
 
 ## 갱신 위치
 
-- `Docs/04_Demos/demo-priority.md`
-- `Docs/04_Demos/capture-plan.md`
-- `Docs/04_Demos/<Part*>/demo-index.md`
+- `Docs/03_Demos/demo-priority.md`
+- `Docs/03_Demos/capture-plan.md`
+- `Docs/03_Demos/<Part*>/demo-index.md`
 - `Docs/_assets`

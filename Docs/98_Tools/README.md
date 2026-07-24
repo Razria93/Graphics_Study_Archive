@@ -1,6 +1,6 @@
 # Tools
 
-이 폴더는 문서 작성에 사용하는 template, validation 기준, troubleshooting 문서를 둔다. 정책 정본은 `Docs/07_Policies`에 둔다.
+이 폴더는 문서 작성에 사용하는 template, validation 기준, troubleshooting 문서를 둔다. 정책 정본은 `Docs/06_Policies`에 둔다.
 
 ## 책임
 
@@ -27,5 +27,5 @@
 ## 작성 기준
 
 - 평서형 현재형을 사용한다.
-- 정책 원문은 `Docs/07_Policies`에 둔다.
+- 정책 원문은 `Docs/06_Policies`에 둔다.
 - legacy import 기록은 `Docs/99_Legacy`에 둔다.

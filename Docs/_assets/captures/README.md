@@ -7,7 +7,7 @@
 - build/run 상태가 `성공` 또는 `부분 성공`인 예제의 capture만 둔다.
 - 파일명은 Part/Chapter/Portfolio, 예제 또는 Topic을 드러낸다.
 - 강의 화면 캡처와 출처 불명 asset은 제외한다.
-- `Docs/04_Demos` 또는 `Docs/03_Verification`에서 실제로 참조할 capture만 둔다.
+- `Docs/03_Demos` 또는 `Docs/02_Verification`에서 실제로 참조할 capture만 둔다.
 - raw 후보, 실패한 capture, 중복 capture는 `local/`에 둔다.
 
 ## 파일명 기준
@@ -33,9 +33,9 @@ portfolio_raytracer_topic.png
 
 ## 연결 문서
 
-- Demo 계획: `Docs/04_Demos`
-- Capture 상태: `Docs/03_Verification/capture-matrix.md`
-- 공개 판단: `Docs/06_Publication`
+- Demo 계획: `Docs/03_Demos`
+- Capture 상태: `Docs/02_Verification/capture-matrix.md`
+- 공개 판단: `Docs/05_Publication`
 
 ## 제외 기준
 

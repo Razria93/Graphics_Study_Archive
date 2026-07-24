@@ -23,11 +23,11 @@
 | 단계 | 검수 기준 |
 | --- | --- |
 | Example 작성 | `templates/example-readme.md`, 코드 폴더 README 정책 |
-| Topic 작성 | `templates/topic.md`, `Docs/02_Topics/AGENTS.md` |
-| WorkLog 마감 | `templates/worklog.md`, `Docs/05_WorkLogs/AGENTS.md` |
-| local study review | `templates/local-study-review.md`, `Docs/07_Policies/local-review-policy.md` |
-| publication review | `templates/local-publication-review.md`, `Docs/06_Publication/AGENTS.md` |
-| GitHub body 검수 | `Docs/07_Policies/github-workflow-policy.md`, `validators/validate-github-body.ps1` |
+| Topic 작성 | `templates/topic.md`, `Docs/01_Topics/AGENTS.md` |
+| WorkLog 마감 | `templates/worklog.md`, `Docs/04_WorkLogs/AGENTS.md` |
+| local study review | `templates/local-study-review.md`, `Docs/06_Policies/local-review-policy.md` |
+| publication review | `templates/local-publication-review.md`, `Docs/05_Publication/AGENTS.md` |
+| GitHub body 검수 | `Docs/06_Policies/github-workflow-policy.md`, `validators/validate-github-body.ps1` |
 
 ## tracked validator 기준
 

@@ -5,9 +5,9 @@
 ## 책임
 
 - 검토된 screenshot, video reference, diagram만 둔다.
-- evidence 파일은 `Docs/04_Demos`에서 설명하고 이 폴더에서는 파일 위치와 용도만 관리한다.
-- build/run 상태는 `Docs/03_Verification`으로 링크한다.
-- public 후보 판단은 `Docs/06_Publication`으로 분리한다.
+- evidence 파일은 `Docs/03_Demos`에서 설명하고 이 폴더에서는 파일 위치와 용도만 관리한다.
+- build/run 상태는 `Docs/02_Verification`으로 링크한다.
+- public 후보 판단은 `Docs/05_Publication`으로 분리한다.
 - `Docs/_assets`는 raw asset archive가 아니라 검증 완료 evidence 보관 위치다.
 
 ## 폴더 역할
@@ -22,7 +22,7 @@
 
 `local/`의 파일은 다음 조건을 만족할 때만 이 폴더로 승격한다.
 
-- `Docs/04_Demos` 또는 `Docs/03_Verification`에서 실제로 참조한다.
+- `Docs/03_Demos` 또는 `Docs/02_Verification`에서 실제로 참조한다.
 - build/run/capture 상태가 `성공`, `부분 성공`, `확보` 등으로 구분되어 있다.
 - 파일명과 문서 연결만으로 어떤 Part/Chapter/Portfolio evidence인지 알 수 있다.
 - public 후보 또는 private-only 사유를 판단할 수 있다.
@@ -39,8 +39,8 @@
 
 ## 연결 문서
 
-- Demo 계획: `Docs/04_Demos`
-- Capture 상태: `Docs/03_Verification/capture-matrix.md`
-- Build/run 상태: `Docs/03_Verification/build-run-matrix.md`
-- 공개 판단: `Docs/06_Publication`
+- Demo 계획: `Docs/03_Demos`
+- Capture 상태: `Docs/02_Verification/capture-matrix.md`
+- Build/run 상태: `Docs/02_Verification/build-run-matrix.md`
+- 공개 판단: `Docs/05_Publication`
 - GitHub 게시 후보: `local/github/public`

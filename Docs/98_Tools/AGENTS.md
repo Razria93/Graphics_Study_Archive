@@ -8,8 +8,8 @@
 
 - template, validation 기준, troubleshooting 문서만 둔다.
 - 반복 실행 가능한 validator script는 `validators/`에 둔다.
-- 정책 원문은 `Docs/07_Policies`로 링크한다.
-- 산출물 정본은 `Docs/00_Index`부터 `Docs/06_Publication`에 둔다.
+- 정책 원문은 `Docs/06_Policies`로 링크한다.
+- 산출물 정본은 `Docs/00_Index`부터 `Docs/05_Publication`에 둔다.
 - GitHub draft, raw/reference 원문, 개인 메모는 이 폴더에 두지 않는다.
 - local-only template은 정본 문서로 그대로 복사하지 않는다.
 

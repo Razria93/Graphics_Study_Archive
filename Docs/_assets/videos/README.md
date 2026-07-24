@@ -10,6 +10,6 @@
 
 ## 연결 문서
 
-- Video 계획: `Docs/04_Demos/video-plan.md`
-- 검증 상태: `Docs/03_Verification`
-- 공개 판단: `Docs/06_Publication`
+- Video 계획: `Docs/03_Demos/video-plan.md`
+- 검증 상태: `Docs/02_Verification`
+- 공개 판단: `Docs/05_Publication`

@@ -20,11 +20,11 @@
 | 산출물 축 | 위치 | 연결 방식 |
 | --- | --- | --- |
 | 예제 README | 코드 폴더 | 예제 목적, 핵심 개념, 코드 위치, 실행 요약 작성 |
-| 개념 설명 | `Docs/02_Topics` | 여러 예제를 관통하는 graphics topic 작성 |
-| 검증 | `Docs/03_Verification` | build/run/capture/known issue 상태 기록 |
-| Demo | `Docs/04_Demos` | 대표 capture와 영상 evidence 연결 |
-| 작업 기록 | `Docs/05_WorkLogs` | Work Unit 종료 요약 기록 |
-| 공개 판단 | `Docs/06_Publication` | public subset 후보와 제외 사유 기록 |
+| 개념 설명 | `Docs/01_Topics` | 여러 예제를 관통하는 graphics topic 작성 |
+| 검증 | `Docs/02_Verification` | build/run/capture/known issue 상태 기록 |
+| Demo | `Docs/03_Demos` | 대표 capture와 영상 evidence 연결 |
+| 작업 기록 | `Docs/04_WorkLogs` | Work Unit 종료 요약 기록 |
+| 공개 판단 | `Docs/05_Publication` | public subset 후보와 제외 사유 기록 |
 
 ## 운영 기준
 

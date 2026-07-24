@@ -9,12 +9,12 @@
 | `Part*_Chapter*` | code/build 기준 예제 프로젝트 |
 | `Portfolio_RayTracer` | Part1 기반 ray tracing 확장 작업 |
 | `Part*_Chapter*/ExampleName/README.md` | 예제 설명 정본 |
-| `Docs/02_Topics` | graphics 개념 정본 |
-| `Docs/03_Verification` | build/run/capture 검증 정본 |
-| `Docs/04_Demos` | demo capture/video evidence 정본 |
-| `Docs/05_WorkLogs` | Issue/PR 작업 기록 정본 |
-| `Docs/06_Publication` | public subset 판단 정본 |
-| `Docs/07_Policies` | 문서화, 검증, demo, GitHub 운영, 공개 정책 |
+| `Docs/01_Topics` | graphics 개념 정본 |
+| `Docs/02_Verification` | build/run/capture 검증 정본 |
+| `Docs/03_Demos` | demo capture/video evidence 정본 |
+| `Docs/04_WorkLogs` | Issue/PR 작업 기록 정본 |
+| `Docs/05_Publication` | public subset 판단 정본 |
+| `Docs/06_Policies` | 문서화, 검증, demo, GitHub 운영, 공개 정책 |
 | `Docs/98_Tools` | templates, validator, troubleshooting |
 | `Docs/99_Legacy` | import 기록과 이전 Docs 구조 |
 
@@ -23,16 +23,16 @@
 - 루트 코드 폴더는 이동하지 않는다.
 - 기존 `Docs/Part*` 문서는 `Docs/99_Legacy/PartDocs`에 보존하고 새 정본으로 사용하지 않는다.
 - 새 예제 설명은 대상 코드 폴더 README에 작성한다.
-- build/run/capture 최신 상태는 `Docs/03_Verification`에 기록한다.
-- public 공개 기준은 `Docs/07_Policies/publication-policy.md`를 따른다.
+- build/run/capture 최신 상태는 `Docs/02_Verification`에 기록한다.
+- public 공개 기준은 `Docs/06_Policies/publication-policy.md`를 따른다.
 - 직접 확인하지 않은 항목은 `미확인`으로 기록한다.
 
 ## 먼저 볼 문서
 
 - [Docs](Docs/README.md)
-- [Canonical Docs Policy](Docs/07_Policies/canonical-docs-policy.md)
-- [Terminology Policy](Docs/07_Policies/terminology-policy.md)
-- [Docs Authoring Flow Policy](Docs/07_Policies/docs-authoring-flow-policy.md)
-- [Verification Policy](Docs/07_Policies/verification-policy.md)
-- [Publication Policy](Docs/07_Policies/publication-policy.md)
+- [Canonical Docs Policy](Docs/06_Policies/canonical-docs-policy.md)
+- [Terminology Policy](Docs/06_Policies/terminology-policy.md)
+- [Docs Authoring Flow Policy](Docs/06_Policies/docs-authoring-flow-policy.md)
+- [Verification Policy](Docs/06_Policies/verification-policy.md)
+- [Publication Policy](Docs/06_Policies/publication-policy.md)
 - [Legacy Import History](Docs/99_Legacy/ImportHistory/README.md)

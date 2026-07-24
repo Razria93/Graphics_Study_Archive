@@ -63,6 +63,6 @@
 
 ## Related Docs
 
-- Topic: `../../Docs/02_Topics/DirectX11Pipeline/PostProcessingAndBloom.md`
-- Verification: `../../Docs/03_Verification/Part1_Chapter01-02/verification-index.md`
-- Demo: `../../Docs/04_Demos/Part1_Chapter01-02/demo-index.md`
+- Topic: `../../Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md`
+- Verification: `../../Docs/02_Verification/Part1_Chapter01-02/verification-index.md`
+- Demo: `../../Docs/03_Demos/Part1_Chapter01-02/demo-index.md`

@@ -49,7 +49,7 @@
 - 열린 solution 경로를 확인한다.
 - startup project와 command argument를 확인한다.
 - shader, texture, model 경로를 확인한다.
-- 실패는 `Docs/03_Verification/known-issues.md`에 기록한다.
+- 실패는 `Docs/02_Verification/known-issues.md`에 기록한다.
 
 ## 작업 분리 문제
 
@@ -61,7 +61,7 @@
 처리:
 
 - 예제 설명은 대상 코드 폴더 README에 둔다.
-- 검증은 `Docs/03_Verification`에 둔다.
-- Demo evidence는 `Docs/04_Demos`에 둔다.
-- 작업 기록은 `Docs/05_WorkLogs`에 둔다.
-- 정책은 `Docs/07_Policies`에 둔다.
+- 검증은 `Docs/02_Verification`에 둔다.
+- Demo evidence는 `Docs/03_Demos`에 둔다.
+- 작업 기록은 `Docs/04_WorkLogs`에 둔다.
+- 정책은 `Docs/06_Policies`에 둔다.

@@ -38,4 +38,4 @@
 ## 주의
 
 - 이 파일은 정본 문서가 아니다.
-- 최종 판단 요약만 `Docs/06_Publication` 또는 `Docs/05_WorkLogs`로 옮긴다.
+- 최종 판단 요약만 `Docs/05_Publication` 또는 `Docs/04_WorkLogs`로 옮긴다.

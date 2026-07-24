@@ -1,6 +1,6 @@
 # Validators
 
-이 폴더는 반복 실행 가능한 tracked validator script를 둔다. 정책 정본은 `Docs/07_Policies`에 두고, 이 폴더에는 실행 파일과 사용법만 둔다.
+이 폴더는 반복 실행 가능한 tracked validator script를 둔다. 정책 정본은 `Docs/06_Policies`에 두고, 이 폴더에는 실행 파일과 사용법만 둔다.
 
 ## Script 목록
 
@@ -50,7 +50,7 @@ Plan Issue 관련 public body는 두 종류만 검사한다.
 | `issues/plan-comments/plan_progress_summary_comment.md` | 전체 진행판 | `## Graphics Study 진행 요약`, `## 완료`, `## 진행 예정`, `## Related PRs` 구조와 Phase heading |
 | `issues/plan-comments/*_worklog_comment.md` | Work Unit 마감 기록 | `## Phase <n-n> progress record`, 완료 내용, 검증, 남은 제한, 관련 PR |
 
-Plan comment는 Docs 정본을 복제하지 않고 진행 상태와 링크만 요약한다. 상세 정책은 `Docs/07_Policies/github-workflow-policy.md`를 따른다.
+Plan comment는 Docs 정본을 복제하지 않고 진행 상태와 링크만 요약한다. 상세 정책은 `Docs/06_Policies/github-workflow-policy.md`를 따른다.
 
 ## 검사하지 않는 것
 
@@ -58,7 +58,7 @@ Plan comment는 Docs 정본을 복제하지 않고 진행 상태와 링크만 �
 - GitHub 게시 승인 여부
 - 실제 `gh` 게시 여부
 - `local/github/snapshots` 생성 여부
-- `Docs/05_WorkLogs`와 `issue-pr-index.md` 동기화 여부
+- `Docs/04_WorkLogs`와 `issue-pr-index.md` 동기화 여부
 - build/run/capture 실제 성공 여부
 
 ## 주의

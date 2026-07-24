@@ -35,6 +35,6 @@
 
 ## 갱신 위치
 
-- `Docs/03_Verification/build-run-matrix.md`
-- `Docs/03_Verification/<Part*>/verification-index.md`
-- `Docs/03_Verification/known-issues.md`
+- `Docs/02_Verification/build-run-matrix.md`
+- `Docs/02_Verification/<Part*>/verification-index.md`
+- `Docs/02_Verification/known-issues.md`

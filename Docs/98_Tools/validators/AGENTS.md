@@ -7,7 +7,7 @@
 ## 책임
 
 - 반복 실행 가능한 검수 script만 둔다.
-- 정책 원문은 `Docs/07_Policies`로 연결한다.
+- 정책 원문은 `Docs/06_Policies`로 연결한다.
 - validator는 remote 상태를 바꾸지 않는다.
 - validator는 local draft를 수정하지 않고 실패/경고만 보고한다.
 - project-specific 경로는 현재 Docs 구조에 맞춘다.
