@@ -7,7 +7,7 @@
 | ID | 대상 | 유형 | 조치 | 상태 | 비고 |
 | --- | --- | --- | --- | --- | --- |
 | RD-001 | public README 후보 | 강의 기반 표현 가능성 | 공개용 문장으로 재작성 | 예정 | 후보 확정 후 수행 |
-| RD-002 | demo evidence 후보 | asset 출처 확인 | 라이선스와 출처 확인 | 예정 | capture 확보 후 수행 |
+| RD-002 | demo capture/result 후보 | asset 출처 확인 | 라이선스와 출처 확인 | 예정 | capture 확보 후 수행 |
 | RD-003 | WorkLog 요약 | local/GitHub draft 흔적 | 게시 전 문체와 민감 정보 제거 | 예정 | Issue/PR 작성 전 수행 |
 
 ## 유형

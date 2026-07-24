@@ -15,7 +15,7 @@
 | 문서 | 책임 |
 | --- | --- |
 | [Build Run Matrix](build-run-matrix.md) | Part/Chapter 단위 build/run 최신 상태 |
-| [Capture Matrix](capture-matrix.md) | capture evidence 상태 요약 |
+| [Capture Matrix](capture-matrix.md) | capture/result 상태 요약 |
 | [Known Issues](known-issues.md) | 실패, 보류, 미확인 사유 목록 |
 
 ## Part/Chapter Verification
@@ -39,16 +39,16 @@
 생성 조건:
 
 - P0 또는 대표 예제의 build/run 상태가 직접 확인되어 있다.
-- capture/video evidence 상태가 `확보`, `미확인`, `보류`, `제외`로 구분되어 있다.
+- capture/result 상태가 `확보`, `미확인`, `보류`, `제외`로 구분되어 있다.
 - known issue와 follow-up이 최신 상태로 정리되어 있다.
 - `Portfolio_RayTracer`와 Part1~Part4의 대표 검증 결과를 한 문서에서 비교할 필요가 있다.
 
 문서 책임:
 
 - 기능별 또는 Part별 검증 결과 요약
-- 대표 evidence 링크
+- 대표 capture/result 링크
 - 남은 제한과 미확인 항목
-- public subset 판단에 필요한 검증 근거
+- public subset 판단에 필요한 build/run 확인 기록
 
 상세 로그와 최신 상태의 정본은 계속 matrix와 각 `verification-index.md`에 둔다. `final-verification-summary.md`는 최종 요약 문서이며 검증 정본을 대체하지 않는다.
 

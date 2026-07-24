@@ -58,6 +58,6 @@
 ## 작성 기준
 
 - 상세 build/run 결과는 이 문서에 복제하지 않는다.
-- 상세 capture/video 설명은 `Docs/03_Demos`로 연결한다.
+- 상세 capture/result 설명은 `Docs/03_Demos`로 연결한다.
 - public 후보 판단은 `Docs/05_Publication`으로 연결한다.
 - existing Docs만 근거로 작성 완료 처리하지 않는다.

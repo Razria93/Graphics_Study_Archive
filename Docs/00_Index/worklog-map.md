@@ -14,7 +14,7 @@
 | `WU-Part2` | `Part2_Chapter04`, `Part2_Chapter05-08` | Rasterization, DirectX11 pipeline, texturing 정리 | `Docs/04_WorkLogs/WU-Part2.md` |
 | `WU-Part3` | `Part3_Chapter09`, `Part3_Chapter10-13` | camera, interaction, shadow, PBR/IBL 후보 정리 | `Docs/04_WorkLogs/WU-Part3.md` |
 | `WU-Part4` | `Part4_Chapter14-20` | compute/simulation/advanced demo 정리 | `Docs/04_WorkLogs/WU-Part4.md` |
-| `WU-Publication` | public subset 후보 정리 | 공개 가능 문서와 evidence 후보 정리 | `Docs/04_WorkLogs/WU-Publication.md` |
+| `WU-Publication` | public subset 후보 정리 | 공개 가능 문서와 capture/result 후보 정리 | `Docs/04_WorkLogs/WU-Publication.md` |
 
 ## GitHub 연결
 

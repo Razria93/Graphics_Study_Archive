@@ -1,6 +1,6 @@
 # Demo Guide
 
-이 문서는 demo capture/video 운영의 root 안내 문서다. Demo evidence의 정본은 `Docs/03_Demos`에 둔다.
+이 문서는 demo capture/result 운영의 root 안내 문서다. Demo capture/result의 정본은 `Docs/03_Demos`에 둔다.
 
 ## 기준 위치
 
@@ -15,6 +15,6 @@
 ## 운영 기준
 
 - raw capture 후보는 먼저 `local/`에 둔다.
-- 검토된 evidence만 tracked Docs 또는 `_assets`로 승격한다.
+- 검토된 capture/result만 tracked Docs 또는 `_assets`로 승격한다.
 - 강의 화면 캡처와 권리 불명확 자료는 public 후보로 두지 않는다.
 - demo는 연결 예제, Topic, Verification 상태를 함께 기록한다.

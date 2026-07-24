@@ -1,6 +1,6 @@
 # Videos
 
-이 폴더는 검토된 video evidence 또는 video link reference를 둔다.
+이 폴더는 검토된 video 또는 video link reference를 둔다.
 
 ## 기준
 

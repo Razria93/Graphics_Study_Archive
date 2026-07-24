@@ -47,7 +47,7 @@
 | Debug x64 build | 확인 | MSBuild 17.14로 `x64/Debug/02_Bloom.exe` 생성 확인 |
 | Debug x64 run | 확인 | 실행 후 5초 이상 유지, `result.png` 생성, 종료 코드 0 |
 | Release x64 build/run | 확인 | `x64/Release/02_Bloom.exe` 생성과 실행 확인 |
-| Capture | 보류 | `result.png`는 생성됐지만 워터마크/권리 검토 전까지 tracked evidence로 승격하지 않음 |
+| Capture | 보류 | `result.png`는 생성됐지만 워터마크/권리 검토 전까지 tracked capture/result로 승격하지 않음 |
 
 ## Demo Points
 
@@ -59,7 +59,7 @@
 
 - GPU shader 기반 multi-pass bloom pipeline은 아니다.
 - HDR render target, tone mapping, emissive material 기반 bloom은 다루지 않는다.
-- Debug/Release x64 build와 run은 확인했다. 다만 `result.png`에는 강의/출처 표기가 포함되어 public evidence 승격은 보류한다.
+- Debug/Release x64 build와 run은 확인했다. 다만 `result.png`에는 강의/출처 표기가 포함되어 public capture/result 승격은 보류한다.
 
 ## Related Docs
 

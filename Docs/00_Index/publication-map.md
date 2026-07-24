@@ -28,5 +28,5 @@
 
 - raw/reference repo에서 public으로 직접 옮기지 않는다.
 - private archive 문서도 public으로 그대로 복사하지 않는다.
-- public 후보는 직접 이해한 설명, 직접 만든 evidence, 라이선스 확인 asset 중심으로 다시 선별한다.
+- public 후보는 직접 이해한 설명, 직접 만든 capture/result, 라이선스 확인 asset 중심으로 다시 선별한다.
 - 법률 자문처럼 단정하지 않고 공개 전 점검 기준으로 기록한다.

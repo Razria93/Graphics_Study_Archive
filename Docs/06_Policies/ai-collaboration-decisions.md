@@ -18,7 +18,7 @@
 | draft to public 전환 | agent가 local-only 전환과 validator 실행까지 진행 가능 | remote 상태를 바꾸지 않으므로 반복 작업 효율이 높다. | `github-workflow-policy.md` |
 | WorkLog/Issue Index 갱신 시점 | draft 작성 시 상태를 기록하고, public-ready/post/snapshot 단계에서 갱신 | 작업 추적 누락을 줄인다. | `worklog.md`, `issue-pr-index.md` |
 | validator 미지원 파일 처리 | 우선 warning 성격으로 다루고, 지원 범위를 README에 명시 | 너무 강하게 막으면 새 GitHub body 유형 추가가 어려워진다. | `validators/README.md` |
-| 상태값 범위 | Verification 상태와 Demo/Evidence 상태를 분리 정의 | build/run 성공과 evidence 확보는 다른 상태다. | `verification-policy.md`, `demo-capture-policy.md` |
+| 상태값 범위 | Verification 상태와 Capture/Result 상태를 분리 정의 | build/run 성공과 capture/result 확보는 다른 상태다. | `verification-policy.md`, `demo-capture-policy.md` |
 | AGENTS override | 상위 공통 안전 규칙은 유지하고 하위 AGENTS는 폴더 범위의 추가/제한 규칙으로 적용 | 하위 규칙이 safety gate를 완화하지 않게 한다. | `AGENTS.md` |
 | structure cleanup roadmap | 정책 폴더에 유지하되 완료 축과 남은 브랜치 마감 작업을 분리 표기 | 브랜치 마감 전까지 구조 정리 맥락을 보존한다. | `structure-cleanup-roadmap.md` |
 | GitHub body 언어 | 한국어 중심으로 작성 | tracked Docs와 AGENTS의 문체 기준과 맞춘다. | `style-policy.md`, `validators/README.md` |

@@ -21,7 +21,7 @@ capture/result
 
 - `capture`는 screenshot과 video처럼 화면을 기록한 자료를 뜻한다.
 - `result image`는 화면 캡처가 아니라 프로그램 출력물이다.
-- `검증 근거`라는 표현은 build/run 확인 근거를 뜻할 때만 제한적으로 사용한다.
+- `build/run 확인 기록`이라는 표현은 build/run 확인 결과를 보조하는 기록을 뜻할 때만 제한적으로 사용한다.
 
 ## 검수 단계 구분
 
@@ -58,6 +58,8 @@ capture/result
 - 강의명, 강사명, 워터마크, 개인 식별자, 계정 정보, 로컬 절대 경로가 포함되어 있지 않다.
 - window title, overlay text, image watermark, terminal/IDE 주변 정보까지 확인했다.
 - video는 화면뿐 아니라 audio, subtitle/caption, 파일 metadata에 강의명, 계정, 로컬 경로, 개인 식별자가 남아 있지 않은지 확인했다.
+- screenshot과 result image는 EXIF, PNG text chunk, 파일 속성 등 이미지 metadata에 개인 식별자, 로컬 경로, 강의명, 출처 불명 정보가 남아 있지 않은지 확인했다.
+- result image가 외부 image, texture, model, HDRI를 입력으로 사용했다면 입력 asset의 출처와 라이선스를 확인하기 전까지 보류로 둔다.
 
 승격하지 않는 항목:
 
@@ -76,7 +78,7 @@ capture/result
 - screenshot/video/result image 내부의 watermark, caption, debug HUD
 - terminal, IDE, browser tab, taskbar, notification 등 주변 UI
 - 파일명과 저장 경로에 포함된 개인 이름, 계정, 로컬 절대 경로
-- video의 audio, subtitle/caption, metadata
+- screenshot/result image의 metadata, video의 audio, subtitle/caption, metadata
 
 하나라도 공개 불가 식별자가 보이면 `확보`가 아니라 `보류` 또는 `제외`로 기록한다.
 
@@ -117,6 +119,6 @@ screenshot, video, result image를 추가하면 다음 문서를 함께 확인�
 ## 갱신 기준
 
 - screenshot/video/result image를 추가하면 `Docs/03_Demos`, `Docs/02_Verification/capture-matrix.md`, `Docs/05_Publication`을 함께 확인한다.
-- video를 추가하면 파일 크기, 저장 위치, 공개 가능성을 먼저 확인한다.
+- screenshot/result image를 추가하면 이미지 metadata를 확인하고, video를 추가하면 파일 크기, 저장 위치, 공개 가능성을 먼저 확인한다.
 - GitHub Issue/PR body에는 승격 검수를 통과한 capture/result만 연결한다.
 - capture/result 승격 전에는 화면 안의 title, watermark, overlay, account, path를 수동으로 확인한다.

@@ -10,7 +10,7 @@
 | capture matrix | `Docs/02_Verification/capture-matrix.md` | build/run과 연결된 capture 상태 요약 |
 | known issue | `Docs/02_Verification/known-issues.md` | 실패, 보류, 미확인 사유 기록 |
 | 예제별 검증 기록 | `Docs/02_Verification/<Part*>/` | 예제 단위 실행 조건, asset path, known issue |
-| Demo evidence | `Docs/03_Demos` | capture/video evidence의 정리와 우선순위 |
+| Demo capture/result | `Docs/03_Demos` | capture/result의 정리와 우선순위 |
 | Work Unit 검증 요약 | `Docs/04_WorkLogs` | 이번 작업에서 확인한 검증 결과 요약 |
 
 ## 상태값

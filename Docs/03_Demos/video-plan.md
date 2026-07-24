@@ -1,6 +1,6 @@
 # Video Plan
 
-이 문서는 video evidence 확보 계획을 기록한다.
+이 문서는 video 확보 계획을 기록한다.
 
 ## 파일 또는 링크 위치
 

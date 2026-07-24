@@ -16,7 +16,7 @@
 
 ## 변경 요약
 
-- private archive에서 public subset 후보로 승격 가능한 문서와 evidence를 검토한다.
+- private archive에서 public subset 후보로 승격 가능한 문서와 capture/result를 검토한다.
 - 제외 대상과 redaction 필요 항목을 `Docs/05_Publication` 기준으로 기록한다.
 - GitHub Issue/PR 게시 전 local draft와 snapshot을 관리한다.
 
@@ -52,5 +52,5 @@
 ## Follow-up
 
 - public 후보 문서와 제외 문서를 분리한다.
-- Demo evidence의 출처와 공개 가능성을 확인한다.
+- Demo capture/result의 출처와 공개 가능성을 확인한다.
 - 게시 전 GitHub Issue/PR draft를 작성하고 사용자 승인을 받는다.

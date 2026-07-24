@@ -49,3 +49,10 @@
 - `Docs/03_Demos/<Part*>/demo-index.md`
 - `Docs/02_Verification/capture-matrix.md`
 - `Docs/_assets`
+
+## Metadata Check
+
+- screenshot/result image metadata: 미확인
+- video metadata/audio/subtitle: 미확인
+- external input asset source/license: 미확인
+- lecture name/instructor/watermark/personal identifier: 미확인

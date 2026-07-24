@@ -54,9 +54,9 @@
 
 | local 문서 | 포함 내용 | 현행 흡수 위치 | 판단 |
 | --- | --- | --- | --- |
-| `local/pr/part1-archive-migration.md` | Part1 import 요약, 확인했다고 적힌 build/run 목록, capture 보류, asset/public 검토 필요, Step14 `Raytracer::Render()` 이슈, 리뷰 범위 | `Docs/05_WorkLogs/WU-Part1.md`, `Docs/03_Verification/Part1_Chapter01-02`, `Docs/03_Verification/Part1_Chapter03`, `Docs/07_Policies/github-workflow-policy.md` | 부분 흡수. PR 형식과 리뷰 기준은 흡수됨. build/run 확인 주장은 현재 세션의 직접 검증이 아니므로 `미확인`을 바꾸지 않는다. Part1 Work Unit 시작 시 참고한다. |
-| `local/prompts/archive-migration-session-prompt.md` | raw/archive/public 3단 구조, raw 읽기 전용, local-only 문서, 코드/문서 분리, import 당시 상태 단계 | `AGENTS.md`, `Docs/07_Policies/work-unit-workflow-policy.md`, `Docs/07_Policies/local-review-policy.md`, `Docs/07_Policies/publication-policy.md`, `Docs/99_Legacy/ImportHistory` | 흡수 완료 후 삭제함. |
-| `local/prompts/quick-start-prompt.md` | archive 세션 시작 체크리스트, raw read-only, import 우선순위, commit/push 금지 | `AGENTS.md`, `Docs/07_Policies/work-unit-workflow-policy.md`, `Docs/07_Policies/github-workflow-policy.md`, `Docs/07_Policies/local-review-policy.md` | 흡수 완료 후 삭제함. |
+| `local/pr/part1-archive-migration.md` | Part1 import 요약, 확인했다고 적힌 build/run 목록, capture 보류, asset/public 검토 필요, Step14 `Raytracer::Render()` 이슈, 리뷰 범위 | `Docs/05_WorkLogs/WU-Part1.md`, `Docs/03_Verification/Part1_Chapter01-02`, `Docs/03_Verification/Part1_Chapter03`, `Docs/06_Policies/github-workflow-policy.md` | 부분 흡수. PR 형식과 리뷰 기준은 흡수됨. build/run 확인 주장은 현재 세션의 직접 검증이 아니므로 `미확인`을 바꾸지 않는다. Part1 Work Unit 시작 시 참고한다. |
+| `local/prompts/archive-migration-session-prompt.md` | raw/archive/public 3단 구조, raw 읽기 전용, local-only 문서, 코드/문서 분리, import 당시 상태 단계 | `AGENTS.md`, `Docs/06_Policies/work-unit-workflow-policy.md`, `Docs/06_Policies/local-review-policy.md`, `Docs/06_Policies/publication-policy.md`, `Docs/99_Legacy/ImportHistory` | 흡수 완료 후 삭제함. |
+| `local/prompts/quick-start-prompt.md` | archive 세션 시작 체크리스트, raw read-only, import 우선순위, commit/push 금지 | `AGENTS.md`, `Docs/06_Policies/work-unit-workflow-policy.md`, `Docs/06_Policies/github-workflow-policy.md`, `Docs/06_Policies/local-review-policy.md` | 흡수 완료 후 삭제함. |
 
 ## local-only 유지
 

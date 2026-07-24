@@ -6,9 +6,9 @@
 
 ## 책임
 
-- demo capture/video 계획과 evidence 연결을 기록한다.
+- demo capture/result 계획과 capture/result 연결을 기록한다.
 - build/run 상태는 `Docs/02_Verification`으로 링크한다.
-- capture/video 파일은 `Docs/_assets`로 링크한다.
+- capture/result 파일은 `Docs/_assets`로 링크한다.
 - public 후보 판단은 `Docs/05_Publication`으로 링크한다.
 - raw capture 후보, 원본 영상, 게시 전 검토 메모는 이 폴더에 두지 않는다.
 
@@ -23,4 +23,4 @@
 
 - 평서형 현재형을 사용한다.
 - 존댓말, 대화체, 감상문체를 사용하지 않는다.
-- technical keywords, folder names, evidence names는 영어를 유지한다.
+- technical keywords, folder names, capture/result names는 영어를 유지한다.

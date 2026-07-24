@@ -22,6 +22,7 @@
 - 독자적으로 재구성한 구현 설명
 - 일반적인 graphics concept 설명
 - 직접 실행해서 만든 capture/result 중 권리 문제가 없는 결과물
+- metadata에 개인 식별자, 로컬 경로, 강의명, 출처 불명 정보가 남아 있지 않은 screenshot/result image
 - 강의명, 강사명, 워터마크, 개인 식별자가 제거된 capture/result
 - 출처와 라이선스가 명확한 asset을 사용한 산출물
 - 직접 확인한 build/run 검증 요약
@@ -45,6 +46,7 @@
 - 문제/해설 전문
 - 강의 고유 구조를 그대로 재현한 문서
 - 출처와 라이선스가 불명확한 asset
+- 외부 image, texture, model, HDRI 입력 asset의 출처와 라이선스를 확인하지 않은 result image
 - 개인 메모, 계정 정보, 로컬 절대 경로, 제출 대상별 기록
 - raw/reference 원문 복사본
 
@@ -65,3 +67,4 @@
 - public repo는 private archive가 안정화된 뒤 별도 subset으로 구성한다.
 - public 후보는 private archive 문서를 그대로 복사하지 않고 공개용 문장으로 재작성한다.
 - public capture/result 후보는 강의명, 강사명, 워터마크, 개인 식별자 제거 여부를 확인한 뒤 연결한다.
+- screenshot/result image는 metadata 확인을 포함하고, 외부 입력 asset을 사용한 result image는 입력 asset의 출처와 라이선스를 확인하기 전까지 검토 필요 또는 제외로 둔다.

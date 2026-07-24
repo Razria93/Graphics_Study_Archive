@@ -25,7 +25,7 @@
 | Part별 예제 지도 | `Docs/00_Index/study-map.md` 또는 코드 폴더 README | 유지 | 예제 목록과 대표 예제 안내 |
 | Topic 문서 | `Docs/02_Topics/` | `Docs/01_Topics/` | 여러 예제를 관통하는 graphics concept 설명 |
 | Verification | `Docs/03_Verification/` | `Docs/02_Verification/` | build/run/capture 상태와 known issue |
-| Demo 계획/evidence | `Docs/04_Demos/`, `Docs/_assets/` | `Docs/03_Demos/`, `Docs/_assets/` | capture/video 후보, 파일명, evidence 연결 |
+| Demo 계획/capture/result | `Docs/04_Demos/`, `Docs/_assets/` | `Docs/03_Demos/`, `Docs/_assets/` | capture/result 후보, 파일명, capture/result 연결 |
 | WorkLog | `Docs/05_WorkLogs/` | `Docs/04_WorkLogs/` | 작업 경위, source review 요약, follow-up |
 | Publication 판단 | `Docs/06_Publication/` | `Docs/05_Publication/` | public 후보, private-only, 제외, 검토 필요 상태 |
 | Policy | `Docs/07_Policies/` | `Docs/06_Policies/` | 문서 작성, 검증, GitHub 운영, 공개 정책 |

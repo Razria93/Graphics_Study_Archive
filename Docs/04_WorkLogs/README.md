@@ -28,7 +28,7 @@
 - 작업 범위
 - 갱신한 정본 문서 링크
 - 검증 요약
-- demo evidence 상태
+- demo capture/result 상태
 - public readiness 영향
 - Issue/PR 번호 또는 예정 상태
 - follow-up

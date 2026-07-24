@@ -62,6 +62,6 @@
 
 - 예제 설명은 대상 코드 폴더 README에 둔다.
 - 검증은 `Docs/02_Verification`에 둔다.
-- Demo evidence는 `Docs/03_Demos`에 둔다.
+- Demo capture/result는 `Docs/03_Demos`에 둔다.
 - 작업 기록은 `Docs/04_WorkLogs`에 둔다.
 - 정책은 `Docs/06_Policies`에 둔다.

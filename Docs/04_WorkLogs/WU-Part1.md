@@ -19,7 +19,7 @@
 | 기존 Docs stale 검토 | 확인 | pilot 초안과 Legacy PartDocs는 참고 전용으로 둔다. |
 | README 이관 | 확인 | `02_Bloom` README 정본을 코드 폴더로 이동했다. |
 | build/run | 확인 | Debug/Release x64 build와 run을 확인했다. |
-| capture/video | 보류 | `result.png` 생성은 확인했지만 워터마크/권리 검토 전까지 evidence 승격을 보류한다. |
+| capture/result | 보류 | `result.png` 생성은 확인했지만 워터마크/권리 검토 전까지 capture/result 승격을 보류한다. |
 | Issue/PR | 예정 | 문서 검수 후 draft를 작성한다. |
 
 ## 02_Bloom 작업 요약
@@ -39,11 +39,11 @@
 | Example redirect | 제거 완료 | `Docs/01_Examples` 폐기에 따라 삭제 |
 | Verification | `Docs/02_Verification/Part1_Chapter01-02/verification-index.md` | Debug/Release x64 build/run 확인 |
 | Topic | `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md` | 작성 |
-| Demo | `Docs/03_Demos/Part1_Chapter01-02/demo-index.md` | evidence 승격 보류 |
-| Publication | `Docs/05_Publication/candidate-list.md` | README/Topic 후보 유지, evidence는 보류 |
+| Demo | `Docs/03_Demos/Part1_Chapter01-02/demo-index.md` | capture/result 승격 보류 |
+| Publication | `Docs/05_Publication/candidate-list.md` | README/Topic 후보 유지, capture/result는 보류 |
 
 ## 다음 작업
 
-1. `02_Bloom` 결과 이미지를 public evidence로 쓸 수 있는지 권리/출처를 검토한다.
+1. `02_Bloom` 결과 이미지를 public capture/result로 쓸 수 있는지 권리/출처를 검토한다.
 2. 공개용 대표 capture가 필요하면 별도 캡처 또는 재구성 이미지를 만든다.
 3. 같은 workflow를 Part1의 다음 대표 예제에 적용한다.

@@ -24,3 +24,9 @@
 - capture/result는 build/run 성공 또는 부분 성공 상태와 연결한다.
 - 강의 화면 캡처와 출처 불명 asset은 capture/result 후보로 두지 않는다.
 - public 후보 여부는 `Docs/05_Publication`에서 별도로 판단한다.
+
+## Metadata 확인 기준
+
+- screenshot과 result image는 EXIF, PNG text chunk, 파일 속성에 개인 식별자, 로컬 경로, 강의명, 출처 불명 정보가 남아 있지 않은지 확인한다.
+- video는 metadata와 함께 audio, subtitle/caption을 확인한다.
+- 외부 image, texture, model, HDRI를 입력으로 사용한 result image는 입력 asset의 출처와 라이선스 확인 전까지 보류로 둔다.

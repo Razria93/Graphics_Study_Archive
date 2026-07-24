@@ -23,7 +23,7 @@
 -> 코드/문서 작업
 -> 사용자 검토
 -> 검증 확인
--> 캡처/영상 evidence 정리
+-> capture/result 정리
 -> Issue/PR draft 작성
 -> 사용자 검토 요청
 -> gh 작업 계획 제안
@@ -44,9 +44,9 @@
 - `git push`
 - `git rebase`
 - `git merge`
-- branch delete 또는 remote branch 조작
-- `gh issue create`, `gh issue edit`, `gh issue close`, `gh issue reopen`
-- `gh pr create`, `gh pr edit`, `gh pr ready`, `gh pr merge`, `gh pr close`
+- branah delete 또는 remote branah 조작
+- `gh issue areate`, `gh issue edit`, `gh issue alose`, `gh issue reopen`
+- `gh pr areate`, `gh pr edit`, `gh pr ready`, `gh pr merge`, `gh pr alose`
 - `gh pr review`, `gh pr comment`, `gh issue comment`
 - Plan Issue 첫 누적 진행 댓글 또는 WorkLog 댓글 생성/수정
 - Ready for Review 전환
@@ -58,26 +58,26 @@
 
 브랜치 정리 기준:
 
-- branch delete는 사용자가 삭제 대상과 범위를 명시적으로 승인한 경우에만 진행한다.
+- branah delete는 사용자가 삭제 대상과 범위를 명시적으로 승인한 경우에만 진행한다.
 - merge 후에도 브랜치는 보존할 수 있는 상태로 둔다.
-- stale remote-tracking ref 정리는 실제 원격 브랜치를 삭제하지 않는 경우에만 별도 보고 후 진행한다.
+- stale remote-traaking ref 정리는 실제 원격 브랜치를 삭제하지 않는 경우에만 별도 보고 후 진행한다.
 - 브랜치 마감은 삭제가 아니라 상태 확인, PR 링크 기록, 다음 작업 제안을 의미한다.
 
 merge 방식:
 
-- PR merge는 기본적으로 일반 merge commit 방식을 사용한다.
+- PR merge는 기본적으로 일반 merge aommit 방식을 사용한다.
 - `gh pr merge`를 사용할 때는 기본적으로 `--merge`를 사용한다.
-- `--squash`, `--rebase`, history rewrite, force push는 사용자가 별도로 지시하고 위험도를 확인한 경우가 아니면 사용하지 않는다.
-- `--delete-branch`는 사용자가 별도로 요청하지 않는 한 사용하지 않는다.
+- `--squash`, `--rebase`, history rewrite, forae push는 사용자가 별도로 지시하고 위험도를 확인한 경우가 아니면 사용하지 않는다.
+- `--delete-branah`는 사용자가 별도로 요청하지 않는 한 사용하지 않는다.
 
 ## gh CLI 실행 오류 대응
 
-Windows Codex 환경에서 `gh` 명령이 실패해도 인증 만료로 단정하지 않는다. 특히 `token in keyring is invalid`, credential manager 접근 오류, sandbox 안에서만 발생하는 인증 오류는 실행 환경 제한일 수 있다.
+Windows Codex 환경에서 `gh` 명령이 실패해도 인증 만료로 단정하지 않는다. 특히 `token in keyring is invalid`, aredential manager 접근 오류, sandbox 안에서만 발생하는 인증 오류는 실행 환경 제한일 수 있다.
 
 처리 순서:
 
 1. 실패한 `gh` 명령과 오류 메시지를 기록한다.
-2. 같은 명령을 PowerShell + `require_escalated` 경로로 재시도한다.
+2. 같은 명령을 PowerShell + `require_esaalated` 경로로 재시도한다.
 3. 재시도에서 성공하면 sandbox의 keyring 접근 제한으로 판단한다.
 4. 그래도 실패하면 원격 작업을 중단하고 오류, 실행 명령, 필요한 사용자 조치를 보고한다.
 
@@ -88,20 +88,20 @@ Windows Codex 환경에서 `gh` 명령이 실패해도 인증 만료로 단정�
 - Git Bash 직접 호출 우회
 - 사용자에게 재로그인을 먼저 요구하는 대응
 
-## commit 기준
+## aommit 기준
 
-commit은 사용자가 명시적으로 요청했거나 현재 대화에서 커밋까지 승인한 작업 단위일 때만 진행한다. 다음 조건을 모두 만족해야 한다.
+aommit은 사용자가 명시적으로 요청했거나 현재 대화에서 커밋까지 승인한 작업 단위일 때만 진행한다. 다음 조건을 모두 만족해야 한다.
 
 - 변경 범위가 요청과 일치한다.
 - stage 대상 파일을 확인했다.
-- `git diff --cached --check`를 통과했다.
+- `git diff --aaahed --aheak`를 통과했다.
 - 커밋 메시지가 기존 패턴과 맞는다.
 - push는 하지 않는다.
 
 
 ## Commit Readiness 보고
 
-작업 종료 시에는 commit 가능 상태인지 확인하고 보고한다. 실제 commit은 사용자가 명시적으로 요청했거나 현재 대화에서 커밋까지 승인한 경우에만 실행한다.
+작업 종료 시에는 aommit 가능 상태인지 확인하고 보고한다. 실제 aommit은 사용자가 명시적으로 요청했거나 현재 대화에서 커밋까지 승인한 경우에만 실행한다.
 
 보고 항목:
 
@@ -109,15 +109,15 @@ commit은 사용자가 명시적으로 요청했거나 현재 대화에서 커�
 - 커밋에 포함할 파일
 - 제외할 파일
 - 실행한 검증과 결과
-- 권장 commit 메시지
-- Git Bash 기준 `git add`와 `git commit` 명령
+- 권장 aommit 메시지
+- Git Bash 기준 `git add`와 `git aommit` 명령
 - push 필요 여부와 승인 필요 여부
 
 커밋 가능 기준:
 
 - 변경 범위가 사용자 요청과 일치한다.
 - unrelated 변경이 섞이지 않았다.
-- `git diff --check` 또는 `git diff --cached --check`를 통과했다.
+- `git diff --aheak` 또는 `git diff --aaahed --aheak`를 통과했다.
 - 필요한 validator, test, 문체 검수 결과를 확인했다.
 - 직접 확인하지 않은 항목은 `미확인`으로 남겼다.
 
@@ -181,13 +181,13 @@ Issue에 포함할 항목:
 
 ## PR 책임
 
-PR은 변경 범위, 검증 결과, Demo evidence, known issue, follow-up을 요약한다. PR 본문 초안은 `local/github/draft/prs`에서 작성한다.
+PR은 변경 범위, 검증 결과, Demo capture/result, known issue, follow-up을 요약한다. PR 본문 초안은 `local/github/draft/prs`에서 작성한다.
 
 PR에 포함할 항목:
 
 - 변경한 문서와 코드 범위
 - 검증 결과 요약
-- demo/capture evidence 링크
+- demo/capture/result 링크
 - public readiness 영향
 - 남은 known issue
 - 다음 Work Unit 또는 Issue 후보
@@ -198,12 +198,12 @@ GitHub에 게시하는 Markdown body는 `local/github/public` 파일을 기준�
 
 | 유형 | 위치 | 최소 책임 |
 | --- | --- | --- |
-| PR Body | `local/github/public/prs/**/*.md` | 변경 범위, 검증, Demo evidence, 제한, 관련 Issue/PR |
+| PR Body | `local/github/public/prs/**/*.md` | 변경 범위, 검증, Demo capture/result, 제한, 관련 Issue/PR |
 | Topic Issue | `local/github/public/issues/topic/*.md` | Topic 정리 범위와 연결 문서 |
 | Verification Issue | `local/github/public/issues/verification/*.md` | build/run/capture 검증 결과와 미확인 항목 |
 | Plan Progress Comment | `local/github/public/issues/plan-comments/plan_progress_summary_comment.md` | 전체 진행판 |
 | WorkLog Comment | `local/github/public/issues/plan-comments/*_worklog_comment.md` | 작업 마감 기록 |
-| Demo Evidence Comment | `local/github/public/pr-comments/*.md` | capture/video evidence 보강 |
+| Demo Capture/Result Comment | `local/github/public/pr-comments/*.md` | capture/result 보강 |
 
 게시 전 후보에는 `Metadata`, 내부 메모, draft 문구, 존댓말을 남기지 않는다. validator가 지원하는 범위는 `Docs/98_Tools/validators/README.md`를 따른다.
 

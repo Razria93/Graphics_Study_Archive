@@ -20,7 +20,7 @@
 | [AI Collaboration Decisions](ai-collaboration-decisions.md) | AI 협업 운영 결정과 선택 이유 |
 | [Structure Cleanup Roadmap](structure-cleanup-roadmap.md) | 문서 구조 정리 진행 상태와 다음 작업 기준 |
 | [Verification Policy](verification-policy.md) | build/run/capture 검증 기준 |
-| [Demo Capture Policy](demo-capture-policy.md) | screenshot/video evidence 관리 기준 |
+| [Demo Capture Policy](demo-capture-policy.md) | screenshot/video 관리 기준 |
 | [Publication Policy](publication-policy.md) | public subset 후보와 제외 기준 |
 | [Assets Policy](assets-policy.md) | capture, video, image, third-party asset 기준 |
 | [Local Review Policy](local-review-policy.md) | local-only 자료 영역과 raw/reference 검토 기준 |

@@ -30,4 +30,4 @@
 
 - 실제 build/run을 수행한 뒤에만 상태를 변경한다.
 - 실패 또는 부분 성공 항목은 `../known-issues.md`에 연결한다.
-- capture evidence는 `../capture-matrix.md`와 `Docs/03_Demos`에 연결한다.
+- capture/result는 `../capture-matrix.md`와 `Docs/03_Demos`에 연결한다.

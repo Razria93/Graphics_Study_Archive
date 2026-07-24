@@ -1,6 +1,6 @@
 # Repository Guidelines
 
-이 저장소는 DirectX11 graphics study examples와 개인 확장 작업을 private archive 형태로 정리하는 작업 공간이다. 목표는 raw 자료를 그대로 공개하는 것이 아니라, 코드 확인, 문서 재작성, 검증 기록, Demo evidence, GitHub Issue/PR 요약을 통해 설명 가능한 portfolio archive를 만드는 것이다.
+이 저장소는 DirectX11 graphics study examples와 개인 확장 작업을 private archive 형태로 정리하는 작업 공간이다. 목표는 raw 자료를 그대로 공개하는 것이 아니라, 코드 확인, 문서 재작성, 검증 기록, Demo capture/result, GitHub Issue/PR 요약을 통해 설명 가능한 portfolio archive를 만드는 것이다.
 
 ## 공통 운영 원칙
 
@@ -25,7 +25,7 @@
 - 코드 폴더 README: 예제 설명 정본
 - `Docs/01_Topics`: graphics 개념 정본
 - `Docs/02_Verification`: build/run/capture 검증 정본
-- `Docs/03_Demos`: demo capture/video evidence 정본
+- `Docs/03_Demos`: demo capture/result 정본
 - `Docs/04_WorkLogs`: Issue/PR 작업 기록 정본
 - `Docs/05_Publication`: public subset 판단 정본
 - `Docs/06_Policies`: 문서화, 검증, demo, GitHub 운영, 공개 정책 정본
@@ -65,6 +65,6 @@ Git에 추적되는 Docs와 AGENTS 문서는 한국어 중심의 평서형 현�
 
 - `docs`: 문서, README, portfolio notes, Issue/PR body 기준
 - `build`: build guide, build verification, toolchain notes
-- `demo`: capture/video, demo map, Demo evidence
+- `demo`: capture/result, demo map, Demo capture/result
 - `chore`: repo 설정, validator, template, 유지보수
 - `fix`: 잘못된 링크, 상태값, 문구, 깨진 문서 수정

@@ -18,6 +18,6 @@
 ## 작성 기준
 
 - 평서형 현재형을 사용한다.
-- 상세 정책은 Docs/07_Policies를 기준으로 한다.
+- 상세 정책은 Docs/06_Policies를 기준으로 한다.
 - 오래된 import 기록 문서는 `Docs/99_Legacy/ImportHistory`를 기준으로 참조한다.
 - ignored `local/` 자료 영역 현황은 `local-inventory.md`를 기준으로 참조한다.

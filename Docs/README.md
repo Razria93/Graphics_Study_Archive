@@ -7,7 +7,7 @@
 | [00_Index](00_Index/README.md) | 전체 지도와 작업 흐름 진입점 |
 | [01_Topics](01_Topics/README.md) | 여러 예제를 관통하는 graphics concept 설명 |
 | [02_Verification](02_Verification/README.md) | build/run/capture 상태와 known issue |
-| [03_Demos](03_Demos/README.md) | demo capture/video 계획과 evidence 연결 |
+| [03_Demos](03_Demos/README.md) | demo capture/result 계획과 capture/result 연결 |
 | [04_WorkLogs](04_WorkLogs/work-unit-index.md) | Work Unit 작업 경위와 follow-up |
 | [05_Publication](05_Publication/README.md) | public subset 후보와 제외 기준 |
 | [06_Policies](06_Policies/README.md) | 문서 작성과 GitHub 운영 정책 |

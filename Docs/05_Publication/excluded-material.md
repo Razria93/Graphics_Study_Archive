@@ -19,7 +19,7 @@
 | 항목 | 제외 이유 | 위치 | 처리 |
 | --- | --- | --- | --- |
 | 강의 원문 자료 | 권리 검토 필요 및 public 부적합 | raw/reference | 이동하지 않음 |
-| 강의 화면 캡처 | public evidence 부적합 | raw/local 후보 | 제외 |
+| 강의 화면 캡처 | public capture/result 부적합 | raw/local 후보 | 제외 |
 | 출처 불명 asset | 라이선스 확인 전 public 부적합 | raw/local 후보 | 검토 필요 또는 제외 |
 
 ## 운영 기준

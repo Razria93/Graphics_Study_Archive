@@ -4,7 +4,7 @@
 
 ## 현재 기준
 
-- 최신 정책 정본은 `Docs/07_Policies`에 둔다.
+- 최신 정책 정본은 `Docs/06_Policies`에 둔다.
 - 도구와 troubleshooting 문서는 `Docs/98_Tools`에 둔다.
 - 과거 import 기록은 `Docs/99_Legacy/ImportHistory`에 둔다.
 - 기존 Part 문서는 `Docs/99_Legacy/PartDocs`에 둔다.

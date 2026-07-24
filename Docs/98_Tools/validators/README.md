@@ -39,7 +39,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 | `issues/verification/*.md` | Verification issue |
 | `issues/plan-comments/plan_progress_summary_comment.md` | Plan Issue 첫 누적 진행 댓글 |
 | `issues/plan-comments/*_worklog_comment.md` | Work Unit 또는 PR 마감 댓글 |
-| `pr-comments/*.md` | PR screenshot 또는 Demo evidence comment |
+| `pr-comments/*.md` | PR screenshot 또는 Demo capture/result comment |
 
 ## Plan comment schema
 

@@ -36,7 +36,7 @@
 8. 예제 README는 대상 코드 폴더 아래에 작성한다.
 9. 연결 Topic은 `Docs/01_Topics`에 작성하거나 갱신한다.
 10. build/run/capture 상태는 `Docs/02_Verification`에 기록한다.
-11. Demo evidence와 시연 포인트는 `Docs/03_Demos`에 기록한다.
+11. Demo capture/result와 시연 포인트는 `Docs/03_Demos`에 기록한다.
 12. public subset 판단은 `Docs/05_Publication`에 기록한다.
 13. 작업 과정과 마감 요약은 `Docs/04_WorkLogs`에 기록한다.
 14. 전체 map은 `Docs/00_Index`에서 필요한 범위만 갱신한다.
@@ -112,7 +112,7 @@ tracked Docs에서 `local/` 파일로 직접 링크하지 않는다. local 문�
 | 예제 하나가 무엇을 보여주는지 | 대상 코드 폴더 `README.md` |
 | 여러 예제를 관통하는 graphics 개념 | `Docs/01_Topics` |
 | build/run/capture 상태 | `Docs/02_Verification` |
-| capture/video evidence와 시연 포인트 | `Docs/03_Demos` |
+| capture/result와 시연 포인트 | `Docs/03_Demos` |
 | public 후보와 제외 판단 | `Docs/05_Publication` |
 | 작업 과정과 리뷰 대응 요약 | `Docs/04_WorkLogs` |
 | 정리된 조사 판단 요약 | `Docs/04_WorkLogs/reviews` |

@@ -17,7 +17,7 @@
 | [Study Map](study-map.md) | 코드 폴더, 예제 문서, Topic, 검증, demo의 연결 확인 |
 | [Topic Map](topic-map.md) | 그래픽스 개념 문서의 분류와 작성 우선순위 확인 |
 | [Verification Map](verification-map.md) | build/run/capture/known issue 기록 위치 확인 |
-| [Demo Map](demo-map.md) | 캡처/영상 evidence와 대표 demo 후보 확인 |
+| [Demo Map](demo-map.md) | capture/result와 대표 demo 후보 확인 |
 | [WorkLog Map](worklog-map.md) | Work Unit 요약과 Issue/PR 연결 방식 확인 |
 | [Publication Map](publication-map.md) | private archive와 public subset 후보 판단 위치 확인 |
 
