@@ -49,4 +49,5 @@
 - 상세 source comment inventory와 raw/current/origin 비교 원문은 `local/study-review/`에 둔다.
 - tracked review summary에는 승격한 항목, 승격하지 않은 항목의 분류, 후속 판단 기준만 남긴다.
 - build/run/capture 상태는 `Docs/02_Verification`에 기록한다.
+- capture/result가 확보된 예제 README에는 대표 screenshot, video link, result image 링크를 포함한다.
 - 공개 가능성 판단은 `Docs/05_Publication`에서 분리한다.

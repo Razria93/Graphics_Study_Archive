@@ -52,6 +52,7 @@ capture/result
 - build/run 상태가 `성공` 또는 `부분 성공`으로 기록되어 있다.
 - 화면 또는 결과 파일이 보여줄 graphics 개념, 예제 상태, 비교 결과를 명확히 설명한다.
 - `Docs/03_Demos/*/demo-index.md` 또는 `Docs/03_Demos/capture-plan.md`에서 참조할 계획이 있다.
+- capture/result가 있는 예제는 코드 폴더 README에도 연결한다.
 - `Docs/02_Verification/capture-matrix.md`에 capture/result 상태를 기록할 수 있다.
 - public 후보 여부 또는 private-only 사유를 `Docs/05_Publication`에서 판단할 수 있다.
 - 강의 화면, 유료 자료, 문제/해설, 출처 불명 asset이 포함되어 있지 않다.
@@ -138,6 +139,7 @@ screenshot, video, result image를 추가하면 다음 문서를 함께 확인�
 - 해당 Part/Portfolio의 `Docs/03_Demos/*/demo-index.md`
 - `Docs/02_Verification/capture-matrix.md`
 - 관련 코드 폴더 README와 `Docs/01_Topics`
+- capture/result가 있는 예제의 코드 폴더 README
 - `Docs/05_Publication`의 public 후보 또는 제외 판단
 
 ## 갱신 기준

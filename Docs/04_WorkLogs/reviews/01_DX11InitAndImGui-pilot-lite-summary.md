@@ -10,7 +10,7 @@
 - 이전 PartDocs는 참고 전용으로 보고, 새 README에는 예제 설명만 남긴다.
 - 학습 주석은 직접 이해한 설명으로 재작성하고 원문 주석은 되살리지 않는다.
 - 이번 작업에서는 코드 수정과 Topic 신설을 하지 않는다.
-- Debug/Release x64 build/run은 직접 확인했다. Capture는 아직 `미확인`으로 유지한다.
+- Debug/Release x64 build/run은 직접 확인했다. Capture는 별도로 만들지 않는다.
 
 ## 확인한 내용
 
@@ -25,10 +25,9 @@
 - Release x64 build/run: 확인
 - shader working directory 의존성: Debug/Release 실행 기준 문제 없음
 - resize 처리 미구현 여부 확인
-- 최소 capture 필요 여부 판단
+- Capture: 제외
 
 ## 후속 작업
 
-1. 최소 capture 필요 여부를 결정한다.
-2. 캡처가 필요하면 `Docs/03_Demos`와 `Docs/_assets` 기준에 맞춰 별도 승격한다.
-3. Part1 단위 Issue/PR draft 작성 시점을 다시 판단한다.
+1. Part1 단위 Issue/PR draft 작성 시점을 다시 판단한다.
+2. 다음 예제 문서화 대상을 결정한다.

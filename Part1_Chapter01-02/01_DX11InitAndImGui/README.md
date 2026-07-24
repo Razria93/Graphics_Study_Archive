@@ -73,7 +73,7 @@ Texture resource를 pixel shader에서 읽으려면 `ShaderResourceView`가 필�
 | --- | --- | --- |
 | Debug x64 build/run | 확인 | MSBuild 17.14로 빌드 후 실행 5초 이상 유지 확인 |
 | Release x64 build/run | 확인 | MSBuild 17.14로 빌드 후 실행 5초 이상 유지 확인 |
-| Capture | 미확인 | 최소 capture 후보로만 유지 |
+| Capture | 제외 | 기반 렌더 루프 설명용 예제로 별도 capture는 만들지 않음 |
 
 ## Related Docs
 

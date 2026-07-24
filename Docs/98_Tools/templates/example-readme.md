@@ -1,63 +1,66 @@
 # Example Name
 
-## 목적
+## Overview
 
-이 예제가 보여주는 핵심 결과를 2~4문장으로 정리한다.
+이 예제가 보여주는 핵심 결과와 그래픽스 개념을 2~4문장으로 정리한다.
 
-## 코드 위치
+## File Map
 
-- 루트 코드 폴더:
-- 예제 폴더:
-- solution:
-- 주요 source/header:
-- 주요 shader/asset:
+| 파일 | 역할 |
+| --- | --- |
+|  |  |
 
-## Source 확인
-
-- 현재 코드 확인: 미확인
-- source comment inventory: 미확인
-- raw/reference 확인: 미확인
-- origin 또는 원본 예제 비교: 미확인
-- 사용한 기준점: 미확인
-- 직접 build/run/capture: 미확인
-
-## 관련 Topic
-
-- Topic: `Docs/01_Topics/...`
-- 보조 Topic:
-
-## 구현 흐름
+## Rendering Flow
 
 1.
 2.
 3.
 
-## 핵심 코드 포인트
+## Core Concepts
 
-| 개념 | 코드 위치 | 확인 근거 | 상태 |
-| --- | --- | --- | --- |
-|  |  | current/raw/origin 비교 필요 | 미확인 |
+### Concept Name
 
-## 학습 흔적
+예제에서 설명할 핵심 개념을 직접 이해한 문장으로 정리한다.
 
-- source comment 또는 local review에서 확인한 학습 고민 요약:
-- tracked Docs로 이관한 내용:
-- local-only로 남긴 내용:
+## Key Code Points
 
-## 상태 링크
+| 개념 | 코드 위치 | 설명 |
+| --- | --- | --- |
+|  |  |  |
+
+## Demo Points
+
+-
+## Capture/Result
+
+- screenshot:
+- video:
+- result image:
+- 비고: capture/result가 없으면 `없음` 또는 `제외` 사유를 적는다.
+
+## Verification
+
+| 항목 | 상태 | 비고 |
+| --- | --- | --- |
+| Debug x64 build/run | 미확인 |  |
+| Release x64 build/run | 미확인 |  |
+| Capture | 미확인 |  |
+
+## Limitations
+
+-
+## Related Docs
 
 - Verification: `Docs/02_Verification/...`
 - Demo: `Docs/03_Demos/...`
-- Publication: `Docs/05_Publication/...`
-- WorkLog: `Docs/04_WorkLogs/...`
-
-## Known Issue
-
-- 미확인
+- Topic: `Docs/01_Topics/...`
 
 ## 작성 기준
 
-- 상세 build/run 결과는 이 문서에 복제하지 않는다.
+- README에는 예제 사용자가 바로 읽을 수 있는 설명만 둔다.
+- 내부 조사 메모와 원문 주석 목록은 README에 넣지 않는다.
+- 상세 build/run 결과는 `Docs/02_Verification`으로 연결한다.
 - 상세 capture/result 설명은 `Docs/03_Demos`로 연결한다.
+- capture/result가 확보된 예제는 README에도 대표 screenshot, video link, result image를 연결한다.
 - public 후보 판단은 `Docs/05_Publication`으로 연결한다.
 - existing Docs만 근거로 작성 완료 처리하지 않는다.
