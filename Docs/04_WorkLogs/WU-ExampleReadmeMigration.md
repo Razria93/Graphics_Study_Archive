@@ -9,7 +9,7 @@
 ## 결정 사항
 
 - 예제별 README 정본은 코드 폴더 아래에 둔다.
-- `Docs/01_Examples`는 전환기 링크 허브로만 사용하고 장기적으로 폐기한다.
+- `Docs/01_Examples`는 전환기 링크 허브 단계를 거쳐 폐기했다.
 - `Docs/01_Examples` 폐기 후 `Docs/02_Topics`부터 `Docs/07_Policies`까지의 번호를 한 칸씩 당겼다.
 - `Docs/98_Tools`, `Docs/99_Legacy`, `Docs/_assets`는 번호 재정렬 대상에서 제외한다.
 - `status.md`는 코드 폴더로 내리지 않는다. 빌드, 실행, capture 상태는 Verification 축에서 관리한다.
@@ -94,7 +94,7 @@ tracked review summary에는 상세 조사 원문을 복사하지 않는다. 다
    - `Docs/07_Policies` -> `Docs/06_Policies`
 6. README, AGENTS, templates, policies, WorkLogs, code README의 링크를 갱신한다.
 7. `git diff --check`, stale path 검색, 에이전트 검수를 수행한다.
-8. `02_Bloom` build/run/capture 검증으로 pilot을 마감한다.
+8. `02_Bloom` build/run 확인과 capture/result 보류 판단으로 pilot을 마감했다.
 9. `CubemapEnvironment` 초안은 재정렬 후 RayTracing 후속 작업으로 살릴지 폐기할지 결정한다.
 
 ## Pilot 순서
@@ -107,12 +107,12 @@ tracked review summary에는 상세 조사 원문을 복사하지 않는다. 다
 ## 02_Bloom 적용 상태
 
 - `Part1_Chapter01-02/02_Bloom/README.md`를 예제 README 정본으로 작성했다.
-- `Docs/01_Examples/Part1_Chapter01-02/02_Bloom/README.md` 전환기 redirect는 `Docs/01_Examples` 폐기 단계에서 제거한다.
-- `Docs/01_Examples/Part1_Chapter01-02/02_Bloom/status.md`는 코드 폴더로 옮기지 않고 `Docs/01_Examples` 폐기 단계에서 제거한다.
-- build/run/capture 상태는 `Docs/02_Verification/Part1_Chapter01-02/verification-index.md`에 `미확인`으로 유지했다.
+- `Docs/01_Examples` 전환기 redirect는 폐기했고, 예제 README 정본은 코드 폴더로 단일화했다.
+- `status.md`는 코드 폴더로 옮기지 않고 Verification 축에 흡수했다.
+- build/run 상태는 `Docs/02_Verification/Part1_Chapter01-02/verification-index.md`에 `확인`으로 기록했다.
 - demo 계획은 `Docs/03_Demos/Part1_Chapter01-02/demo-index.md`에 유지한다.
 - publication 상태는 `Docs/05_Publication/candidate-list.md`에서 `검토 필요`로 유지한다.
-- `02_Bloom` build/run/capture 검증은 아직 미완료다.
+- `02_Bloom` pilot은 README, Topic, Verification, Demo, Publication 연결과 Debug/Release x64 build/run 확인까지 마감했다.
 
 ## Done 기준
 
@@ -121,5 +121,5 @@ tracked review summary에는 상세 조사 원문을 복사하지 않는다. 다
 - `Docs/01_Examples` 폐기 여부와 번호 재정렬 여부가 이 WorkLog에 고정되어 있다.
 - 관련 Topic, Verification, Demo, WorkLog, Publication 링크가 새 위치를 가리킨다.
 - 내부 검토 내용이 README에 노출되지 않는다.
-- 직접 확인하지 않은 build/run/capture는 `미확인`으로 유지된다.
+- 직접 확인하지 않은 build/run/capture는 `미확인`으로 유지하고, 확인한 항목만 `확인`으로 갱신했다.
 - `git diff --check`와 tracked validator를 통과한다.

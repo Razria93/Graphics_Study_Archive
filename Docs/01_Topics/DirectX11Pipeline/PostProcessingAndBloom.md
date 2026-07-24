@@ -53,7 +53,7 @@ CPU에서 계산한 픽셀은 `D3D11_USAGE_DYNAMIC` texture에 `Map/Unmap`으로
 
 - 현재 예제는 GPU multi-pass post-processing pipeline이 아니다.
 - HDR render target, tone mapping, emissive material 기반 bloom까지 다루지는 않는다.
-- 실제 빌드/실행/캡처는 아직 `미확인` 상태다.
+- Debug/Release x64 build/run은 확인했다. `result.png` 생성도 확인했지만 권리/출처 검토 전까지 capture/result 승격은 보류한다.
 
 ## 연결 예제
 
