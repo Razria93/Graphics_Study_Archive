@@ -6,8 +6,8 @@
 
 | 코드 폴더 | 문서화 상태 | 예제 README 위치 | 비고 |
 | --- | --- | --- | --- |
-| `Part1_Chapter01-02` | pilot 진행 중 | 코드 폴더 README | `02_Bloom` README 이관 pilot |
-| `Part1_Chapter03` | pilot 진행 중 | 코드 폴더 README 예정 | `Step14_CubeEnvironment` 후속 후보 |
+| `Part1_Chapter01-02` | pilot 검증 완료 | 코드 폴더 README | `02_Bloom` README 이관과 Debug/Release x64 build/run 확인. evidence 승격은 보류 |
+| `Part1_Chapter03` | 후속 후보 | 코드 폴더 README 예정 | `Step14_CubeEnvironment` 후속 후보 |
 | `Part2_Chapter04` | 예정 | 코드 폴더 README 예정 | rasterization 단계 |
 | `Part2_Chapter05-08` | 예정 | 코드 폴더 README 예정 | mesh, texture, lighting 기초 |
 | `Part3_Chapter09` | 예정 | 코드 폴더 README 예정 | user interaction, camera, scene interaction |

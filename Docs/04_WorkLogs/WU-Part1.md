@@ -13,13 +13,13 @@
 
 | 항목 | 상태 | 비고 |
 | --- | --- | --- |
-| workflow 검증 | 진행 중 | `02_Bloom`으로 새 문서화 workflow를 검증한다. |
+| workflow 검증 | 확인 | `02_Bloom`으로 README, Topic, Verification, Demo, Publication 연결을 검증했다. |
 | code 조사 | 확인 | current code, raw/reference, origin 기준을 비교했다. |
 | source comment inventory | 확인 | raw/reference의 학습 주석을 분류했다. |
 | 기존 Docs stale 검토 | 확인 | pilot 초안과 Legacy PartDocs는 참고 전용으로 둔다. |
-| README 이관 | 진행 중 | `02_Bloom` README 정본을 코드 폴더로 이동했다. |
-| build/run | 미확인 | 직접 실행 전까지 상태를 바꾸지 않는다. |
-| capture/video | 미확인 | 검증 후 evidence 후보를 만든다. |
+| README 이관 | 확인 | `02_Bloom` README 정본을 코드 폴더로 이동했다. |
+| build/run | 확인 | Debug/Release x64 build와 run을 확인했다. |
+| capture/video | 보류 | `result.png` 생성은 확인했지만 워터마크/권리 검토 전까지 evidence 승격을 보류한다. |
 | Issue/PR | 예정 | 문서 검수 후 draft를 작성한다. |
 
 ## 02_Bloom 작업 요약
@@ -37,15 +37,13 @@
 | --- | --- | --- |
 | Example README | `Part1_Chapter01-02/02_Bloom/README.md` | 작성 |
 | Example redirect | 제거 완료 | `Docs/01_Examples` 폐기에 따라 삭제 |
-| Verification | `Docs/02_Verification/Part1_Chapter01-02/verification-index.md` | `미확인` 유지 |
+| Verification | `Docs/02_Verification/Part1_Chapter01-02/verification-index.md` | Debug/Release x64 build/run 확인 |
 | Topic | `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md` | 작성 |
-| Demo | `Docs/03_Demos/Part1_Chapter01-02/demo-index.md` | 후보 작성 |
-| Publication | `Docs/05_Publication/candidate-list.md` | 검토 필요 |
+| Demo | `Docs/03_Demos/Part1_Chapter01-02/demo-index.md` | evidence 승격 보류 |
+| Publication | `Docs/05_Publication/candidate-list.md` | README/Topic 후보 유지, evidence는 보류 |
 
 ## 다음 작업
 
-1. 사용자가 `02_Bloom` 코드 폴더 README 내용을 검토한다.
-2. `02_Bloom.sln` Debug x64 build/run을 직접 확인한다.
-3. 실행 결과가 정상이라면 capture 후보를 만든다.
-4. 검증 결과를 verification/demo 문서에 반영한다.
-5. 같은 workflow를 Part1의 다음 대표 예제에 적용한다.
+1. `02_Bloom` 결과 이미지를 public evidence로 쓸 수 있는지 권리/출처를 검토한다.
+2. 공개용 대표 capture가 필요하면 별도 캡처 또는 재구성 이미지를 만든다.
+3. 같은 workflow를 Part1의 다음 대표 예제에 적용한다.

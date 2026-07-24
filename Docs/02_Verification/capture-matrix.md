@@ -4,7 +4,7 @@
 
 | 범위 | 최소 capture | 대표 capture | video | 상태 | 비고 |
 | --- | --- | --- | --- | --- | --- |
-| Part1_Chapter01-02 | 미확인 | 미확인 | 미확인 | 미확인 | DX11 init, bloom 후보 |
+| Part1_Chapter01-02 | 보류 | 보류 | 미확인 | 보류 | `02_Bloom` runtime result 생성 확인. 워터마크/권리 검토 전까지 `Docs/_assets` 승격 보류 |
 | Part1_Chapter03 | 미확인 | 미확인 | 미확인 | 미확인 | ray tracing 단계별 결과 후보 |
 | Part2_Chapter04 | 미확인 | 미확인 | 미확인 | 미확인 | rasterization, depth buffer 후보 |
 | Part2_Chapter05-08 | 미확인 | 미확인 | 미확인 | 미확인 | modeling, IBL, bloom 후보 |
