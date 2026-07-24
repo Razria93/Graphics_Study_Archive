@@ -13,6 +13,7 @@
 | --- | --- | --- | --- | --- | --- | --- |
 | 최소 capture | `Part1_Chapter01-02/02_Bloom/README.md` | `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md` | `Docs/02_Verification/Part1_Chapter01-02/verification-index.md` | `Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png` | 확보 | ChatGPT 생성 입력 이미지 기반 result image 승격 완료 |
 | 대표 capture | `Part1_Chapter01-02/02_Bloom/README.md` | `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md` | `Docs/02_Verification/Part1_Chapter01-02/verification-index.md` | `Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png` | 확보 | bloom 결과를 보여주는 대표 result image로 사용 |
+| 최소 init capture 후보 | `Part1_Chapter01-02/01_DX11InitAndImGui/README.md` | 미확인 | `Docs/02_Verification/Part1_Chapter01-02/verification-index.md` | 없음 | 미확인 | DirectX11 초기화, ImGui overlay, CPU canvas texture upload 확인용 후보 |
 | video | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 미확인 | 필요 여부 검토 |
 
 ## 갱신 기준

@@ -4,7 +4,7 @@
 
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `01_DX11InitAndImGui` | `Part1_Chapter01-02/01_DX11InitAndImGui/01_DX11InitAndImGui.sln` | 미확인 | 미확인 | 미확인 | 미확인 | 미확인 | 최소 예제 검증 필요 |
+| `01_DX11InitAndImGui` | `Part1_Chapter01-02/01_DX11InitAndImGui/01_DX11InitAndImGui.sln` | 미확인 | 미확인 | 미확인 | 미확인 | 미확인 | 코드 폴더 README 정본화 완료. 이전 성공 기록은 있으나 직접 재검증 필요 |
 | `02_Bloom` | `Part1_Chapter01-02/02_Bloom/02_Bloom.sln` | 확인 | 확인 | 확인 | 확인 | 확인 | ChatGPT 생성 입력 이미지로 교체 후 Debug/Release x64 build/run과 `result.png` 생성 확인. result image를 `Docs/_assets/captures`에 승격함 |
 
 ## 02_Bloom 검증 기록
