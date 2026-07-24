@@ -20,7 +20,7 @@
 
 | Work Unit | Issue 상태 | PR 상태 | Plan 댓글 상태 | GitHub 번호 | 관련 WorkLog | 비고 |
 | --- | --- | --- | --- | --- | --- | --- |
-| `WU-Part1` | 예정 | 예정 | 예정 | 없음 | [WU-Part1](WU-Part1.md) |  |
+| `WU-Part1` | 예정 | public-ready | 예정 | 없음 | [WU-Part1](WU-Part1.md) | `local/github/public/prs/part1-pilot.md` 게시 후보 준비 |
 | `WU-Part2` | 예정 | 예정 | 예정 | 없음 | [WU-Part2](WU-Part2.md) |  |
 | `WU-Part3` | 예정 | 예정 | 예정 | 없음 | [WU-Part3](WU-Part3.md) |  |
 | `WU-Part4` | 예정 | 예정 | 예정 | 없음 | [WU-Part4](WU-Part4.md) |  |

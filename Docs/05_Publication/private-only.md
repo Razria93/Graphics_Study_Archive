@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | legacy import 기록 | raw/archive 구성 이력 추적용 | `Docs/99_Legacy` | private archive |
 | Work Unit 내부 판단 메모 | 작업 흐름 추적용 | `Docs/04_WorkLogs`, `local/` | private archive |
-| 미확인 build/run 상태 | 공개 근거로 사용하기 어려움 | `Docs/02_Verification` | 검토 필요 |
+| 미확인 build/run 상태 | 공개 설명으로 사용하기 어려움 | `Docs/02_Verification` | 검토 필요 |
 | raw/reference 검토 메모 | 원문 표현과 민감 정보 포함 가능성 | `local/` | private archive |
 
 ## 기준

@@ -10,7 +10,7 @@
 
 ## 01_DX11InitAndImGui 검증 기록
 
-| 항목 | 결과 | 근거 |
+| 항목 | 결과 | 확인 내용 |
 | --- | --- | --- |
 | Debug x64 build | 확인 | MSBuild 17.14, `01_DX11InitAndImGui.vcxproj -> x64/Debug/01_DX11InitAndImGui.exe` 생성 |
 | Debug x64 run | 확인 | 실행 후 5초 이상 프로세스 유지, 수동 종료 |
@@ -20,14 +20,14 @@
 
 ## 02_Bloom 검증 기록
 
-| 항목 | 결과 | 근거 |
+| 항목 | 결과 | 확인 내용 |
 | --- | --- | --- |
 | Debug x64 build | 확인 | MSBuild 17.14, `02_Bloom.vcxproj -> x64/Debug/02_Bloom.exe` 생성 |
 | Debug x64 run | 확인 | 실행 후 5초 이상 프로세스 유지, `result.png` 생성, 종료 코드 0 |
 | Release x64 build | 확인 | MSBuild 17.14, `02_Bloom.vcxproj -> x64/Release/02_Bloom.exe` 생성 |
 | Release x64 run | 확인 | 실행 후 5초 이상 프로세스 유지, `result.png` 생성, 종료 코드 0 |
 | Runtime output | 확인 | `Part1_Chapter01-02/02_Bloom/result.png` 생성. `.gitignore` 기준에 따라 tracked 파일로 추가하지 않음 |
-| Capture/Result | 확인 | ChatGPT 생성 입력 이미지 기반 `result.png` 생성 확인. 육안상 강의명/강사명/워터마크/개인 식별자는 보이지 않음. `Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png`로 승격함 |
+| Capture/Result | 확인 | ChatGPT 생성 입력 이미지 기반 `result.png` 생성 확인. 육안상 강의명/강사명/워터마크/개인 식별자는 보이지 않음. input/result 비교 이미지를 `Docs/_assets/captures`에 승격함 |
 
 ## 갱신 기준
 
