@@ -37,12 +37,23 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 | 위치 | 검사 |
 | --- | --- |
 | `prs/**/*.md` | PR body |
+| `issues/work-unit_*.md` | Work Unit issue |
 | `issues/topic_*.md` | Topic issue |
 | `issues/verification_*.md` | Verification issue |
 | `comments/plan-progress.md` | Plan Issue 첫 누적 진행 댓글 |
 | `comments/*_worklog.md` | Work Unit 또는 PR 마감 댓글 |
 | `comments/*_demo.md` | PR screenshot 또는 Demo capture/result comment |
 
+
+## Work Unit issue schema
+
+Work Unit Issue는 작업 범위와 완료 조건을 GitHub에서 추적하기 위한 body다. PR body, WorkLog, Topic, Verification 문서의 내용을 복제하지 않는다.
+
+| 파일 | 책임 | 주요 검사 |
+| --- | --- | --- |
+| `issues/work-unit_*.md` | Work Unit 범위와 완료 조건 | `## 요약`, `## 목표`, `## 범위`, `## 핵심 작업`, `## 검증 기준`, `## Demo/Capture 필요 여부`, `## 완료 조건`, `## 관련 문서`, `## 제외 범위` 순서 |
+
+Work Unit Issue에는 screenshot/image URL을 필수로 요구하지 않는다. capture/result 상세는 `Docs/03_Demos`와 PR body에서 다룬다.
 ## Plan comment schema
 
 Plan Issue 관련 GitHub body는 두 종류만 검사한다.

@@ -249,11 +249,12 @@ function Test-PublicBody {
 
 	Test-CommonPublicRules -Path $RelativePath -Content $Content
 
-	foreach ($Section in $RequiredSections) {
-		if ($Content -notmatch "(?m)^## $([regex]::Escape($Section))$") {
-			Add-Failure $RelativePath "missing required section: ## $Section"
-		}
-	}
+    foreach ($Section in $RequiredSections) {
+        $Heading = "## $Section"
+        if (-not ($Lines | Where-Object { $_ -eq $Heading })) {
+            Add-Failure $RelativePath "missing required section: ## $Section"
+        }
+    }
 
 	Test-SectionOrder -Path $RelativePath -Lines $Lines -RequiredHeadings ($RequiredSections | ForEach-Object { "## $_" })
 
@@ -510,6 +511,13 @@ $RelatedPrSectionName = New-Text @(0xAD00, 0xB828, 0x20, 0x0050, 0x0052)
 $ScopeSection = New-Text @(0xBC94, 0xC704)
 $ConceptNotesSection = New-Text @(0xAC1C, 0xB150, 0x20, 0xBA54, 0xBAA8)
 $RelatedExamplesSection = New-Text @(0xAD00, 0xB828, 0x20, 0xC608, 0xC81C)
+$GoalSection = New-Text @(0xBAA9, 0xD45C)
+$CoreTasksSection = New-Text @(0xD575, 0xC2EC, 0x20, 0xC791, 0xC5C5)
+$VerificationCriteriaSection = New-Text @(0xAC80, 0xC99D, 0x20, 0xAE30, 0xC900)
+$DemoCaptureNeedSection = "Demo/Capture " + (New-Text @(0xD544, 0xC694, 0x20, 0xC5EC, 0xBD80))
+$DoneCriteriaSection = New-Text @(0xC644, 0xB8CC, 0x20, 0xC870, 0xAC74)
+$RelatedDocsSection = New-Text @(0xAD00, 0xB828, 0x20, 0xBB38, 0xC11C)
+$ExcludedScopeSection = New-Text @(0xC81C, 0xC678, 0x20, 0xBC94, 0xC704)
 
 $PrRequiredSections = @(
 	$SummarySection,
@@ -541,6 +549,18 @@ $TopicRequiredSections = @(
 	$RelatedExamplesSection,
 	$DocumentationSection,
 	$RelatedPrSectionName
+)
+
+$WorkUnitRequiredSections = @(
+    $SummarySection,
+    $GoalSection,
+    $ScopeSection,
+    $CoreTasksSection,
+    $VerificationCriteriaSection,
+    $DemoCaptureNeedSection,
+    $DoneCriteriaSection,
+    $RelatedDocsSection,
+    $ExcludedScopeSection
 )
 
 function Get-OptionalMarkdownFiles {
@@ -576,6 +596,11 @@ Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "prs") -Recurse | ForEach
 
 	++$CheckedFileCount
 	Test-PublicBody -File $_ -RequiredSections $PrRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true
+}
+
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "work-unit_*.md" | ForEach-Object {
+    ++$CheckedFileCount
+    Test-PublicBody -File $_ -RequiredSections $WorkUnitRequiredSections -RequireScreenshots $false
 }
 
 Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "topic_*.md" | ForEach-Object {
