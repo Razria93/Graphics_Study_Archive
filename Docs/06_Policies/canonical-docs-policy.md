@@ -75,6 +75,32 @@ Root README는 private archive 내부 운영 문서처럼 작성하지 않는다
 
 정책, stale 문서, legacy import 기록, validator 세부 규칙은 Root README 상단에 길게 두지 않는다. 필요한 경우 하단의 maintainer notes나 `Docs/README.md`, `Docs/06_Policies` 링크로 넘긴다.
 
+## README 계층별 책임
+
+README는 위치에 따라 다른 책임을 가진다. 같은 내용을 여러 README에 본문으로 반복하지 않고, 상위 README는 하위 문서로 들어가는 짧은 안내와 대표 링크만 제공한다.
+
+| README | 책임 | 포함 기준 | 제외 기준 |
+| --- | --- | --- | --- |
+| Root README | portfolio archive의 첫 화면 | repository 목적, 대표 graphics 주제, 현재 pilot/result, 주요 guide 링크 | 내부 조사 기록, stale 판단, raw/origin 비교, 정책 원문 |
+| Chapter README | Chapter 또는 Chapter 묶음의 지도 | Chapter 목표, 예제 목록, 대표 Topic/Demo/Verification, 상태 요약 | 예제별 코드 상세, Topic 본문 전체, WorkLog 상세 |
+| Example README | 예제 하나의 설명 정본 | 예제 목적, 핵심 개념, 핵심 코드 위치, 실행 요약, capture/result, limitation | raw/reference 원문, source comment inventory, stale 판단 상세 |
+| Docs README | Docs 산출물 축의 입구 | 폴더 구조, 각 축의 책임, 먼저 볼 문서 | 세부 정책 원문, 예제별 상세 설명 |
+| Folder README | 해당 폴더의 하위 안내 | 하위 문서 목록, 작성 위치, 관련 정책 링크 | 다른 폴더 책임의 본문 반복 |
+| GitHub body | review/posting용 요약 | 게시 시점의 요약, 핵심 링크, 검증 요약 | README 본문 복제, 내부 draft/metadata |
+
+## README 갱신 기준
+
+README는 무조건 함께 수정하지 않는다. Work Unit 종료 전 아래 기준으로 갱신 필요 여부를 판단하고, 갱신하지 않는 경우 WorkLog 또는 검토 보고에 이유를 남긴다.
+
+| README | 갱신 조건 |
+| --- | --- |
+| Root README | 대표 pilot/result가 바뀌거나, Study Map 상태가 바뀌거나, archive/public 방향이 바뀔 때 |
+| Chapter README | Chapter 예제 목록, 대표 Topic/Demo/Verification 링크, build/run/capture 요약이 바뀔 때 |
+| Example README | 예제의 코드 흐름, 핵심 개념, capture/result, limitation, 관련 문서 링크가 바뀔 때 |
+| Docs README | Docs 폴더 구조, 산출물 축 책임, 먼저 볼 문서가 바뀔 때 |
+| Folder README | 하위 문서 목록, 폴더 책임, template/policy 링크가 바뀔 때 |
+| GitHub body | 게시 대상 Issue/PR/comment의 범위, 검증 요약, 연결 링크가 바뀔 때 |
+
 ## 작성 기준
 
 - 문서는 한국어 평서형으로 작성한다.

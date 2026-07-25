@@ -39,9 +39,10 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | 16 | GitHub Issue/PR draft 작성 | WorkLog, Example, Verification, Demo | `local/github/draft` 또는 `Docs/07_GitHub` | `github-workflow-policy.md` |
 | 17 | GitHub body 검수 | `Docs/07_GitHub`, WorkLog, Verification | validator 결과와 사용자 검토 보고 | `github-workflow-policy.md`, `../98_Tools/validators/README.md` |
 | 18 | Index 갱신 | 전체 산출물 | `Docs/00_Index`, `Docs/04_WorkLogs/issue-pr-index.md` | `canonical-docs-policy.md`, `github-workflow-policy.md` |
-| 19 | 최종 검수 | 변경 파일 전체 | 검수 결과는 final report 또는 WorkLog | `style-policy.md`, `../98_Tools/validation-tools.md` |
-| 20 | 사용자 검토 요청 | 변경 요약, 미확인 항목, follow-up | 대화 보고 또는 WorkLog | `github-workflow-policy.md` |
-| 21 | commit readiness 보고 | 변경 파일, 검증 결과, 권장 commit 메시지 | 대화 보고 | `github-workflow-policy.md` |
+| 19 | README 갱신 여부 확인 | 변경된 Example, Topic, Verification, Demo, Publication | Root/Chapter/Example/Docs/Folder README 중 필요한 문서 | `canonical-docs-policy.md`, `docs-authoring-flow-policy.md` |
+| 20 | 최종 검수 | 변경 파일 전체 | 검수 결과는 final report 또는 WorkLog | `style-policy.md`, `../98_Tools/validation-tools.md` |
+| 21 | 사용자 검토 요청 | 변경 요약, 미확인 항목, follow-up | 대화 보고 또는 WorkLog | `github-workflow-policy.md` |
+| 22 | commit readiness 보고 | 변경 파일, 검증 결과, 권장 commit 메시지 | 대화 보고 | `github-workflow-policy.md` |
 
 ## 산출물별 책임
 
@@ -150,5 +151,7 @@ Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.
 - Plan Issue 누적 진행 댓글 또는 WorkLog 댓글 갱신 필요 여부가 판단되어 있다.
 - `Docs/04_WorkLogs/issue-pr-index.md`에 Issue/PR/Plan comment 상태가 반영되어 있다.
 - `Docs/00_Index` map이 필요한 범위만큼 갱신되어 있다.
+- Root, Chapter, Example, Docs, Folder README의 갱신 필요 여부가 판단되어 있고, 필요한 README만 갱신되어 있다.
+- README를 갱신하지 않은 경우 그 이유가 WorkLog 또는 검토 보고에 남아 있다.
 - 오래된 `Docs/99_Legacy` 문서와 폐기된 `Docs/01_Examples` 본문을 정본처럼 링크하지 않는다.
 - 사용자 검토 요청과 commit readiness 보고가 끝나 있다.

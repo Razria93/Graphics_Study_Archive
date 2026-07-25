@@ -42,8 +42,9 @@
 14. public subset 판단은 `Docs/05_Publication`에 기록한다.
 15. 작업 과정과 마감 요약은 `Docs/04_WorkLogs`에 기록한다.
 16. 전체 map은 `Docs/00_Index`에서 필요한 범위만 갱신한다.
-17. 사용자 검토 요청 전 문체, 링크, 중복, 금지 요소, `미확인` 표기를 검수한다.
-18. 사용자 검토 요청 후 commit readiness를 보고한다.
+17. Root, Chapter, Example, Docs, Folder README 중 갱신이 필요한 문서가 있는지 `canonical-docs-policy.md`의 README 갱신 기준으로 확인한다.
+18. 사용자 검토 요청 전 문체, 링크, 중복, 금지 요소, `미확인` 표기를 검수한다.
+19. 사용자 검토 요청 후 commit readiness를 보고한다.
 
 ## current/raw/origin 비교 최소 범위
 
@@ -67,6 +68,18 @@
 - README에 연결할 대표 자료인지, local 검토 후보인지
 
 검토 완료된 screenshot 또는 result image는 코드 폴더 README에 세로 배치로 연결한다. capture/result가 필요 없으면 `Docs/03_Demos`와 `Docs/02_Verification`에 `제외` 사유를 남긴다.
+
+## README 갱신 확인 기준
+
+문서 작성 또는 검증 결과가 생겼다고 모든 README를 수정하지 않는다. 각 README는 계층별 책임이 다르므로 아래 기준으로 필요한 문서만 갱신한다.
+
+- Root README는 대표 pilot/result 또는 전체 Study Map이 바뀐 경우에만 갱신한다.
+- Chapter README는 Chapter 범위의 예제 목록, 대표 결과, Topic/Verification/Demo 링크가 바뀌면 갱신한다.
+- Example README는 해당 예제의 설명, 핵심 코드 위치, capture/result, limitation이 바뀌면 갱신한다.
+- Docs와 Folder README는 폴더 책임, 하위 문서, 정책 링크가 바뀐 경우에만 갱신한다.
+- GitHub body는 README 내용을 복제하지 않고 게시 시점의 요약과 링크만 갱신한다.
+
+README에 넣지 않는 내부 조사 기록은 `local/study-review/` 또는 `Docs/04_WorkLogs/reviews/`로 분리한다.
 
 ## source comment inventory 범위
 
