@@ -31,9 +31,15 @@
 
 - raw를 바탕으로 재작성한 학습 정리
 - 공개 전 검토가 필요한 demo 후보
-- 미확인 build/run 상태
 - Work Unit 진행 요약
 - 공개 여부가 아직 결정되지 않은 설명 문서
+
+## 검토 필요 후보
+
+- 미확인 build/run 상태
+- 출처와 라이선스 확인 전의 capture/result
+- 공개용 문장으로 재작성하기 전의 private archive 설명
+- metadata, 개인 식별자, 로컬 경로 확인 전의 screenshot/result image
 
 ## 제외 대상
 
@@ -66,5 +72,5 @@
 - 후보 목록과 redaction log는 먼저 local에서 검토한다.
 - public repo는 private archive가 안정화된 뒤 별도 subset으로 구성한다.
 - public 후보는 private archive 문서를 그대로 복사하지 않고 공개용 문장으로 재작성한다.
-- public capture/result 후보는 강의명, 강사명, 워터마크, 개인 식별자 제거 여부를 확인한 뒤 연결한다.
+- public capture/result 후보는 강의명, 강사명, 워터마크, 개인 식별자 포함 여부를 확인한 뒤 연결한다. 포함된 자료는 public 후보에서 제외하거나 재촬영/재생성한다.
 - screenshot/result image는 metadata 확인을 포함하고, 외부 입력 asset을 사용한 result image는 입력 asset의 출처와 라이선스를 확인하기 전까지 검토 필요 또는 제외로 둔다.
