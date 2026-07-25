@@ -40,11 +40,11 @@
 
 ## 검증
 
-- `01_DX11InitAndImGui` Debug x64 build/run을 확인했다.
-- `01_DX11InitAndImGui` Release x64 build/run을 확인했다.
-- `02_Bloom` Debug x64 build/run을 확인했다.
-- `02_Bloom` Release x64 build/run을 확인했다.
-- `02_Bloom`에서 ChatGPT 생성 입력 이미지 기반 `result.png` 생성을 확인했다.
+- `01_DX11InitAndImGui` Debug x64 build/run은 성공했다.
+- `01_DX11InitAndImGui` Release x64 build/run은 성공했다.
+- `02_Bloom` Debug x64 build/run은 성공했다.
+- `02_Bloom` Release x64 build/run은 성공했다.
+- `02_Bloom`에서 ChatGPT 생성 입력 이미지 기반 `result.png`를 생성하고 capture/result를 확보했다.
 - `git diff --check`를 통과했다.
 - GitHub body validator를 통과했다.
 

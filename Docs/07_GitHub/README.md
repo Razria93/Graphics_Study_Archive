@@ -22,16 +22,16 @@
 ## local과의 관계
 
 ```text
-local/github/draft
--> Docs/07_GitHub
+local/ 임시 초안
+-> Docs/07_GitHub 게시 후보
 -> GitHub remote
--> local/github/snapshots
+-> local/ 게시 후 snapshot
 ```
 
-- `local/github/draft`는 임시 초안이며 언제 비워도 되는 공간이다.
-- `Docs/07_GitHub`는 게시 후보 정본이다.
-- `local/github/snapshots`는 게시 후 실제 본문 사본이 필요할 때만 둔다.
-- `local/github/public`은 사용하지 않는다.
+- `local/`은 임시 초안, 게시 후 사본, 검토 메모를 둘 수 있는 작업 공간이며 언제 비워도 되는 공간이다.
+- `Docs/07_GitHub`는 GitHub에 게시하기 직전 검수할 tracked 게시 후보 정본이다.
+- GitHub remote에 게시한 뒤 실제 본문 사본이 필요하면 `local/` 하위 snapshot으로 남긴다.
+- `Docs/05_Publication`은 public subset 판단 정본이며 GitHub body 저장소가 아니다.
 
 ## PR 단위
 

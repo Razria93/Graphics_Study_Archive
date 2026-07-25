@@ -8,9 +8,9 @@
 | --- | --- |
 | Work Unit 흐름 | `Docs/06_Policies/work-unit-workflow-policy.md` |
 | 작업 마감 요약 | `Docs/04_WorkLogs` |
-| GitHub 초안 | `local/github/draft` |
+| GitHub 초안 | `local/` 임시 초안 |
 | GitHub 게시 후보 정본 | `Docs/07_GitHub` |
-| 게시 후 실제 게시본과 리뷰 대응 사본 | `local/github/snapshots` |
+| 게시 후 실제 게시본과 리뷰 대응 사본 | `local/` 하위 snapshot |
 | Plan Issue 진행판 | GitHub remote, `Docs/07_GitHub/comments` |
 | 실제 Issue/PR | GitHub remote |
 
@@ -132,7 +132,7 @@ commit은 사용자가 명시적으로 요청했거나 현재 대화에서 커�
 다음 전환은 remote 상태를 바꾸지 않으므로 agent가 진행할 수 있다. 단, 전환 결과와 validator 결과를 사용자에게 보고한다.
 
 ```text
-local/github/draft
+local/ 임시 초안
 -> Docs/07_GitHub
 -> validator 실행
 -> 사용자 검토 요청
@@ -142,7 +142,7 @@ local/github/draft
 
 ```text
 GitHub 게시
--> local/github/snapshots 저장
+-> local/ 하위 snapshot 저장
 -> Docs/04_WorkLogs 갱신
 -> Docs/04_WorkLogs/work-unit-github-index.md 갱신
 ```
@@ -185,7 +185,7 @@ PR 기본 단위는 Chapter 또는 Chapter 묶음이다. Part는 Plan Issue, Wor
 
 PR body는 README의 미러가 아니라 GitHub review를 위한 요약과 링크 허브다. 상세 설명은 Chapter README, Example README, Topic, Verification, Demo, Publication 정본으로 연결한다. PR body의 검증 상태는 게시 시점 snapshot이며, 최신 검증 정본은 `Docs/02_Verification`에 둔다.
 
-PR 초안은 `local/github/draft/prs`에서 작성할 수 있고, 게시 후보 정본은 `Docs/07_GitHub/prs`에 둔다.
+PR 초안은 `local/`에서 작성할 수 있고, 게시 후보 정본은 `Docs/07_GitHub/prs`에 둔다.
 
 PR에 포함할 항목:
 
@@ -229,10 +229,10 @@ GitHub에 게시하는 Markdown body는 `Docs/07_GitHub` 파일을 기준으로 
 ## draft to GitHub body 흐름
 
 ```text
-local/github/draft
+local/ 임시 초안
 -> Docs/07_GitHub
 -> GitHub remote
--> local/github/snapshots
+-> local/ 하위 snapshot
 -> Docs/04_WorkLogs 요약 반영
 ```
 
@@ -241,7 +241,7 @@ local/github/draft
 GitHub remote에 Issue, PR, comment를 게시하거나 수정한 뒤에는 다음을 확인한다.
 
 - GitHub remote 본문과 `Docs/07_GitHub` 파일의 내용이 일치한다.
-- 게시 후 실제 본문 또는 리뷰 대응 기록이 필요하면 `local/github/snapshots`에 남긴다.
+- 게시 후 실제 본문 또는 리뷰 대응 기록이 필요하면 `local/` 하위 snapshot에 남긴다.
 - `Docs/04_WorkLogs`에는 원문이 아니라 요약과 링크만 반영한다.
 - `Docs/04_WorkLogs/work-unit-github-index.md`의 Issue/PR/Plan comment 상태를 갱신한다.
 
@@ -277,5 +277,5 @@ PR review comment에 답변할 때는 짧은 고정 형식을 사용한다. 답�
 - Issue/PR 생성은 사용자가 명시적으로 요청한 경우에만 진행한다.
 - 게시 전 초안은 local에서 검토할 수 있고, 게시 후보 정본은 `Docs/07_GitHub`에 둔다.
 - 게시 전 후보는 `Metadata`, 내부 메모, draft 문구, 존댓말을 제거한다.
-- 게시 후 실제 게시본과 리뷰 대응 기록은 `local/github/snapshots`에 둔다.
+- 게시 후 실제 게시본과 리뷰 대응 기록은 `local/` 하위 snapshot에 둔다.
 - merge 후 최종 상태는 각 정본 문서에 반영한다.
