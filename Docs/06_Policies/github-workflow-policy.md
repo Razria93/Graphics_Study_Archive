@@ -171,6 +171,8 @@ Plan Issue 댓글을 생성하거나 수정하기 전에는 대상 Issue, 사용
 
 Issue는 작업 범위, 검증 항목, demo 필요 여부, 완료 조건을 추적한다. Docs 원문을 복제하지 않고 정본 문서 링크와 요약을 둔다.
 
+Work Unit Issue는 작업 단위가 GitHub에서 별도 추적될 때만 만든다. WorkLog와 PR body를 대체하지 않으며, 범위와 완료 조건만 짧게 남긴다.
+
 Issue에 포함할 항목:
 
 - 대상 Work Unit
@@ -217,7 +219,7 @@ GitHub에 게시하는 Markdown body는 `Docs/07_GitHub` 파일을 기준으로 
 | 유형 | 위치 | 최소 책임 |
 | --- | --- | --- |
 | PR Body | `Docs/07_GitHub/prs/**/*.md` | 핵심 개념, 대표 예제, 검증, Demo capture/result, 제한, 관련 Issue/PR |
-| Work Unit Issue | `Docs/07_GitHub/issues/*.md` | Work Unit 범위와 완료 조건 |
+| Work Unit Issue | `Docs/07_GitHub/issues/work-unit_*.md` | Work Unit 범위, 검증 기준, 완료 조건 |
 | Topic Issue | `Docs/07_GitHub/issues/topic_*.md` | 여러 Chapter를 관통하는 Topic 정리 범위와 연결 문서 |
 | Verification Issue | `Docs/07_GitHub/issues/verification_*.md` | build/run/capture 검증 결과와 미확인 항목 |
 | Plan Progress Comment | `Docs/07_GitHub/comments/plan-progress.md` | 전체 진행판 |
