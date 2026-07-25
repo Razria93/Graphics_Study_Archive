@@ -5,6 +5,7 @@
 ## 원칙
 
 - 같은 내용을 여러 위치에 본문으로 복제하지 않는다.
+- Root README는 내부 운영표가 아니라 부분 공개 가능한 portfolio archive의 첫 화면으로 작성한다.
 - 예제별 README 정본은 코드 폴더 아래에 둔다.
 - `Docs/01_Examples`는 폐기된 예전 경로이며 정본으로 사용하지 않는다.
 - Topic, Verification, Demo, WorkLog, Publication은 각자 다른 책임을 가진다.
@@ -28,6 +29,7 @@
 
 | 산출물 | 위치 | 책임 |
 | --- | --- | --- |
+| Root README | `README.md` | repository의 목적, 대표 graphics 주제, 현재 pilot/result, 주요 문서 진입점 안내 |
 | 전체 진입점과 map | `Docs/00_Index/` | 산출물 위치와 작업 흐름 안내 |
 | Chapter README | `Part*_Chapter*/README.md` | Chapter 또는 Chapter 묶음의 목표, 예제 구성, 대표 Topic, Demo, Verification 링크 |
 | 예제별 README | `Part*_Chapter*/ExampleName/README.md` | 예제 목적, 핵심 개념, 코드 위치, 실행 요약 |
@@ -60,6 +62,18 @@ Chapter README는 해당 Chapter 또는 Chapter 묶음의 지도 역할을 한�
 Example README는 예제 하나의 설명 정본이다. 목적, 구현 흐름, 핵심 코드, build/run 요약, capture/result, limitation을 둔다.
 
 GitHub PR body는 README의 미러가 아니다. 게시 시점에 reviewer가 볼 요약과 링크만 제공하고, 최신 상태 정본은 README, Topic, Verification, Demo, Publication 문서에 둔다.
+
+## Root README 기준
+
+Root README는 private archive 내부 운영 문서처럼 작성하지 않는다. 이 저장소가 부분적으로 공개될 수 있는 portfolio archive라는 점을 전제로, 처음 보는 독자가 아래 내용을 빠르게 파악하도록 구성한다.
+
+- 이 저장소가 보여주는 graphics study/portfolio 범위
+- 대표 Topic과 Part/Chapter 흐름
+- 현재 검증된 pilot 또는 대표 visual result
+- build, topic, demo, documentation으로 들어가는 짧은 링크
+- private archive와 public subset 분리 원칙
+
+정책, stale 문서, legacy import 기록, validator 세부 규칙은 Root README 상단에 길게 두지 않는다. 필요한 경우 하단의 maintainer notes나 `Docs/README.md`, `Docs/06_Policies` 링크로 넘긴다.
 
 ## 작성 기준
 
