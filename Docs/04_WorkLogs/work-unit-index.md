@@ -11,6 +11,10 @@
 | `WU-Publication` | public subset 후보 정리 | Publication, redaction, excluded material | 예정 | public repo 생성 전 수행 |
 | `WU-StructureCleanup` | 산출물 축 문서 구조 정리 | Index, Examples, Topics, Verification, Demos, WorkLogs, Publication, Policies, Tools, Legacy | 마감 | 브랜치 마감 검토 단계 |
 
+## Work Unit과 PR 단위
+
+Work Unit은 Part 또는 portfolio 흐름을 추적하는 운영 단위다. GitHub PR의 기본 단위는 Chapter 또는 Chapter 묶음이므로, 하나의 Work Unit이 여러 Chapter PR 후보를 가질 수 있다. Part 전체 PR은 예제가 적고 변경 범위가 작을 때만 예외로 사용한다.
+
 ## 상태값
 
 | 상태 | 의미 |

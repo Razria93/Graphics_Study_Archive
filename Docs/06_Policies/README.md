@@ -1,6 +1,6 @@
 # Policies
 
-이 폴더는 Graphics Study Archive에 반복 적용되는 운영 정책의 정본 위치다. 산출물 본문은 `Docs/00_Index`부터 `Docs/05_Publication`에 두고, 정책 원문은 이 폴더에 둔다.
+이 폴더는 Graphics Study Archive에 반복 적용되는 운영 정책의 정본 위치다. 산출물 본문은 `Docs/00_Index`부터 `Docs/05_Publication`에 두고, GitHub 게시 후보 정본은 `Docs/07_GitHub`에 두며, 정책 원문은 이 폴더에 둔다.
 
 ## 책임
 
@@ -33,6 +33,6 @@
 - 평서형 현재형을 사용한다.
 - 반복 용어는 `terminology-policy.md`를 따른다.
 - 정책 문서는 이 폴더에만 둔다.
-- 세부 작업 초안과 GitHub draft는 `local/`에 둔다.
+- 세부 작업 초안은 `local/`에 둘 수 있고, GitHub에 게시하기 직전의 후보 정본은 `Docs/07_GitHub`에 둔다.
 - 과거 import 기록은 `Docs/99_Legacy`를 기준으로 참조한다.
 - 구조 정리 작업 후에는 `structure-cleanup-roadmap.md`를 갱신한다.

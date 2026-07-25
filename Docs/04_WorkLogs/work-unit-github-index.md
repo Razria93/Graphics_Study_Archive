@@ -5,11 +5,14 @@
 ## 책임
 
 - Issue/PR/comment 게시 후보 정본은 `Docs/07_GitHub`에 둔다.
-- `local/github/draft`는 임시 초안으로만 사용한다.
+- `local/`은 임시 초안과 게시 후 snapshot을 둘 수 있는 작업 공간으로만 사용한다.
 - 이 문서에는 게시 여부, 번호, 연결 WorkLog만 요약한다.
 - Plan Issue는 전체 진행판으로 하나만 운영하고, Work Unit별 댓글 상태만 연결한다.
 - 사용자가 명시적으로 요청하기 전에는 GitHub Issue/PR/comment를 생성하거나 수정하지 않는다.
 
+## Work Unit과 PR 관계
+
+Work Unit은 Part 또는 portfolio 흐름을 추적하는 운영 단위다. PR 기본 단위는 Chapter 또는 Chapter 묶음이므로, 하나의 Work Unit이 여러 Chapter PR 후보를 가질 수 있다. 이 표의 PR 상태는 Work Unit 전체가 아니라 연결된 PR 후보들의 진행 상태 요약이다.
 ## Plan Issue 연결
 
 | 항목 | 상태 | GitHub 번호 | 게시 후보 파일 | 비고 |
@@ -33,9 +36,9 @@
 | 상태 | 의미 |
 | --- | --- |
 | `예정` | 아직 초안 없음 |
-| `draft` | `local/github/draft`에 초안 있음 |
+| `draft` | `local/`에 임시 초안 있음 |
 | `ready` | `Docs/07_GitHub`에 게시 후보 있음 |
 | `comment-ready` | Plan comment 또는 PR comment 게시 후보가 `Docs/07_GitHub`에 있음 |
 | `posted` | GitHub remote에 게시됨 |
-| `snapshot` | 게시 후 사본이 `local/github/snapshots`에 있음 |
+| `snapshot` | 게시 후 사본이 `local/` 하위 snapshot으로 있음 |
 | `제외` | Issue/PR/comment로 만들지 않음 |

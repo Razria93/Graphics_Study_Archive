@@ -8,13 +8,13 @@
 - 사용자가 명시적으로 요청하거나 현재 대화에서 커밋까지 승인한 작업 단위가 아니면 commit, push, PR, Issue 생성/수정을 하지 않는다.
 - root의 `Part*_Chapter*`와 `Portfolio_RayTracer` 폴더는 코드와 build 기준으로 유지한다.
 - 문서 용어는 `Docs/06_Policies/terminology-policy.md`를 따른다.
-- 문서 정본은 코드 폴더 README와 `Docs/00_Index`부터 `Docs/06_Policies`까지의 산출물 축 구조, `Docs/98_Tools`, `Docs/99_Legacy` 책임 경계를 기준으로 작성한다.
+- 문서 정본은 코드 폴더 README와 `Docs/00_Index`부터 `Docs/07_GitHub`까지의 산출물 축 구조, `Docs/98_Tools`, `Docs/99_Legacy` 책임 경계를 기준으로 작성한다.
 - 기존 `Docs/Part*` 문서는 정본으로 사용하지 않고 `Docs/99_Legacy/PartDocs`의 전환기 참고 자료로만 사용한다.
 - raw/reference repo의 내용은 필요한 부분만 읽고, Git에 추적되는 Docs/AGENTS 문서에는 직접 이해한 설명으로 재작성한다.
 - 강의 원본 영상, 슬라이드, 퀴즈, 정답, 유료 자료, 강의 화면 캡처, 문제/해설 전문은 archive/public 후보로 확정하지 않는다.
 - `.vs/`, `x64/`, `Debug/`, `Release/`, `.user`, `.suo`, `imgui.ini`, 임시 캡처, raw result는 추가하지 않는다.
 - build/run/capture를 직접 확인하지 않은 항목은 `미확인`으로 기록한다.
-- push, pull, merge, rebase, branch delete, history rewrite, LFS import 같은 되돌리기 어려운 작업은 실행 전에 범위와 위험도를 보고한다.
+- push, pull, merge, rebase, branch delete, history rewrite, LFS import 같은 되돌리기 어려운 작업은 실행 전에 범위와 위험도를 보고하고 승인받는다.
 - 포트폴리오 증빙용 브랜치는 보존 대상일 수 있으므로 로컬/원격 브랜치를 임의로 삭제하지 않는다.
 - PR merge는 사용자가 다르게 명시하지 않는 한 일반 merge commit 방식만 사용하고 squash merge, rebase merge, history rewrite를 사용하지 않는다.
 - 작업 종료 시에는 commit readiness를 보고하고, 커밋 가능 상태라면 Git Bash 기준 `git add` 대상과 권장 commit 메시지를 제안한다.
@@ -29,6 +29,7 @@
 - `Docs/04_WorkLogs`: Issue/PR 작업 기록 정본
 - `Docs/05_Publication`: public subset 판단 정본
 - `Docs/06_Policies`: 문서화, 검증, demo, GitHub 운영, 공개 정책 정본
+- `Docs/07_GitHub`: GitHub Issue/PR/comment 게시 후보 정본
 - `Docs/98_Tools`: validator, templates, troubleshooting 같은 도구 문서
 - `Docs/99_Legacy`: import 기록과 이전 문서 구조
 - `local/`: mini plan, raw 검토 메모, GitHub draft/public 사본, 원본 캡처/영상 후보
