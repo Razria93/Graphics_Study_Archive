@@ -20,6 +20,7 @@
 | README 이관 | 확인 | `02_Bloom` README 정본을 코드 폴더로 이동했다. |
 | build/run | 확인 | Debug/Release x64 build와 run을 확인했다. |
 | capture/result | 확인 | ChatGPT 생성 입력 이미지로 `result.png` 재생성 확인. input/result 비교 이미지를 `Docs/_assets/captures`에 승격했다. |
+| README 계층 | 확인 | Root README는 portfolio archive 첫 화면으로, Chapter/Example README는 각 계층 정본으로 정리했다. |
 | Issue/PR | ready | `Docs/07_GitHub/prs/part1_chapter01-02.md` 게시 후보를 준비했다. 실제 게시 여부는 사용자 승인 후 결정한다. |
 
 ## 02_Bloom 작업 요약
@@ -41,6 +42,15 @@
 | Topic | `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md` | 작성 |
 | Demo | `Docs/03_Demos/Part1_Chapter01-02/demo-index.md` | input/result 비교 이미지 승격 완료 |
 | Publication | `Docs/05_Publication/candidate-list.md` | README/Topic/capture result 후보 유지 |
+
+## README 갱신 판단
+
+| README | 갱신 여부 | 이유 |
+| --- | --- | --- |
+| Root README | 갱신 | 부분 공개 가능한 portfolio archive 첫 화면으로 대표 Topic, current pilot, featured result를 보여주도록 정리했다. |
+| Chapter README | 갱신 | `Part1_Chapter01-02`의 목표, 예제 구성, 핵심 Topic, 대표 Demo, 검증 상태를 연결했다. |
+| Example README | 갱신 | `01_DX11InitAndImGui`, `02_Bloom` 설명 정본을 코드 폴더에 두고, `02_Bloom` input/result를 연결했다. |
+| Docs/Folder README | 부분 갱신 | 산출물 축과 template 안내는 기존 구조를 유지하고, README 계층/갱신 기준은 정책과 template에 반영했다. |
 
 ## Pilot 마감 판단
 

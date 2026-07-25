@@ -4,13 +4,13 @@
 
 이 PR은 `Part1_Chapter01-02`의 DirectX11 초기화와 CPU bloom 예제를 문서화한다. Chapter README를 장 단위 지도 역할로 정리하고, 예제별 상세 설명은 각 코드 폴더 README에 둔다.
 
-`02_Bloom`은 original input과 bloom result를 함께 보여주어 capture/result가 README, Demo, Verification, PR body로 연결되는 흐름을 검증한다. 이 PR body는 상세 설명을 복제하지 않고 reviewer가 볼 핵심 요약과 링크만 제공한다.
+`02_Bloom`은 original input과 bloom result를 함께 보여주어 capture/result가 README, Demo, Verification, PR body로 연결되는 흐름을 검증한다. Root README는 portfolio archive 첫 화면으로 정리하고, Chapter/Example README는 각 계층의 정본 역할을 나눴다. 이 PR body는 상세 설명을 복제하지 않고 reviewer가 볼 핵심 요약과 링크만 제공한다.
 
 ## 범위
 
 - Chapter: `Part1_Chapter01-02`
 - 대표 예제: `01_DX11InitAndImGui`, `02_Bloom`
-- 문서 범위: Chapter README, Example README, Topic, Verification, Demo, Publication 후보, PR body 후보
+- 문서 범위: Root README, Chapter README, Example README, Topic, Verification, Demo, Publication 후보, README 정책, PR body 후보
 - 제외 범위: Part1 Chapter03, `Portfolio_RayTracer`, public repo 게시 확정
 
 ## 핵심 개념
@@ -19,6 +19,7 @@
 - Dynamic texture upload: CPU에서 만든 pixel buffer를 GPU texture에 업로드하고 pixel shader에서 샘플링하는 흐름이다. 두 예제 모두 CPU-side image data와 렌더링 파이프라인의 연결을 보여준다.
 - Bloom post-processing: 밝은 영역을 분리하고 blur 후 원본에 더해 glow를 만드는 후처리 흐름이다. 자세한 개념은 `PostProcessingAndBloom` Topic으로 연결한다.
 - Capture/result 연결: `02_Bloom`의 input/result 이미지를 `Docs/_assets/captures`로 승격하고 Demo, Verification, Publication 후보와 연결한다.
+- README 계층 분리: Root README는 portfolio archive 소개, Chapter README는 장 단위 지도, Example README는 예제 설명 정본으로 분리한다.
 
 ## 대표 예제
 
@@ -71,13 +72,14 @@ CPU bloom 처리 후 생성된 result image다. 밝은 영역이 주변으로 �
 ## 문서
 
 - Chapter README: `Part1_Chapter01-02/README.md`
+- Root README: `README.md`
 - Example README: `Part1_Chapter01-02/01_DX11InitAndImGui/README.md`, `Part1_Chapter01-02/02_Bloom/README.md`
 - Topic: `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md`
 - Verification: `Docs/02_Verification/Part1_Chapter01-02/verification-index.md`
 - Demo: `Docs/03_Demos/Part1_Chapter01-02/demo-index.md`
 - WorkLog: `Docs/04_WorkLogs/WU-Part1.md`
 - Publication: `Docs/05_Publication/candidate-list.md`, `Docs/05_Publication/private-only.md`
-- Policy: `Docs/06_Policies/demo-capture-policy.md`, `Docs/06_Policies/docs-authoring-flow-policy.md`, `Docs/06_Policies/work-unit-workflow-policy.md`
+- Policy: `Docs/06_Policies/canonical-docs-policy.md`, `Docs/06_Policies/demo-capture-policy.md`, `Docs/06_Policies/docs-authoring-flow-policy.md`, `Docs/06_Policies/work-unit-workflow-policy.md`
 
 ## 관련 이슈
 
