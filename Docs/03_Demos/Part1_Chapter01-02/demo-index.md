@@ -14,7 +14,7 @@
 | 최소 capture | `Part1_Chapter01-02/02_Bloom/README.md` | `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md` | `Docs/02_Verification/Part1_Chapter01-02/verification-index.md` | `Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg`, `Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png` | 확보 | original input과 bloom result 비교 자료 승격 완료 |
 | 대표 capture | `Part1_Chapter01-02/02_Bloom/README.md` | `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md` | `Docs/02_Verification/Part1_Chapter01-02/verification-index.md` | `Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg`, `Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png` | 확보 | post-processing 전후 차이를 보여주는 대표 비교 자료로 사용 |
 | 최소 init capture | `Part1_Chapter01-02/01_DX11InitAndImGui/README.md` | 미확인 | `Docs/02_Verification/Part1_Chapter01-02/verification-index.md` | 없음 | 제외 | 기반 렌더 루프 설명용 예제로 별도 capture는 만들지 않음 |
-| video | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 미확인 | 필요 여부 검토 |
+| video | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 후순위 | 현재 Chapter01-02는 input/result image 비교만으로 demo 목적을 충족함 |
 
 ## 갱신 기준
 

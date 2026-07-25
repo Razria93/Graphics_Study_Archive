@@ -53,7 +53,7 @@ CPU에서 계산한 픽셀은 `D3D11_USAGE_DYNAMIC` texture에 `Map/Unmap`으로
 
 - 현재 예제는 GPU multi-pass post-processing pipeline이 아니다.
 - HDR render target, tone mapping, emissive material 기반 bloom까지 다루지는 않는다.
-- Debug/Release x64 build/run은 확인했다. ChatGPT 생성 입력 이미지로 `result.png`를 재생성했고, 육안상 강의명/강사명/워터마크/개인 식별자는 보이지 않는다.
+- build/run과 capture/result 검증 결과는 `Docs/02_Verification/Part1_Chapter01-02/verification-index.md`를 기준으로 확인한다.
 
 ## 연결 예제
 
