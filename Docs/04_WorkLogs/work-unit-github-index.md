@@ -24,7 +24,7 @@ Work Unit은 Part 또는 portfolio 흐름을 추적하는 운영 단위다. PR �
 
 | Work Unit | Issue 상태 | PR 상태 | Plan 댓글 상태 | GitHub 번호 | 관련 WorkLog | 비고 |
 | --- | --- | --- | --- | --- | --- | --- |
-| `WU-Part1` | 예정 | ready | 예정 | 없음 | [WU-Part1](active/WU-Part1.md) | `Docs/07_GitHub/prs/part1_chapter01-02.md` 게시 후보 준비 |
+| `WU-Part1` | ready | ready | 예정 | 없음 | [WU-Part1](active/WU-Part1.md) | Issue 후보 `Docs/07_GitHub/issues/work-unit_part1.md`, PR 후보 `Docs/07_GitHub/prs/part1_chapter01-02.md` 준비 |
 | `WU-Part2` | 예정 | 예정 | 예정 | 없음 | 없음 | 작업 시작 시 `active/`에 WorkLog 생성 |
 | `WU-Part3` | 예정 | 예정 | 예정 | 없음 | 없음 | 작업 시작 시 `active/`에 WorkLog 생성 |
 | `WU-Part4` | 예정 | 예정 | 예정 | 없음 | 없음 | 작업 시작 시 `active/`에 WorkLog 생성 |

@@ -11,7 +11,7 @@ Graphics Study Archive의 문서화 workflow, GitHub 게시 후보 흐름, Legac
 | Work Unit | 상태 | 관련 PR/Issue | 비고 |
 | --- | --- | --- | --- |
 | `WU-StructureCleanup` | 완료 | PR #6 | 산출물 축과 정책 구조 정리 |
-| `WU-Part1` | 진행 중 | `Docs/07_GitHub/prs/part1_chapter01-02.md` | Chapter01-02 PR 후보 준비 |
+| `WU-Part1` | 진행 중 | `Docs/07_GitHub/issues/work-unit_part1.md`, `Docs/07_GitHub/prs/part1_chapter01-02.md` | Work Unit Issue 후보와 Chapter01-02 PR 후보 준비 |
 | `WU-Part2` | 예정 | 없음 | 작업 시작 전 |
 | `WU-Part3` | 예정 | 없음 | 작업 시작 전 |
 | `WU-Part4` | 예정 | 없음 | 작업 시작 전 |
