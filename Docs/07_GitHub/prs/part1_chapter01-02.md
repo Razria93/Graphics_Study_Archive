@@ -53,13 +53,13 @@
 
 Bloom 처리 전 입력 이미지다. 밝은 구체와 어두운 배경 대비가 있어 bloom 전후 비교에 사용한다.
 
-![02_Bloom Original Input](Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg?raw=true)
+![02_Bloom Original Input](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg?raw=true)
 
 ### 02_Bloom Bloom Result
 
 CPU bloom 처리 후 생성된 result image다. 밝은 영역이 주변으로 확산된 결과를 보여준다.
 
-![02_Bloom Bloom Result](Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png?raw=true)
+![02_Bloom Bloom Result](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png?raw=true)
 
 ## 미확인 / 제한
 

@@ -206,6 +206,9 @@ PR body 작성 기준:
 - 표는 검증, 상태, 링크 매트릭스처럼 짧은 정보를 비교할 때만 사용한다.
 - 파일 변경 목록은 구조 정리 PR처럼 파일 이동 자체가 핵심인 경우에만 중심 섹션으로 둔다.
 - public 공개 판단은 PR body에서 단정하지 않고 `Docs/05_Publication`으로 연결한다.
+- screenshot/result image는 repo-relative path가 아니라 GitHub absolute URL로 연결한다.
+- draft PR 후보는 작업 branch 기준 `https://github.com/<owner>/<repo>/blob/<branch>/Docs/_assets/...?...raw=true` 형식을 사용한다.
+- merge 후 main 기준 게시본 또는 snapshot이 필요하면 main 기준 URL로 정리한다.
 
 ## GitHub body 유형
 

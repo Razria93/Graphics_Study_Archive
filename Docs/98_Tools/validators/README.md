@@ -26,6 +26,8 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 - 필수 섹션이 빠지지 않았는지 확인한다.
 - GitHub body가 한국어 섹션 기준을 따르는지 확인한다.
 - screenshot Markdown이 `Docs/_assets/captures`를 가리키는지 확인한다.
+- screenshot/result image는 GitHub absolute URL을 사용해야 한다.
+- 허용 URL은 `https://github.com/<owner>/<repo>/blob/<branch>/Docs/_assets/captures/<file>?raw=true` 또는 `https://raw.githubusercontent.com/<owner>/<repo>/<branch>/Docs/_assets/captures/<file>` 형식이다.
 - template에 특정 Issue 번호가 하드코딩되어 있지 않은지 확인한다.
 
 ## 지원 범위

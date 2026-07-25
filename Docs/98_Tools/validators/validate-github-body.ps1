@@ -34,6 +34,20 @@ function Add-Warning {
 	$Warnings.Add("$Path :: $Message")
 }
 
+function Test-GitHubImageUrl {
+	param([string]$Url)
+
+	if ($Url -match '^https://github\.com/[^/]+/[^/]+/blob/.+/Docs/_assets/captures/.+\?raw=true$') {
+		return $true
+	}
+
+	if ($Url -match '^https://raw\.githubusercontent\.com/[^/]+/[^/]+/.+/Docs/_assets/captures/.+') {
+		return $true
+	}
+
+	return $false
+}
+
 function Get-RelativePath {
 	param([string]$Path)
 
@@ -106,7 +120,8 @@ function Test-SectionOrder {
 function Test-ScreenshotsSection {
 	param(
 		[string]$Path,
-		[string[]]$Lines
+		[string[]]$Lines,
+		[bool]$RequireGitHubImageUrl = $false
 	)
 
 	$NoneText = "- " + (New-Text @(0xC5C6, 0xC74C))
@@ -135,6 +150,10 @@ function Test-ScreenshotsSection {
 
 			if ($UsesCaptureAssetPath -and $ImageUrl -notmatch '\?raw=true' -and $ImageUrl -notmatch '^https://raw\.githubusercontent\.com/') {
 				Add-Warning $Path "screenshot image URL should use ?raw=true unless it is a raw.githubusercontent.com URL: $Line"
+			}
+
+			if ($RequireGitHubImageUrl -and -not (Test-GitHubImageUrl -Url $ImageUrl)) {
+				Add-Failure $Path "screenshot image URL must use a GitHub absolute URL for GitHub body rendering: $Line"
 			}
 
 			$Previous = $Index - 1
@@ -207,7 +226,7 @@ function Test-CommonPublicRules {
 		'local/pr',
 		'local/prompts',
 		'Docs/_repo',
-		'Docs/Part[0-9]',
+		'(?-i)Docs/Part[0-9]',
 		'(?m)^## Metadata$',
 		'Status: Draft'
 	)
@@ -223,7 +242,8 @@ function Test-PublicBody {
 	param(
 		[System.IO.FileInfo]$File,
 		[string[]]$RequiredSections,
-		[bool]$RequireScreenshots
+		[bool]$RequireScreenshots,
+		[bool]$RequireGitHubImageUrl = $false
 	)
 
 	$RelativePath = Get-RelativePath $File.FullName
@@ -241,7 +261,7 @@ function Test-PublicBody {
 	Test-SectionOrder -Path $RelativePath -Lines $Lines -RequiredHeadings ($RequiredSections | ForEach-Object { "## $_" })
 
 	if ($RequireScreenshots) {
-		Test-ScreenshotsSection -Path $RelativePath -Lines $Lines
+		Test-ScreenshotsSection -Path $RelativePath -Lines $Lines -RequireGitHubImageUrl $RequireGitHubImageUrl
 	}
 }
 
@@ -413,6 +433,10 @@ function Test-PrScreenshotComment {
 				Add-Warning $RelativePath "screenshot image URL should use ?raw=true unless it is a raw.githubusercontent.com URL: $Line"
 			}
 
+			if (-not (Test-GitHubImageUrl -Url $Url)) {
+				Add-Failure $RelativePath "screenshot image URL must use a GitHub absolute URL for GitHub body rendering: $Line"
+			}
+
 			$Previous = $Index - 1
 			while ($Previous -ge 0 -and [string]::IsNullOrWhiteSpace($Section[$Previous])) {
 				--$Previous
@@ -554,7 +578,7 @@ Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "prs") -Recurse | ForEach
 	}
 
 	++$CheckedFileCount
-	Test-PublicBody -File $_ -RequiredSections $PrRequiredSections -RequireScreenshots $true
+	Test-PublicBody -File $_ -RequiredSections $PrRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true
 }
 
 Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "topic_*.md" | ForEach-Object {
@@ -564,7 +588,7 @@ Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "topic_
 
 Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "verification_*.md" | ForEach-Object {
 	++$CheckedFileCount
-	Test-PublicBody -File $_ -RequiredSections $VerificationRequiredSections -RequireScreenshots $true
+	Test-PublicBody -File $_ -RequiredSections $VerificationRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true
 }
 
 $PlanProgressPath = Join-Path $GitHubRoot "comments/plan-progress.md"

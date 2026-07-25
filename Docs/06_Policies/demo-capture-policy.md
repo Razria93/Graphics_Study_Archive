@@ -92,6 +92,8 @@ capture/result가 필요 없거나 시각적 설명 가치가 낮으면 `제외`
 
 capture/result가 확보된 예제는 코드 폴더 README의 `Capture/Result` 섹션에 대표 자료를 연결한다. screenshot이나 result image는 너무 작게 보이지 않도록 세로 배치를 기본으로 한다.
 
+README와 일반 Docs 문서는 repo 안에서 렌더링되므로 repo-relative path를 사용한다. GitHub Issue, PR, comment body는 GitHub remote 페이지에서 렌더링되므로 `Docs/07_GitHub` 후보 문서에 capture/result를 연결할 때는 GitHub absolute URL을 사용한다.
+
 권장 형식:
 
 ```md
@@ -107,6 +109,21 @@ capture/result가 확보된 예제는 코드 폴더 README의 `Capture/Result` �
 ```
 
 input/result, before/after처럼 비교가 필요한 경우에도 한 줄 표보다 별도 소제목을 둔 세로 배치를 우선한다. video는 직접 embed보다 링크와 짧은 설명을 둔다.
+
+## GitHub body 이미지 URL 기준
+
+GitHub Issue, PR, comment body에 들어가는 screenshot/result image는 repo-relative path를 사용하지 않는다. 게시 후보 문서인 `Docs/07_GitHub` 안에서는 다음 형식을 사용한다.
+
+```md
+![Description](https://github.com/Razria93/Graphics_Study_Archive/blob/<branch-name>/Docs/_assets/captures/example.png?raw=true)
+```
+
+기준:
+
+- draft PR 또는 branch 검토 중에는 현재 작업 branch 기준 `blob/<branch-name>/...?...raw=true` URL을 사용한다.
+- merge 후 main 기준 snapshot이나 제출용 body가 필요하면 `blob/main/...?...raw=true` 또는 raw.githubusercontent URL로 정리한다.
+- 코드 폴더 README, Topic, Demo, Verification 문서에는 repo-relative path를 유지한다.
+- GitHub body에 연결하는 파일은 승격 검수를 통과한 `Docs/_assets/captures` 또는 정해진 `Docs/_assets` 파일만 사용한다.
 
 승격하지 않는 항목:
 
