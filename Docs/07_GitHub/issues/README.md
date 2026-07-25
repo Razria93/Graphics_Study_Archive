@@ -13,4 +13,4 @@ Issue는 Work Unit 작업 추적을 중심으로 만든다. Topic, Demo, Verific
 | Verification Issue | build/run 실패, 환경 문제, 미확인 묶음이 별도 추적 대상일 때 |
 | Demo Issue | screenshot, video, result image 제작이 별도 작업일 때 |
 
-PR 자체를 위한 별도 Issue는 기본으로 만들지 않는다. PR 상태는 `Docs/04_WorkLogs/issue-pr-index.md`와 Plan Issue 댓글에서 추적한다.
+PR 자체를 위한 별도 Issue는 기본으로 만들지 않는다. PR 상태는 `Docs/04_WorkLogs/work-unit-github-index.md`와 Plan Issue 댓글에서 추적한다.

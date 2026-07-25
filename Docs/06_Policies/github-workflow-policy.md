@@ -144,7 +144,7 @@ local/github/draft
 GitHub 게시
 -> local/github/snapshots 저장
 -> Docs/04_WorkLogs 갱신
--> Docs/04_WorkLogs/issue-pr-index.md 갱신
+-> Docs/04_WorkLogs/work-unit-github-index.md 갱신
 ```
 
 ## Plan Issue 운영 기준
@@ -243,7 +243,7 @@ GitHub remote에 Issue, PR, comment를 게시하거나 수정한 뒤에는 다�
 - GitHub remote 본문과 `Docs/07_GitHub` 파일의 내용이 일치한다.
 - 게시 후 실제 본문 또는 리뷰 대응 기록이 필요하면 `local/github/snapshots`에 남긴다.
 - `Docs/04_WorkLogs`에는 원문이 아니라 요약과 링크만 반영한다.
-- `Docs/04_WorkLogs/issue-pr-index.md`의 Issue/PR/Plan comment 상태를 갱신한다.
+- `Docs/04_WorkLogs/work-unit-github-index.md`의 Issue/PR/Plan comment 상태를 갱신한다.
 
 ## WorkLog 반영
 

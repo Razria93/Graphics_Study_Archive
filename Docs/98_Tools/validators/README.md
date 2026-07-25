@@ -60,7 +60,7 @@ Plan comment는 Docs 정본을 복제하지 않고 진행 상태와 링크만 �
 - GitHub 게시 승인 여부
 - 실제 `gh` 게시 여부
 - `local/github/snapshots` 생성 여부
-- `Docs/04_WorkLogs`와 `issue-pr-index.md` 동기화 여부
+- `Docs/04_WorkLogs`와 `work-unit-github-index.md` 동기화 여부
 - build/run/capture 실제 성공 여부
 
 ## 주의

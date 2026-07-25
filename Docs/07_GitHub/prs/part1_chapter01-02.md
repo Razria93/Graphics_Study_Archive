@@ -77,7 +77,7 @@ CPU bloom 처리 후 생성된 result image다. 밝은 영역이 주변으로 �
 - Topic: `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md`
 - Verification: `Docs/02_Verification/Part1_Chapter01-02/verification-index.md`
 - Demo: `Docs/03_Demos/Part1_Chapter01-02/demo-index.md`
-- WorkLog: `Docs/04_WorkLogs/WU-Part1.md`
+- WorkLog: `Docs/04_WorkLogs/active/WU-Part1.md`
 - Publication: `Docs/05_Publication/candidate-list.md`, `Docs/05_Publication/private-only.md`
 - Policy: `Docs/06_Policies/canonical-docs-policy.md`, `Docs/06_Policies/demo-capture-policy.md`, `Docs/06_Policies/docs-authoring-flow-policy.md`, `Docs/06_Policies/work-unit-workflow-policy.md`
 

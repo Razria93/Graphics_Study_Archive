@@ -6,8 +6,9 @@
 
 - Work Unit 단위의 작업 범위와 변경 요약을 기록한다.
 - 갱신한 Example, Topic, Verification, Demo, Publication 문서를 링크한다.
-- 검증 요약, 미확인 항목, known issue, follow-up을 남긴다.
-- GitHub Issue/PR draft의 출발점이 되는 요약을 둔다.
+- 검증, 미확인 항목, known issue, follow-up은 마감 시점 snapshot으로만 남긴다.
+- 최신 검증, demo, publication 상태는 각 정본 문서로 연결한다.
+- GitHub Issue/PR 상태 연결을 둔다.
 - GitHub 게시 후보 정본은 `Docs/07_GitHub`에 둔다.
 
 ## 문서 목록
@@ -15,21 +16,17 @@
 | 문서 | 책임 |
 | --- | --- |
 | [Work Unit Index](work-unit-index.md) | Work Unit 목록과 상태 |
-| [Issue PR Index](issue-pr-index.md) | Issue/PR draft와 게시 상태 연결 |
-| [WU Part1](WU-Part1.md) | Part1과 Portfolio_RayTracer 기초 연결 작업 요약 |
-| [WU Part2](WU-Part2.md) | Part2 rasterization/pipeline 작업 요약 |
-| [WU Part3](WU-Part3.md) | Part3 interaction/PBR/shadow 작업 요약 |
-| [WU Part4](WU-Part4.md) | Part4 advanced graphics 작업 요약 |
-| [WU Publication](WU-Publication.md) | public subset 후보 정리 작업 요약 |
-| [WU Structure Cleanup](WU-StructureCleanup.md) | 산출물 축 문서 구조 정리 브랜치 마감 요약 |
+| [Work Unit GitHub Index](work-unit-github-index.md) | Work Unit과 Issue/PR/comment 게시 상태 연결 |
+| [active](active/) | 진행 중 Work Unit 기록 |
+| [completed](completed/) | 마감된 Work Unit snapshot |
+| [decisions](decisions/) | 구조 전환과 정책성 결정 기록 |
+| [study-review-summaries](study-review-summaries/) | local study review에서 승격한 반복 판단 요약 |
 
 ## WorkLog에 남길 것
 
 - 작업 범위
 - 갱신한 정본 문서 링크
-- 검증 요약
-- demo capture/result 상태
-- public readiness 영향
+- 검증, demo, publication의 마감 시점 snapshot
 - Issue/PR 번호 또는 예정 상태
 - follow-up
 

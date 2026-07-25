@@ -2,7 +2,7 @@
 
 ## 목적
 
-`Docs/01_Examples`에 있던 예제 설명 문서를 루트 코드 폴더 아래 예제 README로 이관한다. 예제별 README는 코드 폴더의 얼굴이므로 public-safe 설명만 담고, 내부 검토 기록은 `local/study-review/`와 `Docs/04_WorkLogs/reviews/`로 분리한다.
+`Docs/01_Examples`에 있던 예제 설명 문서를 루트 코드 폴더 아래 예제 README로 이관한다. 예제별 README는 코드 폴더의 얼굴이므로 public-safe 설명만 담고, 내부 검토 기록은 `local/study-review/`와 `Docs/04_WorkLogs/study-review-summaries/`로 분리한다.
 
 이 Work Unit은 단순한 `02_Bloom` README 이관만이 아니라, 예제 설명 정본 위치를 코드 폴더로 옮기고 `Docs` 산출물 축 번호를 재정렬하는 구조 전환 흐름을 함께 추적한다. 실제 작업과 커밋은 단계별로 분리한다.
 
@@ -14,7 +14,7 @@
 - `Docs/98_Tools`, `Docs/99_Legacy`, `Docs/_assets`는 번호 재정렬 대상에서 제외한다.
 - `status.md`는 코드 폴더로 내리지 않는다. 빌드, 실행, capture 상태는 Verification 축에서 관리한다.
 - source review, raw/reference, origin 비교, 기존 Docs stale 판단은 public-facing README에 쓰지 않는다.
-- 상세 조사 원문은 `local/study-review/`에 두고, 재사용 가능한 판단 요약만 `Docs/04_WorkLogs/reviews/`에 남긴다.
+- 상세 조사 원문은 `local/study-review/`에 두고, 재사용 가능한 판단 요약만 `Docs/04_WorkLogs/study-review-summaries/`에 남긴다.
 - tracked Docs에서 `local/` 파일로 직접 링크하지 않는다. local 문서에서 tracked 문서로 연결하는 것은 허용한다.
 
 ## 재정렬 결과
@@ -59,10 +59,10 @@
 | 내용 | 위치 | 기준 |
 | --- | --- | --- |
 | 상세 조사 원문 | `local/study-review/` | raw/current/origin 비교, source comment inventory, stale 판단 상세 |
-| tracked 판단 요약 | `Docs/04_WorkLogs/reviews/` | 승격 항목, 제외 분류, 반복 판단 기준, 후속 known issue |
+| tracked 판단 요약 | `Docs/04_WorkLogs/study-review-summaries/` | 승격 항목, 제외 분류, 반복 판단 기준, 후속 known issue |
 | Work Unit 마감 요약 | `Docs/04_WorkLogs/` | 작업 범위, 산출물, follow-up |
 
-tracked review summary에는 상세 조사 원문을 복사하지 않는다. 다음 작업자가 반복 조사하지 않아도 되는 결론만 남긴다. 현재 경로는 `Docs/04_WorkLogs/reviews/`다.
+tracked review summary에는 상세 조사 원문을 복사하지 않는다. 다음 작업자가 반복 조사하지 않아도 되는 결론만 남긴다. 현재 경로는 `Docs/04_WorkLogs/study-review-summaries/`다.
 
 ## 이관 절차
 
@@ -72,7 +72,7 @@ tracked review summary에는 상세 조사 원문을 복사하지 않는다. 다
 4. 예제 README를 코드 폴더 아래로 작성한다.
 5. `Docs/01_Examples`의 해당 예제 문서는 제거하거나 전환기 redirect로 축소한다.
 6. `status.md` 내용은 Verification 축에 흡수한다.
-7. 상세 source review는 `local/study-review/`에 두고, 반복 가능한 판단 요약은 `Docs/04_WorkLogs/reviews/`에 남긴다.
+7. 상세 source review는 `local/study-review/`에 두고, 반복 가능한 판단 요약은 `Docs/04_WorkLogs/study-review-summaries/`에 남긴다.
 8. Topic, Verification, Demo, Publication, Index 링크를 새 README 위치로 갱신한다.
 9. 링크와 validator를 확인한다.
 10. 사용자 검토 후 커밋 여부를 결정한다.

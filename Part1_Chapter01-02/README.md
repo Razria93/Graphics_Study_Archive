@@ -59,5 +59,5 @@ CPU에서 bloom 후처리를 계산하고, 처리된 pixel buffer를 DirectX11 d
 - Topic: [PostProcessingAndBloom](../Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)
 - Verification: [Part1 Chapter01-02 Verification Index](../Docs/02_Verification/Part1_Chapter01-02/verification-index.md)
 - Demo: [Part1 Chapter01-02 Demo Index](../Docs/03_Demos/Part1_Chapter01-02/demo-index.md)
-- WorkLog: [WU-Part1](../Docs/04_WorkLogs/WU-Part1.md)
+- WorkLog: [WU-Part1](../Docs/04_WorkLogs/active/WU-Part1.md)
 - GitHub PR body candidate: [part1_chapter01-02](../Docs/07_GitHub/prs/part1_chapter01-02.md)

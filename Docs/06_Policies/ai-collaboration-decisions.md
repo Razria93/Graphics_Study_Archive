@@ -16,7 +16,7 @@
 | commit 승인 규칙 | 사용자가 명시적으로 요청했거나 현재 대화에서 커밋까지 승인한 작업 단위일 때만 진행 | root/safety 정책과 GitHub workflow 충돌을 막는다. | `AGENTS.md`, `agent-safety-policy.md`, `github-workflow-policy.md` |
 | snapshot 저장 방식 | 게시 후보 정본은 `Docs/07_GitHub`, 게시 후 실제 게시본은 `local/github/snapshots`에 필요 시 저장 | GitHub에 실제 게시한 본문을 로컬에서 재현할 수 있다. | `github-workflow-policy.md`, `work-unit-workflow-policy.md`, `local-review-policy.md` |
 | draft to GitHub body 전환 | agent가 draft 정리와 validator 실행까지 진행 가능 | remote 상태를 바꾸지 않으므로 반복 작업 효율이 높다. | `github-workflow-policy.md` |
-| WorkLog/Issue Index 갱신 시점 | draft 작성 시 상태를 기록하고, ready/posted/snapshot 단계에서 갱신 | 작업 추적 누락을 줄인다. | `worklog.md`, `issue-pr-index.md` |
+| WorkLog/GitHub Index 갱신 시점 | draft 작성 시 상태를 기록하고, ready/posted/snapshot 단계에서 갱신 | 작업 추적 누락을 줄인다. | `worklog.md`, `work-unit-github-index.md` |
 | validator 미지원 파일 처리 | 우선 warning 성격으로 다루고, 지원 범위를 README에 명시 | 너무 강하게 막으면 새 GitHub body 유형 추가가 어려워진다. | `validators/README.md` |
 | 상태값 범위 | Verification 상태와 Capture/Result 상태를 분리 정의 | build/run 성공과 capture/result 확보는 다른 상태다. | `verification-policy.md`, `demo-capture-policy.md` |
 | AGENTS override | 상위 공통 안전 규칙은 유지하고 하위 AGENTS는 폴더 범위의 추가/제한 규칙으로 적용 | 하위 규칙이 safety gate를 완화하지 않게 한다. | `AGENTS.md` |

@@ -21,12 +21,12 @@
 
 | Work Unit | Issue 상태 | PR 상태 | Plan 댓글 상태 | GitHub 번호 | 관련 WorkLog | 비고 |
 | --- | --- | --- | --- | --- | --- | --- |
-| `WU-Part1` | 예정 | ready | 예정 | 없음 | [WU-Part1](WU-Part1.md) | `Docs/07_GitHub/prs/part1_chapter01-02.md` 게시 후보 준비 |
-| `WU-Part2` | 예정 | 예정 | 예정 | 없음 | [WU-Part2](WU-Part2.md) |  |
-| `WU-Part3` | 예정 | 예정 | 예정 | 없음 | [WU-Part3](WU-Part3.md) |  |
-| `WU-Part4` | 예정 | 예정 | 예정 | 없음 | [WU-Part4](WU-Part4.md) |  |
-| `WU-Publication` | 예정 | 예정 | 예정 | 없음 | [WU-Publication](WU-Publication.md) | public subset 확정 후 판단 |
-| `WU-StructureCleanup` | 예정 | posted | 예정 | PR #6 | [WU-StructureCleanup](WU-StructureCleanup.md) | draft PR 생성 완료 |
+| `WU-Part1` | 예정 | ready | 예정 | 없음 | [WU-Part1](active/WU-Part1.md) | `Docs/07_GitHub/prs/part1_chapter01-02.md` 게시 후보 준비 |
+| `WU-Part2` | 예정 | 예정 | 예정 | 없음 | 없음 | 작업 시작 시 `active/`에 WorkLog 생성 |
+| `WU-Part3` | 예정 | 예정 | 예정 | 없음 | 없음 | 작업 시작 시 `active/`에 WorkLog 생성 |
+| `WU-Part4` | 예정 | 예정 | 예정 | 없음 | 없음 | 작업 시작 시 `active/`에 WorkLog 생성 |
+| `WU-Publication` | 예정 | 예정 | 예정 | 없음 | 없음 | public subset 확정 후 WorkLog 생성 |
+| `WU-StructureCleanup` | 예정 | posted | 예정 | PR #6 | [WU-StructureCleanup](completed/WU-StructureCleanup.md) | draft PR 생성 완료 |
 
 ## 상태값
 

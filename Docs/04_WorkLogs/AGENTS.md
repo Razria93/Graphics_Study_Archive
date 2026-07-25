@@ -14,8 +14,11 @@
 ## 작성 단위
 
 - 전체 목록은 `work-unit-index.md`에 둔다.
-- Issue/PR 연결은 `issue-pr-index.md`에 둔다.
-- Work Unit별 마감 기록은 `WU-*.md`에 둔다.
+- Issue/PR 연결은 `work-unit-github-index.md`에 둔다.
+- 진행 중 Work Unit 기록은 `active/WU-*.md`에 둔다.
+- 마감된 Work Unit 기록은 `completed/WU-*.md`에 둔다.
+- 구조 결정 기록은 `decisions/`에 둔다.
+- local study review에서 승격한 판단 요약은 `study-review-summaries/`에 둔다.
 - GitHub 게시 후보 정본은 `Docs/07_GitHub`에 둔다.
 - `local/github/draft`는 임시 초안으로만 사용한다.
 

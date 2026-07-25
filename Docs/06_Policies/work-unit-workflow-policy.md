@@ -26,7 +26,7 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | 3 | 소스 주석 inventory 작성 | 관련 source/header/shader | `local/study-review` | `docs-authoring-flow-policy.md` |
 | 4 | raw/reference와 origin 기준 확인 | raw/reference repo, origin 또는 원본 예제, `Docs/99_Legacy/ImportHistory` | 검토 메모는 `local/` | `canonical-docs-policy.md`, `local-review-policy.md` |
 | 5 | current/raw/origin diff 조사 | 현재 코드, raw/reference, origin 기준 | `local/study-review` | `docs-authoring-flow-policy.md` |
-| 6 | 챕터 목표와 핵심 구현 후보 추출 | code, source comment inventory, raw/origin docs | 상세는 `local/study-review`, 요약은 `Docs/04_WorkLogs/reviews` | `docs-authoring-flow-policy.md` |
+| 6 | 챕터 목표와 핵심 구현 후보 추출 | code, source comment inventory, raw/origin docs | 상세는 `local/study-review`, 요약은 `Docs/04_WorkLogs/study-review-summaries` | `docs-authoring-flow-policy.md` |
 | 7 | 예제 목록과 대표 예제 결정 | 루트 코드 폴더, source review, Legacy PartDocs | 코드 폴더 README 계획 또는 `Docs/00_Index` | `canonical-docs-policy.md` |
 | 8 | 코드 주석 선별 정리 | source comment inventory | 루트 코드 폴더 | `agent-safety-policy.md`, `docs-authoring-flow-policy.md` |
 | 9 | 예제 README 작성 | current/raw/origin 검토 결과 | 대상 코드 폴더 `README.md` | `docs-authoring-flow-policy.md` |
@@ -38,7 +38,7 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | 15 | 작업 기록 마감 | 변경된 Docs, 검증 결과 | `Docs/04_WorkLogs` | `github-workflow-policy.md` |
 | 16 | GitHub Issue/PR draft 작성 | WorkLog, Example, Verification, Demo | `local/github/draft` 또는 `Docs/07_GitHub` | `github-workflow-policy.md` |
 | 17 | GitHub body 검수 | `Docs/07_GitHub`, WorkLog, Verification | validator 결과와 사용자 검토 보고 | `github-workflow-policy.md`, `../98_Tools/validators/README.md` |
-| 18 | Index 갱신 | 전체 산출물 | `Docs/00_Index`, `Docs/04_WorkLogs/issue-pr-index.md` | `canonical-docs-policy.md`, `github-workflow-policy.md` |
+| 18 | Index 갱신 | 전체 산출물 | `Docs/00_Index`, `Docs/04_WorkLogs/work-unit-github-index.md` | `canonical-docs-policy.md`, `github-workflow-policy.md` |
 | 19 | README 갱신 여부 확인 | 변경된 Example, Topic, Verification, Demo, Publication | Root/Chapter/Example/Docs/Folder README 중 필요한 문서 | `canonical-docs-policy.md`, `docs-authoring-flow-policy.md` |
 | 20 | 최종 검수 | 변경 파일 전체 | 검수 결과는 final report 또는 WorkLog | `style-policy.md`, `../98_Tools/validation-tools.md` |
 | 21 | 사용자 검토 요청 | 변경 요약, 미확인 항목, follow-up | 대화 보고 또는 WorkLog | `github-workflow-policy.md` |
@@ -53,7 +53,7 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | Verification | `Docs/02_Verification` | build/run/capture 상태, known issue, 확인 일자 |
 | Demo | `Docs/03_Demos` | capture/result, 시연 포인트, 연결 개념 |
 | WorkLog | `Docs/04_WorkLogs` | 작업 범위, 변경 요약, 검증 요약, Issue/PR 연결, follow-up |
-| Review Summary | `Docs/04_WorkLogs/reviews` | 상세 local 조사에서 승격한 결론과 반복 가능한 판단 기준 |
+| Review Summary | `Docs/04_WorkLogs/study-review-summaries` | 상세 local 조사에서 승격한 결론과 반복 가능한 판단 기준 |
 | Publication | `Docs/05_Publication` | public 후보, private 전용, 검토 필요, 제외 판단 |
 | Policy | `Docs/06_Policies` | 반복 적용되는 규칙 |
 | GitHub Body | `Docs/07_GitHub` | Issue, PR, comment 게시 후보 |
@@ -97,7 +97,7 @@ local/
 
 - code/raw 조사 중 나온 원문 메모와 상세 비교표는 `local/study-review/`에 둔다.
 - tracked Docs에는 `local/`로 직접 연결되는 링크를 만들지 않는다.
-- 다음 작업자가 반복 조사하지 않아도 되는 결론은 `Docs/04_WorkLogs/reviews/`에 요약한다.
+- 다음 작업자가 반복 조사하지 않아도 되는 결론은 `Docs/04_WorkLogs/study-review-summaries/`에 요약한다.
 - GitHub 초안은 `local/github/draft`에 둘 수 있다.
 - GitHub 게시 후보 정본은 `Docs/07_GitHub`에 둔다.
 - 게시 후 실제 게시본과 리뷰 대응 사본은 `local/github/snapshots`에 둔다.
@@ -122,7 +122,7 @@ local/
 - 예제 설명 본문은 코드 폴더 README에 둔다.
 - build/run/capture 상세 상태는 Docs/02_Verification에 둔다.
 - 내부 source review와 stale 판단은 코드 폴더 README에 노출하지 않는다.
-- 상세 조사 기록은 `local/study-review/`에 두고, 재사용 가능한 판단 요약만 `Docs/04_WorkLogs/reviews/`에 둔다.
+- 상세 조사 기록은 `local/study-review/`에 두고, 재사용 가능한 판단 요약만 `Docs/04_WorkLogs/study-review-summaries/`에 둔다.
 
 ## 사용자 검토 지점
 
@@ -141,7 +141,7 @@ local/
 Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.
 
 - 예제 README 정본이 대상 코드 폴더에 있다.
-- 소스 주석 inventory와 raw/origin/current 비교 상세는 `local/study-review/`에 있고, 반복 가능한 판단 요약은 필요한 경우 `Docs/04_WorkLogs/reviews/`에 있다.
+- 소스 주석 inventory와 raw/origin/current 비교 상세는 `local/study-review/`에 있고, 반복 가능한 판단 요약은 필요한 경우 `Docs/04_WorkLogs/study-review-summaries/`에 있다.
 - 관련 Topic이 없으면 없다고 기록하고, 있으면 `Docs/01_Topics`에 연결한다.
 - build/run/capture 상태가 `Docs/02_Verification`에 기록되어 있다.
 - demo 필요 여부와 capture/result 상태가 `Docs/03_Demos`에 기록되어 있다.
@@ -149,7 +149,7 @@ Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.
 - 작업 요약과 follow-up이 `Docs/04_WorkLogs`에 기록되어 있다.
 - GitHub Issue/PR을 운영하는 Work Unit이면 `Docs/07_GitHub` 후보와 validator 결과가 준비되어 있다.
 - Plan Issue 누적 진행 댓글 또는 WorkLog 댓글 갱신 필요 여부가 판단되어 있다.
-- `Docs/04_WorkLogs/issue-pr-index.md`에 Issue/PR/Plan comment 상태가 반영되어 있다.
+- `Docs/04_WorkLogs/work-unit-github-index.md`에 Issue/PR/Plan comment 상태가 반영되어 있다.
 - `Docs/00_Index` map이 필요한 범위만큼 갱신되어 있다.
 - Root, Chapter, Example, Docs, Folder README의 갱신 필요 여부가 판단되어 있고, 필요한 README만 갱신되어 있다.
 - README를 갱신하지 않은 경우 그 이유가 WorkLog 또는 검토 보고에 남아 있다.
