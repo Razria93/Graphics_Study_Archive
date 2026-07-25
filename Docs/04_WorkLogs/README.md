@@ -1,6 +1,8 @@
 # Work Logs
 
-이 폴더는 Work Unit 작업 과정과 마감 요약의 정본 위치다. Example, Topic, Verification, Demo, Publication 문서의 본문을 대체하지 않고, 어떤 정본 문서를 갱신했는지 추적한다.
+이 폴더는 Work Unit의 작업 결정과 마감 snapshot을 기록하는 위치다. Example, Topic, Verification, Demo, Publication 문서의 본문을 대체하지 않고, 어떤 정본 문서를 갱신했는지 추적한다.
+
+WorkLog의 검증, demo, publication 요약은 마감 당시 상태를 압축한 snapshot이다. 최신 상태 정본은 `Docs/02_Verification`, `Docs/03_Demos`, `Docs/05_Publication`, `Docs/07_GitHub`에 둔다.
 
 ## 책임
 
@@ -25,7 +27,8 @@
 ## WorkLog에 남길 것
 
 - 작업 범위
-- 갱신한 정본 문서 링크
+- 작업 중 확정한 주요 결정
+- 갱신한 정본 문서 링크와 위임한 책임
 - 검증, demo, publication의 마감 시점 snapshot
 - Issue/PR 번호 또는 예정 상태
 - follow-up
@@ -35,5 +38,8 @@
 - 예제 구현 설명 전문
 - Topic 개념 설명 전문
 - build/run 상세 로그 전문
+- capture/result 파일 경로와 최신 상태표
+- publication 판단 상세
 - GitHub draft 본문 전문
+- source review 상세와 raw/origin 비교표
 - raw/reference 원문과 개인 메모

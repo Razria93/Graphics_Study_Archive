@@ -20,8 +20,8 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 
 | 단계 | 작업 | 읽는 위치 | 쓰는 위치 | 기준 정책 |
 | --- | --- | --- | --- | --- |
-| 0 | Work Unit 선택과 조사 계획 작성 | `Docs/00_Index`, 루트 코드 폴더 | `local/mini-plans` 또는 `Docs/04_WorkLogs` | 이 문서 |
-| 1 | 사용자에게 조사 계획 보고 | `local/mini-plans`, 대상 코드 목록 | final report 또는 WorkLog 초안 | `github-workflow-policy.md` |
+| 0 | Work Unit 선택과 조사 계획 작성 | `Docs/00_Index`, 루트 코드 폴더 | `local/mini-plans` | 이 문서 |
+| 1 | 사용자에게 조사 계획 보고 | `local/mini-plans`, 대상 코드 목록 | final report | `github-workflow-policy.md` |
 | 2 | 코드 구조 확인 | root `Part*_Chapter*`, `Portfolio_RayTracer` | 조사 메모는 `local/` | `agent-safety-policy.md` |
 | 3 | 소스 주석 inventory 작성 | 관련 source/header/shader | `local/study-review` | `docs-authoring-flow-policy.md` |
 | 4 | raw/reference와 origin 기준 확인 | raw/reference repo, origin 또는 원본 예제, `Docs/99_Legacy/ImportHistory` | 검토 메모는 `local/` | `canonical-docs-policy.md`, `local-review-policy.md` |
@@ -35,7 +35,7 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | 12 | capture/result 요청 조건 판단 | 검증 결과, 예제 유형, demo 후보 | 사용자 요청 문구 또는 `Docs/03_Demos` 초안 | `demo-capture-policy.md` |
 | 13 | Demo capture/result 정리 | 실행 결과, capture 후보 | `Docs/03_Demos`, `Docs/_assets`, 코드 폴더 README | `demo-capture-policy.md`, `assets-policy.md` |
 | 14 | public subset 판단 | example, topic, demo, asset 정보 | `Docs/05_Publication` | `publication-policy.md` |
-| 15 | 작업 기록 마감 | 변경된 Docs, 검증 결과 | `Docs/04_WorkLogs` | `github-workflow-policy.md` |
+| 15 | 작업 기록 마감 | 변경된 Docs, 검증 결과 | `Docs/04_WorkLogs/active` 또는 `Docs/04_WorkLogs/completed` | `github-workflow-policy.md` |
 | 16 | GitHub Issue/PR draft 작성 | WorkLog, Example, Verification, Demo | `local/github/draft` 또는 `Docs/07_GitHub` | `github-workflow-policy.md` |
 | 17 | GitHub body 검수 | `Docs/07_GitHub`, WorkLog, Verification | validator 결과와 사용자 검토 보고 | `github-workflow-policy.md`, `../98_Tools/validators/README.md` |
 | 18 | Index 갱신 | 전체 산출물 | `Docs/00_Index`, `Docs/04_WorkLogs/work-unit-github-index.md` | `canonical-docs-policy.md`, `github-workflow-policy.md` |
@@ -52,7 +52,7 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | Topic | `Docs/01_Topics` | 여러 예제를 관통하는 graphics 개념과 pipeline 설명 |
 | Verification | `Docs/02_Verification` | build/run/capture 상태, known issue, 확인 일자 |
 | Demo | `Docs/03_Demos` | capture/result, 시연 포인트, 연결 개념 |
-| WorkLog | `Docs/04_WorkLogs` | 작업 범위, 변경 요약, 검증 요약, Issue/PR 연결, follow-up |
+| WorkLog | `Docs/04_WorkLogs` | 작업 범위, 주요 결정, 마감 snapshot, Issue/PR 연결, follow-up |
 | Review Summary | `Docs/04_WorkLogs/study-review-summaries` | 상세 local 조사에서 승격한 결론과 반복 가능한 판단 기준 |
 | Publication | `Docs/05_Publication` | public 후보, private 전용, 검토 필요, 제외 판단 |
 | Policy | `Docs/06_Policies` | 반복 적용되는 규칙 |
@@ -67,7 +67,7 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | 대상 | 필수 산출물 | 선택 또는 대표 산출물 |
 | --- | --- | --- |
 | 모든 예제 | 코드 폴더 README, `Docs/02_Verification` 상태 | 상세 Topic/Demo 연결 |
-| 대표 예제 | 상세 코드 폴더 README, Topic 연결, Demo 후보, WorkLog source review 요약 | Publication 후보 상태 |
+| 대표 예제 | 상세 코드 폴더 README, Topic 연결, Demo 후보, WorkLog 결정 요약 | Publication 후보 상태 |
 | Part/Chapter | README, example-index, verification-index, demo-index | 대표 Topic, 대표 capture/result |
 | 공개 후보 | `Docs/05_Publication` 상태 기록 | public subset 문장 재작성 |
 
@@ -146,7 +146,7 @@ Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.
 - build/run/capture 상태가 `Docs/02_Verification`에 기록되어 있다.
 - demo 필요 여부와 capture/result 상태가 `Docs/03_Demos`에 기록되어 있다.
 - public subset 판단이 `Docs/05_Publication`에 기록되어 있다.
-- 작업 요약과 follow-up이 `Docs/04_WorkLogs`에 기록되어 있다.
+- 작업 결정, 마감 snapshot, follow-up이 `Docs/04_WorkLogs`에 기록되어 있다.
 - GitHub Issue/PR을 운영하는 Work Unit이면 `Docs/07_GitHub` 후보와 validator 결과가 준비되어 있다.
 - Plan Issue 누적 진행 댓글 또는 WorkLog 댓글 갱신 필요 여부가 판단되어 있다.
 - `Docs/04_WorkLogs/work-unit-github-index.md`에 Issue/PR/Plan comment 상태가 반영되어 있다.

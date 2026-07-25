@@ -10,7 +10,7 @@
 | [Topic](topic.md) | `Docs/01_Topics` | tracked 정본 문서용 | graphics concept, 구현 연결, 관련 예제 |
 | [Verification Note](verification-note.md) | `Docs/02_Verification` | tracked 정본 문서용 | build/run/capture 확인 기록 |
 | [Demo Note](demo-note.md) | `Docs/03_Demos` 또는 `local/<work-unit>` | tracked/local 검토용 | demo 목표, capture/result 후보, generated image provenance 기록 |
-| [WorkLog](worklog.md) | `Docs/04_WorkLogs` | tracked 정본 문서용 | Work Unit 마감 요약과 source review 요약 |
+| [WorkLog](worklog.md) | `Docs/04_WorkLogs` | tracked 정본 문서용 | Work Unit 결정 요약과 마감 snapshot |
 | [PR Body](pr-body.md) | `Docs/07_GitHub/prs` | GitHub 게시 후보 | 핵심 개념, 대표 예제, 검증, demo 중심 PR 본문 |
 | [Local Study Review](local-study-review.md) | `local/study-review` | local-only 검토용 | raw/source 주석 inventory와 diff 검토 메모 |
 | [Local Publication Review](local-publication-review.md) | `local/publication` | local-only 검토용 | 공개 전 점검 메모 |

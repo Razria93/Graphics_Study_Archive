@@ -10,32 +10,20 @@
 
 -
 
-## Source Review 요약
+## 주요 결정
 
-- 현재 코드 확인:
-- source comment inventory:
-- raw/reference 확인:
-- origin 또는 원본 예제 비교:
-- 사용한 기준점:
-- 기존 Docs 충돌 여부:
-- 직접 검증 여부:
-
-## 주석 정리 결과 요약
-
-- 코드에 유지한 주석:
-- 문서로 이관한 학습 흔적:
-- 제거 후보 또는 제거한 주석:
-- local-only로 남긴 항목:
+-
 
 ## 갱신한 정본 문서
 
-| 산출물 | 문서 | 상태 |
+| 산출물 | 문서 | 위임한 책임 |
 | --- | --- | --- |
 | Example |  |  |
 | Topic |  |  |
 | Verification |  |  |
 | Demo |  |  |
 | Publication |  |  |
+| GitHub |  |  |
 
 ## README 갱신 판단
 
@@ -48,27 +36,21 @@
 
 README를 갱신하지 않은 경우에도 갱신하지 않은 이유를 남긴다.
 
-## 검증 요약
+## 마감 Snapshot
 
-- Debug x64 build: 미확인
-- Debug x64 run: 미확인
-- Release x64 build: 미확인
-- Release x64 run: 미확인
-- Capture: 미확인
+- Verification:
+- Demo:
+- Publication:
+- Known issue:
 
 ## Issue/PR 연결
 
 - Issue:
 - PR:
 - Draft:
-- Public-ready:
 - Validator:
 - Posted:
 - Snapshot:
-
-## Known Issue
-
--
 
 ## 사용자 검토 요청
 
