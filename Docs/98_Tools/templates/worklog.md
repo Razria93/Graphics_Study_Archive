@@ -47,10 +47,10 @@ README를 갱신하지 않은 경우에도 갱신하지 않은 이유를 남긴�
 
 - Issue:
 - PR:
-- Draft:
+- 게시 후보:
 - Validator:
 - Posted:
-- Snapshot:
+- 게시 후 snapshot:
 
 ## 사용자 검토 요청
 

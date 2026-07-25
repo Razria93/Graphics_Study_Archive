@@ -1,6 +1,5 @@
 param(
 	[string]$Root = (Resolve-Path (Join-Path $PSScriptRoot "..\..\..")).Path,
-	[Alias("PublicRoot")]
 	[string]$GitHubRoot = (Join-Path $Root "Docs/07_GitHub"),
 	[string]$TemplatesRoot = (Join-Path $Root "Docs/98_Tools/templates")
 )
@@ -223,6 +222,9 @@ function Test-CommonPublicRules {
 		[regex]::Escape($PrPending),
 		([regex]::Escape($PrBody) + '.*' + [regex]::Escape($Attach)),
 		'local/github/draft',
+		'local/github/snapshots',
+		'local/github/public',
+		'local/',
 		'local/pr',
 		'local/prompts',
 		'Docs/_repo',

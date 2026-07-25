@@ -14,7 +14,7 @@
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-body.ps1
 ```
 
-기본 입력 위치는 `Docs/07_GitHub`이다. 다른 위치를 검사할 때는 `-GitHubRoot`를 지정한다. 기존 호출 호환을 위해 `-PublicRoot` alias도 동작한다.
+기본 입력 위치는 `Docs/07_GitHub`이다. 다른 위치를 검사할 때는 `-GitHubRoot`를 지정한다.
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-body.ps1 -GitHubRoot Docs/07_GitHub
@@ -56,10 +56,10 @@ Plan comment는 Docs 정본을 복제하지 않고 진행 상태와 링크만 �
 
 ## 검사하지 않는 것
 
-- `local/github/draft`에서 `Docs/07_GitHub`로 승격했는지 여부
+- `local/` 임시 초안에서 `Docs/07_GitHub`로 승격했는지 여부
 - GitHub 게시 승인 여부
 - 실제 `gh` 게시 여부
-- `local/github/snapshots` 생성 여부
+- `local/` 하위 snapshot 생성 여부
 - `Docs/04_WorkLogs`와 `work-unit-github-index.md` 동기화 여부
 - build/run/capture 실제 성공 여부
 
@@ -67,4 +67,4 @@ Plan comment는 Docs 정본을 복제하지 않고 진행 상태와 링크만 �
 
 - validator 통과는 GitHub 게시 승인이 아니다.
 - `git push`, `gh issue create`, `gh pr create`, Ready for Review 전환은 사용자 승인 후 진행한다.
-- local draft 원문은 이 폴더에 두지 않는다.
+- local 초안 원문은 이 폴더에 두지 않는다.

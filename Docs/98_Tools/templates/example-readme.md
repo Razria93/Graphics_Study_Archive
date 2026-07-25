@@ -53,11 +53,11 @@ capture/result가 없으면 `없음` 또는 `제외` 사유를 적는다.
 
 ## Verification
 
-| 항목 | 상태 | 비고 |
+| 항목 | 결과 | 비고 |
 | --- | --- | --- |
 | Debug x64 build/run | 미확인 |  |
 | Release x64 build/run | 미확인 |  |
-| Capture | 미확인 |  |
+| Capture/Result | 미확인 |  |
 
 ## Limitations
 
