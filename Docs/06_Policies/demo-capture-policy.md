@@ -172,27 +172,35 @@ ChatGPT 생성 이미지라도 곧바로 public 후보로 확정하지 않는다
 
 ## 파일 기준
 
-파일명은 Part, Chapter, example 또는 concept가 드러나게 작성한다.
+파일명은 Part, Chapter, example 또는 concept가 드러나게 작성한다. 실제 코드 폴더 표기와 맞추기 위해 Part 번호는 `part1`처럼 쓰고, Chapter는 `chapter01` 또는 `chapter01-02`처럼 쓴다.
 
 권장 형식:
 
 ```text
-part##_chapter##_example-or-topic.png
-part##_chapter##_example-or-topic_before.png
-part##_chapter##_example-or-topic_after.png
+part#_chapter##_example-or-topic.png
+part#_chapter##-##_example-or-topic_input.png
+part#_chapter##-##_example-or-topic_result.png
 portfolio_raytracer_topic.png
 ```
 
 예시:
 
 ```text
-part02_chapter04_depth-buffer.png
-part03_chapter13_shadow-mapping-pcf.png
-part04_chapter16_stable-fluids.png
+part1_chapter01-02_02_bloom_input.jpg
+part1_chapter01-02_02_bloom_result.png
+part2_chapter04_depth-buffer.png
+part3_chapter10-13_shadow-mapping-pcf.png
+part4_chapter14-20_stable-fluids.png
 portfolio_raytracer_reflection.png
 ```
 
-브랜치 기준 `Screenshots/<branch-name>/` 구조는 채택하지 않는다. Graphics Study Archive는 PR branch보다 Part/Chapter/Portfolio 기준으로 capture/result를 찾는 것이 더 안정적이다.
+기준:
+
+- Part 번호는 실제 폴더명과 맞춰 `part1`, `part2`처럼 쓴다.
+- Chapter 번호는 두 자리로 쓰고, 범위는 `chapter01-02`처럼 하이픈으로 연결한다.
+- example 번호가 있으면 `02_bloom`처럼 유지한다.
+- before/after보다 input/result 관계가 명확한 예제는 `_input`, `_result` 접미사를 우선한다.
+- 브랜치 기준 `Screenshots/<branch-name>/` 구조는 채택하지 않는다. Graphics Study Archive는 PR branch보다 Part/Chapter/Portfolio 기준으로 capture/result를 찾는 것이 더 안정적이다.
 
 ## 연결 기준
 

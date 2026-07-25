@@ -20,7 +20,7 @@
 
 ## Part/Chapter Verification
 
-| 범위 | 문서 위치 | 상태 |
+| 범위 | 문서 위치 | 문서 상태 |
 | --- | --- | --- |
 | Part1 Chapter01-02 | [Part1_Chapter01-02](Part1_Chapter01-02/verification-index.md) | 골격 작성 |
 | Part1 Chapter03 | [Part1_Chapter03](Part1_Chapter03/verification-index.md) | 골격 작성 |
@@ -31,6 +31,16 @@
 | Part4 Chapter14-20 | [Part4_Chapter14-20](Part4_Chapter14-20/verification-index.md) | 골격 작성 |
 | Portfolio RayTracer | [Portfolio_RayTracer](Portfolio_RayTracer/verification-index.md) | 골격 작성 |
 
+## 문서 상태값
+
+Part/Chapter 표의 `문서 상태`는 build/run/capture 결과가 아니라 검증 문서 골격의 작성 상태를 뜻한다.
+
+| 상태 | 의미 |
+| --- | --- |
+| `골격 작성` | 기본 문서만 있으며 실제 검증 기록은 아직 부족함 |
+| `작성 중` | build/run/capture 결과를 갱신하는 중 |
+| `작성 완료` | 현재 범위의 검증 기록이 정리됨 |
+| `후속 필요` | 추가 실행, 실패 원인 분석, capture/result 확인이 남음 |
 
 ## 최종 검증 요약 예약
 

@@ -39,27 +39,32 @@ capture/result
 
 ## 파일명 기준
 
+상세 파일명 정책의 정본은 `Docs/06_Policies/demo-capture-policy.md`를 따른다.
+
 ```text
-part##_chapter##_example-or-topic.png
-part##_chapter##_example-or-topic_before.png
-part##_chapter##_example-or-topic_after.png
+part#_chapter##_example-or-topic.png
+part#_chapter##-##_example-or-topic_input.png
+part#_chapter##-##_example-or-topic_result.png
 portfolio_raytracer_topic.png
 ```
 
 예시:
 
 ```text
-part02_chapter04_depth-buffer.png
-part03_chapter13_shadow-mapping-pcf.png
-part04_chapter16_stable-fluids.png
+part1_chapter01-02_02_bloom_input.jpg
+part1_chapter01-02_02_bloom_result.png
+part2_chapter04_depth-buffer.png
+part3_chapter10-13_shadow-mapping-pcf.png
+part4_chapter14-20_stable-fluids.png
 portfolio_raytracer_reflection.png
 ```
 
 기준:
 
-- Part/Chapter/Portfolio 기준을 우선한다.
-- example 또는 Topic이 드러나는 짧은 이름을 붙인다.
-- before/after 비교가 필요한 경우 접미사로 구분한다.
+- Part 번호는 실제 폴더명과 맞춰 `part1`, `part2`처럼 쓴다.
+- Chapter 번호는 두 자리로 쓰고, 범위는 `chapter01-02`처럼 하이픈으로 연결한다.
+- example 번호가 있으면 `02_bloom`처럼 유지한다.
+- before/after보다 input/result 관계가 명확한 예제는 `_input`, `_result` 접미사를 우선한다.
 - branch 이름 또는 PR 번호를 파일명 기준으로 삼지 않는다.
 
 ## Capture/Result Checklist

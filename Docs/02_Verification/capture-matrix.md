@@ -8,16 +8,16 @@
 - capture/result 후보는 후보 검수와 승격 검수를 별도로 통과해야 한다.
 - 강의명, 강사명, 워터마크, 개인 식별자, 계정, 로컬 경로가 보이면 `확보`가 아니라 `보류` 또는 `제외`로 기록한다.
 
-| 범위 | 최소 capture/result | 대표 capture/result | video | 상태 | 비고 |
-| --- | --- | --- | --- | --- | --- |
-| Part1_Chapter01-02 | 확보 | 확보 | 미확인 | 부분 확인 | `02_Bloom` result image를 `Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png`로 승격함. `01_DX11InitAndImGui`는 미확인 |
-| Part1_Chapter03 | 미확인 | 미확인 | 미확인 | 미확인 | ray tracing 단계별 결과 후보 |
-| Part2_Chapter04 | 미확인 | 미확인 | 미확인 | 미확인 | rasterization, depth buffer 후보 |
-| Part2_Chapter05-08 | 미확인 | 미확인 | 미확인 | 미확인 | modeling, IBL, bloom 후보 |
-| Part3_Chapter09 | 미확인 | 미확인 | 미확인 | 미확인 | interaction 영상 후보 |
-| Part3_Chapter10-13 | 미확인 | 미확인 | 미확인 | 미확인 | PBR, shadow 후보 |
-| Part4_Chapter14-20 | 미확인 | 미확인 | 미확인 | 미확인 | 구조 확인 후 후보 확정 |
-| Portfolio_RayTracer | 미확인 | 미확인 | 미확인 | 미확인 | 대표 포트폴리오 후보 |
+| 범위 | 최소 capture/result | 대표 capture/result | video | 비고 |
+| --- | --- | --- | --- | --- |
+| Part1_Chapter01-02 | 확보 | 확보 | 제외 | `02_Bloom` input/result image를 `Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg`, `Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png`로 승격함. `01_DX11InitAndImGui` capture/result는 제외함 |
+| Part1_Chapter03 | 미확인 | 미확인 | 미확인 | ray tracing 단계별 결과 후보 |
+| Part2_Chapter04 | 미확인 | 미확인 | 미확인 | rasterization, depth buffer 후보 |
+| Part2_Chapter05-08 | 미확인 | 미확인 | 미확인 | modeling, IBL, bloom 후보 |
+| Part3_Chapter09 | 미확인 | 미확인 | 미확인 | interaction 영상 후보 |
+| Part3_Chapter10-13 | 미확인 | 미확인 | 미확인 | PBR, shadow 후보 |
+| Part4_Chapter14-20 | 미확인 | 미확인 | 미확인 | 구조 확인 후 후보 확정 |
+| Portfolio_RayTracer | 미확인 | 미확인 | 미확인 | 대표 포트폴리오 후보 |
 
 ## 갱신 기준
 

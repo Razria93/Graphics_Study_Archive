@@ -20,7 +20,7 @@
 
 ## Part/Chapter Demo
 
-| 범위 | 문서 위치 | 상태 |
+| 범위 | 문서 위치 | 문서 상태 |
 | --- | --- | --- |
 | Part1 Chapter01-02 | [Part1_Chapter01-02](Part1_Chapter01-02/demo-index.md) | 골격 작성 |
 | Part1 Chapter03 | [Part1_Chapter03](Part1_Chapter03/demo-index.md) | 골격 작성 |
@@ -31,12 +31,23 @@
 | Part4 Chapter14-20 | [Part4_Chapter14-20](Part4_Chapter14-20/demo-index.md) | 골격 작성 |
 | Portfolio RayTracer | [Portfolio_RayTracer](Portfolio_RayTracer/demo-index.md) | 골격 작성 |
 
-## 상태값
+## 문서 상태값
+
+Part/Chapter 표의 `문서 상태`는 capture/result 상태가 아니라 문서 골격의 작성 상태를 뜻한다.
+
+| 상태 | 의미 |
+| --- | --- |
+| `골격 작성` | 기본 문서만 있으며 실제 demo 정리는 아직 부족함 |
+| `작성 중` | 대표 예제와 capture/result 연결을 정리하는 중 |
+| `작성 완료` | 현재 범위의 demo 설명과 연결 문서가 정리됨 |
+| `후속 필요` | 추가 검증, capture/result, public 판단이 남음 |
+
+## Capture/Result 상태값
 
 | 상태 | 의미 |
 | --- | --- |
 | `미확인` | 아직 실행 또는 capture를 확인하지 않음 |
-| `후보` | demo 후보로 선정했지만 capture/result가 없음 |
+| `후보` | demo 후보로 선정했지만 capture/result가 아직 없음 |
 | `확보` | 검토된 capture/result가 있음 |
 | `보류` | 구조, 권리, 품질 문제로 보류함 |
 | `제외` | demo 후보에서 제외함 |
