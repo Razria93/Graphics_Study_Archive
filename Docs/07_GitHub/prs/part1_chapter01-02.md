@@ -2,25 +2,40 @@
 
 ## 요약
 
-이 PR은 `Part1_Chapter01-02`의 `01_DX11InitAndImGui`와 `02_Bloom`을 기준으로 새 문서화 workflow를 검증한다.
+이 PR은 `Part1_Chapter01-02`의 DirectX11 초기화와 CPU bloom 예제를 문서화한다. Chapter README를 장 단위 지도 역할로 정리하고, 예제별 상세 설명은 각 코드 폴더 README에 둔다.
 
-예제 README는 코드 폴더에 두고, Topic, Verification, Demo, Publication 문서는 `Docs` 산출물 축으로 연결한다. `02_Bloom`은 original input과 bloom result를 함께 보여주어 capture/result가 README와 PR body에 어떻게 연결되는지 확인한다.
+`02_Bloom`은 original input과 bloom result를 함께 보여주어 capture/result가 README, Demo, Verification, PR body로 연결되는 흐름을 검증한다. 이 PR body는 상세 설명을 복제하지 않고 reviewer가 볼 핵심 요약과 링크만 제공한다.
+
+## 범위
+
+- Chapter: `Part1_Chapter01-02`
+- 대표 예제: `01_DX11InitAndImGui`, `02_Bloom`
+- 문서 범위: Chapter README, Example README, Topic, Verification, Demo, Publication 후보, PR body 후보
+- 제외 범위: Part1 Chapter03, `Portfolio_RayTracer`, public repo 게시 확정
 
 ## 핵심 개념
 
-| 개념 | 설명 | 문서 |
-| --- | --- | --- |
-| DirectX11 initialization | Win32 window, device, device context, swap chain, render target view를 구성하는 최소 렌더링 기반이다. | `Part1_Chapter01-02/01_DX11InitAndImGui/README.md` |
-| Dynamic texture upload | CPU에서 만든 pixel buffer를 `Map` / `memcpy` / `Unmap`으로 GPU texture에 업로드하고 pixel shader에서 샘플링한다. | `Part1_Chapter01-02/01_DX11InitAndImGui/README.md` |
-| Bloom post-processing | threshold로 밝은 영역을 분리하고 Gaussian blur를 적용한 뒤 원본 이미지에 더해 glow를 만든다. | `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md` |
-| Capture/result 연결 | 실행 결과 이미지를 `Docs/_assets/captures`로 승격하고 README, Demo, Publication 후보와 연결한다. | `Docs/03_Demos/Part1_Chapter01-02/demo-index.md` |
+- DirectX11 initialization: Win32 window, device, device context, swap chain, render target view를 구성하는 최소 렌더링 기반이다. 자세한 흐름은 `01_DX11InitAndImGui` README에서 확인한다.
+- Dynamic texture upload: CPU에서 만든 pixel buffer를 GPU texture에 업로드하고 pixel shader에서 샘플링하는 흐름이다. 두 예제 모두 CPU-side image data와 렌더링 파이프라인의 연결을 보여준다.
+- Bloom post-processing: 밝은 영역을 분리하고 blur 후 원본에 더해 glow를 만드는 후처리 흐름이다. 자세한 개념은 `PostProcessingAndBloom` Topic으로 연결한다.
+- Capture/result 연결: `02_Bloom`의 input/result 이미지를 `Docs/_assets/captures`로 승격하고 Demo, Verification, Publication 후보와 연결한다.
 
 ## 대표 예제
 
-| 예제 | 설명 | README | Demo |
-| --- | --- | --- | --- |
-| `01_DX11InitAndImGui` | DirectX11 device/swap chain/render target과 ImGui overlay를 구성하는 기반 예제다. | `Part1_Chapter01-02/01_DX11InitAndImGui/README.md` | 별도 capture/result 없음 |
-| `02_Bloom` | CPU bloom 처리 결과를 DirectX11 dynamic texture로 업로드해 표시하는 post-processing 예제다. | `Part1_Chapter01-02/02_Bloom/README.md` | `Docs/03_Demos/Part1_Chapter01-02/demo-index.md` |
+### 01_DX11InitAndImGui
+
+이 예제는 이후 예제의 DirectX11 실행 기반을 만든다. device/swap chain/render target, dynamic texture upload, ImGui overlay 흐름을 확인하는 기반 예제이며, 별도 capture/result는 만들지 않는다.
+
+- README: `Part1_Chapter01-02/01_DX11InitAndImGui/README.md`
+- Verification: `Docs/02_Verification/Part1_Chapter01-02/verification-index.md`
+
+### 02_Bloom
+
+이 예제는 CPU에서 bloom 결과 이미지를 만든 뒤 DirectX11 dynamic texture로 표시한다. original input과 bloom result를 함께 보여주므로 Chapter01-02의 대표 demo로 사용한다.
+
+- README: `Part1_Chapter01-02/02_Bloom/README.md`
+- Topic: `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md`
+- Demo: `Docs/03_Demos/Part1_Chapter01-02/demo-index.md`
 
 ## 검증
 
@@ -55,6 +70,7 @@ CPU bloom 처리 후 생성된 result image다. 밝은 영역이 주변으로 �
 
 ## 문서
 
+- Chapter README: `Part1_Chapter01-02/README.md`
 - Example README: `Part1_Chapter01-02/01_DX11InitAndImGui/README.md`, `Part1_Chapter01-02/02_Bloom/README.md`
 - Topic: `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md`
 - Verification: `Docs/02_Verification/Part1_Chapter01-02/verification-index.md`
