@@ -2,7 +2,7 @@
 
 ## 요약
 
-이 Issue가 추적하는 Work Unit의 핵심을 1~2문장으로 요약한다.
+이 Issue가 추적하는 Work Unit의 핵심을 1~2문장으로 요약한다. source docs를 요약해 범위와 완료 조건만 남긴다.
 
 ## 목표
 

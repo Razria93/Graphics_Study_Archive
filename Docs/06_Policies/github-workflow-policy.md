@@ -127,6 +127,19 @@ commit은 사용자가 명시적으로 요청했거나 현재 대화에서 커�
 - 변경 범위가 여러 작업 단위로 섞여 분리 판단이 필요하다.
 - 사용자 결정이 필요한 파일이나 원격 상태 변경이 포함되어 있다.
 - 리뷰 대응을 마지막 커밋으로 남기기로 한 경우처럼 의도된 커밋 순서가 남아 있다.
+
+## Source Docs와 GitHub Body 경계
+
+`Docs/00_Index`부터 `Docs/06_Policies`와 `Docs/_assets`는 GitHub body의 source docs다. 이 범위에는 archive 정본, 상태 기록, 검증 근거, visual result 파일, 정책을 둔다.
+
+`Docs/07_GitHub`는 source docs를 GitHub Issue, PR, comment body로 요약/재구성하는 staging 공간이다. GitHub body는 source docs의 원문을 복제하지 않고, 게시 목적에 맞는 요약과 링크만 둔다.
+
+기본 갱신 기준:
+
+- 매 작업마다 WorkLog, Plan Progress Comment, PR body 갱신 필요 여부를 확인한다.
+- Work Unit Issue, Topic Issue, Demo comment/Issue, Verification Issue는 독립 추적 가치가 있을 때만 만든다.
+- Verification과 Demo 문서는 GitHub 게시 양식을 고민하는 위치가 아니라 상태와 근거를 관리하는 source docs다.
+- GitHub body를 작성할 때는 source docs를 읽고 public-safe 문장으로 재작성한다.
 ## GitHub body 전환 기준
 
 다음 전환은 remote 상태를 바꾸지 않으므로 agent가 진행할 수 있다. 단, 전환 결과와 validator 결과를 사용자에게 보고한다.
@@ -214,7 +227,7 @@ PR body 작성 기준:
 
 ## GitHub body 유형
 
-GitHub에 게시하는 Markdown body는 `Docs/07_GitHub` 파일을 기준으로 검수한다. 정본 정책과 상세 설명은 `Docs`에 두고, GitHub body는 요약과 링크 중심으로 작성한다.
+GitHub에 게시하는 Markdown body는 `Docs/07_GitHub` 파일을 기준으로 검수한다. source docs와 상세 설명은 `Docs/00_Index`부터 `Docs/06_Policies`, `Docs/_assets`에 두고, GitHub body는 요약과 링크 중심으로 재구성한다.
 
 | 유형 | 위치 | 최소 책임 |
 | --- | --- | --- |

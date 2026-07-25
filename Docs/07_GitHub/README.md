@@ -1,6 +1,6 @@
 # GitHub Bodies
 
-이 폴더는 GitHub Issue, PR, comment에 게시할 Markdown body의 tracked 정본을 둔다.
+이 폴더는 GitHub Issue, PR, comment에 게시할 Markdown body의 tracked 정본을 둔다. `Docs/00_Index`부터 `Docs/06_Policies`와 `Docs/_assets`는 source docs이고, 이 폴더는 source docs를 GitHub body로 요약/재구성하는 staging 공간이다.
 
 `Docs/05_Publication`은 public subset 공개 가능성 판단을 맡고, 이 폴더는 private archive repo의 GitHub 게시 후보를 맡는다. 두 책임은 분리한다.
 
@@ -19,6 +19,18 @@
 | [issues](issues/README.md) | Work Unit Issue와 필요한 보조 Issue body 후보 |
 | [comments](comments/README.md) | Plan Issue 진행 댓글, WorkLog 댓글, PR comment 후보 |
 
+
+## Source Docs와의 관계
+
+```text
+Docs/00_Index~06_Policies + Docs/_assets
+-> source docs / archive 정본 / 상태 기록 / 근거 자료
+
+Docs/07_GitHub
+-> GitHub Issue / PR / comment body staging
+```
+
+`Docs/07_GitHub`는 source docs를 그대로 복제하지 않는다. GitHub body에는 핵심 요약, 검토 시점의 상태, 필요한 링크만 둔다. 상세 설명과 최신 상태는 README, Topic, Verification, Demo, Publication, WorkLog source docs를 기준으로 확인한다.
 ## local과의 관계
 
 ```text

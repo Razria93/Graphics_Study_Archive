@@ -1,6 +1,6 @@
 # Verification
 
-이 폴더는 build, run, capture, known issue의 최신 상태를 기록하는 정본 위치다. 문서 작성 여부와 실제 검증 여부를 분리해서 기록한다.
+이 폴더는 build, run, capture, known issue의 최신 상태를 기록하는 source docs다. 문서 작성 여부와 실제 검증 여부를 분리해서 기록한다.
 
 ## 책임
 
@@ -9,6 +9,7 @@
 - 실패, 보류, 미확인 항목은 `known-issues.md`에 남긴다.
 - 예제별 상세 검증은 Part/Chapter 하위 `verification-index.md`에서 시작한다.
 - legacy import 기록과 WorkLog는 참고 자료이며 최신 검증 정본이 아니다.
+- GitHub PR/Issue/comment에는 이 폴더의 상세 로그를 복제하지 않고 `Docs/07_GitHub`에서 요약과 링크로 재구성한다.
 
 ## 문서 목록
 

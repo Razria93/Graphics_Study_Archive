@@ -1,5 +1,7 @@
 # Demo Note
 
+이 문서는 Demo source docs 작성용 템플릿이다. GitHub 게시 문장은 `Docs/07_GitHub`에서 이 내용을 요약/재구성한다.
+
 ## 대상
 
 - 루트 코드 폴더:

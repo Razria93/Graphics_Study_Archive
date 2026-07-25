@@ -1,6 +1,6 @@
 # Demos
 
-이 폴더는 demo capture/result 계획과 시연 우선순위의 정본 위치다. 실제 build/run 검증 상태는 `Docs/02_Verification`을 기준으로 하고, 검토된 asset 파일은 `Docs/_assets`에 둔다.
+이 폴더는 demo capture/result 계획과 시연 우선순위의 source docs다. 실제 build/run 검증 상태는 `Docs/02_Verification`을 기준으로 하고, 검토된 asset 파일은 `Docs/_assets`에 둔다.
 
 ## 책임
 
@@ -9,6 +9,7 @@
 - 실제 파일 위치는 `Docs/_assets/captures`, `Docs/_assets/videos`, `Docs/_assets/diagrams`로 연결한다.
 - public 공개 가능성 판단은 `Docs/05_Publication`으로 분리한다.
 - raw capture 후보와 게시 전 검토 메모는 `local/`에 둔다.
+- GitHub 게시 body는 이 폴더에서 직접 작성하지 않고 `Docs/07_GitHub`에서 source docs를 요약/재구성한다.
 
 ## 문서 목록
 
