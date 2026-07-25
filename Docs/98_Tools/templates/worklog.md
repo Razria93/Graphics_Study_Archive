@@ -37,6 +37,17 @@
 | Demo |  |  |
 | Publication |  |  |
 
+## README 갱신 판단
+
+| README | 갱신 여부 | 이유 |
+| --- | --- | --- |
+| Root README |  | 대표 pilot/result, Study Map, archive/public 방향 변경 여부 |
+| Chapter README |  | 예제 목록, 대표 Topic/Demo/Verification, 검증 요약 변경 여부 |
+| Example README |  | 예제 설명, 핵심 코드, capture/result, limitation 변경 여부 |
+| Docs/Folder README |  | 폴더 책임, 하위 문서, 정책 링크 변경 여부 |
+
+README를 갱신하지 않은 경우에도 갱신하지 않은 이유를 남긴다.
+
 ## 검증 요약
 
 - Debug x64 build: 미확인

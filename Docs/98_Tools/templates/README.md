@@ -6,8 +6,8 @@
 
 | 템플릿 | 사용 위치 | 성격 | 비고 |
 | --- | --- | --- | --- |
-| [Example README](example-readme.md) | 코드 폴더 README | tracked 정본 문서용 | 예제 설명, source 확인, 핵심 코드 연결 |
-| [Topic](topic.md) | `Docs/01_Topics` | tracked 정본 문서용 | graphics concept, source 확인, 구현 연결 |
+| [Example README](example-readme.md) | 코드 폴더 README | tracked 정본 문서용 | 예제 설명, 핵심 코드, 관련 문서 연결 |
+| [Topic](topic.md) | `Docs/01_Topics` | tracked 정본 문서용 | graphics concept, 구현 연결, 관련 예제 |
 | [Verification Note](verification-note.md) | `Docs/02_Verification` | tracked 정본 문서용 | build/run/capture 확인 기록 |
 | [Demo Note](demo-note.md) | `Docs/03_Demos` 또는 `local/<work-unit>` | tracked/local 검토용 | demo 목표, capture/result 후보, generated image provenance 기록 |
 | [WorkLog](worklog.md) | `Docs/04_WorkLogs` | tracked 정본 문서용 | Work Unit 마감 요약과 source review 요약 |
@@ -20,6 +20,7 @@
 
 - tracked 정본 문서용 템플릿은 해당 산출물 폴더 책임만 담는다.
 - local-only 템플릿은 tracked Docs로 그대로 복사하지 않는다.
+- README 계층별 책임과 갱신 기준은 `../../06_Policies/canonical-docs-policy.md`를 따른다.
 - 상세 정책은 `Docs/06_Policies`를 기준으로 한다.
 - 문체 검수와 stale 경로 검수는 `../validation-tools.md`를 따른다.
 
