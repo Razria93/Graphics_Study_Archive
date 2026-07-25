@@ -181,7 +181,11 @@ Issue에 포함할 항목:
 
 ## PR 책임
 
-PR은 Chapter 또는 Chapter 묶음 단위로 변경 범위, 핵심 개념, 대표 예제, 검증 결과, Demo capture/result, known issue, follow-up을 요약한다. PR 초안은 `local/github/draft/prs`에서 작성할 수 있고, 게시 후보 정본은 `Docs/07_GitHub/prs`에 둔다.
+PR 기본 단위는 Chapter 또는 Chapter 묶음이다. Part는 Plan Issue, WorkLog, milestone, 진행판 단위로 다루고 PR 기본 단위로 사용하지 않는다.
+
+PR body는 README의 미러가 아니라 GitHub review를 위한 요약과 링크 허브다. 상세 설명은 Chapter README, Example README, Topic, Verification, Demo, Publication 정본으로 연결한다. PR body의 검증 상태는 게시 시점 snapshot이며, 최신 검증 정본은 `Docs/02_Verification`에 둔다.
+
+PR 초안은 `local/github/draft/prs`에서 작성할 수 있고, 게시 후보 정본은 `Docs/07_GitHub/prs`에 둔다.
 
 PR에 포함할 항목:
 
@@ -195,6 +199,13 @@ PR에 포함할 항목:
 - 다음 Work Unit 또는 Issue 후보
 
 Part 단위 PR은 예제가 적고 변경 범위가 작을 때만 예외로 허용한다. Part 전체 진행은 Plan Issue, WorkLog, milestone 성격으로 추적한다.
+
+PR body 작성 기준:
+
+- `핵심 개념`과 `대표 예제`는 문단과 짧은 리스트를 기본으로 한다.
+- 표는 검증, 상태, 링크 매트릭스처럼 짧은 정보를 비교할 때만 사용한다.
+- 파일 변경 목록은 구조 정리 PR처럼 파일 이동 자체가 핵심인 경우에만 중심 섹션으로 둔다.
+- public 공개 판단은 PR body에서 단정하지 않고 `Docs/05_Publication`으로 연결한다.
 
 ## GitHub body 유형
 

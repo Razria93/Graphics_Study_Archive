@@ -9,6 +9,9 @@
 - GitHub 게시 후보만 둔다.
 - 내부 조사 메모, draft 문구, local-only 경로, 민감 정보는 남기지 않는다.
 - 상세 설명은 Example README, Topic, Verification, Demo, Publication 정본으로 링크한다.
+- PR body는 README를 미러링하지 않고 GitHub review용 요약과 링크 허브로 작성한다.
+- PR 기본 단위는 Chapter 또는 Chapter 묶음이며, Part 단위 PR은 예외로만 사용한다.
+- `핵심 개념`과 `대표 예제`는 표보다 문단과 짧은 리스트를 기본으로 한다.
 - `Docs/05_Publication`을 PR body 저장소처럼 사용하지 않는다.
 
 ## 승인 기준

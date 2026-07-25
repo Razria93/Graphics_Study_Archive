@@ -29,6 +29,7 @@
 | 산출물 | 위치 | 책임 |
 | --- | --- | --- |
 | 전체 진입점과 map | `Docs/00_Index/` | 산출물 위치와 작업 흐름 안내 |
+| Chapter README | `Part*_Chapter*/README.md` | Chapter 또는 Chapter 묶음의 목표, 예제 구성, 대표 Topic, Demo, Verification 링크 |
 | 예제별 README | `Part*_Chapter*/ExampleName/README.md` | 예제 목적, 핵심 개념, 코드 위치, 실행 요약 |
 | Part별 예제 지도 | `Part*_Chapter*/README.md`, `Docs/00_Index/study-map.md` | 예제 목록과 대표 예제 안내 |
 | graphics 개념 | `Docs/01_Topics/` | 여러 예제를 관통하는 Topic 설명 |
@@ -38,8 +39,27 @@
 | 조사 판단 요약 | `Docs/04_WorkLogs/reviews/` | local 상세 조사에서 재사용 가능한 결론과 승격/제외 분류 요약 |
 | public subset 판단 | `Docs/05_Publication/` | 공개 후보, 제외, redaction 기준 |
 | 반복 적용 정책 | `Docs/06_Policies/` | repo 운영과 문서 작성 규칙 |
+| GitHub 게시 후보 | `Docs/07_GitHub/` | Issue, PR, comment body의 게시 후보 정본 |
 | 도구와 템플릿 | `Docs/98_Tools/` | validator, template, troubleshooting |
 | 과거 기록 | `Docs/99_Legacy/` | import 기록과 이전 문서 구조 |
+
+## 문서 위계
+
+외부 독자와 신규 agent는 아래 순서로 문서를 읽는다.
+
+```text
+Root README / BUILD / TOPICS / DEMOS
+-> Chapter README
+-> Example README
+-> Topic / Verification / Demo / Publication
+-> GitHub PR body
+```
+
+Chapter README는 해당 Chapter 또는 Chapter 묶음의 지도 역할을 한다. 본문 설명을 길게 반복하지 않고 목표, 예제 구성, 핵심 Topic, 대표 Demo, 검증 상태, 관련 문서 링크를 제공한다.
+
+Example README는 예제 하나의 설명 정본이다. 목적, 구현 흐름, 핵심 코드, build/run 요약, capture/result, limitation을 둔다.
+
+GitHub PR body는 README의 미러가 아니다. 게시 시점에 reviewer가 볼 요약과 링크만 제공하고, 최신 상태 정본은 README, Topic, Verification, Demo, Publication 문서에 둔다.
 
 ## 작성 기준
 
