@@ -11,7 +11,7 @@
 - Chapter: `Part1_Chapter01-02`
 - 대표 예제: `01_DX11InitAndImGui`, `02_Bloom`
 - 문서 범위: Root README, Chapter README, Example README, Topic, Verification, Demo, Publication 후보, README 정책, PR body 후보
-- 제외 범위: Part1 Chapter03, `Portfolio_RayTracer`, public repo 게시 확정
+- 제외 범위: Part1 Chapter03, `Portfolio_RayTracer`, public subset 게시 확정
 
 ## 핵심 개념
 
@@ -66,7 +66,7 @@ CPU bloom 처리 후 생성된 result image다. 밝은 영역이 주변으로 �
 
 - `01_DX11InitAndImGui`는 기반 렌더 루프 설명용 예제로 별도 capture/result를 만들지 않는다.
 - `02_Bloom`은 GPU multi-pass bloom pipeline이 아니라 CPU image processing 결과를 DirectX11 dynamic texture로 표시하는 예제다.
-- public repo 게시 여부는 아직 확정하지 않는다.
+- public subset 게시 여부는 아직 확정하지 않는다.
 - GitHub Issue/PR 번호는 아직 없다.
 
 ## 문서
