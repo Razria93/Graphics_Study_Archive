@@ -4,6 +4,10 @@
 
 이 문서는 `02_Bloom` 예제를 기준으로 bloom 후처리의 개념과 DirectX11 texture 표시 흐름을 정리한다. `02_Bloom`은 GPU shader pass로 bloom을 계산하는 구조가 아니라, CPU에서 bloom 결과 이미지를 만든 뒤 DirectX11 texture로 업로드해 표시하는 구조다.
 
+## 책임 범위
+
+이 Topic 문서는 bloom과 dynamic texture upload의 개념, pipeline 위치, 여러 예제로 확장 가능한 설명을 맡는다. `02_Bloom`의 build/run 상태, capture/result, 파일별 구현 요약은 코드 폴더 README와 Verification/Demo 문서를 기준으로 확인한다.
+
 ## Bloom 처리 단계
 
 | 단계 | 설명 |
@@ -32,7 +36,7 @@ Bloom의 최종 결과는 blur된 밝은 영역만 보여주는 것이 아니라
 
 CPU에서 계산한 픽셀은 `D3D11_USAGE_DYNAMIC` texture에 `Map/Unmap`으로 전달된다. 이후 pixel shader는 이 texture를 shader resource로 샘플링해 화면에 표시한다. 이 흐름은 CPU image processing 결과를 DirectX11 pipeline에 연결하는 기본 패턴으로 볼 수 있다.
 
-## 02_Bloom에서 확인할 코드
+## 예제 연결 포인트
 
 | 코드 | 역할 |
 | --- | --- |

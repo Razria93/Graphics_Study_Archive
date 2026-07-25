@@ -41,13 +41,13 @@
 
 ## Build And Run
 
-| 항목 | 상태 | 비고 |
+| 항목 | 결과 | 비고 |
 | --- | --- | --- |
-| Solution | 확인 | `02_Bloom.sln` |
-| Debug x64 build | 확인 | MSBuild 17.14로 `x64/Debug/02_Bloom.exe` 생성 확인 |
-| Debug x64 run | 확인 | 실행 후 5초 이상 유지, `result.png` 생성, 종료 코드 0 |
-| Release x64 build/run | 확인 | `x64/Release/02_Bloom.exe` 생성과 실행 확인 |
-| Capture | 확인 | original input과 bloom result 비교 이미지 연결 |
+| Solution | 존재 | `02_Bloom.sln` |
+| Debug x64 build | 성공 | MSBuild 17.14로 `x64/Debug/02_Bloom.exe` 생성을 확인함 |
+| Debug x64 run | 성공 | 실행 후 5초 이상 유지, `result.png` 생성, 종료 코드 0 |
+| Release x64 build/run | 성공 | `x64/Release/02_Bloom.exe` 생성과 실행을 확인함 |
+| Capture/Result | 확보 | original input과 bloom result 비교 이미지 연결 |
 
 ## Capture/Result
 
@@ -72,7 +72,7 @@
 
 - GPU shader 기반 multi-pass bloom pipeline은 아니다.
 - HDR render target, tone mapping, emissive material 기반 bloom은 다루지 않는다.
-- Debug/Release x64 build와 run은 확인했다. ChatGPT 생성 입력 이미지로 `result.png`를 재생성했고, 육안상 강의명/강사명/워터마크/개인 식별자는 보이지 않는다.
+- Debug/Release x64 build와 run은 성공했다. ChatGPT 생성 입력 이미지로 `result.png`를 재생성했고, 육안상 강의명/강사명/워터마크/개인 식별자는 보이지 않는다.
 
 ## Related Docs
 

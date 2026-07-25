@@ -10,6 +10,7 @@
 | Ray tracing basics | Part1 ray tracing steps | 높음 |
 | Rasterization | Part2 rasterization steps | 높음 |
 | DirectX11 pipeline | Part2 Chapter05-08 | 높음 |
+| Post-processing and bloom | Part1 Chapter01-02 `02_Bloom` | 높음 |
 | Texturing and mapping | Part3 texturing steps | 높음 |
 | PBR and IBL | Part3 PBR steps | 높음 |
 | Shadows | Part3 light and shadow steps | 높음 |
