@@ -43,4 +43,4 @@
 - Capture 상태: `Docs/02_Verification/capture-matrix.md`
 - Build/run 상태: `Docs/02_Verification/build-run-matrix.md`
 - 공개 판단: `Docs/05_Publication`
-- GitHub 게시 후보: `local/github/public`
+- GitHub 게시 후보: `Docs/07_GitHub`

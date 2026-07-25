@@ -42,7 +42,7 @@
 
 - Issue: 예정
 - PR: 예정
-- Draft: `local/github/drafts`
+- Draft: `local/github/draft`
 - Snapshot: `local/github/snapshots`
 
 ## Known Issue

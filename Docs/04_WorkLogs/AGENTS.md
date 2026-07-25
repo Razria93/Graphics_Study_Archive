@@ -16,7 +16,8 @@
 - 전체 목록은 `work-unit-index.md`에 둔다.
 - Issue/PR 연결은 `issue-pr-index.md`에 둔다.
 - Work Unit별 마감 기록은 `WU-*.md`에 둔다.
-- 실제 GitHub 초안은 `local/github/draft`에 둔다.
+- GitHub 게시 후보 정본은 `Docs/07_GitHub`에 둔다.
+- `local/github/draft`는 임시 초안으로만 사용한다.
 
 ## 문체
 

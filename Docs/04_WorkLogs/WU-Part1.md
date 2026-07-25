@@ -20,7 +20,7 @@
 | README 이관 | 확인 | `02_Bloom` README 정본을 코드 폴더로 이동했다. |
 | build/run | 확인 | Debug/Release x64 build와 run을 확인했다. |
 | capture/result | 확인 | ChatGPT 생성 입력 이미지로 `result.png` 재생성 확인. input/result 비교 이미지를 `Docs/_assets/captures`에 승격했다. |
-| Issue/PR | draft | 후속 Part1 pilot 적용 작업에서 `Docs/07_GitHub/prs/part1_chapter01-02.md` 게시 후보로 승격한다. 실제 게시 여부는 사용자 승인 후 결정한다. |
+| Issue/PR | ready | `Docs/07_GitHub/prs/part1_chapter01-02.md` 게시 후보를 준비했다. 실제 게시 여부는 사용자 승인 후 결정한다. |
 
 ## 02_Bloom 작업 요약
 
@@ -49,10 +49,10 @@
 - Debug/Release x64 build/run과 `result.png` 생성은 확인했다.
 - `result.png`는 ChatGPT 생성 입력 이미지로 재생성했고 육안상 식별자는 보이지 않는다. input/result 비교 이미지를 `Docs/_assets/captures`에 승격했다.
 - Part1 Work Unit 자체는 아직 진행 중이다.
-- GitHub PR body 후보는 후속 Part1 pilot 적용 작업에서 `Docs/07_GitHub/prs/part1_chapter01-02.md`에 준비한다.
+- GitHub PR body 후보는 `Docs/07_GitHub/prs/part1_chapter01-02.md`에 준비했다.
 
 ## 다음 작업
 
 1. Part1의 다음 예제에 같은 workflow를 적용한다.
 2. `02_Bloom` result image의 public 후보 여부를 `Docs/05_Publication` 기준으로 검토한다.
-3. Part1 pilot PR 게시 여부를 사용자 검토 후 결정한다.
+3. Part1 Chapter01-02 PR 게시 여부를 사용자 검토 후 결정한다.

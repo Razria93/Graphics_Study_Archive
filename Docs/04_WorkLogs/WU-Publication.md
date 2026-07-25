@@ -4,8 +4,8 @@
 
 - Work Unit: `WU-Publication`
 - 대상 코드: 없음
-- 대상 문서: `Docs/05_Publication`, `Docs/03_Demos`, `Docs/04_WorkLogs`, `local/github`
-- 주요 Topic 후보: Publication, redaction, excluded material, Issue/PR publication 후보
+- 대상 문서: `Docs/05_Publication`, `Docs/03_Demos`, `Docs/07_GitHub`, `Docs/04_WorkLogs`
+- 주요 Topic 후보: Publication, redaction, excluded material, GitHub 게시 후보
 
 ## 상태
 
@@ -42,7 +42,7 @@
 
 - Issue: 예정
 - PR: 예정
-- Draft: `local/github/drafts`
+- Draft: `local/github/draft`
 - Snapshot: `local/github/snapshots`
 
 ## Known Issue

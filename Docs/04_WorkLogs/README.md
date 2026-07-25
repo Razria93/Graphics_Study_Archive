@@ -8,7 +8,7 @@
 - 갱신한 Example, Topic, Verification, Demo, Publication 문서를 링크한다.
 - 검증 요약, 미확인 항목, known issue, follow-up을 남긴다.
 - GitHub Issue/PR draft의 출발점이 되는 요약을 둔다.
-- GitHub 게시 본문 원문은 `local/github`에 둔다.
+- GitHub 게시 후보 정본은 `Docs/07_GitHub`에 둔다.
 
 ## 문서 목록
 
