@@ -12,6 +12,9 @@ WorkLog의 검증, demo, publication 요약은 마감 당시 상태를 압축한
 - 최신 검증, demo, publication 상태는 각 정본 문서로 연결한다.
 - GitHub Issue/PR 상태 연결을 둔다.
 - GitHub 게시 후보 정본은 `Docs/07_GitHub`에 둔다.
+- WorkLog는 GitHub 게시물이 아니다.
+- WorkLog는 Chapter/Bundle 완료 댓글과 PR body의 입력 자료다.
+- WorkLog 원문을 GitHub Issue나 댓글에 그대로 복제하지 않는다.
 
 ## 문서 목록
 

@@ -148,8 +148,8 @@ Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.
 - public subset 판단이 `Docs/05_Publication`에 기록되어 있다.
 - 작업 결정, 마감 snapshot, follow-up이 `Docs/04_WorkLogs`에 기록되어 있다.
 - GitHub Issue/PR을 운영하는 Work Unit이면 `Docs/07_GitHub` 후보와 validator 결과가 준비되어 있다.
-- Plan Issue 누적 진행 댓글 또는 WorkLog 댓글 갱신 필요 여부가 판단되어 있다.
-- `Docs/04_WorkLogs/work-unit-github-index.md`에 Issue/PR/Plan comment 상태가 반영되어 있다.
+- Progress Issue 누적 진행 댓글 및 Chapter/Bundle 완료 댓글 갱신 필요 여부가 판단되어 있다.
+- `Docs/04_WorkLogs/work-unit-github-index.md`에 Issue/PR/Progress comment 상태가 반영되어 있다.
 - `Docs/00_Index` map이 필요한 범위만큼 갱신되어 있다.
 - Root, Chapter, Example, Docs, Folder README의 갱신 필요 여부가 판단되어 있고, 필요한 README만 갱신되어 있다.
 - README를 갱신하지 않은 경우 그 이유가 WorkLog 또는 검토 보고에 남아 있다.

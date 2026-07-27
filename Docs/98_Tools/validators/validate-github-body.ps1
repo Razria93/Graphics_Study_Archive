@@ -249,17 +249,65 @@ function Test-PublicBody {
 
 	Test-CommonPublicRules -Path $RelativePath -Content $Content
 
+	if ($Content -match '(?im)\bTODO\b|\bTBD\b|<[^>]+>') {
+		Add-Failure $RelativePath "contains placeholder text (TODO/TBD/<...>)"
+	}
+
     foreach ($Section in $RequiredSections) {
         $Heading = "## $Section"
         if (-not ($Lines | Where-Object { $_ -eq $Heading })) {
             Add-Failure $RelativePath "missing required section: ## $Section"
         }
+		else {
+			$SectionLines = Get-Section -Lines $Lines -Heading $Heading
+			if ($null -eq $SectionLines -or $SectionLines.Count -eq 0) {
+				Add-Failure $RelativePath "required section is empty: $Heading"
+			}
+			else {
+				$MeaningfulLines = @($SectionLines | Where-Object {
+					$Trimmed = $_.Trim()
+					-not [string]::IsNullOrWhiteSpace($Trimmed) -and $Trimmed -ne "-"
+				})
+
+				if ($MeaningfulLines.Count -eq 0) {
+					Add-Failure $RelativePath "required section has no meaningful content: $Heading"
+				}
+			}
+		}
     }
 
 	Test-SectionOrder -Path $RelativePath -Lines $Lines -RequiredHeadings ($RequiredSections | ForEach-Object { "## $_" })
 
 	if ($RequireScreenshots) {
 		Test-ScreenshotsSection -Path $RelativePath -Lines $Lines -RequireGitHubImageUrl $RequireGitHubImageUrl
+	}
+}
+
+function Test-CommentBodyRules {
+	param(
+		[System.IO.FileInfo]$File,
+		[string]$Content,
+		[string[]]$Lines
+	)
+
+	$RelativePath = Get-RelativePath $File.FullName
+	if ($Content -match '(?m)^#\s+') {
+		Add-Failure $RelativePath "comment body must not contain H1 heading"
+	}
+
+	$ThisDoc = New-Text @(0xC774, 0x20, 0xBB38, 0xC11C, 0xB294)
+	$CandidateBody = New-Text @(0xD6C4, 0xBCF4, 0x20, 0xBCF8, 0xBB38)
+	$PostingCandidate = New-Text @(0xAC8C, 0xC2DC, 0x20, 0xD6C4, 0xBCF4)
+	$InternalGuidePatterns = @(
+		$ThisDoc,
+		$CandidateBody,
+		$PostingCandidate
+	)
+
+	foreach ($Pattern in $InternalGuidePatterns) {
+		if ($Content.Contains($Pattern)) {
+			Add-Failure $RelativePath "comment body contains internal guidance phrase: $Pattern"
+		}
 	}
 }
 
@@ -270,10 +318,11 @@ function Test-PlanProgressComment {
 	$Content = Get-Content -Encoding UTF8 $File.FullName -Raw
 	$Lines = $Content -split "`r?`n"
 
-	$ProgressSummary = "MVP " + (New-Text @(0xC9C4, 0xD589, 0x20, 0xC694, 0xC57D))
+	$ProgressSummary = "Graphics Study " + (New-Text @(0xC9C4, 0xD589, 0x20, 0xC694, 0xC57D))
 	$Completed = New-Text @(0xC644, 0xB8CC)
 	$Next = New-Text @(0xC9C4, 0xD589, 0x20, 0xC608, 0xC815)
 	Test-PublicBody -File $File -RequiredSections @($ProgressSummary, $Completed, $Next, "Related PRs") -RequireScreenshots $false
+	Test-CommentBodyRules -File $File -Content $Content -Lines $Lines
 
 	if ($Content -notmatch '(?m)^### Phase ') {
 		Add-Failure $RelativePath "Plan Progress must contain at least one ### Phase heading"
@@ -329,7 +378,7 @@ function Test-PlanProgressComment {
 	}
 }
 
-function Test-PlanFeatureComment {
+function Test-ChapterBundleCompletionComment {
 	param([System.IO.FileInfo]$File)
 
 	$RelativePath = Get-RelativePath $File.FullName
@@ -337,10 +386,15 @@ function Test-PlanFeatureComment {
 	$Lines = $Content -split "`r?`n"
 
 	Test-CommonPublicRules -Path $RelativePath -Content $Content
+	Test-CommentBodyRules -File $File -Content $Content -Lines $Lines
+	if ($Content -match '(?im)\bTODO\b|\bTBD\b|<[^>]+>') {
+		Add-Failure $RelativePath "contains placeholder text (TODO/TBD/<...>)"
+	}
 
-	$ProgressRecord = New-Text @(0xC9C4, 0xD589, 0x20, 0xAE30, 0xB85D)
-	if ($Lines.Count -eq 0 -or $Lines[0] -notmatch ("^## Phase .+ " + [regex]::Escape($ProgressRecord) + "$")) {
-		Add-Failure $RelativePath "Plan Feature Comment must start with '## Phase <n-n> progress record'"
+	$CompletionRecord = New-Text @(0xC644, 0xB8CC, 0x20, 0xAE30, 0xB85D)
+	$KoreanPattern = "^## Phase .+ " + [regex]::Escape($CompletionRecord) + "$"
+	if ($Lines.Count -eq 0 -or $Lines[0] -notmatch $KoreanPattern) {
+		Add-Failure $RelativePath "Chapter/Bundle completion comment must start with the Korean heading pattern: ## Phase <n-n> ..."
 	}
 
 	$FeatureHeadings = New-Object System.Collections.Generic.List[string]
@@ -360,7 +414,8 @@ function Test-PlanFeatureComment {
 
 		$HasContent = $false
 		foreach ($Line in $Section) {
-			if (-not [string]::IsNullOrWhiteSpace($Line)) {
+			$Trimmed = $Line.Trim()
+			if (-not [string]::IsNullOrWhiteSpace($Trimmed) -and $Trimmed -ne "-") {
 				$HasContent = $true
 				break
 			}
@@ -372,16 +427,37 @@ function Test-PlanFeatureComment {
 	}
 
 	if ($Content -match '(?m)^## Screenshots$') {
-		Add-Failure $RelativePath "Plan Feature Comment must not contain ## Screenshots"
+		Add-Failure $RelativePath "Chapter/Bundle completion comment must not contain ## Screenshots"
 	}
 
 	$RelatedPrSection = Get-Section -Lines $Lines -Heading "## Related PR"
 	if ($null -ne $RelatedPrSection) {
 		$RelatedPrText = $RelatedPrSection -join "`n"
-		if ($RelatedPrText -notmatch 'PR #|https://github\.com/.+/pull/[0-9]+') {
-			Add-Failure $RelativePath "Related PR must contain PR # or a pull request URL"
+		$Scheduled = New-Text @(0xC608, 0xC815)
+		if ($RelatedPrText -notmatch 'PR #|https://github\.com/.+/pull/[0-9]+' -and $RelatedPrText -notmatch [regex]::Escape($Scheduled)) {
+			Add-Failure $RelativePath "Related PR must contain PR #, a pull request URL, or 예정"
 		}
 	}
+}
+
+function Test-ProgressIssue {
+	param([System.IO.FileInfo]$File)
+
+	$DefaultPublishingObjects = New-Text @(0xAE30, 0xBCF8, 0x20, 0xAC8C, 0xC2DC, 0x20, 0xAC1D, 0xCCB4)
+	$OptionalIssueCriteria = (New-Text @(0xC120, 0xD0DD, 0x20)) + "Issue " + (New-Text @(0xC0DD, 0xC131, 0x20, 0xAE30, 0xC900))
+
+	$RequiredSections = @(
+		$SummarySection,
+		$GoalSection,
+		("Phase " + $ScopeSection),
+		$DoneCriteriaSection,
+		$DefaultPublishingObjects,
+		$OptionalIssueCriteria,
+		$RelatedDocsSection,
+		$ExcludedScopeSection
+	)
+
+	Test-PublicBody -File $File -RequiredSections $RequiredSections -RequireScreenshots $false
 }
 
 function Test-PrScreenshotComment {
@@ -521,6 +597,7 @@ $ExcludedScopeSection = New-Text @(0xC81C, 0xC678, 0x20, 0xBC94, 0xC704)
 
 $PrRequiredSections = @(
 	$SummarySection,
+	$ScopeSection,
 	$CoreConceptsSection,
 	$RepresentativeExamplesSection,
 	$VerificationSection,
@@ -598,6 +675,11 @@ Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "prs") -Recurse | ForEach
 	Test-PublicBody -File $_ -RequiredSections $PrRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true
 }
 
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "progress-plan.md" | ForEach-Object {
+	++$CheckedFileCount
+	Test-ProgressIssue -File $_
+}
+
 Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "work-unit_*.md" | ForEach-Object {
     ++$CheckedFileCount
     Test-PublicBody -File $_ -RequiredSections $WorkUnitRequiredSections -RequireScreenshots $false
@@ -619,14 +701,9 @@ if (Test-Path $PlanProgressPath) {
 	Test-PlanProgressComment -File (Get-Item $PlanProgressPath)
 }
 
-Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "comments") -Filter "*_worklog.md" | ForEach-Object {
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "comments") -Filter "*_completion.md" | ForEach-Object {
 	++$CheckedFileCount
-	Test-PlanFeatureComment -File $_
-}
-
-Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "comments") -Filter "*_demo.md" | ForEach-Object {
-	++$CheckedFileCount
-	Test-PrScreenshotComment -File $_
+	Test-ChapterBundleCompletionComment -File $_
 }
 
 Get-OptionalMarkdownFiles -Path $GitHubRoot -Recurse | ForEach-Object {
@@ -635,17 +712,30 @@ Get-OptionalMarkdownFiles -Path $GitHubRoot -Recurse | ForEach-Object {
 	}
 
 	$RelativePath = (Get-RelativePath $_.FullName) -replace '\\', '/'
-	$Supported = (
-		$RelativePath -match '/prs/.+\.md$' -or
-		$RelativePath -match '/issues/[^/]+\.md$' -or
-		$RelativePath -match '/comments/plan-progress\.md$' -or
-		$RelativePath -match '/comments/[^/]+_worklog\.md$' -or
-		$RelativePath -match '/comments/[^/]+_demo\.md$'
-	)
-
-	if (-not $Supported) {
-		Add-Warning $RelativePath "unsupported GitHub body path; validator did not apply a body-specific schema"
+	if ($RelativePath -match '/prs/.+\.md$') {
+		return
 	}
+
+	if ($RelativePath -match '/issues/[^/]+\.md$') {
+		$IssueName = [System.IO.Path]::GetFileName($RelativePath)
+		$SupportedIssue = (
+			$IssueName -eq 'progress-plan.md' -or
+			$IssueName -match '^work-unit_.+\.md$' -or
+			$IssueName -match '^topic_.+\.md$' -or
+			$IssueName -match '^verification_.+\.md$'
+		)
+
+		if (-not $SupportedIssue) {
+			Add-Failure $RelativePath "unsupported issue filename schema"
+		}
+		return
+	}
+
+	if ($RelativePath -match '/comments/plan-progress\.md$' -or $RelativePath -match '/comments/[^/]+_completion\.md$') {
+		return
+	}
+
+	Add-Failure $RelativePath "unsupported GitHub body path"
 }
 
 Test-Templates

@@ -11,7 +11,7 @@
 | GitHub 초안 | `local/` 임시 초안 |
 | GitHub 게시 후보 정본 | `Docs/07_GitHub` |
 | 게시 후 실제 게시본과 리뷰 대응 사본 | `local/` 하위 snapshot |
-| Plan Issue 진행판 | GitHub remote, `Docs/07_GitHub/comments` |
+| Progress Issue 진행판 | GitHub remote, `Docs/07_GitHub/issues`와 `Docs/07_GitHub/comments` |
 | 실제 Issue/PR | GitHub remote |
 
 ## 기본 흐름
@@ -48,7 +48,7 @@
 - `gh issue create`, `gh issue edit`, `gh issue close`, `gh issue reopen`
 - `gh pr create`, `gh pr edit`, `gh pr ready`, `gh pr merge`, `gh pr close`
 - `gh pr review`, `gh pr comment`, `gh issue comment`
-- Plan Issue 첫 누적 진행 댓글 또는 WorkLog 댓글 생성/수정
+- Progress Issue 첫 누적 진행 댓글 또는 Chapter/Bundle 완료 댓글 생성/수정
 - Ready for Review 전환
 - remote 상태를 바꾸는 모든 GitHub 작업
 
@@ -136,8 +136,8 @@ commit은 사용자가 명시적으로 요청했거나 현재 대화에서 커�
 
 기본 갱신 기준:
 
-- 매 작업마다 WorkLog, Plan Progress Comment, PR body 갱신 필요 여부를 확인한다.
-- Work Unit Issue, Topic Issue, Demo comment/Issue, Verification Issue는 독립 추적 가치가 있을 때만 만든다.
+- 매 작업마다 WorkLog, 누적 진행 댓글, PR body 갱신 필요 여부를 확인한다.
+- Work Unit Issue, Topic Issue, Demo Issue, Verification Issue는 독립 추적 가치가 있을 때만 만든다.
 - Verification과 Demo 문서는 GitHub 게시 양식을 고민하는 위치가 아니라 상태와 근거를 관리하는 source docs다.
 - GitHub body를 작성할 때는 source docs를 읽고 public-safe 문장으로 재작성한다.
 ## GitHub body 전환 기준
@@ -160,25 +160,25 @@ GitHub 게시
 -> Docs/04_WorkLogs/work-unit-github-index.md 갱신
 ```
 
-## Plan Issue 운영 기준
+## Progress Issue 운영 기준
 
-상위 `[Plan]` Issue는 Graphics Study Archive의 장기 진행판으로 운영한다. Work Unit마다 새 Plan Issue를 만들지 않는다.
+상위 Progress Issue는 Graphics Study Archive의 장기 진행판으로 운영한다. Work Unit마다 새 Progress Issue를 만들지 않는다.
 
-Plan Issue의 책임:
+Progress Issue의 책임:
 
 - 전체 목표와 범위, 제외 대상, 정본 정책 링크를 제공한다.
 - 현재 진행 상황을 첫 누적 진행 댓글로 보여준다.
-- 각 Work Unit 또는 PR 마감 기록을 별도 댓글로 남긴다.
+- 각 Chapter 또는 Chapter 묶음의 마감 기록을 Chapter/Bundle 완료 댓글로 남긴다.
 - 상세 설명과 정본은 `Docs`에 두고, Issue에는 요약과 링크만 둔다.
 
-Plan Issue 댓글은 두 종류로 고정한다.
+Progress Issue 댓글은 두 종류로 고정한다.
 
 | 댓글 유형 | 게시 후보 파일 | 책임 |
 | --- | --- | --- |
 | 누적 진행판 | `Docs/07_GitHub/comments/plan-progress.md` | 완료, 진행 중, 예정 Work Unit과 관련 PR 현황 |
-| WorkLog 마감 댓글 | `Docs/07_GitHub/comments/*_worklog.md` | Work Unit 또는 PR 마감 요약, 검증, 남은 제한, 관련 PR |
+| Chapter/Bundle 완료 댓글 | `Docs/07_GitHub/comments/*_completion.md` | Chapter 또는 Chapter 묶음 마감 요약, 검증, 남은 제한, 관련 PR |
 
-Plan Issue 댓글을 생성하거나 수정하기 전에는 대상 Issue, 사용할 게시 후보 파일, 실행할 `gh` 명령, 예상 변경 요약을 사용자에게 보고하고 승인받는다.
+Progress Issue 댓글을 생성하거나 수정하기 전에는 대상 Issue, 사용할 게시 후보 파일, 실행할 `gh` 명령, 예상 변경 요약을 사용자에게 보고하고 승인받는다.
 
 ## Issue 책임
 
@@ -196,7 +196,7 @@ Issue에 포함할 항목:
 
 ## PR 책임
 
-PR 기본 단위는 Chapter 또는 Chapter 묶음이다. Part는 Plan Issue, WorkLog, milestone, 진행판 단위로 다루고 PR 기본 단위로 사용하지 않는다.
+PR 기본 단위는 Chapter 또는 Chapter 묶음이다. Part는 Progress Issue, WorkLog, milestone, 진행판 단위로 다루고 PR 기본 단위로 사용하지 않는다.
 
 PR body는 README의 미러가 아니라 GitHub review를 위한 요약과 링크 허브다. 상세 설명은 Chapter README, Example README, Topic, Verification, Demo, Publication 정본으로 연결한다. PR body의 검증 상태는 게시 시점 snapshot이며, 최신 검증 정본은 `Docs/02_Verification`에 둔다.
 
@@ -213,7 +213,7 @@ PR에 포함할 항목:
 - 남은 known issue
 - 다음 Work Unit 또는 Issue 후보
 
-Part 단위 PR은 예제가 적고 변경 범위가 작을 때만 예외로 허용한다. Part 전체 진행은 Plan Issue, WorkLog, milestone 성격으로 추적한다.
+Part 단위 PR은 예제가 적고 변경 범위가 작을 때만 예외로 허용한다. Part 전체 진행은 Progress Issue, WorkLog, milestone 성격으로 추적한다.
 
 PR body 작성 기준:
 
@@ -235,11 +235,14 @@ GitHub에 게시하는 Markdown body는 `Docs/07_GitHub` 파일을 기준으로 
 | Work Unit Issue | `Docs/07_GitHub/issues/work-unit_*.md` | Work Unit 범위, 검증 기준, 완료 조건 |
 | Topic Issue | `Docs/07_GitHub/issues/topic_*.md` | 여러 Chapter를 관통하는 Topic 정리 범위와 연결 문서 |
 | Verification Issue | `Docs/07_GitHub/issues/verification_*.md` | build/run/capture 검증 결과와 미확인 항목 |
-| Plan Progress Comment | `Docs/07_GitHub/comments/plan-progress.md` | 전체 진행판 |
-| WorkLog Comment | `Docs/07_GitHub/comments/*_worklog.md` | 작업 마감 기록 |
-| Demo Capture/Result Comment | `Docs/07_GitHub/comments/*_demo.md` | capture/result 보강 |
+| Progress Comment | `Docs/07_GitHub/comments/plan-progress.md` | 전체 진행판 |
+| Chapter/Bundle Completion Comment | `Docs/07_GitHub/comments/*_completion.md` | 작업 마감 기록 |
 
 게시 전 후보에는 `Metadata`, 내부 메모, draft 문구, 존댓말을 남기지 않는다. validator가 지원하는 범위는 `Docs/98_Tools/validators/README.md`를 따른다.
+
+Issue와 PR body는 tracked 후보 본문의 첫 H1을 title source로 사용한다. 실제 `gh issue create`와 `gh pr create` 전에 local 임시 body에서 첫 H1을 제외한 파일을 별도로 만들어 게시한다. comment body는 title이 없으므로 H1을 사용하지 않는다.
+
+누적 진행 댓글은 Progress Issue 당 1개를 유지하고, 새 댓글 생성 대신 기존 댓글을 갱신한다.
 
 ## draft to GitHub body 흐름
 
@@ -258,7 +261,7 @@ GitHub remote에 Issue, PR, comment를 게시하거나 수정한 뒤에는 다�
 - GitHub remote 본문과 `Docs/07_GitHub` 파일의 내용이 일치한다.
 - 게시 후 실제 본문 또는 리뷰 대응 기록이 필요하면 `local/` 하위 snapshot에 남긴다.
 - `Docs/04_WorkLogs`에는 원문이 아니라 요약과 링크만 반영한다.
-- `Docs/04_WorkLogs/work-unit-github-index.md`의 Issue/PR/Plan comment 상태를 갱신한다.
+- `Docs/04_WorkLogs/work-unit-github-index.md`의 Issue/PR/Progress comment 상태를 갱신한다.
 
 ## WorkLog 반영
 

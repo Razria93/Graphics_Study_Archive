@@ -6,7 +6,7 @@
 
 - 기본 PR 단위는 Chapter 또는 Chapter 묶음이다.
 - Part 단위 PR은 예제가 적고 변경 범위가 작을 때만 예외로 허용한다.
-- Part 전체 진행은 Plan Issue, WorkLog, milestone 성격으로 추적한다.
+- Part 전체 진행은 Progress Issue, WorkLog, milestone 성격으로 추적한다.
 
 ## 권장 본문 흐름
 
