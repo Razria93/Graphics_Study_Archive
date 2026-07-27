@@ -23,4 +23,4 @@
 
 ## Related PR
 
-- 예정: Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom PR
+- PR #8 (Draft): Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom

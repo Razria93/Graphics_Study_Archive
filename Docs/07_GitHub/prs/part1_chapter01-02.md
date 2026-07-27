@@ -78,6 +78,7 @@ CPU bloom 처리 후 생성된 result image다. 밝은 영역이 주변으로 �
 - Demo: [Part1_Chapter01-02 demo-index](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/03_Demos/Part1_Chapter01-02/demo-index.md)
 - Publication:
 	- [candidate-list](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/05_Publication/candidate-list.md)
+	- [Demo Issue - Part1 Chapter01-02 Visual And Implementation Guide](https://github.com/Razria93/Graphics_Study_Archive/issues/9)
 
 ## 관련 이슈
 

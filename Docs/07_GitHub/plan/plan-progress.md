@@ -14,7 +14,7 @@ Related PR: 예정
 
 `01_DX11InitAndImGui`와 `02_Bloom`을 기준으로 코드 폴더 README, Topic, Verification, Demo, Publication, PR body 연결 흐름을 검증했다. `02_Bloom`은 input/result 비교 자료를 README와 Demo 문서에 연결해 visual result 승격 흐름을 확인했다.
 
-Related PR: 예정 - Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom PR
+Related PR: PR #8 (Draft) - Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom
 
 ### Phase 2-2. Part1 pilot 게시 모델 정리
 
@@ -28,7 +28,7 @@ Related PR: 예정 - GitHub 게시 workflow 보완 PR
 
 Part1 Chapter01-02 PR 게시와 완료 댓글 반영을 진행한다.
 
-Related PR: 예정 - Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom PR
+Related PR: PR #8 (Draft) - Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom
 
 ### Phase 2-4. Part1 Chapter03 Ray Tracing 예제 정리
 
@@ -44,4 +44,4 @@ Related PR: 예정
 
 ## Related PRs
 
-- 예정: Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom PR
+- PR #8 (Draft): Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom
