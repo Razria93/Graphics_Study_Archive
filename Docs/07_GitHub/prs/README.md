@@ -29,4 +29,6 @@ PR body는 파일 변경 목록보다 이 PR이 설명 가능하게 만든 그�
 
 PR body는 README를 복제하지 않는다. Chapter README와 Example README를 기반으로 작성하되, GitHub reviewer가 볼 요약과 링크만 둔다.
 
+PR body 후보는 첫 H1을 title source로 유지한다. 실제 `gh pr create --title ... --body-file ...` 직전에는 첫 H1을 제외한 임시 body 파일을 `local/` 아래에 따로 만들고, tracked 후보 원본은 수정하지 않는다.
+
 구조 정리 PR처럼 파일 이동 자체가 핵심인 경우에만 `주요 변경` 중심 구성을 예외로 사용할 수 있다. 일반 Chapter/Chapter 묶음 PR은 핵심 개념, 대표 예제, 검증, demo 링크를 기본 흐름으로 둔다.

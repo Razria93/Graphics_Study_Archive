@@ -49,7 +49,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 
 지원 디렉터리와 미보장 범위는 `validators/README.md`를 기준으로 확인한다.
 
-Issue/PR 후보 본문의 첫 H1은 title source로 사용할 수 있다. 실제 게시 전에는 local 임시 body에서 첫 H1을 제외한 파일을 별도로 만들어 사용한다. comment body는 H1을 사용하지 않는다.
+Issue/PR 후보 본문의 첫 H1은 title source로 유지한다. 실제 게시 전에는 local 임시 body에서 첫 H1을 제외한 파일을 별도로 만들어 사용한다. comment body는 H1을 사용하지 않는다.
 
 ## 금지사항
 

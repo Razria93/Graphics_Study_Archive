@@ -32,7 +32,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 - 허용 URL은 `https://github.com/<owner>/<repo>/blob/<branch>/Docs/_assets/captures/<file>?raw=true` 또는 `https://raw.githubusercontent.com/<owner>/<repo>/<branch>/Docs/_assets/captures/<file>` 형식이다.
 - image URL 검사는 형식 검사이며 실제 파일 존재를 보증하지 않는다.
 - template에 특정 Issue 번호가 하드코딩되어 있지 않은지 확인한다.
-- Issue/PR 후보는 첫 H1을 title source로 사용할 수 있다. 실제 게시 전에는 local 임시 body에서 첫 H1을 제외한 파일을 별도로 만든다.
+- Issue/PR 후보는 첫 H1을 title source로 유지한다. 실제 게시 전에는 local 임시 body에서 첫 H1을 제외한 파일을 별도로 만든다.
 
 ## 지원 범위
 
@@ -46,7 +46,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 | `issues/topic_*.md` | Topic issue |
 | `issues/verification_*.md` | Verification issue |
 | `comments/plan-progress.md` | Progress Issue 누적 진행 댓글 |
-| `comments/*_completion.md` | Chapter/Bundle 또는 PR 마감 댓글 |
+| `comments/*_completion.md` | Chapter/Bundle 마감 댓글 |
 
 
 ## Work Unit issue schema

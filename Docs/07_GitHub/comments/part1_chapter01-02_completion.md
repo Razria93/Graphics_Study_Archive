@@ -24,4 +24,3 @@
 ## Related PR
 
 - 예정: Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom PR
-- 댓글 게시 전에는 예정 표기를 실제 PR 번호 또는 PR URL로 교체한다.

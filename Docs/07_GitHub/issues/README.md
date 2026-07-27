@@ -20,6 +20,8 @@ PR 자체를 위한 별도 Issue는 기본으로 만들지 않는다. PR 상태�
 
 Progress Issue는 전체 목표, Phase 범위, 완료 조건, 게시 단위 책임을 관리한다. 상세 내용은 Docs 정본으로 위임하고, Issue에는 요약과 링크만 둔다.
 
+Issue body 후보는 첫 H1을 title source로 유지한다. 실제 `gh issue create --title ... --body-file ...` 직전에는 첫 H1을 제외한 임시 body 파일을 `local/` 아래에 따로 만든다. tracked 후보 원본은 수정하지 않는다.
+
 반복 작성용 템플릿은 `../../98_Tools/templates/progress-issue.md`를 따른다.
 
 ## Work Unit Issue

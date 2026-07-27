@@ -240,7 +240,8 @@ function Test-PublicBody {
 		[System.IO.FileInfo]$File,
 		[string[]]$RequiredSections,
 		[bool]$RequireScreenshots,
-		[bool]$RequireGitHubImageUrl = $false
+		[bool]$RequireGitHubImageUrl = $false,
+		[bool]$RequireLeadingH1 = $false
 	)
 
 	$RelativePath = Get-RelativePath $File.FullName
@@ -248,6 +249,20 @@ function Test-PublicBody {
 	$Lines = $Content -split "`r?`n"
 
 	Test-CommonPublicRules -Path $RelativePath -Content $Content
+
+	if ($RequireLeadingH1) {
+		$FirstMeaningfulLine = $null
+		foreach ($Line in $Lines) {
+			if (-not [string]::IsNullOrWhiteSpace($Line)) {
+				$FirstMeaningfulLine = $Line
+				break
+			}
+		}
+
+		if ($null -eq $FirstMeaningfulLine -or $FirstMeaningfulLine -notmatch '^#\s+.+') {
+			Add-Failure $RelativePath "Issue/PR body must start with an H1 title source"
+		}
+	}
 
 	if ($Content -match '(?im)\bTODO\b|\bTBD\b|<[^>]+>') {
 		Add-Failure $RelativePath "contains placeholder text (TODO/TBD/<...>)"
@@ -672,17 +687,32 @@ Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "prs") -Recurse | ForEach
 	}
 
 	++$CheckedFileCount
-	Test-PublicBody -File $_ -RequiredSections $PrRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true
+	Test-PublicBody -File $_ -RequiredSections $PrRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true -RequireLeadingH1 $true
 }
 
 Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "progress-plan.md" | ForEach-Object {
 	++$CheckedFileCount
+	$RelativePath = Get-RelativePath $_.FullName
+	$Raw = Get-Content -Encoding UTF8 $_.FullName -Raw
+	$Lines = $Raw -split "`r?`n"
+	$FirstMeaningfulLine = $null
+	foreach ($Line in $Lines) {
+		if (-not [string]::IsNullOrWhiteSpace($Line)) {
+			$FirstMeaningfulLine = $Line
+			break
+		}
+	}
+
+	if ($null -eq $FirstMeaningfulLine -or $FirstMeaningfulLine -notmatch '^#\s+.+') {
+		Add-Failure $RelativePath "Issue/PR body must start with an H1 title source"
+	}
+
 	Test-ProgressIssue -File $_
 }
 
 Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "work-unit_*.md" | ForEach-Object {
     ++$CheckedFileCount
-    Test-PublicBody -File $_ -RequiredSections $WorkUnitRequiredSections -RequireScreenshots $false
+	Test-PublicBody -File $_ -RequiredSections $WorkUnitRequiredSections -RequireScreenshots $false -RequireLeadingH1 $true
 }
 
 Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "topic_*.md" | ForEach-Object {
@@ -692,7 +722,7 @@ Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "topic_
 
 Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "verification_*.md" | ForEach-Object {
 	++$CheckedFileCount
-	Test-PublicBody -File $_ -RequiredSections $VerificationRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true
+	Test-PublicBody -File $_ -RequiredSections $VerificationRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true -RequireLeadingH1 $true
 }
 
 $PlanProgressPath = Join-Path $GitHubRoot "comments/plan-progress.md"

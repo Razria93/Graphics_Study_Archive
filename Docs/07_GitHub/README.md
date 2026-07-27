@@ -11,6 +11,8 @@
 - Docs 정본의 상세 설명을 그대로 복제하지 않고 요약과 링크 중심으로 작성한다.
 - GitHub remote 게시, 수정, Ready for Review, merge는 사용자 승인 후에만 진행한다.
 
+Issue/PR body 후보는 첫 H1을 title source로 유지한다. 실제 `gh issue create`/`gh pr create` 직전에는 첫 H1을 제외한 임시 body 파일을 `local/` 아래에 별도로 만들고, tracked `Docs/07_GitHub` 원본은 수정하지 않는다. comment body는 title이 없으므로 H1을 사용하지 않는다. 상세 기준은 `../06_Policies/github-workflow-policy.md`를 따른다.
+
 ## 기본 게시 객체
 
 - Progress Issue 1개
