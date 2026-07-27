@@ -240,7 +240,7 @@ GitHub에 게시하는 Markdown body는 `Docs/07_GitHub` 파일을 기준으로 
 
 게시 전 후보에는 `Metadata`, 내부 메모, draft 문구, 존댓말을 남기지 않는다. validator가 지원하는 범위는 `Docs/98_Tools/validators/README.md`를 따른다.
 
-Issue와 PR body는 tracked 후보 본문의 첫 H1을 title source로 사용한다. 실제 `gh issue create`와 `gh pr create` 전에 local 임시 body에서 첫 H1을 제외한 파일을 별도로 만들어 게시한다. comment body는 title이 없으므로 H1을 사용하지 않는다.
+Issue와 PR body는 tracked 후보 본문의 첫 H1을 title source로 사용한다. tracked 정본은 H1을 유지하고 validator 검사 대상이 된다. 실제 `gh issue create`와 `gh pr create` 전에 local 임시 body에서 첫 H1을 제외한 파일을 별도로 만들어 게시한다. comment body는 title이 없으므로 H1을 사용하지 않는다.
 
 누적 진행 댓글은 Progress Issue 당 1개를 유지하고, 새 댓글 생성 대신 기존 댓글을 갱신한다.
 
