@@ -11,7 +11,7 @@
 | GitHub 초안 | `local/` 임시 초안 |
 | GitHub 게시 후보 정본 | `Docs/07_GitHub` |
 | 게시 후 실제 게시본과 리뷰 대응 사본 | `local/` 하위 snapshot |
-| Progress Issue 진행판 | GitHub remote, `Docs/07_GitHub/issues`와 `Docs/07_GitHub/comments` |
+| Progress Issue 진행판 | GitHub remote, `Docs/07_GitHub/plan` |
 | 실제 Issue/PR | GitHub remote |
 
 ## 기본 흐름
@@ -175,8 +175,8 @@ Progress Issue 댓글은 두 종류로 고정한다.
 
 | 댓글 유형 | 게시 후보 파일 | 책임 |
 | --- | --- | --- |
-| 누적 진행판 | `Docs/07_GitHub/comments/plan-progress.md` | 완료, 진행 중, 예정 Work Unit과 관련 PR 현황 |
-| Chapter/Bundle 완료 댓글 | `Docs/07_GitHub/comments/*_completion.md` | Chapter 또는 Chapter 묶음 마감 요약, 검증, 남은 제한, 관련 PR |
+| 누적 진행판 | `Docs/07_GitHub/plan/plan-progress.md` | 완료, 진행 중, 예정 Work Unit과 관련 PR 현황 |
+| PR 마감 plan comment | `Docs/07_GitHub/plan/comments/*.md` | PR 마감 단위 요약, 검증, 남은 제한, 관련 PR |
 
 Progress Issue 댓글을 생성하거나 수정하기 전에는 대상 Issue, 사용할 게시 후보 파일, 실행할 `gh` 명령, 예상 변경 요약을 사용자에게 보고하고 승인받는다.
 
@@ -232,11 +232,13 @@ GitHub에 게시하는 Markdown body는 `Docs/07_GitHub` 파일을 기준으로 
 | 유형 | 위치 | 최소 책임 |
 | --- | --- | --- |
 | PR Body | `Docs/07_GitHub/prs/**/*.md` | 핵심 개념, 대표 예제, 검증, Demo capture/result, 제한, 관련 Issue/PR |
-| Work Unit Issue | `Docs/07_GitHub/issues/work-unit_*.md` | Work Unit 범위, 검증 기준, 완료 조건 |
-| Topic Issue | `Docs/07_GitHub/issues/topic_*.md` | 여러 Chapter를 관통하는 Topic 정리 범위와 연결 문서 |
-| Verification Issue | `Docs/07_GitHub/issues/verification_*.md` | build/run/capture 검증 결과와 미확인 항목 |
-| Progress Comment | `Docs/07_GitHub/comments/plan-progress.md` | 전체 진행판 |
-| Chapter/Bundle Completion Comment | `Docs/07_GitHub/comments/*_completion.md` | 작업 마감 기록 |
+| Work Unit Issue | `Docs/07_GitHub/issues/work-unit/work-unit_*.md` | Work Unit 범위, 검증 기준, 완료 조건 |
+| Topic Issue | `Docs/07_GitHub/issues/topic/topic_*.md` | 여러 Chapter를 관통하는 Topic 정리 범위와 연결 문서 |
+| Verification Issue | `Docs/07_GitHub/issues/verification/verification_*.md` | build/run/capture 검증 결과와 미확인 항목 |
+| Demo Issue | `Docs/07_GitHub/issues/demo/demo_*.md` | demo 범위, 생성 기준, 승인 필요 범위 |
+| Progress Body | `Docs/07_GitHub/plan/plan-body.md` | 상위 진행판 본문 |
+| Progress Comment | `Docs/07_GitHub/plan/plan-progress.md` | 전체 진행판 누적 댓글 |
+| Plan Comment | `Docs/07_GitHub/plan/comments/*.md` | PR 마감 기록 |
 
 게시 전 후보에는 `Metadata`, 내부 메모, draft 문구, 존댓말을 남기지 않는다. validator가 지원하는 범위는 `Docs/98_Tools/validators/README.md`를 따른다.
 

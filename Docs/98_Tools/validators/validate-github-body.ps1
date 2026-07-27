@@ -690,7 +690,7 @@ Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "prs") -Recurse | ForEach
 	Test-PublicBody -File $_ -RequiredSections $PrRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true -RequireLeadingH1 $true
 }
 
-Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "progress-plan.md" | ForEach-Object {
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "plan") -Filter "plan-body.md" | ForEach-Object {
 	++$CheckedFileCount
 	$RelativePath = Get-RelativePath $_.FullName
 	$Raw = Get-Content -Encoding UTF8 $_.FullName -Raw
@@ -710,28 +710,28 @@ Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "progre
 	Test-ProgressIssue -File $_
 }
 
-Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "work-unit_*.md" | ForEach-Object {
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues/work-unit") -Filter "work-unit_*.md" | ForEach-Object {
     ++$CheckedFileCount
 	Test-PublicBody -File $_ -RequiredSections $WorkUnitRequiredSections -RequireScreenshots $false -RequireLeadingH1 $true
 }
 
-Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "topic_*.md" | ForEach-Object {
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues/topic") -Filter "topic_*.md" | ForEach-Object {
 	++$CheckedFileCount
 	Test-TopicIssue -File $_
 }
 
-Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues") -Filter "verification_*.md" | ForEach-Object {
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues/verification") -Filter "verification_*.md" | ForEach-Object {
 	++$CheckedFileCount
 	Test-PublicBody -File $_ -RequiredSections $VerificationRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true -RequireLeadingH1 $true
 }
 
-$PlanProgressPath = Join-Path $GitHubRoot "comments/plan-progress.md"
+$PlanProgressPath = Join-Path $GitHubRoot "plan/plan-progress.md"
 if (Test-Path $PlanProgressPath) {
 	++$CheckedFileCount
 	Test-PlanProgressComment -File (Get-Item $PlanProgressPath)
 }
 
-Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "comments") -Filter "*_completion.md" | ForEach-Object {
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "plan/comments") -Filter "*.md" | ForEach-Object {
 	++$CheckedFileCount
 	Test-ChapterBundleCompletionComment -File $_
 }
@@ -746,22 +746,11 @@ Get-OptionalMarkdownFiles -Path $GitHubRoot -Recurse | ForEach-Object {
 		return
 	}
 
-	if ($RelativePath -match '/issues/[^/]+\.md$') {
-		$IssueName = [System.IO.Path]::GetFileName($RelativePath)
-		$SupportedIssue = (
-			$IssueName -eq 'progress-plan.md' -or
-			$IssueName -match '^work-unit_.+\.md$' -or
-			$IssueName -match '^topic_.+\.md$' -or
-			$IssueName -match '^verification_.+\.md$'
-		)
-
-		if (-not $SupportedIssue) {
-			Add-Failure $RelativePath "unsupported issue filename schema"
-		}
+	if ($RelativePath -match '/plan/plan-body\.md$' -or $RelativePath -match '/plan/plan-progress\.md$' -or $RelativePath -match '/plan/comments/.+\.md$') {
 		return
 	}
 
-	if ($RelativePath -match '/comments/plan-progress\.md$' -or $RelativePath -match '/comments/[^/]+_completion\.md$') {
+	if ($RelativePath -match '/issues/work-unit/work-unit_.+\.md$' -or $RelativePath -match '/issues/topic/topic_.+\.md$' -or $RelativePath -match '/issues/verification/verification_.+\.md$' -or $RelativePath -match '/issues/demo/demo_.+\.md$') {
 		return
 	}
 

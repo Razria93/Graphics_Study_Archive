@@ -32,7 +32,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 - 허용 URL은 `https://github.com/<owner>/<repo>/blob/<branch>/Docs/_assets/captures/<file>?raw=true` 또는 `https://raw.githubusercontent.com/<owner>/<repo>/<branch>/Docs/_assets/captures/<file>` 형식이다.
 - image URL 검사는 형식 검사이며 실제 파일 존재를 보증하지 않는다.
 - template에 특정 Issue 번호가 하드코딩되어 있지 않은지 확인한다.
-- Issue/PR 후보는 첫 H1을 title source로 유지한다. 실제 게시 전에는 local 임시 body에서 첫 H1을 제외한 파일을 별도로 만든다.
+- Issue/PR 후보는 첫 H1을 title source로 유지한다. 실제 `gh issue create`와 `gh pr create`에서는 title을 H1에서 사용하고 body는 `Docs/07_GitHub` tracked 정본을 그대로 게시한다.
 
 ## 지원 범위
 
@@ -41,12 +41,13 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 | 위치 | 검사 |
 | --- | --- |
 | `prs/**/*.md` | PR body |
-| `issues/progress-plan.md` | Progress issue |
-| `issues/work-unit_*.md` | Work Unit issue |
-| `issues/topic_*.md` | Topic issue |
-| `issues/verification_*.md` | Verification issue |
-| `comments/plan-progress.md` | Progress Issue 누적 진행 댓글 |
-| `comments/*_completion.md` | Chapter/Bundle 마감 댓글 |
+| `plan/plan-body.md` | Progress issue |
+| `plan/plan-progress.md` | Progress Issue 누적 진행 댓글 |
+| `plan/comments/*.md` | PR 마감 plan comment |
+| `issues/work-unit/work-unit_*.md` | Work Unit issue |
+| `issues/topic/topic_*.md` | Topic issue |
+| `issues/verification/verification_*.md` | Verification issue |
+| `issues/demo/demo_*.md` | Demo issue |
 
 
 ## Work Unit issue schema
@@ -55,7 +56,7 @@ Work Unit Issue는 작업 범위와 완료 조건을 GitHub에서 추적하기 �
 
 | 파일 | 책임 | 주요 검사 |
 | --- | --- | --- |
-| `issues/work-unit_*.md` | Work Unit 범위와 완료 조건 | `## 요약`, `## 목표`, `## 범위`, `## 핵심 작업`, `## 검증 기준`, `## Demo/Capture 필요 여부`, `## 완료 조건`, `## 관련 문서`, `## 제외 범위` 순서 |
+| `issues/work-unit/work-unit_*.md` | Work Unit 범위와 완료 조건 | `## 요약`, `## 목표`, `## 범위`, `## 핵심 작업`, `## 검증 기준`, `## Demo/Capture 필요 여부`, `## 완료 조건`, `## 관련 문서`, `## 제외 범위` 순서 |
 
 Work Unit Issue에는 screenshot/image URL을 필수로 요구하지 않는다. capture/result 상세는 `Docs/03_Demos`와 PR body에서 다룬다.
 
@@ -65,7 +66,7 @@ Progress Issue는 전체 목표와 완료 조건을 추적한다. Work Unit 상�
 
 | 파일 | 책임 | 주요 검사 |
 | --- | --- | --- |
-| `issues/progress-plan.md` | 상위 진행판 | `## 요약`, `## 목표`, `## Phase 범위`, `## 완료 조건`, `## 기본 게시 객체`, `## 선택 Issue 생성 기준`, `## 관련 문서`, `## 제외 범위` 순서 |
+| `plan/plan-body.md` | 상위 진행판 | `## 요약`, `## 목표`, `## Phase 범위`, `## 완료 조건`, `## 기본 게시 객체`, `## 선택 Issue 생성 기준`, `## 관련 문서`, `## 제외 범위` 순서 |
 
 Progress Issue에는 screenshot/image URL을 필수로 요구하지 않는다.
 ## Progress comment schema
@@ -74,15 +75,15 @@ Progress Issue 관련 GitHub body는 두 종류만 검사한다.
 
 | 파일 | 책임 | 주요 검사 |
 | --- | --- | --- |
-| `comments/plan-progress.md` | 전체 진행판 | `## Graphics Study 진행 요약`, `## 완료`, `## 진행 예정`, `## Related PRs` 구조와 Phase heading |
-| `comments/*_completion.md` | Chapter/Bundle 마감 기록 | `## Phase <n-n> 완료 기록`, 완료 내용, 검증, 남은 제한, 관련 PR |
+| `plan/plan-progress.md` | 전체 진행판 | `## Graphics Study 진행 요약`, `## 완료`, `## 진행 예정`, `## Related PRs` 구조와 Phase heading |
+| `plan/comments/*.md` | PR 마감 기록 | `## Phase <n-n> 완료 기록`, 완료 내용, 검증, 남은 제한, 관련 PR |
 
 comment body는 H1과 내부 안내 문구를 허용하지 않는다.
 
 ## 지원하지 않는 schema
 
-- `issues/` 아래에서 `progress-plan.md`, `work-unit_*.md`, `topic_*.md`, `verification_*.md` 외 파일명은 실패 처리한다.
-- `comments/` 아래에서 `plan-progress.md`, `*_completion.md` 외 파일명은 실패 처리한다.
+- `plan/` 아래에서 `plan-body.md`, `plan-progress.md`, `comments/*.md` 외 파일명은 실패 처리한다.
+- `issues/` 아래에서 `work-unit/work-unit_*.md`, `topic/topic_*.md`, `verification/verification_*.md`, `demo/demo_*.md` 외 파일명은 실패 처리한다.
 
 Progress comment는 Docs 정본을 복제하지 않고 진행 상태와 링크만 요약한다. 상세 정책은 `Docs/06_Policies/github-workflow-policy.md`를 따른다.
 

@@ -14,14 +14,14 @@
 
 | 항목 | 상태 | GitHub 번호 | 게시 후보 파일 | 비고 |
 | --- | --- | --- | --- | --- |
-| 상위 Progress Issue | ready | 없음 | `Docs/07_GitHub/issues/progress-plan.md` | 게시 전 사용자 승인 필요 |
-| 누적 진행 댓글 | comment-ready | 없음 | `Docs/07_GitHub/comments/plan-progress.md` | Progress Issue 생성 후 작성 |
+| 상위 Progress Issue | ready | 없음 | `Docs/07_GitHub/plan/plan-body.md` | 게시 전 사용자 승인 필요 |
+| 누적 진행 댓글 | comment-ready | 없음 | `Docs/07_GitHub/plan/plan-progress.md` | Progress Issue 생성 후 작성 |
 
 ## 관계 Index
 
 | Work Unit | Chapter/Bundle 완료 댓글 | 선택 Issue | Chapter PR 목록 | 관련 WorkLog | 비고 |
 | --- | --- | --- | --- | --- | --- |
-| `WU-Part1` | comment-ready (`Docs/07_GitHub/comments/part1_chapter01-02_completion.md`) | 제외 | `Docs/07_GitHub/prs/part1_chapter01-02.md` (ready) | [WU-Part1](active/WU-Part1.md) | WU-Part1의 일부 범위인 Chapter01-02 완료 기록이다. WU-Part1 전체 완료가 아니다. |
+| `WU-Part1` | comment-ready (`Docs/07_GitHub/plan/comments/phase-2-1-plan-comment.md`) | 제외 | `Docs/07_GitHub/prs/part1_chapter01-02.md` (ready) | [WU-Part1](active/WU-Part1.md) | WU-Part1의 일부 범위인 Chapter01-02 완료 기록이다. WU-Part1 전체 완료가 아니다. |
 | `WU-Part2` | 예정 | 기본 제외 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
 | `WU-Part3` | 예정 | 기본 제외 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
 | `WU-Part4` | 예정 | 기본 제외 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
