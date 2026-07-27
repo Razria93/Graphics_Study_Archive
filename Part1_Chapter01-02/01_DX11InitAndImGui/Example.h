@@ -275,9 +275,20 @@ public:
 		}
 
 		D3D11_MAPPED_SUBRESOURCE ms;
-		deviceContext->Map(canvasTexture, NULL, D3D11_MAP_WRITE_DISCARD, NULL, &ms);
-		memcpy(ms.pData, pixels.data(), pixels.size() * sizeof(Vec4));
-		deviceContext->Unmap(canvasTexture, NULL);
+		if (SUCCEEDED(deviceContext->Map(canvasTexture, NULL, D3D11_MAP_WRITE_DISCARD, NULL, &ms)))
+		{
+			const size_t srcRowBytes = size_t(canvasWidth) * sizeof(Vec4);
+			const size_t dstRowBytes = size_t(ms.RowPitch);
+			unsigned char* dst = static_cast<unsigned char*>(ms.pData);
+			const unsigned char* src = reinterpret_cast<const unsigned char*>(pixels.data());
+
+			for (int y = 0; y < canvasHeight; ++y)
+			{
+				memcpy(dst + size_t(y) * dstRowBytes, src + size_t(y) * srcRowBytes, srcRowBytes);
+			}
+
+			deviceContext->Unmap(canvasTexture, NULL);
+		}
 	}
 
 	void Render()
