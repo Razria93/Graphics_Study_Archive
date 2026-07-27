@@ -45,6 +45,13 @@ capture/result
 - result image는 성격에 따라 `Docs/_assets/captures` 또는 별도 정한 result image 경로에 둔다.
 - diagram 또는 설명용 그림은 `Docs/_assets/diagrams`에 둔다.
 
+## 최소 Demo 의무 기준
+
+- graphics 예제 문서화에서는 Chapter 또는 Chapter 묶음 단위 demo에 screenshot을 최소 1개 이상 필수로 둔다.
+- screenshot 추가본은 해당 Chapter 작업을 설명하는 데 필수적인 장면만 선별해 구성한다.
+- video가 필요하다고 판단한 경우 작업자는 사용자에게 video 요청 조건을 제시한다.
+- 사용자가 demo 구성을 요청한 경우 작업자는 해당 범위의 demo를 구성한다.
+
 ## Capture/Result 승격 기준
 
 `local/`의 capture 후보나 ignored output의 result image는 다음 조건을 만족할 때만 `Docs/_assets`로 승격한다.
@@ -66,6 +73,8 @@ capture/result
 
 build/run 검증 단계에서 screenshot, video, result image가 필요한 예제라고 판단되면 작업자는 사용자에게 capture/result 요청 조건을 구체적으로 제시한다.
 
+Chapter 또는 Chapter 묶음 단위 demo에서는 screenshot 최소 1개를 기본 요청으로 둔다.
+
 요청에는 다음 항목을 포함한다.
 
 - 필요한 유형: screenshot, video, result image 중 무엇인지
@@ -86,7 +95,7 @@ build/run 검증 단계에서 screenshot, video, result image가 필요한 예�
 | simulation, animation, physics | video와 대표 screenshot | 시간 변화는 video로, 대표 상태는 screenshot으로 남긴다. |
 | file output 기반 예제 | result image | 프로그램이 출력한 파일을 우선 연결한다. |
 
-capture/result가 필요 없거나 시각적 설명 가치가 낮으면 `제외`로 기록하고 사유를 남긴다.
+예제 단위에서 capture/result가 필요 없거나 시각적 설명 가치가 낮으면 `제외`로 기록하고 사유를 남긴다. 단, Chapter 또는 Chapter 묶음 demo-index 기준으로는 최소 1개 screenshot을 유지한다.
 
 ## README 표시 기준
 

@@ -11,7 +11,7 @@
 
 ## Demo 목표
 
-- 최소 capture/result:
+- 최소 capture/result: screenshot 최소 1개 필수
 - 대표 capture/result:
 - video 필요 여부:
 

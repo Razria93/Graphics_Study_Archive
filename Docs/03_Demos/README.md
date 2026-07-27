@@ -11,6 +11,13 @@
 - raw capture 후보와 게시 전 검토 메모는 `local/`에 둔다.
 - GitHub 게시 body는 이 폴더에서 직접 작성하지 않고 `Docs/07_GitHub`에서 source docs를 요약/재구성한다.
 
+## 최소 기준
+
+- graphics 문서화에서는 Chapter 또는 Chapter 묶음 demo-index마다 screenshot 최소 1개를 필수로 둔다.
+- screenshot 추가본은 해당 Chapter 작업을 설명하는 데 필수적인 장면만 선별한다.
+- video가 필요하다고 판단한 경우 사용자에게 요청 조건을 제시한다.
+- 사용자가 demo 구성을 요청한 경우 해당 범위 demo를 구성한다.
+
 ## 문서 목록
 
 | 문서 | 책임 |

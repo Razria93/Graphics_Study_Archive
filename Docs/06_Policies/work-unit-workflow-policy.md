@@ -132,6 +132,8 @@ local/
 - source comment inventory와 current/raw/origin diff에서 예상과 다른 차이를 발견했을 때
 - 코드 주석 제거 또는 재작성 후보가 생겼을 때
 - build/run 검증 후 screenshot, video, result image가 필요하다고 판단했을 때
+- video가 필요하다고 판단해 사용자에게 요청 조건을 제시했을 때
+- 사용자가 demo 구성을 요청했을 때
 - Example/Topic/Verification/Demo 초안 작성 후
 - GitHub Issue/PR draft를 게시하기 전
 - commit readiness를 보고할 때
@@ -145,6 +147,7 @@ Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.
 - 관련 Topic이 없으면 없다고 기록하고, 있으면 `Docs/01_Topics`에 연결한다.
 - build/run/capture 상태가 `Docs/02_Verification`에 기록되어 있다.
 - demo 필요 여부와 capture/result 상태가 `Docs/03_Demos`에 기록되어 있다.
+- Chapter 또는 Chapter 묶음 demo-index 기준으로 screenshot 최소 1개가 기록되어 있다.
 - public subset 판단이 `Docs/05_Publication`에 기록되어 있다.
 - 작업 결정, 마감 snapshot, follow-up이 `Docs/04_WorkLogs`에 기록되어 있다.
 - GitHub Issue/PR을 운영하는 Work Unit이면 `Docs/07_GitHub` 후보와 validator 결과가 준비되어 있다.
