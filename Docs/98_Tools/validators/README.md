@@ -7,18 +7,31 @@
 | Script | 목적 | 입력 |
 | --- | --- | --- |
 | `validate-github-body.ps1` | GitHub Issue/PR/comment 게시 전 Markdown body 검사 | `Docs/07_GitHub` |
+| `validate-github-quality.ps1` | Demo Issue 품질 검사(전개, 시각 자료, C++ 스타일 의사코드, 가독성) | `Docs/07_GitHub/issues/demo` |
 
 ## 사용법
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-body.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-quality.ps1
 ```
 
 기본 입력 위치는 `Docs/07_GitHub`이다. 다른 위치를 검사할 때는 `-GitHubRoot`를 지정한다.
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-body.ps1 -GitHubRoot Docs/07_GitHub
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-quality.ps1 -GitHubRoot Docs/07_GitHub
 ```
+
+`validate-github-quality.ps1`는 현재 `issues/demo/demo_*.md`를 대상으로 다음을 검사한다.
+
+- 필수 섹션 존재와 순서
+- Demo Assets 표의 필수 행(`Input screenshot`, `Result screenshot`, `Result image`, `Video`)
+- `## 핵심 로직 의사코드` 섹션 존재
+- C++ fenced pseudocode(````cpp`) 사용 여부
+- `Pseudo C++` 표기, `*Pseudo(...)` 함수 시그니처 여부
+- 의사코드 아래 원본 코드 링크 존재 여부
+- 긴 줄(기본 100자 초과) 가독성 경고
 
 ## 검사 기준
 
