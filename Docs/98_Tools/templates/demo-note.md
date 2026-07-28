@@ -1,124 +1,77 @@
-# Demo Note
+# Demo Name
 
-이 문서는 Demo source docs 작성용 템플릿이다. GitHub 게시 문장은 `Docs/07_GitHub`에서 이 내용을 요약/재구성한다.
+이 template은 `Docs/03_Demos/<Part*>`의 상세 Demo 기술 정본에 사용한다.
+GitHub Demo Issue는 이 문서를 복제하지 않고 공개 가치가 높은 결과와 구현을
+선별해 작성한다.
 
-## 대상
+## 목적
 
-- 루트 코드 폴더:
-- 예제 폴더:
-- 연결 Topic:
-- 연결 Verification:
+Demo가 보여주는 결과와 기술적 목표를 2~4문장으로 정의한다.
 
-## Demo 목표
+## 책임 범위
 
-- 최소 capture/result: screenshot 최소 1개 필수
-- 대표 capture/result:
-- video 필요 여부:
+- 포함:
+- 위임: 개념과 이론은 Topic, 검증 사실은 Verification으로 연결한다.
 
-## 구현 하이라이트 초안
+## 결과 미리보기
 
-- 구현 목표(3줄 이내):
-- 처리 흐름(번호 목록 4~6단계):
-- 핵심 파일 맵(파일/역할 3~5개):
+대표 visual을 1개 이상 연결하고 결과가 보여주는 차이를 설명한다.
 
-## C++ 스타일 의사코드 초안
+![Result](../../_assets/captures/<tracked-result>.png)
 
-문서 가독성 중심 구조 요약만 기록한다. 원본 코드는 링크로 위임한다.
+## 입력과 출력
 
-```cpp
-// Pseudo C++: 구조 설명용 요약
-void FunctionPseudo(...)
-{
-	// 입력/전처리
-	if (...) {
-		return;
-	}
+| 구분 | 내용 |
+| --- | --- |
+| 입력 |  |
+| 출력 |  |
 
-	// 핵심 처리
-	for (...) {
-		...
-	}
+## 구현 흐름
 
-	// 출력/반영
-}
-```
+1. 입력을 준비한다.
+2. 핵심 처리를 수행한다.
+3. 결과를 출력한다.
 
-- 원본 코드 링크 1:
-- 원본 코드 링크 2:
-- 가독성 체크: 한 줄 80~120자 범위를 권장하고 긴 식은 2~3줄로 분해한다.
+## 핵심 구현
 
-## 사용자 요청 조건
+### Implementation Choice
 
-- 요청 유형: screenshot / video / result image
-- 찍어야 할 화면 또는 출력 파일:
-- before/after 또는 input/result 비교 필요 여부:
-- README 연결 대상 여부 또는 local 검토 후보 여부:
-- 피해야 할 노출 요소: 강의명, 강사명, 워터마크, 개인 식별자, 계정, 로컬 경로, 불필요한 IDE/terminal/browser UI
-- 권장 비율과 구도:
-- 권장 파일명:
+선택한 구현 방식, 주요 코드 위치, 선택 이유를 설명한다.
 
-## Capture/Result 후보
+## 시각 결과
 
-| 항목 | 위치 | 상태 | 비고 |
-| --- | --- | --- | --- |
-| screenshot | `local/` | 미확인 | 화면 이미지 캡처 |
-| video | `local/` | 미확인 | 화면 녹화 |
-| result image | ignored output 또는 `local/` | 미확인 | 프로그램이 파일로 출력한 이미지 |
+시각 자료가 구현 단계나 결과 차이를 어떻게 보여주는지 설명한다. 같은 asset을
+README와 GitHub body에서도 사용할 수 있지만 설명은 이 문서 책임에 맞게 쓴다.
 
-## 검수 단계
+## 구현 범위와 한계
 
-- 정책 검수:
-- 후보 검수:
-- 승격 검수:
+- 포함하는 구현 범위:
+- 다루지 않는 범위:
+- 성능 또는 품질 trade-off:
 
-## GitHub Body 전환 체크
+## 검증
 
-- Demo Issue 필수 섹션 순서 점검 여부:
-- 시각 자료(소제목/설명/이미지) 순서 점검 여부:
-- 의사코드(C++ 스타일, Pseudo C++ 표기) 점검 여부:
-- 원본 코드 링크 쌍 점검 여부:
-- body validator 결과:
-- quality validator 결과:
+최신 build/run/capture 사실을 복제하지 않고 Verification 정본으로 연결한다.
 
-## 공개 전 확인
+- Verification:
 
-- 직접 실행 결과인지:
-- 강의 화면 캡처가 아닌지:
-- 강의명/강사명/강의 브랜드 표기가 없는지:
-- 워터마크가 없는지:
-- window title 또는 overlay text가 public-safe인지:
-- debug HUD, browser tab, taskbar, notification 노출 여부:
-- video audio/subtitle/metadata 확인 여부:
-- asset 권리와 출처:
-- 개인 이름/계정/로컬 경로 포함 여부:
-- 민감 정보 포함 여부:
-- 파일명 규칙:
-- `Docs/_assets` 승격 가능 여부:
+## 관련 코드
 
-## 갱신 위치
+- Example README:
+- Source:
+- Shader:
 
-- `Docs/03_Demos/demo-priority.md`
-- `Docs/03_Demos/capture-plan.md`
-- `Docs/03_Demos/<Part*>/demo-index.md`
-- `Docs/02_Verification/capture-matrix.md`
-- `Docs/_assets`
+## 관련 문서
 
-## Metadata 확인
+- Topic:
+- Verification:
+- Demo index:
+- GitHub Demo Issue 후보:
 
-- screenshot/result image metadata: 미확인
-- video metadata/audio/subtitle: 미확인
-- external input asset source/license: 미확인
-- lecture name/instructor/watermark/personal identifier: 미확인
+## 작성 기준
 
-## 생성 이미지 출처 기록
-
-- 생성 도구:
-- 생성 날짜:
-- 프롬프트 원문:
-- 작업용 원본 이미지:
-- provenance screenshot:
-- 원본 파일 SHA256:
-- 변환 입력 SHA256:
-- result image SHA256:
-- public 게시 가능성:
-- 비고:
+- Example README의 코드 map과 실행 안내를 장문으로 복제하지 않는다.
+- Topic의 일반 개념과 수학적 설명을 복제하지 않는다.
+- 실제 Markdown 링크와 tracked `Docs/_assets`만 사용한다.
+- `local/`, Legacy, placeholder, 로컬 절대 경로를 남기지 않는다.
+- 80자 내외를 권장하고 120자를 초과하는 일반 본문 줄을 사용하지 않는다.

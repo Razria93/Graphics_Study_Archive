@@ -4,7 +4,8 @@
 
 ## 정본 위치
 
-Demo 계획과 capture/result 설명의 정본은 `Docs/03_Demos`에 둔다. 검토된 capture/result 파일은 `Docs/_assets`에 둔다.
+Demo registry와 상세 기술 구현·시각 결과의 정본은 `Docs/03_Demos`에 둔다.
+검토된 capture/result 파일은 `Docs/_assets`에 둔다.
 
 `Docs/_assets`는 raw capture 저장소가 아니다. `Docs/03_Demos` 또는 `Docs/02_Verification`에서 실제로 참조할 검토 완료 capture/result만 둔다.
 
@@ -58,7 +59,8 @@ capture/result
 
 - build/run 상태가 `성공` 또는 `부분 성공`으로 기록되어 있다.
 - 화면 또는 결과 파일이 보여줄 graphics 개념, 예제 상태, 비교 결과를 명확히 설명한다.
-- `Docs/03_Demos/*/demo-index.md` 또는 `Docs/03_Demos/capture-plan.md`에서 참조할 계획이 있다.
+- `Docs/03_Demos/*/demo-index.md`, 상세 Demo 문서 또는
+  `Docs/03_Demos/capture-plan.md`에서 참조할 계획이 있다.
 - capture/result가 있는 예제는 코드 폴더 README에도 연결한다.
 - `Docs/02_Verification/capture-matrix.md`에 capture/result 상태를 기록할 수 있다.
 - public 후보 여부 또는 private-only 사유를 `Docs/05_Publication`에서 판단할 수 있다.
@@ -89,7 +91,7 @@ Chapter 또는 Chapter 묶음 단위 demo에서는 screenshot 최소 1개를 기
 
 | 예제 유형 | 우선 요청 | 기준 |
 | --- | --- | --- |
-| post-processing | input image와 result image | 처리 전후 차이를 README에서 세로로 비교한다. |
+| post-processing | input image와 result image | 처리 전후 비교는 상세 Demo에 두고 Example README에는 대표 visual을 최대 1개 둔다. |
 | static rendering | screenshot | 최종 화면 한 장으로 핵심 개념을 설명할 수 있어야 한다. |
 | interaction, camera, control | video | 움직임이나 입력 반응이 설명의 핵심이면 video를 우선한다. |
 | simulation, animation, physics | video와 대표 screenshot | 시간 변화는 video로, 대표 상태는 screenshot으로 남긴다. |
@@ -99,7 +101,7 @@ Chapter 또는 Chapter 묶음 단위 demo에서는 screenshot 최소 1개를 기
 
 ## README 표시 기준
 
-capture/result가 확보된 예제는 코드 폴더 README의 `Capture/Result` 섹션에 대표 자료를 연결한다. screenshot이나 result image는 너무 작게 보이지 않도록 세로 배치를 기본으로 한다.
+capture/result가 확보된 예제는 코드 폴더 README의 `Capture/Result` 섹션에 대표 자료를 최대 1개 연결한다. 여러 시각 자료의 비교는 상세 Demo에서 별도 소제목을 둔 세로 배치를 기본으로 한다.
 
 README와 일반 Docs 문서는 repo 안에서 렌더링되므로 repo-relative path를 사용한다. GitHub Issue, PR, comment body는 GitHub remote 페이지에서 렌더링되므로 `Docs/07_GitHub` 후보 문서에 capture/result를 연결할 때는 GitHub absolute URL을 사용한다.
 
@@ -217,14 +219,21 @@ screenshot, video, result image를 추가하면 다음 문서를 함께 확인�
 
 - `Docs/03_Demos/capture-plan.md`
 - 해당 Part/Portfolio의 `Docs/03_Demos/*/demo-index.md`
+- 연결된 상세 Demo 문서
 - `Docs/02_Verification/capture-matrix.md`
 - 관련 코드 폴더 README와 `Docs/01_Topics`
 - capture/result가 있는 예제의 코드 폴더 README
 - `Docs/05_Publication`의 public 후보 또는 제외 판단
+- Root/Chapter/Example README의 대표 visual 노출 필요 여부
+- `Docs/07_GitHub` Demo Issue와 PR 게시 후보의 연결 필요 여부
 
 ## 갱신 기준
 
 - screenshot/video/result image를 추가하면 `Docs/03_Demos`, `Docs/02_Verification/capture-matrix.md`, `Docs/05_Publication`을 함께 확인한다.
 - screenshot/result image를 추가하면 이미지 metadata를 확인하고, video를 추가하면 파일 크기, 저장 위치, 공개 가능성을 먼저 확인한다.
 - GitHub Issue/PR body에는 승격 검수를 통과한 capture/result만 연결한다.
+- 상세 Demo에서 구현·결과·limitation이 크게 바뀌면 Demo Issue 동기화 필요
+  여부를 확인한다.
+- 같은 tracked asset은 여러 public surface에서 재사용할 수 있지만 설명 본문은
+  각 surface 목적에 맞게 작성한다.
 - capture/result 승격 전에는 화면 안의 title, watermark, overlay, account, path를 수동으로 확인한다.

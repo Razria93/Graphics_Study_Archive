@@ -22,9 +22,10 @@ model: GPT-5.3-Codex
 1. 대상 파일 목록 수집
 2. `validate-github-body.ps1` 실행
 3. `validate-github-quality.ps1` 실행
-4. 실패 항목을 파일/라인 기준으로 요약
-5. 자동 수정 가능한 항목은 최소 수정 적용
-6. 재검증 후 결과 보고
+4. 상세 Demo가 변경 범위에 있으면 `validate-demo-doc-quality.ps1` 실행
+5. 실패 항목을 파일/라인 기준으로 요약
+6. 자동 수정 가능한 항목은 최소 수정 적용
+7. 재검증 후 결과 보고
 
 ## 실패 처리 원칙
 

@@ -154,6 +154,7 @@ function Test-UpdateRulesSection {
 function Test-DemoTable {
     param(
         [string]$RelativePath,
+        [string]$FileDirectory,
         [string[]]$Lines
     )
 
@@ -171,9 +172,11 @@ function Test-DemoTable {
 
     $header = Split-MarkdownRow -Line $table[0]
     $ColDemoCandidate = "Demo " + (New-Text @(0xD6C4, 0xBCF4))
+    $ColDetailedDemo = (New-Text @(0xC0C1, 0xC138)) + " Demo"
     $ColExample = (New-Text @(0xC5F0, 0xACB0)) + " Example"
     $ColTopic = (New-Text @(0xC5F0, 0xACB0)) + " Topic"
     $ColCaptureResult = "Capture/Result"
+    $ColGitHubIssue = "GitHub Demo Issue"
     $ColStatus = (New-Text @(0xC0C1, 0xD0DC))
     $ColNote = (New-Text @(0xBE44, 0xACE0))
 
@@ -187,12 +190,16 @@ function Test-DemoTable {
     $StatusHold = (New-Text @(0xBCF4, 0xB958))
     $StatusExcluded = (New-Text @(0xC81C, 0xC678))
     $NoneText = (New-Text @(0xC5C6, 0xC74C))
+    $IssueCandidate = (New-Text @(0xAC8C, 0xC2DC, 0x20, 0xD6C4, 0xBCF4))
+    $IssueUnpublished = (New-Text @(0xBBF8, 0xAC8C, 0xC2DC))
     $requiredHeader = @(
         $ColDemoCandidate,
+        $ColDetailedDemo,
         $ColExample,
         $ColTopic,
         "Verification",
         $ColCaptureResult,
+        $ColGitHubIssue,
         $ColStatus,
         $ColNote
     )
@@ -206,8 +213,8 @@ function Test-DemoTable {
     $rows = @()
     for ($i = 2; $i -lt $table.Count; ++$i) {
         $cells = Split-MarkdownRow -Line $table[$i]
-        if ($cells.Count -lt 7) {
-            Add-Failure $RelativePath "demo row has fewer than 7 columns: $($table[$i])"
+        if ($cells.Count -lt $header.Count) {
+            Add-Failure $RelativePath "demo row has fewer columns than its header: $($table[$i])"
             continue
         }
         $rows += ,$cells
@@ -236,18 +243,20 @@ function Test-DemoTable {
     )
 
     foreach ($row in $rows) {
-        $name = $row[0]
-        $example = $row[1]
-        $verification = $row[3]
-        $capture = $row[4]
-        $status = $row[5]
-        $note = $row[6]
+        $name = $row[[Array]::IndexOf($header, $ColDemoCandidate)]
+        $detailedDemo = $row[[Array]::IndexOf($header, $ColDetailedDemo)]
+        $example = $row[[Array]::IndexOf($header, $ColExample)]
+        $verification = $row[[Array]::IndexOf($header, "Verification")]
+        $capture = $row[[Array]::IndexOf($header, $ColCaptureResult)]
+        $githubIssue = $row[[Array]::IndexOf($header, $ColGitHubIssue)]
+        $status = $row[[Array]::IndexOf($header, $ColStatus)]
+        $note = $row[[Array]::IndexOf($header, $ColNote)]
 
         if (-not ($allowedStatuses -contains $status)) {
             Add-Failure $RelativePath "row '$name' has invalid status: $status"
         }
 
-        if ($verification -notmatch 'Docs/02_Verification|`Docs/02_Verification') {
+        if ($verification -notmatch '(Docs/)?02_Verification') {
             Add-Failure $RelativePath "row '$name' should reference Docs/02_Verification"
         }
 
@@ -256,13 +265,41 @@ function Test-DemoTable {
         }
 
         if ($status -eq $StatusReady) {
+            if ($detailedDemo -notmatch '\[[^\]]+\]\(([^)]+\.md)\)') {
+                Add-Failure $RelativePath "row '$name' is '확보' but does not link a detailed Demo"
+            }
+
             if ($capture -eq $NoneText) {
                 Add-Failure $RelativePath "row '$name' is '확보' but Capture/Result is '없음'"
             }
 
-            if ($capture -notmatch 'Docs/_assets/(captures|videos|diagrams)') {
+            if ($capture -notmatch '(Docs/)?_assets/(captures|videos|diagrams)') {
                 Add-Failure $RelativePath "row '$name' is '확보' but Capture/Result does not reference Docs/_assets"
             }
+        }
+
+        foreach ($cell in @($detailedDemo, $githubIssue)) {
+            $matches = [regex]::Matches($cell, '\[[^\]]+\]\(([^)]+)\)')
+            foreach ($match in $matches) {
+                $target = $match.Groups[1].Value.Split('#')[0]
+                if ($target -notmatch '^https?://') {
+                    $resolved = [IO.Path]::GetFullPath((Join-Path $FileDirectory $target))
+                    if (-not (Test-Path -LiteralPath $resolved)) {
+                        Add-Failure $RelativePath "row '$name' has a broken Demo link: $target"
+                    }
+                }
+            }
+        }
+
+        if ($githubIssue -match [regex]::Escape($IssueCandidate) -and
+            $githubIssue -notmatch '\[[^\]]+\]\([^)]+07_GitHub/issues/demo/[^)]+\.md\)') {
+            Add-Failure $RelativePath "row '$name' marks a Demo Issue candidate without linking its tracked candidate"
+        }
+
+        if ($githubIssue -ne $IssueUnpublished -and
+            $githubIssue -notmatch [regex]::Escape($IssueCandidate) -and
+            $githubIssue -notmatch 'https://github\.com/[^/]+/[^/]+/issues/\d+') {
+            Add-Failure $RelativePath "row '$name' has an invalid GitHub Demo Issue value"
         }
 
         if ($name -eq $RowVideo -and $status -eq $StatusExcluded -and $capture -ne $NoneText) {
@@ -288,7 +325,7 @@ function Validate-DemoIndex {
 
     Test-RequiredHeadingOrder -RelativePath $relative -Lines $lines
     Test-ScopeSection -RelativePath $relative -Lines $lines
-    Test-DemoTable -RelativePath $relative -Lines $lines
+    Test-DemoTable -RelativePath $relative -FileDirectory $File.DirectoryName -Lines $lines
     Test-UpdateRulesSection -RelativePath $relative -Lines $lines
 }
 

@@ -40,8 +40,13 @@ CPU에서 bloom 후처리를 계산하고, 처리된 pixel buffer를 DirectX11 d
 
 대표 demo는 `02_Bloom`의 original input과 bloom result 비교다.
 
-- Original input: [part1_chapter01-02_02_bloom_input.jpg](../Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg)
-- Bloom result: [part1_chapter01-02_02_bloom_result.png](../Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png)
+- Bloom result:
+
+![02_Bloom result](../Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png)
+
+- 상세 Demo: [02_Bloom Demo](../Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)
+- Demo Issue 게시 후보:
+  [Part1 Chapter01-02 Demo Issue](../Docs/07_GitHub/issues/demo/demo_part1_chapter01-02.md)
 - Demo index: [Docs/03_Demos/Part1_Chapter01-02/demo-index.md](../Docs/03_Demos/Part1_Chapter01-02/demo-index.md)
 
 ## 검증 상태

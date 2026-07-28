@@ -32,11 +32,12 @@
 | Root README | `README.md` | repository의 목적, 대표 graphics 주제, 현재 pilot/result, 주요 문서 진입점 안내 |
 | 전체 진입점과 map | `Docs/00_Index/` | 산출물 위치와 작업 흐름 안내 |
 | Chapter README | `Part*_Chapter*/README.md` | Chapter 또는 Chapter 묶음의 목표, 예제 구성, 대표 Topic, Demo, Verification 링크 |
-| 예제별 README | `Part*_Chapter*/ExampleName/README.md` | 예제 목적, 핵심 개념, 코드 위치, 실행 요약 |
+| 예제별 README | `Part*_Chapter*/ExampleName/README.md` | 예제 목적, 실행 진입점, 주요 코드 위치, 예제 고유 구조, 관련 정본 링크 |
 | Part별 예제 지도 | `Part*_Chapter*/README.md`, `Docs/00_Index/study-map.md` | 예제 목록과 대표 예제 안내 |
 | graphics 개념 | `Docs/01_Topics/` | 여러 예제를 관통하는 Topic 설명 |
 | build/run/capture 검증 | `Docs/02_Verification/` | 검증 상태와 known issue |
-| demo 계획과 capture/result 설명 | `Docs/03_Demos/`, `Docs/_assets/` | capture/result 후보와 시연 포인트 |
+| Demo registry와 상세 Demo | `Docs/03_Demos/` | 후보 상태, 기술 구현 흐름, 시각 결과, 구현 범위와 한계 |
+| Demo asset | `Docs/_assets/` | 검토를 통과한 capture/result 파일 정본 |
 | 작업 마감 요약 | `Docs/04_WorkLogs/` | Work Unit 요약과 follow-up |
 | 조사 판단 요약 | `Docs/04_WorkLogs/reviews/` | local 상세 조사에서 재사용 가능한 결론과 승격/제외 분류 요약 |
 | public subset 판단 | `Docs/05_Publication/` | 공개 후보, 제외, redaction 기준 |
@@ -50,16 +51,24 @@
 외부 독자와 신규 agent는 아래 순서로 문서를 읽는다.
 
 ```text
-Root README / BUILD / TOPICS / DEMOS
--> Chapter README
--> Example README
--> Topic / Verification / Demo / Publication
--> GitHub PR body
+Root README / Chapter README
+-> Example README / Topic / 상세 Demo / Verification
+-> Demo Issue / GitHub PR body
 ```
 
 Chapter README는 해당 Chapter 또는 Chapter 묶음의 지도 역할을 한다. 본문 설명을 길게 반복하지 않고 목표, 예제 구성, 핵심 Topic, 대표 Demo, 검증 상태, 관련 문서 링크를 제공한다.
 
-Example README는 예제 하나의 설명 정본이다. 목적, 구현 흐름, 핵심 코드, build/run 요약, capture/result, limitation을 둔다.
+Example README는 예제 코드의 근거리 안내 정본이다. 목적, 실행 진입점, 주요
+source/shader 위치, 예제 고유 구조, 짧은 실행 요약, limitation, 관련 정본
+링크를 둔다. 대표 visual은 0~1개만 사용하고 상세 구현 흐름과 단계별 시각
+결과는 상세 Demo로 연결한다.
+
+상세 Demo 문서는 기술 구현과 시각 결과의 정본이다. 구현 목표, 입력과 출력,
+처리 흐름, 구현 선택, 주요 코드, 시각 결과, trade-off, 구현 범위와 한계를 둔다.
+
+Demo Issue는 상세 Demo를 복제하지 않고 GitHub에서 독립적으로 읽히는 curated
+publication view로 작성한다. 대표 visual과 핵심 구현 요약은 자체 포함하고,
+상세 근거는 Demo, Example, Topic, Verification, 코드로 연결한다.
 
 GitHub PR body는 README의 미러가 아니다. 게시 시점에 reviewer가 볼 요약과 링크만 제공하고, 최신 상태 정본은 README, Topic, Verification, Demo, Publication 문서에 둔다.
 
@@ -83,7 +92,7 @@ README는 위치에 따라 다른 책임을 가진다. 같은 내용을 여러 R
 | --- | --- | --- | --- |
 | Root README | portfolio archive의 첫 화면 | repository 목적, 대표 graphics 주제, 현재 pilot/result, 주요 guide 링크 | 내부 조사 기록, stale 판단, raw/origin 비교, 정책 원문 |
 | Chapter README | Chapter 또는 Chapter 묶음의 지도 | Chapter 목표, 예제 목록, 대표 Topic/Demo/Verification, 상태 요약 | 예제별 코드 상세, Topic 본문 전체, WorkLog 상세 |
-| Example README | 예제 하나의 설명 정본 | 예제 목적, 핵심 개념, 핵심 코드 위치, 실행 요약, capture/result, limitation | raw/reference 원문, source comment inventory, stale 판단 상세 |
+| Example README | 예제 코드의 근거리 안내 정본 | 예제 목적, 실행 진입점, 주요 코드 위치, 예제 고유 구조, 실행 요약, 대표 visual 0~1개, limitation, 관련 정본 링크 | 상세 구현 흐름, 단계별 시각 분석, raw/reference 원문, source comment inventory |
 | Docs README | Docs 산출물 축의 입구 | 폴더 구조, 각 축의 책임, 먼저 볼 문서 | 세부 정책 원문, 예제별 상세 설명 |
 | Folder README | 해당 폴더의 하위 안내 | 하위 문서 목록, 작성 위치, 관련 정책 링크 | 다른 폴더 책임의 본문 반복 |
 | GitHub body | review/posting용 요약 | 게시 시점의 요약, 핵심 링크, 검증 요약 | README 본문 복제, 내부 draft/metadata |
@@ -96,7 +105,7 @@ README는 무조건 함께 수정하지 않는다. Work Unit 종료 전 아래 �
 | --- | --- |
 | Root README | 대표 pilot/result가 바뀌거나, Study Map 상태가 바뀌거나, archive/public 방향이 바뀔 때 |
 | Chapter README | Chapter 예제 목록, 대표 Topic/Demo/Verification 링크, build/run/capture 요약이 바뀔 때 |
-| Example README | 예제의 코드 흐름, 핵심 개념, capture/result, limitation, 관련 문서 링크가 바뀔 때 |
+| Example README | 실행 진입점, 주요 코드 위치, 예제 고유 구조, limitation, 관련 정본 링크가 바뀔 때 |
 | Docs README | Docs 폴더 구조, 산출물 축 책임, 먼저 볼 문서가 바뀔 때 |
 | Folder README | 하위 문서 목록, 폴더 책임, template/policy 링크가 바뀔 때 |
 | GitHub body | 게시 대상 Issue/PR/comment의 범위, 검증 요약, 연결 링크가 바뀔 때 |
@@ -109,5 +118,7 @@ README는 무조건 함께 수정하지 않는다. Work Unit 종료 전 아래 �
 - 상세 source comment inventory와 raw/current/origin 비교 원문은 `local/study-review/`에 둔다.
 - tracked review summary에는 승격한 항목, 승격하지 않은 항목의 분류, 후속 판단 기준만 남긴다.
 - build/run/capture 상태는 `Docs/02_Verification`에 기록한다.
-- capture/result가 확보된 예제 README에는 대표 screenshot, video link, result image 링크를 포함한다.
+- capture/result가 확보된 예제 README에는 대표 visual을 최대 1개 연결한다.
+- 같은 tracked asset은 Root, Chapter, Example, 상세 Demo, Demo Issue, PR에서
+  목적에 맞게 재사용할 수 있다. Asset 재사용은 본문 복제로 보지 않는다.
 - 공개 가능성 판단은 `Docs/05_Publication`에서 분리한다.

@@ -130,14 +130,17 @@ commit은 사용자가 명시적으로 요청했거나 현재 대화에서 커�
 
 ## Source Docs와 GitHub Body 경계
 
-`Docs/00_Index`부터 `Docs/06_Policies`와 `Docs/_assets`는 GitHub body의 source docs다. 이 범위에는 archive 정본, 상태 기록, 검증 근거, visual result 파일, 정책을 둔다.
+코드 폴더 README, `Docs/00_Index`부터 `Docs/06_Policies`, `Docs/_assets`는
+GitHub body의 source docs다. 이 범위에는 archive 정본, 상태 기록, 검증 근거,
+visual result 파일, 정책을 둔다.
 
 `Docs/07_GitHub`는 source docs를 GitHub Issue, PR, comment body로 요약/재구성하는 staging 공간이다. GitHub body는 source docs의 원문을 복제하지 않고, 게시 목적에 맞는 요약과 링크만 둔다.
 
 기본 갱신 기준:
 
 - 매 작업마다 WorkLog, 누적 진행 댓글, PR body 갱신 필요 여부를 확인한다.
-- Work Unit Issue, Demo Issue, Verification Issue는 독립 추적 가치가 있을 때만 만든다.
+- Work Unit Issue와 Verification Issue는 독립 추적 가치가 있을 때만 만든다.
+- Demo Issue는 독립적인 시각·기술 공개 가치가 있을 때만 만든다.
 - Verification과 Demo 문서는 GitHub 게시 양식을 고민하는 위치가 아니라 상태와 근거를 관리하는 source docs다.
 - GitHub body를 작성할 때는 source docs를 읽고 public-safe 문장으로 재작성한다.
 ## GitHub body 전환 기준
@@ -194,6 +197,18 @@ Issue에 포함할 항목:
 - 완료 조건
 - follow-up 후보
 
+### Demo Issue
+
+Demo Issue는 상세 Demo 정본에서 공개 가치가 높은 결과와 구현을 선별한 curated
+publication view다. Issue 하나만 읽어도 대표 결과, 핵심 구현, 구현 범위와 한계를
+이해할 수 있게 작성하고 상세 Demo 전체를 복제하지 않는다.
+
+- 대표 visual 1~3개와 핵심 구현 요약을 자체 포함한다.
+- 상세 Demo, Example, Topic, Verification, 코드와 관련 PR을 연결한다.
+- capture 생성 승인이나 내부 workflow 추적에 사용하지 않는다.
+- 게시 시점 snapshot으로 보되 중요한 구현, 결과, limitation이 바뀌면
+  동기화 필요 여부를 확인한다.
+
 ## PR 책임
 
 PR 기본 단위는 Chapter 또는 Chapter 묶음이다. Part는 Progress Issue, WorkLog, milestone, 진행판 단위로 다루고 PR 기본 단위로 사용하지 않는다.
@@ -209,6 +224,7 @@ PR에 포함할 항목:
 - 대표 예제와 README 링크
 - 검증 결과 요약
 - demo/capture/result 링크
+- 대표 visual 0~1개
 - public readiness 영향
 - 남은 known issue
 - 다음 Work Unit 또는 Issue 후보
@@ -224,6 +240,8 @@ PR body 작성 기준:
 - screenshot/result image는 repo-relative path가 아니라 GitHub absolute URL로 연결한다.
 - draft PR 후보는 작업 branch 기준 `https://github.com/<owner>/<repo>/blob/<branch>/Docs/_assets/...?...raw=true` 형식을 사용한다.
 - merge 후 main 기준 게시본 또는 snapshot이 필요하면 main 기준 URL로 정리한다.
+- 상세 visual과 기술 showcase는 Demo Issue로 위임한다.
+- Demo Issue가 게시되지 않았으면 상세 Demo 정본으로 직접 연결한다.
 
 ## GitHub body 유형
 
@@ -231,10 +249,10 @@ GitHub에 게시하는 Markdown body는 `Docs/07_GitHub` 파일을 기준으로 
 
 | 유형 | 위치 | 최소 책임 |
 | --- | --- | --- |
-| PR Body | `Docs/07_GitHub/prs/**/*.md` | 핵심 개념, 대표 예제, 검증, Demo capture/result, 제한, 관련 Issue/PR |
+| PR Body | `Docs/07_GitHub/prs/**/*.md` | 핵심 개념, 대표 예제, 검증, 대표 visual 0~1개, Demo 링크, 제한 |
 | Work Unit Issue | `Docs/07_GitHub/issues/work-unit/work-unit_*.md` | Work Unit 범위, 검증 기준, 완료 조건 |
 | Verification Issue | `Docs/07_GitHub/issues/verification/verification_*.md` | build/run/capture 검증 결과와 미확인 항목 |
-| Demo Issue | `Docs/07_GitHub/issues/demo/demo_*.md` | demo 범위, 생성 기준, 승인 필요 범위 |
+| Demo Issue | `Docs/07_GitHub/issues/demo/demo_*.md` | 대표 visual, 핵심 구현, 범위와 한계, 상세 Demo·코드·검증·PR 링크 |
 | Progress Body | `Docs/07_GitHub/plan/plan-body.md` | 상위 진행판 본문 |
 | Progress Comment | `Docs/07_GitHub/plan/plan-progress.md` | 전체 진행판 누적 댓글 |
 | Plan Comment | `Docs/07_GitHub/plan/comments/*.md` | PR 마감 기록 |

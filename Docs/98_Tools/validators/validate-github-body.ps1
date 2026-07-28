@@ -575,12 +575,36 @@ function Test-Templates {
 	}
 }
 
+function Test-PrVisualAndDemoLinks {
+	param([System.IO.FileInfo]$File)
+
+	$RelativePath = Get-RelativePath $File.FullName
+	$Content = Get-Content -Encoding UTF8 $File.FullName -Raw
+	$Images = [regex]::Matches($Content, '!\[[^\]]+\]\(([^)]+)\)')
+
+	if ($Images.Count -gt 1) {
+		Add-Failure $RelativePath "PR body must use no more than one representative visual"
+	}
+
+	foreach ($Image in $Images) {
+		$Url = $Image.Groups[1].Value
+		if (-not (Test-GitHubImageUrl -Url $Url)) {
+			Add-Failure $RelativePath "PR visual must use a GitHub absolute Docs/_assets URL"
+		}
+	}
+
+	if ($Content -notmatch
+		'\]\(https://github\.com/(?:[^/]+/[^/]+/(?:blob/.+/(?:Docs/03_Demos/|Docs/07_GitHub/issues/demo/).+\.md|issues/\d+))\)') {
+		Add-Failure $RelativePath "PR body must link a detailed Demo, Demo Issue candidate, or published Demo Issue"
+	}
+}
+
 $SummarySection = New-Text @(0xC694, 0xC57D)
 $CoreConceptsSection = New-Text @(0xD575, 0xC2EC, 0x20, 0xAC1C, 0xB150)
 $RepresentativeExamplesSection = New-Text @(0xB300, 0xD45C, 0x20, 0xC608, 0xC81C)
 $VerificationSection = New-Text @(0xAC80, 0xC99D)
 $ScreenshotsSection = New-Text @(0xC2A4, 0xD06C, 0xB9B0, 0xC0F7)
-$UnverifiedLimitationsSection = New-Text @(0xBBF8, 0xD655, 0xC778, 0x20, 0x2F, 0x20, 0xC81C, 0xD55C)
+$ImplementationScopeLimitationsSection = New-Text @(0xAD6C, 0xD604, 0x20, 0xBC94, 0xC704, 0xC640, 0x20, 0xD55C, 0xACC4)
 $DocumentationSection = New-Text @(0xBB38, 0xC11C)
 $RelatedIssuesSection = New-Text @(0xAD00, 0xB828, 0x20, 0xC774, 0xC288)
 $NextStepSection = New-Text @(0xB2E4, 0xC74C, 0x20, 0xB2E8, 0xACC4)
@@ -601,8 +625,7 @@ $PrRequiredSections = @(
 	$CoreConceptsSection,
 	$RepresentativeExamplesSection,
 	$VerificationSection,
-	$ScreenshotsSection,
-	$UnverifiedLimitationsSection,
+	$ImplementationScopeLimitationsSection,
 	$DocumentationSection,
 	$RelatedIssuesSection,
 	$NextStepSection
@@ -663,7 +686,8 @@ Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "prs") -Recurse | ForEach
 	}
 
 	++$CheckedFileCount
-	Test-PublicBody -File $_ -RequiredSections $PrRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true -RequireLeadingH1 $true
+	Test-PublicBody -File $_ -RequiredSections $PrRequiredSections -RequireScreenshots $false -RequireLeadingH1 $true
+	Test-PrVisualAndDemoLinks -File $_
 }
 
 Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "plan") -Filter "plan-body.md" | ForEach-Object {

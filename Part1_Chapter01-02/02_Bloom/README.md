@@ -6,15 +6,13 @@
 
 이 예제는 GPU multi-pass bloom pipeline이 아니라 CPU image processing 결과를 DirectX11 렌더링 파이프라인에 연결하는 구조다. 따라서 bloom 개념과 dynamic texture upload 흐름을 함께 설명하는 데 초점을 둔다.
 
-## Key Concepts
+## 실행 진입점
 
-| 개념 | 설명 |
-| --- | --- |
-| Bloom | 밝은 영역을 blur한 뒤 원본에 더해 빛 번짐을 만드는 후처리 효과다. |
-| Bright-pass | threshold를 기준으로 bloom에 참여할 밝은 픽셀만 분리한다. |
-| Gaussian blur | 밝은 영역을 주변 픽셀로 확산시켜 부드러운 glow를 만든다. |
-| Dynamic texture | CPU에서 계산한 픽셀 배열을 GPU shader resource로 업로드한다. |
-| Full-screen quad | 처리된 texture를 화면 전체에 표시하는 렌더링 단위다. |
+- Solution: `02_Bloom.sln`
+- Application entry: `main.cpp`
+- CPU bloom: `Example.cpp`
+- DirectX11 upload/render: `Example.h`
+- Shader: `VS.hlsl`, `PS.hlsl`
 
 ## Code Map
 
@@ -27,55 +25,39 @@
 | `PS.hlsl` | texture sampling pixel shader |
 | `image_1_360.JPG` | ChatGPT 생성 이미지 기반 입력 이미지 |
 
-## Processing Flow
+## 구현 요약
 
-1. `Image::ReadFromFile()`이 입력 이미지를 float RGBA 픽셀 배열로 읽는다.
-2. 이미지 로드에 실패하면 fallback image를 만든다.
-3. `Image::Bloom()`이 threshold 기준으로 밝은 영역을 분리한다.
-4. `GaussianBlur5()`를 반복 적용해 밝은 영역을 확산시킨다.
-5. blur 결과를 원본 이미지에 weight로 더해 최종 bloom 결과를 만든다.
-6. `WritePNG()`가 결과 이미지를 `result.png`로 저장한다.
-7. `Example::Initialize()`가 swap chain, shader, dynamic texture, SRV를 구성한다.
-8. `Example::Update()`가 `Map/Unmap`으로 CPU 픽셀 데이터를 GPU texture에 업로드한다.
-9. `Example::Render()`가 full-screen quad로 texture를 화면에 표시한다.
+입력 이미지를 CPU에서 처리한 뒤 dynamic texture로 업로드하고 full-screen quad로
+표시한다. Bright-pass, blur, 합성, `RowPitch`를 고려한 upload의 전체 연결은
+[02_Bloom 상세 Demo](../../Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)를
+기준으로 확인한다.
 
 ## Build And Run
 
 | 항목 | 결과 | 비고 |
 | --- | --- | --- |
 | Solution | 존재 | `02_Bloom.sln` |
-| Debug x64 build | 성공 | MSBuild 17.14로 `x64/Debug/02_Bloom.exe` 생성을 확인함 |
-| Debug x64 run | 성공 | 실행 후 5초 이상 유지, `result.png` 생성, 종료 코드 0 |
-| Release x64 build/run | 성공 | `x64/Release/02_Bloom.exe` 생성과 실행을 확인함 |
+| Debug x64 build/run | 성공 | 상세 근거는 Verification으로 위임 |
+| Release x64 build/run | 성공 | 상세 근거는 Verification으로 위임 |
 | Capture/Result | 확보 | original input과 bloom result 비교 이미지 연결 |
 
 ## Capture/Result
-
-### Original Input
-
-![Original input](../../Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg)
 
 ### Bloom Result
 
 ![Bloom result](../../Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png)
 
-- Original input: `Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg`
-- Bloom result: `Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png`
-
-## Demo Points
-
-- 원본 이미지와 bloom 결과의 밝은 영역 확산 차이를 보여준다.
-- threshold와 blur 반복 횟수가 bloom 강도에 미치는 영향을 설명한다.
-- CPU에서 계산한 결과가 DirectX11 texture로 업로드되어 화면에 표시되는 흐름을 보여준다.
+Input/result 비교와 결과 해석은 상세 Demo로 연결한다.
 
 ## Limitations
 
 - GPU shader 기반 multi-pass bloom pipeline은 아니다.
 - HDR render target, tone mapping, emissive material 기반 bloom은 다루지 않는다.
-- Debug/Release x64 build와 run은 성공했다. ChatGPT 생성 입력 이미지로 `result.png`를 재생성했고, 육안상 강의명/강사명/워터마크/개인 식별자는 보이지 않는다.
+- CPU 처리 구조이므로 실시간 고해상도 post-processing 성능을 대표하지 않는다.
 
 ## Related Docs
 
-- Topic: `../../Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md`
-- Verification: `../../Docs/02_Verification/Part1_Chapter01-02/verification-index.md`
-- Demo: `../../Docs/03_Demos/Part1_Chapter01-02/demo-index.md`
+- [Topic](../../Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)
+- [Verification](../../Docs/02_Verification/Part1_Chapter01-02/verification-index.md)
+- [Detailed Demo](../../Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)
+- [Demo Index](../../Docs/03_Demos/Part1_Chapter01-02/demo-index.md)

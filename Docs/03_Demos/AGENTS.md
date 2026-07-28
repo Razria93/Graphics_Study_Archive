@@ -6,7 +6,8 @@
 
 ## 책임
 
-- demo capture/result 계획과 capture/result 연결을 기록한다.
+- demo 후보와 capture/result 상태를 registry로 기록한다.
+- 상세 Demo 문서에 기술 구현 흐름과 시각 결과를 기록한다.
 - build/run 상태는 `Docs/02_Verification`으로 링크한다.
 - capture/result 파일은 `Docs/_assets`로 링크한다.
 - public 후보 판단은 `Docs/05_Publication`으로 링크한다.
@@ -18,6 +19,8 @@
 - screenshot 계획은 `capture-plan.md`에 둔다.
 - video 계획은 `video-plan.md`에 둔다.
 - Part/Chapter 하위에는 `demo-index.md`를 둔다.
+- `demo-index.md`는 후보와 상태 registry로 사용한다.
+- 구현과 시각 결과를 설명할 가치가 있는 Demo는 별도 상세 문서로 둔다.
 
 ## 문체
 

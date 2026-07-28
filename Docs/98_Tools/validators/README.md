@@ -10,6 +10,7 @@
 | `validate-github-quality.ps1` | Demo Issue 품질 검사(전개, 시각 자료, C++ 스타일 의사코드, 가독성) | `Docs/07_GitHub/issues/demo` |
 | `validate-topic-doc-quality.ps1` | 상세 Topic 정본 품질 검사(책임 구조, 핵심 개념, Example/Verification/Demo 연결) | `Docs/01_Topics` |
 | `validate-demo-index-quality.ps1` | Demo source docs 구현도 균일성 검사(필수 구조, 테이블 스키마, 상태값, 최소 capture 기준) | `Docs/03_Demos/**/demo-index.md` |
+| `validate-demo-doc-quality.ps1` | 상세 Demo 기술 정본 검사(구조, 링크, tracked visual, 금지 경로) | `Docs/03_Demos/**/[0-9][0-9]_*.md` |
 
 ## 사용법
 
@@ -18,6 +19,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-topic-doc-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-index-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-doc-quality.ps1
 ```
 
 GitHub body validator의 기본 입력은 `Docs/07_GitHub`이다. Topic과 Demo source docs validator는 각각 `Docs/01_Topics`, `Docs/03_Demos`를 기본 입력으로 사용한다.
@@ -27,28 +29,40 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-quality.ps1 -GitHubRoot Docs/07_GitHub
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-topic-doc-quality.ps1 -TopicsRoot Docs/01_Topics
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-index-quality.ps1 -DemosRoot Docs/03_Demos
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-doc-quality.ps1 -DemosRoot Docs/03_Demos
 ```
 
 `validate-github-quality.ps1`는 현재 `issues/demo/demo_*.md`를 대상으로 다음을 검사한다.
 
-- 필수 섹션 존재와 순서(`검증 상태` 뒤 `구현 범위와 한계`, `관련 문서`)
-- Demo Assets 표의 필수 행(`Input screenshot`, `Result screenshot`, `Result image`, `Video`)
-- `## 핵심 로직 의사코드` 섹션 존재
-- C++ fenced pseudocode(````cpp`) 사용 여부
-- `Pseudo C++` 표기, `*Pseudo(...)` 함수 시그니처 여부
-- 의사코드 아래 원본 코드 링크 존재 여부
-- 긴 줄(기본 100자 초과) 가독성 경고
+- curated Demo Issue 필수 섹션과 순서
+- 대표 GitHub visual 1~3개
+- 상세 Demo, Verification, 원본 C++ 코드 링크
+- 선택적 C++ 의사코드와 원본 코드 링크
+- 120자 초과 일반 본문
 
 `validate-demo-index-quality.ps1`는 현재 `Docs/03_Demos/**/demo-index.md`를 대상으로 다음을 검사한다.
 
 - 필수 섹션 존재와 순서(`## 범위`, `## Demo 목록`, `## 갱신 기준`)
 - `## 범위`의 `주요 demo 후보`, `비고` 항목 존재
-- Demo 목록 테이블 필수 컬럼 존재
+- Demo 목록 테이블 필수 컬럼 존재(`상세 Demo`, `GitHub Demo Issue` 포함)
 - Demo 목록의 필수 행(`최소 capture`, `대표 capture`, `video`) 존재
 - 상태값 허용 목록 준수(`미확인`, `후보`, `확보`, `보류`, `제외`)
 - `확보` 상태일 때 Capture/Result가 `없음`이 아니고 `Docs/_assets` 경로를 포함하는지 확인
+- `확보` 상태일 때 상세 Demo Markdown 링크가 있는지 확인
+- 상세 Demo와 Demo Issue 후보의 상대 링크 대상 존재 여부 확인
+- Demo Issue가 `게시 후보`, `미게시`, 실제 GitHub Issue URL 중 하나로 표현되는지 확인
 - 각 행 `비고` 비어있지 않은지 확인
 - `최소 capture` 행의 Example 대상 지정 여부 확인
+
+`validate-demo-doc-quality.ps1`는 상세 Demo 문서를 대상으로 다음을 검사한다.
+
+- 필수 섹션과 순서, 의미 있는 본문
+- Example, Topic, Verification Markdown 링크
+- repo-relative 링크 대상 존재 여부
+- tracked `Docs/_assets` visual
+- `local/`, Legacy, stale path, placeholder
+- 120자 초과 일반 본문
+- 같은 폴더 `demo-index.md`의 상세 Demo 연결
 
 `validate-topic-doc-quality.ps1`는 `Docs/01_Topics`의 승격된 상세 Topic 문서를 대상으로 다음을 검사한다.
 
@@ -71,6 +85,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 - screenshot/result image는 GitHub absolute URL을 사용해야 한다.
 - 허용 URL은 `https://github.com/<owner>/<repo>/blob/<branch>/Docs/_assets/captures/<file>?raw=true` 또는 `https://raw.githubusercontent.com/<owner>/<repo>/<branch>/Docs/_assets/captures/<file>` 형식이다.
 - image URL 검사는 형식 검사이며 실제 파일 존재를 보증하지 않는다.
+- PR은 대표 visual을 최대 1개 사용하고 상세 Demo, Demo Issue 후보 또는 게시된 Demo Issue를 연결한다.
 - template에 특정 Issue 번호가 하드코딩되어 있지 않은지 확인한다.
 - Issue/PR 후보는 첫 H1을 title source로 유지한다. 실제 `gh issue create`와 `gh pr create`에서는 title을 H1에서 사용하고 body는 `Docs/07_GitHub` tracked 정본을 그대로 게시한다.
 
@@ -134,6 +149,8 @@ Progress comment는 Docs 정본을 복제하지 않고 진행 상태와 링크�
 - `local/` 하위 snapshot 생성 여부
 - `Docs/04_WorkLogs`와 `work-unit-github-index.md` 동기화 여부
 - build/run/capture 실제 성공 여부
+- 상세 Demo와 Example 또는 Demo Issue의 의미 중복
+- visual 대표성과 limitation의 기술적 정확성
 
 ## 주의
 

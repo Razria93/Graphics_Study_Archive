@@ -16,7 +16,7 @@
 - DirectX11 initialization: Win32 window, device, device context, swap chain, render target view를 구성하는 최소 렌더링 기반이다. 자세한 흐름은 `01_DX11InitAndImGui` README에서 확인한다.
 - Dynamic texture upload: CPU에서 만든 pixel buffer를 GPU texture에 업로드하고 pixel shader에서 샘플링하는 흐름이다. 두 예제 모두 CPU-side image data와 렌더링 파이프라인의 연결을 보여준다.
 - Bloom post-processing: 밝은 영역을 분리하고 blur 후 원본에 더해 glow를 만드는 후처리 흐름이다. 자세한 개념은 `PostProcessingAndBloom` Topic으로 연결한다.
-- Capture/result 연결: `02_Bloom`의 input/result 이미지를 Demo와 PR 본문에서 함께 확인한다.
+- Capture/result 연결: PR은 대표 result 하나를 보여주고 상세 비교는 Demo로 연결한다.
 
 ## 대표 예제
 
@@ -33,7 +33,8 @@
 
 - README: [02_Bloom README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Part1_Chapter01-02/02_Bloom/README.md)
 - Topic: [PostProcessingAndBloom](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)
-- Demo: [Part1_Chapter01-02 demo-index](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/03_Demos/Part1_Chapter01-02/demo-index.md)
+- Demo: [02_Bloom 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)
+- Demo Issue candidate: [Part1 Chapter01-02 CPU Bloom Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/07_GitHub/issues/demo/demo_part1_chapter01-02.md)
 
 ## 검증
 
@@ -43,27 +44,19 @@
 - `02_Bloom` Release x64 build/run은 성공했다.
 - `02_Bloom`에서 입력 이미지 기반 `result.png`를 생성하고 original input/bloom result 비교를 확보했다.
 
-## 스크린샷
+## 대표 Visual
 
-### 02_Bloom Original Input
-
-Bloom 처리 전 입력 이미지다. 밝은 구체와 어두운 배경 대비가 있어 bloom 전후 비교에 사용한다.
-
-![02_Bloom Original Input](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg?raw=true)
-
-### 02_Bloom Bloom Result
+### 02_Bloom Result
 
 CPU bloom 처리 후 생성된 result image다. 밝은 영역이 주변으로 확산된 결과를 보여준다.
 
 ![02_Bloom Bloom Result](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png?raw=true)
 
-## 미확인 / 제한
+## 구현 범위와 한계
 
 - `01_DX11InitAndImGui`는 기반 렌더 루프 설명용 예제로 별도 capture/result를 만들지 않는다.
 - `02_Bloom`은 GPU multi-pass bloom pipeline이 아니라 CPU image processing 결과를 DirectX11 dynamic texture로 표시하는 예제다.
-- input/result 이미지는 private archive PR 기준으로 사용 가능 상태다. public subset 승격 확정은 `Docs/05_Publication` 기준으로 별도 판단한다.
-- public subset 게시 여부는 아직 확정하지 않는다.
-- Progress Issue는 #7이고, 이 PR은 Draft PR #8이다.
+- input/result 이미지는 private archive PR 기준으로 사용 가능 상태다.
 
 ## 문서
 
@@ -74,10 +67,10 @@ CPU bloom 처리 후 생성된 result image다. 밝은 영역이 주변으로 �
 	- [02_Bloom README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Part1_Chapter01-02/02_Bloom/README.md)
 - Topic: [PostProcessingAndBloom](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)
 - Verification: [Part1_Chapter01-02 verification-index](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/02_Verification/Part1_Chapter01-02/verification-index.md)
-- Demo: [Part1_Chapter01-02 demo-index](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/03_Demos/Part1_Chapter01-02/demo-index.md)
+- Detailed Demo: [02_Bloom](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)
+- Demo Issue candidate: [Part1 Chapter01-02 CPU Bloom Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/07_GitHub/issues/demo/demo_part1_chapter01-02.md)
 - Publication:
 	- [candidate-list](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/05_Publication/candidate-list.md)
-	- [Demo Issue - Part1 Chapter01-02 Visual And Implementation Guide](https://github.com/Razria93/Graphics_Study_Archive/issues/9)
 
 ## 관련 이슈
 
@@ -85,6 +78,5 @@ CPU bloom 처리 후 생성된 result image다. 밝은 영역이 주변으로 �
 
 ## 다음 단계
 
-- 사용자 검토 후 Part1 Chapter01-02 PR 게시 여부를 결정한다.
-- Part1의 다음 예제 또는 Part2 rasterization 예제에 같은 workflow를 적용한다.
-- public subset 후보는 별도 공개 검수 후 확정한다.
+- 상세 input/result 비교와 구현 설명은 Demo Issue 게시 후보로 연결한다.
+- public subset 후보는 `Docs/05_Publication` 기준으로 검토한다.

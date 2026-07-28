@@ -38,7 +38,7 @@ CPU에서 계산한 픽셀은 `D3D11_USAGE_DYNAMIC` texture에 `Map/Unmap`으로
 
 ## 데모 연결
 
-`02_Bloom`은 original input과 bloom result를 비교해 bright-pass, blur, 합성의 시각적 차이를 보여준다. 함수별 처리 흐름, dynamic texture upload, capture/result는 Example README와 Demo 정본에서 설명한다.
+`02_Bloom`은 original input과 bloom result를 비교해 bright-pass, blur, 합성의 시각적 차이를 보여준다. 코드 탐색은 Example README로 연결하고, 함수별 구현 흐름과 dynamic texture upload, capture/result는 상세 Demo에서 설명한다.
 
 ## 한계
 
@@ -49,4 +49,5 @@ CPU에서 계산한 픽셀은 `D3D11_USAGE_DYNAMIC` texture에 `Map/Unmap`으로
 
 - Example: [`Part1_Chapter01-02/02_Bloom/README.md`](../../../Part1_Chapter01-02/02_Bloom/README.md)
 - Verification: [`Docs/02_Verification/Part1_Chapter01-02/verification-index.md`](../../02_Verification/Part1_Chapter01-02/verification-index.md)
-- Demo: [`Docs/03_Demos/Part1_Chapter01-02/demo-index.md`](../../03_Demos/Part1_Chapter01-02/demo-index.md)
+- Demo:
+  [`Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md`](../../03_Demos/Part1_Chapter01-02/02_Bloom.md)

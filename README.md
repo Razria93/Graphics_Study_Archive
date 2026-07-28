@@ -31,6 +31,10 @@
 
 ![02_Bloom bloom result](Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png)
 
+- [Bloom 상세 Demo](Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)
+- [Demo Issue 게시 후보](Docs/07_GitHub/issues/demo/demo_part1_chapter01-02.md)
+- [02_Bloom 코드 안내](Part1_Chapter01-02/02_Bloom/README.md)
+
 ## Study Map
 
 | 범위 | 주요 내용 | 상태 |
@@ -61,10 +65,11 @@
 | `Part*_Chapter*/ExampleName/README.md` | 예제 설명 정본 |
 | `Docs/01_Topics` | graphics 개념 정본 |
 | `Docs/02_Verification` | build/run/capture 검증 정본 |
-| `Docs/03_Demos` | demo capture/result 정본 |
+| `Docs/03_Demos` | Demo registry와 기술 구현·시각 결과 정본 |
 | `Docs/04_WorkLogs` | Issue/PR 작업 기록 정본 |
 | `Docs/05_Publication` | public subset 판단 정본 |
 | `Docs/06_Policies` | 문서화, 검증, demo, GitHub 운영, 공개 정책 |
+| `Docs/07_GitHub` | GitHub Issue/PR/comment 게시 후보 |
 | `Docs/98_Tools` | templates, validator, troubleshooting |
 | `Docs/99_Legacy` | import 기록과 이전 Docs 구조 |
 

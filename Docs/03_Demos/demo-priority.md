@@ -4,7 +4,7 @@
 
 | 범위 | 최소 demo | 대표 demo 후보 | 선택 demo 후보 | 상태 | 비고 |
 | --- | --- | --- | --- | --- | --- |
-| Part1_Chapter01-02 | DX11 init 실행 화면 | Bloom 결과 | ImGui 조작 화면 | 후보 | build/run 확인 필요 |
+| Part1_Chapter01-02 | Bloom input/result | Bloom 결과 | 없음 | 확보 | build/run과 tracked visual 확인 완료 |
 | Part1_Chapter03 | ray traced sphere | reflection/transparency | cubemap environment | 후보 | Portfolio_RayTracer와 연결 |
 | Part2_Chapter04 | rasterized triangle | depth buffer, projection | lighting step | 후보 | rasterization 설명용 |
 | Part2_Chapter05-08 | DirectX11 pipeline 실행 | model, cubemap, IBL, bloom | shader toy variants | 후보 | 예제 수가 많아 대표 선정 필요 |

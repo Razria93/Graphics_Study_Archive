@@ -32,7 +32,10 @@
 - capture/result:
 - validator:
 
-## 스크린샷
+## 대표 Visual
+
+대표 visual이 review에 도움이 될 때만 0~1개 사용한다. 상세 visual은 Demo
+Issue로 연결한다.
 
 ### Example Capture
 
@@ -40,7 +43,7 @@ capture/result가 보여주는 내용을 한 문장으로 설명한다.
 
 ![Example Capture](https://github.com/Razria93/Graphics_Study_Archive/blob/<branch-name>/Docs/_assets/captures/example.png?raw=true)
 
-## 미확인 / 제한
+## 구현 범위와 한계
 
 -
 
@@ -70,5 +73,5 @@ capture/result가 보여주는 내용을 한 문장으로 설명한다.
 - 표는 검증, 링크, 상태처럼 짧은 값을 비교할 때만 사용한다.
 - 구조 정리 PR처럼 파일 이동 자체가 핵심인 경우에만 변경 목록 중심 구성을 예외로 사용한다.
 - 상세 설명은 README, Topic, Verification, Demo 문서로 링크한다.
-- 스크린샷과 result image는 GitHub absolute URL을 사용한다.
+- 대표 visual은 최대 1개만 사용하고 GitHub absolute URL을 사용한다.
 - GitHub 게시 후보는 `Docs/07_GitHub/prs`에 둔다.

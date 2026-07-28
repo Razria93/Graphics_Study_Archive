@@ -28,6 +28,7 @@
 | Example 작성 | `templates/example-readme.md`, 코드 폴더 README 정책 |
 | Topic 작성 | `templates/topic.md`, `Docs/01_Topics/AGENTS.md` |
 | Demo index 작성 | `Docs/03_Demos/AGENTS.md`, `validators/validate-demo-index-quality.ps1` |
+| 상세 Demo 작성 | `templates/demo-note.md`, `validators/validate-demo-doc-quality.ps1` |
 | WorkLog 마감 | `templates/worklog.md`, `Docs/04_WorkLogs/AGENTS.md` |
 | local study review | `templates/local-study-review.md`, `Docs/06_Policies/local-review-policy.md` |
 | publication review | `templates/local-publication-review.md`, `Docs/05_Publication/AGENTS.md` |

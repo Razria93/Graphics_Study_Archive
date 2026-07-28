@@ -22,20 +22,20 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 - source docs 복제 대신 요약과 링크를 사용한다.
 - 내부 메모, TODO, TBD, draft 문구를 남기지 않는다.
 
-## 문서 전개 규칙
+## Demo Issue 전개
 
-- `요약`: 문서 목적 2~4문장
-- `핵심 목표`: 3~5개 bullet
-- `구조/흐름`: 단계형 목록(숫자 목록)
-- `근거`: 링크 테이블 또는 짧은 목록
-- `검증 상태`: 완료/미확인 분리
-- `구현 범위와 한계`: Demo가 다루는 기술적 범위와 독자가 오해하기 쉬운 제한 명시
-- `제외 범위`: Progress/Work Unit처럼 작업 경계 추적이 필요한 body에서만 사용
+- `요약`: 결과와 핵심 구현 2~4문장
+- `결과`: 대표 visual 1~3개
+- `핵심 구현`: 결과에 직접 연결되는 선택 3~5개
+- `처리 흐름`: 짧은 단계형 목록
+- `구현 범위와 한계`: 독자가 오해하기 쉬운 제한
+- `검증`: build/run과 capture/result 요약
+- `더 자세히 보기`: 상세 Demo, Example, Topic, Verification, PR 링크
 
 ## 이미지와 동영상 규칙
 
 - Demo Issue는 screenshot 최소 1개를 포함한다.
-- Demo Assets 표에는 `Input screenshot`, `Result screenshot`, `Result image`, `Video` 행을 유지한다.
+- Demo Issue는 대표 visual을 최소 1개 포함한다.
 - GitHub body 이미지 URL은 GitHub absolute URL만 사용한다.
 - screenshot/result image는 `Docs/_assets/captures`를 사용한다.
 - video가 없으면 `없음`과 사유를 함께 적는다.
@@ -57,7 +57,8 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 
 ## 의사코드 규칙
 
-- 의사코드는 C++ 스타일 문법(함수, 블록, for, if)으로 작성한다.
+- 의사코드는 핵심 구현 이해에 도움이 될 때만 사용한다.
+- 사용한 의사코드는 C++ 스타일 문법(함수, 블록, for, if)으로 작성한다.
 - 블럭 시작에 `Pseudo C++` 성격을 명시한다.
 - 입력, 처리 단계, 실패 분기, 출력을 모두 보여준다.
 - 구현 세부는 생략하고 알고리즘 구조만 남긴다.
@@ -67,6 +68,8 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 
 - PR 본문은 요약과 링크 허브 역할만 유지한다.
 - Demo 상세(시각 자료, 의사코드, 구현 하이라이트)는 Demo Issue로 위임한다.
+- PR 대표 visual은 0~1개만 사용한다.
+- Demo Issue가 미게시 상태면 상세 Demo 정본으로 직접 연결한다.
 
 ## 작성 후 자기 검수
 

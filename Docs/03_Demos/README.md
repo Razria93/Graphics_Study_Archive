@@ -1,10 +1,13 @@
 # Demos
 
-이 폴더는 demo capture/result 계획과 시연 우선순위의 source docs다. 실제 build/run 검증 상태는 `Docs/02_Verification`을 기준으로 하고, 검토된 asset 파일은 `Docs/_assets`에 둔다.
+이 폴더는 demo registry와 기술 구현·시각 결과의 상세 정본을 둔다. 실제
+build/run 검증 상태는 `Docs/02_Verification`을 기준으로 하고, 검토된 asset
+파일은 `Docs/_assets`에 둔다.
 
 ## 책임
 
 - Part/Chapter별 최소 capture, 대표 capture, 선택 capture 후보를 관리한다.
+- 상세 Demo에서 구현 목표, 처리 흐름, 구현 선택, 시각 결과와 한계를 설명한다.
 - capture/result가 보여주는 Example과 Topic을 연결한다.
 - 실제 파일 위치는 `Docs/_assets/captures`, `Docs/_assets/videos`, `Docs/_assets/diagrams`로 연결한다.
 - public 공개 가능성 판단은 `Docs/05_Publication`으로 분리한다.
@@ -21,10 +24,11 @@
 ## 구현도 균일성 기준
 
 - 각 `demo-index.md`는 `## 범위`, `## Demo 목록`, `## 갱신 기준` 순서를 유지한다.
-- `## Demo 목록` 테이블은 공통 컬럼(`Demo 후보`, `연결 Example`, `연결 Topic`, `Verification`, `Capture/Result`, `상태`, `비고`)을 유지한다.
+- `## Demo 목록` 테이블은 공통 컬럼(`Demo 후보`, `상세 Demo`, `연결 Example`, `연결 Topic`, `Verification`, `Capture/Result`, `GitHub Demo Issue`, `상태`, `비고`)을 유지한다.
 - 최소 행(`최소 capture`, `대표 capture`, `video`)을 유지한다.
 - 상태값은 `미확인`, `후보`, `확보`, `보류`, `제외`만 사용한다.
 - `확보` 상태는 `Docs/_assets` 연결이 확인된 경우에만 사용한다.
+- 상세 Demo는 `demo-index.md`에서 연결하고 별도 상태표를 중복 생성하지 않는다.
 
 ## 품질 검증
 
@@ -32,6 +36,7 @@
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-index-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-doc-quality.ps1
 ```
 
 ## 문서 목록
@@ -41,12 +46,13 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 | [Demo Priority](demo-priority.md) | Part별 demo 우선순위와 대표 후보 |
 | [Capture Plan](capture-plan.md) | screenshot 계획 |
 | [Video Plan](video-plan.md) | video 계획 |
+| [Part1 Bloom](Part1_Chapter01-02/02_Bloom.md) | CPU bloom 구현과 시각 결과 상세 정본 |
 
 ## Part/Chapter Demo
 
 | 범위 | 문서 위치 | 문서 상태 |
 | --- | --- | --- |
-| Part1 Chapter01-02 | [Part1_Chapter01-02](Part1_Chapter01-02/demo-index.md) | 골격 작성 |
+| Part1 Chapter01-02 | [Part1_Chapter01-02](Part1_Chapter01-02/demo-index.md) | 작성 완료 |
 | Part1 Chapter03 | [Part1_Chapter03](Part1_Chapter03/demo-index.md) | 골격 작성 |
 | Part2 Chapter04 | [Part2_Chapter04](Part2_Chapter04/demo-index.md) | 골격 작성 |
 | Part2 Chapter05-08 | [Part2_Chapter05-08](Part2_Chapter05-08/demo-index.md) | 골격 작성 |
