@@ -10,6 +10,9 @@
 - 산출물 본문, 작업 초안, GitHub draft, raw/reference 원문은 이 폴더에 두지 않는다.
 - 정책 문서는 하나의 책임을 가진다.
 - 정책 간 중복은 링크로 처리하고 원문을 복제하지 않는다.
+- 문서 감사의 범위, 권한, 심각도, keyword는
+  `document-system-audit-policy.md`에 둔다.
+- 감사 실행 절차와 보고 template은 `Docs/98_Tools`로 위임한다.
 
 ## 작성 기준
 

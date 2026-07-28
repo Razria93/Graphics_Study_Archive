@@ -25,6 +25,7 @@
 | [Assets Policy](assets-policy.md) | capture, video, image, third-party asset 기준 |
 | [Local Review Policy](local-review-policy.md) | local-only 자료 영역과 raw/reference 검토 기준 |
 | [Agent Safety Policy](agent-safety-policy.md) | agent 작업 안전 규칙 |
+| [Document System Audit Policy](document-system-audit-policy.md) | 문서 전수감사 범위, 권한, 증거와 승인 경계 |
 | [Style Policy](style-policy.md) | 문체와 표현 규칙 |
 | [Terminology Policy](terminology-policy.md) | 반복 용어와 표준 표현 |
 
