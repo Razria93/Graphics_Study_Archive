@@ -60,6 +60,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 - Example, Topic, Verification Markdown 링크
 - repo-relative 링크 대상 존재 여부
 - tracked `Docs/_assets` visual
+- 선택형 의사코드의 `Pseudo C++` 표기와 대응 source line 링크
 - `local/`, Legacy, stale path, placeholder
 - 120자 초과 일반 본문
 - 같은 폴더 `demo-index.md`의 상세 Demo 연결

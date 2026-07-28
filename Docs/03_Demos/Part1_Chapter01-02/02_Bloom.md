@@ -58,7 +58,34 @@
 마지막 합성에서 원본과 blur 결과를 더하고 출력 범위로 제한한다. 개념과 수학적
 배경은 Topic에 위임하고 여기서는 실제 예제의 처리 연결을 기준으로 설명한다.
 
-- [Bloom source](../../../Part1_Chapter01-02/02_Bloom/Example.cpp#L212-L255)
+#### Bloom 합성 의사코드
+
+```cpp
+// Pseudo C++: bright-pass, blur, composite 구조 요약
+auto original = currentPixels;
+
+for (auto& pixel : currentPixels) {
+    if (Luminance(pixel.rgb) < threshold) {
+        pixel.rgb = 0.0f;
+    }
+}
+
+for (int i = 0; i < repeatCount; ++i) {
+    GaussianBlur5(currentPixels);
+}
+
+for (size_t i = 0; i < currentPixels.size(); ++i) {
+    currentPixels[i].rgb = Clamp01(
+        original[i].rgb + currentPixels[i].rgb * weight
+    );
+    currentPixels[i].a = original[i].a;
+}
+```
+
+- 관련 코드:
+  [원본 보존과 bright-pass](../../../Part1_Chapter01-02/02_Bloom/Example.cpp#L212-L235)
+- 관련 코드:
+  [반복 blur와 original composite](../../../Part1_Chapter01-02/02_Bloom/Example.cpp#L237-L249)
 
 ### Dynamic Texture Upload
 
@@ -66,7 +93,29 @@
 갱신한다. Source row 크기와 mapped `RowPitch`가 다를 수 있으므로 각 행을
 분리해 복사한 뒤 texture를 pixel shader resource로 사용한다.
 
-- [Texture upload source](../../../Part1_Chapter01-02/02_Bloom/Example.h#L258-L275)
+#### CPU에서 GPU로 업로드하는 의사코드
+
+```cpp
+// Pseudo C++: Map/Unmap과 RowPitch를 고려한 행 단위 업로드
+auto mapped = MapWriteDiscard(canvasTexture);
+if (!mapped.ok) {
+    return;
+}
+
+const size_t sourceRowBytes = canvasWidth * sizeof(Vec4);
+auto sourceBytes = ByteView(cpuPixels);
+
+for (int y = 0; y < canvasHeight; ++y) {
+    auto* sourceRow = sourceBytes.data + y * sourceRowBytes;
+    auto* destinationRow = mapped.base + y * mapped.rowPitch;
+    CopyBytes(destinationRow, sourceRow, sourceRowBytes);
+}
+
+Unmap(canvasTexture);
+```
+
+- 관련 코드:
+  [Map/Unmap과 RowPitch 기반 upload](../../../Part1_Chapter01-02/02_Bloom/Example.h#L258-L275)
 
 ### Full-screen Presentation
 

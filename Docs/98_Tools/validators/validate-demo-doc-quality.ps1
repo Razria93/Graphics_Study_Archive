@@ -73,6 +73,7 @@ function Validate-DemoDocument {
     $relative = Get-RelativePath $File.FullName
     $lines = Get-Content -Encoding UTF8 $File.FullName
     $content = $lines -join "`n"
+    $PseudocodeWord = New-Text @(0xC758, 0xC0AC, 0xCF54, 0xB4DC)
     $required = @(
         ("## " + (New-Text @(0xBAA9, 0xC801))),
         ("## " + (New-Text @(0xCC45, 0xC784, 0x20, 0xBC94, 0xC704))),
@@ -177,6 +178,24 @@ function Validate-DemoDocument {
     }
     if ($imageCount -eq 0) {
         Add-Warning $relative "representative visual is missing"
+    }
+
+    if ($content -match $PseudocodeWord) {
+        $cppBlocks = [regex]::Matches($content, '(?ms)```cpp\s*(.*?)```')
+        $pseudoBlocks = @($cppBlocks | Where-Object {
+            $_.Groups[1].Value -match 'Pseudo C\+\+'
+        })
+        if ($pseudoBlocks.Count -eq 0) {
+            Add-Failure $relative "pseudocode must use a cpp fence and state 'Pseudo C++'"
+        }
+
+        $sourceLinks = [regex]::Matches(
+            $content,
+            '\[[^\]]+\]\((?!https?://)[^)]*\.(?:cpp|h)#L\d+(?:-L\d+)?\)'
+        )
+        if ($sourceLinks.Count -lt $pseudoBlocks.Count) {
+            Add-Failure $relative "each pseudocode block must have a source line link"
+        }
     }
 
     $indexPath = Join-Path $File.DirectoryName "demo-index.md"
