@@ -24,7 +24,7 @@ Issue/PR body 후보는 첫 H1을 title source로 유지한다. 실제 `gh issue
 - Progress Issue 정본은 `plan/plan-body.md` 1개를 유지한다.
 - 누적 진행 댓글 정본은 `plan/plan-progress.md` 1개를 유지한다.
 - PR 하나가 마감될 때마다 `plan/plan-progress.md`를 갱신하고 `plan/comments/`에 새 plan comment를 1개 추가한다.
-- 선택 Issue는 `issues/work-unit`, `issues/topic`, `issues/verification`, `issues/demo` 하위에서 필요할 때만 만든다.
+- 선택 Issue는 `issues/work-unit`, `issues/verification`, `issues/demo` 하위에서 필요할 때만 만든다.
 
 ## Source Docs와의 관계
 

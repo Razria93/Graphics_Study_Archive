@@ -8,15 +8,15 @@
 
 이 Topic 문서는 bloom과 dynamic texture upload의 개념, pipeline 위치, 여러 예제로 확장 가능한 설명을 맡는다. `02_Bloom`의 build/run 상태, capture/result, 파일별 구현 요약은 코드 폴더 README와 Verification/Demo 문서를 기준으로 확인한다.
 
-## Bloom 처리 단계
+## 개념 흐름
 
 | 단계 | 설명 |
 | --- | --- |
-| 입력 이미지 로드 | 이미지 파일을 읽어 CPU 메모리의 float RGBA 픽셀 배열로 변환한다. |
-| 밝은 영역 분리 | threshold보다 밝은 픽셀만 남기고 나머지는 검정에 가깝게 만든다. |
-| Blur | 밝은 영역에 blur를 반복 적용해 주변으로 빛이 번지는 형태를 만든다. |
-| 합성 | blur 결과를 원본 이미지에 weight로 더해 최종 bloom 이미지를 만든다. |
-| 표시 | CPU 결과 픽셀을 DirectX11 dynamic texture에 업로드하고 full-screen quad로 렌더링한다. |
+| 입력 | 원본 scene color 또는 image에서 bloom 처리 기준이 되는 색상 정보를 얻는다. |
+| 밝은 영역 분리 | threshold보다 밝은 픽셀만 남겨 bloom에 참여할 영역을 제한한다. |
+| Blur | 밝은 영역을 주변으로 확산해 부드러운 glow 분포를 만든다. |
+| 합성 | blur 결과를 원본에 더해 밝은 영역이 번져 보이는 최종 색상을 만든다. |
+| 표시 | 합성 결과를 rendering pipeline의 최종 출력으로 전달한다. |
 
 ## 핵심 개념
 
@@ -36,29 +36,17 @@ Bloom의 최종 결과는 blur된 밝은 영역만 보여주는 것이 아니라
 
 CPU에서 계산한 픽셀은 `D3D11_USAGE_DYNAMIC` texture에 `Map/Unmap`으로 전달된다. 이후 pixel shader는 이 texture를 shader resource로 샘플링해 화면에 표시한다. 이 흐름은 CPU image processing 결과를 DirectX11 pipeline에 연결하는 기본 패턴으로 볼 수 있다.
 
-## 예제 연결 포인트
+## 데모 연결
 
-| 코드 | 역할 |
-| --- | --- |
-| `Image::ReadFromFile()` | 입력 이미지를 CPU 픽셀 배열로 읽는다. |
-| `Image::Bloom()` | bright-pass, blur 반복, 원본 합성을 수행한다. |
-| `Image::GaussianBlur5()` | bloom 확산에 쓰는 blur 처리를 수행한다. |
-| `Example::Initialize()` | swap chain, shader, dynamic texture, SRV를 만든다. |
-| `Example::Update()` | CPU 픽셀 배열을 GPU texture로 업로드한다. |
-| `Example::Render()` | full-screen quad로 texture를 화면에 표시한다. |
-
-## 시연 포인트
-
-- 원본 이미지와 bloom 결과의 차이를 비교한다.
-- threshold와 blur 반복 횟수가 bloom 강도에 미치는 영향을 설명한다.
-- CPU에서 계산한 결과가 DirectX11 texture로 표시되는 과정을 설명한다.
+`02_Bloom`은 original input과 bloom result를 비교해 bright-pass, blur, 합성의 시각적 차이를 보여준다. 함수별 처리 흐름, dynamic texture upload, capture/result는 Example README와 Demo 정본에서 설명한다.
 
 ## 한계
 
 - 현재 예제는 GPU multi-pass post-processing pipeline이 아니다.
 - HDR render target, tone mapping, emissive material 기반 bloom까지 다루지는 않는다.
-- build/run과 capture/result 검증 결과는 `Docs/02_Verification/Part1_Chapter01-02/verification-index.md`를 기준으로 확인한다.
 
-## 연결 예제
+## 관련 문서
 
-- `../../../Part1_Chapter01-02/02_Bloom/README.md`
+- Example: [`Part1_Chapter01-02/02_Bloom/README.md`](../../../Part1_Chapter01-02/02_Bloom/README.md)
+- Verification: [`Docs/02_Verification/Part1_Chapter01-02/verification-index.md`](../../02_Verification/Part1_Chapter01-02/verification-index.md)
+- Demo: [`Docs/03_Demos/Part1_Chapter01-02/demo-index.md`](../../03_Demos/Part1_Chapter01-02/demo-index.md)

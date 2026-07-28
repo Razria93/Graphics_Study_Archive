@@ -12,7 +12,7 @@ tools:
 
 ## 입력
 
-- body 유형: PR / Demo Issue / Topic Issue / Verification Issue / Work Unit Issue / plan body / plan comment
+- body 유형: PR / Demo Issue / Verification Issue / Work Unit Issue / plan body / plan comment
 - 대상 파일 경로
 - 대상 범위(Part/Chapter/Example)
 - 연결 source docs 경로 목록

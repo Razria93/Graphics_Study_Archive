@@ -137,7 +137,7 @@ commit은 사용자가 명시적으로 요청했거나 현재 대화에서 커�
 기본 갱신 기준:
 
 - 매 작업마다 WorkLog, 누적 진행 댓글, PR body 갱신 필요 여부를 확인한다.
-- Work Unit Issue, Topic Issue, Demo Issue, Verification Issue는 독립 추적 가치가 있을 때만 만든다.
+- Work Unit Issue, Demo Issue, Verification Issue는 독립 추적 가치가 있을 때만 만든다.
 - Verification과 Demo 문서는 GitHub 게시 양식을 고민하는 위치가 아니라 상태와 근거를 관리하는 source docs다.
 - GitHub body를 작성할 때는 source docs를 읽고 public-safe 문장으로 재작성한다.
 ## GitHub body 전환 기준
@@ -233,7 +233,6 @@ GitHub에 게시하는 Markdown body는 `Docs/07_GitHub` 파일을 기준으로 
 | --- | --- | --- |
 | PR Body | `Docs/07_GitHub/prs/**/*.md` | 핵심 개념, 대표 예제, 검증, Demo capture/result, 제한, 관련 Issue/PR |
 | Work Unit Issue | `Docs/07_GitHub/issues/work-unit/work-unit_*.md` | Work Unit 범위, 검증 기준, 완료 조건 |
-| Topic Issue | `Docs/07_GitHub/issues/topic/topic_*.md` | 여러 Chapter를 관통하는 Topic 정리 범위와 연결 문서 |
 | Verification Issue | `Docs/07_GitHub/issues/verification/verification_*.md` | build/run/capture 검증 결과와 미확인 항목 |
 | Demo Issue | `Docs/07_GitHub/issues/demo/demo_*.md` | demo 범위, 생성 기준, 승인 필요 범위 |
 | Progress Body | `Docs/07_GitHub/plan/plan-body.md` | 상위 진행판 본문 |

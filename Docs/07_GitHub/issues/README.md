@@ -7,7 +7,6 @@
 | 폴더 | 파일명 규칙 | 생성 기준 |
 | --- | --- | --- |
 | `work-unit` | `work-unit_<slug>.md` | Progress 댓글과 Chapter PR만으로 추적하기 어려운 독립 Work Unit이 있을 때 |
-| `topic` | `topic_<slug>.md` | 여러 Chapter를 관통하는 개념 문서가 독립 작업일 때 |
 | `verification` | `verification_<slug>.md` | build/run 실패, 환경 문제, 미확인 묶음이 별도 추적 대상일 때 |
 | `demo` | `demo_<slug>.md` | screenshot, video, result image 제작이나 승인 범위가 별도 작업일 때 |
 

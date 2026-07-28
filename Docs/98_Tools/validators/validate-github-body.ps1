@@ -561,19 +561,6 @@ function Test-PrScreenshotComment {
 	}
 }
 
-function Test-TopicIssue {
-	param([System.IO.FileInfo]$File)
-
-	$RelativePath = Get-RelativePath $File.FullName
-	$Lines = Get-Content -Encoding UTF8 $File.FullName
-
-	if ($Lines.Count -eq 0 -or $Lines[0] -notmatch '^# .+') {
-		Add-Failure $RelativePath "Topic Issue must start with an H1 title"
-	}
-
-	Test-PublicBody -File $File -RequiredSections $TopicRequiredSections -RequireScreenshots $false
-}
-
 function Test-Templates {
 	if (-not (Test-Path $TemplatesRoot)) {
 		return
@@ -600,8 +587,6 @@ $NextStepSection = New-Text @(0xB2E4, 0xC74C, 0x20, 0xB2E8, 0xACC4)
 $UnverifiedSection = New-Text @(0xBBF8, 0xD655, 0xC778)
 $RelatedPrSectionName = New-Text @(0xAD00, 0xB828, 0x20, 0x0050, 0x0052)
 $ScopeSection = New-Text @(0xBC94, 0xC704)
-$ConceptNotesSection = New-Text @(0xAC1C, 0xB150, 0x20, 0xBA54, 0xBAA8)
-$RelatedExamplesSection = New-Text @(0xAD00, 0xB828, 0x20, 0xC608, 0xC81C)
 $GoalSection = New-Text @(0xBAA9, 0xD45C)
 $CoreTasksSection = New-Text @(0xD575, 0xC2EC, 0x20, 0xC791, 0xC5C5)
 $VerificationCriteriaSection = New-Text @(0xAC80, 0xC99D, 0x20, 0xAE30, 0xC900)
@@ -630,15 +615,6 @@ $VerificationRequiredSections = @(
 	("Capture " + $VerificationSection),
 	$ScreenshotsSection,
 	$UnverifiedSection,
-	$DocumentationSection,
-	$RelatedPrSectionName
-)
-
-$TopicRequiredSections = @(
-	$SummarySection,
-	$ScopeSection,
-	$ConceptNotesSection,
-	$RelatedExamplesSection,
 	$DocumentationSection,
 	$RelatedPrSectionName
 )
@@ -715,11 +691,6 @@ Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues/work-unit") -Filt
 	Test-PublicBody -File $_ -RequiredSections $WorkUnitRequiredSections -RequireScreenshots $false -RequireLeadingH1 $true
 }
 
-Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues/topic") -Filter "topic_*.md" | ForEach-Object {
-	++$CheckedFileCount
-	Test-TopicIssue -File $_
-}
-
 Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues/verification") -Filter "verification_*.md" | ForEach-Object {
 	++$CheckedFileCount
 	Test-PublicBody -File $_ -RequiredSections $VerificationRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true -RequireLeadingH1 $true
@@ -750,7 +721,7 @@ Get-OptionalMarkdownFiles -Path $GitHubRoot -Recurse | ForEach-Object {
 		return
 	}
 
-	if ($RelativePath -match '/issues/work-unit/work-unit_.+\.md$' -or $RelativePath -match '/issues/topic/topic_.+\.md$' -or $RelativePath -match '/issues/verification/verification_.+\.md$' -or $RelativePath -match '/issues/demo/demo_.+\.md$') {
+	if ($RelativePath -match '/issues/work-unit/work-unit_.+\.md$' -or $RelativePath -match '/issues/verification/verification_.+\.md$' -or $RelativePath -match '/issues/demo/demo_.+\.md$') {
 		return
 	}
 

@@ -19,6 +19,21 @@
 - P1/P2 Topic은 먼저 `topic-index.md`에 후보로 둔다.
 - 예제별 문서와 중복되는 내용은 링크로 처리한다.
 
+## 상세 Topic 구조
+
+- `## 목적`, `## 책임 범위`, `## 핵심 개념`, `## 한계`, `## 관련 문서` 순서를 유지한다.
+- Topic별 개념 전개에는 `처리 단계`, `수학적 배경`, `Pipeline 위치`처럼 내용에 맞는 선택 섹션을 사용할 수 있다.
+- `## 핵심 개념`은 최소 2개 `###` 소제목으로 구성한다.
+- 구현 상세와 시각 자료는 Example README와 `Docs/03_Demos`로 위임한다.
+- build/run/capture 상태는 `Docs/02_Verification`으로 위임한다.
+- `## 관련 문서`에서 Example README, Verification, Demo 정본을 연결한다.
+
+## 품질 검증
+
+```powershell
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-topic-doc-quality.ps1
+```
+
 ## 문체
 
 - 평서형 현재형을 사용한다.

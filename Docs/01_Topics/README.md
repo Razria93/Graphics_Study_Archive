@@ -22,3 +22,11 @@
 - 예제별 구현 세부사항은 코드 폴더 README로 링크한다.
 - 직접 확인하지 않은 build/run/capture 결과는 `Docs/02_Verification`에 남긴다.
 - public 후보 여부는 `Docs/05_Publication` 기준을 따른다.
+
+## 품질 검증
+
+상세 Topic 문서는 공통 책임 섹션, 핵심 개념 전개, Example/Verification/Demo 연결을 검사한다.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-topic-doc-quality.ps1
+```
