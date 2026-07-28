@@ -18,7 +18,7 @@
 
 - `01_DX11InitAndImGui`는 기반 렌더 루프 설명용 예제라 별도 capture/result를 만들지 않는다.
 - `02_Bloom`은 GPU multi-pass bloom pipeline이 아니라 CPU image processing 결과를 dynamic texture로 표시하는 예제다.
-- input/result 이미지는 private archive PR 기준으로 사용 가능 상태다. public subset 승격 확정은 `Docs/05_Publication` 기준으로 별도 판단한다.
+- input/result 이미지는 metadata와 개인 식별자 검수를 완료했다.
 
 ## Related PR
 
