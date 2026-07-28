@@ -29,7 +29,8 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 - `구조/흐름`: 단계형 목록(숫자 목록)
 - `근거`: 링크 테이블 또는 짧은 목록
 - `검증 상태`: 완료/미확인 분리
-- `제외 범위`: 이번 작업에 포함하지 않는 범위 명시
+- `구현 범위와 한계`: Demo가 다루는 기술적 범위와 독자가 오해하기 쉬운 제한 명시
+- `제외 범위`: Progress/Work Unit처럼 작업 경계 추적이 필요한 body에서만 사용
 
 ## 이미지와 동영상 규칙
 
@@ -39,6 +40,13 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 - screenshot/result image는 `Docs/_assets/captures`를 사용한다.
 - video가 없으면 `없음`과 사유를 함께 적는다.
 - 각 이미지는 `###` 소제목 + 설명 문장 + 이미지 Markdown 순서를 유지한다.
+
+## Demo 검증 상태 규칙
+
+- Demo Issue의 검증 상태는 build/run과 capture/result 결과만 2~3줄로 요약한다.
+- 결과에 영향을 주지 않는 환경 경고와 조사 메모는 `Docs/02_Verification` 정본으로 위임한다.
+- 구현의 기술적 제한은 `## 구현 범위와 한계`에 둔다.
+- 관련 PR은 별도 운영 섹션을 만들지 않고 `## 관련 문서`에 링크한다.
 
 ## 코드 블럭 규칙
 

@@ -161,9 +161,8 @@ function Validate-DemoIssue {
     $ImplHighlights = "## " + (New-Text @(0xAD6C, 0xD604, 0x20, 0xD558, 0xC774, 0xB77C, 0xC774, 0xD2B8))
     $PseudoHeading = "## " + (New-Text @(0xD575, 0xC2EC, 0x20, 0xB85C, 0xC9C1, 0x20, 0xC758, 0xC0AC, 0xCF54, 0xB4DC))
     $Verify = "## " + (New-Text @(0xAC80, 0xC99D, 0x20, 0xC0C1, 0xD0DC))
-    $PrLinkage = "## PR " + (New-Text @(0xC5F0, 0xACC4, 0x20, 0xAE30, 0xC900))
+    $ImplementationLimits = "## " + (New-Text @(0xAD6C, 0xD604, 0x20, 0xBC94, 0xC704, 0xC640, 0x20, 0xD55C, 0xACC4))
     $RelatedDocs = "## " + (New-Text @(0xAD00, 0xB828, 0x20, 0xBB38, 0xC11C))
-    $OutOfScope = "## " + (New-Text @(0xC81C, 0xC678, 0x20, 0xBC94, 0xC704))
 
     $requiredHeadings = @(
         $Summary,
@@ -173,9 +172,8 @@ function Validate-DemoIssue {
         $ImplHighlights,
         $PseudoHeading,
         $Verify,
-        $PrLinkage,
-        $RelatedDocs,
-        $OutOfScope
+        $ImplementationLimits,
+        $RelatedDocs
     )
 
     $lastIndex = -1

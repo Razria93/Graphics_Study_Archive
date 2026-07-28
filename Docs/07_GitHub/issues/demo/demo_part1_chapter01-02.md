@@ -129,13 +129,11 @@ void UploadCanvasTexturePseudo()
 
 - Build/Run: `01_DX11InitAndImGui`, `02_Bloom` Debug/Release x64 성공
 - Capture/Result: `02_Bloom` input/result 확보
-- Known issue: `pwsh.exe` 경고(VI-003)는 build 성공과 별개로 관찰
 
-## PR 연계 기준
+## 구현 범위와 한계
 
-- PR 본문은 데모를 간단히 소개한다.
-- 상세 시각 자료와 구현 개괄은 이 Demo Issue로 연결한다.
-- PR #8 본문의 데모 섹션은 이 문서 링크를 기준으로 유지한다.
+- `02_Bloom`은 CPU image processing 결과를 DirectX11 dynamic texture로 표시하는 예제다.
+- GPU multi-pass bloom, HDR render target, tone mapping, emissive material 기반 bloom은 다루지 않는다.
 
 ## 관련 문서
 
@@ -145,9 +143,3 @@ void UploadCanvasTexturePseudo()
 - Topic: `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md`
 - Verification: `Docs/02_Verification/Part1_Chapter01-02/verification-index.md`
 - Demo Index: `Docs/03_Demos/Part1_Chapter01-02/demo-index.md`
-
-## 제외 범위
-
-- Chapter03 이후 ray tracing 데모 구성
-- video 제작 및 편집
-- public subset 최종 공개 판단

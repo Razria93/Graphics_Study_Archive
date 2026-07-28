@@ -61,7 +61,6 @@ CPU bloom 처리 후 생성된 result image다. 밝은 영역이 주변으로 �
 
 - `01_DX11InitAndImGui`는 기반 렌더 루프 설명용 예제로 별도 capture/result를 만들지 않는다.
 - `02_Bloom`은 GPU multi-pass bloom pipeline이 아니라 CPU image processing 결과를 DirectX11 dynamic texture로 표시하는 예제다.
-- `Docs/02_Verification/known-issues.md`의 VI-003 기준으로 build 성공과 별개로 `pwsh.exe` 경고가 관찰된다.
 - input/result 이미지는 private archive PR 기준으로 사용 가능 상태다. public subset 승격 확정은 `Docs/05_Publication` 기준으로 별도 판단한다.
 - public subset 게시 여부는 아직 확정하지 않는다.
 - Progress Issue는 #7이고, 이 PR은 Draft PR #8이다.

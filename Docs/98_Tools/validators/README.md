@@ -31,7 +31,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 
 `validate-github-quality.ps1`는 현재 `issues/demo/demo_*.md`를 대상으로 다음을 검사한다.
 
-- 필수 섹션 존재와 순서
+- 필수 섹션 존재와 순서(`검증 상태` 뒤 `구현 범위와 한계`, `관련 문서`)
 - Demo Assets 표의 필수 행(`Input screenshot`, `Result screenshot`, `Result image`, `Video`)
 - `## 핵심 로직 의사코드` 섹션 존재
 - C++ fenced pseudocode(````cpp`) 사용 여부
