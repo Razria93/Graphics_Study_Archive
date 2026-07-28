@@ -1,6 +1,6 @@
-# Review Summaries
+# Reviews
 
-이 폴더는 Work Unit 진행 중 `local/study-review/`에서 승격한 판단 요약을 둔다.
+이 폴더는 Work Unit 진행 중 `local/study-review/`에서 승격한 Chapter 또는 Example 판단 요약을 둔다.
 
 ## 책임
 
@@ -15,6 +15,10 @@
 - 제외 또는 보류한 자료의 반복 가능한 판단 기준
 - 후속 Work Unit에서 다시 확인해야 할 known issue
 - 사용자 검토에서 결정된 정책성 판단
+
+## 문서
+
+- [Part1 Chapter01-02](Part1_Chapter01-02.md): `01_DX11InitAndImGui`, `02_Bloom` pilot 판단 요약
 
 ## 제외 항목
 

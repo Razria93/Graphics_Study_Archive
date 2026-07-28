@@ -22,10 +22,9 @@ WorkLog의 검증, demo, publication 요약은 마감 당시 상태를 압축한
 | --- | --- |
 | [Work Unit Index](work-unit-index.md) | Work Unit 목록과 상태 |
 | [Work Unit GitHub Index](work-unit-github-index.md) | Work Unit과 Issue/PR/comment 게시 상태 연결 |
-| [active](active/) | 진행 중 Work Unit 기록 |
-| [completed](completed/) | 마감된 Work Unit snapshot |
+| [work-units](work-units/) | 진행 상태와 관계없는 Work Unit 기록 |
 | [decisions](decisions/) | 구조 전환과 정책성 결정 기록 |
-| [study-review-summaries](study-review-summaries/) | local study review에서 승격한 반복 판단 요약 |
+| [reviews](reviews/) | local study review에서 승격한 Chapter/Example 판단 요약 |
 
 ## WorkLog에 남길 것
 

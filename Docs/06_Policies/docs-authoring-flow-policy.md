@@ -79,7 +79,7 @@
 - Docs와 Folder README는 폴더 책임, 하위 문서, 정책 링크가 바뀐 경우에만 갱신한다.
 - GitHub body는 README 내용을 복제하지 않고 게시 시점의 요약과 링크만 갱신한다.
 
-README에 넣지 않는 내부 조사 기록은 `local/study-review/` 또는 `Docs/04_WorkLogs/study-review-summaries/`로 분리한다.
+README에 넣지 않는 내부 조사 기록은 `local/study-review/` 또는 `Docs/04_WorkLogs/reviews/`로 분리한다.
 
 ## source comment inventory 범위
 
@@ -126,7 +126,7 @@ README에서 제외한 내부 조사 내용은 두 단계로 분리한다.
 | current/raw/origin 비교 상세 | `local/study-review/` | 원문성, 경로, 민감 판단, 상세 비교표를 포함할 수 있다. |
 | source comment inventory 상세 | `local/study-review/` | 주석 원문과 학습 흔적은 tracked Docs로 직접 옮기지 않는다. |
 | 기존 Docs stale 판단 상세 | `local/study-review/` | 내부 판단 근거와 폐기 이유를 보관한다. |
-| 승격/제외 판단 요약 | `Docs/04_WorkLogs/study-review-summaries/` | 다음 작업자가 반복 조사하지 않아도 되는 결론만 남긴다. |
+| 승격/제외 판단 요약 | `Docs/04_WorkLogs/reviews/` | 다음 작업자가 반복 조사하지 않아도 되는 결론만 남긴다. |
 | Work Unit 마감 요약 | `Docs/04_WorkLogs/` | 작업 범위, 산출물, follow-up을 요약한다. |
 
 tracked review summary에는 상세 조사 원문을 복사하지 않는다. 남기는 내용은 검토 범위, README/Topic/Verification/Demo로 승격한 항목, 승격하지 않은 항목의 분류, 후속 known issue, 반복 적용할 판단 기준으로 제한한다.
@@ -142,7 +142,7 @@ tracked Docs에서 `local/` 파일로 직접 링크하지 않는다. local 문�
 | capture/result와 시연 포인트 | `Docs/03_Demos` |
 | public 후보와 제외 판단 | `Docs/05_Publication` |
 | 작업 과정과 리뷰 대응 요약 | `Docs/04_WorkLogs` |
-| 정리된 조사 판단 요약 | `Docs/04_WorkLogs/study-review-summaries` |
+| 정리된 조사 판단 요약 | `Docs/04_WorkLogs/reviews` |
 | 상세 조사 원문과 민감 판단 | `local/study-review` |
 | 반복 적용 규칙 | `Docs/06_Policies` |
 | 도구와 템플릿 | `Docs/98_Tools` |

@@ -38,7 +38,7 @@
 | build/run/capture 검증 | `Docs/02_Verification/` | 검증 상태와 known issue |
 | demo 계획과 capture/result 설명 | `Docs/03_Demos/`, `Docs/_assets/` | capture/result 후보와 시연 포인트 |
 | 작업 마감 요약 | `Docs/04_WorkLogs/` | Work Unit 요약과 follow-up |
-| 조사 판단 요약 | `Docs/04_WorkLogs/study-review-summaries/` | local 상세 조사에서 재사용 가능한 결론과 승격/제외 분류 요약 |
+| 조사 판단 요약 | `Docs/04_WorkLogs/reviews/` | local 상세 조사에서 재사용 가능한 결론과 승격/제외 분류 요약 |
 | public subset 판단 | `Docs/05_Publication/` | 공개 후보, 제외, redaction 기준 |
 | 반복 적용 정책 | `Docs/06_Policies/` | repo 운영과 문서 작성 규칙 |
 | GitHub 게시 후보 | `Docs/07_GitHub/` | Issue, PR, comment body의 게시 후보 정본 |

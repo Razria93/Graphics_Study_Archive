@@ -6,10 +6,9 @@
 
 | 위치 | 책임 |
 | --- | --- |
-| `Docs/04_WorkLogs/active` | 진행 중 Work Unit 요약 |
-| `Docs/04_WorkLogs/completed` | 완료된 Work Unit 요약 |
+| `Docs/04_WorkLogs/work-units` | 진행 상태와 관계없는 Work Unit 요약 |
 | `Docs/04_WorkLogs/decisions` | 구조 전환, 정책 결정, 마이그레이션 판단 기록 |
-| `Docs/04_WorkLogs/study-review-summaries` | local review를 요약한 tracked 기록 |
+| `Docs/04_WorkLogs/reviews` | local review를 요약한 Chapter/Example 판단 기록 |
 | `Docs/04_WorkLogs/work-unit-index.md` | Work Unit 목록과 예정 상태 |
 | `Docs/04_WorkLogs/work-unit-github-index.md` | Work Unit과 GitHub Issue/PR 후보 연결 |
 
@@ -27,5 +26,6 @@
 
 - WorkLog에는 GitHub 본문 전체가 아니라 요약과 링크만 둔다.
 - 정본 문서가 있는 내용은 WorkLog에 반복하지 않는다.
+- Work Unit 상태는 폴더 경로가 아니라 `work-unit-index.md`에서 관리한다.
 - Work Unit 예정 목록은 placeholder 파일을 만들지 않고 `work-unit-index.md`에 기록한다.
 - Issue/PR 생성은 사용자가 명시적으로 요청한 경우에만 진행한다.
