@@ -13,13 +13,13 @@ result를 통해 처리 전후의 glow 차이와 CPU 결과가 rendering pipelin
 
 밝은 구체와 어두운 배경의 대비가 bloom 처리 전 기준을 제공한다.
 
-![Original Input](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg?raw=true)
+![Original Input](https://github.com/Razria93/Graphics_Study_Archive/blob/af3103cd06ea10d90ce6b1332336ce79eb4eb591/Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg?raw=true)
 
 ### Bloom Result
 
 밝은 영역을 분리하고 blur한 뒤 원본에 합성한 glow 결과다.
 
-![Bloom Result](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png?raw=true)
+![Bloom Result](https://github.com/Razria93/Graphics_Study_Archive/blob/af3103cd06ea10d90ce6b1332336ce79eb4eb591/Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png?raw=true)
 
 ## 핵심 구현
 
@@ -30,8 +30,8 @@ result를 통해 처리 전후의 glow 차이와 CPU 결과가 rendering pipelin
 - Full-screen quad: pixel shader에서 결과 texture를 샘플링해 화면에 표시
 
 핵심 코드는
-[Example.cpp](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Part1_Chapter01-02/02_Bloom/Example.cpp#L212-L255)와
-[Example.h](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Part1_Chapter01-02/02_Bloom/Example.h#L258-L275)에서
+[Example.cpp](https://github.com/Razria93/Graphics_Study_Archive/blob/af3103cd06ea10d90ce6b1332336ce79eb4eb591/Part1_Chapter01-02/02_Bloom/Example.cpp#L212-L255)와
+[Example.h](https://github.com/Razria93/Graphics_Study_Archive/blob/af3103cd06ea10d90ce6b1332336ce79eb4eb591/Part1_Chapter01-02/02_Bloom/Example.h#L258-L275)에서
 확인한다.
 
 ## 처리 흐름

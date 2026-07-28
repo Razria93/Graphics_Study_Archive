@@ -49,7 +49,7 @@
 
 CPU bloom 처리 후 생성된 result image다. 밝은 영역이 주변으로 확산된 결과를 보여준다.
 
-![02_Bloom Bloom Result](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png?raw=true)
+![02_Bloom Bloom Result](https://github.com/Razria93/Graphics_Study_Archive/blob/af3103cd06ea10d90ce6b1332336ce79eb4eb591/Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png?raw=true)
 
 ## 구현 범위와 한계
 
