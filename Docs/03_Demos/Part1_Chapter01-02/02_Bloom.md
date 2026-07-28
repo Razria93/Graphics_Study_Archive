@@ -60,17 +60,21 @@
 // Pseudo C++: bright-pass, blur, composite 구조 요약
 auto original = currentPixels;
 
-for (auto& pixel : currentPixels) {
-    if (Luminance(pixel.rgb) < threshold) {
+for (auto& pixel : currentPixels)
+{
+    if (Luminance(pixel.rgb) < threshold)
+    {
         pixel.rgb = 0.0f;
     }
 }
 
-for (int i = 0; i < repeatCount; ++i) {
+for (int i = 0; i < repeatCount; ++i)
+{
     GaussianBlur5(currentPixels);
 }
 
-for (size_t i = 0; i < currentPixels.size(); ++i) {
+for (size_t i = 0; i < currentPixels.size(); ++i)
+{
     currentPixels[i].rgb = Clamp01(
         original[i].rgb + currentPixels[i].rgb * weight
     );
@@ -92,14 +96,16 @@ for (size_t i = 0; i < currentPixels.size(); ++i) {
 ```cpp
 // Pseudo C++: Map/Unmap과 RowPitch를 고려한 행 단위 업로드
 auto mapped = MapWriteDiscard(canvasTexture);
-if (!mapped.ok) {
+if (!mapped.ok)
+{
     return;
 }
 
 const size_t sourceRowBytes = canvasWidth * sizeof(Vec4);
 auto sourceBytes = ByteView(cpuPixels);
 
-for (int y = 0; y < canvasHeight; ++y) {
+for (int y = 0; y < canvasHeight; ++y)
+{
     auto* sourceRow = sourceBytes.data + y * sourceRowBytes;
     auto* destinationRow = mapped.base + y * mapped.rowPitch;
     CopyBytes(destinationRow, sourceRow, sourceRowBytes);

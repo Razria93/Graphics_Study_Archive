@@ -39,6 +39,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 - 상세 Demo와 Verification 링크
 - 핵심 구현의 commit-pinned C++ source line 링크
 - 선택적 C++ 의사코드와 같은 섹션의 source line 링크
+- `Pseudo C++` 함수와 `if`, `else`, `for`, `while`의 Allman brace style
 - 120자 초과 일반 본문
 - fenced code의 80자 초과 warning과 120자 초과 failure
 
@@ -63,10 +64,17 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 - repo-relative 링크 대상 존재 여부
 - tracked `Docs/_assets` visual
 - 선택형 의사코드의 `Pseudo C++` 표기와 대응 source line 링크
+- `Pseudo C++` 함수와 `if`, `else`, `for`, `while`의 Allman brace style
 - `local/`, Legacy, stale path, placeholder
 - 120자 초과 일반 본문
 - fenced code의 80자 초과 warning과 120자 초과 failure
 - 같은 폴더 `demo-index.md`의 상세 Demo 연결
+
+Allman 검사는 `Pseudo C++`로 표시한 `cpp` fence에만 적용한다. 함수와
+`if`, `else`, `for`, `while`의 명백한 same-line opening brace는 failure다.
+실제 C++ source와 일반 C++ sample, braced initializer는 검사하지 않는다.
+multiline signature, brace balance, indentation, source link의 의미상 대응은
+수동 검수한다.
 
 `validate-topic-doc-quality.ps1`는 `Docs/01_Topics`의 승격된 상세 Topic 문서를 대상으로 다음을 검사한다.
 

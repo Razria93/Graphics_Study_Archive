@@ -40,11 +40,13 @@ tools:
 void FunctionPseudo(...)
 {
     // 입력/전처리
-    if (...) {
+    if (...)
+    {
         return;
     }
 
-    for (...) {
+    for (...)
+    {
         ...
     }
 
@@ -57,6 +59,7 @@ void FunctionPseudo(...)
 - 섹션 순서와 필수 섹션 확인
 - 이미지 URL 형식 확인
 - code block의 80자 권장과 120자 상한, 일반 본문의 의미 단위 개행 확인
+- `Pseudo C++` 함수와 제어문의 Allman brace style 및 한 줄 block 금지 확인
 - 의사코드와 원본 코드 링크 쌍 확인
 - 구현 선택과 결과 영향이 연결되는지 확인
 - 코드 증거가 commit permalink와 line anchor를 사용하는지 확인

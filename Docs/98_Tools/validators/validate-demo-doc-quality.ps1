@@ -22,6 +22,35 @@ function Add-Warning {
     $Warnings.Add("$Path :: $Message")
 }
 
+function Test-PseudocodeAllmanStyle {
+    param([string]$Path, [string]$Block)
+
+    $blockLines = $Block -split "`r?`n"
+    for ($i = 0; $i -lt $blockLines.Count; ++$i) {
+        $line = $blockLines[$i]
+        $sameLineControl =
+            $line -match '^\s*(?:if|for|while)\s*\([^{}]*\)\s*\{' -or
+            $line -match '^\s*else(?:\s+if\s*\([^{}]*\))?\s*\{' -or
+            $line -match '^\s*\}\s*else\b'
+        $sameLineFunction =
+            $line -match (
+                '^\s*(?!(?:if|for|while)\b)' +
+                '(?:[A-Za-z_~][\w:<>,~*&]*\s+)+' +
+                '[A-Za-z_~][\w:<>~]*\s*\([^;{}]*\)\s*\{'
+            ) -or
+            $line -match (
+                '^\s*[A-Za-z_~][\w:<>~]*\s*\([^;{}]*\)\s*\{'
+            )
+
+        if ($sameLineControl -or $sameLineFunction) {
+            Add-Failure $Path (
+                "Pseudo C++ block line $($i + 1): " +
+                "function and control braces must use Allman style"
+            )
+        }
+    }
+}
+
 function Get-RelativePath {
     param([string]$Path)
     $rootPath = [IO.Path]::GetFullPath($Root).TrimEnd('\') + '\'
@@ -199,6 +228,11 @@ function Validate-DemoDocument {
         })
         if ($pseudoBlocks.Count -eq 0) {
             Add-Failure $relative "pseudocode must use a cpp fence and state 'Pseudo C++'"
+        }
+        foreach ($pseudoBlock in $pseudoBlocks) {
+            Test-PseudocodeAllmanStyle `
+                -Path $relative `
+                -Block $pseudoBlock.Groups[1].Value
         }
 
         $sourceLinks = [regex]::Matches(

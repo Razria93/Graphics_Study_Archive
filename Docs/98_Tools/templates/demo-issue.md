@@ -53,5 +53,6 @@
 - 파일명만 있는 link label보다 확인할 구현 역할이 드러나는 label을 사용한다.
 - 게시 시점 코드 증거는 commit permalink와 line anchor를 사용한다.
 - 의사코드는 필요한 경우에만 사용하고 원본 코드 링크를 함께 둔다.
+- 의사코드를 사용하면 함수와 제어문에 Allman brace style을 적용한다.
 - 상세 Demo에 같은 의사코드가 있으면 Demo Issue에 그대로 복제하지 않는다.
 - 실제 GitHub absolute URL과 Markdown 링크를 사용한다.

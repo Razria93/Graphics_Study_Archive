@@ -42,11 +42,16 @@ Demo가 보여주는 결과와 기술적 목표를 2~4문장으로 정의한다.
 
 처리 단계가 여러 함수나 CPU/GPU 경계를 넘어 prose만으로 구조를 파악하기
 어려울 때만 사용한다. 실제 코드를 복제하지 않고 입력, 핵심 처리, 출력 흐름을
-짧게 요약한다.
+짧게 요약한다. 함수와 제어문 block은 Allman brace style을 사용한다.
 
 ```cpp
 // Pseudo C++: 구현 구조 요약
 auto input = PrepareInput();
+if (!input.IsValid())
+{
+    return;
+}
+
 auto result = Process(input);
 Publish(result);
 ```
@@ -90,6 +95,9 @@ README와 GitHub body에서도 사용할 수 있지만 설명은 이 문서 책�
 - 실제 Markdown 링크와 tracked `Docs/_assets`만 사용한다.
 - `local/`, Legacy, placeholder, 로컬 절대 경로를 남기지 않는다.
 - 의사코드를 사용하면 `Pseudo` 표기와 대응 원본 코드 링크를 함께 둔다.
+- 함수와 `if`, `else`, `for`, `while`의 여는 중괄호는 다음 줄에 둔다.
+- 제어문과 함수 block을 한 줄로 압축하지 않는다.
+- braced initializer와 multiline signature는 의미를 유지하고 수동 확인한다.
 - 의사코드는 모든 Demo의 필수 항목으로 강제하지 않는다.
 - 일반 본문은 80자에 맞춰 기계적으로 줄바꿈하지 않고 문장과 의미 단위를 우선한다.
 - 의사코드와 code block은 한 줄 80자 내외를 권장하고 120자를 초과하지 않는다.

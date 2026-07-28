@@ -22,6 +22,35 @@ function Add-Warning {
     $Warnings.Add("$Path :: $Message")
 }
 
+function Test-PseudocodeAllmanStyle {
+    param([string]$Path, [string]$Block)
+
+    $blockLines = $Block -split "`r?`n"
+    for ($i = 0; $i -lt $blockLines.Count; ++$i) {
+        $line = $blockLines[$i]
+        $sameLineControl =
+            $line -match '^\s*(?:if|for|while)\s*\([^{}]*\)\s*\{' -or
+            $line -match '^\s*else(?:\s+if\s*\([^{}]*\))?\s*\{' -or
+            $line -match '^\s*\}\s*else\b'
+        $sameLineFunction =
+            $line -match (
+                '^\s*(?!(?:if|for|while)\b)' +
+                '(?:[A-Za-z_~][\w:<>,~*&]*\s+)+' +
+                '[A-Za-z_~][\w:<>~]*\s*\([^;{}]*\)\s*\{'
+            ) -or
+            $line -match (
+                '^\s*[A-Za-z_~][\w:<>~]*\s*\([^;{}]*\)\s*\{'
+            )
+
+        if ($sameLineControl -or $sameLineFunction) {
+            Add-Failure $Path (
+                "Pseudo C++ block line $($i + 1): " +
+                "function and control braces must use Allman style"
+            )
+        }
+    }
+}
+
 function Get-RelativePath {
     param([string]$Path)
     return Resolve-Path -Relative $Path
@@ -160,6 +189,15 @@ function Validate-DemoIssue {
         $coreText -match 'Pseudo C\+\+') {
         if ($coreText -notmatch '(?ms)```cpp\s*.*?Pseudo C\+\+.*?```') {
             Add-Failure $relative "optional pseudocode must state 'Pseudo C++'"
+        }
+        $cppBlocks = [regex]::Matches($coreText, '(?ms)```cpp\s*(.*?)```')
+        $pseudoBlocks = @($cppBlocks | Where-Object {
+            $_.Groups[1].Value -match 'Pseudo C\+\+'
+        })
+        foreach ($pseudoBlock in $pseudoBlocks) {
+            Test-PseudocodeAllmanStyle `
+                -Path $relative `
+                -Block $pseudoBlock.Groups[1].Value
         }
         if ($coreText -notmatch $sourcePermalinkPattern) {
             Add-Failure $relative `

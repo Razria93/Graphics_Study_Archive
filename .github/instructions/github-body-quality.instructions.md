@@ -59,6 +59,9 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 
 - 의사코드는 핵심 구현 이해에 도움이 될 때만 사용한다.
 - 사용한 의사코드는 C++ 스타일 문법(함수, 블록, for, if)으로 작성한다.
+- 함수와 `if`, `else`, `for`, `while`의 여는 중괄호는 다음 줄에 둔다.
+- 제어문과 함수 block을 `{ ... }` 한 줄로 압축하지 않는다.
+- `Pixel value = { ... };` 같은 braced initializer는 Allman 검사 대상에서 제외한다.
 - 블럭 시작에 `Pseudo C++` 성격을 명시한다.
 - 입력, 처리 단계, 실패 분기, 출력을 모두 보여준다.
 - 구현 세부는 생략하고 알고리즘 구조만 남긴다.
@@ -77,6 +80,7 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 
 - 필수 섹션 순서가 맞는지 확인한다.
 - 의사코드가 C++ 독자 기준으로 읽히는지 확인한다.
+- `Pseudo C++`의 중괄호와 들여쓰기는 수동으로 함께 확인한다.
 - code block의 긴 줄이 뷰포트에서 과도하게 잘리지 않는지 확인한다.
 - 일반 본문은 80자에 맞춘 기계적 개행으로 링크와 조사·서술어를 분리하지 않는다.
 - 이미지 URL이 절대 URL인지 확인한다.
