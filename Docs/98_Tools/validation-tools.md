@@ -7,9 +7,7 @@
 - GitHub body validator는 `validators/validate-github-body.ps1`에 둔다.
 - GitHub quality, Demo index, 상세 Demo, Topic 문서는 각각의 tracked validator로 검사한다.
 - tracked Docs 전체 링크와 상태를 통합 검사하는 validator는 아직 없다.
-- 개별 validator와
-  [Document System Audit Guide](document-system-audit-guide.md)의 수동 감사를
-  함께 사용한다.
+- 개별 validator와 [Document System Audit Guide](document-system-audit-guide.md)의 수동 감사를 함께 사용한다.
 
 ## 최소 검수
 
@@ -20,6 +18,10 @@
 | stale path 검사 | 오래된 `_repo/workflow`, legacy import 기록의 이전 경로, `Docs/Part*` 정본 경로 확인. `Docs/99_Legacy`의 과거 경로 기록은 문맥을 확인한다. | `rg` |
 | 정책 링크 검사 | rename된 정책 파일명과 Index 링크 확인 | `rg` |
 | stage 검사 | 커밋 대상 파일 범위 확인 | `git diff --cached --stat` |
+
+줄 길이 validator는 일반 본문의 120자 초과를 안전망으로 검사한다. fenced code는 80자 초과를 warning, 120자 초과를 failure로 분리한다. URL, image Markdown, table처럼 분할하면 의미나 동작이 깨지는 항목은 일반 본문 길이 검사에서 제외한다.
+
+80자에 맞춘 기계적 본문 개행, 링크와 조사·서술어의 분리, 포괄적인 link label은 길이만으로 판별하지 않는다. 이 항목은 agent 또는 수동 검수에서 의미 단위로 확인한다.
 
 ## Work Unit 검수 연결
 

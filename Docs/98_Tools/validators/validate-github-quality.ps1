@@ -5,6 +5,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $Failures = New-Object System.Collections.Generic.List[string]
+$Warnings = New-Object System.Collections.Generic.List[string]
 
 function New-Text {
     param([int[]]$CodePoints)
@@ -14,6 +15,11 @@ function New-Text {
 function Add-Failure {
     param([string]$Path, [string]$Message)
     $Failures.Add("$Path :: $Message")
+}
+
+function Add-Warning {
+    param([string]$Path, [string]$Message)
+    $Warnings.Add("$Path :: $Message")
 }
 
 function Get-RelativePath {
@@ -52,10 +58,22 @@ function Get-Section {
 
 function Test-LineLength {
     param([string]$Path, [string[]]$Lines)
+    $inFence = $false
     for ($i = 0; $i -lt $Lines.Count; ++$i) {
         $line = $Lines[$i]
-        if ($line.Length -gt 120 -and $line -notmatch '^\s*\|' -and
-            $line -notmatch '^\s*!\[' -and $line -notmatch 'https://') {
+        if ($line -match '^\s*```') {
+            $inFence = -not $inFence
+            continue
+        }
+        if ($inFence -and $line.Length -gt 120) {
+            Add-Failure $Path "line $($i + 1): fenced code exceeds 120 characters"
+        }
+        elseif ($inFence -and $line.Length -gt 80) {
+            Add-Warning $Path "line $($i + 1): fenced code exceeds recommended 80 characters"
+        }
+        elseif (-not $inFence -and $line.Length -gt 120 -and
+            $line -notmatch '^\s*\|' -and $line -notmatch '^\s*!\[' -and
+            $line -notmatch '\]\([^)]+\)') {
             Add-Failure $Path "line $($i + 1): exceeds 120 characters"
         }
     }
@@ -163,6 +181,11 @@ if (Test-Path $demoRoot) {
 }
 foreach ($file in $demoFiles) {
     Validate-DemoIssue -File $file
+}
+
+if ($Warnings.Count -gt 0) {
+    Write-Host "GitHub quality warnings:" -ForegroundColor Yellow
+    $Warnings | ForEach-Object { Write-Host " - $_" -ForegroundColor Yellow }
 }
 
 if ($Failures.Count -gt 0) {

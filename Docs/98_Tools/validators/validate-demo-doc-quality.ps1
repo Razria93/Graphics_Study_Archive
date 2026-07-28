@@ -121,10 +121,22 @@ function Validate-DemoDocument {
         Add-Failure $relative "local, Legacy, or stale paths are not allowed"
     }
 
+    $inFence = $false
     for ($i = 0; $i -lt $lines.Count; ++$i) {
         $line = $lines[$i]
-        if ($line.Length -gt 120 -and $line -notmatch '^\s*\|' -and
-            $line -notmatch '^\s*!\[' -and $line -notmatch 'https://') {
+        if ($line -match '^\s*```') {
+            $inFence = -not $inFence
+            continue
+        }
+        if ($inFence -and $line.Length -gt 120) {
+            Add-Failure $relative "line $($i + 1): fenced code exceeds 120 characters"
+        }
+        elseif ($inFence -and $line.Length -gt 80) {
+            Add-Warning $relative "line $($i + 1): fenced code exceeds recommended 80 characters"
+        }
+        elseif (-not $inFence -and $line.Length -gt 120 -and
+            $line -notmatch '^\s*\|' -and $line -notmatch '^\s*!\[' -and
+            $line -notmatch '\]\([^)]+\)') {
             Add-Failure $relative "line $($i + 1): exceeds 120 characters"
         }
     }

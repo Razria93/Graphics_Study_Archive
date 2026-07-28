@@ -52,7 +52,7 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 
 - 코드 섹션은 원문 복제가 아니라 구조 전달이 목적이다.
 - 긴 식은 2~3줄로 분해한다.
-- 한 줄 길이는 약 80자 내외를 권장한다.
+- code block 한 줄 길이는 약 80자 내외를 권장한다.
 - 중첩 루프/조건문의 한 줄 압축 표기를 피한다.
 
 ## 의사코드 규칙
@@ -77,7 +77,8 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 
 - 필수 섹션 순서가 맞는지 확인한다.
 - 의사코드가 C++ 독자 기준으로 읽히는지 확인한다.
-- 긴 줄이 뷰포트에서 과도하게 잘리지 않는지 확인한다.
+- code block의 긴 줄이 뷰포트에서 과도하게 잘리지 않는지 확인한다.
+- 일반 본문은 80자에 맞춘 기계적 개행으로 링크와 조사·서술어를 분리하지 않는다.
 - 이미지 URL이 절대 URL인지 확인한다.
 - source docs 링크가 누락되지 않았는지 확인한다.
 - 핵심 구현이 keyword 목록과 포괄적인 코드 링크로 끝나지 않는지 확인한다.

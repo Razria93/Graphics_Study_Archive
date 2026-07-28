@@ -40,6 +40,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 - 핵심 구현의 commit-pinned C++ source line 링크
 - 선택적 C++ 의사코드와 같은 섹션의 source line 링크
 - 120자 초과 일반 본문
+- fenced code의 80자 초과 warning과 120자 초과 failure
 
 `validate-demo-index-quality.ps1`는 현재 `Docs/03_Demos/**/demo-index.md`를 대상으로 다음을 검사한다.
 
@@ -64,6 +65,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 - 선택형 의사코드의 `Pseudo C++` 표기와 대응 source line 링크
 - `local/`, Legacy, stale path, placeholder
 - 120자 초과 일반 본문
+- fenced code의 80자 초과 warning과 120자 초과 failure
 - 같은 폴더 `demo-index.md`의 상세 Demo 연결
 
 `validate-topic-doc-quality.ps1`는 `Docs/01_Topics`의 승격된 상세 Topic 문서를 대상으로 다음을 검사한다.
@@ -78,6 +80,8 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 
 ## 검사 기준
 
+- 일반 본문은 80자에 맞춰 기계적으로 개행하지 않는다. validator는 120자 초과를 안전망으로 검사하고, 링크와 조사·서술어의 결합 및 문장 흐름은 수동 검수한다.
+- URL, image Markdown, table처럼 분할하면 의미나 동작이 깨지는 항목은 일반 본문 길이 검사에서 제외한다.
 - GitHub 게시 전 body에 draft/local-only 경로가 남아 있지 않은지 확인한다.
 - 필수 섹션이 빠지지 않았는지 확인한다.
 - 필수 섹션이 비어 있거나 `-`만 있는지 확인한다.
