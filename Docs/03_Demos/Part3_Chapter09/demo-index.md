@@ -11,7 +11,7 @@
 
 | Demo 후보 | 연결 Example | 연결 Topic | Verification | Capture/Result | 상태 | 비고 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 최소 capture | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 후보 | build/run 확인 후 갱신 |
+| 최소 capture | `09_CameraAndMouseControl` | 미확인 | `Docs/02_Verification` | 없음 | 후보 | build/run 확인 후 갱신 |
 | 대표 capture | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 후보 | 대표 예제 선정 후 갱신 |
 | video | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 미확인 | 필요 여부 검토 |
 

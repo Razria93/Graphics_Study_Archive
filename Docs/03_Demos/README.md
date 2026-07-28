@@ -18,6 +18,22 @@
 - video가 필요하다고 판단한 경우 사용자에게 요청 조건을 제시한다.
 - 사용자가 demo 구성을 요청한 경우 해당 범위 demo를 구성한다.
 
+## 구현도 균일성 기준
+
+- 각 `demo-index.md`는 `## 범위`, `## Demo 목록`, `## 갱신 기준` 순서를 유지한다.
+- `## Demo 목록` 테이블은 공통 컬럼(`Demo 후보`, `연결 Example`, `연결 Topic`, `Verification`, `Capture/Result`, `상태`, `비고`)을 유지한다.
+- 최소 행(`최소 capture`, `대표 capture`, `video`)을 유지한다.
+- 상태값은 `미확인`, `후보`, `확보`, `보류`, `제외`만 사용한다.
+- `확보` 상태는 `Docs/_assets` 연결이 확인된 경우에만 사용한다.
+
+## 품질 검증
+
+다음 validator를 함께 실행해 Demo 구현도 균일성을 확인한다.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-index-quality.ps1
+```
+
 ## 문서 목록
 
 | 문서 | 책임 |
