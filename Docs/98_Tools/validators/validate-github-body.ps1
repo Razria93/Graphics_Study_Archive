@@ -607,7 +607,6 @@ $ScreenshotsSection = New-Text @(0xC2A4, 0xD06C, 0xB9B0, 0xC0F7)
 $ImplementationScopeLimitationsSection = New-Text @(0xAD6C, 0xD604, 0x20, 0xBC94, 0xC704, 0xC640, 0x20, 0xD55C, 0xACC4)
 $DocumentationSection = New-Text @(0xBB38, 0xC11C)
 $RelatedIssuesSection = New-Text @(0xAD00, 0xB828, 0x20, 0xC774, 0xC288)
-$NextStepSection = New-Text @(0xB2E4, 0xC74C, 0x20, 0xB2E8, 0xACC4)
 $UnverifiedSection = New-Text @(0xBBF8, 0xD655, 0xC778)
 $RelatedPrSectionName = New-Text @(0xAD00, 0xB828, 0x20, 0x0050, 0x0052)
 $ScopeSection = New-Text @(0xBC94, 0xC704)
@@ -627,8 +626,7 @@ $PrRequiredSections = @(
 	$VerificationSection,
 	$ImplementationScopeLimitationsSection,
 	$DocumentationSection,
-	$RelatedIssuesSection,
-	$NextStepSection
+	$RelatedIssuesSection
 )
 
 $VerificationRequiredSections = @(

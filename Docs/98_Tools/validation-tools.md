@@ -5,7 +5,7 @@
 ## 현재 상태
 
 - GitHub body validator는 `validators/validate-github-body.ps1`에 둔다.
-- GitHub quality, Demo index, Topic 문서는 각각의 tracked validator로 검사한다.
+- GitHub quality, Demo index, 상세 Demo, Topic 문서는 각각의 tracked validator로 검사한다.
 - tracked Docs 전체 링크와 상태를 통합 검사하는 validator는 아직 없다.
 - 개별 validator와
   [Document System Audit Guide](document-system-audit-guide.md)의 수동 감사를

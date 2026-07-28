@@ -75,8 +75,3 @@ CPU bloom 처리 후 생성된 result image다. 밝은 영역이 주변으로 �
 ## 관련 이슈
 
 - #7
-
-## 다음 단계
-
-- 상세 input/result 비교와 구현 설명은 Demo Issue 게시 후보로 연결한다.
-- public subset 후보는 `Docs/05_Publication` 기준으로 검토한다.

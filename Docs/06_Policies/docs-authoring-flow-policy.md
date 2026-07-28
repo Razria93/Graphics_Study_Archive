@@ -38,7 +38,8 @@
 10. build/run/capture 상태는 `Docs/02_Verification`에 기록한다.
 11. 검증 단계에서 screenshot, video, result image가 필요한지 판단하고, 필요하면 사용자에게 촬영 또는 생성 조건을 구체적으로 요청한다.
 12. Demo capture/result와 시연 포인트는 `Docs/03_Demos`에 기록한다.
-13. 검토 완료된 대표 capture/result는 코드 폴더 README에 세로 배치로 연결한다.
+13. 검토 완료된 대표 capture/result는 코드 폴더 README에 최대 1개 연결하고,
+    전후 비교와 다중 시각 자료는 상세 Demo에 세로 배치한다.
 14. public subset 판단은 `Docs/05_Publication`에 기록한다.
 15. 작업 과정과 마감 요약은 `Docs/04_WorkLogs`에 기록한다.
 16. 전체 map은 `Docs/00_Index`에서 필요한 범위만 갱신한다.
@@ -67,7 +68,10 @@
 - 강의명, 강사명, 워터마크, 개인 식별자, 계정, 로컬 경로를 피해야 한다는 조건
 - README에 연결할 대표 자료인지, local 검토 후보인지
 
-검토 완료된 screenshot 또는 result image는 코드 폴더 README에 세로 배치로 연결한다. capture/result가 필요 없으면 `Docs/03_Demos`와 `Docs/02_Verification`에 `제외` 사유를 남긴다.
+검토 완료된 screenshot 또는 result image는 코드 폴더 README에 대표 자료를
+최대 1개 연결한다. 전후 비교와 다중 시각 자료는 상세 Demo에 둔다.
+capture/result가 필요 없으면 `Docs/03_Demos`와 `Docs/02_Verification`에
+`제외` 사유를 남긴다.
 
 ## README 갱신 확인 기준
 
@@ -139,7 +143,7 @@ tracked Docs에서 `local/` 파일로 직접 링크하지 않는다. local 문�
 | 예제 하나가 무엇을 보여주는지 | 대상 코드 폴더 `README.md` |
 | 여러 예제를 관통하는 graphics 개념 | `Docs/01_Topics` |
 | build/run/capture 상태 | `Docs/02_Verification` |
-| capture/result와 시연 포인트 | `Docs/03_Demos` |
+| 구현 선택, capture/result 비교, 결과 해석, limitation | `Docs/03_Demos` |
 | public 후보와 제외 판단 | `Docs/05_Publication` |
 | 작업 과정과 리뷰 대응 요약 | `Docs/04_WorkLogs` |
 | 정리된 조사 판단 요약 | `Docs/04_WorkLogs/reviews` |

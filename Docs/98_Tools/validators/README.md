@@ -7,7 +7,7 @@
 | Script | 목적 | 입력 |
 | --- | --- | --- |
 | `validate-github-body.ps1` | GitHub Issue/PR/comment 게시 전 Markdown body 검사 | `Docs/07_GitHub` |
-| `validate-github-quality.ps1` | Demo Issue 품질 검사(전개, 시각 자료, C++ 스타일 의사코드, 가독성) | `Docs/07_GitHub/issues/demo` |
+| `validate-github-quality.ps1` | Demo Issue 품질 검사(전개, 시각 자료, 구현 설명, 가독성) | `Docs/07_GitHub/issues/demo` |
 | `validate-topic-doc-quality.ps1` | 상세 Topic 정본 품질 검사(책임 구조, 핵심 개념, Example/Verification/Demo 연결) | `Docs/01_Topics` |
 | `validate-demo-index-quality.ps1` | Demo source docs 구현도 균일성 검사(필수 구조, 테이블 스키마, 상태값, 최소 capture 기준) | `Docs/03_Demos/**/demo-index.md` |
 | `validate-demo-doc-quality.ps1` | 상세 Demo 기술 정본 검사(구조, 링크, tracked visual, 금지 경로) | `Docs/03_Demos/**/[0-9][0-9]_*.md` |

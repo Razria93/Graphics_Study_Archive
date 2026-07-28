@@ -25,7 +25,7 @@
 - 코드 폴더 README: 예제 설명 정본
 - `Docs/01_Topics`: graphics 개념 정본
 - `Docs/02_Verification`: build/run/capture 검증 정본
-- `Docs/03_Demos`: demo capture/result 정본
+- `Docs/03_Demos`: 구현 선택, 시각 자료, 결과 해석, limitation을 설명하는 상세 Demo 정본
 - `Docs/04_WorkLogs`: Issue/PR 작업 기록 정본
 - `Docs/05_Publication`: public subset 판단 정본
 - `Docs/06_Policies`: 문서화, 검증, demo, GitHub 운영, 공개 정책 정본

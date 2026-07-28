@@ -34,6 +34,7 @@ git status --short --branch
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-body.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-index-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-doc-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-topic-doc-quality.ps1
 ```
 
@@ -70,14 +71,14 @@ Impact와 Chapter 감사는 관련 관점을 최대 2개로 합친다. Single �
 - `Canonical Docs Policy`와 각 축 `AGENTS.md`의 현재 책임을 기준으로 비교한다.
 - Topic은 여러 예제에 적용되는 개념과 이론을 설명한다.
 - Verification은 직접 확인한 build/run/capture 사실을 소유한다.
+- Example README는 예제 목적, 핵심 코드 위치, 실행 진입점, 대표 visual 최대
+  1개를 소유한다.
+- Demo는 구현 선택, 다중 시각 자료, 결과 해석, limitation을 소유한다.
 - WorkLog는 작업 당시 결정과 snapshot을 기록한다.
 - Publication은 공개 후보와 제외 판단을 소유한다.
 - GitHub body는 정본을 복제하지 않고 게시 목적에 맞게 요약한다.
-- Example README와 Demo의 구현·capture 책임처럼 현재 정책 사이에 경계가
-  충돌하면 어느 한쪽을 감사 가이드에서 선점하지 않는다.
-
 책임 경계 자체가 충돌하면 한쪽 문장을 임의로 고치지 않고 정책 결정 항목으로
-보고한다.
+보고한다. 위 Example/Demo 경계는 확정된 기준이므로 중복 여부를 직접 검사한다.
 
 ### 상태 교차검증
 
