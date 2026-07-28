@@ -12,19 +12,12 @@
 
 ## 책임 경계
 
-- 문서 정본 위치와 축별 책임은
-  [Canonical Docs Policy](canonical-docs-policy.md)를 따른다.
-- 일반 문서 작성 순서는
-  [Docs Authoring Flow Policy](docs-authoring-flow-policy.md)를 따른다.
-- commit과 되돌리기 어려운 작업은
-  [Agent Safety Policy](agent-safety-policy.md)를 따른다.
-- GitHub remote 변경 승인은
-  [GitHub Workflow Policy](github-workflow-policy.md)를 따른다.
-- 실행 절차는
-  [Document System Audit Guide](../98_Tools/document-system-audit-guide.md)에 둔다.
-- 보고 형식은
-  [Document System Audit Report](../98_Tools/templates/document-system-audit-report.md)를
-  사용한다.
+- 문서 정본 위치와 축별 책임은 [Canonical Docs Policy](canonical-docs-policy.md)를 따른다.
+- 일반 문서 작성 순서는 [Docs Authoring Flow Policy](docs-authoring-flow-policy.md)를 따른다.
+- commit과 되돌리기 어려운 작업은 [Agent Safety Policy](agent-safety-policy.md)를 따른다.
+- GitHub remote 변경 승인은 [GitHub Workflow Policy](github-workflow-policy.md)를 따른다.
+- 실행 절차는 [Document System Audit Guide](../98_Tools/document-system-audit-guide.md)에 둔다.
+- 보고 형식은 [Document System Audit Report](../98_Tools/templates/document-system-audit-report.md)를 사용한다.
 
 이 정책은 기존 정본 위계나 Verification 상태값을 새로 정의하지 않는다.
 감사에서 필요한 변경은 발견 항목으로 제안하고 해당 책임 정책에서 확정한다.

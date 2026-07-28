@@ -10,12 +10,8 @@
 
 - CPU bloom 구현 선택과 DirectX11 표시 흐름을 설명한다.
 - 입력과 결과 visual이 보여주는 차이를 설명한다.
-- 일반적인 bloom 이론은
-  [PostProcessingAndBloom](../../01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)으로
-  위임한다.
-- build/run/capture 사실은
-  [Verification Index](../../02_Verification/Part1_Chapter01-02/verification-index.md)로
-  위임한다.
+- 일반적인 bloom 이론은 [PostProcessingAndBloom](../../01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)으로 위임한다.
+- build/run/capture 사실은 [Verification Index](../../02_Verification/Part1_Chapter01-02/verification-index.md)로 위임한다.
 
 ## 결과 미리보기
 
@@ -82,10 +78,8 @@ for (size_t i = 0; i < currentPixels.size(); ++i) {
 }
 ```
 
-- 관련 코드:
-  [원본 보존과 bright-pass](../../../Part1_Chapter01-02/02_Bloom/Example.cpp#L212-L235)
-- 관련 코드:
-  [반복 blur와 original composite](../../../Part1_Chapter01-02/02_Bloom/Example.cpp#L237-L249)
+- [원본 보존과 bright-pass 구현](../../../Part1_Chapter01-02/02_Bloom/Example.cpp#L212-L235)
+- [반복 blur와 original composite 구현](../../../Part1_Chapter01-02/02_Bloom/Example.cpp#L237-L249)
 
 ### Dynamic Texture Upload
 
@@ -114,8 +108,7 @@ for (int y = 0; y < canvasHeight; ++y) {
 Unmap(canvasTexture);
 ```
 
-- 관련 코드:
-  [Map/Unmap과 RowPitch 기반 upload](../../../Part1_Chapter01-02/02_Bloom/Example.h#L258-L275)
+- [Map/Unmap과 RowPitch 기반 upload 구현](../../../Part1_Chapter01-02/02_Bloom/Example.h#L258-L275)
 
 ### Full-screen Presentation
 
@@ -147,9 +140,7 @@ Vertex shader는 full-screen quad를 만들고 pixel shader는 업로드된 text
 - 두 configuration에서 runtime `result.png` 생성을 확인했다.
 - 공개 visual은 runtime output을 직접 연결하지 않고 검토 후 승격한 tracked
   input/result asset을 사용한다.
-- 상세 근거는
-  [Verification Index](../../02_Verification/Part1_Chapter01-02/verification-index.md)와
-  [Capture Registry](../../_assets/captures/README.md)를 기준으로 확인한다.
+- 상세 근거는 [Verification Index](../../02_Verification/Part1_Chapter01-02/verification-index.md)와 [Capture Registry](../../_assets/captures/README.md)를 기준으로 확인한다.
 
 ## 관련 코드
 

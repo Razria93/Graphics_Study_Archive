@@ -150,8 +150,7 @@ Legacy 내부의 과거 경로, validator의 금지 문자열, template placehol
 
 문제는 새 Verification 체계를 만들 때 기존 성공 이력과 근거 수준을 옮기지 않아
 `미확인`으로 보이게 된 provenance 단절이다. `과거 확인` 같은 상태를 실제로
-채택하려면 [Verification Policy](../../06_Policies/verification-policy.md)와
-[Terminology Policy](../../06_Policies/terminology-policy.md)에서 먼저 정의한다.
+채택하려면 [Verification Policy](../../06_Policies/verification-policy.md)와 [Terminology Policy](../../06_Policies/terminology-policy.md)에서 먼저 정의한다.
 
 ### DOC-003 사용자 검토 범위
 

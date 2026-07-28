@@ -19,8 +19,7 @@
 어떤 구현을 선택했는지 설명하고 대표 visual이나 실행 결과에 미치는 영향을
 함께 연결한다.
 
-- 코드:
-  [확인할 구현 역할](https://github.com/<owner>/<repo>/blob/<commit-sha>/<source-path>#L<start>-L<end>)
+- [확인할 구현 역할](https://github.com/<owner>/<repo>/blob/<commit-sha>/<source-path>#L<start>-L<end>)
 
 ## 처리 흐름
 

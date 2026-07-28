@@ -1,8 +1,6 @@
 # Document System Audit Guide
 
-이 문서는
-[Document System Audit Policy](../06_Policies/document-system-audit-policy.md)를
-실행하는 순서를 정의한다. 권한, 심각도, keyword 의미는 정책 정본을 따른다.
+이 문서는 [Document System Audit Policy](../06_Policies/document-system-audit-policy.md)를 실행하는 순서를 정의한다. 권한, 심각도, keyword 의미는 정책 정본을 따른다.
 
 ## 요청 해석
 

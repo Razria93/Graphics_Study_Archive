@@ -8,9 +8,7 @@ tools:
 
 # Audit Document System at High Quality
 
-이 prompt는
-[Document System Audit Policy](../../Docs/06_Policies/document-system-audit-policy.md)에
-따라 문서 체계를 감사한다.
+이 prompt는 [Document System Audit Policy](../../Docs/06_Policies/document-system-audit-policy.md)에 따라 문서 체계를 감사한다.
 
 ## 입력
 
