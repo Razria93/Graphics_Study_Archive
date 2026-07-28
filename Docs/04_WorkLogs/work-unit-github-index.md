@@ -19,14 +19,14 @@
 
 ## 관계 Index
 
-| Work Unit | Chapter/Bundle 완료 댓글 | 선택 Issue | Chapter PR 목록 | 관련 WorkLog | 비고 |
-| --- | --- | --- | --- | --- | --- |
-| `WU-Part1` | comment-ready (`Docs/07_GitHub/plan/comments/phase-2-1-plan-comment.md`) | 제외 | `Docs/07_GitHub/prs/part1_chapter01-02.md` (ready) | [WU-Part1](work-units/WU-Part1.md) | WU-Part1의 일부 범위인 Chapter01-02 완료 기록이다. WU-Part1 전체 완료가 아니다. |
-| `WU-Part2` | 예정 | 기본 제외 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
-| `WU-Part3` | 예정 | 기본 제외 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
-| `WU-Part4` | 예정 | 기본 제외 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
-| `WU-Publication` | 예정 | 기본 제외 | 예정 | 없음 | 별도 승인 범위가 생기면 선택 Issue를 생성한다. |
-| `WU-StructureCleanup` | 제외 | 제외 | PR #6 (posted) | [WU-StructureCleanup](work-units/WU-StructureCleanup.md) | 정책 도입 이전 구조 정리 PR이라 완료 댓글을 예외로 둔다. |
+| Work Unit | Chapter/Bundle 완료 댓글 | Work Unit Issue | Demo Issue remote | 로컬 Demo Issue 후보 | Remote PR | 로컬 PR 후보 | 관련 WorkLog | 비고 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `WU-Part1` | comment-ready (`Docs/07_GitHub/plan/comments/phase-2-1-plan-comment.md`) | 제외 | 없음 | `Docs/07_GitHub/issues/demo/demo_part1_chapter01-02.md` (`ready`) | PR #8 (`Draft`) | `Docs/07_GitHub/prs/part1_chapter01-02.md` (`ready`) | [WU-Part1](work-units/WU-Part1.md) | WU-Part1의 일부 범위인 Chapter01-02 완료 기록이다. WU-Part1 전체 완료가 아니다. |
+| `WU-Part2` | 예정 | 기본 제외 | 없음 | 예정 | 없음 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
+| `WU-Part3` | 예정 | 기본 제외 | 없음 | 예정 | 없음 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
+| `WU-Part4` | 예정 | 기본 제외 | 없음 | 예정 | 없음 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
+| `WU-Publication` | 예정 | 기본 제외 | 없음 | 예정 | 없음 | 예정 | 없음 | 별도 승인 범위가 생기면 선택 Issue를 생성한다. |
+| `WU-StructureCleanup` | 제외 | 제외 | 없음 | 없음 | PR #6 (`posted`) | 없음 | [WU-StructureCleanup](work-units/WU-StructureCleanup.md) | 정책 도입 이전 구조 정리 PR이라 완료 댓글을 예외로 둔다. |
 
 ## 상태값
 
@@ -38,5 +38,6 @@
 | `comment-ready` | Progress comment 또는 completion comment 게시 후보가 `Docs/07_GitHub`에 있음 |
 | `posted` | GitHub remote에 게시됨 |
 | `snapshot` | 게시 후 사본이 `local/` 하위 snapshot으로 있음 |
+| `Draft` | GitHub remote에 Draft PR로 존재함 |
 | `기본 제외` | Progress Issue 댓글과 Chapter PR로 추적하며 선택 Issue는 만들지 않음 |
 | `제외` | Issue/PR/comment로 만들지 않음 |

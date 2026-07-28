@@ -21,7 +21,8 @@
 | build/run | 확인 | Debug/Release x64 build와 run을 확인했다. |
 | capture/result | 확인 | ChatGPT 생성 입력 이미지로 `result.png` 재생성 확인. input/result 비교 이미지를 `Docs/_assets/captures`에 승격했다. |
 | README 계층 | 확인 | Root README는 portfolio archive 첫 화면으로, Chapter/Example README는 각 계층 정본으로 정리했다. |
-| Issue/PR | ready | `Docs/07_GitHub/prs/part1_chapter01-02.md` 게시 후보를 준비했다. 실제 게시 여부는 사용자 승인 후 결정한다. |
+| Remote PR | Draft | PR #8이 GitHub remote에 Draft로 존재한다. |
+| 로컬 PR 후보 | ready | `Docs/07_GitHub/prs/part1_chapter01-02.md`를 remote 갱신 후보로 유지한다. |
 
 ## 02_Bloom 작업 요약
 
@@ -59,10 +60,11 @@
 - Debug/Release x64 build/run과 `result.png` 생성은 확인했다.
 - `result.png`는 ChatGPT 생성 입력 이미지로 재생성했고 육안상 식별자는 보이지 않는다. input/result 비교 이미지를 `Docs/_assets/captures`에 승격했다.
 - Part1 Work Unit 자체는 아직 진행 중이다.
-- GitHub PR body 후보는 `Docs/07_GitHub/prs/part1_chapter01-02.md`에 준비했다.
+- GitHub PR #8은 Draft 상태이며, 로컬 갱신 후보는
+  `Docs/07_GitHub/prs/part1_chapter01-02.md`에 둔다.
 
 ## 다음 작업
 
 1. Part1의 다음 예제에 같은 workflow를 적용한다.
 2. `02_Bloom` result image의 public 후보 여부를 `Docs/05_Publication` 기준으로 검토한다.
-3. Part1 Chapter01-02 PR 게시 여부를 사용자 검토 후 결정한다.
+3. Part1 Chapter01-02 PR #8 갱신 여부를 사용자 검토 후 결정한다.

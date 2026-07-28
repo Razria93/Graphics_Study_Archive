@@ -7,7 +7,7 @@
 | ID | 대상 | 유형 | 조치 | 상태 | 비고 |
 | --- | --- | --- | --- | --- | --- |
 | RD-001 | public README 후보 | 강의 기반 표현 가능성 | 공개용 문장으로 재작성 | 예정 | 후보 확정 후 수행 |
-| RD-002 | demo capture/result 후보 | asset 출처 확인 | 라이선스와 출처 확인 | 예정 | capture 확보 후 수행 |
+| RD-002 | `02_Bloom` input/result | asset provenance와 metadata | ChatGPT 생성 입력 기록 확인, metadata 검사 후 공개 문구 확정 | 진행 중 | 육안상 워터마크·개인 식별자·application UI 없음. metadata 도구 확인이 남음 |
 | RD-003 | WorkLog 요약 | local/GitHub draft 흔적 | 게시 전 문체와 민감 정보 제거 | 예정 | Issue/PR 작성 전 수행 |
 
 ## 유형

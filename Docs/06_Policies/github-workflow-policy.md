@@ -163,6 +163,10 @@ GitHub 게시
 -> Docs/04_WorkLogs/work-unit-github-index.md 갱신
 ```
 
+게시 후에는 실제 Issue/PR 번호와 URL을 기록하고, 변경 영향이 있는 Chapter
+README, 상세 Demo, Demo index, PR 후보, WorkLog, Publication 후보만
+동기화한다. 모든 문서를 기계적으로 갱신하지 않는다.
+
 ## Progress Issue 운영 기준
 
 상위 Progress Issue는 Graphics Study Archive의 장기 진행판으로 운영한다. Work Unit마다 새 Progress Issue를 만들지 않는다.
@@ -225,9 +229,9 @@ PR에 포함할 항목:
 - 검증 결과 요약
 - demo/capture/result 링크
 - 대표 visual 0~1개
-- public readiness 영향
+- Publication 판단 링크와 독자에게 필요한 영향 요약
 - 남은 known issue
-- 다음 Work Unit 또는 Issue 후보
+- 독자에게 필요한 기술 follow-up이 있을 때만 선택적으로 추가
 
 Part 단위 PR은 예제가 적고 변경 범위가 작을 때만 예외로 허용한다. Part 전체 진행은 Progress Issue, WorkLog, milestone 성격으로 추적한다.
 
@@ -238,8 +242,9 @@ PR body 작성 기준:
 - 파일 변경 목록은 구조 정리 PR처럼 파일 이동 자체가 핵심인 경우에만 중심 섹션으로 둔다.
 - public 공개 판단은 PR body에서 단정하지 않고 `Docs/05_Publication`으로 연결한다.
 - screenshot/result image는 repo-relative path가 아니라 GitHub absolute URL로 연결한다.
-- draft PR 후보는 작업 branch 기준 `https://github.com/<owner>/<repo>/blob/<branch>/Docs/_assets/...?...raw=true` 형식을 사용한다.
-- merge 후 main 기준 게시본 또는 snapshot이 필요하면 main 기준 URL로 정리한다.
+- 게시 전 branch 검토가 필요하면 후보 branch URL을 임시로 사용할 수 있다.
+- 계속 갱신되는 문서 이동 링크는 확인된 default branch URL을 사용한다.
+- 게시 시점의 이미지와 코드 증거는 commit permalink를 사용한다.
 - 상세 visual과 기술 showcase는 Demo Issue로 위임한다.
 - Demo Issue가 게시되지 않았으면 상세 Demo 정본으로 직접 연결한다.
 
@@ -278,9 +283,12 @@ local/ 임시 초안
 GitHub remote에 Issue, PR, comment를 게시하거나 수정한 뒤에는 다음을 확인한다.
 
 - GitHub remote 본문과 `Docs/07_GitHub` 파일의 내용이 일치한다.
+- 실제 Issue/PR 번호와 URL을 WorkLog index에 기록한다.
 - 게시 후 실제 본문 또는 리뷰 대응 기록이 필요하면 `local/` 하위 snapshot에 남긴다.
 - `Docs/04_WorkLogs`에는 원문이 아니라 요약과 링크만 반영한다.
 - `Docs/04_WorkLogs/work-unit-github-index.md`의 Issue/PR/Progress comment 상태를 갱신한다.
+- 변경 영향이 있는 Chapter README, 상세 Demo, Demo index, PR 후보,
+  Publication 후보의 링크와 상태를 확인한다.
 
 ## WorkLog 반영
 

@@ -131,8 +131,9 @@ GitHub Issue, PR, comment body에 들어가는 screenshot/result image는 repo-r
 
 기준:
 
-- draft PR 또는 branch 검토 중에는 현재 작업 branch 기준 `blob/<branch-name>/...?...raw=true` URL을 사용한다.
-- merge 후 main 기준 snapshot이나 제출용 body가 필요하면 `blob/main/...?...raw=true` 또는 raw.githubusercontent URL로 정리한다.
+- 게시 전 branch 검토 중에는 후보 branch URL을 임시로 사용할 수 있다.
+- 계속 갱신되는 문서 이동 링크는 확인된 default branch URL을 사용한다.
+- 게시 시점의 image와 code 증거는 commit permalink를 사용한다.
 - 코드 폴더 README, Topic, Demo, Verification 문서에는 repo-relative path를 유지한다.
 - GitHub body에 연결하는 파일은 승격 검수를 통과한 `Docs/_assets/captures` 또는 정해진 `Docs/_assets` 파일만 사용한다.
 
