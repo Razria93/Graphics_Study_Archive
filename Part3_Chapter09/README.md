@@ -12,7 +12,7 @@ User interaction 예제를 정리할 폴더입니다.
 
 | 항목 | 상태 |
 | --- | --- |
-| Raw reference | `C:\ComputerGraphics\Part3_Chapter09` |
+| Source provenance | [`SRC-P3-C09`](../Docs/99_Legacy/source-registry.md) |
 | Import status | Step1-Step6 반영 완료 |
 | Public readiness | 검토 필요 |
 | Build/run status | Step1-Step6 성공 |

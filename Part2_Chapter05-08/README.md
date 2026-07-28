@@ -13,7 +13,7 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 
 | 항목 | 상태 |
 | --- | --- |
-| Raw reference | `C:\ComputerGraphics\Part2_Chapter05-08` |
+| Source provenance | [`SRC-P2-C05-08`](../Docs/99_Legacy/source-registry.md) |
 | Import status | code import 완료 / verification 진행 중 |
 | Public readiness | 검토 필요 |
 | Build/run status | archive 대상 예제 전체 실행 확인 완료 |

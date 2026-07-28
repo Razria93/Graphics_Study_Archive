@@ -2,7 +2,9 @@
 
 Compute shader, simulation, animation, foliage, physics, gameplay 예제를 정리한 Part4 archive 폴더입니다.
 
-Part4 raw는 예제별 solution이 아니라 `Examples` 단일 Visual Studio project 안에 `Ex1401`-`Ex2001` 파일이 모여 있는 구조입니다. Archive에서는 `C:\ComputerGraphics\Part4_HongLabGraphics`를 primary source로 보고, `_2`와 `OriginalExamples`는 reference-only baseline으로 사용합니다.
+Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio project 안에
+`Ex1401`-`Ex2001` 파일이 모인 구조다. Primary와 reference-only baseline의
+관계는 [`SRC-P4-C14-20`](../Docs/99_Legacy/source-registry.md)으로 추적한다.
 
 ## 상태
 
@@ -14,7 +16,7 @@ Part4 raw는 예제별 solution이 아니라 `Examples` 단일 Visual Studio pro
 
 | 항목 | 상태 |
 | --- | --- |
-| Raw reference | `C:\ComputerGraphics\Part4_HongLabGraphics`, `C:\ComputerGraphics\Part4_HongLabGraphics_2` |
+| Source provenance | [`SRC-P4-C14-20`](../Docs/99_Legacy/source-registry.md) |
 | Import status | 반영 완료 |
 | Public readiness | 검토 필요 |
 | Build/run status | 성공 |
@@ -32,6 +34,6 @@ Part4 raw는 예제별 solution이 아니라 `Examples` 단일 Visual Studio pro
 
 ## 문서
 
-- [Part4 docs](../Docs/Part4_Chapter14-20/README.md)
-- [Part4 import plan](../Docs/_repo/manifests/Part4_Chapter14-20.md)
+- [Part4 Verification](../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
+- [Part4 source provenance](../Docs/99_Legacy/source-registry.md)
 

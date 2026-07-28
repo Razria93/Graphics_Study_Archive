@@ -1,5 +1,8 @@
 # Legacy
 
+- [Source Registry](source-registry.md): tracked archive 범위와 import Git history를
+  Source ID로 연결한다.
+
 이 폴더는 과거 import 기록, 이전 workflow, 기존 Part 문서 같은 legacy 구조를 보관한다. 새 정본 문서를 작성하는 위치가 아니며, 현재 문서화 작업의 source of truth로 사용하지 않는다.
 
 ## 책임

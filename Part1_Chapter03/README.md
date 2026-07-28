@@ -12,13 +12,12 @@ CPU ray tracing fundamentals 예제를 step 단위로 정리한 archive 폴더�
 
 | 항목 | 상태 |
 | --- | --- |
-| Raw reference | `C:\ComputerGraphics\Part1_Chapter03` |
+| Source provenance | [`SRC-P1-C03`](../Docs/99_Legacy/source-registry.md) |
 | Import status | Step4-14 반영 |
 | Public readiness | 검토 필요 |
 | Build/run status | Step4-14 build/run 성공 |
 | Texture/environment asset | `shadertoy_abstract1.jpg`, `back.jpg`, Step14 `skybox/`, `SaintPetersBasilica/` 포함, public 공개 전 출처/라이선스 확인 |
-| Import manifest | [Docs/_repo/manifests/Part1_Chapter03.md](../Docs/_repo/manifests/Part1_Chapter03.md) |
-| Chapter docs | [Docs/Part1_Chapter03](../Docs/Part1_Chapter03/README.md) |
+| Verification | [Part1 Chapter03 Verification](../Docs/02_Verification/Part1_Chapter03/verification-index.md) |
 | Next action | Part1 Ch03 capture 보류, 다음 Part 작업 준비 |
 
 ## 반영된 Step

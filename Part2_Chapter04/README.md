@@ -12,7 +12,7 @@ Software rasterization 예제를 정리할 폴더입니다.
 
 | 항목 | 상태 |
 | --- | --- |
-| Raw reference | `C:\ComputerGraphics\Part2_Chapter04` |
+| Source provenance | [`SRC-P2-C04`](../Docs/99_Legacy/source-registry.md) |
 | Import status | 진행 중 |
 | Public readiness | 검토 필요 |
 | Build/run status | Step1, TriangleToCircle, Step2, Step3, Step4, Step5, Step6, Step7, Step8, Step9, Step10 성공 |
