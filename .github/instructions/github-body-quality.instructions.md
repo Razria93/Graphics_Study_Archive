@@ -26,7 +26,7 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 
 - `요약`: 결과와 핵심 구현 2~4문장
 - `결과`: 대표 visual 1~3개
-- `핵심 구현`: 결과에 직접 연결되는 선택 3~5개
+- `핵심 구현`: 구현 선택, 결과 영향, 인접한 게시 시점 코드 증거
 - `처리 흐름`: 짧은 단계형 목록
 - `구현 범위와 한계`: 독자가 오해하기 쉬운 제한
 - `검증`: build/run과 capture/result 요약
@@ -63,11 +63,13 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 - 입력, 처리 단계, 실패 분기, 출력을 모두 보여준다.
 - 구현 세부는 생략하고 알고리즘 구조만 남긴다.
 - 각 의사코드 블럭 아래에 원본 코드 링크를 둔다.
+- 상세 Demo에 같은 의사코드가 있으면 Demo Issue에 그대로 복제하지 않는다.
 
 ## PR 연계 규칙
 
 - PR 본문은 요약과 링크 허브 역할만 유지한다.
-- Demo 상세(시각 자료, 의사코드, 구현 하이라이트)는 Demo Issue로 위임한다.
+- 상세 구현과 의사코드는 상세 Demo 정본으로 위임한다.
+- Demo Issue는 대표 결과, 압축 구현 설명, 게시 시점 코드 증거를 자체 포함한다.
 - PR 대표 visual은 0~1개만 사용한다.
 - Demo Issue가 미게시 상태면 상세 Demo 정본으로 직접 연결한다.
 
@@ -78,3 +80,5 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 - 긴 줄이 뷰포트에서 과도하게 잘리지 않는지 확인한다.
 - 이미지 URL이 절대 URL인지 확인한다.
 - source docs 링크가 누락되지 않았는지 확인한다.
+- 핵심 구현이 keyword 목록과 포괄적인 코드 링크로 끝나지 않는지 확인한다.
+- 코드 link label이 확인할 구현 역할을 설명하는지 확인한다.

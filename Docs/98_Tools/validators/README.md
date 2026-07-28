@@ -36,8 +36,9 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 
 - curated Demo Issue 필수 섹션과 순서
 - 대표 GitHub visual 1~3개
-- 상세 Demo, Verification, 원본 C++ 코드 링크
-- 선택적 C++ 의사코드와 원본 코드 링크
+- 상세 Demo와 Verification 링크
+- 핵심 구현의 commit-pinned C++ source line 링크
+- 선택적 C++ 의사코드와 같은 섹션의 source line 링크
 - 120자 초과 일반 본문
 
 `validate-demo-index-quality.ps1`는 현재 `Docs/03_Demos/**/demo-index.md`를 대상으로 다음을 검사한다.

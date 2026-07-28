@@ -14,9 +14,13 @@
 
 ## 핵심 구현
 
-- 구현 선택:
-- 핵심 코드:
-- 결과에 미치는 영향:
+### Implementation Step
+
+어떤 구현을 선택했는지 설명하고 대표 visual이나 실행 결과에 미치는 영향을
+함께 연결한다.
+
+- 코드:
+  [확인할 구현 역할](https://github.com/<owner>/<repo>/blob/<commit-sha>/<source-path>#L<start>-L<end>)
 
 ## 처리 흐름
 
@@ -46,5 +50,9 @@
 
 - 상세 Demo 전체를 복제하지 않는다.
 - 대표 visual 1~3개와 핵심 구현 요약을 자체 포함한다.
+- 핵심 구현은 단계별 설명, 결과 영향, 인접한 코드 증거 순서로 구성한다.
+- 파일명만 있는 link label보다 확인할 구현 역할이 드러나는 label을 사용한다.
+- 게시 시점 코드 증거는 commit permalink와 line anchor를 사용한다.
 - 의사코드는 필요한 경우에만 사용하고 원본 코드 링크를 함께 둔다.
+- 상세 Demo에 같은 의사코드가 있으면 Demo Issue에 그대로 복제하지 않는다.
 - 실제 GitHub absolute URL과 Markdown 링크를 사용한다.

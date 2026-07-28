@@ -118,23 +118,34 @@ function Validate-DemoIssue {
 
     $detailSection = Get-Section -Lines $lines -Heading $Details
     $detailText = $detailSection -join "`n"
+    $coreSection = Get-Section -Lines $lines -Heading $CoreImplementation
+    $coreText = $coreSection -join "`n"
     if ($detailText -notmatch '\]\(https://github\.com/.+/Docs/03_Demos/.+\.md\)') {
         Add-Failure $relative "details section must link a detailed Demo document"
     }
     if ($detailText -notmatch '\]\(https://github\.com/.+/Docs/02_Verification/.+\.md\)') {
         Add-Failure $relative "details section must link Verification"
     }
-    if ($content -notmatch '\]\(https://github\.com/.+/(blob/.+/)?(?:Part[^/]+|Portfolio_RayTracer)/[^)]+\.(cpp|h)(#[^)]+)?\)') {
-        Add-Failure $relative "Demo Issue must link original C++ code"
+    $sourcePermalinkPattern =
+        '\]\(https://github\.com/.+/blob/[0-9a-fA-F]{40}/' +
+        '(?:Part[^/]+|Portfolio_RayTracer)/[^)]+\.(?:cpp|h)' +
+        '#L\d+(?:-L\d+)?\)'
+    if ($coreText -notmatch $sourcePermalinkPattern) {
+        Add-Failure $relative `
+            "core implementation must link a commit-pinned C++ source line range"
     }
 
-    if ($content -match '```cpp') {
-        if ($content -notmatch 'Pseudo C\+\+') {
+    $PseudocodeWord = New-Text @(0xC758, 0xC0AC, 0xCF54, 0xB4DC)
+    $pseudocodeHeadingPattern =
+        '(?m)^#{3,}\s+.*' + [regex]::Escape($PseudocodeWord)
+    if ($coreText -match $pseudocodeHeadingPattern -or
+        $coreText -match 'Pseudo C\+\+') {
+        if ($coreText -notmatch '(?ms)```cpp\s*.*?Pseudo C\+\+.*?```') {
             Add-Failure $relative "optional pseudocode must state 'Pseudo C++'"
         }
-        if ($content -notmatch
-            '\[.+\]\(https://github\.com/.+\.(cpp|h)(#[^)]+)?\)') {
-            Add-Failure $relative "optional pseudocode must include original source link"
+        if ($coreText -notmatch $sourcePermalinkPattern) {
+            Add-Failure $relative `
+                "optional pseudocode must include a commit-pinned source line link"
         }
     }
 
