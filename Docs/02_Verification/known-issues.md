@@ -4,15 +4,15 @@
 
 ## 현재 상태
 
-`01_DX11InitAndImGui`와 `02_Bloom`은 Debug/Release x64 build/run을 확인했다. 그 외 예제는 아직 직접 build/run 검증을 수행하지 않았으므로 `미확인` 상태다.
+현재 build/run 결과와 provenance는 `build-run-matrix.md`를 기준으로 한다. 이
+문서에는 실패, 보류, 미확인 사유처럼 후속 조치가 필요한 항목만 둔다.
 
 ## Issue 목록
 
 | ID | 범위 | 상태 | 내용 | 다음 조치 |
 | --- | --- | --- | --- | --- |
-| VI-001 | Part4_Chapter14-20 | 미확인 | `Examples.sln` 단일 solution과 실행 argument 방식 확인 필요 | Part4 구조 확인 시 갱신 |
+| VI-001 | Part4_Chapter14-20 | 문서화 필요 | 과거 build/run 성공과 별개로 `Examples.sln`의 sample 선택 및 실행 argument 절차가 아직 정리되지 않음 | Part4 문서화 시 실행 절차 기록 |
 | VI-002 | Portfolio_RayTracer | 미확인 | solution 또는 실행 진입점 확인 필요 | 프로젝트 구조 확인 시 갱신 |
-| VI-003 | Part1_Chapter01-02 | 관찰됨 | `01_DX11InitAndImGui`, `02_Bloom`의 Debug/Release x64 build는 성공했지만 MSBuild 출력 끝에 `pwsh.exe`를 찾을 수 없다는 경고가 표시됨. 프로젝트 파일 내부의 명시적 post-build 명령에서는 원인을 찾지 못함 | 반복 발생 여부 확인. build/run 성공 상태는 유지 |
 | VI-004 | Part1_Chapter01-02/02_Bloom | 해소 | 기존 입력 이미지의 강의/출처 표기 문제는 ChatGPT 생성 입력 이미지로 교체해 해소함 | result image를 `Docs/_assets/captures`에 승격함. public 판단은 `Docs/05_Publication`에서 처리 |
 
 ## 기록 기준

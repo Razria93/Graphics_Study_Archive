@@ -20,6 +20,8 @@
 | current/raw/origin 비교 | current code, raw/reference code, origin 기준의 차이를 확인하는 작업 | diff 단독 표현 |
 | source comment inventory | 관련 source/header/shader 주석을 전수조사해 분류한 local-only 검토 기록 | 주석 삭제, 주석 정리 단독 표현 |
 | capture/result | demo나 문서에서 보여줄 screenshot, video, result image 전체 | 이전 시각 결과/검증 자료 계열 표현 |
+| 과거 확인 | 문서화 이전에 직접 확인한 build/run 성공의 provenance | 현재 재실행, 추정 성공 |
+| 재검증 필요 | 과거 성공을 유지하되 현재 작업에서 다시 실행하지 않은 상태 | 실패, 미확인 |
 | GitHub draft | 게시 전 Issue/PR/comment 초안 | PR draft, Issue draft 단독 표현 |
 | Public subset | 공개 후보로 선별 가능한 결과물 묶음 | public repo 내용, 공개 자료 단독 표현 |
 

@@ -2,6 +2,13 @@
 
 이 문서는 `Part1_Chapter01-02` 예제의 build/run/capture 상태를 기록한다. 직접 확인하지 않은 항목은 `미확인`으로 둔다.
 
+## Provenance
+
+- 확인 근거: 현재 확인
+- 확인 시점: 각 상세 검증 기록의 직접 실행 결과
+- 현재 재검증: 완료
+- 근거: 아래 예제별 Debug/Release build/run 기록
+
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `01_DX11InitAndImGui` | `Part1_Chapter01-02/01_DX11InitAndImGui/01_DX11InitAndImGui.sln` | 성공 | 성공 | 성공 | 성공 | 제외 | Debug/Release x64 build/run 성공. 기반 렌더 루프 설명용 예제로 별도 capture는 만들지 않음 |

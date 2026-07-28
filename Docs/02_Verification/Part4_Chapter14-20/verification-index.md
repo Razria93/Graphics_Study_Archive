@@ -2,9 +2,16 @@
 
 이 문서는 `Part4_Chapter14-20`의 build/run/capture 상태를 기록한다.
 
+## Provenance
+
+- 확인 근거: 과거 확인
+- 확인 시점: 문서화 이전(날짜 미기록)
+- 현재 재검증: 필요
+- 근거: Chapter README에 기록된 Ex1401~Ex2001 Debug/Release build/run 성공
+
 | 예제 또는 단위 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `Part4_Chapter14-20` | `Part4_Chapter14-20/Examples.sln` | 미확인 | 미확인 | 미확인 | 미확인 | 미확인 | 실행 argument와 sample 선택 방식 확인 필요 |
+| `Part4_Chapter14-20` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요. 실행 argument와 sample 선택 방식 문서화 필요 |
 
 ## 갱신 기준
 
