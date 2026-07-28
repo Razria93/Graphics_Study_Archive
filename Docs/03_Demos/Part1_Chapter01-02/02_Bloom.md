@@ -113,5 +113,4 @@ Vertex shader는 full-screen quad를 만들고 pixel shader는 업로드된 text
 - [PostProcessingAndBloom Topic](../../01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)
 - [Verification Index](../../02_Verification/Part1_Chapter01-02/verification-index.md)
 - [Demo Index](demo-index.md)
-- [Demo Issue candidate](../../07_GitHub/issues/demo/demo_part1_chapter01-02.md)
-- [PR body candidate](../../07_GitHub/prs/part1_chapter01-02.md)
+- [PR #8](https://github.com/Razria93/Graphics_Study_Archive/pull/8)

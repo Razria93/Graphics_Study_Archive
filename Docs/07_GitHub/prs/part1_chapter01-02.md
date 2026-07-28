@@ -8,8 +8,8 @@
 
 - Chapter: `Part1_Chapter01-02`
 - 대표 예제: `01_DX11InitAndImGui`, `02_Bloom`
-- 문서 범위: Root README, Chapter README, Example README, Topic, Verification, Demo, Publication 후보
-- 제외 범위: Part1 Chapter03, `Portfolio_RayTracer`, public subset 게시 확정
+- 문서 범위: Root README, Chapter README, Example README, Topic, Verification, Demo
+- 제외 범위: Part1 Chapter03, `Portfolio_RayTracer`
 
 ## 핵심 개념
 
@@ -34,7 +34,6 @@
 - README: [02_Bloom README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Part1_Chapter01-02/02_Bloom/README.md)
 - Topic: [PostProcessingAndBloom](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)
 - Demo: [02_Bloom 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)
-- Demo Issue candidate: [Part1 Chapter01-02 CPU Bloom Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/07_GitHub/issues/demo/demo_part1_chapter01-02.md)
 
 ## 검증
 
@@ -56,7 +55,7 @@ CPU bloom 처리 후 생성된 result image다. 밝은 영역이 주변으로 �
 
 - `01_DX11InitAndImGui`는 기반 렌더 루프 설명용 예제로 별도 capture/result를 만들지 않는다.
 - `02_Bloom`은 GPU multi-pass bloom pipeline이 아니라 CPU image processing 결과를 DirectX11 dynamic texture로 표시하는 예제다.
-- input/result 이미지는 private archive PR 기준으로 사용 가능 상태다.
+- 대표 visual은 검토된 tracked result asset을 사용한다.
 
 ## 문서
 
@@ -68,9 +67,6 @@ CPU bloom 처리 후 생성된 result image다. 밝은 영역이 주변으로 �
 - Topic: [PostProcessingAndBloom](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)
 - Verification: [Part1_Chapter01-02 verification-index](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/02_Verification/Part1_Chapter01-02/verification-index.md)
 - Detailed Demo: [02_Bloom](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)
-- Demo Issue candidate: [Part1 Chapter01-02 CPU Bloom Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/07_GitHub/issues/demo/demo_part1_chapter01-02.md)
-- Publication:
-	- [candidate-list](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/05_Publication/candidate-list.md)
 
 ## 관련 이슈
 
