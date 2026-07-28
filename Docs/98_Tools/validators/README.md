@@ -8,19 +8,25 @@
 | --- | --- | --- |
 | `validate-github-body.ps1` | GitHub Issue/PR/comment 게시 전 Markdown body 검사 | `Docs/07_GitHub` |
 | `validate-github-quality.ps1` | Demo Issue 품질 검사(전개, 시각 자료, C++ 스타일 의사코드, 가독성) | `Docs/07_GitHub/issues/demo` |
+| `validate-topic-doc-quality.ps1` | 상세 Topic 정본 품질 검사(책임 구조, 핵심 개념, Example/Verification/Demo 연결) | `Docs/01_Topics` |
+| `validate-demo-index-quality.ps1` | Demo source docs 구현도 균일성 검사(필수 구조, 테이블 스키마, 상태값, 최소 capture 기준) | `Docs/03_Demos/**/demo-index.md` |
 
 ## 사용법
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-body.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-topic-doc-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-index-quality.ps1
 ```
 
-기본 입력 위치는 `Docs/07_GitHub`이다. 다른 위치를 검사할 때는 `-GitHubRoot`를 지정한다.
+GitHub body validator의 기본 입력은 `Docs/07_GitHub`이다. Topic과 Demo source docs validator는 각각 `Docs/01_Topics`, `Docs/03_Demos`를 기본 입력으로 사용한다.
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-body.ps1 -GitHubRoot Docs/07_GitHub
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-quality.ps1 -GitHubRoot Docs/07_GitHub
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-topic-doc-quality.ps1 -TopicsRoot Docs/01_Topics
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-index-quality.ps1 -DemosRoot Docs/03_Demos
 ```
 
 `validate-github-quality.ps1`는 현재 `issues/demo/demo_*.md`를 대상으로 다음을 검사한다.
@@ -32,6 +38,27 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 - `Pseudo C++` 표기, `*Pseudo(...)` 함수 시그니처 여부
 - 의사코드 아래 원본 코드 링크 존재 여부
 - 긴 줄(기본 100자 초과) 가독성 경고
+
+`validate-demo-index-quality.ps1`는 현재 `Docs/03_Demos/**/demo-index.md`를 대상으로 다음을 검사한다.
+
+- 필수 섹션 존재와 순서(`## 범위`, `## Demo 목록`, `## 갱신 기준`)
+- `## 범위`의 `주요 demo 후보`, `비고` 항목 존재
+- Demo 목록 테이블 필수 컬럼 존재
+- Demo 목록의 필수 행(`최소 capture`, `대표 capture`, `video`) 존재
+- 상태값 허용 목록 준수(`미확인`, `후보`, `확보`, `보류`, `제외`)
+- `확보` 상태일 때 Capture/Result가 `없음`이 아니고 `Docs/_assets` 경로를 포함하는지 확인
+- 각 행 `비고` 비어있지 않은지 확인
+- `최소 capture` 행의 Example 대상 지정 여부 확인
+
+`validate-topic-doc-quality.ps1`는 `Docs/01_Topics`의 승격된 상세 Topic 문서를 대상으로 다음을 검사한다.
+
+- `README.md`, `topic-index.md`, `AGENTS.md`를 제외한 상세 Topic 최소 1개 존재 여부
+- 필수 섹션 존재와 순서(`## 목적`, `## 책임 범위`, `## 핵심 개념`, `## 한계`, `## 관련 문서`)
+- 각 필수 섹션의 의미 있는 내용 존재 여부
+- `## 핵심 개념` 아래 최소 2개 `###` 개념 소제목 존재 여부
+- Example README Markdown 링크 존재 여부
+- `Docs/02_Verification`, `Docs/03_Demos` 정본 연결 여부
+- placeholder와 `local/`, `Docs/99_Legacy` 경로 존재 여부
 
 ## 검사 기준
 
@@ -58,7 +85,6 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 | `plan/plan-progress.md` | Progress Issue 누적 진행 댓글 |
 | `plan/comments/*.md` | PR 마감 plan comment |
 | `issues/work-unit/work-unit_*.md` | Work Unit issue |
-| `issues/topic/topic_*.md` | Topic issue |
 | `issues/verification/verification_*.md` | Verification issue |
 | `issues/demo/demo_*.md` | Demo issue |
 
@@ -96,7 +122,7 @@ comment body는 H1과 내부 안내 문구를 허용하지 않는다.
 ## 지원하지 않는 schema
 
 - `plan/` 아래에서 `plan-body.md`, `plan-progress.md`, `comments/*.md` 외 파일명은 실패 처리한다.
-- `issues/` 아래에서 `work-unit/work-unit_*.md`, `topic/topic_*.md`, `verification/verification_*.md`, `demo/demo_*.md` 외 파일명은 실패 처리한다.
+- `issues/` 아래에서 `work-unit/work-unit_*.md`, `verification/verification_*.md`, `demo/demo_*.md` 외 파일명은 실패 처리한다.
 
 Progress comment는 Docs 정본을 복제하지 않고 진행 상태와 링크만 요약한다. 상세 정책은 `Docs/06_Policies/github-workflow-policy.md`를 따른다.
 
