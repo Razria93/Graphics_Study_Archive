@@ -19,6 +19,7 @@
 | [Local Study Review](local-study-review.md) | `local/study-review` | local-only 검토용 | raw/source 주석 inventory와 diff 검토 메모 |
 | [Local Publication Review](local-publication-review.md) | `local/publication` | local-only 검토용 | 공개 전 점검 메모 |
 | [PR Review Response](pr-review-response.md) | GitHub PR review comment 답변 | GitHub 게시용 짧은 댓글 | 대응, 검증, 비고 고정 형식 |
+| [Document System Audit Report](document-system-audit-report.md) | `Docs/04_WorkLogs/reviews` 또는 대화 보고 | 감사 snapshot용 | 발견 근거, 사용자 판정, 수정 작업 묶음 |
 
 ## 사용 기준
 
@@ -27,6 +28,7 @@
 - README 계층별 책임과 갱신 기준은 `../../06_Policies/canonical-docs-policy.md`를 따른다.
 - 상세 정책은 `Docs/06_Policies`를 기준으로 한다.
 - 문체 검수와 stale 경로 검수는 `../validation-tools.md`를 따른다.
+- 감사 보고서는 최신 상태 정본을 대체하지 않는다.
 
 ## 삭제된 템플릿
 

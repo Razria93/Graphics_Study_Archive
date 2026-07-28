@@ -43,6 +43,17 @@
 - import/history 원문은 `Docs/99_Legacy`에 둔다.
 - 에이전트는 파일 수정 전 해당 작업 범위의 README와 AGENTS를 먼저 확인한다.
 
+## 문서 감사 진입점
+
+- `문서 단일검수 시작`, `문서 영향감사 시작`, `문서 전수감사 시작`,
+  `감사 결과 반영 시작`, `감사 결과 게시 시작`을 문서 감사 workflow
+  keyword로 사용한다.
+- keyword의 범위, 목표 모드, 에이전트 구성, 권한은
+  `Docs/06_Policies/document-system-audit-policy.md`를 따른다.
+- 실행 절차와 보고 형식은
+  `Docs/98_Tools/document-system-audit-guide.md`를 따른다.
+- root에는 상세 감사 규칙을 복제하지 않는다.
+
 ## 문체 규칙
 
 Git에 추적되는 Docs와 AGENTS 문서는 한국어 중심의 평서형 현재형으로 작성한다.

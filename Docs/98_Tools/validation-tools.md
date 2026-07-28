@@ -5,8 +5,11 @@
 ## 현재 상태
 
 - GitHub body validator는 `validators/validate-github-body.ps1`에 둔다.
-- tracked Docs 전용 통합 validator script는 아직 없다.
-- GitHub 게시 전 body 검수는 tracked validator와 수동 검색을 함께 사용한다.
+- GitHub quality, Demo index, Topic 문서는 각각의 tracked validator로 검사한다.
+- tracked Docs 전체 링크와 상태를 통합 검사하는 validator는 아직 없다.
+- 개별 validator와
+  [Document System Audit Guide](document-system-audit-guide.md)의 수동 감사를
+  함께 사용한다.
 
 ## 최소 검수
 
@@ -24,10 +27,21 @@
 | --- | --- |
 | Example 작성 | `templates/example-readme.md`, 코드 폴더 README 정책 |
 | Topic 작성 | `templates/topic.md`, `Docs/01_Topics/AGENTS.md` |
+| Demo index 작성 | `Docs/03_Demos/AGENTS.md`, `validators/validate-demo-index-quality.ps1` |
 | WorkLog 마감 | `templates/worklog.md`, `Docs/04_WorkLogs/AGENTS.md` |
 | local study review | `templates/local-study-review.md`, `Docs/06_Policies/local-review-policy.md` |
 | publication review | `templates/local-publication-review.md`, `Docs/05_Publication/AGENTS.md` |
 | GitHub body 검수 | `Docs/06_Policies/github-workflow-policy.md`, `validators/validate-github-body.ps1` |
+
+## 전체 감사와 Validator 경계
+
+Validator는 링크 형식, section, 상태값처럼 반복 가능한 기계 검사를 담당한다.
+문서 책임 충돌, 설명 중복, 탐색 흐름, 상태 provenance, public narrative는
+수동 감사에서 판단한다. Validator 통과는 전체 문서 감사 통과를 의미하지 않는다.
+
+향후 audit runner의 계획된 interface와 자동화 경계는
+`document-system-audit-guide.md`를 따른다. 현재 runner와 전체 링크·상태
+validator는 구현되지 않았다.
 
 ## tracked validator 기준
 

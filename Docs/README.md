@@ -20,3 +20,6 @@
 - 코드 폴더 README는 public-facing 예제 설명으로 작성한다.
 - 내부 검토 기록은 `Docs/04_WorkLogs` 또는 `local/`에 둔다.
 - 검증 상태는 직접 확인한 결과만 갱신한다.
+- 문서 체계 검수는
+  [Document System Audit Policy](06_Policies/document-system-audit-policy.md)와
+  [Audit Guide](98_Tools/document-system-audit-guide.md)를 따른다.

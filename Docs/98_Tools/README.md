@@ -18,6 +18,7 @@
 | [Templates](templates/README.md) | 산출물별 template과 local-only review template 색인 |
 | [Validators](validators/README.md) | GitHub body 등 반복 검수 script 색인 |
 | [Validation Tools](validation-tools.md) | 최소 검수 명령과 validator 승격 기준 |
+| [Document System Audit Guide](document-system-audit-guide.md) | 문서 체계 감사 실행, 에이전트 분담, 재검증 절차 |
 | [Session Troubleshooting](session-troubleshooting.md) | 세션/권한/인코딩/작업 분리 문제 대응 |
 
 ## local tools 기준
