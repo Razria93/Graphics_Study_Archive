@@ -312,13 +312,27 @@ GitHub remote에 Issue, PR, comment를 게시하거나 수정한 뒤에는 다�
 
 Ready for Review 감사와 실제 상태 전환을 분리한다. 감사 단계는 read-only로 진행하고 다음을 확인한다.
 
-- local, tracking ref, 실제 remote branch와 PR head가 일치한다.
+- local HEAD, tracking ref, 실제 remote branch와 PR head가 일치하고 worktree가 clean 상태이다.
+- upstream 대비 commit 범위가 예상 작업 범위와 일치한다.
 - PR title과 body가 tracked 후보 및 실제 변경 범위를 설명한다.
-- validator, 필요한 test와 public safety 검사가 통과한다.
-- 깨진 링크, 미해결 review thread, 충돌과 merge 차단 요소가 없다.
+- 관련 local validator, 작업별 build/test와 수동 문서·링크·public safety 검사가 통과한다.
+- 핵심 Markdown 링크, asset과 commit permalink가 실제 대상을 가리킨다.
+- merge conflict, 현재 `CHANGES_REQUESTED` review와 미해결 actionable review thread가 없다.
+- 민감 정보, 금지 파일과 공개 위험이 없다.
 - 남은 warning과 follow-up이 Ready 전환을 막는지 구분한다.
 
 감사 결과는 `READY`, `READY WITH WARNINGS`, `BLOCKED` 중 하나로 보고한다. 판정은 상태 전환 승인을 대신하지 않는다. `gh pr ready`는 별도 사용자 승인 후에만 실행한다.
+
+### Ready 판정 제외 항목
+
+사용자가 별도로 도입하거나 필수 조건으로 지정하지 않은 다음 인프라는 현재 Ready 기본 판정에서 제외한다.
+
+- GitHub Actions 또는 외부 CI 구성 여부
+- PR status check 존재 여부
+- branch protection 설정 여부
+- private repository plan 제한 등에 따른 branch protection 상세 API 조회 가능 여부
+
+위 항목이 없거나 조회할 수 없는 상태는 `BLOCKER`, `WARNING` 또는 후속 조치로 분류하지 않으며 기본 감사에서 별도로 조회하지 않는다. 사용자가 해당 기능의 도입이나 검토를 요청한 경우에만 설계와 운영 범위를 별도 작업으로 다룬다.
 
 ## WorkLog 반영
 
