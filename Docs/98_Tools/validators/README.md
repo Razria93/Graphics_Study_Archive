@@ -100,7 +100,8 @@ multiline signature, brace balance, indentation, source link의 의미상 대응
 - image URL 검사는 형식 검사이며 실제 파일 존재를 보증하지 않는다.
 - PR은 대표 visual을 최대 1개 사용하고 상세 Demo, Demo Issue 후보 또는 게시된 Demo Issue를 연결한다.
 - template에 특정 Issue 번호가 하드코딩되어 있지 않은지 확인한다.
-- Issue/PR 후보는 첫 H1을 title source로 유지한다. 실제 `gh issue create`와 `gh pr create`에서는 title을 H1에서 사용하고 body는 `Docs/07_GitHub` tracked 정본을 그대로 게시한다.
+- Issue/PR 후보는 첫 H1을 title source로 유지한다. 실제 remote body에서는 첫
+  H1과 바로 뒤 빈 줄을 제거하고 remote/tracked 비교에도 같은 변환을 적용한다.
 
 ## 지원 범위
 

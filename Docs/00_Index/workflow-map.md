@@ -1,6 +1,9 @@
 # Workflow Map
 
-이 문서는 Work Unit 진행 시 각 단계에서 참고할 위치와 저장할 위치를 요약한다. 세부 절차와 승인 규칙의 정본은 `Docs/06_Policies`에 둔다.
+이 문서는 Work Unit 산출물을 작성할 때 참고할 위치와 저장할 위치를 요약한다.
+세션 시작부터 commit, push, remote 반영, Ready와 handoff까지의 실행 흐름은
+[Work Session Quickstart](../98_Tools/work-session-quickstart.md)에서 확인한다.
+세부 절차와 승인 규칙의 정본은 `Docs/06_Policies`에 둔다.
 
 ## 빠른 흐름
 
@@ -39,7 +42,6 @@
 
 - [Work Unit Workflow Policy](../06_Policies/work-unit-workflow-policy.md)
 - [Docs Authoring Flow Policy](../06_Policies/docs-authoring-flow-policy.md)
-- [Structure Cleanup Roadmap](../06_Policies/structure-cleanup-roadmap.md)
 - [Verification Policy](../06_Policies/verification-policy.md)
 - [Demo Capture Policy](../06_Policies/demo-capture-policy.md)
 - [GitHub Workflow Policy](../06_Policies/github-workflow-policy.md)

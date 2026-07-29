@@ -2,6 +2,44 @@
 
 이 문서는 archive 작업 중 반복되는 세션 문제와 확인 절차를 둔다.
 
+## gh 인증과 실행 환경
+
+`gh`가 keyring 또는 token 오류를 보고해도 인증 만료로 바로 단정하지 않는다.
+같은 read-only 명령을 승인된 PowerShell 실행 환경에서 다시 확인한다. sandbox
+밖에서는 성공하면 keyring 접근 범위 차이로 분류한다.
+
+토큰 값을 출력하거나 환경 변수로 주입해 우회하지 않는다. 승인된 환경에서도
+실패하면 remote 작업을 중단하고 `gh auth status` 결과와 필요한 재인증 절차를
+보고한다.
+
+## UTF-8 GitHub Body
+
+한글 body는 UTF-8 파일을 `--body-file`로 전달한다. shell 문자열 조합이나
+encoding이 불명확한 임시 변환은 사용하지 않는다. 게시 후에는 remote body를
+다시 읽어 글자 깨짐과 누락을 확인한다.
+
+Issue와 PR 후보는 첫 H1을 title source로 사용한다. remote body 비교 전 첫
+H1과 바로 뒤 빈 줄을 제거해 게시 변환을 정규화한다.
+
+## Remote 변경 부분 실패
+
+여러 remote 객체를 한 번에 수정하지 않는다. 한 객체를 변경한 뒤 실제 상태를
+확인하고 다음 객체로 이동한다.
+
+일부 변경만 성공하면 다음 변경을 중단한다. 성공한 대상, 실패한 대상과 아직
+실행하지 않은 대상을 구분하고 read-only로 remote 상태를 재확인한다. 확인되지
+않은 rollback이나 다른 객체의 보상 수정을 시도하지 않는다.
+
+## Branch Head 불일치
+
+push 전 upstream이 local HEAD의 ancestor인지 확인한다. non-fast-forward
+가능성이 있거나 tracking ref와 실제 remote head가 다르면 push와 PR body
+수정을 중단한다.
+
+push 후 local HEAD, tracking ref, 실제 remote branch head와 PR head가 모두
+일치하는지 확인한다. 불일치를 해소하기 전에는 Ready 전환이나 후속 remote
+변경을 진행하지 않는다.
+
 ## 기본 확인
 
 - 작업 전 `git status --short --branch`를 확인한다.

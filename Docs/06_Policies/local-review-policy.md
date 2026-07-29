@@ -59,7 +59,7 @@ local/
 | 공개 판단 | `local/publication/` | 후보, 제외 사유, redaction 근거 검토 |
 | GitHub 초안 | `local/github/draft/` | Issue/PR/comment 게시 전 초안 |
 | GitHub 게시 후보 | `Docs/07_GitHub/` | 게시 직전 최종 후보와 validator 검수 대상 |
-| 게시 후 보존 | `local/github/snapshots/` | 실제 게시본 사본과 리뷰 대응 기록 |
+| 선택적 게시 후 보존 | `local/github/snapshots/` | 별도 보존이 필요한 실제 게시본 사본과 리뷰 대응 기록 |
 
 ## tracked review summary 기준
 

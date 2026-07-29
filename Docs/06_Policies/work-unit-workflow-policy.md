@@ -100,7 +100,8 @@ local/
 - 다음 작업자가 반복 조사하지 않아도 되는 결론은 `Docs/04_WorkLogs/reviews/`에 요약한다.
 - GitHub 초안은 `local/github/draft`에 둘 수 있다.
 - GitHub 게시 후보 정본은 `Docs/07_GitHub`에 둔다.
-- 게시 후 실제 게시본과 리뷰 대응 사본은 `local/github/snapshots`에 둔다.
+- 게시 후 실제 게시본이나 리뷰 대응 사본을 별도로 보존할 필요가 있을 때만
+  `local/github/snapshots`에 둔다.
 - redaction, 공개 제외 판단 근거, 개인 메모는 tracked Docs에 두지 않는다.
 
 ## Template 연결

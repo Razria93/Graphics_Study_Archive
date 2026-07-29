@@ -30,6 +30,7 @@ PR body는 README를 복제하지 않는다. Chapter README와 Example README를
 
 대표 visual은 review에 도움이 될 때만 0~1개 사용한다. 상세 visual과 구현 showcase는 Demo Issue로 연결하고, Issue가 미게시 상태면 상세 Demo를 연결한다.
 
-PR body 후보는 첫 H1을 title source로 유지한다. 실제 `gh pr create`에서는 title을 H1에서 사용하고 body는 tracked 정본을 그대로 게시한다.
+PR body 후보는 첫 H1을 title source로 유지한다. 실제 `gh pr create`에서는
+title을 H1에서 사용하고 remote body에서 첫 H1과 바로 뒤 빈 줄을 제거한다.
 
 구조 정리 PR처럼 파일 이동 자체가 핵심인 경우에만 `주요 변경` 중심 구성을 예외로 사용할 수 있다. 일반 Chapter/Chapter 묶음 PR은 핵심 개념, 대표 예제, 검증, demo 링크를 기본 흐름으로 둔다.

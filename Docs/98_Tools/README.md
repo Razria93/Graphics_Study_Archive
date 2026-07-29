@@ -15,6 +15,7 @@
 
 | 문서 | 책임 |
 | --- | --- |
+| [Work Session Quickstart](work-session-quickstart.md) | 작업 유형, 권한, 검증, commit, remote 반영과 handoff 실행 순서 |
 | [Templates](templates/README.md) | 산출물별 template과 local-only review template 색인 |
 | [Validators](validators/README.md) | GitHub body 등 반복 검수 script 색인 |
 | [Validation Tools](validation-tools.md) | 최소 검수 명령과 validator 승격 기준 |

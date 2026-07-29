@@ -81,6 +81,7 @@
 
 ## Maintainer Notes
 
+- [Work Session Quickstart](Docs/98_Tools/work-session-quickstart.md)
 - [Canonical Docs Policy](Docs/06_Policies/canonical-docs-policy.md)
 - [Terminology Policy](Docs/06_Policies/terminology-policy.md)
 - [Docs Authoring Flow Policy](Docs/06_Policies/docs-authoring-flow-policy.md)

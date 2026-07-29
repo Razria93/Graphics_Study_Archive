@@ -13,6 +13,7 @@
 
 | 문서 | 목적 |
 | --- | --- |
+| [Work Session Quickstart](../98_Tools/work-session-quickstart.md) | 세션 시작부터 검증, commit, remote 반영과 handoff까지 확인 |
 | [Workflow Map](workflow-map.md) | Work Unit 진행 단계별 참고/저장 위치 확인 |
 | [Study Map](study-map.md) | 코드 폴더와 산출물 축의 연결 방식 확인 |
 | [Topic Map](topic-map.md) | graphics Topic 정본 위치와 topic-index 확인 |
