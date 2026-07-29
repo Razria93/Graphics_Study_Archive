@@ -1,15 +1,22 @@
-# Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom
+# Graphics Study Archive 협업·문서 체계와 Part1 Chapter01-02 Pilot
 
 ## 요약
 
-이 PR은 `Part1_Chapter01-02`의 DirectX11 initialization과 CPU bloom post-processing을 중심으로 정리한다. device/context/swap chain/render target 기반과 dynamic texture upload 흐름, original input 대비 bloom result를 함께 검토한다.
+이 PR은 `Part1_Chapter01-02` 파일럿을 통해 DirectX11 initialization과 CPU bloom 예제를 설명 가능한 archive로 정리하고, 같은 작업을 반복할 문서·agent 협업 환경을 확립한다. 산출물 책임, 검증, commit, GitHub 게시와 감사 흐름을 실제 예제와 Demo Issue에 적용한다.
 
 ## 범위
 
 - Chapter: `Part1_Chapter01-02`
 - 대표 예제: `01_DX11InitAndImGui`, `02_Bloom`
-- 문서 범위: Root README, Chapter README, Example README, Topic, Verification, Demo
+- 문서 범위: README, Topic, Verification, Demo, WorkLog, Publication, Policy, GitHub body, Tool
 - 제외 범위: Part1 Chapter03, `Portfolio_RayTracer`
+
+## 협업 환경
+
+- Example, Topic, Verification, Demo, WorkLog, Publication과 GitHub body의 책임 정본을 분리한다.
+- root와 폴더별 `AGENTS.md`로 공통 안전 gate와 산출물별 작성 책임을 적용한다.
+- validator는 반복 가능한 형식 검사를 담당하고, 문서 책임과 public narrative는 read-only 감사로 보완한다.
+- Work Session Quickstart로 세션 시작, 목표 모드·agent 선택, 검증, 독립 commit, push, remote 반영과 handoff를 연결한다.
 
 ## 핵심 개념
 
@@ -59,6 +66,8 @@ CPU bloom 처리 후 생성된 result image다. 밝은 영역이 주변으로 �
 
 ## 문서
 
+- Work Session Quickstart: [작업 세션 실행 흐름](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/98_Tools/work-session-quickstart.md)
+- Collaboration Environment: [파일럿 협업 환경](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/04_WorkLogs/reviews/part1-pilot-collaboration-environment.md)
 - Chapter README: [Part1_Chapter01-02 README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Part1_Chapter01-02/README.md)
 - Root README: [Root README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/README.md)
 - Example README:
