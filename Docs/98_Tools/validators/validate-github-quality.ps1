@@ -85,7 +85,7 @@ function Get-Section {
     return $Lines[($start + 1)..($end - 1)]
 }
 
-function Test-LineLength {
+function Test-FencedCodeLineLength {
     param([string]$Path, [string[]]$Lines)
     $inFence = $false
     for ($i = 0; $i -lt $Lines.Count; ++$i) {
@@ -99,11 +99,6 @@ function Test-LineLength {
         }
         elseif ($inFence -and $line.Length -gt 80) {
             Add-Warning $Path "line $($i + 1): fenced code exceeds recommended 80 characters"
-        }
-        elseif (-not $inFence -and $line.Length -gt 120 -and
-            $line -notmatch '^\s*\|' -and $line -notmatch '^\s*!\[' -and
-            $line -notmatch '\]\([^)]+\)') {
-            Add-Failure $Path "line $($i + 1): exceeds 120 characters"
         }
     }
 }
@@ -205,7 +200,7 @@ function Validate-DemoIssue {
         }
     }
 
-    Test-LineLength -Path $relative -Lines $lines
+    Test-FencedCodeLineLength -Path $relative -Lines $lines
 }
 
 if (-not (Test-Path $GitHubRoot)) {

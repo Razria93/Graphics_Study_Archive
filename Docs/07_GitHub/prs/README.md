@@ -28,8 +28,7 @@ PR body는 파일 변경 목록보다 이 PR이 설명 가능하게 만든 그�
 
 PR body는 README를 복제하지 않는다. Chapter README와 Example README를 기반으로 작성하되, GitHub reviewer가 볼 요약과 링크만 둔다.
 
-대표 visual은 review에 도움이 될 때만 0~1개 사용한다. 상세 visual과 구현
-showcase는 Demo Issue로 연결하고, Issue가 미게시 상태면 상세 Demo를 연결한다.
+대표 visual은 review에 도움이 될 때만 0~1개 사용한다. 상세 visual과 구현 showcase는 Demo Issue로 연결하고, Issue가 미게시 상태면 상세 Demo를 연결한다.
 
 PR body 후보는 첫 H1을 title source로 유지한다. 실제 `gh pr create`에서는 title을 H1에서 사용하고 body는 tracked 정본을 그대로 게시한다.
 

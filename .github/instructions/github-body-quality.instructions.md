@@ -6,6 +6,7 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 # GitHub Body Quality Instructions
 
 이 문서는 `Docs/07_GitHub` 본문 품질을 항상 같은 수준으로 유지하기 위한 고정 규칙이다.
+Markdown 일반 본문 줄바꿈은 [Docs Authoring Flow Policy](../../Docs/06_Policies/docs-authoring-flow-policy.md)를 따른다.
 
 ## 목표
 
@@ -82,7 +83,7 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 - 의사코드가 C++ 독자 기준으로 읽히는지 확인한다.
 - `Pseudo C++`의 중괄호와 들여쓰기는 수동으로 함께 확인한다.
 - code block의 긴 줄이 뷰포트에서 과도하게 잘리지 않는지 확인한다.
-- 일반 본문은 80자에 맞춘 기계적 개행으로 링크와 조사·서술어를 분리하지 않는다.
+- 일반 문단과 하나의 목록 항목은 각각 하나의 물리적 줄로 유지하고 화면 줄바꿈은 GitHub에 맡긴다.
 - 이미지 URL이 절대 URL인지 확인한다.
 - source docs 링크가 누락되지 않았는지 확인한다.
 - 핵심 구현이 keyword 목록과 포괄적인 코드 링크로 끝나지 않는지 확인한다.

@@ -34,8 +34,7 @@
 
 ## 대표 Visual
 
-대표 visual이 review에 도움이 될 때만 0~1개 사용한다. 상세 visual은 Demo
-Issue로 연결한다.
+대표 visual이 review에 도움이 될 때만 0~1개 사용한다. 상세 visual은 Demo Issue로 연결한다.
 
 ### Example Capture
 
@@ -62,6 +61,7 @@ capture/result가 보여주는 내용을 한 문장으로 설명한다.
 
 ## 작성 기준
 
+- 일반 문단과 하나의 목록 항목은 각각 하나의 물리적 줄로 작성한다. 상세 기준은 [Docs Authoring Flow Policy](../../06_Policies/docs-authoring-flow-policy.md)를 따른다.
 - 파일 변경 목록보다 핵심 개념, 대표 예제, 검증, demo를 먼저 보여준다.
 - PR body는 README를 복제하지 않고 GitHub review용 요약과 링크 허브로 작성한다.
 - source docs 원문을 그대로 복사하지 않고 핵심 요약, 검토 시점의 상태, 링크만 남긴다.

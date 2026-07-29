@@ -16,8 +16,7 @@
 
 ### Implementation Step
 
-어떤 구현을 선택했는지 설명하고 대표 visual이나 실행 결과에 미치는 영향을
-함께 연결한다.
+어떤 구현을 선택했는지 설명하고 대표 visual이나 실행 결과에 미치는 영향을 함께 연결한다.
 
 - [확인할 구현 역할](https://github.com/<owner>/<repo>/blob/<commit-sha>/<source-path>#L<start>-L<end>)
 
@@ -47,6 +46,7 @@
 
 ## 작성 기준
 
+- 일반 문단과 하나의 목록 항목은 각각 하나의 물리적 줄로 작성한다. 상세 기준은 [Docs Authoring Flow Policy](../../06_Policies/docs-authoring-flow-policy.md)를 따른다.
 - 상세 Demo 전체를 복제하지 않는다.
 - 대표 visual 1~3개와 핵심 구현 요약을 자체 포함한다.
 - 핵심 구현은 단계별 설명, 결과 영향, 인접한 코드 증거 순서로 구성한다.

@@ -19,9 +19,9 @@
 | 정책 링크 검사 | rename된 정책 파일명과 Index 링크 확인 | `rg` |
 | stage 검사 | 커밋 대상 파일 범위 확인 | `git diff --cached --stat` |
 
-줄 길이 validator는 일반 본문의 120자 초과를 안전망으로 검사한다. fenced code는 80자 초과를 warning, 120자 초과를 failure로 분리한다. URL, image Markdown, table처럼 분할하면 의미나 동작이 깨지는 항목은 일반 본문 길이 검사에서 제외한다.
+일반 본문에는 특정 글자 수 상한을 적용하지 않는다. fenced code는 80자 초과를 warning, 120자 초과를 failure로 분리한다.
 
-80자에 맞춘 기계적 본문 개행, 링크와 조사·서술어의 분리, 포괄적인 link label은 길이만으로 판별하지 않는다. 이 항목은 agent 또는 수동 검수에서 의미 단위로 확인한다.
+인위적 본문 soft-wrap, 링크와 조사·서술어의 분리, 포괄적인 link label은 길이만으로 안정적으로 판별하지 못하므로 agent 또는 수동 검수에서 확인한다. 상세 줄바꿈 기준은 [Docs Authoring Flow Policy](../06_Policies/docs-authoring-flow-policy.md)를 따른다.
 
 ## Work Unit 검수 연결
 

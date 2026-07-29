@@ -163,11 +163,6 @@ function Validate-DemoDocument {
         elseif ($inFence -and $line.Length -gt 80) {
             Add-Warning $relative "line $($i + 1): fenced code exceeds recommended 80 characters"
         }
-        elseif (-not $inFence -and $line.Length -gt 120 -and
-            $line -notmatch '^\s*\|' -and $line -notmatch '^\s*!\[' -and
-            $line -notmatch '\]\([^)]+\)') {
-            Add-Failure $relative "line $($i + 1): exceeds 120 characters"
-        }
     }
 
     $links = [regex]::Matches($content, '!?\[[^\]]*\]\(([^)]+)\)')
