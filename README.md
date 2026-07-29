@@ -32,7 +32,7 @@
 ![02_Bloom bloom result](Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png)
 
 - [Bloom 상세 Demo](Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)
-- [Demo Issue 게시 후보](Docs/07_GitHub/issues/demo/demo_part1_chapter01-02.md)
+- [Demo Issue #9](https://github.com/Razria93/Graphics_Study_Archive/issues/9)
 - [02_Bloom 코드 안내](Part1_Chapter01-02/02_Bloom/README.md)
 
 ## Study Map

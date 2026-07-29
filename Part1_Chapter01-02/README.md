@@ -45,8 +45,7 @@ CPU에서 bloom 후처리를 계산하고, 처리된 pixel buffer를 DirectX11 d
 ![02_Bloom result](../Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png)
 
 - 상세 Demo: [02_Bloom Demo](../Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)
-- Demo Issue 게시 후보:
-  [Part1 Chapter01-02 Demo Issue](../Docs/07_GitHub/issues/demo/demo_part1_chapter01-02.md)
+- Demo Issue: [Part1 Chapter01-02 CPU Bloom Demo #9](https://github.com/Razria93/Graphics_Study_Archive/issues/9)
 - Demo index: [Docs/03_Demos/Part1_Chapter01-02/demo-index.md](../Docs/03_Demos/Part1_Chapter01-02/demo-index.md)
 
 ## 검증 상태

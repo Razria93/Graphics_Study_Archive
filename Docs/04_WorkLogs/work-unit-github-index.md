@@ -14,14 +14,14 @@
 
 | 항목 | 상태 | GitHub 번호 | 게시 후보 파일 | 비고 |
 | --- | --- | --- | --- | --- |
-| 상위 Progress Issue | ready | 없음 | `Docs/07_GitHub/plan/plan-body.md` | 게시 전 사용자 승인 필요 |
-| 누적 진행 댓글 | comment-ready | 없음 | `Docs/07_GitHub/plan/plan-progress.md` | Progress Issue 생성 후 작성 |
+| 상위 Progress Issue | posted | [Issue #7](https://github.com/Razria93/Graphics_Study_Archive/issues/7) | `Docs/07_GitHub/plan/plan-body.md` | GitHub remote에 게시됨 |
+| 누적 진행 댓글 | posted | [댓글 5091068690](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690) | `Docs/07_GitHub/plan/plan-progress.md` | 게시 후 tracked 후보와 동기화 |
 
 ## 관계 Index
 
 | Work Unit | Chapter/Bundle 완료 댓글 | Work Unit Issue | Demo Issue remote | 로컬 Demo Issue 후보 | Remote PR | 로컬 PR 후보 | 관련 WorkLog | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `WU-Part1` | comment-ready (`Docs/07_GitHub/plan/comments/phase-2-1-plan-comment.md`) | 제외 | 없음 | `Docs/07_GitHub/issues/demo/demo_part1_chapter01-02.md` (`ready`) | PR #8 (`Draft`) | `Docs/07_GitHub/prs/part1_chapter01-02.md` (`ready`) | [WU-Part1](work-units/WU-Part1.md) | WU-Part1의 일부 범위인 Chapter01-02 완료 기록이다. WU-Part1 전체 완료가 아니다. |
+| `WU-Part1` | [댓글 5091227284](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091227284) (`posted`; `Docs/07_GitHub/plan/comments/phase-2-1-plan-comment.md`) | 제외 | [Demo Issue #9](https://github.com/Razria93/Graphics_Study_Archive/issues/9) (`posted`) | `Docs/07_GitHub/issues/demo/demo_part1_chapter01-02.md` (`ready`) | [PR #8](https://github.com/Razria93/Graphics_Study_Archive/pull/8) (`Draft`) | `Docs/07_GitHub/prs/part1_chapter01-02.md` (`ready`) | [WU-Part1](work-units/WU-Part1.md) | WU-Part1의 일부 범위인 Chapter01-02 완료 기록이다. WU-Part1 전체 완료가 아니다. |
 | `WU-Part2` | 예정 | 기본 제외 | 없음 | 예정 | 없음 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
 | `WU-Part3` | 예정 | 기본 제외 | 없음 | 예정 | 없음 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
 | `WU-Part4` | 예정 | 기본 제외 | 없음 | 예정 | 없음 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
