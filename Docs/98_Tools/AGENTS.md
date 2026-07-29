@@ -6,8 +6,9 @@
 
 ## 책임
 
-- template, validation 기준, troubleshooting 문서만 둔다.
+- template, validation 기준, troubleshooting 문서와 반복 사용하는 session utility를 둔다.
 - 반복 실행 가능한 validator script는 `validators/`에 둔다.
+- 비파괴적인 session utility script는 `scripts/`에 둔다.
 - 문서 감사 정책은 `Docs/06_Policies/document-system-audit-policy.md`에 두고,
   이 폴더에는 실행 가이드와 보고 template만 둔다.
 - 정책 원문은 `Docs/06_Policies`로 링크한다.

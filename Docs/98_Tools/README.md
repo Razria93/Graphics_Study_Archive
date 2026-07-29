@@ -8,6 +8,7 @@
 - local-only review template의 사용 위치를 안내한다.
 - 문서 검수와 GitHub body 검수 기준을 설명한다.
 - 반복 실행 가능한 validator script를 보관한다.
+- 비파괴적인 session utility script를 보관한다.
 - 세션 문제 해결 문서를 둔다.
 - 실제 작업 초안이나 게시 본문은 이 폴더에 두지 않는다.
 
@@ -21,6 +22,7 @@
 | [Validation Tools](validation-tools.md) | 최소 검수 명령과 validator 승격 기준 |
 | [Document System Audit Guide](document-system-audit-guide.md) | 문서 체계 감사 실행, 에이전트 분담, 재검증 절차 |
 | [Session Troubleshooting](session-troubleshooting.md) | 세션/권한/인코딩/작업 분리 문제 대응 |
+| [User Attention Notification](user-attention-notification.md) | 작업 종료, 승인 대기와 blocker 시 Windows 알림 실행 |
 
 ## local tools 기준
 

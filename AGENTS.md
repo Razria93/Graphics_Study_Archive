@@ -54,6 +54,15 @@
   `Docs/98_Tools/document-system-audit-guide.md`를 따른다.
 - root에는 상세 감사 규칙을 복제하지 않는다.
 
+## 사용자 주의 알림
+
+- 목표 모드 완료·중단, 장시간 도구 작업 완료, 사용자 승인·결정 대기와 진행 불가처럼 사용자가 확인해야 하는 terminal point에서 알림을 한 번 실행한다.
+- 단순 설명, 짧은 질의응답, 중간 commentary와 status update에는 실행하지 않는다.
+- 한 assistant turn의 같은 terminal point에서 중복 실행하지 않는다.
+- 목표 모드를 종료할 때는 목표 상태를 먼저 정리하고 최종 응답 직전에 실행한다.
+- 알림 실패는 원래 작업 결과를 변경하지 않는다.
+- 실행 조건과 명령은 `Docs/98_Tools/user-attention-notification.md`를 따른다.
+
 ## 문체 규칙
 
 Git에 추적되는 Docs와 AGENTS 문서는 한국어 중심의 평서형 현재형으로 작성한다.
