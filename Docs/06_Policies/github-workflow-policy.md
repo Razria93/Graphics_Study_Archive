@@ -203,6 +203,12 @@ Progress Issue 댓글은 두 종류로 고정한다.
 | 누적 진행판 | `Docs/07_GitHub/plan/plan-progress.md` | 완료, 진행 중, 예정 Work Unit과 관련 PR 현황 |
 | PR 마감 plan comment | `Docs/07_GitHub/plan/comments/*.md` | PR 마감 단위 요약, 검증, 남은 제한, 관련 PR |
 
+누적 진행판은 현재 PR 상태를 표시할 수 있다. PR 마감 plan comment는 게시 후
+상태가 바뀌어도 의미가 유지되도록 관련 PR에 `Draft`, `Ready for Review` 같은
+임시 상태 수식어를 붙이지 않고 PR 번호, URL과 완료 범위만 기록한다. 현재 PR
+상태는 GitHub remote와 `Docs/04_WorkLogs/work-unit-github-index.md`에서
+확인한다.
+
 Progress Issue 댓글을 생성하거나 수정하기 전에는 대상 Issue, 사용할 게시 후보 파일, 실행할 `gh` 명령, 예상 변경 요약을 사용자에게 보고하고 승인받는다.
 
 ## Issue 책임

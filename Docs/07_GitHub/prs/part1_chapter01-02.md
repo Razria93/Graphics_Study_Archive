@@ -31,15 +31,15 @@
 
 이 예제는 이후 예제의 DirectX11 실행 기반을 만든다. device/swap chain/render target, dynamic texture upload, ImGui overlay 흐름을 확인하는 기반 예제이며, 별도 capture/result는 만들지 않는다.
 
-- README: [01_DX11InitAndImGui README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Part1_Chapter01-02/01_DX11InitAndImGui/README.md)
-- Verification: [Part1_Chapter01-02 verification-index](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/02_Verification/Part1_Chapter01-02/verification-index.md)
+- README: [01_DX11InitAndImGui README](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Part1_Chapter01-02/01_DX11InitAndImGui/README.md)
+- Verification: [Part1_Chapter01-02 verification-index](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/02_Verification/Part1_Chapter01-02/verification-index.md)
 
 ### 02_Bloom
 
 이 예제는 CPU에서 bloom 결과 이미지를 만든 뒤 DirectX11 dynamic texture로 표시한다. original input과 bloom result를 함께 보여주므로 Chapter01-02의 대표 demo로 사용한다.
 
-- README: [02_Bloom README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Part1_Chapter01-02/02_Bloom/README.md)
-- Topic: [PostProcessingAndBloom](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)
+- README: [02_Bloom README](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Part1_Chapter01-02/02_Bloom/README.md)
+- Topic: [PostProcessingAndBloom](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)
 - Demo Issue: [02_Bloom CPU Bloom Demo #9](https://github.com/Razria93/Graphics_Study_Archive/issues/9)
 
 ## 검증
@@ -66,16 +66,16 @@ CPU bloom 처리 후 생성된 result image다. 밝은 영역이 주변으로 �
 
 ## 문서
 
-- Work Session Quickstart: [작업 세션 실행 흐름](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/98_Tools/work-session-quickstart.md)
-- Collaboration Environment: [파일럿 협업 환경](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/04_WorkLogs/reviews/part1-pilot-collaboration-environment.md)
-- Chapter README: [Part1_Chapter01-02 README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Part1_Chapter01-02/README.md)
-- Root README: [Root README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/README.md)
+- Work Session Quickstart: [작업 세션 실행 흐름](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/98_Tools/work-session-quickstart.md)
+- Collaboration Environment: [파일럿 협업 환경](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/04_WorkLogs/reviews/part1-pilot-collaboration-environment.md)
+- Chapter README: [Part1_Chapter01-02 README](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Part1_Chapter01-02/README.md)
+- Root README: [Root README](https://github.com/Razria93/Graphics_Study_Archive/blob/main/README.md)
 - Example README:
-	- [01_DX11InitAndImGui README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Part1_Chapter01-02/01_DX11InitAndImGui/README.md)
-	- [02_Bloom README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Part1_Chapter01-02/02_Bloom/README.md)
-- Topic: [PostProcessingAndBloom](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)
-- Verification: [Part1_Chapter01-02 verification-index](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/02_Verification/Part1_Chapter01-02/verification-index.md)
-- Detailed Demo: [02_Bloom](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)
+	- [01_DX11InitAndImGui README](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Part1_Chapter01-02/01_DX11InitAndImGui/README.md)
+	- [02_Bloom README](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Part1_Chapter01-02/02_Bloom/README.md)
+- Topic: [PostProcessingAndBloom](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)
+- Verification: [Part1_Chapter01-02 verification-index](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/02_Verification/Part1_Chapter01-02/verification-index.md)
+- Detailed Demo: [02_Bloom](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)
 
 ## 관련 이슈
 

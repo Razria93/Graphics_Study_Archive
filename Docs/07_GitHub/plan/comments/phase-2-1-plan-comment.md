@@ -2,7 +2,7 @@
 
 ## 완료 내용
 
-- `Part1_Chapter01-02` Chapter/Bundle 범위의 README, Topic, Verification, Demo, Draft PR #8 연결을 정리했다.
+- `Part1_Chapter01-02` Chapter/Bundle 범위의 README, Topic, Verification, Demo, PR #8 연결을 정리했다.
 - `02_Bloom` input/result 비교 이미지와 구현 요약을 [Demo Issue #9](https://github.com/Razria93/Graphics_Study_Archive/issues/9)에 게시했다.
 - 이 기록은 WU-Part1 전체 완료가 아니라 WU-Part1 안의 Chapter01-02 완료 기록이다.
 
@@ -22,4 +22,4 @@
 
 ## Related PR
 
-- PR #8 (Draft): Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom
+- PR #8: Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom

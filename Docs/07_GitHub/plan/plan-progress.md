@@ -14,7 +14,7 @@ Related PR: 예정
 
 `01_DX11InitAndImGui`와 `02_Bloom`을 기준으로 코드 폴더 README, Topic, Verification, Demo, Publication, PR body 연결 흐름을 검증했다. `02_Bloom`은 input/result 비교 자료를 README와 Demo 문서에 연결하고 [Demo Issue #9](https://github.com/Razria93/Graphics_Study_Archive/issues/9)에 대표 결과와 구현 요약을 게시했다.
 
-Related PR: PR #8 (Draft) - Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom
+Related PR: PR #8 (Merged) - Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom
 
 ### Phase 2-2. Part1 pilot 게시 모델 정리
 
@@ -22,13 +22,13 @@ Progress Issue, 누적 진행 댓글, Chapter/Bundle 완료 댓글, Chapter PR�
 
 Related PR: 예정 - GitHub 게시 workflow 보완 PR
 
+### Phase 2-3. Part1 Chapter01-02 PR 마감
+
+PR #8 review 대응과 일반 merge commit 방식 병합을 완료했다. 관련 branch는 작업 이력 증빙을 위해 보존한다.
+
+Related PR: PR #8 (Merged) - Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom
+
 ## 진행 예정
-
-### Phase 2-3. Part1 Chapter01-02 PR 마감 준비
-
-Draft PR #8 검토와 완료 댓글 반영을 진행한다.
-
-Related PR: PR #8 (Draft) - Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom
 
 ### Phase 2-4. Part1 Chapter03 Ray Tracing 예제 정리
 
@@ -44,4 +44,4 @@ Related PR: 예정
 
 ## Related PRs
 
-- PR #8 (Draft): Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom
+- PR #8 (Merged): Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom

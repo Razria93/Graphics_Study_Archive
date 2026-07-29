@@ -40,7 +40,7 @@ CPU에서 완성한 pixel buffer를 `D3D11_MAP_WRITE_DISCARD`로 연 dynamic tex
 - [full-screen vertex 전달 shader](https://github.com/Razria93/Graphics_Study_Archive/blob/af3103cd06ea10d90ce6b1332336ce79eb4eb591/Part1_Chapter01-02/02_Bloom/VS.hlsl#L13-L20)
 - [result texture sampling shader](https://github.com/Razria93/Graphics_Study_Archive/blob/af3103cd06ea10d90ce6b1332336ce79eb4eb591/Part1_Chapter01-02/02_Bloom/PS.hlsl#L10-L13)
 
-전체 처리 흐름과 의사코드는 [상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)에서 확인한다.
+전체 처리 흐름과 의사코드는 [상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)에서 확인한다.
 
 ## 처리 흐름
 
@@ -61,8 +61,8 @@ CPU에서 완성한 pixel buffer를 `D3D11_MAP_WRITE_DISCARD`로 연 dynamic tex
 
 ## 더 자세히 보기
 
-- [상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)
-- [Example README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Part1_Chapter01-02/02_Bloom/README.md)
-- [PostProcessingAndBloom Topic](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)
-- [Verification](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/02_Verification/Part1_Chapter01-02/verification-index.md)
+- [상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)
+- [Example README](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Part1_Chapter01-02/02_Bloom/README.md)
+- [PostProcessingAndBloom Topic](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)
+- [Verification](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/02_Verification/Part1_Chapter01-02/verification-index.md)
 - [PR #8](https://github.com/Razria93/Graphics_Study_Archive/pull/8)

@@ -39,10 +39,10 @@ Progress Issue 1개, 누적 진행 댓글 1개, PR 마감 단위 plan comment, C
 
 ## 관련 문서
 
-- GitHub workflow 정책: [github-workflow-policy](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/06_Policies/github-workflow-policy.md)
-- Work Unit workflow 정책: [work-unit-workflow-policy](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/06_Policies/work-unit-workflow-policy.md)
-- Work Unit GitHub Index: [work-unit-github-index](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/04_WorkLogs/work-unit-github-index.md)
-- Verification known issues: [known-issues](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/02_Verification/known-issues.md)
+- GitHub workflow 정책: [github-workflow-policy](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/06_Policies/github-workflow-policy.md)
+- Work Unit workflow 정책: [work-unit-workflow-policy](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/06_Policies/work-unit-workflow-policy.md)
+- Work Unit GitHub Index: [work-unit-github-index](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/04_WorkLogs/work-unit-github-index.md)
+- Verification known issues: [known-issues](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/02_Verification/known-issues.md)
 
 ## 제외 범위
 
