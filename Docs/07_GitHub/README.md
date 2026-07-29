@@ -9,9 +9,7 @@
 - Docs 정본의 상세 설명을 그대로 복제하지 않고 요약과 링크 중심으로 작성한다.
 - GitHub remote 게시, 수정, Ready for Review, merge는 사용자 승인 후에만 진행한다.
 
-Issue/PR body 후보는 첫 H1을 title source로 유지한다. 실제 remote body에서는
-첫 H1과 바로 뒤 빈 줄을 제거한다. tracked 후보와 remote body를 비교할 때도
-같은 변환을 적용한다. comment body는 title이 없으므로 H1을 사용하지 않는다.
+Issue/PR body 후보는 첫 H1을 title source로 유지한다. 실제 remote body에서는 첫 H1과 바로 뒤 빈 줄을 제거한다. tracked 후보와 remote body를 비교할 때도 같은 변환을 적용한다. comment body는 title이 없으므로 H1을 사용하지 않는다.
 
 ## 폴더
 

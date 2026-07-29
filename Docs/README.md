@@ -17,8 +17,7 @@
 
 ## 운영 기준
 
-- 새 작업은 [Work Session Quickstart](98_Tools/work-session-quickstart.md)에서
-  작업 유형, 권한, 검증과 종료 흐름을 먼저 확인한다.
+- 새 작업은 [Work Session Quickstart](98_Tools/work-session-quickstart.md)에서 작업 유형, 권한, 검증과 종료 흐름을 먼저 확인한다.
 - 코드 폴더 README는 public-facing 예제 설명으로 작성한다.
 - 내부 검토 기록은 `Docs/04_WorkLogs` 또는 `local/`에 둔다.
 - 검증 상태는 직접 확인한 결과만 갱신한다.

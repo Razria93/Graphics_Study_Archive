@@ -34,5 +34,4 @@
 - 정책 문서는 이 폴더에만 둔다.
 - 세부 작업 초안은 `local/`에 둘 수 있고, GitHub에 게시하기 직전의 후보 정본은 `Docs/07_GitHub`에 둔다.
 - 과거 import 기록은 `Docs/99_Legacy`를 기준으로 참조한다.
-- 작업 세션의 실행 순서는
-  [Work Session Quickstart](../98_Tools/work-session-quickstart.md)에서 확인한다.
+- 작업 세션의 실행 순서는 [Work Session Quickstart](../98_Tools/work-session-quickstart.md)에서 확인한다.

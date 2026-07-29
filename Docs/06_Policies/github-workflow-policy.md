@@ -130,18 +130,13 @@ commit은 사용자가 명시적으로 요청했거나 현재 대화에서 커�
 
 ## Push 확인 기준
 
-push는 승인 후 실행하며, 실행 전에는 현재 branch, upstream, ahead/behind,
-worktree, staged 변경과 push 대상 commit을 확인한다. upstream이 예상과
-다르거나 non-fast-forward 가능성이 있으면 push를 중단하고 차이를 보고한다.
-force push는 사용자가 별도로 승인하지 않는 한 사용하지 않는다.
+push는 승인 후 실행하며, 실행 전에는 현재 branch, upstream, ahead/behind, worktree, staged 변경과 push 대상 commit을 확인한다. upstream이 예상과 다르거나 non-fast-forward 가능성이 있으면 push를 중단하고 차이를 보고한다. force push는 사용자가 별도로 승인하지 않는 한 사용하지 않는다.
 
-push 후에는 local HEAD, tracking ref, 실제 remote branch head와 PR head를
-비교한다. 각 값이 일치하지 않으면 후속 remote 변경을 진행하지 않는다.
+push 후에는 local HEAD, tracking ref, 실제 remote branch head와 PR head를 비교한다. 각 값이 일치하지 않으면 후속 remote 변경을 진행하지 않는다.
 
 ## Remote 변경의 직렬 실행
 
-Issue, PR, comment와 Ready 상태 같은 remote 변경은 한 번에 한 객체씩
-수행하고 즉시 결과를 확인한다. 여러 객체를 동시에 수정하지 않는다.
+Issue, PR, comment와 Ready 상태 같은 remote 변경은 한 번에 한 객체씩 수행하고 즉시 결과를 확인한다. 여러 객체를 동시에 수정하지 않는다.
 
 remote 변경이 일부만 성공하면 다음 원칙을 적용한다.
 
@@ -287,11 +282,7 @@ GitHub에 게시하는 Markdown body는 `Docs/07_GitHub` 파일을 기준으로 
 
 게시 전 후보에는 `Metadata`, 내부 메모, draft 문구, 존댓말을 남기지 않는다. validator가 지원하는 범위는 `Docs/98_Tools/validators/README.md`를 따른다.
 
-Issue와 PR body는 tracked 후보 본문의 첫 H1을 title source로 사용한다. tracked
-정본은 H1을 유지하고 validator 검사 대상이 된다. 실제 remote title은 첫 H1의
-본문을 사용하고 remote body에서는 첫 H1과 바로 뒤 빈 줄을 제거한다.
-remote body와 tracked 후보를 비교할 때도 같은 변환을 적용한다. comment body는
-title이 없으므로 H1을 사용하지 않는다.
+Issue와 PR body는 tracked 후보 본문의 첫 H1을 title source로 사용한다. tracked 정본은 H1을 유지하고 validator 검사 대상이 된다. 실제 remote title은 첫 H1의 본문을 사용하고 remote body에서는 첫 H1과 바로 뒤 빈 줄을 제거한다. remote body와 tracked 후보를 비교할 때도 같은 변환을 적용한다. comment body는 title이 없으므로 H1을 사용하지 않는다.
 
 누적 진행 댓글은 Progress Issue 당 1개를 유지하고, 새 댓글 생성 대신 기존 댓글을 갱신한다.
 
@@ -309,8 +300,7 @@ local/ 임시 초안
 
 GitHub remote에 Issue, PR, comment를 게시하거나 수정한 뒤에는 다음을 확인한다.
 
-- GitHub remote 본문과 H1 title source 변환을 적용한 `Docs/07_GitHub` 파일의
-  내용이 일치한다.
+- GitHub remote 본문과 H1 title source 변환을 적용한 `Docs/07_GitHub` 파일의 내용이 일치한다.
 - 실제 Issue/PR 번호와 URL을 WorkLog index에 기록한다.
 - 게시 후 실제 본문 또는 리뷰 대응 기록이 필요하면 `local/` 하위 snapshot에 남긴다.
 - `Docs/04_WorkLogs`에는 원문이 아니라 요약과 링크만 반영한다.
@@ -320,8 +310,7 @@ GitHub remote에 Issue, PR, comment를 게시하거나 수정한 뒤에는 다�
 
 ## Ready for Review 확인
 
-Ready for Review 감사와 실제 상태 전환을 분리한다. 감사 단계는 read-only로
-진행하고 다음을 확인한다.
+Ready for Review 감사와 실제 상태 전환을 분리한다. 감사 단계는 read-only로 진행하고 다음을 확인한다.
 
 - local, tracking ref, 실제 remote branch와 PR head가 일치한다.
 - PR title과 body가 tracked 후보 및 실제 변경 범위를 설명한다.
@@ -329,9 +318,7 @@ Ready for Review 감사와 실제 상태 전환을 분리한다. 감사 단계�
 - 깨진 링크, 미해결 review thread, 충돌과 merge 차단 요소가 없다.
 - 남은 warning과 follow-up이 Ready 전환을 막는지 구분한다.
 
-감사 결과는 `READY`, `READY WITH WARNINGS`, `BLOCKED` 중 하나로 보고한다.
-판정은 상태 전환 승인을 대신하지 않는다. `gh pr ready`는 별도 사용자 승인
-후에만 실행한다.
+감사 결과는 `READY`, `READY WITH WARNINGS`, `BLOCKED` 중 하나로 보고한다. 판정은 상태 전환 승인을 대신하지 않는다. `gh pr ready`는 별도 사용자 승인 후에만 실행한다.
 
 ## WorkLog 반영
 
@@ -365,6 +352,5 @@ PR review comment에 답변할 때는 짧은 고정 형식을 사용한다. 답�
 - Issue/PR 생성은 사용자가 명시적으로 요청한 경우에만 진행한다.
 - 게시 전 초안은 local에서 검토할 수 있고, 게시 후보 정본은 `Docs/07_GitHub`에 둔다.
 - 게시 전 후보는 `Metadata`, 내부 메모, draft 문구, 존댓말을 제거한다.
-- 게시 후 실제 게시본이나 리뷰 대응 기록을 별도로 보존할 필요가 있을 때만
-  `local/` 하위 snapshot에 둔다.
+- 게시 후 실제 게시본이나 리뷰 대응 기록을 별도로 보존할 필요가 있을 때만 `local/` 하위 snapshot에 둔다.
 - merge 후 최종 상태는 각 정본 문서에 반영한다.

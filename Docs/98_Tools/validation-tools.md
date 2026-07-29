@@ -71,9 +71,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 
 지원 디렉터리와 미보장 범위는 `validators/README.md`를 기준으로 확인한다.
 
-Issue/PR 후보 본문의 첫 H1은 title source로 유지한다. 실제 remote body에서는
-첫 H1과 바로 뒤 빈 줄을 제거한다. remote/tracked 비교에도 같은 변환을
-적용한다. comment body는 H1을 사용하지 않는다.
+Issue/PR 후보 본문의 첫 H1은 title source로 유지한다. 실제 remote body에서는 첫 H1과 바로 뒤 빈 줄을 제거한다. remote/tracked 비교에도 같은 변환을 적용한다. comment body는 H1을 사용하지 않는다.
 
 ## 금지사항
 
