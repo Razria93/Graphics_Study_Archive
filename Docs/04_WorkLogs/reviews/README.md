@@ -1,6 +1,6 @@
 # Reviews
 
-이 폴더는 Work Unit 진행 중 `local/study-review/`에서 승격한 Chapter 또는 Example 판단 요약을 둔다.
+이 폴더는 Work Unit 진행 중 `local/study-review/` 또는 PR review에서 승격한 재사용 가능한 판단 요약을 둔다.
 
 ## 책임
 
@@ -15,6 +15,7 @@
 - 제외 또는 보류한 자료의 반복 가능한 판단 기준
 - 후속 Work Unit에서 다시 확인해야 할 known issue
 - 사용자 검토에서 결정된 정책성 판단
+- 다음 PR의 회귀 검사에 재사용할 actionable review feedback
 
 ## 문서
 
@@ -22,6 +23,7 @@
 - [Document System Audit 2026-07-28](document-system-audit-2026-07-28.md):
   전체 문서 감사와 사용자 판정 snapshot
 - [Part1 Pilot Collaboration Environment](part1-pilot-collaboration-environment.md): 파일럿에서 확립한 문서·agent·검증·GitHub 협업 환경 snapshot
+- [Review Feedback Log](review-feedback-log.md): actionable PR review의 대응 결과와 재사용할 회귀 검사
 
 ## 제외 항목
 

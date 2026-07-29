@@ -114,11 +114,14 @@ Ready 감사는 read-only로 수행하고 실제 상태 전환과 분리한다.
 - 관련 local validator, 작업별 build/test와 수동 문서·링크·public safety 검사 통과
 - 핵심 링크, asset과 commit permalink 확인
 - merge conflict, 현재 `CHANGES_REQUESTED` review와 미해결 actionable review thread 확인
+- 현재 PR의 `open` feedback과 변경 파일에 관련된 과거 regression check 확인
 - blocker와 warning 구분
 
 GitHub Actions, status check와 branch protection은 현재 Ready 기본 판정에서 제외하며 사용자가 도입을 별도로 요청한 경우에만 검토한다. 세부 판정 기준은 [GitHub Workflow Policy](../06_Policies/github-workflow-policy.md)를 따른다.
 
-감사 결과가 `READY`여도 `gh pr ready`는 별도 승인 후 실행한다. review 응답, thread resolve와 merge도 각각 승인 범위를 확인한다. 기본 merge 방식과 branch 보존 기준은 GitHub Workflow Policy를 따른다.
+review 대응은 actionable thread 확인, 영향 범위 조사, 수정 또는 유지 판단, 검증, 필요한 [Review Feedback Log](../04_WorkLogs/reviews/review-feedback-log.md) 기록과 답글 후보 준비 순서로 진행한다. 과거 log 전체가 아니라 현재 변경 파일에 관련된 regression check만 다시 확인한다.
+
+감사 결과가 `READY`여도 `gh pr ready`는 별도 승인 후 실행한다. review 답글, thread resolve와 merge도 각각 승인 범위를 확인한다. 기본 merge 방식과 branch 보존 기준은 GitHub Workflow Policy를 따른다.
 
 ## 11. 종료와 Handoff
 

@@ -24,7 +24,7 @@ WorkLog의 검증, demo, publication 요약은 마감 당시 상태를 압축한
 | [Work Unit GitHub Index](work-unit-github-index.md) | Work Unit과 Issue/PR/comment 게시 상태 연결 |
 | [work-units](work-units/) | 진행 상태와 관계없는 Work Unit 기록 |
 | [decisions](decisions/) | 구조 전환과 정책성 결정 기록 |
-| [reviews](reviews/) | local study review에서 승격한 Chapter/Example 판단 요약 |
+| [reviews](reviews/) | local study review와 PR review에서 승격한 재사용 가능한 판단 요약 |
 
 ## WorkLog에 남길 것
 

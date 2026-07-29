@@ -19,7 +19,7 @@
 | [Plan Comment](work-unit-completion-comment.md) | `Docs/07_GitHub/plan/comments/*.md` | GitHub 게시 후보 | PR 마감 단위 기록 |
 | [Local Study Review](local-study-review.md) | `local/study-review` | local-only 검토용 | raw/source 주석 inventory와 diff 검토 메모 |
 | [Local Publication Review](local-publication-review.md) | `local/publication` | local-only 검토용 | 공개 전 점검 메모 |
-| [PR Review Response](pr-review-response.md) | GitHub PR review comment 답변 | GitHub 게시용 짧은 댓글 | 대응, 검증, 비고 고정 형식 |
+| [PR Review Response](pr-review-response.md) | GitHub PR review comment 답변 | GitHub 게시용 짧은 댓글 | 원인, 대응 또는 판단, 검증, 반영 commit |
 | [Document System Audit Report](document-system-audit-report.md) | `Docs/04_WorkLogs/reviews` 또는 대화 보고 | 감사 snapshot용 | 발견 근거, 사용자 판정, 수정 작업 묶음 |
 
 ## 사용 기준

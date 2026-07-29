@@ -19,7 +19,7 @@
 - 진행 상태와 관계없이 Work Unit 기록은 `work-units/WU-*.md`에 둔다.
 - 진행/마감 상태는 `work-unit-index.md`에서 관리하고 파일 경로로 중복 표현하지 않는다.
 - 구조 결정 기록은 `decisions/`에 둔다.
-- local study review에서 승격한 판단 요약은 `reviews/`에 둔다.
+- local study review와 PR review에서 승격한 재사용 가능한 판단 요약은 `reviews/`에 둔다.
 - GitHub 게시 후보 정본은 `Docs/07_GitHub`에 둔다.
 - `local/github/draft`는 임시 초안으로만 사용한다.
 

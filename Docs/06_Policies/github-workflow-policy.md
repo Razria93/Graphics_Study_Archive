@@ -345,21 +345,25 @@ WorkLog에는 GitHub 본문 전체가 아니라 다음만 남긴다.
 - 리뷰 대응과 follow-up
 
 
-## PR 리뷰 대응 댓글
+## PR review feedback 기록
 
-PR review comment에 답변할 때는 짧은 고정 형식을 사용한다. 답변은 수정 내용, 검증, 남은 제한만 남기고 긴 원인 분석은 반복하지 않는다.
+모든 review comment를 별도로 보존하지 않는다. 실제 수정이나 판단이 필요하고 이후 작업에서 재발 방지 가치가 있는 actionable feedback만 `Docs/04_WorkLogs/reviews/review-feedback-log.md`에 기록한다.
 
-기본 형식:
+- review 원문은 복제하지 않고 GitHub source URL로 연결한다.
+- 문제, 영향 범위, 대응, 검증, fix와 regression check만 남긴다.
+- 상태는 `open`, `resolved`, `accepted`만 사용한다.
+- `open`은 대응 또는 검증이 남은 상태다.
+- `resolved`는 수정과 검증을 완료한 상태다.
+- `accepted`는 검토 결과 현재 상태를 유지하기로 결정한 상태다.
+- PR 최종 감사에서는 전체 과거 기록을 다시 검사하지 않고 현재 변경 파일과 관련된 regression check만 적용한다.
 
-```md
-반영했습니다.
+review 대응은 수정 또는 유지 판단, 관련 영향 범위 확인, 검증, 필요한 feedback log 기록과 답글 후보 준비가 끝나면 완료 상태로 본다.
 
-- 대응: <무엇을 어떻게 수정했는지>
-- 검증: <실행한 검증 또는 확인한 근거>
-- 비고: <남은 제한 또는 추가 제한 없음>
-```
+## PR review 대응 댓글
 
-반복 작성용 템플릿은 `Docs/98_Tools/templates/pr-review-response.md`를 따른다. 원격 댓글 게시 또는 review thread resolve는 승인 게이트를 따른다.
+PR review comment에는 원인, 대응 또는 판단, 검증과 반영 commit만 짧게 답변한다. 긴 원인 분석과 review 원문을 반복하지 않는다.
+
+반복 작성용 템플릿은 `Docs/98_Tools/templates/pr-review-response.md`를 따른다. 원격 답글 게시와 review thread resolve는 서로 다른 remote 변경으로 취급하고 각각 승인 범위를 확인한다.
 
 ## 운영 기준
 
