@@ -1,6 +1,6 @@
 # Tools
 
-이 폴더는 문서 작성에 사용하는 template, validation 기준, troubleshooting 문서를 둔다. 정책 정본은 `Docs/07_Policies`에 둔다.
+이 폴더는 문서 작성에 사용하는 template, validation 기준, troubleshooting 문서를 둔다. 정책 정본은 `Docs/06_Policies`에 둔다.
 
 ## 책임
 
@@ -8,6 +8,7 @@
 - local-only review template의 사용 위치를 안내한다.
 - 문서 검수와 GitHub body 검수 기준을 설명한다.
 - 반복 실행 가능한 validator script를 보관한다.
+- 비파괴적인 session utility script를 보관한다.
 - 세션 문제 해결 문서를 둔다.
 - 실제 작업 초안이나 게시 본문은 이 폴더에 두지 않는다.
 
@@ -15,10 +16,13 @@
 
 | 문서 | 책임 |
 | --- | --- |
+| [Work Session Quickstart](work-session-quickstart.md) | 작업 유형, 권한, 검증, commit, remote 반영과 handoff 실행 순서 |
 | [Templates](templates/README.md) | 산출물별 template과 local-only review template 색인 |
 | [Validators](validators/README.md) | GitHub body 등 반복 검수 script 색인 |
 | [Validation Tools](validation-tools.md) | 최소 검수 명령과 validator 승격 기준 |
+| [Document System Audit Guide](document-system-audit-guide.md) | 문서 체계 감사 실행, 에이전트 분담, 재검증 절차 |
 | [Session Troubleshooting](session-troubleshooting.md) | 세션/권한/인코딩/작업 분리 문제 대응 |
+| [User Attention Notification](user-attention-notification.md) | 작업 종료, 승인 대기와 blocker 시 Windows 알림 실행 |
 
 ## local tools 기준
 
@@ -27,5 +31,5 @@
 ## 작성 기준
 
 - 평서형 현재형을 사용한다.
-- 정책 원문은 `Docs/07_Policies`에 둔다.
+- 정책 원문은 `Docs/06_Policies`에 둔다.
 - legacy import 기록은 `Docs/99_Legacy`에 둔다.

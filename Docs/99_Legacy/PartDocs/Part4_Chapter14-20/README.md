@@ -1,5 +1,7 @@
 # Part4 Chapter14-20
 
+> Legacy snapshot: 이 문서는 과거 PartDocs 구조에서 작성된 기록이다. 최신 예제 README 정본은 코드 폴더 `README.md`를 기준으로 하고, 최신 Topic/Verification/Demo/Publication 상태는 `Docs/01_Topics`~`Docs/05_Publication`에서 확인한다.
+
 Compute shader, simulation, animation, foliage, physics, gameplay 예제를 정리하는 문서 공간입니다.
 
 ## 현재 상태

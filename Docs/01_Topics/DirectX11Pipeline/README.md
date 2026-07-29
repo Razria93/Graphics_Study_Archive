@@ -1,0 +1,27 @@
+# DirectX11 Pipeline
+
+이 폴더는 DirectX11 Pipeline 관련 graphics concept 문서의 정본 위치다.
+
+## 범위
+
+- 주요 개념: device/context, COM, buffer, shader stage, swap chain, viewport, dynamic texture upload, post-processing
+- 연결 예제 후보: Part1_Chapter01-02, Part2_Chapter05-08
+- 우선순위: P0
+
+## 문서 목록
+
+- [Topic Index](topic-index.md)
+- [Post Processing And Bloom](PostProcessingAndBloom.md)
+
+## 상태
+
+- Topic 목록: 작성
+- 상세 Topic 문서: 일부 작성
+- 연결 예제 검토: Part1 Chapter01-02 일부 확인
+- demo 연결: Part1 Chapter01-02 일부 연결
+
+## 다음 작업
+
+1. 연결 예제의 코드 폴더 README를 확인한다.
+2. 대표 Topic을 P0/P1/P2로 확정한다.
+3. 코드 확인 후 상세 Topic 문서를 승격한다.

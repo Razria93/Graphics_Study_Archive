@@ -1,6 +1,6 @@
 param(
 	[string]$Root = (Resolve-Path (Join-Path $PSScriptRoot "..\..\..")).Path,
-	[string]$PublicRoot = (Join-Path $Root "local/github/public"),
+	[string]$GitHubRoot = (Join-Path $Root "Docs/07_GitHub"),
 	[string]$TemplatesRoot = (Join-Path $Root "Docs/98_Tools/templates")
 )
 
@@ -31,6 +31,20 @@ function Add-Warning {
 	)
 
 	$Warnings.Add("$Path :: $Message")
+}
+
+function Test-GitHubImageUrl {
+	param([string]$Url)
+
+	if ($Url -match '^https://github\.com/[^/]+/[^/]+/blob/.+/Docs/_assets/captures/.+\?raw=true$') {
+		return $true
+	}
+
+	if ($Url -match '^https://raw\.githubusercontent\.com/[^/]+/[^/]+/.+/Docs/_assets/captures/.+') {
+		return $true
+	}
+
+	return $false
 }
 
 function Get-RelativePath {
@@ -105,7 +119,8 @@ function Test-SectionOrder {
 function Test-ScreenshotsSection {
 	param(
 		[string]$Path,
-		[string[]]$Lines
+		[string[]]$Lines,
+		[bool]$RequireGitHubImageUrl = $false
 	)
 
 	$NoneText = "- " + (New-Text @(0xC5C6, 0xC74C))
@@ -134,6 +149,10 @@ function Test-ScreenshotsSection {
 
 			if ($UsesCaptureAssetPath -and $ImageUrl -notmatch '\?raw=true' -and $ImageUrl -notmatch '^https://raw\.githubusercontent\.com/') {
 				Add-Warning $Path "screenshot image URL should use ?raw=true unless it is a raw.githubusercontent.com URL: $Line"
+			}
+
+			if ($RequireGitHubImageUrl -and -not (Test-GitHubImageUrl -Url $ImageUrl)) {
+				Add-Failure $Path "screenshot image URL must use a GitHub absolute URL for GitHub body rendering: $Line"
 			}
 
 			$Previous = $Index - 1
@@ -202,18 +221,16 @@ function Test-CommonPublicRules {
 		'(?m)^## Documentation Structure$',
 		[regex]::Escape($PrPending),
 		([regex]::Escape($PrBody) + '.*' + [regex]::Escape($Attach)),
-		'local/github/draft',
-		'local/pr',
-		'local/prompts',
+		'local/',
 		'Docs/_repo',
-		'Docs/Part[0-9]',
+		'(?-i)Docs/Part[0-9]',
 		'(?m)^## Metadata$',
 		'Status: Draft'
 	)
 
 	foreach ($Pattern in $BannedPatterns) {
 		if ($Content -match $Pattern) {
-			Add-Failure $Path "contains banned public-body pattern: $Pattern"
+			Add-Failure $Path "contains banned GitHub body pattern: $Pattern"
 		}
 	}
 }
@@ -222,7 +239,9 @@ function Test-PublicBody {
 	param(
 		[System.IO.FileInfo]$File,
 		[string[]]$RequiredSections,
-		[bool]$RequireScreenshots
+		[bool]$RequireScreenshots,
+		[bool]$RequireGitHubImageUrl = $false,
+		[bool]$RequireLeadingH1 = $false
 	)
 
 	$RelativePath = Get-RelativePath $File.FullName
@@ -231,16 +250,79 @@ function Test-PublicBody {
 
 	Test-CommonPublicRules -Path $RelativePath -Content $Content
 
-	foreach ($Section in $RequiredSections) {
-		if ($Content -notmatch "(?m)^## $([regex]::Escape($Section))$") {
-			Add-Failure $RelativePath "missing required section: ## $Section"
+	if ($RequireLeadingH1) {
+		$FirstMeaningfulLine = $null
+		foreach ($Line in $Lines) {
+			if (-not [string]::IsNullOrWhiteSpace($Line)) {
+				$FirstMeaningfulLine = $Line
+				break
+			}
+		}
+
+		if ($null -eq $FirstMeaningfulLine -or $FirstMeaningfulLine -notmatch '^#\s+.+') {
+			Add-Failure $RelativePath "Issue/PR body must start with an H1 title source"
 		}
 	}
+
+	if ($Content -match '(?im)\bTODO\b|\bTBD\b|<[^>]+>') {
+		Add-Failure $RelativePath "contains placeholder text (TODO/TBD/<...>)"
+	}
+
+    foreach ($Section in $RequiredSections) {
+        $Heading = "## $Section"
+        if (-not ($Lines | Where-Object { $_ -eq $Heading })) {
+            Add-Failure $RelativePath "missing required section: ## $Section"
+        }
+		else {
+			$SectionLines = Get-Section -Lines $Lines -Heading $Heading
+			if ($null -eq $SectionLines -or $SectionLines.Count -eq 0) {
+				Add-Failure $RelativePath "required section is empty: $Heading"
+			}
+			else {
+				$MeaningfulLines = @($SectionLines | Where-Object {
+					$Trimmed = $_.Trim()
+					-not [string]::IsNullOrWhiteSpace($Trimmed) -and $Trimmed -ne "-"
+				})
+
+				if ($MeaningfulLines.Count -eq 0) {
+					Add-Failure $RelativePath "required section has no meaningful content: $Heading"
+				}
+			}
+		}
+    }
 
 	Test-SectionOrder -Path $RelativePath -Lines $Lines -RequiredHeadings ($RequiredSections | ForEach-Object { "## $_" })
 
 	if ($RequireScreenshots) {
-		Test-ScreenshotsSection -Path $RelativePath -Lines $Lines
+		Test-ScreenshotsSection -Path $RelativePath -Lines $Lines -RequireGitHubImageUrl $RequireGitHubImageUrl
+	}
+}
+
+function Test-CommentBodyRules {
+	param(
+		[System.IO.FileInfo]$File,
+		[string]$Content,
+		[string[]]$Lines
+	)
+
+	$RelativePath = Get-RelativePath $File.FullName
+	if ($Content -match '(?m)^#\s+') {
+		Add-Failure $RelativePath "comment body must not contain H1 heading"
+	}
+
+	$ThisDoc = New-Text @(0xC774, 0x20, 0xBB38, 0xC11C, 0xB294)
+	$CandidateBody = New-Text @(0xD6C4, 0xBCF4, 0x20, 0xBCF8, 0xBB38)
+	$PostingCandidate = New-Text @(0xAC8C, 0xC2DC, 0x20, 0xD6C4, 0xBCF4)
+	$InternalGuidePatterns = @(
+		$ThisDoc,
+		$CandidateBody,
+		$PostingCandidate
+	)
+
+	foreach ($Pattern in $InternalGuidePatterns) {
+		if ($Content.Contains($Pattern)) {
+			Add-Failure $RelativePath "comment body contains internal guidance phrase: $Pattern"
+		}
 	}
 }
 
@@ -251,10 +333,11 @@ function Test-PlanProgressComment {
 	$Content = Get-Content -Encoding UTF8 $File.FullName -Raw
 	$Lines = $Content -split "`r?`n"
 
-	$ProgressSummary = "MVP " + (New-Text @(0xC9C4, 0xD589, 0x20, 0xC694, 0xC57D))
+	$ProgressSummary = "Graphics Study " + (New-Text @(0xC9C4, 0xD589, 0x20, 0xC694, 0xC57D))
 	$Completed = New-Text @(0xC644, 0xB8CC)
 	$Next = New-Text @(0xC9C4, 0xD589, 0x20, 0xC608, 0xC815)
 	Test-PublicBody -File $File -RequiredSections @($ProgressSummary, $Completed, $Next, "Related PRs") -RequireScreenshots $false
+	Test-CommentBodyRules -File $File -Content $Content -Lines $Lines
 
 	if ($Content -notmatch '(?m)^### Phase ') {
 		Add-Failure $RelativePath "Plan Progress must contain at least one ### Phase heading"
@@ -310,7 +393,7 @@ function Test-PlanProgressComment {
 	}
 }
 
-function Test-PlanFeatureComment {
+function Test-ChapterBundleCompletionComment {
 	param([System.IO.FileInfo]$File)
 
 	$RelativePath = Get-RelativePath $File.FullName
@@ -318,10 +401,15 @@ function Test-PlanFeatureComment {
 	$Lines = $Content -split "`r?`n"
 
 	Test-CommonPublicRules -Path $RelativePath -Content $Content
+	Test-CommentBodyRules -File $File -Content $Content -Lines $Lines
+	if ($Content -match '(?im)\bTODO\b|\bTBD\b|<[^>]+>') {
+		Add-Failure $RelativePath "contains placeholder text (TODO/TBD/<...>)"
+	}
 
-	$ProgressRecord = New-Text @(0xC9C4, 0xD589, 0x20, 0xAE30, 0xB85D)
-	if ($Lines.Count -eq 0 -or $Lines[0] -notmatch ("^## Phase .+ " + [regex]::Escape($ProgressRecord) + "$")) {
-		Add-Failure $RelativePath "Plan Feature Comment must start with '## Phase <n-n> progress record'"
+	$CompletionRecord = New-Text @(0xC644, 0xB8CC, 0x20, 0xAE30, 0xB85D)
+	$KoreanPattern = "^## Phase .+ " + [regex]::Escape($CompletionRecord) + "$"
+	if ($Lines.Count -eq 0 -or $Lines[0] -notmatch $KoreanPattern) {
+		Add-Failure $RelativePath "Chapter/Bundle completion comment must start with the Korean heading pattern: ## Phase <n-n> ..."
 	}
 
 	$FeatureHeadings = New-Object System.Collections.Generic.List[string]
@@ -341,7 +429,8 @@ function Test-PlanFeatureComment {
 
 		$HasContent = $false
 		foreach ($Line in $Section) {
-			if (-not [string]::IsNullOrWhiteSpace($Line)) {
+			$Trimmed = $Line.Trim()
+			if (-not [string]::IsNullOrWhiteSpace($Trimmed) -and $Trimmed -ne "-") {
 				$HasContent = $true
 				break
 			}
@@ -353,16 +442,37 @@ function Test-PlanFeatureComment {
 	}
 
 	if ($Content -match '(?m)^## Screenshots$') {
-		Add-Failure $RelativePath "Plan Feature Comment must not contain ## Screenshots"
+		Add-Failure $RelativePath "Chapter/Bundle completion comment must not contain ## Screenshots"
 	}
 
 	$RelatedPrSection = Get-Section -Lines $Lines -Heading "## Related PR"
 	if ($null -ne $RelatedPrSection) {
 		$RelatedPrText = $RelatedPrSection -join "`n"
-		if ($RelatedPrText -notmatch 'PR #|https://github\.com/.+/pull/[0-9]+') {
-			Add-Failure $RelativePath "Related PR must contain PR # or a pull request URL"
+		$Scheduled = New-Text @(0xC608, 0xC815)
+		if ($RelatedPrText -notmatch 'PR #|https://github\.com/.+/pull/[0-9]+' -and $RelatedPrText -notmatch [regex]::Escape($Scheduled)) {
+			Add-Failure $RelativePath "Related PR must contain PR #, a pull request URL, or 예정"
 		}
 	}
+}
+
+function Test-ProgressIssue {
+	param([System.IO.FileInfo]$File)
+
+	$DefaultPublishingObjects = New-Text @(0xAE30, 0xBCF8, 0x20, 0xAC8C, 0xC2DC, 0x20, 0xAC1D, 0xCCB4)
+	$OptionalIssueCriteria = (New-Text @(0xC120, 0xD0DD, 0x20)) + "Issue " + (New-Text @(0xC0DD, 0xC131, 0x20, 0xAE30, 0xC900))
+
+	$RequiredSections = @(
+		$SummarySection,
+		$GoalSection,
+		("Phase " + $ScopeSection),
+		$DoneCriteriaSection,
+		$DefaultPublishingObjects,
+		$OptionalIssueCriteria,
+		$RelatedDocsSection,
+		$ExcludedScopeSection
+	)
+
+	Test-PublicBody -File $File -RequiredSections $RequiredSections -RequireScreenshots $false
 }
 
 function Test-PrScreenshotComment {
@@ -412,6 +522,10 @@ function Test-PrScreenshotComment {
 				Add-Warning $RelativePath "screenshot image URL should use ?raw=true unless it is a raw.githubusercontent.com URL: $Line"
 			}
 
+			if (-not (Test-GitHubImageUrl -Url $Url)) {
+				Add-Failure $RelativePath "screenshot image URL must use a GitHub absolute URL for GitHub body rendering: $Line"
+			}
+
 			$Previous = $Index - 1
 			while ($Previous -ge 0 -and [string]::IsNullOrWhiteSpace($Section[$Previous])) {
 				--$Previous
@@ -447,19 +561,6 @@ function Test-PrScreenshotComment {
 	}
 }
 
-function Test-TopicIssue {
-	param([System.IO.FileInfo]$File)
-
-	$RelativePath = Get-RelativePath $File.FullName
-	$Lines = Get-Content -Encoding UTF8 $File.FullName
-
-	if ($Lines.Count -eq 0 -or $Lines[0] -notmatch '^# .+') {
-		Add-Failure $RelativePath "Topic Issue must start with an H1 title"
-	}
-
-	Test-PublicBody -File $File -RequiredSections $TopicRequiredSections -RequireScreenshots $false
-}
-
 function Test-Templates {
 	if (-not (Test-Path $TemplatesRoot)) {
 		return
@@ -474,29 +575,58 @@ function Test-Templates {
 	}
 }
 
+function Test-PrVisualAndDemoLinks {
+	param([System.IO.FileInfo]$File)
+
+	$RelativePath = Get-RelativePath $File.FullName
+	$Content = Get-Content -Encoding UTF8 $File.FullName -Raw
+	$Images = [regex]::Matches($Content, '!\[[^\]]+\]\(([^)]+)\)')
+
+	if ($Images.Count -gt 1) {
+		Add-Failure $RelativePath "PR body must use no more than one representative visual"
+	}
+
+	foreach ($Image in $Images) {
+		$Url = $Image.Groups[1].Value
+		if (-not (Test-GitHubImageUrl -Url $Url)) {
+			Add-Failure $RelativePath "PR visual must use a GitHub absolute Docs/_assets URL"
+		}
+	}
+
+	if ($Content -notmatch
+		'\]\(https://github\.com/(?:[^/]+/[^/]+/(?:blob/.+/(?:Docs/03_Demos/|Docs/07_GitHub/issues/demo/).+\.md|issues/\d+))\)') {
+		Add-Failure $RelativePath "PR body must link a detailed Demo, Demo Issue candidate, or published Demo Issue"
+	}
+}
+
 $SummarySection = New-Text @(0xC694, 0xC57D)
-$KeyChangesSection = New-Text @(0xC8FC, 0xC694, 0x20, 0xBCC0, 0xACBD)
+$CoreConceptsSection = New-Text @(0xD575, 0xC2EC, 0x20, 0xAC1C, 0xB150)
+$RepresentativeExamplesSection = New-Text @(0xB300, 0xD45C, 0x20, 0xC608, 0xC81C)
 $VerificationSection = New-Text @(0xAC80, 0xC99D)
 $ScreenshotsSection = New-Text @(0xC2A4, 0xD06C, 0xB9B0, 0xC0F7)
-$UnverifiedLimitationsSection = New-Text @(0xBBF8, 0xD655, 0xC778, 0x20, 0x2F, 0x20, 0xC81C, 0xD55C)
+$ImplementationScopeLimitationsSection = New-Text @(0xAD6C, 0xD604, 0x20, 0xBC94, 0xC704, 0xC640, 0x20, 0xD55C, 0xACC4)
 $DocumentationSection = New-Text @(0xBB38, 0xC11C)
 $RelatedIssuesSection = New-Text @(0xAD00, 0xB828, 0x20, 0xC774, 0xC288)
-$NextStepSection = New-Text @(0xB2E4, 0xC74C, 0x20, 0xB2E8, 0xACC4)
 $UnverifiedSection = New-Text @(0xBBF8, 0xD655, 0xC778)
 $RelatedPrSectionName = New-Text @(0xAD00, 0xB828, 0x20, 0x0050, 0x0052)
 $ScopeSection = New-Text @(0xBC94, 0xC704)
-$ConceptNotesSection = New-Text @(0xAC1C, 0xB150, 0x20, 0xBA54, 0xBAA8)
-$RelatedExamplesSection = New-Text @(0xAD00, 0xB828, 0x20, 0xC608, 0xC81C)
+$GoalSection = New-Text @(0xBAA9, 0xD45C)
+$CoreTasksSection = New-Text @(0xD575, 0xC2EC, 0x20, 0xC791, 0xC5C5)
+$VerificationCriteriaSection = New-Text @(0xAC80, 0xC99D, 0x20, 0xAE30, 0xC900)
+$DemoCaptureNeedSection = "Demo/Capture " + (New-Text @(0xD544, 0xC694, 0x20, 0xC5EC, 0xBD80))
+$DoneCriteriaSection = New-Text @(0xC644, 0xB8CC, 0x20, 0xC870, 0xAC74)
+$RelatedDocsSection = New-Text @(0xAD00, 0xB828, 0x20, 0xBB38, 0xC11C)
+$ExcludedScopeSection = New-Text @(0xC81C, 0xC678, 0x20, 0xBC94, 0xC704)
 
 $PrRequiredSections = @(
 	$SummarySection,
-	$KeyChangesSection,
+	$ScopeSection,
+	$CoreConceptsSection,
+	$RepresentativeExamplesSection,
 	$VerificationSection,
-	$ScreenshotsSection,
-	$UnverifiedLimitationsSection,
+	$ImplementationScopeLimitationsSection,
 	$DocumentationSection,
-	$RelatedIssuesSection,
-	$NextStepSection
+	$RelatedIssuesSection
 )
 
 $VerificationRequiredSections = @(
@@ -510,13 +640,16 @@ $VerificationRequiredSections = @(
 	$RelatedPrSectionName
 )
 
-$TopicRequiredSections = @(
-	$SummarySection,
-	$ScopeSection,
-	$ConceptNotesSection,
-	$RelatedExamplesSection,
-	$DocumentationSection,
-	$RelatedPrSectionName
+$WorkUnitRequiredSections = @(
+    $SummarySection,
+    $GoalSection,
+    $ScopeSection,
+    $CoreTasksSection,
+    $VerificationCriteriaSection,
+    $DemoCaptureNeedSection,
+    $DoneCriteriaSection,
+    $RelatedDocsSection,
+    $ExcludedScopeSection
 )
 
 function Get-OptionalMarkdownFiles {
@@ -537,53 +670,84 @@ function Get-OptionalMarkdownFiles {
 	return Get-ChildItem $Path -File -Filter $Filter
 }
 
+function Test-IsGuidanceMarkdown {
+	param([System.IO.FileInfo]$File)
+
+	return ($File.Name -eq "README.md" -or $File.Name -eq "AGENTS.md")
+}
+
 $CheckedFileCount = 0
 
-Get-OptionalMarkdownFiles -Path (Join-Path $PublicRoot "prs") -Recurse | ForEach-Object {
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "prs") -Recurse | ForEach-Object {
+	if (Test-IsGuidanceMarkdown -File $_) {
+		return
+	}
+
 	++$CheckedFileCount
-	Test-PublicBody -File $_ -RequiredSections $PrRequiredSections -RequireScreenshots $true
+	Test-PublicBody -File $_ -RequiredSections $PrRequiredSections -RequireScreenshots $false -RequireLeadingH1 $true
+	Test-PrVisualAndDemoLinks -File $_
 }
 
-Get-OptionalMarkdownFiles -Path (Join-Path $PublicRoot "issues/topic") | ForEach-Object {
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "plan") -Filter "plan-body.md" | ForEach-Object {
 	++$CheckedFileCount
-	Test-TopicIssue -File $_
+	$RelativePath = Get-RelativePath $_.FullName
+	$Raw = Get-Content -Encoding UTF8 $_.FullName -Raw
+	$Lines = $Raw -split "`r?`n"
+	$FirstMeaningfulLine = $null
+	foreach ($Line in $Lines) {
+		if (-not [string]::IsNullOrWhiteSpace($Line)) {
+			$FirstMeaningfulLine = $Line
+			break
+		}
+	}
+
+	if ($null -eq $FirstMeaningfulLine -or $FirstMeaningfulLine -notmatch '^#\s+.+') {
+		Add-Failure $RelativePath "Issue/PR body must start with an H1 title source"
+	}
+
+	Test-ProgressIssue -File $_
 }
 
-Get-OptionalMarkdownFiles -Path (Join-Path $PublicRoot "issues/verification") | ForEach-Object {
-	++$CheckedFileCount
-	Test-PublicBody -File $_ -RequiredSections $VerificationRequiredSections -RequireScreenshots $true
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues/work-unit") -Filter "work-unit_*.md" | ForEach-Object {
+    ++$CheckedFileCount
+	Test-PublicBody -File $_ -RequiredSections $WorkUnitRequiredSections -RequireScreenshots $false -RequireLeadingH1 $true
 }
 
-$PlanProgressPath = Join-Path $PublicRoot "issues/plan-comments/plan_progress_summary_comment.md"
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues/verification") -Filter "verification_*.md" | ForEach-Object {
+	++$CheckedFileCount
+	Test-PublicBody -File $_ -RequiredSections $VerificationRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true -RequireLeadingH1 $true
+}
+
+$PlanProgressPath = Join-Path $GitHubRoot "plan/plan-progress.md"
 if (Test-Path $PlanProgressPath) {
 	++$CheckedFileCount
 	Test-PlanProgressComment -File (Get-Item $PlanProgressPath)
 }
 
-Get-OptionalMarkdownFiles -Path (Join-Path $PublicRoot "issues/plan-comments") -Filter "*_worklog_comment.md" | ForEach-Object {
+Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "plan/comments") -Filter "*.md" | ForEach-Object {
 	++$CheckedFileCount
-	Test-PlanFeatureComment -File $_
+	Test-ChapterBundleCompletionComment -File $_
 }
 
-Get-OptionalMarkdownFiles -Path (Join-Path $PublicRoot "pr-comments") | ForEach-Object {
-	++$CheckedFileCount
-	Test-PrScreenshotComment -File $_
-}
-
-Get-OptionalMarkdownFiles -Path $PublicRoot -Recurse | ForEach-Object {
-	$RelativePath = (Get-RelativePath $_.FullName) -replace '\\', '/'
-	$Supported = (
-		$RelativePath -match '/prs/.+\.md$' -or
-		$RelativePath -match '/issues/topic/[^/]+\.md$' -or
-		$RelativePath -match '/issues/verification/[^/]+\.md$' -or
-		$RelativePath -match '/issues/plan-comments/plan_progress_summary_comment\.md$' -or
-		$RelativePath -match '/issues/plan-comments/[^/]+_worklog_comment\.md$' -or
-		$RelativePath -match '/pr-comments/[^/]+\.md$'
-	)
-
-	if (-not $Supported) {
-		Add-Warning $RelativePath "unsupported GitHub public body path; validator did not apply a body-specific schema"
+Get-OptionalMarkdownFiles -Path $GitHubRoot -Recurse | ForEach-Object {
+	if (Test-IsGuidanceMarkdown -File $_) {
+		return
 	}
+
+	$RelativePath = (Get-RelativePath $_.FullName) -replace '\\', '/'
+	if ($RelativePath -match '/prs/.+\.md$') {
+		return
+	}
+
+	if ($RelativePath -match '/plan/plan-body\.md$' -or $RelativePath -match '/plan/plan-progress\.md$' -or $RelativePath -match '/plan/comments/.+\.md$') {
+		return
+	}
+
+	if ($RelativePath -match '/issues/work-unit/work-unit_.+\.md$' -or $RelativePath -match '/issues/verification/verification_.+\.md$' -or $RelativePath -match '/issues/demo/demo_.+\.md$') {
+		return
+	}
+
+	Add-Failure $RelativePath "unsupported GitHub body path"
 }
 
 Test-Templates
@@ -597,4 +761,4 @@ if ($Failures.Count -gt 0) {
 	exit 1
 }
 
-Write-Output "GitHub public body validation passed."
+Write-Output "GitHub body validation passed."

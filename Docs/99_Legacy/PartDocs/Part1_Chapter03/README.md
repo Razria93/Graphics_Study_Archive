@@ -1,5 +1,7 @@
 # Part1 Chapter03 Docs
 
+> Legacy snapshot: 이 문서는 과거 PartDocs 구조에서 작성된 기록이다. 최신 예제 README 정본은 코드 폴더 `README.md`를 기준으로 하고, 최신 Topic/Verification/Demo/Publication 상태는 `Docs/01_Topics`~`Docs/05_Publication`에서 확인한다.
+
 CPU ray tracing 예제를 step 단위로 정리하는 문서 공간입니다.
 
 Part1 Chapter03은 ray generation, ray-object intersection, shading, shadow, texturing, supersampling, reflection/environment로 이어지는 단계형 구현입니다. 전체 구조는 Chapter03 기준으로 관리하되, 실제 import와 검증은 step별로 진행합니다.

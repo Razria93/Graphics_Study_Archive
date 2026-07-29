@@ -165,7 +165,7 @@ DX11 초기화 예제는 단순히 창을 띄우는 코드가 아니라 이후 �
 - [Part1 Chapter01-02 Docs](../README.md)
 - [Example status](status.md)
 - [Part Import 작업 방식](../../../ImportHistory/02_ImportWorkflow.md)
-- [Chapter Study 정리 방식](../../../../07_Policies/docs-authoring-flow-policy.md)
+- [Chapter Study 정리 방식](../../../../06_Policies/docs-authoring-flow-policy.md)
 - [Part1 import manifest](../../../ImportHistory/Manifests/Part1_Chapter01-02.md)
 
 ## Local-only 작업 재료

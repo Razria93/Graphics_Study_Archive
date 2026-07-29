@@ -10,6 +10,6 @@
 
 ## 연결 문서
 
-- Topic 문서: `Docs/02_Topics`
-- Demo 문서: `Docs/04_Demos`
-- 공개 판단: `Docs/06_Publication`
+- Topic 문서: `Docs/01_Topics`
+- Demo 문서: `Docs/03_Demos`
+- 공개 판단: `Docs/05_Publication`

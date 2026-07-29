@@ -4,8 +4,8 @@
 
 ## 공개 기준
 
-- 공개 후보와 제외 기준은 `Docs/07_Policies/publication-policy.md`를 따른다.
-- public subset 판단은 `Docs/06_Publication`에 기록한다.
+- 공개 후보와 제외 기준은 `Docs/06_Policies/publication-policy.md`를 따른다.
+- public subset 판단은 `Docs/05_Publication`에 기록한다.
 - raw 자료를 public으로 직접 이동하지 않는다.
 - 강의 원본 영상, 슬라이드, 퀴즈, 정답, 유료 자료, 강의 화면 캡처, 문제/해설 전문은 공개 후보로 두지 않는다.
 

@@ -12,7 +12,7 @@ Part1 ray tracing study examples를 바탕으로 확장한 software ray tracer �
 
 | 항목 | 상태 |
 | --- | --- |
-| Raw reference | `C:\ComputerGraphics\_00_Graphics_Portfolio`, `C:\ComputerGraphics\Part1_Chapter03` |
+| Source provenance | [`SRC-PORTFOLIO-RAYTRACER`](../Docs/99_Legacy/source-registry.md), import 근거 미확인 |
 | Import status | 검토 필요 |
 | Public readiness | 검토 필요 |
 | Build/run status | 미확인 |
@@ -22,4 +22,6 @@ Part1 ray tracing study examples를 바탕으로 확장한 software ray tracer �
 
 - `16-01_Sampling`
 
-대표 문서는 [Docs/Portfolio_RayTracer/README.md](../Docs/Portfolio_RayTracer/README.md)에서 정리합니다.
+검증 상태는
+[Portfolio RayTracer Verification](../Docs/02_Verification/Portfolio_RayTracer/verification-index.md)에서
+관리한다.
