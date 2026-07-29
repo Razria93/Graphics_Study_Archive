@@ -163,6 +163,9 @@ Progress comment는 Docs 정본을 복제하지 않고 진행 상태와 링크�
 - `local/` 하위 snapshot 생성 여부
 - `Docs/04_WorkLogs`와 `work-unit-github-index.md` 동기화 여부
 - build/run/capture 실제 성공 여부
+- asset 출처 상태, 외부 자료 복제 여부, 라이선스와 metadata
+- 실행 입력과 tracked asset의 hash 또는 decoded pixel 관계
+- prompt 원문, 생성 화면 screenshot, 생성 날짜와 작업용 원본
 - 상세 Demo와 Example 또는 Demo Issue의 의미 중복
 - visual 대표성과 limitation의 기술적 정확성
 

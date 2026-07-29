@@ -159,18 +159,20 @@ GitHub Issue, PR, comment body에 들어가는 screenshot/result image는 repo-r
 하나라도 공개 불가 식별자가 보이면 `확보`가 아니라 `보류` 또는 `제외`로 기록한다.
 
 
-## ChatGPT 생성 이미지 workflow
+## Generated Input workflow
 
-이미지 입력이 필요한 예제는 외부 wallpaper나 출처 불명 이미지를 우선 사용하지 않는다. 기본 흐름은 ChatGPT 생성 이미지와 local-only provenance 기록을 사용하는 방식으로 통일한다.
+이미지 입력이 필요한 예제는 외부 wallpaper나 출처 불명 이미지를 우선 사용하지
+않는다. Generated input의 출처 기록과 강화 검수 조건은
+[Assets Policy](assets-policy.md)를 따른다.
 
-1. 에이전트가 예제 목적에 맞는 영어 이미지 생성 프롬프트를 제안한다.
-2. 사용자가 ChatGPT 앱에서 이미지를 생성한다.
-3. 작업용 원본 이미지는 `local/<work-unit>/image.png`에 저장한다.
-4. 생성 화면 스크린샷은 `local/<work-unit>/provenance-chatgpt-generation.png`에 저장한다.
-5. provenance screenshot은 생성 증빙용 local-only 자료로만 사용하고 public 문서에 게시하지 않는다.
-6. 에이전트는 local-only 입력 테스트를 수행하고 result image를 생성한다.
-7. screenshot/result image metadata, 워터마크, 텍스트, 개인 식별자를 검수한다.
-8. tracked 입력 asset 교체, `Docs/_assets` 승격, public subset 후보 여부는 별도로 판단한다.
+1. 예제 목적에 맞는 입력 이미지를 직접 생성하거나 출처가 확인된 자료를
+   선택한다.
+2. 출처 상태와 외부 자료 복제 여부를 확인한다.
+3. 예제 실행용 입력으로 테스트하고 result image를 생성한다.
+4. 실행 입력과 tracked input의 hash 또는 재인코딩 관계를 확인한다.
+5. metadata, 워터마크, 텍스트, 개인 식별자를 검수한다.
+6. tracked 입력 asset 교체, `Docs/_assets` 승격, public subset 후보 여부를
+   별도로 판단한다.
 
 권장 프롬프트 조건:
 
@@ -180,7 +182,8 @@ No text, no logo, no watermark, no people
 Clear visual features for the target graphics concept
 ```
 
-ChatGPT 생성 이미지라도 곧바로 public 후보로 확정하지 않는다. 생성 도구, 프롬프트, 생성 날짜, 원본 파일 hash, 변환 파일 hash, 테스트 결과를 local review에 기록한 뒤 승격 검수를 수행한다.
+Prompt 원문, 생성 화면, 생성 날짜와 작업용 원본은 기본 승격 필수가 아니다.
+출처가 불명확하거나 외부 자료가 섞인 경우에만 강화 검수 자료로 요청한다.
 
 ## 파일 기준
 

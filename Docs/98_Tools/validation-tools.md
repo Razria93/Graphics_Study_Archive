@@ -42,6 +42,11 @@ Validator는 링크 형식, section, 상태값처럼 반복 가능한 기계 검
 문서 책임 충돌, 설명 중복, 탐색 흐름, 상태 provenance, public narrative는
 수동 감사에서 판단한다. Validator 통과는 전체 문서 감사 통과를 의미하지 않는다.
 
+Publication 검수의 출처 상태, 외부 자료 복제 여부, 라이선스, metadata,
+decoded pixel 관계와 강화 출처 검수 필요 여부는 수동으로 판단한다. 현재
+validator는 prompt 원문, 생성 화면 screenshot, 생성 날짜와 작업용 원본을
+요구하지 않는다.
+
 향후 audit runner의 계획된 interface와 자동화 경계는
 `document-system-audit-guide.md`를 따른다. 현재 runner와 전체 링크·상태
 validator는 구현되지 않았다.

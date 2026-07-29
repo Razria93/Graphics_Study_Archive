@@ -22,6 +22,7 @@
 - 독자적으로 재구성한 구현 설명
 - 일반적인 graphics concept 설명
 - 직접 실행해서 만든 capture/result 중 권리 문제가 없는 결과물
+- 사용자 직접 생성 또는 직접 촬영으로 출처 상태를 확인한 asset
 - metadata에 개인 식별자, 로컬 경로, 강의명, 출처 불명 정보가 남아 있지 않은 screenshot/result image
 - 강의명, 강사명, 워터마크, 개인 식별자가 제거된 capture/result
 - 출처와 라이선스가 명확한 asset을 사용한 산출물
@@ -38,6 +39,7 @@
 
 - 미확인 build/run 상태
 - 출처와 라이선스 확인 전의 capture/result
+- 생성 주체나 외부 자료 복제 여부를 확인하지 못한 generated asset
 - 공개용 문장으로 재작성하기 전의 private archive 설명
 - metadata, 개인 식별자, 로컬 경로 확인 전의 screenshot/result image
 
@@ -73,4 +75,6 @@
 - public repo는 private archive가 안정화된 뒤 별도 subset으로 구성한다.
 - public 후보는 private archive 문서를 그대로 복사하지 않고 공개용 문장으로 재작성한다.
 - public capture/result 후보는 강의명, 강사명, 워터마크, 개인 식별자 포함 여부를 확인한 뒤 연결한다. 포함된 자료는 public 후보에서 제외하거나 재촬영/재생성한다.
-- screenshot/result image는 metadata 확인을 포함하고, 외부 입력 asset을 사용한 result image는 입력 asset의 출처와 라이선스를 확인하기 전까지 검토 필요 또는 제외로 둔다.
+- screenshot/result image는 metadata 확인을 포함한다. 사용자 직접 생성 asset은
+  최소 출처 기록을 적용하고, 외부 입력 asset을 사용한 result image는 입력
+  asset의 출처와 라이선스를 확인하기 전까지 검토 필요 또는 제외로 둔다.
