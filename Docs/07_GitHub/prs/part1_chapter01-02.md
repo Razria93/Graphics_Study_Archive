@@ -33,7 +33,7 @@
 
 - README: [02_Bloom README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Part1_Chapter01-02/02_Bloom/README.md)
 - Topic: [PostProcessingAndBloom](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)
-- Demo: [02_Bloom 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-pilot-workflow/Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)
+- Demo Issue: [02_Bloom CPU Bloom Demo #9](https://github.com/Razria93/Graphics_Study_Archive/issues/9)
 
 ## 검증
 

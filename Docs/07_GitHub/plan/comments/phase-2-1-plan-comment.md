@@ -2,8 +2,8 @@
 
 ## 완료 내용
 
-- `Part1_Chapter01-02` Chapter/Bundle 범위의 README, Topic, Verification, Demo, PR 후보 연결을 정리했다.
-- `02_Bloom` input/result 비교 이미지를 Chapter PR과 정본 문서에서 참조 가능한 형태로 정리했다.
+- `Part1_Chapter01-02` Chapter/Bundle 범위의 README, Topic, Verification, Demo, Draft PR #8 연결을 정리했다.
+- `02_Bloom` input/result 비교 이미지와 구현 요약을 [Demo Issue #9](https://github.com/Razria93/Graphics_Study_Archive/issues/9)에 게시했다.
 - 이 기록은 WU-Part1 전체 완료가 아니라 WU-Part1 안의 Chapter01-02 완료 기록이다.
 
 ## 검증
