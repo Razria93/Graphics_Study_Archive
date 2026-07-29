@@ -16,5 +16,5 @@ DirectX11 초기화, ImGui, Bloom 예제를 챕터 단위로 정리하는 문서
 ## 관련 운영 문서
 
 - [Part1 import manifest](../../ImportHistory/Manifests/Part1_Chapter01-02.md)
-- [Chapter Study 정리 방식](../../../07_Policies/docs-authoring-flow-policy.md)
+- [Chapter Study 정리 방식](../../../06_Policies/docs-authoring-flow-policy.md)
 - [Part Import 작업 방식](../../ImportHistory/02_ImportWorkflow.md)
