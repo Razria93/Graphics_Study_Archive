@@ -14,7 +14,7 @@
 | 범위 | solution 기준 | Debug x64 build | Debug x64 run | Release x64 build | Release x64 run | Provenance | 현재 재검증 | Capture | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Part1_Chapter01-02 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 현재 확인 | 완료 | 확보 | 두 예제 build/run 성공. `01_DX11InitAndImGui` capture 제외, `02_Bloom` input/result 확보 |
-| Part1_Chapter03 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 혼합 | 부분 완료 | 확보 | Step4~10은 2026-07-30~31 현재 확인, Step11~14는 과거 확인·재검증 필요. Step10 capture는 외부 입력 texture 권리 검토 보류 |
+| Part1_Chapter03 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 혼합 | 부분 완료 | 확보 | Step4~10은 2026-07-30~31 현재 확인과 capture 확보, Step11~14는 과거 확인·재검증 필요 |
 | Part2_Chapter04 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 과거 확인 | 필요 | 미확인 | 문서화 이전 전체 예제 확인, 날짜 미기록 |
 | Part2_Chapter05-08 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 과거 확인 | 필요 | 미확인 | 문서화 이전 전체 예제 확인, 날짜 미기록 |
 | Part3_Chapter09 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 과거 확인 | 필요 | 미확인 | 문서화 이전 전체 예제 확인, 날짜 미기록 |
