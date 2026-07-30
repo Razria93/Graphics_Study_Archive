@@ -42,7 +42,7 @@
 | 범위 | 주요 내용 | 코드 보관 | 문서화 |
 | --- | --- | --- | --- |
 | `Part1_Chapter01-02` | DirectX11 init, render loop, bloom post-processing | 완료 | pilot 마감 |
-| `Part1_Chapter03` | ray tracing basics | 완료 | Step4 문서화·재검증 완료, Step5 대기 |
+| `Part1_Chapter03` | ray tracing basics | 진행 중 | Step4~12 문서화·재검증 완료, Step13 대기 |
 | `Part2_Chapter04` | rasterization foundation | 완료 | 대기 |
 | `Part2_Chapter05-08` | DirectX11 pipeline, texture, mesh 흐름 | 완료 | 대기 |
 | `Part3_Chapter09` | texturing and mapping | 완료 | 대기 |

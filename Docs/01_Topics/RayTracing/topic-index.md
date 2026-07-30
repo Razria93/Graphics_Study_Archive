@@ -7,6 +7,7 @@
 | [Phong Shading](../LightingAndShading/PhongShading.md) | Part1_Chapter03 | P1 | 작성 | Step5 현재 확인 |
 | [Shadow Ray](../Shadows/ShadowRay.md) | Part1_Chapter03 | P1 | 작성 | Step8 Shadow 현재 확인 |
 | [Barycentric Coordinates](BarycentricCoordinates.md) | Part1_Chapter03 | P1 | 작성 | Step9 현재 확인 |
-| Reflection And Transparency | Part1_Chapter03, Portfolio_RayTracer | P1 | 예정 | 미확인 |
+| [Recursive Reflection](RecursiveReflection.md) | Part1_Chapter03, Portfolio_RayTracer | P1 | 작성 | Step12 현재 확인 |
+| Refraction And Transparency | Part1_Chapter03, Portfolio_RayTracer | P1 | 예정 | 미확인 |
 | [Sampling And Anti Aliasing](SamplingAndAntiAliasing.md) | Part1_Chapter03, Portfolio_RayTracer | P1 | 작성 | Step11 현재 확인 |
 | Cubemap Environment | Part1_Chapter03 | P1 | 예정 | 미확인 |
