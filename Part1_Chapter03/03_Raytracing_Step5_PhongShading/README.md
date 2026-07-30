@@ -80,4 +80,3 @@ ambient/diffuse/specular color, specular power와 coefficient를 ImGui에서 조
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
 - [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/05_PhongShading.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)
-
