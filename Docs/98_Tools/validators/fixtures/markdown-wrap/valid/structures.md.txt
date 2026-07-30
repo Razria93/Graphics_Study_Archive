@@ -1,0 +1,35 @@
+# Valid Markdown Wrapping
+
+일반 문단은 길이와 무관하게 하나의 물리적 줄로 유지한다. This sentence deliberately remains on one physical line even when it is long enough for a renderer to wrap naturally.
+
+- [링크와 조사](https://example.com)로 같은 줄에서 연결한다.
+- 첫 번째 항목
+- 두 번째 항목
+  - 정상 nested list
+
+![Example image](example.png)
+
+| 항목 | 값 |
+| --- | --- |
+| 상태 | 정상 |
+
+> block quote는 검사 대상에서 제외한다.
+
+명시적 hard break는 유지한다.\
+다음 줄이다.
+
+```cpp
+if (condition)
+{
+    Run();
+}
+```
+
+<details>
+HTML block은
+검사 대상에서 제외한다.
+</details>
+
+- 목록 다음의 indented code
+
+    RunIndentedCode();

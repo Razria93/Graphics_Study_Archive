@@ -42,3 +42,11 @@ jobs:
       - name: Validate Topic documents
         shell: pwsh
         run: ./Docs/98_Tools/validators/validate-topic-doc-quality.ps1
+
+      - name: Test Markdown wrap validator fixtures
+        shell: pwsh
+        run: ./Docs/98_Tools/validators/test-markdown-wrap-quality.ps1
+
+      - name: Validate Markdown wrapping
+        shell: pwsh
+        run: ./Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
