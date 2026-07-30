@@ -6,7 +6,7 @@
 
 | 그룹 | 위치 | 상태 |
 | --- | --- | --- |
-| Ray Tracing | [RayTracing](RayTracing/README.md) | 골격 작성 |
+| Ray Tracing | [RayTracing](RayTracing/README.md) | 진행 중 |
 | Rasterization | [Rasterization](Rasterization/README.md) | 골격 작성 |
 | DirectX11 Pipeline | [DirectX11Pipeline](DirectX11Pipeline/README.md) | 진행 중 |
 | Texturing And Mapping | [TexturingAndMapping](TexturingAndMapping/README.md) | 골격 작성 |

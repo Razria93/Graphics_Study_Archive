@@ -44,15 +44,15 @@ Single-sided triangle은 ray 방향과 normal의 관계로 back face를 제거�
 
 Plane 교차점이 triangle 내부에 있는지는 세 directed edge와 교차점 vector의 cross product가 face normal과 같은 방향을 향하는지 검사해 판정할 수 있다. 모든 edge test를 통과한 점만 triangle hit로 사용한다.
 
-이 방식은 barycentric coordinate를 계산하지 않아도 내부 판정이 가능하지만 vertex attribute interpolation 값은 제공하지 않는다. Degenerate triangle, edge 위의 zero-length vector와 epsilon 선택은 별도 numerical robustness가 필요하다.
+이 방식은 barycentric coordinate를 계산하지 않아도 내부 판정이 가능하지만 vertex attribute interpolation 값은 제공하지 않는다. Weight 계산과 attribute interpolation은 [Barycentric Coordinates](BarycentricCoordinates.md)에서 다룬다. Degenerate triangle, edge 위의 zero-length vector와 epsilon 선택은 별도 numerical robustness가 필요하다.
 
 ## 데모 연결
 
-Step4 Demo는 sphere의 miss, 접선 또는 일반 hit를 diagnostic 결과로 표시한다. Step7 Demo는 triangle의 winding, plane 교차와 edge half-space 판정이 만드는 직선 경계와 flat normal shading을 보여준다. 실제 계산과 결과 변환은 연결된 source에서 확인한다.
+Step4 Demo는 sphere의 miss, 접선 또는 일반 hit를 diagnostic 결과로 표시한다. Step7 Demo는 triangle의 winding, plane 교차와 edge half-space 판정이 만드는 직선 경계와 flat normal shading을 보여준다. Step9 Demo는 같은 hit point에 barycentric weight를 추가해 vertex color를 보간한다. 실제 계산과 결과 변환은 연결된 source에서 확인한다.
 
 ## 한계
 
-- Möller–Trumbore 알고리즘과 barycentric attribute interpolation은 다루지 않는다.
+- Möller–Trumbore 알고리즘과 barycentric attribute interpolation의 상세는 다루지 않는다.
 - acceleration structure와 다중 object closest-hit 탐색은 포함하지 않는다.
 - numerical robustness와 scene scale별 epsilon 정책은 다루지 않는다.
 
@@ -60,7 +60,10 @@ Step4 Demo는 sphere의 miss, 접선 또는 일반 hit를 diagnostic 결과로 �
 
 - Example: [Step4 DrawingSphere README](../../../Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/README.md)
 - Example: [Step7 Triangle README](../../../Part1_Chapter03/03_Raytracing_Step7_Triangle/README.md)
+- Example: [Step9 Barycentric Coordinates README](../../../Part1_Chapter03/03_Raytracing_Step9_BarycentricCordinates/README.md)
 - Verification: [`Docs/02_Verification/Part1_Chapter03/verification-index.md`](../../02_Verification/Part1_Chapter03/verification-index.md)
 - Demo: [`Docs/03_Demos/Part1_Chapter03/04_DrawingSphere.md`](../../03_Demos/Part1_Chapter03/04_DrawingSphere.md)
 - Demo: [`Docs/03_Demos/Part1_Chapter03/07_Triangle.md`](../../03_Demos/Part1_Chapter03/07_Triangle.md)
+- Demo: [`Docs/03_Demos/Part1_Chapter03/09_BarycentricCoordinates.md`](../../03_Demos/Part1_Chapter03/09_BarycentricCoordinates.md)
 - Related Topic: [Ray](Ray.md)
+- Related Topic: [Barycentric Coordinates](BarycentricCoordinates.md)
