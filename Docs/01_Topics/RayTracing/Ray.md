@@ -2,11 +2,11 @@
 
 ## 목적
 
-Ray tracing에서 ray가 표현하는 위치와 방향, 그리고 scene query에 사용하는 parametric 형태를 설명한다. `Part1_Chapter03`의 Step4와 Step6가 화면 pixel을 orthographic 또는 perspective primary ray로 바꾸는 방식을 이해하기 위한 개념 정본으로 사용한다.
+Ray tracing에서 ray가 표현하는 위치와 방향, 그리고 scene query에 사용하는 parametric 형태를 설명한다. `Part1_Chapter03`의 Step4, Step6와 Step7이 화면 pixel을 primary ray로 바꾸고 여러 primitive를 조회하는 방식을 이해하기 위한 개념 정본으로 사용한다.
 
 ## 책임 범위
 
-이 문서는 ray의 일반적인 구성과 primary ray의 역할을 다룬다. Step4와 Step6의 함수 및 DirectX11 표시 구현은 Example README로, build/run/capture 사실은 Verification으로, 실제 처리 흐름과 시각 결과는 상세 Demo로 위임한다.
+이 문서는 ray의 일반적인 구성과 primary ray의 역할을 다룬다. Step4, Step6와 Step7의 함수 및 DirectX11 표시 구현은 Example README로, build/run/capture 사실은 Verification으로, 실제 처리 흐름과 시각 결과는 상세 Demo로 위임한다.
 
 ## 개념 흐름
 
@@ -34,7 +34,7 @@ Step6는 eye에서 camera-plane sample로 향하는 direction을 normalize해 pi
 
 ## 데모 연결
 
-Step4 Example은 화면의 각 pixel을 orthographic primary ray로 바꾸고 sphere와 교차시킨다. Step6 Example은 perspective 방향과 closest-hit scene query를 추가한다. 구체적인 함수 연결과 결과 화면은 각 Example README와 상세 Demo에서 확인한다.
+Step4 Example은 화면의 각 pixel을 orthographic primary ray로 바꾸고 sphere와 교차시킨다. Step6 Example은 perspective 방향과 closest-hit scene query를 추가하고 Step7 Example은 같은 ray를 sphere와 triangle에 전달한다. 구체적인 함수 연결과 결과 화면은 각 Example README와 상세 Demo에서 확인한다.
 
 ## 한계
 
@@ -46,7 +46,9 @@ Step4 Example은 화면의 각 pixel을 orthographic primary ray로 바꾸고 sp
 
 - Example: [Step4 DrawingSphere README](../../../Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/README.md)
 - Example: [Step6 PerspectiveView README](../../../Part1_Chapter03/03_Raytracing_Step6_PerspectiveView/README.md)
+- Example: [Step7 Triangle README](../../../Part1_Chapter03/03_Raytracing_Step7_Triangle/README.md)
 - Verification: [`Docs/02_Verification/Part1_Chapter03/verification-index.md`](../../02_Verification/Part1_Chapter03/verification-index.md)
 - Demo: [`Docs/03_Demos/Part1_Chapter03/04_DrawingSphere.md`](../../03_Demos/Part1_Chapter03/04_DrawingSphere.md)
 - Demo: [`Docs/03_Demos/Part1_Chapter03/06_PerspectiveView.md`](../../03_Demos/Part1_Chapter03/06_PerspectiveView.md)
+- Demo: [`Docs/03_Demos/Part1_Chapter03/07_Triangle.md`](../../03_Demos/Part1_Chapter03/07_Triangle.md)
 - Related Topic: [Intersection](Intersection.md)
