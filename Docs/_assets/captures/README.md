@@ -48,6 +48,7 @@ part2_chapter04_depth-buffer.png
 | `part1_chapter03_10_texturing.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step10_Texturing` | 확보 | Release x64 전체 application window에서 사용자 직접 생성 석재 texture의 mapping·보간·seam 부재 확인 |
 | `part1_chapter03_11_supersampling.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step11_Supersampling` | 확보 | Release x64 전체 application window에서 160×90 grid의 64-sample 평균과 8배 point upscale 확인 |
 | `part1_chapter03_12_reflection.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step12_Reflection` | 확보 | Release x64 전체 application window에서 ground와 blue sphere의 recursive reflection 확인 |
+| `part1_chapter03_13_transparency.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step13_Transparency` | 확보 | Release x64 전체 application window에서 sphere 내부의 background 확대·왜곡과 enter/exit 경계 확인 |
 
 ## 승격 체크
 
