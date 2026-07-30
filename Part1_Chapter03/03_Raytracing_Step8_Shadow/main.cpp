@@ -37,7 +37,7 @@ int main()
 
     HWND hwnd = CreateWindow(
         wc.lpszClassName,
-        L"HongLabGraphics Example",
+        L"ComputerGraphics - Step8 Shadow",
         WS_OVERLAPPEDWINDOW,
         100,
         100,
