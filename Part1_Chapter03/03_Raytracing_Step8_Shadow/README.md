@@ -11,7 +11,7 @@
 - Solution: `03_Raytracing_Step8_Shadow.sln`
 - Application entry: `main.cpp`
 - CPU ray tracing과 shadow 판정: `Raytracer.h`
-- Primitive intersection: `Object.h`, `Sphere.h`, `Triangle.h`
+- Primitive intersection: `Object.h`, `Sphere.h`, `Square.h`, `Triangle.h`
 - Hit와 Light data: `Hit.h`, `Light.h`
 - DirectX11 upload/render: `Example.h`
 - Shader: `VS.hlsl`, `PS.hlsl`
@@ -21,10 +21,11 @@
 | 파일 | 역할 |
 | --- | --- |
 | `main.cpp` | Win32 window, DirectX11·ImGui 초기화와 실행 loop |
-| `Raytracer.h` | sphere와 바닥 scene, closest-hit, shadow ray와 Phong lighting 계산 |
+| `Raytracer.h` | sphere와 Square 바닥 scene, closest-hit, shadow ray와 Phong lighting 계산 |
 | `Object.h` | material field와 polymorphic intersection interface |
 | `Sphere.h` | ray-sphere intersection과 곡면 normal 계산 |
-| `Triangle.h` | 바닥 triangle의 ray-plane intersection과 내부 판정 |
+| `Square.h` | 두 child triangle 구성과 내부 closest-hit 선택 |
+| `Triangle.h` | ray-plane intersection과 triangle 내부 판정 |
 | `Hit.h` | hit distance, point, normal과 hit object |
 | `Light.h` | point light position |
 | `Example.h` | CPU buffer 생성, dynamic texture upload와 full-screen draw |
@@ -33,9 +34,9 @@
 
 ## 구현 요약
 
-Step8은 red sphere와 두 triangle으로 만든 바닥을 배치한다. Primary ray가 가장 가까운 surface를 찾으면 hit point를 normal 방향으로 `1e-4`만큼 이동한 뒤 point light 방향으로 shadow ray를 보낸다. Shadow ray의 가장 가까운 hit가 light까지의 거리보다 짧으면 blocker가 있다고 판단한다.
+Step8은 red sphere와 두 child triangle을 묶은 `Square` 바닥을 배치한다. Square는 child intersection 가운데 가까운 hit의 distance, point와 normal을 반환한다. Scene closest-hit는 parent Square를 `hit.obj`에 연결하므로 바닥 전체가 Square에 설정한 material을 사용한다.
 
-가려진 surface는 ambient만 반환하고, visible surface는 기존 diffuse와 specular 계산을 이어간다. 실제 visibility 흐름과 코드 증거는 [Step8 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/08_Shadow.md)에서 확인한다.
+Primary ray가 가장 가까운 surface를 찾으면 hit point를 normal 방향으로 `1e-4`만큼 이동한 뒤 point light 방향으로 shadow ray를 보낸다. Shadow ray의 가장 가까운 hit가 light까지의 거리보다 짧으면 blocker가 있다고 판단한다. 가려진 surface는 ambient만 반환하고, visible surface는 기존 diffuse와 specular 계산을 이어간다. 실제 composite primitive와 visibility 흐름은 [Step8 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/08_Shadow.md)에서 확인한다.
 
 ## Build And Run
 
@@ -44,13 +45,13 @@ Step8은 red sphere와 두 triangle으로 만든 바닥을 배치한다. Primary
 | Solution | 존재 | `03_Raytracing_Step8_Shadow.sln` |
 | Debug x64 build/run | 성공 | project 폴더를 working directory로 사용 |
 | Release x64 build/run | 성공 | project 폴더를 working directory로 사용 |
-| Capture/Result | 확보 | sphere가 바닥에 만드는 cast shadow 확인 |
+| Capture/Result | 확보 | Square 바닥의 연속 면과 sphere cast shadow 확인 |
 
 ## Capture/Result
 
 ![Step8 Shadow result](../../Docs/_assets/captures/part1_chapter03_08_shadow.png)
 
-화면 중앙의 red sphere는 point light를 직접 받아 highlight를 만들고, 바닥에는 sphere가 light를 가리는 타원형 shadow가 나타난다. Shadow 영역은 ambient만 남아 주변의 직접광 영역보다 어둡다.
+화면 중앙의 red sphere는 point light를 직접 받아 highlight를 만들고, Square 바닥에는 sphere가 light를 가리는 타원형 shadow가 나타난다. 두 child triangle의 공용 대각선에는 seam이나 material 차이가 보이지 않는다.
 
 ## Limitations
 
@@ -61,7 +62,8 @@ Step8은 red sphere와 두 triangle으로 만든 바닥을 배치한다. Primary
 - CPU 결과는 최초 frame에 한 번만 계산하고 업로드하므로 초기 표시까지 시간이 걸린다.
 - Shader는 project working directory의 `VS.hlsl`, `PS.hlsl`에 의존한다.
 - Dynamic texture upload는 mapped `RowPitch`를 별도로 처리하지 않는다.
-- `Square.h`는 project에 포함되어 있지만 현재 Step8 scene에서는 사용하지 않는다.
+- Square는 고정된 두 triangle 조합이며 임의 polygon을 지원하지 않는다.
+- Child triangle은 독립 scene object가 아니며 parent Square가 material과 object identity를 소유한다.
 
 ## Related Docs
 

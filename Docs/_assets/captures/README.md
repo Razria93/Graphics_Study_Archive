@@ -43,8 +43,7 @@ part2_chapter04_depth-buffer.png
 | `part1_chapter03_05_phong-shading_parameter-adjusted.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step5_PhongShading` | 확보 | 전체 application window에서 Light 위치 조정과 highlight 이동 확인 |
 | `part1_chapter03_06_perspective-view.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step6_PerspectiveView` | 확보 | Release x64 전체 application window에서 perspective 크기 변화와 sphere overlap 확인 |
 | `part1_chapter03_07_triangle.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step7_Triangle` | 확보 | Debug x64 전체 application window에서 triangle 경계, flat normal shading과 sphere closest-hit 확인 |
-| `part1_chapter03_08_shadow.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step8_Shadow` | 확보 | Debug x64 전체 application window에서 sphere, 바닥과 cast shadow 확인 |
-| `part1_chapter03_08_shadow-square.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step8_Shadow_Square` | 확보 | Debug x64 전체 application window에서 Square 바닥의 연속 면과 cast shadow 확인 |
+| `part1_chapter03_08_shadow.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step8_Shadow` | 확보 | Release x64 전체 application window에서 Square 바닥의 연속 면과 cast shadow 확인 |
 
 ## 승격 체크
 

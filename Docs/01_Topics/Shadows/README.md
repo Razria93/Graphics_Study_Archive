@@ -17,8 +17,8 @@
 
 - Topic 목록: 작성
 - 상세 Topic 문서: Shadow Ray 작성
-- 연결 예제 검토: Part1_Chapter03 Step8 Shadow와 Step8 Shadow_Square 확인
-- demo 연결: Step8 Shadow와 Step8 Shadow_Square 연결
+- 연결 예제 검토: Part1_Chapter03 Step8 Shadow 확인
+- demo 연결: Step8 Shadow 연결
 
 ## 다음 작업
 

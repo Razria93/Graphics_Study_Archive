@@ -5,10 +5,10 @@
 ## 상태
 
 - 학습 코드: Step4~14 보관 완료
-- 현재 문서화: Step4~8 Shadow_Square 완료, Step9 문서화 대기
-- 현재 재검증: Step4~8 Shadow_Square Debug/Release x64 build/run 완료
+- 현재 문서화: Step4~8 Shadow 완료, Step9 문서화 대기
+- 현재 재검증: Step4~8 Shadow Debug/Release x64 build/run 완료
 - 과거 확인: Step9~14 Debug/Release build/run 성공, 현재 재검증 필요
-- Capture: Step4~8 Shadow_Square screenshot 확보
+- Capture: Step4~8 Shadow screenshot 확보
 
 ## Archive/Public 검토
 
@@ -16,8 +16,8 @@
 | --- | --- |
 | Source provenance | [`SRC-P1-C03`](../Docs/99_Legacy/source-registry.md) |
 | Import status | Step4~14 반영 |
-| Public readiness | Step4~8 Shadow_Square 검토 필요, Step9~14 미판정 |
-| Build/run status | Step4~8 Shadow_Square 현재 확인, Step9~14 과거 확인 |
+| Public readiness | Step4~8 Shadow 검토 필요, Step9~14 미판정 |
+| Build/run status | Step4~8 Shadow 현재 확인, Step9~14 과거 확인 |
 | Texture/environment asset | Step10 이후 외부 asset은 각 Step 작업에서 별도 검토 |
 | Verification | [Part1 Chapter03 Verification](../Docs/02_Verification/Part1_Chapter03/verification-index.md) |
 | Demo | [Part1 Chapter03 Demo Index](../Docs/03_Demos/Part1_Chapter03/demo-index.md) |
@@ -33,7 +33,6 @@
 | Step6 | [PerspectiveView](03_Raytracing_Step6_PerspectiveView/README.md) | 완료 | 현재 확인 | [PerspectiveView Demo](../Docs/03_Demos/Part1_Chapter03/06_PerspectiveView.md) |
 | Step7 | [Triangle](03_Raytracing_Step7_Triangle/README.md) | 완료 | 현재 확인 | [Triangle Demo](../Docs/03_Demos/Part1_Chapter03/07_Triangle.md) |
 | Step8 | [Shadow](03_Raytracing_Step8_Shadow/README.md) | 완료 | 현재 확인 | [Shadow Demo](../Docs/03_Demos/Part1_Chapter03/08_Shadow.md) |
-| Step8 Shadow_Square | [Shadow Square](03_Raytracing_Step8_Shadow_Square/README.md) | 완료 | 현재 확인 | [Shadow Square Demo](../Docs/03_Demos/Part1_Chapter03/08_ShadowSquare.md) |
 | Step9 | `03_Raytracing_Step9_BarycentricCordinates` | 대기 | 과거 확인 | 대기 |
 | Step10 | `03_Raytracing_Step10_Texturing` | 대기 | 과거 확인 | 대기 |
 | Step11 | `03_Raytracing_Step11_Supersampling` | 대기 | 과거 확인 | 대기 |
