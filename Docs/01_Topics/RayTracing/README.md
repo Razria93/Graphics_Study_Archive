@@ -18,11 +18,11 @@
 
 - Topic 목록: 작성
 - 상세 Topic 문서: Ray, Intersection 작성
-- 연결 예제 검토: Step4 현재 확인
-- demo 연결: Step4 DrawingSphere 연결
+- 연결 예제 검토: Step4~6 현재 확인
+- demo 연결: Step4 DrawingSphere, Step5 PhongShading와 Step6 PerspectiveView 연결
 
 ## 다음 작업
 
-1. Step5 PhongShading의 코드와 기존 Lighting Topic 책임을 확인한다.
-2. Step5 Example README와 상세 Demo를 작성한다.
+1. Step7 Triangle의 코드와 기존 Intersection Topic 책임을 확인한다.
+2. Step7 Example README와 상세 Demo를 작성한다.
 3. 후속 Topic은 Step 순서에 맞춰 승격한다.

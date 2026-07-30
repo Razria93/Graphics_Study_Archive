@@ -2,11 +2,11 @@
 
 ## 목적
 
-Ray tracing에서 ray가 표현하는 위치와 방향, 그리고 scene query에 사용하는 parametric 형태를 설명한다. `Part1_Chapter03`의 첫 단계가 화면 pixel을 primary ray로 바꾸는 방식을 이해하기 위한 개념 정본으로 사용한다.
+Ray tracing에서 ray가 표현하는 위치와 방향, 그리고 scene query에 사용하는 parametric 형태를 설명한다. `Part1_Chapter03`의 Step4와 Step6가 화면 pixel을 orthographic 또는 perspective primary ray로 바꾸는 방식을 이해하기 위한 개념 정본으로 사용한다.
 
 ## 책임 범위
 
-이 문서는 ray의 일반적인 구성과 primary ray의 역할을 다룬다. Step4의 함수와 DirectX11 표시 구현은 Example README로, build/run/capture 사실은 Verification으로, 실제 처리 흐름과 시각 결과는 상세 Demo로 위임한다.
+이 문서는 ray의 일반적인 구성과 primary ray의 역할을 다룬다. Step4와 Step6의 함수 및 DirectX11 표시 구현은 Example README로, build/run/capture 사실은 Verification으로, 실제 처리 흐름과 시각 결과는 상세 Demo로 위임한다.
 
 ## 개념 흐름
 
@@ -30,9 +30,11 @@ Primary ray는 화면 sample에서 scene으로 처음 보내는 ray다. Perspect
 
 Step4는 각 pixel의 camera-plane 위치를 origin으로 사용하고 direction을 `(0, 0, 1)`로 고정한다. 따라서 perspective distortion 없이 sphere intersection의 기본 구조를 확인한다.
 
+Step6는 eye에서 camera-plane sample로 향하는 direction을 normalize해 pixel마다 다른 perspective 방향을 만든다. 일반적인 perspective camera와 달리 실제 ray origin은 eye가 아니라 camera-plane sample에 두므로 image plane 앞쪽 구간은 교차 검사에서 제외한다.
+
 ## 데모 연결
 
-Step4 Example은 화면의 각 pixel을 orthographic primary ray로 바꾸고 sphere와 교차시킨다. 구체적인 함수 연결과 결과 화면은 Example README와 상세 Demo에서 확인한다.
+Step4 Example은 화면의 각 pixel을 orthographic primary ray로 바꾸고 sphere와 교차시킨다. Step6 Example은 perspective 방향과 closest-hit scene query를 추가한다. 구체적인 함수 연결과 결과 화면은 각 Example README와 상세 Demo에서 확인한다.
 
 ## 한계
 
@@ -43,6 +45,8 @@ Step4 Example은 화면의 각 pixel을 orthographic primary ray로 바꾸고 sp
 ## 관련 문서
 
 - Example: [Step4 DrawingSphere README](../../../Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/README.md)
+- Example: [Step6 PerspectiveView README](../../../Part1_Chapter03/03_Raytracing_Step6_PerspectiveView/README.md)
 - Verification: [`Docs/02_Verification/Part1_Chapter03/verification-index.md`](../../02_Verification/Part1_Chapter03/verification-index.md)
 - Demo: [`Docs/03_Demos/Part1_Chapter03/04_DrawingSphere.md`](../../03_Demos/Part1_Chapter03/04_DrawingSphere.md)
+- Demo: [`Docs/03_Demos/Part1_Chapter03/06_PerspectiveView.md`](../../03_Demos/Part1_Chapter03/06_PerspectiveView.md)
 - Related Topic: [Intersection](Intersection.md)
