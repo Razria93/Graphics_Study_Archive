@@ -22,6 +22,6 @@
 
 ## 다음 작업
 
-1. Step11 Supersampling의 sampling 책임을 확인한다.
-2. 후속 Topic을 Step 순서에 맞춰 승격한다.
+1. Step12 Reflection에서 texture sampling과 recursive shading의 책임을 확인한다.
+2. Step14 CubeEnvironment의 direction-to-face mapping을 별도 Topic으로 승격한다.
 3. GPU sampler와 CPU sampling의 연결 범위를 확장한다.
