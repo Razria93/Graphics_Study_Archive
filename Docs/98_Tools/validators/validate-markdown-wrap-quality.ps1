@@ -92,7 +92,8 @@ function Get-MarkdownFiles {
             Where-Object {
                 $_ -and
                 (Test-IncludedPath $_) -and
-                -not (Test-ExcludedPath $_)
+                -not (Test-ExcludedPath $_) -and
+                (Test-Path -LiteralPath (Join-Path $Root $_) -PathType Leaf)
             } |
             ForEach-Object { Get-Item -LiteralPath (Join-Path $Root $_) }
     )
