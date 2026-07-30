@@ -9,6 +9,14 @@
 - tracked Docs 전체 링크와 상태를 통합 검사하는 validator는 아직 없다.
 - 개별 validator와 [Document System Audit Guide](document-system-audit-guide.md)의 수동 감사를 함께 사용한다.
 
+## 로컬과 Actions 실행
+
+로컬 검증은 commit과 push 전에 현재 worktree의 문제를 찾는다. GitHub Actions의 `Docs Validation` workflow는 push와 pull request의 commit을 clean checkout한 `windows-latest` runner에서 다시 검사해 실행 누락과 환경 의존 문제를 찾는다.
+
+Actions run의 validator step 실패는 실제 검사 실패로 분류하고 로컬에서 같은 commit과 명령으로 재현한다. checkout, runner 할당과 GitHub infrastructure 실패는 문서 품질 실패와 구분한다.
+
+Actions 성공은 validator가 담당하는 자동 검사만 증명한다. build/run 사실, capture의 시각 안전성, 문서 책임 분리와 설명의 기술적 정확성은 기존 수동 검수를 유지한다.
+
 ## 최소 검수
 
 | 검수 | 목적 | 예시 |

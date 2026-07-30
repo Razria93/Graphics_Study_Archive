@@ -340,6 +340,14 @@ Ready for Review 감사와 실제 상태 전환을 분리한다. 감사 단계�
 
 위 항목이 없거나 조회할 수 없는 상태는 `BLOCKER`, `WARNING` 또는 후속 조치로 분류하지 않으며 기본 감사에서 별도로 조회하지 않는다. 사용자가 해당 기능의 도입이나 검토를 요청한 경우에만 설계와 운영 범위를 별도 작업으로 다룬다.
 
+### GitHub Actions 보조 검증
+
+GitHub Actions는 로컬 validator와 동일한 검사를 원격 runner에서 다시 실행하는 보조 검증으로 사용하며 로컬 검증을 대체하지 않는다. 현재 workflow는 branch protection 또는 required merge gate로 사용하지 않는다.
+
+변경 commit에 대응하는 Actions run이 생성되면 Ready 감사에서 결과를 확인한다. validator step 실패는 원인을 확인할 때까지 `BLOCKED`로 분류하며, runner 할당과 GitHub infrastructure 실패는 문서 품질 실패로 단정하지 않고 `WARNING`으로 분류한다.
+
+Actions가 없다는 사실 자체는 Ready blocker가 아니다. 구성된 workflow의 실패를 무시하거나 성공한 Actions run만으로 build/run, capture의 시각 안전성과 문서 의미 품질을 증명하지 않는다.
+
 ## WorkLog 반영
 
 WorkLog에는 GitHub 본문 전체가 아니라 다음만 남긴다.

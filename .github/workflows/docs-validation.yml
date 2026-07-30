@@ -1,0 +1,44 @@
+name: Docs Validation
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: docs-validation-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate documentation
+    runs-on: windows-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Validate GitHub bodies
+        shell: pwsh
+        run: ./Docs/98_Tools/validators/validate-github-body.ps1
+
+      - name: Validate GitHub quality
+        shell: pwsh
+        run: ./Docs/98_Tools/validators/validate-github-quality.ps1
+
+      - name: Validate Demo indexes
+        shell: pwsh
+        run: ./Docs/98_Tools/validators/validate-demo-index-quality.ps1
+
+      - name: Validate Demo documents
+        shell: pwsh
+        run: ./Docs/98_Tools/validators/validate-demo-doc-quality.ps1
+
+      - name: Validate Topic documents
+        shell: pwsh
+        run: ./Docs/98_Tools/validators/validate-topic-doc-quality.ps1
