@@ -4,8 +4,7 @@
 
 ## 현재 상태
 
-현재 build/run 결과와 provenance는 `build-run-matrix.md`를 기준으로 한다. 이
-문서에는 실패, 보류, 미확인 사유처럼 후속 조치가 필요한 항목만 둔다.
+현재 build/run 결과와 provenance는 `build-run-matrix.md`를 기준으로 한다. 이 문서에는 실패, 보류, 미확인 사유처럼 후속 조치가 필요한 항목만 둔다.
 
 ## Issue 목록
 

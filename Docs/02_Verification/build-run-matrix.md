@@ -1,7 +1,6 @@
 # Build Run Matrix
 
-이 문서는 archive 기준 build/run 결과와 provenance, 현재 재검증 상태의 정본이다.
-직접 확인한 근거가 없는 항목은 `미확인`으로 둔다.
+이 문서는 archive 기준 build/run 결과와 provenance, 현재 재검증 상태의 정본이다. 직접 확인한 근거가 없는 항목은 `미확인`으로 둔다.
 
 ## 기준
 
@@ -26,8 +25,7 @@
 ## 갱신 규칙
 
 - 현재 검증 또는 과거 확인 근거가 생기면 이 matrix를 먼저 갱신한다.
-- 과거 성공 이후 현재 작업에서 다시 실행하지 않았으면 결과는 `성공`으로
-  유지하고 provenance `과거 확인`, 현재 재검증 `필요`를 함께 기록한다.
+- 과거 성공 이후 현재 작업에서 다시 실행하지 않았으면 결과는 `성공`으로 유지하고 provenance `과거 확인`, 현재 재검증 `필요`를 함께 기록한다.
 - 예제별 상세 결과는 해당 Part/Chapter의 `verification-index.md` 또는 별도 검증 문서에 기록한다.
 - capture/result는 `capture-matrix.md`와 `Docs/03_Demos`에 연결한다.
 - 실패 원인은 `known-issues.md`에 요약한다.

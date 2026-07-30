@@ -58,17 +58,11 @@ Root README / Chapter README
 
 Chapter README는 해당 Chapter 또는 Chapter 묶음의 지도 역할을 한다. 본문 설명을 길게 반복하지 않고 목표, 예제 구성, 핵심 Topic, 대표 Demo, 검증 상태, 관련 문서 링크를 제공한다.
 
-Example README는 예제 코드의 근거리 안내 정본이다. 목적, 실행 진입점, 주요
-source/shader 위치, 예제 고유 구조, 짧은 실행 요약, limitation, 관련 정본
-링크를 둔다. 대표 visual은 0~1개만 사용하고 상세 구현 흐름과 단계별 시각
-결과는 상세 Demo로 연결한다.
+Example README는 예제 코드의 근거리 안내 정본이다. 목적, 실행 진입점, 주요 source/shader 위치, 예제 고유 구조, 짧은 실행 요약, limitation, 관련 정본 링크를 둔다. 대표 visual은 0~1개만 사용하고 상세 구현 흐름과 단계별 시각 결과는 상세 Demo로 연결한다.
 
-상세 Demo 문서는 기술 구현과 시각 결과의 정본이다. 구현 목표, 입력과 출력,
-처리 흐름, 구현 선택, 주요 코드, 시각 결과, trade-off, 구현 범위와 한계를 둔다.
+상세 Demo 문서는 기술 구현과 시각 결과의 정본이다. 구현 목표, 입력과 출력, 처리 흐름, 구현 선택, 주요 코드, 시각 결과, trade-off, 구현 범위와 한계를 둔다.
 
-Demo Issue는 상세 Demo를 복제하지 않고 GitHub에서 독립적으로 읽히는 curated
-publication view로 작성한다. 대표 visual과 핵심 구현 요약은 자체 포함하고,
-상세 근거는 Demo, Example, Topic, Verification, 코드로 연결한다.
+Demo Issue는 상세 Demo를 복제하지 않고 GitHub에서 독립적으로 읽히는 curated publication view로 작성한다. 대표 visual과 핵심 구현 요약은 자체 포함하고, 상세 근거는 Demo, Example, Topic, Verification, 코드로 연결한다.
 
 GitHub PR body는 README의 미러가 아니다. 게시 시점에 reviewer가 볼 요약과 링크만 제공하고, 최신 상태 정본은 README, Topic, Verification, Demo, Publication 문서에 둔다.
 
@@ -119,6 +113,5 @@ README는 무조건 함께 수정하지 않는다. Work Unit 종료 전 아래 �
 - tracked review summary에는 승격한 항목, 승격하지 않은 항목의 분류, 후속 판단 기준만 남긴다.
 - build/run/capture 상태는 `Docs/02_Verification`에 기록한다.
 - capture/result가 확보된 예제 README에는 대표 visual을 최대 1개 연결한다.
-- 같은 tracked asset은 Root, Chapter, Example, 상세 Demo, Demo Issue, PR에서
-  목적에 맞게 재사용할 수 있다. Asset 재사용은 본문 복제로 보지 않는다.
+- 같은 tracked asset은 Root, Chapter, Example, 상세 Demo, Demo Issue, PR에서 목적에 맞게 재사용할 수 있다. Asset 재사용은 본문 복제로 보지 않는다.
 - 공개 가능성 판단은 `Docs/05_Publication`에서 분리한다.

@@ -5,8 +5,7 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 
 # GitHub Body Quality Instructions
 
-이 문서는 `Docs/07_GitHub` 본문 품질을 항상 같은 수준으로 유지하기 위한 고정 규칙이다.
-Markdown 일반 본문 줄바꿈은 [Docs Authoring Flow Policy](../../Docs/06_Policies/docs-authoring-flow-policy.md)를 따른다.
+이 문서는 `Docs/07_GitHub` 본문 품질을 항상 같은 수준으로 유지하기 위한 고정 규칙이다. Markdown 일반 본문 줄바꿈은 [Docs Authoring Flow Policy](../../Docs/06_Policies/docs-authoring-flow-policy.md)를 따른다.
 
 ## 목표
 

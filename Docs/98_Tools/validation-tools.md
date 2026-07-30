@@ -6,6 +6,7 @@
 
 - GitHub body validator는 `validators/validate-github-body.ps1`에 둔다.
 - GitHub quality, Demo index, 상세 Demo, Topic 문서는 각각의 tracked validator로 검사한다.
+- 현재 정본 Markdown의 명백한 인위적 soft-wrap은 `validators/validate-markdown-wrap-quality.ps1`로 검사한다.
 - tracked Docs 전체 링크와 상태를 통합 검사하는 validator는 아직 없다.
 - 개별 validator와 [Document System Audit Guide](document-system-audit-guide.md)의 수동 감사를 함께 사용한다.
 
@@ -29,7 +30,7 @@ Actions 성공은 validator가 담당하는 자동 검사만 증명한다. build
 
 일반 본문에는 특정 글자 수 상한을 적용하지 않는다. fenced code는 80자 초과를 warning, 120자 초과를 failure로 분리한다.
 
-인위적 본문 soft-wrap, 링크와 조사·서술어의 분리, 포괄적인 link label은 길이만으로 안정적으로 판별하지 못하므로 agent 또는 수동 검수에서 확인한다. 상세 줄바꿈 기준은 [Docs Authoring Flow Policy](../06_Policies/docs-authoring-flow-policy.md)를 따른다.
+같은 문단·목록 항목을 여러 물리 줄로 나눈 명백한 인위적 soft-wrap은 `validate-markdown-wrap-quality.ps1`로 검사한다. 문장 흐름, 렌더링 가독성과 포괄적인 link label처럼 문맥이 필요한 항목은 agent 또는 수동 검수에서 확인한다. 상세 줄바꿈 기준은 [Docs Authoring Flow Policy](../06_Policies/docs-authoring-flow-policy.md)를 따른다.
 
 ## Work Unit 검수 연결
 
@@ -43,21 +44,15 @@ Actions 성공은 validator가 담당하는 자동 검사만 증명한다. build
 | local study review | `templates/local-study-review.md`, `Docs/06_Policies/local-review-policy.md` |
 | publication review | `templates/local-publication-review.md`, `Docs/05_Publication/AGENTS.md` |
 | GitHub body 검수 | `Docs/06_Policies/github-workflow-policy.md`, `validators/validate-github-body.ps1` |
+| Markdown 원문 가독성 | `Docs/06_Policies/docs-authoring-flow-policy.md`, `validators/validate-markdown-wrap-quality.ps1` |
 
 ## 전체 감사와 Validator 경계
 
-Validator는 링크 형식, section, 상태값처럼 반복 가능한 기계 검사를 담당한다.
-문서 책임 충돌, 설명 중복, 탐색 흐름, 상태 provenance, public narrative는
-수동 감사에서 판단한다. Validator 통과는 전체 문서 감사 통과를 의미하지 않는다.
+Validator는 링크 형식, section, 상태값처럼 반복 가능한 기계 검사를 담당한다. 문서 책임 충돌, 설명 중복, 탐색 흐름, 상태 provenance, public narrative는 수동 감사에서 판단한다. Validator 통과는 전체 문서 감사 통과를 의미하지 않는다.
 
-Publication 검수의 출처 상태, 외부 자료 복제 여부, 라이선스, metadata,
-decoded pixel 관계와 강화 출처 검수 필요 여부는 수동으로 판단한다. 현재
-validator는 prompt 원문, 생성 화면 screenshot, 생성 날짜와 작업용 원본을
-요구하지 않는다.
+Publication 검수의 출처 상태, 외부 자료 복제 여부, 라이선스, metadata, decoded pixel 관계와 강화 출처 검수 필요 여부는 수동으로 판단한다. 현재 validator는 prompt 원문, 생성 화면 screenshot, 생성 날짜와 작업용 원본을 요구하지 않는다.
 
-향후 audit runner의 계획된 interface와 자동화 경계는
-`document-system-audit-guide.md`를 따른다. 현재 runner와 전체 링크·상태
-validator는 구현되지 않았다.
+향후 audit runner의 계획된 interface와 자동화 경계는 `document-system-audit-guide.md`를 따른다. 현재 runner와 전체 링크·상태 validator는 구현되지 않았다.
 
 ## tracked validator 기준
 

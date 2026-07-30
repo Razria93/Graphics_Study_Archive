@@ -12,8 +12,7 @@
 
 ## Current Work
 
-`Part1_Chapter01-02` pilot으로 문서화 workflow를 검증했고, 현재는
-`Part1_Chapter03`을 Step 순서대로 검증하고 문서화한다.
+`Part1_Chapter01-02` pilot으로 문서화 workflow를 검증했고, 현재는 `Part1_Chapter03`을 Step 순서대로 검증하고 문서화한다.
 
 - [Part1 Chapter01-02](Part1_Chapter01-02/README.md): DirectX11 기반 렌더링 흐름과 bloom 후처리 pilot
 - [01_DX11InitAndImGui](Part1_Chapter01-02/01_DX11InitAndImGui/README.md): DirectX11 device, swap chain, render target, ImGui 기반 예제

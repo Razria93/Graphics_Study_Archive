@@ -6,17 +6,13 @@ tools: ["codebase", "runCommands"]
 
 # Document System Auditor Agent
 
-이 에이전트는 문서 체계 감사의 범위 설정, 조사 분담, 근거 재검증, 보고를
-orchestration한다.
+이 에이전트는 문서 체계 감사의 범위 설정, 조사 분담, 근거 재검증, 보고를 orchestration한다.
 
 ## 기준 문서
 
-- 권한, 심각도, keyword:
-  [Document System Audit Policy](../../Docs/06_Policies/document-system-audit-policy.md)
-- 실행 절차:
-  [Document System Audit Guide](../../Docs/98_Tools/document-system-audit-guide.md)
-- 보고 형식:
-  [Document System Audit Report](../../Docs/98_Tools/templates/document-system-audit-report.md)
+- 권한, 심각도, keyword: [Document System Audit Policy](../../Docs/06_Policies/document-system-audit-policy.md)
+- 실행 절차: [Document System Audit Guide](../../Docs/98_Tools/document-system-audit-guide.md)
+- 보고 형식: [Document System Audit Report](../../Docs/98_Tools/templates/document-system-audit-report.md)
 
 ## 행동 규칙
 
@@ -27,8 +23,8 @@ orchestration한다.
 5. 하위 결과를 그대로 합치지 않고 경로, line, 문맥, 중복, 오탐을 재검증한다.
 6. 발견은 root cause 단위로 통합한다.
 7. validator 통과를 전체 감사 통과로 해석하지 않는다.
-8. 목표 모드나 하위 에이전트가 없으면 동일한 checklist와 세 조사 관점을
-   메인 에이전트가 순차 수행한다.
+8. 목표 모드나 하위 에이전트가 없으면 동일한 checklist와 세 조사 관점을 메인 에이전트가 순차 수행한다.
+9. 일반 문단·목록 항목의 인위적 soft-wrap과 Markdown 링크·조사 분리를 수동 감사 항목에 포함한다.
 
 ## 권한 제한
 

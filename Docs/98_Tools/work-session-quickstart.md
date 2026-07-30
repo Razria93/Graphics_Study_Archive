@@ -120,12 +120,7 @@ Ready 감사는 read-only로 수행하고 실제 상태 전환과 분리한다.
 - 현재 PR의 `open` feedback과 변경 파일에 관련된 과거 regression check 확인
 - blocker와 warning 구분
 
-GitHub Actions 구성 여부, required status check와 branch protection은 현재 Ready
-기본 판정에서 제외한다. 기본 감사에서는 protection과 required check 존재 여부를
-별도로 조회하지 않는다. Actions는 원격 검증 결과를 만들고 보호 규칙은 그 결과를
-merge 조건으로 강제하는 독립 기능이다. 구성된 `Docs Validation` run이 현재
-변경에 존재하면 결과를 확인하며 세부 판정 기준은
-[GitHub Workflow Policy](../06_Policies/github-workflow-policy.md)를 따른다.
+GitHub Actions 구성 여부, required status check와 branch protection은 현재 Ready 기본 판정에서 제외한다. 기본 감사에서는 protection과 required check 존재 여부를 별도로 조회하지 않는다. Actions는 원격 검증 결과를 만들고 보호 규칙은 그 결과를 merge 조건으로 강제하는 독립 기능이다. 구성된 `Docs Validation` run이 현재 변경에 존재하면 결과를 확인하며 세부 판정 기준은 [GitHub Workflow Policy](../06_Policies/github-workflow-policy.md)를 따른다.
 
 review 대응은 actionable thread 확인, 영향 범위 조사, 수정 또는 유지 판단, 검증, 필요한 [Review Feedback Log](../04_WorkLogs/reviews/review-feedback-log.md) 기록과 답글 후보 준비 순서로 진행한다. 과거 log 전체가 아니라 현재 변경 파일에 관련된 regression check만 다시 확인한다.
 

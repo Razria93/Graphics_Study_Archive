@@ -61,9 +61,7 @@
 - Debug/Release x64 build/run과 `result.png` 생성은 확인했다.
 - `result.png`는 ChatGPT 생성 입력 이미지로 재생성했고 육안상 식별자는 보이지 않는다. input/result 비교 이미지를 `Docs/_assets/captures`에 승격했다.
 - Part1 Work Unit 자체는 아직 진행 중이다.
-- GitHub PR #8은 일반 merge commit
-  [`e14f5e3`](https://github.com/Razria93/Graphics_Study_Archive/commit/e14f5e39d1352fb4f1f55bd6b06fb1e9840cb88c)으로
-  병합했다.
+- GitHub PR #8은 일반 merge commit [`e14f5e3`](https://github.com/Razria93/Graphics_Study_Archive/commit/e14f5e39d1352fb4f1f55bd6b06fb1e9840cb88c)으로 병합했다.
 - Chapter01-02 파일럿은 마감했지만 WU-Part1 전체는 진행 중이다.
 
 ## 다음 작업

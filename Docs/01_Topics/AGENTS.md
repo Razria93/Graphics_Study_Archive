@@ -24,8 +24,7 @@
 - `## 목적`, `## 책임 범위`, `## 핵심 개념`, `## 한계`, `## 관련 문서` 순서를 유지한다.
 - Topic별 개념 전개에는 `처리 단계`, `수학적 배경`, `Pipeline 위치`처럼 내용에 맞는 선택 섹션을 사용할 수 있다.
 - `## 핵심 개념`은 최소 2개 `###` 소제목으로 구성한다.
-- 예제 고유 코드 탐색은 Example README로, 구현 흐름과 시각 결과는
-  `Docs/03_Demos`로 위임한다.
+- 예제 고유 코드 탐색은 Example README로, 구현 흐름과 시각 결과는 `Docs/03_Demos`로 위임한다.
 - build/run/capture 상태는 `Docs/02_Verification`으로 위임한다.
 - `## 관련 문서`에서 Example README, Verification, Demo 정본을 연결한다.
 

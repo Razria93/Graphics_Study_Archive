@@ -1,8 +1,6 @@
 # Part1 Chapter03
 
-이 Chapter는 CPU ray tracing의 기반부터 environment sampling까지 Step 단위로
-확장하는 예제를 정리한다. 각 Step은 코드 폴더 README, Verification와 독립 상세
-Demo를 같은 순서로 연결한다.
+이 Chapter는 CPU ray tracing의 기반부터 environment sampling까지 Step 단위로 확장하는 예제를 정리한다. 각 Step은 코드 폴더 README, Verification와 독립 상세 Demo를 같은 순서로 연결한다.
 
 ## 상태
 

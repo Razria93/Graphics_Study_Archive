@@ -1,8 +1,6 @@
 # Demos
 
-이 폴더는 demo registry와 기술 구현·시각 결과의 상세 정본을 둔다. 실제
-build/run 검증 상태는 `Docs/02_Verification`을 기준으로 하고, 검토된 asset
-파일은 `Docs/_assets`에 둔다.
+이 폴더는 demo registry와 기술 구현·시각 결과의 상세 정본을 둔다. 실제 build/run 검증 상태는 `Docs/02_Verification`을 기준으로 하고, 검토된 asset 파일은 `Docs/_assets`에 둔다.
 
 ## 책임
 

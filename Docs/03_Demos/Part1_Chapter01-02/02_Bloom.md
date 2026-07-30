@@ -2,9 +2,7 @@
 
 ## 목적
 
-`02_Bloom`은 CPU에서 bright-pass, Gaussian blur, 원본 합성을 수행한 뒤 결과
-픽셀을 DirectX11 dynamic texture로 업로드하는 흐름을 보여준다. 입력과 결과를
-함께 제시해 기본 bloom 효과와 CPU 결과의 GPU 표시 경로를 연결한다.
+`02_Bloom`은 CPU에서 bright-pass, Gaussian blur, 원본 합성을 수행한 뒤 결과 픽셀을 DirectX11 dynamic texture로 업로드하는 흐름을 보여준다. 입력과 결과를 함께 제시해 기본 bloom 효과와 CPU 결과의 GPU 표시 경로를 연결한다.
 
 ## 책임 범위
 
@@ -50,9 +48,7 @@
 
 ### CPU Bloom
 
-`Example.cpp`는 원본 pixel buffer를 보존한 뒤 bright-pass와 blur를 적용한다.
-마지막 합성에서 원본과 blur 결과를 더하고 출력 범위로 제한한다. 개념과 수학적
-배경은 Topic에 위임하고 여기서는 실제 예제의 처리 연결을 기준으로 설명한다.
+`Example.cpp`는 원본 pixel buffer를 보존한 뒤 bright-pass와 blur를 적용한다. 마지막 합성에서 원본과 blur 결과를 더하고 출력 범위로 제한한다. 개념과 수학적 배경은 Topic에 위임하고 여기서는 실제 예제의 처리 연결을 기준으로 설명한다.
 
 #### Bloom 합성 의사코드
 
@@ -87,9 +83,7 @@ for (size_t i = 0; i < currentPixels.size(); ++i)
 
 ### Dynamic Texture Upload
 
-`Example.h`는 `D3D11_USAGE_DYNAMIC` texture를 `D3D11_MAP_WRITE_DISCARD`로
-갱신한다. Source row 크기와 mapped `RowPitch`가 다를 수 있으므로 각 행을
-분리해 복사한 뒤 texture를 pixel shader resource로 사용한다.
+`Example.h`는 `D3D11_USAGE_DYNAMIC` texture를 `D3D11_MAP_WRITE_DISCARD`로 갱신한다. Source row 크기와 mapped `RowPitch`가 다를 수 있으므로 각 행을 분리해 복사한 뒤 texture를 pixel shader resource로 사용한다.
 
 #### CPU에서 GPU로 업로드하는 의사코드
 
@@ -118,19 +112,14 @@ Unmap(canvasTexture);
 
 ### Full-screen Presentation
 
-Vertex shader는 full-screen quad를 만들고 pixel shader는 업로드된 texture를
-샘플링한다. CPU image processing 결과가 DirectX11 rendering pipeline의 최종
-화면으로 이어지는 경계를 담당한다.
+Vertex shader는 full-screen quad를 만들고 pixel shader는 업로드된 texture를 샘플링한다. CPU image processing 결과가 DirectX11 rendering pipeline의 최종 화면으로 이어지는 경계를 담당한다.
 
 - [Vertex shader](../../../Part1_Chapter01-02/02_Bloom/VS.hlsl)
 - [Pixel shader](../../../Part1_Chapter01-02/02_Bloom/PS.hlsl)
 
 ## 시각 결과
 
-입력에서는 밝은 구체의 경계가 비교적 선명하다. 결과에서는 threshold를 통과한
-밝은 영역이 blur를 통해 주변으로 확산되고 원본에 다시 합성되어 glow가 나타난다.
-이 비교는 GPU multi-pass 구현이 아니어도 bloom의 핵심 단계가 최종 이미지에
-어떤 차이를 만드는지 보여준다.
+입력에서는 밝은 구체의 경계가 비교적 선명하다. 결과에서는 threshold를 통과한 밝은 영역이 blur를 통해 주변으로 확산되고 원본에 다시 합성되어 glow가 나타난다. 이 비교는 GPU multi-pass 구현이 아니어도 bloom의 핵심 단계가 최종 이미지에 어떤 차이를 만드는지 보여준다.
 
 ## 구현 범위와 한계
 
@@ -144,8 +133,7 @@ Vertex shader는 full-screen quad를 만들고 pixel shader는 업로드된 text
 
 - Debug/Release x64 build와 run을 직접 확인했다.
 - 두 configuration에서 runtime `result.png` 생성을 확인했다.
-- 공개 visual은 runtime output을 직접 연결하지 않고 검토 후 승격한 tracked
-  input/result asset을 사용한다.
+- 공개 visual은 runtime output을 직접 연결하지 않고 검토 후 승격한 tracked input/result asset을 사용한다.
 - 상세 근거는 [Verification Index](../../02_Verification/Part1_Chapter01-02/verification-index.md)와 [Capture Registry](../../_assets/captures/README.md)를 기준으로 확인한다.
 
 ## 관련 코드

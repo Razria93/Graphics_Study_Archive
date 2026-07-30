@@ -2,21 +2,15 @@
 
 ## 목적
 
-Step5는 Step4의 sphere intersection 결과에 reflection-vector 기반 Phong
-lighting을 적용한다. Hit point와 normal이 ambient, diffuse와 specular 항을 거쳐
-최종 pixel color로 변하는 흐름을 보여준다.
+Step5는 Step4의 sphere intersection 결과에 reflection-vector 기반 Phong lighting을 적용한다. Hit point와 normal이 ambient, diffuse와 specular 항을 거쳐 최종 pixel color로 변하는 흐름을 보여준다.
 
 ## 책임 범위
 
 - Step4 대비 추가된 surface lighting 흐름과 구현 선택을 설명한다.
 - CPU shading 결과와 DirectX11 presentation 경계를 설명한다.
-- 일반 Phong 이론은
-  [Phong Shading](../../01_Topics/LightingAndShading/PhongShading.md)으로 위임한다.
-- Ray와 intersection 이론은 [Ray](../../01_Topics/RayTracing/Ray.md)와
-  [Intersection](../../01_Topics/RayTracing/Intersection.md)으로 위임한다.
-- Build/run/capture 사실은
-  [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)로
-  위임한다.
+- 일반 Phong 이론은 [Phong Shading](../../01_Topics/LightingAndShading/PhongShading.md)으로 위임한다.
+- Ray와 intersection 이론은 [Ray](../../01_Topics/RayTracing/Ray.md)와 [Intersection](../../01_Topics/RayTracing/Intersection.md)으로 위임한다.
+- Build/run/capture 사실은 [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)로 위임한다.
 
 ## 결과 미리보기
 
@@ -24,16 +18,13 @@ lighting을 적용한다. Hit point와 normal이 ambient, diffuse와 specular �
 
 ![Step5 PhongShading result](../../_assets/captures/part1_chapter03_05_phong-shading.png)
 
-Blue diffuse surface 위에 white specular highlight가 나타난다. Step4의 hit-distance
-diagnostic color와 달리 surface normal, light와 view 방향이 밝기 분포를 만든다.
+Blue diffuse surface 위에 white specular highlight가 나타난다. Step4의 hit-distance diagnostic color와 달리 surface normal, light와 view 방향이 밝기 분포를 만든다.
 
 ### Light 위치 조정
 
 ![Step5 PhongShading light-position result](../../_assets/captures/part1_chapter03_05_phong-shading_parameter-adjusted.png)
 
-`Light (1.270, 0.875, -1.000)`로 조정하면 highlight와 밝은 영역이 sphere의
-오른쪽 위로 이동한다. Sphere와 material 값은 유지하므로 light position이
-diffuse와 specular 분포를 바꾸는 효과를 기본 결과와 직접 비교할 수 있다.
+`Light (1.270, 0.875, -1.000)`로 조정하면 highlight와 밝은 영역이 sphere의 오른쪽 위로 이동한다. Sphere와 material 값은 유지하므로 light position이 diffuse와 specular 분포를 바꾸는 효과를 기본 결과와 직접 비교할 수 있다.
 
 ## 입력과 출력
 
@@ -58,10 +49,7 @@ diffuse와 specular 분포를 바꾸는 효과를 기본 결과와 직접 비교
 
 ### Hit에서 Phong Color로 변환
 
-Step5는 Step4의 diagnostic color를 surface lighting으로 교체한다. Point light
-방향은 hit point마다 달라지고, normal과의 내적으로 diffuse 밝기를 만든다.
-Specular는 reflection vector와 고정 orthographic view 방향의 정렬 정도를
-shininess exponent로 조절한다.
+Step5는 Step4의 diagnostic color를 surface lighting으로 교체한다. Point light 방향은 hit point마다 달라지고, normal과의 내적으로 diffuse 밝기를 만든다. Specular는 reflection vector와 고정 orthographic view 방향의 정렬 정도를 shininess exponent로 조절한다.
 
 #### Phong lighting 의사코드
 
@@ -101,9 +89,7 @@ Color TraceRay(Ray ray)
 
 ### Pixel 순회와 화면 표시
 
-Primary ray 구조는 Step4와 같다. 각 pixel의 결과를 clamp해 CPU buffer에 기록하고
-dynamic texture로 전달한다. HLSL은 Step4와 동일한 presentation shader이며
-Phong 계산을 수행하지 않는다.
+Primary ray 구조는 Step4와 같다. 각 pixel의 결과를 clamp해 CPU buffer에 기록하고 dynamic texture로 전달한다. HLSL은 Step4와 동일한 presentation shader이며 Phong 계산을 수행하지 않는다.
 
 #### CPU render와 presentation 의사코드
 
@@ -133,17 +119,11 @@ DrawFullscreenQuad();
 
 ## 시각 결과
 
-기본값은 blue diffuse color와 white specular color를 사용한다. Light는 camera
-plane 앞쪽의 `(0, 0, -1)`에 있어 sphere 중심 부근에 강한 highlight가 나타난다.
-ImGui parameter는 다음 frame의 CPU shading에 직접 반영된다.
+기본값은 blue diffuse color와 white specular color를 사용한다. Light는 camera plane 앞쪽의 `(0, 0, -1)`에 있어 sphere 중심 부근에 강한 highlight가 나타난다. ImGui parameter는 다음 frame의 CPU shading에 직접 반영된다.
 
-Light 위치 조정 결과에서는 highlight와 밝기 분포가 오른쪽 위로 이동한다. 이는
-point light에서 hit point로 계산되는 light direction이 pixel마다 바뀌고,
-diffuse와 specular 항이 같은 입력 변화에 함께 반응한다는 점을 보여준다.
+Light 위치 조정 결과에서는 highlight와 밝기 분포가 오른쪽 위로 이동한다. 이는 point light에서 hit point로 계산되는 light direction이 pixel마다 바뀌고, diffuse와 specular 항이 같은 입력 변화에 함께 반응한다는 점을 보여준다.
 
-Step4와 비교하면 silhouette 확인용 밝기 대신 normal과 조명 방향에 따른 smooth
-brightness distribution이 생긴다. 이는 intersection 결과가 surface point와
-normal을 제공하고, 그 정보를 lighting 단계가 소비한다는 변화를 보여준다.
+Step4와 비교하면 silhouette 확인용 밝기 대신 normal과 조명 방향에 따른 smooth brightness distribution이 생긴다. 이는 intersection 결과가 surface point와 normal을 제공하고, 그 정보를 lighting 단계가 소비한다는 변화를 보여준다.
 
 ## 구현 범위와 한계
 
@@ -151,8 +131,7 @@ normal을 제공하고, 그 정보를 lighting 단계가 소비한다는 변화�
 - Ambient는 light와 무관한 상수이며 distance attenuation이 없다.
 - Shadow, multiple light, gamma correction과 tone mapping을 포함하지 않는다.
 - Reflection-vector Phong을 사용하며 Blinn half-vector를 사용하지 않는다.
-- Sphere가 camera plane에 닿고 `t > 0` root만 허용해 중심 ray가 exit surface를
-  선택할 수 있다.
+- Sphere가 camera plane에 닿고 `t > 0` root만 허용해 중심 ray가 exit surface를 선택할 수 있다.
 - 최종 clamp로 밝은 highlight detail이 포화될 수 있다.
 - Shader는 project working directory의 파일에 의존한다.
 - Dynamic texture upload는 mapped `RowPitch`를 별도로 처리하지 않는다.
@@ -165,9 +144,7 @@ normal을 제공하고, 그 정보를 lighting 단계가 소비한다는 변화�
 - 공개 application title, sphere lighting과 parameter UI를 전체 창에서 확인했다.
 - 사용자가 Light 위치를 조정한 전체 창 screenshot에서 highlight 이동을 확인했다.
 - 공개 visual은 metadata와 개인 식별 정보를 검사한 tracked screenshot을 사용한다.
-- 상세 상태는
-  [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)와
-  [Capture Registry](../../_assets/captures/README.md)를 기준으로 확인한다.
+- 상세 상태는 [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)와 [Capture Registry](../../_assets/captures/README.md)를 기준으로 확인한다.
 
 ## 관련 코드
 

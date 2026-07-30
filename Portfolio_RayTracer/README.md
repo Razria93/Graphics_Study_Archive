@@ -22,6 +22,4 @@ Part1 ray tracing study examples를 바탕으로 확장한 software ray tracer �
 
 - `16-01_Sampling`
 
-검증 상태는
-[Portfolio RayTracer Verification](../Docs/02_Verification/Portfolio_RayTracer/verification-index.md)에서
-관리한다.
+검증 상태는 [Portfolio RayTracer Verification](../Docs/02_Verification/Portfolio_RayTracer/verification-index.md)에서 관리한다.

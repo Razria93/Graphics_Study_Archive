@@ -45,13 +45,9 @@
 
 ## 문서 감사 진입점
 
-- `문서 단일검수 시작`, `문서 영향감사 시작`, `문서 전수감사 시작`,
-  `감사 결과 반영 시작`, `감사 결과 게시 시작`을 문서 감사 workflow
-  keyword로 사용한다.
-- keyword의 범위, 목표 모드, 에이전트 구성, 권한은
-  `Docs/06_Policies/document-system-audit-policy.md`를 따른다.
-- 실행 절차와 보고 형식은
-  `Docs/98_Tools/document-system-audit-guide.md`를 따른다.
+- `문서 단일검수 시작`, `문서 영향감사 시작`, `문서 전수감사 시작`, `감사 결과 반영 시작`, `감사 결과 게시 시작`을 문서 감사 workflow keyword로 사용한다.
+- keyword의 범위, 목표 모드, 에이전트 구성, 권한은 `Docs/06_Policies/document-system-audit-policy.md`를 따른다.
+- 실행 절차와 보고 형식은 `Docs/98_Tools/document-system-audit-guide.md`를 따른다.
 - root에는 상세 감사 규칙을 복제하지 않는다.
 
 ## 사용자 주의 알림

@@ -9,8 +9,7 @@
 - template, validation 기준, troubleshooting 문서와 반복 사용하는 session utility를 둔다.
 - 반복 실행 가능한 validator script는 `validators/`에 둔다.
 - 비파괴적인 session utility script는 `scripts/`에 둔다.
-- 문서 감사 정책은 `Docs/06_Policies/document-system-audit-policy.md`에 두고,
-  이 폴더에는 실행 가이드와 보고 template만 둔다.
+- 문서 감사 정책은 `Docs/06_Policies/document-system-audit-policy.md`에 두고, 이 폴더에는 실행 가이드와 보고 template만 둔다.
 - 정책 원문은 `Docs/06_Policies`로 링크한다.
 - 산출물 정본은 `Docs/00_Index`부터 `Docs/05_Publication`에 둔다.
 - GitHub draft, raw/reference 원문, 개인 메모는 이 폴더에 두지 않는다.
@@ -21,8 +20,7 @@
 - tracked 정본 문서용 template은 해당 산출물 폴더 책임만 담는다.
 - local-only review template은 파일명에 `local-`을 붙인다.
 - 상태를 여러 산출물에서 다시 모으는 template은 만들지 않는다.
-- 감사 보고 template은 특정 시점 snapshot 형식만 제공하고 최신 정본을
-  대체하지 않는다.
+- 감사 보고 template은 특정 시점 snapshot 형식만 제공하고 최신 정본을 대체하지 않는다.
 - 상세 정책은 각 정책 문서로 연결한다.
 
 ## Validator 기준

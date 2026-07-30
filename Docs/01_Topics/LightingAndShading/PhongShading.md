@@ -2,23 +2,17 @@
 
 ## 목적
 
-Surface normal, light direction과 view direction으로 ambient, diffuse와 specular
-항을 구성하는 Phong shading의 기본 원리를 설명한다. 여러 예제에서 반복되는
-lighting 이론을 하나의 개념 정본으로 제공한다.
+Surface normal, light direction과 view direction으로 ambient, diffuse와 specular 항을 구성하는 Phong shading의 기본 원리를 설명한다. 여러 예제에서 반복되는 lighting 이론을 하나의 개념 정본으로 제공한다.
 
 ## 책임 범위
 
-이 문서는 reflection vector 기반 Phong shading과 각 항의 의미를 설명한다. 특정
-예제의 API와 parameter 값은 Example README로 위임하고, 구현 흐름과 capture
-해석은 `Docs/03_Demos`로 위임한다. Build/run/capture 사실은
-`Docs/02_Verification`으로 위임한다.
+이 문서는 reflection vector 기반 Phong shading과 각 항의 의미를 설명한다. 특정 예제의 API와 parameter 값은 Example README로 위임하고, 구현 흐름과 capture 해석은 `Docs/03_Demos`로 위임한다. Build/run/capture 사실은 `Docs/02_Verification`으로 위임한다.
 
 ## 핵심 개념
 
 ### Ambient And Diffuse
 
-Ambient 항은 직접 조명 계산과 무관하게 surface에 남기는 기본 밝기다. 단순한
-모델에서는 material의 ambient color를 그대로 사용한다.
+Ambient 항은 직접 조명 계산과 무관하게 surface에 남기는 기본 밝기다. 단순한 모델에서는 material의 ambient color를 그대로 사용한다.
 
 Diffuse 항은 surface normal `N`과 light 방향 `L`의 cosine 관계를 사용한다.
 
@@ -26,22 +20,18 @@ Diffuse 항은 surface normal `N`과 light 방향 `L`의 cosine 관계를 사용
 diffuse = max(dot(N, L), 0)
 ```
 
-두 vector가 같은 방향에 가까울수록 surface가 밝아지고, light가 surface 뒤에
-있으면 음수를 0으로 제한한다.
+두 vector가 같은 방향에 가까울수록 surface가 밝아지고, light가 surface 뒤에 있으면 음수를 0으로 제한한다.
 
 ### Reflection-Vector Specular
 
-Phong specular는 light vector를 normal 기준으로 반사한 vector `R`과 view 방향
-`V`가 가까운 정도를 사용한다.
+Phong specular는 light vector를 normal 기준으로 반사한 vector `R`과 view 방향 `V`가 가까운 정도를 사용한다.
 
 ```text
 R = normalize(2 * dot(N, L) * N - L)
 specular = pow(max(dot(R, V), 0), shininess)
 ```
 
-`shininess`가 커지면 highlight가 좁아지고, specular coefficient와 color는 최종
-highlight의 세기와 색을 조절한다. Blinn-Phong은 reflection vector 대신
-half-vector를 사용하므로 별도의 shading model이다.
+`shininess`가 커지면 highlight가 좁아지고, specular coefficient와 color는 최종 highlight의 세기와 색을 조절한다. Blinn-Phong은 reflection vector 대신 half-vector를 사용하므로 별도의 shading model이다.
 
 ### Lighting Composition
 
@@ -54,9 +44,7 @@ color =
     + specularColor * specular * specularCoefficient
 ```
 
-출력 범위를 제한하는 clamp는 display 가능한 값을 만들지만, 합산 값이 큰 영역의
-detail을 잃을 수 있다. Linear color space, gamma correction, tone mapping과 light
-attenuation은 별도의 확장 문제다.
+출력 범위를 제한하는 clamp는 display 가능한 값을 만들지만, 합산 값이 큰 영역의 detail을 잃을 수 있다. Linear color space, gamma correction, tone mapping과 light attenuation은 별도의 확장 문제다.
 
 ## 한계
 
