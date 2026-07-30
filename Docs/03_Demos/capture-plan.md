@@ -120,7 +120,7 @@ portfolio_raytracer_reflection.png
 
 ## Part1 Chapter03 순차 계획
 
-- Step4 DrawingSphere와 Step5 PhongShading의 기본·파라미터 조정 screenshot, Step6 PerspectiveView와 Step7 Triangle의 기본 screenshot을 동일한 전체 application window 규격으로 확보했다.
-- Step8~14는 build/run과 문서화를 같은 순서로 완료한 뒤 capture 필요성을 판단한다.
+- Step4 DrawingSphere와 Step5 PhongShading의 기본·파라미터 조정 screenshot, Step6 PerspectiveView, Step7 Triangle과 Step8 Shadow의 기본 screenshot을 동일한 전체 application window 규격으로 확보했다.
+- Step8 Shadow_Square~14는 build/run과 문서화를 같은 순서로 완료한 뒤 capture 필요성을 판단한다.
 - 각 Step은 독립 상세 Demo를 기본으로 하며 Chapter 전체를 하나의 Demo로 합치지 않는다.
 - 최소·대표·선택 등급은 Step4~14 상세 Demo가 완료된 뒤 확정한다.
