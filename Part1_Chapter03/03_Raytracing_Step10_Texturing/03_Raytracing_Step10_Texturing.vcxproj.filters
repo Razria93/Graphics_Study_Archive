@@ -59,7 +59,7 @@
     <FxCompile Include="VS.hlsl" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="part1_chapter03_uv_diagnostic.png">
+    <Image Include="part1_chapter03_stone_mosaic.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

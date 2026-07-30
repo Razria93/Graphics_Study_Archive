@@ -32,7 +32,7 @@ namespace hlab
             objects.push_back(sphere);
 
             auto texture = std::make_shared<Texture>(
-                "part1_chapter03_uv_diagnostic.png");
+                "part1_chapter03_stone_mosaic.png");
             auto square = std::make_shared<Square>(
                 vec3(-2.0f, 2.0f, 2.0f),
                 vec3(2.0f, 2.0f, 2.0f),
