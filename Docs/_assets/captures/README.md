@@ -41,6 +41,7 @@ part2_chapter04_depth-buffer.png
 | `part1_chapter03_04_drawing-sphere_parameter-adjusted.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step4_DrawingSphere` | 확보 | 전체 application window에서 Center, Radius와 RGB 조정 결과 확인 |
 | `part1_chapter03_05_phong-shading.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step5_PhongShading` | 확보 | Debug x64 전체 application window에서 기본 Phong lighting과 parameter UI 확인 |
 | `part1_chapter03_05_phong-shading_parameter-adjusted.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step5_PhongShading` | 확보 | 전체 application window에서 Light 위치 조정과 highlight 이동 확인 |
+| `part1_chapter03_06_perspective-view.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step6_PerspectiveView` | 확보 | Release x64 전체 application window에서 perspective 크기 변화와 sphere overlap 확인 |
 
 ## 승격 체크
 
