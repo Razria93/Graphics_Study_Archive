@@ -5,7 +5,7 @@
 | 범위 | 최소 demo | 대표 demo 후보 | 선택 demo 후보 | 상태 | 비고 |
 | --- | --- | --- | --- | --- | --- |
 | Part1_Chapter01-02 | Bloom input/result | Bloom 결과 | 없음 | 확보 | build/run과 tracked visual 확인 완료 |
-| Part1_Chapter03 | ray traced sphere | reflection/transparency | cubemap environment | 후보 | Portfolio_RayTracer와 연결 |
+| Part1_Chapter03 | 미확정 | 미확정 | 미확정 | 후보 | Step4~14 상세 Demo를 순차 작성한 뒤 등급 확정 |
 | Part2_Chapter04 | rasterized triangle | depth buffer, projection | lighting step | 후보 | rasterization 설명용 |
 | Part2_Chapter05-08 | DirectX11 pipeline 실행 | model, cubemap, IBL, bloom | shader toy variants | 후보 | 예제 수가 많아 대표 선정 필요 |
 | Part3_Chapter09 | first-person camera | mouse picking, trackball | drag transform | 후보 | video 우선 |

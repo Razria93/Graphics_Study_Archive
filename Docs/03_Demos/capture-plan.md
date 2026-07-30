@@ -117,3 +117,10 @@ portfolio_raytracer_reflection.png
 - tracked capture/result로 승격하기 전에는 강의명, 강사명, 워터마크, 개인 식별자, 로컬 경로 노출 여부를 확인한다.
 - public 후보 여부는 `Docs/05_Publication`에서 별도로 판단한다.
 - GitHub 게시 후보를 만들 때는 `Docs/07_GitHub` 본문이 `_assets`의 검토된 capture/result만 참조하는지 확인한다.
+
+## Part1 Chapter03 순차 계획
+
+- Step4 DrawingSphere screenshot을 확보했다.
+- Step5~14는 build/run과 문서화를 같은 순서로 완료한 뒤 capture 필요성을 판단한다.
+- 각 Step은 독립 상세 Demo를 기본으로 하며 Chapter 전체를 하나의 Demo로 합치지 않는다.
+- 최소·대표·선택 등급은 Step4~14 상세 Demo가 완료된 뒤 확정한다.

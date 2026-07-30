@@ -5,15 +5,27 @@
 ## 범위
 
 - 주요 demo 후보: ray tracing steps, reflection, transparency, cubemap
-- 비고: step 비교 screenshot 중심
+- 비고: Step4~14 독립 상세 Demo를 순차적으로 작성하고 등급은 전체 완료 후 확정
 
 ## Demo 목록
 
 | Demo 후보 | 상세 Demo | 연결 Example | 연결 Topic | Verification | Capture/Result | GitHub Demo Issue | 상태 | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 최소 capture | 없음 | `03_Raytracing_Step14_CubeEnvironment` | 미확인 | `Docs/02_Verification` | 없음 | 미게시 | 후보 | build/run 확인 후 갱신 |
-| 대표 capture | 없음 | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 미게시 | 후보 | 대표 예제 선정 후 갱신 |
-| video | 없음 | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 미게시 | 미확인 | 필요 여부 검토 |
+| 최소 capture | [Step4 DrawingSphere](04_DrawingSphere.md) | [Step4 Example](../../../Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/README.md) | [Ray](../../01_Topics/RayTracing/Ray.md), [Intersection](../../01_Topics/RayTracing/Intersection.md) | [현재 확인](../../02_Verification/Part1_Chapter03/verification-index.md) | [screenshot](../../_assets/captures/part1_chapter03_04_drawing-sphere.png) | 미게시 | 후보 | Step4 최소 capture 후보, 등급은 전체 Step 완료 후 확정 |
+| 대표 capture | 없음 | 미확인 | 미확인 | [Verification](../../02_Verification/Part1_Chapter03/verification-index.md) | 없음 | 미게시 | 후보 | 전체 Step 완료 후 선정 |
+| video | 없음 | 미확인 | 미확인 | [Verification](../../02_Verification/Part1_Chapter03/verification-index.md) | 없음 | 미게시 | 미확인 | 전체 Step 완료 후 필요 여부 검토 |
+| Step4 DrawingSphere | [상세 Demo](04_DrawingSphere.md) | [Example README](../../../Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/README.md) | [Ray](../../01_Topics/RayTracing/Ray.md), [Intersection](../../01_Topics/RayTracing/Intersection.md) | [현재 확인](../../02_Verification/Part1_Chapter03/verification-index.md) | [screenshot](../../_assets/captures/part1_chapter03_04_drawing-sphere.png) | 미게시 | 확보 | 2026-07-30 Debug/Release x64 확인 |
+| Step5 PhongShading | 없음 | `03_Raytracing_Step5_PhongShading` | 미확인 | [과거 확인](../../02_Verification/Part1_Chapter03/verification-index.md) | 없음 | 미게시 | 후보 | 문서 작성 대기 |
+| Step6 PerspectiveView | 없음 | `03_Raytracing_Step6_PerspectiveView` | 미확인 | [과거 확인](../../02_Verification/Part1_Chapter03/verification-index.md) | 없음 | 미게시 | 후보 | 문서 작성 대기 |
+| Step7 Triangle | 없음 | `03_Raytracing_Step7_Triangle` | 미확인 | [과거 확인](../../02_Verification/Part1_Chapter03/verification-index.md) | 없음 | 미게시 | 후보 | 문서 작성 대기 |
+| Step8 Shadow | 없음 | `03_Raytracing_Step8_Shadow` | 미확인 | [과거 확인](../../02_Verification/Part1_Chapter03/verification-index.md) | 없음 | 미게시 | 후보 | 문서 작성 대기 |
+| Step8 Shadow_Square | 없음 | `03_Raytracing_Step8_Shadow_Square` | 미확인 | [과거 확인](../../02_Verification/Part1_Chapter03/verification-index.md) | 없음 | 미게시 | 후보 | 문서 작성 대기 |
+| Step9 Barycentric Coordinates | 없음 | `03_Raytracing_Step9_BarycentricCordinates` | 미확인 | [과거 확인](../../02_Verification/Part1_Chapter03/verification-index.md) | 없음 | 미게시 | 후보 | 실제 경로 오탈자는 유지하고 표시 이름만 정규화 |
+| Step10 Texturing | 없음 | `03_Raytracing_Step10_Texturing` | 미확인 | [과거 확인](../../02_Verification/Part1_Chapter03/verification-index.md) | 없음 | 미게시 | 후보 | 문서 작성과 asset 검토 대기 |
+| Step11 Supersampling | 없음 | `03_Raytracing_Step11_Supersampling` | 미확인 | [과거 확인](../../02_Verification/Part1_Chapter03/verification-index.md) | 없음 | 미게시 | 후보 | 문서 작성과 asset 검토 대기 |
+| Step12 Reflection | 없음 | `03_Raytracing_Step12_Reflection` | 미확인 | [과거 확인](../../02_Verification/Part1_Chapter03/verification-index.md) | 없음 | 미게시 | 후보 | 문서 작성과 asset 검토 대기 |
+| Step13 Transparency | 없음 | `03_Raytracing_Step13_Transparency` | 미확인 | [과거 확인](../../02_Verification/Part1_Chapter03/verification-index.md) | 없음 | 미게시 | 후보 | 문서 작성과 asset 검토 대기 |
+| Step14 CubeEnvironment | 없음 | `03_Raytracing_Step14_CubeEnvironment` | 미확인 | [과거 확인](../../02_Verification/Part1_Chapter03/verification-index.md) | 없음 | 미게시 | 후보 | 문서 작성과 attribution 검토 대기 |
 
 ## 갱신 기준
 

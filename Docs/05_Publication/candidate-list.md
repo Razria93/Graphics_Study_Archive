@@ -13,6 +13,7 @@
 | Work Unit summary | `Docs/04_WorkLogs` | 작업 과정과 결과 요약으로 사용 가능 | 검토 필요 | WorkLog는 마감 snapshot이므로 public 문장으로 재작성 필요 | 최신 정본 링크 확인, 내부 판단 제거 | GitHub 본문은 `Docs/07_GitHub`에서 관리 |
 | `02_Bloom` example README | `Part1_Chapter01-02/02_Bloom/README.md` | bloom 처리 흐름과 DirectX11 texture upload를 직접 설명 가능 | 검토 필요 | Debug/Release x64 build/run 확인. ChatGPT 생성 입력 이미지로 결과 재생성 확인 | 공개 문장 재작성, input/result 출처 확인 |  |
 | `PostProcessingAndBloom` topic | `Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md` | 일반적인 bloom 개념 설명으로 재작성 가능 | 검토 필요 | GPU bloom pipeline과 CPU 예제 한계를 명시해야 함 | Topic/Example 중복 축소, 표현 재작성 |  |
+| `Step4 DrawingSphere` Demo bundle | `Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/README.md`, `Docs/03_Demos/Part1_Chapter03/04_DrawingSphere.md`, `Docs/_assets/captures/part1_chapter03_04_drawing-sphere.png` | 외부 input asset 없이 primary ray와 sphere intersection 결과를 설명 가능 | 검토 필요 | Debug/Release x64 build/run과 client-area screenshot 확인. PNG text/EXIF/XMP 정보와 개인 식별자 없음 | 공개 문장과 code permalink는 GitHub 후보 작성 시 검토 | Demo 등급과 GitHub 게시 여부는 Step4~14 완료 후 판단 |
 
 ## 갱신 기준
 
