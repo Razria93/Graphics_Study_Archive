@@ -3,6 +3,7 @@
 #include "Light.h"
 #include "Ray.h"
 #include "Sphere.h"
+#include "Square.h"
 #include "Triangle.h"
 
 #include <algorithm>
@@ -30,24 +31,16 @@ namespace hlab
             sphere->alpha = 50.0f;
             objects.push_back(sphere);
 
-            auto floorTriangle1 = std::make_shared<Triangle>(
+            auto floor = std::make_shared<Square>(
                 vec3(-2.0f, -1.0f, 0.0f),
                 vec3(-2.0f, -1.0f, 4.0f),
-                vec3(2.0f, -1.0f, 4.0f));
-
-            auto floorTriangle2 = std::make_shared<Triangle>(
-                vec3(-2.0f, -1.0f, 0.0f),
                 vec3(2.0f, -1.0f, 4.0f),
                 vec3(2.0f, -1.0f, 0.0f));
-
-            for (auto &floorTriangle : {floorTriangle1, floorTriangle2})
-            {
-                floorTriangle->amb = vec3(0.2f);
-                floorTriangle->dif = vec3(0.8f);
-                floorTriangle->spec = vec3(1.0f);
-                floorTriangle->alpha = 50.0f;
-                objects.push_back(floorTriangle);
-            }
+            floor->amb = vec3(0.2f);
+            floor->dif = vec3(0.8f);
+            floor->spec = vec3(1.0f);
+            floor->alpha = 50.0f;
+            objects.push_back(floor);
 
             light = Light{vec3(0.0f, 1.0f, 0.2f)};
         }
