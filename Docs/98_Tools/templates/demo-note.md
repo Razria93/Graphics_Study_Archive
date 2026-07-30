@@ -52,7 +52,7 @@ auto result = Process(input);
 Publish(result);
 ```
 
-- 관련 코드: 의사코드와 대응하는 현재 코드의 Markdown 링크
+- [입력 준비와 핵심 처리](../../../Part_Chapter/Example/Example.cpp#L1-L20)
 
 ## 시각 결과
 
@@ -73,8 +73,8 @@ Publish(result);
 ## 관련 코드
 
 - Example README:
-- Source:
-- Shader:
+- [Scene 구성과 핵심 처리](../../../Part_Chapter/Example/Example.cpp#L1-L20)
+- [결과 texture sampling](../../../Part_Chapter/Example/PS.hlsl#L1-L20)
 
 ## 관련 문서
 
@@ -94,5 +94,6 @@ Publish(result);
 - 제어문과 함수 block을 한 줄로 압축하지 않는다.
 - braced initializer와 multiline signature는 의미를 유지하고 수동 확인한다.
 - 의사코드는 모든 Demo의 필수 항목으로 강제하지 않는다.
+- Source line 코드 근거 bullet은 구현 역할을 나타내는 명사형 link label을 사용하고 끝에 마침표를 붙이지 않는다.
 - 일반 문단과 하나의 목록 항목은 각각 하나의 물리적 줄로 작성한다. 상세 기준은 [Docs Authoring Flow Policy](../../06_Policies/docs-authoring-flow-policy.md)를 따른다.
 - 의사코드와 code block은 한 줄 80자 내외를 권장하고 120자를 초과하지 않는다.

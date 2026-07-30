@@ -39,6 +39,10 @@ jobs:
         shell: pwsh
         run: ./Docs/98_Tools/validators/validate-demo-doc-quality.ps1
 
+      - name: Test Demo document validator fixtures
+        shell: pwsh
+        run: ./Docs/98_Tools/validators/test-demo-doc-quality.ps1
+
       - name: Validate Topic documents
         shell: pwsh
         run: ./Docs/98_Tools/validators/validate-topic-doc-quality.ps1

@@ -11,6 +11,7 @@
 | `validate-topic-doc-quality.ps1` | 상세 Topic 정본 품질 검사(책임 구조, 핵심 개념, Example/Verification/Demo 연결) | `Docs/01_Topics` |
 | `validate-demo-index-quality.ps1` | Demo source docs 구현도 균일성 검사(필수 구조, 테이블 스키마, 상태값, 최소 capture 기준) | `Docs/03_Demos/**/demo-index.md` |
 | `validate-demo-doc-quality.ps1` | 상세 Demo 기술 정본 검사(구조, 링크, tracked visual, 금지 경로) | `Docs/03_Demos/**/[0-9][0-9]_*.md` |
+| `test-demo-doc-quality.ps1` | 상세 Demo 코드 근거 link label fixture 검사 | `fixtures/demo-doc-link-label` |
 | `validate-markdown-wrap-quality.ps1` | 현재 정본 Markdown의 명백한 인위적 soft-wrap 검사 | Root·Example README, `Docs/00_Index`~`Docs/07_GitHub`, `Docs/98_Tools`, tracked `.github` Markdown |
 
 ## 사용법
@@ -21,6 +22,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-topic-doc-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-index-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-doc-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-doc-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
 ```
@@ -29,7 +31,7 @@ GitHub body validator의 기본 입력은 `Docs/07_GitHub`이다. Topic과 Demo 
 
 ## GitHub Actions
 
-`.github/workflows/docs-validation.yml`의 `Docs Validation` workflow는 push와 pull request에서 기존 validator 5종, Markdown 줄바꿈 fixture와 현재 정본 검사를 같은 입력 기준으로 실행한다. Actions는 검사 기준의 정본이 아니라 로컬 validator를 실행하는 원격 환경이다.
+`.github/workflows/docs-validation.yml`의 `Docs Validation` workflow는 push와 pull request에서 기존 validator 5종, Demo와 Markdown 줄바꿈 fixture, 현재 정본 검사를 같은 입력 기준으로 실행한다. Actions는 검사 기준의 정본이 아니라 로컬 validator를 실행하는 원격 환경이다.
 
 GitHub의 Actions tab 또는 PR Checks에서 `Docs Validation` run을 열고 validator별 step과 log를 확인한다. validator step 실패와 checkout, runner 또는 GitHub infrastructure 실패를 구분하며 상세 판정은 [GitHub Workflow Policy](../../06_Policies/github-workflow-policy.md)를 따른다.
 
@@ -39,6 +41,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-topic-doc-quality.ps1 -TopicsRoot Docs/01_Topics
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-index-quality.ps1 -DemosRoot Docs/03_Demos
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-doc-quality.ps1 -DemosRoot Docs/03_Demos
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-doc-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
 ```
@@ -74,6 +77,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markd
 - repo-relative 링크 대상 존재 여부
 - tracked `Docs/_assets` visual
 - 선택형 의사코드의 `Pseudo C++` 표기와 대응 source line 링크
+- `## 핵심 구현` source line 코드 근거 bullet의 명사형 label과 끝 마침표 금지
 - `Pseudo C++` 함수와 `if`, `else`, `for`, `while`의 Allman brace style
 - `local/`, Legacy, stale path, placeholder
 - fenced code의 80자 초과 warning과 120자 초과 failure

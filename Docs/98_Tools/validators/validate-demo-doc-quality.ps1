@@ -6,6 +6,7 @@ param(
 $ErrorActionPreference = "Stop"
 $Failures = New-Object System.Collections.Generic.List[string]
 $Warnings = New-Object System.Collections.Generic.List[string]
+. (Join-Path $PSScriptRoot "demo-doc-quality-rules.ps1")
 
 function New-Text {
     param([int[]]$CodePoints)
@@ -162,6 +163,33 @@ function Validate-DemoDocument {
         }
         elseif ($inFence -and $line.Length -gt 80) {
             Add-Warning $relative "line $($i + 1): fenced code exceeds recommended 80 characters"
+        }
+    }
+
+    $CoreHeading = "## " + (New-Text @(0xD575, 0xC2EC, 0x20, 0xAD6C, 0xD604))
+    $inCoreSection = $false
+    $inCoreFence = $false
+    for ($i = 0; $i -lt $lines.Count; ++$i) {
+        $line = $lines[$i]
+        if ($line -match '^##\s+') {
+            $inCoreSection = $line -eq $CoreHeading
+            $inCoreFence = $false
+            continue
+        }
+        if (-not $inCoreSection) {
+            continue
+        }
+        if ($line -match '^\s*```') {
+            $inCoreFence = -not $inCoreFence
+            continue
+        }
+        if ($inCoreFence) {
+            continue
+        }
+
+        $labelIssues = @(Get-DemoCodeEvidenceLinkIssue -Line $line)
+        foreach ($issue in $labelIssues) {
+            Add-Failure $relative "line $($i + 1): $issue"
         }
     }
 
