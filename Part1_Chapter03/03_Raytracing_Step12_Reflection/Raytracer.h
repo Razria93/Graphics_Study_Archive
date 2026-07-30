@@ -39,7 +39,8 @@ namespace hlab
             blueSphere->alpha = 50.0f;
             objects.push_back(blueSphere);
 
-            auto groundTexture = std::make_shared<Texture>("shadertoy_abstract1.jpg");
+            auto groundTexture = std::make_shared<Texture>(
+                "part1_chapter03_stone_mosaic.png");
             auto ground = std::make_shared<Square>(
                 vec3(-10.0f, -1.2f, 0.0f),
                 vec3(-10.0f, -1.2f, 10.0f),
