@@ -49,7 +49,7 @@ Step7은 Step6의 perspective primary ray와 closest-hit 탐색을 유지하면�
 
 ![Step7 Triangle result](../../Docs/_assets/captures/part1_chapter03_07_triangle.png)
 
-화면 왼쪽의 triangle은 directed edge 내부 판정으로 직선 경계를 만들고 단일 face normal로 shading된다. 오른쪽 sphere는 radial normal로 곡면 highlight를 만들며, 두 object가 겹치는 부분에서는 더 가까운 sphere가 triangle을 가린다.
+화면 왼쪽의 triangle은 directed edge 내부 판정으로 직선 경계를 만들고 단일 face normal로 shading된다. 중앙의 sphere는 radial normal로 곡면 highlight를 만들며, 두 object가 겹치는 부분에서는 ray 진행 방향에서 더 가까운 sphere가 triangle을 가린다.
 
 ## Limitations
 

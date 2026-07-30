@@ -23,7 +23,7 @@ namespace hlab
         Raytracer(const int &width, const int &height)
             : width(width), height(height)
         {
-            auto sphere = std::make_shared<Sphere>(vec3(0.6f, 0.0f, 0.5f), 0.4f);
+            auto sphere = std::make_shared<Sphere>(vec3(0.0f, 0.0f, 0.5f), 0.4f);
             sphere->amb = vec3(0.1f);
             sphere->dif = vec3(1.0f, 0.1f, 0.1f);
             sphere->spec = vec3(1.0f);

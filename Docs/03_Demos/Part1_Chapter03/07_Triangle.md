@@ -16,7 +16,7 @@ Step7은 Step6의 perspective ray와 closest-hit 흐름에 triangle primitive를
 
 ![Step7 Triangle result](../../_assets/captures/part1_chapter03_07_triangle.png)
 
-Gray triangle의 직선 경계와 red sphere의 곡면이 같은 perspective scene에 나타난다. Sphere가 triangle보다 camera에 가까운 겹침 영역에서는 closest positive hit가 sphere를 선택한다.
+Gray triangle의 직선 경계와 red sphere의 곡면이 같은 perspective scene에 나타난다. 두 object가 화면에서 겹치는 영역에서는 ray 진행 방향에서 가장 가까운 교차점을 선택하므로 camera에 가까운 sphere가 triangle을 가린다.
 
 ## 입력과 출력
 
