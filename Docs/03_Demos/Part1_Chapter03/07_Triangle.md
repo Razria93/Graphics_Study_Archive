@@ -56,7 +56,7 @@ BuildScene()
 
 Step7은 서로 다른 primitive를 `Object` 목록에 함께 추가한다. 각 object는 고유 교차 함수를 제공하고 공통 closest-hit와 shading 경로는 그대로 사용한다.
 
-- [sphere와 triangle scene 및 material 구성을 확인한다](../../../Part1_Chapter03/03_Raytracing_Step7_Triangle/Raytracer.h#L23-L44).
+- [Sphere와 triangle scene 및 material 구성](../../../Part1_Chapter03/03_Raytracing_Step7_Triangle/Raytracer.h#L23-L44)
 
 ### Winding과 Plane Intersection
 
@@ -88,7 +88,7 @@ IntersectTriangle(ray, v0, v1, v2)
 
 Vertex winding은 face normal 방향을 결정한다. 현재 vertex 순서는 `-Z` normal을 만들어 camera 쪽 front face를 유지한다. 이후 ray와 plane이 거의 평행한지 확인하고 origin 앞쪽의 교차점만 받는다.
 
-- [face normal, back-face culling과 ray-plane 교차를 확인한다](../../../Part1_Chapter03/03_Raytracing_Step7_Triangle/Triangle.h#L42-L73).
+- [Face normal, back-face culling과 ray-plane 교차](../../../Part1_Chapter03/03_Raytracing_Step7_Triangle/Triangle.h#L42-L73)
 
 ### Edge Half-Space 내부 판정
 
@@ -107,7 +107,7 @@ IsInsideTriangle(point, v0, v1, v2, faceNormal)
 
 교차점이 세 directed edge의 안쪽에 있는지 각 edge cross product와 face normal의 부호로 판정한다. `u`, `v` parameter는 이 단계에서 계산하지 않으므로 Step9의 barycentric interpolation과 구분한다.
 
-- [세 edge의 half-space 내부 판정과 미사용 `u`, `v`를 확인한다](../../../Part1_Chapter03/03_Raytracing_Step7_Triangle/Triangle.h#L75-L94).
+- [세 edge의 half-space 내부 판정과 미사용 `u`, `v`](../../../Part1_Chapter03/03_Raytracing_Step7_Triangle/Triangle.h#L75-L94)
 
 ### Primitive 공통 Closest Hit
 
@@ -131,8 +131,8 @@ FindClosestHit(ray)
 
 Sphere와 triangle은 같은 object 목록에서 검사된다. 가장 작은 nonnegative distance를 가진 hit가 선택되므로 겹치는 영역에서 camera에 가까운 sphere가 triangle을 가린다.
 
-- [primitive 공통 closest-hit 선택을 확인한다](../../../Part1_Chapter03/03_Raytracing_Step7_Triangle/Raytracer.h#L46-L61).
-- [sphere의 radial normal 계산을 triangle의 flat normal과 비교한다](../../../Part1_Chapter03/03_Raytracing_Step7_Triangle/Sphere.h#L20-L56).
+- [Primitive 공통 closest-hit 선택](../../../Part1_Chapter03/03_Raytracing_Step7_Triangle/Raytracer.h#L46-L61)
+- [Sphere radial normal과 triangle flat normal 비교](../../../Part1_Chapter03/03_Raytracing_Step7_Triangle/Sphere.h#L20-L56)
 
 ## 시각 결과
 

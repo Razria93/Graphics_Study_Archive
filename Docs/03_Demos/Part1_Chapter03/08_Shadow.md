@@ -54,7 +54,7 @@ CreateScene()
 
 Sphere 아래에 `Square` 하나를 scene object로 등록한다. Square는 네 vertex를 공용 대각선 기준의 child triangle 두 개로 나누지만, material과 scene object identity는 parent Square가 소유한다. Point light는 sphere 위쪽에 있어 sphere가 바닥으로 향하는 light path 일부를 막는다.
 
-- [sphere, Square 바닥과 point light 배치를 확인한다](../../../Part1_Chapter03/03_Raytracing_Step8_Shadow/Raytracer.h#L27-L45).
+- [Sphere, Square 바닥과 point light 배치](../../../Part1_Chapter03/03_Raytracing_Step8_Shadow/Raytracer.h#L27-L45)
 
 ### Child intersection과 parent identity
 
@@ -69,8 +69,8 @@ Hit Square::CheckRayCollision(ray)
 
 Square는 두 child hit 가운데 가까운 유효 결과를 반환한다. Scene의 closest-hit는 선택된 top-level object를 `hit.obj`에 저장하므로 child triangle의 기본 material이 아니라 parent Square의 ambient, diffuse, specular와 alpha를 사용한다.
 
-- [Square의 child 구성과 closest-hit 선택을 확인한다](../../../Part1_Chapter03/03_Raytracing_Step8_Shadow/Square.h#L7-L33).
-- [Scene closest-hit가 parent object를 연결하는 과정을 확인한다](../../../Part1_Chapter03/03_Raytracing_Step8_Shadow/Raytracer.h#L48-L63).
+- [Square child 구성과 closest-hit 선택](../../../Part1_Chapter03/03_Raytracing_Step8_Shadow/Square.h#L7-L33)
+- [Scene closest-hit의 parent object 연결](../../../Part1_Chapter03/03_Raytracing_Step8_Shadow/Raytracer.h#L48-L63)
 
 ### Shadow ray와 light 구간
 
@@ -89,8 +89,8 @@ bool IsInShadow(hit, light)
 
 Shadow ray는 normalized light 방향을 사용하므로 hit distance를 실제 light 거리와 비교할 수 있다. Light보다 가까운 교점만 blocker로 인정하고 light 뒤의 object는 제외한다. Origin은 normal 방향으로 `1e-4` 이동하여 원래 surface와의 수치 오차 교차를 줄인다.
 
-- [shadow ray 생성과 blocker 거리 판정을 확인한다](../../../Part1_Chapter03/03_Raytracing_Step8_Shadow/Raytracer.h#L65-L73).
-- [primary ray와 shadow ray가 공유하는 closest-hit를 확인한다](../../../Part1_Chapter03/03_Raytracing_Step8_Shadow/Raytracer.h#L48-L63).
+- [Shadow ray 생성과 blocker 거리 판정](../../../Part1_Chapter03/03_Raytracing_Step8_Shadow/Raytracer.h#L65-L73)
+- [Primary ray와 shadow ray의 공통 closest-hit](../../../Part1_Chapter03/03_Raytracing_Step8_Shadow/Raytracer.h#L48-L63)
 
 ### Visibility에 따른 lighting
 
@@ -116,7 +116,7 @@ Color Shade(ray)
 
 Blocker가 있으면 ambient만 반환하여 direct diffuse와 specular를 차단한다. Visible surface는 Step7의 Phong 계산을 그대로 사용한다.
 
-- [shadow와 direct lighting 분기를 확인한다](../../../Part1_Chapter03/03_Raytracing_Step8_Shadow/Raytracer.h#L75-L96).
+- [Shadow와 direct lighting 분기](../../../Part1_Chapter03/03_Raytracing_Step8_Shadow/Raytracer.h#L75-L96)
 
 ### CPU 결과 표시
 
@@ -132,7 +132,7 @@ UpdateOnce()
 
 Ray tracing은 CPU에서 최초 frame에 한 번 실행한다. DirectX11과 HLSL은 계산된 texture를 화면에 표시하며 shadow 교차를 계산하지 않는다.
 
-- [CPU render와 dynamic texture upload를 확인한다](../../../Part1_Chapter03/03_Raytracing_Step8_Shadow/Example.h#L51-L65).
+- [CPU render와 dynamic texture upload](../../../Part1_Chapter03/03_Raytracing_Step8_Shadow/Example.h#L51-L65)
 
 ## 시각 결과
 
