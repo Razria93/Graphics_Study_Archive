@@ -165,7 +165,7 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="shadertoy_abstract1.jpg" />
+    <Image Include="part1_chapter03_uv_diagnostic.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
