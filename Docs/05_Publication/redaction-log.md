@@ -10,6 +10,7 @@
 | RD-002 | `02_Bloom` input/result | generated asset 출처와 실행 증거 연결 | 사용자 직접 생성과 외부 자료 미복제를 확인하고 metadata·개인 식별자 검수 및 실행 입력과 tracked input의 SHA-256 일치를 기록 | 완료 | Input과 tracked input SHA-256 일치. Input APP1 metadata 제거와 decoded pixel 유지, Result PNG metadata와 육안 검사 완료. 생성 날짜, prompt 원문, provenance screenshot과 작업용 원본은 선택 기록으로 분류 |
 | RD-003 | WorkLog 요약 | local/GitHub draft 흔적 | 게시 전 문체와 민감 정보 제거 | 예정 | Issue/PR 작성 전 수행 |
 | RD-004 | `Step10 Texturing` input/result | 출처 불명 texture 교체 | 출처 불명 JPEG를 제거하고 사용자 직접 생성 석재 PNG와 재촬영한 전체 창 capture를 사용 | 완료 | 외부 image 직접 입력·pixel 복제 없음. 실행 입력과 tracked input SHA-256 일치. 입력·capture PNG의 text/EXIF/XMP 정보와 개인 식별자 없음 |
+| RD-005 | `Step11 Supersampling` input/result | 출처 불명 texture 교체 | Step11의 출처 불명 JPEG를 제거하고 Step10에서 검수한 석재 PNG의 동일 바이트 사본과 전체 창 capture를 사용 | 완료 | Step11 입력과 Step10 검증 input의 SHA-256 일치. 입력·capture PNG의 text/EXIF/XMP 정보와 개인 식별자 없음 |
 
 ## 유형
 

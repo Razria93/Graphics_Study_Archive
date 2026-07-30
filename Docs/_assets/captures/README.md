@@ -46,6 +46,7 @@ part2_chapter04_depth-buffer.png
 | `part1_chapter03_08_shadow.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step8_Shadow` | 확보 | Release x64 전체 application window에서 Square 바닥의 연속 면과 cast shadow 확인 |
 | `part1_chapter03_09_barycentric_coordinates.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step9_BarycentricCordinates` | 확보 | Release x64 전체 application window에서 RGB vertex color의 연속 보간 확인 |
 | `part1_chapter03_10_texturing.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step10_Texturing` | 확보 | Release x64 전체 application window에서 사용자 직접 생성 석재 texture의 mapping·보간·seam 부재 확인 |
+| `part1_chapter03_11_supersampling.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step11_Supersampling` | 확보 | Release x64 전체 application window에서 160×90 grid의 64-sample 평균과 8배 point upscale 확인 |
 
 ## 승격 체크
 
