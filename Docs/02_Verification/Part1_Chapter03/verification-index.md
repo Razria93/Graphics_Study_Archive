@@ -10,7 +10,7 @@
 
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Provenance | 현재 재검증 | Capture | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `03_Raytracing_Step4_DrawingSphere` | `Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/03_Raytracing_Step4_DrawingSphere.sln` | 성공 | 성공 | 성공 | 성공 | 현재 확인 | 완료 | 확보 | project 폴더 CWD에서 shader load, sphere와 UI 확인 |
+| `03_Raytracing_Step4_DrawingSphere` | `Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/03_Raytracing_Step4_DrawingSphere.sln` | 성공 | 성공 | 성공 | 성공 | 현재 확인 | 완료 | 확보 | project 폴더 CWD에서 shader load, 공개 application title, sphere UI와 기본·파라미터 조정 전체 창 screenshot 확인 |
 | `03_Raytracing_Step5_PhongShading` | `Part1_Chapter03/03_Raytracing_Step5_PhongShading/03_Raytracing_Step5_PhongShading.sln` | 성공 | 성공 | 성공 | 성공 | 과거 확인 | 필요 | 미확인 | 문서화 이전 확인 |
 | `03_Raytracing_Step6_PerspectiveView` | `Part1_Chapter03/03_Raytracing_Step6_PerspectiveView/03_Raytracing_Step6_PerspectiveView.sln` | 성공 | 성공 | 성공 | 성공 | 과거 확인 | 필요 | 미확인 | 문서화 이전 확인 |
 | `03_Raytracing_Step7_Triangle` | `Part1_Chapter03/03_Raytracing_Step7_Triangle/03_Raytracing_Step7_Triangle.sln` | 성공 | 성공 | 성공 | 성공 | 과거 확인 | 필요 | 미확인 | 문서화 이전 확인 |

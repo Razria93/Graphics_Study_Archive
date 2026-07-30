@@ -37,7 +37,8 @@ part2_chapter04_depth-buffer.png
 | --- | --- | --- | --- | --- |
 | `part1_chapter01-02_02_bloom_input.jpg` | input image | `Part1_Chapter01-02/02_Bloom` | 확보 | bloom 전 원본 비교 이미지 |
 | `part1_chapter01-02_02_bloom_result.png` | result image | `Part1_Chapter01-02/02_Bloom` | 확보 | ChatGPT 생성 입력 이미지 기반 `result.png`를 승격함 |
-| `part1_chapter03_04_drawing-sphere.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step4_DrawingSphere` | 확보 | Debug x64 client area에서 sphere와 조절 UI 확인 |
+| `part1_chapter03_04_drawing-sphere.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step4_DrawingSphere` | 확보 | Debug x64 전체 application window에서 기본 sphere와 조절 UI 확인 |
+| `part1_chapter03_04_drawing-sphere_parameter-adjusted.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step4_DrawingSphere` | 확보 | 전체 application window에서 Center, Radius와 RGB 조정 결과 확인 |
 
 ## 승격 체크
 

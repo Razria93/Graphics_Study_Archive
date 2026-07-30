@@ -87,6 +87,8 @@ Chapter 또는 Chapter 묶음 단위 demo에서는 screenshot 최소 1개를 기
 - 권장 비율과 구도: 가능하면 16:9, 예제 결과가 중심에 보이는 화면
 - 파일명 기준: Part/Chapter/Example과 개념이 드러나는 이름
 
+전체 application window를 촬영하면 공개 가능한 application title과 window border는 포함할 수 있다. 이 경우 실행 결과 규격은 client 해상도를 기준으로 기록하며 OS theme, border와 DPI에 따른 전체 image dimensions 차이는 허용한다. 같은 Demo의 비교 capture는 가능한 한 동일한 window 크기, 위치와 capture 방식을 유지한다.
+
 예제 유형별 기본 요청 기준은 다음과 같다.
 
 | 예제 유형 | 우선 요청 | 기준 |
