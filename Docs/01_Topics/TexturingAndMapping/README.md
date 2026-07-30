@@ -11,16 +11,17 @@
 ## 문서 목록
 
 - [Topic Index](topic-index.md)
+- [Texture Sampling](TextureSampling.md)
 
 ## 상태
 
 - Topic 목록: 작성
-- 상세 Topic 문서: 예정
-- 연결 예제 검토: 미확인
-- demo 연결: 미확인
+- 상세 Topic 문서: Texture Sampling 작성
+- 연결 예제 검토: Step10 현재 확인
+- demo 연결: Step10 Demo 후보 연결
 
 ## 다음 작업
 
-1. 연결 예제의 코드 폴더 README를 확인한다.
-2. 대표 Topic을 P0/P1/P2로 확정한다.
-3. 코드 확인 후 상세 Topic 문서를 승격한다.
+1. Step11 Supersampling의 sampling 책임을 확인한다.
+2. 후속 Topic을 Step 순서에 맞춰 승격한다.
+3. GPU sampler와 CPU sampling의 연결 범위를 확장한다.

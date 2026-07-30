@@ -35,7 +35,7 @@ Vertex마다 attribute `a0`, `a1`, `a2`가 있으면 hit point의 값은 같은 
 a(p) = w0 a0 + w1 a1 + w2 a2
 ```
 
-Step9은 세 RGB color를 보간한다. 같은 구조는 Step10에서 texture coordinate를 보간하는 데 사용할 수 있다.
+Step9은 세 RGB color를 보간하고 Step10은 같은 weight로 texture coordinate를 보간한다.
 
 ### Ray Hit와 Rasterization의 경계
 
@@ -43,7 +43,7 @@ Step9은 world-space ray와 triangle의 실제 hit point에서 weight를 계산�
 
 ## 데모 연결
 
-Step9 Demo의 triangle 세 꼭짓점은 red, green, blue에 대응한다. 각 꼭짓점 근처에서는 해당 color가 강하고, 중심과 edge로 이동할수록 두세 color가 연속적으로 혼합된다.
+Step9 Demo의 triangle 세 꼭짓점은 red, green, blue에 대응한다. Step10은 같은 weight를 UV에 적용해 두 triangle으로 구성한 Square에서 image coordinate를 연속적으로 전달한다.
 
 ## 한계
 
@@ -54,7 +54,9 @@ Step9 Demo의 triangle 세 꼭짓점은 red, green, blue에 대응한다. 각 �
 ## 관련 문서
 
 - Example: [Step9 Barycentric Coordinates README](../../../Part1_Chapter03/03_Raytracing_Step9_BarycentricCordinates/README.md)
+- Example: [Step10 Texturing README](../../../Part1_Chapter03/03_Raytracing_Step10_Texturing/README.md)
 - Verification: [`Docs/02_Verification/Part1_Chapter03/verification-index.md`](../../02_Verification/Part1_Chapter03/verification-index.md)
 - Demo: [`Docs/03_Demos/Part1_Chapter03/09_BarycentricCoordinates.md`](../../03_Demos/Part1_Chapter03/09_BarycentricCoordinates.md)
 - Related Topic: [Intersection](Intersection.md)
 - Related Topic: [Ray](Ray.md)
+- Related Topic: [Texture Sampling](../TexturingAndMapping/TextureSampling.md)
