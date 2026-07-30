@@ -23,7 +23,7 @@
 | README 계층 | 확인 | Root README는 portfolio archive 첫 화면으로, Chapter/Example README는 각 계층 정본으로 정리했다. |
 | Remote PR | Merged | PR #8을 일반 merge commit `e14f5e3`으로 병합했다. |
 | Pilot 게시 후보 동기화 | 완료 | PR #10 후처리에서 tracked GitHub 후보와 원격 객체를 동기화했다. |
-| Chapter03 순차 작업 | 진행 중 | Step4 DrawingSphere부터 Step10 Texturing까지 build/run, README·Topic과 독립 상세 Demo를 완료했다. Step10은 자작 UV 진단 texture와 전체 창 capture를 사용한다. |
+| Chapter03 순차 작업 | 진행 중 | Step4 DrawingSphere부터 Step10 Texturing까지 build/run, README·Topic과 독립 상세 Demo를 완료했다. Step10은 사용자 직접 생성 석재 texture와 전체 창 capture를 사용한다. |
 
 ## 02_Bloom 작업 요약
 

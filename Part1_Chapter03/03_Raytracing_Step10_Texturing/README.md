@@ -47,14 +47,14 @@ Square의 네 vertex는 image의 좌상단부터 시계 방향으로 `(0,0)`, `(
 | Solution | 존재 | `03_Raytracing_Step10_Texturing.sln` |
 | Debug x64 build/run | 성공 | project 폴더를 working directory로 사용 |
 | Release x64 build/run | 성공 | project 폴더를 working directory로 사용 |
-| Input texture | 포함 | `part1_chapter03_uv_diagnostic.png`, 저장소 도구로 직접 생성 |
-| Capture/Result | 확보 | 전체 application window에서 UV 방향·보간·seam 확인 |
+| Input texture | 포함 | `part1_chapter03_stone_mosaic.png`, 사용자 직접 생성 |
+| Capture/Result | 확보 | 전체 application window에서 석재 mapping·보간·seam 확인 |
 
 ## Capture/Result
 
 ![Step10 Texturing result](../../Docs/_assets/captures/part1_chapter03_10_texturing.png)
 
-직접 생성한 UV 진단 texture가 원본 방향으로 Square에 표시된다. 네 모서리의 색, checker와 gradient가 두 child triangle 경계에서 끊김 없이 이어지며 별도 sphere도 정상적으로 shading된다.
+직접 생성한 불규칙 판석과 밝은 줄눈 texture가 Square에 표시된다. 판석과 줄눈이 두 child triangle의 공유 대각선에서 끊김 없이 이어지며 별도 sphere도 정상적으로 shading된다.
 
 ## Limitations
 

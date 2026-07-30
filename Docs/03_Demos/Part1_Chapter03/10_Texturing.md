@@ -2,7 +2,7 @@
 
 ## 목적
 
-Triangle hit의 barycentric weight로 UV를 보간하고 CPU에서 image texture를 bilinear sampling하는 흐름을 확인한다. 방향과 경계가 명확한 자작 UV 진단 texture를 사용해 두 triangle으로 구성한 Square에서 보간이 연속되는지도 함께 확인한다.
+Triangle hit의 barycentric weight로 UV를 보간하고 CPU에서 image texture를 bilinear sampling하는 흐름을 확인한다. 사용자 직접 생성 석재 texture를 사용해 두 triangle으로 구성한 Square에서 판석과 줄눈이 연속적으로 이어지는지도 함께 확인한다.
 
 ## 책임 범위
 
@@ -18,7 +18,7 @@ Triangle hit의 barycentric weight로 UV를 보간하고 CPU에서 image texture
 
 ## 입력과 출력
 
-- 입력: perspective primary ray, 두 triangle으로 구성한 Square, 자작 UV 진단 PNG, 별도 sphere와 point light
+- 입력: perspective primary ray, 두 triangle으로 구성한 Square, 사용자 직접 생성 석재 PNG, 별도 sphere와 point light
 - 출력: bilinear sampling한 textured Square와 Phong shading sphere
 - 표시 경로: CPU RGBA32F buffer를 DirectX11 dynamic texture로 옮기고 full-screen quad로 표시
 
@@ -68,7 +68,7 @@ CreateTexturedSquare()
 
 네 vertex는 image의 좌상단부터 시계 방향으로 UV를 대응한다. 두 child triangle은 공용 대각선의 위치와 UV를 공유하므로 동일한 surface 좌표를 계산한다.
 
-- [자작 texture와 Square UV 구성](../../../Part1_Chapter03/03_Raytracing_Step10_Texturing/Raytracer.h#L34-L50)
+- [석재 texture와 Square UV 구성](../../../Part1_Chapter03/03_Raytracing_Step10_Texturing/Raytracer.h#L34-L50)
 - [두 triangle의 공유 UV 구성](../../../Part1_Chapter03/03_Raytracing_Step10_Texturing/Square.h#L10-L16)
 
 ### Barycentric UV 보간
@@ -146,20 +146,21 @@ Ray tracing, UV interpolation과 image sampling은 CPU에서 수행한다. Direc
 
 ## 시각 결과
 
-- Red, green, blue와 yellow corner marker로 UV의 상하좌우 방향을 구분할 수 있다.
-- Checker와 가로·세로 gradient가 Square 전체에서 연속적으로 변한다.
-- 두 child triangle의 공유 대각선에서 color나 pattern의 불연속 seam이 보이지 않는다.
-- 중앙 target과 반대 대각선 표식이 bilinear filtering 후에도 연속적으로 유지된다.
+- 불규칙한 붉은색·갈색·베이지색 판석과 밝은 줄눈이 Square 표면에 mapping된다.
+- 판석의 미세한 표면 변화와 줄눈 경계가 bilinear sampling 후에도 자연스럽게 유지된다.
+- 두 child triangle의 공유 대각선에서 판석이나 줄눈의 불연속 seam이 보이지 않는다.
+- Square 바깥 UV 경계에서 눈에 띄는 wrap blend strip이 보이지 않는다.
 - 오른쪽 sphere는 texture가 없는 기존 closest-hit와 Phong material 경로를 유지한다.
 
 ## 입력 asset
 
-- 파일: `part1_chapter03_uv_diagnostic.png`
-- 출처 상태: 저장소 도구로 직접 생성
-- 생성 도구: `Docs/98_Tools/scripts/new-uv-diagnostic-texture.ps1`
+- 파일: `part1_chapter03_stone_mosaic.png`
+- 출처 상태: 사용자 직접 생성
+- 생성 도구: OpenAI built-in image generation
 - 규격: 1024×1024, RGB PNG
-- SHA-256: `65A1E8E94547329BEF52F2886103B83A478FB3631AA732E5F57787187CCB4688`
-- 외부 자료: 복제하거나 입력으로 사용하지 않음
+- Input SHA-256: `D0960C2380D0D4432BECEA77A579ACAB2C6A04EDCD8AC0BFA15B1756866348D9`
+- Capture SHA-256: `399A896E2A4D7135FACE2AD75A377DC89762E14DBBC7B81D9D52ED5B94F3A090`
+- 외부 자료: 실제 image 생성 입력으로 사용하거나 pixel을 복제하지 않음
 
 ## 구현 범위와 한계
 
@@ -177,13 +178,13 @@ Ray tracing, UV interpolation과 image sampling은 CPU에서 수행한다. Direc
 - Project 폴더 working directory에서 PNG와 shader load 확인
 - `ComputerGraphics - Step10 Texturing` application title 확인
 - Release x64 전체 application window capture 확인
-- UV 방향, bilinear filtering과 Square 공유 대각선의 seam 부재 확인
+- 자연석 mapping, bilinear filtering과 Square 공유 대각선의 seam 부재 확인
 - 입력과 capture PNG에 text, EXIF, XMP metadata와 개인 식별자 없음
 - 자세한 상태는 [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)에서 관리한다.
 
 ## 관련 코드
 
-- [자작 texture와 Square UV](../../../Part1_Chapter03/03_Raytracing_Step10_Texturing/Raytracer.h#L34-L50)
+- [석재 texture와 Square UV](../../../Part1_Chapter03/03_Raytracing_Step10_Texturing/Raytracer.h#L34-L50)
 - [Square child triangle 구성](../../../Part1_Chapter03/03_Raytracing_Step10_Texturing/Square.h#L10-L34)
 - [Barycentric UV interpolation](../../../Part1_Chapter03/03_Raytracing_Step10_Texturing/Triangle.h#L26-L40)
 - [Image load](../../../Part1_Chapter03/03_Raytracing_Step10_Texturing/Texture.cpp#L13-L27)

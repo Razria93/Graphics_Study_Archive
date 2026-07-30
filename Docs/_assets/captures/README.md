@@ -45,7 +45,7 @@ part2_chapter04_depth-buffer.png
 | `part1_chapter03_07_triangle.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step7_Triangle` | 확보 | Debug x64 전체 application window에서 triangle 경계, flat normal shading과 sphere closest-hit 확인 |
 | `part1_chapter03_08_shadow.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step8_Shadow` | 확보 | Release x64 전체 application window에서 Square 바닥의 연속 면과 cast shadow 확인 |
 | `part1_chapter03_09_barycentric_coordinates.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step9_BarycentricCordinates` | 확보 | Release x64 전체 application window에서 RGB vertex color의 연속 보간 확인 |
-| `part1_chapter03_10_texturing.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step10_Texturing` | 확보 | Release x64 전체 application window에서 자작 UV 진단 texture의 방향·보간·seam 확인 |
+| `part1_chapter03_10_texturing.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step10_Texturing` | 확보 | Release x64 전체 application window에서 사용자 직접 생성 석재 texture의 mapping·보간·seam 부재 확인 |
 
 ## 승격 체크
 

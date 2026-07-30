@@ -16,7 +16,7 @@ Asset 출처와 승격 기준은 [Assets Policy](../06_Policies/assets-policy.md
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass `
   -File Docs/98_Tools/scripts/new-uv-diagnostic-texture.ps1 `
-  -OutputPath Part1_Chapter03/03_Raytracing_Step10_Texturing/part1_chapter03_uv_diagnostic.png `
+  -OutputPath local/uv-diagnostic.png `
   -Size 1024
 ```
 
@@ -41,7 +41,7 @@ Square를 두 triangle으로 나누는 주 대각선에는 별도 선을 그리�
 
 ```powershell
 Get-FileHash `
-  Part1_Chapter03/03_Raytracing_Step10_Texturing/part1_chapter03_uv_diagnostic.png `
+  local/uv-diagnostic.png `
   -Algorithm SHA256
 ```
 
