@@ -65,6 +65,7 @@
 - Topic: Topic validator
 - Markdown: 상대 링크 대상과 stale path
 - asset: tracked 여부, metadata, dimensions와 hash
+- application window capture: [Example Window Capture](example-window-capture.md)
 - code: 관련 build/test/run
 
 validator의 지원 범위와 수동 검수 경계는 [Validation Tools](validation-tools.md)와 [Validators](validators/README.md)를 따른다.
