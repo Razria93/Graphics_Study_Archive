@@ -5,10 +5,10 @@
 ## 상태
 
 - 학습 코드: Step4~14 보관 완료
-- 현재 문서화: Step4~7 완료, Step8 문서화 대기
-- 현재 재검증: Step4~7 Debug/Release x64 build/run 완료
-- 과거 확인: Step8~14 Debug/Release build/run 성공, 현재 재검증 필요
-- Capture: Step4~7 screenshot 확보
+- 현재 문서화: Step4~8 Shadow 완료, Step8 Shadow_Square 문서화 대기
+- 현재 재검증: Step4~8 Shadow Debug/Release x64 build/run 완료
+- 과거 확인: Step8 Shadow_Square~14 Debug/Release build/run 성공, 현재 재검증 필요
+- Capture: Step4~8 Shadow screenshot 확보
 
 ## Archive/Public 검토
 
@@ -16,13 +16,13 @@
 | --- | --- |
 | Source provenance | [`SRC-P1-C03`](../Docs/99_Legacy/source-registry.md) |
 | Import status | Step4~14 반영 |
-| Public readiness | Step4~7 검토 필요, Step8~14 미판정 |
-| Build/run status | Step4~7 현재 확인, Step8~14 과거 확인 |
+| Public readiness | Step4~8 Shadow 검토 필요, Step8 Shadow_Square~14 미판정 |
+| Build/run status | Step4~8 Shadow 현재 확인, Step8 Shadow_Square~14 과거 확인 |
 | Texture/environment asset | Step10 이후 외부 asset은 각 Step 작업에서 별도 검토 |
 | Verification | [Part1 Chapter03 Verification](../Docs/02_Verification/Part1_Chapter03/verification-index.md) |
 | Demo | [Part1 Chapter03 Demo Index](../Docs/03_Demos/Part1_Chapter03/demo-index.md) |
-| Topic | [Ray Tracing Topics](../Docs/01_Topics/RayTracing/README.md), [Lighting And Shading Topics](../Docs/01_Topics/LightingAndShading/README.md) |
-| Next action | Step8 Shadow 검증과 문서화 |
+| Topic | [Ray Tracing Topics](../Docs/01_Topics/RayTracing/README.md), [Lighting And Shading Topics](../Docs/01_Topics/LightingAndShading/README.md), [Shadow Topics](../Docs/01_Topics/Shadows/README.md) |
+| Next action | Step8 Shadow_Square 검증과 문서화 |
 
 ## 순차 Step
 
@@ -32,7 +32,7 @@
 | Step5 | [PhongShading](03_Raytracing_Step5_PhongShading/README.md) | 완료 | 현재 확인 | [PhongShading Demo](../Docs/03_Demos/Part1_Chapter03/05_PhongShading.md) |
 | Step6 | [PerspectiveView](03_Raytracing_Step6_PerspectiveView/README.md) | 완료 | 현재 확인 | [PerspectiveView Demo](../Docs/03_Demos/Part1_Chapter03/06_PerspectiveView.md) |
 | Step7 | [Triangle](03_Raytracing_Step7_Triangle/README.md) | 완료 | 현재 확인 | [Triangle Demo](../Docs/03_Demos/Part1_Chapter03/07_Triangle.md) |
-| Step8 | `03_Raytracing_Step8_Shadow` | 대기 | 과거 확인 | 대기 |
+| Step8 | [Shadow](03_Raytracing_Step8_Shadow/README.md) | 완료 | 현재 확인 | [Shadow Demo](../Docs/03_Demos/Part1_Chapter03/08_Shadow.md) |
 | Step8 변형 | `03_Raytracing_Step8_Shadow_Square` | 대기 | 과거 확인 | 대기 |
 | Step9 | `03_Raytracing_Step9_BarycentricCordinates` | 대기 | 과거 확인 | 대기 |
 | Step10 | `03_Raytracing_Step10_Texturing` | 대기 | 과거 확인 | 대기 |
@@ -46,8 +46,9 @@
 - [Ray](../Docs/01_Topics/RayTracing/Ray.md)
 - [Intersection](../Docs/01_Topics/RayTracing/Intersection.md)
 - [Phong Shading](../Docs/01_Topics/LightingAndShading/PhongShading.md)
+- [Shadow Ray](../Docs/01_Topics/Shadows/ShadowRay.md)
 
-Step8 이후 Topic은 해당 Step의 코드와 실행 결과를 확인한 뒤 순서대로 연결한다.
+Step8 Shadow_Square 이후 Topic은 해당 Step의 코드와 실행 결과를 확인한 뒤 순서대로 연결한다.
 
 ## Asset 검토가 필요한 Step
 
