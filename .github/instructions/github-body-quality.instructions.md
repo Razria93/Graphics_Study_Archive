@@ -31,6 +31,9 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 - `구현 범위와 한계`: 독자가 오해하기 쉬운 제한
 - `검증`: build/run과 capture/result 요약
 - `더 자세히 보기`: 상세 Demo, Example, Topic, Verification, PR 링크
+- `더 자세히 보기`가 길어지면 Chapter 안내, 대표 구현, 선택 Demo, 관련 개념처럼 책임과 중요도에 따라 묶는다.
+- 같은 Example의 README와 상세 Demo는 가능하면 한 목록 항목에 배치하고, 링크 label은 실제 문서 책임과 대상을 표현한다.
+- `대표`, `선택` 같은 상태는 개별 링크명에 반복하기보다 그룹 소제목으로 표현한다.
 
 ## 이미지와 동영상 규칙
 

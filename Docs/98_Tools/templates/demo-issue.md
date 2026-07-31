@@ -38,11 +38,24 @@
 
 ## 더 자세히 보기
 
-- 상세 Demo:
-- Example:
-- Topic:
+### Chapter 안내
+
+- Chapter README:
+- Demo Index:
 - Verification:
 - 관련 PR:
+
+### 대표 구현
+
+- Example name: [Example README](...) · [상세 Demo](...)
+
+### 선택 Demo
+
+- [Example name 상세 Demo](...)
+
+### 관련 개념
+
+- Topic:
 
 ## 작성 기준
 
