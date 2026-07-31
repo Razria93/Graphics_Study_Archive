@@ -67,5 +67,5 @@
 
 ## 다음 작업
 
-1. Chapter03 public 후보의 GitHub 게시 범위를 정한다.
+1. Chapter03 GitHub 게시 후보를 검증하고 원격 게시 범위를 확정한다.
 2. `Portfolio_RayTracer`와 Part1 ray tracing 범위의 연결 단위를 정리한다.
