@@ -4,14 +4,15 @@
 
 ## Provenance
 
+- 현재 확인: Step1 Triangle, 2026-07-31 Debug/Release x64 build/run
 - 확인 근거: 과거 확인
 - 확인 시점: 문서화 이전(날짜 미기록)
-- 현재 재검증: 필요
+- 현재 재검증: Step1 완료, 나머지 예제 필요
 - 근거: Chapter README에 기록된 전체 예제 Debug/Release build/run 성공
 
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `04_Rasterization_Step1_Triangle` | `Part2_Chapter04/04_Rasterization_Step1_Triangle/04_Rasterization_Step1_Triangle.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `04_Rasterization_Step1_Triangle` | `Part2_Chapter04/04_Rasterization_Step1_Triangle/04_Rasterization_Step1_Triangle.sln` | 성공 | 성공 | 성공 | 성공 | [확보](../../_assets/captures/part2_chapter04_01_triangle.png) | 2026-07-31 현재 확인 · project 폴더 CWD · 사용자 확인 완료 |
 | `04_Rasterization_Step1_TriangleToCircle` | `Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle/04_Rasterization_Step1_TriangleToCircle.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `04_Rasterization_Step2_Circle` | `Part2_Chapter04/04_Rasterization_Step2_Circle/04_Rasterization_Step2_Circle.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `04_Rasterization_Step3_Transformations2D` | `Part2_Chapter04/04_Rasterization_Step3_Transformations2D/04_Rasterization_Step3_Transformations2D.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
