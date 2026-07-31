@@ -51,7 +51,7 @@ Enter/exit 상태에 따라 IOR ratio와 normal을 전환하고 reflected·refra
 - Step4~14 Release x64 build/run 성공
 - Step4~14 전체 application window capture 확보
 - Tracked capture와 input asset의 metadata·개인 식별자 검사 완료
-- 로컬 문서 validator 8종 통과
+- 로컬 문서 validator와 fixture 전체 통과
 - GitHub Actions `Docs Validation` workflow 구성
 
 ## 대표 Visual
