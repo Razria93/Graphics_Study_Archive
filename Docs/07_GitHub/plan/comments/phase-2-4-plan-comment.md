@@ -24,4 +24,4 @@
 
 ## Related PR
 
-- 예정
+- [PR #11](https://github.com/Razria93/Graphics_Study_Archive/pull/11) - Part1 Chapter03 CPU Ray Tracing 단계별 구현과 Demo

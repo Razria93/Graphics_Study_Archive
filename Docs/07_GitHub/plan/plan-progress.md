@@ -32,7 +32,7 @@ Related PR: PR #8 (Merged) - Part1 Chapter01-02 DirectX11 Initialization and CPU
 
 Step4~14 CPU ray tracing 예제를 README, Topic, Verification과 독립 상세 Demo로 연결했다. Debug/Release x64 build/run과 전체 application window capture를 확인하고 Step4 DrawingSphere, Step8 Shadow와 Step13 Transparency를 Chapter 대표 흐름으로 확정했다. Step10 Texturing과 Step14 CubeEnvironment는 선택 Demo로 유지한다.
 
-Related PR: 예정
+Related PR: [PR #11](https://github.com/Razria93/Graphics_Study_Archive/pull/11) (Draft) - Part1 Chapter03 CPU Ray Tracing 단계별 구현과 Demo
 
 ## 진행 예정
 
@@ -45,3 +45,4 @@ Related PR: 예정
 ## Related PRs
 
 - PR #8 (Merged): Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom
+- [PR #11](https://github.com/Razria93/Graphics_Study_Archive/pull/11) (Draft): Part1 Chapter03 CPU Ray Tracing 단계별 구현과 Demo
