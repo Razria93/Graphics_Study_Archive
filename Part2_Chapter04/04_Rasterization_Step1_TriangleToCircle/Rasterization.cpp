@@ -17,7 +17,7 @@ namespace hlab
 	using namespace std;
 
 	Rasterization::Rasterization(const int& width, const int& height)
-		: width(width), height(height), triangleNums(0), New_triangleNums(6), radius(0.5f)
+		: width(width), height(height), triangleNums(0), New_triangleNums(32), radius(0.5f)
 	{
 	}
 
