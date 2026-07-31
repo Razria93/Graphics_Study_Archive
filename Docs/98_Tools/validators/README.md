@@ -8,10 +8,14 @@
 | --- | --- | --- |
 | `validate-github-body.ps1` | GitHub Issue/PR/comment 게시 전 Markdown body 검사 | `Docs/07_GitHub` |
 | `validate-github-quality.ps1` | Demo Issue 품질 검사(전개, 시각 자료, 구현 설명, 가독성) | `Docs/07_GitHub/issues/demo` |
+| `test-github-visual-quality.ps1` | GitHub image와 video attachment 합산 fixture 검사 | inline fixture |
 | `validate-topic-doc-quality.ps1` | 상세 Topic 정본 품질 검사(책임 구조, 핵심 개념, Example/Verification/Demo 연결) | `Docs/01_Topics` |
 | `validate-demo-index-quality.ps1` | Demo source docs 구현도 균일성 검사(필수 구조, 테이블 스키마, 상태값, 최소 capture 기준) | `Docs/03_Demos/**/demo-index.md` |
+| `test-demo-index-quality.ps1` | Demo index의 selected·published video reference fixture 검사 | `fixtures/demo-index-video` |
 | `validate-demo-doc-quality.ps1` | 상세 Demo 기술 정본 검사(구조, 링크, tracked visual, 금지 경로) | `Docs/03_Demos/**/[0-9][0-9]_*.md` |
 | `test-demo-doc-quality.ps1` | 상세 Demo 코드 근거 link label과 의사코드 fence fixture 검사 | `fixtures/demo-doc-link-label`, `fixtures/demo-doc-pseudocode` |
+| `validate-video-asset-quality.ps1` | 예상하지 못한 tracked MP4, MOV와 WEBM 검사 | Git tracked path |
+| `test-video-asset-quality.ps1` | tracked video path fixture 검사 | `fixtures/video-asset-quality` |
 | `validate-markdown-wrap-quality.ps1` | 현재 정본 Markdown의 명백한 인위적 soft-wrap 검사 | Root·Example README, `Docs/00_Index`~`Docs/07_GitHub`, `Docs/98_Tools`, tracked `.github` Markdown |
 | `test-markdown-render-quality.ps1` | Markdown 범위 표기의 취소선 오해 방지 fixture 검사 | `fixtures/markdown-render-quality` |
 | `validate-markdown-render-quality.ps1` | 한 줄의 복수 단일-tilde 범위로 발생하는 의도하지 않은 취소선 검사 | Root·Example README, `Docs/00_Index`~`Docs/07_GitHub`, `Docs/98_Tools`, tracked `.github` Markdown |
@@ -23,10 +27,14 @@
 ```powershell
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-body.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-github-visual-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-topic-doc-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-index-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-index-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-doc-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-doc-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-video-asset-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-video-asset-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-render-quality.ps1
@@ -46,10 +54,14 @@ GitHub의 Actions tab 또는 PR Checks에서 `Docs Validation` run을 열고 val
 ```powershell
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-body.ps1 -GitHubRoot Docs/07_GitHub
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-quality.ps1 -GitHubRoot Docs/07_GitHub
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-github-visual-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-topic-doc-quality.ps1 -TopicsRoot Docs/01_Topics
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-index-quality.ps1 -DemosRoot Docs/03_Demos
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-index-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-doc-quality.ps1 -DemosRoot Docs/03_Demos
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-doc-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-video-asset-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-video-asset-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-render-quality.ps1
@@ -61,7 +73,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markd
 `validate-github-quality.ps1`는 현재 `issues/demo/demo_*.md`를 대상으로 다음을 검사한다.
 
 - curated Demo Issue 필수 섹션과 순서
-- 대표 GitHub visual 1~3개
+- 대표 GitHub visual 1~3개, screenshot 최소 1개와 standalone video attachment URL 합산
 - 상세 Demo와 Verification 링크
 - 핵심 구현의 commit-pinned C++ source line 링크
 - 선택적 C++ 의사코드와 같은 섹션의 source line 링크
@@ -75,7 +87,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markd
 - Demo 목록 테이블 필수 컬럼 존재(`상세 Demo`, `GitHub Demo Issue` 포함)
 - Demo 목록의 필수 행(`최소 capture`, `대표 capture`, `video`) 존재
 - 상태값 허용 목록 준수(`미확인`, `후보`, `확보`, `보류`, `제외`)
-- `확보` 상태일 때 Capture/Result가 `없음`이 아니고 `Docs/_assets` 경로를 포함하는지 확인
+- `확보` 상태일 때 Capture/Result가 `없음`이 아니며 tracked asset, selected local video 또는 published Demo Issue 중 하나를 참조하는지 확인
 - `확보` 상태일 때 상세 Demo Markdown 링크가 있는지 확인
 - 상세 Demo와 Demo Issue 후보의 상대 링크 대상 존재 여부 확인
 - Demo Issue가 `게시 후보`, `미게시`, 실제 GitHub Issue URL 중 하나로 표현되는지 확인
@@ -130,7 +142,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markd
 - screenshot/result image는 GitHub absolute URL을 사용해야 한다.
 - 허용 URL은 `https://github.com/<owner>/<repo>/blob/<branch>/Docs/_assets/captures/<file>?raw=true` 또는 `https://raw.githubusercontent.com/<owner>/<repo>/<branch>/Docs/_assets/captures/<file>` 형식이다.
 - image URL 검사는 형식 검사이며 실제 파일 존재를 보증하지 않는다.
-- PR은 대표 visual을 최대 1개 사용하고 상세 Demo, Demo Issue 후보 또는 게시된 Demo Issue를 연결한다.
+- PR은 screenshot과 standalone video attachment를 합해 대표 visual을 최대 1개 사용하고 상세 Demo, Demo Issue 후보 또는 게시된 Demo Issue를 연결한다.
 - template에 특정 Issue 번호가 하드코딩되어 있지 않은지 확인한다.
 - Issue/PR 후보는 첫 H1을 title source로 유지한다. 실제 remote body에서는 첫 H1과 바로 뒤 빈 줄을 제거하고 remote/tracked 비교에도 같은 변환을 적용한다.
 
@@ -199,6 +211,15 @@ Progress comment는 Docs 정본을 복제하지 않고 진행 상태와 링크�
 - prompt 원문, 생성 화면 screenshot, 생성 날짜와 작업용 원본
 - 상세 Demo와 Example 또는 Demo Issue의 의미 중복
 - visual 대표성과 limitation의 기술적 정확성
+- video 필요성, 조작과 결과의 대응, 시작·종료 frame과 공개 화면 안전성
+- private repository attachment의 실제 재생과 비인가 독자 접근 가능성
+
+Video binary와 게시 상태는 다음 방식으로 함께 확인한다.
+
+- 기존 selected MP4의 기술 검사는 `../scripts/inspect-example-video.ps1`을 사용한다.
+- 예상하지 못한 tracked MP4, MOV와 WEBM은 `validate-video-asset-quality.ps1`로 검사한다.
+- Demo Issue video attachment의 실제 GitHub UI 재생은 Browser 수동 검수로 확인한다.
+- 같은 video의 중복 업로드와 PR 대표성은 게시 전 수동 감사로 확인한다.
 
 ## 주의
 

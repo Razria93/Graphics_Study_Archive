@@ -63,14 +63,16 @@ F9는 일반 크기와 최대화 상태를 유지한다. 대상 창이 최소화
 
 정상 attempt는 다음 조건을 자동 확인한다.
 
-- MP4와 H.264
+- MP4 container와 H.264
 - `yuv420p`
-- 지정 FPS
+- CFR 지정 FPS
 - 양수 duration
 - video stream 1개와 audio stream 0개
 - DWM bounds에 대응하는 dimensions
-- 민감한 title, author, comment, location, date와 software metadata 부재
+- 민감한 title, author, comment, location, date와 software metadata tag 부재
 - 전체 frame decode 성공
+
+MP4 brand, `handler_name`과 encoder library처럼 개인 정보가 아닌 기술 container metadata는 허용한다. F11은 최근 정상 attempt를 selected 파일로 복사한 뒤 attempt와 selected의 SHA-256 일치를 확인한다.
 
 강제 종료된 FFmpeg 결과와 검증에 실패한 partial은 정상 attempt로 승격하지 않는다. 도구 종료 뒤 FFmpeg process와 global hotkey가 남지 않아야 한다.
 
@@ -83,7 +85,20 @@ F9는 일반 크기와 최대화 상태를 유지한다. 대상 창이 최소화
 - 다른 window, notification, 계정과 개인 정보 미노출
 - 조작 흐름과 시각 결과의 설명 가능성
 
-검토가 끝난 raw video도 기본적으로 `local/`에 유지한다. tracked Demo asset으로 승격하려면 [Demo Capture Policy](../06_Policies/demo-capture-policy.md)와 [Capture Plan](../03_Demos/capture-plan.md)을 따른다.
+검토가 끝난 selected video도 기본적으로 `local/`에 유지한다. 독립적으로 다시 검사할 때는 `scripts/inspect-example-video.ps1`을 사용한다. 게시와 reference 연결은 [Demo Capture Policy](../06_Policies/demo-capture-policy.md), [Assets Policy](../06_Policies/assets-policy.md)와 [Video Plan](../03_Demos/video-plan.md)을 따른다.
+
+## Selected video 재검사
+
+기존 selected MP4는 application을 다시 실행하지 않고 read-only로 검사할 수 있다.
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass `
+  -File Docs/98_Tools/scripts/inspect-example-video.ps1 `
+  -Path local/chapter04/step1a/video/step1a-triangle-to-circle_selected.mp4 `
+  -ExpectedFrameRate 30
+```
+
+검사 결과는 container, codec, pixel format, dimensions, CFR, duration, stream 수, 민감 metadata, 전체 decode, size와 SHA-256을 출력한다. 이 결과는 화면 의미와 공개 안전성에 대한 사용자 시각 검수를 대신하지 않는다.
 
 ## 제한
 

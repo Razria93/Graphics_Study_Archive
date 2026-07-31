@@ -23,6 +23,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+. (Join-Path $PSScriptRoot "video-quality-rules.ps1")
 
 if ($env:OS -ne "Windows_NT")
 {
@@ -673,105 +674,13 @@ function Test-RecordedVideo
 {
     param([Parameter(Mandatory = $true)]$Recording)
 
-    if (-not (Test-Path -LiteralPath $Recording.PartialPath -PathType Leaf))
-    {
-        throw "FFmpeg did not create a partial video."
-    }
-    if ((Get-Item -LiteralPath $Recording.PartialPath).Length -le 0)
-    {
-        throw "FFmpeg created an empty partial video."
-    }
-
-    $probeText = (& $resolvedFfprobe `
-        -v error -show_streams -show_format -of json `
-        $Recording.PartialPath 2>&1 | Out-String)
-    if ($LASTEXITCODE -ne 0)
-    {
-        throw "FFprobe validation failed: $probeText"
-    }
-    $probe = $probeText | ConvertFrom-Json
-    $videoStreams = @($probe.streams | Where-Object { $_.codec_type -eq "video" })
-    $audioStreams = @($probe.streams | Where-Object { $_.codec_type -eq "audio" })
-    if ($videoStreams.Count -ne 1 -or $audioStreams.Count -ne 0)
-    {
-        throw "Expected one video stream and no audio streams."
-    }
-    $video = $videoStreams[0]
-    if ($video.codec_name -ne "h264" -or $video.pix_fmt -ne "yuv420p")
-    {
-        throw "Unexpected video format: $($video.codec_name), $($video.pix_fmt)."
-    }
-    if (
-        [int]$video.width -ne $Recording.Bounds.PaddedWidth -or
-        [int]$video.height -ne $Recording.Bounds.PaddedHeight
-    )
-    {
-        throw "Unexpected video dimensions: $($video.width)x$($video.height)."
-    }
-    $rateParts = $video.avg_frame_rate -split '/'
-    if ($rateParts.Count -ne 2 -or [double]$rateParts[1] -eq 0)
-    {
-        throw "Invalid average frame rate: $($video.avg_frame_rate)."
-    }
-    $actualRate = [double]$rateParts[0] / [double]$rateParts[1]
-    if ([Math]::Abs($actualRate - $FrameRate) -gt 0.1)
-    {
-        throw "Unexpected average frame rate: $actualRate."
-    }
-    $duration = [double]$probe.format.duration
-    if ($duration -le 0)
-    {
-        throw "Video duration is not positive."
-    }
-
-    $sensitiveTagNames = @(
-        "artist",
-        "author",
-        "comment",
-        "copyright",
-        "creation_time",
-        "date",
-        "description",
-        "gps",
-        "location",
-        "software",
-        "title"
-    )
-    $tagContainers = @($probe.format.tags)
-    foreach ($stream in @($probe.streams))
-    {
-        $tagContainers += $stream.tags
-    }
-    foreach ($tags in $tagContainers)
-    {
-        if ($null -eq $tags)
-        {
-            continue
-        }
-        foreach ($property in $tags.PSObject.Properties)
-        {
-            if ($sensitiveTagNames -contains $property.Name.ToLowerInvariant())
-            {
-                throw "Sensitive metadata tag remains: $($property.Name)."
-            }
-        }
-    }
-
-    $decodeText = (& $resolvedFfmpeg `
-        -v error -i $Recording.PartialPath -f null NUL 2>&1 | Out-String)
-    if ($LASTEXITCODE -ne 0)
-    {
-        throw "Video decode validation failed: $decodeText"
-    }
-    return [PSCustomObject]@{
-        Codec = $video.codec_name
-        PixelFormat = $video.pix_fmt
-        Width = [int]$video.width
-        Height = [int]$video.height
-        FrameRate = $actualRate
-        Duration = $duration
-        AudioStreams = $audioStreams.Count
-    }
+    return Test-ExampleVideoFile `
+        -Path $Recording.PartialPath `
+        -FfprobePath $resolvedFfprobe `
+        -FfmpegPath $resolvedFfmpeg `
+        -ExpectedFrameRate $FrameRate `
+        -ExpectedWidth $Recording.Bounds.PaddedWidth `
+        -ExpectedHeight $Recording.Bounds.PaddedHeight
 }
 
 function Get-NextAttemptPath
@@ -1007,13 +916,32 @@ try
                                     ".selection-{0}.mp4" -f [Guid]::NewGuid().ToString("N")
                                 )
                                 Copy-Item -LiteralPath $latestAttempt -Destination $selectionTemp
+                                $attemptHash = (Get-FileHash `
+                                    -LiteralPath $latestAttempt `
+                                    -Algorithm SHA256).Hash
+                                $temporaryHash = (Get-FileHash `
+                                    -LiteralPath $selectionTemp `
+                                    -Algorithm SHA256).Hash
+                                if ($attemptHash -ne $temporaryHash)
+                                {
+                                    Remove-Item -LiteralPath $selectionTemp -Force
+                                    throw "Selected copy hash does not match the validated attempt."
+                                }
                                 Move-Item `
                                     -LiteralPath $selectionTemp `
                                     -Destination $selectedPath `
                                     -Force:$OverwriteSelection
+                                $selectedHash = (Get-FileHash `
+                                    -LiteralPath $selectedPath `
+                                    -Algorithm SHA256).Hash
+                                if ($attemptHash -ne $selectedHash)
+                                {
+                                    throw "Selected file hash does not match the validated attempt."
+                                }
                                 $accepted = $true
                                 Set-RecorderStatus $statusWindow "SELECTED" "Latest validated attempt selected. Recorder is closing."
                                 Write-Host "Selected: $selectedPath"
+                                Write-Host "SHA-256: $selectedHash"
                             }
                         }
                     }
