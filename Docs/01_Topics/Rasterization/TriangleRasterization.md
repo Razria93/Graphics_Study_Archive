@@ -9,7 +9,7 @@ Triangle rasterization은 세 vertex가 정의하는 연속 영역을 raster pix
 - world 또는 NDC 좌표를 raster 좌표로 옮긴 뒤 triangle coverage를 판정하는 기초를 설명한다.
 - signed edge function과 winding의 관계를 설명한다.
 - bounding box traversal과 barycentric interpolation을 설명한다.
-- Step1의 실제 함수와 상수는 [Step1 Triangle Example](../../../Part2_Chapter04/04_Rasterization_Step1_Triangle/README.md)로 위임한다.
+- Step1과 Step1A의 실제 함수와 상수는 [Step1 Triangle Example](../../../Part2_Chapter04/04_Rasterization_Step1_Triangle/README.md)과 [Step1A Triangle To Circle Example](../../../Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle/README.md)로 위임한다.
 - build/run/capture 사실은 [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)로 위임한다.
 
 ## 핵심 개념
@@ -29,6 +29,10 @@ Vertex를 raster 좌표로 변환하면 화면의 각 pixel을 같은 좌표계�
 ### Barycentric Interpolation
 
 세 edge 값 또는 부분 triangle area를 전체 signed area로 나누면 barycentric weight를 얻는다. 내부 점에서는 세 weight의 합이 1이 되며 각 vertex color, UV와 normal 같은 attribute를 같은 위치로 보간할 수 있다. Perspective projection 이후의 attribute에는 perspective-correct interpolation이 별도로 필요하다.
+
+### Triangle Fan과 Polygonal Circle Approximation
+
+하나의 center vertex와 원주를 나눈 boundary vertex 쌍으로 triangle을 반복하면 fan 형태의 polygon을 만들 수 있다. Segment 수가 증가할수록 boundary edge가 짧아져 circle에 가까워지지만 geometry 수와 rasterization 작업량도 함께 증가한다. Shared vertex와 index를 사용할 수도 있고 각 triangle을 독립 객체로 저장할 수도 있으며, 두 방식은 같은 silhouette를 만들더라도 메모리 구성과 갱신 책임이 다르다.
 
 ## 처리 단계
 
@@ -51,6 +55,8 @@ vertex position
 ## 관련 문서
 
 - [Step1 Triangle Example](../../../Part2_Chapter04/04_Rasterization_Step1_Triangle/README.md)
+- [Step1A Triangle To Circle Example](../../../Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle/README.md)
 - Demo: [`Docs/03_Demos/Part2_Chapter04/01_Triangle.md`](../../03_Demos/Part2_Chapter04/01_Triangle.md)
+- Demo: [`Docs/03_Demos/Part2_Chapter04/01_TriangleToCircle.md`](../../03_Demos/Part2_Chapter04/01_TriangleToCircle.md)
 - Verification: [`Docs/02_Verification/Part2_Chapter04/verification-index.md`](../../02_Verification/Part2_Chapter04/verification-index.md)
 - [Rasterization Topic Index](topic-index.md)

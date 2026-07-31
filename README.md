@@ -22,6 +22,7 @@
 - [Step14 CubeEnvironment](Part1_Chapter03/03_Raytracing_Step14_CubeEnvironment/README.md): direction 기반 cubemap environment sampling
 - [Part2 Chapter04](Part2_Chapter04/README.md): CPU software rasterization Step1~10 순차 작업
 - [Step1 Triangle](Part2_Chapter04/04_Rasterization_Step1_Triangle/README.md): edge function과 barycentric RGB interpolation 기반 최소 rasterizer
+- [Step1A Triangle To Circle](Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle/README.md): triangle fan과 segment-count slider를 사용하는 Personal Extension
 
 ## Featured Result
 
@@ -45,7 +46,7 @@
 | --- | --- | --- | --- |
 | `Part1_Chapter01-02` | DirectX11 init, render loop, bloom post-processing | 완료 | pilot 마감 |
 | `Part1_Chapter03` | ray tracing basics와 cubemap sampling | 완료 | Step4~14 문서화·재검증 완료 |
-| `Part2_Chapter04` | rasterization foundation | 완료 | Step1 순차 작업 중 |
+| `Part2_Chapter04` | rasterization foundation | 완료 | Step1·Step1A 순차 작업 완료, Step2 대기 |
 | `Part2_Chapter05-08` | DirectX11 pipeline, texture, mesh 흐름 | 완료 | 대기 |
 | `Part3_Chapter09` | texturing and mapping | 완료 | 대기 |
 | `Part3_Chapter10-13` | lighting, shadow, PBR/IBL | 완료 | 대기 |

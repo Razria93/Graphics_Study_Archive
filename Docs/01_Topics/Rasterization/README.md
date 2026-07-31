@@ -17,11 +17,11 @@
 
 - Topic 목록: 작성
 - 상세 Topic 문서: Triangle Rasterization 작성
-- 연결 예제 검토: Step1 Triangle 현재 확인
-- demo 연결: Step1 Triangle 연결
+- 연결 예제 검토: Step1 Triangle과 Step1A Triangle To Circle 현재 확인
+- demo 연결: Step1과 Step1A 연결
 
 ## 다음 작업
 
-1. Step2 Circle의 primitive 구성 차이를 확인한다.
+1. Step2 Circle의 indexed primitive 구성을 정규화한다.
 2. Depth Buffer와 Perspective Projection Topic을 순차 정규화한다.
 3. 후속 Example과 상세 Demo 연결을 갱신한다.
