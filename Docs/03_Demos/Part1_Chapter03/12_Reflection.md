@@ -32,7 +32,8 @@ Step11은 160×90 output cell마다 64개 primary ray를 평균하고 결과를 
 
 ## 구현 흐름
 
-```text
+```cpp
+// Pseudo C++: recursive reflection scene 렌더 흐름
 RenderReflectionScene()
 {
     for each pixel in 1280x720
@@ -46,6 +47,8 @@ RenderReflectionScene()
     DrawFullscreenQuad();
 }
 ```
+
+- [Reflection scene render](../../../Part1_Chapter03/03_Raytracing_Step12_Reflection/Raytracer.h#L147-L163)
 
 ## 핵심 구현
 

@@ -44,6 +44,7 @@ perspective primary ray
 ### Sphere와 Square 바닥 scene
 
 ```cpp
+// Pseudo C++: sphere와 Square composite scene 구성
 CreateScene()
 {
     AddSphere(center, radius, sphereMaterial);
@@ -59,6 +60,7 @@ Sphere 아래에 `Square` 하나를 scene object로 등록한다. Square는 네 
 ### Child intersection과 parent identity
 
 ```cpp
+// Pseudo C++: Square child triangle 교차를 parent hit로 변환
 Hit Square::CheckRayCollision(ray)
 {
     hit1 = triangle1.CheckRayCollision(ray);
@@ -75,6 +77,7 @@ Square는 두 child hit 가운데 가까운 유효 결과를 반환한다. Scene
 ### Shadow ray와 light 구간
 
 ```cpp
+// Pseudo C++: light까지의 shadow ray 차폐 판정
 bool IsInShadow(hit, light)
 {
     direction = Normalize(light.position - hit.point);
@@ -95,6 +98,7 @@ Shadow ray는 normalized light 방향을 사용하므로 hit distance를 실제 
 ### Visibility에 따른 lighting
 
 ```cpp
+// Pseudo C++: shadow 여부를 반영한 surface shading
 Color Shade(ray)
 {
     hit = FindClosestCollision(ray);
@@ -121,6 +125,7 @@ Blocker가 있으면 ambient만 반환하여 direct diffuse와 specular를 차�
 ### CPU 결과 표시
 
 ```cpp
+// Pseudo C++: CPU render 결과를 dynamic texture로 전달
 UpdateOnce()
 {
     RenderCpuPixels();

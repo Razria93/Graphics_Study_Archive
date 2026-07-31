@@ -32,7 +32,8 @@ Step12는 reflection weight 0.5인 sphere에서 local Phong color와 reflected c
 
 ## 구현 흐름
 
-```text
+```cpp
+// Pseudo C++: recursive transparency scene 렌더 흐름
 RenderTransparentScene()
 {
     for each pixel in 1280x720
@@ -46,6 +47,8 @@ RenderTransparentScene()
     DrawFullscreenQuad();
 }
 ```
+
+- [Transparency scene render](../../../Part1_Chapter03/03_Raytracing_Step13_Transparency/Raytracer.h#L188-L204)
 
 ## 핵심 구현
 

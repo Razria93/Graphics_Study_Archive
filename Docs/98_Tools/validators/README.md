@@ -11,7 +11,7 @@
 | `validate-topic-doc-quality.ps1` | 상세 Topic 정본 품질 검사(책임 구조, 핵심 개념, Example/Verification/Demo 연결) | `Docs/01_Topics` |
 | `validate-demo-index-quality.ps1` | Demo source docs 구현도 균일성 검사(필수 구조, 테이블 스키마, 상태값, 최소 capture 기준) | `Docs/03_Demos/**/demo-index.md` |
 | `validate-demo-doc-quality.ps1` | 상세 Demo 기술 정본 검사(구조, 링크, tracked visual, 금지 경로) | `Docs/03_Demos/**/[0-9][0-9]_*.md` |
-| `test-demo-doc-quality.ps1` | 상세 Demo 코드 근거 link label fixture 검사 | `fixtures/demo-doc-link-label` |
+| `test-demo-doc-quality.ps1` | 상세 Demo 코드 근거 link label과 의사코드 fence fixture 검사 | `fixtures/demo-doc-link-label`, `fixtures/demo-doc-pseudocode` |
 | `validate-markdown-wrap-quality.ps1` | 현재 정본 Markdown의 명백한 인위적 soft-wrap 검사 | Root·Example README, `Docs/00_Index`~`Docs/07_GitHub`, `Docs/98_Tools`, tracked `.github` Markdown |
 
 ## 사용법
@@ -76,14 +76,15 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markd
 - Example, Topic, Verification Markdown 링크
 - repo-relative 링크 대상 존재 여부
 - tracked `Docs/_assets` visual
-- 선택형 의사코드의 `Pseudo C++` 표기와 대응 source line 링크
+- 모든 `cpp` fence의 `Pseudo C++` 표기와 대응 source line 링크
+- C++ 함수 block을 `text` fence로 분류한 의사코드 탐지
 - `## 핵심 구현` source line 코드 근거 bullet의 명사형 label과 끝 마침표 금지
 - `Pseudo C++` 함수와 `if`, `else`, `for`, `while`의 Allman brace style
 - `local/`, Legacy, stale path, placeholder
 - fenced code의 80자 초과 warning과 120자 초과 failure
 - 같은 폴더 `demo-index.md`의 상세 Demo 연결
 
-Allman 검사는 `Pseudo C++`로 표시한 `cpp` fence에만 적용한다. 함수와 `if`, `else`, `for`, `while`의 명백한 same-line opening brace는 failure다. 실제 C++ source와 일반 C++ sample, braced initializer는 검사하지 않는다. multiline signature, brace balance, indentation, source link의 의미상 대응은 수동 검수한다.
+상세 Demo는 실제 C++ source를 복제하지 않고 source line 링크로 연결한다. `cpp` fence는 첫 비공백 줄에 `// Pseudo C++:`와 요약을 두며 Allman style을 적용한다. 함수 block을 포함하지 않는 화살표 기반 흐름도는 `text` fence로 유지한다. multiline signature, brace balance, indentation, source link의 의미상 대응은 수동 검수한다.
 
 `validate-topic-doc-quality.ps1`는 `Docs/01_Topics`의 승격된 상세 Topic 문서를 대상으로 다음을 검사한다.
 

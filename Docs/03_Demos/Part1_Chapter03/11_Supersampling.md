@@ -31,7 +31,8 @@ Step10은 1280×720 pixel마다 primary ray 하나를 계산한다. Step11은 �
 
 ## 구현 흐름
 
-```text
+```cpp
+// Pseudo C++: supersampled scene 렌더 흐름
 RenderSupersampledScene()
 {
     for each output cell in 160x90
@@ -45,6 +46,8 @@ RenderSupersampledScene()
     DrawPointUpscaledFullscreenQuad();
 }
 ```
+
+- [Supersampled scene render](../../../Part1_Chapter03/03_Raytracing_Step11_Supersampling/Raytracer.h#L139-L155)
 
 ## 핵심 구현
 

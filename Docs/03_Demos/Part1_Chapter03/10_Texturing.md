@@ -28,7 +28,8 @@ Step9은 triangle vertex의 RGB color를 barycentric weight로 직접 보간한�
 
 ## 구현 흐름
 
-```text
+```cpp
+// Pseudo C++: textured scene 렌더 흐름
 RenderTexturedScene()
 {
     ray = MakePerspectivePrimaryRay(pixel);
@@ -49,11 +50,14 @@ RenderTexturedScene()
 }
 ```
 
+- [Textured scene render](../../../Part1_Chapter03/03_Raytracing_Step10_Texturing/Raytracer.h#L105-L120)
+
 ## 핵심 구현
 
 ### Square UV와 공유 대각선
 
 ```cpp
+// Pseudo C++: 두 triangle으로 textured Square 구성
 CreateTexturedSquare()
 {
     uv0 = (0, 0);
@@ -74,6 +78,7 @@ CreateTexturedSquare()
 ### Barycentric UV 보간
 
 ```cpp
+// Pseudo C++: barycentric weight로 UV 보간
 InterpolateUv(hit)
 {
     return uv0 * hit.w0
@@ -89,6 +94,7 @@ Triangle intersection에서 계산한 세 weight를 같은 vertex 순서의 UV�
 ### Image load와 bilinear sampling
 
 ```cpp
+// Pseudo C++: 네 texel의 bilinear sampling
 SampleLinear(uv)
 {
     texel = uv * textureSize - 0.5;
@@ -112,6 +118,7 @@ SampleLinear(uv)
 ### Diffuse texture와 Phong lighting
 
 ```cpp
+// Pseudo C++: texture와 lighting 결합
 SampleDiffuse(hit)
 {
     if (hit.object has diffuseTexture)
@@ -131,6 +138,7 @@ Texture가 있는 Square는 sampled color를 diffuse 항에 사용한다. Textur
 ### CPU 결과 표시
 
 ```cpp
+// Pseudo C++: CPU render 결과를 dynamic texture로 전달
 UpdateOnce()
 {
     RenderCpuPixels();

@@ -29,7 +29,8 @@ Step13은 geometry hit, reflection/refraction과 textured Square를 재귀 추�
 
 ## 구현 흐름
 
-```text
+```cpp
+// Pseudo C++: cubemap environment 렌더 흐름
 RenderEnvironment()
 {
     for each pixel in 1280x720
@@ -44,6 +45,8 @@ RenderEnvironment()
     DrawFullscreenQuad();
 }
 ```
+
+- [Environment scene render](../../../Part1_Chapter03/03_Raytracing_Step14_CubeEnvironment/Raytracer.h#L45-L58)
 
 ## 핵심 구현
 

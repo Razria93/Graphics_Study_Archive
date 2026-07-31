@@ -46,6 +46,7 @@ screen pixel
 ### Sphere와 Triangle Scene
 
 ```cpp
+// Pseudo C++: sphere와 triangle scene 구성
 BuildScene()
 {
     AddSphere(center, radius, sphereMaterial);
@@ -61,6 +62,7 @@ Step7은 서로 다른 primitive를 `Object` 목록에 함께 추가한다. 각 
 ### Winding과 Plane Intersection
 
 ```cpp
+// Pseudo C++: triangle plane 교차와 내부 판정
 IntersectTriangle(ray, v0, v1, v2)
 {
     faceNormal = Normalize(Cross(v1 - v0, v2 - v0));
@@ -93,6 +95,7 @@ Vertex winding은 face normal 방향을 결정한다. 현재 vertex 순서는 `-
 ### Edge Half-Space 내부 판정
 
 ```cpp
+// Pseudo C++: edge cross product 기반 내부 판정
 IsInsideTriangle(point, v0, v1, v2, faceNormal)
 {
     edgeNormal0 = Normalize(Cross(v1 - v0, point - v0));
@@ -112,6 +115,7 @@ IsInsideTriangle(point, v0, v1, v2, faceNormal)
 ### Primitive 공통 Closest Hit
 
 ```cpp
+// Pseudo C++: 가장 가까운 양수 교차 선택
 FindClosestHit(ray)
 {
     closest = Miss;

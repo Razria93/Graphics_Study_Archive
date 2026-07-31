@@ -89,7 +89,8 @@ Publish(result);
 - Topic의 일반 개념과 수학적 설명을 복제하지 않는다.
 - 실제 Markdown 링크와 tracked `Docs/_assets`만 사용한다.
 - `local/`, Legacy, placeholder, 로컬 절대 경로를 남기지 않는다.
-- 의사코드를 사용하면 `Pseudo` 표기와 대응 원본 코드 링크를 함께 둔다.
+- 상세 Demo의 `cpp` fence는 첫 비공백 줄에 `// Pseudo C++:`와 요약을 두고 대응 원본 코드 링크를 함께 둔다.
+- 실제 C++ source는 code block으로 복제하지 않고 source line 링크로 연결한다.
 - 함수와 `if`, `else`, `for`, `while`의 여는 중괄호는 다음 줄에 둔다.
 - 제어문과 함수 block을 한 줄로 압축하지 않는다.
 - braced initializer와 multiline signature는 의미를 유지하고 수동 확인한다.

@@ -1,0 +1,13 @@
+```cpp
+RenderWithoutMarker()
+{
+    Publish();
+}
+```
+
+```text
+RenderInTextFence()
+{
+    Publish();
+}
+```

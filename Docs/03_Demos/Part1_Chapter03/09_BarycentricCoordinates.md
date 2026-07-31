@@ -27,7 +27,8 @@ Step8의 Square 바닥과 shadow ray를 누적하지 않고 장면의 초점을 
 
 ## 구현 흐름
 
-```text
+```cpp
+// Pseudo C++: barycentric color scene 렌더 흐름
 PerspectivePrimaryRay()
 {
     hit = FindClosestSceneHit(ray);
@@ -43,11 +44,14 @@ PerspectivePrimaryRay()
 }
 ```
 
+- [Barycentric scene render](../../../Part1_Chapter03/03_Raytracing_Step9_BarycentricCordinates/Raytracer.h#L98-L113)
+
 ## 핵심 구현
 
 ### Triangle hit에 weight 저장
 
 ```cpp
+// Pseudo C++: triangle 교차점과 barycentric 입력 확보
 Hit Triangle::CheckRayCollision(ray)
 {
     if (IntersectRayTriangle(ray, point, normal, barycentric, distance))
@@ -66,6 +70,7 @@ Plane과 내부 판정을 통과한 교차점의 barycentric coordinate를 hit d
 ### Sub-triangle 면적 비율
 
 ```cpp
+// Pseudo C++: triangle 면적비 기반 barycentric weight 계산
 ComputeBarycentric(point)
 {
     totalArea = Area(v0, v1, v2);
@@ -83,6 +88,7 @@ ComputeBarycentric(point)
 ### RGB vertex color 보간
 
 ```cpp
+// Pseudo C++: vertex color barycentric 보간
 InterpolateVertexColor(hit)
 {
     return Red * hit.w0
@@ -99,6 +105,7 @@ InterpolateVertexColor(hit)
 ### CPU 결과 표시
 
 ```cpp
+// Pseudo C++: CPU render 결과를 dynamic texture로 전달
 UpdateOnce()
 {
     RenderCpuPixels();

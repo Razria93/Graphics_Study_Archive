@@ -41,3 +41,51 @@ function Get-DemoCodeEvidenceLinkIssue {
 
     return @($issues)
 }
+
+function Get-DemoPseudocodeFenceIssue {
+    param([string]$Content)
+
+    $issues = [System.Collections.Generic.List[string]]::new()
+    $fences = [regex]::Matches(
+        $Content,
+        '(?ms)^```(?<lang>cpp|text)[ \t]*\r?\n(?<body>.*?)^```[ \t]*$'
+    )
+
+    foreach ($fence in $fences) {
+        $language = $fence.Groups['lang'].Value
+        $body = $fence.Groups['body'].Value
+        $bodyLines = $body -split "`r?`n"
+        $meaningful = @($bodyLines | Where-Object {
+            -not [string]::IsNullOrWhiteSpace($_)
+        })
+
+        if ($language -eq 'cpp') {
+            if ($meaningful.Count -eq 0 -or
+                $meaningful[0] -notmatch '^// Pseudo C\+\+:\s*\S') {
+                $issues.Add(
+                    "cpp fence must start with a descriptive " +
+                    "'// Pseudo C++:' marker"
+                )
+            }
+            continue
+        }
+
+        for ($i = 0; $i -lt $meaningful.Count - 1; ++$i) {
+            $looksLikeFunction =
+                $meaningful[$i] -match (
+                    '^\s*[A-Za-z_~][\w:<>,~*&\s]*' +
+                    '\([^;{}]*\)\s*$'
+                )
+            if ($looksLikeFunction -and
+                $meaningful[$i + 1] -match '^\s*\{\s*$') {
+                $issues.Add(
+                    "C++-shaped pseudocode must use a cpp fence and " +
+                    "a '// Pseudo C++:' marker"
+                )
+                break
+            }
+        }
+    }
+
+    return @($issues)
+}
