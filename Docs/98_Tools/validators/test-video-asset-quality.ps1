@@ -1,16 +1,17 @@
 $ErrorActionPreference = "Stop"
+$powerShellPath = [Diagnostics.Process]::GetCurrentProcess().MainModule.FileName
 
 $validator = Join-Path $PSScriptRoot "validate-video-asset-quality.ps1"
 $validFixture = Join-Path $PSScriptRoot "fixtures/video-asset-quality/valid/paths.txt"
 $invalidFixture = Join-Path $PSScriptRoot "fixtures/video-asset-quality/invalid/paths.txt"
 
-& powershell -NoProfile -ExecutionPolicy Bypass -File $validator -TrackedPathsFile $validFixture
+& $powerShellPath -NoProfile -ExecutionPolicy Bypass -File $validator -TrackedPathsFile $validFixture
 if ($LASTEXITCODE -ne 0)
 {
     throw "Valid video asset fixture failed."
 }
 
-$invalidOutput = (& powershell -NoProfile -ExecutionPolicy Bypass `
+$invalidOutput = (& $powerShellPath -NoProfile -ExecutionPolicy Bypass `
     -File $validator -TrackedPathsFile $invalidFixture 2>&1 | Out-String)
 if ($LASTEXITCODE -eq 0)
 {

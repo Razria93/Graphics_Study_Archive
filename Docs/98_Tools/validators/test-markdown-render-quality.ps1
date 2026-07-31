@@ -5,6 +5,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+$powerShellPath = [Diagnostics.Process]::GetCurrentProcess().MainModule.FileName
 $FixtureRoot = Join-Path $PSScriptRoot "fixtures/markdown-render-quality"
 $Failures = [System.Collections.Generic.List[string]]::new()
 
@@ -17,7 +18,7 @@ function Invoke-Fixture {
         [int]$ExpectedLine
     )
 
-    $output = & powershell `
+    $output = & $powerShellPath `
         -NoProfile `
         -ExecutionPolicy Bypass `
         -File $ValidatorPath `

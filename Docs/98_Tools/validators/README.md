@@ -51,6 +51,8 @@ GitHub body validator의 기본 입력은 `Docs/07_GitHub`이다. Topic과 Demo 
 
 GitHub의 Actions tab 또는 PR Checks에서 `Docs Validation` run을 열고 validator별 step과 log를 확인한다. validator step 실패와 checkout, runner 또는 GitHub infrastructure 실패를 구분하며 상세 판정은 [GitHub Workflow Policy](../../06_Policies/github-workflow-policy.md)를 따른다.
 
+Fixture가 validator의 exit code를 확인하기 위해 자식 PowerShell process를 실행할 때는 현재 host executable을 사용한다. 로컬 Windows PowerShell과 Actions의 `pwsh` 사이에서 host를 바꾸지 않아 BOM 없는 UTF-8 script의 해석 기준을 유지한다. 관련 장애 처리는 [Session Troubleshooting](../session-troubleshooting.md)을 따른다.
+
 ```powershell
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-body.ps1 -GitHubRoot Docs/07_GitHub
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-quality.ps1 -GitHubRoot Docs/07_GitHub
