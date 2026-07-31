@@ -25,7 +25,7 @@
 | --- | --- | --- |
 | Part1 Chapter01-02 | [Part1_Chapter01-02](Part1_Chapter01-02/verification-index.md) | 골격 작성 |
 | Part1 Chapter03 | [Part1_Chapter03](Part1_Chapter03/verification-index.md) | 골격 작성 |
-| Part2 Chapter04 | [Part2_Chapter04](Part2_Chapter04/verification-index.md) | 골격 작성 |
+| Part2 Chapter04 | [Part2_Chapter04](Part2_Chapter04/verification-index.md) | 작성 중 |
 | Part2 Chapter05-08 | [Part2_Chapter05-08](Part2_Chapter05-08/verification-index.md) | 골격 작성 |
 | Part3 Chapter09 | [Part3_Chapter09](Part3_Chapter09/verification-index.md) | 골격 작성 |
 | Part3 Chapter10-13 | [Part3_Chapter10-13](Part3_Chapter10-13/verification-index.md) | 골격 작성 |
