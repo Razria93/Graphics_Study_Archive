@@ -20,6 +20,7 @@ tools:
 - 에이전트: `Auto` / `None` / 최대 수
 - 필수 validator:
 - 추가 stale path:
+- publication closeout: `Auto` / `Required` / `NotApplicable`
 
 ## Full 기본값
 
@@ -42,6 +43,7 @@ tools:
 9. 감사 결과 수정은 별도 `감사 결과 반영 시작` 요청으로 분리한다.
 10. 목표 모드나 하위 에이전트를 지원하지 않으면 같은 완료 조건과 조사 관점을 메인 에이전트가 순차 유지한다.
 11. 일반 문단·목록 항목의 인위적 soft-wrap과 Markdown 링크·조사 분리를 확인하고, 일반 본문에는 글자 수 제한을 적용하지 않는다.
+12. Chapter merge 전 감사에서 publication closeout이 적용되면 결정된 Demo Issue·Progress 게시 객체, 실제 URL·상태 정본 동기화와 의도적 미게시 근거를 read-only로 교차검증한다.
 
 ## 완료 형식
 

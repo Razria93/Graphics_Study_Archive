@@ -304,6 +304,22 @@ GitHub remote에 Issue, PR, comment를 게시하거나 수정한 뒤에는 다�
 
 ## Ready for Review 확인
 
+### Chapter publication closeout
+
+Chapter에서 Demo Issue, 누적 Progress comment 또는 Chapter 완료 댓글을 게시하기로 결정했다면 게시와 실제 URL·상태 정본 동기화를 해당 Chapter PR merge 전에 완료한다. 의도적으로 게시하지 않을 때는 영향받는 정본에 미게시 판단과 이유를 기록한다.
+
+게시하기로 결정한 경우 다음 순서로 마감한다.
+
+1. Demo Issue를 게시하고 실제 번호와 URL을 확인한다.
+2. 누적 Progress comment와 Chapter 완료 댓글을 직렬로 게시·갱신한다.
+3. Demo Index, Publication, WorkLog와 GitHub 후보에 실제 URL과 `posted` 상태를 반영한다.
+4. 최종 commit과 push 후 local validator, Actions와 Browser 표본 검수를 통과한다.
+5. 위 상태가 모두 정렬된 뒤 Chapter PR을 merge한다.
+
+이미 `main`에 존재하는 문서 이동 링크는 default branch URL을 사용한다. 아직 merge되지 않은 새 문서는 보존 작업 branch URL 또는 검증된 commit permalink를 사용하고, branch URL을 사용하면 해당 branch를 보존한다. 이미지와 코드 증거는 commit permalink로 고정한다. merge 직후 링크 교체를 전제로 게시물을 설계하지 않는다.
+
+정상 흐름의 merge 후 단계는 `main`, Actions와 branch 보존 상태의 read-only 확인으로 제한한다. 상태 동기화만을 위한 post-merge PR을 만들지 않는다.
+
 Ready for Review 감사와 실제 상태 전환을 분리한다. 감사 단계는 read-only로 진행하고 다음을 확인한다.
 
 - local HEAD, tracking ref, 실제 remote branch와 PR head가 일치하고 worktree가 clean 상태이다.
@@ -315,6 +331,7 @@ Ready for Review 감사와 실제 상태 전환을 분리한다. 감사 단계�
 - 민감 정보, 금지 파일과 공개 위험이 없다.
 - 남은 warning과 follow-up이 Ready 전환을 막는지 구분한다.
 - 새로 게시하거나 레이아웃이 크게 바뀐 공개 문서는 실제 GitHub UI 표본 렌더링을 확인한다.
+- Chapter publication closeout 대상은 게시와 실제 URL 동기화를 완료했거나 의도적 미게시 판단과 이유를 기록한다.
 
 감사 결과는 `READY`, `READY WITH WARNINGS`, `BLOCKED` 중 하나로 보고한다. 판정은 상태 전환 승인을 대신하지 않는다. `gh pr ready`는 별도 사용자 승인 후에만 실행한다.
 
