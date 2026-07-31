@@ -30,7 +30,9 @@ capture/result
 - raw capture 후보: `local/`
 - ignored result image 후보: 예제 runtime output 위치
 - 검토된 screenshot: `Docs/_assets/captures/`
-- 검토된 video: `Docs/_assets/videos/`
+- raw, attempt와 selected video: `local/`
+- published video reference와 운영 안내: `Docs/_assets/videos/`
+- published video: GitHub Demo Issue attachment
 - 검토된 result image: `Docs/_assets/captures/` 또는 별도 정한 result image 경로
 - capture/result 상태 요약: `Docs/02_Verification/capture-matrix.md`
 - demo 설명과 우선순위: `Docs/03_Demos/*/demo-index.md`, `Docs/03_Demos/demo-priority.md`
@@ -106,7 +108,7 @@ portfolio_raytracer_reflection.png
 
 상태값은 다음을 따른다.
 
-- `확보`: 검토된 capture/result가 `Docs/_assets`에 있고 문서에서 참조된다. 강의명, 강사명, 워터마크, 개인 식별자, 계정, 로컬 경로 검토를 통과해야 한다.
+- `확보`: screenshot/result image는 검토된 파일이 `Docs/_assets`에 있고 문서에서 참조되는 상태다. Video는 selected local master가 자동·사용자 검수를 통과했거나 published Demo Issue가 연결된 상태이며 registry에서 위치를 구분한다.
 - `미확인`: 아직 capture/result를 직접 확인하지 않았다.
 - `보류`: 촬영, result 생성, 권리 검토, 공개 판단을 의도적으로 미룬다.
 - `제외`: demo capture/result로 사용하지 않는다.

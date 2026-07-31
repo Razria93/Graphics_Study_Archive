@@ -11,7 +11,7 @@
 | video 계획 | `Docs/03_Demos/video-plan.md` | video 확보 기준 |
 | Part별 demo index | `Docs/03_Demos/<Part*>/demo-index.md` | Part/Chapter별 demo 후보와 capture/result 연결 |
 | capture 파일 | `Docs/_assets/captures` | 검토된 screenshot |
-| video 파일 또는 링크 | `Docs/_assets/videos` | 검토된 video 또는 reference |
+| video reference | `Docs/_assets/videos` | published Demo Issue reference와 운영 안내 |
 | diagram 파일 | `Docs/_assets/diagrams` | 직접 만든 설명용 이미지 |
 | 공개 판단 | `Docs/05_Publication` | public 후보 여부와 제외 사유 |
 

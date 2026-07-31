@@ -12,6 +12,12 @@
 
 ![Representative Result](https://github.com/<owner>/<repo>/blob/<branch>/Docs/_assets/captures/<result>.png?raw=true)
 
+### Interaction Video
+
+Video가 필수 또는 선택인 경우 관찰할 조작과 결과 변화를 설명하고 Demo Issue에 한 번 첨부한 GitHub attachment URL을 둔다. Video가 없으면 이 소제목을 제거한다.
+
+https://github.com/user-attachments/assets/<attachment-id>
+
 ## 핵심 구현
 
 ### Implementation Step
@@ -62,6 +68,9 @@
 - 일반 문단과 하나의 목록 항목은 각각 하나의 물리적 줄로 작성한다. 상세 기준은 [Docs Authoring Flow Policy](../../06_Policies/docs-authoring-flow-policy.md)를 따른다.
 - 상세 Demo 전체를 복제하지 않는다.
 - 대표 visual 1~3개와 핵심 구현 요약을 자체 포함한다.
+- Screenshot을 최소 1개 유지하고 video가 있으면 관찰할 변화와 결과 영향을 설명한다.
+- Selected video는 Demo Issue에 한 번만 첨부하고 PR에서 필요하면 동일 attachment URL을 재사용한다.
+- 게시되지 않은 video placeholder와 `local/` 경로를 남기지 않는다.
 - 핵심 구현은 단계별 설명, 결과 영향, 인접한 코드 증거 순서로 구성한다.
 - 파일명만 있는 link label보다 확인할 구현 역할이 드러나는 label을 사용한다.
 - 게시 시점 코드 증거는 commit permalink와 line anchor를 사용한다.

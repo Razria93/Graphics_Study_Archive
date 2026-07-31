@@ -41,7 +41,11 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 - Demo Issue는 대표 visual을 최소 1개 포함한다.
 - GitHub body 이미지 URL은 GitHub absolute URL만 사용한다.
 - screenshot/result image는 `Docs/_assets/captures`를 사용한다.
-- video가 없으면 `없음`과 사유를 함께 적는다.
+- video는 UI parameter, animation, camera와 interaction처럼 시간 변화가 핵심일 때 사용한다.
+- video가 있으면 Demo Issue에 한 번 첨부하고 관찰할 변화와 결과 영향을 설명한다.
+- PR에서 video를 대표 visual로 선택하면 Demo Issue의 동일 attachment URL을 재사용하고 다시 업로드하지 않는다.
+- PR 대표 visual 최대 1개는 screenshot과 video의 합계에 적용한다.
+- 게시되지 않은 video placeholder와 `local/` 경로를 남기지 않는다.
 - 각 이미지는 `###` 소제목 + 설명 문장 + 이미지 Markdown 순서를 유지한다.
 
 ## Demo 검증 상태 규칙

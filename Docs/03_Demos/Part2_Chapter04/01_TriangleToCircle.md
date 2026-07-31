@@ -82,7 +82,7 @@ if (currentCount != requestedCount)
 - 기본값 32는 현재 1200×900 출력에서의 시각 판단이며 일반적인 품질 기준은 아니다.
 - Segment가 증가하면 독립 triangle과 per-pixel 작업량도 증가한다.
 - Clipping, shared-edge top-left rule, depth test와 perspective-correct interpolation을 포함하지 않는다.
-- Video는 slider 변화 검증에 사용한 local 후보이며 tracked asset은 3·32 PNG 두 장만 사용한다.
+- Video 필요성은 slider 변화와 fan 재생성 과정을 보여주므로 `필수`로 판정한다. Selected master는 local에서 검증 완료 상태로 유지하고 tracked 상세 Demo는 3·32 PNG 두 장만 사용한다.
 
 ## 검증
 
@@ -90,7 +90,7 @@ if (currentCount != requestedCount)
 - Debug x64 build/run: 성공, 현재 확인
 - Release x64 build/run: 성공, 현재 확인
 - Capture: 3·32 전체 application window screenshot 확보, 사용자 확인 완료
-- Video: H.264, yuv420p, 1202×932, CFR 30fps, 10.9초, audio 없음, decode 성공
+- Video: selected local master 자동·사용자 검수 완료, H.264, yuv420p, 1202×932, CFR 30fps, 10.9초, audio 없음, decode 성공, remote 미게시
 
 ## 관련 코드
 

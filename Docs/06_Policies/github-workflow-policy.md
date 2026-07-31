@@ -225,6 +225,9 @@ Demo Issue는 상세 Demo 정본에서 공개 가치가 높은 결과와 구현�
 - 상세 Demo, Example, Topic, Verification, 코드와 관련 PR을 연결한다.
 - capture 생성 승인이나 내부 workflow 추적에 사용하지 않는다.
 - 게시 시점 snapshot으로 보되 중요한 구현, 결과, limitation이 바뀌면 동기화 필요 여부를 확인한다.
+- Selected video의 기본 게시 위치로 사용하며 사용자 승인 후 한 번만 첨부한다.
+- Video attachment upload는 URL이 생성되는 remote mutation이므로 Issue 생성·수정과 별도로 대상 파일과 예상 변경을 보고하고 승인받는다.
+- Video가 있는 경우에도 핵심 상태 screenshot을 유지하고 관찰할 변화와 결과 영향을 짧게 설명한다.
 
 ## PR 책임
 
@@ -260,6 +263,32 @@ PR body 작성 기준:
 - 게시 시점의 이미지와 코드 증거는 commit permalink를 사용한다.
 - 상세 visual과 기술 showcase는 Demo Issue로 위임한다.
 - Demo Issue가 게시되지 않았으면 상세 Demo 정본으로 직접 연결한다.
+- PR이 video를 대표 visual로 사용하면 Demo Issue에 게시한 동일 attachment URL을 재사용하고 다시 업로드하지 않는다.
+- PR의 대표 visual 0~1개 기준은 screenshot과 video의 합계에 적용한다.
+
+## Video 게시와 merge 전 동기화
+
+Video가 있는 Chapter는 다음 직렬 흐름으로 게시 상태를 마감한다.
+
+```text
+local selected video 검수
+-> 상세 Demo와 GitHub 게시 후보 작성
+-> branch push와 Actions 확인
+-> Demo Issue 생성
+-> 승인 후 selected video를 Demo Issue에 한 번 첨부
+-> remote body와 actual attachment URL 확인
+-> 실제 Issue URL과 게시 상태를 tracked 정본에 동기화
+-> commit과 push
+-> 필요하면 PR에서 동일 attachment URL 재사용
+-> PR body 최종 동기화
+-> Ready for Review
+-> merge
+```
+
+- 게시되지 않은 video URL, placeholder와 `local/` 경로를 public body에 넣지 않는다.
+- Tracked 상세 Demo는 published attachment보다 실제 Demo Issue를 연결한다.
+- Video 게시와 actual URL 동기화는 merge 전에 완료해 영상만을 위한 post-merge 후처리 PR을 기본 흐름으로 만들지 않는다.
+- Private repository attachment는 repository 접근 권한이 있는 사용자만 볼 수 있으며 anonymized URL이 인증을 우회한다고 가정하지 않는다.
 
 ## GitHub body 유형
 

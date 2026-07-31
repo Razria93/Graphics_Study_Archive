@@ -30,6 +30,9 @@
 | asset 출처 상태와 외부 자료 복제 여부를 확인함 | 미확인 |  |
 | 외부 asset이면 출처와 라이선스를 확인함 | 미확인 | 대상에 외부 asset이 없을 때만 `해당 없음`으로 판정 |
 | 파일명이 Part/Topic/Demo를 명확히 드러냄 | 미확인 |  |
+| video container·codec·pixel format·CFR·stream·decode를 확인함 | 미확인 | 대상에 video가 없을 때만 `해당 없음`으로 판정 |
+| video의 민감 metadata와 화면 노출을 확인함 | 미확인 | 자동 검수와 사용자 시각 검수를 분리해 확인 |
+| video 게시 위치와 private repository 접근 범위를 확인함 | 미확인 | 대상에 video가 없을 때만 `해당 없음`으로 판정 |
 
 ## 게시 체크
 
@@ -38,3 +41,5 @@
 | `Docs/07_GitHub`의 게시 후보 본문을 검토함 | 미확인 |  |
 | Issue/PR 번호와 WorkLog 연결을 확인함 | 미확인 |  |
 | 게시 후 snapshot 필요 여부를 판단함 | 미확인 |  |
+| video를 Demo Issue에 한 번만 첨부하고 PR의 중복 업로드를 피함 | 미확인 | 대상에 video가 없을 때만 `해당 없음`으로 판정 |
+| actual video URL과 게시 상태를 merge 전에 동기화함 | 미확인 | 대상에 video가 없을 때만 `해당 없음`으로 판정 |

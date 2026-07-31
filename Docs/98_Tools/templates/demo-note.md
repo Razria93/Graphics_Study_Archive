@@ -58,6 +58,8 @@ Publish(result);
 
 시각 자료가 구현 단계나 결과 차이를 어떻게 보여주는지 설명한다. 같은 asset을 README와 GitHub body에서도 사용할 수 있지만 설명은 이 문서 책임에 맞게 쓴다.
 
+Video가 필수 또는 선택이면 필요성, 관찰할 변화, selected와 published 상태를 짧게 기록한다. Tracked 상세 Demo는 핵심 screenshot을 유지하고 published video는 실제 Demo Issue로 연결한다.
+
 ## 구현 범위와 한계
 
 - 포함하는 구현 범위:
