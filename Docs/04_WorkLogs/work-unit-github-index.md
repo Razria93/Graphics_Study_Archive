@@ -15,14 +15,14 @@
 | 항목 | 상태 | GitHub 번호 | 게시 후보 파일 | 비고 |
 | --- | --- | --- | --- | --- |
 | 상위 Progress Issue | posted | [Issue #7](https://github.com/Razria93/Graphics_Study_Archive/issues/7) | `Docs/07_GitHub/plan/plan-body.md` | GitHub remote에 게시됨 |
-| 누적 진행 댓글 | posted | [댓글 5091068690](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690) | `Docs/07_GitHub/plan/plan-progress.md` | 게시 후 tracked 후보와 동기화 |
+| 누적 진행 댓글 | posted | [댓글 5091068690](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690) | `Docs/07_GitHub/plan/plan-progress.md` | Chapter03 게시 상태를 tracked 후보와 동기화 |
 
 ## 관계 Index
 
 | Work Unit | Chapter/Bundle 완료 댓글 | Work Unit Issue | Demo Issue remote | 로컬 Demo Issue 후보 | Remote PR | 로컬 PR 후보 | 관련 WorkLog | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | `WU-Part1` | [댓글 5091227284](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091227284) (`posted`; `Docs/07_GitHub/plan/comments/phase-2-1-plan-comment.md`) | 제외 | [Demo Issue #9](https://github.com/Razria93/Graphics_Study_Archive/issues/9) (`posted`) | `Docs/07_GitHub/issues/demo/demo_part1_chapter01-02.md` (`ready`) | [PR #8](https://github.com/Razria93/Graphics_Study_Archive/pull/8) (`Merged`; [`e14f5e3`](https://github.com/Razria93/Graphics_Study_Archive/commit/e14f5e39d1352fb4f1f55bd6b06fb1e9840cb88c)) | `Docs/07_GitHub/prs/part1_chapter01-02.md` (`ready`) | [WU-Part1](work-units/WU-Part1.md) | WU-Part1의 일부 범위인 Chapter01-02 파일럿 완료 기록이다. WU-Part1 전체 완료가 아니다. |
-| `WU-Part1 / Chapter03` | `Docs/07_GitHub/plan/comments/phase-2-4-plan-comment.md` (`comment-ready`) | 제외 | 없음 | `Docs/07_GitHub/issues/demo/demo_part1_chapter03.md` (`ready`) | [PR #11](https://github.com/Razria93/Graphics_Study_Archive/pull/11) (`posted`) | `Docs/07_GitHub/prs/part1_chapter03.md` (`ready`) | [WU-Part1](work-units/WU-Part1.md) | Phase 2-4 Chapter03 PR을 게시했다. 실제 lifecycle은 GitHub remote를 기준으로 확인한다. Demo Issue와 Progress comment는 아직 게시하지 않았다. |
+| `WU-Part1 / Chapter03` | [댓글 5142322616](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5142322616) (`posted`; `Docs/07_GitHub/plan/comments/phase-2-4-plan-comment.md`) | 제외 | [Demo Issue #12](https://github.com/Razria93/Graphics_Study_Archive/issues/12) (`posted`) | `Docs/07_GitHub/issues/demo/demo_part1_chapter03.md` (`ready`) | [PR #11](https://github.com/Razria93/Graphics_Study_Archive/pull/11) (`Merged`; [`eeb7897`](https://github.com/Razria93/Graphics_Study_Archive/commit/eeb7897142c30bfc5fa8479b03548cf9351c6968)) | `Docs/07_GitHub/prs/part1_chapter03.md` (`ready`) | [WU-Part1](work-units/WU-Part1.md) | Phase 2-4 Chapter03 PR, Demo Issue와 Progress 게시를 마감했다. |
 | `WU-Part2` | 예정 | 기본 제외 | 없음 | 예정 | 없음 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
 | `WU-Part3` | 예정 | 기본 제외 | 없음 | 예정 | 없음 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
 | `WU-Part4` | 예정 | 기본 제외 | 없음 | 예정 | 없음 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |

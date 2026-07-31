@@ -15,13 +15,13 @@
 | --- | --- |
 | Source provenance | [`SRC-P1-C03`](../Docs/99_Legacy/source-registry.md) |
 | Import status | Step4~14 반영 |
-| Public readiness | Step4·8·13 대표 흐름과 Step10·14 선택 Demo 확정, GitHub 게시 후보 작성 |
+| Public readiness | Step4·8·13 대표 흐름과 Step10·14 선택 Demo 확정, [Demo Issue #12](https://github.com/Razria93/Graphics_Study_Archive/issues/12) 게시 완료 |
 | Build/run status | Step4~14 현재 확인 |
 | Texture/environment asset | Step10~13 검수 asset 적용, Step14는 Humus CC BY 3.0 cubemap 6면과 attribution 원문 유지 |
 | Verification | [Part1 Chapter03 Verification](../Docs/02_Verification/Part1_Chapter03/verification-index.md) |
 | Demo | [Part1 Chapter03 Demo Index](../Docs/03_Demos/Part1_Chapter03/demo-index.md) |
 | Topic | [Ray Tracing Topics](../Docs/01_Topics/RayTracing/README.md), [Lighting And Shading Topics](../Docs/01_Topics/LightingAndShading/README.md), [Shadow Topics](../Docs/01_Topics/Shadows/README.md), [Texturing And Mapping Topics](../Docs/01_Topics/TexturingAndMapping/README.md) |
-| Next action | Demo Issue 게시 판단과 `Portfolio_RayTracer` 연계 범위 정리 |
+| Next action | `Portfolio_RayTracer` 연계 범위 정리 |
 
 ## 순차 Step
 

@@ -4,7 +4,7 @@
 
 | Work Unit | 범위 | 주요 산출물 | 상태 | 비고 |
 | --- | --- | --- | --- | --- |
-| [WU-Part1](work-units/WU-Part1.md) | `Part1_Chapter01-02`, `Part1_Chapter03`, `Portfolio_RayTracer` 기초 연결 | Example, RayTracing Topic, Verification, Demo | 진행 중 | `02_Bloom` pilot 마감. Chapter03 Step4~14 정규화·감사 완료, GitHub 게시 후보 작성 |
+| [WU-Part1](work-units/WU-Part1.md) | `Part1_Chapter01-02`, `Part1_Chapter03`, `Portfolio_RayTracer` 기초 연결 | Example, RayTracing Topic, Verification, Demo | 진행 중 | `02_Bloom` pilot 마감. Chapter03 Step4~14 정규화·감사와 GitHub 게시 마감 완료 |
 | `WU-Part2` | `Part2_Chapter04`, `Part2_Chapter05-08` | Rasterization, DirectX11 Pipeline, Texturing | 예정 | 예제 수가 많아 대표 예제 선정 필요 |
 | `WU-Part3` | `Part3_Chapter09`, `Part3_Chapter10-13` | Interaction, PBR/IBL, Shadows | 예정 | demo 우선순위 높음 |
 | `WU-Part4` | `Part4_Chapter14-20` | Advanced graphics, compute/simulation 후보 | 예정 | 구조 확인 필요 |

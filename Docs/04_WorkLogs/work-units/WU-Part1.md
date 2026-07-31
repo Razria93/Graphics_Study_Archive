@@ -24,6 +24,7 @@
 | Remote PR | Merged | PR #8을 일반 merge commit `e14f5e3`으로 병합했다. |
 | Pilot 게시 후보 동기화 | 완료 | PR #10 후처리에서 tracked GitHub 후보와 원격 객체를 동기화했다. |
 | Chapter03 순차 작업 | 완료 | Step4 DrawingSphere부터 Step14 CubeEnvironment까지 build/run, README·Topic과 독립 상세 Demo를 완료했다. Step14는 CC BY 3.0 cubemap 실행 subset과 attribution 원문을 유지한다. |
+| Chapter03 게시 마감 | 완료 | PR #11 병합과 [Demo Issue #12](https://github.com/Razria93/Graphics_Study_Archive/issues/12), Progress 누적·완료 댓글 게시를 마쳤다. |
 
 ## 02_Bloom 작업 요약
 
@@ -67,5 +68,4 @@
 
 ## 다음 작업
 
-1. Chapter03 Demo Issue와 Progress comment 게시 여부를 판단한다.
-2. `Portfolio_RayTracer`와 Part1 ray tracing 범위의 연결 단위를 정리한다.
+1. `Portfolio_RayTracer`와 Part1 ray tracing 범위의 연결 단위를 정리한다.
