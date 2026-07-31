@@ -64,11 +64,14 @@
 - Demo index와 상세 Demo: 대응 Demo validator
 - Topic: Topic validator
 - Markdown: 상대 링크 대상과 stale path
+- Markdown table: table validator와 fixture
 - asset: tracked 여부, metadata, dimensions와 hash
 - application window capture: [Example Window Capture](example-window-capture.md)
 - code: 관련 build/test/run
 
 validator의 지원 범위와 수동 검수 경계는 [Validation Tools](validation-tools.md)와 [Validators](validators/README.md)를 따른다.
+
+새 PR/Issue, 공개 진입점, 큰 table 또는 대표 visual을 변경하면 push 후 로그인된 GitHub UI에서 대표 표본을 read-only로 확인한다. table·목록 layout, 의도하지 않은 줄바꿈, 이미지 로드·비율·잘림과 연결 문서 이동을 확인하며 상세 절차는 [Validation Tools](validation-tools.md)를 따른다.
 
 ## 6. Dirty Worktree와 Commit
 
@@ -115,6 +118,7 @@ Ready 감사는 read-only로 수행하고 실제 상태 전환과 분리한다.
 - upstream 대비 commit 범위와 예상 작업 범위 일치
 - PR title/body와 실제 변경 범위 일치
 - 관련 local validator, 작업별 build/test와 수동 문서·링크·public safety 검사 통과
+- 변경 범위에 해당하는 GitHub UI 렌더링 표본 확인 또는 `렌더링 미확인` warning 기록
 - 핵심 링크, asset과 commit permalink 확인
 - merge conflict, 현재 `CHANGES_REQUESTED` review와 미해결 actionable review thread 확인
 - 현재 PR의 `open` feedback과 변경 파일에 관련된 과거 regression check 확인

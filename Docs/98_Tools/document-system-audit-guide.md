@@ -106,6 +106,9 @@ Chapter README, Verification, Demo, Publication, WorkLog, GitHub body가 같은 
 - source docs를 복제하지 않고 요약과 링크를 사용하는지 확인한다.
 - 검증 상태와 limitation을 독자가 오해하지 않게 구분하는지 확인한다.
 - 관련 문서가 실제로 이동 가능한 Markdown 또는 GitHub 링크인지 확인한다.
+- 공개·레이아웃 민감 변경은 [Validation Tools](validation-tools.md)에 따라 GitHub UI 표본을 확인한다.
+- Browser를 사용할 수 없으면 source 검사와 렌더링 확인을 구분하고 `렌더링 미확인`으로 기록한다.
+- Browser에서 발견한 반복 가능한 구조 결함은 validator와 fixture 후보로 분류한다.
 
 ## 메인 재검증
 

@@ -314,8 +314,11 @@ Ready for Review 감사와 실제 상태 전환을 분리한다. 감사 단계�
 - merge conflict, 현재 `CHANGES_REQUESTED` review와 미해결 actionable review thread가 없다.
 - 민감 정보, 금지 파일과 공개 위험이 없다.
 - 남은 warning과 follow-up이 Ready 전환을 막는지 구분한다.
+- 새로 게시하거나 레이아웃이 크게 바뀐 공개 문서는 실제 GitHub UI 표본 렌더링을 확인한다.
 
 감사 결과는 `READY`, `READY WITH WARNINGS`, `BLOCKED` 중 하나로 보고한다. 판정은 상태 전환 승인을 대신하지 않는다. `gh pr ready`는 별도 사용자 승인 후에만 실행한다.
+
+Browser 연결이 없으면 렌더링을 통과했다고 추정하지 않고 `렌더링 미확인` warning으로 남긴다. 이미 확인된 broken table, broken image 또는 잘린 대표 visual은 수정과 재검수 전까지 blocker로 다룬다. 표본 범위와 실행 절차는 [Validation Tools](../98_Tools/validation-tools.md)를 따른다.
 
 ### Ready 판정 제외 항목
 

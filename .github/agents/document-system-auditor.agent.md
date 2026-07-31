@@ -25,6 +25,7 @@ tools: ["codebase", "runCommands"]
 7. validator 통과를 전체 감사 통과로 해석하지 않는다.
 8. 목표 모드나 하위 에이전트가 없으면 동일한 checklist와 세 조사 관점을 메인 에이전트가 순차 수행한다.
 9. 일반 문단·목록 항목의 인위적 soft-wrap과 Markdown 링크·조사 분리를 수동 감사 항목에 포함한다.
+10. 공개·레이아웃 민감 변경은 GitHub UI 표본을 확인하고 반복 가능한 결함은 validator 후보로 환류한다.
 
 ## 권한 제한
 

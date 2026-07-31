@@ -154,6 +154,8 @@ Validator는 반복 가능한 기계 검사를 담당한다.
 
 Validator 통과는 전체 문서 감사 통과를 의미하지 않는다.
 
+공개·레이아웃 민감 문서의 실제 GitHub UI는 Browser로 표본 검수한다. Browser에서 확인된 반복 가능한 구조 결함은 validator와 fixture 후보로 환류하며, 자동 검사 통과를 실제 렌더링 확인으로 대체하지 않는다. 표본 선택과 판정 절차는 [Validation Tools](../98_Tools/validation-tools.md)를 따른다.
+
 ## Legacy와 오탐
 
 - `Docs/99_Legacy` 내부의 폐기 경로와 역사 기록은 현재 문제로 계산하지 않는다.
