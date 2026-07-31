@@ -28,13 +28,13 @@ PR #8 review 대응과 일반 merge commit 방식 병합을 완료했다. 관련
 
 Related PR: PR #8 (Merged) - Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom
 
-## 진행 예정
-
 ### Phase 2-4. Part1 Chapter03 Ray Tracing 예제 정리
 
-ray tracing 단계별 대표 예제, build/run 상태, demo 후보를 정리하고 Chapter PR 초안을 준비한다.
+Step4~14 CPU ray tracing 예제를 README, Topic, Verification과 독립 상세 Demo로 연결했다. Debug/Release x64 build/run과 전체 application window capture를 확인하고 Step4 DrawingSphere, Step8 Shadow와 Step13 Transparency를 Chapter 대표 흐름으로 확정했다. Step10 Texturing과 Step14 CubeEnvironment는 선택 Demo로 유지한다.
 
 Related PR: 예정
+
+## 진행 예정
 
 ### Phase 2-5. Portfolio_RayTracer 연계 정리
 
