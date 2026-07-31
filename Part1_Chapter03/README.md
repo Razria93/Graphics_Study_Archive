@@ -20,7 +20,7 @@
 | Texture/environment asset | Step10~13 검수 asset 적용, Step14는 Humus CC BY 3.0 cubemap 6면과 attribution 원문 유지 |
 | Verification | [Part1 Chapter03 Verification](../Docs/02_Verification/Part1_Chapter03/verification-index.md) |
 | Demo | [Part1 Chapter03 Demo Index](../Docs/03_Demos/Part1_Chapter03/demo-index.md) |
-| Topic | [Ray Tracing Topics](../Docs/01_Topics/RayTracing/README.md), [Lighting And Shading Topics](../Docs/01_Topics/LightingAndShading/README.md), [Shadow Topics](../Docs/01_Topics/Shadows/README.md) |
+| Topic | [Ray Tracing Topics](../Docs/01_Topics/RayTracing/README.md), [Lighting And Shading Topics](../Docs/01_Topics/LightingAndShading/README.md), [Shadow Topics](../Docs/01_Topics/Shadows/README.md), [Texturing And Mapping Topics](../Docs/01_Topics/TexturingAndMapping/README.md) |
 | Next action | 대표 Demo Publication 판정과 GitHub 게시 후보 구성 |
 
 ## 순차 Step

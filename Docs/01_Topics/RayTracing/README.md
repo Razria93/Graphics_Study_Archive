@@ -27,6 +27,4 @@
 
 ## 다음 작업
 
-1. Step14 CubeEnvironment의 코드와 cubemap Topic 책임을 확인한다.
-2. Step14 Example README와 상세 Demo를 작성한다.
-3. 후속 Topic은 Step 순서에 맞춰 승격한다.
+1. 후속 Topic은 Step 순서에 맞춰 승격한다.
