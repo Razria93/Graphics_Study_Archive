@@ -63,10 +63,9 @@
 - Part1 Work Unit 자체는 아직 진행 중이다.
 - GitHub PR #8은 일반 merge commit [`e14f5e3`](https://github.com/Razria93/Graphics_Study_Archive/commit/e14f5e39d1352fb4f1f55bd6b06fb1e9840cb88c)으로 병합했다.
 - Chapter01-02 파일럿은 마감했지만 WU-Part1 전체는 진행 중이다.
+- Chapter03 Step4~14 문서·재검증·capture와 최소·대표·선택 Demo 등급 정리를 완료했다.
 
 ## 다음 작업
 
-1. `Part1_Chapter03` 전체 문서·상태·link 정합성을 감사한다.
-2. Step4~14의 대표 Demo와 GitHub 게시 후보를 선정한다.
-3. 전체 Step 완료 후 최소·대표·선택 Demo 등급을 확정한다.
-4. `Portfolio_RayTracer`와 Part1 ray tracing 범위의 연결 단위를 정리한다.
+1. Chapter03 public 후보의 GitHub 게시 범위를 정한다.
+2. `Portfolio_RayTracer`와 Part1 ray tracing 범위의 연결 단위를 정리한다.
