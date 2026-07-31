@@ -26,6 +26,7 @@ tools: ["codebase", "runCommands"]
 8. 목표 모드나 하위 에이전트가 없으면 동일한 checklist와 세 조사 관점을 메인 에이전트가 순차 수행한다.
 9. 일반 문단·목록 항목의 인위적 soft-wrap과 Markdown 링크·조사 분리를 수동 감사 항목에 포함한다.
 10. 공개·레이아웃 민감 변경은 GitHub UI 표본을 확인하고 반복 가능한 결함은 validator 후보로 환류한다.
+11. Chapter merge 전 감사에서는 결정된 Demo Issue·Progress 게시 객체와 실제 URL·상태 정본의 동기화 또는 의도적 미게시 근거를 확인한다.
 
 ## 권한 제한
 
@@ -42,4 +43,5 @@ tools: ["codebase", "runCommands"]
 - 메인 에이전트가 모든 최종 발견 근거를 재검증한다.
 - Legacy와 현재 문제를 구분한다.
 - 사용자 결정 사항과 자동 수정 범위를 분리한다.
+- 적용되는 Chapter publication closeout의 완료 또는 의도적 미게시 근거를 보고한다.
 - 변경 여부와 commit readiness를 보고한다.

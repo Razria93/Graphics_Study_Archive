@@ -8,6 +8,7 @@
 - GitHub quality, Demo index, 상세 Demo, Topic 문서는 각각의 tracked validator로 검사한다.
 - 현재 정본 Markdown의 명백한 인위적 soft-wrap은 `validators/validate-markdown-wrap-quality.ps1`로 검사한다.
 - 현재 정본 Markdown table의 header, separator와 data row 열 정합성은 `validators/validate-markdown-table-quality.ps1`로 검사한다.
+- 현재 정본 Markdown의 복수 단일-tilde 범위가 만드는 의도하지 않은 취소선은 `validators/validate-markdown-render-quality.ps1`로 검사한다.
 - tracked Docs 전체 링크와 상태를 통합 검사하는 validator는 아직 없다.
 - 개별 validator와 [Document System Audit Guide](document-system-audit-guide.md)의 수동 감사를 함께 사용한다.
 
@@ -47,6 +48,7 @@ Actions 성공은 validator가 담당하는 자동 검사만 증명한다. build
 | GitHub body 검수 | `Docs/06_Policies/github-workflow-policy.md`, `validators/validate-github-body.ps1` |
 | Markdown 원문 가독성 | `Docs/06_Policies/docs-authoring-flow-policy.md`, `validators/validate-markdown-wrap-quality.ps1` |
 | Markdown table 구조 | `validators/validate-markdown-table-quality.ps1`, `validators/test-markdown-table-quality.ps1` |
+| Markdown 범위 렌더링 | `validators/validate-markdown-render-quality.ps1`, `validators/test-markdown-render-quality.ps1` |
 
 ## 전체 감사와 Validator 경계
 

@@ -4,7 +4,7 @@
 
 ## Provenance
 
-- Step4~13: 2026-07-30~31 현재 확인, 재검증 완료
+- Step4–13: 2026-07-30–31 현재 확인, 재검증 완료
 - Step14: 2026-07-31 현재 확인, 재검증 완료
 - 과거 근거: Chapter README에 기록된 Step4~14 Debug/Release build/run 성공
 

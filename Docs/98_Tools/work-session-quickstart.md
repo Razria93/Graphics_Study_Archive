@@ -114,6 +114,8 @@ Issue와 PR 후보의 첫 H1은 remote title source다. remote body에서는 첫
 
 Ready 감사는 read-only로 수행하고 실제 상태 전환과 분리한다.
 
+Chapter PR은 merge 전에 publication closeout을 수행한다. Demo Issue와 Progress 게시 여부를 확정하고, 게시 대상은 Issue 생성, 누적 Progress comment 갱신, Chapter 완료 댓글 게시와 실제 URL 정본 동기화를 마친다. 의도적 미게시 대상은 이유를 기록한다. 최종 commit·push, Actions와 Browser 표본 검수까지 통과한 뒤 merge하며, merge 후에는 `main`, Actions와 branch 보존 상태만 read-only로 확인한다.
+
 - local HEAD, tracking, remote와 PR head 일치 및 clean worktree
 - upstream 대비 commit 범위와 예상 작업 범위 일치
 - PR title/body와 실제 변경 범위 일치
@@ -122,6 +124,7 @@ Ready 감사는 read-only로 수행하고 실제 상태 전환과 분리한다.
 - 핵심 링크, asset과 commit permalink 확인
 - merge conflict, 현재 `CHANGES_REQUESTED` review와 미해결 actionable review thread 확인
 - 현재 PR의 `open` feedback과 변경 파일에 관련된 과거 regression check 확인
+- Chapter publication closeout 완료 또는 의도적 미게시 근거 확인
 - blocker와 warning 구분
 
 GitHub Actions 구성 여부, required status check와 branch protection은 현재 Ready 기본 판정에서 제외한다. 기본 감사에서는 protection과 required check 존재 여부를 별도로 조회하지 않는다. Actions는 원격 검증 결과를 만들고 보호 규칙은 그 결과를 merge 조건으로 강제하는 독립 기능이다. 구성된 `Docs Validation` run이 현재 변경에 존재하면 결과를 확인하며 세부 판정 기준은 [GitHub Workflow Policy](../06_Policies/github-workflow-policy.md)를 따른다.

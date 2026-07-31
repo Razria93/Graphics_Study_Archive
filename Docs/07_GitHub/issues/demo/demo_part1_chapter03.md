@@ -76,23 +76,24 @@ Step13은 ray와 surface normal의 방향으로 enter/exit를 구분하고 air/g
 
 ### Chapter 안내
 
-- [Part1 Chapter03 README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Part1_Chapter03/README.md)
-- [Chapter03 Demo Index](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/03_Demos/Part1_Chapter03/demo-index.md)
-- [Chapter03 Verification](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/02_Verification/Part1_Chapter03/verification-index.md)
+- [Part1 Chapter03 README](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Part1_Chapter03/README.md)
+- [Chapter03 Demo Index](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/03_Demos/Part1_Chapter03/demo-index.md)
+- [Chapter03 Verification](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/02_Verification/Part1_Chapter03/verification-index.md)
+- [Chapter PR #11](https://github.com/Razria93/Graphics_Study_Archive/pull/11)
 
 ### 대표 구현
 
-- Step4 DrawingSphere: [Example README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/README.md) · [상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/03_Demos/Part1_Chapter03/04_DrawingSphere.md)
-- Step8 Shadow: [Example README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Part1_Chapter03/03_Raytracing_Step8_Shadow/README.md) · [상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/03_Demos/Part1_Chapter03/08_Shadow.md)
-- Step13 Transparency: [Example README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Part1_Chapter03/03_Raytracing_Step13_Transparency/README.md) · [상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/03_Demos/Part1_Chapter03/13_Transparency.md)
+- Step4 DrawingSphere: [Example README](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/README.md) · [상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/03_Demos/Part1_Chapter03/04_DrawingSphere.md)
+- Step8 Shadow: [Example README](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Part1_Chapter03/03_Raytracing_Step8_Shadow/README.md) · [상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/03_Demos/Part1_Chapter03/08_Shadow.md)
+- Step13 Transparency: [Example README](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Part1_Chapter03/03_Raytracing_Step13_Transparency/README.md) · [상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/03_Demos/Part1_Chapter03/13_Transparency.md)
 
 ### 선택 Demo
 
-- [Step10 Texturing 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/03_Demos/Part1_Chapter03/10_Texturing.md)
-- [Step14 CubeEnvironment 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/03_Demos/Part1_Chapter03/14_CubeEnvironment.md) — Humus/Emil Persson, CC BY 3.0
+- [Step10 Texturing 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/03_Demos/Part1_Chapter03/10_Texturing.md)
+- [Step14 CubeEnvironment 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/03_Demos/Part1_Chapter03/14_CubeEnvironment.md) — Humus/Emil Persson, CC BY 3.0
 
 ### 관련 개념
 
-- [Ray Tracing Topics](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/01_Topics/RayTracing/README.md)
-- [Shadow Ray](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/01_Topics/Shadows/ShadowRay.md)
-- [Refraction And Transparency](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/01_Topics/RayTracing/RefractionAndTransparency.md)
+- [Ray Tracing Topics](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/01_Topics/RayTracing/README.md)
+- [Shadow Ray](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/01_Topics/Shadows/ShadowRay.md)
+- [Refraction And Transparency](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/01_Topics/RayTracing/RefractionAndTransparency.md)
