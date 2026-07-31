@@ -120,11 +120,11 @@ portfolio_raytracer_reflection.png
 
 ## Part1 Chapter03 순차 계획
 
-- Step4 DrawingSphere와 Step5 PhongShading의 기본·파라미터 조정 screenshot, Step6 PerspectiveView부터 Step13 Transparency까지의 기본 screenshot을 동일한 전체 application window 규격으로 확보했다.
+- Step4 DrawingSphere와 Step5 PhongShading의 기본·파라미터 조정 screenshot, Step6 PerspectiveView부터 Step14 CubeEnvironment까지의 기본 screenshot을 동일한 전체 application window 규격으로 확보했다.
 - Step10 Texturing은 사용자 직접 생성 석재 texture를 적용해 자연석 mapping·bilinear sampling·Square seam 부재를 확인했다.
 - Step11 Supersampling은 동일 석재 texture를 사용해 160×90 output cell의 64-sample 평균과 8배 point upscale을 확인했다.
 - Step12 Reflection은 동일 석재 texture를 사용해 red sphere의 ground와 blue sphere reflection을 확인했다.
 - Step13 Transparency는 석재 ground와 해수면·하늘 background를 사용해 sphere 내부의 수평선·수면 왜곡과 enter/exit 경계를 확인했다.
-- Step14는 build/run과 문서화를 완료한 뒤 capture 필요성을 판단한다.
+- Step14 CubeEnvironment는 PosZ 중심과 PosX·NegX 경계를 보여주는 정적 environment screenshot을 확보했다. Camera 조작이 없어 video는 제외한다.
 - 각 Step은 독립 상세 Demo를 기본으로 하며 Chapter 전체를 하나의 Demo로 합치지 않는다.
 - 최소·대표·선택 등급은 Step4~14 상세 Demo가 완료된 뒤 확정한다.

@@ -13,6 +13,7 @@
 | RD-005 | `Step11 Supersampling` input/result | 출처 불명 texture 교체 | Step11의 출처 불명 JPEG를 제거하고 Step10에서 검수한 석재 PNG의 동일 바이트 사본과 전체 창 capture를 사용 | 완료 | Step11 입력과 Step10 검증 input의 SHA-256 일치. 입력·capture PNG의 text/EXIF/XMP 정보와 개인 식별자 없음 |
 | RD-006 | `Step12 Reflection` input/result | 출처 불명 texture와 미사용 asset 제거 | Step12의 출처 불명 JPEG와 미사용 background 사본을 제거하고 Step10·11에서 검수한 석재 PNG의 동일 바이트 사본과 전체 창 capture를 사용 | 완료 | Step12 입력과 Step10·11 검증 input의 SHA-256 일치. 입력·capture PNG의 text/EXIF/XMP 정보와 개인 식별자 없음. Step13 asset은 변경하지 않음 |
 | RD-007 | `Step13 Transparency` input/result | 출처 불명 ground·background 교체 | Step13의 출처 불명 JPEG 두 개를 제거하고 검수한 석재 PNG를 ground에, 사용자 직접 생성 해수면·하늘 PNG를 background에 사용 | 완료 | Ground 입력은 Step10~12 검증 input과 SHA-256이 일치한다. Background는 참고 이미지의 pixel을 직접 복제하지 않은 새 생성 결과다. Background의 C2PA에는 OpenAI 생성 이력만 있고 개인 식별자와 로컬 경로는 없다. 입력·capture의 PNG text/EXIF/XMP 정보와 개인 식별자를 확인했다. Step14 asset은 변경하지 않음 |
+| RD-008 | `Step14 CubeEnvironment` asset/result | Runtime 미사용 environment asset 정리 | 실행에 필요한 Humus CC BY 3.0 cubemap 6면과 attribution 원문만 유지하고 미사용 blurred face 6개와 별도 skybox asset 18개 제거 | 완료 | 실행용 JPEG 6면의 metadata와 공개 안전성, Debug/Release x64 load와 capture를 확인했다. 정적 capture는 6면 orientation 전체 검증으로 사용하지 않음 |
 
 ## 유형
 
