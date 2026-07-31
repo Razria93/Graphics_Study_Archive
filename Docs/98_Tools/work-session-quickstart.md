@@ -143,4 +143,4 @@ review 대응은 actionable thread 확인, 영향 범위 조사, 수정 또는 �
 
 목표 상태와 Git 상태를 정리하고 필요한 사용자 승인·결정을 명시한 뒤, 사용자 확인이 필요한 terminal point이면 [User Attention Notification](user-attention-notification.md)을 한 번 실행하고 최종 응답을 제공한다.
 
-후속 작업에 바로 사용하는 완성형 작업 프롬프트를 제공한 경우에도 같은 기준으로 최종 응답 직전에 알림을 한 번 실행한다. 세부 대상, 비대상과 중복 처리 기준은 User Attention Notification을 따른다.
+일반 terminal point에는 즉시 알림을 사용한다. 후속 작업에 바로 사용하는 완성형 작업 프롬프트를 제공한 경우에는 최종 응답 직전에 `-DelaySeconds 30`으로 알림을 한 번 예약한다. 세부 대상, 비대상과 중복 처리 기준은 User Attention Notification을 따른다.

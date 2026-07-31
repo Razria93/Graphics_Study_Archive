@@ -1,10 +1,41 @@
 param(
     [ValidateSet("Complete", "Attention", "Blocked")]
-    [string]$Event = "Attention"
+    [string]$Event = "Attention",
+
+    [ValidateRange(0, 300)]
+    [int]$DelaySeconds = 0,
+
+    [switch]$ScheduledPlayback
 )
 
 try
 {
+    if ($DelaySeconds -gt 0 -and -not $ScheduledPlayback)
+    {
+        $powerShellPath = [Diagnostics.Process]::GetCurrentProcess().MainModule.FileName
+        $quotedScriptPath = '"{0}"' -f $PSCommandPath.Replace('"', '""')
+        $arguments = @(
+            "-NoProfile",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-File",
+            $quotedScriptPath,
+            "-Event",
+            $Event,
+            "-DelaySeconds",
+            $DelaySeconds,
+            "-ScheduledPlayback"
+        )
+
+        Start-Process -FilePath $powerShellPath -ArgumentList $arguments -WindowStyle Hidden | Out-Null
+        return
+    }
+
+    if ($ScheduledPlayback -and $DelaySeconds -gt 0)
+    {
+        Start-Sleep -Seconds $DelaySeconds
+    }
+
     if ([Environment]::OSVersion.Platform -ne [PlatformID]::Win32NT)
     {
         Write-Warning "User notification sound is available only on Windows."
