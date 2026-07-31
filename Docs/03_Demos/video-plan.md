@@ -14,7 +14,7 @@
 | 범위 | 후보 | 필요성 | 보여줄 개념 | selected | published |
 | --- | --- | --- | --- | --- | --- |
 | Part2_Chapter04 Step1A | triangle count 3→32 slider 조작 | 필수 | triangle fan 재생성과 polygonal circle 수렴 과정 | 검증 완료 | 미게시 |
-| Part2_Chapter04 Step4 | Animation2D 실행 | 필수 | 시간에 따른 2D animation | 미확인 | 미게시 |
+| Part2_Chapter04 Step4 | Animation2D 실행 | 필수 | 시간에 따른 계층적 2D orbit | 검증 완료 | 미게시 |
 | Part3_Chapter09 | camera, picking, trackball 조작 | 필수 | interaction | 미확인 | 미게시 |
 | Part3_Chapter10-13 | shadow quality 비교 | 선택 | shadow mapping, PCF, PCSS | 미확인 | 미게시 |
 | Part4_Chapter14-20 | 대표 sample 실행 | 선택 | advanced graphics 후보 | 미확인 | 미게시 |

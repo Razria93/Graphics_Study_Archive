@@ -25,7 +25,7 @@
 - `## Demo 목록` 테이블은 공통 컬럼(`Demo 후보`, `상세 Demo`, `연결 Example`, `연결 Topic`, `Verification`, `Capture/Result`, `GitHub Demo Issue`, `상태`, `비고`)을 유지한다.
 - 최소 행(`최소 capture`, `대표 capture`, `video`)을 유지한다.
 - 상태값은 `미확인`, `후보`, `확보`, `보류`, `제외`만 사용한다.
-- `확보` 상태는 `Docs/_assets` 연결이 확인된 경우에만 사용한다.
+- `확보` 상태는 tracked asset, 검수 완료 selected local master 또는 published Demo Issue가 연결된 경우에 사용한다.
 - 상세 Demo는 `demo-index.md`에서 연결하고 별도 상태표를 중복 생성하지 않는다.
 
 ## 품질 검증
@@ -52,7 +52,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 | --- | --- | --- |
 | Part1 Chapter01-02 | [Part1_Chapter01-02](Part1_Chapter01-02/demo-index.md) | 작성 완료 |
 | Part1 Chapter03 | [Part1_Chapter03](Part1_Chapter03/demo-index.md) | Step4~14 순차 상세 Demo 작성 |
-| Part2 Chapter04 | [Part2_Chapter04](Part2_Chapter04/demo-index.md) | Step1–3 순차 상세 Demo 작성 |
+| Part2 Chapter04 | [Part2_Chapter04](Part2_Chapter04/demo-index.md) | Step1–4 순차 상세 Demo 작성 |
 | Part2 Chapter05-08 | [Part2_Chapter05-08](Part2_Chapter05-08/demo-index.md) | 골격 작성 |
 | Part3 Chapter09 | [Part3_Chapter09](Part3_Chapter09/demo-index.md) | 골격 작성 |
 | Part3 Chapter10-13 | [Part3_Chapter10-13](Part3_Chapter10-13/demo-index.md) | 골격 작성 |

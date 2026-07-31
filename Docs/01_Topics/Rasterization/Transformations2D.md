@@ -8,7 +8,7 @@
 
 - 2D translation, rotation과 non-uniform scale의 기본 관계를 설명한다.
 - 원점 기준 rotation·scale과 transform 조합의 비가환성을 설명한다.
-- 시간 기반 animation은 후속 Step4와 `AnimationAndPhysics` Topic으로 위임한다.
+- 시간 기반 animation은 [2D Animation And Hierarchical Orbit](../AnimationAndPhysics/Animation2D.md)으로 위임한다.
 - 실제 결과 설명은 `Docs/03_Demos`, 검증 사실은 `Docs/02_Verification` 정본으로 위임한다.
 - 실제 구현 순서와 capture는 [Step3 Transformations2D Example](../../../Part2_Chapter04/04_Rasterization_Step3_Transformations2D/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter04/03_Transformations2D.md)로 위임한다.
 - build/run/capture 사실은 [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)로 위임한다.
@@ -43,4 +43,5 @@ Column-vector convention에서 오른쪽 transform이 먼저 적용된다. 예�
 - [Step3 Transformations2D Example](../../../Part2_Chapter04/04_Rasterization_Step3_Transformations2D/README.md)
 - [Step3 Transformations2D Demo](../../03_Demos/Part2_Chapter04/03_Transformations2D.md)
 - [Part2 Chapter04 Verification](../../02_Verification/Part2_Chapter04/verification-index.md)
+- [2D Animation And Hierarchical Orbit](../AnimationAndPhysics/Animation2D.md)
 - [Rasterization Topic Index](topic-index.md)
