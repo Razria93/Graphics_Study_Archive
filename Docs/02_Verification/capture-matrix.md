@@ -11,7 +11,7 @@
 | 범위 | 최소 capture/result | 대표 capture/result | video | 비고 |
 | --- | --- | --- | --- | --- |
 | Part1_Chapter01-02 | 확보 | 확보 | 제외 | `02_Bloom` input/result image를 `Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg`, `Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png`로 승격함. `01_DX11InitAndImGui` capture/result는 제외함 |
-| Part1_Chapter03 | 확보 | 미확인 | 미확인 | Step4 DrawingSphere부터 Step13 Transparency까지 전체 창 screenshot 확보. Step13은 sphere 내부의 background 확대·왜곡과 enter/exit 경계를 확인함. 대표 등급은 전체 Step 완료 후 확정 |
+| Part1_Chapter03 | 확보 | 미확인 | 미확인 | Step4 DrawingSphere부터 Step14 CubeEnvironment까지 전체 창 screenshot 확보. Step14는 PosZ 중심과 X face 경계를 확인함. 대표 등급은 별도 감사에서 확정 |
 | Part2_Chapter04 | 미확인 | 미확인 | 미확인 | rasterization, depth buffer 후보 |
 | Part2_Chapter05-08 | 미확인 | 미확인 | 미확인 | modeling, IBL, bloom 후보 |
 | Part3_Chapter09 | 미확인 | 미확인 | 미확인 | interaction 영상 후보 |

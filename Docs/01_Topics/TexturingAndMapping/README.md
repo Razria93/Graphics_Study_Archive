@@ -22,6 +22,6 @@
 
 ## 다음 작업
 
-1. Step14 CubeEnvironment의 direction-to-face mapping을 별도 Topic으로 승격한다.
-2. Cubemap texture sampling과 기존 2D sampling의 책임 경계를 정리한다.
+1. Part2 example에서 GPU cubemap resource와 reflection mapping을 연결한다.
+2. Normal mapping과 tangent space Topic을 작성한다.
 3. GPU sampler와 CPU sampling의 연결 범위를 확장한다.

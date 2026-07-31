@@ -5,7 +5,7 @@
 ## Provenance
 
 - Step4~13: 2026-07-30~31 현재 확인, 재검증 완료
-- Step14: 문서화 이전 과거 확인(날짜 미기록), 현재 재검증 필요
+- Step14: 2026-07-31 현재 확인
 - 과거 근거: Chapter README에 기록된 Step4~14 Debug/Release build/run 성공
 
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Provenance | 현재 재검증 | Capture | 비고 |
@@ -20,7 +20,7 @@
 | `03_Raytracing_Step11_Supersampling` | `Part1_Chapter03/03_Raytracing_Step11_Supersampling/03_Raytracing_Step11_Supersampling.sln` | 성공 | 성공 | 성공 | 성공 | 현재 확인 | 완료 | 확보 | 2026-07-31 project 폴더 CWD에서 shader·사용자 직접 생성 석재 PNG load, 공개 application title, 64-sample 평균과 160×90 point-upscaled 전체 창 screenshot 확인 |
 | `03_Raytracing_Step12_Reflection` | `Part1_Chapter03/03_Raytracing_Step12_Reflection/03_Raytracing_Step12_Reflection.sln` | 성공 | 성공 | 성공 | 성공 | 현재 확인 | 완료 | 확보 | 2026-07-31 project 폴더 CWD에서 shader·사용자 직접 생성 석재 PNG load, 공개 application title, recursive reflection과 전체 창 screenshot 확인 |
 | `03_Raytracing_Step13_Transparency` | `Part1_Chapter03/03_Raytracing_Step13_Transparency/03_Raytracing_Step13_Transparency.sln` | 성공 | 성공 | 성공 | 성공 | 현재 확인 | 완료 | 확보 | 2026-07-31 project 폴더 CWD에서 shader·사용자 직접 생성 석재 ground와 해수면·하늘 background PNG load, 공개 application title, air/glass refraction과 전체 창 screenshot 확인 |
-| `03_Raytracing_Step14_CubeEnvironment` | `Part1_Chapter03/03_Raytracing_Step14_CubeEnvironment/03_Raytracing_Step14_CubeEnvironment.sln` | 성공 | 성공 | 성공 | 성공 | 과거 확인 | 필요 | 미확인 | 문서화 이전 확인 |
+| `03_Raytracing_Step14_CubeEnvironment` | `Part1_Chapter03/03_Raytracing_Step14_CubeEnvironment/03_Raytracing_Step14_CubeEnvironment.sln` | 성공 | 성공 | 성공 | 성공 | 현재 확인 | 완료 | 확보 | 2026-07-31 project CWD와 repository-root CWD에서 shader·cubemap 6면 load, 공개 title과 environment 전체 창 screenshot 확인 |
 
 ## 갱신 기준
 

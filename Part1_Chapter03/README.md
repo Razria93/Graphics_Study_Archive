@@ -5,10 +5,9 @@
 ## 상태
 
 - 학습 코드: Step4~14 보관 완료
-- 현재 문서화: Step4~13 완료, Step14 문서화 대기
-- 현재 재검증: Step4~13 Debug/Release x64 build/run 완료
-- 과거 확인: Step14 Debug/Release build/run 성공, 현재 재검증 필요
-- Capture: Step4~13 screenshot 확보
+- 현재 문서화: Step4~14 완료
+- 현재 재검증: Step4~14 Debug/Release x64 build/run 완료
+- Capture: Step4~14 screenshot 확보
 
 ## Archive/Public 검토
 
@@ -16,13 +15,13 @@
 | --- | --- |
 | Source provenance | [`SRC-P1-C03`](../Docs/99_Legacy/source-registry.md) |
 | Import status | Step4~14 반영 |
-| Public readiness | Step4~13 검토 필요, Step14 미판정 |
-| Build/run status | Step4~13 현재 확인, Step14 과거 확인 |
-| Texture/environment asset | Step10~12와 Step13 ground에 사용자 직접 생성 석재 texture 적용, Step13 background에 사용자 직접 생성 해수면·하늘 texture 적용, Step14 environment asset은 별도 검토 |
+| Public readiness | Step4~14 검토 필요 |
+| Build/run status | Step4~14 현재 확인 |
+| Texture/environment asset | Step10~13 검수 asset 적용, Step14는 Humus CC BY 3.0 cubemap 6면과 attribution 원문 유지 |
 | Verification | [Part1 Chapter03 Verification](../Docs/02_Verification/Part1_Chapter03/verification-index.md) |
 | Demo | [Part1 Chapter03 Demo Index](../Docs/03_Demos/Part1_Chapter03/demo-index.md) |
 | Topic | [Ray Tracing Topics](../Docs/01_Topics/RayTracing/README.md), [Lighting And Shading Topics](../Docs/01_Topics/LightingAndShading/README.md), [Shadow Topics](../Docs/01_Topics/Shadows/README.md) |
-| Next action | Step14 CubeEnvironment 검증과 문서화 |
+| Next action | Chapter03 전체 정합성 감사와 대표 Demo 선정 |
 
 ## 순차 Step
 
@@ -38,7 +37,7 @@
 | Step11 | [Supersampling](03_Raytracing_Step11_Supersampling/README.md) | 완료 | 현재 확인 | [Supersampling Demo](../Docs/03_Demos/Part1_Chapter03/11_Supersampling.md) |
 | Step12 | [Reflection](03_Raytracing_Step12_Reflection/README.md) | 완료 | 현재 확인 | [Reflection Demo](../Docs/03_Demos/Part1_Chapter03/12_Reflection.md) |
 | Step13 | [Transparency](03_Raytracing_Step13_Transparency/README.md) | 완료 | 현재 확인 | [Transparency Demo](../Docs/03_Demos/Part1_Chapter03/13_Transparency.md) |
-| Step14 | `03_Raytracing_Step14_CubeEnvironment` | 대기 | 과거 확인 | 대기 |
+| Step14 | [CubeEnvironment](03_Raytracing_Step14_CubeEnvironment/README.md) | 완료 | 현재 확인 | [CubeEnvironment Demo](../Docs/03_Demos/Part1_Chapter03/14_CubeEnvironment.md) |
 
 ## Topic 연결
 
@@ -51,9 +50,4 @@
 - [Sampling And Anti Aliasing](../Docs/01_Topics/RayTracing/SamplingAndAntiAliasing.md)
 - [Recursive Reflection](../Docs/01_Topics/RayTracing/RecursiveReflection.md)
 - [Refraction And Transparency](../Docs/01_Topics/RayTracing/RefractionAndTransparency.md)
-
-Step14 Topic은 해당 Step의 코드와 실행 결과를 확인한 뒤 연결한다.
-
-## Asset 검토가 필요한 Step
-
-- Step14 environment asset은 public 공개 전 attribution과 사용 subset을 검토한다.
+- [Cubemap And Environment Mapping](../Docs/01_Topics/TexturingAndMapping/CubemapAndEnvironmentMapping.md)
