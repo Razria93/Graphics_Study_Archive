@@ -48,7 +48,7 @@ function Get-DemoPseudocodeFenceIssue {
     $issues = [System.Collections.Generic.List[string]]::new()
     $fences = [regex]::Matches(
         $Content,
-        '(?ms)^```(?<lang>cpp|text)[ \t]*\r?\n(?<body>.*?)^```[ \t]*$'
+        '(?ms)^```(?<lang>cpp|text)[ \t]*\r?\n(?<body>.*?)^```[ \t]*\r?$'
     )
 
     foreach ($fence in $fences) {

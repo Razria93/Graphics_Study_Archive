@@ -9,6 +9,22 @@ $FixtureRoot = Join-Path $PSScriptRoot "fixtures/demo-doc-link-label"
 $PseudocodeFixtureRoot = Join-Path $PSScriptRoot "fixtures/demo-doc-pseudocode"
 $Failures = [System.Collections.Generic.List[string]]::new()
 
+function ConvertTo-LineEnding {
+    param(
+        [string]$Content,
+        [ValidateSet("LF", "CRLF")]
+        [string]$LineEnding
+    )
+
+    $normalized = $Content -replace "`r`n", "`n"
+    $normalized = $normalized -replace "`r", "`n"
+    if ($LineEnding -eq "CRLF") {
+        return $normalized -replace "`n", "`r`n"
+    }
+
+    return $normalized
+}
+
 $validLines = Get-Content -LiteralPath `
     (Join-Path $FixtureRoot "valid.md.txt") -Encoding utf8
 foreach ($line in $validLines) {
@@ -27,25 +43,36 @@ foreach ($line in $invalidLines) {
     }
 }
 
-$validPseudocode = Get-Content -Raw -LiteralPath `
+$validPseudocodeSource = Get-Content -Raw -LiteralPath `
     (Join-Path $PseudocodeFixtureRoot "valid.md.txt") -Encoding utf8
-$validPseudocodeIssues = @(
-    Get-DemoPseudocodeFenceIssue -Content $validPseudocode
-)
-if ($validPseudocodeIssues.Count -gt 0) {
-    $Failures.Add("valid pseudocode fixture rejected")
-}
-
-$invalidPseudocode = Get-Content -Raw -LiteralPath `
+$invalidPseudocodeSource = Get-Content -Raw -LiteralPath `
     (Join-Path $PseudocodeFixtureRoot "invalid.md.txt") -Encoding utf8
-$invalidPseudocodeIssues = @(
-    Get-DemoPseudocodeFenceIssue -Content $invalidPseudocode
-)
-if ($invalidPseudocodeIssues.Count -ne 2) {
-    $Failures.Add(
-        "invalid pseudocode fixture expected 2 issues, got " +
-        $invalidPseudocodeIssues.Count
+
+foreach ($lineEnding in @("LF", "CRLF")) {
+    $validPseudocode = ConvertTo-LineEnding `
+        -Content $validPseudocodeSource `
+        -LineEnding $lineEnding
+    $validPseudocodeIssues = @(
+        Get-DemoPseudocodeFenceIssue -Content $validPseudocode
     )
+    if ($validPseudocodeIssues.Count -gt 0) {
+        $Failures.Add(
+            "valid $lineEnding pseudocode fixture rejected"
+        )
+    }
+
+    $invalidPseudocode = ConvertTo-LineEnding `
+        -Content $invalidPseudocodeSource `
+        -LineEnding $lineEnding
+    $invalidPseudocodeIssues = @(
+        Get-DemoPseudocodeFenceIssue -Content $invalidPseudocode
+    )
+    if ($invalidPseudocodeIssues.Count -ne 2) {
+        $Failures.Add(
+            "invalid $lineEnding pseudocode fixture expected 2 issues, got " +
+            $invalidPseudocodeIssues.Count
+        )
+    }
 }
 
 if ($Failures.Count -gt 0) {
