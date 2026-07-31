@@ -148,9 +148,7 @@ remote 변경이 일부만 성공하면 다음 원칙을 적용한다.
 
 ## Source Docs와 GitHub Body 경계
 
-코드 폴더 README, `Docs/00_Index`부터 `Docs/06_Policies`, `Docs/_assets`는
-GitHub body의 source docs다. 이 범위에는 archive 정본, 상태 기록, 검증 근거,
-visual result 파일, 정책을 둔다.
+코드 폴더 README, `Docs/00_Index`부터 `Docs/06_Policies`, `Docs/_assets`는 GitHub body의 source docs다. 이 범위에는 archive 정본, 상태 기록, 검증 근거, visual result 파일, 정책을 둔다.
 
 `Docs/07_GitHub`는 source docs를 GitHub Issue, PR, comment body로 요약/재구성하는 staging 공간이다. GitHub body는 source docs의 원문을 복제하지 않고, 게시 목적에 맞는 요약과 링크만 둔다.
 
@@ -181,9 +179,7 @@ GitHub 게시
 -> Docs/04_WorkLogs/work-unit-github-index.md 갱신
 ```
 
-게시 후에는 실제 Issue/PR 번호와 URL을 기록하고, 변경 영향이 있는 Chapter
-README, 상세 Demo, Demo index, PR 후보, WorkLog, Publication 후보만
-동기화한다. 모든 문서를 기계적으로 갱신하지 않는다.
+게시 후에는 실제 Issue/PR 번호와 URL을 기록하고, 변경 영향이 있는 Chapter README, 상세 Demo, Demo index, PR 후보, WorkLog, Publication 후보만 동기화한다. 모든 문서를 기계적으로 갱신하지 않는다.
 
 ## Progress Issue 운영 기준
 
@@ -203,11 +199,7 @@ Progress Issue 댓글은 두 종류로 고정한다.
 | 누적 진행판 | `Docs/07_GitHub/plan/plan-progress.md` | 완료, 진행 중, 예정 Work Unit과 관련 PR 현황 |
 | PR 마감 plan comment | `Docs/07_GitHub/plan/comments/*.md` | PR 마감 단위 요약, 검증, 남은 제한, 관련 PR |
 
-누적 진행판은 현재 PR 상태를 표시할 수 있다. PR 마감 plan comment는 게시 후
-상태가 바뀌어도 의미가 유지되도록 관련 PR에 `Draft`, `Ready for Review` 같은
-임시 상태 수식어를 붙이지 않고 PR 번호, URL과 완료 범위만 기록한다. 현재 PR
-상태는 GitHub remote와 `Docs/04_WorkLogs/work-unit-github-index.md`에서
-확인한다.
+누적 진행판은 현재 PR 상태를 표시할 수 있다. PR 마감 plan comment는 게시 후 상태가 바뀌어도 의미가 유지되도록 관련 PR에 `Draft`, `Ready for Review` 같은 임시 상태 수식어를 붙이지 않고 PR 번호, URL과 완료 범위만 기록한다. 현재 PR 상태는 GitHub remote와 `Docs/04_WorkLogs/work-unit-github-index.md`에서 확인한다.
 
 Progress Issue 댓글을 생성하거나 수정하기 전에는 대상 Issue, 사용할 게시 후보 파일, 실행할 `gh` 명령, 예상 변경 요약을 사용자에게 보고하고 승인받는다.
 
@@ -227,15 +219,12 @@ Issue에 포함할 항목:
 
 ### Demo Issue
 
-Demo Issue는 상세 Demo 정본에서 공개 가치가 높은 결과와 구현을 선별한 curated
-publication view다. Issue 하나만 읽어도 대표 결과, 핵심 구현, 구현 범위와 한계를
-이해할 수 있게 작성하고 상세 Demo 전체를 복제하지 않는다.
+Demo Issue는 상세 Demo 정본에서 공개 가치가 높은 결과와 구현을 선별한 curated publication view다. Issue 하나만 읽어도 대표 결과, 핵심 구현, 구현 범위와 한계를 이해할 수 있게 작성하고 상세 Demo 전체를 복제하지 않는다.
 
 - 대표 visual 1~3개와 핵심 구현 요약을 자체 포함한다.
 - 상세 Demo, Example, Topic, Verification, 코드와 관련 PR을 연결한다.
 - capture 생성 승인이나 내부 workflow 추적에 사용하지 않는다.
-- 게시 시점 snapshot으로 보되 중요한 구현, 결과, limitation이 바뀌면
-  동기화 필요 여부를 확인한다.
+- 게시 시점 snapshot으로 보되 중요한 구현, 결과, limitation이 바뀌면 동기화 필요 여부를 확인한다.
 
 ## PR 책임
 
@@ -311,8 +300,7 @@ GitHub remote에 Issue, PR, comment를 게시하거나 수정한 뒤에는 다�
 - 게시 후 실제 본문 또는 리뷰 대응 기록이 필요하면 `local/` 하위 snapshot에 남긴다.
 - `Docs/04_WorkLogs`에는 원문이 아니라 요약과 링크만 반영한다.
 - `Docs/04_WorkLogs/work-unit-github-index.md`의 Issue/PR/Progress comment 상태를 갱신한다.
-- 변경 영향이 있는 Chapter README, 상세 Demo, Demo index, PR 후보,
-  Publication 후보의 링크와 상태를 확인한다.
+- 변경 영향이 있는 Chapter README, 상세 Demo, Demo index, PR 후보, Publication 후보의 링크와 상태를 확인한다.
 
 ## Ready for Review 확인
 
@@ -326,8 +314,11 @@ Ready for Review 감사와 실제 상태 전환을 분리한다. 감사 단계�
 - merge conflict, 현재 `CHANGES_REQUESTED` review와 미해결 actionable review thread가 없다.
 - 민감 정보, 금지 파일과 공개 위험이 없다.
 - 남은 warning과 follow-up이 Ready 전환을 막는지 구분한다.
+- 새로 게시하거나 레이아웃이 크게 바뀐 공개 문서는 실제 GitHub UI 표본 렌더링을 확인한다.
 
 감사 결과는 `READY`, `READY WITH WARNINGS`, `BLOCKED` 중 하나로 보고한다. 판정은 상태 전환 승인을 대신하지 않는다. `gh pr ready`는 별도 사용자 승인 후에만 실행한다.
+
+Browser 연결이 없으면 렌더링을 통과했다고 추정하지 않고 `렌더링 미확인` warning으로 남긴다. 이미 확인된 broken table, broken image 또는 잘린 대표 visual은 수정과 재검수 전까지 blocker로 다룬다. 표본 범위와 실행 절차는 [Validation Tools](../98_Tools/validation-tools.md)를 따른다.
 
 ### Ready 판정 제외 항목
 
@@ -338,7 +329,17 @@ Ready for Review 감사와 실제 상태 전환을 분리한다. 감사 단계�
 - branch protection 설정 여부
 - private repository plan 제한 등에 따른 branch protection 상세 API 조회 가능 여부
 
-위 항목이 없거나 조회할 수 없는 상태는 `BLOCKER`, `WARNING` 또는 후속 조치로 분류하지 않으며 기본 감사에서 별도로 조회하지 않는다. 사용자가 해당 기능의 도입이나 검토를 요청한 경우에만 설계와 운영 범위를 별도 작업으로 다룬다.
+GitHub Actions는 검증 결과를 생성하고, branch protection과 required check는 그 결과를 merge 조건으로 강제한다. 두 기능은 독립적이므로 Actions를 사용하기 위해 branch protection이 필요하지 않다.
+
+현재 개인 저장소에서는 branch protection과 required check를 운용하지 않는다. 위 항목이 없거나 조회할 수 없는 상태는 `BLOCKER`, `WARNING` 또는 후속 조치로 분류하지 않으며 기본 감사에서 별도로 조회하지 않는다. 사용자가 해당 기능의 도입이나 검토를 요청한 경우에만 설계와 운영 범위를 별도 작업으로 다룬다.
+
+### GitHub Actions 보조 검증
+
+GitHub Actions는 로컬 validator와 동일한 검사를 원격 runner에서 다시 실행하는 보조 검증으로 사용하며 로컬 검증을 대체하지 않는다. 현재 workflow는 검증 결과만 생성하며 branch protection 또는 required merge gate를 구성하지 않는다.
+
+변경 commit에 대응하는 Actions run이 생성되면 Ready 감사에서 결과를 확인한다. validator step 실패는 원인을 확인할 때까지 `BLOCKED`로 분류하며, runner 할당과 GitHub infrastructure 실패는 문서 품질 실패로 단정하지 않고 `WARNING`으로 분류한다.
+
+Actions가 없다는 사실 자체는 Ready blocker가 아니다. 구성된 workflow의 실패를 무시하거나 성공한 Actions run만으로 build/run, capture의 시각 안전성과 문서 의미 품질을 증명하지 않는다.
 
 ## WorkLog 반영
 

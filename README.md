@@ -7,17 +7,19 @@
 - DirectX11 initialization과 render loop 구성
 - CPU-side image processing 결과의 DirectX11 texture upload
 - Bloom post-processing과 original/result 비교
-- Ray tracing, rasterization, lighting, shadows, PBR/IBL 정리 예정
+- CPU ray tracing Step4~14와 cubemap environment sampling
 - Compute shader와 simulation 예제 정리 예정
 
-## Current Pilot
+## Current Work
 
-현재는 `Part1_Chapter01-02`를 기준으로 새 문서화 workflow를 검증하고 있다.
+`Part1_Chapter01-02` pilot으로 문서화 workflow를 검증했고, 현재는 `Part1_Chapter03`을 Step 순서대로 검증하고 문서화한다.
 
 - [Part1 Chapter01-02](Part1_Chapter01-02/README.md): DirectX11 기반 렌더링 흐름과 bloom 후처리 pilot
 - [01_DX11InitAndImGui](Part1_Chapter01-02/01_DX11InitAndImGui/README.md): DirectX11 device, swap chain, render target, ImGui 기반 예제
 - [02_Bloom](Part1_Chapter01-02/02_Bloom/README.md): original input과 bloom result를 비교하는 post-processing 예제
 - [PostProcessingAndBloom](Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md): bloom 처리 흐름과 DirectX11 표시 경로
+- [Part1 Chapter03](Part1_Chapter03/README.md): CPU ray tracing Step4~14 순차 작업
+- [Step14 CubeEnvironment](Part1_Chapter03/03_Raytracing_Step14_CubeEnvironment/README.md): direction 기반 cubemap environment sampling
 
 ## Featured Result
 
@@ -39,8 +41,8 @@
 
 | 범위 | 주요 내용 | 코드 보관 | 문서화 |
 | --- | --- | --- | --- |
-| `Part1_Chapter01-02` | DirectX11 init, render loop, bloom post-processing | 완료 | pilot 진행 |
-| `Part1_Chapter03` | ray tracing basics | 완료 | 대기 |
+| `Part1_Chapter01-02` | DirectX11 init, render loop, bloom post-processing | 완료 | pilot 마감 |
+| `Part1_Chapter03` | ray tracing basics와 cubemap sampling | 완료 | Step4~14 문서화·재검증 완료 |
 | `Part2_Chapter04` | rasterization foundation | 완료 | 대기 |
 | `Part2_Chapter05-08` | DirectX11 pipeline, texture, mesh 흐름 | 완료 | 대기 |
 | `Part3_Chapter09` | texturing and mapping | 완료 | 대기 |

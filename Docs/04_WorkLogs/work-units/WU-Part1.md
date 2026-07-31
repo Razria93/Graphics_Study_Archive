@@ -22,7 +22,8 @@
 | capture/result | 확인 | ChatGPT 생성 입력 이미지로 `result.png` 재생성 확인. input/result 비교 이미지를 `Docs/_assets/captures`에 승격했다. |
 | README 계층 | 확인 | Root README는 portfolio archive 첫 화면으로, Chapter/Example README는 각 계층 정본으로 정리했다. |
 | Remote PR | Merged | PR #8을 일반 merge commit `e14f5e3`으로 병합했다. |
-| 로컬 PR 후보 | ready | `Docs/07_GitHub/prs/part1_chapter01-02.md`를 post-merge remote 동기화 후보로 유지한다. |
+| Pilot 게시 후보 동기화 | 완료 | PR #10 후처리에서 tracked GitHub 후보와 원격 객체를 동기화했다. |
+| Chapter03 순차 작업 | 완료 | Step4 DrawingSphere부터 Step14 CubeEnvironment까지 build/run, README·Topic과 독립 상세 Demo를 완료했다. Step14는 CC BY 3.0 cubemap 실행 subset과 attribution 원문을 유지한다. |
 
 ## 02_Bloom 작업 요약
 
@@ -60,13 +61,11 @@
 - Debug/Release x64 build/run과 `result.png` 생성은 확인했다.
 - `result.png`는 ChatGPT 생성 입력 이미지로 재생성했고 육안상 식별자는 보이지 않는다. input/result 비교 이미지를 `Docs/_assets/captures`에 승격했다.
 - Part1 Work Unit 자체는 아직 진행 중이다.
-- GitHub PR #8은 일반 merge commit
-  [`e14f5e3`](https://github.com/Razria93/Graphics_Study_Archive/commit/e14f5e39d1352fb4f1f55bd6b06fb1e9840cb88c)으로
-  병합했다.
+- GitHub PR #8은 일반 merge commit [`e14f5e3`](https://github.com/Razria93/Graphics_Study_Archive/commit/e14f5e39d1352fb4f1f55bd6b06fb1e9840cb88c)으로 병합했다.
 - Chapter01-02 파일럿은 마감했지만 WU-Part1 전체는 진행 중이다.
+- Chapter03 Step4~14 문서·재검증·capture와 최소·대표·선택 Demo 등급 정리를 완료했다.
 
 ## 다음 작업
 
-1. post-merge 게시 후보와 원격 Progress·Demo 본문의 동기화 여부를 확인한다.
-2. `Part1_Chapter03`의 대표 예제와 검증 범위를 정리한다.
-3. `Portfolio_RayTracer`와 Part1 ray tracing 범위의 연결 단위를 정리한다.
+1. Chapter03 Demo Issue와 Progress comment 게시 여부를 판단한다.
+2. `Portfolio_RayTracer`와 Part1 ray tracing 범위의 연결 단위를 정리한다.

@@ -4,8 +4,7 @@
 
 ## 정본 위치
 
-Demo registry와 상세 기술 구현·시각 결과의 정본은 `Docs/03_Demos`에 둔다.
-검토된 capture/result 파일은 `Docs/_assets`에 둔다.
+Demo registry와 상세 기술 구현·시각 결과의 정본은 `Docs/03_Demos`에 둔다. 검토된 capture/result 파일은 `Docs/_assets`에 둔다.
 
 `Docs/_assets`는 raw capture 저장소가 아니다. `Docs/03_Demos` 또는 `Docs/02_Verification`에서 실제로 참조할 검토 완료 capture/result만 둔다.
 
@@ -59,8 +58,7 @@ capture/result
 
 - build/run 상태가 `성공` 또는 `부분 성공`으로 기록되어 있다.
 - 화면 또는 결과 파일이 보여줄 graphics 개념, 예제 상태, 비교 결과를 명확히 설명한다.
-- `Docs/03_Demos/*/demo-index.md`, 상세 Demo 문서 또는
-  `Docs/03_Demos/capture-plan.md`에서 참조할 계획이 있다.
+- `Docs/03_Demos/*/demo-index.md`, 상세 Demo 문서 또는 `Docs/03_Demos/capture-plan.md`에서 참조할 계획이 있다.
 - capture/result가 있는 예제는 코드 폴더 README에도 연결한다.
 - `Docs/02_Verification/capture-matrix.md`에 capture/result 상태를 기록할 수 있다.
 - public 후보 여부 또는 private-only 사유를 `Docs/05_Publication`에서 판단할 수 있다.
@@ -86,6 +84,8 @@ Chapter 또는 Chapter 묶음 단위 demo에서는 screenshot 최소 1개를 기
 - 피해야 할 노출 요소: 강의명, 강사명, 워터마크, 개인 식별자, 계정, 로컬 경로, 불필요한 IDE/terminal/browser UI
 - 권장 비율과 구도: 가능하면 16:9, 예제 결과가 중심에 보이는 화면
 - 파일명 기준: Part/Chapter/Example과 개념이 드러나는 이름
+
+전체 application window를 촬영하면 공개 가능한 application title과 window border는 포함할 수 있다. 이 경우 실행 결과 규격은 client 해상도를 기준으로 기록하며 OS theme, border와 DPI에 따른 전체 image dimensions 차이는 허용한다. 같은 Demo의 비교 capture는 가능한 한 동일한 window 크기, 위치와 capture 방식을 유지한다.
 
 예제 유형별 기본 요청 기준은 다음과 같다.
 
@@ -161,18 +161,14 @@ GitHub Issue, PR, comment body에 들어가는 screenshot/result image는 repo-r
 
 ## Generated Input workflow
 
-이미지 입력이 필요한 예제는 외부 wallpaper나 출처 불명 이미지를 우선 사용하지
-않는다. Generated input의 출처 기록과 강화 검수 조건은
-[Assets Policy](assets-policy.md)를 따른다.
+이미지 입력이 필요한 예제는 외부 wallpaper나 출처 불명 이미지를 우선 사용하지 않는다. Generated input의 출처 기록과 강화 검수 조건은 [Assets Policy](assets-policy.md)를 따른다.
 
-1. 예제 목적에 맞는 입력 이미지를 직접 생성하거나 출처가 확인된 자료를
-   선택한다.
+1. 예제 목적에 맞는 입력 이미지를 직접 생성하거나 출처가 확인된 자료를 선택한다.
 2. 출처 상태와 외부 자료 복제 여부를 확인한다.
 3. 예제 실행용 입력으로 테스트하고 result image를 생성한다.
 4. 실행 입력과 tracked input의 hash 또는 재인코딩 관계를 확인한다.
 5. metadata, 워터마크, 텍스트, 개인 식별자를 검수한다.
-6. tracked 입력 asset 교체, `Docs/_assets` 승격, public subset 후보 여부를
-   별도로 판단한다.
+6. tracked 입력 asset 교체, `Docs/_assets` 승격, public subset 후보 여부를 별도로 판단한다.
 
 권장 프롬프트 조건:
 
@@ -182,8 +178,7 @@ No text, no logo, no watermark, no people
 Clear visual features for the target graphics concept
 ```
 
-Prompt 원문, 생성 화면, 생성 날짜와 작업용 원본은 기본 승격 필수가 아니다.
-출처가 불명확하거나 외부 자료가 섞인 경우에만 강화 검수 자료로 요청한다.
+Prompt 원문, 생성 화면, 생성 날짜와 작업용 원본은 기본 승격 필수가 아니다. 출처가 불명확하거나 외부 자료가 섞인 경우에만 강화 검수 자료로 요청한다.
 
 ## 파일 기준
 
@@ -236,8 +231,6 @@ screenshot, video, result image를 추가하면 다음 문서를 함께 확인�
 - screenshot/video/result image를 추가하면 `Docs/03_Demos`, `Docs/02_Verification/capture-matrix.md`, `Docs/05_Publication`을 함께 확인한다.
 - screenshot/result image를 추가하면 이미지 metadata를 확인하고, video를 추가하면 파일 크기, 저장 위치, 공개 가능성을 먼저 확인한다.
 - GitHub Issue/PR body에는 승격 검수를 통과한 capture/result만 연결한다.
-- 상세 Demo에서 구현·결과·limitation이 크게 바뀌면 Demo Issue 동기화 필요
-  여부를 확인한다.
-- 같은 tracked asset은 여러 public surface에서 재사용할 수 있지만 설명 본문은
-  각 surface 목적에 맞게 작성한다.
+- 상세 Demo에서 구현·결과·limitation이 크게 바뀌면 Demo Issue 동기화 필요 여부를 확인한다.
+- 같은 tracked asset은 여러 public surface에서 재사용할 수 있지만 설명 본문은 각 surface 목적에 맞게 작성한다.
 - capture/result 승격 전에는 화면 안의 title, watermark, overlay, account, path를 수동으로 확인한다.

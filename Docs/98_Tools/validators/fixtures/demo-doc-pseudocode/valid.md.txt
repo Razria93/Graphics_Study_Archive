@@ -1,0 +1,13 @@
+```cpp
+// Pseudo C++: 유효한 구현 흐름
+Render()
+{
+    Publish();
+}
+```
+
+```text
+input
+→ process
+→ output
+```

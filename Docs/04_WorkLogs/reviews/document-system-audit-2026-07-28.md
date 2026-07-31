@@ -1,8 +1,6 @@
 # Document System Audit 2026-07-28
 
-이 문서는 2026-07-28에 수행한 Graphics Study Archive 전체 문서 감사와 사용자
-검토 결과를 기록한 snapshot이다. 최신 상태 정본을 대체하지 않으며 실제 상태는
-각 책임 문서에서 확인한다.
+이 문서는 2026-07-28에 수행한 Graphics Study Archive 전체 문서 감사와 사용자 검토 결과를 기록한 snapshot이다. 최신 상태 정본을 대체하지 않으며 실제 상태는 각 책임 문서에서 확인한다.
 
 ## 1. Executive summary
 
@@ -12,8 +10,7 @@
 - Markdown 링크, stale path, Legacy 오탐
 - 로컬 GitHub 기록과 remote Issue/PR 상태
 
-감사는 read-only로 수행했다. 초기와 최종 validator는 모두 통과했고 감사 중
-tracked 파일을 변경하지 않았다.
+감사는 read-only로 수행했다. 초기와 최종 validator는 모두 통과했고 감사 중 tracked 파일을 변경하지 않았다.
 
 ## 2. 현재 문서 구조의 강점
 
@@ -47,27 +44,18 @@ tracked 파일을 변경하지 않았다.
 
 주요 근거 위치:
 
-- DOC-001: Chapter README 6개와
-  `Docs/02_Verification/build-run-matrix.md`
-- DOC-002: `Part1_Chapter03/README.md`,
-  `Part4_Chapter14-20/README.md`, `Portfolio_RayTracer/README.md`,
-  `Docs/07_GitHub/prs/part1_chapter01-02.md`
+- DOC-001: Chapter README 6개와 `Docs/02_Verification/build-run-matrix.md`
+- DOC-002: `Part1_Chapter03/README.md`, `Part4_Chapter14-20/README.md`, `Portfolio_RayTracer/README.md`, `Docs/07_GitHub/prs/part1_chapter01-02.md`
 - DOC-003, DOC-013: 비파일럿 Chapter README 6개와 Portfolio README
 - DOC-004: Root `README.md` Study Map
 - DOC-005: `Docs/03_Demos/demo-priority.md`와 Part1 Demo index
 - DOC-006: `Docs/04_WorkLogs/work-unit-github-index.md`, Issue #7, PR #8
-- DOC-007, DOC-010, DOC-012:
-  `Docs/07_GitHub/issues/demo/demo_part1_chapter01-02.md`와 Part1 PR body
-- DOC-008, DOC-009, DOC-011:
-  `canonical-docs-policy.md`, `github-workflow-policy.md`,
-  GitHub body instruction과 관련 template
+- DOC-007, DOC-010, DOC-012: `Docs/07_GitHub/issues/demo/demo_part1_chapter01-02.md`와 Part1 PR body
+- DOC-008, DOC-009, DOC-011: `canonical-docs-policy.md`, `github-workflow-policy.md`, GitHub body instruction과 관련 template
 - DOC-014: Root `README.md`와 `Docs/README.md`
 - DOC-015, DOC-016: `Docs/98_Tools`, validators와 `.github` 품질 규칙
 
-DOC-002, DOC-004, DOC-005, DOC-007, DOC-010, DOC-013, DOC-014는 목표가
-확정되면 자동 또는 반자동 수정할 수 있다. DOC-001, DOC-003, DOC-008,
-DOC-009, DOC-011, DOC-015, DOC-016은 정책 또는 사용자 판단을 먼저 반영한다.
-DOC-006과 DOC-012의 remote 변경은 별도 GitHub 승인 절차를 따른다.
+DOC-002, DOC-004, DOC-005, DOC-007, DOC-010, DOC-013, DOC-014는 목표가 확정되면 자동 또는 반자동 수정할 수 있다. DOC-001, DOC-003, DOC-008, DOC-009, DOC-011, DOC-015, DOC-016은 정책 또는 사용자 판단을 먼저 반영한다. DOC-006과 DOC-012의 remote 변경은 별도 GitHub 승인 절차를 따른다.
 
 ## 4. 책임 축별 감사 결과
 
@@ -99,8 +87,7 @@ DOC-006과 DOC-012의 remote 변경은 별도 GitHub 승인 절차를 따른다.
 - `Portfolio_RayTracer/README.md`: 존재하지 않는 Docs 경로 1개
 - `Docs/07_GitHub/prs/part1_chapter01-02.md`: 존재하지 않는 Issue #9 링크
 
-Legacy 내부의 과거 경로, validator의 금지 문자열, template placeholder는 현재
-깨진 링크에서 제외했다.
+Legacy 내부의 과거 경로, validator의 금지 문자열, template placeholder는 현재 깨진 링크에서 제외했다.
 
 ## 7. 정책/template/validator 불일치
 
@@ -145,12 +132,9 @@ Legacy 내부의 과거 경로, validator의 금지 문자열, template placehol
 
 ### DOC-001 재분류
 
-사용자는 문서화 이전 코드 복사 단계에서 대상 코드를 직접 build/run하여 성공을
-확인했다. 따라서 Chapter README의 성공 기록은 사실과 다른 상태가 아니다.
+사용자는 문서화 이전 코드 복사 단계에서 대상 코드를 직접 build/run하여 성공을 확인했다. 따라서 Chapter README의 성공 기록은 사실과 다른 상태가 아니다.
 
-문제는 새 Verification 체계를 만들 때 기존 성공 이력과 근거 수준을 옮기지 않아
-`미확인`으로 보이게 된 provenance 단절이다. `과거 확인` 같은 상태를 실제로
-채택하려면 [Verification Policy](../../06_Policies/verification-policy.md)와 [Terminology Policy](../../06_Policies/terminology-policy.md)에서 먼저 정의한다.
+문제는 새 Verification 체계를 만들 때 기존 성공 이력과 근거 수준을 옮기지 않아 `미확인`으로 보이게 된 provenance 단절이다. `과거 확인` 같은 상태를 실제로 채택하려면 [Verification Policy](../../06_Policies/verification-policy.md)와 [Terminology Policy](../../06_Policies/terminology-policy.md)에서 먼저 정의한다.
 
 ### DOC-003 사용자 검토 범위
 
@@ -161,13 +145,11 @@ Legacy 내부의 과거 경로, validator의 금지 문자열, template placehol
 3. import와 dependency 역사 중 공개 README에 남길 사실
 4. 과거 build/run 성공과 예제 고유 limitation
 
-현재 축 링크, 절대 경로 제거, 문체, 공통 구조는 규칙에 따라 반자동으로 정리할
-수 있다.
+현재 축 링크, 절대 경로 제거, 문체, 공통 구조는 규칙에 따라 반자동으로 정리할 수 있다.
 
 ### DOC-008 Example 의미와 미결정 사항
 
-Example은 폐기된 `Docs/01_Examples` 축을 뜻하지 않는다. Chapter 코드 폴더 아래의
-개별 실행 예제와 그 폴더의 README를 뜻한다.
+Example은 폐기된 `Docs/01_Examples` 축을 뜻하지 않는다. Chapter 코드 폴더 아래의 개별 실행 예제와 그 폴더의 README를 뜻한다.
 
 검토 중인 권장 경계:
 
@@ -175,8 +157,7 @@ Example은 폐기된 `Docs/01_Examples` 축을 뜻하지 않는다. Chapter 코�
 - Topic: 여러 예제에 적용되는 개념과 이론
 - Demo: 저장소에서 결과를 만든 기술 흐름, 구현 선택, 시각 결과
 
-이 경계는 아직 정책으로 확정하지 않는다. 상세 Demo 정본을 `Docs/03_Demos`에
-둘지, Example README의 기존 구현 설명 책임을 유지할지 추가 결정이 필요하다.
+이 경계는 아직 정책으로 확정하지 않는다. 상세 Demo 정본을 `Docs/03_Demos`에 둘지, Example README의 기존 구현 설명 책임을 유지할지 추가 결정이 필요하다.
 
 ## 12. 초기 및 최종 validator 결과
 
@@ -187,8 +168,7 @@ Example은 폐기된 `Docs/01_Examples` 축을 뜻하지 않는다. Chapter 코�
 | `validate-demo-index-quality.ps1` | PASS | PASS |
 | `validate-topic-doc-quality.ps1` | PASS | PASS |
 
-Validator가 모두 통과했지만 링크와 상태 의미 충돌을 발견하지 못했다. 이는
-DOC-016의 자동화 coverage 문제로 분류한다.
+Validator가 모두 통과했지만 링크와 상태 의미 충돌을 발견하지 못했다. 이는 DOC-016의 자동화 coverage 문제로 분류한다.
 
 ## 13. 감사 단계 commit readiness
 
@@ -198,5 +178,4 @@ DOC-016의 자동화 coverage 문제로 분류한다.
 - remote 변경: 없음
 - 후속 수정: 사용자 승인 항목별 별도 작업
 
-이 snapshot 작성은 감사 workflow 문서화 작업에 포함한다. 위 발견 항목의 실제
-정본 수정은 별도 `감사 결과 반영 시작` 요청에서 수행한다.
+이 snapshot 작성은 감사 workflow 문서화 작업에 포함한다. 위 발견 항목의 실제 정본 수정은 별도 `감사 결과 반영 시작` 요청에서 수행한다.

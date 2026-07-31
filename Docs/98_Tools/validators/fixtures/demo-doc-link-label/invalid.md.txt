@@ -1,0 +1,6 @@
+- [CPU render와 dynamic texture upload를 확인한다](../../../Example.h#L51-L65)
+- [Scene 구성을 살펴본다](../../../Raytracer.h#L20-L40)
+- [관련 구현을 참조한다](../../../Raytracer.cpp#L20-L40)
+- [Sphere normal을 triangle normal과 비교한다](../../../Sphere.h#L20-L40)
+- [결과를 확인할 수 있다](../../../PS.hlsl#L10-L13)
+- [Shadow ray 생성과 blocker 거리 판정](../../../Raytracer.h#L65-L73).

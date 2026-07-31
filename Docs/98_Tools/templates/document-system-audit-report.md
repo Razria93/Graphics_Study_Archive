@@ -1,7 +1,6 @@
 # Document System Audit Report
 
-이 template은 특정 시점의 문서 체계 감사 결과를 기록한다. 보고서는 최신 상태
-정본을 대체하지 않고 각 책임 문서로 연결한다.
+이 template은 특정 시점의 문서 체계 감사 결과를 기록한다. 보고서는 최신 상태 정본을 대체하지 않고 각 책임 문서로 연결한다.
 
 ## 1. Executive summary
 

@@ -64,10 +64,14 @@
 - Demo index와 상세 Demo: 대응 Demo validator
 - Topic: Topic validator
 - Markdown: 상대 링크 대상과 stale path
+- Markdown table: table validator와 fixture
 - asset: tracked 여부, metadata, dimensions와 hash
+- application window capture: [Example Window Capture](example-window-capture.md)
 - code: 관련 build/test/run
 
 validator의 지원 범위와 수동 검수 경계는 [Validation Tools](validation-tools.md)와 [Validators](validators/README.md)를 따른다.
+
+새 PR/Issue, 공개 진입점, 큰 table 또는 대표 visual을 변경하면 push 후 로그인된 GitHub UI에서 대표 표본을 read-only로 확인한다. table·목록 layout, 의도하지 않은 줄바꿈, 이미지 로드·비율·잘림과 연결 문서 이동을 확인하며 상세 절차는 [Validation Tools](validation-tools.md)를 따른다.
 
 ## 6. Dirty Worktree와 Commit
 
@@ -85,6 +89,8 @@ commit 승인과 readiness 기준은 [GitHub Workflow Policy](../06_Policies/git
 push 전에는 branch, upstream, ahead/behind, worktree, staged 변경, push 대상 commit과 fast-forward 가능 여부를 확인한다. force push는 별도 승인 없이는 사용하지 않는다.
 
 push 후에는 local HEAD, tracking ref, 실제 remote branch head와 PR head를 비교한다. 값이 다르면 PR, Issue 또는 comment를 수정하지 않는다.
+
+push 또는 pull request에 `Docs Validation` run이 생성되면 완료 상태와 validator별 step을 확인한다. 실패하면 [Validators](validators/README.md)와 [GitHub Workflow Policy](../06_Policies/github-workflow-policy.md)를 기준으로 validator 실패와 runner 또는 GitHub infrastructure 실패를 구분한다.
 
 ## 8. Remote 반영
 
@@ -112,12 +118,13 @@ Ready 감사는 read-only로 수행하고 실제 상태 전환과 분리한다.
 - upstream 대비 commit 범위와 예상 작업 범위 일치
 - PR title/body와 실제 변경 범위 일치
 - 관련 local validator, 작업별 build/test와 수동 문서·링크·public safety 검사 통과
+- 변경 범위에 해당하는 GitHub UI 렌더링 표본 확인 또는 `렌더링 미확인` warning 기록
 - 핵심 링크, asset과 commit permalink 확인
 - merge conflict, 현재 `CHANGES_REQUESTED` review와 미해결 actionable review thread 확인
 - 현재 PR의 `open` feedback과 변경 파일에 관련된 과거 regression check 확인
 - blocker와 warning 구분
 
-GitHub Actions, status check와 branch protection은 현재 Ready 기본 판정에서 제외하며 사용자가 도입을 별도로 요청한 경우에만 검토한다. 세부 판정 기준은 [GitHub Workflow Policy](../06_Policies/github-workflow-policy.md)를 따른다.
+GitHub Actions 구성 여부, required status check와 branch protection은 현재 Ready 기본 판정에서 제외한다. 기본 감사에서는 protection과 required check 존재 여부를 별도로 조회하지 않는다. Actions는 원격 검증 결과를 만들고 보호 규칙은 그 결과를 merge 조건으로 강제하는 독립 기능이다. 구성된 `Docs Validation` run이 현재 변경에 존재하면 결과를 확인하며 세부 판정 기준은 [GitHub Workflow Policy](../06_Policies/github-workflow-policy.md)를 따른다.
 
 review 대응은 actionable thread 확인, 영향 범위 조사, 수정 또는 유지 판단, 검증, 필요한 [Review Feedback Log](../04_WorkLogs/reviews/review-feedback-log.md) 기록과 답글 후보 준비 순서로 진행한다. 과거 log 전체가 아니라 현재 변경 파일에 관련된 regression check만 다시 확인한다.
 
@@ -139,3 +146,5 @@ review 대응은 actionable thread 확인, 영향 범위 조사, 수정 또는 �
 현재 작업이 commit 가능한 상태면 stage 대상과 권장 commit 메시지를 함께 제시한다.
 
 목표 상태와 Git 상태를 정리하고 필요한 사용자 승인·결정을 명시한 뒤, 사용자 확인이 필요한 terminal point이면 [User Attention Notification](user-attention-notification.md)을 한 번 실행하고 최종 응답을 제공한다.
+
+일반 terminal point에는 즉시 알림을 사용한다. 후속 작업에 바로 사용하는 완성형 작업 프롬프트를 제공한 경우에는 최종 응답 직전에 `-DelaySeconds 60`으로 알림을 한 번 예약한다. 세부 대상, 비대상과 중복 처리 기준은 User Attention Notification을 따른다.

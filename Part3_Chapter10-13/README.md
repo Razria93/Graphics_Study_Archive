@@ -1,4 +1,4 @@
-﻿# Part3 Chapter10-13
+# Part3 Chapter10-13
 
 Advanced rendering 예제를 정리하는 폴더입니다.
 
@@ -20,8 +20,7 @@ Advanced rendering 예제를 정리하는 폴더입니다.
 
 ## Source 기준
 
-- primary와 reference source의 관계는
-  [`SRC-P3-C10-13`](../Docs/99_Legacy/source-registry.md)으로 추적한다.
+- primary와 reference source의 관계는 [`SRC-P3-C10-13`](../Docs/99_Legacy/source-registry.md)으로 추적한다.
 - reference-only snapshot은 build/run 실패나 기능 누락 의심 시에만 비교한다.
 - `_Solution` variant는 private archive 비교용 후보이며, 사용자 작업본과 섞지 않습니다.
 - 실행에 필요한 asset만 선별하고, raw result/capture/build output은 포함하지 않습니다.

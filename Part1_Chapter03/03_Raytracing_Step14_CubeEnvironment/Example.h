@@ -12,6 +12,8 @@
 #include <vector>
 #include <chrono>
 #include <algorithm>
+#include <cstring>
+#include <stdexcept>
 
 struct Vertex
 {
@@ -60,8 +62,25 @@ public:
 			raytracer.Render(pixels);
 
 			D3D11_MAPPED_SUBRESOURCE ms;
-			deviceContext->Map(canvasTexture, NULL, D3D11_MAP_WRITE_DISCARD, NULL, &ms);
-			memcpy(ms.pData, pixels.data(), pixels.size() * sizeof(glm::vec4));
+			const HRESULT mapResult = deviceContext->Map(
+				canvasTexture,
+				0,
+				D3D11_MAP_WRITE_DISCARD,
+				0,
+				&ms);
+			if (FAILED(mapResult))
+			{
+				throw std::runtime_error("Failed to map canvas texture.");
+			}
+
+			const size_t rowBytes = size_t(raytracer.width) * sizeof(glm::vec4);
+			for (int row = 0; row < raytracer.height; ++row)
+			{
+				std::memcpy(
+					static_cast<uint8_t *>(ms.pData) + size_t(row) * ms.RowPitch,
+					pixels.data() + size_t(row) * size_t(raytracer.width),
+					rowBytes);
+			}
 			deviceContext->Unmap(canvasTexture, NULL);
 		}
 		count++;

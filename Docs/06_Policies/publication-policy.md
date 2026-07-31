@@ -75,6 +75,4 @@
 - public repo는 private archive가 안정화된 뒤 별도 subset으로 구성한다.
 - public 후보는 private archive 문서를 그대로 복사하지 않고 공개용 문장으로 재작성한다.
 - public capture/result 후보는 강의명, 강사명, 워터마크, 개인 식별자 포함 여부를 확인한 뒤 연결한다. 포함된 자료는 public 후보에서 제외하거나 재촬영/재생성한다.
-- screenshot/result image는 metadata 확인을 포함한다. 사용자 직접 생성 asset은
-  최소 출처 기록을 적용하고, 외부 입력 asset을 사용한 result image는 입력
-  asset의 출처와 라이선스를 확인하기 전까지 검토 필요 또는 제외로 둔다.
+- screenshot/result image는 metadata 확인을 포함한다. 사용자 직접 생성 asset은 최소 출처 기록을 적용하고, 외부 입력 asset을 사용한 result image는 입력 asset의 출처와 라이선스를 확인하기 전까지 검토 필요 또는 제외로 둔다.

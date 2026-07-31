@@ -12,3 +12,7 @@
 ## 권리 검토
 
 저작권과 라이선스 내용은 법률 자문처럼 단정하지 않고 공개 전 점검 기준으로 기록한다. 출처와 라이선스가 불명확한 asset은 `검토 필요`로 둔다.
+
+## Third-Party Asset Attribution
+
+`Part1_Chapter03/03_Raytracing_Step14_CubeEnvironment/SaintPetersBasilica`의 cubemap 6면은 Emil Persson(Humus)의 작업이며 [Creative Commons Attribution 3.0 Unported](https://creativecommons.org/licenses/by/3.0/) 조건으로 제공된다. 저자·source·license 원문은 같은 폴더의 [`readme.txt`](Part1_Chapter03/03_Raytracing_Step14_CubeEnvironment/SaintPetersBasilica/readme.txt)에 유지한다.

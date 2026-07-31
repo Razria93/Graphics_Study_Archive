@@ -37,6 +37,19 @@ part2_chapter04_depth-buffer.png
 | --- | --- | --- | --- | --- |
 | `part1_chapter01-02_02_bloom_input.jpg` | input image | `Part1_Chapter01-02/02_Bloom` | 확보 | bloom 전 원본 비교 이미지 |
 | `part1_chapter01-02_02_bloom_result.png` | result image | `Part1_Chapter01-02/02_Bloom` | 확보 | ChatGPT 생성 입력 이미지 기반 `result.png`를 승격함 |
+| `part1_chapter03_04_drawing-sphere.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step4_DrawingSphere` | 확보 | Debug x64 전체 application window에서 기본 sphere와 조절 UI 확인 |
+| `part1_chapter03_04_drawing-sphere_parameter-adjusted.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step4_DrawingSphere` | 확보 | 전체 application window에서 Center, Radius와 RGB 조정 결과 확인 |
+| `part1_chapter03_05_phong-shading.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step5_PhongShading` | 확보 | Debug x64 전체 application window에서 기본 Phong lighting과 parameter UI 확인 |
+| `part1_chapter03_05_phong-shading_parameter-adjusted.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step5_PhongShading` | 확보 | 전체 application window에서 Light 위치 조정과 highlight 이동 확인 |
+| `part1_chapter03_06_perspective-view.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step6_PerspectiveView` | 확보 | Release x64 전체 application window에서 perspective 크기 변화와 sphere overlap 확인 |
+| `part1_chapter03_07_triangle.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step7_Triangle` | 확보 | Debug x64 전체 application window에서 triangle 경계, flat normal shading과 sphere closest-hit 확인 |
+| `part1_chapter03_08_shadow.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step8_Shadow` | 확보 | Release x64 전체 application window에서 Square 바닥의 연속 면과 cast shadow 확인 |
+| `part1_chapter03_09_barycentric_coordinates.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step9_BarycentricCordinates` | 확보 | Release x64 전체 application window에서 RGB vertex color의 연속 보간 확인 |
+| `part1_chapter03_10_texturing.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step10_Texturing` | 확보 | Release x64 전체 application window에서 사용자 직접 생성 석재 texture의 mapping·보간·seam 부재 확인 |
+| `part1_chapter03_11_supersampling.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step11_Supersampling` | 확보 | Release x64 전체 application window에서 160×90 grid의 64-sample 평균과 8배 point upscale 확인 |
+| `part1_chapter03_12_reflection.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step12_Reflection` | 확보 | Release x64 전체 application window에서 ground와 blue sphere의 recursive reflection 확인 |
+| `part1_chapter03_13_transparency.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step13_Transparency` | 확보 | Release x64 전체 application window에서 sphere 내부의 해수면·하늘 background 왜곡과 enter/exit 경계 확인 |
+| `part1_chapter03_14_cube_environment.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step14_CubeEnvironment` | 확보 | Release x64 전체 application window에서 PosZ 중심과 PosX·NegX 경계 environment 확인 |
 
 ## 승격 체크
 

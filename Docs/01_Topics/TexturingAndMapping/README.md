@@ -11,16 +11,18 @@
 ## 문서 목록
 
 - [Topic Index](topic-index.md)
+- [Texture Sampling](TextureSampling.md)
+- [Cubemap And Environment Mapping](CubemapAndEnvironmentMapping.md)
 
 ## 상태
 
 - Topic 목록: 작성
-- 상세 Topic 문서: 예정
-- 연결 예제 검토: 미확인
-- demo 연결: 미확인
+- 상세 Topic 문서: Texture Sampling, Cubemap And Environment Mapping 작성
+- 연결 예제 검토: Step10·14 현재 확인
+- demo 연결: Step10·14 상세 Demo 연결
 
 ## 다음 작업
 
-1. 연결 예제의 코드 폴더 README를 확인한다.
-2. 대표 Topic을 P0/P1/P2로 확정한다.
-3. 코드 확인 후 상세 Topic 문서를 승격한다.
+1. Part2 example에서 GPU cubemap resource와 reflection mapping을 연결한다.
+2. Normal mapping과 tangent space Topic을 작성한다.
+3. GPU sampler와 CPU sampling의 연결 범위를 확장한다.

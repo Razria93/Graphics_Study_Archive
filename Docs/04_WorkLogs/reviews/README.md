@@ -20,8 +20,7 @@
 ## 문서
 
 - [Part1 Chapter01-02](Part1_Chapter01-02.md): `01_DX11InitAndImGui`, `02_Bloom` pilot 판단 요약
-- [Document System Audit 2026-07-28](document-system-audit-2026-07-28.md):
-  전체 문서 감사와 사용자 판정 snapshot
+- [Document System Audit 2026-07-28](document-system-audit-2026-07-28.md): 전체 문서 감사와 사용자 판정 snapshot
 - [Part1 Pilot Collaboration Environment](part1-pilot-collaboration-environment.md): 파일럿에서 확립한 문서·agent·검증·GitHub 협업 환경 snapshot
 - [Review Feedback Log](review-feedback-log.md): actionable PR review의 대응 결과와 재사용할 회귀 검사
 

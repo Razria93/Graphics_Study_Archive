@@ -32,7 +32,8 @@ namespace hlab
             glassSphere->transparency = 1.0f;
             objects.push_back(glassSphere);
 
-            auto groundTexture = std::make_shared<Texture>("shadertoy_abstract1.jpg");
+            auto groundTexture = std::make_shared<Texture>(
+                "part1_chapter03_stone_mosaic.png");
             auto ground = std::make_shared<Square>(
                 vec3(-10.0f, -1.5f, 0.0f),
                 vec3(-10.0f, -1.5f, 10.0f),
@@ -51,7 +52,8 @@ namespace hlab
             ground->difTexture = groundTexture;
             objects.push_back(ground);
 
-            auto backgroundTexture = std::make_shared<Texture>("back.jpg");
+            auto backgroundTexture = std::make_shared<Texture>(
+                "part1_chapter03_ocean_sunset.png");
             auto background = std::make_shared<Square>(
                 vec3(-10.0f, 10.0f, 10.0f),
                 vec3(10.0f, 10.0f, 10.0f),

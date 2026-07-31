@@ -49,5 +49,4 @@ CPU에서 계산한 픽셀은 `D3D11_USAGE_DYNAMIC` texture에 `Map/Unmap`으로
 
 - Example: [`Part1_Chapter01-02/02_Bloom/README.md`](../../../Part1_Chapter01-02/02_Bloom/README.md)
 - Verification: [`Docs/02_Verification/Part1_Chapter01-02/verification-index.md`](../../02_Verification/Part1_Chapter01-02/verification-index.md)
-- Demo:
-  [`Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md`](../../03_Demos/Part1_Chapter01-02/02_Bloom.md)
+- Demo: [`Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md`](../../03_Demos/Part1_Chapter01-02/02_Bloom.md)

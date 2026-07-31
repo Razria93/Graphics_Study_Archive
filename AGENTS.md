@@ -45,20 +45,18 @@
 
 ## 문서 감사 진입점
 
-- `문서 단일검수 시작`, `문서 영향감사 시작`, `문서 전수감사 시작`,
-  `감사 결과 반영 시작`, `감사 결과 게시 시작`을 문서 감사 workflow
-  keyword로 사용한다.
-- keyword의 범위, 목표 모드, 에이전트 구성, 권한은
-  `Docs/06_Policies/document-system-audit-policy.md`를 따른다.
-- 실행 절차와 보고 형식은
-  `Docs/98_Tools/document-system-audit-guide.md`를 따른다.
+- `문서 단일검수 시작`, `문서 영향감사 시작`, `문서 전수감사 시작`, `감사 결과 반영 시작`, `감사 결과 게시 시작`을 문서 감사 workflow keyword로 사용한다.
+- keyword의 범위, 목표 모드, 에이전트 구성, 권한은 `Docs/06_Policies/document-system-audit-policy.md`를 따른다.
+- 실행 절차와 보고 형식은 `Docs/98_Tools/document-system-audit-guide.md`를 따른다.
 - root에는 상세 감사 규칙을 복제하지 않는다.
 
 ## 사용자 주의 알림
 
 - 목표 모드 완료·중단, 장시간 도구 작업 완료, 사용자 승인·결정 대기와 진행 불가처럼 사용자가 확인해야 하는 terminal point에서 알림을 한 번 실행한다.
+- 후속 작업에 바로 사용하는 완성형 작업 프롬프트를 최종 산출물로 제공한 경우에는 60초 지연 알림을 예약한다.
 - 단순 설명, 짧은 질의응답, 중간 commentary와 status update에는 실행하지 않는다.
-- 한 assistant turn의 같은 terminal point에서 중복 실행하지 않는다.
+- 한 assistant turn에서는 terminal point가 겹쳐도 알림을 최대 한 번만 실행한다.
+- blocker와 사용자 결정 대기는 즉시 알림을 우선하고, 목표 완료와 완성형 작업 프롬프트 제공이 겹치면 지연 알림을 사용한다.
 - 목표 모드를 종료할 때는 목표 상태를 먼저 정리하고 최종 응답 직전에 실행한다.
 - 알림 실패는 원래 작업 결과를 변경하지 않는다.
 - 실행 조건과 명령은 `Docs/98_Tools/user-attention-notification.md`를 따른다.

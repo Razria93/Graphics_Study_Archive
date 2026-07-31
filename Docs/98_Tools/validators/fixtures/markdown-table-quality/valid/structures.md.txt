@@ -1,0 +1,17 @@
+| 이름 | 값 |
+| --- | --- |
+| 기본 | 정상 |
+
+| 왼쪽 | 가운데 | 오른쪽 |
+| :--- | :---: | ---: |
+| A | B | C |
+
+| escaped pipe | inline code | 긴 경로 |
+| --- | --- | --- |
+| f\|oo | `value \| fallback` | `Docs/02_Verification/Part1_Chapter03/verification-index.md`와 한국어 설명 |
+
+```markdown
+| header | mismatch |
+| --- | --- | --- |
+| fenced | table-like | content |
+```

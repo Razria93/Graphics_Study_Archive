@@ -1,8 +1,6 @@
 # Demos
 
-이 폴더는 demo registry와 기술 구현·시각 결과의 상세 정본을 둔다. 실제
-build/run 검증 상태는 `Docs/02_Verification`을 기준으로 하고, 검토된 asset
-파일은 `Docs/_assets`에 둔다.
+이 폴더는 demo registry와 기술 구현·시각 결과의 상세 정본을 둔다. 실제 build/run 검증 상태는 `Docs/02_Verification`을 기준으로 하고, 검토된 asset 파일은 `Docs/_assets`에 둔다.
 
 ## 책임
 
@@ -53,7 +51,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 | 범위 | 문서 위치 | 문서 상태 |
 | --- | --- | --- |
 | Part1 Chapter01-02 | [Part1_Chapter01-02](Part1_Chapter01-02/demo-index.md) | 작성 완료 |
-| Part1 Chapter03 | [Part1_Chapter03](Part1_Chapter03/demo-index.md) | 골격 작성 |
+| Part1 Chapter03 | [Part1_Chapter03](Part1_Chapter03/demo-index.md) | Step4~14 순차 상세 Demo 작성 |
 | Part2 Chapter04 | [Part2_Chapter04](Part2_Chapter04/demo-index.md) | 골격 작성 |
 | Part2 Chapter05-08 | [Part2_Chapter05-08](Part2_Chapter05-08/demo-index.md) | 골격 작성 |
 | Part3 Chapter09 | [Part3_Chapter09](Part3_Chapter09/demo-index.md) | 골격 작성 |

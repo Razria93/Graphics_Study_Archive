@@ -32,8 +32,10 @@
 - Markdown 링크와 뒤따르는 조사·서술어는 같은 물리 줄에 둔다.
 - 하나의 목록 항목은 의미상 한 항목이면 한 물리적 줄로 유지한다.
 - 목록의 `코드:`, `관련 코드:`, `Shader:` 같은 포괄적 label을 별도 줄에 두지 않고, 링크 label에서 확인할 구현 역할을 설명한다.
+- 상세 Demo의 source line 코드 근거 bullet은 구현 대상과 역할을 나타내는 명사형 link label을 사용한다. `확인한다`, `살펴본다`, `참조한다`, `비교한다`, `확인할 수 있다` 같은 행동·서술 종결형 label과 bullet 끝 마침표는 사용하지 않는다.
 - 의사코드와 code block은 뷰포트 가독성을 위해 한 줄 80자 내외를 권장하고 120자를 상한으로 둔다.
-- 일반 본문은 line-length validator 대상으로 삼지 않는다. 인위적 soft-wrap, 문장 흐름, 렌더링 가독성은 agent 또는 수동 검수에서 확인한다.
+- 일반 본문은 line-length validator 대상으로 삼지 않는다. 같은 문단·목록 항목의 연속 물리 줄처럼 구조적으로 확실한 인위적 soft-wrap은 validator로 검사하고, 문장 흐름과 렌더링 가독성처럼 문맥 판단이 필요한 항목은 agent 또는 수동 검수에서 확인한다.
+- 공개 문서의 table, 목록과 visual은 source 구조 검사와 실제 GitHub UI 표본 검수를 구분한다. 반복 가능한 구조 결함은 validator로 환류하고 렌더링 절차는 [Validation Tools](../98_Tools/validation-tools.md)를 따른다.
 - 의미와 문단 구조를 바꾸는 자동 reflow는 사용하지 않는다.
 
 ## 작성 순서
@@ -50,8 +52,7 @@
 10. build/run/capture 상태는 `Docs/02_Verification`에 기록한다.
 11. 검증 단계에서 screenshot, video, result image가 필요한지 판단하고, 필요하면 사용자에게 촬영 또는 생성 조건을 구체적으로 요청한다.
 12. Demo capture/result와 시연 포인트는 `Docs/03_Demos`에 기록한다.
-13. 검토 완료된 대표 capture/result는 코드 폴더 README에 최대 1개 연결하고,
-    전후 비교와 다중 시각 자료는 상세 Demo에 세로 배치한다.
+13. 검토 완료된 대표 capture/result는 코드 폴더 README에 최대 1개 연결하고, 전후 비교와 다중 시각 자료는 상세 Demo에 세로 배치한다.
 14. public subset 판단은 `Docs/05_Publication`에 기록한다.
 15. 작업 과정과 마감 요약은 `Docs/04_WorkLogs`에 기록한다.
 16. 전체 map은 `Docs/00_Index`에서 필요한 범위만 갱신한다.
@@ -80,10 +81,7 @@
 - 강의명, 강사명, 워터마크, 개인 식별자, 계정, 로컬 경로를 피해야 한다는 조건
 - README에 연결할 대표 자료인지, local 검토 후보인지
 
-검토 완료된 screenshot 또는 result image는 코드 폴더 README에 대표 자료를
-최대 1개 연결한다. 전후 비교와 다중 시각 자료는 상세 Demo에 둔다.
-capture/result가 필요 없으면 `Docs/03_Demos`와 `Docs/02_Verification`에
-`제외` 사유를 남긴다.
+검토 완료된 screenshot 또는 result image는 코드 폴더 README에 대표 자료를 최대 1개 연결한다. 전후 비교와 다중 시각 자료는 상세 Demo에 둔다. capture/result가 필요 없으면 `Docs/03_Demos`와 `Docs/02_Verification`에 `제외` 사유를 남긴다.
 
 ## README 갱신 확인 기준
 

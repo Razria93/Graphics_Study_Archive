@@ -11,16 +11,20 @@
 ## 문서 목록
 
 - [Topic Index](topic-index.md)
+- [Ray](Ray.md)
+- [Intersection](Intersection.md)
+- [Barycentric Coordinates](BarycentricCoordinates.md)
+- [Sampling And Anti Aliasing](SamplingAndAntiAliasing.md)
+- [Recursive Reflection](RecursiveReflection.md)
+- [Refraction And Transparency](RefractionAndTransparency.md)
 
 ## 상태
 
 - Topic 목록: 작성
-- 상세 Topic 문서: 예정
-- 연결 예제 검토: 미확인
-- demo 연결: 미확인
+- 상세 Topic 문서: Ray, Intersection, Barycentric Coordinates, Sampling And Anti Aliasing, Recursive Reflection, Refraction And Transparency 작성
+- 연결 예제 검토: Step4~13 현재 확인
+- demo 연결: Step4~13 순차 Demo 연결
 
 ## 다음 작업
 
-1. 연결 예제의 코드 폴더 README를 확인한다.
-2. 대표 Topic을 P0/P1/P2로 확정한다.
-3. 코드 확인 후 상세 Topic 문서를 승격한다.
+1. 후속 Topic은 Step 순서에 맞춰 승격한다.

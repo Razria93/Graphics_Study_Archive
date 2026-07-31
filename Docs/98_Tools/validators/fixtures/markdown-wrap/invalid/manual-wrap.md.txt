@@ -1,0 +1,11 @@
+# Invalid Markdown Wrapping
+
+CPU shading 결과는 reflection-vector 기반
+Phong lighting으로 변환한다.
+
+- 일반 Phong 이론은
+  [Phong Shading](https://example.com)으로 위임한다.
+
+- Build/run/capture 사실은
+  [Verification](https://example.com)로
+  위임한다.

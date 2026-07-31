@@ -14,8 +14,7 @@
 감사 결과 게시 시작: <대상과 작업>
 ```
 
-`Single`, `Impact`, `Chapter`, `Full` 이외의 범위가 들어오면 가장 좁은 명확한
-범위로 해석한다. 수정과 remote 변경은 감사 요청에서 추론하지 않는다.
+`Single`, `Impact`, `Chapter`, `Full` 이외의 범위가 들어오면 가장 좁은 명확한 범위로 해석한다. 수정과 remote 변경은 감사 요청에서 추론하지 않는다.
 
 ## 시작 절차
 
@@ -49,9 +48,7 @@ Full 감사의 기본 분담은 다음과 같다.
 | `policy_quality_audit` | AGENTS, 정책, template, validator, 공개 문서 품질 |
 | 메인 에이전트 | inventory, AGENTS, 실제 문맥 재검증, root cause 통합 |
 
-Impact와 Chapter 감사는 관련 관점을 최대 2개로 합친다. Single 감사는 메인
-에이전트가 직접 수행한다. 하위 에이전트를 지원하지 않으면 표의 세 관점을
-순서대로 조사한다.
+Impact와 Chapter 감사는 관련 관점을 최대 2개로 합친다. Single 감사는 메인 에이전트가 직접 수행한다. 하위 에이전트를 지원하지 않으면 표의 세 관점을 순서대로 조사한다.
 
 하위 에이전트 요청에는 read-only, 수정·stage·commit 금지를 명시한다.
 
@@ -69,19 +66,16 @@ Impact와 Chapter 감사는 관련 관점을 최대 2개로 합친다. Single �
 - `Canonical Docs Policy`와 각 축 `AGENTS.md`의 현재 책임을 기준으로 비교한다.
 - Topic은 여러 예제에 적용되는 개념과 이론을 설명한다.
 - Verification은 직접 확인한 build/run/capture 사실을 소유한다.
-- Example README는 예제 목적, 핵심 코드 위치, 실행 진입점, 대표 visual 최대
-  1개를 소유한다.
+- Example README는 예제 목적, 핵심 코드 위치, 실행 진입점, 대표 visual 최대 1개를 소유한다.
 - Demo는 구현 선택, 다중 시각 자료, 결과 해석, limitation을 소유한다.
 - WorkLog는 작업 당시 결정과 snapshot을 기록한다.
 - Publication은 공개 후보와 제외 판단을 소유한다.
 - GitHub body는 정본을 복제하지 않고 게시 목적에 맞게 요약한다.
-책임 경계 자체가 충돌하면 한쪽 문장을 임의로 고치지 않고 정책 결정 항목으로
-보고한다. 위 Example/Demo 경계는 확정된 기준이므로 중복 여부를 직접 검사한다.
+책임 경계 자체가 충돌하면 한쪽 문장을 임의로 고치지 않고 정책 결정 항목으로 보고한다. 위 Example/Demo 경계는 확정된 기준이므로 중복 여부를 직접 검사한다.
 
 ### 상태 교차검증
 
-Chapter README, Verification, Demo, Publication, WorkLog, GitHub body가 같은
-대상의 상태를 어떻게 표현하는지 비교한다.
+Chapter README, Verification, Demo, Publication, WorkLog, GitHub body가 같은 대상의 상태를 어떻게 표현하는지 비교한다.
 
 - 서로 다른 시점의 snapshot은 오류로 단정하지 않는다.
 - 과거 성공 이력과 현재 재검증 여부를 구분한다.
@@ -103,6 +97,8 @@ Chapter README, Verification, Demo, Publication, WorkLog, GitHub body가 같은
 - validator가 정책이나 template에 없는 규칙을 강제하는지 확인한다.
 - validator가 검사하지 않는 의미적 품질을 수동 감사 목록에 남긴다.
 - 미구현 tool을 현재 사용 가능한 명령처럼 설명하지 않는다.
+- 일반 문단과 하나의 목록 항목이 각각 한 물리 줄인지, Markdown 링크와 조사·서술어가 같은 줄인지 확인한다.
+- 일반 본문에 글자 수 기준을 적용하지 않고 fenced code에만 80자 권장·120자 상한을 적용하는지 확인한다.
 
 ### 공개 문서 품질
 
@@ -110,6 +106,9 @@ Chapter README, Verification, Demo, Publication, WorkLog, GitHub body가 같은
 - source docs를 복제하지 않고 요약과 링크를 사용하는지 확인한다.
 - 검증 상태와 limitation을 독자가 오해하지 않게 구분하는지 확인한다.
 - 관련 문서가 실제로 이동 가능한 Markdown 또는 GitHub 링크인지 확인한다.
+- 공개·레이아웃 민감 변경은 [Validation Tools](validation-tools.md)에 따라 GitHub UI 표본을 확인한다.
+- Browser를 사용할 수 없으면 source 검사와 렌더링 확인을 구분하고 `렌더링 미확인`으로 기록한다.
+- Browser에서 발견한 반복 가능한 구조 결함은 validator와 fixture 후보로 분류한다.
 
 ## 메인 재검증
 
@@ -126,8 +125,7 @@ Chapter README, Verification, Demo, Publication, WorkLog, GitHub body가 같은
 
 ## 보고서 작성
 
-[Document System Audit Report](templates/document-system-audit-report.md)를 사용한다.
-발견은 증상이 아니라 root cause 단위로 묶고 P0, P1, P2 순서로 제시한다.
+[Document System Audit Report](templates/document-system-audit-report.md)를 사용한다. 발견은 증상이 아니라 root cause 단위로 묶고 P0, P1, P2 순서로 제시한다.
 
 수정 작업 묶음은 다음을 분리한다.
 
@@ -163,6 +161,4 @@ powershell -ExecutionPolicy Bypass `
 - 선택 `-TargetPath`
 - 선택 `-OutputPath`
 
-Runner는 console-only와 read-only를 기본으로 하며 tracked 파일 생성, 자동 수정,
-목표 생성, 하위 에이전트 생성, remote 변경을 담당하지 않는다. 링크와 상태의 의미
-판정은 메인 에이전트의 수동 감사에 남긴다.
+Runner는 console-only와 read-only를 기본으로 하며 tracked 파일 생성, 자동 수정, 목표 생성, 하위 에이전트 생성, remote 변경을 담당하지 않는다. 링크와 상태의 의미 판정은 메인 에이전트의 수동 감사에 남긴다.

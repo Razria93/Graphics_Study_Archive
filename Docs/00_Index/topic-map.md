@@ -10,7 +10,7 @@
 | Rasterization | `Docs/01_Topics/Rasterization` | `Part2_Chapter04` |
 | DirectX11 Pipeline | `Docs/01_Topics/DirectX11Pipeline` | `Part1_Chapter01-02`, `Part2_Chapter05-08` |
 | Texturing And Mapping | `Docs/01_Topics/TexturingAndMapping` | `Part2_Chapter05-08`, `Part3_Chapter10-13` |
-| Lighting And Shading | `Docs/01_Topics/LightingAndShading` | `Part2_Chapter05-08`, `Part3_Chapter10-13` |
+| Lighting And Shading | `Docs/01_Topics/LightingAndShading` | `Part1_Chapter03`, `Part2_Chapter05-08`, `Part3_Chapter10-13` |
 | PBR And IBL | `Docs/01_Topics/PBRAndIBL` | `Part2_Chapter05-08`, `Part3_Chapter10-13` |
 | Shadows | `Docs/01_Topics/Shadows` | `Part1_Chapter03`, `Part3_Chapter10-13` |
 | Compute And Simulation | `Docs/01_Topics/ComputeAndSimulation` | `Part4_Chapter14-20` |

@@ -27,8 +27,7 @@
 
 ## 구현 요약
 
-입력 이미지를 CPU에서 처리한 뒤 dynamic texture로 업로드하고 full-screen quad로
-표시한다. Bright-pass, blur, 합성, `RowPitch`를 고려한 upload의 전체 연결은 [02_Bloom 상세 Demo](../../Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)를 기준으로 확인한다.
+입력 이미지를 CPU에서 처리한 뒤 dynamic texture로 업로드하고 full-screen quad로 표시한다. Bright-pass, blur, 합성, `RowPitch`를 고려한 upload의 전체 연결은 [02_Bloom 상세 Demo](../../Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)를 기준으로 확인한다.
 
 ## Build And Run
 
