@@ -13,6 +13,8 @@
 | `validate-demo-doc-quality.ps1` | 상세 Demo 기술 정본 검사(구조, 링크, tracked visual, 금지 경로) | `Docs/03_Demos/**/[0-9][0-9]_*.md` |
 | `test-demo-doc-quality.ps1` | 상세 Demo 코드 근거 link label과 의사코드 fence fixture 검사 | `fixtures/demo-doc-link-label`, `fixtures/demo-doc-pseudocode` |
 | `validate-markdown-wrap-quality.ps1` | 현재 정본 Markdown의 명백한 인위적 soft-wrap 검사 | Root·Example README, `Docs/00_Index`~`Docs/07_GitHub`, `Docs/98_Tools`, tracked `.github` Markdown |
+| `test-markdown-table-quality.ps1` | Markdown table 열 정합성 fixture 검사 | `fixtures/markdown-table-quality` |
+| `validate-markdown-table-quality.ps1` | 현재 정본 Markdown table의 header·separator·data row 열 정합성 검사 | Root·Example README, `Docs/00_Index`~`Docs/07_GitHub`, `Docs/98_Tools`, tracked `.github` Markdown |
 
 ## 사용법
 
@@ -25,13 +27,15 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-doc-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-table-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-table-quality.ps1
 ```
 
 GitHub body validator의 기본 입력은 `Docs/07_GitHub`이다. Topic과 Demo source docs validator는 각각 `Docs/01_Topics`, `Docs/03_Demos`를 기본 입력으로 사용한다.
 
 ## GitHub Actions
 
-`.github/workflows/docs-validation.yml`의 `Docs Validation` workflow는 push와 pull request에서 기존 validator 5종, Demo와 Markdown 줄바꿈 fixture, 현재 정본 검사를 같은 입력 기준으로 실행한다. Actions는 검사 기준의 정본이 아니라 로컬 validator를 실행하는 원격 환경이다.
+`.github/workflows/docs-validation.yml`의 `Docs Validation` workflow는 push와 pull request에서 문서 validator, Demo·Markdown 줄바꿈·Markdown table fixture와 현재 정본 검사를 같은 입력 기준으로 실행한다. Actions는 검사 기준의 정본이 아니라 로컬 validator를 실행하는 원격 환경이다.
 
 GitHub의 Actions tab 또는 PR Checks에서 `Docs Validation` run을 열고 validator별 step과 log를 확인한다. validator step 실패와 checkout, runner 또는 GitHub infrastructure 실패를 구분하며 상세 판정은 [GitHub Workflow Policy](../../06_Policies/github-workflow-policy.md)를 따른다.
 
@@ -44,6 +48,8 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-doc-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-table-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-table-quality.ps1
 ```
 
 `validate-github-quality.ps1`는 현재 `issues/demo/demo_*.md`를 대상으로 다음을 검사한다.
@@ -101,7 +107,10 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markd
 - 일반 문단과 하나의 목록 항목은 각각 하나의 물리적 줄로 작성하고 특정 글자 수 상한을 두지 않는다.
 - 같은 문단·목록 항목의 연속 물리 줄처럼 구조적으로 확실한 인위적 soft-wrap은 `validate-markdown-wrap-quality.ps1`로 검사한다.
 - 애매한 들여쓰기 continuation은 warning으로 보고하며 `-WarningAsFailure`에서만 실패로 승격한다.
+- Markdown table은 header, separator와 data row의 열 수가 일치하는지 검사하고 separator cell의 alignment marker 문법을 확인한다.
+- escaped pipe는 cell 내용으로 처리하고 fenced code block과 HTML table은 table 검사에서 제외한다.
 - 문장 흐름과 렌더링 가독성처럼 문맥 판단이 필요한 항목은 agent 또는 수동 검수에서 확인한다.
+- 실제 GitHub UI에서 table, 목록과 이미지가 의도대로 렌더링되는지는 validator가 보장하지 않으며 [Validation Tools](../validation-tools.md)의 Browser 표본 검수에서 확인한다.
 - validator는 Markdown을 자동 reflow하거나 수정하지 않는다.
 - fenced code는 80자를 권장하고 120자를 상한으로 검사한다.
 - GitHub 게시 전 body에 draft/local-only 경로가 남아 있지 않은지 확인한다.

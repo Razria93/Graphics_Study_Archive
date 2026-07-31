@@ -54,3 +54,11 @@ jobs:
       - name: Validate Markdown wrapping
         shell: pwsh
         run: ./Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
+
+      - name: Test Markdown table validator fixtures
+        shell: pwsh
+        run: ./Docs/98_Tools/validators/test-markdown-table-quality.ps1
+
+      - name: Validate Markdown tables
+        shell: pwsh
+        run: ./Docs/98_Tools/validators/validate-markdown-table-quality.ps1
