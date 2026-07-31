@@ -127,4 +127,4 @@ portfolio_raytracer_reflection.png
 - Step13 Transparency는 석재 ground와 해수면·하늘 background를 사용해 sphere 내부의 수평선·수면 왜곡과 enter/exit 경계를 확인했다.
 - Step14 CubeEnvironment는 PosZ 중심과 PosX·NegX 경계를 보여주는 정적 environment screenshot을 확보했다. Camera 조작이 없어 video는 제외한다.
 - 각 Step은 독립 상세 Demo를 기본으로 하며 Chapter 전체를 하나의 Demo로 합치지 않는다.
-- 최소·대표·선택 등급은 Step4~14 상세 Demo가 완료된 뒤 확정한다.
+- 최소 Demo는 Step4, 대표 Demo는 Step8·13, 선택 Demo는 Step10·14로 확정한다. 나머지 Step은 순차 학습 Demo로 유지하고 정적 결과에 불필요한 video는 제외한다.

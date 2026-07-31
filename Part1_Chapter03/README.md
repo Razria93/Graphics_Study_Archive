@@ -15,13 +15,13 @@
 | --- | --- |
 | Source provenance | [`SRC-P1-C03`](../Docs/99_Legacy/source-registry.md) |
 | Import status | Step4~14 반영 |
-| Public readiness | Step4~14 검토 필요 |
+| Public readiness | Step4~14 asset 검토 완료, GitHub 게시 후보 미선정 |
 | Build/run status | Step4~14 현재 확인 |
 | Texture/environment asset | Step10~13 검수 asset 적용, Step14는 Humus CC BY 3.0 cubemap 6면과 attribution 원문 유지 |
 | Verification | [Part1 Chapter03 Verification](../Docs/02_Verification/Part1_Chapter03/verification-index.md) |
 | Demo | [Part1 Chapter03 Demo Index](../Docs/03_Demos/Part1_Chapter03/demo-index.md) |
 | Topic | [Ray Tracing Topics](../Docs/01_Topics/RayTracing/README.md), [Lighting And Shading Topics](../Docs/01_Topics/LightingAndShading/README.md), [Shadow Topics](../Docs/01_Topics/Shadows/README.md) |
-| Next action | Chapter03 전체 정합성 감사와 대표 Demo 선정 |
+| Next action | 대표 Demo Publication 판정과 GitHub 게시 후보 구성 |
 
 ## 순차 Step
 
