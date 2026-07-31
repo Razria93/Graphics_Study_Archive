@@ -24,7 +24,7 @@
 | `Raytracer.h` | Transparent sphere scene, air/glass IOR 전환과 recursive reflection/refraction |
 | `Object.h` | Reflection과 transparency material weight |
 | `Sphere.h`, `Square.h`, `Triangle.h` | Primitive intersection, outward normal과 UV 계산 |
-| `Texture.cpp`, `Texture.h` | 석재 PNG load와 bilinear sampling |
+| `Texture.cpp`, `Texture.h` | PNG texture load와 bilinear sampling |
 | `Example.h` | CPU RGBA32F buffer, dynamic texture upload와 full-screen draw |
 | `VS.hlsl`, `PS.hlsl` | CPU 결과 canvas texture 표시 |
 
@@ -41,14 +41,15 @@ Transparent sphere의 transparency는 1.0이고 reflection은 0이므로 local P
 | Solution | 존재 | `03_Raytracing_Step13_Transparency.sln` |
 | Debug x64 build/run | 성공 | project 폴더를 working directory로 사용 |
 | Release x64 build/run | 성공 | project 폴더를 working directory로 사용 |
-| Input texture | 포함 | `part1_chapter03_stone_mosaic.png`, Step10~12 검증 asset과 동일 SHA-256 |
+| Ground texture | 포함 | `part1_chapter03_stone_mosaic.png`, Step10~12 검증 asset과 동일 SHA-256 |
+| Background texture | 포함 | `part1_chapter03_ocean_sunset.png`, 사용자 요청으로 생성한 해수면·하늘 asset |
 | Capture/Result | 확보 | Sphere 내부의 background 왜곡과 경계 굴절 확인 |
 
 ## Capture/Result
 
 ![Step13 Transparency result](../../Docs/_assets/captures/part1_chapter03_13_transparency.png)
 
-Sphere 내부에서 background의 석재 줄눈이 확대되고 휘어지며, 상단과 하단의 겹친 경계는 ray가 sphere의 진입·이탈 surface를 통과한 결과를 보여준다.
+Sphere 내부에서 background의 수평선과 구름, 수면 반사가 확대되고 휘어진다. 상단과 하단의 겹친 경계는 ray가 sphere의 진입·이탈 surface를 통과한 결과를 보여준다.
 
 ## Limitations
 

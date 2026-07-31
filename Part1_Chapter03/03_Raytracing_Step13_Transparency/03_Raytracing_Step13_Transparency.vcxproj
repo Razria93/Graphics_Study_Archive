@@ -165,6 +165,7 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="part1_chapter03_ocean_sunset.png" />
     <Image Include="part1_chapter03_stone_mosaic.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

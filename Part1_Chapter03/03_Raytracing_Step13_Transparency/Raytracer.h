@@ -53,7 +53,7 @@ namespace hlab
             objects.push_back(ground);
 
             auto backgroundTexture = std::make_shared<Texture>(
-                "part1_chapter03_stone_mosaic.png");
+                "part1_chapter03_ocean_sunset.png");
             auto background = std::make_shared<Square>(
                 vec3(-10.0f, 10.0f, 10.0f),
                 vec3(10.0f, 10.0f, 10.0f),

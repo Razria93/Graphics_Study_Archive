@@ -59,6 +59,9 @@
     <FxCompile Include="VS.hlsl" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="part1_chapter03_ocean_sunset.png">
+      <Filter>Resource Files</Filter>
+    </Image>
     <Image Include="part1_chapter03_stone_mosaic.png">
       <Filter>Resource Files</Filter>
     </Image>

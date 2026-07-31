@@ -12,7 +12,7 @@
 | RD-004 | `Step10 Texturing` input/result | 출처 불명 texture 교체 | 출처 불명 JPEG를 제거하고 사용자 직접 생성 석재 PNG와 재촬영한 전체 창 capture를 사용 | 완료 | 외부 image 직접 입력·pixel 복제 없음. 실행 입력과 tracked input SHA-256 일치. 입력·capture PNG의 text/EXIF/XMP 정보와 개인 식별자 없음 |
 | RD-005 | `Step11 Supersampling` input/result | 출처 불명 texture 교체 | Step11의 출처 불명 JPEG를 제거하고 Step10에서 검수한 석재 PNG의 동일 바이트 사본과 전체 창 capture를 사용 | 완료 | Step11 입력과 Step10 검증 input의 SHA-256 일치. 입력·capture PNG의 text/EXIF/XMP 정보와 개인 식별자 없음 |
 | RD-006 | `Step12 Reflection` input/result | 출처 불명 texture와 미사용 asset 제거 | Step12의 출처 불명 JPEG와 미사용 background 사본을 제거하고 Step10·11에서 검수한 석재 PNG의 동일 바이트 사본과 전체 창 capture를 사용 | 완료 | Step12 입력과 Step10·11 검증 input의 SHA-256 일치. 입력·capture PNG의 text/EXIF/XMP 정보와 개인 식별자 없음. Step13 asset은 변경하지 않음 |
-| RD-007 | `Step13 Transparency` input/result | 출처 불명 ground·background 교체 | Step13의 출처 불명 JPEG 두 개를 제거하고 Step10~12에서 검수한 석재 PNG의 동일 바이트 사본을 ground·background와 전체 창 capture에 사용 | 완료 | Step13 입력과 Step10~12 검증 input의 SHA-256 일치. 입력·capture PNG의 text/EXIF/XMP 정보와 개인 식별자 없음. Step14 asset은 변경하지 않음 |
+| RD-007 | `Step13 Transparency` input/result | 출처 불명 ground·background 교체 | Step13의 출처 불명 JPEG 두 개를 제거하고 검수한 석재 PNG를 ground에, 사용자 직접 생성 해수면·하늘 PNG를 background에 사용 | 완료 | Ground 입력은 Step10~12 검증 input과 SHA-256이 일치한다. Background는 참고 이미지의 pixel을 직접 복제하지 않은 새 생성 결과다. Background의 C2PA에는 OpenAI 생성 이력만 있고 개인 식별자와 로컬 경로는 없다. 입력·capture의 PNG text/EXIF/XMP 정보와 개인 식별자를 확인했다. Step14 asset은 변경하지 않음 |
 
 ## 유형
 

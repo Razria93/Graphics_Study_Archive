@@ -18,7 +18,7 @@ Recursive reflection trace에 refraction path를 추가하고, air와 glass 경�
 
 ## 입력과 출력
 
-- 입력: transparency 1.0 sphere, 석재 texture ground와 background Square, point light
+- 입력: transparency 1.0 sphere, 석재 ground, 해수면·하늘 background Square, point light
 - IOR: air 1.0과 glass 1.5
 - Secondary ray: reflected 또는 refracted direction으로 생성
 - 출력: local, reflected와 refracted result의 material-weighted sum
@@ -159,10 +159,10 @@ Ray tracing은 CPU에서 최초 frame에 한 번 수행한다. HLSL은 ray traci
 
 ## 시각 결과
 
-- Sphere 내부에서 background의 석재 줄눈과 색 영역이 확대되고 곡면을 따라 휘어진다.
+- Sphere 내부에서 background의 수평선과 구름, 수면 반사가 확대되고 곡면을 따라 휘어진다.
 - Sphere 상단과 하단에는 enter와 exit surface를 통과한 ray가 만든 겹친 굴절 경계가 나타난다.
 - Sphere 양옆의 검은 영역은 background Square 밖으로 진행한 ray 또는 miss 결과와 연결된다.
-- Ground와 background는 같은 검증 texture를 사용하지만 서로 다른 Square orientation과 perspective로 구분된다.
+- Ground는 검증된 석재 texture를 사용하고 background는 해수면·하늘 texture를 사용한다.
 - Capture에서 NaN 형태의 무작위 black speckle이나 self-intersection acne는 관찰되지 않는다.
 
 ## 입력 asset
@@ -171,8 +171,17 @@ Ray tracing은 CPU에서 최초 frame에 한 번 수행한다. HLSL은 ray traci
 - 출처 상태: 사용자 직접 생성
 - 규격: 1024×1024, RGB PNG
 - Input SHA-256: `D0960C2380D0D4432BECEA77A579ACAB2C6A04EDCD8AC0BFA15B1756866348D9`
-- Capture SHA-256: `173773B59391FE0ED5CE8AD455BE74B58A0F0532566EAC77973925D93804E41B`
-- 관계: Step10~12 검증 input의 동일 바이트 사본을 Step13 ground와 background에서 사용한다.
+- 관계: Step10~12 검증 input의 동일 바이트 사본을 Step13 ground에서 사용한다.
+
+- 파일: `part1_chapter03_ocean_sunset.png`
+- 출처 상태: 사용자 직접 생성
+- 규격: 1254×1254, RGB PNG
+- 생성 수단: OpenAI image generation
+- 용도: Step13 background ambient/diffuse texture
+- Input SHA-256: `0394847BCCD57B4C5F5A9D79576BD911F37CD6BB7BD1F725B436C2838BBCFC46`
+
+- Capture 파일: `part1_chapter03_13_transparency.png`
+- Capture SHA-256: `4AEAE58D9CF3C4EB1BE549AF174315CBD3617356CA742D9A193C420BECB70EE2`
 
 ## 구현 범위와 한계
 

@@ -124,7 +124,7 @@ portfolio_raytracer_reflection.png
 - Step10 Texturing은 사용자 직접 생성 석재 texture를 적용해 자연석 mapping·bilinear sampling·Square seam 부재를 확인했다.
 - Step11 Supersampling은 동일 석재 texture를 사용해 160×90 output cell의 64-sample 평균과 8배 point upscale을 확인했다.
 - Step12 Reflection은 동일 석재 texture를 사용해 red sphere의 ground와 blue sphere reflection을 확인했다.
-- Step13 Transparency는 동일 석재 texture를 ground와 background에 사용해 sphere 내부의 확대·왜곡과 enter/exit 경계를 확인했다.
+- Step13 Transparency는 석재 ground와 해수면·하늘 background를 사용해 sphere 내부의 수평선·수면 왜곡과 enter/exit 경계를 확인했다.
 - Step14는 build/run과 문서화를 완료한 뒤 capture 필요성을 판단한다.
 - 각 Step은 독립 상세 Demo를 기본으로 하며 Chapter 전체를 하나의 Demo로 합치지 않는다.
 - 최소·대표·선택 등급은 Step4~14 상세 Demo가 완료된 뒤 확정한다.

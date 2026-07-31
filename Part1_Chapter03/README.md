@@ -18,7 +18,7 @@
 | Import status | Step4~14 반영 |
 | Public readiness | Step4~13 검토 필요, Step14 미판정 |
 | Build/run status | Step4~13 현재 확인, Step14 과거 확인 |
-| Texture/environment asset | Step10~13 사용자 직접 생성 석재 texture 적용, Step14 environment asset은 별도 검토 |
+| Texture/environment asset | Step10~12와 Step13 ground에 사용자 직접 생성 석재 texture 적용, Step13 background에 사용자 직접 생성 해수면·하늘 texture 적용, Step14 environment asset은 별도 검토 |
 | Verification | [Part1 Chapter03 Verification](../Docs/02_Verification/Part1_Chapter03/verification-index.md) |
 | Demo | [Part1 Chapter03 Demo Index](../Docs/03_Demos/Part1_Chapter03/demo-index.md) |
 | Topic | [Ray Tracing Topics](../Docs/01_Topics/RayTracing/README.md), [Lighting And Shading Topics](../Docs/01_Topics/LightingAndShading/README.md), [Shadow Topics](../Docs/01_Topics/Shadows/README.md) |
