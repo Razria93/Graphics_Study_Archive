@@ -9,7 +9,7 @@ Triangle rasterization은 세 vertex가 정의하는 연속 영역을 raster pix
 - world 또는 NDC 좌표를 raster 좌표로 옮긴 뒤 triangle coverage를 판정하는 기초를 설명한다.
 - signed edge function과 winding의 관계를 설명한다.
 - bounding box traversal과 barycentric interpolation을 설명한다.
-- Step1과 Step1A의 실제 함수와 상수는 [Step1 Triangle Example](../../../Part2_Chapter04/04_Rasterization_Step1_Triangle/README.md)과 [Step1A Triangle To Circle Example](../../../Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle/README.md)로 위임한다.
+- Step1, Step1A와 Step2의 실제 함수와 상수는 [Step1 Triangle Example](../../../Part2_Chapter04/04_Rasterization_Step1_Triangle/README.md), [Step1A Triangle To Circle Example](../../../Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle/README.md)과 [Step2 Circle Example](../../../Part2_Chapter04/04_Rasterization_Step2_Circle/README.md)으로 위임한다.
 - build/run/capture 사실은 [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)로 위임한다.
 
 ## 핵심 개념
@@ -56,7 +56,9 @@ vertex position
 
 - [Step1 Triangle Example](../../../Part2_Chapter04/04_Rasterization_Step1_Triangle/README.md)
 - [Step1A Triangle To Circle Example](../../../Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle/README.md)
+- [Step2 Circle Example](../../../Part2_Chapter04/04_Rasterization_Step2_Circle/README.md)
 - Demo: [`Docs/03_Demos/Part2_Chapter04/01_Triangle.md`](../../03_Demos/Part2_Chapter04/01_Triangle.md)
 - Demo: [`Docs/03_Demos/Part2_Chapter04/01_TriangleToCircle.md`](../../03_Demos/Part2_Chapter04/01_TriangleToCircle.md)
+- Demo: [`Docs/03_Demos/Part2_Chapter04/02_Circle.md`](../../03_Demos/Part2_Chapter04/02_Circle.md)
 - Verification: [`Docs/02_Verification/Part2_Chapter04/verification-index.md`](../../02_Verification/Part2_Chapter04/verification-index.md)
 - [Rasterization Topic Index](topic-index.md)

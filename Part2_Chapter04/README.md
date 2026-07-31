@@ -5,9 +5,9 @@ CPU software rasterization에서 triangle coverage와 attribute interpolation을
 ## 상태
 
 - 학습 코드 정리: 전체 예제 보관 완료
-- 순차 문서화: Step1 Triangle과 Step1A Personal Extension 완료
-- Build/run: Step1·Step1A 현재 확인, 나머지 예제 과거 확인
-- Capture: Step1과 Step1A 전체 창 screenshot 확보
+- 순차 문서화: Step1 Triangle, Step1A Personal Extension과 Step2 Circle 완료
+- Build/run: Step1·Step1A·Step2 현재 확인, 나머지 예제 과거 확인
+- Capture: Step1, Step1A와 Step2 전체 창 screenshot 확보
 - Public readiness: 검토 필요
 
 ## Archive/Public 검토
@@ -17,14 +17,14 @@ CPU software rasterization에서 triangle coverage와 attribute interpolation을
 | Source provenance | [`SRC-P2-C04`](../Docs/99_Legacy/source-registry.md) |
 | Import status | 코드 보관 완료 |
 | Public readiness | Step별 검토 필요 |
-| Build/run status | Step1·Step1A Debug/Release x64 현재 확인, 나머지 과거 확인 |
-| Next action | Step2 Circle 정규화 |
+| Build/run status | Step1·Step1A·Step2 Debug/Release x64 현재 확인, 나머지 과거 확인 |
+| Next action | Step3 Transformations2D 정규화 |
 
 ## 학습 순서
 
 1. [Step1 Triangle](04_Rasterization_Step1_Triangle/README.md)
 2. [Step1A Triangle To Circle](04_Rasterization_Step1_TriangleToCircle/README.md)
-3. Step2 Circle
+3. [Step2 Circle](04_Rasterization_Step2_Circle/README.md)
 4. Step3 Transformations2D
 5. Step4 Animation2D
 6. Step5 DepthBuffer
@@ -56,11 +56,19 @@ Step1은 raster 좌표 변환, triangle bounding box, edge function과 barycentr
 
 Step1A는 Step1을 여러 독립 triangle로 구성한 fan으로 확장한다. Slider에서 segment 수를 바꾸면 fan을 재생성하며, 3개와 기본값 32개의 비교로 polygon이 circle에 가까워지는 변화를 확인한다.
 
+### Step2 Circle
+
+- [Example README](04_Rasterization_Step2_Circle/README.md)
+- [Triangle Rasterization Topic](../Docs/01_Topics/Rasterization/TriangleRasterization.md)
+- [Verification](../Docs/02_Verification/Part2_Chapter04/verification-index.md)
+- [Detailed Demo](../Docs/03_Demos/Part2_Chapter04/02_Circle.md)
+
+Step2는 center와 outer-ring position/color를 공유 CPU 배열에 저장하고 index 세 개로 triangle을 조립한다. 고정된 32-triangle fan과 per-indexed-triangle rasterization을 다루며 Step1A의 runtime slider와 독립 triangle 목록을 포함하지 않는다.
+
 ## 후속 예제
 
 | Example | 책임 | 현재 상태 |
 | --- | --- | --- |
-| `04_Rasterization_Step2_Circle` | indexed triangle 기반 circle 구성 | 정규화 대기, 사용자 시험값 local 보존 |
 | `04_Rasterization_Step3_Transformations2D` | 2D transform | 정규화 대기 |
 | `04_Rasterization_Step4_Animation2D` | 시간 기반 2D animation | 정규화 대기 |
 | `04_Rasterization_Step5_DepthBuffer` | depth test와 visibility | 정규화 대기 |
