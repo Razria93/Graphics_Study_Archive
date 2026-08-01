@@ -40,7 +40,8 @@
 ## 후속 작업
 
 - [Chapter04 Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14) 게시와 실제 URL 동기화를 완료한다.
-- Chapter04 PR과 Phase 3-1 완료 댓글 후보의 게시 전 감사를 수행한다.
-- 실제 게시 후 PR·comment URL과 상태를 정본에 동기화한다.
+- [Chapter04 Draft PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15) 게시와 실제 URL 동기화를 완료한다.
+- 누적 Progress 댓글과 Phase 3-1 완료 댓글 후보의 게시 전 감사를 수행한다.
+- 실제 게시 후 comment URL과 상태를 정본에 동기화한다.
 - `Part2_Chapter05-08` 순차 정규화를 별도 Chapter 작업으로 진행한다.
 - `RowPitch`, `Map()` 실패, runtime shader path와 Step1A project identity는 별도 code task로 둔다.

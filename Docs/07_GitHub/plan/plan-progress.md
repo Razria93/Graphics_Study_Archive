@@ -40,7 +40,7 @@ Related PR: [PR #11](https://github.com/Razria93/Graphics_Study_Archive/pull/11)
 
 Step1 Triangle부터 Step10 Lights까지와 사용자 Personal Extension인 Step1A Triangle To Circle을 README, Topic, Verification과 독립 상세 Demo로 연결했다. Debug/Release x64 build/run과 전체 application window capture를 확인하고 Step8을 Chapter 대표, Step10을 기술 보조, Step1A를 사용자 확장, Step4를 시간 변화 Demo로 정리했다. Publication 판정을 완료하고 Chapter 공개 구성을 정리한다.
 
-Related PR: 예정
+Related PR: [PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15) (Draft) - Part2 Chapter04 CPU Software Rasterization 단계별 정규화와 Demo
 
 ## 진행 예정
 
@@ -54,3 +54,4 @@ Related PR: 예정
 
 - PR #8 (Merged): Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom
 - [PR #11](https://github.com/Razria93/Graphics_Study_Archive/pull/11) (Merged): Part1 Chapter03 CPU Ray Tracing 단계별 구현과 Demo
+- [PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15) (Draft): Part2 Chapter04 CPU Software Rasterization 단계별 정규화와 Demo

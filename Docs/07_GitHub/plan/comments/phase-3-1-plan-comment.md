@@ -24,4 +24,4 @@
 
 ## Related PR
 
-- 예정
+- [PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15) - Part2 Chapter04 CPU Software Rasterization 단계별 정규화와 Demo
