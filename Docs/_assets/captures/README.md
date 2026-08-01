@@ -50,6 +50,9 @@ part2_chapter04_depth-buffer.png
 | `part1_chapter03_12_reflection.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step12_Reflection` | 확보 | Release x64 전체 application window에서 ground와 blue sphere의 recursive reflection 확인 |
 | `part1_chapter03_13_transparency.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step13_Transparency` | 확보 | Release x64 전체 application window에서 sphere 내부의 해수면·하늘 background 왜곡과 enter/exit 경계 확인 |
 | `part1_chapter03_14_cube_environment.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step14_CubeEnvironment` | 확보 | Release x64 전체 application window에서 PosZ 중심과 PosX·NegX 경계 environment 확인 |
+| `part2_chapter04_08_perspective_projection_orthographic.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step8_PerspectiveProjection` | 확보 | 서로 다른 Z에서도 같은 크기를 유지하는 orthographic 기준 상태 확인 |
+| `part2_chapter04_08_perspective_projection_affine.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step8_PerspectiveProjection` | 확보 | Perspective 크기 변화와 screen-space affine checker 왜곡 확인 |
+| `part2_chapter04_08_perspective_projection_correct.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step8_PerspectiveProjection` | 확보 | Reciprocal-depth 보정 이후 perspective-correct checker 결과 확인 |
 
 ## 승격 체크
 

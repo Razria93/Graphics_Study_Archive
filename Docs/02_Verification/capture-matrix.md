@@ -12,7 +12,7 @@
 | --- | --- | --- | --- | --- |
 | Part1_Chapter01-02 | 확보 | 확보 | 제외 | `02_Bloom` input/result image를 `Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg`, `Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png`로 승격함. `01_DX11InitAndImGui` capture/result는 제외함 |
 | Part1_Chapter03 | 확보 | 확보 | 제외 | 최소 Step4, 대표 Step8·13, 선택 Step10·14 screenshot을 확정함. Step4~14 전체 창 screenshot을 확보했고 Step14는 PosZ 중심과 X face 경계를 확인함 |
-| Part2_Chapter04 | 확보 | 확보 | 확보 | Step1 Triangle, Step1A 3·32, Step2 Circle, Step3 기본·조정, Step4 Animation2D, Step5 DepthBuffer 기본·반전, Step6 ShadersConcept와 Step7 Culling On/Off 전체 창 screenshot 확보. Step7 selected video 사용자 검수 완료. 대표 Demo는 Step8·10 확인 후 선정 |
+| Part2_Chapter04 | 확보 | 확보 | 확보 | Step1 Triangle, Step1A 3·32, Step2 Circle, Step3 기본·조정, Step4 Animation2D, Step5 DepthBuffer 기본·반전, Step6 ShadersConcept, Step7 Culling On/Off와 Step8 projection 3단계 전체 창 screenshot 확보. Step8은 정지 이미지로 원근과 보간 차이를 설명하므로 video를 제외한다. 대표 Demo는 Step10 확인 후 확정한다 |
 | Part2_Chapter05-08 | 미확인 | 미확인 | 미확인 | modeling, IBL, bloom 후보 |
 | Part3_Chapter09 | 미확인 | 미확인 | 미확인 | interaction 영상 후보 |
 | Part3_Chapter10-13 | 미확인 | 미확인 | 미확인 | PBR, shadow 후보 |
