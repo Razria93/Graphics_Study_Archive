@@ -58,7 +58,7 @@ Step2와 같은 장면에서 Y rotation, translation과 non-uniform scale을 적
 
 - [Part2 Chapter05-08 README](../README.md)
 - [이전 단계: Step3 DirectXMath](../05_AffineTransformations_Step3_DirectXMath/README.md)
-- 다음 단계: Chapter06 Step1 COM 문서화 대기
+- [다음 단계: Chapter06 Step1 COM](../06_GraphicsPipeline_Step1_COM/README.md)
 - [Matrix And Affine Transformations Topic](../../Docs/01_Topics/Rasterization/MatrixAndAffineTransformations.md)
 - [Phong And Blinn-Phong Topic](../../Docs/01_Topics/LightingAndShading/PhongAndBlinnPhong.md)
 - [Light Types Topic](../../Docs/01_Topics/LightingAndShading/LightTypes.md)
