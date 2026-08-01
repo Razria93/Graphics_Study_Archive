@@ -12,7 +12,7 @@ Step9은 Step8의 perspective-correct CPU software rasterizer에 box topology, f
 - Ambient, Lambert diffuse와 half-vector specular 합성을 설명한다.
 - CPU shading과 DirectX11 presentation 책임을 구분한다.
 - 일반적인 Phong과 Blinn-Phong 비교는 [Phong And Blinn-Phong](../../01_Topics/LightingAndShading/PhongAndBlinnPhong.md)으로 위임한다.
-- Build/run/capture 사실은 [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)로 위임한다.
+- build/run/capture 사실은 [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)로 위임한다.
 
 ## 결과 미리보기
 

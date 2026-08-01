@@ -12,7 +12,7 @@ Step10은 Step9의 CPU Blinn-Phong shading 경로에 Directional, Point와 Spot 
 - CPU shading과 DirectX11 presentation 책임을 구분한다.
 - 일반적인 Light type 이론은 [Light Types](../../01_Topics/LightingAndShading/LightTypes.md)로 위임한다.
 - Phong과 Blinn-Phong의 일반 이론은 [Phong And Blinn-Phong](../../01_Topics/LightingAndShading/PhongAndBlinnPhong.md)으로 위임한다.
-- Build/run/capture 사실은 [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)로 위임한다.
+- build/run/capture 사실은 [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)로 위임한다.
 
 ## 결과 미리보기
 

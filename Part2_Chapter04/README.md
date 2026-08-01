@@ -8,7 +8,7 @@ CPU software rasterization에서 triangle coverage와 attribute interpolation을
 - 순차 문서화: Step1 Triangle부터 Step10 Lights까지 작성
 - Build/run: Step1·Step1A·Step2·Step3·Step4·Step5·Step6·Step7·Step8·Step9·Step10 현재 확인
 - Capture: Step1부터 Step10까지 screenshot 확보, Step10 Directional·Point·Spot 비교 사용자 검수 완료
-- Public readiness: 검토 필요
+- Public readiness: Publication 판정 완료, GitHub 게시 후보 작성 대기
 
 ## Archive/Public 검토
 
@@ -16,9 +16,9 @@ CPU software rasterization에서 triangle coverage와 attribute interpolation을
 | --- | --- |
 | Source provenance | [`SRC-P2-C04`](../Docs/99_Legacy/source-registry.md) |
 | Import status | 코드 보관 완료 |
-| Public readiness | Step별 검토 필요 |
+| Public readiness | Step별 공개 가능성과 대표 구성을 판정하고 GitHub 게시 후보 작성을 대기 |
 | Build/run status | Step1·Step1A·Step2·Step3·Step4·Step5·Step6·Step7·Step8·Step9·Step10 Debug/Release x64 현재 확인 |
-| Next action | Chapter04 전체 정합성과 Publication 후보 감사 |
+| Next action | Chapter04 Demo Issue, PR과 Progress 후보 작성 |
 
 ## 학습 순서
 
