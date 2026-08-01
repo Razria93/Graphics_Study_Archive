@@ -52,5 +52,8 @@
 - Step2를 Chapter 최초 graphics Example과 최소 visual로 두고 video는 정지 image 두 장으로 차이를 설명할 수 있어 제외한다.
 - Chapter05 Step3 DirectXMath의 Debug/Release x64 현재 재검증과 문서 정규화를 완료했다.
 - Step3은 결정적 console 예제로 screenshot과 video를 제외하고 DirectXMath·SimpleMath API 비교를 상세 Demo에 기록한다.
-- Chapter05 Step4 Lights(SimpleMath)를 다음 순차 Example로 정규화한다.
+- Chapter05 Step4 Lights(SimpleMath)의 코드 정합성 보완, Debug/Release x64 현재 재검증과 screenshot 승격을 완료했다.
+- Chapter05 Step1~4를 GLM matrix 기초·적용에서 DirectXMath/SimpleMath API·graphics 적용으로 이어지는 하나의 affine transformation bundle로 정리한다.
+- Step2 GLM과 Step4 SimpleMath는 같은 transform 의도의 대응 visual로 유지하고, Step1·3 console 예제는 설명 중심 단계로 둔다.
+- Chapter06 Step1 COM을 다음 순차 Example로 정규화한다.
 - `RowPitch`, `Map()` 실패, runtime shader path와 Step1A project identity는 별도 code task로 둔다.

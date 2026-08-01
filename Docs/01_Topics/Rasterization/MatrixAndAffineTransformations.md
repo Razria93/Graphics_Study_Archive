@@ -13,6 +13,7 @@ Graphics 좌표 변환에 사용하는 matrix, homogeneous coordinate와 affine 
 - GLM API와 실제 출력은 [Step1 Matrix(GLM) Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step1_Matrix%28GLM%29/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter05-08/05_MatrixGLM.md)로 위임한다.
 - GLM model·normal transform의 실제 적용은 [Step2 Lights(GLM) Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step2_Lights%28GLM%29/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter05-08/05_LightsGLM.md)로 위임한다.
 - DirectXMath의 SIMD load/store와 semantic transform API는 [Step3 DirectXMath Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step3_DirectXMath/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter05-08/05_DirectXMath.md)로 위임한다.
+- SimpleMath row-vector convention의 실제 model·normal transform은 [Step4 Lights(SimpleMath) Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step4_Lights%28SimpleMath%29/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter05-08/05_LightsSimpleMath.md)로 위임한다.
 - build/run 사실은 [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)로 위임한다.
 - 결과 해석은 `Docs/03_Demos`, 검증 사실은 `Docs/02_Verification` 정본으로 위임한다.
 
@@ -37,6 +38,20 @@ DirectXMath의 transform helper는 row-vector 관례를 사용하며 translation
 Matrix multiplication은 일반적으로 교환 법칙이 성립하지 않는다. Column-vector convention에서 `T * R * p`는 point에 rotation을 먼저 적용한 뒤 translation을 적용한다. 반대로 `R * T * p`는 translation으로 생긴 offset까지 원점 주위로 회전한다.
 
 복합 transform은 코드를 읽는 순서가 아니라 vector에 가까운 오른쪽 matrix부터 해석한다. 다른 convention으로 옮길 때는 matrix transpose만이 아니라 multiplication order와 vector 방향을 함께 맞춰야 한다.
+
+### GLM And DirectXMath Convention Equivalence
+
+GLM의 일반적인 column-vector 식은 `M * v`를 사용하고, DirectXMath와 SimpleMath의 row-vector 식은 `v * M`을 사용한다. 같은 scale, rotation과 translation을 적용하려면 matrix multiplication의 표기 순서가 서로 반대로 보인다.
+
+```text
+GLM column-vector:                 v' = T * Rz * Ry * Rx * S * v
+DirectXMath/SimpleMath row-vector: v' = v * S * Rx * Ry * Rz * T
+Applied transform order:           S → Rx → Ry → Rz → T
+```
+
+두 식은 matrix 숫자 배열이 같다는 뜻이 아니다. 각 library의 vector convention과 API semantic에 맞게 구성했을 때 같은 affine transform 역할과 결과를 만들 수 있다는 뜻이다.
+
+Coordinate handedness, memory의 row-major·column-major layout, vector가 matrix의 왼쪽·오른쪽에 놓이는 convention과 multiplication order는 각각 구분한다. DirectXMath는 left-handed와 right-handed view/projection helper를 모두 제공하므로 library 이름만으로 좌표계 handedness를 단정하지 않는다.
 
 ### Inverse And Orthogonal Rotation
 
@@ -72,6 +87,8 @@ Singular scale처럼 inverse가 존재하지 않는 transform은 normal matrix�
 - [Step2 Lights(GLM) Demo](../../03_Demos/Part2_Chapter05-08/05_LightsGLM.md)
 - [Step3 DirectXMath Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step3_DirectXMath/README.md)
 - [Step3 DirectXMath Demo](../../03_Demos/Part2_Chapter05-08/05_DirectXMath.md)
+- [Step4 Lights(SimpleMath) Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step4_Lights%28SimpleMath%29/README.md)
+- [Step4 Lights(SimpleMath) Demo](../../03_Demos/Part2_Chapter05-08/05_LightsSimpleMath.md)
 - [Part2 Chapter05-08 Verification](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [2D Transformations](Transformations2D.md)
 - [Rasterization Topic Index](topic-index.md)

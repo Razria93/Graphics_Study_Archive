@@ -52,7 +52,7 @@ SimpleMath 비교에서는 같은 translation matrix에 `w=1` point와 `w=0` dir
 
 - [Part2 Chapter05-08 README](../README.md)
 - [이전 단계: Step2 Lights(GLM)](../05_AffineTransformations_Step2_Lights%28GLM%29/README.md)
-- 다음 단계: Step4 Lights(SimpleMath) 문서화 대기
+- [다음 단계: Step4 Lights(SimpleMath)](../05_AffineTransformations_Step4_Lights%28SimpleMath%29/README.md)
 - [Matrix And Affine Transformations Topic](../../Docs/01_Topics/Rasterization/MatrixAndAffineTransformations.md)
 - [Step3 DirectXMath 상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/05_DirectXMath.md)
 - [Verification Index](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
