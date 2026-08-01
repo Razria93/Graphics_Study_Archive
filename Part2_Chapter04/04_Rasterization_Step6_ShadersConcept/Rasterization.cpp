@@ -180,7 +180,7 @@ void Rasterization::Render(vector<vec4> &pixels) {
 
 void Rasterization::Update() {
     for (auto &mesh : this->meshes) {
-        mesh->rotationZ += 0.001f;
+        mesh->rotationZ += 0.005f;
     }
 }
 
