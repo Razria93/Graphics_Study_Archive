@@ -82,6 +82,8 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markd
 - `Pseudo C++` 함수와 `if`, `else`, `for`, `while`의 Allman brace style
 - fenced code의 80자 초과 warning과 120자 초과 failure
 
+대표 visual 1~3개 검사는 구조와 수량만 확인한다. 단일 Example 또는 Chapter·Bundle 범위에 맞는 대표성, visual 간 독립 설명 가치와 중복 여부는 게시 전 수동 감사로 확인한다.
+
 `validate-demo-index-quality.ps1`는 현재 `Docs/03_Demos/**/demo-index.md`를 대상으로 다음을 검사한다.
 
 - 필수 섹션 존재와 순서(`## 범위`, `## Demo 목록`, `## 갱신 기준`)

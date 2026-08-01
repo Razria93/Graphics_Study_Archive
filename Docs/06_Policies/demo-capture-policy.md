@@ -52,6 +52,14 @@ capture/result
 - video가 필요하다고 판단한 경우 작업자는 사용자에게 video 요청 조건을 제시한다.
 - 사용자가 demo 구성을 요청한 경우 작업자는 해당 범위의 demo를 구성한다.
 
+Demo Issue의 `visual unit`은 독자가 하나의 결과나 변화를 독립적으로 이해할 수 있는 screenshot, 비교 image 또는 video 하나를 뜻한다. 여러 screenshot을 하나의 비교 image로 합쳤더라도 같은 비교 목적을 설명하면 visual unit 하나로 센다.
+
+- 단일 Example Demo Issue는 해당 Example의 대표 결과를 가장 직접적으로 보여주는 visual을 우선한다.
+- Chapter 또는 Bundle Demo Issue는 대표 기술 결과, 비교 가능한 구현 차이, 사용자 확장이나 시간 변화처럼 서로 다른 설명 축을 먼저 정하고 각 축에 필요한 visual만 선별한다.
+- 각 visual은 다른 visual이 설명하지 않는 구현 선택이나 결과 변화를 추가해야 한다. 같은 상태를 반복하거나 설명 가치가 겹치면 제외한다.
+- Chapter 또는 Bundle Demo Issue도 대표 visual 1~3개 범위와 screenshot 최소 1개를 유지한다.
+- PR은 상세 showcase가 아니라 review 요약이므로 Chapter 또는 Bundle 범위여도 대표 visual 0~1개를 유지한다.
+
 ## Video 필요성 판정
 
 Video 필요성은 `필수`, `선택`, `생략`으로 구분한다. 이 판정은 예제 의미와 정지 이미지 대비 추가 설명 가치를 수동으로 검토해 결정하며 validator가 추측하지 않는다.

@@ -25,7 +25,7 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 ## Demo Issue 전개
 
 - `요약`: 결과와 핵심 구현 2~4문장
-- `결과`: 대표 visual 1~3개
+- `결과`: 대표 visual 1~3개. 단일 Example은 대표 결과를 우선하고 Chapter·Bundle은 대표 기술 결과, 구현 비교, 사용자 확장이나 시간 변화처럼 서로 다른 설명 축을 선별한다.
 - `핵심 구현`: 구현 선택, 결과 영향, 인접한 게시 시점 코드 증거
 - `처리 흐름`: 짧은 단계형 목록
 - `구현 범위와 한계`: 독자가 오해하기 쉬운 제한
@@ -39,6 +39,8 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 
 - Demo Issue는 screenshot 최소 1개를 포함한다.
 - Demo Issue는 대표 visual을 최소 1개 포함한다.
+- Chapter·Bundle Demo Issue의 각 visual은 다른 visual이 설명하지 않는 구현 선택이나 결과 변화를 추가해야 한다.
+- 같은 상태를 반복하거나 설명 가치가 겹치는 visual은 제외한다.
 - GitHub body 이미지 URL은 GitHub absolute URL만 사용한다.
 - screenshot/result image는 `Docs/_assets/captures`를 사용한다.
 - video는 UI parameter, animation, camera와 interaction처럼 시간 변화가 핵심일 때 사용한다.

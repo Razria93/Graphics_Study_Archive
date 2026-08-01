@@ -221,11 +221,12 @@ Issue에 포함할 항목:
 
 Demo Issue는 상세 Demo 정본에서 공개 가치가 높은 결과와 구현을 선별한 curated publication view다. Issue 하나만 읽어도 대표 결과, 핵심 구현, 구현 범위와 한계를 이해할 수 있게 작성하고 상세 Demo 전체를 복제하지 않는다.
 
-- 대표 visual 1~3개와 핵심 구현 요약을 자체 포함한다.
+- 대표 visual 1~3개와 핵심 구현 요약을 자체 포함한다. 단일 Example과 Chapter·Bundle의 visual 선정은 `demo-capture-policy.md`의 독립 설명 축 기준을 따른다.
 - 상세 Demo, Example, Topic, Verification, 코드와 관련 PR을 연결한다.
 - capture 생성 승인이나 내부 workflow 추적에 사용하지 않는다.
 - 게시 시점 snapshot으로 보되 중요한 구현, 결과, limitation이 바뀌면 동기화 필요 여부를 확인한다.
 - Selected video의 기본 게시 위치로 사용하며 사용자 승인 후 한 번만 첨부한다.
+- Selected video를 게시하지 않기로 결정하면 `Docs/05_Publication`에 미게시 이유를 기록한다.
 - Video attachment upload는 URL이 생성되는 remote mutation이므로 Issue 생성·수정과 별도로 대상 파일과 예상 변경을 보고하고 승인받는다.
 - Video가 있는 경우에도 핵심 상태 screenshot을 유지하고 관찰할 변화와 결과 영향을 짧게 설명한다.
 

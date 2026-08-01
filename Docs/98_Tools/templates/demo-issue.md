@@ -12,6 +12,12 @@
 
 ![Representative Result](https://github.com/<owner>/<repo>/blob/<branch>/Docs/_assets/captures/<result>.png?raw=true)
 
+### Supporting Or Comparison Result
+
+Chapter·Bundle 범위에서 대표 결과와 다른 구현 선택이나 비교 축을 보여주는 경우에만 사용한다. 필요하지 않으면 이 소제목을 제거한다.
+
+![Supporting Or Comparison Result](https://github.com/<owner>/<repo>/blob/<branch>/Docs/_assets/captures/<comparison>.png?raw=true)
+
 ### Interaction Video
 
 Video가 필수 또는 선택인 경우 관찰할 조작과 결과 변화를 설명하고 Demo Issue에 한 번 첨부한 GitHub attachment URL을 둔다. Video가 없으면 이 소제목을 제거한다.
@@ -68,6 +74,8 @@ https://github.com/user-attachments/assets/<attachment-id>
 - 일반 문단과 하나의 목록 항목은 각각 하나의 물리적 줄로 작성한다. 상세 기준은 [Docs Authoring Flow Policy](../../06_Policies/docs-authoring-flow-policy.md)를 따른다.
 - 상세 Demo 전체를 복제하지 않는다.
 - 대표 visual 1~3개와 핵심 구현 요약을 자체 포함한다.
+- 단일 Example은 대표 결과를 우선하고 Chapter·Bundle은 서로 다른 설명 축을 보여주는 visual만 선별한다.
+- Supporting/Comparison Result와 Interaction Video를 사용하지 않으면 해당 소제목과 placeholder를 제거한다.
 - Screenshot을 최소 1개 유지하고 video가 있으면 관찰할 변화와 결과 영향을 설명한다.
 - Selected video는 Demo Issue에 한 번만 첨부하고 PR에서 필요하면 동일 attachment URL을 재사용한다.
 - 게시되지 않은 video placeholder와 `local/` 경로를 남기지 않는다.
