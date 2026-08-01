@@ -1,12 +1,12 @@
 ﻿# Part2 Chapter05-08
 
-D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니다.
+D3D11 graphics pipeline, modeling, shader toy 예제를 정리하는 폴더다.
 
 ## 상태
 
-- 학습 코드 정리: Chapter05 Step1·2 순차 정규화 완료
-- Build/run: Chapter05 Step1·2 현재 재검증 완료, 나머지 예제 과거 확인 유지
-- 현재 대상: Chapter05 Step2 Lights(GLM) 정규화 완료
+- 학습 코드 정리: Chapter05 Step1·2·3 순차 정규화 완료
+- Build/run: Chapter05 Step1·2·3 현재 재검증 완료, 나머지 예제 과거 확인 유지
+- 현재 대상: Chapter05 Step3 DirectXMath 정규화 완료
 - 캡처: Step2 기본·non-uniform scale screenshot으로 Chapter 최소 visual 확보
 
 ## Archive/Public 검토
@@ -14,10 +14,10 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 | 항목 | 상태 |
 | --- | --- |
 | Source provenance | [`SRC-P2-C05-08`](../Docs/99_Legacy/source-registry.md) |
-| Import status | code import 완료 / Chapter05 Step1·2 순차 verification 완료 |
+| Import status | code import 완료 / Chapter05 Step1·2·3 순차 verification 완료 |
 | Public readiness | 검토 필요 |
-| Build/run status | Step1·2 Debug/Release x64 현재 확인, 나머지 과거 확인 |
-| Next action | Chapter05 Step3 DirectXMath 순차 정규화 |
+| Build/run status | Step1·2·3 Debug/Release x64 현재 확인, 나머지 과거 확인 |
+| Next action | Chapter05 Step4 Lights(SimpleMath) 순차 정규화 |
 
 ## 예정 주제
 
@@ -41,7 +41,7 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 | --- | --- |
 | [`05_AffineTransformations_Step1_Matrix(GLM)`](05_AffineTransformations_Step1_Matrix%28GLM%29/README.md) | 현재 build/run·문서·상세 Demo 정규화 완료 |
 | [`05_AffineTransformations_Step2_Lights(GLM)`](05_AffineTransformations_Step2_Lights%28GLM%29/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료 |
-| `05_AffineTransformations_Step3_DirectXMath` | archive 반영 완료, Debug/Release 실행 확인 완료 |
+| [`05_AffineTransformations_Step3_DirectXMath`](05_AffineTransformations_Step3_DirectXMath/README.md) | 현재 build/run·문서·상세 Demo 정규화 완료 |
 | `05_AffineTransformations_Step4_Lights(SimpleMath)` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `06_GraphicsPipeline_Step1_COM` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `06_GraphicsPipeline_Step2_InitializingD3D` | archive 반영 완료, Debug/Release 실행 확인 완료 |

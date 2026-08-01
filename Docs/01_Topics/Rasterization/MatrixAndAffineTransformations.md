@@ -12,6 +12,7 @@ Graphics 좌표 변환에 사용하는 matrix, homogeneous coordinate와 affine 
 - 2D geometry의 실제 변환 흐름은 [2D Transformations](Transformations2D.md)으로 위임한다.
 - GLM API와 실제 출력은 [Step1 Matrix(GLM) Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step1_Matrix%28GLM%29/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter05-08/05_MatrixGLM.md)로 위임한다.
 - GLM model·normal transform의 실제 적용은 [Step2 Lights(GLM) Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step2_Lights%28GLM%29/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter05-08/05_LightsGLM.md)로 위임한다.
+- DirectXMath의 SIMD load/store와 semantic transform API는 [Step3 DirectXMath Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step3_DirectXMath/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter05-08/05_DirectXMath.md)로 위임한다.
 - build/run 사실은 [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)로 위임한다.
 - 결과 해석은 `Docs/03_Demos`, 검증 사실은 `Docs/02_Verification` 정본으로 위임한다.
 
@@ -22,6 +23,8 @@ Graphics 좌표 변환에 사용하는 matrix, homogeneous coordinate와 affine 
 Matrix가 memory에서 row-major 또는 column-major로 저장되는 방식과 vector를 matrix의 왼쪽 또는 오른쪽에 두는 multiplication convention은 별개의 선택이다. GLM은 column 단위 constructor와 index access를 제공하며 일반적인 column-vector 식 `M * v`를 사용한다.
 
 Storage 설명만 보고 transform 적용 순서를 추론하면 안 된다. 실제 식에서 vector가 놓인 위치와 library가 정의한 연산을 함께 확인해야 한다.
+
+DirectXMath의 transform helper는 row-vector 관례를 사용하며 translation component가 저장된 matrix의 마지막 row에 나타난다. 이는 GLM의 column-vector 식과 다른 API convention이므로 같은 숫자 배치나 곱셈 순서를 그대로 옮기지 않는다.
 
 ### Homogeneous Coordinates
 
@@ -67,6 +70,8 @@ Singular scale처럼 inverse가 존재하지 않는 transform은 normal matrix�
 - [Step1 Matrix(GLM) Demo](../../03_Demos/Part2_Chapter05-08/05_MatrixGLM.md)
 - [Step2 Lights(GLM) Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step2_Lights%28GLM%29/README.md)
 - [Step2 Lights(GLM) Demo](../../03_Demos/Part2_Chapter05-08/05_LightsGLM.md)
+- [Step3 DirectXMath Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step3_DirectXMath/README.md)
+- [Step3 DirectXMath Demo](../../03_Demos/Part2_Chapter05-08/05_DirectXMath.md)
 - [Part2 Chapter05-08 Verification](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [2D Transformations](Transformations2D.md)
 - [Rasterization Topic Index](topic-index.md)

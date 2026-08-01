@@ -56,6 +56,8 @@ CPU rasterizer는 triangle coverage, depth와 perspective-correct interpolation�
 ## 관련 문서
 
 - [Part2 Chapter05-08 README](../README.md)
+- [이전 단계: Step1 Matrix(GLM)](../05_AffineTransformations_Step1_Matrix%28GLM%29/README.md)
+- [다음 단계: Step3 DirectXMath](../05_AffineTransformations_Step3_DirectXMath/README.md)
 - [Matrix And Affine Transformations Topic](../../Docs/01_Topics/Rasterization/MatrixAndAffineTransformations.md)
 - [Phong And Blinn-Phong Topic](../../Docs/01_Topics/LightingAndShading/PhongAndBlinnPhong.md)
 - [Light Types Topic](../../Docs/01_Topics/LightingAndShading/LightTypes.md)

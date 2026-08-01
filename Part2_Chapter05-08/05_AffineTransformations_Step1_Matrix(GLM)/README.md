@@ -24,7 +24,7 @@ GLM matrix 생성자는 column 단위로 값을 받으며 `matrix[index]`도 col
 
 Translation matrix는 homogeneous coordinate의 `w`를 이용해 point와 direction vector를 구분한다. Column-vector convention에서는 오른쪽 matrix가 먼저 적용되므로 `T * R`과 `R * T`가 서로 다른 위치를 만든다. Rotation matrix의 transpose와 원래 matrix를 곱한 결과는 identity가 되어 orthogonal 관계를 확인할 수 있다.
 
-일반 개념은 [Matrix And Affine Transformations](../../Docs/01_Topics/Rasterization/MatrixAndAffineTransformations.md)으로 위임하고, 출력값과 build/run 사실은 [Verification Index](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)로 위임한다.
+일반 개념은 [Matrix And Affine Transformations](../../Docs/01_Topics/Rasterization/MatrixAndAffineTransformations.md), 출력값 해석은 [Step1 상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/05_MatrixGLM.md), build/run 사실은 [Verification Index](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)로 위임한다.
 
 ## Build And Run
 
@@ -50,6 +50,7 @@ Translation matrix는 homogeneous coordinate의 `w`를 이용해 point와 direct
 ## 관련 문서
 
 - [Part2 Chapter05-08 README](../README.md)
+- [다음 단계: Step2 Lights(GLM)](../05_AffineTransformations_Step2_Lights%28GLM%29/README.md)
 - [Matrix And Affine Transformations Topic](../../Docs/01_Topics/Rasterization/MatrixAndAffineTransformations.md)
 - [Step1 Matrix 상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/05_MatrixGLM.md)
 - [Verification Index](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)

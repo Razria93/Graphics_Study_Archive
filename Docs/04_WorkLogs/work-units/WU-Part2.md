@@ -6,7 +6,7 @@
 | --- | --- |
 | Work Unit | `WU-Part2` |
 | 현재 마감 대상 | `Part2_Chapter05-08` Chapter05 순차 정규화 |
-| 후속 코드 범위 | Chapter05 Step3부터 Chapter08까지 |
+| 후속 코드 범위 | Chapter05 Step4부터 Chapter08까지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -50,5 +50,7 @@
 - Step1은 결정적 console 예제로 screenshot과 video를 제외하고 Step2에서 Chapter 최소 visual을 확보했다.
 - Chapter05 Step2 Lights(GLM)의 Debug/Release x64 현재 재검증, 기본·non-uniform scale screenshot과 상세 Demo 정규화를 완료했다.
 - Step2를 Chapter 최초 graphics Example과 최소 visual로 두고 video는 정지 image 두 장으로 차이를 설명할 수 있어 제외한다.
-- Chapter05 Step3 DirectXMath를 다음 순차 Example로 정규화한다.
+- Chapter05 Step3 DirectXMath의 Debug/Release x64 현재 재검증과 문서 정규화를 완료했다.
+- Step3은 결정적 console 예제로 screenshot과 video를 제외하고 DirectXMath·SimpleMath API 비교를 상세 Demo에 기록한다.
+- Chapter05 Step4 Lights(SimpleMath)를 다음 순차 Example로 정규화한다.
 - `RowPitch`, `Map()` 실패, runtime shader path와 Step1A project identity는 별도 code task로 둔다.
