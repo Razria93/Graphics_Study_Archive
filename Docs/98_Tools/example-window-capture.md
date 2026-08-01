@@ -23,6 +23,8 @@ Windows에서 graphics example의 보이는 application window 전체를 PNG 후
 | `Overwrite` | 기존 output 교체 허용 |
 | `KeepApplicationOpen` | 성공 후 application 유지 |
 | `CaptureImmediately` | parameter 조작을 위한 Enter 대기 생략 |
+| `CenterWindow` | monitor working area 중앙으로 창을 이동하고 크기는 유지 |
+| `CountdownSeconds` | 입력 중단 안내 뒤 capture까지 countdown, 기본값 `0`, 범위 `0`~`10` |
 
 ## Interactive capture
 
@@ -48,9 +50,13 @@ powershell -NoProfile -ExecutionPolicy Bypass `
   -WorkingDirectory Part1_Chapter03/03_Raytracing_Step4_DrawingSphere `
   -ExpectedTitle "ComputerGraphics - Step4 DrawingSphere" `
   -OutputPath local/chapter03/step4/step4-base-window.png `
+  -CenterWindow `
+  -CountdownSeconds 5 `
   -CaptureImmediately `
   -Overwrite
 ```
+
+`CenterWindow`는 application의 현재 크기를 바꾸지 않고 해당 monitor의 taskbar를 제외한 working area 중앙에 배치한다. 창이 working area보다 크거나 중앙 배치 후 bounds가 벗어나면 capture하지 않는다. countdown을 사용하는 동안 사용자는 마우스와 키보드를 조작하지 않는다. 도구는 global input을 잠그거나 system 설정을 변경하지 않는다.
 
 성공 결과는 absolute output path, 실제 image dimensions와 SHA-256을 출력한다. OS theme, DPI와 window border에 따라 전체 image dimensions는 달라질 수 있다.
 
@@ -68,6 +74,8 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 도구가 출력하는 dimensions와 hash는 검수 보조 증거이며 공개 안전성을 자동으로 보장하지 않는다. 창 겹침, title, overlay, watermark, 계정, 로컬 경로, taskbar와 notification 노출을 직접 확인하고 image metadata도 별도로 검사한다.
 
 capture 후보는 먼저 `local/`에 저장한다.
+
+parameter 변경 전후 상태, reset과 재촬영 순서는 [Capture Operation Guide](capture-operation-guide.md)와 local-only [Capture Operation Plan Template](templates/local-capture-operation-plan.md)에 기록한다.
 
 검수 후 `Docs/_assets`로 승격하고 관련 Verification, Demo와 Publication 문서를 갱신하는 절차는 [Demo Capture Policy](../06_Policies/demo-capture-policy.md)와 [Publication Policy](../06_Policies/publication-policy.md)를 따른다.
 

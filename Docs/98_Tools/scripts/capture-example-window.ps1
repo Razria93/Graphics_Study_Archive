@@ -12,10 +12,14 @@ param(
     [int]$CaptureDelayMilliseconds = 750,
     [switch]$Overwrite,
     [switch]$KeepApplicationOpen,
-    [switch]$CaptureImmediately
+    [switch]$CaptureImmediately,
+    [switch]$CenterWindow,
+    [ValidateRange(0, 10)]
+    [int]$CountdownSeconds = 0
 )
 
 $ErrorActionPreference = "Stop"
+. (Join-Path $PSScriptRoot "window-operation-rules.ps1")
 
 if ($env:OS -ne "Windows_NT") {
     throw "This tool requires Windows."
@@ -75,6 +79,15 @@ public static class ExampleWindowCaptureNative
         public int Bottom;
     }
 
+    [StructLayout(LayoutKind.Sequential)]
+    public struct MONITORINFO
+    {
+        public int Size;
+        public RECT Monitor;
+        public RECT Work;
+        public uint Flags;
+    }
+
     [DllImport("dwmapi.dll")]
     public static extern int DwmGetWindowAttribute(
         IntPtr hwnd, int attribute, out RECT rect, int size
@@ -87,8 +100,166 @@ public static class ExampleWindowCaptureNative
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
     public static extern bool ShowWindow(IntPtr hwnd, int command);
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool IsIconic(IntPtr hwnd);
+
+    [DllImport("user32.dll")]
+    public static extern IntPtr GetForegroundWindow();
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool GetWindowRect(IntPtr hwnd, out RECT rect);
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool SetWindowPos(
+        IntPtr hwnd, IntPtr insertAfter, int x, int y, int width, int height,
+        uint flags
+    );
+
+    [DllImport("user32.dll")]
+    public static extern IntPtr MonitorFromWindow(IntPtr hwnd, uint flags);
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool GetMonitorInfo(
+        IntPtr monitor, ref MONITORINFO info
+    );
+
+    [DllImport("user32.dll")]
+    public static extern int GetSystemMetrics(int index);
 }
 "@
+
+function Get-CaptureBounds
+{
+    param(
+        [Parameter(Mandatory = $true)][Diagnostics.Process]$Process,
+        [switch]$AllowOutsideVirtualDesktop
+    )
+
+    $Process.Refresh()
+    if ($Process.HasExited -or $Process.MainWindowHandle -eq [IntPtr]::Zero)
+    {
+        throw "Application main window is unavailable."
+    }
+    if ($Process.MainWindowTitle -cne $ExpectedTitle)
+    {
+        throw "Application title changed."
+    }
+
+    $bounds = New-Object ExampleWindowCaptureNative+RECT
+    $dwmResult = [ExampleWindowCaptureNative]::DwmGetWindowAttribute(
+        $Process.MainWindowHandle,
+        9,
+        [ref]$bounds,
+        [Runtime.InteropServices.Marshal]::SizeOf($bounds)
+    )
+    if ($dwmResult -ne 0)
+    {
+        throw "DwmGetWindowAttribute failed with HRESULT $dwmResult."
+    }
+    $width = $bounds.Right - $bounds.Left
+    $height = $bounds.Bottom - $bounds.Top
+    if ($width -le 0 -or $height -le 0)
+    {
+        throw "DWM returned invalid window bounds: ${width}x${height}."
+    }
+
+    $virtualLeft = [ExampleWindowCaptureNative]::GetSystemMetrics(76)
+    $virtualTop = [ExampleWindowCaptureNative]::GetSystemMetrics(77)
+    $virtual = [PSCustomObject]@{
+        Left = $virtualLeft
+        Top = $virtualTop
+        Right = $virtualLeft + [ExampleWindowCaptureNative]::GetSystemMetrics(78)
+        Bottom = $virtualTop + [ExampleWindowCaptureNative]::GetSystemMetrics(79)
+    }
+    if (
+        -not $AllowOutsideVirtualDesktop -and
+        -not (Test-WindowBoundsInsideRectangle $bounds $virtual)
+    )
+    {
+        throw "Application window must fit inside the Windows virtual desktop."
+    }
+
+    return [PSCustomObject]@{
+        Left = $bounds.Left
+        Top = $bounds.Top
+        Right = $bounds.Right
+        Bottom = $bounds.Bottom
+        Width = $width
+        Height = $height
+    }
+}
+
+function Get-CaptureMonitorWorkingArea
+{
+    param([Parameter(Mandatory = $true)][IntPtr]$WindowHandle)
+
+    $monitor = [ExampleWindowCaptureNative]::MonitorFromWindow($WindowHandle, 2)
+    if ($monitor -eq [IntPtr]::Zero)
+    {
+        throw "The monitor nearest the application window was not found."
+    }
+    $info = New-Object ExampleWindowCaptureNative+MONITORINFO
+    $info.Size = [Runtime.InteropServices.Marshal]::SizeOf($info)
+    if (-not [ExampleWindowCaptureNative]::GetMonitorInfo($monitor, [ref]$info))
+    {
+        throw "GetMonitorInfo failed."
+    }
+    return $info.Work
+}
+
+function Center-CaptureWindow
+{
+    param([Parameter(Mandatory = $true)][Diagnostics.Process]$Process)
+
+    $bounds = Get-CaptureBounds $Process -AllowOutsideVirtualDesktop
+    $workingArea = Get-CaptureMonitorWorkingArea $Process.MainWindowHandle
+    $placement = Get-CenteredWindowPlacement $bounds $workingArea
+    $nativeBounds = New-Object ExampleWindowCaptureNative+RECT
+    if (-not [ExampleWindowCaptureNative]::GetWindowRect(
+        $Process.MainWindowHandle,
+        [ref]$nativeBounds
+    ))
+    {
+        throw "GetWindowRect failed."
+    }
+    $targetX = $nativeBounds.Left + $placement.DeltaX
+    $targetY = $nativeBounds.Top + $placement.DeltaY
+    if (-not [ExampleWindowCaptureNative]::SetWindowPos(
+        $Process.MainWindowHandle,
+        [IntPtr]::Zero,
+        $targetX,
+        $targetY,
+        0,
+        0,
+        0x0015
+    ))
+    {
+        throw "SetWindowPos failed while centering the application window."
+    }
+    Start-Sleep -Milliseconds 250
+    $centered = Get-CaptureBounds $Process
+    if (-not (Test-WindowBoundsInsideRectangle $centered $workingArea))
+    {
+        throw "Centered application window does not fit inside the monitor working area."
+    }
+    return $centered
+}
+
+function Test-SameCaptureBounds
+{
+    param($Expected, $Actual)
+    return (
+        $Expected.Left -eq $Actual.Left -and
+        $Expected.Top -eq $Actual.Top -and
+        $Expected.Right -eq $Actual.Right -and
+        $Expected.Bottom -eq $Actual.Bottom
+    )
+}
 
 $process = $null
 $captureSucceeded = $false
@@ -122,6 +293,10 @@ try {
         )
     }
 
+    if ($CenterWindow) {
+        [void](Center-CaptureWindow $process)
+    }
+
     if (-not $CaptureImmediately) {
         Write-Host ""
         Write-Host "Adjust the application to the frame to capture."
@@ -136,33 +311,38 @@ try {
     if ($process.MainWindowTitle -cne $ExpectedTitle) {
         throw "Application title changed before capture."
     }
+    if ([ExampleWindowCaptureNative]::IsIconic($process.MainWindowHandle)) {
+        [ExampleWindowCaptureNative]::ShowWindow(
+            $process.MainWindowHandle, 9
+        ) | Out-Null
+        Start-Sleep -Milliseconds 250
+    }
 
-    [ExampleWindowCaptureNative]::ShowWindow(
-        $process.MainWindowHandle, 9
-    ) | Out-Null
+    $plannedBounds = Get-CaptureBounds $process
+
     if (-not [ExampleWindowCaptureNative]::SetForegroundWindow(
         $process.MainWindowHandle
     )) {
         throw "The application window could not be brought to the foreground."
     }
+    Write-Host "Do not use the mouse or keyboard until capture completes or fails."
+    Invoke-WindowOperationCountdown -Seconds $CountdownSeconds
     Start-Sleep -Milliseconds $CaptureDelayMilliseconds
 
-    $bounds = New-Object ExampleWindowCaptureNative+RECT
-    $dwmResult = [ExampleWindowCaptureNative]::DwmGetWindowAttribute(
-        $process.MainWindowHandle,
-        9,
-        [ref]$bounds,
-        [Runtime.InteropServices.Marshal]::SizeOf($bounds)
-    )
-    if ($dwmResult -ne 0) {
-        throw "DwmGetWindowAttribute failed with HRESULT $dwmResult."
+    $process.Refresh()
+    if ($process.HasExited -or $process.MainWindowTitle -cne $ExpectedTitle) {
+        throw "Application process or title changed during capture preparation."
     }
-
-    $width = $bounds.Right - $bounds.Left
-    $height = $bounds.Bottom - $bounds.Top
-    if ($width -le 0 -or $height -le 0) {
-        throw "DWM returned invalid window bounds: ${width}x${height}."
+    if ([ExampleWindowCaptureNative]::GetForegroundWindow() -ne $process.MainWindowHandle) {
+        throw "Application lost foreground focus during capture preparation."
     }
+    $finalBounds = Get-CaptureBounds $process
+    if (-not (Test-SameCaptureBounds $plannedBounds $finalBounds)) {
+        throw "Application moved or resized during capture preparation."
+    }
+    $bounds = $finalBounds
+    $width = $bounds.Width
+    $height = $bounds.Height
 
     $bitmap = New-Object Drawing.Bitmap $width, $height
     try {
@@ -193,6 +373,7 @@ try {
     $captureSucceeded = $true
     Write-Host "Capture succeeded."
     Write-Host "Saved: $resolvedOutput"
+    Write-Host "Bounds: $($bounds.Left),$($bounds.Top) ${width}x${height}"
     Write-Host "Dimensions: ${width}x${height}"
     Write-Host "SHA-256: $hash"
 }

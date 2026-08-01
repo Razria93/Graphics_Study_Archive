@@ -21,3 +21,15 @@
 - Fix: `a35b1f2`
 - Status: `resolved`
 - Regression check: 파일 또는 정책 경로를 이동·삭제한 PR은 이전 경로 문자열과 해당 대상을 가리키는 inbound Markdown link를 검색한다.
+
+### RF-002 — 최대화 screenshot capture의 창 상태 변경
+
+- Source: [PR #16 review comment](https://github.com/Razria93/Graphics_Study_Archive/pull/16#discussion_r3696198364)
+- Category: `capture`
+- Affected: `Docs/98_Tools/scripts/capture-example-window.ps1`
+- Finding: interactive capture가 최대화된 창의 bounds를 기록한 뒤 창을 복원해 최종 bounds 검사가 실패한다.
+- Response: 최소화된 창만 복원하고 필요한 복원을 planned bounds 기록 전에 완료해 최대화 상태를 유지한다.
+- Verification: 최대화 창 screenshot smoke, window capture contract test, 전체 문서 validator
+- Fix: `4f89fe9`
+- Status: `resolved`
+- Regression check: capture 준비 중 창 상태를 변경하는 동작은 baseline bounds 기록 전에 완료하고 상태 변경 조건을 contract test로 고정한다.

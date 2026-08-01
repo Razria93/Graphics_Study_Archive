@@ -16,6 +16,7 @@
 | `test-demo-doc-quality.ps1` | 상세 Demo 코드 근거 link label과 의사코드 fence fixture 검사 | `fixtures/demo-doc-link-label`, `fixtures/demo-doc-pseudocode` |
 | `validate-video-asset-quality.ps1` | 예상하지 못한 tracked MP4, MOV와 WEBM 검사 | Git tracked path |
 | `test-video-asset-quality.ps1` | tracked video path fixture 검사 | `fixtures/video-asset-quality` |
+| `test-window-capture-tools.ps1` | screenshot·video 도구의 창 배치, countdown, 입력 안전 계약 검사 | `Docs/98_Tools/scripts` |
 | `validate-markdown-wrap-quality.ps1` | 현재 정본 Markdown의 명백한 인위적 soft-wrap 검사 | Root·Example README, `Docs/00_Index`~`Docs/07_GitHub`, `Docs/98_Tools`, tracked `.github` Markdown |
 | `test-markdown-render-quality.ps1` | Markdown 범위 표기의 취소선 오해 방지 fixture 검사 | `fixtures/markdown-render-quality` |
 | `validate-markdown-render-quality.ps1` | 한 줄의 복수 단일-tilde 범위로 발생하는 의도하지 않은 취소선 검사 | Root·Example README, `Docs/00_Index`~`Docs/07_GitHub`, `Docs/98_Tools`, tracked `.github` Markdown |
@@ -35,6 +36,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-doc-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-video-asset-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-video-asset-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-window-capture-tools.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-render-quality.ps1
@@ -47,7 +49,7 @@ GitHub body validator의 기본 입력은 `Docs/07_GitHub`이다. Topic과 Demo 
 
 ## GitHub Actions
 
-`.github/workflows/docs-validation.yml`의 `Docs Validation` workflow는 push와 pull request에서 문서 validator, Demo·Markdown 줄바꿈·Markdown table fixture와 현재 정본 검사를 같은 입력 기준으로 실행한다. Actions는 검사 기준의 정본이 아니라 로컬 validator를 실행하는 원격 환경이다.
+`.github/workflows/docs-validation.yml`의 `Docs Validation` workflow는 push와 pull request에서 문서 validator, Demo·Markdown 줄바꿈·Markdown table fixture, capture tool 계약과 현재 정본 검사를 같은 입력 기준으로 실행한다. Actions는 검사 기준의 정본이 아니라 로컬 validator를 실행하는 원격 환경이다.
 
 GitHub의 Actions tab 또는 PR Checks에서 `Docs Validation` run을 열고 validator별 step과 log를 확인한다. validator step 실패와 checkout, runner 또는 GitHub infrastructure 실패를 구분하며 상세 판정은 [GitHub Workflow Policy](../../06_Policies/github-workflow-policy.md)를 따른다.
 
@@ -64,6 +66,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-doc-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-video-asset-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-video-asset-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-window-capture-tools.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-render-quality.ps1
