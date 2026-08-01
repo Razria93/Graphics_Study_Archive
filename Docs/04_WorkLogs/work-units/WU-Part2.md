@@ -5,8 +5,8 @@
 | 항목 | 내용 |
 | --- | --- |
 | Work Unit | `WU-Part2` |
-| 현재 마감 대상 | `Part2_Chapter04` |
-| 후속 코드 범위 | `Part2_Chapter05-08` |
+| 현재 마감 대상 | `Part2_Chapter05-08` Chapter05 순차 정규화 |
+| 후속 코드 범위 | Chapter05 Step2부터 Chapter08까지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -46,5 +46,7 @@
 
 ## 후속 작업
 
-- `Part2_Chapter05-08` 순차 정규화를 별도 Chapter 작업으로 진행한다.
+- Chapter05 Step1 Matrix(GLM)의 Debug/Release x64 현재 재검증과 문서 정규화를 완료했다.
+- Step1은 결정적 console 예제로 screenshot과 video를 제외하고 후속 graphics Example에서 Chapter 최소 visual을 확보한다.
+- Chapter05 Step2 Lights(GLM)를 다음 순차 Example로 정규화한다.
 - `RowPitch`, `Map()` 실패, runtime shader path와 Step1A project identity는 별도 code task로 둔다.

@@ -4,20 +4,20 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 
 ## 상태
 
-- 학습 코드 정리: Step 단위 진행 중
-- Build/run: archive 대상 예제 전체 사용자 Debug/Release 실행 확인 완료
-- 현재 후보: Part2 Chapter05-08 마무리 상태 점검
-- 캡처: 보류
+- 학습 코드 정리: Chapter05 Step1부터 순차 정규화 진행 중
+- Build/run: Chapter05 Step1 현재 재검증 완료, 나머지 예제 과거 확인 유지
+- 현재 대상: Chapter05 Step1 Matrix(GLM) 정규화 완료
+- 캡처: Step1 제외, 후속 graphics Example에서 Chapter 최소 visual 확보 예정
 
 ## Archive/Public 검토
 
 | 항목 | 상태 |
 | --- | --- |
 | Source provenance | [`SRC-P2-C05-08`](../Docs/99_Legacy/source-registry.md) |
-| Import status | code import 완료 / verification 진행 중 |
+| Import status | code import 완료 / Chapter05 순차 verification 진행 중 |
 | Public readiness | 검토 필요 |
-| Build/run status | archive 대상 예제 전체 실행 확인 완료 |
-| Next action | Part2 Chapter05-08 code import 마무리 정리 |
+| Build/run status | Step1 Debug/Release x64 현재 확인, 나머지 과거 확인 |
+| Next action | Chapter05 Step2 Lights(GLM) 순차 정규화 |
 
 ## 예정 주제
 
@@ -39,7 +39,7 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리할 폴더입니�
 
 | Example | 상태 |
 | --- | --- |
-| `05_AffineTransformations_Step1_Matrix(GLM)` | archive 반영 완료, Debug/Release 실행 확인 완료 |
+| [`05_AffineTransformations_Step1_Matrix(GLM)`](05_AffineTransformations_Step1_Matrix%28GLM%29/README.md) | 현재 build/run·문서·상세 Demo 정규화 완료 |
 | `05_AffineTransformations_Step2_Lights(GLM)` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `05_AffineTransformations_Step3_DirectXMath` | archive 반영 완료, Debug/Release 실행 확인 완료 |
 | `05_AffineTransformations_Step4_Lights(SimpleMath)` | archive 반영 완료, Debug/Release 실행 확인 완료 |
