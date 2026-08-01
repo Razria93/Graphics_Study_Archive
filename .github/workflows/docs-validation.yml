@@ -59,6 +59,10 @@ jobs:
         shell: pwsh
         run: ./Docs/98_Tools/validators/test-video-asset-quality.ps1
 
+      - name: Test window capture tool contracts
+        shell: pwsh
+        run: ./Docs/98_Tools/validators/test-window-capture-tools.ps1
+
       - name: Validate Topic documents
         shell: pwsh
         run: ./Docs/98_Tools/validators/validate-topic-doc-quality.ps1

@@ -19,11 +19,15 @@ param(
     [ValidateRange(0, 10000)]
     [int]$ForegroundDelayMilliseconds = 500,
     [switch]$KeepApplicationOpen,
-    [switch]$OverwriteSelection
+    [switch]$OverwriteSelection,
+    [switch]$CenterWindow,
+    [ValidateRange(0, 10)]
+    [int]$CountdownSeconds = 0
 )
 
 $ErrorActionPreference = "Stop"
 . (Join-Path $PSScriptRoot "video-quality-rules.ps1")
+. (Join-Path $PSScriptRoot "window-operation-rules.ps1")
 
 if ($env:OS -ne "Windows_NT")
 {
@@ -185,6 +189,15 @@ public static class ExampleWindowRecorderNative
     }
 
     [StructLayout(LayoutKind.Sequential)]
+    public struct MONITORINFO
+    {
+        public int Size;
+        public RECT Monitor;
+        public RECT Work;
+        public uint Flags;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
     public struct POINT
     {
         public int X;
@@ -235,6 +248,27 @@ public static class ExampleWindowRecorderNative
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
     public static extern bool SetForegroundWindow(IntPtr hwnd);
+
+    [DllImport("user32.dll")]
+    public static extern IntPtr GetForegroundWindow();
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool GetWindowRect(IntPtr hwnd, out RECT rect);
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool SetWindowPos(
+        IntPtr hwnd, IntPtr insertAfter, int x, int y,
+        int width, int height, uint flags
+    );
+
+    [DllImport("user32.dll")]
+    public static extern IntPtr MonitorFromWindow(IntPtr hwnd, uint flags);
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool GetMonitorInfo(IntPtr monitor, ref MONITORINFO info);
 
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
@@ -310,21 +344,21 @@ function New-RecorderStatusWindow
     $form.TopMost = $true
     $form.ShowInTaskbar = $true
     $form.ControlBox = $false
-    $form.ClientSize = New-Object Drawing.Size(400, 142)
+    $form.ClientSize = New-Object Drawing.Size(280, 142)
     $form.BackColor = [Drawing.Color]::FromArgb(28, 32, 38)
 
     $statusLabel = New-Object Windows.Forms.Label
     $statusLabel.Location = New-Object Drawing.Point(12, 12)
-    $statusLabel.Size = New-Object Drawing.Size(376, 46)
-    $statusLabel.Font = New-Object Drawing.Font("Segoe UI", 18, [Drawing.FontStyle]::Bold)
+    $statusLabel.Size = New-Object Drawing.Size(256, 46)
+    $statusLabel.Font = New-Object Drawing.Font("Segoe UI", 15, [Drawing.FontStyle]::Bold)
     $statusLabel.ForeColor = [Drawing.Color]::White
     $statusLabel.TextAlign = [Drawing.ContentAlignment]::MiddleCenter
     $form.Controls.Add($statusLabel)
 
     $detailLabel = New-Object Windows.Forms.Label
     $detailLabel.Location = New-Object Drawing.Point(12, 62)
-    $detailLabel.Size = New-Object Drawing.Size(376, 66)
-    $detailLabel.Font = New-Object Drawing.Font("Segoe UI", 9)
+    $detailLabel.Size = New-Object Drawing.Size(256, 66)
+    $detailLabel.Font = New-Object Drawing.Font("Segoe UI", 7)
     $detailLabel.ForeColor = [Drawing.Color]::Gainsboro
     $detailLabel.TextAlign = [Drawing.ContentAlignment]::MiddleCenter
     $detailLabel.Text = "F9 Start  |  F10 Save  |  F8 Discard`r`nF7 Restart app  |  F11 Accept latest`r`nUse Ctrl+Shift with every function key"
@@ -348,13 +382,14 @@ function Set-RecorderStatus
     param(
         [Parameter(Mandatory = $true)]$StatusWindow,
         [Parameter(Mandatory = $true)]
-        [ValidateSet("READY", "RECORDING", "FINALIZING", "SAVED", "DISCARDED", "RESTARTED", "ERROR", "SELECTED")]
+        [ValidateSet("READY", "STARTING", "RECORDING", "FINALIZING", "SAVED", "DISCARDED", "RESTARTED", "ERROR", "SELECTED")]
         [string]$State,
         [string]$Detail
     )
 
     $colors = @{
         READY = [Drawing.Color]::FromArgb(36, 77, 118)
+        STARTING = [Drawing.Color]::FromArgb(145, 92, 16)
         RECORDING = [Drawing.Color]::FromArgb(155, 24, 24)
         FINALIZING = [Drawing.Color]::FromArgb(145, 92, 16)
         SAVED = [Drawing.Color]::FromArgb(35, 112, 63)
@@ -440,7 +475,10 @@ function Stop-ExampleApplication
 
 function Get-ApplicationBounds
 {
-    param([Parameter(Mandatory = $true)][Diagnostics.Process]$Process)
+    param(
+        [Parameter(Mandatory = $true)][Diagnostics.Process]$Process,
+        [switch]$AllowOutsideVirtualDesktop
+    )
 
     $Process.Refresh()
     if ($Process.HasExited)
@@ -496,10 +534,13 @@ function Get-ApplicationBounds
     $virtualWidth = [ExampleWindowRecorderNative]::GetSystemMetrics(78)
     $virtualHeight = [ExampleWindowRecorderNative]::GetSystemMetrics(79)
     if (
-        $bounds.Left -lt $virtualLeft -or
-        $bounds.Top -lt $virtualTop -or
-        $bounds.Right -gt ($virtualLeft + $virtualWidth) -or
-        $bounds.Bottom -gt ($virtualTop + $virtualHeight)
+        -not $AllowOutsideVirtualDesktop -and
+        (
+            $bounds.Left -lt $virtualLeft -or
+            $bounds.Top -lt $virtualTop -or
+            $bounds.Right -gt ($virtualLeft + $virtualWidth) -or
+            $bounds.Bottom -gt ($virtualTop + $virtualHeight)
+        )
     )
     {
         throw "Application window must fit inside the Windows virtual desktop."
@@ -528,9 +569,86 @@ function Test-SameBounds
     )
 }
 
+function Get-RecorderMonitorWorkingArea
+{
+    param([Parameter(Mandatory = $true)][Diagnostics.Process]$Process)
+
+    $monitor = [ExampleWindowRecorderNative]::MonitorFromWindow(
+        $Process.MainWindowHandle,
+        2
+    )
+    if ($monitor -eq [IntPtr]::Zero)
+    {
+        throw "The monitor containing the application window was not found."
+    }
+
+    $info = New-Object ExampleWindowRecorderNative+MONITORINFO
+    $info.Size = [Runtime.InteropServices.Marshal]::SizeOf($info)
+    if (-not [ExampleWindowRecorderNative]::GetMonitorInfo($monitor, [ref]$info))
+    {
+        throw "The monitor working area could not be read."
+    }
+    return [PSCustomObject]@{
+        Left = $info.Work.Left
+        Top = $info.Work.Top
+        Right = $info.Work.Right
+        Bottom = $info.Work.Bottom
+    }
+}
+
+function Center-RecorderApplicationWindow
+{
+    param([Parameter(Mandatory = $true)][Diagnostics.Process]$Process)
+
+    $bounds = Get-ApplicationBounds $Process -AllowOutsideVirtualDesktop
+    $workingArea = Get-RecorderMonitorWorkingArea $Process
+    $placement = Get-CenteredWindowPlacement `
+        -Bounds $bounds -WorkingArea $workingArea
+
+    $nativeBounds = New-Object ExampleWindowRecorderNative+RECT
+    if (-not [ExampleWindowRecorderNative]::GetWindowRect(
+        $Process.MainWindowHandle,
+        [ref]$nativeBounds
+    ))
+    {
+        throw "The application window rectangle could not be read."
+    }
+    $nativeLeft = $nativeBounds.Left + $placement.DeltaX
+    $nativeTop = $nativeBounds.Top + $placement.DeltaY
+    if (-not [ExampleWindowRecorderNative]::SetWindowPos(
+        $Process.MainWindowHandle,
+        [IntPtr]::Zero,
+        $nativeLeft,
+        $nativeTop,
+        0,
+        0,
+        0x0015
+    ))
+    {
+        throw "The application window could not be centered."
+    }
+    Start-Sleep -Milliseconds 250
+
+    $centered = Get-ApplicationBounds $Process
+    if (-not (Test-WindowBoundsInsideRectangle $centered $workingArea))
+    {
+        throw "The centered application window does not fit inside the monitor working area."
+    }
+    return $centered
+}
+
 function Start-Recording
 {
-    param([Diagnostics.Process]$ApplicationProcess)
+    param(
+        [Diagnostics.Process]$ApplicationProcess,
+        [Parameter(Mandatory = $true)]$StatusWindow,
+        [Parameter(Mandatory = $true)]$PlannedBounds
+    )
+
+    if (-not $StatusWindow.OutsideTarget)
+    {
+        throw "Move the application so the recorder status window is outside the capture bounds."
+    }
 
     if ([ExampleWindowRecorderNative]::IsIconic($ApplicationProcess.MainWindowHandle))
     {
@@ -546,8 +664,32 @@ function Start-Recording
     {
         throw "The application window could not be brought to the foreground."
     }
+    Write-Host "Automatic recording control starts after the countdown. Do not use the mouse or keyboard."
+    Set-RecorderStatus $StatusWindow "STARTING" "Do not use the mouse or keyboard during the countdown."
+    Invoke-WindowOperationCountdown -Seconds $CountdownSeconds -OnTick {
+        param($remaining)
+        Set-RecorderStatus $StatusWindow "STARTING" (
+            "Recording starts in {0}. Do not use mouse or keyboard." -f $remaining
+        )
+    }
     Start-Sleep -Milliseconds $ForegroundDelayMilliseconds
+    $ApplicationProcess.Refresh()
+    if (
+        $ApplicationProcess.HasExited -or
+        $ApplicationProcess.MainWindowTitle -cne $ExpectedTitle
+    )
+    {
+        throw "Application process or title changed during recording preparation."
+    }
+    if ([ExampleWindowRecorderNative]::GetForegroundWindow() -ne $ApplicationProcess.MainWindowHandle)
+    {
+        throw "Application lost foreground focus during recording preparation."
+    }
     $bounds = Get-ApplicationBounds $ApplicationProcess
+    if (-not (Test-SameBounds $PlannedBounds $bounds))
+    {
+        throw "Application moved or resized during recording preparation."
+    }
     $partial = Join-Path $resolvedOutputDirectory (
         "{0}.recording-{1}.partial.mp4" -f `
             $BaseName, [Guid]::NewGuid().ToString("N")
@@ -768,6 +910,7 @@ $recording = $null
 $latestAttempt = $null
 $accepted = $false
 $statusWindow = $null
+$selectionTemp = $null
 
 try
 {
@@ -799,7 +942,14 @@ try
     }
 
     $applicationProcess = Start-ExampleApplication
-    $initialBounds = Get-ApplicationBounds $applicationProcess
+    if ($CenterWindow)
+    {
+        $initialBounds = Center-RecorderApplicationWindow $applicationProcess
+    }
+    else
+    {
+        $initialBounds = Get-ApplicationBounds $applicationProcess
+    }
     $statusWindow = New-RecorderStatusWindow $initialBounds
     Set-RecorderStatus $statusWindow "READY" "F9 starts recording. F10 saves and validates.`r`nF11 requires a SAVED attempt."
     [void][ExampleWindowRecorderNative]::SetForegroundWindow(
@@ -836,7 +986,14 @@ try
                         $recording = $null
                         Stop-ExampleApplication $applicationProcess
                         $applicationProcess = Start-ExampleApplication
-                        $restartBounds = Get-ApplicationBounds $applicationProcess
+                        if ($CenterWindow)
+                        {
+                            $restartBounds = Center-RecorderApplicationWindow $applicationProcess
+                        }
+                        else
+                        {
+                            $restartBounds = Get-ApplicationBounds $applicationProcess
+                        }
                         $statusWindow.OutsideTarget = Set-RecorderStatusWindowPosition `
                             -StatusWindow $statusWindow -Bounds $restartBounds
                         Set-RecorderStatus $statusWindow "RESTARTED" "Application restarted. F9 starts a new recording."
@@ -867,7 +1024,10 @@ try
                             $readyBounds = Get-ApplicationBounds $applicationProcess
                             $statusWindow.OutsideTarget = Set-RecorderStatusWindowPosition `
                                 -StatusWindow $statusWindow -Bounds $readyBounds
-                            $recording = Start-Recording $applicationProcess
+                            $recording = Start-Recording `
+                                -ApplicationProcess $applicationProcess `
+                                -StatusWindow $statusWindow `
+                                -PlannedBounds $readyBounds
                             Set-RecorderStatus $statusWindow "RECORDING" "F10 stops and validates. F8 discards this take."
                         }
                     }
@@ -931,6 +1091,7 @@ try
                                     -LiteralPath $selectionTemp `
                                     -Destination $selectedPath `
                                     -Force:$OverwriteSelection
+                                $selectionTemp = $null
                                 $selectedHash = (Get-FileHash `
                                     -LiteralPath $selectedPath `
                                     -Algorithm SHA256).Hash
@@ -990,6 +1151,10 @@ finally
     if ($null -ne $recording)
     {
         Abort-Recording $recording
+    }
+    if ($selectionTemp -and (Test-Path -LiteralPath $selectionTemp))
+    {
+        Remove-Item -LiteralPath $selectionTemp -Force
     }
     if ($null -ne $statusWindow -and -not $statusWindow.Form.IsDisposed)
     {
