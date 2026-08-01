@@ -5,9 +5,9 @@ CPU software rasterization에서 triangle coverage와 attribute interpolation을
 ## 상태
 
 - 학습 코드 정리: 전체 예제 보관 완료
-- 순차 문서화: Step1 Triangle부터 Step8 PerspectiveProjection까지 작성
-- Build/run: Step1·Step1A·Step2·Step3·Step4·Step5·Step6·Step7·Step8 현재 확인, 나머지 예제 과거 확인
-- Capture: Step1부터 Step8까지 screenshot 확보, Step8 projection·interpolation 비교 사용자 검수 완료
+- 순차 문서화: Step1 Triangle부터 Step9 Shading까지 작성
+- Build/run: Step1·Step1A·Step2·Step3·Step4·Step5·Step6·Step7·Step8·Step9 현재 확인, Step10 과거 확인
+- Capture: Step1부터 Step9까지 screenshot 확보, Step9 directional Blinn-Phong shading 사용자 검수 완료
 - Public readiness: 검토 필요
 
 ## Archive/Public 검토
@@ -17,8 +17,8 @@ CPU software rasterization에서 triangle coverage와 attribute interpolation을
 | Source provenance | [`SRC-P2-C04`](../Docs/99_Legacy/source-registry.md) |
 | Import status | 코드 보관 완료 |
 | Public readiness | Step별 검토 필요 |
-| Build/run status | Step1·Step1A·Step2·Step3·Step4·Step5·Step6·Step7·Step8 Debug/Release x64 현재 확인, 나머지 과거 확인 |
-| Next action | Step9 Shading 순차 정규화 |
+| Build/run status | Step1·Step1A·Step2·Step3·Step4·Step5·Step6·Step7·Step8·Step9 Debug/Release x64 현재 확인, Step10 과거 확인 |
+| Next action | Step10 Lights 순차 정규화 |
 
 ## 학습 순서
 
@@ -31,7 +31,7 @@ CPU software rasterization에서 triangle coverage와 attribute interpolation을
 7. [Step6 ShadersConcept](04_Rasterization_Step6_ShadersConcept/README.md)
 8. [Step7 BackfaceCulling](04_Rasterization_Step7_BackfaceCulling/README.md)
 9. [Step8 PerspectiveProjection](04_Rasterization_Step8_PerspectiveProjection/README.md)
-10. Step9 Shading
+10. [Step9 Shading](04_Rasterization_Step9_Shading/README.md)
 11. Step10 Lights
 
 `04_Rasterization_Step1_TriangleToCircle`은 강의 단계가 아니라 사용자가 Step1 triangle rasterization을 triangle fan 기반 circle approximation으로 확장한 Personal Extension이다. Step2와 합치지 않고 독립 Example과 상세 Demo로 유지한다.
@@ -119,11 +119,19 @@ Step7은 동일 square topology 두 개 중 오른쪽에 X축 π 회전을 적�
 
 Step8은 서로 다른 Z에 놓인 두 square에 간소화된 perspective projection을 적용한다. Orthographic, screen-space affine과 reciprocal-depth 보정 결과를 같은 checker pattern으로 비교해 projected size와 perspective-correct interpolation의 책임을 분리한다.
 
+### Step9 Shading
+
+- [Example README](04_Rasterization_Step9_Shading/README.md)
+- [Phong And Blinn-Phong Topic](../Docs/01_Topics/LightingAndShading/PhongAndBlinnPhong.md)
+- [Verification](../Docs/02_Verification/Part2_Chapter04/verification-index.md)
+- [Detailed Demo](../Docs/03_Demos/Part2_Chapter04/09_Shading.md)
+
+Step9은 face별 normal을 가진 box에 directional Blinn-Phong shading을 적용한다. CPU vertex stage가 position과 normal을 변환하고 rasterizer가 perspective-correct position·normal을 보간한 뒤 CPU pixel stage가 ambient, diffuse와 half-vector specular를 합성한다.
+
 ## 후속 예제
 
 | Example | 책임 | 현재 상태 |
 | --- | --- | --- |
-| `04_Rasterization_Step9_Shading` | surface shading | 정규화 대기 |
 | `04_Rasterization_Step10_Lights` | light 구성 | 정규화 대기 |
 
 존재하지 않는 Example README와 상세 Demo는 미리 연결하지 않는다. 각 Step을 현재 build/run과 capture로 확인한 뒤 순서대로 추가한다.

@@ -26,5 +26,5 @@
 
 ## 다음 작업
 
-1. Step9 Shading의 일반 이론 책임 위치를 확정한다.
+1. Step10 Lights의 rasterization과 lighting 책임 경계를 확인한다.
 2. 후속 Example과 상세 Demo 연결을 갱신한다.
