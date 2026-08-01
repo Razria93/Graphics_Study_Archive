@@ -100,6 +100,56 @@ Video 상태와 위치는 다음과 같이 구분한다.
 - 사용자 시각 검수는 조작과 결과의 대응, 시작·종료 frame, 잘림과 black frame, 다른 window·notification·계정·경로 노출, 속도와 길이, 정지 이미지 대비 추가 설명 가치를 확인한다.
 - 자동 검수는 사용자 시각 검수를 대신하지 않는다.
 
+## 자동 UI 조작 안전 기준
+
+- 자동 UI 조작 시작 전에 사용자가 mouse와 keyboard를 조작하지 않도록 안내하고 countdown을 실행한다.
+- countdown 종료 후에 도구가 시작한 process ID, exact window title, foreground window와 DWM bounds를 다시 확인한다.
+- 대상 process, title, foreground 또는 bounds가 예상과 다르면 현재 screenshot 또는 video attempt를 폐기한다.
+- 자동 조작은 저장소 범위의 example application에만 적용하며 browser, terminal, system UI와 다른 application을 조작하지 않는다.
+- Windows 전체 input lock, global mouse hook과 system-wide keyboard hook은 사용하지 않는다.
+- 범용 도구는 application 실행, foreground, window bounds, capture, 검증과 cleanup을 담당하고 slider, checkbox, parameter, 상대 좌표와 조작 sequence는 example별 local driver에 둔다.
+
+## Window 배치와 bounds 기준
+
+- application window의 DWM extended frame bounds 전체가 monitor working area 안에 들어오도록 한다.
+- 화면 중앙 배치는 잘림과 taskbar 침범을 피하기 위한 선택적 권장 기본값으로 사용한다.
+- 중앙 배치는 기존 window size를 유지하며 window가 working area보다 크면 강제 resize 대신 실패로 처리한다.
+- 같은 비교 묶음의 capture는 동일한 window size, position과 capture 방식을 유지한다.
+- title bar와 window border를 포함하며 녹화 중 window 이동과 resize가 확인되면 현재 attempt를 실패로 처리한다.
+
+## Screenshot 조작 lifecycle
+
+```text
+초기 상태 확인
+→ 목표 parameter 설정
+→ rendering 안정화
+→ cursor 대피
+→ screenshot
+→ 초기 상태 복구 또는 application 재시작
+```
+
+- screenshot마다 초기 상태, 목표 parameter, capture 시점과 reset 방식을 local operation plan에 기록한다.
+- before/after 비교는 application restart를 기본 reset 방식으로 사용한다.
+- parameter를 역조작해 복구하면 실제 기본값과 rendering 상태가 복구됐는지 확인한다.
+
+## Video 조작 lifecycle
+
+```text
+핵심 변화 결정
+→ 초기 상태와 조작 sequence 확정
+→ 시작 안정 구간
+→ 조작
+→ 결과 안정 구간
+→ 저장·검증
+→ selected 판정
+→ 초기 상태 복구
+```
+
+- 촬영 전에 초기값, 목표값, 조작 순서, 동작별 대기 시간, cursor 대피 위치, 종료 상태와 재촬영 조건을 local operation plan에 기록한다.
+- 한 video에는 하나의 변화나 interaction을 두고 불필요한 parameter 왕복, 반복 click, mouse movement와 대기를 제거한다.
+- 조작 전후에 결과를 확인할 수 있는 안정 구간을 둔다.
+- 재촬영하더라도 기존의 정상 attempt는 보존하고 selected 교체는 명시적 옵션으로만 허용한다.
+
 ## Capture/Result 승격 기준
 
 `local/`의 capture 후보나 ignored output의 result image는 다음 조건을 만족할 때만 `Docs/_assets`로 승격한다.

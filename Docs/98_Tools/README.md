@@ -23,6 +23,7 @@
 | [Document System Audit Guide](document-system-audit-guide.md) | 문서 체계 감사 실행, 에이전트 분담, 재검증 절차 |
 | [Session Troubleshooting](session-troubleshooting.md) | 세션/권한/인코딩/작업 분리 문제 대응 |
 | [User Attention Notification](user-attention-notification.md) | 작업 종료, 승인 대기와 blocker 시 Windows 알림 실행 |
+| [Capture Operation Guide](capture-operation-guide.md) | screenshot·video 조작 계획, 입력 안전, window 배치, reset과 시각 검수 절차 |
 | [Example Window Capture](example-window-capture.md) | Windows/DWM 기반 application 전체 창 capture 후보 생성 |
 | [Example Window Recording](example-window-recording.md) | FFmpeg 기반 application 전체 창 video 후보 녹화 |
 | `scripts/inspect-example-video.ps1` | 기존 selected MP4의 container, stream, CFR, metadata, decode와 hash 재검사 |

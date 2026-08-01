@@ -1,6 +1,6 @@
 # Capture Plan
 
-이 문서는 screenshot, video, result image 확보 계획을 기록한다.
+이 문서는 Chapter·Example 단위 screenshot, video, result image 확보 계획과 상태를 기록하는 registry다. 개별 take의 parameter, 조작 sequence, 대기 시간과 reset은 [Local Capture Operation Plan](../98_Tools/templates/local-capture-operation-plan.md)을 `local/`에 복사해 기록한다.
 
 ## 용어 기준
 
