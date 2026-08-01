@@ -80,4 +80,4 @@ Affine weight로 휘어진 checker를 reciprocal-depth weight로 보정한 Chapt
 
 ## 관련 이슈
 
-- 없음
+- [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14)
