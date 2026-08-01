@@ -295,7 +295,8 @@ function Test-DemoTable {
             foreach ($match in $matches) {
                 $target = $match.Groups[1].Value.Split('#')[0]
                 if ($target -notmatch '^https?://') {
-                    $resolved = [IO.Path]::GetFullPath((Join-Path $FileDirectory $target))
+                    $decodedTarget = [Uri]::UnescapeDataString($target)
+                    $resolved = [IO.Path]::GetFullPath((Join-Path $FileDirectory $decodedTarget))
                     if (-not (Test-Path -LiteralPath $resolved)) {
                         Add-Failure $RelativePath "row '$name' has a broken Demo link: $target"
                     }

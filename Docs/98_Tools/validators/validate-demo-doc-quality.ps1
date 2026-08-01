@@ -203,7 +203,8 @@ function Validate-DemoDocument {
             continue
         }
 
-        $resolved = [IO.Path]::GetFullPath((Join-Path $File.DirectoryName $target))
+        $decodedTarget = [Uri]::UnescapeDataString($target)
+        $resolved = [IO.Path]::GetFullPath((Join-Path $File.DirectoryName $decodedTarget))
         if (-not (Test-Path -LiteralPath $resolved)) {
             Add-Failure $relative "broken relative link: $target"
             continue
