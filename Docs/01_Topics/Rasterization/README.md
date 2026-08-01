@@ -5,7 +5,8 @@
 ## 범위
 
 - 주요 개념: triangle rasterization, 2D transformation, depth buffer, projection, backface culling
-- 연결 예제 후보: Part2_Chapter04 Step1–Step10
+- 직접 연결 예제: Part2_Chapter04 Step1·Step1A·Step2·Step3·Step5·Step7·Step8
+- 기반 공유 예제: Step4·Step6·Step9·Step10은 CPU rasterizer를 공유하고 다른 Topic group이 직접 책임진다.
 - 우선순위: P0
 
 ## 문서 목록
@@ -21,8 +22,8 @@
 
 - Topic 목록: 작성
 - 상세 Topic 문서: Triangle Rasterization, 2D Transformations, Depth Buffer, Backface Culling과 Perspective Projection 작성
-- 연결 예제 검토: Step1 Triangle부터 Step10 Lights까지 현재 확인
-- demo 연결: Step1, Step1A와 Step2부터 Step10까지 확정
+- 직접 연결 예제 검토: Step1·Step1A·Step2·Step3·Step5·Step7·Step8 현재 확인
+- Chapter 기반 공유: Step4·Step6·Step9·Step10 연결 확인
 
 ## 다음 작업
 
