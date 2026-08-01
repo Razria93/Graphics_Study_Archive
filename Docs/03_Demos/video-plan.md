@@ -17,6 +17,7 @@
 | Part2_Chapter04 Step4 | Animation2D 실행 | 필수 | 시간에 따른 계층적 2D orbit | 검증 완료 | 미게시 |
 | Part2_Chapter04 Step5 | circle depth 순서 변경 | 필수 | Per-pixel depth test에 따른 visibility 반전 | 검증 완료 | 미게시 |
 | Part2_Chapter04 Step6 | 자동 square rotation | 선택 | CPU vertex stage의 per-frame transform 결과 | 검증 완료 | 미게시 |
+| Part2_Chapter04 Step7 | culling checkbox On→Off→On | 선택 | Post-transform winding에 따른 backface rejection 전환 | 기술·사용자 시각 검수 완료 | 미게시 |
 | Part3_Chapter09 | camera, picking, trackball 조작 | 필수 | interaction | 미확인 | 미게시 |
 | Part3_Chapter10-13 | shadow quality 비교 | 선택 | shadow mapping, PCF, PCSS | 미확인 | 미게시 |
 | Part4_Chapter14-20 | 대표 sample 실행 | 선택 | advanced graphics 후보 | 미확인 | 미게시 |

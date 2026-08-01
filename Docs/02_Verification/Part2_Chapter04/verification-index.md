@@ -4,10 +4,10 @@
 
 ## Provenance
 
-- 현재 확인: Step1 Triangle부터 Step6 ShadersConcept까지, 2026-07-31–2026-08-01 Debug/Release x64 build/run
+- 현재 확인: Step1 Triangle부터 Step7 BackfaceCulling까지, 2026-07-31–2026-08-01 Debug/Release x64 build/run
 - 확인 근거: 과거 확인
 - 확인 시점: 문서화 이전(날짜 미기록)
-- 현재 재검증: Step1·Step1A·Step2·Step3·Step4·Step5·Step6 완료, 나머지 예제 필요
+- 현재 재검증: Step1·Step1A·Step2·Step3·Step4·Step5·Step6·Step7 완료, 나머지 예제 필요
 - 근거: Chapter README에 기록된 전체 예제 Debug/Release build/run 성공
 
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
@@ -19,7 +19,7 @@
 | `04_Rasterization_Step4_Animation2D` | `Part2_Chapter04/04_Rasterization_Step4_Animation2D/04_Rasterization_Step4_Animation2D.sln` | 성공 | 성공 | 성공 | 성공 | [확보](../../_assets/captures/part2_chapter04_04_animation2d.png) | 2026-08-01 현재 확인 · project 폴더 CWD · 표준 title과 계층적 orbit 확인 · screenshot·selected video 사용자 확인 완료 |
 | `04_Rasterization_Step5_DepthBuffer` | `Part2_Chapter04/04_Rasterization_Step5_DepthBuffer/04_Rasterization_Step5_DepthBuffer.sln` | 성공 | 성공 | 성공 | 성공 | [기본](../../_assets/captures/part2_chapter04_05_depth_buffer_default.png), [반전](../../_assets/captures/part2_chapter04_05_depth_buffer_reordered.png) | 2026-08-01 현재 확인 · project 폴더 CWD · 표준 title과 depth 순서 반전 확인 · screenshot·selected video 기술·사용자 시각 검수 완료 |
 | `04_Rasterization_Step6_ShadersConcept` | `Part2_Chapter04/04_Rasterization_Step6_ShadersConcept/04_Rasterization_Step6_ShadersConcept.sln` | 성공 | 성공 | 성공 | 성공 | [확보](../../_assets/captures/part2_chapter04_06_shaders_concept.png) | 2026-08-01 현재 확인 · project 폴더 CWD · 표준 title과 runtime shader compile 확인 · screenshot·selected video 기술·사용자 시각 검수 완료 |
-| `04_Rasterization_Step7_BackfaceCulling` | `Part2_Chapter04/04_Rasterization_Step7_BackfaceCulling/04_Rasterization_Step7_BackfaceCulling.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `04_Rasterization_Step7_BackfaceCulling` | `Part2_Chapter04/04_Rasterization_Step7_BackfaceCulling/04_Rasterization_Step7_BackfaceCulling.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-01 현재 확인 · project 폴더 CWD · 표준 title과 Culling On/Off 확인 · screenshot·selected video 기술·사용자 시각 검수 완료 |
 | `04_Rasterization_Step8_PerspectiveProjection` | `Part2_Chapter04/04_Rasterization_Step8_PerspectiveProjection/04_Rasterization_Step8_PerspectiveProjection.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `04_Rasterization_Step9_Shading` | `Part2_Chapter04/04_Rasterization_Step9_Shading/04_Rasterization_Step9_Shading.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `04_Rasterization_Step10_Lights` | `Part2_Chapter04/04_Rasterization_Step10_Lights/04_Rasterization_Step10_Lights.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |

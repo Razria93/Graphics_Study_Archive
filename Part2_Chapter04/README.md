@@ -5,9 +5,9 @@ CPU software rasterization에서 triangle coverage와 attribute interpolation을
 ## 상태
 
 - 학습 코드 정리: 전체 예제 보관 완료
-- 순차 문서화: Step1 Triangle부터 Step6 ShadersConcept까지 작성
-- Build/run: Step1·Step1A·Step2·Step3·Step4·Step5·Step6 현재 확인, 나머지 예제 과거 확인
-- Capture: Step1부터 Step6까지 screenshot 확보, Step1A·Step4·Step5·Step6 selected video 검수 완료
+- 순차 문서화: Step1 Triangle부터 Step7 BackfaceCulling까지 작성
+- Build/run: Step1·Step1A·Step2·Step3·Step4·Step5·Step6·Step7 현재 확인, 나머지 예제 과거 확인
+- Capture: Step1부터 Step7까지 screenshot 확보, Step7 On/Off screenshot·selected video 사용자 검수 완료
 - Public readiness: 검토 필요
 
 ## Archive/Public 검토
@@ -17,8 +17,8 @@ CPU software rasterization에서 triangle coverage와 attribute interpolation을
 | Source provenance | [`SRC-P2-C04`](../Docs/99_Legacy/source-registry.md) |
 | Import status | 코드 보관 완료 |
 | Public readiness | Step별 검토 필요 |
-| Build/run status | Step1·Step1A·Step2·Step3·Step4·Step5·Step6 Debug/Release x64 현재 확인, 나머지 과거 확인 |
-| Next action | Step7 BackfaceCulling 정규화 |
+| Build/run status | Step1·Step1A·Step2·Step3·Step4·Step5·Step6·Step7 Debug/Release x64 현재 확인, 나머지 과거 확인 |
+| Next action | Step8 PerspectiveProjection 순차 정규화 |
 
 ## 학습 순서
 
@@ -29,7 +29,7 @@ CPU software rasterization에서 triangle coverage와 attribute interpolation을
 5. [Step4 Animation2D](04_Rasterization_Step4_Animation2D/README.md)
 6. [Step5 DepthBuffer](04_Rasterization_Step5_DepthBuffer/README.md)
 7. [Step6 ShadersConcept](04_Rasterization_Step6_ShadersConcept/README.md)
-8. Step7 BackfaceCulling
+8. [Step7 BackfaceCulling](04_Rasterization_Step7_BackfaceCulling/README.md)
 9. Step8 PerspectiveProjection
 10. Step9 Shading
 11. Step10 Lights
@@ -101,11 +101,19 @@ Step5는 frame마다 per-pixel depth buffer를 초기화하고 barycentric Z를 
 
 Step6는 CPU software rasterizer의 transform과 fragment color 계산을 `MyVertexShader()`와 `MyPixelShader()` 입출력 계약으로 분리한다. DirectX11 HLSL은 CPU framebuffer texture를 full-screen quad로 표시하는 presentation 경로이며 학습용 CPU shader stage와 별도 책임을 가진다.
 
+### Step7 BackfaceCulling
+
+- [Example README](04_Rasterization_Step7_BackfaceCulling/README.md)
+- [Backface Culling Topic](../Docs/01_Topics/Rasterization/BackfaceCulling.md)
+- [Verification](../Docs/02_Verification/Part2_Chapter04/verification-index.md)
+- [Detailed Demo](../Docs/03_Demos/Part2_Chapter04/07_BackfaceCulling.md)
+
+Step7은 동일 square topology 두 개 중 오른쪽에 X축 π 회전을 적용해 post-transform winding을 반전한다. CPU rasterizer는 Y-down raster 좌표의 signed area를 사용해 culling 활성 상태에서 back-facing triangle을 coverage 이전에 제외하며 ImGui checkbox로 On/Off 결과를 비교한다.
+
 ## 후속 예제
 
 | Example | 책임 | 현재 상태 |
 | --- | --- | --- |
-| `04_Rasterization_Step7_BackfaceCulling` | triangle winding과 culling | 정규화 대기 |
 | `04_Rasterization_Step8_PerspectiveProjection` | perspective projection | 정규화 대기 |
 | `04_Rasterization_Step9_Shading` | surface shading | 정규화 대기 |
 | `04_Rasterization_Step10_Lights` | light 구성 | 정규화 대기 |

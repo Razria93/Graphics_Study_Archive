@@ -13,16 +13,17 @@
 - [Triangle Rasterization](TriangleRasterization.md)
 - [2D Transformations](Transformations2D.md)
 - [Depth Buffer](DepthBuffer.md)
+- [Backface Culling](BackfaceCulling.md)
 - [Topic Index](topic-index.md)
 
 ## 상태
 
 - Topic 목록: 작성
-- 상세 Topic 문서: Triangle Rasterization, 2D Transformations와 Depth Buffer 작성
-- 연결 예제 검토: Step1 Triangle부터 Step6 ShadersConcept까지 현재 확인
-- demo 연결: Step1, Step1A와 Step2부터 Step6까지 연결
+- 상세 Topic 문서: Triangle Rasterization, 2D Transformations, Depth Buffer와 Backface Culling 작성
+- 연결 예제 검토: Step1 Triangle부터 Step7 BackfaceCulling까지 현재 확인
+- demo 연결: Step1, Step1A와 Step2부터 Step7까지 확정
 
 ## 다음 작업
 
-1. Backface Culling과 Perspective Projection Topic을 순차 정규화한다.
+1. Perspective Projection Topic을 순차 정규화한다.
 2. 후속 Example과 상세 Demo 연결을 갱신한다.
