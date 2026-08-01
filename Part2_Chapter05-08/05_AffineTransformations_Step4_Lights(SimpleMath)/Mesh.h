@@ -21,7 +21,7 @@ struct Material {
     Vector3 ambient = Vector3(0.1f);
     Vector3 diffuse = Vector3(1.0f);
     Vector3 specular = Vector3(1.0f);
-    float shininess;
+    float shininess = 10.0f;
 };
 
 struct Light {

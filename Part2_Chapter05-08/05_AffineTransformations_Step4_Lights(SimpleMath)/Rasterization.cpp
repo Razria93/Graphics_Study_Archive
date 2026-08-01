@@ -69,7 +69,7 @@ void Rasterization::DrawIndexedTriangle(const size_t &startIndex,
 
     const float area = EdgeFunction(v0, v1, v2);
 
-    if (this->cullBackface && area < 0.0f)
+    if (area == 0.0f || (this->cullBackface && area < 0.0f))
         return;
 
     const auto &c0 = this->colorBuffer[i0];
@@ -138,7 +138,9 @@ void Rasterization::DrawIndexedTriangle(const size_t &startIndex,
 
                     PSInput psInput;
                     psInput.position = w0 * p0 + w1 * p1 + w2 * p2;
-                    psInput.normal = w0 * n0 + w1 * n1 + w2 * n2;
+                    Vector3 normal = w0 * n0 + w1 * n1 + w2 * n2;
+                    normal.Normalize();
+                    psInput.normal = normal;
 
                     pixels[i + width * j] = MyPixelShader(psInput);
                 }
@@ -154,18 +156,19 @@ void Rasterization::Render(vector<Vector4> &pixels) {
 
     for (const auto &mesh : this->meshes) {
 
-        Matrix scale = Matrix::CreateScale(object->transformation.scale);
-        Matrix rotation = Matrix::CreateRotationX(object->transformation.rotationX) * Matrix::CreateRotationY(object->transformation.rotationY) * Matrix::CreateRotationZ(object->transformation.rotationZ);
-        Matrix translation = Matrix::CreateTranslation(object->transformation.translation);
+        const auto &transform = mesh->transformation;
+        Matrix scale = Matrix::CreateScale(transform.scale);
+        Matrix rotation = Matrix::CreateRotationX(transform.rotationX) *
+                          Matrix::CreateRotationY(transform.rotationY) *
+                          Matrix::CreateRotationZ(transform.rotationZ);
+        Matrix translation = Matrix::CreateTranslation(transform.translation);
 
-        Matrix transMatrix = scale* rotation* translation;
+        Matrix transMatrix = scale * rotation * translation;
 
         constants.modelMatrix = transMatrix;
         
         transMatrix.Translation(Vector3(0.0f));
-        transMatrix.Invert().Transpose();
-
-        constants.invTranspose = transMatrix;
+        constants.invTranspose = transMatrix.Invert().Transpose();
 
 
         constants.material = mesh->material;
