@@ -104,7 +104,7 @@ Transform, rasterization, interpolation과 lighting은 C++ CPU 경로에서 수�
 - [CPU framebuffer와 dynamic texture upload](../../../Part2_Chapter04/04_Rasterization_Step10_Lights/Example.cpp#L10-L21)
 - [Full-screen presentation draw](../../../Part2_Chapter04/04_Rasterization_Step10_Lights/Example.cpp#L217-L236)
 - [Presentation vertex shader](../../../Part2_Chapter04/04_Rasterization_Step10_Lights/VertexShader.hlsl#L11-L18)
-- [Presentation pixel shader](../../../Part2_Chapter04/04_Rasterization_Step10_Lights/PixelShader.hlsl#L9-L12)
+- [Presentation pixel shader](../../../Part2_Chapter04/04_Rasterization_Step10_Lights/PixelShader.hlsl#L9-L11)
 
 ## 시각 결과
 
