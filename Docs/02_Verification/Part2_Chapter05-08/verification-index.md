@@ -4,16 +4,16 @@
 
 ## Provenance
 
-- 현재 확인: Chapter05 Step1 Matrix(GLM)·Step2 Lights(GLM), 2026-08-02
+- 현재 확인: Chapter05 Step1 Matrix(GLM)·Step2 Lights(GLM)·Step3 DirectXMath, 2026-08-02
 - 과거 확인: 나머지 예제, 문서화 이전(날짜 미기록)
-- 현재 재검증: Step1·2 완료, 나머지 필요
-- 근거: Step1·2 Debug/Release x64 직접 실행과 Chapter README의 전체 예제 과거 성공 기록
+- 현재 재검증: Step1·2·3 완료, 나머지 필요
+- 근거: Step1·2·3 Debug/Release x64 직접 실행과 Chapter README의 전체 예제 과거 성공 기록
 
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `05_AffineTransformations_Step1_Matrix(GLM)` | `Part2_Chapter05-08/05_AffineTransformations_Step1_Matrix(GLM)/05_AffineTransformations_Step1_Matrix(GLM).sln` | 성공 | 성공 | 성공 | 성공 | 제외 | 2026-08-02 현재 확인 · exit code 0 · Debug/Release stdout 54줄 일치 |
 | `05_AffineTransformations_Step2_Lights(GLM)` | `Part2_Chapter05-08/05_AffineTransformations_Step2_Lights(GLM)/05_AffineTransformations_Step2_Lights(GLM).sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · 기본/조정 전체 창 screenshot |
-| `05_AffineTransformations_Step3_DirectXMath` | `Part2_Chapter05-08/05_AffineTransformations_Step3_DirectXMath/05_AffineTransformations_Step3_DirectXMath.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `05_AffineTransformations_Step3_DirectXMath` | `Part2_Chapter05-08/05_AffineTransformations_Step3_DirectXMath/05_AffineTransformations_Step3_DirectXMath.sln` | 성공 | 성공 | 성공 | 성공 | 제외 | 2026-08-02 현재 확인 · exit code 0 · Debug/Release stdout 24줄 일치 |
 | `05_AffineTransformations_Step4_Lights(SimpleMath)` | `Part2_Chapter05-08/05_AffineTransformations_Step4_Lights(SimpleMath)/05_AffineTransformations_Step4_Lights(SimpleMath).sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `06_GraphicsPipeline_Step1_COM` | `Part2_Chapter05-08/06_GraphicsPipeline_Step1_COM/06_D3D11GraphicsPipeline_Step1_COM.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `06_GraphicsPipeline_Step2_InitializingD3D` | `Part2_Chapter05-08/06_GraphicsPipeline_Step2_InitializingD3D/06_GraphicsPipeline_Step2_InitializingD3D.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
