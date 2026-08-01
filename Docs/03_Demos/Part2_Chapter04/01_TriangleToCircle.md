@@ -90,7 +90,7 @@ if (currentCount != requestedCount)
 - Debug x64 build/run: 성공, 현재 확인
 - Release x64 build/run: 성공, 현재 확인
 - Capture: 3·32 전체 application window screenshot 확보, 사용자 확인 완료
-- Video: selected local master 자동·사용자 검수 완료, H.264, yuv420p, 1202×932, CFR 30fps, 10.9초, audio 없음, decode 성공, remote 미게시
+- Video: selected local master 자동·사용자 검수 완료, H.264, yuv420p, 1202×932, CFR 30fps, 10.9초, audio 없음, decode 성공, [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14)에 게시
 
 ## 관련 코드
 

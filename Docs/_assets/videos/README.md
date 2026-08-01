@@ -11,6 +11,12 @@
 - Published video는 Demo Issue에 한 번 첨부하고 PR에서 필요하면 동일 attachment URL을 재사용한다.
 - 상세 Demo는 핵심 screenshot과 텍스트 설명을 유지하고 실제 Demo Issue로 연결한다.
 
+## 게시된 Video
+
+| 범위 | Demo Issue | Attachment | 상태 |
+| --- | --- | --- | --- |
+| Part2_Chapter04 Step1A Triangle To Circle | [Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14) | [3→32 interaction video](https://github.com/user-attachments/assets/fc86477d-36bf-44bc-b279-a0824fa0c447) | published |
+
 ## 연결 문서
 
 - Video 계획: `Docs/03_Demos/video-plan.md`

@@ -13,8 +13,8 @@
 
 | 범위 | 후보 | 필요성 | 보여줄 개념 | selected | published |
 | --- | --- | --- | --- | --- | --- |
-| Part2_Chapter04 Step1A | triangle count 3→32 slider 조작 | 필수 | triangle fan 재생성과 polygonal circle 수렴 과정 | 검증 완료 | 미게시 |
-| Part2_Chapter04 Step4 | Animation2D 실행 | 필수 | 시간에 따른 계층적 2D orbit | 검증 완료 | 미게시 |
+| Part2_Chapter04 Step1A | triangle count 3→32 slider 조작 | 필수 | triangle fan 재생성과 polygonal circle 수렴 과정 | 검증 완료 | [Demo Issue #14 attachment](https://github.com/user-attachments/assets/fc86477d-36bf-44bc-b279-a0824fa0c447) |
+| Part2_Chapter04 Step4 | Animation2D 실행 | 필수 | 시간에 따른 계층적 2D orbit | 검증 완료 | 미게시: Chapter Issue의 3개 visual에서 Step1A Personal Extension을 우선하고 중복을 줄임 |
 | Part2_Chapter04 Step5 | circle depth 순서 변경 | 필수 | Per-pixel depth test에 따른 visibility 반전 | 검증 완료 | 미게시 |
 | Part2_Chapter04 Step6 | 자동 square rotation | 선택 | CPU vertex stage의 per-frame transform 결과 | 검증 완료 | 미게시 |
 | Part2_Chapter04 Step7 | culling checkbox On→Off→On | 선택 | Post-transform winding에 따른 backface rejection 전환 | 기술·사용자 시각 검수 완료 | 미게시 |

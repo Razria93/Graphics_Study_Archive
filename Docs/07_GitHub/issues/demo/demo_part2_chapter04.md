@@ -6,11 +6,23 @@
 
 ## 결과
 
+### Step1A — Triangle To Circle Personal Extension
+
+Step1의 단일 triangle rasterizer를 사용자가 triangle fan으로 확장했다. Slider를 3에서 32까지 조정하면 같은 반지름과 color interpolation을 유지한 채 polygonal silhouette가 원에 가까워지는 과정을 확인할 수 있다.
+
+https://github.com/user-attachments/assets/fc86477d-36bf-44bc-b279-a0824fa0c447
+
 ### Step8 — Perspective-Correct Interpolation
 
 같은 triangle mesh에서 Z 기반 크기 변화와 interpolation 방식을 함께 바꾸어, affine weight로 휘어진 checker가 reciprocal-depth 보정 뒤 안정된 형태로 나타나는 결과를 확인한다.
 
 ![Step8 Perspective-Correct Interpolation](https://github.com/Razria93/Graphics_Study_Archive/blob/0249770306c636e298f33f97dd7873046f481b3b/Docs/_assets/captures/part2_chapter04_08_perspective_projection_correct.png?raw=true)
+
+### Step10 — Directional·Point·Spot Light 비교
+
+같은 geometry, material과 Light parameter에서 type만 바꾸어 Directional의 전역 방향, Point의 거리 감쇠와 Spot의 cone 집중이 밝기 분포를 어떻게 바꾸는지 비교한다.
+
+![Step10 Directional Point Spot Light Comparison](https://github.com/Razria93/Graphics_Study_Archive/blob/512882ac239f461f80ae1b4ad836aeca22906f28/Docs/_assets/captures/part2_chapter04_10_lights_comparison.png?raw=true)
 
 ## 핵심 구현
 
@@ -53,7 +65,7 @@ Step10은 같은 geometry와 material에 공통 Blinn-Phong 항을 사용하고 
 ## 검증
 
 - Build/Run: Step1, Step1A와 Step2~10의 Debug/Release x64 build/run 성공을 2026-07-31–2026-08-01에 project 폴더 CWD 기준으로 재확인
-- Capture/Result: 전체 예제 application window screenshot 19개와 공개 안전성 확인
+- Capture/Result: application window screenshot 19개, Step10 비교 image와 Step1A interaction video의 공개 안전성 확인
 - Documentation: 문서 validator와 GitHub Actions `Docs Validation`은 문서·fixture·asset 정책을 검사하며 graphics executable build/run은 로컬 Verification에 기록
 
 ## 더 자세히 보기
