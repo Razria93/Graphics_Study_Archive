@@ -54,6 +54,9 @@ part2_chapter04_depth-buffer.png
 | `part2_chapter04_08_perspective_projection_affine.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step8_PerspectiveProjection` | 확보 | Perspective 크기 변화와 screen-space affine checker 왜곡 확인 |
 | `part2_chapter04_08_perspective_projection_correct.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step8_PerspectiveProjection` | 확보 | Reciprocal-depth 보정 이후 perspective-correct checker 결과 확인 |
 | `part2_chapter04_09_shading.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step9_Shading` | 확보 | Face별 flat normal과 directional Blinn-Phong shading, material·light UI 확인 |
+| `part2_chapter04_10_lights_directional.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step10_Lights` | 확보 | 공통 기본 parameter에서 거리 감쇠 없는 Directional Light 결과 확인 |
+| `part2_chapter04_10_lights_point.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step10_Lights` | 확보 | Position `(0, 0.5, 0.5)`과 선형 distance attenuation의 radial highlight 확인 |
+| `part2_chapter04_10_lights_spot.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step10_Lights` | 확보 | Point 감쇠에 `spotPower=400` cone factor를 적용한 집중 영역 확인 |
 
 ## 승격 체크
 

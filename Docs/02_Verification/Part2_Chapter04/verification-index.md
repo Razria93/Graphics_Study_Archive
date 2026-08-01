@@ -4,10 +4,10 @@
 
 ## Provenance
 
-- 현재 확인: Step1 Triangle부터 Step9 Shading까지, 2026-07-31–2026-08-01 Debug/Release x64 build/run
+- 현재 확인: Step1 Triangle부터 Step10 Lights까지, 2026-07-31–2026-08-01 Debug/Release x64 build/run
 - 확인 근거: 과거 확인
 - 확인 시점: 문서화 이전(날짜 미기록)
-- 현재 재검증: Step1·Step1A·Step2·Step3·Step4·Step5·Step6·Step7·Step8·Step9 완료, Step10 필요
+- 현재 재검증: Step1·Step1A·Step2·Step3·Step4·Step5·Step6·Step7·Step8·Step9·Step10 완료
 - 근거: Chapter README에 기록된 전체 예제 Debug/Release build/run 성공
 
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
@@ -22,7 +22,7 @@
 | `04_Rasterization_Step7_BackfaceCulling` | `Part2_Chapter04/04_Rasterization_Step7_BackfaceCulling/04_Rasterization_Step7_BackfaceCulling.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-01 현재 확인 · project 폴더 CWD · 표준 title과 Culling On/Off 확인 · screenshot·selected video 기술·사용자 시각 검수 완료 |
 | `04_Rasterization_Step8_PerspectiveProjection` | `Part2_Chapter04/04_Rasterization_Step8_PerspectiveProjection/04_Rasterization_Step8_PerspectiveProjection.sln` | 성공 | 성공 | 성공 | 성공 | [직교](../../_assets/captures/part2_chapter04_08_perspective_projection_orthographic.png), [affine](../../_assets/captures/part2_chapter04_08_perspective_projection_affine.png), [보정](../../_assets/captures/part2_chapter04_08_perspective_projection_correct.png) | 2026-08-01 현재 확인 · project 폴더 CWD · 표준 title과 projection·interpolation 비교 확인 · 사용자 시각 검수 완료 |
 | `04_Rasterization_Step9_Shading` | `Part2_Chapter04/04_Rasterization_Step9_Shading/04_Rasterization_Step9_Shading.sln` | 성공 | 성공 | 성공 | 성공 | [확보](../../_assets/captures/part2_chapter04_09_shading.png) | 2026-08-01 현재 확인 · project 폴더 CWD · 표준 title과 directional Blinn-Phong shading 확인 · 사용자 시각 검수 완료 |
-| `04_Rasterization_Step10_Lights` | `Part2_Chapter04/04_Rasterization_Step10_Lights/04_Rasterization_Step10_Lights.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `04_Rasterization_Step10_Lights` | `Part2_Chapter04/04_Rasterization_Step10_Lights/04_Rasterization_Step10_Lights.sln` | 성공 | 성공 | 성공 | 성공 | [Directional](../../_assets/captures/part2_chapter04_10_lights_directional.png), [Point](../../_assets/captures/part2_chapter04_10_lights_point.png), [Spot](../../_assets/captures/part2_chapter04_10_lights_spot.png) | 2026-08-01 현재 확인 · project 폴더 CWD · 표준 title과 Directional·Point·Spot 결과 확인 · 사용자 시각 검수 완료 |
 
 ## 갱신 기준
 

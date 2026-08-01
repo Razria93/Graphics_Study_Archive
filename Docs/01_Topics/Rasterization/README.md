@@ -21,10 +21,10 @@
 
 - Topic 목록: 작성
 - 상세 Topic 문서: Triangle Rasterization, 2D Transformations, Depth Buffer, Backface Culling과 Perspective Projection 작성
-- 연결 예제 검토: Step1 Triangle부터 Step8 PerspectiveProjection까지 현재 확인
-- demo 연결: Step1, Step1A와 Step2부터 Step8까지 확정
+- 연결 예제 검토: Step1 Triangle부터 Step10 Lights까지 현재 확인
+- demo 연결: Step1, Step1A와 Step2부터 Step10까지 확정
 
 ## 다음 작업
 
-1. Step10 Lights의 rasterization과 lighting 책임 경계를 확인한다.
-2. 후속 Example과 상세 Demo 연결을 갱신한다.
+1. Part2 Chapter05-08의 GPU rasterization pipeline과 연결한다.
+2. Chapter04 CPU software rasterizer와 DirectX11 pipeline의 책임 차이를 유지한다.

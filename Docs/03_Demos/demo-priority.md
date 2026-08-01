@@ -6,7 +6,7 @@
 | --- | --- | --- | --- | --- | --- |
 | Part1_Chapter01-02 | Bloom input/result | Bloom 결과 | 없음 | 확보 | build/run과 tracked visual 확인 완료 |
 | Part1_Chapter03 | Step4 DrawingSphere | Step8 Shadow, Step13 Transparency | Step10 Texturing, Step14 CubeEnvironment | 확보 | Step4~14 독립 상세 Demo와 tracked screenshot 확인 완료 |
-| Part2_Chapter04 | Step1 Triangle | Step5 DepthBuffer, Step8 PerspectiveProjection | Step1A Personal Extension, Step9 Shading, Step10 Lights | 후보 | Step1 최소 Demo, Step5 depth 순서 반전, Step8 projection·interpolation과 Step9 directional shading 확보. Step10 확인 후 대표 Demo 확정 |
+| Part2_Chapter04 | Step1 Triangle | Step8 PerspectiveProjection | Step1A Personal Extension, Step5 DepthBuffer, Step9 Shading, Step10 Lights | 확보 | Step1–10 순차 Demo와 capture 확보. 단계별 projection·interpolation 차이가 명확한 Step8을 Chapter 대표로 유지하고 Step10 Light type 비교는 선택 Demo로 확정 |
 | Part2_Chapter05-08 | DirectX11 pipeline 실행 | model, cubemap, IBL, bloom | shader toy variants | 후보 | 예제 수가 많아 대표 선정 필요 |
 | Part3_Chapter09 | first-person camera | mouse picking, trackball | drag transform | 후보 | video 우선 |
 | Part3_Chapter10-13 | normal mapping 또는 PBR | shadow mapping, PCF/PCSS | HDR pipeline, halo | 후보 | 시각 임팩트 우선순위 높음 |
