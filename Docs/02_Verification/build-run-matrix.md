@@ -16,7 +16,7 @@
 | Part1_Chapter01-02 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 현재 확인 | 완료 | 확보 | 두 예제 build/run 성공. `01_DX11InitAndImGui` capture 제외, `02_Bloom` input/result 확보 |
 | Part1_Chapter03 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 현재 확인 | 완료 | 확보 | Step4–14는 2026-07-30–31 현재 확인과 capture 확보 |
 | Part2_Chapter04 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 현재 확인 | 완료 | 확보 | Step1은 2026-07-31, Step1A·Step2·Step3·Step4·Step5·Step6·Step7·Step8·Step9·Step10은 2026-08-01 Debug/Release x64 현재 확인 |
-| Part2_Chapter05-08 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 혼합 | 진행 중 | 혼합 | Chapter05 Step1·2·3은 2026-08-02 현재 확인. Step1·3 capture 제외, Step2 screenshot 확보, 나머지는 과거 확인·재검증 필요 |
+| Part2_Chapter05-08 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 혼합 | 진행 중 | 혼합 | Chapter05 Step1~4는 2026-08-02 현재 확인. Step1·3 capture 제외, Step2 GLM과 Step4 SimpleMath 대응 screenshot 확보, 나머지는 과거 확인·재검증 필요 |
 | Part3_Chapter09 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 과거 확인 | 필요 | 미확인 | 문서화 이전 전체 예제 확인, 날짜 미기록 |
 | Part3_Chapter10-13 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 과거 확인 | 필요 | 미확인 | 문서화 이전 현재 index 범위 확인, 날짜 미기록 |
 | Part4_Chapter14-20 | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 과거 확인 | 필요 | 미확인 | 문서화 이전 Ex1401~Ex2001 확인, 날짜 미기록 |
