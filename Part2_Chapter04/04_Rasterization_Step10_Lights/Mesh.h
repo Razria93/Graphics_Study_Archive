@@ -27,10 +27,10 @@ struct Material {
 struct Light {
     vec3 strength = vec3(1.0f);
     vec3 direction = vec3(0.0f, -1.0f, 0.0f);
-    vec3 position = vec3(0.0f, 1.0f, 0.5f);
-    float fallOffStart = 0.0f;
-    float fallOffEnd = 1.8f;
-    float spotPower = 0.0f;
+    vec3 position = vec3(0.0f, 0.5f, 0.5f);
+    float fallOffStart = 1.35f;
+    float fallOffEnd = 7.5f;
+    float spotPower = 400.0f;
 };
 
 class Mesh {
