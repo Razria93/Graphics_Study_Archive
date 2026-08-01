@@ -30,7 +30,8 @@ int main() {
     RECT wr = {0, 0, width, height};
     AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, FALSE);
 
-    HWND hwnd = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example",
+    HWND hwnd = CreateWindow(wc.lpszClassName,
+                             L"ComputerGraphics - Step5 DepthBuffer",
                              WS_OVERLAPPEDWINDOW, 100, 100, wr.right - wr.left,
                              wr.bottom - wr.top, NULL, NULL, wc.hInstance,
                              NULL);
@@ -59,6 +60,7 @@ int main() {
             ImGui_ImplDX11_NewFrame();
             ImGui_ImplWin32_NewFrame();
             ImGui::NewFrame();
+            ImGui::SetNextWindowSize(ImVec2(320.0f, 140.0f), ImGuiCond_Once);
             ImGui::Begin("Scene Control");
 
             // Move circles along z to verify depth test ordering.
