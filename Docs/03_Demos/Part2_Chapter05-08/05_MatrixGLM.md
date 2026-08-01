@@ -99,7 +99,7 @@ Print(p * Transpose(T * R));
 
 ## 시각 결과
 
-이 예제의 결과는 정지된 console text이며 parameter 조작이나 frame 변화가 없다. Screenshot은 source와 실제 출력보다 정보 밀도가 낮고 video는 시간 변화를 설명하지 못하므로 둘 다 제외한다. 후속 graphics Example에서 Chapter 최소 visual을 확보한다.
+이 예제의 결과는 정지된 console text이며 parameter 조작이나 frame 변화가 없다. Screenshot은 source와 실제 출력보다 정보 밀도가 낮고 video는 시간 변화를 설명하지 못하므로 둘 다 제외한다. Chapter 최소 visual은 Step2 Lights(GLM)에서 확보한다.
 
 ## 구현 범위와 한계
 

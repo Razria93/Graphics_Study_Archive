@@ -70,6 +70,8 @@ part2_chapter04_depth-buffer.png
 | `part2_chapter04_10_lights_point.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step10_Lights` | 확보 | Position `(0, 0.5, 0.5)`과 선형 distance attenuation의 radial highlight 확인 |
 | `part2_chapter04_10_lights_spot.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step10_Lights` | 확보 | Point 감쇠에 `spotPower=400` cone factor를 적용한 집중 영역 확인 |
 | `part2_chapter04_10_lights_comparison.png` | comparison image | `Part2_Chapter04/04_Rasterization_Step10_Lights` | 확보 | 동일한 기본 parameter의 Directional·Point·Spot screenshot을 원본 크기로 세로 배치한 GitHub Demo Issue용 비교 자료 |
+| `part2_chapter05_02_lights_glm_default.png` | screenshot | `Part2_Chapter05-08/05_AffineTransformations_Step2_Lights(GLM)` | 확보 | 기본 transform과 Directional Light의 전체 application window 확인 |
+| `part2_chapter05_02_lights_glm_adjusted.png` | screenshot | `Part2_Chapter05-08/05_AffineTransformations_Step2_Lights(GLM)` | 확보 | Y rotation과 non-uniform scale을 적용한 geometry·lighting 변화 확인 |
 
 ## 승격 체크
 
