@@ -40,12 +40,11 @@
 ## 게시 snapshot
 
 - [Chapter04 Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14) 게시와 실제 URL 동기화를 완료했다.
-- [Chapter04 Draft PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15) 게시와 실제 URL 동기화를 완료했다.
+- [Chapter04 PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15)을 일반 merge commit 방식으로 병합해 실제 URL과 최종 상태 동기화를 완료했다.
 - [누적 Progress 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690)을 Chapter04 상태로 갱신했다.
 - [Phase 3-1 완료 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5150875726) 게시와 실제 URL 동기화를 완료했다.
 
 ## 후속 작업
 
-- PR #15 Ready for Review 전환 전 current-state를 최종 감사한다.
 - `Part2_Chapter05-08` 순차 정규화를 별도 Chapter 작업으로 진행한다.
 - `RowPitch`, `Map()` 실패, runtime shader path와 Step1A project identity는 별도 code task로 둔다.

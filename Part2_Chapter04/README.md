@@ -8,7 +8,7 @@ CPU software rasterization에서 triangle coverage와 attribute interpolation을
 - 순차 문서화: Step1 Triangle부터 Step10 Lights까지 작성
 - Build/run: Step1·Step1A·Step2·Step3·Step4·Step5·Step6·Step7·Step8·Step9·Step10 현재 확인
 - Capture: Step1부터 Step10까지 screenshot 확보, Step10 Directional·Point·Spot 비교 사용자 검수 완료
-- Public readiness: Publication 판정 완료, [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14), [Draft PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15), [Phase 3-1 완료 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5150875726) 게시 완료
+- Public readiness: Publication 판정 완료, [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14), [PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15), [Phase 3-1 완료 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5150875726) 마감 완료
 
 ## Archive/Public 검토
 
@@ -16,9 +16,9 @@ CPU software rasterization에서 triangle coverage와 attribute interpolation을
 | --- | --- |
 | Source provenance | [`SRC-P2-C04`](../Docs/99_Legacy/source-registry.md) |
 | Import status | 코드 보관 완료 |
-| Public readiness | Step별 공개 가능성과 대표 구성을 판정하고 [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14)와 [Draft PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15)를 게시 |
+| Public readiness | Step별 공개 가능성과 대표 구성을 판정하고 [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14)와 [PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15)를 마감 |
 | Build/run status | Step1·Step1A·Step2·Step3·Step4·Step5·Step6·Step7·Step8·Step9·Step10 Debug/Release x64 현재 확인 |
-| Next action | PR #15 Ready for Review 전환 전 current-state 최종 감사 |
+| Next action | `Part2_Chapter05-08` 코드·project·shader·asset 사전 감사 |
 
 ## 학습 순서
 
