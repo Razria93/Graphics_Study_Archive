@@ -6,7 +6,7 @@
 
 - 순차 Demo 시작: Step1 Triangle
 - Personal Extension: Step1A Triangle To Circle 독립 Demo 확보
-- 순차 Demo 진행: Step4 Animation2D 정규화 완료
+- 순차 Demo 진행: Step5 DepthBuffer 정규화 완료
 - 주요 demo 후보: rasterization, depth buffer, projection, lighting
 - 비고: 개념 비교 screenshot 중심
 
@@ -19,8 +19,9 @@
 | Step2 Circle | [Step2 상세 Demo](02_Circle.md) | [Step2 Circle Example](../../../Part2_Chapter04/04_Rasterization_Step2_Circle/README.md) | [Triangle Rasterization](../../01_Topics/Rasterization/TriangleRasterization.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [전체 창 screenshot](../../_assets/captures/part2_chapter04_02_circle.png) | 미게시 | 확보 | 공유 CPU vertex/color 배열과 index 기반 triangle fan |
 | Step3 Transformations2D | [Step3 상세 Demo](03_Transformations2D.md) | [Step3 Transformations2D Example](../../../Part2_Chapter04/04_Rasterization_Step3_Transformations2D/README.md) | [2D Transformations](../../01_Topics/Rasterization/Transformations2D.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [기본](../../_assets/captures/part2_chapter04_03_transformations2d_default.png), [조정](../../_assets/captures/part2_chapter04_03_transformations2d_composed.png) | 미게시 | 확보 | 5-segment 원본 mesh와 순차 CPU transform composition |
 | Step4 Animation2D | [Step4 상세 Demo](04_Animation2D.md) | [Step4 Animation2D Example](../../../Part2_Chapter04/04_Rasterization_Step4_Animation2D/README.md) | [2D Animation And Hierarchical Orbit](../../01_Topics/AnimationAndPhysics/Animation2D.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [전체 창 screenshot](../../_assets/captures/part2_chapter04_04_animation2d.png) | 미게시 | 확보 | Sun·Earth·Moon 계층적 orbit, selected local video 검수 완료 |
+| Step5 DepthBuffer | [Step5 상세 Demo](05_DepthBuffer.md) | [Step5 DepthBuffer Example](../../../Part2_Chapter04/04_Rasterization_Step5_DepthBuffer/README.md) | [Depth Buffer](../../01_Topics/Rasterization/DepthBuffer.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [기본](../../_assets/captures/part2_chapter04_05_depth_buffer_default.png), [반전](../../_assets/captures/part2_chapter04_05_depth_buffer_reordered.png) | 미게시 | 확보 | Per-pixel depth test와 순서 반전, selected local video 검수 완료 |
 | 대표 capture | 없음 | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 미게시 | 후보 | 대표 예제 선정 후 갱신 |
-| video | [Step1A 상세 Demo](01_TriangleToCircle.md), [Step4 상세 Demo](04_Animation2D.md) | [Step1A Example](../../../Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle/README.md), [Step4 Example](../../../Part2_Chapter04/04_Rasterization_Step4_Animation2D/README.md) | [Triangle Rasterization](../../01_Topics/Rasterization/TriangleRasterization.md), [2D Animation](../../01_Topics/AnimationAndPhysics/Animation2D.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | selected local video | 미게시 | 확보 | Step1A segment 변화와 Step4 계층적 orbit 자동·사용자 검수 완료, remote 미게시 |
+| video | [Step1A 상세 Demo](01_TriangleToCircle.md), [Step4 상세 Demo](04_Animation2D.md), [Step5 상세 Demo](05_DepthBuffer.md) | [Step1A Example](../../../Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle/README.md), [Step4 Example](../../../Part2_Chapter04/04_Rasterization_Step4_Animation2D/README.md), [Step5 Example](../../../Part2_Chapter04/04_Rasterization_Step5_DepthBuffer/README.md) | [Triangle Rasterization](../../01_Topics/Rasterization/TriangleRasterization.md), [2D Animation](../../01_Topics/AnimationAndPhysics/Animation2D.md), [Depth Buffer](../../01_Topics/Rasterization/DepthBuffer.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | selected local video | 미게시 | 확보 | Step1A·Step4·Step5 기술·사용자 시각 검수 완료, remote 미게시 |
 
 ## 갱신 기준
 

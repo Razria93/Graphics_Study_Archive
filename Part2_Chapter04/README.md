@@ -5,9 +5,9 @@ CPU software rasterization에서 triangle coverage와 attribute interpolation을
 ## 상태
 
 - 학습 코드 정리: 전체 예제 보관 완료
-- 순차 문서화: Step1 Triangle부터 Step4 Animation2D까지 작성
-- Build/run: Step1·Step1A·Step2·Step3·Step4 현재 확인, 나머지 예제 과거 확인
-- Capture: Step1부터 Step4까지 screenshot 확보, Step1A·Step4 selected video 검수 완료
+- 순차 문서화: Step1 Triangle부터 Step5 DepthBuffer까지 작성
+- Build/run: Step1·Step1A·Step2·Step3·Step4·Step5 현재 확인, 나머지 예제 과거 확인
+- Capture: Step1부터 Step5까지 screenshot 확보, Step1A·Step4·Step5 selected video 검수 완료
 - Public readiness: 검토 필요
 
 ## Archive/Public 검토
@@ -17,8 +17,8 @@ CPU software rasterization에서 triangle coverage와 attribute interpolation을
 | Source provenance | [`SRC-P2-C04`](../Docs/99_Legacy/source-registry.md) |
 | Import status | 코드 보관 완료 |
 | Public readiness | Step별 검토 필요 |
-| Build/run status | Step1·Step1A·Step2·Step3·Step4 Debug/Release x64 현재 확인, 나머지 과거 확인 |
-| Next action | Step5 DepthBuffer 정규화 |
+| Build/run status | Step1·Step1A·Step2·Step3·Step4·Step5 Debug/Release x64 현재 확인, 나머지 과거 확인 |
+| Next action | Step6 ShadersConcept 정규화 |
 
 ## 학습 순서
 
@@ -27,7 +27,7 @@ CPU software rasterization에서 triangle coverage와 attribute interpolation을
 3. [Step2 Circle](04_Rasterization_Step2_Circle/README.md)
 4. [Step3 Transformations2D](04_Rasterization_Step3_Transformations2D/README.md)
 5. [Step4 Animation2D](04_Rasterization_Step4_Animation2D/README.md)
-6. Step5 DepthBuffer
+6. [Step5 DepthBuffer](04_Rasterization_Step5_DepthBuffer/README.md)
 7. Step6 ShadersConcept
 8. Step7 BackfaceCulling
 9. Step8 PerspectiveProjection
@@ -83,11 +83,19 @@ Step3은 원본 5-segment polygonal fan을 유지하고 `Rotation1 → Scale →
 
 Step4는 Sun, Earth와 Moon의 angle을 매 frame 갱신한다. Earth는 Sun 원점을 기준으로 공전하고 Moon은 Earth 주변 local orbit에 Earth의 parent orbit을 조합해 계층적 2D animation을 구성한다.
 
+### Step5 DepthBuffer
+
+- [Example README](04_Rasterization_Step5_DepthBuffer/README.md)
+- [Depth Buffer Topic](../Docs/01_Topics/Rasterization/DepthBuffer.md)
+- [Verification](../Docs/02_Verification/Part2_Chapter04/verification-index.md)
+- [Detailed Demo](../Docs/03_Demos/Part2_Chapter04/05_DepthBuffer.md)
+
+Step5는 frame마다 per-pixel depth buffer를 초기화하고 barycentric Z를 기존 값과 비교한다. 기본과 반전 상태는 geometry와 draw order를 유지한 채 center Z만 바꿔 red, blue와 yellow circle의 visibility가 depth로 결정되는 결과를 보여준다.
+
 ## 후속 예제
 
 | Example | 책임 | 현재 상태 |
 | --- | --- | --- |
-| `04_Rasterization_Step5_DepthBuffer` | depth test와 visibility | 정규화 대기 |
 | `04_Rasterization_Step6_ShadersConcept` | CPU shader abstraction | 정규화 대기 |
 | `04_Rasterization_Step7_BackfaceCulling` | triangle winding과 culling | 정규화 대기 |
 | `04_Rasterization_Step8_PerspectiveProjection` | perspective projection | 정규화 대기 |
