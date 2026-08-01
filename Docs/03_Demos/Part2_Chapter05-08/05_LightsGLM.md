@@ -141,6 +141,7 @@ Capture는 inverse-transpose 계산 자체를 증명하지 않는다. 해당 사
 
 - [Step2 Lights(GLM) Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step2_Lights%28GLM%29/README.md)
 - [Step1 Matrix(GLM) Demo](05_MatrixGLM.md)
+- [다음 단계: Step3 DirectXMath Demo](05_DirectXMath.md)
 - [Matrix And Affine Transformations Topic](../../01_Topics/Rasterization/MatrixAndAffineTransformations.md)
 - [Phong And Blinn-Phong Topic](../../01_Topics/LightingAndShading/PhongAndBlinnPhong.md)
 - [Light Types Topic](../../01_Topics/LightingAndShading/LightTypes.md)

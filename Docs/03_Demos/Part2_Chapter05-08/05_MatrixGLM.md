@@ -125,6 +125,7 @@ Print(p * Transpose(T * R));
 ## 관련 문서
 
 - [Step1 Matrix(GLM) Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step1_Matrix%28GLM%29/README.md)
+- [다음 단계: Step2 Lights(GLM) Demo](05_LightsGLM.md)
 - [Matrix And Affine Transformations Topic](../../01_Topics/Rasterization/MatrixAndAffineTransformations.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
