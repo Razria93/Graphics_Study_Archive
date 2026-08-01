@@ -12,7 +12,7 @@
 
 ## Current Work
 
-`Part1_Chapter01-02` pilot으로 문서화 workflow를 검증했고, 현재는 `Part1_Chapter03`을 Step 순서대로 검증하고 문서화한다.
+`Part1_Chapter01-02` pilot, `Part1_Chapter03`과 `Part2_Chapter04` 순차 정규화를 마감했다. 다음 정규 작업은 `Part2_Chapter05-08`의 코드·project·shader·asset 사전 감사다.
 
 - [Part1 Chapter01-02](Part1_Chapter01-02/README.md): DirectX11 기반 렌더링 흐름과 bloom 후처리 pilot
 - [01_DX11InitAndImGui](Part1_Chapter01-02/01_DX11InitAndImGui/README.md): DirectX11 device, swap chain, render target, ImGui 기반 예제
@@ -20,6 +20,9 @@
 - [PostProcessingAndBloom](Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md): bloom 처리 흐름과 DirectX11 표시 경로
 - [Part1 Chapter03](Part1_Chapter03/README.md): CPU ray tracing Step4~14 순차 작업
 - [Step14 CubeEnvironment](Part1_Chapter03/03_Raytracing_Step14_CubeEnvironment/README.md): direction 기반 cubemap environment sampling
+- [Part2 Chapter04](Part2_Chapter04/README.md): CPU software rasterization Step1~10 순차 작업
+- [Step1 Triangle](Part2_Chapter04/04_Rasterization_Step1_Triangle/README.md): edge function과 barycentric RGB interpolation 기반 최소 rasterizer
+- [Step1A Triangle To Circle](Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle/README.md): triangle fan과 segment-count slider를 사용하는 Personal Extension
 
 ## Featured Result
 
@@ -43,7 +46,7 @@
 | --- | --- | --- | --- |
 | `Part1_Chapter01-02` | DirectX11 init, render loop, bloom post-processing | 완료 | pilot 마감 |
 | `Part1_Chapter03` | ray tracing basics와 cubemap sampling | 완료 | Step4~14 문서화·재검증 완료 |
-| `Part2_Chapter04` | rasterization foundation | 완료 | 대기 |
+| `Part2_Chapter04` | rasterization foundation | 완료 | Step1~10·Step1A 문서화·재검증, GitHub 게시와 PR 마감 완료 |
 | `Part2_Chapter05-08` | DirectX11 pipeline, texture, mesh 흐름 | 완료 | 대기 |
 | `Part3_Chapter09` | texturing and mapping | 완료 | 대기 |
 | `Part3_Chapter10-13` | lighting, shadow, PBR/IBL | 완료 | 대기 |

@@ -273,8 +273,20 @@ function Test-DemoTable {
                 Add-Failure $RelativePath "row '$name' is '확보' but Capture/Result is '없음'"
             }
 
-            if ($capture -notmatch '(Docs/)?_assets/(captures|videos|diagrams)') {
-                Add-Failure $RelativePath "row '$name' is '확보' but Capture/Result does not reference Docs/_assets"
+            $usesTrackedAsset = $capture -match '(Docs/)?_assets/(captures|videos|diagrams)'
+            $usesSelectedLocalVideo = (
+                $name -eq $RowVideo -and
+                $capture -match '(?i)\bselected local video\b'
+            )
+            $usesPublishedDemoIssue = (
+                $name -eq $RowVideo -and
+                $capture -match 'https://github\.com/[^/]+/[^/]+/issues/\d+'
+            )
+            if (-not ($usesTrackedAsset -or $usesSelectedLocalVideo -or $usesPublishedDemoIssue)) {
+                Add-Failure $RelativePath "row '$name' is '확보' but Capture/Result has no tracked asset, selected local video, or published Demo Issue"
+            }
+            if ($usesPublishedDemoIssue -and $githubIssue -notmatch 'https://github\.com/[^/]+/[^/]+/issues/\d+') {
+                Add-Failure $RelativePath "row '$name' references a published video without a GitHub Demo Issue"
             }
         }
 

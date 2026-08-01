@@ -5,6 +5,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+. (Join-Path $PSScriptRoot "github-visual-rules.ps1")
 
 $Failures = New-Object System.Collections.Generic.List[string]
 $Warnings = New-Object System.Collections.Generic.List[string]
@@ -581,8 +582,11 @@ function Test-PrVisualAndDemoLinks {
 	$RelativePath = Get-RelativePath $File.FullName
 	$Content = Get-Content -Encoding UTF8 $File.FullName -Raw
 	$Images = [regex]::Matches($Content, '!\[[^\]]+\]\(([^)]+)\)')
+	$VisualCount = Get-GitHubRepresentativeVisualCount `
+		-Content $Content `
+		-ImageCount $Images.Count
 
-	if ($Images.Count -gt 1) {
+	if ($VisualCount -gt 1) {
 		Add-Failure $RelativePath "PR body must use no more than one representative visual"
 	}
 

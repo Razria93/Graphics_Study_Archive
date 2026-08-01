@@ -50,6 +50,26 @@ part2_chapter04_depth-buffer.png
 | `part1_chapter03_12_reflection.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step12_Reflection` | 확보 | Release x64 전체 application window에서 ground와 blue sphere의 recursive reflection 확인 |
 | `part1_chapter03_13_transparency.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step13_Transparency` | 확보 | Release x64 전체 application window에서 sphere 내부의 해수면·하늘 background 왜곡과 enter/exit 경계 확인 |
 | `part1_chapter03_14_cube_environment.png` | screenshot | `Part1_Chapter03/03_Raytracing_Step14_CubeEnvironment` | 확보 | Release x64 전체 application window에서 PosZ 중심과 PosX·NegX 경계 environment 확인 |
+| `part2_chapter04_01_triangle.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step1_Triangle` | 확보 | Edge function coverage와 barycentric RGB interpolation 결과 확인 |
+| `part2_chapter04_01a_triangle_to_circle_segments_3.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle` | 확보 | 3개 segment의 triangle silhouette와 red center·blue boundary 보간 확인 |
+| `part2_chapter04_01a_triangle_to_circle_segments_32.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle` | 확보 | 32개 segment에서 같은 반지름·색 보간을 유지한 circle 근사 확인 |
+| `part2_chapter04_02_circle.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step2_Circle` | 확보 | 32개 indexed triangle fan과 red center·green boundary 보간 확인 |
+| `part2_chapter04_03_transformations2d_default.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step3_Transformations2D` | 확보 | 원점의 5-segment fan과 identity transform 기준 상태 확인 |
+| `part2_chapter04_03_transformations2d_composed.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step3_Transformations2D` | 확보 | rotation·non-uniform scale·translation 합성에 따른 orientation·aspect·위치 변화 확인 |
+| `part2_chapter04_04_animation2d.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step4_Animation2D` | 확보 | Sun·Earth·Moon의 한 시점 계층 배치와 Scene Control UI 확인 |
+| `part2_chapter04_05_depth_buffer_default.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step5_DepthBuffer` | 확보 | red 0.1·blue 0.3·yellow 0.7의 기본 depth visibility 확인 |
+| `part2_chapter04_05_depth_buffer_reordered.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step5_DepthBuffer` | 확보 | red 0.7·blue 0.3·yellow 0.1의 반전 depth visibility 확인 |
+| `part2_chapter04_06_shaders_concept.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step6_ShadersConcept` | 확보 | CPU vertex stage rotation이 적용된 white square와 framebuffer 출력 확인 |
+| `part2_chapter04_07_backface_culling_on.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step7_BackfaceCulling` | 확보 | Culling On에서 front-facing 왼쪽 square만 남는 결과 확인 |
+| `part2_chapter04_07_backface_culling_off.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step7_BackfaceCulling` | 확보 | Culling Off에서 반전된 오른쪽 square까지 표시되는 결과 확인 |
+| `part2_chapter04_08_perspective_projection_orthographic.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step8_PerspectiveProjection` | 확보 | 서로 다른 Z에서도 같은 크기를 유지하는 orthographic 기준 상태 확인 |
+| `part2_chapter04_08_perspective_projection_affine.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step8_PerspectiveProjection` | 확보 | Perspective 크기 변화와 screen-space affine checker 왜곡 확인 |
+| `part2_chapter04_08_perspective_projection_correct.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step8_PerspectiveProjection` | 확보 | Reciprocal-depth 보정 이후 perspective-correct checker 결과 확인 |
+| `part2_chapter04_09_shading.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step9_Shading` | 확보 | Face별 flat normal과 directional Blinn-Phong shading, material·light UI 확인 |
+| `part2_chapter04_10_lights_directional.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step10_Lights` | 확보 | 공통 기본 parameter에서 거리 감쇠 없는 Directional Light 결과 확인 |
+| `part2_chapter04_10_lights_point.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step10_Lights` | 확보 | Position `(0, 0.5, 0.5)`과 선형 distance attenuation의 radial highlight 확인 |
+| `part2_chapter04_10_lights_spot.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step10_Lights` | 확보 | Point 감쇠에 `spotPower=400` cone factor를 적용한 집중 영역 확인 |
+| `part2_chapter04_10_lights_comparison.png` | comparison image | `Part2_Chapter04/04_Rasterization_Step10_Lights` | 확보 | 동일한 기본 parameter의 Directional·Point·Spot screenshot을 원본 크기로 세로 배치한 GitHub Demo Issue용 비교 자료 |
 
 ## 승격 체크
 

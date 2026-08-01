@@ -14,6 +14,15 @@ Asset 사용 기준은 이 문서를 따른다. Demo capture/result 설명은 `D
 - 외부 texture, model, image asset은 출처와 라이선스를 확인하기 전까지 `검토 필요`로 둔다.
 - 검토된 capture/result와 diagram reference는 `Docs/_assets`에 둔다.
 
+## Video 저장 기준
+
+- raw, attempt와 selected video는 `local/`에 보관한다.
+- selected video의 기본 게시 방식은 GitHub Demo Issue attachment이며 같은 파일을 여러 public surface에 중복 업로드하지 않는다.
+- `Docs/_assets/videos`는 게시된 video reference와 운영 안내 위치로 사용하고 MP4, MOV, WEBM binary 저장소로 사용하지 않는 것을 기본값으로 한다.
+- Git tracked video는 저장소 이력 누적과 clone 비용을 검토한 Publication 예외이며 사용자 승인을 별도로 받는다.
+- Git LFS 도입, migration과 tracked video 교체 정책은 별도 설계·승인 작업으로 분리한다.
+- 파일 크기가 작다는 이유만으로 tracked binary를 기본값으로 선택하지 않는다.
+
 ## third-party 기준
 
 Build dependency로 필요한 third-party header는 출처와 라이선스를 확인한다. Public subset 구성 시 별도 notice를 다시 검토한다.

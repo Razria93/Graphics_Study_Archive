@@ -31,7 +31,8 @@ int main() {
 
     AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, FALSE);
 
-    HWND hwnd = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example",
+    HWND hwnd = CreateWindow(wc.lpszClassName,
+                             L"ComputerGraphics - Step1A Triangle To Circle",
                              WS_OVERLAPPEDWINDOW,
                              100,
                              100,

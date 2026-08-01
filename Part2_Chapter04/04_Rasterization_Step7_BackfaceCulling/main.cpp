@@ -30,7 +30,8 @@ int main() {
     RECT wr = {0, 0, width, height};
     AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, FALSE);
 
-    HWND hwnd = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example",
+    HWND hwnd = CreateWindow(wc.lpszClassName,
+                             L"ComputerGraphics - Step7 BackfaceCulling",
                              WS_OVERLAPPEDWINDOW, 100, 100, wr.right - wr.left,
                              wr.bottom - wr.top, NULL, NULL, wc.hInstance,
                              NULL);

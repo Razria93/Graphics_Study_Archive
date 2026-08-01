@@ -60,6 +60,19 @@ push 후 local HEAD, tracking ref, 실제 remote branch head와 PR head가 모�
 - 새 tracked Docs는 UTF-8로 작성한다.
 - 깨진 기존 문서는 legacy로 보존하고 새 정본 문서로 재작성한다.
 
+### Actions PowerShell host 불일치
+
+`pwsh`로 실행한 fixture가 내부에서 `powershell.exe`를 고정 호출하면 영문 Windows runner의 system code page가 BOM 없는 UTF-8 script를 다르게 해석할 수 있다. 직접 validator는 통과하지만 자식 process에서 parser 오류가 발생하는 형태로 나타난다.
+
+Fixture가 별도 process로 validator의 exit code를 검사해야 하면 현재 process의 executable을 사용한다.
+
+```powershell
+$powerShellPath = [Diagnostics.Process]::GetCurrentProcess().MainModule.FileName
+& $powerShellPath -NoProfile -ExecutionPolicy Bypass -File $validator
+```
+
+이 오류는 `gh` 인증이나 repository 권한 문제로 분류하지 않는다. Actions log에서 실패한 shell, 직접 validator 단계와 fixture의 자식 process 호출을 비교한다.
+
 ## Visual Studio 실행 문제
 
 증상:

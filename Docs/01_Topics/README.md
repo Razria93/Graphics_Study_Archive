@@ -7,14 +7,14 @@
 | 그룹 | 위치 | 상태 |
 | --- | --- | --- |
 | Ray Tracing | [RayTracing](RayTracing/README.md) | 진행 중 |
-| Rasterization | [Rasterization](Rasterization/README.md) | 골격 작성 |
+| Rasterization | [Rasterization](Rasterization/README.md) | 진행 중 |
 | DirectX11 Pipeline | [DirectX11Pipeline](DirectX11Pipeline/README.md) | 진행 중 |
 | Texturing And Mapping | [TexturingAndMapping](TexturingAndMapping/README.md) | 골격 작성 |
-| Lighting And Shading | [LightingAndShading](LightingAndShading/README.md) | 골격 작성 |
+| Lighting And Shading | [LightingAndShading](LightingAndShading/README.md) | 진행 중 |
 | PBR And IBL | [PBRAndIBL](PBRAndIBL/README.md) | 골격 작성 |
 | Shadows | [Shadows](Shadows/README.md) | 골격 작성 |
 | Compute And Simulation | [ComputeAndSimulation](ComputeAndSimulation/README.md) | 골격 작성 |
-| Animation And Physics | [AnimationAndPhysics](AnimationAndPhysics/README.md) | 골격 작성 |
+| Animation And Physics | [AnimationAndPhysics](AnimationAndPhysics/README.md) | 진행 중 |
 
 ## 작성 기준
 

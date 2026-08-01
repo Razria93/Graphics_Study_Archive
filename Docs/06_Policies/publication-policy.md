@@ -24,6 +24,7 @@
 - 직접 실행해서 만든 capture/result 중 권리 문제가 없는 결과물
 - 사용자 직접 생성 또는 직접 촬영으로 출처 상태를 확인한 asset
 - metadata에 개인 식별자, 로컬 경로, 강의명, 출처 불명 정보가 남아 있지 않은 screenshot/result image
+- 자동 검수와 사용자 시각 검수를 통과하고 게시 위치와 접근 범위를 확인한 selected video
 - 강의명, 강사명, 워터마크, 개인 식별자가 제거된 capture/result
 - 출처와 라이선스가 명확한 asset을 사용한 산출물
 - 직접 확인한 build/run 검증 요약
@@ -42,6 +43,7 @@
 - 생성 주체나 외부 자료 복제 여부를 확인하지 못한 generated asset
 - 공개용 문장으로 재작성하기 전의 private archive 설명
 - metadata, 개인 식별자, 로컬 경로 확인 전의 screenshot/result image
+- codec, stream, decode, 민감 metadata, 화면 노출과 접근 범위 확인 전의 video
 
 ## 제외 대상
 
@@ -76,3 +78,5 @@
 - public 후보는 private archive 문서를 그대로 복사하지 않고 공개용 문장으로 재작성한다.
 - public capture/result 후보는 강의명, 강사명, 워터마크, 개인 식별자 포함 여부를 확인한 뒤 연결한다. 포함된 자료는 public 후보에서 제외하거나 재촬영/재생성한다.
 - screenshot/result image는 metadata 확인을 포함한다. 사용자 직접 생성 asset은 최소 출처 기록을 적용하고, 외부 입력 asset을 사용한 result image는 입력 asset의 출처와 라이선스를 확인하기 전까지 검토 필요 또는 제외로 둔다.
+- video는 container, codec, pixel format, CFR, duration, audio·subtitle stream, 민감 metadata와 전체 decode를 자동 확인하고 화면 의미와 공개 안전성을 사용자 시각 검수로 별도 확인한다.
+- private repository attachment는 repository 접근 권한이 있는 사용자만 볼 수 있는 게시본으로 판단한다. 비인가 독자에게 공개해야 하면 public subset 또는 별도 승인한 public hosting을 선택한다.

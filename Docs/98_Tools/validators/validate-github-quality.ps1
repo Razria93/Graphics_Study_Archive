@@ -4,6 +4,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+. (Join-Path $PSScriptRoot "github-visual-rules.ps1")
 $Failures = New-Object System.Collections.Generic.List[string]
 $Warnings = New-Object System.Collections.Generic.List[string]
 
@@ -154,7 +155,10 @@ function Validate-DemoIssue {
     if ($images.Count -lt 1) {
         Add-Failure $relative "Demo Issue must contain at least one GitHub Docs/_assets visual URL"
     }
-    if ($images.Count -gt 3) {
+    $visualCount = Get-GitHubRepresentativeVisualCount `
+        -Content $content `
+        -ImageCount $images.Count
+    if ($visualCount -gt 3) {
         Add-Failure $relative "Demo Issue must use no more than three representative visuals"
     }
 

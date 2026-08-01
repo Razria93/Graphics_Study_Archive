@@ -12,7 +12,7 @@ namespace hlab {
 	{
 		const auto radius = 0.5f;
 		const auto center = vec3(0.0f, 0.0f, 1.0f);
-		const size_t numTriangles = 3;
+		const size_t numTriangles = 32;
 
 		this->vertices.reserve(numTriangles + 1);
 		this->colors.reserve(numTriangles + 1);

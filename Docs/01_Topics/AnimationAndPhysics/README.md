@@ -6,21 +6,21 @@
 
 - 주요 개념: time step, transform update, interaction, physics 후보
 - 연결 예제 후보: Part2_Chapter04, Part3_Chapter09, Part4_Chapter14-20
-- 우선순위: P2
+- 우선순위: P1–P2
 
 ## 문서 목록
 
 - [Topic Index](topic-index.md)
+- [2D Animation And Hierarchical Orbit](Animation2D.md)
 
 ## 상태
 
 - Topic 목록: 작성
-- 상세 Topic 문서: 예정
-- 연결 예제 검토: 미확인
-- demo 연결: 미확인
+- 상세 Topic 문서: 작성
+- 연결 예제 검토: Part2 Chapter04 Step4 확인
+- demo 연결: Step4 Animation2D 연결
 
 ## 다음 작업
 
-1. 연결 예제의 코드 폴더 README를 확인한다.
-2. 대표 Topic을 P0/P1/P2로 확정한다.
-3. 코드 확인 후 상세 Topic 문서를 승격한다.
+1. Part3·4 연결 후보에서 공통 timestep 책임을 확인한다.
+2. Interaction과 physics 후보를 순서대로 검토한다.

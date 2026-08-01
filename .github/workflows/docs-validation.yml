@@ -31,9 +31,17 @@ jobs:
         shell: pwsh
         run: ./Docs/98_Tools/validators/validate-github-quality.ps1
 
+      - name: Test GitHub visual validator fixtures
+        shell: pwsh
+        run: ./Docs/98_Tools/validators/test-github-visual-quality.ps1
+
       - name: Validate Demo indexes
         shell: pwsh
         run: ./Docs/98_Tools/validators/validate-demo-index-quality.ps1
+
+      - name: Test Demo index validator fixtures
+        shell: pwsh
+        run: ./Docs/98_Tools/validators/test-demo-index-quality.ps1
 
       - name: Validate Demo documents
         shell: pwsh
@@ -42,6 +50,14 @@ jobs:
       - name: Test Demo document validator fixtures
         shell: pwsh
         run: ./Docs/98_Tools/validators/test-demo-doc-quality.ps1
+
+      - name: Validate tracked video assets
+        shell: pwsh
+        run: ./Docs/98_Tools/validators/validate-video-asset-quality.ps1
+
+      - name: Test video asset validator fixtures
+        shell: pwsh
+        run: ./Docs/98_Tools/validators/test-video-asset-quality.ps1
 
       - name: Validate Topic documents
         shell: pwsh

@@ -69,8 +69,6 @@ namespace hlab
 		{
 			for (size_t i = xMin; i <= xMax; i++)
 			{
-				vec4 returnColor = vec4(1.0f, 1.0f, 1.0f, 1.0f);
-
 				const vec2 point = vec2(float(i), float(j));
 
 				const float area = EdgeFunction(Rast_v0, Rast_v1, Rast_v2);
@@ -97,9 +95,9 @@ namespace hlab
 						alpha1 * triangle.v1.color.b +
 						alpha2 * triangle.v2.color.b;
 
-					returnColor = vec4(color_R, color_G, color_B, 1.0f);
+					pixels[i + width * j] =
+						vec4(color_R, color_G, color_B, 1.0f);
 				}
-				pixels[i + width * j] = returnColor;
 			}
 		}
 	}

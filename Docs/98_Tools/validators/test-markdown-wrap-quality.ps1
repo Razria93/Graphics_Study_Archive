@@ -3,6 +3,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+$powerShellPath = [Diagnostics.Process]::GetCurrentProcess().MainModule.FileName
 $FixtureRoot = Join-Path $PSScriptRoot "fixtures/markdown-wrap"
 $Failures = [System.Collections.Generic.List[string]]::new()
 
@@ -24,7 +25,7 @@ function Invoke-Fixture {
         $arguments += "-WarningAsFailure"
     }
 
-    & powershell @arguments *> $null
+    & $powerShellPath @arguments *> $null
     if ($LASTEXITCODE -ne $ExpectedExitCode) {
         $Failures.Add(
             "$Name expected exit $ExpectedExitCode but received $LASTEXITCODE"
