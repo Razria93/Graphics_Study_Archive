@@ -19,10 +19,10 @@
 
 - Topic 목록: 작성
 - 상세 Topic 문서: Phong Shading, Phong And Blinn-Phong과 Light Types 작성
-- 연결 예제 검토: Part1 Chapter03 Step5, Part2 Chapter04 Step9·10 현재 확인
-- demo 연결: Step5 PhongShading, Step9 Shading과 Step10 Lights 연결
+- 연결 예제 검토: Part1 Chapter03 Step5, Part2 Chapter04 Step9·10, Part2 Chapter05 Step2 현재 확인
+- demo 연결: Step5 PhongShading, Step9 Shading, Step10 Lights와 Chapter05 Step2 Lights(GLM) 연결
 
 ## 다음 작업
 
-1. Part2 Chapter05-08의 Phong·Blinn-Phong 비교 예제를 연결한다.
+1. Part2 Chapter05-08의 후속 Phong·Blinn-Phong 비교 예제를 연결한다.
 2. Material parameter와 Rim Lighting Topic을 순서대로 검토한다.

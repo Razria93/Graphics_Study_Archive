@@ -11,6 +11,7 @@ Graphics 좌표 변환에 사용하는 matrix, homogeneous coordinate와 affine 
 - Translation, rotation과 scale의 조합 순서가 결과에 미치는 영향을 설명한다.
 - 2D geometry의 실제 변환 흐름은 [2D Transformations](Transformations2D.md)으로 위임한다.
 - GLM API와 실제 출력은 [Step1 Matrix(GLM) Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step1_Matrix%28GLM%29/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter05-08/05_MatrixGLM.md)로 위임한다.
+- GLM model·normal transform의 실제 적용은 [Step2 Lights(GLM) Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step2_Lights%28GLM%29/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter05-08/05_LightsGLM.md)로 위임한다.
 - build/run 사실은 [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)로 위임한다.
 - 결과 해석은 `Docs/03_Demos`, 검증 사실은 `Docs/02_Verification` 정본으로 위임한다.
 
@@ -40,6 +41,19 @@ Inverse transform은 적용한 변환을 반대 순서로 되돌린다. Translat
 
 이 관계는 rotation에 유효하지만 non-uniform scale이나 shear가 섞인 일반 affine matrix에는 그대로 적용할 수 없다. 이런 경우에는 전체 inverse 또는 normal matrix를 별도로 계산해야 한다.
 
+### Normal Matrix Under Non-Uniform Scale
+
+Normal은 surface tangent에 수직인 방향이므로 position처럼 model matrix를 그대로 적용해서는 안 된다. Uniform scale과 rotation만 있다면 같은 방향 관계가 유지되지만, 축마다 scale이 다른 non-uniform scale은 tangent와 normal 사이의 직교 관계를 바꾼다.
+
+Model matrix `M`의 선형 변환에 대해 normal은 inverse transpose `transpose(inverse(M))`로 변환한다. Translation은 normal에 영향을 주지 않으므로 homogeneous normal은 `w=0`으로 둔다. 변환 뒤에는 길이가 달라질 수 있으므로 lighting 계산 전에 다시 정규화한다.
+
+```text
+worldPosition = M * vec4(localPosition, 1)
+worldNormal = normalize(transpose(inverse(M)) * vec4(localNormal, 0))
+```
+
+Singular scale처럼 inverse가 존재하지 않는 transform은 normal matrix를 만들 수 없다. 따라서 각 scale component를 0이 아닌 값으로 유지하거나 별도의 안전 처리가 필요하다.
+
 ## 한계
 
 - Matrix decomposition, quaternion, camera view/projection과 hierarchy transform은 포함하지 않는다.
@@ -51,6 +65,8 @@ Inverse transform은 적용한 변환을 반대 순서로 되돌린다. Translat
 
 - [Step1 Matrix(GLM) Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step1_Matrix%28GLM%29/README.md)
 - [Step1 Matrix(GLM) Demo](../../03_Demos/Part2_Chapter05-08/05_MatrixGLM.md)
+- [Step2 Lights(GLM) Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step2_Lights%28GLM%29/README.md)
+- [Step2 Lights(GLM) Demo](../../03_Demos/Part2_Chapter05-08/05_LightsGLM.md)
 - [Part2 Chapter05-08 Verification](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [2D Transformations](Transformations2D.md)
 - [Rasterization Topic Index](topic-index.md)

@@ -60,9 +60,11 @@ Normal, light direction과 view direction은 같은 좌표계에서 정규화해
 
 - Example: [Step9 Shading README](../../../Part2_Chapter04/04_Rasterization_Step9_Shading/README.md)
 - Example: [Step10 Lights README](../../../Part2_Chapter04/04_Rasterization_Step10_Lights/README.md)
+- Example: [Chapter05 Step2 Lights(GLM) README](../../../Part2_Chapter05-08/05_AffineTransformations_Step2_Lights%28GLM%29/README.md)
 - Verification: [Part2 Chapter04 Verification](../../02_Verification/Part2_Chapter04/verification-index.md)
 - Demo: [Step9 Shading Demo](../../03_Demos/Part2_Chapter04/09_Shading.md)
 - Demo: [Step10 Lights Demo](../../03_Demos/Part2_Chapter04/10_Lights.md)
+- Demo: [Chapter05 Step2 Lights(GLM) Demo](../../03_Demos/Part2_Chapter05-08/05_LightsGLM.md)
 - Related Topic: [Phong Shading](PhongShading.md)
 - Related Topic: [Light Types](LightTypes.md)
 - Related Topic: [Perspective Projection](../Rasterization/PerspectiveProjection.md)
