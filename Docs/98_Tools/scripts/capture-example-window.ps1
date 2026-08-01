@@ -102,6 +102,10 @@ public static class ExampleWindowCaptureNative
     public static extern bool ShowWindow(IntPtr hwnd, int command);
 
     [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool IsIconic(IntPtr hwnd);
+
+    [DllImport("user32.dll")]
     public static extern IntPtr GetForegroundWindow();
 
     [DllImport("user32.dll")]
@@ -300,8 +304,6 @@ try {
         Read-Host | Out-Null
     }
 
-    $plannedBounds = Get-CaptureBounds $process
-
     $process.Refresh()
     if ($process.HasExited) {
         throw "Application exited before capture."
@@ -309,10 +311,15 @@ try {
     if ($process.MainWindowTitle -cne $ExpectedTitle) {
         throw "Application title changed before capture."
     }
+    if ([ExampleWindowCaptureNative]::IsIconic($process.MainWindowHandle)) {
+        [ExampleWindowCaptureNative]::ShowWindow(
+            $process.MainWindowHandle, 9
+        ) | Out-Null
+        Start-Sleep -Milliseconds 250
+    }
 
-    [ExampleWindowCaptureNative]::ShowWindow(
-        $process.MainWindowHandle, 9
-    ) | Out-Null
+    $plannedBounds = Get-CaptureBounds $process
+
     if (-not [ExampleWindowCaptureNative]::SetForegroundWindow(
         $process.MainWindowHandle
     )) {

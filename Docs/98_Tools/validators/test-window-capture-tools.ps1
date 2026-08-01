@@ -186,4 +186,17 @@ Assert-True ($recorderText -notmatch 'BlockInput') `
 Assert-True ($captureText -notmatch 'BlockInput') `
     "Capture tools must not block global user input."
 
+$isIconicCall = '[ExampleWindowCaptureNative]::IsIconic('
+$showWindowCall = '[ExampleWindowCaptureNative]::ShowWindow('
+$plannedBoundsAssignment = '$plannedBounds = Get-CaptureBounds $process'
+$isIconicCallIndex = $captureText.LastIndexOf($isIconicCall)
+$showWindowCallIndex = $captureText.LastIndexOf($showWindowCall)
+$plannedBoundsIndex = $captureText.IndexOf($plannedBoundsAssignment)
+Assert-True ($isIconicCallIndex -ge 0) `
+    "Screenshot capture must detect a minimized window before restoring it."
+Assert-True ($showWindowCallIndex -gt $isIconicCallIndex) `
+    "Screenshot restore must be guarded by the minimized-window check."
+Assert-True ($plannedBoundsIndex -gt $showWindowCallIndex) `
+    "Screenshot restore must finish before planned bounds are recorded."
+
 Write-Host "Window capture tool tests passed."
