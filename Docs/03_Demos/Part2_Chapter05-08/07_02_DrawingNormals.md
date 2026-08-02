@@ -101,7 +101,7 @@ RenderScene(drawNormals)
 
 - [Chapter07 Step2 Example README](../../../Part2_Chapter05-08/07_Modeling_Step2_DrawingNormals/README.md)
 - [이전 단계: Chapter07 Step1 Demo](07_01_DrawingWireFrames.md)
-- 다음 단계: Chapter07 Step3 Grid 문서화 대기
+- [다음 단계: Chapter07 Step3 Demo](07_03_Grid.md)
 - [Vertex And Face Normals](../../01_Topics/ModelingAndGeometry/VertexAndFaceNormals.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
