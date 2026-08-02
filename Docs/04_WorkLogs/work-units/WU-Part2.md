@@ -175,3 +175,7 @@
 - Step6는 Step5 scene을 GPU threshold, downsample, separable blur와 original composite filter chain으로 확장한다.
 - Blur accumulator 초기화, 작은 window dimension 제한과 resize 시 post-process resource 재생성을 보완한다.
 - Debug/Release Clean/Rebuild, wide·compact resize, minimize/restore와 1282×992 screenshot을 확인하고 asset 권리 근거 미확정으로 Publication은 `검토 필요`로 둔다.
+- Step7은 full-screen Star shader에 `iTime`, 현재 `iResolution`과 texture channel 0을 연결한다.
+- 고정 aspect를 현재 resolution으로 교체하고 resize 시 filter resource를 재생성하며 비활성 Seascape shader는 build에서 제외한다.
+- Debug/Release Clean/Rebuild, wide·compact resize, minimize/restore, 1282×992 screenshot과 9.83초 selected local video를 확인한다.
+- Star shader license와 `shadertoytexture0.jpg` 출처 근거가 충분하지 않아 Publication은 `검토 필요`로 둔다.

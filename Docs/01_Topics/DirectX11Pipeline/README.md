@@ -16,11 +16,12 @@
 - [Swap Chain And Viewport](SwapChainAndViewport.md)
 - [Shader Stage](ShaderStage.md)
 - [Post Processing And Bloom](PostProcessingAndBloom.md)
+- [Shadertoy Runtime Inputs](ShadertoyRuntimeInputs.md)
 
 ## 상태
 
 - Topic 목록: 작성
-- 상세 Topic 문서: Device And Context, COM And Resource Lifetime, Swap Chain And Viewport, Shader Stage와 Post Processing And Bloom 작성
+- 상세 Topic 문서: Device And Context, COM And Resource Lifetime, Swap Chain And Viewport, Shader Stage, Post Processing And Bloom과 Shadertoy Runtime Inputs 작성
 - 연결 예제 검토: Part1 Chapter01-02 일부, Part2 Chapter04 Step6, Part2 Chapter05-08 Chapter06 Step1–7 현재 확인
 - demo 연결: Part1 Chapter01-02 일부, Part2 Chapter04 Step6, Part2 Chapter05-08 Chapter06 Step1–7 연결
 

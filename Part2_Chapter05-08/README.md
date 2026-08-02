@@ -4,19 +4,19 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리하는 폴더다.
 
 ## 상태
 
-- 학습 코드 정리: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–3 정규화 완료
-- Build/run: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–3 현재 재검증 완료, 나머지 예제 과거 확인 유지
-- 현재 대상: Chapter08 ShaderToys 순차 정규화
-- 캡처: Chapter05 Step2·4, Chapter06 Step2–9, Chapter07 Step1–9와 Chapter08 Step1–3 screenshot 확보, console 예제 제외
+- 학습 코드 정리: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 정규화 완료
+- Build/run: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 현재 재검증 완료
+- 현재 대상: Chapter05–08 순차 정규화 마감 감사
+- 캡처: Chapter05 Step2·4, Chapter06 Step2–9, Chapter07 Step1–9와 Chapter08 Step1–7 screenshot 확보, console 예제 제외
 
 ## Archive/Public 검토
 
 | 항목 | 상태 |
 | --- | --- |
 | Source provenance | [`SRC-P2-C05-08`](../Docs/99_Legacy/source-registry.md) |
-| Import status | code import 완료 / Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–2 순차 verification 완료 |
+| Import status | code import 완료 / Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 순차 verification 완료 |
 | Public readiness | 검토 필요 |
-| Build/run status | Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–2 Debug/Release x64 현재 확인, 나머지 과거 확인 |
+| Build/run status | Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 Debug/Release x64 현재 확인 |
 | Next action | Chapter08 순차 정규화 범위 감사 |
 
 ## 예정 주제
@@ -87,4 +87,4 @@ Chapter06은 Direct3D interface lifetime에서 시작해 window, device resource
 | [`08_ShaderToys_Step4_ImageBasedLighting`](08_ShaderToys_Step4_ImageBasedLighting/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
 | [`08_ShaderToys_Step5_FresnelEffect`](08_ShaderToys_Step5_FresnelEffect/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
 | [`08_ShaderToys_Step6_BloomEffect`](08_ShaderToys_Step6_BloomEffect/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
-| `08_ShaderToys_Step7_Shadertoy` | 코드 보관 완료 및 현재 문서화 대기 |
+| [`08_ShaderToys_Step7_Shadertoy`](08_ShaderToys_Step7_Shadertoy/README.md) | 현재 build/run·capture·video·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
