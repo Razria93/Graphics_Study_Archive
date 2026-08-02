@@ -162,3 +162,7 @@
 - Debug/Release x64 Clean/Rebuild, Assimp·DirectXTK runtime dependency, resize·minimize/restore와 1282×992 전체 창 screenshot을 2026-08-03 현재 확인한다.
 - 사용하지 않는 root asset 4개를 제거했으며 Zelda FBX와 skybox DDS는 실행 근거로 유지한다.
 - Zelda와 skybox asset 권리 근거가 충분하지 않아 Publication은 `검토 필요`로 유지하고 video는 제외한다.
+- Step3은 `reflect(-V, N)` direction으로 NightPath cubemap을 sampling해 environment reflection을 만든다.
+- 실제 shader에 연결되지 않던 `Use Reflection` UI와 HLSL vector truncation warning을 제거한다.
+- Debug/Release x64, resize·minimize/restore와 1282×992 전체 창 screenshot을 2026-08-03 현재 확인한다.
+- NightPath attribution을 유지하고 Zelda 권리 근거가 충분하지 않아 Publication은 `검토 필요`로 둔다.

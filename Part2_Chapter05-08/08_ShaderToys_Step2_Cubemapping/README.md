@@ -46,4 +46,4 @@
 - [Cubemap And Environment Mapping](../../Docs/01_Topics/TexturingAndMapping/CubemapAndEnvironmentMapping.md)
 - [Verification](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [이전 단계: Chapter08 Step1 RimLighting](../08_ShaderToys_Step1_RimLighting/README.md)
-- 다음 단계: Chapter08 Step3 EnvironmentMapping
+- [다음 단계: Chapter08 Step3 EnvironmentMapping](../08_ShaderToys_Step3_EnvironmentMapping/README.md)

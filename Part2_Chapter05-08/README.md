@@ -4,10 +4,10 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리하는 폴더다.
 
 ## 상태
 
-- 학습 코드 정리: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–2 정규화 완료
-- Build/run: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–2 현재 재검증 완료, 나머지 예제 과거 확인 유지
+- 학습 코드 정리: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–3 정규화 완료
+- Build/run: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–3 현재 재검증 완료, 나머지 예제 과거 확인 유지
 - 현재 대상: Chapter08 ShaderToys 순차 정규화
-- 캡처: Chapter05 Step2·4, Chapter06 Step2–9, Chapter07 Step1–9와 Chapter08 Step1–2 screenshot 확보, console 예제 제외
+- 캡처: Chapter05 Step2·4, Chapter06 Step2–9, Chapter07 Step1–9와 Chapter08 Step1–3 screenshot 확보, console 예제 제외
 
 ## Archive/Public 검토
 
@@ -83,7 +83,7 @@ Chapter06은 Direct3D interface lifetime에서 시작해 window, device resource
 | [`07_Modeling_Step9_ModelFiles`](07_Modeling_Step9_ModelFiles/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
 | [`08_ShaderToys_Step1_RimLighting`](08_ShaderToys_Step1_RimLighting/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
 | [`08_ShaderToys_Step2_Cubemapping`](08_ShaderToys_Step2_Cubemapping/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
-| `08_ShaderToys_Step3_EnvironmentMapping` | 코드 보관 완료 및 현재 문서화 대기 |
+| [`08_ShaderToys_Step3_EnvironmentMapping`](08_ShaderToys_Step3_EnvironmentMapping/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
 | `08_ShaderToys_Step4_ImageBasedLighting` | 코드 보관 완료 및 현재 문서화 대기 |
 | `08_ShaderToys_Step5_FresnelEffect` | 코드 보관 완료 및 현재 문서화 대기 |
 | `08_ShaderToys_Step6_BloomEffect` | 코드 보관 완료 및 현재 문서화 대기 |
