@@ -151,6 +151,9 @@ portfolio_raytracer_reflection.png
 - 한 장에서 texture 방향과 U seam 결과를 판독할 수 있어 같은 bounds의 보조 screenshot은 추가하지 않는다.
 - Step9 ModelFiles는 `Use Texture=On`, wireframe·normal 표시 Off 상태의 Zelda FBX 전체 창 screenshot 한 장을 확보했다.
 - Step9 video는 정적 model import와 submesh texture binding을 screenshot 한 장으로 판독할 수 있어 제외한다.
+
+## Part2 Chapter08 순차 계획
+
 - Chapter08 Step1 RimLighting은 texture·wireframe·normal 표시 Off, 파란 rim 기본값의 Dragon 전체 창 screenshot 한 장을 확보했다.
 - Step1 video는 정적 silhouette과 parameter UI를 한 frame에서 판독할 수 있어 제외한다.
 - Chapter08 Step2 Cubemapping은 skybox와 Zelda 전경 mesh가 함께 보이는 전체 창 screenshot 한 장을 확보했다.

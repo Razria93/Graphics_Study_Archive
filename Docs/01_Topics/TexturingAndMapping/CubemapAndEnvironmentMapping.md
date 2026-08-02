@@ -8,7 +8,7 @@ Environment mapping은 이 direction lookup을 background, reflection, refractio
 
 ## 책임 범위
 
-이 문서는 일반적인 cubemap direction-to-face mapping, face-local filtering과 environment mapping의 활용 범위를 다룬다. Step14의 실제 CPU 구현과 asset은 Example README로, 직접 확인한 실행 상태는 Verification으로, 시각 결과는 상세 Demo로 위임한다.
+이 문서는 일반적인 cubemap direction-to-face mapping, face-local filtering과 environment mapping의 활용 범위를 다룬다. Part1 Step14의 CPU sampling과 Part2 Chapter08 Step2·3의 GPU resource binding은 각 Example README로, 직접 확인한 실행 상태는 Verification으로, 시각 결과는 상세 Demo로 위임한다.
 
 ## 핵심 개념
 
@@ -54,6 +54,11 @@ GPU cubemap resource는 direction을 직접 받아 face 경계를 처리할 수 
 ## 관련 문서
 
 - Example: [Step14 CubeEnvironment README](../../../Part1_Chapter03/03_Raytracing_Step14_CubeEnvironment/README.md)
+- Example: [Chapter08 Step2 Cubemapping README](../../../Part2_Chapter05-08/08_ShaderToys_Step2_Cubemapping/README.md)
+- Example: [Chapter08 Step3 EnvironmentMapping README](../../../Part2_Chapter05-08/08_ShaderToys_Step3_EnvironmentMapping/README.md)
 - Verification: [`Docs/02_Verification/Part1_Chapter03/verification-index.md`](../../02_Verification/Part1_Chapter03/verification-index.md)
+- Verification: [`Docs/02_Verification/Part2_Chapter05-08/verification-index.md`](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - Demo: [`Docs/03_Demos/Part1_Chapter03/14_CubeEnvironment.md`](../../03_Demos/Part1_Chapter03/14_CubeEnvironment.md)
+- Demo: [`Docs/03_Demos/Part2_Chapter05-08/08_02_Cubemapping.md`](../../03_Demos/Part2_Chapter05-08/08_02_Cubemapping.md)
+- Demo: [`Docs/03_Demos/Part2_Chapter05-08/08_03_EnvironmentMapping.md`](../../03_Demos/Part2_Chapter05-08/08_03_EnvironmentMapping.md)
 - Related Topic: [Texture Sampling](TextureSampling.md)

@@ -9,7 +9,7 @@
 | `Part1_Chapter01-02` | 예제 폴더별 README | `Docs/01_Topics`, `Docs/02_Verification`, `Docs/03_Demos`, `Docs/05_Publication` |
 | `Part1_Chapter03` | 예제 폴더별 README | `Docs/01_Topics`, `Docs/02_Verification`, `Docs/03_Demos` |
 | `Part2_Chapter04` | 예제 폴더별 README | `Docs/01_Topics`, `Docs/02_Verification`, `Docs/03_Demos` |
-| `Part2_Chapter05-08` | 예제 폴더별 README | `Docs/01_Topics`, `Docs/02_Verification`, `Docs/03_Demos` |
+| `Part2_Chapter05-08` | 예제 폴더별 README | `Docs/01_Topics`, `Docs/02_Verification`, `Docs/03_Demos`, `Docs/05_Publication` |
 | `Part3_Chapter09` | 예제 폴더별 README | `Docs/01_Topics`, `Docs/02_Verification`, `Docs/03_Demos` |
 | `Part3_Chapter10-13` | 예제 폴더별 README | `Docs/01_Topics`, `Docs/02_Verification`, `Docs/03_Demos` |
 | `Part4_Chapter14-20` | 예제 폴더별 README | `Docs/01_Topics`, `Docs/02_Verification`, `Docs/03_Demos` |
