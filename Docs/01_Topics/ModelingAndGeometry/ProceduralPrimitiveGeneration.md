@@ -9,7 +9,7 @@ Procedural primitive generation은 크기와 분할 수 같은 파라미터로 v
 - Primitive 파라미터에서 vertex attribute와 index topology를 계산하는 일반 원리를 설명한다.
 - 개별 DirectX11 resource 생성과 draw 호출은 각 Example README로 위임한다.
 - Build/run/capture 사실은 `Docs/02_Verification`의 [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)로 위임한다.
-- 구현 흐름과 시각 자료는 `Docs/03_Demos`의 [Chapter07 Step3 Demo](../../03_Demos/Part2_Chapter05-08/07_03_Grid.md)와 [Chapter07 Step4 Demo](../../03_Demos/Part2_Chapter05-08/07_04_Cylinder.md)로 위임한다.
+- 구현 흐름과 시각 자료는 `Docs/03_Demos`의 [Chapter07 Step3 Demo](../../03_Demos/Part2_Chapter05-08/07_03_Grid.md), [Chapter07 Step4 Demo](../../03_Demos/Part2_Chapter05-08/07_04_Cylinder.md)와 [Chapter07 Step5 Demo](../../03_Demos/Part2_Chapter05-08/07_05_Sphere.md)로 위임한다.
 
 ## 핵심 개념
 
@@ -18,6 +18,8 @@ Procedural primitive generation은 크기와 분할 수 같은 파라미터로 v
 가로 분할 수를 `slices`, 세로 분할 수를 `stacks`로 두면 Grid의 vertex 수는 `(slices + 1) × (stacks + 1)`이다. 인접 cell이 경계 vertex를 공유하므로 cell 수보다 한 줄씩 많은 vertex가 필요하다.
 
 각 cell을 triangle 두 개로 나누면 index 수는 `6 × slices × stacks`가 된다. Chapter07 Step3의 5×3 Grid는 vertex 24개, cell 15개, triangle 30개와 index 90개를 만든다.
+
+Sphere는 longitude slice와 latitude stack을 조합한다. Pole을 일반 quad band처럼 처리하면 같은 위치에 모인 vertex 때문에 면적 0 triangle이 생길 수 있다. Pole band를 triangle fan으로 따로 마감하면 이러한 degenerate triangle을 피할 수 있다. UV seam과 pole에서는 같은 position을 여러 vertex가 공유할 수 있으며 texture coordinate와 topology 책임을 구분해야 한다.
 
 ### Vertex attribute 생성
 
@@ -49,5 +51,7 @@ Geometry generator는 CPU-side vertex와 index 목록을 만든다. GPU buffer �
 - [Chapter07 Step3 Grid Demo](../../03_Demos/Part2_Chapter05-08/07_03_Grid.md)
 - [Chapter07 Step4 Cylinder Example](../../../Part2_Chapter05-08/07_Modeling_Step4_Cylinder/README.md)
 - [Chapter07 Step4 Cylinder Demo](../../03_Demos/Part2_Chapter05-08/07_04_Cylinder.md)
+- [Chapter07 Step5 Sphere UserSolution Example](../../../Part2_Chapter05-08/07_Modeling_Step5_Sphere_UserSolution/README.md)
+- [Chapter07 Step5 Sphere UserSolution Demo](../../03_Demos/Part2_Chapter05-08/07_05_Sphere.md)
 - [Mesh Topology And Wireframe Rasterization](MeshTopologyAndWireframeRasterization.md)
 - [Vertex And Face Normals](VertexAndFaceNormals.md)

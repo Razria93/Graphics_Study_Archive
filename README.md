@@ -12,7 +12,7 @@
 
 ## Current Work
 
-`Part1_Chapter01-02` pilot, `Part1_Chapter03`과 `Part2_Chapter04` 순차 정규화를 마감했다. `Part2_Chapter05-08`은 Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–4를 정규화했고 다음 대상은 Chapter07 Step5 Sphere 변형이다.
+`Part1_Chapter01-02` pilot, `Part1_Chapter03`과 `Part2_Chapter04` 순차 정규화를 마감했다. `Part2_Chapter05-08`은 Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–5를 정규화했고 다음 대상은 Chapter07 Step6 Subdivision이다.
 
 - [Part1 Chapter01-02](Part1_Chapter01-02/README.md): DirectX11 기반 렌더링 흐름과 bloom 후처리 pilot
 - [01_DX11InitAndImGui](Part1_Chapter01-02/01_DX11InitAndImGui/README.md): DirectX11 device, swap chain, render target, ImGui 기반 예제
@@ -33,6 +33,7 @@
 - [Chapter07 Step2 DrawingNormals](Part2_Chapter05-08/07_Modeling_Step2_DrawingNormals/README.md): surface mesh와 vertex normal line의 분리
 - [Chapter07 Step3 Grid](Part2_Chapter05-08/07_Modeling_Step3_Grid/README.md): 분할 파라미터 기반 procedural Grid 생성
 - [Chapter07 Step4 Cylinder](Part2_Chapter05-08/07_Modeling_Step4_Cylinder/README.md): ring·slice 기반 열린 cylinder side surface 생성
+- [Chapter07 Step5 Sphere UserSolution](Part2_Chapter05-08/07_Modeling_Step5_Sphere_UserSolution/README.md): 두 반구와 pole fan을 결합한 사용자 sphere 구현
 
 ## Featured Result
 

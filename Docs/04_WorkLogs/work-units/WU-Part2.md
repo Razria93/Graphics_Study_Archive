@@ -6,7 +6,7 @@
 | --- | --- |
 | Work Unit | `WU-Part2` |
 | 현재 마감 대상 | `Part2_Chapter05-08` Chapter07 순차 정규화 |
-| 후속 코드 범위 | Chapter07 Step5 Sphere 변형부터 Chapter08까지 |
+| 후속 코드 범위 | Chapter07 Step6 Subdivision부터 Chapter08까지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -121,3 +121,10 @@
 - Debug/Release x64 build/run, wide·compact·minimize/restore와 전체 창 Cylinder screenshot을 2026-08-02 현재 확인했다.
 - Step4 video는 정적 wireframe으로 열린 top과 ring·slice topology를 충분히 설명할 수 있어 제외했다.
 - Cap·height subdivision 부재와 taper 시 normal 재계산 필요성, winding의 outward 방향 확인을 구현 한계로 기록했다.
+- Step5는 위·아래 반구를 분리 생성하고 equator에서 결합하는 UserSolution을 공개 정본으로 선정했다.
+- UserSolution은 242 vertices와 380 triangles를 만들고 pole band를 한 triangle씩 마감해 ReferenceSolution의 면적 0 pole triangle 30개를 피한다.
+- ReferenceSolution은 private 비교 근거로만 유지하고 README, 상세 Demo와 tracked capture를 만들지 않는다.
+- 출처 불명·미사용 texture 3개를 제거하고 검수된 generated wood의 동일 바이트 사본을 runtime 보조 input으로 사용한다.
+- Debug/Release x64 build/run, wide·compact·minimize/restore와 전체 창 Sphere wireframe screenshot을 2026-08-02 현재 확인했다.
+- Step5 video는 정적 wireframe으로 두 반구, equator와 pole topology를 충분히 설명할 수 있어 제외했다.
+- Bottom UV의 wrap sampler 의존, equator·pole 중복 vertex와 winding 재검증 필요성을 구현 한계로 기록했다.
