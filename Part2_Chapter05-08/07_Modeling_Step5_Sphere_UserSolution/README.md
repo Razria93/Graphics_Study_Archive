@@ -43,7 +43,7 @@
 - 위·아래 반구는 equator ring을 각각 보유하므로 같은 위치의 vertex가 중복된다.
 - Pole 위치 vertex도 slice별로 중복하지만 pole band는 한 triangle씩 연결해 degenerate triangle을 만들지 않는다.
 - 아래쪽 반구의 U 좌표는 `1.5`에서 `0.5` 범위를 사용하고 wrap sampler에 의존한다.
-- Index winding과 radial vertex normal 방향의 정합은 Step7 FaceNormals에서 다시 검증한다. 현재 rasterizer는 culling을 사용하지 않는다.
+- 380개 triangle의 winding을 radial direction과 수치 비교한 결과 모두 outward이며 inward·degenerate triangle은 없다. 현재 rasterizer는 culling을 사용하지 않는다.
 - 0 이하의 분할 수와 `uint16_t` 범위를 넘는 큰 입력에 대한 guard는 범위 밖이다.
 
 ## Related Docs
