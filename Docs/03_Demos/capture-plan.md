@@ -159,3 +159,5 @@ portfolio_raytracer_reflection.png
 - Step2 video는 정적 frame에서 cube 방향 sampling과 전경·배경 분리를 판독할 수 있어 제외한다.
 - Chapter08 Step3 EnvironmentMapping은 NightPath 배경과 reflection이 함께 보이는 전체 창 screenshot 한 장을 확보했다.
 - Step3 camera 회전 video는 설명 가치가 있으나 이번 단계에서는 local 후보 없이 screenshot으로 마감한다.
+- Chapter08 Step4 ImageBasedLighting은 Atrium 환경과 IBL sphere가 함께 보이는 전체 창 screenshot 한 장을 확보했다.
+- Step4 video는 fixed diffuse/specular 결과를 정적 frame에서 판독할 수 있어 제외한다.
