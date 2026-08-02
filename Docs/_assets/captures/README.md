@@ -89,6 +89,8 @@ part2_chapter04_depth-buffer.png
 | `part2_chapter06_08_resizing_window_default.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow` | 확보 | 1280×960 client 기준 resource와 projection 결과 기술·시각 검수 완료 |
 | `part2_chapter06_08_resizing_window_wide.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow` | 확보 | 1600×900 client resize 뒤 scene aspect와 textured lighting 유지 기술·시각 검수 완료 |
 | `part2_chapter06_08_resizing_window_compact.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow` | 확보 | 960×720 client resize 뒤 panel·scene 배치와 resource 갱신 기술·시각 검수 완료 |
+| `part2_chapter06_09_phong.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step9_PhongVsBlinnPhong` | 확보 | 동일 scene·material·shininess 32의 reflection-vector 기반 Phong highlight 확인 |
+| `part2_chapter06_09_blinn_phong.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step9_PhongVsBlinnPhong` | 확보 | 동일 scene·material·shininess 32와 exponent 보정의 halfway-vector 기반 Blinn-Phong highlight 확인 |
 
 ## 승격 체크
 

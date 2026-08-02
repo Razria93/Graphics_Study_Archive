@@ -19,6 +19,7 @@
 | Part2_Chapter04 Step6 | 자동 square rotation | 선택 | CPU vertex stage의 per-frame transform 결과 | 검증 완료 | 미게시 |
 | Part2_Chapter04 Step7 | culling checkbox On→Off→On | 선택 | Post-transform winding에 따른 backface rejection 전환 | 기술·사용자 시각 검수 완료 | 미게시 |
 | Part2_Chapter05-08 Chapter06 Step8 | Default→Wide→Compact window resize | 필수 | Swap chain dependent resource 재생성과 projection aspect 유지 | 보류: recorder 고정 bounds 계약과 충돌 | 미게시 |
+| Part2_Chapter05-08 Chapter06 Step9 | Phong↔Blinn-Phong checkbox 전환 | 선택 | 동일 조건에서 reflection vector와 halfway vector 기반 highlight 변화 | 제외: 정적 screenshot 2장이 상태와 결과를 충분히 설명 | 미게시 |
 | Part3_Chapter09 | camera, picking, trackball 조작 | 필수 | interaction | 미확인 | 미게시 |
 | Part3_Chapter10-13 | shadow quality 비교 | 선택 | shadow mapping, PCF, PCSS | 미확인 | 미게시 |
 | Part4_Chapter14-20 | 대표 sample 실행 | 선택 | advanced graphics 후보 | 미확인 | 미게시 |
