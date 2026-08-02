@@ -44,15 +44,20 @@ Step6의 generated 목재 texture, box geometry와 Directional·Point·Spot ligh
 | Release x64 build/run | 성공 | 2026-08-02 현재 확인, project 폴더 CWD |
 | Viewport 분리 | 성공 | 420px 기본 panel 오른쪽에서 scene 시작, geometry 왜곡 없음 |
 | Texture·Lighting 유지 | 성공 | Generated 목재 texture와 Directional Light 기본 결과 확인 |
-| Capture/Result | 확보 | Release 전체 창 screenshot 기술 검수와 사용자 승인 완료 |
+| Capture/Result | 확보 | 약 420px·640px panel 비교 screenshot 기술 검수 완료, 사용자 사후 확인 대기 |
 
 ## Capture/Result
 
 왼쪽 `Scene Control` panel과 panel 오른쪽에서 시작하는 scene viewport를 하나의 전체 창 screenshot으로 확인한다. Textured box는 줄어든 viewport 비율에 맞춰 표시되며 UI와 겹치지 않는다.
 
-![Chapter06 Step7 ResizingViewport](../../Docs/_assets/captures/part2_chapter06_07_resizing_viewport.png)
+### 기본 panel 폭 약 420px
 
-Build 중 vcpkg가 먼저 호출하는 `pwsh.exe`는 이 환경에 없지만 Windows PowerShell fallback이 완료되어 MSBuild는 오류 없이 성공했다.
+![Chapter06 Step7 ResizingViewport panel 420](../../Docs/_assets/captures/part2_chapter06_07_resizing_viewport_panel_420.png)
+
+### 확장 panel 폭 약 640px
+
+![Chapter06 Step7 ResizingViewport panel 640](../../Docs/_assets/captures/part2_chapter06_07_resizing_viewport_panel_640.png)
+
 
 ## 구현 범위와 한계
 

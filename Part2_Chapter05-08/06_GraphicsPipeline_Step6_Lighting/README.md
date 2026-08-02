@@ -46,7 +46,6 @@ Vertex shader는 projected position, world position, inverse-transpose normal과
 | 실패 경로 | 성공 | 잘못된 CWD에서 texture load 실패를 보고하고 exit code `-1`로 종료 |
 | Capture/Result | 확보 | Directional·Point·Spot 전체 창 screenshot, 사용자 승인 완료 |
 
-Build 중 vcpkg가 먼저 호출하는 `pwsh.exe`는 이 환경에 없지만 Windows PowerShell fallback이 완료되어 MSBuild는 오류 없이 성공했다.
 
 ## Capture/Result
 

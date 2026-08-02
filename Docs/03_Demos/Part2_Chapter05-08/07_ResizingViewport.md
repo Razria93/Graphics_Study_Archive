@@ -15,7 +15,13 @@ Step7은 Step6의 textured lighting scene을 유지하면서 ImGui control panel
 
 ## 결과 미리보기
 
-![Chapter06 Step7 ResizingViewport](../../_assets/captures/part2_chapter06_07_resizing_viewport.png)
+### 기본 panel 폭 약 420px
+
+![Chapter06 Step7 ResizingViewport panel 420](../../_assets/captures/part2_chapter06_07_resizing_viewport_panel_420.png)
+
+### 확장 panel 폭 약 640px
+
+![Chapter06 Step7 ResizingViewport panel 640](../../_assets/captures/part2_chapter06_07_resizing_viewport_panel_640.png)
 
 ## 입력과 출력
 

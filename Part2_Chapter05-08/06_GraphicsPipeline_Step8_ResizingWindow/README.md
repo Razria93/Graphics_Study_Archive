@@ -41,22 +41,27 @@ Frame에서는 Step7과 같은 panel width 기반 scene viewport를 계산한다
 | --- | --- | --- |
 | Debug x64 build/run | 성공 | 2026-08-02 현재 확인, project 폴더 CWD |
 | Release x64 build/run | 성공 | 2026-08-02 현재 확인, project 폴더 CWD |
-| 반복 resize | 성공 | default·wide·compact와 추가 크기 전환 후 rendering 유지 |
+| 반복 resize | 성공 | compact·default·wide와 추가 크기 전환 후 rendering 유지 |
 | 최소화·복원 | 성공 | 최소화 중 0×0 생성 생략, 복원 후 rendering 재개 |
 | Texture·Lighting 유지 | 성공 | Generated 목재 texture와 Directional Light 기본 결과 확인 |
 | Capture/Result | 확보 | 세 크기의 Release 전체 창 screenshot 기술·시각 검수 완료 |
 
 ## Capture/Result
 
-Default, wide와 compact 전체 창 screenshot은 같은 camera, geometry와 Light 상태에서 client size만 바뀐 결과를 비교한다. Panel과 scene viewport 경계, box 비율과 depth 결과가 세 크기에서 유지된다.
+Compact, default와 wide 전체 창 screenshot은 같은 camera, geometry와 Light 상태에서 client size만 바뀐 결과를 비교한다. Panel과 scene viewport 경계, box 비율과 depth 결과가 세 크기에서 유지된다.
 
-![Chapter06 Step8 ResizingWindow default](../../Docs/_assets/captures/part2_chapter06_08_resizing_window_default.png)
-
-![Chapter06 Step8 ResizingWindow wide](../../Docs/_assets/captures/part2_chapter06_08_resizing_window_wide.png)
+### Compact — 960×720 client
 
 ![Chapter06 Step8 ResizingWindow compact](../../Docs/_assets/captures/part2_chapter06_08_resizing_window_compact.png)
 
-Build 중 vcpkg가 먼저 호출하는 `pwsh.exe`는 이 환경에 없지만 Windows PowerShell fallback이 완료되어 MSBuild는 오류 없이 성공했다.
+### Default — 1280×960 client
+
+![Chapter06 Step8 ResizingWindow default](../../Docs/_assets/captures/part2_chapter06_08_resizing_window_default.png)
+
+### Wide — 1600×900 client
+
+![Chapter06 Step8 ResizingWindow wide](../../Docs/_assets/captures/part2_chapter06_08_resizing_window_wide.png)
+
 
 ## 구현 범위와 한계
 

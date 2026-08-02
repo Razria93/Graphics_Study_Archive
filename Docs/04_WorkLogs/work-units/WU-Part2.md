@@ -95,7 +95,7 @@
 - Step7은 정적 screenshot으로 panel과 scene 경계를 설명할 수 있어 video를 제외하고, window resize와 dependent resource 재생성은 Step8 책임으로 유지했다.
 - Step8은 정규화된 Step7을 기준으로 `WM_SIZE`, swap chain dependent resource 재생성과 projection 갱신을 추가했다.
 - Step8 Debug/Release x64와 반복 resize·minimize/restore를 현재 확인하고, 출처 불명 texture를 제거한 뒤 기존 generated 목재 PNG의 동일 바이트 사본을 사용했다.
-- Default·wide·compact screenshot은 사용자 위임 범위에서 기술·시각 검수를 완료했다. Window resize video는 기존 recorder의 고정 bounds 계약과 충돌하므로 도구 확장 전까지 보류한다.
+- Compact·default·wide screenshot은 동일 process에서 기술·시각 검수를 완료하고 사용자 사후 확인 대상으로 둔다. Window resize video는 기존 recorder의 고정 bounds 계약과 충돌하므로 도구 확장 전까지 보류한다.
 - Step9은 정규화된 Step8의 resource·resize 경로를 유지하고 동일 scene에서 Phong reflection vector와 Blinn halfway vector branch를 전환한다.
 - Constant buffer flag를 32-bit 정수로 고정하고 halfway vector의 zero-length guard, ambient 중복 제거와 attenuation denominator 제한을 적용했다.
 - Blinn-Phong branch의 `shininess * 2`는 같은 입력값에서 lobe 폭을 조정하는 예제 고유 선택으로 유지하고 상세 Demo에 명시했다.

@@ -40,7 +40,6 @@ Vertex shader는 model transform이 적용된 world position과 inverse-transpos
 | 실패 경로 | 성공 | 잘못된 CWD에서 texture load 실패를 보고하고 exit code `-1`로 종료 |
 | Capture/Result | 확보 | 기본 light와 위치 조정 전체 창 screenshot, 사용자 승인 완료 |
 
-Build 뒤의 `pwsh.exe` 환경 경고는 MSBuild 성공과 분리해 관찰했으며 실행 결과에는 영향을 주지 않았다.
 
 ## Capture/Result
 

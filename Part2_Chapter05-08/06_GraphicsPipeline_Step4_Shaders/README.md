@@ -38,7 +38,6 @@ CPU는 ImGui slider의 현재값을 매 frame pixel shader constant buffer에 �
 | Shader·UI 반영 | 성공 | `b0` MVP, `b1` pixel constant buffer와 `xSplitPoint` 반영 확인 |
 | Capture/Result | 확보 | 기본 `0.5`와 조정 `0.25` 전체 창 screenshot, 사용자 승인 완료 |
 
-Build 뒤의 `pwsh.exe` 환경 경고는 MSBuild 성공과 분리해 관찰했으며 실행 결과에는 영향을 주지 않았다.
 
 ## Capture/Result
 

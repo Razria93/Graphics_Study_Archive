@@ -14,20 +14,22 @@ Step9은 같은 textured box, camera, Directional Light와 material 조건에서
 
 ## 결과 미리보기
 
-### Phong
+### Phong — reflection vector
 
 ![Chapter06 Step9 Phong](../../_assets/captures/part2_chapter06_09_phong.png)
 
-### Blinn-Phong
+### Blinn-Phong — halfway vector
 
 ![Chapter06 Step9 Blinn-Phong](../../_assets/captures/part2_chapter06_09_blinn_phong.png)
+
+두 이미지는 texture를 끄고 Point Light, diffuse 0.35, specular 1.0, shininess 32와 같은 camera·model·window 조건을 유지한다. Cube의 각 면은 고정 normal을 사용하고 Blinn-Phong에는 `shininess * 2` 보정을 적용하므로, 이 장면의 최종 명암 차이는 작다. 시각 자료는 과장된 우열보다 checkbox와 계산 경로가 다른 동일 조건 결과를 비교하는 근거로 사용한다.
 
 ## 입력과 출력
 
 | 구분 | 내용 |
 | --- | --- |
-| Geometry·camera | Step8과 같은 회전된 textured box와 perspective camera |
-| Light·material | Directional Light, diffuse 1, specular 1, shininess UI 32 |
+| Geometry·camera | Step8과 같은 회전된 box와 perspective camera |
+| Light·material | Point Light, texture off, diffuse 0.35, specular 1, shininess UI 32 |
 | Phong 입력 | Surface-to-light vector를 반사한 reflection vector |
 | Blinn-Phong 입력 | View vector와 light vector 합으로 만든 halfway vector |
 | 출력 | 동일 조건에서 각 specular model을 적용한 전체 창 screenshot |
@@ -94,9 +96,9 @@ EvaluateSpecular(light, view, normal, material, useBlinnPhong)
 
 ## 시각 결과
 
-두 screenshot은 1282×992 전체 창, 같은 box transform, texture, camera, Directional Light, material diffuse·specular와 shininess 32를 사용한다. Checkbox 상태만 달라 UI에서 비교 조건과 선택 model을 함께 확인할 수 있다.
+두 screenshot은 1282×992 전체 창, 같은 box transform, camera, Point Light, texture off, diffuse 0.35, specular 1.0과 shininess 32를 사용한다. Checkbox 상태만 달라 UI에서 비교 조건과 선택 model을 함께 확인할 수 있다.
 
-두 결과의 diffuse와 texture pattern은 유지되고 specular highlight의 분포만 달라진다. 이는 두 모델이 같은 표면과 광원에서도 서로 다른 비교 vector와 exponent를 사용한다는 점을 보여준다.
+두 결과는 같은 flat face normal과 보정된 exponent를 사용해 최종 명암이 매우 유사하다. 시각 차이를 과장하지 않고 reflection vector와 halfway vector라는 계산 기준의 차이를 UI 상태와 코드 근거로 함께 확인한다.
 
 ## 구현 범위와 한계
 

@@ -52,6 +52,8 @@ Example README에서는 기본 Blinn-Phong 상태 한 장만 대표 visual로 �
 
 ![Chapter06 Step9 Blinn-Phong](../../Docs/_assets/captures/part2_chapter06_09_blinn_phong.png)
 
+Capture는 texture를 끄고 Point Light, diffuse 0.35, specular 1.0과 shininess 32를 고정한다. Flat face normal과 Blinn-Phong exponent 보정 때문에 두 결과의 명암 차이는 작으며, 상세 Demo에서 계산 기준과 함께 비교한다.
+
 ## 구현 범위와 한계
 
 - 고전적인 Phong과 Blinn-Phong specular 항만 비교한다.

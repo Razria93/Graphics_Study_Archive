@@ -2,7 +2,7 @@
 
 ## 목적
 
-Step8은 Step7의 panel·scene viewport 분리를 유지하면서 실제 window client size 변경에 맞춰 swap chain dependent resource와 projection을 다시 연결한다. Default, wide와 compact window에서 같은 box 비율과 textured lighting 결과가 유지되는지 확인한다.
+Step8은 Step7의 panel·scene viewport 분리를 유지하면서 실제 window client size 변경에 맞춰 swap chain dependent resource와 projection을 다시 연결한다. Compact, default와 wide window에서 같은 box 비율과 textured lighting 결과가 유지되는지 확인한다.
 
 ## 책임 범위
 
@@ -15,17 +15,23 @@ Step8은 Step7의 panel·scene viewport 분리를 유지하면서 실제 window 
 
 ## 결과 미리보기
 
-![Chapter06 Step8 ResizingWindow default](../../_assets/captures/part2_chapter06_08_resizing_window_default.png)
-
-![Chapter06 Step8 ResizingWindow wide](../../_assets/captures/part2_chapter06_08_resizing_window_wide.png)
+### Compact — 960×720 client
 
 ![Chapter06 Step8 ResizingWindow compact](../../_assets/captures/part2_chapter06_08_resizing_window_compact.png)
+
+### Default — 1280×960 client
+
+![Chapter06 Step8 ResizingWindow default](../../_assets/captures/part2_chapter06_08_resizing_window_default.png)
+
+### Wide — 1600×900 client
+
+![Chapter06 Step8 ResizingWindow wide](../../_assets/captures/part2_chapter06_08_resizing_window_wide.png)
 
 ## 입력과 출력
 
 | 구분 | 내용 |
 | --- | --- |
-| Window 입력 | Default 1280×960, wide 1600×900, compact 960×720 client size와 최소화·복원 |
+| Window 입력 | Compact 960×720, default 1280×960, wide 1600×900 client size와 최소화·복원 |
 | Scene 입력 | Step7 box geometry, generated 목재 texture, transform·projection·Light parameter |
 | Resource | Client size에 맞춘 swap chain back buffer RTV와 depth texture·DSV |
 | Viewport | Panel 오른쪽에서 시작하고 현재 client height를 사용하는 scene rectangle |
@@ -124,7 +130,7 @@ Debug와 Release에서 추가 크기 전환을 반복하고 최소화·복원했
 - [Part2 Chapter05-08 Verification](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - Debug x64 build/run: 성공, 2026-08-02 현재 확인, project 폴더 CWD
 - Release x64 build/run: 성공, 2026-08-02 현재 확인, project 폴더 CWD
-- Resize: default·wide·compact와 추가 크기 전환 반복 후 rendering 유지
+- Resize: compact·default·wide와 추가 크기 전환 반복 후 rendering 유지
 - Minimize/restore: 0×0 resource 생성 생략과 복원 후 rendering 재개
 - Resource: Generated 목재 PNG load, Step5·Step5A·Step6·Step7과 동일 SHA-256
 - Capture: PNG 1282×992, 1602×932, 962×752 기술·시각 검수 완료
