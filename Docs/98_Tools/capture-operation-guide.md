@@ -26,6 +26,7 @@ mouse와 keyboard를 조작하지 않는다.
 2. countdown 종료 후 PID, exact title, foreground와 bounds를 확인한다.
 3. 다른 application을 조작하거나 Windows 전체 input을 잠그지 않는다.
 4. 사용자 입력으로 대상이 바뀌었다고 의심되면 현재 take를 폐기한다.
+5. Foreground 전환을 위해 input queue를 연결한 경우 대상 창을 올린 직후 해제하고 actual foreground를 다시 확인한다.
 
 ## 기본 상태 screenshot
 

@@ -28,7 +28,7 @@ Windows에서 graphics example의 보이는 application window 전체를 PNG 후
 
 ## Interactive capture
 
-파라미터나 camera를 직접 조작해야 하면 prompt가 나타난 뒤 application에서 원하는 상태를 만든다. 창을 가리지 않는 terminal에서 Enter를 누르면 대상 창을 foreground로 전환한 뒤 캡처한다.
+파라미터나 camera를 직접 조작해야 하면 prompt가 나타난 뒤 application에서 원하는 상태를 만든다. 창을 가리지 않는 terminal에서 Enter를 누르면 대상 창을 foreground로 전환한 뒤 캡처한다. Windows가 background process의 foreground 요청을 제한하면 현재 foreground thread의 input queue를 전환 구간에만 연결하고, 대상 창을 올린 뒤 연결을 즉시 해제한다.
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass `
@@ -66,7 +66,7 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 - output이 이미 있으면 `Overwrite` 없이는 실패한다.
 - application이 조기 종료되거나 main window를 찾지 못하면 실패한다.
 - actual title이 `ExpectedTitle`과 정확히 일치하지 않으면 실패한다.
-- foreground 전환, DWM bounds 조회 또는 PNG 저장이 실패하면 불완전한 임시 파일을 제거한다.
+- foreground 전환 뒤 actual foreground가 대상 창과 다르거나 DWM bounds 조회 또는 PNG 저장이 실패하면 불완전한 임시 파일을 제거한다.
 - 실패 시 도구가 시작한 application을 종료하며, 성공 시에도 `KeepApplicationOpen`이 없으면 종료한다.
 
 ## 검수와 승격
