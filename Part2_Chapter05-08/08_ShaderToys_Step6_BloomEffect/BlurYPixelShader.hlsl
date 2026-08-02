@@ -20,7 +20,7 @@ struct SamplingPixelShaderInput
 
 float4 main(SamplingPixelShaderInput input) : SV_TARGET
 {
-    float4 output;
+    float4 output = float4(0.0, 0.0, 0.0, 0.0);
     
     for (int i = 0; i < 5; i++)
     {

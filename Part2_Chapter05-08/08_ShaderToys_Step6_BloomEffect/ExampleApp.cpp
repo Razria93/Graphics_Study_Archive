@@ -37,6 +37,7 @@ bool ExampleApp::Initialize()
 	m_meshGroupCharacter.m_specularResView = m_cubeMapping.m_specularResView;
 
 	BuildFilters();
+	m_filtersInitialized = true;
 
 	return true;
 }
@@ -184,16 +185,24 @@ void ExampleApp::BuildFilters()
 	bool reverseFlag = false;
 	bool completeFlag = false;
 	int curlevel_Sampling = 0;
-	int maxlevel_Sampling = 5;
+	int maxlevel_Sampling = 0;
 	int width = m_screenWidth;
 	int height = m_screenHeight;
+	int testWidth = width;
+	int testHeight = height;
+	while (maxlevel_Sampling < 5 && testWidth > 1 && testHeight > 1)
+	{
+		testWidth = std::max(1, testWidth / 2);
+		testHeight = std::max(1, testHeight / 2);
+		maxlevel_Sampling++;
+	}
 
 	while (completeFlag == false)
 	{
 		if (!reverseFlag)
 		{
-			width /= 2;
-			height /= 2;
+			width = std::max(1, width / 2);
+			height = std::max(1, height / 2);
 			curlevel_Sampling++;
 		}
 		else
@@ -247,6 +256,13 @@ void ExampleApp::BuildFilters()
 	combineFilter->SetShaderResources({m_filters.back()->m_shaderResourceView, this->m_shaderResourceView});
 	combineFilter->SetRenderTargets({this->m_renderTargetView});
 	m_filters.push_back(combineFilter);
+	m_dirtyflag = 1;
+}
+
+void ExampleApp::OnResize()
+{
+	if (m_filtersInitialized)
+		BuildFilters();
 }
 
 void ExampleApp::UpdateGUI()
