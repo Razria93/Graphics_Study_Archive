@@ -76,4 +76,6 @@ Procedural subdivision, radial normal, spherical UV와 seam 보정을 공개 안
 
 ## 관련 이슈
 
-- 없음
+- [Chapter05 Affine Transformations Demo #17](https://github.com/Razria93/Graphics_Study_Archive/issues/17)
+- [Chapter06 DirectX11 Graphics Pipeline Demo #18](https://github.com/Razria93/Graphics_Study_Archive/issues/18)
+- [Chapter07 Procedural Modeling Demo #19](https://github.com/Razria93/Graphics_Study_Archive/issues/19)

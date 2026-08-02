@@ -46,6 +46,7 @@
 - [Chapter04 PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15)을 일반 merge commit 방식으로 병합해 실제 URL과 최종 상태 동기화를 완료했다.
 - [누적 Progress 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690)을 Chapter04 상태로 갱신했다.
 - [Phase 3-1 완료 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5150875726) 게시와 실제 URL 동기화를 완료했다.
+- Chapter05 [Demo Issue #17](https://github.com/Razria93/Graphics_Study_Archive/issues/17), Chapter06 [Demo Issue #18](https://github.com/Razria93/Graphics_Study_Archive/issues/18), Chapter07 [Demo Issue #19](https://github.com/Razria93/Graphics_Study_Archive/issues/19)를 번호 순서대로 게시했다.
 
 ## Chapter05 마감 snapshot
 

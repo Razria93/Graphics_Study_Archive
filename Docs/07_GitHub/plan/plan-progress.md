@@ -42,7 +42,7 @@ Related PR: [PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15)
 
 ### Phase 3-2. Part2 Chapter05-08
 
-Chapter05–08의 30개 예제를 순서대로 재검증하고 Example README, Topic, Verification과 독립 상세 Demo로 연결했다. Chapter05는 affine transformation API 비교, Chapter06은 DirectX11 pipeline·lighting·resize, Chapter07은 procedural modeling과 SphereMapping 흐름으로 정리했다. Chapter05·06·07의 공개 안전한 대표 visual과 Demo Issue 후보를 구성하고, 외부 asset 권리 근거가 충분하지 않은 Chapter08은 archive 검증 상태로 유지한다.
+Chapter05–08의 30개 예제를 순서대로 재검증하고 Example README, Topic, Verification과 독립 상세 Demo로 연결했다. Chapter05는 affine transformation API 비교, Chapter06은 DirectX11 pipeline·lighting·resize, Chapter07은 procedural modeling과 SphereMapping 흐름으로 정리했다. 공개 안전한 대표 visual을 Chapter05 [Demo Issue #17](https://github.com/Razria93/Graphics_Study_Archive/issues/17), Chapter06 [Demo Issue #18](https://github.com/Razria93/Graphics_Study_Archive/issues/18), Chapter07 [Demo Issue #19](https://github.com/Razria93/Graphics_Study_Archive/issues/19)에 게시하고, 외부 asset 권리 근거가 충분하지 않은 Chapter08은 archive 검증 상태로 유지한다.
 
 Related PR: 예정 - Part2 Chapter05-08 DirectX11 Pipeline·Modeling·Shader 예제 정규화와 Demo
 
