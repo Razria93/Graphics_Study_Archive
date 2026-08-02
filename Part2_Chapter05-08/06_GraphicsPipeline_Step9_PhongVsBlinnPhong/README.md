@@ -65,7 +65,7 @@ Example README에서는 기본 Blinn-Phong 상태 한 장만 대표 visual로 �
 
 - [Part2 Chapter05-08 README](../README.md)
 - [이전 단계: Chapter06 Step8 ResizingWindow](../06_GraphicsPipeline_Step8_ResizingWindow/README.md)
-- 다음 단계: Chapter07 Step1 DrawingWireFrames 문서화 대기
+- [다음 단계: Chapter07 Step1 DrawingWireFrames](../07_Modeling_Step1_DrawingWireFrames/README.md)
 - [Phong And Blinn-Phong Topic](../../Docs/01_Topics/LightingAndShading/PhongAndBlinnPhong.md)
 - [Step9 상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/09_PhongVsBlinnPhong.md)
 - [Verification Index](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)

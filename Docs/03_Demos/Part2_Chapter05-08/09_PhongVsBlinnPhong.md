@@ -131,7 +131,7 @@ EvaluateSpecular(light, view, normal, material, useBlinnPhong)
 
 - [Chapter06 Step9 Example README](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step9_PhongVsBlinnPhong/README.md)
 - [이전 단계: Chapter06 Step8 ResizingWindow Demo](08_ResizingWindow.md)
-- 다음 단계: Chapter07 Step1 DrawingWireFrames 문서화 대기
+- [다음 단계: Chapter07 Step1 DrawingWireFrames Demo](07_01_DrawingWireFrames.md)
 - [Phong And Blinn-Phong Topic](../../01_Topics/LightingAndShading/PhongAndBlinnPhong.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)

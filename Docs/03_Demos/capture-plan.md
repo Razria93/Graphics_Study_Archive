@@ -130,3 +130,10 @@ portfolio_raytracer_reflection.png
 - Step14 CubeEnvironment는 PosZ 중심과 PosX·NegX 경계를 보여주는 정적 environment screenshot을 확보했다. Camera 조작이 없어 video는 제외한다.
 - 각 Step은 독립 상세 Demo를 기본으로 하며 Chapter 전체를 하나의 Demo로 합치지 않는다.
 - 최소 Demo는 Step4, 대표 Demo는 Step8·13, 선택 Demo는 Step10·14로 확정한다. 나머지 Step은 순차 학습 Demo로 유지하고 정적 결과에 불필요한 video는 제외한다.
+
+## Part2 Chapter07 순차 계획
+
+- Step1 DrawingWireFrames는 `Wireframe=On`, `Use Texture=Off`와 비스듬한 box rotation을 사용한 전체 창 screenshot 한 장을 확보했다.
+- Box의 세 면과 face별 triangle diagonal, UI 상태와 공개 title을 한 frame에서 확인한다.
+- Step1 video는 fill mode의 고정 결과를 screenshot으로 충분히 설명할 수 있어 제외한다.
+- 다음 Step2 DrawingNormals부터 같은 순차 단위로 capture 필요성을 다시 판정한다.
