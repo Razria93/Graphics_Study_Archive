@@ -46,7 +46,7 @@ Image loader와 graphics API는 row origin 규약이 다를 수 있다. Step10�
 
 GPU sampling에서는 image byte를 저장하는 texture resource, shader가 resource를 읽을 형식과 범위를 나타내는 shader resource view, filtering과 address mode를 정의하는 sampler를 구분한다. Direct3D11 pixel shader는 SRV를 `t` slot, sampler를 `s` slot에 연결하고 보간된 UV로 sample한다.
 
-Chapter06 Step5는 generated PNG 2개를 RGBA8 immutable texture와 SRV로 만들고 `t0`·`t1`에 연결한다. Linear wrap sampler는 `s0`, texture 선택 경계는 constant buffer `b0`을 사용한다. Resource 생성·binding 같은 API 선택은 [Step5 Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing/README.md), 결과 비교는 [Step5 Demo](../../03_Demos/Part2_Chapter05-08/06_Texturing.md)에서 설명한다.
+Chapter06 Step5는 generated PNG 2개를 RGBA8 immutable texture와 SRV로 만들고 `t0`·`t1`에 연결한다. Linear wrap sampler는 `s0`, texture 선택 경계는 constant buffer `b0`을 사용한다. Step5A는 같은 resource 흐름을 box의 textured point-light shading으로 확장한다. Resource 생성·binding 같은 API 선택은 각 Example README, 결과 비교는 각 상세 Demo에서 설명한다.
 
 ## 한계
 
@@ -59,8 +59,10 @@ Chapter06 Step5는 generated PNG 2개를 RGBA8 immutable texture와 SRV로 만�
 
 - Example: [Step10 Texturing README](../../../Part1_Chapter03/03_Raytracing_Step10_Texturing/README.md)
 - Example: [Chapter06 Step5 Texturing README](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing/README.md)
+- Example: [Chapter06 Step5A Texturing LightingSelf README](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf/README.md)
 - Verification: [`Docs/02_Verification/Part1_Chapter03/verification-index.md`](../../02_Verification/Part1_Chapter03/verification-index.md)
 - Verification: [`Docs/02_Verification/Part2_Chapter05-08/verification-index.md`](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - Demo: [`Docs/03_Demos/Part1_Chapter03/demo-index.md`](../../03_Demos/Part1_Chapter03/demo-index.md)
 - Demo: [`Docs/03_Demos/Part2_Chapter05-08/06_Texturing.md`](../../03_Demos/Part2_Chapter05-08/06_Texturing.md)
+- Demo: [Chapter06 Step5A Texturing LightingSelf](../../03_Demos/Part2_Chapter05-08/06_TexturingLightingSelf.md)
 - Related Topic: [Barycentric Coordinates](../RayTracing/BarycentricCoordinates.md)

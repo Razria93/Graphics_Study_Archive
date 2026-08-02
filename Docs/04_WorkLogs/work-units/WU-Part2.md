@@ -6,7 +6,7 @@
 | --- | --- |
 | Work Unit | `WU-Part2` |
 | 현재 마감 대상 | `Part2_Chapter05-08` Chapter06 순차 정규화 |
-| 후속 코드 범위 | Chapter06 Step5 Texturing LightingSelf부터 Chapter08까지 |
+| 후속 코드 범위 | Chapter06 Step6 Lighting부터 Chapter08까지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -79,3 +79,8 @@
 - Step5의 Debug/Release x64 현재 재검증과 Example·Texture Sampling Topic·상세 Demo 정규화를 완료했다.
 - 기본 `0.5`와 조정 `0.25` 전체 창 screenshot 2장의 기술 검사와 사용자 시각 확인을 완료해 tracked capture로 승격했다.
 - Step5 video는 정적 screenshot 비교로 texture 선택 경계를 충분히 설명할 수 있어 제외했다.
+- Step5A Texturing LightingSelf의 texture load·resource 실패 전파, camera position 동기화와 attenuation denominator 제한을 보완했다.
+- Step5에서 검수한 generated 목재 PNG의 동일 바이트 사본을 사용하고 미사용 texture·shader resource를 제거했다.
+- Step5A의 Debug/Release x64 현재 재검증과 Example·기존 Topic·상세 Demo 정규화를 완료했다.
+- 기본 light와 위치 조정 전체 창 screenshot 2장의 기술 검사와 사용자 시각 확인을 완료해 tracked capture로 승격했다.
+- Step5A video는 단일 light position의 정적 결과 비교로 구현 효과를 충분히 설명할 수 있어 제외했다.
