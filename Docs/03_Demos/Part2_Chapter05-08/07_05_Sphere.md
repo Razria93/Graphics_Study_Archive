@@ -95,7 +95,7 @@ Wireframe은 equator를 중심으로 위·아래 latitude ring이 이어지고, 
 - 비교 결과는 구현 선택을 검증하기 위한 private 근거이며 Reference 코드를 정본에 복제하지 않는다.
 - Equator와 pole 위치에는 UV seam·반구 분리를 위한 중복 vertex가 존재한다.
 - 아래쪽 U 범위는 `1.5`에서 `0.5`이며 wrap sampler가 필요하다.
-- Index winding과 radial normal의 방향 정합은 후속 FaceNormals 단계에서 재검증한다.
+- 380개 triangle의 winding을 radial direction과 수치 비교한 결과 모두 outward이며 inward·degenerate triangle은 없다.
 - 입력 범위 guard와 runtime 분할 수 조정은 포함하지 않는다.
 - Video는 정적 wireframe이 topology를 충분히 설명하므로 제외한다.
 

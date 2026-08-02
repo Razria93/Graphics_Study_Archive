@@ -105,7 +105,7 @@ Wireframe은 seed의 각 triangle이 두 pass를 거치며 16개 child triangle�
 
 - [Chapter07 Step6 Subdivision Example](../../../Part2_Chapter05-08/07_Modeling_Step6_Subdivision/README.md)
 - [이전 단계: Chapter07 Step5 Sphere UserSolution Demo](07_05_Sphere.md)
-- 다음 단계: Chapter07 Step7 FaceNormals 문서화 대기
+- [다음 단계: Chapter07 Step7 FaceNormals Demo](07_07_FaceNormals.md)
 - [Procedural Primitive Generation](../../01_Topics/ModelingAndGeometry/ProceduralPrimitiveGeneration.md)
 - [Vertex And Face Normals](../../01_Topics/ModelingAndGeometry/VertexAndFaceNormals.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
