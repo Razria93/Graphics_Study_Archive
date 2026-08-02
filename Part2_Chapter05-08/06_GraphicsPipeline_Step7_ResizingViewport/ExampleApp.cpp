@@ -7,53 +7,9 @@ namespace hlab {
 
 using namespace std;
 
-auto MakeSquare() {
-    vector<Vector3> positions;
-    vector<Vector3> colors;
-    vector<Vector3> normals;
-    vector<Vector2> texcoords; 
-
-    const float scale = 1.0f;
-
-    positions.push_back(Vector3(-1.0f, 1.0f, 0.0f) * scale);
-    positions.push_back(Vector3(1.0f, 1.0f, 0.0f) * scale);
-    positions.push_back(Vector3(1.0f, -1.0f, 0.0f) * scale);
-    positions.push_back(Vector3(-1.0f, -1.0f, 0.0f) * scale);
-    colors.push_back(Vector3(0.0f, 0.0f, 1.0f));
-    colors.push_back(Vector3(0.0f, 0.0f, 1.0f));
-    colors.push_back(Vector3(0.0f, 0.0f, 1.0f));
-    colors.push_back(Vector3(0.0f, 0.0f, 1.0f));
-    normals.push_back(Vector3(0.0f, 0.0f, -1.0f));
-    normals.push_back(Vector3(0.0f, 0.0f, -1.0f));
-    normals.push_back(Vector3(0.0f, 0.0f, -1.0f));
-    normals.push_back(Vector3(0.0f, 0.0f, -1.0f));
-
-    texcoords.push_back(Vector2(0.0f, 0.0f));
-    texcoords.push_back(Vector2(1.0f, 0.0f));
-    texcoords.push_back(Vector2(1.0f, 1.0f));
-    texcoords.push_back(Vector2(0.0f, 1.0f));
-
-    vector<Vertex> vertices;
-    for (size_t i = 0; i < positions.size(); i++) {
-        Vertex v;
-        v.position = positions[i];
-        v.normal = normals[i];
-        v.texcoord = texcoords[i];
-
-
-        vertices.push_back(v);
-    }
-    vector<uint16_t> indices = {
-        0, 1, 2, 0, 2, 3, 
-    };
-
-    return tuple{vertices, indices};
-}
-
 auto MakeBox() {
 
     vector<Vector3> positions;
-    vector<Vector3> colors;
     vector<Vector3> normals;
     vector<Vector2> texcoords; 
 
@@ -63,10 +19,6 @@ auto MakeBox() {
     positions.push_back(Vector3(-1.0f, 1.0f, 1.0f) * scale);
     positions.push_back(Vector3(1.0f, 1.0f, 1.0f) * scale);
     positions.push_back(Vector3(1.0f, 1.0f, -1.0f) * scale);
-    colors.push_back(Vector3(1.0f, 0.0f, 0.0f));
-    colors.push_back(Vector3(1.0f, 0.0f, 0.0f));
-    colors.push_back(Vector3(1.0f, 0.0f, 0.0f));
-    colors.push_back(Vector3(1.0f, 0.0f, 0.0f));
     normals.push_back(Vector3(0.0f, 1.0f, 0.0f));
     normals.push_back(Vector3(0.0f, 1.0f, 0.0f));
     normals.push_back(Vector3(0.0f, 1.0f, 0.0f));
@@ -80,10 +32,6 @@ auto MakeBox() {
     positions.push_back(Vector3(1.0f, -1.0f, -1.0f) * scale);
     positions.push_back(Vector3(1.0f, -1.0f, 1.0f) * scale);
     positions.push_back(Vector3(-1.0f, -1.0f, 1.0f) * scale);
-    colors.push_back(Vector3(0.0f, 1.0f, 0.0f));
-    colors.push_back(Vector3(0.0f, 1.0f, 0.0f));
-    colors.push_back(Vector3(0.0f, 1.0f, 0.0f));
-    colors.push_back(Vector3(0.0f, 1.0f, 0.0f));
     normals.push_back(Vector3(0.0f, -1.0f, 0.0f));
     normals.push_back(Vector3(0.0f, -1.0f, 0.0f));
     normals.push_back(Vector3(0.0f, -1.0f, 0.0f));
@@ -97,10 +45,6 @@ auto MakeBox() {
     positions.push_back(Vector3(-1.0f, 1.0f, -1.0f) * scale);
     positions.push_back(Vector3(1.0f, 1.0f, -1.0f) * scale);
     positions.push_back(Vector3(1.0f, -1.0f, -1.0f) * scale);
-    colors.push_back(Vector3(0.0f, 0.0f, 1.0f));
-    colors.push_back(Vector3(0.0f, 0.0f, 1.0f));
-    colors.push_back(Vector3(0.0f, 0.0f, 1.0f));
-    colors.push_back(Vector3(0.0f, 0.0f, 1.0f));
     normals.push_back(Vector3(0.0f, 0.0f, -1.0f));
     normals.push_back(Vector3(0.0f, 0.0f, -1.0f));
     normals.push_back(Vector3(0.0f, 0.0f, -1.0f));
@@ -114,10 +58,6 @@ auto MakeBox() {
     positions.push_back(Vector3(1.0f, -1.0f, 1.0f) * scale);
     positions.push_back(Vector3(1.0f, 1.0f, 1.0f) * scale);
     positions.push_back(Vector3(-1.0f, 1.0f, 1.0f) * scale);
-    colors.push_back(Vector3(0.0f, 1.0f, 1.0f));
-    colors.push_back(Vector3(0.0f, 1.0f, 1.0f));
-    colors.push_back(Vector3(0.0f, 1.0f, 1.0f));
-    colors.push_back(Vector3(0.0f, 1.0f, 1.0f));
     normals.push_back(Vector3(0.0f, 0.0f, 1.0f));
     normals.push_back(Vector3(0.0f, 0.0f, 1.0f));
     normals.push_back(Vector3(0.0f, 0.0f, 1.0f));
@@ -131,10 +71,6 @@ auto MakeBox() {
     positions.push_back(Vector3(-1.0f, 1.0f, 1.0f) * scale);
     positions.push_back(Vector3(-1.0f, 1.0f, -1.0f) * scale);
     positions.push_back(Vector3(-1.0f, -1.0f, -1.0f) * scale);
-    colors.push_back(Vector3(1.0f, 1.0f, 0.0f));
-    colors.push_back(Vector3(1.0f, 1.0f, 0.0f));
-    colors.push_back(Vector3(1.0f, 1.0f, 0.0f));
-    colors.push_back(Vector3(1.0f, 1.0f, 0.0f));
     normals.push_back(Vector3(-1.0f, 0.0f, 0.0f));
     normals.push_back(Vector3(-1.0f, 0.0f, 0.0f));
     normals.push_back(Vector3(-1.0f, 0.0f, 0.0f));
@@ -148,10 +84,6 @@ auto MakeBox() {
     positions.push_back(Vector3(1.0f, -1.0f, -1.0f) * scale);
     positions.push_back(Vector3(1.0f, 1.0f, -1.0f) * scale);
     positions.push_back(Vector3(1.0f, 1.0f, 1.0f) * scale);
-    colors.push_back(Vector3(1.0f, 0.0f, 1.0f));
-    colors.push_back(Vector3(1.0f, 0.0f, 1.0f));
-    colors.push_back(Vector3(1.0f, 0.0f, 1.0f));
-    colors.push_back(Vector3(1.0f, 0.0f, 1.0f));
     normals.push_back(Vector3(1.0f, 0.0f, 0.0f));
     normals.push_back(Vector3(1.0f, 0.0f, 0.0f));
     normals.push_back(Vector3(1.0f, 0.0f, 0.0f));
@@ -183,17 +115,18 @@ auto MakeBox() {
 }
 
 ExampleApp::ExampleApp()
-    : AppBase(), m_indexCount(0), m_pixelConstantBufferData() {}
+    : AppBase(), m_indexCount(0), m_pixelConstantBufferData() {
+    m_pixelConstantBufferData.useTexture = true;
+}
 
 bool ExampleApp::Initialize() {
 
     if (!AppBase::Initialize())
         return false;
 
-    AppBase::CreateTexture("crate2_diffuse.png", m_texture,
-                           m_textureResourceView);
-
-    AppBase::CreateTexture("wall.jpg", m_texture2, m_textureResourceView2);
+    if (!AppBase::CreateTexture("generated_dark_wood.png", m_texture,
+                                m_textureResourceView))
+        return false;
 
     D3D11_SAMPLER_DESC sampDesc;
     ZeroMemory(&sampDesc, sizeof(sampDesc));
@@ -205,25 +138,33 @@ bool ExampleApp::Initialize() {
     sampDesc.MinLOD = 0;
     sampDesc.MaxLOD = D3D11_FLOAT32_MAX;
 
-    m_device->CreateSamplerState(&sampDesc, m_samplerState.GetAddressOf());
+    if (FAILED(m_device->CreateSamplerState(&sampDesc,
+                                            m_samplerState.GetAddressOf()))) {
+        cout << "CreateSamplerState() failed." << endl;
+        return false;
+    }
 
     auto [vertices, indices] = MakeBox();
 
-    AppBase::CreateVertexBuffer(vertices, m_vertexBuffer);
+    if (!AppBase::CreateVertexBuffer(vertices, m_vertexBuffer))
+        return false;
 
     m_indexCount = UINT(indices.size());
 
-    AppBase::CreateIndexBuffer(indices, m_indexBuffer);
+    if (!AppBase::CreateIndexBuffer(indices, m_indexBuffer))
+        return false;
 
     m_vertexConstantBufferData.model = Matrix();
     m_vertexConstantBufferData.view = Matrix();
     m_vertexConstantBufferData.projection = Matrix();
 
-    AppBase::CreateConstantBuffer(m_vertexConstantBufferData,
-                                  m_vertexConstantBuffer);
+    if (!AppBase::CreateConstantBuffer(m_vertexConstantBufferData,
+                                       m_vertexConstantBuffer))
+        return false;
 
-    AppBase::CreateConstantBuffer(m_pixelConstantBufferData,
-                                  m_pixelShaderConstantBuffer);
+    if (!AppBase::CreateConstantBuffer(m_pixelConstantBufferData,
+                                       m_pixelShaderConstantBuffer))
+        return false;
 
 
 
@@ -239,11 +180,14 @@ bool ExampleApp::Initialize() {
          D3D11_INPUT_PER_VERTEX_DATA, 0},
     };
 
-    AppBase::CreateVertexShaderAndInputLayout(
-        L"BasicVertexShader.hlsl", inputElements, m_colorVertexShader,
-        m_colorInputLayout);
+    if (!AppBase::CreateVertexShaderAndInputLayout(
+            L"BasicVertexShader.hlsl", inputElements, m_colorVertexShader,
+            m_colorInputLayout))
+        return false;
 
-    AppBase::CreatePixelShader(L"BasicPixelShader.hlsl", m_colorPixelShader);
+    if (!AppBase::CreatePixelShader(L"BasicPixelShader.hlsl",
+                                    m_colorPixelShader))
+        return false;
 
     return true;
 }
@@ -276,7 +220,7 @@ void ExampleApp::Update(float dt) {
     m_vertexConstantBufferData.view =
         m_vertexConstantBufferData.view.Transpose();
 
-    m_aspect = AppBase::GetAspectRatio(); 
+    m_aspect = AppBase::GetAspectRatio();
     if (m_usePerspectiveProjection) {
         m_vertexConstantBufferData.projection = XMMatrixPerspectiveFovLH(
             XMConvertToRadians(m_projFovAngleY), m_aspect, m_nearZ, m_farZ);
@@ -291,6 +235,9 @@ void ExampleApp::Update(float dt) {
 
     m_pixelConstantBufferData.material.diffuse = Vector3(m_materialDiffuse);
     m_pixelConstantBufferData.material.specular = Vector3(m_materialSpecular);
+    m_lightFromGUI.fallOffEnd =
+        (std::max)(m_lightFromGUI.fallOffEnd,
+                   m_lightFromGUI.fallOffStart + 0.01f);
 
     for (int i = 0; i < MAX_LIGHTS; i++) {
         if (i != m_lightType) {
@@ -304,11 +251,8 @@ void ExampleApp::Update(float dt) {
                           m_pixelShaderConstantBuffer);
 }
 
-void ExampleApp::Render() 
-{
+void ExampleApp::Render() {
 
-
-    SetViewport();
 
     m_context->RSSetViewports(1, &m_screenViewport);
 
@@ -328,9 +272,9 @@ void ExampleApp::Render()
     m_context->VSSetConstantBuffers(0, 1,
                                     m_vertexConstantBuffer.GetAddressOf());
 
-    ID3D11ShaderResourceView *pixelResources[2] = {
-        m_textureResourceView.Get(), m_textureResourceView2.Get()};
-    m_context->PSSetShaderResources(0, 2, pixelResources);
+    ID3D11ShaderResourceView *pixelResources[1] = {
+        m_textureResourceView.Get()};
+    m_context->PSSetShaderResources(0, 1, pixelResources);
     m_context->PSSetSamplers(0, 1, m_samplerState.GetAddressOf());
 
     m_context->PSSetConstantBuffers(0, 1,
@@ -348,8 +292,8 @@ void ExampleApp::Render()
     m_context->DrawIndexed(m_indexCount, 0, 0);
 }
 
-void ExampleApp::UpdateGUI() 
-{
+void ExampleApp::UpdateGUI() {
+
     ImGui::Checkbox("Use Texture", &m_pixelConstantBufferData.useTexture);
 
     ImGui::SliderFloat3("m_modelTranslation", &m_modelTranslation.x, -2.0f,
@@ -388,6 +332,8 @@ void ExampleApp::UpdateGUI()
 
     ImGui::SliderFloat("Light spotPower", &m_lightFromGUI.spotPower, 1.0f,
                        512.0f);
+    ImGui::SliderFloat3("Light Direction", &m_lightFromGUI.direction.x, -1.0f,
+                        1.0f);
 }
 
 } 

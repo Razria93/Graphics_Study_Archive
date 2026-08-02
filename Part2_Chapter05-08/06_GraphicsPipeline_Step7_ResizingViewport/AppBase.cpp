@@ -3,6 +3,8 @@
 
 #include "AppBase.h"
 
+#include <algorithm>
+
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
@@ -26,7 +28,8 @@ AppBase *g_appBase = nullptr;
 
 
 LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
-
+    if (!g_appBase)
+        return ::DefWindowProc(hWnd, msg, wParam, lParam);
     return g_appBase->MsgProc(hWnd, msg, wParam, lParam);
 }
 
@@ -39,18 +42,21 @@ AppBase::AppBase()
 }
 
 AppBase::~AppBase() {
+    if (ImGui::GetCurrentContext()) {
+        ImGui_ImplDX11_Shutdown();
+        ImGui_ImplWin32_Shutdown();
+        ImGui::DestroyContext();
+    }
+
+    if (m_mainWindow)
+        DestroyWindow(m_mainWindow);
     g_appBase = nullptr;
-
-    ImGui_ImplDX11_Shutdown();
-    ImGui_ImplWin32_Shutdown();
-    ImGui::DestroyContext();
-
-    DestroyWindow(m_mainWindow);
-
 }
 
 float AppBase::GetAspectRatio() const {
-    return float(m_screenWidth - imGui_Size.x) / m_screenHeight;
+    const float width = (std::max)(m_screenViewport.Width, 1.0f);
+    const float height = (std::max)(m_screenViewport.Height, 1.0f);
+    return width / height;
 }
 
 int AppBase::Run() {
@@ -65,10 +71,12 @@ int AppBase::Run() {
             ImGui_ImplWin32_NewFrame();
 
             ImGui::NewFrame(); 
+            ImGui::SetNextWindowPos(ImVec2(0.0f, 0.0f), ImGuiCond_Always);
+            ImGui::SetNextWindowSize(ImVec2(420.0f, 720.0f),
+                                     ImGuiCond_FirstUseEver);
             ImGui::Begin("Scene Control");
 
-            ImGui::SetWindowPos(ImVec2(0.0f, 0.0f));
-            imGui_Size = ImGui::GetWindowSize();
+            UpdateSceneViewport(ImGui::GetWindowSize().x);
 
             ImGui::Text("Average %.3f ms/frame (%.1f FPS)",
                         1000.0f / ImGui::GetIO().Framerate,
@@ -159,13 +167,11 @@ bool AppBase::InitMainWindow() {
 
     AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, false);
 
-    m_mainWindow = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example",
-                                WS_OVERLAPPEDWINDOW,
-                                100,                
-                                100,                
-                                wr.right - wr.left, 
-                                wr.bottom - wr.top, 
-                                NULL, NULL, wc.hInstance, NULL);
+    m_mainWindow = CreateWindow(
+        wc.lpszClassName,
+        L"ComputerGraphics - Chapter06 Step7 ResizingViewport",
+        WS_OVERLAPPEDWINDOW, 100, 100, wr.right - wr.left,
+        wr.bottom - wr.top, NULL, NULL, wc.hInstance, NULL);
 
     if (!m_mainWindow) {
         cout << "CreateWindow() failed." << endl;
@@ -284,7 +290,15 @@ bool AppBase::InitDirect3D() {
         return false;
     }
 
-    SetViewport();
+    ZeroMemory(&m_screenViewport, sizeof(D3D11_VIEWPORT));
+    m_screenViewport.TopLeftX = 0;
+    m_screenViewport.TopLeftY = 0;
+    m_screenViewport.Width = float(m_screenWidth);
+    m_screenViewport.Height = float(m_screenHeight);
+    m_screenViewport.MinDepth = 0.0f;
+    m_screenViewport.MaxDepth = 1.0f;
+
+    m_context->RSSetViewports(1, &m_screenViewport);
 
     D3D11_RASTERIZER_DESC rastDesc;
     ZeroMemory(&rastDesc, sizeof(D3D11_RASTERIZER_DESC)); 
@@ -345,6 +359,7 @@ bool AppBase::InitGUI() {
     ImGui::CreateContext();
     ImGuiIO &io = ImGui::GetIO();
     (void)io;
+    io.IniFilename = nullptr;
     io.DisplaySize = ImVec2(float(m_screenWidth), float(m_screenHeight));
     ImGui::StyleColorsLight();
 
@@ -384,7 +399,7 @@ void CheckResult(HRESULT hr, ID3DBlob *errorBlob) {
     }
 }
 
-void AppBase::CreateVertexShaderAndInputLayout(
+bool AppBase::CreateVertexShaderAndInputLayout(
     const wstring &filename,
     const vector<D3D11_INPUT_ELEMENT_DESC> &inputElements,
     ComPtr<ID3D11VertexShader> &vertexShader,
@@ -400,21 +415,33 @@ void AppBase::CreateVertexShaderAndInputLayout(
 
     HRESULT hr = D3DCompileFromFile(
         filename.c_str(), 0, D3D_COMPILE_STANDARD_FILE_INCLUDE, "main",
-        "vs_5_0", compileFlags, 0, &shaderBlob, &errorBlob);
+        "vs_5_0",
+                                    compileFlags, 0, &shaderBlob, &errorBlob);
 
     CheckResult(hr, errorBlob.Get());
+    if (FAILED(hr) || !shaderBlob)
+        return false;
 
-    m_device->CreateVertexShader(shaderBlob->GetBufferPointer(),
-                                 shaderBlob->GetBufferSize(), NULL,
-                                 &vertexShader);
+    if (FAILED(m_device->CreateVertexShader(
+            shaderBlob->GetBufferPointer(), shaderBlob->GetBufferSize(), NULL,
+            &vertexShader))) {
+        cout << "CreateVertexShader() failed." << endl;
+        return false;
+    }
 
-    m_device->CreateInputLayout(inputElements.data(),
-                                UINT(inputElements.size()),
-                                shaderBlob->GetBufferPointer(),
-                                shaderBlob->GetBufferSize(), &inputLayout);
+    if (FAILED(m_device->CreateInputLayout(
+            inputElements.data(), UINT(inputElements.size()),
+            shaderBlob->GetBufferPointer(), shaderBlob->GetBufferSize(),
+            &inputLayout))) {
+        cout << "CreateInputLayout() failed." << endl;
+        vertexShader.Reset();
+        return false;
+    }
+
+    return true;
 }
 
-void AppBase::CreatePixelShader(const wstring &filename,
+bool AppBase::CreatePixelShader(const wstring &filename,
                                 ComPtr<ID3D11PixelShader> &pixelShader) {
     ComPtr<ID3DBlob> shaderBlob;
     ComPtr<ID3DBlob> errorBlob;
@@ -426,16 +453,24 @@ void AppBase::CreatePixelShader(const wstring &filename,
 
     HRESULT hr = D3DCompileFromFile(
         filename.c_str(), 0, D3D_COMPILE_STANDARD_FILE_INCLUDE, "main",
-        "ps_5_0", compileFlags, 0, &shaderBlob, &errorBlob);
+        "ps_5_0",
+                                    compileFlags, 0, &shaderBlob, &errorBlob);
 
     CheckResult(hr, errorBlob.Get());
+    if (FAILED(hr) || !shaderBlob)
+        return false;
 
-    m_device->CreatePixelShader(shaderBlob->GetBufferPointer(),
-                                shaderBlob->GetBufferSize(), NULL,
-                                &pixelShader);
+    if (FAILED(m_device->CreatePixelShader(
+            shaderBlob->GetBufferPointer(), shaderBlob->GetBufferSize(), NULL,
+            &pixelShader))) {
+        cout << "CreatePixelShader() failed." << endl;
+        return false;
+    }
+
+    return true;
 }
 
-void AppBase::CreateIndexBuffer(const std::vector<uint16_t> &indices,
+bool AppBase::CreateIndexBuffer(const std::vector<uint16_t> &indices,
                                 ComPtr<ID3D11Buffer> &m_indexBuffer) {
     D3D11_BUFFER_DESC bufferDesc = {};
     bufferDesc.Usage = D3D11_USAGE_IMMUTABLE; 
@@ -449,24 +484,30 @@ void AppBase::CreateIndexBuffer(const std::vector<uint16_t> &indices,
     indexBufferData.SysMemPitch = 0;
     indexBufferData.SysMemSlicePitch = 0;
 
-    m_device->CreateBuffer(&bufferDesc, &indexBufferData,
-                           m_indexBuffer.GetAddressOf());
+    if (FAILED(m_device->CreateBuffer(&bufferDesc, &indexBufferData,
+                                      m_indexBuffer.GetAddressOf()))) {
+        cout << "CreateIndexBuffer() CreateBuffer failed." << endl;
+        return false;
+    }
+
+    return true;
 }
 
-void AppBase::CreateTexture(
-    const std::string filename, ComPtr<ID3D11Texture2D> &texture,
+bool AppBase::CreateTexture(
+    const std::string &filename, ComPtr<ID3D11Texture2D> &texture,
     ComPtr<ID3D11ShaderResourceView> &textureResourceView) {
 
-    int width, height, channels;
+    int width = 0;
+    int height = 0;
+    int channels = 0;
 
     unsigned char *img =
-        stbi_load(filename.c_str(), &width, &height, &channels, 0);
-
-
-    std::vector<uint8_t> image;
-
-    image.resize(width * height * channels);
-    memcpy(image.data(), img, image.size() * sizeof(uint8_t));
+        stbi_load(filename.c_str(), &width, &height, &channels, 4);
+    if (!img) {
+        cout << "Texture load failed: " << filename << " ("
+             << stbi_failure_reason() << ")" << endl;
+        return false;
+    }
 
     D3D11_TEXTURE2D_DESC txtDesc = {};
     txtDesc.Width = width;
@@ -477,31 +518,41 @@ void AppBase::CreateTexture(
     txtDesc.Usage = D3D11_USAGE_IMMUTABLE;
     txtDesc.BindFlags = D3D11_BIND_SHADER_RESOURCE;
 
-    D3D11_SUBRESOURCE_DATA InitData;
-    InitData.pSysMem = image.data();
-    InitData.SysMemPitch = txtDesc.Width * sizeof(uint8_t) * channels;
+    D3D11_SUBRESOURCE_DATA initData = {};
+    initData.pSysMem = img;
+    initData.SysMemPitch = txtDesc.Width * sizeof(uint8_t) * 4;
 
-    m_device->CreateTexture2D(&txtDesc, &InitData, texture.GetAddressOf());
-    m_device->CreateShaderResourceView(texture.Get(), nullptr,
-                                       textureResourceView.GetAddressOf());
-}
-
-void AppBase::SetViewport() 
-{
-    if (pre_imGui_Size.x != imGui_Size.x) 
-    {
-        pre_imGui_Size = imGui_Size;
-
-        ZeroMemory(&m_screenViewport, sizeof(D3D11_VIEWPORT));
-        m_screenViewport.TopLeftX = imGui_Size.x;
-        m_screenViewport.TopLeftY = 0;
-        m_screenViewport.Width = float(m_screenWidth - imGui_Size.x);
-        m_screenViewport.Height = float(m_screenHeight);
-        m_screenViewport.MinDepth = 0.0f;
-        m_screenViewport.MaxDepth = 1.0f; 
-
-        m_context->RSSetViewports(1, &m_screenViewport);
+    const HRESULT textureResult =
+        m_device->CreateTexture2D(&txtDesc, &initData, texture.GetAddressOf());
+    stbi_image_free(img);
+    if (FAILED(textureResult)) {
+        cout << "CreateTexture2D() failed: " << filename << endl;
+        return false;
     }
+
+    if (FAILED(m_device->CreateShaderResourceView(
+            texture.Get(), nullptr, textureResourceView.GetAddressOf()))) {
+        cout << "CreateShaderResourceView() failed: " << filename << endl;
+        texture.Reset();
+        return false;
+    }
+
+    return true;
 }
 
-} 
+void AppBase::UpdateSceneViewport(float panelWidth) {
+    const float maxPanelWidth = (std::max)(float(m_screenWidth) - 1.0f, 0.0f);
+    const float clampedPanelWidth =
+        (std::min)((std::max)(panelWidth, 0.0f), maxPanelWidth);
+
+    ZeroMemory(&m_screenViewport, sizeof(D3D11_VIEWPORT));
+    m_screenViewport.TopLeftX = clampedPanelWidth;
+    m_screenViewport.TopLeftY = 0.0f;
+    m_screenViewport.Width =
+        (std::max)(float(m_screenWidth) - clampedPanelWidth, 1.0f);
+    m_screenViewport.Height = (std::max)(float(m_screenHeight), 1.0f);
+    m_screenViewport.MinDepth = 0.0f;
+    m_screenViewport.MaxDepth = 1.0f;
+}
+
+}
