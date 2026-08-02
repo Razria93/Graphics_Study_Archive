@@ -4,9 +4,9 @@
 
 ## Provenance
 
-- 현재 확인: Chapter05 Step1 Matrix(GLM)·Step2 Lights(GLM)·Step3 DirectXMath·Step4 Lights(SimpleMath), Chapter06 Step1 COM, 2026-08-02
-- 과거 확인: Chapter06 Step2 이후 예제, 문서화 이전(날짜 미기록)
-- 현재 재검증: Chapter05 Step1~4와 Chapter06 Step1 완료, 나머지 필요
+- 현재 확인: Chapter05 Step1 Matrix(GLM)·Step2 Lights(GLM)·Step3 DirectXMath·Step4 Lights(SimpleMath), Chapter06 Step1 COM·Step2 InitializingD3D, 2026-08-02
+- 과거 확인: Chapter06 Step3 이후 예제, 문서화 이전(날짜 미기록)
+- 현재 재검증: Chapter05 Step1–4와 Chapter06 Step1–2 완료, 나머지 필요
 - 근거: 현재 대상의 Debug/Release x64 직접 실행과 Chapter README의 전체 예제 과거 성공 기록
 
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
@@ -16,7 +16,7 @@
 | `05_AffineTransformations_Step3_DirectXMath` | `Part2_Chapter05-08/05_AffineTransformations_Step3_DirectXMath/05_AffineTransformations_Step3_DirectXMath.sln` | 성공 | 성공 | 성공 | 성공 | 제외 | 2026-08-02 현재 확인 · exit code 0 · Debug/Release stdout 24줄 일치 |
 | `05_AffineTransformations_Step4_Lights(SimpleMath)` | `Part2_Chapter05-08/05_AffineTransformations_Step4_Lights(SimpleMath)/05_AffineTransformations_Step4_Lights(SimpleMath).sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · 전체 창 screenshot · 사용자 시각 확인 완료 |
 | `06_GraphicsPipeline_Step1_COM` | `Part2_Chapter05-08/06_GraphicsPipeline_Step1_COM/06_D3D11GraphicsPipeline_Step1_COM.sln` | 성공 | 성공 | 성공 | 성공 | 제외 | 2026-08-02 현재 확인 · exit code 0 · feature level `0xc100` · raw pointer 주소 외 Debug/Release 출력 의미 일치 |
-| `06_GraphicsPipeline_Step2_InitializingD3D` | `Part2_Chapter05-08/06_GraphicsPipeline_Step2_InitializingD3D/06_GraphicsPipeline_Step2_InitializingD3D.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `06_GraphicsPipeline_Step2_InitializingD3D` | `Part2_Chapter05-08/06_GraphicsPipeline_Step2_InitializingD3D/06_GraphicsPipeline_Step2_InitializingD3D.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · exit code 0 · 기본 perspective 전체 창 screenshot · 자동 기술 검수와 사용자 시각 확인 완료 |
 | `06_GraphicsPipeline_Step3_ModelViewProj` | `Part2_Chapter05-08/06_GraphicsPipeline_Step3_ModelViewProj/06_GraphicsPipeline_Step3_ModelViewProj.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `06_GraphicsPipeline_Step4_Shaders` | `Part2_Chapter05-08/06_GraphicsPipeline_Step4_Shaders/06_GraphicsPipeline_Step4_Shaders.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `06_GraphicsPipeline_Step5_Texturing` | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing/06_GraphicsPipeline_Step5_Texturing.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
