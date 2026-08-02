@@ -79,7 +79,7 @@ Spot Light는 Point와 같은 위치·falloff를 유지하고 `direction=(-0.557
 
 - [Part2 Chapter05-08 README](../README.md)
 - [이전 단계: Chapter06 Step5A Texturing LightingSelf](../06_GraphicsPipeline_Step5_Texturing_LightingSelf/README.md)
-- 다음 단계: Chapter06 Step7 ResizingViewport 문서화 대기
+- [다음 단계: Chapter06 Step7 ResizingViewport](../06_GraphicsPipeline_Step7_ResizingViewport/README.md)
 - [Light Types Topic](../../Docs/01_Topics/LightingAndShading/LightTypes.md)
 - [Phong And Blinn-Phong Topic](../../Docs/01_Topics/LightingAndShading/PhongAndBlinnPhong.md)
 - [Texture Sampling Topic](../../Docs/01_Topics/TexturingAndMapping/TextureSampling.md)

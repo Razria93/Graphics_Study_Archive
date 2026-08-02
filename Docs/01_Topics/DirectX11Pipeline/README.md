@@ -21,8 +21,8 @@
 
 - Topic 목록: 작성
 - 상세 Topic 문서: Device And Context, COM And Resource Lifetime, Swap Chain And Viewport, Shader Stage와 Post Processing And Bloom 작성
-- 연결 예제 검토: Part1 Chapter01-02 일부, Part2 Chapter04 Step6, Part2 Chapter05-08 Chapter06 Step1–5A 현재 확인
-- demo 연결: Part1 Chapter01-02 일부, Part2 Chapter04 Step6, Part2 Chapter05-08 Chapter06 Step1–5A 연결
+- 연결 예제 검토: Part1 Chapter01-02 일부, Part2 Chapter04 Step6, Part2 Chapter05-08 Chapter06 Step1–7 현재 확인
+- demo 연결: Part1 Chapter01-02 일부, Part2 Chapter04 Step6, Part2 Chapter05-08 Chapter06 Step1–7 연결
 
 ## 다음 작업
 

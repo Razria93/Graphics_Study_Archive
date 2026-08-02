@@ -17,6 +17,7 @@
 | RD-009 | `Chapter06 Step5 Texturing` input/result | 출처 불명 texture 교체 | 출처 불명 PNG·JPEG를 제거하고 공개용 generated 석재·목재 PNG와 재촬영한 전체 창 capture를 사용 | 완료 | 외부 원문 pixel 복제 없음. Generated input 2개는 1254×1254 RGB PNG이며 C2PA에는 OpenAI 생성 이력만 있다. 개인 식별자·PNG text·EXIF가 없고 Debug/Release x64 load와 capture 2장의 공개 안전성을 확인했다 |
 | RD-010 | `Chapter06 Step5A Texturing LightingSelf` input/result | 출처 불명·미사용 texture 정리 | 출처 불명 texture 2개를 제거하고 Step5에서 검수한 generated 목재 PNG의 동일 바이트 사본과 재촬영한 전체 창 capture를 사용 | 완료 | Step5A와 Step5 목재 input SHA-256 일치. 미사용 texture·shader resource를 제거하고 Debug/Release x64 load, capture 2장의 metadata와 개인 식별자를 확인했다 |
 | RD-011 | `Chapter06 Step6 Lighting` input/result | 출처 불명·미사용 texture 정리 | 출처 불명 PNG·JPEG를 제거하고 Step5·Step5A에서 검수한 generated 목재 PNG의 동일 바이트 사본과 재촬영한 전체 창 capture를 사용 | 완료 | Step6와 Step5·Step5A 목재 input SHA-256 일치. 미사용 texture·shader resource를 제거하고 Debug/Release x64 load, Directional·Point·Spot capture 3장의 metadata와 개인 식별자를 확인했다 |
+| RD-012 | `Chapter06 Step7 ResizingViewport` input/result | 출처 불명·미사용 texture 정리 | 출처 불명 PNG·JPEG와 두 번째 texture resource를 제거하고 Step5·Step5A·Step6에서 검수한 generated 목재 PNG의 동일 바이트 사본과 재촬영한 전체 창 capture를 사용 | 완료 | 네 단계의 목재 input SHA-256 일치. Debug/Release x64 load와 1282×992 capture의 metadata·개인 식별자 부재를 확인했다 |
 
 ## 유형
 

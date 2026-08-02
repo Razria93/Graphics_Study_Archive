@@ -6,7 +6,7 @@
 | --- | --- |
 | Work Unit | `WU-Part2` |
 | 현재 마감 대상 | `Part2_Chapter05-08` Chapter06 순차 정규화 |
-| 후속 코드 범위 | Chapter06 Step7 ResizingViewport부터 Chapter08까지 |
+| 후속 코드 범위 | Chapter06 Step8 ResizingWindow부터 Chapter08까지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -89,3 +89,7 @@
 - Step6의 Debug/Release x64 현재 재검증과 Example·기존 Topic·상세 Demo 정규화를 완료했다.
 - Directional·Point·Spot 전체 창 screenshot 3장의 기술 검사와 사용자 시각 확인을 완료해 tracked capture로 승격했다.
 - Spot은 Point와 같은 위치·falloff에서 `spotPower=16`을 사용해 cone 차이를 응축하고, 세 이산 상태가 구현 차이를 충분히 설명하므로 video를 제외했다.
+- Step7의 panel 기반 viewport 계산, projection aspect 정렬과 Step6 lighting 유지 경로를 정규화했다.
+- 출처 불명 texture 2개와 미사용 두 번째 texture resource를 제거하고 Step5·Step5A·Step6의 generated 목재 PNG와 동일한 사본을 사용했다.
+- Step7 Debug/Release x64 현재 재검증과 전체 창 screenshot의 기술 검사·사용자 승인을 완료했다.
+- Step7은 정적 screenshot으로 panel과 scene 경계를 설명할 수 있어 video를 제외하고, window resize와 dependent resource 재생성은 Step8 책임으로 유지했다.

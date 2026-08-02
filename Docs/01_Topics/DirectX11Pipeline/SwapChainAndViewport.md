@@ -11,7 +11,8 @@ Swap chain은 application의 render buffer와 window presentation을 연결하�
 - Viewport가 clip-space 결과를 render target 영역으로 mapping하는 역할을 설명한다.
 - Step2의 고정 resolution과 API 호출 순서는 [Chapter06 Step2 Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step2_InitializingD3D/README.md)로 위임한다.
 - 구현 흐름과 시각 자료는 `Docs/03_Demos`의 [Chapter06 Step2 Demo](../../03_Demos/Part2_Chapter05-08/06_InitializingD3D.md)로 위임한다.
-- Runtime resize 구현은 Chapter06 Step7·8에서 다룬다.
+- 고정 render target 안의 viewport 분리는 [Chapter06 Step7 Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step7_ResizingViewport/README.md)로 위임한다.
+- Window resize와 dependent resource 재생성은 Chapter06 Step8에서 다룬다.
 - build/run/capture 사실은 `Docs/02_Verification`의 [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)로 위임한다.
 
 ## 개념 흐름
@@ -41,11 +42,15 @@ View는 resource 데이터를 복제하지 않고 pipeline에서 사용할 형�
 
 Viewport는 normalized device coordinate를 render target의 pixel rectangle과 depth range로 mapping한다. Swap chain buffer 크기와 viewport가 같으면 전체 window client area를 사용하고, 더 작은 viewport를 사용하면 render target 일부 영역만 rasterization 대상으로 삼을 수 있다.
 
+`TopLeftX`와 `TopLeftY`는 render target 안에서 viewport가 시작하는 pixel 위치를 정한다. `Width`와 `Height`는 NDC의 X·Y 범위를 mapping할 rectangle 크기를 정하며 `MinDepth`와 `MaxDepth`는 depth mapping 범위를 정한다. Viewport가 좁아졌는데 projection aspect ratio를 이전 값으로 유지하면 geometry가 수평으로 압축되거나 늘어날 수 있으므로 projection도 실제 viewport 비율에 맞춘다.
+
+Viewport 변경은 기존 render target resource의 일부를 rasterization 대상으로 선택하는 상태 변경이다. 같은 back buffer와 depth resource를 유지한 채 UI panel 오른쪽에 scene을 배치할 수 있으며 `RSSetViewports()`로 draw 전에 적용한다. 반대로 window client size가 바뀌면 back buffer와 depth resource 자체가 새 크기와 맞지 않을 수 있어 viewport 변경만으로는 충분하지 않다.
+
 Window 크기가 바뀌면 viewport만 바꾸는 것으로 충분하지 않을 수 있다. Back buffer와 depth resource 크기도 새 client area에 맞춰 재생성해야 하므로 resize는 presentation resource 전체의 lifetime 문제다.
 
 ## 데모 연결
 
-Chapter06 Step2는 고정 client size에서 swap chain, back buffer view, depth resource와 viewport를 만든 뒤 rotating cube frame을 `Present(1, 0)`으로 표시한다. Step7과 Step8은 viewport와 window resize 책임을 별도 단계에서 확장한다.
+Chapter06 Step2는 고정 client size에서 swap chain, back buffer view, depth resource와 viewport를 만든 뒤 rotating cube frame을 `Present(1, 0)`으로 표시한다. Step7은 같은 render target 안에서 ImGui panel 너비만큼 scene viewport를 이동하고 남은 영역의 aspect ratio를 사용한다. Step8은 실제 window resize와 presentation resource 재생성을 별도 책임으로 확장한다.
 
 ## 한계
 
@@ -58,6 +63,7 @@ Chapter06 Step2는 고정 client size에서 swap chain, back buffer view, depth 
 
 - [Chapter06 Step2 InitializingD3D Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step2_InitializingD3D/README.md)
 - [Chapter06 Step2 InitializingD3D Demo](../../03_Demos/Part2_Chapter05-08/06_InitializingD3D.md)
+- [Chapter06 Step7 ResizingViewport Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step7_ResizingViewport/README.md)
 - [Device And Context](DeviceAndContext.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [DirectX11 Pipeline Topic Index](topic-index.md)
