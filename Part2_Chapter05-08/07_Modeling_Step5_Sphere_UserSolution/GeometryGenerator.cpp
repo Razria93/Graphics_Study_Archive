@@ -271,7 +271,7 @@ MeshData GeometryGenerator::MakeSphere(const float radius, const int numSlices,
 	vector<Vertex> &vertices = meshData.vertices;
 	vector<uint16_t> &indices = meshData.indices;
 
-	int offset_half;
+	uint16_t offset_half;
 
 	float numSlices_float = float(numSlices);
 	float numStacks_float = float(numStacks);
@@ -336,7 +336,7 @@ MeshData GeometryGenerator::MakeSphere(const float radius, const int numSlices,
 			}
 		} // Vertex
 
-		offset_half = vertices.size();
+		offset_half = static_cast<uint16_t>(vertices.size());
 
 		// Index
 		for (int j = 0; j < numStacks; j++)
