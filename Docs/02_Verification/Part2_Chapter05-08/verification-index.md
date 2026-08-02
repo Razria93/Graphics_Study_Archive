@@ -4,9 +4,9 @@
 
 ## Provenance
 
-- 현재 확인: Chapter05 Step1 Matrix(GLM)·Step2 Lights(GLM)·Step3 DirectXMath·Step4 Lights(SimpleMath), Chapter06 Step1 COM·Step2 InitializingD3D·Step3 ModelViewProj·Step4 Shaders·Step5 Texturing, 2026-08-02
-- 과거 확인: Chapter06 Step5 Texturing LightingSelf 이후 예제, 문서화 이전(날짜 미기록)
-- 현재 재검증: Chapter05 Step1–4와 Chapter06 Step1–5 완료, 나머지 필요
+- 현재 확인: Chapter05 Step1 Matrix(GLM)·Step2 Lights(GLM)·Step3 DirectXMath·Step4 Lights(SimpleMath), Chapter06 Step1 COM·Step2 InitializingD3D·Step3 ModelViewProj·Step4 Shaders·Step5 Texturing·Step5A Texturing LightingSelf, 2026-08-02
+- 과거 확인: Chapter06 Step6 Lighting 이후 예제, 문서화 이전(날짜 미기록)
+- 현재 재검증: Chapter05 Step1–4와 Chapter06 Step1–5A 완료, 나머지 필요
 - 근거: 현재 대상의 Debug/Release x64 직접 실행과 Chapter README의 전체 예제 과거 성공 기록
 
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
@@ -20,7 +20,7 @@
 | `06_GraphicsPipeline_Step3_ModelViewProj` | `Part2_Chapter05-08/06_GraphicsPipeline_Step3_ModelViewProj/06_GraphicsPipeline_Step3_ModelViewProj.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · Model·View·FOV·aspect와 projection 전환 확인 · screenshot 2장과 selected local video 사용자 승인 완료 |
 | `06_GraphicsPipeline_Step4_Shaders` | `Part2_Chapter05-08/06_GraphicsPipeline_Step4_Shaders/06_GraphicsPipeline_Step4_Shaders.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · title·shader compile·`xSplitPoint` UI 반영 확인 · screenshot 2장 사용자 승인 완료 · video 제외 |
 | `06_GraphicsPipeline_Step5_Texturing` | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing/06_GraphicsPipeline_Step5_Texturing.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · generated texture 2개와 `xSplit` 반영 · 기본/조정 전체 창 screenshot · 사용자 승인 완료 · video 제외 |
-| `06_GraphicsPipeline_Step5_Texturing_LightingSelf` | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf/06_GraphicsPipeline_Step5_Texturing.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `06_GraphicsPipeline_Step5_Texturing_LightingSelf` | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf/06_GraphicsPipeline_Step5_Texturing.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · generated 목재 texture와 point-light shading 반영 · 기본/조정 전체 창 screenshot · 사용자 승인 완료 · video 제외 |
 | `06_GraphicsPipeline_Step6_Lighting` | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting/06_GraphicsPipeline_Step6_Lighting.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `06_GraphicsPipeline_Step7_ResizingViewport` | `Part2_Chapter05-08/06_GraphicsPipeline_Step7_ResizingViewport/06_GraphicsPipeline_Step7_ResizingViewport.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `06_GraphicsPipeline_Step8_ResizingWindow` | `Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow/06_GraphicsPipeline_Step8_ResizingWindow.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
