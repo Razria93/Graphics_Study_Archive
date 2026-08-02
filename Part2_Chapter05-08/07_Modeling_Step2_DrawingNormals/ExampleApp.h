@@ -14,6 +14,7 @@ using DirectX::SimpleMath::Matrix;
 using DirectX::SimpleMath::Vector2;
 using DirectX::SimpleMath::Vector3;
 using DirectX::SimpleMath::Vector4;
+using std::shared_ptr;
 
 
 struct Material {
@@ -92,8 +93,6 @@ class ExampleApp : public AppBase {
 
     ComPtr<ID3D11Texture2D> m_texture;
     ComPtr<ID3D11ShaderResourceView> m_textureResourceView;
-    ComPtr<ID3D11Texture2D> m_texture2;
-    ComPtr<ID3D11ShaderResourceView> m_textureResourceView2;
     ComPtr<ID3D11SamplerState> m_samplerState;
 
     BasicVertexConstantBuffer m_BasicVertexConstantBufferData;
@@ -122,6 +121,6 @@ class ExampleApp : public AppBase {
     shared_ptr<Mesh> m_normalLines;
     NormalVertexConstantBuffer m_normalVertexConstantBufferData;
     bool m_drawNormals = true;
-    float m_scale = 0.2f;
+    float m_scale = 0.4f;
 };
 }

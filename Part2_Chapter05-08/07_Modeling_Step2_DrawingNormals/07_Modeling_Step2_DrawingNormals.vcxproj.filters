@@ -46,10 +46,7 @@
     <None Include="Common.hlsli" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="crate2_diffuse.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="wall.jpg">
+    <Image Include="generated_dark_wood.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

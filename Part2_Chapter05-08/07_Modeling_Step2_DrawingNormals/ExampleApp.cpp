@@ -9,7 +9,9 @@ namespace hlab {
 
 using namespace std;
 
-ExampleApp::ExampleApp() : AppBase(), m_BasicPixelConstantBufferData() {}
+ExampleApp::ExampleApp() : AppBase(), m_BasicPixelConstantBufferData() {
+    m_BasicPixelConstantBufferData.useTexture = false;
+}
 
 bool ExampleApp::Initialize() {
 
@@ -19,9 +21,9 @@ bool ExampleApp::Initialize() {
 
 
 
-    AppBase::CreateTexture("crate2_diffuse.png", m_texture,
-                           m_textureResourceView);
-    AppBase::CreateTexture("wall.jpg", m_texture2, m_textureResourceView2);
+    if (!AppBase::CreateTexture("generated_dark_wood.png", m_texture,
+                                m_textureResourceView))
+        return false;
 
 
     D3D11_SAMPLER_DESC sampDesc;
@@ -35,27 +37,34 @@ bool ExampleApp::Initialize() {
     sampDesc.MaxLOD = D3D11_FLOAT32_MAX;
 
 
-    m_device->CreateSamplerState(&sampDesc, m_samplerState.GetAddressOf());
+    if (FAILED(m_device->CreateSamplerState(&sampDesc,
+                                            m_samplerState.GetAddressOf())))
+        return false;
 
 
     MeshData meshData = GeometryGenerator::MakeBox();
 
     m_mesh = std::make_shared<Mesh>();
 
-    AppBase::CreateVertexBuffer(meshData.vertices, m_mesh->m_vertexBuffer);
+    if (!AppBase::CreateVertexBuffer(meshData.vertices,
+                                     m_mesh->m_vertexBuffer))
+        return false;
     m_mesh->m_indexCount = UINT(meshData.indices.size());
-    AppBase::CreateIndexBuffer(meshData.indices, m_mesh->m_indexBuffer);
+    if (!AppBase::CreateIndexBuffer(meshData.indices, m_mesh->m_indexBuffer))
+        return false;
 
 
     m_BasicVertexConstantBufferData.model = Matrix();
     m_BasicVertexConstantBufferData.view = Matrix();
     m_BasicVertexConstantBufferData.projection = Matrix();
 
-    AppBase::CreateConstantBuffer(m_BasicVertexConstantBufferData,
-                                  m_mesh->m_vertexConstantBuffer);
+    if (!AppBase::CreateConstantBuffer(m_BasicVertexConstantBufferData,
+                                       m_mesh->m_vertexConstantBuffer))
+        return false;
 
-    AppBase::CreateConstantBuffer(m_BasicPixelConstantBufferData,
-                                  m_mesh->m_pixelConstantBuffer);
+    if (!AppBase::CreateConstantBuffer(m_BasicPixelConstantBufferData,
+                                       m_mesh->m_pixelConstantBuffer))
+        return false;
 
     vector<D3D11_INPUT_ELEMENT_DESC> basicInputElements = {
         {"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0,
@@ -66,11 +75,14 @@ bool ExampleApp::Initialize() {
          D3D11_INPUT_PER_VERTEX_DATA, 0},
     };
 
-    AppBase::CreateVertexShaderAndInputLayout(
-        L"BasicVertexShader.hlsl", basicInputElements, m_basicVertexShader,
-        m_basicInputLayout);
+    if (!AppBase::CreateVertexShaderAndInputLayout(
+            L"BasicVertexShader.hlsl", basicInputElements,
+            m_basicVertexShader, m_basicInputLayout))
+        return false;
 
-    AppBase::CreatePixelShader(L"BasicPixelShader.hlsl", m_basicPixelShader);
+    if (!AppBase::CreatePixelShader(L"BasicPixelShader.hlsl",
+                                    m_basicPixelShader))
+        return false;
 
 
 
@@ -98,12 +110,16 @@ bool ExampleApp::Initialize() {
     }
 
 
-    AppBase::CreateVertexBuffer(normalVertices, m_normalLines->m_vertexBuffer);
+    if (!AppBase::CreateVertexBuffer(normalVertices,
+                                     m_normalLines->m_vertexBuffer))
+        return false;
    
 
 
     m_normalLines->m_indexCount = UINT(normalIndices.size()); 
-    AppBase::CreateIndexBuffer(normalIndices, m_normalLines->m_indexBuffer);
+    if (!AppBase::CreateIndexBuffer(normalIndices,
+                                    m_normalLines->m_indexBuffer))
+        return false;
 
 
 
@@ -112,13 +128,20 @@ bool ExampleApp::Initialize() {
     m_normalVertexConstantBufferData.view = Matrix();
     m_normalVertexConstantBufferData.projection = Matrix();
 
-    AppBase::CreateConstantBuffer(m_normalVertexConstantBufferData,
-        m_normalLines->m_vertexConstantBuffer);
+    if (!AppBase::CreateConstantBuffer(
+            m_normalVertexConstantBufferData,
+            m_normalLines->m_vertexConstantBuffer))
+        return false;
    
 
-    AppBase::CreateVertexShaderAndInputLayout(L"NormalVertexShader.hlsl", basicInputElements, m_normalVertexShader,m_basicInputLayout);
+    if (!AppBase::CreateVertexShaderAndInputLayout(
+            L"NormalVertexShader.hlsl", basicInputElements,
+            m_normalVertexShader, m_basicInputLayout))
+        return false;
 
-    AppBase::CreatePixelShader(L"NormalPixelShader.hlsl", m_normalPixelShader);
+    if (!AppBase::CreatePixelShader(L"NormalPixelShader.hlsl",
+                                    m_normalPixelShader))
+        return false;
 
 
     return true;
@@ -245,14 +268,7 @@ void ExampleApp::Update(float dt) {
 }
 
 void ExampleApp::Render() {
-
-
-
-
-
-
-
-    SetViewport();
+    m_context->RSSetViewports(1, &m_screenViewport);
 
     float clearColor[4] = {0.0f, 0.0f, 0.0f, 1.0f};
 
@@ -271,9 +287,9 @@ void ExampleApp::Render() {
     m_context->VSSetConstantBuffers(
         0, 1, m_mesh->m_vertexConstantBuffer.GetAddressOf());
 
-    ID3D11ShaderResourceView *pixelResources[2] = {
-        m_textureResourceView.Get(), m_textureResourceView2.Get()};
-    m_context->PSSetShaderResources(0, 2, pixelResources);
+    ID3D11ShaderResourceView *pixelResources[1] = {
+        m_textureResourceView.Get()};
+    m_context->PSSetShaderResources(0, 1, pixelResources);
     m_context->PSSetSamplers(0, 1, m_samplerState.GetAddressOf());
 
     m_context->PSSetConstantBuffers(
@@ -281,9 +297,9 @@ void ExampleApp::Render() {
     m_context->PSSetShader(m_basicPixelShader.Get(), 0, 0);
 
     if (m_drawAsWire) {
-        m_context->RSSetState(m_wireRasterizerSate.Get());
+        m_context->RSSetState(m_wireRasterizerState.Get());
     } else {
-        m_context->RSSetState(m_solidRasterizerSate.Get());
+        m_context->RSSetState(m_solidRasterizerState.Get());
     }
 
 
@@ -306,16 +322,13 @@ void ExampleApp::Render() {
         m_context->VSSetConstantBuffers(0, 1, m_normalLines->m_vertexConstantBuffer.GetAddressOf());
 
         m_context->PSSetShader(m_normalPixelShader.Get(), 0, 0);
-        m_context->PSSetConstantBuffers(0, 1, m_normalLines->m_pixelConstantBuffer.GetAddressOf());
-
-
-
         m_context->IASetVertexBuffers(0, 1, m_normalLines->m_vertexBuffer.GetAddressOf(), &stride, &offset);
         m_context->IASetIndexBuffer(m_normalLines->m_indexBuffer.Get(), DXGI_FORMAT_R16_UINT, 0);
 
         m_context->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_LINELIST);
         m_context->DrawIndexed(m_normalLines->m_indexCount, 0, 0);
     }
+
 }
 
 void ExampleApp::UpdateGUI() {
