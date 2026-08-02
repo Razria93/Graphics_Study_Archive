@@ -4,9 +4,9 @@
 
 ## Provenance
 
-- 현재 확인: Chapter05 Step1 Matrix(GLM)·Step2 Lights(GLM)·Step3 DirectXMath·Step4 Lights(SimpleMath), Chapter06 Step1 COM·Step2 InitializingD3D·Step3 ModelViewProj·Step4 Shaders·Step5 Texturing·Step5A Texturing LightingSelf·Step6 Lighting·Step7 ResizingViewport·Step8 ResizingWindow, 2026-08-02
-- 과거 확인: Chapter06 Step9 PhongVsBlinnPhong 이후 예제, 문서화 이전(날짜 미기록)
-- 현재 재검증: Chapter05 Step1–4와 Chapter06 Step1–8 완료, 나머지 필요
+- 현재 확인: Chapter05 Step1 Matrix(GLM)·Step2 Lights(GLM)·Step3 DirectXMath·Step4 Lights(SimpleMath), Chapter06 Step1 COM·Step2 InitializingD3D·Step3 ModelViewProj·Step4 Shaders·Step5 Texturing·Step5A Texturing LightingSelf·Step6 Lighting·Step7 ResizingViewport·Step8 ResizingWindow·Step9 PhongVsBlinnPhong, 2026-08-02
+- 과거 확인: Chapter07 Step1 DrawingWireFrames 이후 예제, 문서화 이전(날짜 미기록)
+- 현재 재검증: Chapter05 Step1–4와 Chapter06 Step1–9 완료, 나머지 필요
 - 근거: 현재 대상의 Debug/Release x64 직접 실행과 Chapter README의 전체 예제 과거 성공 기록
 
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
@@ -24,7 +24,7 @@
 | `06_GraphicsPipeline_Step6_Lighting` | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting/06_GraphicsPipeline_Step6_Lighting.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · Directional·Point·Spot 전환과 generated 목재 texture 반영 · 전체 창 screenshot 3장 · 사용자 승인 완료 · video 제외 · 잘못된 CWD exit code `-1` |
 | `06_GraphicsPipeline_Step7_ResizingViewport` | `Part2_Chapter05-08/06_GraphicsPipeline_Step7_ResizingViewport/06_GraphicsPipeline_Step7_ResizingViewport.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · ImGui panel과 scene viewport 분리 · exact title과 generated 목재 texture load · Release 전체 창 screenshot 사용자 승인 완료 |
 | `06_GraphicsPipeline_Step8_ResizingWindow` | `Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow/06_GraphicsPipeline_Step8_ResizingWindow.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · 반복 resize와 minimize/restore · default·wide·compact screenshot 기술·시각 검수 완료 · 기존 recorder 고정 bounds 계약으로 resize video 보류 |
-| `06_GraphicsPipeline_Step9_PhongVsBlinnPhong` | `Part2_Chapter05-08/06_GraphicsPipeline_Step9_PhongVsBlinnPhong/06_GraphicsPipeline_Step9_PhongVsBlinnPhong.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `06_GraphicsPipeline_Step9_PhongVsBlinnPhong` | `Part2_Chapter05-08/06_GraphicsPipeline_Step9_PhongVsBlinnPhong/06_GraphicsPipeline_Step9_PhongVsBlinnPhong.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · 동일 scene·material·shininess 32의 Phong·Blinn-Phong 전환 · 반복 resize와 minimize/restore · 전체 창 screenshot 2장 기술·시각 검수 완료 · video 제외 |
 | `07_Modeling_Step1_DrawingWireFrames` | `Part2_Chapter05-08/07_Modeling_Step1_DrawingWireFrames/07_Modeling_Step1_DrawingWireFrames.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `07_Modeling_Step2_DrawingNormals` | `Part2_Chapter05-08/07_Modeling_Step2_DrawingNormals/07_Modeling_Step2_DrawingNormals.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `07_Modeling_Step3_Grid` | `Part2_Chapter05-08/07_Modeling_Step3_Grid/07_Modeling_Step3_Grid.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
