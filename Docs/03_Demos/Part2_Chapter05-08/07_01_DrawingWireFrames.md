@@ -116,7 +116,7 @@ UI에서 `Wireframe`이 선택되고 `Use Texture`가 해제된 상태를 함께
 
 - [Chapter07 Step1 Example README](../../../Part2_Chapter05-08/07_Modeling_Step1_DrawingWireFrames/README.md)
 - [이전 단계: Chapter06 Step9 Demo](09_PhongVsBlinnPhong.md)
-- 다음 단계: Chapter07 Step2 DrawingNormals 문서화 대기
+- [다음 단계: Chapter07 Step2 DrawingNormals Demo](07_02_DrawingNormals.md)
 - [Mesh Topology And Wireframe Rasterization](../../01_Topics/ModelingAndGeometry/MeshTopologyAndWireframeRasterization.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)

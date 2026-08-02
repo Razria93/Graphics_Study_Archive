@@ -136,4 +136,5 @@ portfolio_raytracer_reflection.png
 - Step1 DrawingWireFrames는 `Wireframe=On`, `Use Texture=Off`와 비스듬한 box rotation을 사용한 전체 창 screenshot 한 장을 확보했다.
 - Box의 세 면과 face별 triangle diagonal, UI 상태와 공개 title을 한 frame에서 확인한다.
 - Step1 video는 fill mode의 고정 결과를 screenshot으로 충분히 설명할 수 있어 제외한다.
-- 다음 Step2 DrawingNormals부터 같은 순차 단위로 capture 필요성을 다시 판정한다.
+- Step2 DrawingNormals는 `Draw Normals=On`, solid surface와 normal line을 함께 담은 전체 창 screenshot 한 장을 확보했다.
+- 다음 Step3 Grid부터 같은 순차 단위로 capture 필요성을 다시 판정한다.
