@@ -9,7 +9,8 @@ cbuffer SamplingPixelConstantData : register(b0)
     float threshold;
     float strength;
     float iTime;
-    float dummy[3];
+    float2 iResolution;
+    float dummy;
 };
 
 
@@ -64,7 +65,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
     float3 orange = float3(0.8, 0.65, 0.3);
     float3 orangeRed = float3(0.8, 0.35, 0.1);
     float time = iTime * 0.1;
-    float aspect = 1280.0 / 960.0;
+    float aspect = iResolution.x / max(iResolution.y, 1.0);
     float2 uv = float2(input.texcoord.x, 1.0 - input.texcoord.y);
     float2 p = -0.5 + uv;
     p.x *= aspect;
@@ -86,8 +87,10 @@ float4 main(PixelShaderInput input) : SV_TARGET
         fVal2 += (0.5 / power) * snoise(coord + float3(0.0, -time, time * 0.2), (power * (25.0) * (newTime2 + 1.0)));
     }
 	
-    float corona = pow(fVal1 * max(1.1 - fade, 0.0), 2.0) * 50.0;
-    corona += pow(fVal2 * max(1.1 - fade, 0.0), 2.0) * 50.0;
+    float coronaBase1 = fVal1 * max(1.1 - fade, 0.0);
+    float coronaBase2 = fVal2 * max(1.1 - fade, 0.0);
+    float corona = coronaBase1 * coronaBase1 * 50.0;
+    corona += coronaBase2 * coronaBase2 * 50.0;
     corona *= 1.2 - newTime1;
     float3 sphereNormal = float3(0.0, 0.0, 1.0);
     float3 dir = float3(0.0, 0.0, 0.0);
@@ -101,7 +104,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
     float f = (1.0 - sqrt(abs(1.0 - r))) / (r) + brightness * 0.5;
     if (dist < radius)
     {
-        corona *= pow(dist * invRadius, 24.0);
+        corona *= pow(max(dist * invRadius, 0.0), 24.0);
         float2 newUv;
         newUv.x = sp.x * f;
         newUv.y = sp.y * f;

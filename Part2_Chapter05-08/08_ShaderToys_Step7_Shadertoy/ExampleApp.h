@@ -23,6 +23,7 @@ class ExampleApp : public AppBase {
     virtual void UpdateGUI() override;
     virtual void Update(float dt) override;
     virtual void Render() override;
+    virtual void OnResize() override;
 
     void BuildFilters();
 
@@ -49,6 +50,7 @@ class ExampleApp : public AppBase {
     int m_visibleMeshIndex = 0; // Sphere, character.
 
     std::vector<shared_ptr<ImageFilter>> m_filters;
+    bool m_filtersInitialized = false;
 
     int m_dirtyflag = 1; // 처음에 한 번 실행
     int m_down = 16;
