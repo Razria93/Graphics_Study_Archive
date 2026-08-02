@@ -151,12 +151,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Common.hlsli" />
-    <None Include="stanford_dragon.stl" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="crate2_diffuse.png" />
-    <Image Include="ojwD8.jpg" />
-    <Image Include="wall.jpg" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="BasicPixelShader.hlsl">
