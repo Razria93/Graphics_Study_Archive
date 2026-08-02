@@ -6,7 +6,7 @@
 | --- | --- |
 | Work Unit | `WU-Part2` |
 | 현재 마감 대상 | `Part2_Chapter05-08` Chapter07 순차 정규화 |
-| 후속 코드 범위 | Chapter07 Step8 SphereMapping UserSolution부터 Chapter08까지 |
+| 후속 코드 범위 | Chapter07 Step8 SphereMapping부터 Chapter08까지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -121,14 +121,14 @@
 - Debug/Release x64 build/run, wide·compact·minimize/restore와 전체 창 Cylinder screenshot을 2026-08-02 현재 확인했다.
 - Step4 video는 정적 wireframe으로 열린 top과 ring·slice topology를 충분히 설명할 수 있어 제외했다.
 - Cap·height subdivision 부재와 taper 시 normal 재계산 필요성, winding의 outward 방향 확인을 구현 한계로 기록했다.
-- Step5는 위·아래 반구를 분리 생성하고 equator에서 결합하는 UserSolution을 공개 정본으로 선정했다.
-- UserSolution은 242 vertices와 380 triangles를 만들고 pole band를 한 triangle씩 마감해 ReferenceSolution의 면적 0 pole triangle 30개를 피한다.
-- ReferenceSolution은 private 비교 근거로만 유지하고 README, 상세 Demo와 tracked capture를 만들지 않는다.
+- Step5는 위·아래 반구를 분리 생성하고 equator에서 결합하는 구현을 공개 정본으로 선정했다.
+- 선정한 구현은 242 vertices와 380 triangles를 만들고 pole band를 한 triangle씩 마감해 면적 0 pole triangle을 피한다.
+- 비교가 끝난 중복 구현은 canonical 정본 확정 단계에서 제거했다.
 - 출처 불명·미사용 texture 3개를 제거하고 검수된 generated wood의 동일 바이트 사본을 runtime 보조 input으로 사용한다.
 - Debug/Release x64 build/run, wide·compact·minimize/restore와 전체 창 Sphere wireframe screenshot을 2026-08-02 현재 확인했다.
 - Step5 video는 정적 wireframe으로 두 반구, equator와 pole topology를 충분히 설명할 수 있어 제외했다.
 - Bottom UV의 wrap sampler 의존과 equator·pole 중복 vertex를 구현 한계로 기록했다.
-- Step5 UserSolution의 380개 triangle winding을 직접 수치 검사해 모두 outward이며 inward·degenerate triangle이 없음을 확인했다.
+- Step5 Sphere의 380개 triangle winding을 직접 수치 검사해 모두 outward이며 inward·degenerate triangle이 없음을 확인했다.
 - Step6은 별도 latitude·longitude seed의 50 triangles를 두 번 1→4 분할하고 각 midpoint를 sphere surface로 projection해 800 triangles를 만든다.
 - Shared midpoint cache가 없는 triangle-soup 구조와 pole의 degenerate triangle 160개, 단순 UV midpoint 보간의 seam 한계를 문서화한다.
 - 출처 불명·미사용 texture 3개와 두 번째 texture resource를 제거하고 검증된 generated wood의 동일 바이트 사본을 runtime 보조 input으로 사용한다.
@@ -140,11 +140,11 @@
 - 출처 불명·미사용 texture 3개와 두 번째 texture resource를 제거하고 검증된 generated wood의 동일 바이트 사본을 runtime 보조 input으로 사용한다.
 - Debug/Release x64 build/run, wide·compact·minimize/restore와 전체 창 FaceNormals screenshot을 2026-08-02 현재 확인한다.
 - Step7 video는 정적 screenshot에서 normal 방향과 분포를 충분히 설명할 수 있어 제외한다.
-- Step8 UserSolution은 20-triangle icosahedron을 세 번 1→4 분할하고 각 midpoint를 sphere surface로 projection해 1280 triangles를 만든다.
+- Step8 SphereMapping은 20-triangle icosahedron을 세 번 1→4 분할하고 각 midpoint를 sphere surface로 projection해 1280 triangles를 만든다.
 - 각 triangle의 spherical UV를 계산하고 U span이 0.5보다 큰 seam triangle에서 triangle-local vertex copy의 U를 0 또는 1로 보정한다.
 - 출처 불명·미사용 texture 3개와 두 번째 texture resource를 제거하고 공개 안전한 generated fictional planet equirectangular PNG를 runtime input으로 사용한다.
 - Debug/Release x64 build/run, wide·compact·minimize/restore, generated texture runtime 결과와 1282×992 전체 창 screenshot을 2026-08-03 현재 확인한다.
-- Step8 ReferenceSolution은 private 비교 근거로만 유지하고 tracked Example·Demo·capture를 만들지 않는다.
+- 비교가 끝난 Step8 중복 구현은 canonical 정본 확정 단계에서 제거했다.
 - Step8 video는 정적 screenshot에서 texture 방향과 seam 결과를 판독할 수 있어 제외한다.
 - Step9는 Assimp scene과 node hierarchy를 순회하고 FBX submesh별 vertex/index buffer와 diffuse texture를 구성한다.
 - Model load 실패, 빈 mesh 결과와 resize resource 실패를 전파하고 Debug/Release x64와 1282×992 전체 창 screenshot을 2026-08-03 현재 확인한다.

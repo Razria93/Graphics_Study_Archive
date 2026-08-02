@@ -53,8 +53,8 @@ Latitude·longitude mapping은 구현이 단순하고 2:1 equirectangular textur
 
 ## 관련 문서
 
-- [Chapter07 Step8 SphereMapping UserSolution Example](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/README.md)
-- [Chapter07 Step8 SphereMapping UserSolution Demo](../../03_Demos/Part2_Chapter05-08/07_08_SphereMappingUserSolution.md)
+- [Chapter07 Step8 SphereMapping Example](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/README.md)
+- [Chapter07 Step8 SphereMapping Demo](../../03_Demos/Part2_Chapter05-08/07_08_SphereMapping.md)
 - [Texture Sampling](TextureSampling.md)
 - [Procedural Primitive Generation](../ModelingAndGeometry/ProceduralPrimitiveGeneration.md)
 - [Vertex And Face Normals](../ModelingAndGeometry/VertexAndFaceNormals.md)

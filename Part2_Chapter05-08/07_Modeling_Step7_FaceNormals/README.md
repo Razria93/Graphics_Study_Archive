@@ -55,4 +55,4 @@ Triangle-soup mesh의 winding으로 face normal을 계산하고, 각 triangle co
 - [Verification](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/07_07_FaceNormals.md)
 - [이전 단계: Chapter07 Step6 Subdivision](../07_Modeling_Step6_Subdivision/README.md)
-- [다음 단계: Chapter07 Step8 SphereMapping UserSolution](../07_Modeling_Step8_SphereMapping_UserSolution/README.md)
+- [다음 단계: Chapter07 Step8 SphereMapping](../07_Modeling_Step8_SphereMapping/README.md)

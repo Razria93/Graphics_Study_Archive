@@ -9,7 +9,7 @@
 - Step6의 midpoint 생성, 1→4 child triangle 구성과 sphere surface projection을 설명한다.
 - 일반적인 procedural primitive 이론은 [Procedural Primitive Generation](../../01_Topics/ModelingAndGeometry/ProceduralPrimitiveGeneration.md)으로 위임한다.
 - Build/run/capture 사실은 [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)로 위임한다.
-- Step5 UserSolution과 다른 sphere 생성 경로임을 구분하고 Step7 FaceNormals의 선행 topology로 연결한다.
+- Step5 Sphere와 다른 sphere 생성 경로임을 구분하고 Step7 FaceNormals의 선행 topology로 연결한다.
 
 ## 결과 미리보기
 
@@ -77,7 +77,7 @@ Wireframe은 seed의 각 triangle이 두 pass를 거치며 16개 child triangle�
 
 ## 구현 범위와 한계
 
-- Step5 UserSolution의 두 반구·pole fan을 세분화하지 않고 별도 위도·경도 seed를 사용한다.
+- Step5 Sphere의 두 반구·pole fan을 세분화하지 않고 별도 위도·경도 seed를 사용한다.
 - Shared edge midpoint를 cache하지 않아 최종 mesh는 2,400개의 triangle-local vertex를 사용한다.
 - 중복 구조는 Step7에서 triangle별 face normal을 넣기 위한 기반으로 유지한다.
 - Pole band의 degenerate triangle 10개는 pass마다 4배로 늘어 최종 160개가 된다.
@@ -104,7 +104,7 @@ Wireframe은 seed의 각 triangle이 두 pass를 거치며 16개 child triangle�
 ## 관련 문서
 
 - [Chapter07 Step6 Subdivision Example](../../../Part2_Chapter05-08/07_Modeling_Step6_Subdivision/README.md)
-- [이전 단계: Chapter07 Step5 Sphere UserSolution Demo](07_05_Sphere.md)
+- [이전 단계: Chapter07 Step5 Sphere Demo](07_05_Sphere.md)
 - [다음 단계: Chapter07 Step7 FaceNormals Demo](07_07_FaceNormals.md)
 - [Procedural Primitive Generation](../../01_Topics/ModelingAndGeometry/ProceduralPrimitiveGeneration.md)
 - [Vertex And Face Normals](../../01_Topics/ModelingAndGeometry/VertexAndFaceNormals.md)

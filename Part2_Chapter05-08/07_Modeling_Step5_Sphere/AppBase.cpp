@@ -216,7 +216,7 @@ bool AppBase::InitMainWindow() {
 
     m_mainWindow = CreateWindow(
         wc.lpszClassName,
-        L"ComputerGraphics - Chapter07 Step5 Sphere UserSolution",
+        L"ComputerGraphics - Chapter07 Step5 Sphere",
                                 WS_OVERLAPPEDWINDOW,
                                 100,
                                 100,

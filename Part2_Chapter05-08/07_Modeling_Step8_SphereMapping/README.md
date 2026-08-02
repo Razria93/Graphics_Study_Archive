@@ -1,4 +1,4 @@
-# Chapter07 Step8 SphereMapping UserSolution
+# Chapter07 Step8 SphereMapping
 
 Icosahedron seed를 반복 세분화해 sphere surface로 투영하고, 위치에서 spherical UV를 계산해 2D texture를 구면에 연결하는 사용자 구현 예제다. Triangle-local vertex 복제로 seam을 보정하며 Step7의 face normal에서 radial smooth normal로 전환한다.
 
@@ -9,7 +9,7 @@ Icosahedron seed를 반복 세분화해 sphere surface로 투영하고, 위치�
 - Shader: `BasicVertexShader.hlsl`, `BasicPixelShader.hlsl`, `NormalVertexShader.hlsl`, `NormalPixelShader.hlsl`
 - Runtime input: `generated_fictional_planet_equirectangular.png`
 - Runtime working directory: project 폴더
-- Application title: `ComputerGraphics - Chapter07 Step8 SphereMapping UserSolution`
+- Application title: `ComputerGraphics - Chapter07 Step8 SphereMapping`
 
 ## Code Map
 
@@ -25,7 +25,7 @@ Icosahedron seed를 반복 세분화해 sphere surface로 투영하고, 위치�
 
 ## Capture/Result
 
-![Chapter07 Step8 SphereMapping UserSolution](../../Docs/_assets/captures/part2_chapter07_08_sphere_mapping_user_solution.png)
+![Chapter07 Step8 SphereMapping](../../Docs/_assets/captures/part2_chapter07_08_sphere_mapping.png)
 
 `Use Texture=On`, `Draw Normals=Off`, `Wireframe=Off` 상태에서 비대칭 대륙·해양과 극지 패턴이 sphere surface에 연결되는지 확인한다.
 
@@ -49,7 +49,6 @@ Icosahedron seed를 반복 세분화해 sphere surface로 투영하고, 위치�
 - Seam triangle은 공유 vertex를 유지하지 않고 outlier vertex를 복제해 U를 0 또는 1로 옮긴다.
 - Pole 전용 U 평균 보정은 구현하지 않는다. Pole에서 복제된 vertex와 wrap sampling 결과는 진단 texture와 capture로 확인한다.
 - Triangle-soup 중복 제거, tangent space, mipmap 생성과 anisotropic filtering은 범위 밖이다.
-- `ReferenceSolution`은 비공개 비교 근거로만 유지하며 이 문서의 구현 정본으로 사용하지 않는다.
 - 다음 Step9은 file 기반 model loading을 다룬다.
 
 ## Related Docs
@@ -58,6 +57,6 @@ Icosahedron seed를 반복 세분화해 sphere surface로 투영하고, 위치�
 - [Texture Sampling](../../Docs/01_Topics/TexturingAndMapping/TextureSampling.md)
 - [Procedural Primitive Generation](../../Docs/01_Topics/ModelingAndGeometry/ProceduralPrimitiveGeneration.md)
 - [Verification](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
-- [상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/07_08_SphereMappingUserSolution.md)
+- [상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/07_08_SphereMapping.md)
 - [이전 단계: Chapter07 Step7 FaceNormals](../07_Modeling_Step7_FaceNormals/README.md)
 - [다음 단계: Chapter07 Step9 ModelFiles](../07_Modeling_Step9_ModelFiles/README.md)

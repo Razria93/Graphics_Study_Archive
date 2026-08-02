@@ -141,16 +141,14 @@ portfolio_raytracer_reflection.png
 - Step3 video는 정적 wireframe 한 장으로 procedural topology를 충분히 설명할 수 있어 제외한다.
 - Step4 Cylinder는 `Wireframe=On`, `Use Texture=Off`, `Draw Normals=Off`로 열린 top과 ring·slice 연결을 담은 전체 창 screenshot 한 장을 확보했다.
 - Step4 video는 정적 wireframe 한 장으로 열린 side surface와 triangle topology를 충분히 설명할 수 있어 제외한다.
-- Step5 Sphere UserSolution은 `Wireframe=On`, `Use Texture=Off`, `Draw Normals=Off`로 두 반구, equator 결합과 pole fan을 담은 전체 창 screenshot 한 장을 확보했다.
-- Step5 ReferenceSolution은 private 비교 근거로만 사용하고 tracked capture를 만들지 않는다.
+- Step5 Sphere는 `Wireframe=On`, `Use Texture=Off`, `Draw Normals=Off`로 두 반구, equator 결합과 pole fan을 담은 전체 창 screenshot 한 장을 확보했다.
 - Step5 video는 정적 wireframe 한 장으로 latitude·longitude·pole topology를 충분히 설명할 수 있어 제외한다.
 - Step6 Subdivision은 `Wireframe=On`, `Use Texture=Off`, `Draw Normals=Off`로 2회 분할한 800-triangle sphere surface를 담은 전체 창 screenshot 한 장을 확보했다.
 - Step6 video는 정적 wireframe 한 장으로 subdivision density와 sphere projection을 충분히 설명할 수 있어 제외한다.
 - Step7 FaceNormals는 `Draw Normals=On`, `Use Texture=Off`, `Wireframe=Off`, `Normal scale=0.1`로 solid surface와 corner 기반 face-normal line을 담은 전체 창 screenshot 한 장을 확보했다.
 - Step7 video는 정지 이미지에서 yellow start와 red endpoint의 방향, UI 상태와 outward 분포를 판독할 수 있어 제외한다.
-- Step8 SphereMapping UserSolution은 generated fictional planet texture를 적용한 1282×992 전체 창 screenshot 한 장을 확보했다.
+- Step8 SphereMapping은 generated fictional planet texture를 적용한 1282×992 전체 창 screenshot 한 장을 확보했다.
 - 한 장에서 texture 방향과 U seam 결과를 판독할 수 있어 같은 bounds의 보조 screenshot은 추가하지 않는다.
-- Step8 ReferenceSolution은 private 비교 근거로만 사용하고 tracked capture를 만들지 않는다.
 - Step9 ModelFiles는 `Use Texture=On`, wireframe·normal 표시 Off 상태의 Zelda FBX 전체 창 screenshot 한 장을 확보했다.
 - Step9 video는 정적 model import와 submesh texture binding을 screenshot 한 장으로 판독할 수 있어 제외한다.
 - Chapter08 Step1 RimLighting은 texture·wireframe·normal 표시 Off, 파란 rim 기본값의 Dragon 전체 창 screenshot 한 장을 확보했다.

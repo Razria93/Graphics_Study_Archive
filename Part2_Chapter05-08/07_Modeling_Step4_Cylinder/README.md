@@ -50,4 +50,4 @@
 - [Verification](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/07_04_Cylinder.md)
 - [이전 단계: Chapter07 Step3](../07_Modeling_Step3_Grid/README.md)
-- [다음 단계: Chapter07 Step5 Sphere UserSolution](../07_Modeling_Step5_Sphere_UserSolution/README.md)
+- [다음 단계: Chapter07 Step5 Sphere](../07_Modeling_Step5_Sphere/README.md)

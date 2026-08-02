@@ -5,8 +5,8 @@
 ## Provenance
 
 - 현재 확인: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1 build/run, 2026-08-03
-- 과거 확인: Chapter07 Step8 ReferenceSolution과 Step9 이후 예제, 문서화 이전(날짜 미기록)
-- 현재 재검증: Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–8 UserSolution 완료
+- 과거 확인: Chapter07 Step9 이후 예제, 문서화 이전(날짜 미기록)
+- 현재 재검증: Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–8 완료
 - 근거: 현재 대상의 Debug/Release x64 직접 실행과 Chapter README의 전체 예제 과거 성공 기록
 
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
@@ -29,12 +29,10 @@
 | `07_Modeling_Step2_DrawingNormals` | `Part2_Chapter05-08/07_Modeling_Step2_DrawingNormals/07_Modeling_Step2_DrawingNormals.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · surface `TRIANGLELIST`와 normal `LINELIST` 분리 · Shader Model 5.0 · wide·compact·minimize/restore · 전체 창 screenshot 검수 완료 · video 제외 |
 | `07_Modeling_Step3_Grid` | `Part2_Chapter05-08/07_Modeling_Step3_Grid/07_Modeling_Step3_Grid.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · 5×3 Grid의 24 vertices·30 triangles · Shader Model 5.0 · wide·compact·minimize/restore · 전체 창 screenshot 검수 완료 · video 제외 |
 | `07_Modeling_Step4_Cylinder` | `Part2_Chapter05-08/07_Modeling_Step4_Cylinder/07_Modeling_Step4_Cylinder.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · 2개 ring·40 slices의 82 vertices·80 triangles · 열린 side surface · Shader Model 5.0 · wide·compact·minimize/restore · 전체 창 screenshot 검수 완료 · video 제외 |
-| `07_Modeling_Step5_Sphere_ReferenceSolution` | `Part2_Chapter05-08/07_Modeling_Step5_Sphere_ReferenceSolution/07_Modeling_Step5_Sphere.sln` | 성공 | 성공 | 성공 | 성공 | 제외 | 2026-08-02 현재 비교 확인 · 전구 단일 stack/slice loop · private reference · capture 미승격 |
-| `07_Modeling_Step5_Sphere_UserSolution` | `Part2_Chapter05-08/07_Modeling_Step5_Sphere_UserSolution/07_Modeling_Step5_Sphere.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · 두 반구의 242 vertices·380 triangles · pole fan으로 degenerate triangle 회피 · Shader Model 5.0 · wide·compact·minimize/restore · 전체 창 screenshot 검수 완료 · video 제외 |
+| `07_Modeling_Step5_Sphere` | `Part2_Chapter05-08/07_Modeling_Step5_Sphere/07_Modeling_Step5_Sphere.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · project 폴더 CWD · 두 반구의 242 vertices·380 triangles · pole fan으로 degenerate triangle 회피 · Shader Model 5.0 · wide·compact·minimize/restore · 중앙 배치 전체 창 screenshot 검수 완료 · video 제외 |
 | `07_Modeling_Step6_Subdivision` | `Part2_Chapter05-08/07_Modeling_Step6_Subdivision/07_Modeling_Step6_Subdivision.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · 36 vertices·50 triangles seed를 2회 분할해 2,400 vertices·800 triangles 생성 · Shader Model 5.0 · wide·compact·반복 resize·minimize/restore · 전체 창 screenshot 검수 완료 · video 제외 |
 | `07_Modeling_Step7_FaceNormals` | `Part2_Chapter05-08/07_Modeling_Step7_FaceNormals/07_Modeling_Step7_FaceNormals.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · non-degenerate 160개 outward·degenerate 40개 · wide·compact·minimize/restore · 전체 창 screenshot · video 제외 |
-| `07_Modeling_Step8_SphereMapping_ReferenceSolution` | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_ReferenceSolution/07_Modeling_Step8_SphereMapping.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `07_Modeling_Step8_SphereMapping_UserSolution` | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/07_Modeling_Step8_SphereMapping.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · project 폴더 CWD · 20→80→320→1,280 triangles · generated fictional planet texture load · wide·compact·minimize/restore · 1282×992 전체 창 capture 확인 |
+| `07_Modeling_Step8_SphereMapping` | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/07_Modeling_Step8_SphereMapping.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · project 폴더 CWD · 20→80→320→1,280 triangles · generated fictional planet texture load · wide·compact·minimize/restore · 1282×992 전체 창 capture 확인 |
 | `07_Modeling_Step9_ModelFiles` | `Part2_Chapter05-08/07_Modeling_Step9_ModelFiles/07_Modeling_Step9_ModelFiles.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · project 폴더 CWD · FBX와 diffuse texture load · resize·minimize/restore · 1282×992 전체 창 screenshot |
 | `08_ShaderToys_Step1_RimLighting` | `Part2_Chapter05-08/08_ShaderToys_Step1_RimLighting/08_ShaderToys_Step1_RimLighting.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · Clean/Rebuild로 Assimp runtime DLL 복원 · rim power/smoothstep · resize·minimize/restore · 1282×992 전체 창 screenshot |
 | `08_ShaderToys_Step2_Cubemapping` | `Part2_Chapter05-08/08_ShaderToys_Step2_Cubemapping/08_ShaderToys_Step2_Cubemapping.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · Clean/Rebuild · rotation-only skybox view · resize·minimize/restore · 1282×992 전체 창 screenshot |

@@ -19,8 +19,8 @@
 
 - Topic 목록: 작성
 - 상세 Topic 문서: Texture Sampling, Spherical Texture Mapping, Cubemap And Environment Mapping 작성
-- 연결 예제 검토: Part1 Step10·14, Part2 Chapter06 Step5와 Chapter07 Step8 UserSolution 현재 확인
-- demo 연결: Part1 Step10·14, Part2 Chapter06 Step5와 Chapter07 Step8 UserSolution 상세 Demo 연결
+- 연결 예제 검토: Part1 Step10·14, Part2 Chapter06 Step5와 Chapter07 Step8 SphereMapping 현재 확인
+- demo 연결: Part1 Step10·14, Part2 Chapter06 Step5와 Chapter07 Step8 SphereMapping 상세 Demo 연결
 
 ## 다음 작업
 

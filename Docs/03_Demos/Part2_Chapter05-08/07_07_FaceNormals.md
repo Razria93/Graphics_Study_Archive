@@ -82,7 +82,7 @@ Solid surface가 뒤쪽 line을 depth test로 가려 전면 face의 방향을 �
 - Face center에서 line 하나를 만들지 않고 triangle corner마다 같은 face normal line을 만든다.
 - Step7 수치 검사는 non-degenerate 160개가 outward, inward 0개, degenerate 40개임을 확인했다.
 - Degenerate face의 zero-length normal은 길이 0 line으로 남는다. Capture에서 NaN, infinite line과 clipping은 관찰되지 않았다.
-- Step5 UserSolution은 별도 geometry를 직접 검사해 380개 triangle이 모두 outward임을 확인했다.
+- Step5 Sphere는 별도 geometry를 직접 검사해 380개 triangle이 모두 outward임을 확인했다.
 - Normal line scale은 가독성을 위한 world-space 값이며 실제 geometry 크기를 뜻하지 않는다.
 - Video는 정지 이미지에서 방향과 분포를 판독할 수 있어 제외한다.
 
@@ -91,7 +91,7 @@ Solid surface가 뒤쪽 line을 depth test로 가려 전면 face의 방향을 �
 - Debug/Release x64 build/run 성공, 2026-08-02 현재 확인
 - Project 폴더 CWD와 generated wood input load 확인
 - Step7 winding: outward 160, inward 0, degenerate 40
-- Step5 UserSolution winding: outward 380, inward 0, degenerate 0
+- Step5 Sphere winding: outward 380, inward 0, degenerate 0
 - Wide·compact resize, minimize/restore와 기본 크기 복원 확인
 - 1282×992 PNG의 full decode, metadata와 시각 결과 확인
 - Generated wood input은 이전 검증 asset과 같은 SHA-256
@@ -108,7 +108,7 @@ Solid surface가 뒤쪽 line을 depth test로 가려 전면 face의 방향을 �
 
 - [Chapter07 Step7 FaceNormals Example](../../../Part2_Chapter05-08/07_Modeling_Step7_FaceNormals/README.md)
 - [이전 단계: Chapter07 Step6 Subdivision Demo](07_06_Subdivision.md)
-- [다음 단계: Chapter07 Step8 SphereMapping UserSolution Demo](07_08_SphereMappingUserSolution.md)
+- [다음 단계: Chapter07 Step8 SphereMapping Demo](07_08_SphereMapping.md)
 - [Vertex And Face Normals](../../01_Topics/ModelingAndGeometry/VertexAndFaceNormals.md)
 - [Procedural Primitive Generation](../../01_Topics/ModelingAndGeometry/ProceduralPrimitiveGeneration.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)

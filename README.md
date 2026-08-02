@@ -33,10 +33,10 @@
 - [Chapter07 Step2 DrawingNormals](Part2_Chapter05-08/07_Modeling_Step2_DrawingNormals/README.md): surface mesh와 vertex normal line의 분리
 - [Chapter07 Step3 Grid](Part2_Chapter05-08/07_Modeling_Step3_Grid/README.md): 분할 파라미터 기반 procedural Grid 생성
 - [Chapter07 Step4 Cylinder](Part2_Chapter05-08/07_Modeling_Step4_Cylinder/README.md): ring·slice 기반 열린 cylinder side surface 생성
-- [Chapter07 Step5 Sphere UserSolution](Part2_Chapter05-08/07_Modeling_Step5_Sphere_UserSolution/README.md): 두 반구와 pole fan을 결합한 사용자 sphere 구현
+- [Chapter07 Step5 Sphere](Part2_Chapter05-08/07_Modeling_Step5_Sphere/README.md): 두 반구와 pole fan을 결합한 sphere 구현
 - [Chapter07 Step6 Subdivision](Part2_Chapter05-08/07_Modeling_Step6_Subdivision/README.md): triangle subdivision과 sphere surface projection
 - [Chapter07 Step7 FaceNormals](Part2_Chapter05-08/07_Modeling_Step7_FaceNormals/README.md): triangle winding과 face-normal diagnostic line
-- [Chapter07 Step8 SphereMapping UserSolution](Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/README.md): icosahedron subdivision과 spherical UV seam 보정
+- [Chapter07 Step8 SphereMapping](Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/README.md): icosahedron subdivision과 spherical UV seam 보정
 
 ## Featured Result
 

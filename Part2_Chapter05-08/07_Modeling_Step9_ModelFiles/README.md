@@ -47,5 +47,5 @@ Assimp로 FBX scene을 읽고 node 계층의 transform을 누적해 여러 subme
 - [상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/07_09_ModelFiles.md)
 - [Model File Import](../../Docs/01_Topics/ModelingAndGeometry/ModelFileImport.md)
 - [Verification](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
-- [이전 단계: Step8 SphereMapping UserSolution](../07_Modeling_Step8_SphereMapping_UserSolution/README.md)
+- [이전 단계: Step8 SphereMapping](../07_Modeling_Step8_SphereMapping/README.md)
 - [다음 단계: Chapter08 Step1 RimLighting](../08_ShaderToys_Step1_RimLighting/README.md)

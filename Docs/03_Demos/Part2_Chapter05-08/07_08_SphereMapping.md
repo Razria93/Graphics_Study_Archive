@@ -1,4 +1,4 @@
-# Chapter07 Step8 SphereMapping UserSolution Demo
+# Chapter07 Step8 SphereMapping Demo
 
 ## 목적
 
@@ -6,16 +6,15 @@ Icosahedron subdivision으로 만든 sphere에 spherical UV를 계산하고, U s
 
 ## 책임 범위
 
-- UserSolution의 icosahedron seed, 3회 subdivision, sphere projection과 radial normal을 설명한다.
+- Icosahedron seed, 3회 subdivision, sphere projection과 radial normal을 설명한다.
 - Longitude·latitude UV와 U seam vertex 복제의 구현 선택을 설명한다.
 - 일반적인 구면 parameterization은 [Spherical Texture Mapping](../../01_Topics/TexturingAndMapping/SphericalTextureMapping.md)으로 위임한다.
 - Texture sampling 설정은 [Texture Sampling](../../01_Topics/TexturingAndMapping/TextureSampling.md)으로 위임한다.
 - Build/run/capture 사실은 [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)로 위임한다.
-- ReferenceSolution은 비교 근거로만 사용하고 public Demo 정본에 포함하지 않는다.
 
 ## 결과 미리보기
 
-![Chapter07 Step8 SphereMapping UserSolution](../../_assets/captures/part2_chapter07_08_sphere_mapping_user_solution.png)
+![Chapter07 Step8 SphereMapping](../../_assets/captures/part2_chapter07_08_sphere_mapping.png)
 
 ## 입력과 출력
 
@@ -62,7 +61,7 @@ ProjectToSphere(vertex, radius)
 }
 ```
 
-- [Sphere projection, radial normal과 spherical UV 계산](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/GeometryGenerator.cpp#L416-L445)
+- [Sphere projection, radial normal과 spherical UV 계산](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/GeometryGenerator.cpp#L416-L445)
 
 ### Triangle-local seam 보정
 
@@ -83,7 +82,7 @@ AppendSeamSafeTriangle(a, b, c)
 }
 ```
 
-- [U 차이 판정과 outlier vertex 복제](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/GeometryGenerator.cpp#L448-L530)
+- [U 차이 판정과 outlier vertex 복제](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/GeometryGenerator.cpp#L448-L530)
 
 ### 반복 subdivision
 
@@ -102,8 +101,8 @@ SubdivideTriangle(v0, v1, v2)
 }
 ```
 
-- [Midpoint 생성과 네 child triangle 구성](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/GeometryGenerator.cpp#L532-L572)
-- [Icosahedron seed와 3회 subdivision](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/ExampleApp.cpp#L43-L50)
+- [Midpoint 생성과 네 child triangle 구성](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/GeometryGenerator.cpp#L532-L572)
+- [Icosahedron seed와 3회 subdivision](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/ExampleApp.cpp#L43-L50)
 
 ## 시각 결과
 
@@ -111,14 +110,13 @@ SubdivideTriangle(v0, v1, v2)
 
 ## 구현 범위와 한계
 
-- UserSolution은 20-triangle icosahedron을 세 번 세분화해 1,280 triangle을 만든다.
+- SphereMapping은 20-triangle icosahedron을 세 번 세분화해 1,280 triangle을 만든다.
 - Subdivision 결과는 shared indexed mesh가 아니라 triangle-local 3,840 vertex 구조다.
 - Normal은 projected position에서 만든 radial smooth normal이며 Step7 face normal을 사용하지 않는다.
 - Seam 보정은 U span이 0.5를 넘는 triangle의 outlier vertex만 U=0 또는 1로 복제한다.
 - 별도 pole correction은 구현하지 않는다. Pole position은 주변 triangle에 따라 여러 U로 복제될 수 있다.
 - Midpoint UV 평균은 sphere projection 뒤 다시 계산되므로 최종 UV의 직접 근거가 아니다.
 - Tangent space, mipmap 생성, anisotropic filtering과 vertex deduplication은 범위 밖이다.
-- ReferenceSolution의 2회 subdivision과 음수 U 범위는 비교 근거일 뿐 UserSolution 결과에 합치지 않는다.
 
 ## 검증
 
@@ -133,17 +131,17 @@ SubdivideTriangle(v0, v1, v2)
 
 ## 관련 코드
 
-- [Icosahedron seed topology](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/GeometryGenerator.cpp#L333-L366)
-- [Sphere projection과 spherical UV](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/GeometryGenerator.cpp#L416-L445)
-- [Triangle-local U seam 보정](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/GeometryGenerator.cpp#L448-L530)
-- [반복 subdivision과 child triangle 구성](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/GeometryGenerator.cpp#L532-L572)
-- [Generated texture와 3회 subdivision](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/ExampleApp.cpp#L20-L54)
-- [Surface와 optional normal draw 분리](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/ExampleApp.cpp#L237-L287)
-- [Resize resource lifetime](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/AppBase.cpp#L530-L555)
+- [Icosahedron seed topology](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/GeometryGenerator.cpp#L333-L366)
+- [Sphere projection과 spherical UV](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/GeometryGenerator.cpp#L416-L445)
+- [Triangle-local U seam 보정](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/GeometryGenerator.cpp#L448-L530)
+- [반복 subdivision과 child triangle 구성](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/GeometryGenerator.cpp#L532-L572)
+- [Generated texture와 3회 subdivision](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/ExampleApp.cpp#L20-L54)
+- [Surface와 optional normal draw 분리](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/ExampleApp.cpp#L237-L287)
+- [Resize resource lifetime](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/AppBase.cpp#L530-L555)
 
 ## 관련 문서
 
-- [Chapter07 Step8 SphereMapping UserSolution Example](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/README.md)
+- [Chapter07 Step8 SphereMapping Example](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/README.md)
 - [이전 단계: Chapter07 Step7 FaceNormals Demo](07_07_FaceNormals.md)
 - [다음 단계: Chapter07 Step9 ModelFiles Demo](07_09_ModelFiles.md)
 - [Spherical Texture Mapping](../../01_Topics/TexturingAndMapping/SphericalTextureMapping.md)

@@ -1,4 +1,4 @@
-# Chapter07 Step5 Sphere UserSolution
+# Chapter07 Step5 Sphere
 
 위·아래 반구를 별도로 생성하고 equator에서 결합해 sphere mesh를 만드는 사용자 구현이다. 각 반구의 pole band를 triangle fan 형태로 마감해 일반 quad 분할에서 생길 수 있는 면적 0 pole triangle을 피한다.
 
@@ -9,7 +9,7 @@
 - Shader: `BasicVertexShader.hlsl`, `BasicPixelShader.hlsl`, `NormalVertexShader.hlsl`, `NormalPixelShader.hlsl`
 - Runtime input: `generated_dark_wood.png`
 - Runtime working directory: project 폴더
-- Application title: `ComputerGraphics - Chapter07 Step5 Sphere UserSolution`
+- Application title: `ComputerGraphics - Chapter07 Step5 Sphere`
 
 ## Code Map
 
@@ -23,7 +23,7 @@
 
 ## Capture/Result
 
-![Chapter07 Step5 Sphere UserSolution](../../Docs/_assets/captures/part2_chapter07_05_sphere_user_solution.png)
+![Chapter07 Step5 Sphere](../../Docs/_assets/captures/part2_chapter07_05_sphere.png)
 
 `Wireframe=On`, `Use Texture=Off`, `Draw Normals=Off` 상태에서 두 반구의 latitude ring, longitude slice, equator 결합과 pole fan을 확인한다.
 
