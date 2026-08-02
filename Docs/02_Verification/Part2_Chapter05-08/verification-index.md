@@ -42,7 +42,7 @@
 | `08_ShaderToys_Step4_ImageBasedLighting` | `Part2_Chapter05-08/08_ShaderToys_Step4_ImageBasedLighting/08_ShaderToys_Step4_ImageBasedLighting.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · diffuse/specular IBL · Clean/Rebuild와 runtime preflight · resize·minimize/restore · 1282×992 screenshot |
 | `08_ShaderToys_Step5_FresnelEffect` | `Part2_Chapter05-08/08_ShaderToys_Step5_FresnelEffect/08_ShaderToys_Step5_FresnelEffect.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · Schlick Fresnel과 Stonewall IBL · Clean/Rebuild와 runtime DLL 확인 · resize·minimize/restore · 1282×992 screenshot · 오류창 수동 종료 개입 기록 |
 | `08_ShaderToys_Step6_BloomEffect` | `Part2_Chapter05-08/08_ShaderToys_Step6_BloomEffect/08_ShaderToys_Step6_BloomEffect.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · GPU threshold/downsample/blur/composite · Clean/Rebuild · wide·compact resize와 minimize/restore · 1282×992 screenshot |
-| `08_ShaderToys_Step7_Shadertoy` | `Part2_Chapter05-08/08_ShaderToys_Step7_Shadertoy/08_ShaderToys_Step7_Shadertoy.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `08_ShaderToys_Step7_Shadertoy` | `Part2_Chapter05-08/08_ShaderToys_Step7_Shadertoy/08_ShaderToys_Step7_Shadertoy.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · Star shader time·resolution·texture channel · Clean/Rebuild · wide·compact resize와 minimize/restore · 1282×992 screenshot · 9.83초 selected local video |
 
 ## 갱신 기준
 
