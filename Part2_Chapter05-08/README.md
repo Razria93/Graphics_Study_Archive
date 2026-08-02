@@ -85,6 +85,6 @@ Chapter06은 Direct3D interface lifetime에서 시작해 window, device resource
 | [`08_ShaderToys_Step2_Cubemapping`](08_ShaderToys_Step2_Cubemapping/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
 | [`08_ShaderToys_Step3_EnvironmentMapping`](08_ShaderToys_Step3_EnvironmentMapping/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
 | [`08_ShaderToys_Step4_ImageBasedLighting`](08_ShaderToys_Step4_ImageBasedLighting/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
-| `08_ShaderToys_Step5_FresnelEffect` | 코드 보관 완료 및 현재 문서화 대기 |
+| [`08_ShaderToys_Step5_FresnelEffect`](08_ShaderToys_Step5_FresnelEffect/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
 | `08_ShaderToys_Step6_BloomEffect` | 코드 보관 완료 및 현재 문서화 대기 |
 | `08_ShaderToys_Step7_Shadertoy` | 코드 보관 완료 및 현재 문서화 대기 |

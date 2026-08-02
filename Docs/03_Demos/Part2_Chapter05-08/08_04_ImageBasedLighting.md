@@ -70,7 +70,7 @@ Atrium 환경이 배경과 sphere highlight에 함께 나타나고, normal 방�
 
 - [Step4 Example](../../../Part2_Chapter05-08/08_ShaderToys_Step4_ImageBasedLighting/README.md)
 - [이전 단계: Step3 Demo](08_03_EnvironmentMapping.md)
-- 다음 단계: Step5 FresnelEffect
+- [다음 단계: Chapter08 Step5 FresnelEffect](08_05_FresnelEffect.md)
 - [Image Based Lighting](../../01_Topics/LightingAndShading/ImageBasedLighting.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)

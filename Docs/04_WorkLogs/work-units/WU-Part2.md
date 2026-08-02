@@ -169,3 +169,6 @@
 - Step4는 diffuse irradiance와 specular environment cubemap을 sphere lighting에 결합한다.
 - Shader scalar type과 `pow` 입력 범위를 명시하고 Debug/Release Clean/Rebuild, runtime preflight, resize와 1282×992 screenshot을 확인한다.
 - Atrium cubemap과 surface texture 권리 근거가 충분하지 않아 Publication은 `검토 필요`로 둔다.
+- Step5는 Step4 IBL에 Schlick Fresnel factor와 `fresnelR0` UI를 추가한다.
+- Fresnel 주석의 정면·grazing angle 설명을 바로잡고 Debug/Release Clean/Rebuild, runtime DLL, resize와 1282×992 screenshot을 확인한다.
+- Assimp 오류창은 사용자가 수동 종료했음을 기록하고 Stonewall cubemap과 surface texture 권리 근거가 충분하지 않아 Publication은 `검토 필요`로 둔다.
