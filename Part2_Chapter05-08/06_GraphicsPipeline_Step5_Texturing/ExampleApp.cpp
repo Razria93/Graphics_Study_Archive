@@ -176,11 +176,11 @@ bool ExampleApp::Initialize() {
     
     
     
-    if (!AppBase::CreateTexture("crate2_diffuse.png", m_texture_0,
+    if (!AppBase::CreateTexture("generated_dark_wood.png", m_texture_0,
                                 m_textureResourceView_0))
         return false;
 
-    if (!AppBase::CreateTexture("wall.jpg", m_texture_1,
+    if (!AppBase::CreateTexture("generated_stone_tiles.png", m_texture_1,
                                 m_textureResourceView_1))
         return false;
 
