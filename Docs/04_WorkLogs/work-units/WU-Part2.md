@@ -140,3 +140,9 @@
 - 출처 불명·미사용 texture 3개와 두 번째 texture resource를 제거하고 검증된 generated wood의 동일 바이트 사본을 runtime 보조 input으로 사용한다.
 - Debug/Release x64 build/run, wide·compact·minimize/restore와 전체 창 FaceNormals screenshot을 2026-08-02 현재 확인한다.
 - Step7 video는 정적 screenshot에서 normal 방향과 분포를 충분히 설명할 수 있어 제외한다.
+- Step8 UserSolution은 20-triangle icosahedron을 세 번 1→4 분할하고 각 midpoint를 sphere surface로 projection해 1280 triangles를 만든다.
+- 각 triangle의 spherical UV를 계산하고 U span이 0.5보다 큰 seam triangle에서 triangle-local vertex copy의 U를 0 또는 1로 보정한다.
+- 출처 불명·미사용 texture 3개와 두 번째 texture resource를 제거하고 공개 안전한 generated fictional planet equirectangular PNG를 runtime input으로 사용한다.
+- Debug/Release x64 build/run, wide·compact·minimize/restore, generated texture runtime 결과와 1282×992 전체 창 screenshot을 2026-08-03 현재 확인한다.
+- Step8 ReferenceSolution은 private 비교 근거로만 유지하고 tracked Example·Demo·capture를 만들지 않는다.
+- Step8 video는 정적 screenshot에서 texture 방향과 seam 결과를 판독할 수 있어 제외한다.

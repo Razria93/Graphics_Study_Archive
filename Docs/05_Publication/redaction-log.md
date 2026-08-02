@@ -28,6 +28,7 @@
 | RD-019 | `Chapter07 Step5 Sphere UserSolution` input/result | 출처 불명·미사용 texture 정리 | 출처 불명 PNG·JPEG 3개와 미사용 두 번째 texture resource를 제거하고 이전 단계에서 검수한 generated 목재 PNG의 동일 바이트 사본과 재촬영한 전체 창 capture를 사용 | 완료 | 열한 단계의 목재 input SHA-256 일치. Debug/Release x64 load, resize·minimize/restore와 capture metadata·개인 식별자 부재를 확인했다. ReferenceSolution은 private 비교 근거로 유지한다 |
 | RD-020 | `Chapter07 Step6 Subdivision` input/result | 출처 불명·미사용 texture 정리 | 출처 불명 PNG·JPEG 3개와 미사용 두 번째 texture resource를 제거하고 이전 단계에서 검수한 generated 목재 PNG의 동일 바이트 사본과 재촬영한 전체 창 capture를 사용 | 완료 | 열두 단계의 목재 input SHA-256 일치. Debug/Release x64 load, resize·minimize/restore와 capture metadata·개인 식별자 부재를 확인했다 |
 | RD-021 | `Chapter07 Step7 FaceNormals` input/result | 출처 불명·미사용 texture 정리 | 출처 불명 PNG·JPEG 3개와 미사용 두 번째 texture resource를 제거하고 이전 단계에서 검수한 generated 목재 PNG의 동일 바이트 사본과 재촬영한 전체 창 capture를 사용 | 완료 | 열세 단계의 목재 input SHA-256 일치. Debug/Release x64 load, winding 수치 검사, resize·minimize/restore와 capture metadata·개인 식별자 부재를 확인했다 |
+| RD-022 | `Chapter07 Step8 SphereMapping UserSolution` input/result | 출처 불명·미사용 texture 정리 | 출처 불명 PNG·JPEG 3개와 미사용 두 번째 texture resource를 제거하고 generated fictional planet 2:1 equirectangular PNG와 전체 창 capture를 사용 | 완료 | Debug/Release x64 load와 runtime visual을 확인했다. Input은 1774×887, capture는 1282×992다. Capture에 PNG text·EXIF·XMP·trailing data와 개인 식별자가 없다 |
 
 ## 유형
 
