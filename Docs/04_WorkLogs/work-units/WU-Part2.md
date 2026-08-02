@@ -158,3 +158,7 @@
 - Debug/Release x64, Assimp runtime dependency Clean/Rebuild, resize·minimize/restore와 1282×992 전체 창 screenshot을 2026-08-03 현재 확인한다.
 - 사용하지 않는 root image 3개를 제거했으며 Stanford Dragon은 실행 근거로 유지한다.
 - Dragon asset 권리 근거가 충분하지 않아 Publication은 `검토 필요`로 유지하고 video는 제외한다.
+- Step2는 DDS texture cube, 내부 면 skybox와 rotation-only view를 사용해 camera 주변 배경을 그린다.
+- Debug/Release x64 Clean/Rebuild, Assimp·DirectXTK runtime dependency, resize·minimize/restore와 1282×992 전체 창 screenshot을 2026-08-03 현재 확인한다.
+- 사용하지 않는 root asset 4개를 제거했으며 Zelda FBX와 skybox DDS는 실행 근거로 유지한다.
+- Zelda와 skybox asset 권리 근거가 충분하지 않아 Publication은 `검토 필요`로 유지하고 video는 제외한다.

@@ -46,4 +46,4 @@ Surface normal과 eye direction의 각도 차이를 사용해 silhouette 주변�
 - [Rim Lighting](../../Docs/01_Topics/LightingAndShading/RimLighting.md)
 - [Verification](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [이전 단계: Chapter07 Step9 ModelFiles](../07_Modeling_Step9_ModelFiles/README.md)
-- 다음 단계: Chapter08 Step2 Cubemapping
+- [다음 단계: Chapter08 Step2 Cubemapping](../08_ShaderToys_Step2_Cubemapping/README.md)
