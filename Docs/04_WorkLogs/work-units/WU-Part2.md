@@ -6,7 +6,7 @@
 | --- | --- |
 | Work Unit | `WU-Part2` |
 | 현재 마감 대상 | `Part2_Chapter05-08` Chapter07 순차 정규화 |
-| 후속 코드 범위 | Chapter07 Step4 Cylinder부터 Chapter08까지 |
+| 후속 코드 범위 | Chapter07 Step5 Sphere 변형부터 Chapter08까지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -116,3 +116,8 @@
 - 출처 불명 texture 3개를 제거하고 검수된 generated wood의 동일 바이트 사본을 runtime 보조 input으로 사용한다.
 - Debug/Release x64 build/run, wide·compact·minimize/restore와 전체 창 Grid screenshot을 2026-08-02 현재 확인했다.
 - Step3 video는 정적 wireframe으로 cell 분할과 triangle topology를 충분히 설명할 수 있어 제외했다.
+- Step4는 2개 ring과 40 slices로 82개 vertex와 80개 triangle의 열린 Cylinder side surface를 절차적으로 생성한다.
+- 출처 불명 texture 2개를 제거하고 검수된 generated wood의 동일 바이트 사본을 runtime 보조 input으로 사용한다.
+- Debug/Release x64 build/run, wide·compact·minimize/restore와 전체 창 Cylinder screenshot을 2026-08-02 현재 확인했다.
+- Step4 video는 정적 wireframe으로 열린 top과 ring·slice topology를 충분히 설명할 수 있어 제외했다.
+- Cap·height subdivision 부재와 taper 시 normal 재계산 필요성, winding의 outward 방향 확인을 구현 한계로 기록했다.

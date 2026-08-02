@@ -24,6 +24,7 @@
 | RD-015 | `Chapter07 Step1 DrawingWireFrames` input/result | 출처 불명·미사용 texture 정리 | 출처 불명 PNG·JPEG와 두 번째 texture resource를 제거하고 Chapter06 Step5–9에서 검수한 generated 목재 PNG의 동일 바이트 사본과 재촬영한 전체 창 capture를 사용 | 완료 | 일곱 단계의 목재 input SHA-256 일치. Debug/Release x64 load, 반복 resize·minimize/restore와 capture metadata·개인 식별자 부재를 확인했다 |
 | RD-016 | `Chapter07 Step2 DrawingNormals` input/result | 출처 불명·미사용 texture 정리 | 출처 불명 PNG·JPEG와 두 번째 texture resource를 제거하고 Chapter06 Step5–9와 Chapter07 Step1에서 검수한 generated 목재 PNG의 동일 바이트 사본과 재촬영한 전체 창 capture를 사용 | 완료 | 여덟 단계의 목재 input SHA-256 일치. Debug/Release x64 load, 반복 resize·minimize/restore와 capture metadata·개인 식별자 부재를 확인했다 |
 | RD-017 | `Chapter07 Step3 Grid` input/result | 출처 불명·미사용 texture 정리 | 출처 불명 PNG·JPEG를 제거하고 Chapter06 Step5–9와 Chapter07 Step1–2에서 검수한 generated 목재 PNG의 동일 바이트 사본과 재촬영한 전체 창 capture를 사용 | 완료 | 아홉 단계의 목재 input SHA-256 일치. Debug/Release x64 load, resize·minimize/restore와 capture metadata·개인 식별자 부재를 확인했다 |
+| RD-018 | `Chapter07 Step4 Cylinder` input/result | 출처 불명·미사용 texture 정리 | 출처 불명 PNG·JPEG를 제거하고 Chapter06 Step5–9와 Chapter07 Step1–3에서 검수한 generated 목재 PNG의 동일 바이트 사본과 재촬영한 전체 창 capture를 사용 | 완료 | 열 단계의 목재 input SHA-256 일치. Debug/Release x64 load, resize·minimize/restore와 capture metadata·개인 식별자 부재를 확인했다 |
 
 ## 유형
 

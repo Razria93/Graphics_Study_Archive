@@ -9,7 +9,7 @@ Procedural primitive generation은 크기와 분할 수 같은 파라미터로 v
 - Primitive 파라미터에서 vertex attribute와 index topology를 계산하는 일반 원리를 설명한다.
 - 개별 DirectX11 resource 생성과 draw 호출은 각 Example README로 위임한다.
 - Build/run/capture 사실은 `Docs/02_Verification`의 [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)로 위임한다.
-- 구현 흐름과 시각 자료는 `Docs/03_Demos`의 [Chapter07 Step3 Demo](../../03_Demos/Part2_Chapter05-08/07_03_Grid.md)로 위임한다.
+- 구현 흐름과 시각 자료는 `Docs/03_Demos`의 [Chapter07 Step3 Demo](../../03_Demos/Part2_Chapter05-08/07_03_Grid.md)와 [Chapter07 Step4 Demo](../../03_Demos/Part2_Chapter05-08/07_04_Cylinder.md)로 위임한다.
 
 ## 핵심 개념
 
@@ -41,11 +41,13 @@ Geometry generator는 CPU-side vertex와 index 목록을 만든다. GPU buffer �
 
 - 이 문서는 생성 규칙과 자료 구조를 설명하며 개별 DirectX11 resource 호출은 Example README로 위임한다.
 - 16-bit index를 사용하면 표현 가능한 vertex index 범위를 넘지 않도록 입력 범위를 제한해야 한다.
-- Seam, pole 중복, tangent 생성과 subdivision은 primitive별 후속 단계에서 다룬다.
+- Seam, pole 중복, tangent 생성과 subdivision은 primitive별 Example과 상세 Demo에서 다룬다.
 
 ## 관련 문서
 
 - [Chapter07 Step3 Grid Example](../../../Part2_Chapter05-08/07_Modeling_Step3_Grid/README.md)
 - [Chapter07 Step3 Grid Demo](../../03_Demos/Part2_Chapter05-08/07_03_Grid.md)
+- [Chapter07 Step4 Cylinder Example](../../../Part2_Chapter05-08/07_Modeling_Step4_Cylinder/README.md)
+- [Chapter07 Step4 Cylinder Demo](../../03_Demos/Part2_Chapter05-08/07_04_Cylinder.md)
 - [Mesh Topology And Wireframe Rasterization](MeshTopologyAndWireframeRasterization.md)
 - [Vertex And Face Normals](VertexAndFaceNormals.md)

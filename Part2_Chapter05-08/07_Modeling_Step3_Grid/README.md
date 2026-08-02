@@ -49,4 +49,4 @@
 - [Verification](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/07_03_Grid.md)
 - [이전 단계: Chapter07 Step2](../07_Modeling_Step2_DrawingNormals/README.md)
-- 다음 단계: `07_Modeling_Step4_Cylinder`
+- [다음 단계: Chapter07 Step4](../07_Modeling_Step4_Cylinder/README.md)
