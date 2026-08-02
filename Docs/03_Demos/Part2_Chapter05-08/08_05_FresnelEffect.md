@@ -85,7 +85,7 @@ Stonewall environment가 sphere에 반사되며 view angle과 `fresnelR0`에 따
 
 - [Chapter08 Step5 FresnelEffect Example](../../../Part2_Chapter05-08/08_ShaderToys_Step5_FresnelEffect/README.md)
 - [이전 단계: Chapter08 Step4 ImageBasedLighting Demo](08_04_ImageBasedLighting.md)
-- 다음 단계: Chapter08 Step6 BloomEffect
+- [다음 단계: Chapter08 Step6 BloomEffect](08_06_BloomEffect.md)
 - [Fresnel Reflectance](../../01_Topics/LightingAndShading/FresnelReflectance.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)

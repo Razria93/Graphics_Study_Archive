@@ -2,11 +2,11 @@
 
 ## 목적
 
-이 문서는 `02_Bloom` 예제를 기준으로 bloom 후처리의 개념과 DirectX11 texture 표시 흐름을 정리한다. `02_Bloom`은 GPU shader pass로 bloom을 계산하는 구조가 아니라, CPU에서 bloom 결과 이미지를 만든 뒤 DirectX11 texture로 업로드해 표시하는 구조다.
+이 문서는 bloom 후처리의 개념과 CPU image-processing 결과 표시, GPU multi-pass 구현 흐름을 정리한다. `02_Bloom`은 CPU에서 결과를 만든 뒤 dynamic texture로 표시하고 Chapter08 Step6은 scene render target을 GPU threshold·blur·composite pass에 연결한다.
 
 ## 책임 범위
 
-이 Topic 문서는 bloom과 dynamic texture upload의 개념, pipeline 위치, 여러 예제로 확장 가능한 설명을 맡는다. `02_Bloom`의 build/run 상태, capture/result, 파일별 구현 요약은 코드 폴더 README와 Verification/Demo 문서를 기준으로 확인한다.
+이 Topic 문서는 bloom, dynamic texture upload와 GPU post-processing pass의 공통 개념을 맡는다. 각 예제의 build/run 상태, capture/result와 파일별 구현은 Example README와 Verification/Demo 문서로 위임한다.
 
 ## 개념 흐름
 
@@ -38,11 +38,10 @@ CPU에서 계산한 픽셀은 `D3D11_USAGE_DYNAMIC` texture에 `Map/Unmap`으로
 
 ## 데모 연결
 
-`02_Bloom`은 original input과 bloom result를 비교해 bright-pass, blur, 합성의 시각적 차이를 보여준다. 코드 탐색은 Example README로 연결하고, 함수별 구현 흐름과 dynamic texture upload, capture/result는 상세 Demo에서 설명한다.
+`02_Bloom`은 original input과 CPU bloom result를 비교한다. Chapter08 Step6은 scene back buffer를 threshold, multi-resolution blur와 original composite GPU pass에 연결한다.
 
 ## 한계
 
-- 현재 예제는 GPU multi-pass post-processing pipeline이 아니다.
 - HDR render target, tone mapping, emissive material 기반 bloom까지 다루지는 않는다.
 
 ## 관련 문서
@@ -50,3 +49,5 @@ CPU에서 계산한 픽셀은 `D3D11_USAGE_DYNAMIC` texture에 `Map/Unmap`으로
 - Example: [`Part1_Chapter01-02/02_Bloom/README.md`](../../../Part1_Chapter01-02/02_Bloom/README.md)
 - Verification: [`Docs/02_Verification/Part1_Chapter01-02/verification-index.md`](../../02_Verification/Part1_Chapter01-02/verification-index.md)
 - Demo: [`Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md`](../../03_Demos/Part1_Chapter01-02/02_Bloom.md)
+- Chapter08 Step6 Example: [`Part2_Chapter05-08/08_ShaderToys_Step6_BloomEffect/README.md`](../../../Part2_Chapter05-08/08_ShaderToys_Step6_BloomEffect/README.md)
+- Chapter08 Step6 Demo: [`Docs/03_Demos/Part2_Chapter05-08/08_06_BloomEffect.md`](../../03_Demos/Part2_Chapter05-08/08_06_BloomEffect.md)

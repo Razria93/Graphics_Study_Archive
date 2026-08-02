@@ -48,4 +48,4 @@ Stonewall environment가 sphere에 반사되고 `fresnelR0`가 angle-dependent s
 - [Image Based Lighting](../../Docs/01_Topics/LightingAndShading/ImageBasedLighting.md)
 - [Verification](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [이전 단계: Chapter08 Step4 ImageBasedLighting](../08_ShaderToys_Step4_ImageBasedLighting/README.md)
-- 다음 단계: Chapter08 Step6 BloomEffect
+- [다음 단계: Chapter08 Step6 BloomEffect](../08_ShaderToys_Step6_BloomEffect/README.md)

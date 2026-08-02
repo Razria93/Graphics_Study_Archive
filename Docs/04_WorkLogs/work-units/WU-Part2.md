@@ -172,3 +172,6 @@
 - Step5는 Step4 IBL에 Schlick Fresnel factor와 `fresnelR0` UI를 추가한다.
 - Fresnel 주석의 정면·grazing angle 설명을 바로잡고 Debug/Release Clean/Rebuild, runtime DLL, resize와 1282×992 screenshot을 확인한다.
 - Assimp 오류창은 사용자가 수동 종료했음을 기록하고 Stonewall cubemap과 surface texture 권리 근거가 충분하지 않아 Publication은 `검토 필요`로 둔다.
+- Step6는 Step5 scene을 GPU threshold, downsample, separable blur와 original composite filter chain으로 확장한다.
+- Blur accumulator 초기화, 작은 window dimension 제한과 resize 시 post-process resource 재생성을 보완한다.
+- Debug/Release Clean/Rebuild, wide·compact resize, minimize/restore와 1282×992 screenshot을 확인하고 asset 권리 근거 미확정으로 Publication은 `검토 필요`로 둔다.
