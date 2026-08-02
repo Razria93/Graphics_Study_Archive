@@ -175,7 +175,9 @@ bool AppBase::InitMainWindow() {
     AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, false);
 
     
-    m_mainWindow = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example", WS_OVERLAPPEDWINDOW,
+    m_mainWindow = CreateWindow(wc.lpszClassName,
+                                L"ComputerGraphics - Chapter06 Step2 InitializingD3D",
+                                WS_OVERLAPPEDWINDOW,
                                 100,                
                                 100,                
                                 wr.right - wr.left, 
@@ -479,4 +481,4 @@ void AppBase::CreateIndexBuffer(const std::vector<uint16_t> &indices,
     m_device->CreateBuffer(&bufferDesc, &indexBufferData, m_indexBuffer.GetAddressOf());
 }
 
-} 
+}
