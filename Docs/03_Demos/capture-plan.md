@@ -139,4 +139,6 @@ portfolio_raytracer_reflection.png
 - Step2 DrawingNormals는 `Draw Normals=On`, solid surface와 normal line을 함께 담은 전체 창 screenshot 한 장을 확보했다.
 - Step3 Grid는 `Wireframe=On`, `Use Texture=Off`, `Draw Normals=Off`로 5×3 cells와 triangle diagonal을 담은 전체 창 screenshot 한 장을 확보했다.
 - Step3 video는 정적 wireframe 한 장으로 procedural topology를 충분히 설명할 수 있어 제외한다.
-- 다음 Step4 Cylinder부터 같은 순차 단위로 capture 필요성을 다시 판정한다.
+- Step4 Cylinder는 `Wireframe=On`, `Use Texture=Off`, `Draw Normals=Off`로 열린 top과 ring·slice 연결을 담은 전체 창 screenshot 한 장을 확보했다.
+- Step4 video는 정적 wireframe 한 장으로 열린 side surface와 triangle topology를 충분히 설명할 수 있어 제외한다.
+- 다음 Step5 Sphere 변형부터 같은 순차 단위로 capture 필요성을 다시 판정한다.
