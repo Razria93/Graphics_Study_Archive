@@ -14,6 +14,7 @@
 
 
 
+
 #define MAX_LIGHTS 3 
 #define NUM_DIR_LIGHTS 1
 #define NUM_POINT_LIGHTS 1
@@ -40,6 +41,84 @@ struct Light
     float3 position;
     float spotPower;
 };
+
+float CalcAttenuation(float d, float falloffStart, float falloffEnd)
+{
+    float range = max(falloffEnd - falloffStart, 0.0001f);
+    return saturate((falloffEnd - d) / range);
+}
+float3 BlinnPhong(float3 lightStrength, float3 lightVec, float3 normal,
+                   float3 toEye, Material mat)
+{
+    float3 halfway = normalize(toEye + lightVec);
+    float3 specular = mat.specular * pow(max(dot(halfway, normal), 0.0f), mat.shininess);
+
+    return (mat.diffuse + specular) * lightStrength;
+}
+
+float3 ComputeDirectionalLight(Light L, Material mat, float3 normal,
+                                float3 toEye)
+{
+    float3 lightVec = -L.direction;
+
+    float ndotl = max(dot(lightVec, normal), 0.0f);
+    float3 lightStrength = L.strength * ndotl;
+
+    return BlinnPhong(lightStrength, lightVec, normal, toEye, mat);
+}
+
+float3 ComputePointLight(Light L, Material mat, float3 pos, float3 normal,
+                          float3 toEye)
+{
+    float3 lightVec = L.position - pos;
+
+    float d = length(lightVec);
+
+    if (d > L.fallOffEnd || d <= 0.0001f)
+    {
+        return float3(0.0, 0.0, 0.0);
+    }
+    else
+    {
+        lightVec /= d;
+
+        float ndotl = max(dot(lightVec, normal), 0.0f);
+        float3 lightStrength = L.strength * ndotl;
+
+        float att = CalcAttenuation(d, L.fallOffStart, L.fallOffEnd);
+        lightStrength *= att;
+
+        return BlinnPhong(lightStrength, lightVec, normal, toEye, mat);
+    }
+}
+
+float3 ComputeSpotLight(Light L, Material mat, float3 pos, float3 normal,
+                         float3 toEye)
+{
+    float3 lightVec = L.position - pos;
+
+    float d = length(lightVec);
+
+    if (d > L.fallOffEnd || d <= 0.0001f)
+    {
+        return float3(0.0f, 0.0f, 0.0f);
+    }
+    else
+    {
+        lightVec /= d;
+
+        float ndotl = max(dot(lightVec, normal), 0.0f);
+        float3 lightStrength = L.strength * ndotl;
+
+        float att = CalcAttenuation(d, L.fallOffStart, L.fallOffEnd);
+        lightStrength *= att;
+        float spotFactor =
+        pow(max(0.0f, dot(-lightVec, L.direction)), L.spotPower);
+        lightStrength *= spotFactor;
+
+        return BlinnPhong(lightStrength, lightVec, normal, toEye, mat);
+    }
+}
 
 struct VertexShaderInput
 {

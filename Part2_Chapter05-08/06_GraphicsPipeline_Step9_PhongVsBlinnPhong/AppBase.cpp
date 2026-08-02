@@ -1,7 +1,9 @@
-﻿
+
 
 
 #include "AppBase.h"
+
+#include <algorithm>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
@@ -26,10 +28,10 @@ AppBase *g_appBase = nullptr;
 
 
 LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
-
+    if (!g_appBase)
+        return ::DefWindowProc(hWnd, msg, wParam, lParam);
     return g_appBase->MsgProc(hWnd, msg, wParam, lParam);
 }
-
 
 AppBase::AppBase()
     : m_screenWidth(1280), m_screenHeight(960), m_mainWindow(0),
@@ -39,18 +41,21 @@ AppBase::AppBase()
 }
 
 AppBase::~AppBase() {
+    if (ImGui::GetCurrentContext()) {
+        ImGui_ImplDX11_Shutdown();
+        ImGui_ImplWin32_Shutdown();
+        ImGui::DestroyContext();
+    }
+
+    if (m_mainWindow)
+        DestroyWindow(m_mainWindow);
     g_appBase = nullptr;
-
-    ImGui_ImplDX11_Shutdown();
-    ImGui_ImplWin32_Shutdown();
-    ImGui::DestroyContext();
-
-    DestroyWindow(m_mainWindow);
-
 }
 
 float AppBase::GetAspectRatio() const {
-    return float(m_screenWidth - m_guiWidth) / m_screenHeight;
+    const float width = (std::max)(m_screenViewport.Width, 1.0f);
+    const float height = (std::max)(m_screenViewport.Height, 1.0f);
+    return width / height;
 }
 
 int AppBase::Run() {
@@ -61,21 +66,31 @@ int AppBase::Run() {
             TranslateMessage(&msg);
             DispatchMessage(&msg);
         } else {
+            if (m_isMinimized || !m_renderResourcesReady) {
+                Sleep(16);
+                continue;
+            }
+
             ImGui_ImplDX11_NewFrame(); 
             ImGui_ImplWin32_NewFrame();
 
             ImGui::NewFrame(); 
+            ImGui::SetNextWindowPos(ImVec2(0.0f, 0.0f), ImGuiCond_Always);
+            ImGui::SetNextWindowSize(ImVec2(420.0f, 720.0f),
+                                     ImGuiCond_FirstUseEver);
             ImGui::Begin("Scene Control");
+
+            ImGui::SetWindowPos(ImVec2(0.0f, 0.0f));
+            ImGui::SetWindowSize(
+                ImVec2(ImGui::GetWindowWidth(), float(m_screenHeight)));
+
+            UpdateSceneViewport(ImGui::GetWindowSize().x);
 
             ImGui::Text("Average %.3f ms/frame (%.1f FPS)",
                         1000.0f / ImGui::GetIO().Framerate,
                         ImGui::GetIO().Framerate);
 
             UpdateGUI(); 
-
-            ImGui::SetWindowPos(ImVec2(0.0f, 0.0f));
-
-            m_guiWidth = int(ImGui::GetWindowWidth());
 
             ImGui::End();
             ImGui::Render(); 
@@ -114,25 +129,24 @@ LRESULT AppBase::MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 
     switch (msg) {
     case WM_SIZE:
-
-        if (m_swapChain) { 
-
-            m_screenWidth = int(LOWORD(lParam));
-            m_screenHeight = int(HIWORD(lParam));
-            m_guiWidth = 0;
-
-            m_renderTargetView.Reset();
-            m_swapChain->ResizeBuffers(0, 
-                                       (UINT)LOWORD(lParam), 
-                                       (UINT)HIWORD(lParam),
-                                       DXGI_FORMAT_UNKNOWN, 
-                                       0);
-            CreateRenderTargetView();
-            CreateDepthBuffer();
-            SetViewport();
+        if (wParam == SIZE_MINIMIZED || LOWORD(lParam) == 0 ||
+            HIWORD(lParam) == 0) {
+            m_isMinimized = true;
+            return 0;
         }
 
-        break;
+        m_isMinimized = false;
+        if (!m_swapChain) {
+            m_screenWidth = int(LOWORD(lParam));
+            m_screenHeight = int(HIWORD(lParam));
+            return 0;
+        }
+
+        if (!ResizeClientResources(UINT(LOWORD(lParam)),
+                                   UINT(HIWORD(lParam)))) {
+            cout << "Window resize failed." << endl;
+        }
+        return 0;
     case WM_SYSCOMMAND:
         if ((wParam & 0xfff0) == SC_KEYMENU) 
             return 0;
@@ -178,13 +192,11 @@ bool AppBase::InitMainWindow() {
 
     AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, false);
 
-    m_mainWindow = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example",
-                                WS_OVERLAPPEDWINDOW,
-                                100, 
-                                100, 
-                                wr.right - wr.left, 
-                                wr.bottom - wr.top, 
-                                NULL, NULL, wc.hInstance, NULL);
+    m_mainWindow = CreateWindow(
+        wc.lpszClassName,
+        L"ComputerGraphics - Chapter06 Step9 PhongVsBlinnPhong",
+        WS_OVERLAPPEDWINDOW, 100, 100, wr.right - wr.left,
+        wr.bottom - wr.top, NULL, NULL, wc.hInstance, NULL);
 
     if (!m_mainWindow) {
         cout << "CreateWindow() failed." << endl;
@@ -240,8 +252,8 @@ bool AppBase::InitDirect3D() {
 
 
     device->CheckMultisampleQualityLevels(DXGI_FORMAT_R8G8B8A8_UNORM, 4,
-                                          &numQualityLevels);
-    if (numQualityLevels <= 0) {
+                                          &m_msaaQualityLevels);
+    if (m_msaaQualityLevels <= 0) {
         cout << "MSAA not supported." << endl;
     }
 
@@ -271,9 +283,9 @@ bool AppBase::InitDirect3D() {
     sd.Flags =
         DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH; 
     sd.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
-    if (numQualityLevels > 0) {
+    if (m_msaaQualityLevels > 0) {
         sd.SampleDesc.Count = 4; 
-        sd.SampleDesc.Quality = numQualityLevels - 1;
+        sd.SampleDesc.Quality = m_msaaQualityLevels - 1;
     } else {
         sd.SampleDesc.Count = 1; 
         sd.SampleDesc.Quality = 0;
@@ -292,9 +304,19 @@ bool AppBase::InitDirect3D() {
 
 
 
-    CreateRenderTargetView();
+    if (!CreateRenderTargetView()) {
+        return false;
+    }
 
-    SetViewport();
+    ZeroMemory(&m_screenViewport, sizeof(D3D11_VIEWPORT));
+    m_screenViewport.TopLeftX = 0;
+    m_screenViewport.TopLeftY = 0;
+    m_screenViewport.Width = float(m_screenWidth);
+    m_screenViewport.Height = float(m_screenHeight);
+    m_screenViewport.MinDepth = 0.0f;
+    m_screenViewport.MaxDepth = 1.0f;
+
+    m_context->RSSetViewports(1, &m_screenViewport);
 
     D3D11_RASTERIZER_DESC rastDesc;
     ZeroMemory(&rastDesc, sizeof(D3D11_RASTERIZER_DESC)); 
@@ -305,7 +327,13 @@ bool AppBase::InitDirect3D() {
 
     m_device->CreateRasterizerState(&rastDesc, m_rasterizerSate.GetAddressOf());
 
-    CreateDepthBuffer();
+
+    if (!CreateDepthBuffer()) {
+        return false;
+    }
+
+    m_renderResourcesReady = true;
+
 
     D3D11_DEPTH_STENCIL_DESC depthStencilDesc;
     ZeroMemory(&depthStencilDesc, sizeof(D3D11_DEPTH_STENCIL_DESC));
@@ -328,6 +356,7 @@ bool AppBase::InitGUI() {
     ImGui::CreateContext();
     ImGuiIO &io = ImGui::GetIO();
     (void)io;
+    io.IniFilename = nullptr;
     io.DisplaySize = ImVec2(float(m_screenWidth), float(m_screenHeight));
     ImGui::StyleColorsLight();
 
@@ -339,71 +368,6 @@ bool AppBase::InitGUI() {
         return false;
     }
 
-    return true;
-}
-
-void AppBase::SetViewport() {
-
-    static int previousGuiWidth = m_guiWidth;
-
-    if (previousGuiWidth != m_guiWidth) {
-
-        previousGuiWidth = m_guiWidth;
-
-        ZeroMemory(&m_screenViewport, sizeof(D3D11_VIEWPORT));
-        m_screenViewport.TopLeftX = float(m_guiWidth);
-        m_screenViewport.TopLeftY = 0;
-        m_screenViewport.Width = float(m_screenWidth - m_guiWidth);
-        m_screenViewport.Height = float(m_screenHeight);
-        m_screenViewport.MinDepth = 0.0f;
-        m_screenViewport.MaxDepth = 1.0f; 
-
-        m_context->RSSetViewports(1, &m_screenViewport);
-    }
-}
-
-bool AppBase::CreateRenderTargetView() {
-
-    ComPtr<ID3D11Texture2D> backBuffer;
-    m_swapChain->GetBuffer(0, IID_PPV_ARGS(backBuffer.GetAddressOf()));
-    if (backBuffer) {
-        m_device->CreateRenderTargetView(backBuffer.Get(), NULL,
-                                         m_renderTargetView.GetAddressOf());
-    } else {
-        std::cout << "CreateRenderTargetView() failed." << std::endl;
-        return false;
-    }
-
-    return true;
-}
-
-bool AppBase::CreateDepthBuffer() {
-    D3D11_TEXTURE2D_DESC depthStencilBufferDesc;
-    depthStencilBufferDesc.Width = m_screenWidth;
-    depthStencilBufferDesc.Height = m_screenHeight;
-    depthStencilBufferDesc.MipLevels = 1;
-    depthStencilBufferDesc.ArraySize = 1;
-    depthStencilBufferDesc.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
-    if (numQualityLevels > 0) {
-        depthStencilBufferDesc.SampleDesc.Count = 4; 
-        depthStencilBufferDesc.SampleDesc.Quality = numQualityLevels - 1;
-    } else {
-        depthStencilBufferDesc.SampleDesc.Count = 1; 
-        depthStencilBufferDesc.SampleDesc.Quality = 0;
-    }
-    depthStencilBufferDesc.Usage = D3D11_USAGE_DEFAULT;
-    depthStencilBufferDesc.BindFlags = D3D11_BIND_DEPTH_STENCIL;
-    depthStencilBufferDesc.CPUAccessFlags = 0;
-    depthStencilBufferDesc.MiscFlags = 0;
-
-    if (FAILED(m_device->CreateTexture2D(
-            &depthStencilBufferDesc, 0, m_depthStencilBuffer.GetAddressOf()))) {
-        std::cout << "CreateTexture2D() failed." << std::endl;
-    }
-    if (FAILED(m_device->CreateDepthStencilView(m_depthStencilBuffer.Get(), 0,
-                                                &m_depthStencilView))) {
-        std::cout << "CreateDepthStencilView() failed." << std::endl;
-    }
     return true;
 }
 
@@ -432,7 +396,7 @@ void CheckResult(HRESULT hr, ID3DBlob *errorBlob) {
     }
 }
 
-void AppBase::CreateVertexShaderAndInputLayout(
+bool AppBase::CreateVertexShaderAndInputLayout(
     const wstring &filename,
     const vector<D3D11_INPUT_ELEMENT_DESC> &inputElements,
     ComPtr<ID3D11VertexShader> &vertexShader,
@@ -448,21 +412,111 @@ void AppBase::CreateVertexShaderAndInputLayout(
 
     HRESULT hr = D3DCompileFromFile(
         filename.c_str(), 0, D3D_COMPILE_STANDARD_FILE_INCLUDE, "main",
-        "vs_5_0", compileFlags, 0, &shaderBlob, &errorBlob);
+        "vs_5_0",
+                                    compileFlags, 0, &shaderBlob, &errorBlob);
 
     CheckResult(hr, errorBlob.Get());
+    if (FAILED(hr) || !shaderBlob)
+        return false;
 
-    m_device->CreateVertexShader(shaderBlob->GetBufferPointer(),
-                                 shaderBlob->GetBufferSize(), NULL,
-                                 &vertexShader);
+    if (FAILED(m_device->CreateVertexShader(
+            shaderBlob->GetBufferPointer(), shaderBlob->GetBufferSize(), NULL,
+            &vertexShader))) {
+        cout << "CreateVertexShader() failed." << endl;
+        return false;
+    }
 
-    m_device->CreateInputLayout(inputElements.data(),
-                                UINT(inputElements.size()),
-                                shaderBlob->GetBufferPointer(),
-                                shaderBlob->GetBufferSize(), &inputLayout);
+    if (FAILED(m_device->CreateInputLayout(
+            inputElements.data(), UINT(inputElements.size()),
+            shaderBlob->GetBufferPointer(), shaderBlob->GetBufferSize(),
+            &inputLayout))) {
+        cout << "CreateInputLayout() failed." << endl;
+        vertexShader.Reset();
+        return false;
+    }
+
+    return true;
 }
 
-void AppBase::CreatePixelShader(const wstring &filename,
+bool AppBase::CreateRenderTargetView() {
+    ComPtr<ID3D11Texture2D> backBuffer;
+    if (FAILED(m_swapChain->GetBuffer(
+            0, IID_PPV_ARGS(backBuffer.GetAddressOf())))) {
+        cout << "Swap chain GetBuffer() failed." << endl;
+        return false;
+    }
+
+    if (FAILED(m_device->CreateRenderTargetView(
+            backBuffer.Get(), nullptr, m_renderTargetView.GetAddressOf()))) {
+        cout << "CreateRenderTargetView() failed." << endl;
+        return false;
+    }
+    return true;
+}
+
+bool AppBase::CreateDepthBuffer() {
+    D3D11_TEXTURE2D_DESC desc = {};
+    desc.Width = UINT(m_screenWidth);
+    desc.Height = UINT(m_screenHeight);
+    desc.MipLevels = 1;
+    desc.ArraySize = 1;
+    desc.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
+    desc.SampleDesc.Count = m_msaaQualityLevels > 0 ? 4 : 1;
+    desc.SampleDesc.Quality =
+        m_msaaQualityLevels > 0 ? m_msaaQualityLevels - 1 : 0;
+    desc.Usage = D3D11_USAGE_DEFAULT;
+    desc.BindFlags = D3D11_BIND_DEPTH_STENCIL;
+
+    if (FAILED(m_device->CreateTexture2D(
+            &desc, nullptr, m_depthStencilBuffer.GetAddressOf()))) {
+        cout << "CreateTexture2D() failed." << endl;
+        return false;
+    }
+    if (FAILED(m_device->CreateDepthStencilView(
+            m_depthStencilBuffer.Get(), nullptr,
+            m_depthStencilView.GetAddressOf()))) {
+        cout << "CreateDepthStencilView() failed." << endl;
+        m_depthStencilBuffer.Reset();
+        return false;
+    }
+    return true;
+}
+
+bool AppBase::ResizeClientResources(UINT width, UINT height) {
+    if (width == 0 || height == 0 || !m_swapChain || !m_context) {
+        return false;
+    }
+    if (width == UINT(m_screenWidth) && height == UINT(m_screenHeight) &&
+        m_renderResourcesReady) {
+        return true;
+    }
+
+    m_renderResourcesReady = false;
+    m_context->OMSetRenderTargets(0, nullptr, nullptr);
+    m_renderTargetView.Reset();
+    m_depthStencilView.Reset();
+    m_depthStencilBuffer.Reset();
+
+    const HRESULT resizeResult = m_swapChain->ResizeBuffers(
+        0, width, height, DXGI_FORMAT_UNKNOWN, 0);
+    if (FAILED(resizeResult)) {
+        cout << "ResizeBuffers() failed: 0x" << hex << resizeResult << dec
+             << endl;
+        return false;
+    }
+
+    m_screenWidth = int(width);
+    m_screenHeight = int(height);
+    if (!CreateRenderTargetView() || !CreateDepthBuffer()) {
+        return false;
+    }
+
+    UpdateSceneViewport(m_screenViewport.TopLeftX);
+    m_renderResourcesReady = true;
+    return true;
+}
+
+bool AppBase::CreatePixelShader(const wstring &filename,
                                 ComPtr<ID3D11PixelShader> &pixelShader) {
     ComPtr<ID3DBlob> shaderBlob;
     ComPtr<ID3DBlob> errorBlob;
@@ -474,16 +528,24 @@ void AppBase::CreatePixelShader(const wstring &filename,
 
     HRESULT hr = D3DCompileFromFile(
         filename.c_str(), 0, D3D_COMPILE_STANDARD_FILE_INCLUDE, "main",
-        "ps_5_0", compileFlags, 0, &shaderBlob, &errorBlob);
+        "ps_5_0",
+                                    compileFlags, 0, &shaderBlob, &errorBlob);
 
     CheckResult(hr, errorBlob.Get());
+    if (FAILED(hr) || !shaderBlob)
+        return false;
 
-    m_device->CreatePixelShader(shaderBlob->GetBufferPointer(),
-                                shaderBlob->GetBufferSize(), NULL,
-                                &pixelShader);
+    if (FAILED(m_device->CreatePixelShader(
+            shaderBlob->GetBufferPointer(), shaderBlob->GetBufferSize(), NULL,
+            &pixelShader))) {
+        cout << "CreatePixelShader() failed." << endl;
+        return false;
+    }
+
+    return true;
 }
 
-void AppBase::CreateIndexBuffer(const std::vector<uint16_t> &indices,
+bool AppBase::CreateIndexBuffer(const std::vector<uint16_t> &indices,
                                 ComPtr<ID3D11Buffer> &m_indexBuffer) {
     D3D11_BUFFER_DESC bufferDesc = {};
     bufferDesc.Usage = D3D11_USAGE_IMMUTABLE; 
@@ -497,24 +559,30 @@ void AppBase::CreateIndexBuffer(const std::vector<uint16_t> &indices,
     indexBufferData.SysMemPitch = 0;
     indexBufferData.SysMemSlicePitch = 0;
 
-    m_device->CreateBuffer(&bufferDesc, &indexBufferData,
-                           m_indexBuffer.GetAddressOf());
+    if (FAILED(m_device->CreateBuffer(&bufferDesc, &indexBufferData,
+                                      m_indexBuffer.GetAddressOf()))) {
+        cout << "CreateIndexBuffer() CreateBuffer failed." << endl;
+        return false;
+    }
+
+    return true;
 }
 
-void AppBase::CreateTexture(
-    const std::string filename, ComPtr<ID3D11Texture2D> &texture,
+bool AppBase::CreateTexture(
+    const std::string &filename, ComPtr<ID3D11Texture2D> &texture,
     ComPtr<ID3D11ShaderResourceView> &textureResourceView) {
 
-    int width, height, channels;
+    int width = 0;
+    int height = 0;
+    int channels = 0;
 
     unsigned char *img =
-        stbi_load(filename.c_str(), &width, &height, &channels, 0);
-
-
-    std::vector<uint8_t> image;
-
-    image.resize(width * height * channels);
-    memcpy(image.data(), img, image.size() * sizeof(uint8_t));
+        stbi_load(filename.c_str(), &width, &height, &channels, 4);
+    if (!img) {
+        cout << "Texture load failed: " << filename << " ("
+             << stbi_failure_reason() << ")" << endl;
+        return false;
+    }
 
     D3D11_TEXTURE2D_DESC txtDesc = {};
     txtDesc.Width = width;
@@ -525,13 +593,41 @@ void AppBase::CreateTexture(
     txtDesc.Usage = D3D11_USAGE_IMMUTABLE;
     txtDesc.BindFlags = D3D11_BIND_SHADER_RESOURCE;
 
-    D3D11_SUBRESOURCE_DATA InitData;
-    InitData.pSysMem = image.data();
-    InitData.SysMemPitch = txtDesc.Width * sizeof(uint8_t) * channels;
+    D3D11_SUBRESOURCE_DATA initData = {};
+    initData.pSysMem = img;
+    initData.SysMemPitch = txtDesc.Width * sizeof(uint8_t) * 4;
 
-    m_device->CreateTexture2D(&txtDesc, &InitData, texture.GetAddressOf());
-    m_device->CreateShaderResourceView(texture.Get(), nullptr,
-                                       textureResourceView.GetAddressOf());
+    const HRESULT textureResult =
+        m_device->CreateTexture2D(&txtDesc, &initData, texture.GetAddressOf());
+    stbi_image_free(img);
+    if (FAILED(textureResult)) {
+        cout << "CreateTexture2D() failed: " << filename << endl;
+        return false;
+    }
+
+    if (FAILED(m_device->CreateShaderResourceView(
+            texture.Get(), nullptr, textureResourceView.GetAddressOf()))) {
+        cout << "CreateShaderResourceView() failed: " << filename << endl;
+        texture.Reset();
+        return false;
+    }
+
+    return true;
 }
 
-} 
+void AppBase::UpdateSceneViewport(float panelWidth) {
+    const float maxPanelWidth = (std::max)(float(m_screenWidth) - 1.0f, 0.0f);
+    const float clampedPanelWidth =
+        (std::min)((std::max)(panelWidth, 0.0f), maxPanelWidth);
+
+    ZeroMemory(&m_screenViewport, sizeof(D3D11_VIEWPORT));
+    m_screenViewport.TopLeftX = clampedPanelWidth;
+    m_screenViewport.TopLeftY = 0.0f;
+    m_screenViewport.Width =
+        (std::max)(float(m_screenWidth) - clampedPanelWidth, 1.0f);
+    m_screenViewport.Height = (std::max)(float(m_screenHeight), 1.0f);
+    m_screenViewport.MinDepth = 0.0f;
+    m_screenViewport.MaxDepth = 1.0f;
+}
+
+}
