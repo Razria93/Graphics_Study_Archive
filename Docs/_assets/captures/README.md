@@ -78,6 +78,8 @@ part2_chapter04_depth-buffer.png
 | `part2_chapter06_03_model_view_proj_orthographic.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step3_ModelViewProj` | 확보 | 동일한 Model·View에서 orthographic projection의 일정한 투영 크기 확인 |
 | `part2_chapter06_04_shaders_default.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step4_Shaders` | 확보 | 전체 application window에서 `xSplitPoint=0.5`의 균등 UV X·Y 분기 확인 |
 | `part2_chapter06_04_shaders_split_adjusted.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step4_Shaders` | 확보 | 동일한 window에서 `xSplitPoint=0.25`의 세로·가로 경계 이동 확인 |
+| `part2_chapter06_05_texturing_default.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing` | 확보 | Generated 석재·목재 texture와 `xSplit=0.5`의 균등 선택 경계 확인 |
+| `part2_chapter06_05_texturing_split_adjusted.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing` | 확보 | 동일한 window에서 `xSplit=0.25`의 texture 선택 경계 이동 확인 |
 
 ## 승격 체크
 
