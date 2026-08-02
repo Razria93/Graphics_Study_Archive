@@ -161,3 +161,5 @@ portfolio_raytracer_reflection.png
 - Step3 camera 회전 video는 설명 가치가 있으나 이번 단계에서는 local 후보 없이 screenshot으로 마감한다.
 - Chapter08 Step4 ImageBasedLighting은 Atrium 환경과 IBL sphere가 함께 보이는 전체 창 screenshot 한 장을 확보했다.
 - Step4 video는 fixed diffuse/specular 결과를 정적 frame에서 판독할 수 있어 제외한다.
+- Chapter08 Step5 FresnelEffect는 Stonewall 환경과 Fresnel sphere, material UI가 함께 보이는 전체 창 screenshot 한 장을 확보했다.
+- Step5 video는 angle-dependent 결과와 parameter가 정적 frame에서 판독 가능해 제외한다.
