@@ -51,4 +51,4 @@
 - [상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/07_01_DrawingWireFrames.md)
 - [Publication](../../Docs/05_Publication/candidate-list.md)
 - [이전 단계: Chapter06 Step9](../06_GraphicsPipeline_Step9_PhongVsBlinnPhong/README.md)
-- 다음 단계: `07_Modeling_Step2_DrawingNormals`
+- [다음 단계: Chapter07 Step2 DrawingNormals](../07_Modeling_Step2_DrawingNormals/README.md)

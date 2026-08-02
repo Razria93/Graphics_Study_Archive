@@ -6,7 +6,7 @@
 | --- | --- |
 | Work Unit | `WU-Part2` |
 | 현재 마감 대상 | `Part2_Chapter05-08` Chapter07 순차 정규화 |
-| 후속 코드 범위 | Chapter07 Step2 DrawingNormals부터 Chapter08까지 |
+| 후속 코드 범위 | Chapter07 Step3 Grid부터 Chapter08까지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -109,3 +109,6 @@
 - 출처 불명 texture 2개와 사용되지 않는 두 번째 shader resource를 제거하고 검증된 generated wood를 solid mode 보조 input으로 사용한다.
 - Debug/Release x64 build/run, 반복 resize·minimize/restore와 전체 창 wireframe screenshot을 2026-08-02 현재 확인했다.
 - Step1 video는 고정 wireframe 결과와 UI 상태를 screenshot 한 장으로 충분히 설명할 수 있어 제외했다.
+- Step2는 surface `TRIANGLELIST`와 vertex normal `LINELIST`를 분리하고 Shader Model 5.0, viewport binding과 resource 실패 전파를 정렬했다.
+- Debug/Release x64 build/run, 반복 resize·minimize/restore와 전체 창 normal screenshot을 2026-08-02 현재 확인했다.
+- Step2 video는 비스듬한 surface와 normal 분포를 screenshot 한 장으로 충분히 설명할 수 있어 제외했다.

@@ -71,6 +71,7 @@ Chapter06은 Direct3D interface lifetime에서 시작해 window, device resource
 | [`06_GraphicsPipeline_Step8_ResizingWindow`](06_GraphicsPipeline_Step8_ResizingWindow/README.md) | 현재 build/run·resize·capture·문서·상세 Demo 정규화 완료 |
 | [`06_GraphicsPipeline_Step9_PhongVsBlinnPhong`](06_GraphicsPipeline_Step9_PhongVsBlinnPhong/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료 |
 | [`07_Modeling_Step1_DrawingWireFrames`](07_Modeling_Step1_DrawingWireFrames/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료 |
+| [`07_Modeling_Step2_DrawingNormals`](07_Modeling_Step2_DrawingNormals/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료 |
 | `07_Modeling_Step2_DrawingNormals` | 코드 보관 완료 및 현재 문서화 대기 |
 | `07_Modeling_Step3_Grid` | 코드 보관 완료 및 현재 문서화 대기 |
 | `07_Modeling_Step4_Cylinder` | 코드 보관 완료 및 현재 문서화 대기 |

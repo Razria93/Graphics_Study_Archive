@@ -5,6 +5,7 @@
 ## Topic 문서
 
 - [Mesh Topology And Wireframe Rasterization](MeshTopologyAndWireframeRasterization.md)
+- [Vertex And Face Normals](VertexAndFaceNormals.md)
 - [Topic Index](topic-index.md)
 
 ## 책임 경계
