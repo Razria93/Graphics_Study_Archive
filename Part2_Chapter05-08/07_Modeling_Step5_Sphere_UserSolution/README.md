@@ -53,4 +53,4 @@
 - [Verification](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/07_05_Sphere.md)
 - [이전 단계: Chapter07 Step4](../07_Modeling_Step4_Cylinder/README.md)
-- 다음 단계: `07_Modeling_Step6_Subdivision`
+- [다음 단계: Chapter07 Step6 Subdivision](../07_Modeling_Step6_Subdivision/README.md)

@@ -4,20 +4,20 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리하는 폴더다.
 
 ## 상태
 
-- 학습 코드 정리: Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–5 정규화 완료
-- Build/run: Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–5 현재 재검증 완료, 나머지 예제 과거 확인 유지
+- 학습 코드 정리: Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–6 정규화 완료
+- Build/run: Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–6 현재 재검증 완료, 나머지 예제 과거 확인 유지
 - 현재 대상: Chapter07 modeling 순차 정규화
-- 캡처: Chapter05 Step2·4, Chapter06 Step2–9와 Chapter07 Step1–5 screenshot 확보, console 예제 제외
+- 캡처: Chapter05 Step2·4, Chapter06 Step2–9와 Chapter07 Step1–6 screenshot 확보, console 예제 제외
 
 ## Archive/Public 검토
 
 | 항목 | 상태 |
 | --- | --- |
 | Source provenance | [`SRC-P2-C05-08`](../Docs/99_Legacy/source-registry.md) |
-| Import status | code import 완료 / Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–5 순차 verification 완료 |
+| Import status | code import 완료 / Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–6 순차 verification 완료 |
 | Public readiness | 검토 필요 |
-| Build/run status | Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–5 Debug/Release x64 현재 확인, 나머지 과거 확인 |
-| Next action | Chapter07 Step6 Subdivision 정규화 |
+| Build/run status | Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–6 Debug/Release x64 현재 확인, 나머지 과거 확인 |
+| Next action | Chapter07 Step7 FaceNormals 정규화 |
 
 ## 예정 주제
 
@@ -76,7 +76,7 @@ Chapter06은 Direct3D interface lifetime에서 시작해 window, device resource
 | [`07_Modeling_Step4_Cylinder`](07_Modeling_Step4_Cylinder/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료 |
 | [`07_Modeling_Step5_Sphere_UserSolution`](07_Modeling_Step5_Sphere_UserSolution/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, 공개 정본 |
 | `07_Modeling_Step5_Sphere_ReferenceSolution` | private 비교 근거, 공개 문서·capture 제외 |
-| `07_Modeling_Step6_Subdivision` | 코드 보관 완료 및 현재 문서화 대기 |
+| [`07_Modeling_Step6_Subdivision`](07_Modeling_Step6_Subdivision/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료 |
 | `07_Modeling_Step7_FaceNormals` | 코드 보관 완료 및 현재 문서화 대기 |
 | `07_Modeling_Step8_SphereMapping_UserSolution` | 코드 보관 완료 및 현재 문서화 대기 |
 | `07_Modeling_Step8_SphereMapping_ReferenceSolution` | 코드 보관 완료 및 현재 문서화 대기 |

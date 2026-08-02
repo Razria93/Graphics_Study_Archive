@@ -6,7 +6,7 @@
 | --- | --- |
 | Work Unit | `WU-Part2` |
 | 현재 마감 대상 | `Part2_Chapter05-08` Chapter07 순차 정규화 |
-| 후속 코드 범위 | Chapter07 Step6 Subdivision부터 Chapter08까지 |
+| 후속 코드 범위 | Chapter07 Step7 FaceNormals부터 Chapter08까지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -128,3 +128,8 @@
 - Debug/Release x64 build/run, wide·compact·minimize/restore와 전체 창 Sphere wireframe screenshot을 2026-08-02 현재 확인했다.
 - Step5 video는 정적 wireframe으로 두 반구, equator와 pole topology를 충분히 설명할 수 있어 제외했다.
 - Bottom UV의 wrap sampler 의존, equator·pole 중복 vertex와 winding 재검증 필요성을 구현 한계로 기록했다.
+- Step6은 별도 latitude·longitude seed의 50 triangles를 두 번 1→4 분할하고 각 midpoint를 sphere surface로 projection해 800 triangles를 만든다.
+- Shared midpoint cache가 없는 triangle-soup 구조와 pole의 degenerate triangle 160개, 단순 UV midpoint 보간의 seam 한계를 문서화한다.
+- 출처 불명·미사용 texture 3개와 두 번째 texture resource를 제거하고 검증된 generated wood의 동일 바이트 사본을 runtime 보조 input으로 사용한다.
+- Debug/Release x64 build/run, wide·compact·minimize/restore와 전체 창 Subdivision wireframe screenshot을 2026-08-02 현재 확인한다.
+- Step6 video는 정적 wireframe과 단계별 triangle 수로 구현 결과를 충분히 설명할 수 있어 제외한다.

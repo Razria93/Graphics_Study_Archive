@@ -9,7 +9,7 @@ Procedural primitive generation은 크기와 분할 수 같은 파라미터로 v
 - Primitive 파라미터에서 vertex attribute와 index topology를 계산하는 일반 원리를 설명한다.
 - 개별 DirectX11 resource 생성과 draw 호출은 각 Example README로 위임한다.
 - Build/run/capture 사실은 `Docs/02_Verification`의 [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)로 위임한다.
-- 구현 흐름과 시각 자료는 `Docs/03_Demos`의 [Chapter07 Step3 Demo](../../03_Demos/Part2_Chapter05-08/07_03_Grid.md), [Chapter07 Step4 Demo](../../03_Demos/Part2_Chapter05-08/07_04_Cylinder.md)와 [Chapter07 Step5 Demo](../../03_Demos/Part2_Chapter05-08/07_05_Sphere.md)로 위임한다.
+- 구현 흐름과 시각 자료는 `Docs/03_Demos`의 [Chapter07 Step3 Demo](../../03_Demos/Part2_Chapter05-08/07_03_Grid.md), [Chapter07 Step4 Demo](../../03_Demos/Part2_Chapter05-08/07_04_Cylinder.md), [Chapter07 Step5 Demo](../../03_Demos/Part2_Chapter05-08/07_05_Sphere.md)와 [Chapter07 Step6 Demo](../../03_Demos/Part2_Chapter05-08/07_06_Subdivision.md)로 위임한다.
 
 ## 핵심 개념
 
@@ -39,11 +39,17 @@ Grid는 일정한 간격으로 sample하지만 cylinder와 sphere는 각도와 �
 
 Geometry generator는 CPU-side vertex와 index 목록을 만든다. GPU buffer 생성, primitive topology binding과 draw call은 renderer가 담당한다. Normal line처럼 진단용 geometry가 필요하면 surface mesh와 별도 buffer·topology로 분리한다.
 
+### Triangle subdivision과 surface projection
+
+Triangle subdivision은 세 edge의 midpoint를 만들어 parent triangle 하나를 corner triangle 세 개와 중앙 triangle 하나로 나눈다. Sphere refinement에서는 midpoint를 정규화한 radial 방향으로 옮기고 radius를 곱해 새 vertex를 sphere 표면에 투영한다.
+
+한 pass마다 triangle 수는 4배가 된다. Shared edge midpoint를 재사용하면 vertex 수를 줄일 수 있지만, triangle마다 vertex를 독립 복제하면 이후 face normal처럼 triangle-local attribute를 구성하기 쉽다. 구체적인 중복 정책과 16-bit index 한계는 개별 Example과 상세 Demo에서 다룬다.
+
 ## 한계
 
 - 이 문서는 생성 규칙과 자료 구조를 설명하며 개별 DirectX11 resource 호출은 Example README로 위임한다.
 - 16-bit index를 사용하면 표현 가능한 vertex index 범위를 넘지 않도록 입력 범위를 제한해야 한다.
-- Seam, pole 중복, tangent 생성과 subdivision은 primitive별 Example과 상세 Demo에서 다룬다.
+- Seam, pole 중복, tangent 생성과 subdivision의 구현 선택은 primitive별 Example과 상세 Demo에서 다룬다.
 
 ## 관련 문서
 
@@ -53,5 +59,7 @@ Geometry generator는 CPU-side vertex와 index 목록을 만든다. GPU buffer �
 - [Chapter07 Step4 Cylinder Demo](../../03_Demos/Part2_Chapter05-08/07_04_Cylinder.md)
 - [Chapter07 Step5 Sphere UserSolution Example](../../../Part2_Chapter05-08/07_Modeling_Step5_Sphere_UserSolution/README.md)
 - [Chapter07 Step5 Sphere UserSolution Demo](../../03_Demos/Part2_Chapter05-08/07_05_Sphere.md)
+- [Chapter07 Step6 Subdivision Example](../../../Part2_Chapter05-08/07_Modeling_Step6_Subdivision/README.md)
+- [Chapter07 Step6 Subdivision Demo](../../03_Demos/Part2_Chapter05-08/07_06_Subdivision.md)
 - [Mesh Topology And Wireframe Rasterization](MeshTopologyAndWireframeRasterization.md)
 - [Vertex And Face Normals](VertexAndFaceNormals.md)
