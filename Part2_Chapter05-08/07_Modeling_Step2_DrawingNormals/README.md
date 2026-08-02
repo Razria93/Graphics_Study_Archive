@@ -49,4 +49,4 @@ Step1의 indexed box surface에 vertex normal 방향을 나타내는 별도 line
 - [Verification](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/07_02_DrawingNormals.md)
 - [이전 단계: Chapter07 Step1](../07_Modeling_Step1_DrawingWireFrames/README.md)
-- 다음 단계: `07_Modeling_Step3_Grid`
+- [다음 단계: Chapter07 Step3](../07_Modeling_Step3_Grid/README.md)

@@ -6,7 +6,7 @@
 | --- | --- |
 | Work Unit | `WU-Part2` |
 | 현재 마감 대상 | `Part2_Chapter05-08` Chapter07 순차 정규화 |
-| 후속 코드 범위 | Chapter07 Step3 Grid부터 Chapter08까지 |
+| 후속 코드 범위 | Chapter07 Step4 Cylinder부터 Chapter08까지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -112,3 +112,7 @@
 - Step2는 surface `TRIANGLELIST`와 vertex normal `LINELIST`를 분리하고 Shader Model 5.0, viewport binding과 resource 실패 전파를 정렬했다.
 - Debug/Release x64 build/run, 반복 resize·minimize/restore와 전체 창 normal screenshot을 2026-08-02 현재 확인했다.
 - Step2 video는 비스듬한 surface와 normal 분포를 screenshot 한 장으로 충분히 설명할 수 있어 제외했다.
+- Step3는 폭·높이와 5×3 분할로 XY plane의 24개 vertex와 30개 triangle을 절차적으로 생성한다.
+- 출처 불명 texture 3개를 제거하고 검수된 generated wood의 동일 바이트 사본을 runtime 보조 input으로 사용한다.
+- Debug/Release x64 build/run, wide·compact·minimize/restore와 전체 창 Grid screenshot을 2026-08-02 현재 확인했다.
+- Step3 video는 정적 wireframe으로 cell 분할과 triangle topology를 충분히 설명할 수 있어 제외했다.
