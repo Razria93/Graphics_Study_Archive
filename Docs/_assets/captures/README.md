@@ -76,6 +76,8 @@ part2_chapter04_depth-buffer.png
 | `part2_chapter06_02_initializing_d3d.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step2_InitializingD3D` | 확보 | 전체 application window에서 기본 perspective color cube, Scene Control과 D3D11 frame 출력 확인 |
 | `part2_chapter06_03_model_view_proj_perspective.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step3_ModelViewProj` | 확보 | 전체 application window에서 조정한 Model·View와 perspective projection 결과 확인 |
 | `part2_chapter06_03_model_view_proj_orthographic.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step3_ModelViewProj` | 확보 | 동일한 Model·View에서 orthographic projection의 일정한 투영 크기 확인 |
+| `part2_chapter06_04_shaders_default.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step4_Shaders` | 확보 | 전체 application window에서 `xSplitPoint=0.5`의 균등 UV X·Y 분기 확인 |
+| `part2_chapter06_04_shaders_split_adjusted.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step4_Shaders` | 확보 | 동일한 window에서 `xSplitPoint=0.25`의 세로·가로 경계 이동 확인 |
 
 ## 승격 체크
 
