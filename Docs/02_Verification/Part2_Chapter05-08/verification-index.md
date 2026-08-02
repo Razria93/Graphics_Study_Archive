@@ -4,9 +4,9 @@
 
 ## Provenance
 
-- 현재 확인: Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1 DrawingWireFrames·Step2 DrawingNormals·Step3 Grid, 2026-08-02
-- 과거 확인: Chapter07 Step4 Cylinder 이후 예제, 문서화 이전(날짜 미기록)
-- 현재 재검증: Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–3 완료, 나머지 필요
+- 현재 확인: Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1 DrawingWireFrames·Step2 DrawingNormals·Step3 Grid·Step4 Cylinder, 2026-08-02
+- 과거 확인: Chapter07 Step5 Sphere 이후 예제, 문서화 이전(날짜 미기록)
+- 현재 재검증: Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–4 완료, 나머지 필요
 - 근거: 현재 대상의 Debug/Release x64 직접 실행과 Chapter README의 전체 예제 과거 성공 기록
 
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
@@ -28,7 +28,7 @@
 | `07_Modeling_Step1_DrawingWireFrames` | `Part2_Chapter05-08/07_Modeling_Step1_DrawingWireFrames/07_Modeling_Step1_DrawingWireFrames.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · triangle-list box와 solid·wireframe rasterizer state 전환 · 반복 resize와 minimize/restore · 전체 창 screenshot 기술·시각 검수 완료 · video 제외 |
 | `07_Modeling_Step2_DrawingNormals` | `Part2_Chapter05-08/07_Modeling_Step2_DrawingNormals/07_Modeling_Step2_DrawingNormals.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · surface `TRIANGLELIST`와 normal `LINELIST` 분리 · Shader Model 5.0 · wide·compact·minimize/restore · 전체 창 screenshot 검수 완료 · video 제외 |
 | `07_Modeling_Step3_Grid` | `Part2_Chapter05-08/07_Modeling_Step3_Grid/07_Modeling_Step3_Grid.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · 5×3 Grid의 24 vertices·30 triangles · Shader Model 5.0 · wide·compact·minimize/restore · 전체 창 screenshot 검수 완료 · video 제외 |
-| `07_Modeling_Step4_Cylinder` | `Part2_Chapter05-08/07_Modeling_Step4_Cylinder/07_Modeling_Step4_Cylinder.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `07_Modeling_Step4_Cylinder` | `Part2_Chapter05-08/07_Modeling_Step4_Cylinder/07_Modeling_Step4_Cylinder.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · 2개 ring·40 slices의 82 vertices·80 triangles · 열린 side surface · Shader Model 5.0 · wide·compact·minimize/restore · 전체 창 screenshot 검수 완료 · video 제외 |
 | `07_Modeling_Step5_Sphere_ReferenceSolution` | `Part2_Chapter05-08/07_Modeling_Step5_Sphere_ReferenceSolution/07_Modeling_Step5_Sphere.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `07_Modeling_Step5_Sphere_UserSolution` | `Part2_Chapter05-08/07_Modeling_Step5_Sphere_UserSolution/07_Modeling_Step5_Sphere.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `07_Modeling_Step6_Subdivision` | `Part2_Chapter05-08/07_Modeling_Step6_Subdivision/07_Modeling_Step6_Subdivision.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
