@@ -17,7 +17,7 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리하는 폴더다.
 | Import status | code import 완료 / Chapter05 Step1–4와 Chapter06 Step1–9 순차 verification 완료 |
 | Public readiness | 검토 필요 |
 | Build/run status | Chapter05 Step1–4와 Chapter06 Step1–9 Debug/Release x64 현재 확인, 나머지 과거 확인 |
-| Next action | Chapter07 Step1 DrawingWireFrames 순차 정규화 |
+| Next action | Chapter07 Step2 DrawingNormals 순차 정규화 |
 
 ## 예정 주제
 
@@ -70,7 +70,7 @@ Chapter06은 Direct3D interface lifetime에서 시작해 window, device resource
 | [`06_GraphicsPipeline_Step7_ResizingViewport`](06_GraphicsPipeline_Step7_ResizingViewport/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료 |
 | [`06_GraphicsPipeline_Step8_ResizingWindow`](06_GraphicsPipeline_Step8_ResizingWindow/README.md) | 현재 build/run·resize·capture·문서·상세 Demo 정규화 완료 |
 | [`06_GraphicsPipeline_Step9_PhongVsBlinnPhong`](06_GraphicsPipeline_Step9_PhongVsBlinnPhong/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료 |
-| `07_Modeling_Step1_DrawingWireFrames` | 코드 보관 완료 및 현재 문서화 대기 |
+| [`07_Modeling_Step1_DrawingWireFrames`](07_Modeling_Step1_DrawingWireFrames/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료 |
 | `07_Modeling_Step2_DrawingNormals` | 코드 보관 완료 및 현재 문서화 대기 |
 | `07_Modeling_Step3_Grid` | 코드 보관 완료 및 현재 문서화 대기 |
 | `07_Modeling_Step4_Cylinder` | 코드 보관 완료 및 현재 문서화 대기 |

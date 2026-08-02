@@ -5,8 +5,8 @@
 | 항목 | 내용 |
 | --- | --- |
 | Work Unit | `WU-Part2` |
-| 현재 마감 대상 | `Part2_Chapter05-08` Chapter06 순차 정규화 |
-| 후속 코드 범위 | Chapter07 Step1 DrawingWireFrames부터 Chapter08까지 |
+| 현재 마감 대상 | `Part2_Chapter05-08` Chapter07 순차 정규화 |
+| 후속 코드 범위 | Chapter07 Step2 DrawingNormals부터 Chapter08까지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -102,3 +102,10 @@
 - 출처 불명 texture를 제거하고 Step5~8에서 검수한 generated 목재 PNG의 동일 바이트 사본을 사용했다.
 - Step9 Debug/Release x64와 반복 resize·minimize/restore를 현재 확인하고, 동일 material·shininess 32의 Phong·Blinn-Phong screenshot 2장을 기술·시각 검수했다.
 - Step9 video는 두 정적 상태가 specular model 차이를 충분히 설명하므로 제외했다.
+
+## Chapter07 진행
+
+- Step1은 24개 face vertex와 36개 index의 box를 `TRIANGLELIST`로 유지하고 rasterizer fill mode만 wireframe으로 전환한다.
+- 출처 불명 texture 2개와 사용되지 않는 두 번째 shader resource를 제거하고 검증된 generated wood를 solid mode 보조 input으로 사용한다.
+- Debug/Release x64 build/run, 반복 resize·minimize/restore와 전체 창 wireframe screenshot을 2026-08-02 현재 확인했다.
+- Step1 video는 고정 wireframe 결과와 UI 상태를 screenshot 한 장으로 충분히 설명할 수 있어 제외했다.

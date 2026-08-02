@@ -21,6 +21,8 @@
 | RD-013 | `Chapter06 Step8 ResizingWindow` input/result | 출처 불명·미사용 texture 정리 | 출처 불명 PNG·JPEG와 두 번째 texture resource를 제거하고 Step5·Step5A·Step6·Step7에서 검수한 generated 목재 PNG의 동일 바이트 사본과 세 크기의 전체 창 capture를 사용 | 완료 | 다섯 단계의 목재 input SHA-256 일치. Debug/Release x64 load와 default·wide·compact capture의 metadata·개인 식별자 부재와 시각 결과를 확인했다 |
 | RD-014 | `Chapter06 Step9 PhongVsBlinnPhong` input/result | 출처 불명·미사용 texture 정리 | 출처 불명 PNG·JPEG를 제거하고 Step5·Step5A·Step6·Step7·Step8에서 검수한 generated 목재 PNG의 동일 바이트 사본과 같은 조건의 Phong·Blinn-Phong 전체 창 capture를 사용 | 완료 | 여섯 단계의 목재 input SHA-256 일치. Debug/Release x64 load와 capture 2장의 metadata·개인 식별자 부재와 시각 결과를 확인했다 |
 
+| RD-015 | `Chapter07 Step1 DrawingWireFrames` input/result | 출처 불명·미사용 texture 정리 | 출처 불명 PNG·JPEG와 두 번째 texture resource를 제거하고 Chapter06 Step5–9에서 검수한 generated 목재 PNG의 동일 바이트 사본과 재촬영한 전체 창 capture를 사용 | 완료 | 일곱 단계의 목재 input SHA-256 일치. Debug/Release x64 load, 반복 resize·minimize/restore와 capture metadata·개인 식별자 부재를 확인했다 |
+
 ## 유형
 
 - 강의 원문 표현
