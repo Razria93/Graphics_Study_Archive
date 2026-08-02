@@ -82,6 +82,9 @@ part2_chapter04_depth-buffer.png
 | `part2_chapter06_05_texturing_split_adjusted.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing` | 확보 | 동일한 window에서 `xSplit=0.25`의 texture 선택 경계 이동 확인 |
 | `part2_chapter06_05a_texturing_lighting_self_default.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf` | 확보 | 기본 light position에서 textured box의 face별 밝기와 highlight 확인 |
 | `part2_chapter06_05a_texturing_lighting_self_light_adjusted.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf` | 확보 | Light position만 오른쪽 위로 옮긴 textured point-light 결과 확인 |
+| `part2_chapter06_06_lighting_directional.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 확보 | Directional Light의 위치와 무관한 일정한 입사 방향 결과 확인 |
+| `part2_chapter06_06_lighting_point.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 확보 | Point Light의 위치와 선형 distance attenuation 결과 확인 |
+| `part2_chapter06_06_lighting_spot.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 확보 | Point와 같은 위치·falloff에서 `spotPower=16`으로 응축한 cone 결과 확인 |
 
 ## 승격 체크
 
