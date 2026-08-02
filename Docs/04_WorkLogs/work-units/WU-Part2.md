@@ -150,3 +150,11 @@
 - Model load 실패, 빈 mesh 결과와 resize resource 실패를 전파하고 Debug/Release x64와 1282×992 전체 창 screenshot을 2026-08-03 현재 확인한다.
 - 사용하지 않는 root image 3개를 제거했으며 Zelda FBX bundle은 실행 근거로 유지한다.
 - Zelda bundle의 공개 재배포 권리 근거가 충분하지 않아 Publication은 `검토 필요`로 유지하고 video는 제외한다.
+
+## Chapter08 진행
+
+- Step1은 normal과 eye direction의 dot product를 뒤집어 Dragon silhouette에 rim color를 가산한다.
+- Power와 smoothstep shaping이 모두 rim contribution을 유지하도록 branch를 교정하고 파란 rim이 보이는 결정적 기본값을 둔다.
+- Debug/Release x64, Assimp runtime dependency Clean/Rebuild, resize·minimize/restore와 1282×992 전체 창 screenshot을 2026-08-03 현재 확인한다.
+- 사용하지 않는 root image 3개를 제거했으며 Stanford Dragon은 실행 근거로 유지한다.
+- Dragon asset 권리 근거가 충분하지 않아 Publication은 `검토 필요`로 유지하고 video는 제외한다.

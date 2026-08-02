@@ -4,19 +4,19 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리하는 폴더다.
 
 ## 상태
 
-- 학습 코드 정리: Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–9 정규화 완료
-- Build/run: Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–9 현재 재검증 완료, 나머지 예제 과거 확인 유지
+- 학습 코드 정리: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1 정규화 완료
+- Build/run: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1 현재 재검증 완료, 나머지 예제 과거 확인 유지
 - 현재 대상: Chapter08 ShaderToys 순차 정규화
-- 캡처: Chapter05 Step2·4, Chapter06 Step2–9와 Chapter07 Step1–9 screenshot 확보, console 예제 제외
+- 캡처: Chapter05 Step2·4, Chapter06 Step2–9, Chapter07 Step1–9와 Chapter08 Step1 screenshot 확보, console 예제 제외
 
 ## Archive/Public 검토
 
 | 항목 | 상태 |
 | --- | --- |
 | Source provenance | [`SRC-P2-C05-08`](../Docs/99_Legacy/source-registry.md) |
-| Import status | code import 완료 / Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–9 순차 verification 완료 |
+| Import status | code import 완료 / Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1 순차 verification 완료 |
 | Public readiness | 검토 필요 |
-| Build/run status | Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–9 Debug/Release x64 현재 확인, 나머지 과거 확인 |
+| Build/run status | Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1 Debug/Release x64 현재 확인, 나머지 과거 확인 |
 | Next action | Chapter08 순차 정규화 범위 감사 |
 
 ## 예정 주제
@@ -81,7 +81,7 @@ Chapter06은 Direct3D interface lifetime에서 시작해 window, device resource
 | [`07_Modeling_Step8_SphereMapping_UserSolution`](07_Modeling_Step8_SphereMapping_UserSolution/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료 |
 | `07_Modeling_Step8_SphereMapping_ReferenceSolution` | private 비교 근거로 유지 |
 | [`07_Modeling_Step9_ModelFiles`](07_Modeling_Step9_ModelFiles/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
-| `08_ShaderToys_Step1_RimLighting` | 코드 보관 완료 및 현재 문서화 대기 |
+| [`08_ShaderToys_Step1_RimLighting`](08_ShaderToys_Step1_RimLighting/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
 | `08_ShaderToys_Step2_Cubemapping` | 코드 보관 완료 및 현재 문서화 대기 |
 | `08_ShaderToys_Step3_EnvironmentMapping` | 코드 보관 완료 및 현재 문서화 대기 |
 | `08_ShaderToys_Step4_ImageBasedLighting` | 코드 보관 완료 및 현재 문서화 대기 |

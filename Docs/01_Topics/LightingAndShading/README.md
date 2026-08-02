@@ -14,11 +14,12 @@
 - [Phong Shading](PhongShading.md)
 - [Phong And Blinn-Phong](PhongAndBlinnPhong.md)
 - [Light Types](LightTypes.md)
+- [Rim Lighting](RimLighting.md)
 
 ## 상태
 
 - Topic 목록: 작성
-- 상세 Topic 문서: Phong Shading, Phong And Blinn-Phong과 Light Types 작성
+- 상세 Topic 문서: Phong Shading, Phong And Blinn-Phong, Light Types와 Rim Lighting 작성
 - 연결 예제 검토: Part1 Chapter03 Step5, Part2 Chapter04 Step9·10, Part2 Chapter05 Step2 현재 확인
 - demo 연결: Step5 PhongShading, Step9 Shading, Step10 Lights와 Chapter05 Step2 Lights(GLM) 연결
 
