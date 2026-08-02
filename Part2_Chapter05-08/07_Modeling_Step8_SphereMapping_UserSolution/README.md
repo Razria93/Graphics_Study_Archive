@@ -60,4 +60,4 @@ Icosahedron seed를 반복 세분화해 sphere surface로 투영하고, 위치�
 - [Verification](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/07_08_SphereMappingUserSolution.md)
 - [이전 단계: Chapter07 Step7 FaceNormals](../07_Modeling_Step7_FaceNormals/README.md)
-- 다음 단계: `07_Modeling_Step9_ModelFiles`
+- [다음 단계: Chapter07 Step9 ModelFiles](../07_Modeling_Step9_ModelFiles/README.md)

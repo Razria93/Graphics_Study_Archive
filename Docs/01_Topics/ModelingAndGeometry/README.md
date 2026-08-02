@@ -7,6 +7,7 @@
 - [Mesh Topology And Wireframe Rasterization](MeshTopologyAndWireframeRasterization.md)
 - [Vertex And Face Normals](VertexAndFaceNormals.md)
 - [Procedural Primitive Generation](ProceduralPrimitiveGeneration.md)
+- [Model File Import](ModelFileImport.md)
 - [Topic Index](topic-index.md)
 
 ## 책임 경계

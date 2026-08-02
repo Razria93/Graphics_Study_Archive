@@ -146,3 +146,7 @@
 - Debug/Release x64 build/run, wide·compact·minimize/restore, generated texture runtime 결과와 1282×992 전체 창 screenshot을 2026-08-03 현재 확인한다.
 - Step8 ReferenceSolution은 private 비교 근거로만 유지하고 tracked Example·Demo·capture를 만들지 않는다.
 - Step8 video는 정적 screenshot에서 texture 방향과 seam 결과를 판독할 수 있어 제외한다.
+- Step9는 Assimp scene과 node hierarchy를 순회하고 FBX submesh별 vertex/index buffer와 diffuse texture를 구성한다.
+- Model load 실패, 빈 mesh 결과와 resize resource 실패를 전파하고 Debug/Release x64와 1282×992 전체 창 screenshot을 2026-08-03 현재 확인한다.
+- 사용하지 않는 root image 3개를 제거했으며 Zelda FBX bundle은 실행 근거로 유지한다.
+- Zelda bundle의 공개 재배포 권리 근거가 충분하지 않아 Publication은 `검토 필요`로 유지하고 video는 제외한다.
