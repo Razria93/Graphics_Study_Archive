@@ -9,15 +9,13 @@ using namespace std;
 
 
 
-int main()
-{
-	hlab::ExampleApp exampleApp;
+int main() {
+    hlab::ExampleApp exampleApp;
 
-	if (!exampleApp.Initialize())
-	{
-		cout << "Initialization failed." << endl;
-		return -1;
-	}
+    if (!exampleApp.Initialize()) {
+        cout << "Initialization failed." << endl;
+        return -1;
+    }
 
-	return exampleApp.Run();
+    return exampleApp.Run();
 }

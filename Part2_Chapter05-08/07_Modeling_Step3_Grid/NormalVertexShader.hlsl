@@ -1,19 +1,11 @@
 #include "Common.hlsli"
 
-cbuffer BasicVertexConstantBuffer : register(b0)
+cbuffer NormalVertexConstantBuffer : register(b0)
 {
     matrix model;
     matrix invTranspose;
     matrix view;
     matrix projection;
-};
-
-cbuffer NormalVertexConstantBuffer : register(b1)
-{
-
-
-
-
     float scale;
 };
 
@@ -25,7 +17,6 @@ PixelShaderInput main(VertexShaderInput input)
 
     float4 normal = float4(input.normalModel, 0.0f);
     output.normalWorld = mul(normal, invTranspose).xyz;
-
     output.normalWorld = normalize(output.normalWorld);
     
     pos = mul(pos, model);

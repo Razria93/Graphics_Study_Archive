@@ -15,6 +15,7 @@ using DirectX::SimpleMath::Matrix;
 using DirectX::SimpleMath::Vector2;
 using DirectX::SimpleMath::Vector3;
 using DirectX::SimpleMath::Vector4;
+using std::shared_ptr;
 
 
 struct Material
@@ -64,10 +65,10 @@ static_assert((sizeof(BasicPixelConstantBuffer) % 16) == 0,
 
 struct NormalVertexConstantBuffer
 {
-
-
-
-
+	Matrix model;
+	Matrix invTranspose;
+	Matrix view;
+	Matrix projection;
 	float scale = 0.1f;
 	float dummy[3];
 };
@@ -99,8 +100,6 @@ class ExampleApp : public AppBase
 
 	ComPtr<ID3D11Texture2D> m_texture;
 	ComPtr<ID3D11ShaderResourceView> m_textureResourceView;
-	ComPtr<ID3D11Texture2D> m_texture2;
-	ComPtr<ID3D11ShaderResourceView> m_textureResourceView2;
 	ComPtr<ID3D11SamplerState> m_samplerState;
 
 	BasicVertexConstantBuffer m_BasicVertexConstantBufferData;
@@ -109,7 +108,7 @@ class ExampleApp : public AppBase
 	bool m_usePerspectiveProjection = true;
 	Vector3 m_modelTranslation = Vector3(0.0f);
 	Vector3 m_modelRotation = Vector3(-0.286f, 0.163f, 0.0f);
-	Vector3 m_modelScaling = Vector3(0.5f);
+	Vector3 m_modelScaling = Vector3(0.8f);
 	float m_viewRot = 0.0f;
 
 	float m_projFovAngleY = 70.0f;
@@ -129,6 +128,6 @@ class ExampleApp : public AppBase
 	shared_ptr<Mesh> m_normalLines;
 	NormalVertexConstantBuffer m_normalVertexConstantBufferData;
 	bool m_drawNormals = false;
-	bool m_drawNormalsDirtyFlag = false;
+	float m_scale = 0.1f;
 };
 }
