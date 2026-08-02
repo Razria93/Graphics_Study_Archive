@@ -1,6 +1,6 @@
 #include "Common.hlsli"
 
-cbuffer BasicVertexConstantBuffer : register(b0)
+cbuffer VertexConstantBuffer : register(b0)
 {
     matrix model;
     matrix invTranspose;
@@ -30,6 +30,7 @@ PixelShaderInput main(VertexShaderInput input)
     output.posProj = pos;
     output.texcoord = input.texcoord;
     output.color = float3(0.0f, 0.0f, 0.0f);
+
     
     float4 normal = float4(input.normalModel, 0.0f);
     output.normalWorld = mul(normal, invTranspose).xyz;
@@ -37,4 +38,3 @@ PixelShaderInput main(VertexShaderInput input)
 
     return output;
 }
-

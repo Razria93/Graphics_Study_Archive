@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <memory>
 #include <windows.h>
 
@@ -19,4 +19,3 @@ int main() {
 
     return exampleApp.Run();
 }
-

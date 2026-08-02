@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <d3d11.h>
 #include <windows.h>
@@ -19,4 +19,3 @@ struct Mesh {
     UINT m_indexCount = 0;
 };
 }
-
