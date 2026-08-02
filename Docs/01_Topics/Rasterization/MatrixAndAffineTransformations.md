@@ -14,6 +14,7 @@ Graphics 좌표 변환에 사용하는 matrix, homogeneous coordinate와 affine 
 - GLM model·normal transform의 실제 적용은 [Step2 Lights(GLM) Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step2_Lights%28GLM%29/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter05-08/05_LightsGLM.md)로 위임한다.
 - DirectXMath의 SIMD load/store와 semantic transform API는 [Step3 DirectXMath Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step3_DirectXMath/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter05-08/05_DirectXMath.md)로 위임한다.
 - SimpleMath row-vector convention의 실제 model·normal transform은 [Step4 Lights(SimpleMath) Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step4_Lights%28SimpleMath%29/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter05-08/05_LightsSimpleMath.md)로 위임한다.
+- Model·View·Projection의 실제 UI 적용은 [Chapter06 Step3 ModelViewProj Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step3_ModelViewProj/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter05-08/06_ModelViewProj.md)로 위임한다.
 - build/run 사실은 [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)로 위임한다.
 - 결과 해석은 `Docs/03_Demos`, 검증 사실은 `Docs/02_Verification` 정본으로 위임한다.
 
@@ -38,6 +39,12 @@ DirectXMath의 transform helper는 row-vector 관례를 사용하며 translation
 Matrix multiplication은 일반적으로 교환 법칙이 성립하지 않는다. Column-vector convention에서 `T * R * p`는 point에 rotation을 먼저 적용한 뒤 translation을 적용한다. 반대로 `R * T * p`는 translation으로 생긴 offset까지 원점 주위로 회전한다.
 
 복합 transform은 코드를 읽는 순서가 아니라 vector에 가까운 오른쪽 matrix부터 해석한다. 다른 convention으로 옮길 때는 matrix transpose만이 아니라 multiplication order와 vector 방향을 함께 맞춰야 한다.
+
+### Model View Projection 연결
+
+Model matrix는 object local coordinate를 scene에 배치하고, View matrix는 scene을 camera 기준 coordinate로 옮긴다. Projection matrix는 camera-space position을 clip space로 변환해 화면 투영과 depth 범위를 정의한다. 세 matrix는 서로 다른 책임을 가지므로 object transform, camera 이동과 lens 설정을 하나의 값으로 섞지 않는다.
+
+CPU library와 shader의 matrix layout이 다르면 upload 전에 transpose할 수 있다. 이 transpose는 memory 해석을 연결하는 구현 선택이며 Model·View·Projection의 적용 순서나 left-handed·right-handed coordinate system을 자동으로 바꾸지 않는다.
 
 ### GLM And DirectXMath Convention Equivalence
 
@@ -89,6 +96,8 @@ Singular scale처럼 inverse가 존재하지 않는 transform은 normal matrix�
 - [Step3 DirectXMath Demo](../../03_Demos/Part2_Chapter05-08/05_DirectXMath.md)
 - [Step4 Lights(SimpleMath) Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step4_Lights%28SimpleMath%29/README.md)
 - [Step4 Lights(SimpleMath) Demo](../../03_Demos/Part2_Chapter05-08/05_LightsSimpleMath.md)
+- [Chapter06 Step3 ModelViewProj Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step3_ModelViewProj/README.md)
+- [Chapter06 Step3 ModelViewProj Demo](../../03_Demos/Part2_Chapter05-08/06_ModelViewProj.md)
 - [Part2 Chapter05-08 Verification](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [2D Transformations](Transformations2D.md)
 - [Rasterization Topic Index](topic-index.md)

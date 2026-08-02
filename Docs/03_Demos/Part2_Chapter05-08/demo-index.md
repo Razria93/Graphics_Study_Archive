@@ -5,9 +5,9 @@
 ## 범위
 
 - Chapter05 bundle: Step1 Matrix(GLM) → Step2 Lights(GLM) → Step3 DirectXMath → Step4 Lights(SimpleMath)
-- Chapter06 시작: Step1 COM ownership에서 Step2 window·device resource와 첫 graphics frame으로 확장
+- Chapter06 시작: Step1 COM ownership에서 Step2 window·device resource와 첫 graphics frame, Step3 조작 가능한 Model·View·Projection으로 확장
 - 주요 demo 후보: pipeline, modeling, cubemap, IBL, bloom
-- 비고: Chapter05 Step1·3과 Chapter06 Step1은 설명 중심 단계, Chapter05 Step2·4는 대응 visual, Chapter06 Step2는 첫 D3D11 pipeline visual로 유지
+- 비고: Chapter05 Step1·3과 Chapter06 Step1은 설명 중심 단계, Chapter05 Step2·4는 대응 visual, Chapter06 Step2는 첫 D3D11 pipeline visual, Step3는 projection 비교 visual로 유지
 
 ## Demo 목록
 
@@ -19,9 +19,10 @@
 | Chapter05 Step4 Lights(SimpleMath) | [상세 Demo](05_LightsSimpleMath.md) | [Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step4_Lights%28SimpleMath%29/README.md) | [Matrix](../../01_Topics/Rasterization/MatrixAndAffineTransformations.md), [Lighting](../../01_Topics/LightingAndShading/PhongAndBlinnPhong.md) | [Verification](../../02_Verification/Part2_Chapter05-08/verification-index.md) | [조정](../../_assets/captures/part2_chapter05_04_lights_simplemath_adjusted.png) | 미게시 | 확보 | Step1–4 bundle의 결론으로 Step2 GLM과 SimpleMath convention 결과 비교 |
 | Chapter06 Step1 COM | [상세 Demo](06_COM.md) | [Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step1_COM/README.md) | [COM And Resource Lifetime](../../01_Topics/DirectX11Pipeline/COMAndResourceLifetime.md) | [Verification](../../02_Verification/Part2_Chapter05-08/verification-index.md) | 없음 | 미게시 | 제외 | 결정적 console 출력과 source로 interface ownership 설명, screenshot·video 제외 |
 | Chapter06 Step2 InitializingD3D | [상세 Demo](06_InitializingD3D.md) | [Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step2_InitializingD3D/README.md) | [Device And Context](../../01_Topics/DirectX11Pipeline/DeviceAndContext.md), [Swap Chain And Viewport](../../01_Topics/DirectX11Pipeline/SwapChainAndViewport.md) | [Verification](../../02_Verification/Part2_Chapter05-08/verification-index.md) | [기본](../../_assets/captures/part2_chapter06_02_initializing_d3d.png) | 미게시 | 확보 | 첫 end-to-end D3D11 graphics pipeline과 기본 perspective color cube 확인 |
+| Chapter06 Step3 ModelViewProj | [상세 Demo](06_ModelViewProj.md) | [Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step3_ModelViewProj/README.md) | [Matrix](../../01_Topics/Rasterization/MatrixAndAffineTransformations.md), [Perspective Projection](../../01_Topics/Rasterization/PerspectiveProjection.md) | [Verification](../../02_Verification/Part2_Chapter05-08/verification-index.md) | [Perspective](../../_assets/captures/part2_chapter06_03_model_view_proj_perspective.png), [Orthographic](../../_assets/captures/part2_chapter06_03_model_view_proj_orthographic.png) | 미게시 | 확보 | 동일 Model·View의 projection 비교 screenshot과 Model Y 회전 selected local video 확보 |
 | 최소 capture | [Step2 상세 Demo](05_LightsGLM.md) | [Step2 Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step2_Lights%28GLM%29/README.md) | [Matrix](../../01_Topics/Rasterization/MatrixAndAffineTransformations.md) | [Verification](../../02_Verification/Part2_Chapter05-08/verification-index.md) | [기본](../../_assets/captures/part2_chapter05_02_lights_glm_default.png), [조정](../../_assets/captures/part2_chapter05_02_lights_glm_adjusted.png) | 미게시 | 확보 | Chapter 최초 graphics Example visual |
 | 대표 capture | 없음 | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 미게시 | 후보 | 대표 예제 선정 후 갱신 |
-| video | 없음 | Chapter05 Step1–4, Chapter06 Step1–2 | [Matrix](../../01_Topics/Rasterization/MatrixAndAffineTransformations.md), [DirectX11 Pipeline](../../01_Topics/DirectX11Pipeline/README.md) | [Verification](../../02_Verification/Part2_Chapter05-08/verification-index.md) | 없음 | 미게시 | 제외 | Console 단계, Chapter05 정적 비교와 Step2 초기화 결과는 시간 변화 없이 설명 가능 |
+| video | [Step3 상세 Demo](06_ModelViewProj.md) | [Step3 Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step3_ModelViewProj/README.md) | [Matrix](../../01_Topics/Rasterization/MatrixAndAffineTransformations.md) | [Verification](../../02_Verification/Part2_Chapter05-08/verification-index.md) | selected local video | 미게시 | 확보 | Model Y rotation을 한 방향 연속 drag로 보여주는 7.27초 MP4, Publication 전까지 local-only |
 
 ## 갱신 기준
 
