@@ -127,7 +127,7 @@ class AppBase {
         m_context->Unmap(buffer.Get(), NULL);
     }
 
-    void CreateTexture(const std::string filename,
+    bool CreateTexture(const std::string &filename,
                        ComPtr<ID3D11Texture2D> &texture,
                        ComPtr<ID3D11ShaderResourceView> &textureResourceView);
 
@@ -152,4 +152,4 @@ class AppBase {
 
     D3D11_VIEWPORT m_screenViewport;
 };
-} 
+}

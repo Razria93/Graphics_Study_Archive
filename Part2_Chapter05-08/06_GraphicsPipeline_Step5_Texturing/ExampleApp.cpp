@@ -164,7 +164,9 @@ auto MakeBox() {
 }
 
 ExampleApp::ExampleApp()
-    : AppBase(), m_indexCount(0), m_pixelShaderConstantBufferData() {}
+    : AppBase(), m_indexCount(0), m_pixelShaderConstantBufferData() {
+    m_pixelShaderConstantBufferData.xSplit = 0.5f;
+}
 
 bool ExampleApp::Initialize() {
 
@@ -174,10 +176,13 @@ bool ExampleApp::Initialize() {
     
     
     
-    AppBase::CreateTexture("crate2_diffuse.png", m_texture_0,
-                           m_textureResourceView_0);
+    if (!AppBase::CreateTexture("crate2_diffuse.png", m_texture_0,
+                                m_textureResourceView_0))
+        return false;
 
-    AppBase::CreateTexture("wall.jpg", m_texture_1, m_textureResourceView_1);
+    if (!AppBase::CreateTexture("wall.jpg", m_texture_1,
+                                m_textureResourceView_1))
+        return false;
 
     
     D3D11_SAMPLER_DESC sampDesc;
@@ -191,7 +196,11 @@ bool ExampleApp::Initialize() {
     sampDesc.MaxLOD = D3D11_FLOAT32_MAX;
 
     
-    m_device->CreateSamplerState(&sampDesc, m_samplerState.GetAddressOf());
+    if (FAILED(m_device->CreateSamplerState(&sampDesc,
+                                            m_samplerState.GetAddressOf()))) {
+        cout << "CreateSamplerState() failed." << endl;
+        return false;
+    }
 
     
     auto [vertices, indices] = MakeSquare();
