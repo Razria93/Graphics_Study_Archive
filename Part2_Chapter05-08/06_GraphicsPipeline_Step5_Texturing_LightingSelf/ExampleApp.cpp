@@ -7,51 +7,9 @@ namespace hlab {
 
 using namespace std;
 
-auto MakeSquare() {
-    vector<Vector3> positions;
-    vector<Vector3> worldPosition;
-    vector<Vector3> normals;
-    vector<Vector2> texcoords; 
-
-    const float scale = 1.0f;
-
-    positions.push_back(Vector3(-1.0f, 1.0f, 0.0f) * scale);
-    positions.push_back(Vector3(1.0f, 1.0f, 0.0f) * scale);
-    positions.push_back(Vector3(1.0f, -1.0f, 0.0f) * scale);
-    positions.push_back(Vector3(-1.0f, -1.0f, 0.0f) * scale);
-    worldPosition.push_back(Vector3(-1.0f, 1.0f, 0.0f) * scale);
-    worldPosition.push_back(Vector3(1.0f, 1.0f, 0.0f) * scale);
-    worldPosition.push_back(Vector3(1.0f, -1.0f, 0.0f) * scale);
-    worldPosition.push_back(Vector3(-1.0f, -1.0f, 0.0f) * scale);
-    normals.push_back(Vector3(0.0f, 0.0f, -1.0f));
-    normals.push_back(Vector3(0.0f, 0.0f, -1.0f));
-    normals.push_back(Vector3(0.0f, 0.0f, -1.0f));
-    normals.push_back(Vector3(0.0f, 0.0f, -1.0f));
-
-    texcoords.push_back(Vector2(0.0f, 0.0f));
-    texcoords.push_back(Vector2(1.0f, 0.0f));
-    texcoords.push_back(Vector2(1.0f, 1.0f));
-    texcoords.push_back(Vector2(0.0f, 1.0f));
-
-    vector<Vertex> vertices;
-    for (size_t i = 0; i < positions.size(); i++) {
-        Vertex v;
-        v.position = positions[i];
-        v.worldPosition = worldPosition[i];
-        v.texcoord = texcoords[i];
-        vertices.push_back(v);
-    }
-    vector<uint16_t> indices = {
-        0, 1, 2, 0, 2, 3, 
-    };
-
-    return tuple{vertices, indices};
-}
-
 auto MakeBox() {
 
     vector<Vector3> positions;
-    vector<Vector3> worldPosition;
     vector<Vector3> normals;
     vector<Vector2> texcoords; 
 
@@ -61,10 +19,6 @@ auto MakeBox() {
     positions.push_back(Vector3(-1.0f, +1.0f, +1.0f) * scale);
     positions.push_back(Vector3(+1.0f, +1.0f, +1.0f) * scale);
     positions.push_back(Vector3(+1.0f, +1.0f, -1.0f) * scale);
-    worldPosition.push_back(Vector3(-1.0f, +1.0f, -1.0f) * scale);
-    worldPosition.push_back(Vector3(-1.0f, +1.0f, +1.0f) * scale);
-    worldPosition.push_back(Vector3(+1.0f, +1.0f, +1.0f) * scale);
-    worldPosition.push_back(Vector3(+1.0f, +1.0f, -1.0f) * scale);
     normals.push_back(Vector3(0.0f, +1.0f, 0.0f));
     normals.push_back(Vector3(0.0f, +1.0f, 0.0f));
     normals.push_back(Vector3(0.0f, +1.0f, 0.0f));
@@ -78,10 +32,6 @@ auto MakeBox() {
     positions.push_back(Vector3(-1.0f, -1.0f, -1.0f) * scale);
     positions.push_back(Vector3(+1.0f, -1.0f, -1.0f) * scale);
     positions.push_back(Vector3(+1.0f, -1.0f, +1.0f) * scale);
-    worldPosition.push_back(Vector3(-1.0f, -1.0f, +1.0f) * scale);
-    worldPosition.push_back(Vector3(-1.0f, -1.0f, -1.0f) * scale);
-    worldPosition.push_back(Vector3(+1.0f, -1.0f, -1.0f) * scale);
-    worldPosition.push_back(Vector3(+1.0f, -1.0f, +1.0f) * scale);
     normals.push_back(Vector3(0.0f, -1.0f, 0.0f));
     normals.push_back(Vector3(0.0f, -1.0f, 0.0f));
     normals.push_back(Vector3(0.0f, -1.0f, 0.0f));
@@ -95,10 +45,6 @@ auto MakeBox() {
     positions.push_back(Vector3(-1.0f, +1.0f, -1.0f) * scale);
     positions.push_back(Vector3(+1.0f, +1.0f, -1.0f) * scale);
     positions.push_back(Vector3(1.0f, -1.0f, -1.0f) * scale);
-    worldPosition.push_back(Vector3(-1.0f, -1.0f, -1.0f) * scale);
-    worldPosition.push_back(Vector3(-1.0f, +1.0f, -1.0f) * scale);
-    worldPosition.push_back(Vector3(+1.0f, +1.0f, -1.0f) * scale);
-    worldPosition.push_back(Vector3(1.0f, -1.0f, -1.0f) * scale);
     normals.push_back(Vector3(0.0f, 0.0f, -1.0f));
     normals.push_back(Vector3(0.0f, 0.0f, -1.0f));
     normals.push_back(Vector3(0.0f, 0.0f, -1.0f));
@@ -112,10 +58,6 @@ auto MakeBox() {
     positions.push_back(Vector3(-1.0f, -1.0f, +1.0f) * scale);
     positions.push_back(Vector3(+1.0f, -1.0f, +1.0f) * scale);
     positions.push_back(Vector3(+1.0f, +1.0f, +1.0f) * scale);
-    worldPosition.push_back(Vector3(-1.0f, +1.0f, +1.0f) * scale);
-    worldPosition.push_back(Vector3(-1.0f, -1.0f, +1.0f) * scale);
-    worldPosition.push_back(Vector3(+1.0f, -1.0f, +1.0f) * scale);
-    worldPosition.push_back(Vector3(+1.0f, +1.0f, +1.0f) * scale);
     normals.push_back(Vector3(0.0f, 0.0f, 1.0f));
     normals.push_back(Vector3(0.0f, 0.0f, 1.0f));
     normals.push_back(Vector3(0.0f, 0.0f, 1.0f));
@@ -129,10 +71,6 @@ auto MakeBox() {
     positions.push_back(Vector3(-1.0f, -1.0f, +1.0f) * scale);
     positions.push_back(Vector3(-1.0f, +1.0f, +1.0f) * scale);
     positions.push_back(Vector3(-1.0f, +1.0f, -1.0f) * scale);
-    worldPosition.push_back(Vector3(-1.0f, -1.0f, -1.0f) * scale);
-    worldPosition.push_back(Vector3(-1.0f, -1.0f, +1.0f) * scale);
-    worldPosition.push_back(Vector3(-1.0f, +1.0f, +1.0f) * scale);
-    worldPosition.push_back(Vector3(-1.0f, +1.0f, -1.0f) * scale);
     normals.push_back(Vector3(-1.0f, 0.0f, 0.0f));
     normals.push_back(Vector3(-1.0f, 0.0f, 0.0f));
     normals.push_back(Vector3(-1.0f, 0.0f, 0.0f));
@@ -146,10 +84,6 @@ auto MakeBox() {
     positions.push_back(Vector3(+1.0f, +1.0f, +1.0f) * scale);
     positions.push_back(Vector3(+1.0f, -1.0f, +1.0f) * scale);
     positions.push_back(Vector3(+1.0f, -1.0f, -1.0f) * scale);
-    worldPosition.push_back(Vector3(+1.0f, +1.0f, -1.0f) * scale);
-    worldPosition.push_back(Vector3(+1.0f, +1.0f, +1.0f) * scale);
-    worldPosition.push_back(Vector3(+1.0f, -1.0f, +1.0f) * scale);
-    worldPosition.push_back(Vector3(+1.0f, -1.0f, -1.0f) * scale);
     normals.push_back(Vector3(1.0f, 0.0f, 0.0f));
     normals.push_back(Vector3(1.0f, 0.0f, 0.0f));
     normals.push_back(Vector3(1.0f, 0.0f, 0.0f));
@@ -163,7 +97,6 @@ auto MakeBox() {
     for (size_t i = 0; i < positions.size(); i++) {
         Vertex v;
         v.position = positions[i];
-        v.worldPosition = worldPosition[i];
         v.normal = normals[i];
         v.texcoord = texcoords[i];
         vertices.push_back(v);
@@ -189,10 +122,9 @@ bool ExampleApp::Initialize() {
     if (!AppBase::Initialize())
         return false;
 
-    AppBase::CreateTexture("crate2_diffuse.png", m_texture_0,
-                           m_textureResourceView_0);
-
-    AppBase::CreateTexture("wall.jpg", m_texture_1, m_textureResourceView_1);
+    if (!AppBase::CreateTexture("generated_dark_wood.png", m_texture_0,
+                                m_textureResourceView_0))
+        return false;
 
     D3D11_SAMPLER_DESC sampDesc;
     ZeroMemory(&sampDesc, sizeof(sampDesc));
@@ -204,28 +136,37 @@ bool ExampleApp::Initialize() {
     sampDesc.MinLOD = 0;
     sampDesc.MaxLOD = D3D11_FLOAT32_MAX;
 
-    m_device->CreateSamplerState(&sampDesc, m_samplerState.GetAddressOf());
+    if (FAILED(m_device->CreateSamplerState(&sampDesc,
+                                            m_samplerState.GetAddressOf()))) {
+        cout << "CreateSamplerState() failed." << endl;
+        return false;
+    }
 
     auto [vertices, indices] = MakeBox();
 
-    AppBase::CreateVertexBuffer(vertices, m_vertexBuffer);
+    if (!AppBase::CreateVertexBuffer(vertices, m_vertexBuffer))
+        return false;
 
     m_indexCount = UINT(indices.size());
 
-    AppBase::CreateIndexBuffer(indices, m_indexBuffer);
+    if (!AppBase::CreateIndexBuffer(indices, m_indexBuffer))
+        return false;
 
     m_constantBufferData.model = Matrix();
     m_constantBufferData.view = Matrix();
     m_constantBufferData.projection = Matrix();
     m_constantBufferData.normalMatrix = Matrix();
 
-    AppBase::CreateConstantBuffer(m_constantBufferData, m_constantBuffer);
+    if (!AppBase::CreateConstantBuffer(m_constantBufferData, m_constantBuffer))
+        return false;
 
-    AppBase::CreateConstantBuffer(m_lightConstantBufferData,
-                                  m_lightConstantBuffer);
+    if (!AppBase::CreateConstantBuffer(m_lightConstantBufferData,
+                                       m_lightConstantBuffer))
+        return false;
 
-        AppBase::CreateConstantBuffer(m_materialConstantBufferData,
-                                  m_materialConstantBuffer);
+    if (!AppBase::CreateConstantBuffer(m_materialConstantBufferData,
+                                       m_materialConstantBuffer))
+        return false;
 
 
 
@@ -235,19 +176,20 @@ bool ExampleApp::Initialize() {
     vector<D3D11_INPUT_ELEMENT_DESC> inputElements = {
         {"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0,
          D3D11_INPUT_PER_VERTEX_DATA, 0},
-        {"WORLDPOSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 4 * 3,
+        {"NORMAL", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 4 * 3,
          D3D11_INPUT_PER_VERTEX_DATA, 0},
-        {"NORMAL", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 4 * 3 + 4 * 3,
-         D3D11_INPUT_PER_VERTEX_DATA, 0},
-        {"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT, 0, 4 * 3 + 4 * 3 + 4 * 3,
+        {"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT, 0, 4 * 3 + 4 * 3,
          D3D11_INPUT_PER_VERTEX_DATA, 0},
     };
 
-    AppBase::CreateVertexShaderAndInputLayout(
-        L"ColorVertexShader.hlsl", inputElements, m_colorVertexShader,
-        m_colorInputLayout);
+    if (!AppBase::CreateVertexShaderAndInputLayout(
+            L"ColorVertexShader.hlsl", inputElements, m_colorVertexShader,
+            m_colorInputLayout))
+        return false;
 
-    AppBase::CreatePixelShader(L"ColorPixelShader.hlsl", m_colorPixelShader);
+    if (!AppBase::CreatePixelShader(L"ColorPixelShader.hlsl",
+                                    m_colorPixelShader))
+        return false;
 
     return true;
 }
@@ -283,10 +225,10 @@ void ExampleApp::Update(float dt) {
     m_constantBufferData.projection =
         m_constantBufferData.projection.Transpose();
 
-    AppBase::UpdateBuffer(m_constantBufferData, m_constantBuffer);
+    m_lightConstantBufferData.viewPos = m_viewEyePos;
 
-    AppBase::UpdateBuffer(m_lightConstantBufferData, 
-                          m_lightConstantBuffer);
+    AppBase::UpdateBuffer(m_constantBufferData, m_constantBuffer);
+    AppBase::UpdateBuffer(m_lightConstantBufferData, m_lightConstantBuffer);
     AppBase::UpdateBuffer(m_materialConstantBufferData,
                           m_materialConstantBuffer);
 }
@@ -313,10 +255,7 @@ void ExampleApp::Render() {
 
     ID3D11ShaderResourceView *pixelResources_0[1] = {
         m_textureResourceView_0.Get()};
-    ID3D11ShaderResourceView *pixelResources_1[1] = {
-        m_textureResourceView_1.Get()};
     m_context->PSSetShaderResources(0, 1, pixelResources_0);
-    m_context->PSSetShaderResources(1, 1, pixelResources_1);
     m_context->PSSetSamplers(0, 1, m_samplerState.GetAddressOf());
 
     m_context->PSSetConstantBuffers(0, 1, m_lightConstantBuffer.GetAddressOf());
@@ -383,9 +322,7 @@ void ExampleApp::UpdateGUI()
                         &m_materialConstantBufferData.matSpecular.x, 0.0f, 1.0f);
 
     ImGui::SliderFloat("shininess", &m_materialConstantBufferData.shininess,
-                       0.0f, 100.0f);
-    ImGui::SliderFloat("ks", &m_materialConstantBufferData.ks, 0.0f, 1.0f);
-    ImGui::SliderFloat("kd", &m_materialConstantBufferData.kd, 0.0f, 1.0f);
+                       1.0f, 100.0f);
 
 
 }

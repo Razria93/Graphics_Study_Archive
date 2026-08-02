@@ -19,7 +19,6 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0) {
 
 struct VertexShaderInput {
     float3 modelPos : POSITION;
-    float3 worldPos : WORLDPOSITION;
     float3 normal : NORMAL;
     float2 texcoord : TEXCOORD0;
 };
