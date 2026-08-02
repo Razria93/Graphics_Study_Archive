@@ -80,6 +80,8 @@ part2_chapter04_depth-buffer.png
 | `part2_chapter06_04_shaders_split_adjusted.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step4_Shaders` | 확보 | 동일한 window에서 `xSplitPoint=0.25`의 세로·가로 경계 이동 확인 |
 | `part2_chapter06_05_texturing_default.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing` | 확보 | Generated 석재·목재 texture와 `xSplit=0.5`의 균등 선택 경계 확인 |
 | `part2_chapter06_05_texturing_split_adjusted.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing` | 확보 | 동일한 window에서 `xSplit=0.25`의 texture 선택 경계 이동 확인 |
+| `part2_chapter06_05a_texturing_lighting_self_default.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf` | 확보 | 기본 light position에서 textured box의 face별 밝기와 highlight 확인 |
+| `part2_chapter06_05a_texturing_lighting_self_light_adjusted.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf` | 확보 | Light position만 오른쪽 위로 옮긴 textured point-light 결과 확인 |
 
 ## 승격 체크
 
