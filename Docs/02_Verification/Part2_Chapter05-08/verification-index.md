@@ -4,7 +4,7 @@
 
 ## Provenance
 
-- 현재 확인: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–7과 Step8 SphereMapping UserSolution build/run, 2026-08-03
+- 현재 확인: Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–9 build/run, 2026-08-03
 - 과거 확인: Chapter07 Step8 ReferenceSolution과 Step9 이후 예제, 문서화 이전(날짜 미기록)
 - 현재 재검증: Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–8 UserSolution 완료
 - 근거: 현재 대상의 Debug/Release x64 직접 실행과 Chapter README의 전체 예제 과거 성공 기록
@@ -35,7 +35,7 @@
 | `07_Modeling_Step7_FaceNormals` | `Part2_Chapter05-08/07_Modeling_Step7_FaceNormals/07_Modeling_Step7_FaceNormals.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · non-degenerate 160개 outward·degenerate 40개 · wide·compact·minimize/restore · 전체 창 screenshot · video 제외 |
 | `07_Modeling_Step8_SphereMapping_ReferenceSolution` | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_ReferenceSolution/07_Modeling_Step8_SphereMapping.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `07_Modeling_Step8_SphereMapping_UserSolution` | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/07_Modeling_Step8_SphereMapping.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · project 폴더 CWD · 20→80→320→1,280 triangles · generated fictional planet texture load · wide·compact·minimize/restore · 1282×992 전체 창 capture 확인 |
-| `07_Modeling_Step9_ModelFiles` | `Part2_Chapter05-08/07_Modeling_Step9_ModelFiles/07_Modeling_Step9_ModelFiles.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `07_Modeling_Step9_ModelFiles` | `Part2_Chapter05-08/07_Modeling_Step9_ModelFiles/07_Modeling_Step9_ModelFiles.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · project 폴더 CWD · FBX와 diffuse texture load · resize·minimize/restore · 1282×992 전체 창 screenshot |
 | `08_ShaderToys_Step1_RimLighting` | `Part2_Chapter05-08/08_ShaderToys_Step1_RimLighting/08_ShaderToys_Step1_RimLighting.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `08_ShaderToys_Step2_Cubemapping` | `Part2_Chapter05-08/08_ShaderToys_Step2_Cubemapping/08_ShaderToys_Step2_Cubemapping.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `08_ShaderToys_Step3_EnvironmentMapping` | `Part2_Chapter05-08/08_ShaderToys_Step3_EnvironmentMapping/08_ShaderToys_Step3_EnvironmentMapping.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
