@@ -151,3 +151,5 @@ portfolio_raytracer_reflection.png
 - Step8 SphereMapping UserSolution은 generated fictional planet texture를 적용한 1282×992 전체 창 screenshot 한 장을 확보했다.
 - 한 장에서 texture 방향과 U seam 결과를 판독할 수 있어 같은 bounds의 보조 screenshot은 추가하지 않는다.
 - Step8 ReferenceSolution은 private 비교 근거로만 사용하고 tracked capture를 만들지 않는다.
+- Step9 ModelFiles는 `Use Texture=On`, wireframe·normal 표시 Off 상태의 Zelda FBX 전체 창 screenshot 한 장을 확보했다.
+- Step9 video는 정적 model import와 submesh texture binding을 screenshot 한 장으로 판독할 수 있어 제외한다.

@@ -145,7 +145,7 @@ SubdivideTriangle(v0, v1, v2)
 
 - [Chapter07 Step8 SphereMapping UserSolution Example](../../../Part2_Chapter05-08/07_Modeling_Step8_SphereMapping_UserSolution/README.md)
 - [이전 단계: Chapter07 Step7 FaceNormals Demo](07_07_FaceNormals.md)
-- 다음 단계: Chapter07 Step9 ModelFiles
+- [다음 단계: Chapter07 Step9 ModelFiles Demo](07_09_ModelFiles.md)
 - [Spherical Texture Mapping](../../01_Topics/TexturingAndMapping/SphericalTextureMapping.md)
 - [Texture Sampling](../../01_Topics/TexturingAndMapping/TextureSampling.md)
 - [Procedural Primitive Generation](../../01_Topics/ModelingAndGeometry/ProceduralPrimitiveGeneration.md)
