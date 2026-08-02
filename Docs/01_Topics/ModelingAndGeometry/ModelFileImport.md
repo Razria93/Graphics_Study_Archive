@@ -2,8 +2,7 @@
 
 ## 목적
 
-Model file import는 외부 파일의 scene, node, mesh와 material 표현을 runtime의
-geometry와 GPU resource 구조로 변환하는 과정이다.
+Model file import는 외부 파일의 scene, node, mesh와 material 표현을 runtime의 geometry와 GPU resource 구조로 변환하는 과정이다.
 
 ## 책임 범위
 
@@ -16,16 +15,11 @@ geometry와 GPU resource 구조로 변환하는 과정이다.
 
 ### Scene과 node 계층
 
-Model file은 하나의 mesh만 저장하지 않을 수 있다. Scene root 아래의 node는
-여러 child와 mesh reference를 가지며, 각 node의 local transform은 부모에서
-누적한 transform과 합성한다. 따라서 mesh vertex를 world 또는 model 기준으로
-옮길 때 node tree의 순회 순서와 행렬 convention을 함께 확인한다.
+Model file은 하나의 mesh만 저장하지 않을 수 있다. Scene root 아래의 node는 여러 child와 mesh reference를 가지며, 각 node의 local transform은 부모에서 누적한 transform과 합성한다. 따라서 mesh vertex를 world 또는 model 기준으로 옮길 때 node tree의 순회 순서와 행렬 convention을 함께 확인한다.
 
 ### Mesh와 submesh
 
-Importer가 반환한 mesh마다 position, normal, texture coordinate와 index를
-runtime vertex 형식으로 변환한다. Material이 참조하는 diffuse texture는 mesh와
-연결하되, 파일 누락과 decode 실패를 resource 생성 실패로 전파한다.
+Importer가 반환한 mesh마다 position, normal, texture coordinate와 index를 runtime vertex 형식으로 변환한다. Material이 참조하는 diffuse texture는 mesh와 연결하되, 파일 누락과 decode 실패를 resource 생성 실패로 전파한다.
 
 ```cpp
 // Pseudo C++: scene tree를 runtime mesh 목록으로 변환

@@ -2,8 +2,7 @@
 
 ## 목적
 
-Procedural geometry 단계에서 확장해 FBX scene의 node, submesh와 diffuse texture를
-읽고 DirectX11 draw resource로 변환하는 흐름을 설명한다.
+Procedural geometry 단계에서 확장해 FBX scene의 node, submesh와 diffuse texture를 읽고 DirectX11 draw resource로 변환하는 흐름을 설명한다.
 
 ## 책임 범위
 
@@ -70,9 +69,7 @@ CreateSubmesh(meshData)
 
 ## 시각 결과
 
-Texture가 적용된 여러 submesh가 하나의 character와 base scene을 구성한다. UI의
-`Use Texture`가 켜진 기본 상태에서 material 경계와 각 submesh의 texture binding을
-한 frame에서 확인한다.
+Texture가 적용된 여러 submesh가 하나의 character와 base scene을 구성한다. UI의 `Use Texture`가 켜진 기본 상태에서 material 경계와 각 submesh의 texture binding을 한 frame에서 확인한다.
 
 ## 구현 범위와 한계
 

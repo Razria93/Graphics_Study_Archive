@@ -2,8 +2,7 @@
 
 ## 목적
 
-Assimp로 FBX scene을 읽고 node 계층의 transform을 누적해 여러 submesh를
-DirectX11 vertex/index buffer와 texture resource로 변환한다.
+Assimp로 FBX scene을 읽고 node 계층의 transform을 누적해 여러 submesh를 DirectX11 vertex/index buffer와 texture resource로 변환한다.
 
 ## 구현 요약
 
@@ -13,9 +12,7 @@ DirectX11 vertex/index buffer와 texture resource로 변환한다.
 - surface는 `TRIANGLELIST`, 선택적인 normal 진단선은 `LINELIST`로 그린다.
 - model load 실패나 빈 mesh 결과는 GPU resource 생성 전에 중단한다.
 
-일반적인 scene graph와 model import 개념은
-[Model File Import](../../Docs/01_Topics/ModelingAndGeometry/ModelFileImport.md)로
-위임한다.
+일반적인 scene graph와 model import 개념은 [Model File Import](../../Docs/01_Topics/ModelingAndGeometry/ModelFileImport.md)로 위임한다.
 
 ## Build And Run
 
