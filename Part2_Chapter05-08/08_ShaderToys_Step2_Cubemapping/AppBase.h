@@ -48,6 +48,7 @@ class AppBase {
     void SetViewport();
     bool CreateRenderTargetView();
     bool CreateDepthBuffer();
+    bool ResizeClientResources(UINT width, UINT height);
     void CreateVertexShaderAndInputLayout(
         const wstring &filename,
         const vector<D3D11_INPUT_ELEMENT_DESC> &inputElements,
@@ -161,5 +162,7 @@ class AppBase {
     ComPtr<ID3D11DepthStencilState> m_depthStencilState;
 
     D3D11_VIEWPORT m_screenViewport;
+    bool m_isMinimized = false;
+    bool m_renderResourcesReady = false;
 };
 } // namespace hlab

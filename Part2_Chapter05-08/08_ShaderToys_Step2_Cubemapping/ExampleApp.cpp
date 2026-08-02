@@ -17,7 +17,7 @@ ExampleApp::ExampleApp() : AppBase(), m_BasicPixelConstantBufferData() {}
 
 // 코드 구조가 조금씩 복잡해지고 있습니다.
 // 일단은 이해하기 단순하게 구현해봅시다.
-void ExampleApp::InitializeCubeMapping()
+bool ExampleApp::InitializeCubeMapping()
 {
 
 	// texassemble.exe cube -w 2048 -h 2048 -o saintpeters.dds posx.jpg negx.jpg posy.jpg negy.jpg posz.jpg negz.jpg
@@ -40,6 +40,7 @@ void ExampleApp::InitializeCubeMapping()
 	if (FAILED(hr))
 	{
 		std::cout << "CreateDDSTextureFromFileEx() failed" << std::endl;
+		return false;
 	}
 
 	// Mesh 객체 생성 및 CB 초기화
@@ -99,6 +100,7 @@ void ExampleApp::InitializeCubeMapping()
 
 	// 기타
 	// - 텍스춰 샘플러도 다른 텍스춰와 같이 사용
+	return true;
 }
 
 bool ExampleApp::Initialize()
@@ -108,7 +110,8 @@ bool ExampleApp::Initialize()
 		return false;
 
 	// 큐브매핑 준비 만들기
-	InitializeCubeMapping();
+	if (!InitializeCubeMapping())
+		return false;
 
 	// Texture sampler 만들기
 	D3D11_SAMPLER_DESC sampDesc;
@@ -122,12 +125,16 @@ bool ExampleApp::Initialize()
 	sampDesc.MaxLOD = D3D11_FLOAT32_MAX;
 
 	// Create the Sample State
-	m_device->CreateSamplerState(&sampDesc, m_samplerState.GetAddressOf());
+	if (FAILED(m_device->CreateSamplerState(&sampDesc,
+	                                      m_samplerState.GetAddressOf())))
+		return false;
 
 	// Geometry 정의
 
 	auto meshes =
 	    GeometryGenerator::ReadFromFile("f3d-data/zelda/", "zeldaPosed001.fbx");
+	if (meshes.empty())
+		return false;
 
 	// ConstantBuffer 만들기 (하나 만들어서 공유)
 	m_BasicVertexConstantBufferData.model = Matrix();
@@ -327,6 +334,10 @@ void ExampleApp::Update(float dt)
 
 	// 큐브매핑을 위한 ConstantBuffers
 	m_BasicVertexConstantBufferData.model = Matrix();
+	m_BasicVertexConstantBufferData.view =
+	    (Matrix::CreateRotationY(m_viewRot.y) *
+	     Matrix::CreateRotationX(m_viewRot.x))
+	        .Transpose();
 	// Transpose()도 생략 가능
 
 	// cubeMap VS CB 업데이트

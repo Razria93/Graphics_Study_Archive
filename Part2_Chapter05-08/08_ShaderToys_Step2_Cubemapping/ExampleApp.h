@@ -71,7 +71,7 @@ class ExampleApp : public AppBase {
     virtual void Update(float dt) override;
     virtual void Render() override;
 
-    void InitializeCubeMapping();
+    bool InitializeCubeMapping();
 
   protected:
     ComPtr<ID3D11VertexShader> m_basicVertexShader;
