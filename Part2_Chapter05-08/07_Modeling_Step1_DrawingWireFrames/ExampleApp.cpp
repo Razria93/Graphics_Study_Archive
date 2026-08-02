@@ -10,7 +10,9 @@ namespace hlab {
 using namespace std;
 
 ExampleApp::ExampleApp()
-    : AppBase(), m_indexCount(0), m_pixelConstantBufferData() {}
+    : AppBase(), m_indexCount(0), m_pixelConstantBufferData() {
+    m_pixelConstantBufferData.useTexture = false;
+}
 
 bool ExampleApp::Initialize() {
 
@@ -20,10 +22,9 @@ bool ExampleApp::Initialize() {
 
 
 
-    AppBase::CreateTexture("crate2_diffuse.png", m_texture,
-                           m_textureResourceView);
-
-    AppBase::CreateTexture("wall.jpg", m_texture2, m_textureResourceView2);
+    if (!AppBase::CreateTexture("generated_dark_wood.png", m_texture,
+                                m_textureResourceView))
+        return false;
 
 
     D3D11_SAMPLER_DESC sampDesc;
@@ -37,29 +38,35 @@ bool ExampleApp::Initialize() {
     sampDesc.MaxLOD = D3D11_FLOAT32_MAX;
 
 
-    m_device->CreateSamplerState(&sampDesc, m_samplerState.GetAddressOf());
+    if (FAILED(m_device->CreateSamplerState(&sampDesc,
+                                            m_samplerState.GetAddressOf())))
+        return false;
 
 
     MeshData meshData = GeometryGenerator::MakeBox();
 
 
-    AppBase::CreateVertexBuffer(meshData.vertices, m_vertexBuffer);
+    if (!AppBase::CreateVertexBuffer(meshData.vertices, m_vertexBuffer))
+        return false;
 
 
     m_indexCount = UINT(meshData.indices.size());
 
-    AppBase::CreateIndexBuffer(meshData.indices, m_indexBuffer);
+    if (!AppBase::CreateIndexBuffer(meshData.indices, m_indexBuffer))
+        return false;
 
 
     m_vertexConstantBufferData.model = Matrix();
     m_vertexConstantBufferData.view = Matrix();
     m_vertexConstantBufferData.projection = Matrix();
 
-    AppBase::CreateConstantBuffer(m_vertexConstantBufferData,
-                                  m_vertexConstantBuffer);
+    if (!AppBase::CreateConstantBuffer(m_vertexConstantBufferData,
+                                       m_vertexConstantBuffer))
+        return false;
 
-    AppBase::CreateConstantBuffer(m_pixelConstantBufferData,
-                                  m_pixelShaderConstantBuffer);
+    if (!AppBase::CreateConstantBuffer(m_pixelConstantBufferData,
+                                       m_pixelShaderConstantBuffer))
+        return false;
 
 
 
@@ -88,11 +95,14 @@ bool ExampleApp::Initialize() {
          D3D11_INPUT_PER_VERTEX_DATA, 0},
     };
 
-    AppBase::CreateVertexShaderAndInputLayout(
-        L"BasicVertexShader.hlsl", inputElements, m_colorVertexShader,
-        m_colorInputLayout);
+    if (!AppBase::CreateVertexShaderAndInputLayout(
+            L"BasicVertexShader.hlsl", inputElements, m_colorVertexShader,
+            m_colorInputLayout))
+        return false;
 
-    AppBase::CreatePixelShader(L"BasicPixelShader.hlsl", m_colorPixelShader);
+    if (!AppBase::CreatePixelShader(L"BasicPixelShader.hlsl",
+                                    m_colorPixelShader))
+        return false;
 
     return true;
 }
@@ -168,7 +178,7 @@ void ExampleApp::Render() {
 
 
 
-    SetViewport();
+    m_context->RSSetViewports(1, &m_screenViewport);
 
     float clearColor[4] = {0.0f, 0.0f, 0.0f, 1.0f};
     m_context->ClearRenderTargetView(m_renderTargetView.Get(), clearColor);
@@ -191,9 +201,9 @@ void ExampleApp::Render() {
     m_context->VSSetConstantBuffers(0, 1,
                                     m_vertexConstantBuffer.GetAddressOf());
 
-    ID3D11ShaderResourceView *pixelResources[2] = {
-        m_textureResourceView.Get(), m_textureResourceView2.Get()};
-    m_context->PSSetShaderResources(0, 2, pixelResources);
+    ID3D11ShaderResourceView *pixelResources[1] = {
+        m_textureResourceView.Get()};
+    m_context->PSSetShaderResources(0, 1, pixelResources);
     m_context->PSSetSamplers(0, 1, m_samplerState.GetAddressOf());
 
     m_context->PSSetConstantBuffers(0, 1,
@@ -202,11 +212,11 @@ void ExampleApp::Render() {
 
     if (m_drawAsWire)
     {
-        m_context->RSSetState(m_wireRasterizerSate.Get());
+        m_context->RSSetState(m_wireRasterizerState.Get());
     } 
     else
     {
-        m_context->RSSetState(m_solidRasterizerSate.Get());
+        m_context->RSSetState(m_solidRasterizerState.Get());
     }
 
 
