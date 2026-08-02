@@ -18,11 +18,11 @@
 
 - Topic 목록: 작성
 - 상세 Topic 문서: Texture Sampling, Cubemap And Environment Mapping 작성
-- 연결 예제 검토: Step10·14 현재 확인
-- demo 연결: Step10·14 상세 Demo 연결
+- 연결 예제 검토: Part1 Step10·14, Part2 Chapter06 Step5 현재 확인
+- demo 연결: Part1 Step10·14, Part2 Chapter06 Step5 상세 Demo 연결
 
 ## 다음 작업
 
 1. Part2 example에서 GPU cubemap resource와 reflection mapping을 연결한다.
 2. Normal mapping과 tangent space Topic을 작성한다.
-3. GPU sampler와 CPU sampling의 연결 범위를 확장한다.
+3. Mipmap과 anisotropic filtering의 실제 적용 예제를 연결한다.

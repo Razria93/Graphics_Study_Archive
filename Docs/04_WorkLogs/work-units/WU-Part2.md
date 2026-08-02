@@ -6,7 +6,7 @@
 | --- | --- |
 | Work Unit | `WU-Part2` |
 | 현재 마감 대상 | `Part2_Chapter05-08` Chapter06 순차 정규화 |
-| 후속 코드 범위 | Chapter06 Step5부터 Chapter08까지 |
+| 후속 코드 범위 | Chapter06 Step5 Texturing LightingSelf부터 Chapter08까지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -74,3 +74,8 @@
 - Step4의 Debug/Release x64 현재 재검증과 Example·Shader Stage Topic·상세 Demo 정규화를 완료했다.
 - 기본 `0.5`와 조정 `0.25` 전체 창 screenshot 2장의 기술 검사와 사용자 시각 확인을 완료해 tracked capture로 승격했다.
 - Step4 video는 정적 screenshot 비교로 UV 분기 이동을 충분히 설명할 수 있어 제외했다.
+- Step5 Texturing의 texture load·GPU resource 실패 전파, 기본 `xSplit=0.5`와 application title을 최소 보완했다.
+- 출처 불명 input 2개를 외부 원문 pixel을 복제하지 않은 generated 석재·목재 PNG로 교체하고 metadata·hash를 확인했다.
+- Step5의 Debug/Release x64 현재 재검증과 Example·Texture Sampling Topic·상세 Demo 정규화를 완료했다.
+- 기본 `0.5`와 조정 `0.25` 전체 창 screenshot 2장의 기술 검사와 사용자 시각 확인을 완료해 tracked capture로 승격했다.
+- Step5 video는 정적 screenshot 비교로 texture 선택 경계를 충분히 설명할 수 있어 제외했다.
