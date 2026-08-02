@@ -6,7 +6,7 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리하는 폴더다.
 
 - 학습 코드 정리: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 정규화 완료
 - Build/run: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 현재 재검증 완료
-- 현재 대상: Chapter05–07 Demo Issue 게시 완료, Chapter05–08 bundle Draft PR 준비
+- 현재 대상: Chapter05–07 Demo Issue와 Chapter05–08 [Draft PR #20](https://github.com/Razria93/Graphics_Study_Archive/pull/20) 게시 완료
 - 캡처: Chapter05 Step2·4, Chapter06 Step2–9, Chapter07 Step1–9와 Chapter08 Step1–7 screenshot 확보, console 예제 제외
 
 ## Archive/Public 검토
@@ -17,7 +17,7 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리하는 폴더다.
 | Import status | code import 완료 / Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 순차 verification 완료 |
 | Public readiness | Chapter05–07 Demo Issue 게시 완료 / Chapter08 권리 검토 보류 |
 | Build/run status | Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 Debug/Release x64 현재 확인 |
-| Next action | Chapter05–08 bundle Draft PR 게시와 Progress 상태 동기화 |
+| Next action | Progress 누적·Phase 3-2 완료 댓글 동기화와 review 준비 |
 
 ## 예정 주제
 
