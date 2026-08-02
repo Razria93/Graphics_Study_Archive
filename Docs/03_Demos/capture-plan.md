@@ -165,3 +165,5 @@ portfolio_raytracer_reflection.png
 - Step5 video는 angle-dependent 결과와 parameter가 정적 frame에서 판독 가능해 제외한다.
 - Chapter08 Step6 BloomEffect는 bloom scene과 threshold·strength UI가 함께 보이는 전체 창 screenshot 한 장을 확보했다.
 - Step6 video는 정적 frame에서 glow와 parameter를 판독할 수 있어 제외한다.
+- Chapter08 Step7 Shadertoy는 star surface와 corona가 함께 보이는 전체 창 screenshot 한 장을 확보했다.
+- Step7의 시간 변화는 정지 이미지로 대체할 수 없어 9.83초 selected local video를 함께 확보했다.

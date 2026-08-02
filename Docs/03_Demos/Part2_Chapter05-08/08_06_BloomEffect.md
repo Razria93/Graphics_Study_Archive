@@ -96,7 +96,7 @@ BuildBloom(source, threshold, strength)
 
 - [Chapter08 Step6 BloomEffect Example](../../../Part2_Chapter05-08/08_ShaderToys_Step6_BloomEffect/README.md)
 - [이전 단계: Chapter08 Step5 FresnelEffect Demo](08_05_FresnelEffect.md)
-- 다음 단계: Chapter08 Step7 Shadertoy
+- [다음 단계: Chapter08 Step7 Shadertoy](08_07_Shadertoy.md)
 - [Post Processing And Bloom](../../01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
