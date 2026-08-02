@@ -30,7 +30,7 @@ Step2의 cubemap을 배경에만 사용하지 않고 surface reflection directio
 
 - [NightPath cubemap과 scene 초기화](ExampleApp.cpp#L20-L105)
 - [Reflection direction sampling](BasicPixelShader.hlsl#L55-L73)
-- [Cubemap과 mesh resource binding](ExampleApp.cpp#L345-L425)
+- [Cubemap과 mesh resource binding](ExampleApp.cpp#L271-L311)
 
 ## 범위와 한계
 

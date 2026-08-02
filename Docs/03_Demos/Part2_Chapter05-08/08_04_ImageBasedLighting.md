@@ -64,7 +64,7 @@ Atrium 환경이 배경과 sphere highlight에 함께 나타나고, normal 방�
 ## 관련 코드
 
 - [IBL shader](../../../Part2_Chapter05-08/08_ShaderToys_Step4_ImageBasedLighting/BasicPixelShader.hlsl#L1-L67)
-- [Cubemap resource binding](../../../Part2_Chapter05-08/08_ShaderToys_Step4_ImageBasedLighting/ExampleApp.cpp#L356-L421)
+- [Cubemap resource binding](../../../Part2_Chapter05-08/08_ShaderToys_Step4_ImageBasedLighting/ExampleApp.cpp#L356-L372)
 
 ## 관련 문서
 

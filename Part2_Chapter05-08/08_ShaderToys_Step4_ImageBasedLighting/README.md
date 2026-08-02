@@ -29,7 +29,7 @@ Diffuse irradiance와 specular environment cubemap을 surface lighting 입력으
 
 - [Diffuse·specular IBL cubemap load](ExampleApp.cpp#L24-L41)
 - [IBL sampling과 material weight](BasicPixelShader.hlsl#L50-L64)
-- [Cubemap resource binding](ExampleApp.cpp#L356-L421)
+- [Cubemap resource binding](ExampleApp.cpp#L356-L372)
 
 ## 범위와 한계
 

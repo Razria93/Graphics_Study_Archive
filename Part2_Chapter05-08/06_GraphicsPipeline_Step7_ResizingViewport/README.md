@@ -44,7 +44,7 @@ Step6의 generated 목재 texture, box geometry와 Directional·Point·Spot ligh
 | Release x64 build/run | 성공 | 2026-08-02 현재 확인, project 폴더 CWD |
 | Viewport 분리 | 성공 | 420px 기본 panel 오른쪽에서 scene 시작, geometry 왜곡 없음 |
 | Texture·Lighting 유지 | 성공 | Generated 목재 texture와 Directional Light 기본 결과 확인 |
-| Capture/Result | 확보 | 약 420px·640px panel 비교 screenshot 기술 검수 완료, 사용자 사후 확인 대기 |
+| Capture/Result | 확보 | 약 420px·640px panel 비교 screenshot 기술·시각 검수 완료 |
 
 ## Capture/Result
 

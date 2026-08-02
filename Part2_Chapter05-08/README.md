@@ -1,4 +1,4 @@
-﻿# Part2 Chapter05-08
+# Part2 Chapter05-08
 
 D3D11 graphics pipeline, modeling, shader toy 예제를 정리하는 폴더다.
 
@@ -6,7 +6,7 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리하는 폴더다.
 
 - 학습 코드 정리: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 정규화 완료
 - Build/run: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 현재 재검증 완료
-- 현재 대상: Chapter05–08 순차 정규화 마감 감사
+- 현재 대상: Chapter05–08 Publication과 GitHub 게시 준비 마감
 - 캡처: Chapter05 Step2·4, Chapter06 Step2–9, Chapter07 Step1–9와 Chapter08 Step1–7 screenshot 확보, console 예제 제외
 
 ## Archive/Public 검토
@@ -15,9 +15,9 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리하는 폴더다.
 | --- | --- |
 | Source provenance | [`SRC-P2-C05-08`](../Docs/99_Legacy/source-registry.md) |
 | Import status | code import 완료 / Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 순차 verification 완료 |
-| Public readiness | 검토 필요 |
+| Public readiness | Chapter05–07 공개 후보 / Chapter08 권리 검토 보류 |
 | Build/run status | Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 Debug/Release x64 현재 확인 |
-| Next action | Chapter08 순차 정규화 범위 감사 |
+| Next action | Chapter05–07 Demo Issue와 Chapter05–08 bundle PR 게시 준비 |
 
 ## 예정 주제
 
@@ -44,13 +44,11 @@ Coordinate handedness, matrix memory layout, vector convention과 multiplication
 
 Chapter06은 Direct3D interface lifetime에서 시작해 window, device resource와 pipeline stage를 순서대로 확장한다. Step1은 graphics window 없이 device·immediate context 생성과 `ComPtr` ownership만 분리해 확인하고, Step2부터 swap chain과 rendering loop를 연결한다.
 
-## Modeling variant 기준
+## Modeling 정본 기준
 
-- `*_Lecture`: private archive에서 비교용으로 선별한 reference solution 후보로 보존
-- `*_Complete`: 사용자 풀이 또는 사용자 완성본으로 보존
-- archive 이름은 `ReferenceSolution` / `UserSolution`처럼 제출물 관점의 이름으로 조정 가능
-- `ReferenceSolution`은 public 공개 후보가 아니며, 공개 전 별도 권리/출처 검토 필요
-- `*_Backup*`, `*_Debug`, 단순 중간 실험 폴더는 기본 제외 후보
+- Chapter07은 각 학습 단계에서 실제로 유지할 구현 하나를 canonical Example로 둔다.
+- 비교용 reference와 중간 실험은 현재 정본에 복제하지 않고 WorkLog의 결정 기록으로 위임한다.
+- 외부 model과 texture를 사용하는 단계는 구현 검증과 공개 가능성 판정을 분리한다.
 
 ## 진행 중인 예제
 

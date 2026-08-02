@@ -65,7 +65,7 @@ CreateSubmesh(meshData)
 ```
 
 - [FBX 입력과 submesh resource 구성](../../../Part2_Chapter05-08/07_Modeling_Step9_ModelFiles/ExampleApp.cpp#L47-L87)
-- [Mesh vertex와 index 변환](../../../Part2_Chapter05-08/07_Modeling_Step9_ModelFiles/ModelLoader.cpp#L187-L270)
+- [Mesh vertex와 index 변환](../../../Part2_Chapter05-08/07_Modeling_Step9_ModelFiles/ModelLoader.cpp#L187-L256)
 
 ## 시각 결과
 

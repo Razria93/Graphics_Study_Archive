@@ -4,10 +4,10 @@
 
 ## Provenance
 
-- 현재 확인: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1 build/run, 2026-08-03
-- 과거 확인: Chapter07 Step9 이후 예제, 문서화 이전(날짜 미기록)
-- 현재 재검증: Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–8 완료
-- 근거: 현재 대상의 Debug/Release x64 직접 실행과 Chapter README의 전체 예제 과거 성공 기록
+- 현재 확인: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 build/run/capture, 2026-08-03
+- 과거 확인: Chapter05–08 전체 예제, 문서화 이전(날짜 미기록)
+- 현재 재검증: Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 완료
+- 근거: Debug/Release x64 직접 실행과 Chapter README의 문서화 이전 성공 기록
 
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -22,9 +22,9 @@
 | `06_GraphicsPipeline_Step5_Texturing` | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing/06_GraphicsPipeline_Step5_Texturing.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · generated texture 2개와 `xSplit` 반영 · 기본/조정 전체 창 screenshot · 사용자 승인 완료 · video 제외 |
 | `06_GraphicsPipeline_Step5_Texturing_LightingSelf` | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf/06_GraphicsPipeline_Step5_Texturing.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · generated 목재 texture와 point-light shading 반영 · 기본/조정 전체 창 screenshot · 사용자 승인 완료 · video 제외 |
 | `06_GraphicsPipeline_Step6_Lighting` | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting/06_GraphicsPipeline_Step6_Lighting.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · Directional·Point·Spot 전환과 generated 목재 texture 반영 · 전체 창 screenshot 3장 · 사용자 승인 완료 · video 제외 · 잘못된 CWD exit code `-1` |
-| `06_GraphicsPipeline_Step7_ResizingViewport` | `Part2_Chapter05-08/06_GraphicsPipeline_Step7_ResizingViewport/06_GraphicsPipeline_Step7_ResizingViewport.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · project 폴더 CWD · 약 420px→640px panel 확장과 viewport 이동 · geometry 비율 유지 · 사용자 사후 확인 대기 |
-| `06_GraphicsPipeline_Step8_ResizingWindow` | `Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow/06_GraphicsPipeline_Step8_ResizingWindow.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · project 폴더 CWD · Compact→Default→Wide와 추가 resize·minimize/restore · 동일 process capture · 사용자 사후 확인 대기 |
-| `06_GraphicsPipeline_Step9_PhongVsBlinnPhong` | `Part2_Chapter05-08/06_GraphicsPipeline_Step9_PhongVsBlinnPhong/06_GraphicsPipeline_Step9_PhongVsBlinnPhong.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · texture off·Point Light·diffuse 0.35·specular 1·shininess 32 고정 · flat face와 exponent 보정으로 결과 차이 작음 · 사용자 사후 확인 대기 |
+| `06_GraphicsPipeline_Step7_ResizingViewport` | `Part2_Chapter05-08/06_GraphicsPipeline_Step7_ResizingViewport/06_GraphicsPipeline_Step7_ResizingViewport.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · project 폴더 CWD · 약 420px→640px panel 확장과 viewport 이동 · geometry 비율 유지 · 사용자 시각 확인 완료 |
+| `06_GraphicsPipeline_Step8_ResizingWindow` | `Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow/06_GraphicsPipeline_Step8_ResizingWindow.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · project 폴더 CWD · Compact→Default→Wide와 추가 resize·minimize/restore · 동일 process capture · 사용자 시각 확인 완료 |
+| `06_GraphicsPipeline_Step9_PhongVsBlinnPhong` | `Part2_Chapter05-08/06_GraphicsPipeline_Step9_PhongVsBlinnPhong/06_GraphicsPipeline_Step9_PhongVsBlinnPhong.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-03 현재 확인 · texture off·Point Light·diffuse 0.35·specular 1·shininess 32 고정 · flat face와 exponent 보정으로 결과 차이 작음 · 사용자 시각 확인 완료 |
 | `07_Modeling_Step1_DrawingWireFrames` | `Part2_Chapter05-08/07_Modeling_Step1_DrawingWireFrames/07_Modeling_Step1_DrawingWireFrames.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · triangle-list box와 solid·wireframe rasterizer state 전환 · 반복 resize와 minimize/restore · 전체 창 screenshot 기술·시각 검수 완료 · video 제외 |
 | `07_Modeling_Step2_DrawingNormals` | `Part2_Chapter05-08/07_Modeling_Step2_DrawingNormals/07_Modeling_Step2_DrawingNormals.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · surface `TRIANGLELIST`와 normal `LINELIST` 분리 · Shader Model 5.0 · wide·compact·minimize/restore · 전체 창 screenshot 검수 완료 · video 제외 |
 | `07_Modeling_Step3_Grid` | `Part2_Chapter05-08/07_Modeling_Step3_Grid/07_Modeling_Step3_Grid.sln` | 성공 | 성공 | 성공 | 성공 | 확보 | 2026-08-02 현재 확인 · project 폴더 CWD · 5×3 Grid의 24 vertices·30 triangles · Shader Model 5.0 · wide·compact·minimize/restore · 전체 창 screenshot 검수 완료 · video 제외 |

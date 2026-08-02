@@ -66,7 +66,7 @@ Zelda와 주변 geometry에 NightPath의 주황색 하늘과 밝은 광원이 �
 
 - [Cubemap resource 생성](../../../Part2_Chapter05-08/08_ShaderToys_Step3_EnvironmentMapping/AppBase.cpp#L694-L714)
 - [Environment shader](../../../Part2_Chapter05-08/08_ShaderToys_Step3_EnvironmentMapping/BasicPixelShader.hlsl#L1-L74)
-- [Scene draw](../../../Part2_Chapter05-08/08_ShaderToys_Step3_EnvironmentMapping/ExampleApp.cpp#L345-L425)
+- [Scene draw](../../../Part2_Chapter05-08/08_ShaderToys_Step3_EnvironmentMapping/ExampleApp.cpp#L252-L312)
 
 ## 관련 문서
 

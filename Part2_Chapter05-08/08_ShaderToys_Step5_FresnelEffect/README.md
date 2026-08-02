@@ -39,7 +39,6 @@ Stonewall environment가 sphere에 반사되고 `fresnelR0`가 angle-dependent s
 - Schlick approximation을 사용한다.
 - Roughness 기반 prefiltered mip LOD와 split-sum BRDF는 구현하지 않는다.
 - Active Stonewall cubemap과 `ojwD8.jpg`의 공개 권리 근거는 별도 Publication 검토 대상으로 둔다.
-- Assimp runtime 오류창은 사용자가 수동으로 닫은 뒤 Clean/Rebuild와 정상 실행을 재확인했다.
 
 ## 관련 문서
 

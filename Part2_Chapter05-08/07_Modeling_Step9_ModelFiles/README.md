@@ -31,7 +31,7 @@ Assimp로 FBX scene을 읽고 node 계층의 transform을 누적해 여러 subme
 
 - [FBX 입력과 submesh resource 구성](ExampleApp.cpp#L47-L87)
 - [Assimp scene 검증과 node 순회](ModelLoader.cpp#L69-L182)
-- [Vertex, index와 material texture 변환](ModelLoader.cpp#L187-L270)
+- [Vertex, index와 material texture 변환](ModelLoader.cpp#L187-L256)
 - [Submesh별 texture binding과 draw](ExampleApp.cpp#L282-L300)
 - [Resize dependent resource 재생성](AppBase.cpp#L572-L610)
 

@@ -5,8 +5,8 @@
 | 항목 | 내용 |
 | --- | --- |
 | Work Unit | `WU-Part2` |
-| 현재 마감 대상 | `Part2_Chapter05-08` Chapter07 순차 정규화 |
-| 후속 코드 범위 | Chapter07 Step8 SphereMapping부터 Chapter08까지 |
+| 현재 마감 대상 | `Part2_Chapter05-08` Publication과 GitHub 게시 준비 |
+| 후속 코드 범위 | Chapter05–08 순차 정규화 완료, 권리 미확정 asset은 Publication 검토 유지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -33,6 +33,9 @@
 | Chapter와 Example 흐름 | [Part2 Chapter04 README](../../../Part2_Chapter04/README.md) |
 | build/run/capture 사실 | [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md) |
 | 순차·대표 Demo | [Demo Index](../../03_Demos/Part2_Chapter04/demo-index.md) |
+| Chapter05–08 흐름 | [Part2 Chapter05–08 README](../../../Part2_Chapter05-08/README.md) |
+| Chapter05–08 build/run/capture | [Chapter05–08 Verification](../../02_Verification/Part2_Chapter05-08/verification-index.md) |
+| Chapter05–08 순차·대표 Demo | [Chapter05–08 Demo Index](../../03_Demos/Part2_Chapter05-08/demo-index.md) |
 | video 필요성과 상태 | [Video Plan](../../03_Demos/video-plan.md) |
 | 공개 후보와 미선정 판단 | [Candidate List](../../05_Publication/candidate-list.md) |
 | GitHub 게시 상태 | [Work Unit GitHub Index](../work-unit-github-index.md) |
@@ -57,7 +60,7 @@
 - Step2 GLM과 Step4 SimpleMath는 같은 transform 의도의 대응 visual로 유지하고, Step1·3 console 예제는 설명 중심 단계로 둔다.
 - `RowPitch`, `Map()` 실패, runtime shader path와 Step1A project identity는 별도 code task로 둔다.
 
-## Chapter06 진행
+## Chapter06 마감 snapshot
 
 - Step1 COM의 Debug/Release x64 현재 재검증과 문서 정규화를 완료했다.
 - Step1은 D3D11 device·immediate context 생성과 `ComPtr` ownership을 분리해 설명한다.
@@ -95,7 +98,7 @@
 - Step7은 정적 screenshot으로 panel과 scene 경계를 설명할 수 있어 video를 제외하고, window resize와 dependent resource 재생성은 Step8 책임으로 유지했다.
 - Step8은 정규화된 Step7을 기준으로 `WM_SIZE`, swap chain dependent resource 재생성과 projection 갱신을 추가했다.
 - Step8 Debug/Release x64와 반복 resize·minimize/restore를 현재 확인하고, 출처 불명 texture를 제거한 뒤 기존 generated 목재 PNG의 동일 바이트 사본을 사용했다.
-- Compact·default·wide screenshot은 동일 process에서 기술·시각 검수를 완료하고 사용자 사후 확인 대상으로 둔다. Window resize video는 기존 recorder의 고정 bounds 계약과 충돌하므로 도구 확장 전까지 보류한다.
+- Compact·default·wide screenshot은 동일 process에서 기술·시각 검수와 사용자 확인을 완료했다. Window resize video는 기존 recorder의 고정 bounds 계약과 충돌하므로 도구 확장 전까지 후속 개선으로 둔다.
 - Step9은 정규화된 Step8의 resource·resize 경로를 유지하고 동일 scene에서 Phong reflection vector와 Blinn halfway vector branch를 전환한다.
 - Constant buffer flag를 32-bit 정수로 고정하고 halfway vector의 zero-length guard, ambient 중복 제거와 attenuation denominator 제한을 적용했다.
 - Blinn-Phong branch의 `shininess * 2`는 같은 입력값에서 lobe 폭을 조정하는 예제 고유 선택으로 유지하고 상세 Demo에 명시했다.
@@ -103,7 +106,7 @@
 - Step9 Debug/Release x64와 반복 resize·minimize/restore를 현재 확인하고, 동일 material·shininess 32의 Phong·Blinn-Phong screenshot 2장을 기술·시각 검수했다.
 - Step9 video는 두 정적 상태가 specular model 차이를 충분히 설명하므로 제외했다.
 
-## Chapter07 진행
+## Chapter07 마감 snapshot
 
 - Step1은 24개 face vertex와 36개 index의 box를 `TRIANGLELIST`로 유지하고 rasterizer fill mode만 wireframe으로 전환한다.
 - 출처 불명 texture 2개와 사용되지 않는 두 번째 shader resource를 제거하고 검증된 generated wood를 solid mode 보조 input으로 사용한다.
@@ -151,7 +154,7 @@
 - 사용하지 않는 root image 3개를 제거했으며 Zelda FBX bundle은 실행 근거로 유지한다.
 - Zelda bundle의 공개 재배포 권리 근거가 충분하지 않아 Publication은 `검토 필요`로 유지하고 video는 제외한다.
 
-## Chapter08 진행
+## Chapter08 마감 snapshot
 
 - Step1은 normal과 eye direction의 dot product를 뒤집어 Dragon silhouette에 rim color를 가산한다.
 - Power와 smoothstep shaping이 모두 rim contribution을 유지하도록 branch를 교정하고 파란 rim이 보이는 결정적 기본값을 둔다.
