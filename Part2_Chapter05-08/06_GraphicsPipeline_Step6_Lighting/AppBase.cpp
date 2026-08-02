@@ -26,7 +26,8 @@ AppBase *g_appBase = nullptr;
 
 
 LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
-
+    if (!g_appBase)
+        return ::DefWindowProc(hWnd, msg, wParam, lParam);
     return g_appBase->MsgProc(hWnd, msg, wParam, lParam);
 }
 
@@ -39,14 +40,15 @@ AppBase::AppBase()
 }
 
 AppBase::~AppBase() {
+    if (ImGui::GetCurrentContext()) {
+        ImGui_ImplDX11_Shutdown();
+        ImGui_ImplWin32_Shutdown();
+        ImGui::DestroyContext();
+    }
+
+    if (m_mainWindow)
+        DestroyWindow(m_mainWindow);
     g_appBase = nullptr;
-
-    ImGui_ImplDX11_Shutdown();
-    ImGui_ImplWin32_Shutdown();
-    ImGui::DestroyContext();
-
-    DestroyWindow(m_mainWindow);
-
 }
 
 float AppBase::GetAspectRatio() const {
@@ -65,6 +67,9 @@ int AppBase::Run() {
             ImGui_ImplWin32_NewFrame();
 
             ImGui::NewFrame(); 
+            ImGui::SetNextWindowPos(ImVec2(20.0f, 20.0f), ImGuiCond_Always);
+            ImGui::SetNextWindowSize(ImVec2(420.0f, 720.0f),
+                                     ImGuiCond_Always);
             ImGui::Begin("Scene Control");
 
             ImGui::Text("Average %.3f ms/frame (%.1f FPS)",
@@ -156,13 +161,10 @@ bool AppBase::InitMainWindow() {
 
     AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, false);
 
-    m_mainWindow = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example",
-                                WS_OVERLAPPEDWINDOW,
-                                100, 
-                                100, 
-                                wr.right - wr.left, 
-                                wr.bottom - wr.top, 
-                                NULL, NULL, wc.hInstance, NULL);
+    m_mainWindow = CreateWindow(
+        wc.lpszClassName, L"ComputerGraphics - Chapter06 Step6 Lighting",
+        WS_OVERLAPPEDWINDOW, 100, 100, wr.right - wr.left,
+        wr.bottom - wr.top, NULL, NULL, wc.hInstance, NULL);
 
     if (!m_mainWindow) {
         cout << "CreateWindow() failed." << endl;
@@ -350,6 +352,7 @@ bool AppBase::InitGUI() {
     ImGui::CreateContext();
     ImGuiIO &io = ImGui::GetIO();
     (void)io;
+    io.IniFilename = nullptr;
     io.DisplaySize = ImVec2(float(m_screenWidth), float(m_screenHeight));
     ImGui::StyleColorsLight();
 
@@ -389,7 +392,7 @@ void CheckResult(HRESULT hr, ID3DBlob *errorBlob) {
     }
 }
 
-void AppBase::CreateVertexShaderAndInputLayout(
+bool AppBase::CreateVertexShaderAndInputLayout(
     const wstring &filename,
     const vector<D3D11_INPUT_ELEMENT_DESC> &inputElements,
     ComPtr<ID3D11VertexShader> &vertexShader,
@@ -409,18 +412,29 @@ void AppBase::CreateVertexShaderAndInputLayout(
                                     compileFlags, 0, &shaderBlob, &errorBlob);
 
     CheckResult(hr, errorBlob.Get());
+    if (FAILED(hr) || !shaderBlob)
+        return false;
 
-    m_device->CreateVertexShader(shaderBlob->GetBufferPointer(),
-                                 shaderBlob->GetBufferSize(), NULL,
-                                 &vertexShader);
+    if (FAILED(m_device->CreateVertexShader(
+            shaderBlob->GetBufferPointer(), shaderBlob->GetBufferSize(), NULL,
+            &vertexShader))) {
+        cout << "CreateVertexShader() failed." << endl;
+        return false;
+    }
 
-    m_device->CreateInputLayout(inputElements.data(),
-                                UINT(inputElements.size()),
-                                shaderBlob->GetBufferPointer(),
-                                shaderBlob->GetBufferSize(), &inputLayout);
+    if (FAILED(m_device->CreateInputLayout(
+            inputElements.data(), UINT(inputElements.size()),
+            shaderBlob->GetBufferPointer(), shaderBlob->GetBufferSize(),
+            &inputLayout))) {
+        cout << "CreateInputLayout() failed." << endl;
+        vertexShader.Reset();
+        return false;
+    }
+
+    return true;
 }
 
-void AppBase::CreatePixelShader(const wstring &filename,
+bool AppBase::CreatePixelShader(const wstring &filename,
                                 ComPtr<ID3D11PixelShader> &pixelShader) {
     ComPtr<ID3DBlob> shaderBlob;
     ComPtr<ID3DBlob> errorBlob;
@@ -436,13 +450,20 @@ void AppBase::CreatePixelShader(const wstring &filename,
                                     compileFlags, 0, &shaderBlob, &errorBlob);
 
     CheckResult(hr, errorBlob.Get());
+    if (FAILED(hr) || !shaderBlob)
+        return false;
 
-    m_device->CreatePixelShader(shaderBlob->GetBufferPointer(),
-                                shaderBlob->GetBufferSize(), NULL,
-                                &pixelShader);
+    if (FAILED(m_device->CreatePixelShader(
+            shaderBlob->GetBufferPointer(), shaderBlob->GetBufferSize(), NULL,
+            &pixelShader))) {
+        cout << "CreatePixelShader() failed." << endl;
+        return false;
+    }
+
+    return true;
 }
 
-void AppBase::CreateIndexBuffer(const std::vector<uint16_t> &indices,
+bool AppBase::CreateIndexBuffer(const std::vector<uint16_t> &indices,
                                 ComPtr<ID3D11Buffer> &m_indexBuffer) {
     D3D11_BUFFER_DESC bufferDesc = {};
     bufferDesc.Usage = D3D11_USAGE_IMMUTABLE; 
@@ -456,24 +477,30 @@ void AppBase::CreateIndexBuffer(const std::vector<uint16_t> &indices,
     indexBufferData.SysMemPitch = 0;
     indexBufferData.SysMemSlicePitch = 0;
 
-    m_device->CreateBuffer(&bufferDesc, &indexBufferData,
-                           m_indexBuffer.GetAddressOf());
+    if (FAILED(m_device->CreateBuffer(&bufferDesc, &indexBufferData,
+                                      m_indexBuffer.GetAddressOf()))) {
+        cout << "CreateIndexBuffer() CreateBuffer failed." << endl;
+        return false;
+    }
+
+    return true;
 }
 
-void AppBase::CreateTexture(
-    const std::string filename, ComPtr<ID3D11Texture2D> &texture,
+bool AppBase::CreateTexture(
+    const std::string &filename, ComPtr<ID3D11Texture2D> &texture,
     ComPtr<ID3D11ShaderResourceView> &textureResourceView) {
 
-    int width, height, channels;
+    int width = 0;
+    int height = 0;
+    int channels = 0;
 
     unsigned char *img =
-        stbi_load(filename.c_str(), &width, &height, &channels, 0);
-
-
-    std::vector<uint8_t> image;
-
-    image.resize(width * height * channels);
-    memcpy(image.data(), img, image.size() * sizeof(uint8_t));
+        stbi_load(filename.c_str(), &width, &height, &channels, 4);
+    if (!img) {
+        cout << "Texture load failed: " << filename << " ("
+             << stbi_failure_reason() << ")" << endl;
+        return false;
+    }
 
     D3D11_TEXTURE2D_DESC txtDesc = {};
     txtDesc.Width = width;
@@ -484,13 +511,26 @@ void AppBase::CreateTexture(
     txtDesc.Usage = D3D11_USAGE_IMMUTABLE;
     txtDesc.BindFlags = D3D11_BIND_SHADER_RESOURCE;
 
-    D3D11_SUBRESOURCE_DATA InitData;
-    InitData.pSysMem = image.data();
-    InitData.SysMemPitch = txtDesc.Width * sizeof(uint8_t) * channels;
+    D3D11_SUBRESOURCE_DATA initData = {};
+    initData.pSysMem = img;
+    initData.SysMemPitch = txtDesc.Width * sizeof(uint8_t) * 4;
 
-    m_device->CreateTexture2D(&txtDesc, &InitData, texture.GetAddressOf());
-    m_device->CreateShaderResourceView(texture.Get(), nullptr,
-                                       textureResourceView.GetAddressOf());
+    const HRESULT textureResult =
+        m_device->CreateTexture2D(&txtDesc, &initData, texture.GetAddressOf());
+    stbi_image_free(img);
+    if (FAILED(textureResult)) {
+        cout << "CreateTexture2D() failed: " << filename << endl;
+        return false;
+    }
+
+    if (FAILED(m_device->CreateShaderResourceView(
+            texture.Get(), nullptr, textureResourceView.GetAddressOf()))) {
+        cout << "CreateShaderResourceView() failed: " << filename << endl;
+        texture.Reset();
+        return false;
+    }
+
+    return true;
 }
 
-} 
+}
