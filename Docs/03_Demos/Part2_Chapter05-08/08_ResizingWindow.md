@@ -141,7 +141,7 @@ Debug와 Release에서 추가 크기 전환을 반복하고 최소화·복원했
 
 - [Chapter06 Step8 Example README](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow/README.md)
 - [이전 단계: Chapter06 Step7 ResizingViewport](07_ResizingViewport.md)
-- 다음 단계: Chapter06 Step9 PhongVsBlinnPhong 문서화 대기
+- [다음 단계: Chapter06 Step9 PhongVsBlinnPhong Demo](09_PhongVsBlinnPhong.md)
 - [Swap Chain And Viewport Topic](../../01_Topics/DirectX11Pipeline/SwapChainAndViewport.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)

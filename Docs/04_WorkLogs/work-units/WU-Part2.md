@@ -6,7 +6,7 @@
 | --- | --- |
 | Work Unit | `WU-Part2` |
 | 현재 마감 대상 | `Part2_Chapter05-08` Chapter06 순차 정규화 |
-| 후속 코드 범위 | Chapter06 Step9 PhongVsBlinnPhong부터 Chapter08까지 |
+| 후속 코드 범위 | Chapter07 Step1 DrawingWireFrames부터 Chapter08까지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -96,3 +96,9 @@
 - Step8은 정규화된 Step7을 기준으로 `WM_SIZE`, swap chain dependent resource 재생성과 projection 갱신을 추가했다.
 - Step8 Debug/Release x64와 반복 resize·minimize/restore를 현재 확인하고, 출처 불명 texture를 제거한 뒤 기존 generated 목재 PNG의 동일 바이트 사본을 사용했다.
 - Default·wide·compact screenshot은 사용자 위임 범위에서 기술·시각 검수를 완료했다. Window resize video는 기존 recorder의 고정 bounds 계약과 충돌하므로 도구 확장 전까지 보류한다.
+- Step9은 정규화된 Step8의 resource·resize 경로를 유지하고 동일 scene에서 Phong reflection vector와 Blinn halfway vector branch를 전환한다.
+- Constant buffer flag를 32-bit 정수로 고정하고 halfway vector의 zero-length guard, ambient 중복 제거와 attenuation denominator 제한을 적용했다.
+- Blinn-Phong branch의 `shininess * 2`는 같은 입력값에서 lobe 폭을 조정하는 예제 고유 선택으로 유지하고 상세 Demo에 명시했다.
+- 출처 불명 texture를 제거하고 Step5~8에서 검수한 generated 목재 PNG의 동일 바이트 사본을 사용했다.
+- Step9 Debug/Release x64와 반복 resize·minimize/restore를 현재 확인하고, 동일 material·shininess 32의 Phong·Blinn-Phong screenshot 2장을 기술·시각 검수했다.
+- Step9 video는 두 정적 상태가 specular model 차이를 충분히 설명하므로 제외했다.
