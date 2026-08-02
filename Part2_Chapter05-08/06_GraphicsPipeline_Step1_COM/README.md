@@ -53,7 +53,7 @@
 
 - [Part2 Chapter05-08 README](../README.md)
 - [이전 단계: Chapter05 Step4 Lights(SimpleMath)](../05_AffineTransformations_Step4_Lights%28SimpleMath%29/README.md)
-- 다음 단계: Chapter06 Step2 InitializingD3D 문서화 대기
+- [다음 단계: Chapter06 Step2 InitializingD3D](../06_GraphicsPipeline_Step2_InitializingD3D/README.md)
 - [COM And Resource Lifetime Topic](../../Docs/01_Topics/DirectX11Pipeline/COMAndResourceLifetime.md)
 - [Step1 COM 상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/06_COM.md)
 - [Verification Index](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)

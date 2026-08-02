@@ -11,18 +11,20 @@
 ## 문서 목록
 
 - [Topic Index](topic-index.md)
+- [Device And Context](DeviceAndContext.md)
 - [COM And Resource Lifetime](COMAndResourceLifetime.md)
+- [Swap Chain And Viewport](SwapChainAndViewport.md)
 - [Shader Stage](ShaderStage.md)
 - [Post Processing And Bloom](PostProcessingAndBloom.md)
 
 ## 상태
 
 - Topic 목록: 작성
-- 상세 Topic 문서: COM And Resource Lifetime, Shader Stage와 Post Processing And Bloom 작성
-- 연결 예제 검토: Part1 Chapter01-02 일부, Part2 Chapter04 Step6, Part2 Chapter05-08 Chapter06 Step1 현재 확인
-- demo 연결: Part1 Chapter01-02 일부, Part2 Chapter04 Step6, Part2 Chapter05-08 Chapter06 Step1 연결
+- 상세 Topic 문서: Device And Context, COM And Resource Lifetime, Swap Chain And Viewport, Shader Stage와 Post Processing And Bloom 작성
+- 연결 예제 검토: Part1 Chapter01-02 일부, Part2 Chapter04 Step6, Part2 Chapter05-08 Chapter06 Step1–2 현재 확인
+- demo 연결: Part1 Chapter01-02 일부, Part2 Chapter04 Step6, Part2 Chapter05-08 Chapter06 Step1–2 연결
 
 ## 다음 작업
 
-1. Chapter06 Step2에서 Device And Context와 Swap Chain 책임을 확인한다.
+1. Chapter06 Step3에서 Model, View와 Projection parameter 책임을 확인한다.
 2. Buffer And Input Layout 상세 Topic을 순차 승격한다.
