@@ -155,3 +155,5 @@ portfolio_raytracer_reflection.png
 - Step9 video는 정적 model import와 submesh texture binding을 screenshot 한 장으로 판독할 수 있어 제외한다.
 - Chapter08 Step1 RimLighting은 texture·wireframe·normal 표시 Off, 파란 rim 기본값의 Dragon 전체 창 screenshot 한 장을 확보했다.
 - Step1 video는 정적 silhouette과 parameter UI를 한 frame에서 판독할 수 있어 제외한다.
+- Chapter08 Step2 Cubemapping은 skybox와 Zelda 전경 mesh가 함께 보이는 전체 창 screenshot 한 장을 확보했다.
+- Step2 video는 정적 frame에서 cube 방향 sampling과 전경·배경 분리를 판독할 수 있어 제외한다.

@@ -77,7 +77,7 @@ ComputeRim(normal, toEye)
 
 - [Chapter08 Step1 RimLighting Example](../../../Part2_Chapter05-08/08_ShaderToys_Step1_RimLighting/README.md)
 - [이전 단계: Chapter07 Step9 ModelFiles Demo](07_09_ModelFiles.md)
-- 다음 단계: Chapter08 Step2 Cubemapping
+- [다음 단계: Chapter08 Step2 Cubemapping](08_02_Cubemapping.md)
 - [Rim Lighting](../../01_Topics/LightingAndShading/RimLighting.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
