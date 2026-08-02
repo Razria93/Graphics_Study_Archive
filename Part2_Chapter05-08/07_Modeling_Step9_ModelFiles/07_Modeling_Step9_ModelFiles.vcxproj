@@ -152,9 +152,6 @@
     <None Include="Common.hlsli" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="crate2_diffuse.png" />
-    <Image Include="ojwD8.jpg" />
-    <Image Include="wall.jpg" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="BasicPixelShader.hlsl">
