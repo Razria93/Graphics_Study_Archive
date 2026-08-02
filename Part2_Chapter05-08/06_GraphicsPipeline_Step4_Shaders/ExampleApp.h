@@ -51,6 +51,8 @@ struct PSConstantBuffer
 
 static_assert((sizeof(ModelViewProjectionConstantBuffer) % 16) == 0,
               "Constant Buffer size must be 16-byte aligned");
+static_assert((sizeof(PSConstantBuffer) % 16) == 0,
+              "Pixel shader constant buffer size must be 16-byte aligned");
 
 
 
@@ -95,7 +97,7 @@ class ExampleApp : public AppBase {
 
     Vector4 p_leftColor;
     Vector4 p_rightColor;
-    float   p_xSplitPoint;
+    float   p_xSplitPoint = 0.5f;
     
 };
-} 
+}

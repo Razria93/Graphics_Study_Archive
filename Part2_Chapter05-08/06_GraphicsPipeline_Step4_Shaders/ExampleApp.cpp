@@ -225,7 +225,7 @@ bool ExampleApp::Initialize()
     
     p_constantBufferData.leftColor = Vector4(1.0f, 0.0f, 0.0f, 1.0f);
     p_constantBufferData.rightColor = Vector4(0.0f, 0.0f, 1.0f, 1.0f);
-    p_constantBufferData.xSplitPoint = 0.0f;
+    p_constantBufferData.xSplitPoint = p_xSplitPoint;
 
     AppBase::CreateConstantBuffer(p_constantBufferData, p_constantBuffer);
     
