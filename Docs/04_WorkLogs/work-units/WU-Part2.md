@@ -5,7 +5,7 @@
 | 항목 | 내용 |
 | --- | --- |
 | Work Unit | `WU-Part2` |
-| 현재 마감 대상 | `Part2_Chapter05-08` Demo Issue와 Draft PR 게시 상태 동기화 |
+| 현재 마감 대상 | `Part2_Chapter05-08` GitHub 게시 완료와 Draft PR review 준비 |
 | 후속 코드 범위 | Chapter05–08 순차 정규화 완료, 권리 미확정 asset은 Publication 검토 유지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
@@ -48,6 +48,8 @@
 - [Phase 3-1 완료 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5150875726) 게시와 실제 URL 동기화를 완료했다.
 - Chapter05 [Demo Issue #17](https://github.com/Razria93/Graphics_Study_Archive/issues/17), Chapter06 [Demo Issue #18](https://github.com/Razria93/Graphics_Study_Archive/issues/18), Chapter07 [Demo Issue #19](https://github.com/Razria93/Graphics_Study_Archive/issues/19)를 번호 순서대로 게시했다.
 - [Chapter05–08 PR #20](https://github.com/Razria93/Graphics_Study_Archive/pull/20)을 Draft 상태로 게시했다.
+- [누적 Progress 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690)을 Phase 3-2 상태로 갱신했다.
+- [Phase 3-2 완료 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5160239752) 게시와 실제 URL 동기화를 완료했다.
 
 ## Chapter05 마감 snapshot
 
