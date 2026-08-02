@@ -119,7 +119,7 @@ Wireframe은 equator를 중심으로 위·아래 latitude ring이 이어지고, 
 
 - [Chapter07 Step5 UserSolution Example](../../../Part2_Chapter05-08/07_Modeling_Step5_Sphere_UserSolution/README.md)
 - [이전 단계: Chapter07 Step4 Demo](07_04_Cylinder.md)
-- 다음 단계: Chapter07 Step6 Subdivision 문서화 대기
+- [다음 단계: Chapter07 Step6 Subdivision Demo](07_06_Subdivision.md)
 - [Procedural Primitive Generation](../../01_Topics/ModelingAndGeometry/ProceduralPrimitiveGeneration.md)
 - [Vertex And Face Normals](../../01_Topics/ModelingAndGeometry/VertexAndFaceNormals.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
