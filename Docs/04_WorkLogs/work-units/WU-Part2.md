@@ -6,7 +6,7 @@
 | --- | --- |
 | Work Unit | `WU-Part2` |
 | 현재 마감 대상 | `Part2_Chapter05-08` Chapter06 순차 정규화 |
-| 후속 코드 범위 | Chapter06 Step3부터 Chapter08까지 |
+| 후속 코드 범위 | Chapter06 Step4부터 Chapter08까지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -66,3 +66,7 @@
 - Step2는 device·context에서 swap chain, render target, depth buffer, viewport와 indexed draw까지 연결하는 첫 end-to-end graphics pipeline 단계로 둔다.
 - 기본 perspective 전체 창 screenshot의 자동 기술 검수와 사용자 시각 확인을 완료해 tracked capture로 승격했다.
 - Orthographic 조정 screenshot과 video는 제외하고 projection parameter 비교를 Step3으로 위임한다.
+- Step3 ModelViewProj의 Debug/Release x64 현재 재검증과 Example·Topic·상세 Demo 정규화를 완료했다.
+- Step3는 Model·View·Projection parameter와 dynamic constant buffer 갱신을 분리하고 perspective·orthographic 결과를 비교한다.
+- Perspective·Orthographic 전체 창 screenshot 2장의 기술 검사와 사용자 시각 확인을 완료해 tracked capture로 승격했다.
+- Model Y rotation은 한 방향 연속 drag selected video로 검증하고 Publication 단계 전까지 local evidence로 유지한다.

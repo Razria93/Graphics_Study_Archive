@@ -59,7 +59,7 @@ Cube는 position과 face color를 가진 indexed geometry다. Model matrix는 Y�
 
 - [Part2 Chapter05-08 README](../README.md)
 - [이전 단계: Chapter06 Step1 COM](../06_GraphicsPipeline_Step1_COM/README.md)
-- 다음 단계: Chapter06 Step3 ModelViewProj 문서화 대기
+- [다음 단계: Chapter06 Step3 ModelViewProj](../06_GraphicsPipeline_Step3_ModelViewProj/README.md)
 - [Device And Context Topic](../../Docs/01_Topics/DirectX11Pipeline/DeviceAndContext.md)
 - [Swap Chain And Viewport Topic](../../Docs/01_Topics/DirectX11Pipeline/SwapChainAndViewport.md)
 - [Step2 InitializingD3D 상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/06_InitializingD3D.md)
