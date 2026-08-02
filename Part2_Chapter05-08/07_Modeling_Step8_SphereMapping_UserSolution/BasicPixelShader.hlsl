@@ -1,7 +1,6 @@
 #include "Common.hlsli" // 쉐이더에서도 include 사용 가능
 
 Texture2D g_texture0 : register(t0);
-Texture2D g_texture1 : register(t1);
 SamplerState g_sampler : register(s0);
 
 cbuffer BasicPixelConstantBuffer : register(b0)

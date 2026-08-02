@@ -92,8 +92,6 @@ class ExampleApp : public AppBase {
     // Texturing
     ComPtr<ID3D11Texture2D> m_texture;
     ComPtr<ID3D11ShaderResourceView> m_textureResourceView;
-    ComPtr<ID3D11Texture2D> m_texture2;
-    ComPtr<ID3D11ShaderResourceView> m_textureResourceView2;
     ComPtr<ID3D11SamplerState> m_samplerState;
 
     BasicVertexConstantBuffer m_BasicVertexConstantBufferData;
@@ -122,6 +120,6 @@ class ExampleApp : public AppBase {
     shared_ptr<Mesh> m_normalLines;
     NormalVertexConstantBuffer m_normalVertexConstantBufferData;
     bool m_drawNormals = false;
-    bool m_drawNormalsDirtyFlag = false;
+    bool m_drawNormalsDirtyFlag = true;
 };
 } // namespace hlab

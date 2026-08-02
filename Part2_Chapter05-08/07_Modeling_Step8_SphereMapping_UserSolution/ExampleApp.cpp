@@ -10,7 +10,9 @@ namespace hlab
 
 using namespace std;
 
-ExampleApp::ExampleApp() : AppBase(), m_BasicPixelConstantBufferData() {}
+ExampleApp::ExampleApp() : AppBase(), m_BasicPixelConstantBufferData() {
+	m_BasicPixelConstantBufferData.useTexture = true;
+}
 
 bool ExampleApp::Initialize()
 {
@@ -18,11 +20,8 @@ bool ExampleApp::Initialize()
 	if (!AppBase::Initialize())
 		return false;
 
-	// 지구 텍스춰 출처
-	// https://stackoverflow.com/questions/31799670/applying-map-of-the-earth-texture-a-sphere
-	AppBase::CreateTexture("ojwD8.jpg", m_texture, m_textureResourceView);
-
-	AppBase::CreateTexture("wall.jpg", m_texture2, m_textureResourceView2);
+	AppBase::CreateTexture("generated_fictional_planet_equirectangular.png", m_texture,
+	                       m_textureResourceView);
 
 	// Texture sampler 만들기
 	D3D11_SAMPLER_DESC sampDesc;
@@ -36,7 +35,9 @@ bool ExampleApp::Initialize()
 	sampDesc.MaxLOD = D3D11_FLOAT32_MAX;
 
 	// Create the Sample State
-	m_device->CreateSamplerState(&sampDesc, m_samplerState.GetAddressOf());
+	if (FAILED(m_device->CreateSamplerState(&sampDesc,
+	                                      m_samplerState.GetAddressOf())))
+		return false;
 
 	// Geometry 정의
 	// MeshData meshData = GeometryGenerator::MakeSphere(1.5f, 5, 5);
@@ -236,9 +237,9 @@ void ExampleApp::Render()
 	m_context->VSSetConstantBuffers(
 	    0, 1, m_mesh->m_vertexConstantBuffer.GetAddressOf());
 
-	ID3D11ShaderResourceView *pixelResources[2] = {
-	    m_textureResourceView.Get(), m_textureResourceView2.Get()};
-	m_context->PSSetShaderResources(0, 2, pixelResources);
+	ID3D11ShaderResourceView *pixelResources[1] = {
+	    m_textureResourceView.Get()};
+	m_context->PSSetShaderResources(0, 1, pixelResources);
 	m_context->PSSetSamplers(0, 1, m_samplerState.GetAddressOf());
 
 	m_context->PSSetConstantBuffers(

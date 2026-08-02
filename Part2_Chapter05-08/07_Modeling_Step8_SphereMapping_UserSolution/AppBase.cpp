@@ -59,7 +59,11 @@ AppBase::~AppBase() {
 }
 
 float AppBase::GetAspectRatio() const {
-    return float(m_screenWidth - m_guiWidth) / m_screenHeight;
+    const float width = float((m_screenWidth - m_guiWidth > 0)
+                                  ? m_screenWidth - m_guiWidth
+                                  : 1);
+    const float height = float(m_screenHeight > 0 ? m_screenHeight : 1);
+    return width / height;
 }
 
 int AppBase::Run() {
@@ -70,12 +74,19 @@ int AppBase::Run() {
         if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
             TranslateMessage(&msg);
             DispatchMessage(&msg);
-        } else {
+        } else if (!m_isMinimized && m_renderResourcesReady) {
             ImGui_ImplDX11_NewFrame(); // GUI 프레임 시작
             ImGui_ImplWin32_NewFrame();
 
             ImGui::NewFrame(); // 어떤 것들을 렌더링 할지 기록 시작
-            ImGui::Begin("Scene Control");
+            const float panelWidth =
+                (m_screenWidth < 934) ? float(m_screenWidth) * 0.45f : 420.0f;
+            ImGui::SetNextWindowPos(ImVec2(0.0f, 0.0f), ImGuiCond_Always);
+            ImGui::SetNextWindowSize(
+                ImVec2(panelWidth, float(m_screenHeight)), ImGuiCond_Always);
+            ImGui::Begin("Scene Control", nullptr,
+                         ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize |
+                             ImGuiWindowFlags_NoCollapse);
 
             // ImGui가 측정해주는 Framerate 출력
             ImGui::Text("Average %.3f ms/frame (%.1f FPS)",
@@ -83,8 +94,6 @@ int AppBase::Run() {
                         ImGui::GetIO().Framerate);
 
             UpdateGUI(); // 추가적으로 사용할 GUI
-
-            ImGui::SetWindowPos(ImVec2(0.0f, 0.0f));
 
             m_guiWidth = int(ImGui::GetWindowWidth());
 
@@ -127,27 +136,17 @@ LRESULT AppBase::MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 
     switch (msg) {
     case WM_SIZE:
-        // Reset and resize swapchain
-        // std::cout << (UINT)LOWORD(lParam) << " " << (UINT)HIWORD(lParam)
-        //          << std::endl;
-
-        if (m_swapChain) { // 처음 실행이 아닌지 확인
-
-            m_screenWidth = int(LOWORD(lParam));
-            m_screenHeight = int(HIWORD(lParam));
-            m_guiWidth = 0;
-
-            m_renderTargetView.Reset();
-            m_swapChain->ResizeBuffers(0, // 현재 개수 유지
-                                       (UINT)LOWORD(lParam), // 해상도 변경
-                                       (UINT)HIWORD(lParam),
-                                       DXGI_FORMAT_UNKNOWN, // 현재 포맷 유지
-                                       0);
-            CreateRenderTargetView();
-            CreateDepthBuffer();
-            SetViewport();
+        if (wParam == SIZE_MINIMIZED || LOWORD(lParam) == 0 ||
+            HIWORD(lParam) == 0) {
+            m_isMinimized = true;
+            m_renderResourcesReady = false;
+            break;
         }
-
+        m_isMinimized = false;
+        if (m_swapChain &&
+            !ResizeClientResources(LOWORD(lParam), HIWORD(lParam))) {
+            PostQuitMessage(1);
+        }
         break;
     case WM_SYSCOMMAND:
         if ((wParam & 0xfff0) == SC_KEYMENU) // Disable ALT application menu
@@ -208,7 +207,9 @@ bool AppBase::InitMainWindow() {
     AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, false);
 
     // 윈도우를 만들때 위에서 계산한 wr 사용
-    m_mainWindow = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example",
+    m_mainWindow = CreateWindow(
+        wc.lpszClassName,
+        L"ComputerGraphics - Chapter07 Step8 SphereMapping UserSolution",
                                 WS_OVERLAPPEDWINDOW,
                                 100, // 윈도우 좌측 상단의 x 좌표
                                 100, // 윈도우 좌측 상단의 y 좌표
@@ -400,7 +401,8 @@ bool AppBase::InitDirect3D() {
     &swapChainDesc, nullptr, nullptr, swapChain.GetAddressOf());
     */
 
-    CreateRenderTargetView();
+    if (!CreateRenderTargetView())
+        return false;
 
     SetViewport();
 
@@ -421,7 +423,8 @@ bool AppBase::InitDirect3D() {
     m_device->CreateRasterizerState(&rastDesc,
                                     m_wireRasterizerSate.GetAddressOf());
 
-    CreateDepthBuffer();
+    if (!CreateDepthBuffer())
+        return false;
 
     // Create depth stencil state
     D3D11_DEPTH_STENCIL_DESC depthStencilDesc;
@@ -436,6 +439,7 @@ bool AppBase::InitDirect3D() {
         cout << "CreateDepthStencilState() failed." << endl;
     }
 
+    m_renderResourcesReady = true;
     return true;
 }
 
@@ -461,25 +465,16 @@ bool AppBase::InitGUI() {
 }
 
 void AppBase::SetViewport() {
-
-    static int previousGuiWidth = m_guiWidth;
-
-    if (previousGuiWidth != m_guiWidth) {
-
-        previousGuiWidth = m_guiWidth;
-
-        // Set the viewport
-        ZeroMemory(&m_screenViewport, sizeof(D3D11_VIEWPORT));
-        m_screenViewport.TopLeftX = float(m_guiWidth);
-        m_screenViewport.TopLeftY = 0;
-        m_screenViewport.Width = float(m_screenWidth - m_guiWidth);
-        m_screenViewport.Height = float(m_screenHeight);
-        // m_screenViewport.Width = static_cast<float>(m_screenHeight);
-        m_screenViewport.MinDepth = 0.0f;
-        m_screenViewport.MaxDepth = 1.0f; // Note: important for depth buffering
-
-        m_context->RSSetViewports(1, &m_screenViewport);
-    }
+    ZeroMemory(&m_screenViewport, sizeof(D3D11_VIEWPORT));
+    m_screenViewport.TopLeftX = float(m_guiWidth);
+    m_screenViewport.TopLeftY = 0;
+    m_screenViewport.Width = float((m_screenWidth - m_guiWidth > 0)
+                                       ? m_screenWidth - m_guiWidth
+                                       : 1);
+    m_screenViewport.Height = float(m_screenHeight > 0 ? m_screenHeight : 1);
+    m_screenViewport.MinDepth = 0.0f;
+    m_screenViewport.MaxDepth = 1.0f;
+    m_context->RSSetViewports(1, &m_screenViewport);
 }
 
 bool AppBase::CreateRenderTargetView() {
@@ -498,6 +493,9 @@ bool AppBase::CreateRenderTargetView() {
 }
 
 bool AppBase::CreateDepthBuffer() {
+    m_depthStencilView.Reset();
+    m_depthStencilBuffer.Reset();
+
     D3D11_TEXTURE2D_DESC depthStencilBufferDesc;
     depthStencilBufferDesc.Width = m_screenWidth;
     depthStencilBufferDesc.Height = m_screenHeight;
@@ -519,11 +517,41 @@ bool AppBase::CreateDepthBuffer() {
     if (FAILED(m_device->CreateTexture2D(
             &depthStencilBufferDesc, 0, m_depthStencilBuffer.GetAddressOf()))) {
         std::cout << "CreateTexture2D() failed." << std::endl;
+        return false;
     }
     if (FAILED(m_device->CreateDepthStencilView(m_depthStencilBuffer.Get(), 0,
                                                 &m_depthStencilView))) {
         std::cout << "CreateDepthStencilView() failed." << std::endl;
+        return false;
     }
+    return true;
+}
+
+bool AppBase::ResizeClientResources(UINT width, UINT height) {
+    if (!m_swapChain || width == 0 || height == 0)
+        return false;
+
+    m_renderResourcesReady = false;
+    m_context->OMSetRenderTargets(0, nullptr, nullptr);
+    m_renderTargetView.Reset();
+    m_depthStencilView.Reset();
+    m_depthStencilBuffer.Reset();
+
+    const HRESULT hr = m_swapChain->ResizeBuffers(
+        0, width, height, DXGI_FORMAT_UNKNOWN, 0);
+    if (FAILED(hr)) {
+        cout << "ResizeBuffers() failed. " << hex << hr << endl;
+        return false;
+    }
+
+    m_screenWidth = int(width);
+    m_screenHeight = int(height);
+    m_guiWidth = 0;
+    if (!CreateRenderTargetView() || !CreateDepthBuffer())
+        return false;
+
+    SetViewport();
+    m_renderResourcesReady = true;
     return true;
 }
 

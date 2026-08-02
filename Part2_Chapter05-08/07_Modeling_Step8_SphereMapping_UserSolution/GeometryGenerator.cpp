@@ -445,84 +445,6 @@ MeshData GeometryGenerator::SubdivideToSphere(const float radius, MeshData meshD
 	};
 
 
-	auto CalculateTextCoord = [](Vertex &v0, Vertex &v1, Vertex &others)
-	{
-		Vector2 returnTextCoord;
-
-		// Calculate U
-		float x0 = v1.texcoord.x - v0.texcoord.x;
-
-		if (x0 > 0.5f)
-		{
-			if (others.texcoord.x > 0.5f)
-			{
-				returnTextCoord.x = (1.0f + v1.texcoord.x) / 2;
-			}
-			else
-			{
-				returnTextCoord.x = (v0.texcoord.x + 0.0f) / 2;
-			}
-		}
-
-		if (x0 < -0.5f)
-		{
-			if (others.texcoord.x < 0.5f)
-			{
-				returnTextCoord.x = (0.0f + v1.texcoord.x) / 2;
-			}
-			else
-			{
-				returnTextCoord.x = (v0.texcoord.x + 1.0f) / 2;
-			}
-		}
-
-		returnTextCoord.x = (v0.texcoord.x + v1.texcoord.x) / 2;
-
-		// Calculate V
-
-		float y0 = v1.texcoord.y - v0.texcoord.y;
-
-		if (y0 > 0.5f)
-		{
-			if (others.texcoord.y > 0.5f)
-			{
-				returnTextCoord.y = (1.0f + v1.texcoord.y) / 2;
-			}
-			else
-			{
-				returnTextCoord.y = (v0.texcoord.y + 0.0f) / 2;
-			}
-		}
-
-		if (y0 < -0.5f)
-		{
-			if (others.texcoord.y < 0.5f)
-			{
-				returnTextCoord.y = (0.0f + v1.texcoord.y) / 2;
-			}
-			else
-			{
-				returnTextCoord.y = (v0.texcoord.y + 1.0f) / 2;
-			}
-		}
-
-		returnTextCoord.y = (v0.texcoord.y + v1.texcoord.y) / 2;
-
-		return returnTextCoord;
-	};
-
-
-	auto UpdateFaceNormal = [](Vertex &v0, Vertex &v1, Vertex &v2)
-	{
-		auto faceNormal =
-		    (v1.position - v0.position).Cross(v2.position - v0.position);
-		faceNormal.Normalize();
-		v0.normal = faceNormal;
-		v1.normal = faceNormal;
-		v2.normal = faceNormal;
-	};
-
-
 	auto CheckAndPushBack = [&](MeshData &meshData, Vertex &v0, Vertex &v1, Vertex &v2)
 	{
 		// Calculate U
@@ -598,7 +520,7 @@ MeshData GeometryGenerator::SubdivideToSphere(const float radius, MeshData meshD
 			}
 		}
 
-		int offset = meshData.indices.size();
+		const auto offset = static_cast<uint16_t>(meshData.indices.size());
 
 		meshData.indices.push_back(offset + 0);
 		meshData.indices.push_back(offset + 1);
@@ -610,7 +532,6 @@ MeshData GeometryGenerator::SubdivideToSphere(const float radius, MeshData meshD
 	// Main
 	// 버텍스가 중복되는 구조로 구현
 	MeshData newMesh;
-	uint16_t count = 0;
 	for (size_t i = 0; i < meshData.indices.size(); i += 3)
 	{
 		size_t i0 = meshData.indices[i];
@@ -640,17 +561,7 @@ MeshData GeometryGenerator::SubdivideToSphere(const float radius, MeshData meshD
 		v5.texcoord = (v2.texcoord + v0.texcoord) * 0.5f;
 		ProjectVertex(v5);
 
-		std::cout << "v0.texcoord.x : " << v0.texcoord.x << std::endl;
-		std::cout << "v1.texcoord.x : " << v1.texcoord.x << std::endl;
-		std::cout << "v2.texcoord.x : " << v2.texcoord.x << std::endl;
-		std::cout << "v3.texcoord.x : " << v3.texcoord.x << std::endl;
-		std::cout << "v4.texcoord.x : " << v4.texcoord.x << std::endl;
-		std::cout << "v5.texcoord.x : " << v5.texcoord.x << std::endl << std::endl;
 
-		// UpdateFaceNormal(v0, v3, v5);
-		// UpdateFaceNormal(v3, v1, v4);
-		// UpdateFaceNormal(v5, v4, v2);
-		// UpdateFaceNormal(v3, v4, v5);
 
 		CheckAndPushBack(newMesh, v0, v3, v5);
 		CheckAndPushBack(newMesh, v3, v1, v4);
@@ -699,7 +610,6 @@ MeshData GeometryGenerator::ProjectVertex(const float radius, MeshData meshData)
 
 	// 버텍스가 중복되는 구조로 구현
 	MeshData newMesh;
-	uint16_t count = 0;
 	for (size_t i = 0; i < meshData.indices.size(); i += 3)
 	{
 		size_t i0 = meshData.indices[i];
@@ -714,15 +624,15 @@ MeshData GeometryGenerator::ProjectVertex(const float radius, MeshData meshData)
 		ProjectVertex(v1);
 		ProjectVertex(v2);
 
+		const auto offset = static_cast<uint16_t>(newMesh.vertices.size());
 		newMesh.vertices.push_back(v0);
 		newMesh.vertices.push_back(v1);
 		newMesh.vertices.push_back(v2);
 
 		for (uint16_t j = 0; j < 3; j++)
 		{
-			newMesh.indices.push_back(j + count);
+			newMesh.indices.push_back(j + offset);
 		}
-		count += 3;
 	}
 
 	return newMesh;

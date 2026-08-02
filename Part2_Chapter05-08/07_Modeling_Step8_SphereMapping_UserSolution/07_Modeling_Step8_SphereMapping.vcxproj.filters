@@ -46,13 +46,7 @@
     <None Include="Common.hlsli" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="crate2_diffuse.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="wall.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="ojwD8.jpg">
+    <Image Include="generated_fictional_planet_equirectangular.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -48,6 +48,7 @@ class AppBase {
     void SetViewport();
     bool CreateRenderTargetView();
     bool CreateDepthBuffer();
+    bool ResizeClientResources(UINT width, UINT height);
     void CreateVertexShaderAndInputLayout(
         const wstring &filename,
         const vector<D3D11_INPUT_ELEMENT_DESC> &inputElements,
@@ -145,6 +146,8 @@ class AppBase {
     int m_guiWidth = 0;
     HWND m_mainWindow;
     UINT numQualityLevels = 0;
+    bool m_isMinimized = false;
+    bool m_renderResourcesReady = false;
 
     ComPtr<ID3D11Device> m_device;
     ComPtr<ID3D11DeviceContext> m_context;
