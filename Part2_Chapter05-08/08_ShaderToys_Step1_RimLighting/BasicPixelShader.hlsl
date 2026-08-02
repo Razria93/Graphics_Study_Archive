@@ -63,11 +63,9 @@ float4 main(PixelShaderInput input) : SV_TARGET
     rimBase = max(rimBase, 1e-4);
     float rimPow = max(rimPower, 0.0);
     
-    float rim = pow(rimBase, rimPow);
-    
-    color = useSmoothstep ? 
-            color + rim * (rimColor * rimStrength) :
-            color;
+    float rim = useSmoothstep ? smoothstep(0.0, 1.0, rimBase)
+                              : pow(rimBase, rimPow);
+    color += rim * (rimColor * rimStrength);
     
     return useTexture ? float4(color, 1.0) * g_texture0.Sample(g_sampler, input.texcoord) : float4(color, 1.0);
 }
