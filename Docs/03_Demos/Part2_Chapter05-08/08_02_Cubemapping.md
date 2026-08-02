@@ -77,7 +77,7 @@ DrawSkybox(camera, cubemap)
 
 - [Chapter08 Step2 Cubemapping Example](../../../Part2_Chapter05-08/08_ShaderToys_Step2_Cubemapping/README.md)
 - [이전 단계: Chapter08 Step1 RimLighting Demo](08_01_RimLighting.md)
-- 다음 단계: Chapter08 Step3 EnvironmentMapping
+- [다음 단계: Chapter08 Step3 EnvironmentMapping](08_03_EnvironmentMapping.md)
 - [Cubemap And Environment Mapping](../../01_Topics/TexturingAndMapping/CubemapAndEnvironmentMapping.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)

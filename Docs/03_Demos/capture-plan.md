@@ -157,3 +157,5 @@ portfolio_raytracer_reflection.png
 - Step1 video는 정적 silhouette과 parameter UI를 한 frame에서 판독할 수 있어 제외한다.
 - Chapter08 Step2 Cubemapping은 skybox와 Zelda 전경 mesh가 함께 보이는 전체 창 screenshot 한 장을 확보했다.
 - Step2 video는 정적 frame에서 cube 방향 sampling과 전경·배경 분리를 판독할 수 있어 제외한다.
+- Chapter08 Step3 EnvironmentMapping은 NightPath 배경과 reflection이 함께 보이는 전체 창 screenshot 한 장을 확보했다.
+- Step3 camera 회전 video는 설명 가치가 있으나 이번 단계에서는 local 후보 없이 screenshot으로 마감한다.
