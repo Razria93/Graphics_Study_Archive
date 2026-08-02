@@ -142,6 +142,7 @@ Color Shade(PixelInput input)
 
 - [Chapter06 Step5A Texturing LightingSelf Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf/README.md)
 - [이전 단계: Chapter06 Step5 Texturing Demo](06_Texturing.md)
+- [다음 단계: Chapter06 Step6 Lighting Demo](06_Lighting.md)
 - [Texture Sampling Topic](../../01_Topics/TexturingAndMapping/TextureSampling.md)
 - [Phong And Blinn-Phong Topic](../../01_Topics/LightingAndShading/PhongAndBlinnPhong.md)
 - [Light Types Topic](../../01_Topics/LightingAndShading/LightTypes.md)

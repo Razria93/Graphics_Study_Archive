@@ -16,6 +16,7 @@
 | RD-008 | `Step14 CubeEnvironment` asset/result | Runtime 미사용 environment asset 정리 | 실행에 필요한 Humus CC BY 3.0 cubemap 6면과 attribution 원문만 유지하고 미사용 blurred face 6개와 별도 skybox asset 18개 제거 | 완료 | 실행용 JPEG 6면의 metadata와 공개 안전성, Debug/Release x64 load를 확인했다. Capture는 프로그램이 6면을 sampling해 렌더링한 결과이며 6면 orientation 전체 검증으로 사용하지 않음 |
 | RD-009 | `Chapter06 Step5 Texturing` input/result | 출처 불명 texture 교체 | 출처 불명 PNG·JPEG를 제거하고 공개용 generated 석재·목재 PNG와 재촬영한 전체 창 capture를 사용 | 완료 | 외부 원문 pixel 복제 없음. Generated input 2개는 1254×1254 RGB PNG이며 C2PA에는 OpenAI 생성 이력만 있다. 개인 식별자·PNG text·EXIF가 없고 Debug/Release x64 load와 capture 2장의 공개 안전성을 확인했다 |
 | RD-010 | `Chapter06 Step5A Texturing LightingSelf` input/result | 출처 불명·미사용 texture 정리 | 출처 불명 texture 2개를 제거하고 Step5에서 검수한 generated 목재 PNG의 동일 바이트 사본과 재촬영한 전체 창 capture를 사용 | 완료 | Step5A와 Step5 목재 input SHA-256 일치. 미사용 texture·shader resource를 제거하고 Debug/Release x64 load, capture 2장의 metadata와 개인 식별자를 확인했다 |
+| RD-011 | `Chapter06 Step6 Lighting` input/result | 출처 불명·미사용 texture 정리 | 출처 불명 PNG·JPEG를 제거하고 Step5·Step5A에서 검수한 generated 목재 PNG의 동일 바이트 사본과 재촬영한 전체 창 capture를 사용 | 완료 | Step6와 Step5·Step5A 목재 input SHA-256 일치. 미사용 texture·shader resource를 제거하고 Debug/Release x64 load, Directional·Point·Spot capture 3장의 metadata와 개인 식별자를 확인했다 |
 
 ## 유형
 

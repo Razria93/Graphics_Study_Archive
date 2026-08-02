@@ -67,7 +67,7 @@ Build 뒤의 `pwsh.exe` 환경 경고는 MSBuild 성공과 분리해 관찰했�
 
 - [Part2 Chapter05-08 README](../README.md)
 - [이전 단계: Chapter06 Step5 Texturing](../06_GraphicsPipeline_Step5_Texturing/README.md)
-- 다음 단계: Chapter06 Step6 Lighting 문서화 대기
+- [다음 단계: Chapter06 Step6 Lighting](../06_GraphicsPipeline_Step6_Lighting/README.md)
 - [Texture Sampling Topic](../../Docs/01_Topics/TexturingAndMapping/TextureSampling.md)
 - [Phong And Blinn-Phong Topic](../../Docs/01_Topics/LightingAndShading/PhongAndBlinnPhong.md)
 - [Light Types Topic](../../Docs/01_Topics/LightingAndShading/LightTypes.md)

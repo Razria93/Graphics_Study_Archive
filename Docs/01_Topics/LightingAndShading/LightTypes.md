@@ -15,6 +15,7 @@ Directional, Point와 Spot Light가 surface-to-light vector와 세기 범위를 
 - Build/run/capture 사실은 [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)로 위임한다.
 - GLM transform과 결합한 CPU Light 구현은 [Chapter05 Step2 Example](../../../Part2_Chapter05-08/05_AffineTransformations_Step2_Lights%28GLM%29/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter05-08/05_LightsGLM.md)로 위임한다.
 - GPU texture와 point-light distance attenuation을 결합한 구현은 [Chapter06 Step5A Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter05-08/06_TexturingLightingSelf.md)로 위임한다.
+- 동일한 GPU pipeline에서 Directional·Point·Spot을 비교한 구현은 [Chapter06 Step6 Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting/README.md)과 [상세 Demo](../../03_Demos/Part2_Chapter05-08/06_Lighting.md)로 위임한다.
 
 ## 핵심 개념
 
@@ -48,8 +49,10 @@ Spot Light는 Point Light의 위치와 distance attenuation에 방향성 cone을
 - Example: [Step10 Lights README](../../../Part2_Chapter04/04_Rasterization_Step10_Lights/README.md)
 - Example: [Chapter05 Step2 Lights(GLM) README](../../../Part2_Chapter05-08/05_AffineTransformations_Step2_Lights%28GLM%29/README.md)
 - Example: [Chapter06 Step5A Texturing LightingSelf README](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf/README.md)
+- Example: [Chapter06 Step6 Lighting README](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting/README.md)
 - Related Topic: [Phong And Blinn-Phong](PhongAndBlinnPhong.md)
 - Verification: [`Docs/02_Verification/Part2_Chapter04/verification-index.md`](../../02_Verification/Part2_Chapter04/verification-index.md)
 - Demo: [`Docs/03_Demos/Part2_Chapter04/10_Lights.md`](../../03_Demos/Part2_Chapter04/10_Lights.md)
 - Demo: [Chapter05 Step2 Lights(GLM) Demo](../../03_Demos/Part2_Chapter05-08/05_LightsGLM.md)
 - Demo: [Chapter06 Step5A Texturing LightingSelf](../../03_Demos/Part2_Chapter05-08/06_TexturingLightingSelf.md)
+- Demo: [Chapter06 Step6 Lighting](../../03_Demos/Part2_Chapter05-08/06_Lighting.md)
