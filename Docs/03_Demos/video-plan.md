@@ -24,6 +24,7 @@
 | Part2_Chapter05-08 Chapter07 Step2 | Vertex normal line 표시와 mesh 회전 | 선택 | 여러 면의 normal 방향과 분포 | 제외: 비스듬한 box와 normal line을 담은 정적 screenshot 1장이 구현을 충분히 설명 | 미게시 |
 | Part2_Chapter05-08 Chapter07 Step3 | Grid 분할 수와 topology 표시 | 선택 | Procedural sample과 cell triangulation | 제외: 5×3 wireframe screenshot 1장이 cell과 triangle 구성을 충분히 설명 | 미게시 |
 | Part2_Chapter05-08 Chapter07 Step4 | Cylinder ring·slice topology 표시 | 선택 | 열린 side surface의 ring 연결과 triangle 분할 | 제외: 비스듬한 wireframe screenshot 1장이 열린 top과 topology를 충분히 설명 | 미게시 |
+| Part2_Chapter05-08 Chapter07 Step5 | Sphere latitude·longitude·pole topology 표시 | 선택 | 두 반구 합성, equator 결합과 pole fan | 제외: wireframe screenshot 1장이 topology를 충분히 설명 | 미게시 |
 | Part3_Chapter09 | camera, picking, trackball 조작 | 필수 | interaction | 미확인 | 미게시 |
 | Part3_Chapter10-13 | shadow quality 비교 | 선택 | shadow mapping, PCF, PCSS | 미확인 | 미게시 |
 | Part4_Chapter14-20 | 대표 sample 실행 | 선택 | advanced graphics 후보 | 미확인 | 미게시 |

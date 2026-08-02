@@ -141,4 +141,7 @@ portfolio_raytracer_reflection.png
 - Step3 video는 정적 wireframe 한 장으로 procedural topology를 충분히 설명할 수 있어 제외한다.
 - Step4 Cylinder는 `Wireframe=On`, `Use Texture=Off`, `Draw Normals=Off`로 열린 top과 ring·slice 연결을 담은 전체 창 screenshot 한 장을 확보했다.
 - Step4 video는 정적 wireframe 한 장으로 열린 side surface와 triangle topology를 충분히 설명할 수 있어 제외한다.
-- 다음 Step5 Sphere 변형부터 같은 순차 단위로 capture 필요성을 다시 판정한다.
+- Step5 Sphere UserSolution은 `Wireframe=On`, `Use Texture=Off`, `Draw Normals=Off`로 두 반구, equator 결합과 pole fan을 담은 전체 창 screenshot 한 장을 확보했다.
+- Step5 ReferenceSolution은 private 비교 근거로만 사용하고 tracked capture를 만들지 않는다.
+- Step5 video는 정적 wireframe 한 장으로 latitude·longitude·pole topology를 충분히 설명할 수 있어 제외한다.
+- 다음 Step6 Subdivision부터 같은 순차 단위로 capture 필요성을 다시 판정한다.

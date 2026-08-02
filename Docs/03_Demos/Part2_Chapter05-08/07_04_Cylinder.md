@@ -101,7 +101,7 @@ BuildCylinderSideIndices(slices)
 
 - [Chapter07 Step4 Example README](../../../Part2_Chapter05-08/07_Modeling_Step4_Cylinder/README.md)
 - [이전 단계: Chapter07 Step3 Demo](07_03_Grid.md)
-- 다음 단계: Chapter07 Step5 Sphere Reference Solution 문서화 대기
+- [다음 단계: Chapter07 Step5 Sphere UserSolution Demo](07_05_Sphere.md)
 - [Procedural Primitive Generation](../../01_Topics/ModelingAndGeometry/ProceduralPrimitiveGeneration.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
