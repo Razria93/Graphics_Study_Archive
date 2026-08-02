@@ -15,6 +15,7 @@
 - [Phong And Blinn-Phong](PhongAndBlinnPhong.md)
 - [Light Types](LightTypes.md)
 - [Rim Lighting](RimLighting.md)
+- [Image Based Lighting](ImageBasedLighting.md)
 
 ## 상태
 

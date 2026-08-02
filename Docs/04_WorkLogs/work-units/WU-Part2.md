@@ -166,3 +166,6 @@
 - 실제 shader에 연결되지 않던 `Use Reflection` UI와 HLSL vector truncation warning을 제거한다.
 - Debug/Release x64, resize·minimize/restore와 1282×992 전체 창 screenshot을 2026-08-03 현재 확인한다.
 - NightPath attribution을 유지하고 Zelda 권리 근거가 충분하지 않아 Publication은 `검토 필요`로 둔다.
+- Step4는 diffuse irradiance와 specular environment cubemap을 sphere lighting에 결합한다.
+- Shader scalar type과 `pow` 입력 범위를 명시하고 Debug/Release Clean/Rebuild, runtime preflight, resize와 1282×992 screenshot을 확인한다.
+- Atrium cubemap과 surface texture 권리 근거가 충분하지 않아 Publication은 `검토 필요`로 둔다.

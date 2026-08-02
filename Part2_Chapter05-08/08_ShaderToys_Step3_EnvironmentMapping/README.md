@@ -45,4 +45,4 @@ Step2의 cubemap을 배경에만 사용하지 않고 surface reflection directio
 - [Cubemap And Environment Mapping](../../Docs/01_Topics/TexturingAndMapping/CubemapAndEnvironmentMapping.md)
 - [Verification](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [이전 단계: Chapter08 Step2 Cubemapping](../08_ShaderToys_Step2_Cubemapping/README.md)
-- 다음 단계: Chapter08 Step4 ImageBasedLighting
+- [다음 단계: Chapter08 Step4 ImageBasedLighting](../08_ShaderToys_Step4_ImageBasedLighting/README.md)

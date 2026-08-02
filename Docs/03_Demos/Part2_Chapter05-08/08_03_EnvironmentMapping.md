@@ -72,7 +72,7 @@ Zelda와 주변 geometry에 NightPath의 주황색 하늘과 밝은 광원이 �
 
 - [Chapter08 Step3 EnvironmentMapping Example](../../../Part2_Chapter05-08/08_ShaderToys_Step3_EnvironmentMapping/README.md)
 - [이전 단계: Chapter08 Step2 Cubemapping Demo](08_02_Cubemapping.md)
-- 다음 단계: Chapter08 Step4 ImageBasedLighting
+- [다음 단계: Chapter08 Step4 ImageBasedLighting](08_04_ImageBasedLighting.md)
 - [Cubemap And Environment Mapping](../../01_Topics/TexturingAndMapping/CubemapAndEnvironmentMapping.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
