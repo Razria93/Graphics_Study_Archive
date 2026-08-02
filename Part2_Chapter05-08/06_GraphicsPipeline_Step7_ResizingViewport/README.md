@@ -67,7 +67,7 @@ Build 중 vcpkg가 먼저 호출하는 `pwsh.exe`는 이 환경에 없지만 Win
 
 - [Part2 Chapter05-08 README](../README.md)
 - [이전 단계: Chapter06 Step6 Lighting](../06_GraphicsPipeline_Step6_Lighting/README.md)
-- 다음 단계: Chapter06 Step8 ResizingWindow 문서화 대기
+- [다음 단계: Chapter06 Step8 ResizingWindow](../06_GraphicsPipeline_Step8_ResizingWindow/README.md)
 - [Swap Chain And Viewport Topic](../../Docs/01_Topics/DirectX11Pipeline/SwapChainAndViewport.md)
 - [Step7 상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/07_ResizingViewport.md)
 - [Verification Index](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)

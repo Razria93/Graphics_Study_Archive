@@ -6,7 +6,7 @@
 | --- | --- |
 | Work Unit | `WU-Part2` |
 | 현재 마감 대상 | `Part2_Chapter05-08` Chapter06 순차 정규화 |
-| 후속 코드 범위 | Chapter06 Step8 ResizingWindow부터 Chapter08까지 |
+| 후속 코드 범위 | Chapter06 Step9 PhongVsBlinnPhong부터 Chapter08까지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -93,3 +93,6 @@
 - 출처 불명 texture 2개와 미사용 두 번째 texture resource를 제거하고 Step5·Step5A·Step6의 generated 목재 PNG와 동일한 사본을 사용했다.
 - Step7 Debug/Release x64 현재 재검증과 전체 창 screenshot의 기술 검사·사용자 승인을 완료했다.
 - Step7은 정적 screenshot으로 panel과 scene 경계를 설명할 수 있어 video를 제외하고, window resize와 dependent resource 재생성은 Step8 책임으로 유지했다.
+- Step8은 정규화된 Step7을 기준으로 `WM_SIZE`, swap chain dependent resource 재생성과 projection 갱신을 추가했다.
+- Step8 Debug/Release x64와 반복 resize·minimize/restore를 현재 확인하고, 출처 불명 texture를 제거한 뒤 기존 generated 목재 PNG의 동일 바이트 사본을 사용했다.
+- Default·wide·compact screenshot은 기술 검수를 통과하고 사용자 확인을 기다린다. Window resize video는 기존 recorder의 고정 bounds 계약과 충돌하므로 도구 확장 전까지 보류한다.

@@ -12,7 +12,7 @@
 
 ## Current Work
 
-`Part1_Chapter01-02` pilot, `Part1_Chapter03`과 `Part2_Chapter04` 순차 정규화를 마감했다. `Part2_Chapter05-08`은 Chapter05 Step1–4와 Chapter06 Step1–7을 정규화했고 다음 대상은 Step8 ResizingWindow다.
+`Part1_Chapter01-02` pilot, `Part1_Chapter03`과 `Part2_Chapter04` 순차 정규화를 마감했다. `Part2_Chapter05-08`은 Chapter05 Step1–4와 Chapter06 Step1–8을 정규화했고 다음 대상은 Step9 PhongVsBlinnPhong다.
 
 - [Part1 Chapter01-02](Part1_Chapter01-02/README.md): DirectX11 기반 렌더링 흐름과 bloom 후처리 pilot
 - [01_DX11InitAndImGui](Part1_Chapter01-02/01_DX11InitAndImGui/README.md): DirectX11 device, swap chain, render target, ImGui 기반 예제
@@ -27,6 +27,7 @@
 - [Chapter06 Step5A Texturing LightingSelf](Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf/README.md): GPU texture와 point-light shading 결합
 - [Chapter06 Step6 Lighting](Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting/README.md): Directional·Point·Spot GPU lighting 비교
 - [Chapter06 Step7 ResizingViewport](Part2_Chapter05-08/06_GraphicsPipeline_Step7_ResizingViewport/README.md): ImGui panel과 scene viewport 분리
+- [Chapter06 Step8 ResizingWindow](Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow/README.md): Window resize와 swap chain dependent resource 재생성
 
 ## Featured Result
 
@@ -51,7 +52,7 @@
 | `Part1_Chapter01-02` | DirectX11 init, render loop, bloom post-processing | 완료 | pilot 마감 |
 | `Part1_Chapter03` | ray tracing basics와 cubemap sampling | 완료 | Step4~14 문서화·재검증 완료 |
 | `Part2_Chapter04` | rasterization foundation | 완료 | Step1~10·Step1A 문서화·재검증, GitHub 게시와 PR 마감 완료 |
-| `Part2_Chapter05-08` | DirectX11 pipeline, texture, mesh 흐름 | 완료 | Chapter05 Step1–4와 Chapter06 Step1–7 문서화·재검증 완료 |
+| `Part2_Chapter05-08` | DirectX11 pipeline, texture, mesh 흐름 | 완료 | Chapter05 Step1–4와 Chapter06 Step1–8 문서화·재검증 완료 |
 | `Part3_Chapter09` | texturing and mapping | 완료 | 대기 |
 | `Part3_Chapter10-13` | lighting, shadow, PBR/IBL | 완료 | 대기 |
 | `Part4_Chapter14-20` | compute shader, simulation, animation/physics | 완료 | 대기 |

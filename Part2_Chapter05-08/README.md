@@ -4,20 +4,20 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리하는 폴더다.
 
 ## 상태
 
-- 학습 코드 정리: Chapter05 Step1–4 bundle과 Chapter06 Step1–7 정규화 완료
-- Build/run: Chapter05 Step1–4와 Chapter06 Step1–7 현재 재검증 완료, 나머지 예제 과거 확인 유지
+- 학습 코드 정리: Chapter05 Step1–4 bundle과 Chapter06 Step1–8 정규화 완료
+- Build/run: Chapter05 Step1–4와 Chapter06 Step1–8 현재 재검증 완료, 나머지 예제 과거 확인 유지
 - 현재 대상: Chapter06 graphics pipeline 순차 정규화
-- 캡처: Chapter05 Step2·4와 Chapter06 Step2–7 screenshot 확보, Chapter06 Step1 console 예제 제외
+- 캡처: Chapter05 Step2·4와 Chapter06 Step2–7 screenshot 확보, Step8 screenshot 기술 검수 완료·사용자 확인 대기, Chapter06 Step1 console 예제 제외
 
 ## Archive/Public 검토
 
 | 항목 | 상태 |
 | --- | --- |
 | Source provenance | [`SRC-P2-C05-08`](../Docs/99_Legacy/source-registry.md) |
-| Import status | code import 완료 / Chapter05 Step1–4와 Chapter06 Step1–7 순차 verification 완료 |
+| Import status | code import 완료 / Chapter05 Step1–4와 Chapter06 Step1–8 순차 verification 완료 |
 | Public readiness | 검토 필요 |
-| Build/run status | Chapter05 Step1–4와 Chapter06 Step1–7 Debug/Release x64 현재 확인, 나머지 과거 확인 |
-| Next action | Chapter06 Step8 ResizingWindow 순차 정규화 |
+| Build/run status | Chapter05 Step1–4와 Chapter06 Step1–8 Debug/Release x64 현재 확인, 나머지 과거 확인 |
+| Next action | Chapter06 Step9 PhongVsBlinnPhong 순차 정규화 |
 
 ## 예정 주제
 
@@ -68,7 +68,7 @@ Chapter06은 Direct3D interface lifetime에서 시작해 window, device resource
 | [`06_GraphicsPipeline_Step5_Texturing_LightingSelf`](06_GraphicsPipeline_Step5_Texturing_LightingSelf/README.md) | Step5A 현재 build/run·capture·문서·상세 Demo 정규화 완료 |
 | [`06_GraphicsPipeline_Step6_Lighting`](06_GraphicsPipeline_Step6_Lighting/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료 |
 | [`06_GraphicsPipeline_Step7_ResizingViewport`](06_GraphicsPipeline_Step7_ResizingViewport/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료 |
-| `06_GraphicsPipeline_Step8_ResizingWindow` | 코드 보관 완료 및 현재 문서화 대기 |
+| [`06_GraphicsPipeline_Step8_ResizingWindow`](06_GraphicsPipeline_Step8_ResizingWindow/README.md) | 현재 build/run·resize 검증 완료, screenshot 사용자 확인 대기 |
 | `06_GraphicsPipeline_Step9_PhongVsBlinnPhong` | 코드 보관 완료 및 현재 문서화 대기 |
 | `07_Modeling_Step1_DrawingWireFrames` | 코드 보관 완료 및 현재 문서화 대기 |
 | `07_Modeling_Step2_DrawingNormals` | 코드 보관 완료 및 현재 문서화 대기 |
