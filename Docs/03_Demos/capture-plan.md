@@ -148,4 +148,6 @@ portfolio_raytracer_reflection.png
 - Step6 video는 정적 wireframe 한 장으로 subdivision density와 sphere projection을 충분히 설명할 수 있어 제외한다.
 - Step7 FaceNormals는 `Draw Normals=On`, `Use Texture=Off`, `Wireframe=Off`, `Normal scale=0.1`로 solid surface와 corner 기반 face-normal line을 담은 전체 창 screenshot 한 장을 확보했다.
 - Step7 video는 정지 이미지에서 yellow start와 red endpoint의 방향, UI 상태와 outward 분포를 판독할 수 있어 제외한다.
-- 다음 Step8 SphereMapping UserSolution부터 같은 순차 단위로 capture 필요성을 다시 판정한다.
+- Step8 SphereMapping UserSolution은 generated fictional planet texture를 적용한 1282×992 전체 창 screenshot 한 장을 확보했다.
+- 한 장에서 texture 방향과 U seam 결과를 판독할 수 있어 같은 bounds의 보조 screenshot은 추가하지 않는다.
+- Step8 ReferenceSolution은 private 비교 근거로만 사용하고 tracked capture를 만들지 않는다.

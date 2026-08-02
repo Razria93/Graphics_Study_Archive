@@ -27,6 +27,7 @@
 | Part2_Chapter05-08 Chapter07 Step5 | Sphere latitude·longitude·pole topology 표시 | 선택 | 두 반구 합성, equator 결합과 pole fan | 제외: wireframe screenshot 1장이 topology를 충분히 설명 | 미게시 |
 | Part2_Chapter05-08 Chapter07 Step6 | Subdivision 전후 triangle density와 sphere projection | 선택 | 1→4 triangle 분할과 2회 적용 결과 | 제외: 최종 wireframe screenshot 1장과 문서의 단계별 triangle 수로 충분히 설명 | 미게시 |
 | Part2_Chapter05-08 Chapter07 Step7 | Face normal 표시와 sphere 회전 | 선택 | Triangle winding과 face normal 방향 | 제외: solid surface와 corner 기반 normal line을 담은 정적 screenshot 1장이 방향과 분포를 충분히 설명 | 미게시 |
+| Part2_Chapter05-08 Chapter07 Step8 UserSolution | Spherical UV seam과 pole 확인 | 제외 | Fictional planet texture의 U seam·pole mapping | 전체 창 screenshot 한 장에서 texture 방향과 seam 결과를 판독 가능 | 미게시 |
 | Part3_Chapter09 | camera, picking, trackball 조작 | 필수 | interaction | 미확인 | 미게시 |
 | Part3_Chapter10-13 | shadow quality 비교 | 선택 | shadow mapping, PCF, PCSS | 미확인 | 미게시 |
 | Part4_Chapter14-20 | 대표 sample 실행 | 선택 | advanced graphics 후보 | 미확인 | 미게시 |

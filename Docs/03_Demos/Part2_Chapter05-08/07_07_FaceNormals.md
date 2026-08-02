@@ -108,7 +108,7 @@ Solid surface가 뒤쪽 line을 depth test로 가려 전면 face의 방향을 �
 
 - [Chapter07 Step7 FaceNormals Example](../../../Part2_Chapter05-08/07_Modeling_Step7_FaceNormals/README.md)
 - [이전 단계: Chapter07 Step6 Subdivision Demo](07_06_Subdivision.md)
-- 다음 단계: Chapter07 Step8 SphereMapping UserSolution
+- [다음 단계: Chapter07 Step8 SphereMapping UserSolution Demo](07_08_SphereMappingUserSolution.md)
 - [Vertex And Face Normals](../../01_Topics/ModelingAndGeometry/VertexAndFaceNormals.md)
 - [Procedural Primitive Generation](../../01_Topics/ModelingAndGeometry/ProceduralPrimitiveGeneration.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
