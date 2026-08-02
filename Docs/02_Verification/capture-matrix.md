@@ -13,7 +13,7 @@
 | Part1_Chapter01-02 | 확보 | 확보 | 제외 | `02_Bloom` input/result image를 `Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg`, `Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png`로 승격함. `01_DX11InitAndImGui` capture/result는 제외함 |
 | Part1_Chapter03 | 확보 | 확보 | 제외 | 최소 Step4, 대표 Step8·13, 선택 Step10·14 screenshot을 확정함. Step4~14 전체 창 screenshot을 확보했고 Step14는 PosZ 중심과 X face 경계를 확인함 |
 | Part2_Chapter04 | 확보 | 확보 | 확보 | Step1 Triangle부터 Step10 Lights까지 순차 screenshot을 확보했다. Step10은 Directional·Point·Spot 3장을 같은 기본 parameter로 비교하며 video를 제외한다. Chapter 대표 Demo는 Step8 PerspectiveProjection으로 유지하고 Step10은 기술 보조 Demo로 확정한다 |
-| Part2_Chapter05-08 | 확보 | 후보 | 확보 | Chapter05 Step1·3과 Chapter06 Step1 console 예제는 capture를 제외한다. Chapter05 Step2 GLM·Step4 SimpleMath 대응 screenshot, Chapter06 Step2 기본 pipeline과 Step3 projection 비교 screenshot을 확보했다. Chapter06 Step3 selected local video를 확인했고 Step4 shader split, Step5 texture split과 Step5A textured lighting은 기본·조정 screenshot 2장씩 확보했다. Step6 Lighting은 Directional·Point·Spot screenshot 3장을 확보하며 video를 제외했다 |
+| Part2_Chapter05-08 | 확보 | 후보 | 확보 | Chapter05 Step1·3과 Chapter06 Step1 console 예제는 capture를 제외한다. Chapter05 Step2 GLM·Step4 SimpleMath 대응 screenshot, Chapter06 Step2 기본 pipeline과 Step3 projection 비교 screenshot을 확보했다. Chapter06 Step3 selected local video를 확인했고 Step4 shader split, Step5 texture split과 Step5A textured lighting은 기본·조정 screenshot 2장씩 확보했다. Step6 Lighting은 Directional·Point·Spot screenshot 3장, Step7은 panel과 scene viewport 분리 screenshot 1장을 확보하며 video를 제외했다 |
 | Part3_Chapter09 | 미확인 | 미확인 | 미확인 | interaction 영상 후보 |
 | Part3_Chapter10-13 | 미확인 | 미확인 | 미확인 | PBR, shadow 후보 |
 | Part4_Chapter14-20 | 미확인 | 미확인 | 미확인 | 구조 확인 후 후보 확정 |

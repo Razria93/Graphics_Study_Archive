@@ -85,6 +85,7 @@ part2_chapter04_depth-buffer.png
 | `part2_chapter06_06_lighting_directional.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 확보 | Directional Light의 위치와 무관한 일정한 입사 방향 결과 확인 |
 | `part2_chapter06_06_lighting_point.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 확보 | Point Light의 위치와 선형 distance attenuation 결과 확인 |
 | `part2_chapter06_06_lighting_spot.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 확보 | Point와 같은 위치·falloff에서 `spotPower=16`으로 응축한 cone 결과 확인 |
+| `part2_chapter06_07_resizing_viewport.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step7_ResizingViewport` | 확보 | 왼쪽 ImGui panel과 오른쪽 scene viewport의 분리, projection 비율과 textured lighting 유지 확인 |
 
 ## 승격 체크
 
