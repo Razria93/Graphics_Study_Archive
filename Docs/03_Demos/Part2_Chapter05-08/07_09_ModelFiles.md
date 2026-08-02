@@ -97,7 +97,7 @@ Texture가 적용된 여러 submesh가 하나의 character와 base scene을 구�
 
 - [Chapter07 Step9 ModelFiles Example](../../../Part2_Chapter05-08/07_Modeling_Step9_ModelFiles/README.md)
 - [이전 단계: Chapter07 Step8 SphereMapping UserSolution Demo](07_08_SphereMappingUserSolution.md)
-- 다음 단계: Chapter08 Step1 RimLighting
+- [다음 단계: Chapter08 Step1 RimLighting Demo](08_01_RimLighting.md)
 - [Model File Import](../../01_Topics/ModelingAndGeometry/ModelFileImport.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)

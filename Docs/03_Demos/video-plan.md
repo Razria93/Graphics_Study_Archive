@@ -29,6 +29,7 @@
 | Part2_Chapter05-08 Chapter07 Step7 | Face normal 표시와 sphere 회전 | 선택 | Triangle winding과 face normal 방향 | 제외: solid surface와 corner 기반 normal line을 담은 정적 screenshot 1장이 방향과 분포를 충분히 설명 | 미게시 |
 | Part2_Chapter05-08 Chapter07 Step8 UserSolution | Spherical UV seam과 pole 확인 | 제외 | Fictional planet texture의 U seam·pole mapping | 전체 창 screenshot 한 장에서 texture 방향과 seam 결과를 판독 가능 | 미게시 |
 | Part2_Chapter05-08 Chapter07 Step9 | Imported model 회전과 submesh 확인 | 선택 | Assimp node traversal 결과와 submesh별 texture binding | 제외: 정적 전체 창 screenshot 한 장에서 model과 material 경계를 판독 가능 | 미게시 |
+| Part2_Chapter05-08 Chapter08 Step1 | Rim power와 shaping 변화 | 선택 | Normal·view angle 기반 silhouette 강조 | 제외: 파란 rim과 parameter UI를 정적 전체 창 screenshot 한 장에서 판독 가능 | 미게시 |
 | Part3_Chapter09 | camera, picking, trackball 조작 | 필수 | interaction | 미확인 | 미게시 |
 | Part3_Chapter10-13 | shadow quality 비교 | 선택 | shadow mapping, PCF, PCSS | 미확인 | 미게시 |
 | Part4_Chapter14-20 | 대표 sample 실행 | 선택 | advanced graphics 후보 | 미확인 | 미게시 |
