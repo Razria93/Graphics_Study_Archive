@@ -6,7 +6,7 @@
 | --- | --- |
 | Work Unit | `WU-Part2` |
 | 현재 마감 대상 | `Part2_Chapter05-08` Chapter06 순차 정규화 |
-| 후속 코드 범위 | Chapter06 Step4부터 Chapter08까지 |
+| 후속 코드 범위 | Chapter06 Step5부터 Chapter08까지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -70,3 +70,7 @@
 - Step3는 Model·View·Projection parameter와 dynamic constant buffer 갱신을 분리하고 perspective·orthographic 결과를 비교한다.
 - Perspective·Orthographic 전체 창 screenshot 2장의 기술 검사와 사용자 시각 확인을 완료해 tracked capture로 승격했다.
 - Model Y rotation은 한 방향 연속 drag selected video로 검증하고 Publication 단계 전까지 local evidence로 유지한다.
+- Step4 Shaders의 deterministic `xSplitPoint=0.5`, pixel constant-buffer alignment와 application title을 최소 보완했다.
+- Step4의 Debug/Release x64 현재 재검증과 Example·Shader Stage Topic·상세 Demo 정규화를 완료했다.
+- 기본 `0.5`와 조정 `0.25` 전체 창 screenshot 2장의 기술 검사와 사용자 시각 확인을 완료해 tracked capture로 승격했다.
+- Step4 video는 정적 screenshot 비교로 UV 분기 이동을 충분히 설명할 수 있어 제외했다.

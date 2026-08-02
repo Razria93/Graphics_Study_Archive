@@ -63,7 +63,7 @@ Perspective·Orthographic screenshot 2장은 기술 검사와 사용자 시각 �
 
 - [Part2 Chapter05-08 README](../README.md)
 - [이전 단계: Chapter06 Step2 InitializingD3D](../06_GraphicsPipeline_Step2_InitializingD3D/README.md)
-- 다음 단계: Chapter06 Step4 Shaders 문서화 대기
+- [다음 단계: Chapter06 Step4 Shaders](../06_GraphicsPipeline_Step4_Shaders/README.md)
 - [Matrix And Affine Transformations Topic](../../Docs/01_Topics/Rasterization/MatrixAndAffineTransformations.md)
 - [Perspective Projection Topic](../../Docs/01_Topics/Rasterization/PerspectiveProjection.md)
 - [Step3 ModelViewProj 상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/06_ModelViewProj.md)
