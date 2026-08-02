@@ -44,7 +44,7 @@ Frame에서는 Step7과 같은 panel width 기반 scene viewport를 계산한다
 | 반복 resize | 성공 | default·wide·compact와 추가 크기 전환 후 rendering 유지 |
 | 최소화·복원 | 성공 | 최소화 중 0×0 생성 생략, 복원 후 rendering 재개 |
 | Texture·Lighting 유지 | 성공 | Generated 목재 texture와 Directional Light 기본 결과 확인 |
-| Capture/Result | 사용자 확인 대기 | 세 크기의 Release 전체 창 screenshot 기술 검수 완료 |
+| Capture/Result | 확보 | 세 크기의 Release 전체 창 screenshot 기술·시각 검수 완료 |
 
 ## Capture/Result
 

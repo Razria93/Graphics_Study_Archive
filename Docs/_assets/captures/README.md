@@ -86,6 +86,9 @@ part2_chapter04_depth-buffer.png
 | `part2_chapter06_06_lighting_point.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 확보 | Point Light의 위치와 선형 distance attenuation 결과 확인 |
 | `part2_chapter06_06_lighting_spot.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 확보 | Point와 같은 위치·falloff에서 `spotPower=16`으로 응축한 cone 결과 확인 |
 | `part2_chapter06_07_resizing_viewport.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step7_ResizingViewport` | 확보 | 왼쪽 ImGui panel과 오른쪽 scene viewport의 분리, projection 비율과 textured lighting 유지 확인 |
+| `part2_chapter06_08_resizing_window_default.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow` | 확보 | 1280×960 client 기준 resource와 projection 결과 기술·시각 검수 완료 |
+| `part2_chapter06_08_resizing_window_wide.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow` | 확보 | 1600×900 client resize 뒤 scene aspect와 textured lighting 유지 기술·시각 검수 완료 |
+| `part2_chapter06_08_resizing_window_compact.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow` | 확보 | 960×720 client resize 뒤 panel·scene 배치와 resource 갱신 기술·시각 검수 완료 |
 
 ## 승격 체크
 

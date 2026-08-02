@@ -123,6 +123,7 @@ Panel 아래와 scene 밖의 검은 영역은 전체 render target clear 결과�
 
 - [Chapter06 Step7 ResizingViewport Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step7_ResizingViewport/README.md)
 - [이전 단계: Chapter06 Step6 Lighting Demo](06_Lighting.md)
+- [다음 단계: Chapter06 Step8 ResizingWindow Demo](08_ResizingWindow.md)
 - [Swap Chain And Viewport Topic](../../01_Topics/DirectX11Pipeline/SwapChainAndViewport.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
