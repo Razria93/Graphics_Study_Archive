@@ -52,8 +52,8 @@
 - Category: `validator`
 - Affected: GitHub quality validator, visual fixture와 Chapter04 Demo Issue 후보
 - Finding: 정책은 video를 별도 Issue comment에 두도록 정의하지만 validator는 Demo Issue 본문의 bare video attachment를 허용한다.
-- Response: standalone video attachment를 실패 처리하고 image-only 및 video comment link 허용 fixture를 실제 validator에 연결한다. 기존 Chapter04 후보의 video는 정적 visual로 교체한다.
-- Verification: validator 수정 전 invalid fixture 실패 재현, 수정 후 GitHub visual fixture 및 GitHub quality validator 통과
+- Response: standalone video attachment를 실패 처리하고 image-only 및 video comment link 허용 fixture를 실제 validator에 연결한다. Chapter04 Issue #14 본문은 정적 visual 3개로 교체하고 기존 video는 전용 댓글로 이전한다.
+- Verification: validator 수정 전 invalid fixture 실패 재현, 수정 후 fixture와 GitHub quality validator 통과, [Issue #14 video 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/14#issuecomment-5168469025)의 1202×932 H.264 재생과 본문의 standalone video 0건 확인
 - Fix: `c67c198`
 - Status: `resolved`
 - Regression check: Demo Issue 후보는 정적 visual만 본문에 두고 동적 evidence는 전용 comment permalink로 연결한다.
