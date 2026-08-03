@@ -14,6 +14,7 @@ Cursor near/far NDC를 world space로 역변환해 CPU picking ray를 만들고 
 | 파일 | 역할 |
 | --- | --- |
 | [AppBase.cpp](AppBase.cpp#L140-L157) | cursor client 좌표를 NDC로 변환 |
+| [AppBase.cpp](AppBase.cpp#L231-L243) | press·release와 capture 상실 시 입력 상태 복구 |
 | [ExampleApp.cpp](ExampleApp.cpp#L110-L142) | inverse view-projection과 world ray 구성 |
 | [ExampleApp.cpp](ExampleApp.cpp#L141-L166) | bounding sphere 교차와 hit marker 갱신 |
 
@@ -21,17 +22,22 @@ Cursor near/far NDC를 world space로 역변환해 CPU picking ray를 만들고 
 
 ![Chapter09 Step3 MousePickingRayCollision](../../Docs/_assets/captures/part3_chapter09_03_mouse_picking_ray_collision.png)
 
+![Chapter09 Step3 MousePickingRayCollision Press](../../Docs/_assets/captures/part3_chapter09_03_mouse_picking_ray_collision_press.png)
+
+Press, sphere 안쪽 marker 이동과 release는 selected local video로 확인한다.
+
 ## Verification
 
 | 항목 | 결과 | 비고 |
 | --- | --- | --- |
 | Debug x64 build/run | 성공 | CPU ray collision 경로 확인 |
 | Release x64 build/run | 성공 | project 폴더 CWD |
-| Capture/Result | 완료 | 전체 창 PNG |
+| Capture/Result | 완료 | release·press 전체 창 PNG, lifecycle selected local video |
 
 ## Limitations
 
 - 실제 triangle이 아니라 bounding sphere 근사 교차를 사용한다.
+- Press 중에도 cursor ray가 sphere를 벗어나면 marker가 사라진다.
 - `_Solution` 기반 구현이며 사용자 고유 구현으로 주장하지 않는다.
 - Earth texture와 cubemap은 공개 권리 근거 확인이 필요하다.
 

@@ -21,13 +21,15 @@ Drag 시작점의 near/far ray depth 비율을 보존하고 현재 cursor ray의
 
 ![Chapter09 Step6 MouseDragMove](../../Docs/_assets/captures/part3_chapter09_06_mouse_drag_move.png)
 
+오른쪽 이동 뒤 위쪽으로 이어지는 world-space translation은 selected local video로 확인한다.
+
 ## Verification
 
 | 항목 | 결과 | 비고 |
 | --- | --- | --- |
 | Debug x64 build/run | 성공 | drag capture·release 경로 확인 |
 | Release x64 build/run | 성공 | project 폴더 CWD |
-| Capture/Result | 완료 | 전체 창 PNG |
+| Capture/Result | 완료 | 전체 창 PNG, drag-move selected local video |
 
 ## Limitations
 

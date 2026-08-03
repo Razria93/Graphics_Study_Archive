@@ -13,6 +13,8 @@ GPU가 기록한 object ID color를 cursor 위치에서 읽어 hover object를 �
 
 ![Chapter09 Step2 MousePicking](../../_assets/captures/part3_chapter09_02_mouse_picking.png)
 
+![Chapter09 Step2 MousePicking Hover](../../_assets/captures/part3_chapter09_02_mouse_picking_hover.png)
+
 ## 입력과 출력
 
 | 구분 | 내용 |
@@ -33,12 +35,12 @@ GPU가 기록한 object ID color를 cursor 위치에서 읽어 hover object를 �
 
 화면에 보이는 geometry와 같은 draw에서 ID color를 만들고 필요한 한 pixel만 CPU로 가져온다.
 
-- [Picking texture 구성](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/AppBase.cpp#L136-L161)
-- [Cursor pixel readback](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/AppBase.cpp#L163-L189)
+- [Picking texture 구성](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/AppBase.cpp#L544-L630)
+- [Cursor pixel readback](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/ExampleApp.cpp#L221-L316)
 
 ## 시각 결과
 
-기본 scene은 ground와 sphere의 ID 대상 관계를 보여준다. Hover 상태는 cursor 위치에 따라 변하는 동적 결과이므로 정적 capture는 scene 기준선으로 사용한다.
+기본 PNG는 ground와 sphere의 ID 대상 관계를 보여준다. Hover PNG는 sphere 중심 cursor의 GPU readback 결과가 red highlight로 연결되는 상태를 보여준다.
 
 ## 구현 범위와 한계
 
@@ -52,7 +54,7 @@ GPU가 기록한 object ID color를 cursor 위치에서 읽어 hover object를 �
 
 ## 관련 코드
 
-- [Highlight state 연결](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/ExampleApp.cpp#L209-L250)
+- [Highlight state 연결](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/ExampleApp.cpp#L317-L334)
 - [Example README](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/README.md)
 
 ## 관련 문서

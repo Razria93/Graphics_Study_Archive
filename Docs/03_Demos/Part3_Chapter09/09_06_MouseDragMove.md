@@ -39,7 +39,7 @@ Picking ray의 drag 시작 depth를 보존해 sphere를 world space에서 이동
 
 ## 시각 결과
 
-Textured sphere와 background가 screen-space drag의 depth 기준을 보여준다. Screenshot은 기본 위치를 기록하며 이동 전후 video는 후속 선택 증거다.
+Textured sphere와 background가 screen-space drag의 depth 기준을 보여준다. Screenshot은 기본 위치를 기록하고 16.07초 selected local video는 오른쪽 이동 뒤 위쪽으로 이어지는 world-space translation을 보여준다.
 
 ## 구현 범위와 한계
 

@@ -13,6 +13,8 @@ Cursor에서 만든 world-space ray와 bounding sphere의 CPU collision으로 ob
 
 ![Chapter09 Step3 MousePickingRayCollision](../../_assets/captures/part3_chapter09_03_mouse_picking_ray_collision.png)
 
+![Chapter09 Step3 MousePickingRayCollision Press](../../_assets/captures/part3_chapter09_03_mouse_picking_ray_collision_press.png)
+
 ## 입력과 출력
 
 | 구분 | 내용 |
@@ -38,11 +40,12 @@ GPU ID readback 대신 CPU가 단순 bounding volume과 교차해 선택 여부�
 
 ## 시각 결과
 
-Earth sphere는 picking 대상과 bounding volume의 위치를 명확히 보여준다. Hit marker는 pointer hold 동안 표시되는 동적 진단 결과다.
+Earth sphere는 picking 대상과 bounding volume의 위치를 명확히 보여준다. Release·press PNG와 selected local video는 pointer press, sphere 안쪽 marker 이동과 release 소멸을 순서대로 보여준다.
 
 ## 구현 범위와 한계
 
 - Triangle surface가 아닌 bounding sphere 근사 교차다.
+- Press 중에도 cursor ray가 sphere silhouette을 벗어나면 marker가 사라진다.
 - Step3은 `_Solution` 기반이며 개인 고유 구현으로 주장하지 않는다.
 - Earth와 cubemap asset의 공개 권리 근거가 부족해 Publication은 `검토 필요`다.
 
@@ -53,6 +56,7 @@ Earth sphere는 picking 대상과 bounding volume의 위치를 명확히 보여�
 ## 관련 코드
 
 - [Hit marker 갱신](../../../Part3_Chapter09/09_UserInteraction_Step3_MousePickingRayCollision/ExampleApp.cpp#L141-L166)
+- [Mouse capture와 release 복구](../../../Part3_Chapter09/09_UserInteraction_Step3_MousePickingRayCollision/AppBase.cpp#L231-L243)
 - [Example README](../../../Part3_Chapter09/09_UserInteraction_Step3_MousePickingRayCollision/README.md)
 
 ## 관련 문서

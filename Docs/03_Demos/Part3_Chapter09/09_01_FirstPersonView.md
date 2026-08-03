@@ -38,12 +38,13 @@ Keyboard와 cursor 입력이 camera view 변화로 이어지는 Chapter09의 입
 
 ## 시각 결과
 
-Ground plane과 cubemap scene은 camera orientation과 perspective 기준선을 제공한다. Capture는 기본 view이며 동적 이동 증거는 향후 video 후보로 남긴다.
+Ground plane과 cubemap scene은 camera orientation과 perspective 기준선을 제공한다. 기본 정면 PNG와 W→S→A→D 이동, 중앙→왼쪽→중앙→오른쪽→중앙 시선 전환을 분리한 selected local video 두 개로 입력 결과를 확인한다.
 
 ## 구현 범위와 한계
 
 - 절대 cursor 매핑을 사용하며 relative mouse-look은 구현하지 않는다.
 - Pointer lock, raw input과 focus reset은 범위 밖이다.
+- Mouse-look video는 사용자가 지정한 네 구간의 5초 이동을 보존해 일반 권장 길이보다 길다.
 - Scene asset의 공개 권리 근거가 부족해 Publication은 `검토 필요`다.
 
 ## 검증

@@ -38,7 +38,7 @@ Object 중심에서 hit point로 향하는 두 vector가 drag의 3D 회전량을
 
 ## 시각 결과
 
-Textured sphere의 표면 방향 변화가 회전을 판독하게 한다. Screenshot은 기본 상태를 기록하며 상호작용 video는 foreground 안정성 재확인 후 별도 후보로 둔다.
+Textured sphere의 표면 방향 변화가 회전을 판독하게 한다. Screenshot은 기본 상태를 기록하고 18.6초 selected local video는 sphere 안쪽의 연속 drag와 누적 orientation 변화를 보여준다.
 
 ## 구현 범위와 한계
 

@@ -13,13 +13,15 @@ Object ID color를 별도 render target에 기록하고 cursor의 한 pixel을 s
 
 | 파일 | 역할 |
 | --- | --- |
-| [AppBase.cpp](AppBase.cpp#L136-L161) | ID render target와 1×1 staging texture 구성 |
-| [AppBase.cpp](AppBase.cpp#L163-L189) | cursor pixel resolve·copy·map readback |
-| [ExampleApp.cpp](ExampleApp.cpp#L209-L250) | ID color와 object highlight 상태 연결 |
+| [AppBase.cpp](AppBase.cpp#L544-L630) | ID render target와 1×1 staging texture 구성 |
+| [ExampleApp.cpp](ExampleApp.cpp#L221-L316) | cursor pixel resolve·copy·map readback |
+| [ExampleApp.cpp](ExampleApp.cpp#L317-L334) | ID color와 object highlight 상태 연결 |
 
 ## Capture/Result
 
 ![Chapter09 Step2 MousePicking](../../Docs/_assets/captures/part3_chapter09_02_mouse_picking.png)
+
+![Chapter09 Step2 MousePicking Hover](../../Docs/_assets/captures/part3_chapter09_02_mouse_picking_hover.png)
 
 ## Verification
 
@@ -27,7 +29,7 @@ Object ID color를 별도 render target에 기록하고 cursor의 한 pixel을 s
 | --- | --- | --- |
 | Debug x64 build/run | 성공 | HLSL 출력 초기화 warning 관찰 |
 | Release x64 build/run | 성공 | project 폴더 CWD |
-| Capture/Result | 완료 | 기본 scene 전체 창 PNG |
+| Capture/Result | 완료 | 기본·hover red 전체 창 PNG |
 
 ## Limitations
 

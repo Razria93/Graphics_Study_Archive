@@ -38,7 +38,7 @@ Axis-angle UI를 quaternion과 model rotation matrix로 변환하는 수치 기�
 
 ## 시각 결과
 
-UI는 quaternion axis와 angle을 노출하고 sphere texture 방향으로 회전 결과를 읽게 한다. Raw 경로 spelling과 공개 표시 이름을 분리한다.
+UI는 quaternion axis와 angle을 노출하고 sphere texture 방향으로 회전 결과를 읽게 한다. X·Y·Z 축은 각각 별도 15초 selected local video에서 `quatTheta` 0→약 π/2 drag 결과를 확인한다. Raw 경로 spelling과 공개 표시 이름을 분리한다.
 
 ## 구현 범위와 한계
 
@@ -52,7 +52,7 @@ UI는 quaternion axis와 angle을 노출하고 sphere texture 방향으로 회�
 
 ## 관련 코드
 
-- [Axis-angle UI](../../../Part3_Chapter09/09_UserInteraction_Step4_QuaternianRotation/ExampleApp.cpp#L290-L315)
+- [Axis-angle UI](../../../Part3_Chapter09/09_UserInteraction_Step4_QuaternianRotation/ExampleApp.cpp#L337-L360)
 - [Example README](../../../Part3_Chapter09/09_UserInteraction_Step4_QuaternianRotation/README.md)
 
 ## 관련 문서

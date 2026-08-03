@@ -15,11 +15,13 @@ UI의 axis-angle 값을 quaternion으로 변환하고 model rotation matrix에 �
 | --- | --- |
 | [ExampleApp.cpp](ExampleApp.cpp#L107-L131) | axis normalization과 quaternion 구성 |
 | [ExampleApp.cpp](ExampleApp.cpp#L127-L132) | quaternion을 model rotation matrix로 변환 |
-| [ExampleApp.cpp](ExampleApp.cpp#L290-L315) | axis와 angle UI |
+| [ExampleApp.cpp](ExampleApp.cpp#L337-L360) | axis와 angle UI |
 
 ## Capture/Result
 
 ![Chapter09 Step4 QuaternionRotation](../../Docs/_assets/captures/part3_chapter09_04_quaternion_rotation.png)
+
+`quatX`, `quatY`, `quatZ` 축별 `quatTheta` 변화는 15초 selected local video 세 개로 확인한다.
 
 ## Verification
 
@@ -27,7 +29,7 @@ UI의 axis-angle 값을 quaternion으로 변환하고 model rotation matrix에 �
 | --- | --- | --- |
 | Debug x64 build/run | 성공 | zero axis fallback 포함 |
 | Release x64 build/run | 성공 | project 폴더 CWD |
-| Capture/Result | 완료 | axis-angle UI 포함 PNG |
+| Capture/Result | 완료 | axis-angle UI PNG, X·Y·Z 축별 selected local video |
 
 ## Limitations
 

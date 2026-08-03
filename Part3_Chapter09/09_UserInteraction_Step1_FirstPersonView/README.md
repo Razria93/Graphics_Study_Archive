@@ -21,13 +21,15 @@
 
 ![Chapter09 Step1 FirstPersonView](../../Docs/_assets/captures/part3_chapter09_01_first_person_view.png)
 
+WASD 이동과 절대 cursor 위치 기반 시선 전환은 서로 분리한 selected local video 두 개로 확인한다.
+
 ## Verification
 
 | 항목 | 결과 | 비고 |
 | --- | --- | --- |
 | Debug x64 build/run | 성공 | 2026-08-03 현재 확인 |
 | Release x64 build/run | 성공 | project 폴더 CWD |
-| Capture/Result | 완료 | 전체 창 1282×752 PNG |
+| Capture/Result | 완료 | 전체 창 1282×752 PNG, WASD·mouse-look selected local video |
 
 ## Limitations
 

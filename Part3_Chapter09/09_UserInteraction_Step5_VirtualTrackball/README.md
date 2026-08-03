@@ -21,13 +21,15 @@ Drag 시작과 현재 cursor ray의 sphere hit vector를 비교해 quaternion을
 
 ![Chapter09 Step5 VirtualTrackball](../../Docs/_assets/captures/part3_chapter09_05_virtual_trackball.png)
 
+Sphere 안쪽 drag에 따른 누적 회전은 selected local video로 확인한다.
+
 ## Verification
 
 | 항목 | 결과 | 비고 |
 | --- | --- | --- |
 | Debug x64 build/run | 성공 | drag capture·release 경로 확인 |
 | Release x64 build/run | 성공 | project 폴더 CWD |
-| Capture/Result | 완료 | 전체 창 PNG |
+| Capture/Result | 완료 | 전체 창 PNG, trackball selected local video |
 
 ## Limitations
 
