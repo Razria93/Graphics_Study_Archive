@@ -64,7 +64,7 @@ Stonewall environment가 sphere에 반사되며 view angle과 `fresnelR0`에 따
 
 - Schlick approximation을 사용한다.
 - Roughness mip LOD와 split-sum BRDF는 포함하지 않는다.
-- Active asset 권리 근거가 충분하지 않아 Publication은 `검토 필요`로 유지한다.
+- Active asset 원본은 비공개로 유지하고 직접 실행한 rendered evidence만 공개한다.
 - Video는 정지 이미지가 구현 결과를 충분히 보여주므로 제외한다.
 
 ## 검증

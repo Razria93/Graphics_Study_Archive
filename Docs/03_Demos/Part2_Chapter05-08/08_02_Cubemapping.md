@@ -57,7 +57,7 @@ DrawSkybox(camera, cubemap)
 ## 구현 범위와 한계
 
 - Skybox 표시가 대상이며 reflection과 refraction은 아직 적용하지 않는다.
-- Zelda FBX와 skybox DDS의 공개 재배포 권리 근거가 충분하지 않아 공개 후보로 확정하지 않는다.
+- Zelda FBX와 skybox DDS 원본은 비공개로 유지하고 직접 실행한 rendered evidence만 공개한다.
 - 정적 결과로 방향 sampling과 배경 구성이 충분히 보이므로 video를 제외한다.
 
 ## 검증

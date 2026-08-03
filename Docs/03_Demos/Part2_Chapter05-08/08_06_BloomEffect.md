@@ -75,7 +75,7 @@ BuildBloom(source, threshold, strength)
 
 - 최대 5단계 sampling chain과 5-tap separable blur를 사용한다.
 - HDR tone mapping과 exposure adaptation은 구현하지 않는다.
-- Active asset 권리 근거가 충분하지 않아 Publication은 `검토 필요`로 유지한다.
+- Active asset 원본은 비공개로 유지하고 직접 실행한 rendered evidence만 공개한다.
 - Video는 정적 frame에서 bloom 결과와 핵심 parameter를 확인할 수 있어 제외한다.
 
 ## 검증

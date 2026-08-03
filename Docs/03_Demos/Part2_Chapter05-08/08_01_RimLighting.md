@@ -56,7 +56,7 @@ ComputeRim(normal, toEye)
 
 - Stylized rim이며 물리 기반 Fresnel reflection은 아니다.
 - Default power 2.5와 strength 1.25는 효과 판독을 위한 예제 값이다.
-- Stanford Dragon asset의 공개 재배포 권리 근거가 충분하지 않아 공개 후보로 확정하지 않는다.
+- Stanford Dragon 원본은 비공개로 유지하고 직접 실행한 rendered evidence만 공개한다.
 - Video는 정적 결과와 UI parameter를 한 frame에서 확인할 수 있어 제외한다.
 
 ## 검증
