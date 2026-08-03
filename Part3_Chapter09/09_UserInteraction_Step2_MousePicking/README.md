@@ -35,7 +35,7 @@ Object ID color를 별도 render target에 기록하고 cursor의 한 pixel을 s
 
 - 매 frame GPU readback을 수행해 동기화 비용이 있다.
 - MSAA edge resolve와 exact color 비교는 경계 pixel에서 선택을 놓칠 수 있다.
-- Scene asset의 공개 권리 근거 확인이 필요하다.
+- Scene asset 원본은 비공개 runtime dependency로 유지하고 직접 실행 visual만 공개한다.
 
 ## Related Docs
 

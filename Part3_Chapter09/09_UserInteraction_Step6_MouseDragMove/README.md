@@ -35,7 +35,7 @@ Drag 시작점의 near/far ray depth 비율을 보존하고 현재 cursor ray의
 
 - 현재 ray가 이동 중인 sphere와 교차하지 않으면 drag 갱신이 중단된다.
 - 화면 평면, 축 또는 ground constraint는 구현하지 않는다.
-- Earth texture와 cubemap은 공개 권리 근거 확인이 필요하다.
+- Earth texture와 cubemap 원본은 비공개 runtime dependency로 유지하고 직접 실행 visual만 공개한다.
 
 ## Related Docs
 

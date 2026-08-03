@@ -86,3 +86,4 @@ https://github.com/user-attachments/assets/<attachment-id>
 - 의사코드를 사용하면 함수와 제어문에 Allman brace style을 적용한다.
 - 상세 Demo에 같은 의사코드가 있으면 Demo Issue에 그대로 복제하지 않는다.
 - 실제 GitHub absolute URL과 Markdown 링크를 사용한다.
+- 출처 또는 재배포 조건이 불완전한 runtime asset 원본을 첨부하거나 직접 링크하지 않는다. 승인된 Bundle 예외에서는 구현 결과 visual만 사용한다.

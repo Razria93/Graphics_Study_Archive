@@ -52,7 +52,7 @@ GPU가 기록한 object ID color를 cursor 위치에서 읽어 hover object를 �
 
 - 동기 readback을 매 frame 수행한다.
 - MSAA edge와 exact color 비교는 경계에서 불안정할 수 있다.
-- Scene asset의 공개 권리 근거가 부족해 Publication은 `검토 필요`다.
+- Scene asset 원본은 비공개 runtime dependency로 유지하고 직접 실행 visual은 승인된 Chapter09 Bundle 예외에 따라 `공개 가능`으로 판정한다.
 
 ## 검증
 

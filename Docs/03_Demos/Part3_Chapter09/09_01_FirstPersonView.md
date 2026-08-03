@@ -63,7 +63,7 @@ Keyboard와 cursor 입력이 camera view 변화로 이어지는 Chapter09의 입
 - 절대 cursor 매핑을 사용하며 relative mouse-look은 구현하지 않는다.
 - Pointer lock, raw input과 focus reset은 범위 밖이다.
 - Mouse-look video는 사용자가 지정한 네 구간의 5초 이동을 보존해 일반 권장 길이보다 길다.
-- Scene asset의 공개 권리 근거가 부족해 Publication은 `검토 필요`다.
+- Scene asset 원본은 비공개 runtime dependency로 유지하고 직접 실행 visual은 승인된 Chapter09 Bundle 예외에 따라 `공개 가능`으로 판정한다.
 
 ## 검증
 

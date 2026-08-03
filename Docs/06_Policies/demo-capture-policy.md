@@ -343,3 +343,12 @@ screenshot, video, result image를 추가하면 다음 문서를 함께 확인�
 - 상세 Demo에서 구현·결과·limitation이 크게 바뀌면 Demo Issue 동기화 필요 여부를 확인한다.
 - 같은 tracked asset은 여러 public surface에서 재사용할 수 있지만 설명 본문은 각 surface 목적에 맞게 작성한다.
 - capture/result 승격 전에는 화면 안의 title, watermark, overlay, account, path를 수동으로 확인한다.
+
+## Bundle 단위 rendered evidence 승격
+
+강의 제공 runtime asset이 포함된 capture/result는 기본적으로 출처와 권리 검토 기준을 따른다. 다만 `publication-policy.md`의 Bundle 단위 rendered evidence 예외가 승인된 범위에서는 원본 asset을 공개하지 않고 구현 결과만 보여주는 screenshot, storyboard와 video를 별도로 승격할 수 있다.
+
+- 시각 자료는 asset 자체가 아니라 구현 동작과 graphics 결과를 설명해야 한다.
+- 원본 asset과 직접 다운로드 링크는 tracked Demo와 GitHub body에 넣지 않는다.
+- 강의 화면, 워터마크, 개인정보, 계정, 로컬 경로와 외부 application UI가 없어야 한다.
+- 예외 승인 범위와 원본 asset 교체 backlog는 `Docs/05_Publication`에 기록한다.

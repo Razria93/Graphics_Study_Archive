@@ -52,7 +52,7 @@ Textured sphere의 표면 방향 변화가 회전을 판독하게 한다. Screen
 
 - Cursor가 sphere silhouette 밖으로 나가면 회전 갱신이 멈춘다.
 - Inertia와 axis constraint는 구현하지 않는다.
-- Earth와 cubemap asset의 공개 권리 근거가 부족해 Publication은 `검토 필요`다.
+- Earth와 cubemap 원본은 비공개 runtime dependency로 유지하고 직접 실행 visual은 승인된 Chapter09 Bundle 예외에 따라 `public 후보`로 판정한다.
 
 ## 검증
 

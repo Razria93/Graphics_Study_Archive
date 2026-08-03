@@ -53,3 +53,14 @@
 - 이 파일은 정본 문서가 아니다.
 - 최종 판단 요약만 `Docs/05_Publication` 또는 `Docs/04_WorkLogs`로 옮긴다.
 - 선택 기록이 없다는 이유만으로 사용자 직접 생성 asset을 보류하지 않는다.
+
+## Bundle 단위 rendered evidence 예외
+
+- 적용 Chapter 또는 Bundle:
+- 사용자 승인:
+- 원본 runtime asset 공개 여부: 비공개
+- 공개할 rendered evidence:
+- 원본 asset 직접 링크 부재:
+- 공개 안전성 검수:
+- 출처 한계 기록:
+- 교체 backlog:

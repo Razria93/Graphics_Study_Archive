@@ -52,7 +52,7 @@ UI는 quaternion axis와 angle을 노출하고 sphere texture 방향으로 회�
 
 - Euler UI 값은 표시되지만 실제 model transform에는 사용하지 않는다.
 - Slerp와 angular velocity는 구현하지 않는다.
-- Earth와 cubemap asset의 공개 권리 근거가 부족해 Publication은 `검토 필요`다.
+- Earth와 cubemap 원본은 비공개 runtime dependency로 유지하고 직접 실행 visual은 승인된 Chapter09 Bundle 예외에 따라 `공개 가능`으로 판정한다.
 
 ## 검증
 

@@ -37,7 +37,7 @@ Press, sphere 안쪽 marker 이동과 release sequence는 [상세 Demo](../../Do
 - 실제 triangle이 아니라 bounding sphere 근사 교차를 사용한다.
 - Press 중에도 cursor ray가 sphere를 벗어나면 marker가 사라진다.
 - `_Solution` 기반 구현이며 사용자 고유 구현으로 주장하지 않는다.
-- Earth texture와 cubemap은 공개 권리 근거 확인이 필요하다.
+- Earth texture와 cubemap 원본은 비공개 runtime dependency로 유지하고 직접 실행 visual만 공개한다.
 
 ## Related Docs
 

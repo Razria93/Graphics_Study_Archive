@@ -36,7 +36,7 @@
 - QA contact sheet와 중간 frame은 `local/`에 유지하고 최종 storyboard만 tracked capture로 승격했다.
 - Step1 mouse-look 31초는 사용자가 지정한 5초 이동 네 구간을 보존한 예외다.
 - Step4는 39.77초 통합 take를 선택하지 않고 X·Y·Z 축별 15초 파일 세 개로 분리했다.
-- source asset 권리 근거가 부족하므로 Publication은 `검토 필요`
+- Publication 판정은 [Candidate List](../../05_Publication/candidate-list.md)에 위임한다.
 
 ## 관련 문서
 

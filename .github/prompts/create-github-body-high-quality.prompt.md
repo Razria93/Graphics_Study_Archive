@@ -67,3 +67,5 @@ void FunctionPseudo(...)
 - link label이 확인할 구현 역할을 설명하는지 확인
 - validator 실행 가능 상태 확인
 - Demo Issue는 상세 Demo 전체를 복제하지 않았는지 확인
+- 출처 또는 재배포 조건이 불완전한 runtime asset 원본과 직접 링크가 없는지 확인
+- 승인된 Bundle 예외는 구현 결과 visual만 사용하고 내부 출처 검토 문구를 public body에서 제외

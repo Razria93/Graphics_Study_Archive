@@ -47,7 +47,7 @@
 | 길이 | 짧고 반복 시청 가능함 |
 | 흐름 | 시작, 조작, 결과가 분명함 |
 | 설명 | 화면 밖 설명은 README/PR 본문으로 분리함 |
-| 권리 검토 | 강의 화면, 유료 자료, 출처 불명 asset이 아님 |
+| 권리 검토 | 강의 화면·유료 자료가 없고 외부 asset 출처 또는 승인된 Bundle rendered evidence 예외를 확인함 |
 | 연결 문서 | Example, Topic, Verification 문서와 연결됨 |
 | 자동 검수 | container, codec, pixel format, CFR, stream, 민감 metadata, hash와 decode를 확인함 |
 | 사용자 시각 검수 | 조작과 결과 대응, 화면 노출, 시작·종료 frame과 추가 설명 가치를 확인함 |

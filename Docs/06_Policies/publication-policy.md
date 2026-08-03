@@ -80,3 +80,14 @@
 - screenshot/result image는 metadata 확인을 포함한다. 사용자 직접 생성 asset은 최소 출처 기록을 적용하고, 외부 입력 asset을 사용한 result image는 입력 asset의 출처와 라이선스를 확인하기 전까지 검토 필요 또는 제외로 둔다.
 - video는 container, codec, pixel format, CFR, duration, audio·subtitle stream, 민감 metadata와 전체 decode를 자동 확인하고 화면 의미와 공개 안전성을 사용자 시각 검수로 별도 확인한다.
 - private repository attachment는 repository 접근 권한이 있는 사용자만 볼 수 있는 게시본으로 판단한다. 비인가 독자에게 공개해야 하면 public subset 또는 별도 승인한 public hosting을 선택한다.
+
+## Bundle 단위 rendered evidence 예외
+
+강의 제공 runtime asset의 출처 또는 재배포 조건이 불완전해도 사용자 승인을 받은 Chapter 또는 Bundle은 원본 asset과 직접 실행 결과를 분리해 판정할 수 있다.
+
+- 원본 asset은 `private archive` 또는 `검토 필요`로 유지하고 공개·첨부·직접 링크하지 않는다.
+- 직접 실행한 screenshot, storyboard와 video는 구현 선택과 시각 결과가 중심이고 공개 안전성 검수를 통과하면 `공개 가능` 또는 `public 후보`로 둘 수 있다.
+- `공개 가능`은 체크리스트를 통과했지만 실제 게시 대상으로 선정하지 않은 상태다.
+- `public 후보`는 실제 GitHub Issue, PR 또는 public subset에 사용할 대상으로 선정한 상태다.
+- 예외 적용 범위, 사용자 승인, 원본 비공개 상태와 교체 backlog를 `Docs/05_Publication`에 기록한다.
+- 이 예외는 승인된 Bundle 밖으로 승계하지 않으며 다른 Chapter에는 별도 판단을 요구한다.

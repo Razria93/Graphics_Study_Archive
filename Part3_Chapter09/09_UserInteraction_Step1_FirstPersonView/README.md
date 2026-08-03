@@ -35,7 +35,7 @@ WASD 이동과 절대 cursor 위치 기반 시선 전환은 서로 분리한 sel
 
 - 상대 mouse delta가 아니라 cursor의 절대 NDC 위치가 orientation을 결정한다.
 - Pointer lock과 raw input은 구현하지 않는다.
-- Scene texture와 cubemap은 공개 권리 근거 확인이 필요하다.
+- Scene texture와 cubemap 원본은 비공개 runtime dependency로 유지하고 직접 실행 visual만 공개한다.
 
 ## Related Docs
 

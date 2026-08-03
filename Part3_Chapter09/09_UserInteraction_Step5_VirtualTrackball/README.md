@@ -35,7 +35,7 @@ Sphere 안쪽 drag에 따른 누적 회전은 selected local video로 확인한�
 
 - Cursor ray가 sphere silhouette을 벗어나면 연속 rotation을 갱신하지 않는다.
 - Inertia, axis constraint와 화면 전체 arcball projection은 구현하지 않는다.
-- Earth texture와 cubemap은 공개 권리 근거 확인이 필요하다.
+- Earth texture와 cubemap 원본은 비공개 runtime dependency로 유지하고 직접 실행 visual만 공개한다.
 
 ## Related Docs
 

@@ -35,7 +35,7 @@ UI의 axis-angle 값을 quaternion으로 변환하고 model rotation matrix에 �
 
 - Euler angle UI는 표시되지만 model rotation에는 사용하지 않는다.
 - Quaternion interpolation과 angular velocity는 다루지 않는다.
-- Earth texture와 cubemap은 공개 권리 근거 확인이 필요하다.
+- Earth texture와 cubemap 원본은 비공개 runtime dependency로 유지하고 직접 실행 visual만 공개한다.
 
 ## Related Docs
 

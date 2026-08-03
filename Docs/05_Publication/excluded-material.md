@@ -20,7 +20,7 @@
 | --- | --- | --- | --- |
 | 강의 원문 자료 | 권리 검토 필요 및 public 부적합 | raw/reference | 이동하지 않음 |
 | 강의 화면 캡처 | public capture/result 부적합 | raw/local 후보 | 제외 |
-| 출처 불명 asset | 라이선스 확인 전 public 부적합 | raw/local 후보 | 검토 필요 또는 제외 |
+| 출처 불명 asset 원본 | 라이선스 확인 전 원본 재배포 부적합 | raw/local 후보 | 검토 필요 또는 제외. 승인된 Bundle의 직접 실행 visual은 원본과 분리 판정 |
 
 ## 운영 기준
 

@@ -57,3 +57,16 @@ Build dependency로 필요한 third-party header는 출처와 라이선스를 �
 - 상업적 배포, 별도 public release 또는 출처 분쟁 가능성이 있다.
 
 강화 검수에서는 source URL, 라이선스, 생성 도구와 날짜, prompt 원문, 생성 화면 screenshot, 작업용 원본, import commit 또는 source ID를 필요에 따라 추가 확인한다. 민감 원문과 UI screenshot은 `local/`에만 두고 public 문서에 게시하지 않는다.
+
+## 강의 제공 runtime asset의 rendered evidence 예외
+
+출처 또는 재배포 조건이 불완전한 강의 제공 runtime asset은 원본 공개와 실행 결과 공개를 분리해 판단할 수 있다. 이 예외는 사용자 승인을 받은 Chapter 또는 Bundle에만 적용하며 다른 범위에 자동 적용하지 않는다.
+
+- 원본 asset은 private runtime dependency로 유지하고 public subset에 복사하지 않는다.
+- GitHub body와 공개 문서에 원본 asset의 직접 링크, 다운로드 링크 또는 파일 내용을 제공하지 않는다.
+- 원본 asset에 대한 소유권, 재배포 권한 또는 라이선스를 확보했다고 표현하지 않는다.
+- 직접 실행한 screenshot, storyboard와 video는 구현 결과와 graphics behavior가 설명의 중심일 때 rendered evidence로 검토할 수 있다.
+- rendered evidence에는 강의 화면, 워터마크, 계정, 개인정보, 로컬 경로와 외부 application UI가 없어야 한다.
+- 원본 asset의 출처 한계와 교체 backlog는 `Docs/05_Publication`에 기록하고 public body에는 내부 검토 문구를 복제하지 않는다.
+- 입력 asset 자체를 재현하거나 원본과 실질적으로 동일한 독립 result image에는 이 예외를 적용하지 않는다.
+- 권리자의 삭제 또는 사용 중단 요청이 확인되면 해당 evidence를 공개 후보에서 제거하고 원본 asset과 함께 다시 검토한다.

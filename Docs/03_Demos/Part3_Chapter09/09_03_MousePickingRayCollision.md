@@ -53,7 +53,7 @@ Earth sphere는 picking 대상과 bounding volume의 위치를 명확히 보여�
 - Triangle surface가 아닌 bounding sphere 근사 교차다.
 - Press 중에도 cursor ray가 sphere silhouette을 벗어나면 marker가 사라진다.
 - Step3은 `_Solution` 기반이며 개인 고유 구현으로 주장하지 않는다.
-- Earth와 cubemap asset의 공개 권리 근거가 부족해 Publication은 `검토 필요`다.
+- Earth와 cubemap 원본은 비공개 runtime dependency로 유지하고 직접 실행 visual은 승인된 Chapter09 Bundle 예외에 따라 `공개 가능`으로 판정한다.
 
 ## 검증
 

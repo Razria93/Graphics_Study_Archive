@@ -96,3 +96,5 @@ description: "Use when writing or editing GitHub body docs. Enforce portfolio-gr
 - source docs 링크가 누락되지 않았는지 확인한다.
 - 핵심 구현이 keyword 목록과 포괄적인 코드 링크로 끝나지 않는지 확인한다.
 - 코드 link label이 확인할 구현 역할을 설명하는지 확인한다.
+- 출처 또는 재배포 조건이 불완전한 runtime asset 원본을 GitHub body에 첨부하거나 직접 링크하지 않는다.
+- 승인된 Bundle 단위 rendered evidence 예외는 screenshot, storyboard와 video로 구현 결과만 보여주고 내부 출처 검토와 교체 backlog는 Publication 정본에 둔다.
