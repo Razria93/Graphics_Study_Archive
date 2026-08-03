@@ -60,7 +60,7 @@ Textured sphere의 표면 방향 변화가 회전을 판독하게 한다. Screen
 
 ## 관련 코드
 
-- [Mouse capture와 release 복구](../../../Part3_Chapter09/09_UserInteraction_Step5_VirtualTrackball/AppBase.cpp#L232-L247)
+- [Mouse capture와 release 복구](../../../Part3_Chapter09/09_UserInteraction_Step5_VirtualTrackball/AppBase.cpp#L248-L259)
 - [Example README](../../../Part3_Chapter09/09_UserInteraction_Step5_VirtualTrackball/README.md)
 
 ## 관련 문서

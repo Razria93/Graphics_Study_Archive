@@ -13,8 +13,8 @@ Cursor near/far NDC를 world space로 역변환해 CPU picking ray를 만들고 
 
 | 파일 | 역할 |
 | --- | --- |
-| [AppBase.cpp](AppBase.cpp#L140-L157) | cursor client 좌표를 NDC로 변환 |
-| [AppBase.cpp](AppBase.cpp#L231-L243) | press·release와 capture 상실 시 입력 상태 복구 |
+| [AppBase.cpp](AppBase.cpp#L141-L158) | cursor client 좌표를 NDC로 변환 |
+| [AppBase.cpp](AppBase.cpp#L248-L257) | press·release와 capture 상실 시 입력 상태 복구 |
 | [ExampleApp.cpp](ExampleApp.cpp#L110-L142) | inverse view-projection과 world ray 구성 |
 | [ExampleApp.cpp](ExampleApp.cpp#L141-L166) | bounding sphere 교차와 hit marker 갱신 |
 

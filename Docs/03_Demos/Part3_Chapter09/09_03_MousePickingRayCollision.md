@@ -41,7 +41,7 @@ Cursor에서 만든 world-space ray와 bounding sphere의 CPU collision으로 ob
 
 GPU ID readback 대신 CPU가 단순 bounding volume과 교차해 선택 여부와 거리를 얻는다.
 
-- [Cursor NDC 변환](../../../Part3_Chapter09/09_UserInteraction_Step3_MousePickingRayCollision/AppBase.cpp#L140-L157)
+- [Cursor NDC 변환](../../../Part3_Chapter09/09_UserInteraction_Step3_MousePickingRayCollision/AppBase.cpp#L141-L158)
 - [Ray와 bounding sphere 교차](../../../Part3_Chapter09/09_UserInteraction_Step3_MousePickingRayCollision/ExampleApp.cpp#L110-L166)
 
 ## 시각 결과
@@ -62,7 +62,7 @@ Earth sphere는 picking 대상과 bounding volume의 위치를 명확히 보여�
 ## 관련 코드
 
 - [Hit marker 갱신](../../../Part3_Chapter09/09_UserInteraction_Step3_MousePickingRayCollision/ExampleApp.cpp#L141-L166)
-- [Mouse capture와 release 복구](../../../Part3_Chapter09/09_UserInteraction_Step3_MousePickingRayCollision/AppBase.cpp#L231-L243)
+- [Mouse capture와 release 복구](../../../Part3_Chapter09/09_UserInteraction_Step3_MousePickingRayCollision/AppBase.cpp#L248-L257)
 - [Example README](../../../Part3_Chapter09/09_UserInteraction_Step3_MousePickingRayCollision/README.md)
 
 ## 관련 문서

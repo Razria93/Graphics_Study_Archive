@@ -1,6 +1,7 @@
 ﻿#include "AppBase.h"
 
 #include <algorithm>
+#include <windowsx.h>
 
 #include "D3D11Utils.h"
 
@@ -157,6 +158,16 @@ void AppBase::OnMouseMove(WPARAM btnState, int mouseX, int mouseY) {
 }
 
 void AppBase::UpdateMousePickColor() { // Picking
+    if (m_screenWidth <= 0 || m_screenHeight <= 0)
+        return;
+
+    D3D11_TEXTURE2D_DESC indexTextureDesc{};
+    m_indexTempTexture->GetDesc(&indexTextureDesc);
+    if (m_cursorX < 0 || m_cursorY < 0 ||
+        static_cast<UINT>(m_cursorX) >= indexTextureDesc.Width ||
+        static_cast<UINT>(m_cursorY) >= indexTextureDesc.Height)
+        return;
+
     m_context->ResolveSubresource(m_indexTempTexture.Get(), 0,
                                   m_indexTexture.Get(), 0,
                                   DXGI_FORMAT_R8G8B8A8_UNORM);
@@ -218,18 +229,22 @@ LRESULT AppBase::MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
         if ((wParam & 0xfff0) == SC_KEYMENU) // Disable ALT application menu
             return 0;
         break;
-    case WM_MOUSEMOVE: // WM_MOUSEFIRST와 WM_MOUSEMOVE가 같음
+    case WM_MOUSEMOVE: { // WM_MOUSEFIRST와 WM_MOUSEMOVE가 같음
 
         // cout << "Mouse BtnState " << wParam << endl;
         // cout << "Mouse " << LOWORD(lParam) << " " << HIWORD(lParam) << endl;
 
-        // 마우스의 위치 저장
-        m_cursorX = LOWORD(lParam);
-        m_cursorY = HIWORD(lParam);
+        const int mouseX = GET_X_LPARAM(lParam);
+        const int mouseY = GET_Y_LPARAM(lParam);
 
-        OnMouseMove(wParam, LOWORD(lParam), HIWORD(lParam));
+        // 마우스의 위치 저장
+        m_cursorX = mouseX;
+        m_cursorY = mouseY;
+
+        OnMouseMove(wParam, mouseX, mouseY);
 
         break;
+    }
     case WM_LBUTTONDOWN:
         SetCapture(hwnd);
         m_leftButton = true;

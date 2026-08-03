@@ -61,7 +61,7 @@ Textured sphere와 background가 screen-space drag의 depth 기준을 보여준�
 
 ## 관련 코드
 
-- [Mouse capture와 release 복구](../../../Part3_Chapter09/09_UserInteraction_Step6_MouseDragMove/AppBase.cpp#L232-L247)
+- [Mouse capture와 release 복구](../../../Part3_Chapter09/09_UserInteraction_Step6_MouseDragMove/AppBase.cpp#L248-L259)
 - [Example README](../../../Part3_Chapter09/09_UserInteraction_Step6_MouseDragMove/README.md)
 
 ## 관련 문서
