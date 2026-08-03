@@ -6,23 +6,21 @@
 
 ## 결과
 
-### Representative Result
+### Representative Result Or Storyboard
 
-대표 결과가 무엇을 보여주는지 설명한다.
+대표 결과 또는 storyboard의 제목을 적고 왼쪽→오른쪽이나 위→아래처럼 읽는 방향을 설명한다.
 
 ![Representative Result](https://github.com/<owner>/<repo>/blob/<branch>/Docs/_assets/captures/<result>.png?raw=true)
+
+- 입력 또는 상태 변화:
+- 관찰 결과:
+- 구현 목적:
 
 ### Supporting Or Comparison Result
 
 Chapter·Bundle 범위에서 대표 결과와 다른 구현 선택이나 비교 축을 보여주는 경우에만 사용한다. 필요하지 않으면 이 소제목을 제거한다.
 
 ![Supporting Or Comparison Result](https://github.com/<owner>/<repo>/blob/<branch>/Docs/_assets/captures/<comparison>.png?raw=true)
-
-### Interaction Video
-
-Video가 필수 또는 선택인 경우 관찰할 조작과 결과 변화를 설명하고 Demo Issue에 한 번 첨부한 GitHub attachment URL을 둔다. Video가 없으면 이 소제목을 제거한다.
-
-https://github.com/user-attachments/assets/<attachment-id>
 
 ## 핵심 구현
 
@@ -69,15 +67,21 @@ https://github.com/user-attachments/assets/<attachment-id>
 
 - Topic:
 
+### 동적 자료
+
+- [<Interaction video comment>](https://github.com/<owner>/<repo>/issues/<number>#issuecomment-<comment-id>)
+
 ## 작성 기준
 
 - 일반 문단과 하나의 목록 항목은 각각 하나의 물리적 줄로 작성한다. 상세 기준은 [Docs Authoring Flow Policy](../../06_Policies/docs-authoring-flow-policy.md)를 따른다.
 - 상세 Demo 전체를 복제하지 않는다.
 - 대표 visual 1~3개와 핵심 구현 요약을 자체 포함한다.
 - 단일 Example은 대표 결과를 우선하고 Chapter·Bundle은 서로 다른 설명 축을 보여주는 visual만 선별한다.
-- Supporting/Comparison Result와 Interaction Video를 사용하지 않으면 해당 소제목과 placeholder를 제거한다.
-- Screenshot을 최소 1개 유지하고 video가 있으면 관찰할 변화와 결과 영향을 설명한다.
-- Selected video는 Demo Issue에 한 번만 첨부하고 PR에서 필요하면 동일 attachment URL을 재사용한다.
+- Supporting/Comparison Result를 사용하지 않으면 해당 소제목과 placeholder를 제거한다.
+- Screenshot 또는 storyboard를 최소 1개 유지하고 동적 변화도 본문만으로 이해할 수 있게 설명한다.
+- Selected video는 본문에 직접 삽입하지 않고 [Demo Video Comment](demo-video-comment.md) 양식으로 전용 댓글에 한 번 첨부한다.
+- PR에서 video가 필요하면 attachment 대신 전용 댓글 permalink를 연결한다.
+- 실제 video comment permalink가 없으면 `### 동적 자료`와 placeholder를 제거한다.
 - 게시되지 않은 video placeholder와 `local/` 경로를 남기지 않는다.
 - 핵심 구현은 단계별 설명, 결과 영향, 인접한 코드 증거 순서로 구성한다.
 - 파일명만 있는 link label보다 확인할 구현 역할이 드러나는 label을 사용한다.

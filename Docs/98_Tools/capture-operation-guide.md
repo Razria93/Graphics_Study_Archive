@@ -117,6 +117,9 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 
 1. raw, attempt와 selected는 `local/`에 유지한다.
 2. screenshot 승격 전 metadata, visual, 입력 asset과 Publication 조건을 확인한다.
-3. selected video는 Demo Issue attachment에 한 번만 게시한다.
-4. PR에서 video가 필요하면 Demo Issue의 동일 attachment URL을 재사용한다.
-5. 승격과 게시는 자동 기술 검수와 사용자 시각 검수를 모두 통과한 후보만 사용한다.
+3. selected video에서 본문용 storyboard를 만들고 제목, 읽는 방향, 입력 변화와 관찰 결과를 작성한다.
+4. Demo Issue 본문은 정적 visual로 먼저 게시하고 selected video는 독립 설명 축별 전용 댓글에 한 번만 첨부한다.
+5. 댓글 게시 후 comment permalink와 attachment URL을 각각 확인하고 video registry에 기록한다.
+6. PR에서 video가 필요하면 Demo Issue의 comment permalink를 연결하고 attachment를 다시 업로드하지 않는다.
+7. 같은 설명 축의 개선은 기존 댓글 수정, 다른 설명 축은 새 댓글 추가로 처리한다.
+8. 승격과 게시는 자동 기술 검수와 사용자 시각 검수를 모두 통과한 후보만 사용한다.

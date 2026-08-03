@@ -32,7 +32,7 @@ capture/result
 - 검토된 screenshot: `Docs/_assets/captures/`
 - raw, attempt와 selected video: `local/`
 - published video reference와 운영 안내: `Docs/_assets/videos/`
-- published video: GitHub Demo Issue attachment
+- published video: GitHub Demo Issue 전용 댓글 attachment
 - 검토된 result image: `Docs/_assets/captures/` 또는 별도 정한 result image 경로
 - capture/result 상태 요약: `Docs/02_Verification/capture-matrix.md`
 - demo 설명과 우선순위: `Docs/03_Demos/*/demo-index.md`, `Docs/03_Demos/demo-priority.md`

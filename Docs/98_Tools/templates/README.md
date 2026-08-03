@@ -11,6 +11,7 @@
 | [Verification Note](verification-note.md) | `Docs/02_Verification` | tracked 정본 문서용 | build/run/capture 확인 기록 |
 | [Demo Note](demo-note.md) | `Docs/03_Demos/<Part*>` | tracked 정본 문서용 | 기술 구현 흐름, 시각 결과, 구현 범위와 한계 |
 | [Demo Issue](demo-issue.md) | `Docs/07_GitHub/issues/demo` | GitHub 게시 후보 | 대표 visual과 핵심 구현의 curated publication view |
+| [Demo Video Comment](demo-video-comment.md) | GitHub Demo Issue comment | GitHub 게시용 동적 자료 | 독립 설명 축별 조작, 관찰 결과와 video attachment |
 | [WorkLog](worklog.md) | `Docs/04_WorkLogs` | tracked 정본 문서용 | Work Unit 결정 요약과 마감 snapshot |
 | [PR Body](pr-body.md) | `Docs/07_GitHub/prs` | GitHub 게시 후보 | 핵심 개념, 대표 예제, 검증, demo 중심 PR 본문 |
 | [Progress Issue](progress-issue.md) | `Docs/07_GitHub/plan/plan-body.md` | GitHub 게시 후보 | 전체 목표, 운영 기준, 완료 조건 |

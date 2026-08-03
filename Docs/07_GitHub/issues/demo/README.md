@@ -15,6 +15,11 @@
 - 첫 H1을 title source로 유지한다.
 - PR 본문 요약으로 부족한 시각 자료와 구현 개괄을 보강한다.
 - 대표 visual 1~3개와 각 결과가 무엇을 보여주는지 설명한다.
+- 본문 visual은 screenshot 또는 storyboard로 구성하고 video 없이도 구현과 결과를 이해할 수 있게 작성한다.
+- Storyboard는 제목, 읽는 방향, 입력 또는 상태 변화, 관찰 결과와 구현 목적을 함께 설명한다.
+- Video는 하나의 독립 설명 축마다 전용 댓글로 게시하고 본문에 직접 삽입하지 않는다.
+- 같은 설명 축을 개선하면 기존 댓글을 수정하고 다른 설명 축이면 새 댓글을 추가한다.
+- PR은 video attachment 대신 Demo Issue video comment permalink를 연결한다.
 - 핵심 구현은 구현 선택, 결과에 미치는 영향, 인접한 commit permalink를 함께 제공한다.
 - 구현 설명은 하이라이트 중심으로 제한하고 상세 구현은 상세 Demo로 위임한다.
 - 기술 keyword만 나열하거나 여러 역할을 포괄적인 코드 링크 하나로 연결하지 않는다.

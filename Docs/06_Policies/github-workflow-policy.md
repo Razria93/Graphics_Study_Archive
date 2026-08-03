@@ -221,7 +221,8 @@ Issue에 포함할 항목:
 
 Demo Issue는 상세 Demo 정본에서 공개 가치가 높은 결과와 구현을 선별한 curated publication view다. Issue 하나만 읽어도 대표 결과, 핵심 구현, 구현 범위와 한계를 이해할 수 있게 작성하고 상세 Demo 전체를 복제하지 않는다.
 
-- 대표 visual 1~3개와 핵심 구현 요약을 자체 포함한다. 단일 Example과 Chapter·Bundle의 visual 선정은 `demo-capture-policy.md`의 독립 설명 축 기준을 따른다.
+- 대표 screenshot 또는 storyboard 1~3개와 핵심 구현 요약을 자체 포함한다. 단일 Example과 Chapter·Bundle의 visual 선정은 `demo-capture-policy.md`의 독립 설명 축 기준을 따른다.
+- Video는 본문에 직접 삽입하지 않고 하나의 설명 축마다 전용 댓글로 게시한다. 본문은 video 없이도 구현과 결과를 이해할 수 있어야 한다.
 - 상세 Demo, Example, Topic, Verification, 코드와 관련 PR을 연결한다.
 - capture 생성 승인이나 내부 workflow 추적에 사용하지 않는다.
 - 게시 시점 snapshot으로 보되 중요한 구현, 결과, limitation이 바뀌면 동기화 필요 여부를 확인한다.
@@ -264,8 +265,8 @@ PR body 작성 기준:
 - 게시 시점의 이미지와 코드 증거는 commit permalink를 사용한다.
 - 상세 visual과 기술 showcase는 Demo Issue로 위임한다.
 - Demo Issue가 게시되지 않았으면 상세 Demo 정본으로 직접 연결한다.
-- PR이 video를 대표 visual로 사용하면 Demo Issue에 게시한 동일 attachment URL을 재사용하고 다시 업로드하지 않는다.
-- PR의 대표 visual 0~1개 기준은 screenshot과 video의 합계에 적용한다.
+- PR의 대표 visual은 screenshot 또는 storyboard 0~1개로 제한한다.
+- Video가 review에 필요하면 Demo Issue의 video comment permalink를 관련 근거로 연결하고 attachment를 직접 삽입하거나 다시 업로드하지 않는다.
 
 ## Video 게시와 merge 전 동기화
 
@@ -273,21 +274,24 @@ Video가 있는 Chapter는 다음 직렬 흐름으로 게시 상태를 마감한
 
 ```text
 local selected video 검수
--> 상세 Demo와 GitHub 게시 후보 작성
+-> storyboard 생성과 정적 본문 후보 작성
 -> branch push와 Actions 확인
--> Demo Issue 생성
--> 승인 후 selected video를 Demo Issue에 한 번 첨부
--> remote body와 actual attachment URL 확인
+-> Demo Issue를 정적 visual 중심으로 생성
+-> 승인 후 selected video를 독립 설명 축별 전용 댓글에 한 번 첨부
+-> video comment permalink와 actual attachment URL 확인
 -> 실제 Issue URL과 게시 상태를 tracked 정본에 동기화
 -> commit과 push
--> 필요하면 PR에서 동일 attachment URL 재사용
+-> 필요하면 PR에서 video comment permalink 연결
 -> PR body 최종 동기화
 -> Ready for Review
 -> merge
 ```
 
-- 게시되지 않은 video URL, placeholder와 `local/` 경로를 public body에 넣지 않는다.
+- 게시되지 않은 video URL, placeholder와 `local/` 경로를 public body와 댓글에 넣지 않는다.
 - Tracked 상세 Demo는 published attachment보다 실제 Demo Issue를 연결한다.
+- Video 댓글은 Step 번호와 학습 순서대로 게시하고 같은 목적의 개선은 기존 댓글 수정, 다른 설명 축은 새 댓글 추가로 처리한다.
+- 잘못된 게시, 중복 또는 공개 위험이 아닌 경우 기존 video 댓글을 삭제하지 않는다.
+- Video 댓글 생성·수정·삭제는 각각 원격 변경 승인을 확인한다.
 - Video 게시와 actual URL 동기화는 merge 전에 완료해 영상만을 위한 post-merge 후처리 PR을 기본 흐름으로 만들지 않는다.
 - Private repository attachment는 repository 접근 권한이 있는 사용자만 볼 수 있으며 anonymized URL이 인증을 우회한다고 가정하지 않는다.
 
