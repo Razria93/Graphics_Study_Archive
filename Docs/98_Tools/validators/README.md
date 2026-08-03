@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | `validate-github-body.ps1` | GitHub Issue/PR/comment 게시 전 Markdown body 검사 | `Docs/07_GitHub` |
 | `validate-github-quality.ps1` | Demo Issue 품질 검사(전개, 시각 자료, 구현 설명, 가독성) | `Docs/07_GitHub/issues/demo` |
-| `test-github-visual-quality.ps1` | GitHub image와 video attachment 합산 fixture 검사 | inline fixture |
+| `test-github-visual-quality.ps1` | GitHub visual 합산, Demo Issue video 위치와 댓글 template 계약 fixture 검사 | inline fixture, `fixtures/github-visual-quality`와 `Docs/98_Tools/templates` |
 | `validate-topic-doc-quality.ps1` | 상세 Topic 정본 품질 검사(책임 구조, 핵심 개념, Example/Verification/Demo 연결) | `Docs/01_Topics` |
 | `validate-demo-index-quality.ps1` | Demo source docs 구현도 균일성 검사(필수 구조, 테이블 스키마, 상태값, 최소 capture 기준) | `Docs/03_Demos/**/demo-index.md` |
 | `test-demo-index-quality.ps1` | Demo index의 selected·published video reference fixture 검사 | `fixtures/demo-index-video` |
@@ -78,7 +78,8 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markd
 `validate-github-quality.ps1`는 현재 `issues/demo/demo_*.md`를 대상으로 다음을 검사한다.
 
 - curated Demo Issue 필수 섹션과 순서
-- 대표 GitHub visual 1~3개, screenshot 최소 1개와 standalone video attachment URL 합산
+- 대표 GitHub visual 1~3개와 screenshot 최소 1개
+- Demo Issue 본문의 standalone video attachment 금지와 video comment permalink 허용
 - 상세 Demo와 Verification 링크
 - 핵심 구현의 commit-pinned C++ source line 링크
 - 선택적 C++ 의사코드와 같은 섹션의 source line 링크
@@ -150,7 +151,8 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markd
 - screenshot/result image는 GitHub absolute URL을 사용해야 한다.
 - 허용 URL은 `https://github.com/<owner>/<repo>/blob/<branch>/Docs/_assets/captures/<file>?raw=true` 또는 `https://raw.githubusercontent.com/<owner>/<repo>/<branch>/Docs/_assets/captures/<file>` 형식이다.
 - image URL 검사는 형식 검사이며 실제 파일 존재를 보증하지 않는다.
-- PR은 screenshot과 standalone video attachment를 합해 대표 visual을 최대 1개 사용하고 상세 Demo, Demo Issue 후보 또는 게시된 Demo Issue를 연결한다.
+- PR은 screenshot 또는 storyboard 대표 visual을 최대 1개 사용하고 상세 Demo, Demo Issue 후보 또는 게시된 Demo Issue를 연결한다.
+- PR body에는 standalone video attachment를 삽입하지 않고 Demo Issue video comment permalink를 연결한다.
 - template에 특정 Issue 번호가 하드코딩되어 있지 않은지 확인한다.
 - Issue/PR 후보는 첫 H1을 title source로 유지한다. 실제 remote body에서는 첫 H1과 바로 뒤 빈 줄을 제거하고 remote/tracked 비교에도 같은 변환을 적용한다.
 

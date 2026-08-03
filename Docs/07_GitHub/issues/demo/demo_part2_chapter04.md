@@ -8,9 +8,9 @@
 
 ### Step1A — Triangle To Circle Personal Extension
 
-Step1의 단일 triangle rasterizer를 사용자가 triangle fan으로 확장했다. Slider를 3에서 32까지 조정하면 같은 반지름과 color interpolation을 유지한 채 polygonal silhouette가 원에 가까워지는 과정을 확인할 수 있다.
+Step1의 단일 triangle rasterizer를 사용자가 triangle fan으로 확장했다. Segment를 32로 조정한 결과에서 같은 반지름과 color interpolation을 유지한 채 polygonal silhouette가 원에 가까워진 상태를 확인할 수 있다.
 
-https://github.com/user-attachments/assets/fc86477d-36bf-44bc-b279-a0824fa0c447
+![Step1A Triangle To Circle 32 segments](https://github.com/Razria93/Graphics_Study_Archive/blob/05e496ede9b47dcaae6299446dd86bf754d574eb/Docs/_assets/captures/part2_chapter04_01a_triangle_to_circle_segments_32.png?raw=true)
 
 ### Step8 — Perspective-Correct Interpolation
 

@@ -6,7 +6,7 @@
 
 - raw, attempt와 selected video: `local/`
 - 게시된 video reference와 운영 안내: `Docs/_assets/videos/`
-- published video: GitHub Demo Issue attachment
+- published video: GitHub Demo Issue 전용 댓글 attachment
 - 게시 전 설명 초안: `local/github/draft`
 
 ## 우선 video 후보
@@ -31,7 +31,11 @@
 | Part2_Chapter05-08 Chapter07 Step9 | Imported model 회전과 submesh 확인 | 선택 | Assimp node traversal 결과와 submesh별 texture binding | 제외: 정적 전체 창 screenshot 한 장에서 model과 material 경계를 판독 가능 | 미게시 |
 | Part2_Chapter05-08 Chapter08 Step1 | Rim power와 shaping 변화 | 선택 | Normal·view angle 기반 silhouette 강조 | 제외: 파란 rim과 parameter UI를 정적 전체 창 screenshot 한 장에서 판독 가능 | 미게시 |
 | Part2_Chapter05-08 Chapter08 Step7 | Star surface와 corona의 시간 변화 | 필수 | `iTime` 기반 procedural animation | 9.83초, 30 FPS selected local video 기술 검수 완료 | 미게시 |
-| Part3_Chapter09 | camera, picking, trackball 조작 | 필수 | interaction | 미확인 | 미게시 |
+| Part3_Chapter09 Step1 | WASD 이동과 절대 cursor 시선 전환 | 필수 | camera translation과 orientation | 17.57초 WASD, 31초 mouse-look selected local video 검증 완료 | 미게시 |
+| Part3_Chapter09 Step3 | Press·marker 이동·release | 필수 | CPU picking ray collision lifecycle | 13.97초 selected local video 검증 완료 | 미게시 |
+| Part3_Chapter09 Step4 | X·Y·Z axis별 Theta drag | 필수 | Axis-angle quaternion rotation | 축별 15초 selected local video 3개 검증 완료 | 미게시 |
+| Part3_Chapter09 Step5 | Sphere 안쪽 virtual trackball drag | 필수 | Surface vector 기반 누적 quaternion 회전 | 18.6초 selected local video 검증 완료 | [Video comment](https://github.com/Razria93/Graphics_Study_Archive/issues/21#issuecomment-5164633305) · [Attachment](https://github.com/user-attachments/assets/5217ba4b-1b18-4cbb-9635-ecd89d721cb9) |
+| Part3_Chapter09 Step6 | 오른쪽→위쪽 object drag | 필수 | 동일 ray depth의 world-space translation | 16.07초 selected local video 검증 완료 | 미게시 |
 | Part3_Chapter10-13 | shadow quality 비교 | 선택 | shadow mapping, PCF, PCSS | 미확인 | 미게시 |
 | Part4_Chapter14-20 | 대표 sample 실행 | 선택 | advanced graphics 후보 | 미확인 | 미게시 |
 | Portfolio_RayTracer | feature progression | 선택 | ray tracing extension | 미확인 | 미게시 |
@@ -43,11 +47,11 @@
 | 길이 | 짧고 반복 시청 가능함 |
 | 흐름 | 시작, 조작, 결과가 분명함 |
 | 설명 | 화면 밖 설명은 README/PR 본문으로 분리함 |
-| 권리 검토 | 강의 화면, 유료 자료, 출처 불명 asset이 아님 |
+| 권리 검토 | 강의 화면·유료 자료가 없고 외부 asset 출처 또는 승인된 Bundle rendered evidence 예외를 확인함 |
 | 연결 문서 | Example, Topic, Verification 문서와 연결됨 |
 | 자동 검수 | container, codec, pixel format, CFR, stream, 민감 metadata, hash와 decode를 확인함 |
 | 사용자 시각 검수 | 조작과 결과 대응, 화면 노출, 시작·종료 frame과 추가 설명 가치를 확인함 |
-| 게시 | Demo Issue에 한 번 첨부하고 PR은 대표성이 있을 때 동일 URL을 재사용함 |
+| 게시 | Demo Issue 전용 댓글에 한 번 첨부하고 PR은 필요할 때 comment permalink를 연결함 |
 
 ## 갱신 기준
 

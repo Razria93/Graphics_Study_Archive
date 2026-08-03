@@ -52,7 +52,7 @@ capture/result
 - video가 필요하다고 판단한 경우 작업자는 사용자에게 video 요청 조건을 제시한다.
 - 사용자가 demo 구성을 요청한 경우 작업자는 해당 범위의 demo를 구성한다.
 
-Demo Issue의 `visual unit`은 독자가 하나의 결과나 변화를 독립적으로 이해할 수 있는 screenshot, 비교 image 또는 video 하나를 뜻한다. 여러 screenshot을 하나의 비교 image로 합쳤더라도 같은 비교 목적을 설명하면 visual unit 하나로 센다.
+Demo Issue 본문의 `visual unit`은 독자가 하나의 결과나 변화를 독립적으로 이해할 수 있는 screenshot 또는 storyboard 하나를 뜻한다. 여러 screenshot을 하나의 비교 image로 합쳤더라도 같은 비교 목적을 설명하면 visual unit 하나로 센다. Video는 본문 visual unit으로 세지 않고 전용 댓글에서 별도 관리한다.
 
 - 단일 Example Demo Issue는 해당 Example의 대표 결과를 가장 직접적으로 보여주는 visual을 우선한다.
 - Chapter 또는 Bundle Demo Issue는 대표 기술 결과, 비교 가능한 구현 차이, 사용자 확장이나 시간 변화처럼 서로 다른 설명 축을 먼저 정하고 각 축에 필요한 visual만 선별한다.
@@ -70,6 +70,18 @@ Video 필요성은 `필수`, `선택`, `생략`으로 구분한다. 이 판정�
 
 필수 또는 선택 video가 있는 Demo도 핵심 상태 screenshot과 텍스트 설명만으로 주요 구현과 결과를 이해할 수 있게 작성한다.
 
+## 동적 결과 Storyboard 기준
+
+Storyboard는 검증된 screenshot 또는 selected video에서 의미 있는 상태 2~5개를 선별해 하나의 읽기 순서로 구성한 comparison image다. 시간 간격대로 자동 추출한 QA contact sheet와 구분하며, 독자가 입력과 결과 변화를 정지 화면만으로 따라갈 수 있을 때 사용한다.
+
+- 입력·상태 전환이 핵심이면 storyboard를 사용하고 속도·연속성 자체가 핵심이면 video를 함께 유지한다.
+- 각 frame에는 순번과 짧은 상태 label을 두고 같은 crop, scale과 application bounds를 유지한다.
+- 상세 Demo는 시트 제목, 읽는 순서, 입력 변화, 관찰 지점과 구현 결과를 함께 설명한다.
+- Demo Issue 본문도 storyboard 제목, 읽는 방향, 입력 또는 상태 변화, 관찰 결과와 구현 목적을 함께 설명한다.
+- Storyboard 하나는 같은 변화 축을 설명하는 visual unit 하나로 센다.
+- 원본 frame, QA contact sheet와 조합 중간 파일은 `local/`에 두고 검수한 최종 storyboard만 `Docs/_assets/captures`에 둔다.
+- Storyboard는 selected video를 대체하지 않는다. Video의 게시 여부와 lifecycle은 별도로 관리한다.
+
 ## Video lifecycle과 위치
 
 Video 상태와 위치는 다음과 같이 구분한다.
@@ -79,14 +91,23 @@ Video 상태와 위치는 다음과 같이 구분한다.
 | raw | `local/` | 녹화 원본과 선별 전 자료 |
 | attempt | `local/` | 정상 종료와 자동 검증을 통과한 take |
 | selected | `local/` | 사용자 시각 검수를 포함해 게시 후보로 선택한 master |
-| published | GitHub Demo Issue attachment | selected video를 한 번 업로드한 게시본 |
+| published | GitHub Demo Issue 전용 댓글 attachment | selected video를 한 번 업로드한 게시본 |
 
 - selected video는 일반 Git history에 추가하지 않는 것을 기본값으로 한다.
-- published video의 기본 게시 위치는 독립 공개 가치가 있는 Demo Issue다.
-- PR에서 video가 Chapter 대표 자료로 선택되면 Demo Issue에 게시한 동일 attachment URL을 재사용한다.
+- published video의 기본 게시 위치는 독립 공개 가치가 있는 Demo Issue의 전용 댓글이다.
+- 전용 댓글 하나는 하나의 독립 설명 축만 다루고 제목, 조작 순서, 관찰 결과, 대응 Demo와 attachment를 포함한다.
+- PR에서 video가 Chapter 대표 자료로 선택되면 attachment를 직접 삽입하지 않고 Demo Issue의 전용 댓글 permalink를 연결한다.
 - 같은 video를 Demo Issue와 PR에 각각 중복 업로드하지 않는다.
 - tracked 상세 Demo는 핵심 screenshot과 변화 설명을 유지하고 published video는 실제 Demo Issue로 연결한다.
 - Git tracked video와 Git LFS는 `assets-policy.md`의 예외 기준과 사용자 승인을 따른다.
+
+Video 댓글은 게시 목적에 따라 다음과 같이 갱신한다.
+
+- 같은 목적과 같은 설명 축의 video를 개선하면 기존 댓글을 수정하고 attachment와 설명을 교체한다.
+- 다른 조작, 비교 기준 또는 구현 결과를 설명하면 새 댓글을 추가한다.
+- 잘못된 게시, 중복 게시 또는 공개 위험이 확인된 경우에만 댓글이나 attachment 삭제를 검토한다.
+- 댓글 수정, 추가와 삭제는 각각 원격 변경으로 보고 별도 승인 범위를 확인한다.
+- 게시 registry에는 Demo Issue URL, video comment permalink와 attachment URL을 구분해 기록한다.
 
 ## Video 촬영과 검수 기준
 
@@ -332,3 +353,12 @@ screenshot, video, result image를 추가하면 다음 문서를 함께 확인�
 - 상세 Demo에서 구현·결과·limitation이 크게 바뀌면 Demo Issue 동기화 필요 여부를 확인한다.
 - 같은 tracked asset은 여러 public surface에서 재사용할 수 있지만 설명 본문은 각 surface 목적에 맞게 작성한다.
 - capture/result 승격 전에는 화면 안의 title, watermark, overlay, account, path를 수동으로 확인한다.
+
+## Bundle 단위 rendered evidence 승격
+
+강의 제공 runtime asset이 포함된 capture/result는 기본적으로 출처와 권리 검토 기준을 따른다. 다만 `publication-policy.md`의 Bundle 단위 rendered evidence 예외가 승인된 범위에서는 원본 asset을 공개하지 않고 구현 결과만 보여주는 screenshot, storyboard와 video를 별도로 승격할 수 있다.
+
+- 시각 자료는 asset 자체가 아니라 구현 동작과 graphics 결과를 설명해야 한다.
+- 원본 asset과 직접 다운로드 링크는 tracked Demo와 GitHub body에 넣지 않는다.
+- 강의 화면, 워터마크, 개인정보, 계정, 로컬 경로와 외부 application UI가 없어야 한다.
+- 예외 승인 범위와 원본 asset 교체 backlog는 `Docs/05_Publication`에 기록한다.

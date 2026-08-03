@@ -47,6 +47,7 @@
 | 상태 | 의미 |
 | --- | --- |
 | `public 후보` | 직접 작성했고 공개 전 체크리스트 통과 가능성이 있음 |
+| `공개 가능` | 체크리스트를 통과했지만 실제 public surface 대상으로 선정하지 않음 |
 | `private archive` | private repo에는 둘 수 있으나 public 후보는 아님 |
 | `검토 필요` | 출처, 권리, 민감 정보, 표현 재작성 여부 확인 필요 |
 | `제외` | public subset으로 옮기지 않음 |
@@ -57,3 +58,4 @@
 - private archive 문서도 public으로 그대로 복사하지 않는다.
 - public 후보는 직접 이해한 설명, 직접 만든 capture/result, 라이선스 확인 asset 중심으로 다시 선별한다.
 - 법률 자문처럼 단정하지 않고 공개 전 점검 기준으로 기록한다.
+- 강의 제공 runtime asset의 Bundle 단위 예외는 원본 비공개와 rendered evidence 공개 가능성을 분리하고 사용자 승인 범위를 함께 기록한다.

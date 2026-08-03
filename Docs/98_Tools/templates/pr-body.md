@@ -42,7 +42,7 @@ capture/result가 보여주는 내용을 한 문장으로 설명한다.
 
 ![Example Capture](https://github.com/Razria93/Graphics_Study_Archive/blob/<branch-name>/Docs/_assets/captures/example.png?raw=true)
 
-Video가 Chapter 대표 자료인 경우 위 screenshot 대신 Demo Issue에 게시한 동일 attachment URL과 관찰할 변화를 둔다. Screenshot과 video를 합해 대표 visual은 최대 1개만 사용한다.
+Video가 review에 필요한 경우 대표 screenshot 또는 storyboard는 유지하고 관련 Demo Issue의 video comment permalink를 문서나 관련 이슈에 연결한다.
 
 ## 구현 범위와 한계
 
@@ -72,6 +72,6 @@ Video가 Chapter 대표 자료인 경우 위 screenshot 대신 Demo Issue에 게
 - 구조 정리 PR처럼 파일 이동 자체가 핵심인 경우에만 변경 목록 중심 구성을 예외로 사용한다.
 - 상세 설명은 README, Topic, Verification, Demo 문서로 링크한다.
 - 내부 게시 절차나 승인 대기 항목은 PR body에 두지 않는다.
-- 대표 visual은 screenshot과 video를 합해 최대 1개만 사용하고 GitHub absolute URL을 사용한다.
-- Video는 Demo Issue에 게시한 attachment URL을 재사용하고 PR에 다시 업로드하지 않는다.
+- 대표 visual은 screenshot 또는 storyboard 최대 1개만 사용하고 GitHub absolute URL을 사용한다.
+- Video는 Demo Issue의 전용 댓글 permalink를 연결하고 attachment를 직접 삽입하거나 PR에 다시 업로드하지 않는다.
 - GitHub 게시 후보는 `Docs/07_GitHub/prs`에 둔다.

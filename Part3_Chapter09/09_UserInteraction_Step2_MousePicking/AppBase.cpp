@@ -1,6 +1,7 @@
 ﻿#include "AppBase.h"
 
 #include <algorithm>
+#include <windowsx.h>
 
 #include "D3D11Utils.h"
 
@@ -190,25 +191,47 @@ LRESULT AppBase::MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	switch (msg)
 	{
 	case WM_SIZE:
+		if (wParam == SIZE_MINIMIZED || LOWORD(lParam) == 0 ||
+		    HIWORD(lParam) == 0)
+			return 0;
+
 		// Reset and resize swapchain
 		if (m_swapChain)
 		{ // 처음 실행이 아닌지 확인
 
-			m_screenWidth = int(LOWORD(lParam));
-			m_screenHeight = int(HIWORD(lParam));
+			OnResizeBegin();
+			m_context->OMSetRenderTargets(0, nullptr, nullptr);
+			m_renderTargetView.Reset();
+			m_depthStencilView.Reset();
+			m_shaderResourceView.Reset();
+			m_tempTexture.Reset();
+			m_indexTexture.Reset();
+			m_indexTempTexture.Reset();
+			m_indexStagingTexture.Reset();
+			m_indexRenderTargetView.Reset();
+
+			const UINT width = LOWORD(lParam);
+			const UINT height = HIWORD(lParam);
+			const HRESULT resizeResult = m_swapChain->ResizeBuffers(
+			    0, width, height, DXGI_FORMAT_UNKNOWN, 0);
+			if (FAILED(resizeResult))
+			{
+				cout << "ResizeBuffers() failed: 0x" << hex << resizeResult
+				     << dec << endl;
+				return 0;
+			}
+
+			m_screenWidth = int(width);
+			m_screenHeight = int(height);
 			m_guiWidth = 0;
 
-			m_renderTargetView.Reset();
-			m_swapChain->ResizeBuffers(0,                    // 현재 개수 유지
-			                           (UINT)LOWORD(lParam), // 해상도 변경
-			                           (UINT)HIWORD(lParam),
-			                           DXGI_FORMAT_UNKNOWN, // 현재 포맷 유지
-			                           0);
-			CreateRenderTargetView();
+			if (!CreateRenderTargetView())
+				return 0;
 			D3D11Utils::CreateDepthBuffer(m_device, m_screenWidth,
 			                              m_screenHeight, numQualityLevels,
 			                              m_depthStencilView);
 			SetViewport();
+			OnResizeEnd();
 
 			// 화면 해상도가 바뀌면 카메라의 aspect ratio도 변경
 			m_camera.SetAspectRatio(this->GetAspectRatio());
@@ -219,18 +242,22 @@ LRESULT AppBase::MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		if ((wParam & 0xfff0) == SC_KEYMENU) // Disable ALT application menu
 			return 0;
 		break;
-	case WM_MOUSEMOVE: // WM_MOUSEFIRST와 WM_MOUSEMOVE가 같음
+	case WM_MOUSEMOVE: { // WM_MOUSEFIRST와 WM_MOUSEMOVE가 같음
 
 		// cout << "Mouse BtnState " << wParam << endl;
 		// cout << "Mouse " << LOWORD(lParam) << " " << HIWORD(lParam) << endl;
 
-		// 마우스의 위치 저장
-		m_cursorX = LOWORD(lParam);
-		m_cursorY = HIWORD(lParam);
+		const int mouseX = GET_X_LPARAM(lParam);
+		const int mouseY = GET_Y_LPARAM(lParam);
 
-		OnMouseMove(wParam, LOWORD(lParam), HIWORD(lParam));
+		// 마우스의 위치 저장
+		m_cursorX = mouseX;
+		m_cursorY = mouseY;
+
+		OnMouseMove(wParam, mouseX, mouseY);
 
 		break;
+	}
 	case WM_LBUTTONUP:
 		// cout << "WM_LBUTTONUP Left mouse button" << endl;
 		break;
@@ -314,7 +341,8 @@ bool AppBase::InitMainWindow()
 	AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, false);
 
 	// 윈도우를 만들때 위에서 계산한 wr 사용
-	m_mainWindow = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example",
+	m_mainWindow = CreateWindow(wc.lpszClassName,
+	                           L"ComputerGraphics - Chapter09 Step2 MousePicking",
 	                            WS_OVERLAPPEDWINDOW,
 	                            100,                // 윈도우 좌측 상단의 x 좌표
 	                            100,                // 윈도우 좌측 상단의 y 좌표

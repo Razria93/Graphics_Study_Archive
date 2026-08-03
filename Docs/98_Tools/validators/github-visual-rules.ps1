@@ -19,3 +19,10 @@ function Get-GitHubRepresentativeVisualCount
     $videoUrls = @(Get-GitHubVideoAttachmentUrls -Content $Content)
     return $ImageCount + $videoUrls.Count
 }
+
+function Test-GitHubStandaloneVideoAttachment
+{
+    param([Parameter(Mandatory = $true)][string]$Content)
+
+    return @(Get-GitHubVideoAttachmentUrls -Content $Content).Count -gt 0
+}

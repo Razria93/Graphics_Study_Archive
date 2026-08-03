@@ -52,7 +52,7 @@ Zelda와 주변 geometry에 NightPath의 주황색 하늘과 밝은 광원이 �
 ## 구현 범위와 한계
 
 - Roughness에 따른 mip LOD와 Fresnel weight는 적용하지 않는다.
-- NightPath attribution은 유지하지만 Zelda asset 권리 근거가 충분하지 않아 공개 후보로 확정하지 않는다.
+- NightPath attribution은 유지하고 Zelda 원본은 비공개로 두며 직접 실행한 rendered evidence만 공개한다.
 - Dead `Use Reflection` UI를 제거했으며 reflection은 이 단계의 고정 구현이다.
 
 ## 검증

@@ -80,7 +80,7 @@ Aspect ratio는 고정 `1280/960` 대신 현재 `iResolution`에서 계산한다
 - 활성 runtime은 Star shader 한 개와 texture channel 0 하나만 사용한다.
 - `Seascape`와 `EnergeticFlyby`는 활성 결과가 아니므로 Demo 설명과 capture 근거에서 제외한다.
 - Audio channel, mouse input과 다중 render pass 같은 Shadertoy 기능은 구현하지 않는다.
-- Star shader의 원문 링크·작성자 표기는 유지하지만 license와 texture 출처 근거가 충분하지 않아 Publication은 `검토 필요`다.
+- Star shader의 원문 링크·작성자 표기는 유지하고 원본 texture와 shader source는 직접 게시하지 않으며 rendered evidence만 공개한다.
 - Video는 local evidence이며 일반 Git history와 GitHub 게시 후보에 포함하지 않는다.
 
 ## 검증

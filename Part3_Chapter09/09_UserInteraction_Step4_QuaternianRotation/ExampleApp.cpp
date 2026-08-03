@@ -119,7 +119,10 @@ void ExampleApp::Update(float dt)
 	// - Normalize()
 
 	Vector3 normal = Vector3(m_quatX, m_quatY, m_quatZ);
-	normal.Normalize(); // length 가 0에 가까울 경우 에러가 뜰 수 있음
+	if (normal.LengthSquared() < 1.0e-8f)
+		normal = Vector3(0.0f, 1.0f, 0.0f);
+	else
+		normal.Normalize();
 
 	// CreateFromAxisAngle은 회전축과 각도만 넣어도 됨
 	Quaternion q = Quaternion(normal * sin(m_quatTheta * 0.5f), cos(m_quatTheta * 0.5f));

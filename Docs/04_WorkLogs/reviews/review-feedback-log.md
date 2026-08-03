@@ -33,3 +33,27 @@
 - Fix: `4f89fe9`
 - Status: `resolved`
 - Regression check: capture 준비 중 창 상태를 변경하는 동작은 baseline bounds 기록 전에 완료하고 상태 변경 조건을 contract test로 고정한다.
+
+### RF-003 — Capture 중 client 영역 밖 cursor 좌표 처리
+
+- Source: [PR #23 review comment](https://github.com/Razria93/Graphics_Study_Archive/pull/23#discussion_r3704747976)
+- Category: `runtime`
+- Affected: Chapter09 Step2–6의 `AppBase.cpp`와 Step2 `ExampleApp.cpp`
+- Finding: Step3–6은 mouse capture 중 client 영역 밖 음수 좌표를 unsigned 값으로 해석했다. Step2는 resize 뒤 남은 cursor 좌표로 변경된 index texture 범위 밖을 readback할 수 있었다.
+- Response: Step2–6은 signed cursor 좌표를 사용한다. Step2는 실제 index texture bounds 밖 readback을 생략하고 resize 전 filter·render resource 참조를 해제한 뒤 재구성한다.
+- Verification: Step2–6 Debug/Release x64 build, Step2 wide·medium·compact resize와 minimize/restore, Step3–6 client 경계 밖 drag·release runtime 검사, 관련 Demo code anchor 확인
+- Fix: `7a782fd`, `3f6cfb3`
+- Status: `resolved`
+- Regression check: 모든 picking 예제는 signed cursor 좌표와 실제 readback texture bounds를 확인한다. Mouse capture 예제는 client 경계 밖 좌·상·우·하 이동과 외부 release를 추가로 검사한다.
+
+### RF-004 — Demo Issue 본문의 standalone video 검증 누락
+
+- Source: [PR #23 review comment](https://github.com/Razria93/Graphics_Study_Archive/pull/23#discussion_r3704747988)
+- Category: `validator`
+- Affected: GitHub quality validator, visual fixture와 Chapter04 Demo Issue 후보
+- Finding: 정책은 video를 별도 Issue comment에 두도록 정의하지만 validator는 Demo Issue 본문의 bare video attachment를 허용한다.
+- Response: standalone video attachment를 실패 처리하고 image-only 및 video comment link 허용 fixture를 실제 validator에 연결한다. Chapter04 Issue #14 본문은 정적 visual 3개로 교체하고 기존 video는 전용 댓글로 이전한다.
+- Verification: validator 수정 전 invalid fixture 실패 재현, 수정 후 fixture와 GitHub quality validator 통과, [Issue #14 video 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/14#issuecomment-5168469025)의 1202×932 H.264 재생과 본문의 standalone video 0건 확인
+- Fix: `c67c198`
+- Status: `resolved`
+- Regression check: Demo Issue 후보는 정적 visual만 본문에 두고 동적 evidence는 전용 comment permalink로 연결한다.

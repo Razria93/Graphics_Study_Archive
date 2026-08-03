@@ -32,7 +32,7 @@
 
 - 강의 화면 캡처, 유료 자료, 출처 불명 asset은 이 폴더에 두지 않는다.
 - 파일명은 Part/Chapter, 예제 또는 Topic이 드러나게 작성한다.
-- Video binary는 일반 Git history에 추가하지 않고 Demo Issue attachment를 기본 게시 방식으로 사용한다. 예외는 Publication 판단과 사용자 승인을 따른다.
+- Video binary는 일반 Git history에 추가하지 않고 Demo Issue 전용 댓글 attachment를 기본 게시 방식으로 사용한다. 예외는 Publication 판단과 사용자 승인을 따른다.
 - 검토하지 않은 raw 파일은 `local/`에 둔다.
 - 같은 의미의 중복 capture/result는 하나만 승격한다.
 - 실패 기록이나 비교용 원본 후보는 필요한 경우 `local/`에 보존하고 tracked Docs에는 요약만 남긴다.

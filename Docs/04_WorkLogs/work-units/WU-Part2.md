@@ -5,8 +5,8 @@
 | 항목 | 내용 |
 | --- | --- |
 | Work Unit | `WU-Part2` |
-| 현재 마감 대상 | `Part2_Chapter05-08` GitHub 게시와 일반 merge commit 마감 |
-| 후속 코드 범위 | Chapter05–08 순차 정규화 완료, 권리 미확정 asset은 Publication 검토 유지 |
+| 현재 마감 대상 | Chapter08 rendered evidence와 Demo Issue #22 게시 마감 |
+| 후속 코드 범위 | Chapter05–08 순차 정규화 완료, 원본 runtime asset은 비공개 유지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
@@ -50,6 +50,7 @@
 - [Chapter05–08 PR #20](https://github.com/Razria93/Graphics_Study_Archive/pull/20)을 Draft로 게시하고 Ready for Review로 전환한 뒤 일반 merge commit 방식으로 병합했다.
 - [누적 Progress 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690)을 Phase 3-2 상태로 갱신했다.
 - [Phase 3-2 완료 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5160239752) 게시와 실제 URL 동기화를 완료했다.
+- [Chapter08 Demo Issue #22](https://github.com/Razria93/Graphics_Study_Archive/issues/22)에 Step1·6·7 rendered evidence를 게시하고 원본 runtime asset은 비공개로 유지한다.
 
 ## Chapter05 마감 snapshot
 
@@ -186,3 +187,6 @@
 - 고정 aspect를 현재 resolution으로 교체하고 resize 시 filter resource를 재생성하며 비활성 Seascape shader는 build에서 제외한다.
 - Debug/Release Clean/Rebuild, wide·compact resize, minimize/restore, 1282×992 screenshot과 9.83초 selected local video를 확인한다.
 - Star shader license와 `shadertoytexture0.jpg` 출처 근거가 충분하지 않아 Publication은 `검토 필요`로 둔다.
+- 2026-08-03 사용자 승인으로 Chapter08 Bundle에 rendered evidence 예외를 적용하고 원본 runtime asset은 비공개로 유지한다.
+- Step1 RimLighting, Step6 BloomEffect와 Step7 Shadertoy를 서로 다른 surface shading·post-processing·procedural shader 설명 축의 Demo Issue 대표 visual로 선정한다.
+- Chapter08 screenshot은 공개 가능으로 판정하고 [Demo Issue #22](https://github.com/Razria93/Graphics_Study_Archive/issues/22)에 Step1·6·7을 게시한다. Selected video 댓글은 미게시 상태로 유지한다.

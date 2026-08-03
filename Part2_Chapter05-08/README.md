@@ -15,9 +15,9 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리하는 폴더다.
 | --- | --- |
 | Source provenance | [`SRC-P2-C05-08`](../Docs/99_Legacy/source-registry.md) |
 | Import status | code import 완료 / Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 순차 verification 완료 |
-| Public readiness | Chapter05–07 Demo Issue 게시 완료 / Chapter08 권리 검토 보류 |
+| Public readiness | Chapter05–07 Demo Issue와 [Chapter08 Demo Issue #22](https://github.com/Razria93/Graphics_Study_Archive/issues/22) 게시 완료 |
 | Build/run status | Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 Debug/Release x64 현재 확인 |
-| Next action | merge 후 `main`·Actions·링크 read-only 확인 |
+| Next action | Chapter08 Demo Issue #22 상태 유지, selected video 댓글은 미게시 |
 
 ## 예정 주제
 
@@ -77,10 +77,10 @@ Chapter06은 Direct3D interface lifetime에서 시작해 window, device resource
 | [`07_Modeling_Step7_FaceNormals`](07_Modeling_Step7_FaceNormals/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료 |
 | [`07_Modeling_Step8_SphereMapping`](07_Modeling_Step8_SphereMapping/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료 |
 | [`07_Modeling_Step9_ModelFiles`](07_Modeling_Step9_ModelFiles/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
-| [`08_ShaderToys_Step1_RimLighting`](08_ShaderToys_Step1_RimLighting/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
-| [`08_ShaderToys_Step2_Cubemapping`](08_ShaderToys_Step2_Cubemapping/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
-| [`08_ShaderToys_Step3_EnvironmentMapping`](08_ShaderToys_Step3_EnvironmentMapping/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
-| [`08_ShaderToys_Step4_ImageBasedLighting`](08_ShaderToys_Step4_ImageBasedLighting/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
-| [`08_ShaderToys_Step5_FresnelEffect`](08_ShaderToys_Step5_FresnelEffect/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
-| [`08_ShaderToys_Step6_BloomEffect`](08_ShaderToys_Step6_BloomEffect/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
-| [`08_ShaderToys_Step7_Shadertoy`](08_ShaderToys_Step7_Shadertoy/README.md) | 현재 build/run·capture·video·문서·상세 Demo 정규화 완료, Publication 검토 필요 |
+| [`08_ShaderToys_Step1_RimLighting`](08_ShaderToys_Step1_RimLighting/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, rendered evidence 공개 가능 |
+| [`08_ShaderToys_Step2_Cubemapping`](08_ShaderToys_Step2_Cubemapping/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, rendered evidence 공개 가능 |
+| [`08_ShaderToys_Step3_EnvironmentMapping`](08_ShaderToys_Step3_EnvironmentMapping/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, rendered evidence 공개 가능 |
+| [`08_ShaderToys_Step4_ImageBasedLighting`](08_ShaderToys_Step4_ImageBasedLighting/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, rendered evidence 공개 가능 |
+| [`08_ShaderToys_Step5_FresnelEffect`](08_ShaderToys_Step5_FresnelEffect/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, rendered evidence 공개 가능 |
+| [`08_ShaderToys_Step6_BloomEffect`](08_ShaderToys_Step6_BloomEffect/README.md) | 현재 build/run·capture·문서·상세 Demo 정규화 완료, rendered evidence 공개 가능 |
+| [`08_ShaderToys_Step7_Shadertoy`](08_ShaderToys_Step7_Shadertoy/README.md) | 현재 build/run·capture·video·문서·상세 Demo 정규화 완료, rendered evidence 공개 가능 |

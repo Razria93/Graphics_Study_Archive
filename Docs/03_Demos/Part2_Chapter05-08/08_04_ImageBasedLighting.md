@@ -52,7 +52,7 @@ Atrium 환경이 배경과 sphere highlight에 함께 나타나고, normal 방�
 ## 구현 범위와 한계
 
 - Fixed cubemap sample만 사용하며 roughness LOD와 BRDF integration은 없다.
-- Atrium과 surface texture의 공개 권리 근거가 충분하지 않아 공개 후보로 확정하지 않는다.
+- Atrium과 surface texture 원본은 비공개로 유지하고 직접 실행한 rendered evidence만 공개한다.
 
 ## 검증
 
