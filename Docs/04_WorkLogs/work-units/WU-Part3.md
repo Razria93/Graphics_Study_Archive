@@ -45,9 +45,10 @@
 
 ## 다음 작업
 
-1. [Chapter09 PR #23](https://github.com/Razria93/Graphics_Study_Archive/pull/23)의 Ready for Review 전 current-state를 최종 감사한다.
-2. 원본 runtime asset 교체는 시간과 필요성을 검토하는 backlog로 유지한다.
-3. Chapter10-13 착수 감사를 수행한다.
+1. Chapter09 review 수정 커밋을 push한 뒤 [PR #23](https://github.com/Razria93/Graphics_Study_Archive/pull/23)의 review 답글과 thread resolve를 별도 승인으로 수행한다.
+2. merge 직전 current-state와 unresolved actionable review를 다시 감사한다.
+3. 원본 runtime asset 교체는 시간과 필요성을 검토하는 backlog로 유지한다.
+4. Chapter10-13 착수 감사를 수행한다.
 
 ## 관련 문서
 
