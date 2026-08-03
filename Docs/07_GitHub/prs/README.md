@@ -8,6 +8,10 @@
 - Part 단위 PR은 예제가 적고 변경 범위가 작을 때만 예외로 허용한다.
 - Part 전체 진행은 Progress Issue, WorkLog, milestone 성격으로 추적한다.
 
+## 게시 후보
+
+- [Part3 Chapter10-13](part3_chapter10-13.md)
+
 ## 권장 본문 흐름
 
 PR body는 파일 변경 목록보다 이 PR이 설명 가능하게 만든 그래픽스 내용을 먼저 보여준다.

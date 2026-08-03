@@ -10,6 +10,13 @@
 
 - 독립적인 시각·기술 공개 가치가 있을 때 생성한다.
 
+## 게시 후보
+
+- [Part3 Chapter10 Geometry Pipeline](demo_part3_chapter10.md)
+- [Part3 Chapter11 Texturing Techniques](demo_part3_chapter11.md)
+- [Part3 Chapter12 Physically Based Rendering](demo_part3_chapter12.md)
+- [Part3 Chapter13 Light And Shadow](demo_part3_chapter13.md)
+
 ## 작성 기준
 
 - 첫 H1을 title source로 유지한다.

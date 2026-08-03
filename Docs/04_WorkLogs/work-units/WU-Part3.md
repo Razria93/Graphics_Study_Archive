@@ -55,9 +55,10 @@
 
 ## 다음 작업
 
-1. Part3 Chapter10-13의 Publication과 GitHub 게시 후보를 최종 검증한다.
-2. 원본 runtime asset 교체는 시간과 필요성을 검토하는 backlog로 유지한다.
-3. 실제 PR, Demo Issue와 comment 게시는 별도 승인 단계로 수행한다.
+1. Chapter10→13 Demo Issue 4개를 Chapter10→11→12→13 순서로 별도 승인 후 게시한다.
+2. 실제 Issue URL을 PR body에 동기화한 뒤 Part3 Chapter10-13 PR을 별도 승인 후 생성한다.
+3. 실제 PR URL을 확보한 뒤 Progress 누적 댓글과 Phase 4-2 완료 댓글을 게시한다.
+4. 원본 runtime asset 교체는 시간과 필요성을 검토할 선택 backlog로 유지한다.
 
 ## 관련 문서
 
