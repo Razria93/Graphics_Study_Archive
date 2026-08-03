@@ -284,7 +284,9 @@ bool AppBase::InitMainWindow()
 	AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, false);
 
 	// 윈도우를 만들때 위에서 계산한 wr 사용
-	m_mainWindow = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example",
+	m_mainWindow = CreateWindow(
+	    wc.lpszClassName,
+	    L"ComputerGraphics - Chapter09 Step1 FirstPersonView",
 	                            WS_OVERLAPPEDWINDOW,
 	                            100,                // 윈도우 좌측 상단의 x 좌표
 	                            100,                // 윈도우 좌측 상단의 y 좌표
