@@ -45,7 +45,7 @@
 
 ## 다음 작업
 
-1. Chapter09 PR 후보의 원격 게시와 GitHub UI 렌더링을 검수한다.
+1. [Chapter09 PR #23](https://github.com/Razria93/Graphics_Study_Archive/pull/23)의 Ready for Review 전 current-state를 최종 감사한다.
 2. 원본 runtime asset 교체는 시간과 필요성을 검토하는 backlog로 유지한다.
 3. Chapter10-13 착수 감사를 수행한다.
 
