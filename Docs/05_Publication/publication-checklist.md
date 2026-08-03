@@ -43,9 +43,9 @@
 | `Docs/07_GitHub`의 게시 후보 본문을 검토함 | 미확인 |  |
 | Issue/PR 번호와 WorkLog 연결을 확인함 | 미확인 |  |
 | 게시 후 snapshot 필요 여부를 판단함 | 미확인 |  |
-| video를 Demo Issue에 한 번만 첨부하고 PR의 중복 업로드를 피함 | 미확인 | 대상에 video가 없을 때만 `해당 없음`으로 판정 |
+| video를 Demo Issue 전용 댓글에 한 번만 첨부하고 PR의 중복 업로드를 피함 | 미확인 | 대상에 video가 없을 때만 `해당 없음`으로 판정 |
 | selected video의 게시 또는 미게시 판단과 이유를 기록함 | 미확인 | 대상에 selected video가 없을 때만 `해당 없음`으로 판정 |
-| actual video URL과 게시 상태를 merge 전에 동기화함 | 미확인 | 대상에 video가 없을 때만 `해당 없음`으로 판정 |
+| video 댓글 permalink, attachment URL과 게시 상태를 merge 전에 동기화함 | 미확인 | PR은 댓글 permalink만 연결하고 대상에 video가 없을 때만 `해당 없음`으로 판정 |
 
 ## Bundle 단위 rendered evidence 예외 체크
 

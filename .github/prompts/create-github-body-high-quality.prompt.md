@@ -16,7 +16,8 @@ tools:
 - 대상 파일 경로
 - 대상 범위(Part/Chapter/Example)
 - 연결 source docs 경로 목록
-- screenshot/video/result image 경로 또는 URL
+- screenshot/storyboard/result image 경로 또는 URL
+- 게시된 video 댓글 permalink(있는 경우)
 - 원본 코드 링크 후보
 
 ## 생성 규칙
