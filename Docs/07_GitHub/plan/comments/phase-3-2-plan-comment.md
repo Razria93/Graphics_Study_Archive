@@ -16,10 +16,10 @@
 
 ## 남은 제한
 
-- Chapter06 Step8 resize interaction video는 후속 개선으로 유지한다.
+- Chapter06 Step8 resize 결과는 Compact·Default·Wide screenshot과 반복 resize로 검증한다.
 - Chapter07 Step9와 Chapter08의 외부 asset은 권리 근거 확인 전 대표 publication visual로 사용하지 않는다.
-- RowPitch·Map failure와 project metadata 정리는 별도 code maintenance 범위로 유지한다.
+- RowPitch가 달라지는 환경의 texture upload portability 보완은 현재 범위에 포함하지 않는다.
 
 ## Related PR
 
-- [PR #20](https://github.com/Razria93/Graphics_Study_Archive/pull/20) (Draft) - Part2 Chapter05-08 DirectX11 Pipeline·Modeling·Shader 예제 정규화와 Demo
+- [PR #20](https://github.com/Razria93/Graphics_Study_Archive/pull/20) - Part2 Chapter05-08 DirectX11 Pipeline·Modeling·Shader 예제 정규화와 Demo
