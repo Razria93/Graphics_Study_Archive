@@ -38,13 +38,13 @@
 
 - Source: [PR #23 review comment](https://github.com/Razria93/Graphics_Study_Archive/pull/23#discussion_r3704747976)
 - Category: `runtime`
-- Affected: Chapter09 Step3–6의 `AppBase.cpp`
-- Finding: mouse capture 중 client 영역 밖으로 이동한 음수 좌표를 unsigned 값으로 해석해 index texture 범위를 벗어난다.
-- Response: `GET_X_LPARAM`, `GET_Y_LPARAM`으로 signed 좌표를 해석하고 실제 index texture 크기로 readback 범위를 검사한다.
-- Verification: Step3–6 Debug/Release x64 build, client 경계 밖 drag·release runtime 검사, 관련 Demo code anchor 확인
-- Fix: `7a782fd`
+- Affected: Chapter09 Step2–6의 `AppBase.cpp`와 Step2 `ExampleApp.cpp`
+- Finding: Step3–6은 mouse capture 중 client 영역 밖 음수 좌표를 unsigned 값으로 해석했다. Step2는 resize 뒤 남은 cursor 좌표로 변경된 index texture 범위 밖을 readback할 수 있었다.
+- Response: Step2–6은 signed cursor 좌표를 사용한다. Step2는 실제 index texture bounds 밖 readback을 생략하고 resize 전 filter·render resource 참조를 해제한 뒤 재구성한다.
+- Verification: Step2–6 Debug/Release x64 build, Step2 wide·medium·compact resize와 minimize/restore, Step3–6 client 경계 밖 drag·release runtime 검사, 관련 Demo code anchor 확인
+- Fix: `7a782fd`, `3f6cfb3`
 - Status: `resolved`
-- Regression check: mouse capture를 사용하는 picking 예제는 client 경계 밖의 좌·상·우·하 이동과 외부 release를 포함해 검사한다.
+- Regression check: 모든 picking 예제는 signed cursor 좌표와 실제 readback texture bounds를 확인한다. Mouse capture 예제는 client 경계 밖 좌·상·우·하 이동과 외부 release를 추가로 검사한다.
 
 ### RF-004 — Demo Issue 본문의 standalone video 검증 누락
 
