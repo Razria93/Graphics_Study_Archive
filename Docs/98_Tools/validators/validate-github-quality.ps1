@@ -155,6 +155,10 @@ function Validate-DemoIssue {
     if ($images.Count -lt 1) {
         Add-Failure $relative "Demo Issue must contain at least one GitHub Docs/_assets visual URL"
     }
+    if (Test-GitHubStandaloneVideoAttachment -Content $content) {
+        Add-Failure $relative `
+            "Demo Issue body must link a dedicated video comment instead of embedding a standalone video attachment"
+    }
     $visualCount = Get-GitHubRepresentativeVisualCount `
         -Content $content `
         -ImageCount $images.Count

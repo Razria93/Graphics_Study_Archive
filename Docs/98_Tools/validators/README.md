@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | `validate-github-body.ps1` | GitHub Issue/PR/comment 게시 전 Markdown body 검사 | `Docs/07_GitHub` |
 | `validate-github-quality.ps1` | Demo Issue 품질 검사(전개, 시각 자료, 구현 설명, 가독성) | `Docs/07_GitHub/issues/demo` |
-| `test-github-visual-quality.ps1` | GitHub visual 합산과 Demo video 댓글 template 계약 fixture 검사 | inline fixture와 `Docs/98_Tools/templates` |
+| `test-github-visual-quality.ps1` | GitHub visual 합산, Demo Issue video 위치와 댓글 template 계약 fixture 검사 | inline fixture, `fixtures/github-visual-quality`와 `Docs/98_Tools/templates` |
 | `validate-topic-doc-quality.ps1` | 상세 Topic 정본 품질 검사(책임 구조, 핵심 개념, Example/Verification/Demo 연결) | `Docs/01_Topics` |
 | `validate-demo-index-quality.ps1` | Demo source docs 구현도 균일성 검사(필수 구조, 테이블 스키마, 상태값, 최소 capture 기준) | `Docs/03_Demos/**/demo-index.md` |
 | `test-demo-index-quality.ps1` | Demo index의 selected·published video reference fixture 검사 | `fixtures/demo-index-video` |
@@ -79,7 +79,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markd
 
 - curated Demo Issue 필수 섹션과 순서
 - 대표 GitHub visual 1~3개와 screenshot 최소 1개
-- 정책 도입 전 Demo Issue 본문의 standalone video attachment URL 수량 호환 검사
+- Demo Issue 본문의 standalone video attachment 금지와 video comment permalink 허용
 - 상세 Demo와 Verification 링크
 - 핵심 구현의 commit-pinned C++ source line 링크
 - 선택적 C++ 의사코드와 같은 섹션의 source line 링크

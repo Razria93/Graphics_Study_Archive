@@ -1,0 +1,33 @@
+# Demo Visual Fixture
+
+## 요약
+
+정적 visual과 video comment permalink를 사용하는 Demo Issue fixture다.
+
+## 결과
+
+![Static result](https://github.com/example/repository/blob/1111111111111111111111111111111111111111/Docs/_assets/captures/example.png?raw=true)
+
+- [동적 근거 댓글](https://github.com/example/repository/issues/1#issuecomment-2)
+
+## 핵심 구현
+
+- [구현 근거](https://github.com/example/repository/blob/1111111111111111111111111111111111111111/Part2_Chapter04/Example/Example.cpp#L1-L8)
+
+## 처리 흐름
+
+1. 입력을 처리한다.
+2. 결과를 출력한다.
+
+## 구현 범위와 한계
+
+- Fixture 검증 범위만 포함한다.
+
+## 검증
+
+- Build/Run: fixture
+
+## 더 자세히 보기
+
+- [상세 Demo](https://github.com/example/repository/blob/main/Docs/03_Demos/example.md)
+- [Verification](https://github.com/example/repository/blob/main/Docs/02_Verification/example.md)

@@ -1,5 +1,8 @@
 $ErrorActionPreference = "Stop"
 . (Join-Path $PSScriptRoot "github-visual-rules.ps1")
+$powerShellPath = [Diagnostics.Process]::GetCurrentProcess().MainModule.FileName
+$validatorPath = Join-Path $PSScriptRoot "validate-github-quality.ps1"
+$fixtureRoot = Join-Path $PSScriptRoot "fixtures/github-visual-quality"
 
 $videoUrl = "https://github.com/user-attachments/assets/12345678-1234-1234-1234-123456789abc"
 $duplicateContent = "$videoUrl`n`n$videoUrl"
@@ -31,6 +34,63 @@ if (-not (Test-GitHubStandaloneVideoAttachment -Content $videoUrl))
 if (Test-GitHubStandaloneVideoAttachment -Content "[video comment]($videoUrl)")
 {
     throw "Linked video reference should not be treated as an embedded attachment."
+}
+
+$tempRoot = Join-Path ([IO.Path]::GetTempPath()) (
+    "github-visual-quality-" + [Guid]::NewGuid().ToString("N")
+)
+try
+{
+    $validGitHubRoot = Join-Path $tempRoot "valid/Docs/07_GitHub"
+    $validDemoRoot = Join-Path $validGitHubRoot "issues/demo"
+    New-Item -ItemType Directory -Path $validDemoRoot -Force | Out-Null
+
+    $fixtureIndex = 0
+    Get-ChildItem -LiteralPath (Join-Path $fixtureRoot "valid") `
+        -Filter "*.md.txt" | ForEach-Object {
+        $fixtureIndex++
+        Copy-Item -LiteralPath $_.FullName -Destination (
+            Join-Path $validDemoRoot "demo_fixture_$fixtureIndex.md"
+        )
+    }
+
+    & $powerShellPath -NoProfile -ExecutionPolicy Bypass `
+        -File $validatorPath `
+        -Root (Join-Path $tempRoot "valid") `
+        -GitHubRoot $validGitHubRoot
+    if ($LASTEXITCODE -ne 0)
+    {
+        throw "Valid Demo Issue visual fixtures failed."
+    }
+
+    $invalidGitHubRoot = Join-Path $tempRoot "invalid/Docs/07_GitHub"
+    $invalidDemoRoot = Join-Path $invalidGitHubRoot "issues/demo"
+    New-Item -ItemType Directory -Path $invalidDemoRoot -Force | Out-Null
+    Copy-Item -LiteralPath (
+        Join-Path $fixtureRoot "invalid/standalone-video.md.txt"
+    ) -Destination (Join-Path $invalidDemoRoot "demo_fixture.md")
+
+    $invalidOutput = & $powerShellPath -NoProfile -ExecutionPolicy Bypass `
+        -File $validatorPath `
+        -Root (Join-Path $tempRoot "invalid") `
+        -GitHubRoot $invalidGitHubRoot 2>&1 | Out-String
+    if ($LASTEXITCODE -eq 0)
+    {
+        throw "Standalone Demo Issue video attachment fixture passed."
+    }
+    if ($invalidOutput -notmatch (
+        "must link a dedicated video comment instead of embedding"
+    ))
+    {
+        throw "Standalone video fixture did not report the expected failure."
+    }
+}
+finally
+{
+    if (Test-Path -LiteralPath $tempRoot)
+    {
+        Remove-Item -LiteralPath $tempRoot -Recurse -Force
+    }
 }
 
 function New-UnicodeText
