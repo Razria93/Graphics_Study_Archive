@@ -44,7 +44,7 @@ Related PR: [PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15)
 
 Chapter05–08의 30개 예제를 순서대로 재검증하고 Example README, Topic, Verification과 독립 상세 Demo로 연결했다. Chapter05는 affine transformation API 비교, Chapter06은 DirectX11 pipeline·lighting·resize, Chapter07은 procedural modeling과 SphereMapping 흐름으로 정리했다. 공개 안전한 대표 visual을 Chapter05 [Demo Issue #17](https://github.com/Razria93/Graphics_Study_Archive/issues/17), Chapter06 [Demo Issue #18](https://github.com/Razria93/Graphics_Study_Archive/issues/18), Chapter07 [Demo Issue #19](https://github.com/Razria93/Graphics_Study_Archive/issues/19)에 게시하고, 외부 asset 권리 근거가 충분하지 않은 Chapter08은 archive 검증 상태로 유지한다.
 
-Related PR: [PR #20](https://github.com/Razria93/Graphics_Study_Archive/pull/20) (Ready for Review) - Part2 Chapter05-08 DirectX11 Pipeline·Modeling·Shader 예제 정규화와 Demo
+Related PR: [PR #20](https://github.com/Razria93/Graphics_Study_Archive/pull/20) (Merged) - Part2 Chapter05-08 DirectX11 Pipeline·Modeling·Shader 예제 정규화와 Demo
 
 ## 진행 예정
 
@@ -59,4 +59,4 @@ Related PR: 예정
 - PR #8 (Merged): Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom
 - [PR #11](https://github.com/Razria93/Graphics_Study_Archive/pull/11) (Merged): Part1 Chapter03 CPU Ray Tracing 단계별 구현과 Demo
 - [PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15) (Merged): Part2 Chapter04 CPU Software Rasterization 단계별 정규화와 Demo
-- [PR #20](https://github.com/Razria93/Graphics_Study_Archive/pull/20) (Ready for Review): Part2 Chapter05-08 DirectX11 Pipeline·Modeling·Shader 예제 정규화와 Demo
+- [PR #20](https://github.com/Razria93/Graphics_Study_Archive/pull/20) (Merged): Part2 Chapter05-08 DirectX11 Pipeline·Modeling·Shader 예제 정규화와 Demo
