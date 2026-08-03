@@ -2,13 +2,13 @@
 
 ## 요약
 
-이 PR은 `Part3_Chapter09` Step1–6의 camera·picking·object manipulation 흐름을 현재 build/run으로 재검증하고 Example, Topic, Verification과 상세 Demo로 연결한다. 입력과 결과 변화는 정적 storyboard로 설명하고, 대표 VirtualTrackball video는 Demo Issue 전용 댓글로 분리한다. 보조 마감 범위로 Chapter08 rendered evidence 공개 판단과 Demo Issue 후보, Demo 정적·동적 visual 게시 기준을 정렬한다.
+이 PR은 `Part3_Chapter09` Step1–6의 camera·picking·object manipulation 흐름을 현재 build/run으로 재검증하고 Example, Topic, Verification과 상세 Demo로 연결한다. 입력과 결과 변화는 정적 storyboard로 설명하고, 대표 VirtualTrackball video는 Demo Issue 전용 댓글로 분리한다. 보조 마감 범위로 Chapter08 rendered evidence 공개 판단과 [Demo Issue #22](https://github.com/Razria93/Graphics_Study_Archive/issues/22), Demo 정적·동적 visual 게시 기준을 정렬한다.
 
 ## 범위
 
 - Chapter09 Step1–6: FirstPersonView, GPU·CPU picking, quaternion rotation, VirtualTrackball과 MouseDragMove
 - 문서·검증: Example README 6개, interaction Topic 3개, Verification, 상세 Demo 6개와 storyboard 7개
-- Chapter08 publication closeout: 원본 runtime asset 비공개와 rendered evidence 공개 범위, 신규 Demo Issue 게시 후보 정렬
+- Chapter08 publication closeout: 원본 runtime asset 비공개와 rendered evidence 공개 범위, [Demo Issue #22](https://github.com/Razria93/Graphics_Study_Archive/issues/22) 게시 상태 정렬
 - Demo visual 체계: Issue 본문 정적 visual과 전용 댓글 video의 책임, template·validator·Publication checklist 정렬
 
 ## 핵심 개념
@@ -82,5 +82,6 @@ Axis-angle quaternion에서 VirtualTrackball 누적 회전으로 확장하고, �
 
 ## 관련 이슈
 
+- [Part2 Chapter08 Shader Experiments Demo #22](https://github.com/Razria93/Graphics_Study_Archive/issues/22)
 - [Part3 Chapter09 User Interaction Demo #21](https://github.com/Razria93/Graphics_Study_Archive/issues/21)
 - [Step5 VirtualTrackball video 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/21#issuecomment-5164633305)

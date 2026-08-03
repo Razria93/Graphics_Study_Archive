@@ -15,9 +15,9 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리하는 폴더다.
 | --- | --- |
 | Source provenance | [`SRC-P2-C05-08`](../Docs/99_Legacy/source-registry.md) |
 | Import status | code import 완료 / Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 순차 verification 완료 |
-| Public readiness | Chapter05–07 Demo Issue 게시 완료 / Chapter08 rendered evidence 공개 가능·Demo Issue 후보 작성 완료 |
+| Public readiness | Chapter05–07 Demo Issue와 [Chapter08 Demo Issue #22](https://github.com/Razria93/Graphics_Study_Archive/issues/22) 게시 완료 |
 | Build/run status | Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 Debug/Release x64 현재 확인 |
-| Next action | Chapter08 Demo Issue 후보 게시와 실제 Issue 번호·URL 동기화 |
+| Next action | Chapter08 Demo Issue #22 상태 유지, selected video 댓글은 미게시 |
 
 ## 예정 주제
 
