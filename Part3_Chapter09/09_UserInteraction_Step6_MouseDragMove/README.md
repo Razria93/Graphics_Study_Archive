@@ -15,7 +15,7 @@ Drag 시작점의 near/far ray depth 비율을 보존하고 현재 cursor ray의
 | --- | --- |
 | [ExampleApp.cpp](ExampleApp.cpp#L121-L148) | cursor ray와 sphere hit 계산 |
 | [ExampleApp.cpp](ExampleApp.cpp#L152-L178) | drag depth ratio와 world delta 계산 |
-| [ExampleApp.cpp](ExampleApp.cpp#L180-L183) | model translation과 bounding sphere center 동기화 |
+| [ExampleApp.cpp](ExampleApp.cpp#L176-L183) | model translation과 bounding sphere center 동기화 |
 
 ## Capture/Result
 

@@ -43,7 +43,7 @@ Picking ray의 drag 시작 depth를 보존해 sphere를 world space에서 이동
 동일한 ray parameter를 유지해 screen cursor 이동을 world translation으로 바꾸고 다음 frame의 collision bounds도 함께 이동한다.
 
 - [Drag depth ratio와 world delta](../../../Part3_Chapter09/09_UserInteraction_Step6_MouseDragMove/ExampleApp.cpp#L121-L178)
-- [Model과 bounds 동기화](../../../Part3_Chapter09/09_UserInteraction_Step6_MouseDragMove/ExampleApp.cpp#L180-L183)
+- [Model과 bounds 동기화](../../../Part3_Chapter09/09_UserInteraction_Step6_MouseDragMove/ExampleApp.cpp#L176-L183)
 
 ## 시각 결과
 

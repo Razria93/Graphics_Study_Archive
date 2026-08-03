@@ -1,6 +1,6 @@
 # Chapter09 Step5 VirtualTrackball
 
-Drag 시작과 현재 cursor ray의 sphere hit vector를 비교해 quaternion을 만들고 object를 회전한다.
+Drag 첫 frame의 sphere hit vector를 기준값으로 초기화하고, 이후 매 frame의 직전·현재 hit vector 사이 quaternion을 model rotation에 누적한다.
 
 ## 실행 진입점
 
@@ -14,7 +14,7 @@ Drag 시작과 현재 cursor ray의 sphere hit vector를 비교해 quaternion을
 | 파일 | 역할 |
 | --- | --- |
 | [ExampleApp.cpp](ExampleApp.cpp#L120-L142) | cursor ray와 sphere hit point 계산 |
-| [ExampleApp.cpp](ExampleApp.cpp#L149-L177) | drag vector와 `FromToRotation` 계산 |
+| [ExampleApp.cpp](ExampleApp.cpp#L149-L177) | 직전·현재 drag vector와 `FromToRotation` 계산 |
 | [ExampleApp.cpp](ExampleApp.cpp#L183-L194) | 누적 model rotation 합성 |
 
 ## Capture/Result

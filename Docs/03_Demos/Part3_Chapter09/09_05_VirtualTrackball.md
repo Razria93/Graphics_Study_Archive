@@ -19,27 +19,27 @@ Sphere 표면의 pointer drag를 quaternion 회전으로 바꾸는 object-surfac
 
 - 입력 변화: Sphere 표면에서 pointer를 누른 채 연속 drag한다.
 - 관찰 지점: Surface texture 방향이 drag 경로를 따라 바뀌고 종료 상태에 회전이 누적된다.
-- 구현 결과: 시작·현재 hit vector 사이의 quaternion이 model rotation에 합성된다.
+- 구현 결과: 매 frame의 직전·현재 hit vector 사이 quaternion이 model rotation에 누적된다.
 
 ## 입력과 출력
 
 | 구분 | 내용 |
 | --- | --- |
-| 입력 | Drag 시작·현재 cursor ray의 sphere hit point |
-| 출력 | 두 surface vector 사이 quaternion과 누적 model rotation |
+| 입력 | 첫 frame의 기준 hit point와 이후 frame의 현재 hit point |
+| 출력 | 직전·현재 surface vector 사이 quaternion과 누적 model rotation |
 
 ## 구현 흐름
 
 1. Cursor ray와 sphere의 hit point를 구한다.
-2. Drag 시작 hit vector를 저장한다.
-3. 현재 hit vector와 이전 vector 사이 quaternion을 구한다.
-4. Rotation을 model matrix에 합성하고 기준 vector를 갱신한다.
+2. Drag 첫 frame의 hit vector를 기준값으로 초기화한다.
+3. 이후 매 frame의 현재 hit vector와 직전 기준 vector 사이 quaternion을 구한다.
+4. Rotation을 model matrix에 누적하고 현재 vector를 다음 frame의 기준값으로 갱신한다.
 
 ## 핵심 구현
 
 ### Surface Vector Rotation
 
-Object 중심에서 hit point로 향하는 두 vector가 drag의 3D 회전량을 결정한다.
+Object 중심에서 직전·현재 hit point로 향하는 두 vector가 각 frame의 3D 회전량을 결정한다.
 
 - [Sphere hit vector 구성](../../../Part3_Chapter09/09_UserInteraction_Step5_VirtualTrackball/ExampleApp.cpp#L120-L162)
 - [From-to quaternion과 회전 합성](../../../Part3_Chapter09/09_UserInteraction_Step5_VirtualTrackball/ExampleApp.cpp#L163-L194)

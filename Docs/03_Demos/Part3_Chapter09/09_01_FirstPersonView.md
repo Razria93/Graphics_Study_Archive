@@ -27,7 +27,7 @@ Keyboard와 cursor 입력이 camera view 변화로 이어지는 Chapter09의 입
 
 ![Chapter09 Step1 mouse-look storyboard](../../_assets/captures/part3_chapter09_01_first_person_view_mouse_look_storyboard.png)
 
-- 입력 변화: Cursor를 중앙에서 왼쪽 끝과 오른쪽 끝으로 각각 5초간 drag한다.
+- 입력 변화: Cursor를 누르지 않고 중앙에서 왼쪽 끝과 오른쪽 끝으로 이동한다. 촬영에서는 각 바깥 방향과 중앙 복귀 구간에 5초를 사용한다.
 - 관찰 지점: 수평 입력 방향에 따라 camera yaw가 바뀌고 중앙으로 돌아오면 정면 view가 복구된다.
 - 구현 결과: 절대 cursor NDC가 camera orientation에 직접 연결된다.
 
