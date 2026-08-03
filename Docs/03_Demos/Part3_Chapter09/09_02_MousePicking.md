@@ -41,8 +41,10 @@ GPU가 기록한 object ID color를 cursor 위치에서 읽어 hover object를 �
 
 화면에 보이는 geometry와 같은 draw에서 ID color를 만들고 필요한 한 pixel만 CPU로 가져온다.
 
-- [Picking texture 구성](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/AppBase.cpp#L544-L630)
-- [Cursor pixel readback](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/ExampleApp.cpp#L221-L316)
+- [Resize resource 재구성](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/AppBase.cpp#L193-L237)
+- [Signed cursor 좌표 저장](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/AppBase.cpp#L245-L257)
+- [Picking texture 구성](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/AppBase.cpp#L571-L665)
+- [Texture bounds 검사와 cursor pixel readback](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/ExampleApp.cpp#L221-L347)
 
 ## 시각 결과
 
@@ -51,6 +53,7 @@ GPU가 기록한 object ID color를 cursor 위치에서 읽어 hover object를 �
 ## 구현 범위와 한계
 
 - 동기 readback을 매 frame 수행한다.
+- Cursor가 실제 ID texture 범위를 벗어나면 readback을 생략하고 이전 hover 상태를 유지한다.
 - MSAA edge와 exact color 비교는 경계에서 불안정할 수 있다.
 - Scene asset 원본은 비공개 runtime dependency로 유지하고 직접 실행 visual은 승인된 Chapter09 Bundle 예외에 따라 `공개 가능`으로 판정한다.
 
@@ -60,7 +63,8 @@ GPU가 기록한 object ID color를 cursor 위치에서 읽어 hover object를 �
 
 ## 관련 코드
 
-- [Highlight state 연결](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/ExampleApp.cpp#L317-L334)
+- [Highlight state 연결](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/ExampleApp.cpp#L325-L344)
+- [Resize filter 수명 처리](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/ExampleApp.cpp#L425-L433)
 - [Example README](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/README.md)
 
 ## 관련 문서

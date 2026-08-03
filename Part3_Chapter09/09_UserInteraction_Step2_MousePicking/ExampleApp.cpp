@@ -223,6 +223,16 @@ void ExampleApp::Render()
 		// TODO: m_pickColor 업데이트
 		//  GPU->CPU는 화면 캡쳐 코드 참고
 
+		if (m_screenWidth <= 0 || m_screenHeight <= 0)
+			return;
+
+		D3D11_TEXTURE2D_DESC indexTextureDesc{};
+		m_indexTempTexture->GetDesc(&indexTextureDesc);
+		if (m_cursorX < 0 || m_cursorY < 0 ||
+		    static_cast<UINT>(m_cursorX) >= indexTextureDesc.Width ||
+		    static_cast<UINT>(m_cursorY) >= indexTextureDesc.Height)
+			return;
+
 		// 여기서 Get되는 backBuffer는 위에 RTV로 지정하여 기록이 되었던 _m_indexTexture
 		// swapchain의 backBuffer는 main RTV로 사용하고 있던 것 1개임
 		// 즉, ResolveSubresource의 대상이 되어야하는건 백버퍼가 아니라 m_indexTexture
@@ -410,6 +420,16 @@ void ExampleApp::BuildFilters()
 	combineFilter->m_pixelConstData.strength = m_strength;
 	combineFilter->UpdateConstantBuffers(m_device, m_context);
 	m_filters.push_back(combineFilter);
+}
+
+void ExampleApp::OnResizeBegin()
+{
+	m_filters.clear();
+}
+
+void ExampleApp::OnResizeEnd()
+{
+	BuildFilters();
 }
 
 void ExampleApp::UpdateGUI()

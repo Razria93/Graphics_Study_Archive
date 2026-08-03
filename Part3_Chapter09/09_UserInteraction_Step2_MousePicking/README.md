@@ -13,9 +13,12 @@ Object ID color를 별도 render target에 기록하고 cursor의 한 pixel을 s
 
 | 파일 | 역할 |
 | --- | --- |
-| [AppBase.cpp](AppBase.cpp#L544-L630) | ID render target와 1×1 staging texture 구성 |
-| [ExampleApp.cpp](ExampleApp.cpp#L221-L316) | cursor pixel resolve·copy·map readback |
-| [ExampleApp.cpp](ExampleApp.cpp#L317-L334) | ID color와 object highlight 상태 연결 |
+| [AppBase.cpp](AppBase.cpp#L193-L237) | resize 전 resource 해제와 render target 재구성 |
+| [AppBase.cpp](AppBase.cpp#L245-L257) | signed cursor 좌표 저장 |
+| [AppBase.cpp](AppBase.cpp#L571-L665) | ID render target와 1×1 staging texture 구성 |
+| [ExampleApp.cpp](ExampleApp.cpp#L221-L347) | texture bounds 검사와 cursor pixel readback |
+| [ExampleApp.cpp](ExampleApp.cpp#L325-L344) | ID color와 object highlight 상태 연결 |
+| [ExampleApp.cpp](ExampleApp.cpp#L425-L433) | resize 전 filter 해제와 재구성 |
 
 ## Capture/Result
 
@@ -34,6 +37,7 @@ Object ID color를 별도 render target에 기록하고 cursor의 한 pixel을 s
 ## Limitations
 
 - 매 frame GPU readback을 수행해 동기화 비용이 있다.
+- Cursor가 실제 ID texture 범위를 벗어나면 readback을 생략하고 이전 hover 상태를 유지한다.
 - MSAA edge resolve와 exact color 비교는 경계 pixel에서 선택을 놓칠 수 있다.
 - Scene asset 원본은 비공개 runtime dependency로 유지하고 직접 실행 visual만 공개한다.
 
