@@ -26,9 +26,7 @@
 
 ## Chapter09 runtime asset limitation
 
-`SRC-P3-C09` raw import에서 archive로 이동한 다음 asset은 Step1~6 실행 재현용
-원본으로 유지한다. Runtime 사용과 SHA-256은 확인했지만 원저작자, 공식 배포처와
-재배포 license는 완전히 확정하지 않았다.
+`SRC-P3-C09` raw import에서 archive로 이동한 다음 asset은 Step1~6 실행 재현용 원본으로 유지한다. Runtime 사용과 SHA-256은 확인했지만 원저작자, 공식 배포처와 재배포 license는 완전히 확정하지 않았다.
 
 | ID | Asset | 사용 범위 | SHA-256 | 처리 |
 | --- | --- | --- | --- | --- |
