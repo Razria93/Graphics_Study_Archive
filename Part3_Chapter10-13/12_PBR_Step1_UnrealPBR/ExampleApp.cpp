@@ -63,6 +63,11 @@ bool ExampleApp::Initialize() {
         m_mainSphere.m_irradianceSRV = m_cubeMapping.m_irradianceSRV;
         m_mainSphere.m_specularSRV = m_cubeMapping.m_specularSRV;
         m_mainSphere.m_brdfSRV = m_cubeMapping.m_brdfSRV;
+        m_mainSphere.m_basicPixelConstData.useAlbedoMap = 1;
+        m_mainSphere.m_basicPixelConstData.useNormalMap = 1;
+        m_mainSphere.m_basicPixelConstData.useAOMap = 1;
+        m_mainSphere.m_basicPixelConstData.useMetallicMap = 1;
+        m_mainSphere.m_basicPixelConstData.useRoughnessMap = 1;
         m_mainSphere.UpdateModelWorld(Matrix::CreateTranslation(center));
         m_mainSphere.UpdateConstantBuffers(m_device, m_context);
 
