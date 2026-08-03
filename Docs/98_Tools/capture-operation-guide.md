@@ -101,6 +101,18 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 - 불필요한 parameter 왕복, click, mouse movement와 대기를 확인한다.
 - screenshot대비 video가 추가 설명 가치를 갖는지 확인한다.
 
+## Selected video 기반 Storyboard
+
+1. Selected video에서 입력 전, 입력 중과 결과 상태처럼 의미가 다른 frame을 2~5개 고른다.
+2. Frame을 같은 application bounds, crop과 scale로 맞춘다.
+3. 각 frame에 읽기 순서와 짧은 상태 label을 넣는다.
+4. 2장은 2열, 3장은 3열, 4장은 2×2, 5장은 3+2 구성을 기본으로 사용한다.
+5. GitHub 문서 폭에서 title, UI와 결과 차이가 읽히는지 확인한다.
+6. 원본 video와 대조해 label, 입력 상태와 결과가 실제 sequence와 일치하는지 확인한다.
+7. 기술 검수와 공개 안전성 검수를 통과한 최종 PNG만 tracked capture로 승격한다.
+
+균등 간격 frame을 나열한 QA contact sheet는 누락 frame과 black frame을 찾는 local 검사 자료다. 공개 storyboard는 시간 간격이 아니라 설명할 상태를 기준으로 frame을 선별한다.
+
 ## 승격과 게시 전 확인
 
 1. raw, attempt와 selected는 `local/`에 유지한다.

@@ -17,6 +17,18 @@ Demo가 보여주는 결과와 기술적 목표를 2~4문장으로 정의한다.
 
 ![Result](../../_assets/captures/<tracked-result>.png)
 
+동적 입력이나 상태 전환을 storyboard로 설명할 때는 다음 항목을 사용한다.
+
+### <Storyboard 제목>
+
+`<초기 상태> → <입력 상태> → <결과 상태>` 순서로 왼쪽 위에서 오른쪽 아래로 본다.
+
+![Storyboard](../../_assets/captures/<tracked-storyboard>.png)
+
+- 입력 변화:
+- 관찰 지점:
+- 구현 결과:
+
 ## 입력과 출력
 
 | 구분 | 내용 |

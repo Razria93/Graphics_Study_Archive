@@ -70,6 +70,17 @@ Video 필요성은 `필수`, `선택`, `생략`으로 구분한다. 이 판정�
 
 필수 또는 선택 video가 있는 Demo도 핵심 상태 screenshot과 텍스트 설명만으로 주요 구현과 결과를 이해할 수 있게 작성한다.
 
+## 동적 결과 Storyboard 기준
+
+Storyboard는 검증된 screenshot 또는 selected video에서 의미 있는 상태 2~5개를 선별해 하나의 읽기 순서로 구성한 comparison image다. 시간 간격대로 자동 추출한 QA contact sheet와 구분하며, 독자가 입력과 결과 변화를 정지 화면만으로 따라갈 수 있을 때 사용한다.
+
+- 입력·상태 전환이 핵심이면 storyboard를 사용하고 속도·연속성 자체가 핵심이면 video를 함께 유지한다.
+- 각 frame에는 순번과 짧은 상태 label을 두고 같은 crop, scale과 application bounds를 유지한다.
+- 상세 Demo는 시트 제목, 읽는 순서, 입력 변화, 관찰 지점과 구현 결과를 함께 설명한다.
+- Storyboard 하나는 같은 변화 축을 설명하는 visual unit 하나로 센다.
+- 원본 frame, QA contact sheet와 조합 중간 파일은 `local/`에 두고 검수한 최종 storyboard만 `Docs/_assets/captures`에 둔다.
+- Storyboard는 selected video를 대체하지 않는다. Video의 게시 여부와 lifecycle은 별도로 관리한다.
+
 ## Video lifecycle과 위치
 
 Video 상태와 위치는 다음과 같이 구분한다.
