@@ -11,7 +11,25 @@ Keyboard와 cursor 입력이 camera view 변화로 이어지는 Chapter09의 입
 
 ## 결과 미리보기
 
-![Chapter09 Step1 FirstPersonView](../../_assets/captures/part3_chapter09_01_first_person_view.png)
+### WASD 이동
+
+`Initial → W → S → A → D` 순서로 왼쪽 위에서 오른쪽 아래로 본다.
+
+![Chapter09 Step1 WASD storyboard](../../_assets/captures/part3_chapter09_01_first_person_view_wasd_storyboard.png)
+
+- 입력 변화: 각 방향 key를 2초간 누른 뒤 release한다.
+- 관찰 지점: 같은 정면 기준에서 camera position 변화가 지면 숫자와 원경의 상대 위치에 반영된다.
+- 구현 결과: Keyboard 상태와 frame delta가 camera translation으로 누적된다.
+
+### Mouse-look 시선 전환
+
+`Center → Left → Center → Right → Center` 순서로 왼쪽 위에서 오른쪽 아래로 본다.
+
+![Chapter09 Step1 mouse-look storyboard](../../_assets/captures/part3_chapter09_01_first_person_view_mouse_look_storyboard.png)
+
+- 입력 변화: Cursor를 중앙에서 왼쪽 끝과 오른쪽 끝으로 각각 5초간 drag한다.
+- 관찰 지점: 수평 입력 방향에 따라 camera yaw가 바뀌고 중앙으로 돌아오면 정면 view가 복구된다.
+- 구현 결과: 절대 cursor NDC가 camera orientation에 직접 연결된다.
 
 ## 입력과 출력
 
@@ -38,7 +56,7 @@ Keyboard와 cursor 입력이 camera view 변화로 이어지는 Chapter09의 입
 
 ## 시각 결과
 
-Ground plane과 cubemap scene은 camera orientation과 perspective 기준선을 제공한다. 기본 정면 PNG와 W→S→A→D 이동, 중앙→왼쪽→중앙→오른쪽→중앙 시선 전환을 분리한 selected local video 두 개로 입력 결과를 확인한다.
+두 storyboard는 translation과 orientation을 별도 변화 축으로 보여준다. 연속 이동 속도와 camera 전환 과정은 selected local video 두 개에서 확인한다.
 
 ## 구현 범위와 한계
 

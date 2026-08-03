@@ -11,7 +11,15 @@ Sphere 표면의 pointer drag를 quaternion 회전으로 바꾸는 object-surfac
 
 ## 결과 미리보기
 
-![Chapter09 Step5 VirtualTrackball](../../_assets/captures/part3_chapter09_05_virtual_trackball.png)
+### Surface drag 회전
+
+`Initial → Dragging → Rotated` 순서로 왼쪽에서 오른쪽으로 본다.
+
+![Chapter09 Step5 virtual trackball storyboard](../../_assets/captures/part3_chapter09_05_virtual_trackball_storyboard.png)
+
+- 입력 변화: Sphere 표면에서 pointer를 누른 채 연속 drag한다.
+- 관찰 지점: Surface texture 방향이 drag 경로를 따라 바뀌고 종료 상태에 회전이 누적된다.
+- 구현 결과: 시작·현재 hit vector 사이의 quaternion이 model rotation에 합성된다.
 
 ## 입력과 출력
 

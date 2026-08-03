@@ -11,7 +11,15 @@ Axis-angle UI를 quaternion과 model rotation matrix로 변환하는 수치 기�
 
 ## 결과 미리보기
 
-![Chapter09 Step4 QuaternionRotation](../../_assets/captures/part3_chapter09_04_quaternion_rotation.png)
+### Axis별 회전
+
+`Initial → X Axis → Y Axis → Z Axis` 순서로 왼쪽 위에서 오른쪽 아래로 본다.
+
+![Chapter09 Step4 axis rotation storyboard](../../_assets/captures/part3_chapter09_04_quaternion_rotation_storyboard.png)
+
+- 입력 변화: X, Y와 Z axis를 각각 선택하고 `quatTheta`를 약 π/2까지 조절한다.
+- 관찰 지점: 같은 sphere texture의 방향이 선택한 회전축에 따라 서로 다르게 바뀐다.
+- 구현 결과: Axis-angle UI가 unit quaternion과 model rotation matrix로 변환된다.
 
 ## 입력과 출력
 

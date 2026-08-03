@@ -11,9 +11,15 @@ Cursor에서 만든 world-space ray와 bounding sphere의 CPU collision으로 ob
 
 ## 결과 미리보기
 
-![Chapter09 Step3 MousePickingRayCollision](../../_assets/captures/part3_chapter09_03_mouse_picking_ray_collision.png)
+### Press lifecycle
 
-![Chapter09 Step3 MousePickingRayCollision Press](../../_assets/captures/part3_chapter09_03_mouse_picking_ray_collision_press.png)
+`Release → Press → Press + Move → Release` 순서로 왼쪽 위에서 오른쪽 아래로 본다.
+
+![Chapter09 Step3 picking lifecycle storyboard](../../_assets/captures/part3_chapter09_03_mouse_picking_ray_collision_storyboard.png)
+
+- 입력 변화: Earth sphere에서 pointer를 누른 채 이동한 뒤 release한다.
+- 관찰 지점: Press 중 hit marker가 나타나 cursor ray를 따라 이동하고 release하면 사라진다.
+- 구현 결과: World-space ray와 bounding sphere 교차 결과가 pointer capture lifecycle에 연결된다.
 
 ## 입력과 출력
 

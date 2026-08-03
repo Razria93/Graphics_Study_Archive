@@ -11,7 +11,15 @@ Picking ray의 drag 시작 depth를 보존해 sphere를 world space에서 이동
 
 ## 결과 미리보기
 
-![Chapter09 Step6 MouseDragMove](../../_assets/captures/part3_chapter09_06_mouse_drag_move.png)
+### Screen drag 이동
+
+`Initial → Right → Up` 순서로 왼쪽에서 오른쪽으로 본다.
+
+![Chapter09 Step6 mouse drag move storyboard](../../_assets/captures/part3_chapter09_06_mouse_drag_move_storyboard.png)
+
+- 입력 변화: Sphere를 오른쪽으로 drag한 뒤 위쪽으로 이어서 이동한다.
+- 관찰 지점: Object가 cursor 방향을 따라 이동하면서 기존 camera depth를 유지한다.
+- 구현 결과: Drag 시작 hit ratio가 현재 cursor ray의 world position과 model translation으로 변환된다.
 
 ## 입력과 출력
 

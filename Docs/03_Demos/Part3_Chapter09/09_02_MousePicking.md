@@ -11,9 +11,15 @@ GPU가 기록한 object ID color를 cursor 위치에서 읽어 hover object를 �
 
 ## 결과 미리보기
 
-![Chapter09 Step2 MousePicking](../../_assets/captures/part3_chapter09_02_mouse_picking.png)
+### Hover 판정
 
-![Chapter09 Step2 MousePicking Hover](../../_assets/captures/part3_chapter09_02_mouse_picking_hover.png)
+`Not Hovered → Hovered` 순서로 왼쪽에서 오른쪽으로 본다.
+
+![Chapter09 Step2 hover storyboard](../../_assets/captures/part3_chapter09_02_mouse_picking_hover_storyboard.png)
+
+- 입력 변화: Cursor를 배경에서 왼쪽 sphere 위로 이동한다.
+- 관찰 지점: 선택되지 않은 기본 상태가 red highlight로 바뀐다.
+- 구현 결과: Cursor pixel의 ID color readback이 object highlight state에 연결된다.
 
 ## 입력과 출력
 
