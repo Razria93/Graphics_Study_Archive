@@ -231,9 +231,14 @@ LRESULT AppBase::MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 
         break;
     case WM_LBUTTONDOWN:
+        SetCapture(hwnd);
         m_leftButton = true;
         break;
     case WM_LBUTTONUP:
+        m_leftButton = false;
+        ReleaseCapture();
+        break;
+    case WM_CAPTURECHANGED:
         m_leftButton = false;
         break;
     case WM_KEYDOWN:
