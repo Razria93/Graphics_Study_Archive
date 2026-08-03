@@ -5,7 +5,8 @@ Geometry pipeline, texturing, PBR와 light/shadow를 순차적으로 확장하�
 ## 현재 상태
 
 - Chapter10 Step1→5: 현재 Debug/Release x64 build/run과 capture 완료
-- Chapter11→13: 과거 build/run 확인, 현재 순차 재검증 진행 예정
+- Chapter11 Step1→5: 현재 Debug/Release x64 build/run과 capture 완료
+- Chapter12→13: 과거 build/run 확인, 현재 순차 재검증 진행 예정
 - Source provenance: [`SRC-P3-C10-13`](../Docs/99_Legacy/source-registry.md)
 - Public readiness: Chapter별 rendered evidence와 asset 기록을 확인해 판정
 
@@ -21,11 +22,13 @@ Geometry pipeline, texturing, PBR와 light/shadow를 순차적으로 확장하�
 
 ## Chapter11 Texturing Techniques
 
-1. `11_TexturingTechniques_Step1_Mipmaps`
-2. `11_TexturingTechniques_Step2_NormalMapping`
-3. `11_TexturingTechniques_Step3_HeightMapping`
-4. `11_TexturingTechniques_Step4_HDRI`
-5. `11_TexturingTechniques_Step5_HDRPipeline`
+| 단계 | 핵심 변화 | 상태 |
+| --- | --- | --- |
+| [Step1 Mipmaps](11_TexturingTechniques_Step1_Mipmaps/README.md) | 명시적 mip level sampling | 현재 확인 완료 |
+| [Step2 NormalMapping](11_TexturingTechniques_Step2_NormalMapping/README.md) | Tangent-space normal과 TBN 변환 | 현재 확인 완료 |
+| [Step3 HeightMapping](11_TexturingTechniques_Step3_HeightMapping/README.md) | Vertex displacement와 silhouette 변화 | 현재 확인 완료 |
+| [Step4 HDRI](11_TexturingTechniques_Step4_HDRI/README.md) | EXR load와 exposure·gamma 표시 | 현재 확인 완료 |
+| [Step5 HDRPipeline](11_TexturingTechniques_Step5_HDRPipeline/README.md) | Bloom pyramid와 HDR composite | 현재 확인 완료 |
 
 ## Chapter12 PBR
 

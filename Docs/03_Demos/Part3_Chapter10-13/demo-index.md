@@ -13,6 +13,7 @@
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 최소 capture | [Step1 Demo](10_01_GeometryShader.md) | [Step1 README](../../../Part3_Chapter10-13/10_GeometryPipeline_Step1_GeometryShader/README.md) | [Geometry Shader](../../01_Topics/ModelingAndGeometry/GeometryShaderAndBillboards.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Docs/_assets PNG](../../_assets/captures/part3_chapter10_01_geometry_shader.png) | 미게시 | 확보 | Geometry shader 기준선 |
 | 대표 capture | [Step5 Demo](10_05_Tessellation.md) | [Step5 README](../../../Part3_Chapter10-13/10_GeometryPipeline_Step5_Tessellation/README.md) | [Tessellation](../../01_Topics/ModelingAndGeometry/TessellationPipeline.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Docs/_assets PNG](../../_assets/captures/part3_chapter10_05_tessellation.png) | 미게시 | 후보 | Chapter10 대표 후보 |
+| 대표 capture | [Chapter11 Step5 Demo](11_05_HDRPipeline.md) | [Step5 README](../../../Part3_Chapter10-13/11_TexturingTechniques_Step5_HDRPipeline/README.md) | [HDR Pipeline](../../01_Topics/TexturingAndMapping/HDRRenderingPipeline.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Docs/_assets PNG](../../_assets/captures/part3_chapter11_05_hdr_pipeline.png) | 미게시 | 후보 | Chapter11 대표 후보 |
 | video | [Step4 Demo](10_04_Fireball.md) | [Step4 README](../../../Part3_Chapter10-13/10_GeometryPipeline_Step4_Fireball/README.md) | [Runtime Inputs](../../01_Topics/DirectX11Pipeline/ShadertoyRuntimeInputs.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | 없음 | 미게시 | 제외 | 정지 image로 형태와 phase 차이 확인 가능 |
 
 ## Chapter10 Geometry Pipeline
@@ -27,11 +28,23 @@
 
 Chapter10의 순차 흐름은 point primitive 확장, billboard, diagnostic normal, procedural animation과 tessellation으로 이어진다. Step5는 원래 Manual 경로와 사용자 확장 Distance Adaptive 경로를 하나의 상세 Demo에서 명확히 분리한다.
 
+## Chapter11 Texturing Techniques
+
+| 단계 | 상세 Demo | Capture | 상태 |
+| --- | --- | --- | --- |
+| Step1 Mipmaps | [Demo](11_01_Mipmaps.md) | [PNG](../../_assets/captures/part3_chapter11_01_mipmaps.png) | 완료 |
+| Step2 NormalMapping | [Demo](11_02_NormalMapping.md) | [PNG](../../_assets/captures/part3_chapter11_02_normal_mapping.png) | 완료 |
+| Step3 HeightMapping | [Demo](11_03_HeightMapping.md) | [PNG](../../_assets/captures/part3_chapter11_03_height_mapping.png) | 완료 |
+| Step4 HDRI | [Demo](11_04_HDRI.md) | [PNG](../../_assets/captures/part3_chapter11_04_hdri.png) | 완료 |
+| Step5 HDRPipeline | [Demo](11_05_HDRPipeline.md) | [PNG](../../_assets/captures/part3_chapter11_05_hdr_pipeline.png) | 완료 |
+
+Chapter11의 순차 흐름은 texture LOD, shading normal, vertex displacement, HDR image 표시와 전체 post-process pipeline으로 이어진다. 대표 후보는 여러 stage의 결합과 시각적 차이를 함께 보여주는 Step5 HDRPipeline으로 둔다.
+
 ## 이후 Chapter 후보
 
 | Chapter | 순차 범위 | 상태 | 대표 후보 |
 | --- | --- | --- | --- |
-| Chapter11 | Mipmaps → HDR Pipeline | 현재 재검증 예정 | HDR Pipeline |
+| Chapter11 | Mipmaps → HDR Pipeline | 현재 확인 완료 | HDR Pipeline |
 | Chapter12 | Unreal PBR → PBR Models | 현재 재검증 예정 | Unreal PBR material matrix |
 | Chapter13 | Mirror → Unreal Sphere Light | 현재 재검증 예정 | ShadowMapping·PCF·PCSS 비교 |
 

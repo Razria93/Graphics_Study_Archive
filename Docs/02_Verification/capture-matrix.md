@@ -15,7 +15,7 @@
 | Part2_Chapter04 | 확보 | 확보 | 확보 | Step1 Triangle부터 Step10 Lights까지 순차 screenshot을 확보했다. Step10은 Directional·Point·Spot 3장을 같은 기본 parameter로 비교하며 video를 제외한다. Chapter 대표 Demo는 Step8 PerspectiveProjection으로 유지하고 Step10은 기술 보조 Demo로 확정한다 |
 | Part2_Chapter05-08 | 확보 | 후보 | 확보 | Chapter05 Step1·3과 Chapter06 Step1 console 예제는 capture를 제외한다. Chapter05 Step2·4, Chapter06 Step2–9, Chapter07 Step1–9와 Chapter08 Step1–7 screenshot을 확보했다. Chapter06 Step3와 Chapter08 Step7 selected local video를 확인했다 |
 | Part3_Chapter09 | 확보 | 확보 | 확보 | Step1~6 기본 PNG, Step2 hover, Step3 press PNG와 Step1·3·4·5·6 selected local video를 foreground 검증 경로로 확보했다. |
-| Part3_Chapter10-13 | 확보 | 후보 | 선택 | Chapter10 Step1–5 전체 창 screenshot을 확보했다. Step4 animation은 정지 image로 형태와 phase를 확인해 video를 필수로 두지 않는다 |
+| Part3_Chapter10-13 | 확보 | 후보 | 선택 | Chapter10·11 Step1–5 전체 창 screenshot을 확보했다. Chapter11 대표 후보는 HDRPipeline이며 현재 단계에서 video는 필요하지 않다 |
 | Part4_Chapter14-20 | 미확인 | 미확인 | 미확인 | 구조 확인 후 후보 확정 |
 | Portfolio_RayTracer | 미확인 | 미확인 | 미확인 | 대표 포트폴리오 후보 |
 

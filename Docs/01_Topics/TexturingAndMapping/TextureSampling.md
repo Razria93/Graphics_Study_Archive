@@ -48,9 +48,13 @@ GPU sampling에서는 image byte를 저장하는 texture resource, shader가 res
 
 Chapter06 Step5는 generated PNG 2개를 RGBA8 immutable texture와 SRV로 만들고 `t0`·`t1`에 연결한다. Linear wrap sampler는 `s0`, texture 선택 경계는 constant buffer `b0`을 사용한다. Step5A는 같은 resource 흐름을 box의 textured point-light shading으로 확장하고 Step6는 같은 목재 texture를 Directional·Point·Spot 비교에 사용한다. Resource 생성·binding 같은 API 선택은 각 Example README, 결과 비교는 각 상세 Demo에서 설명한다.
 
+### Mipmap과 명시적 LOD
+
+Mipmap은 원본 texture를 단계적으로 축소한 image chain이다. 화면에서 texture가 작아질 때 낮은 해상도 level을 선택하면 고주파 detail의 aliasing을 줄일 수 있다. Chapter11 Step1은 자동 derivative 기반 LOD 대신 `SampleLevel`과 UI 값을 사용해 각 mip level의 결과를 직접 비교한다.
+
 ## 한계
 
-- Mipmap, trilinear와 anisotropic filtering은 다루지 않는다.
+- Trilinear와 anisotropic filtering은 다루지 않는다.
 - Color space와 gamma-correct filtering은 포함하지 않는다.
 - GPU sampler state의 API별 전체 option은 다루지 않는다.
 - Texture compression과 streaming은 포함하지 않는다.
@@ -61,10 +65,12 @@ Chapter06 Step5는 generated PNG 2개를 RGBA8 immutable texture와 SRV로 만�
 - Example: [Chapter06 Step5 Texturing README](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing/README.md)
 - Example: [Chapter06 Step5A Texturing LightingSelf README](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf/README.md)
 - Example: [Chapter06 Step6 Lighting README](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting/README.md)
+- Example: [Chapter11 Step1 Mipmaps README](../../../Part3_Chapter10-13/11_TexturingTechniques_Step1_Mipmaps/README.md)
 - Verification: [`Docs/02_Verification/Part1_Chapter03/verification-index.md`](../../02_Verification/Part1_Chapter03/verification-index.md)
 - Verification: [`Docs/02_Verification/Part2_Chapter05-08/verification-index.md`](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - Demo: [`Docs/03_Demos/Part1_Chapter03/demo-index.md`](../../03_Demos/Part1_Chapter03/demo-index.md)
 - Demo: [`Docs/03_Demos/Part2_Chapter05-08/06_Texturing.md`](../../03_Demos/Part2_Chapter05-08/06_Texturing.md)
 - Demo: [Chapter06 Step5A Texturing LightingSelf](../../03_Demos/Part2_Chapter05-08/06_TexturingLightingSelf.md)
 - Demo: [Chapter06 Step6 Lighting](../../03_Demos/Part2_Chapter05-08/06_Lighting.md)
+- Demo: [Chapter11 Step1 Mipmaps](../../03_Demos/Part3_Chapter10-13/11_01_Mipmaps.md)
 - Related Topic: [Barycentric Coordinates](../RayTracing/BarycentricCoordinates.md)
