@@ -1,33 +1,59 @@
 # Part3 Chapter10-13
 
-Advanced rendering 예제를 정리하는 폴더입니다.
+Geometry pipeline, texturing, PBR와 light/shadow를 순차적으로 확장하는 advanced rendering 묶음이다.
 
-## 상태
+## 현재 상태
 
-- 학습 코드 정리: private 검토 후 결정
-- Build/run: Step1-Step5, 11-Step1-Step5, 12-Step1-Step2, 13-Step1, 13-Step2 PipelineStateObject, 13-Step2 Shadow, 13-Step3, 13-Step4, 13-Step5, 13-Step6, 13-Step7, and 13-Step8 성공
-- 캡처: 보류
+- Chapter10 Step1→5: 현재 Debug/Release x64 build/run과 capture 완료
+- Chapter11→13: 과거 build/run 확인, 현재 순차 재검증 진행 예정
+- Source provenance: [`SRC-P3-C10-13`](../Docs/99_Legacy/source-registry.md)
+- Public readiness: Chapter별 rendered evidence와 asset 기록을 확인해 판정
 
-## Archive/Public 검토
+## Chapter10 Geometry Pipeline
 
-| 항목 | 상태 |
-| --- | --- |
-| Source provenance | [`SRC-P3-C10-13`](../Docs/99_Legacy/source-registry.md) |
-| Import status | Step1-Step5, 11-Step1-Step5, 12-Step1-Step2, 13-Step1, 13-Step2 PipelineStateObject, 13-Step2 Shadow, 13-Step3, 13-Step4, 13-Step5, 13-Step6, 13-Step7, and 13-Step8 imported |
-| Public readiness | 검토 필요 |
-| Build/run status | Step1-Step5, 11-Step1-Step5, 12-Step1-Step2, 13-Step1, 13-Step2 PipelineStateObject, 13-Step2 Shadow, 13-Step3, 13-Step4, 13-Step5, 13-Step6, 13-Step7, and 13-Step8 성공 |
-| Next action | Part3 Ch10-13 import 마무리 상태 확인 및 브랜치 정리 |
+| 단계 | 핵심 변화 | 상태 |
+| --- | --- | --- |
+| [Step1 GeometryShader](10_GeometryPipeline_Step1_GeometryShader/README.md) | Point에서 quad strip 생성 | 현재 확인 완료 |
+| [Step2 Billboards](10_GeometryPipeline_Step2_Billboards/README.md) | Camera-facing textured billboard | 현재 확인 완료 |
+| [Step3 NormalLines](10_GeometryPipeline_Step3_NormalLines/README.md) | Vertex normal diagnostic line | 현재 확인 완료 |
+| [Step4 Fireball](10_GeometryPipeline_Step4_Fireball/README.md) | Procedural animated billboard | 현재 확인 완료 |
+| [Step5 Tessellation](10_GeometryPipeline_Step5_Tessellation/README.md) | Manual·Distance Adaptive tessellation | 현재 확인 완료 |
+
+## Chapter11 Texturing Techniques
+
+1. `11_TexturingTechniques_Step1_Mipmaps`
+2. `11_TexturingTechniques_Step2_NormalMapping`
+3. `11_TexturingTechniques_Step3_HeightMapping`
+4. `11_TexturingTechniques_Step4_HDRI`
+5. `11_TexturingTechniques_Step5_HDRPipeline`
+
+## Chapter12 PBR
+
+1. `12_PBR_Step1_UnrealPBR`
+2. `12_PBR_Step2_PBRModels`
+
+## Chapter13 Light And Shadow
+
+1. `13_LightAndShadow_Step1_Mirror`
+2. `13_LightAndShadow_Step2_PipelineStateObject`
+3. `13_LightAndShadow_Step2_Shadow` — 공개 표시 `Step2B Shadow Prototype`
+4. `13_LightAndShadow_Step3_DepthBufferAndFog`
+5. `13_LightAndShadow_Step4_ShadowMapping`
+6. `13_LightAndShadow_Step5_SoftShadowPCF`
+7. `13_LightAndShadow_Step6_SoftShadowPCSS`
+8. `13_LightAndShadow_Step7_Halo`
+9. `13_LightAndShadow_Step8_UnrealSphereLight`
+
+## 문서 진입점
+
+- [Verification](../Docs/02_Verification/Part3_Chapter10-13/verification-index.md)
+- [Demo Index](../Docs/03_Demos/Part3_Chapter10-13/demo-index.md)
+- [Topics](../Docs/01_Topics/README.md)
+- [Publication](../Docs/05_Publication/candidate-list.md)
 
 ## Source 기준
 
-- primary와 reference source의 관계는 [`SRC-P3-C10-13`](../Docs/99_Legacy/source-registry.md)으로 추적한다.
-- reference-only snapshot은 build/run 실패나 기능 누락 의심 시에만 비교한다.
-- `_Solution` variant는 private archive 비교용 후보이며, 사용자 작업본과 섞지 않습니다.
-- 실행에 필요한 asset만 선별하고, raw result/capture/build output은 포함하지 않습니다.
-
-## 예정 주제
-
-- Geometry shader and billboards
-- Normal mapping and HDR pipeline
-- PBR materials
-- Shadow mapping, PCF, and PCSS
+- Primary와 reference source 관계는 source registry로 추적한다.
+- Reference-only snapshot은 build/run 실패나 기능 누락 의심 시에만 비교한다.
+- `_Solution` variant는 private 비교 후보로 유지하고 사용자 작업본과 섞지 않는다.
+- 실행에 필요한 asset만 유지하고 raw result, 임시 capture와 build output은 추적하지 않는다.

@@ -10,7 +10,7 @@
 | Chapter | 코드 | Build/run | Example | Topic | Demo | Publication |
 | --- | --- | --- | --- | --- | --- | --- |
 | Chapter09 | 보관 완료 | Step1–6 현재 확인 | Step1–6 작성 | camera·picking·quaternion 작성 | Step1–6 작성 | Step5 public 후보, 나머지 공개 가능 |
-| Chapter10-13 | 보관 완료 | 과거 확인 | 대기 | 대기 | 대기 | 대기 |
+| Chapter10-13 | 보관 완료 | Chapter10 현재 확인 | Chapter10 작성 | geometry·tessellation 작성 | Chapter10 작성 | rendered evidence 검토 |
 
 ## Chapter09 결정
 
@@ -48,7 +48,7 @@
 1. Chapter09 review 수정 커밋을 push한 뒤 [PR #23](https://github.com/Razria93/Graphics_Study_Archive/pull/23)의 review 답글과 thread resolve를 별도 승인으로 수행한다.
 2. merge 직전 current-state와 unresolved actionable review를 다시 감사한다.
 3. 원본 runtime asset 교체는 시간과 필요성을 검토하는 backlog로 유지한다.
-4. Chapter10-13 착수 감사를 수행한다.
+4. Chapter11 Texturing Techniques를 현재 재검증하고 순차 정규화한다.
 
 ## 관련 문서
 

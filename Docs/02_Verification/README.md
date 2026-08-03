@@ -28,7 +28,7 @@
 | Part2 Chapter04 | [Part2_Chapter04](Part2_Chapter04/verification-index.md) | 작성 완료 |
 | Part2 Chapter05-08 | [Part2_Chapter05-08](Part2_Chapter05-08/verification-index.md) | Chapter05 Step1–4와 Chapter06 Step1–5A 현재 확인 |
 | Part3 Chapter09 | [Part3_Chapter09](Part3_Chapter09/verification-index.md) | Step1–6 현재 확인 완료 |
-| Part3 Chapter10-13 | [Part3_Chapter10-13](Part3_Chapter10-13/verification-index.md) | 골격 작성 |
+| Part3 Chapter10-13 | [Part3_Chapter10-13](Part3_Chapter10-13/verification-index.md) | Chapter10 현재 확인 완료, Chapter11–13 진행 예정 |
 | Part4 Chapter14-20 | [Part4_Chapter14-20](Part4_Chapter14-20/verification-index.md) | 골격 작성 |
 | Portfolio RayTracer | [Portfolio_RayTracer](Portfolio_RayTracer/verification-index.md) | 골격 작성 |
 

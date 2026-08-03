@@ -6,6 +6,8 @@
 
 - [Mesh Topology And Wireframe Rasterization](MeshTopologyAndWireframeRasterization.md)
 - [Vertex And Face Normals](VertexAndFaceNormals.md)
+- [Geometry Shader And Billboards](GeometryShaderAndBillboards.md)
+- [Tessellation Pipeline](TessellationPipeline.md)
 - [Procedural Primitive Generation](ProceduralPrimitiveGeneration.md)
 - [Model File Import](ModelFileImport.md)
 - [Topic Index](topic-index.md)
