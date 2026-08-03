@@ -231,11 +231,16 @@ LRESULT AppBase::MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 
         break;
     case WM_LBUTTONDOWN:
+        SetCapture(hwnd);
         if (!m_leftButton)          // 현재 호출이 LBUTTONDOWN의 최초호출인지 체크하는 방식
             m_dragStartFlag = true; // 드래그를 새로 시작하는지 확인
         m_leftButton = true;
         break;
     case WM_LBUTTONUP:
+        m_leftButton = false;
+        ReleaseCapture();
+        break;
+    case WM_CAPTURECHANGED:
         m_leftButton = false;
         break;
     case WM_KEYDOWN:
@@ -310,7 +315,9 @@ bool AppBase::InitMainWindow() {
     AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, false);
 
     // 윈도우를 만들때 위에서 계산한 wr 사용
-    m_mainWindow = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example",
+    m_mainWindow = CreateWindow(
+        wc.lpszClassName,
+        L"ComputerGraphics - Chapter09 Step5 VirtualTrackball",
                                 WS_OVERLAPPEDWINDOW,
                                 100, // 윈도우 좌측 상단의 x 좌표
                                 100, // 윈도우 좌측 상단의 y 좌표
