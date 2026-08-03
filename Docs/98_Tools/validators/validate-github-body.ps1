@@ -590,6 +590,10 @@ function Test-PrVisualAndDemoLinks {
 		Add-Failure $RelativePath "PR body must use no more than one representative visual"
 	}
 
+	if (Test-GitHubStandaloneVideoAttachment -Content $Content) {
+		Add-Failure $RelativePath "PR body must link the Demo Issue video comment instead of embedding a video attachment"
+	}
+
 	foreach ($Image in $Images) {
 		$Url = $Image.Groups[1].Value
 		if (-not (Test-GitHubImageUrl -Url $Url)) {
