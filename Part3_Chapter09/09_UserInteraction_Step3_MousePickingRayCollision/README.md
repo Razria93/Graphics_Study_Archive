@@ -22,9 +22,7 @@ Cursor near/far NDC를 world space로 역변환해 CPU picking ray를 만들고 
 
 ![Chapter09 Step3 MousePickingRayCollision](../../Docs/_assets/captures/part3_chapter09_03_mouse_picking_ray_collision.png)
 
-![Chapter09 Step3 MousePickingRayCollision Press](../../Docs/_assets/captures/part3_chapter09_03_mouse_picking_ray_collision_press.png)
-
-Press, sphere 안쪽 marker 이동과 release는 selected local video로 확인한다.
+Press, sphere 안쪽 marker 이동과 release sequence는 [상세 Demo](../../Docs/03_Demos/Part3_Chapter09/09_03_MousePickingRayCollision.md)와 selected local video로 확인한다.
 
 ## Verification
 

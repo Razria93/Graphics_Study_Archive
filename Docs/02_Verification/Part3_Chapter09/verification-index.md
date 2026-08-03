@@ -32,6 +32,8 @@
 - application title과 Example 결과 일치
 - 외부 application UI, 계정, 로컬 경로와 개인 식별자 없음
 - Selected local video 8개는 H.264, `yuv420p`, 30 FPS, 1282×752, audio stream 0개와 full decode를 확인했다.
+- 검증된 screenshot과 selected local video에서 의미 상태를 선별한 storyboard PNG 7장의 full decode, label 순서와 source sequence 대응을 확인했다.
+- QA contact sheet와 중간 frame은 `local/`에 유지하고 최종 storyboard만 tracked capture로 승격했다.
 - Step1 mouse-look 31초는 사용자가 지정한 5초 이동 네 구간을 보존한 예외다.
 - Step4는 39.77초 통합 take를 선택하지 않고 X·Y·Z 축별 15초 파일 세 개로 분리했다.
 - source asset 권리 근거가 부족하므로 Publication은 `검토 필요`

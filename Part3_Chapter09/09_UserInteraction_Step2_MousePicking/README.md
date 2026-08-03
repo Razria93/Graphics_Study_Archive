@@ -21,7 +21,7 @@ Object ID color를 별도 render target에 기록하고 cursor의 한 pixel을 s
 
 ![Chapter09 Step2 MousePicking](../../Docs/_assets/captures/part3_chapter09_02_mouse_picking.png)
 
-![Chapter09 Step2 MousePicking Hover](../../Docs/_assets/captures/part3_chapter09_02_mouse_picking_hover.png)
+기본 상태와 hover red 상태의 비교는 [상세 Demo](../../Docs/03_Demos/Part3_Chapter09/09_02_MousePicking.md)에서 확인한다.
 
 ## Verification
 
