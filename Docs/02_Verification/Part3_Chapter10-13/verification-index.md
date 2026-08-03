@@ -8,8 +8,10 @@
 - Chapter10 현재 재검증: 완료
 - Chapter11 확인 시점: 2026-08-04
 - Chapter11 현재 재검증: 완료
-- Chapter12→13 확인 근거: 과거 확인
-- Chapter12→13 현재 재검증: 필요
+- Chapter12 확인 시점: 2026-08-04
+- Chapter12 현재 재검증: 완료
+- Chapter13 확인 근거: 과거 확인
+- Chapter13 현재 재검증: 필요
 
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -23,8 +25,8 @@
 | `11_TexturingTechniques_Step3_HeightMapping` | `Part3_Chapter10-13/11_TexturingTechniques_Step3_HeightMapping/11_TexturingTechniques_Step3_HeightMapping.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · sphere height scale 0.04 |
 | `11_TexturingTechniques_Step4_HDRI` | `Part3_Chapter10-13/11_TexturingTechniques_Step4_HDRI/11_TexturingTechniques_Step4_HDRI.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · DirectXTex·OpenEXR runtime |
 | `11_TexturingTechniques_Step5_HDRPipeline` | `Part3_Chapter10-13/11_TexturingTechniques_Step5_HDRPipeline/11_TexturingTechniques_Step5_HDRPipeline.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · bloom strength 0.2 |
-| `12_PBR_Step1_UnrealPBR` | `Part3_Chapter10-13/12_PBR_Step1_UnrealPBR/12_PBR_Step1_UnrealPBR.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `12_PBR_Step2_PBRModels` | `Part3_Chapter10-13/12_PBR_Step2_PBRModels/12_PBR_Step2_PBRModels.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `12_PBR_Step1_UnrealPBR` | `Part3_Chapter10-13/12_PBR_Step1_UnrealPBR/12_PBR_Step1_UnrealPBR.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · PBR map 5종 On |
+| `12_PBR_Step2_PBRModels` | `Part3_Chapter10-13/12_PBR_Step2_PBRModels/12_PBR_Step2_PBRModels.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · Assimp model과 material map 5종 |
 | `13_LightAndShadow_Step1_Mirror` | `Part3_Chapter10-13/13_LightAndShadow_Step1_Mirror/13_LightAndShadow_Step1_Mirror.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `13_LightAndShadow_Step2_PipelineStateObject` | `Part3_Chapter10-13/13_LightAndShadow_Step2_PipelineStateObject/13_LightAndShadow_Step2_PipelineStateObject.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `13_LightAndShadow_Step2_Shadow` | `Part3_Chapter10-13/13_LightAndShadow_Step2_Shadow/13_LightAndShadow_Step2_Shadow.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |

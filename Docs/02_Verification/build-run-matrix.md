@@ -18,7 +18,7 @@
 | Part2_Chapter04 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 현재 확인 | 완료 | 확보 | Step1은 2026-07-31, Step1A·Step2·Step3·Step4·Step5·Step6·Step7·Step8·Step9·Step10은 2026-08-01 Debug/Release x64 현재 확인 |
 | Part2_Chapter05-08 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 현재 확인 | 완료 | 혼합 | Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–7은 2026-08-02 현재 확인. Chapter07 Step8–9와 Chapter08 Step1–7은 2026-08-03 Debug/Release x64 현재 확인 |
 | Part3_Chapter09 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 현재 확인 | 완료 | 확보 | Step1–6은 2026-08-03 Debug/Release x64 Clean/Rebuild와 run을 현재 확인했다. 전체 창 PNG, storyboard 7장과 selected local video 8개를 확보했다. |
-| Part3_Chapter10-13 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 혼합 | 진행 중 | 혼합 | Chapter10·11 Step1–5는 2026-08-04 Debug/Release x64 build와 run을 현재 확인했다. Chapter12–13은 과거 확인 상태다 |
+| Part3_Chapter10-13 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 혼합 | 진행 중 | 혼합 | Chapter10·11 Step1–5와 Chapter12 Step1–2는 2026-08-04 Debug/Release x64 build와 run을 현재 확인했다. Chapter13은 과거 확인 상태다 |
 | Part4_Chapter14-20 | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 과거 확인 | 필요 | 미확인 | 문서화 이전 Ex1401~Ex2001 확인, 날짜 미기록 |
 | Portfolio_RayTracer | solution 확인 필요 | 미확인 | 미확인 | 미확인 | 미확인 | 없음 | 해당 없음 | 미확인 | 프로젝트 구조와 실행 진입점 확인 필요 |
 

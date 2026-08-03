@@ -6,7 +6,8 @@ Geometry pipeline, texturing, PBR와 light/shadow를 순차적으로 확장하�
 
 - Chapter10 Step1→5: 현재 Debug/Release x64 build/run과 capture 완료
 - Chapter11 Step1→5: 현재 Debug/Release x64 build/run과 capture 완료
-- Chapter12→13: 과거 build/run 확인, 현재 순차 재검증 진행 예정
+- Chapter12 Step1→2: 현재 Debug/Release x64 build/run과 capture 완료
+- Chapter13: 과거 build/run 확인, 현재 순차 재검증 진행 예정
 - Source provenance: [`SRC-P3-C10-13`](../Docs/99_Legacy/source-registry.md)
 - Public readiness: Chapter별 rendered evidence와 asset 기록을 확인해 판정
 
@@ -32,8 +33,10 @@ Geometry pipeline, texturing, PBR와 light/shadow를 순차적으로 확장하�
 
 ## Chapter12 PBR
 
-1. `12_PBR_Step1_UnrealPBR`
-2. `12_PBR_Step2_PBRModels`
+| 단계 | 핵심 변화 | 상태 |
+| --- | --- | --- |
+| [Step1 UnrealPBR](12_PBR_Step1_UnrealPBR/README.md) | Metallic-roughness PBR와 IBL | 현재 확인 완료 |
+| [Step2 PBRModels](12_PBR_Step2_PBRModels/README.md) | Imported model의 PBR material binding | 현재 확인 완료 |
 
 ## Chapter13 Light And Shadow
 

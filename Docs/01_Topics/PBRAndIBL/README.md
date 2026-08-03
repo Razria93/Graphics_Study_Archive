@@ -13,15 +13,17 @@
 - [Topic Index](topic-index.md)
 - [Image Based Lighting](../LightingAndShading/ImageBasedLighting.md)
 - [Fresnel Reflectance](../LightingAndShading/FresnelReflectance.md)
+- [PBR Material Model](PBRMaterialModel.md)
+- [Metallic Roughness Workflow](MetallicRoughnessWorkflow.md)
 
 ## 상태
 
 - Topic 목록: 작성
-- 상세 Topic 문서: Image Based Lighting과 Fresnel Reflectance는 `LightingAndShading` 정본으로 연결, PBR Material Model과 Metallic Roughness Workflow는 예정
+- 상세 Topic 문서: PBR Material Model과 Metallic Roughness Workflow 작성
 - 연결 예제 검토: Part2 Chapter08 Step4·5 현재 확인
-- demo 연결: Chapter08 Step4 ImageBasedLighting과 Step5 FresnelEffect 상세 Demo 연결
+- demo 연결: Chapter08 IBL·Fresnel과 Chapter12 Step1·2 상세 Demo 연결
 
 ## 다음 작업
 
-1. Part3 예제에서 PBR Material Model과 Metallic Roughness Workflow를 확인한다.
-2. HDRI와 prefiltered environment 적용 범위를 검토한다.
+1. Chapter13 light와 shadow가 PBR direct lighting에 미치는 영향을 연결한다.
+2. Layered material과 area light 확장 범위를 검토한다.

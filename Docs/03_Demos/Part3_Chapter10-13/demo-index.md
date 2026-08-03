@@ -14,6 +14,7 @@
 | 최소 capture | [Step1 Demo](10_01_GeometryShader.md) | [Step1 README](../../../Part3_Chapter10-13/10_GeometryPipeline_Step1_GeometryShader/README.md) | [Geometry Shader](../../01_Topics/ModelingAndGeometry/GeometryShaderAndBillboards.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Docs/_assets PNG](../../_assets/captures/part3_chapter10_01_geometry_shader.png) | 미게시 | 확보 | Geometry shader 기준선 |
 | 대표 capture | [Step5 Demo](10_05_Tessellation.md) | [Step5 README](../../../Part3_Chapter10-13/10_GeometryPipeline_Step5_Tessellation/README.md) | [Tessellation](../../01_Topics/ModelingAndGeometry/TessellationPipeline.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Docs/_assets PNG](../../_assets/captures/part3_chapter10_05_tessellation.png) | 미게시 | 후보 | Chapter10 대표 후보 |
 | 대표 capture | [Chapter11 Step5 Demo](11_05_HDRPipeline.md) | [Step5 README](../../../Part3_Chapter10-13/11_TexturingTechniques_Step5_HDRPipeline/README.md) | [HDR Pipeline](../../01_Topics/TexturingAndMapping/HDRRenderingPipeline.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Docs/_assets PNG](../../_assets/captures/part3_chapter11_05_hdr_pipeline.png) | 미게시 | 후보 | Chapter11 대표 후보 |
+| 대표 capture | [Chapter12 Step1 Demo](12_01_UnrealPBR.md) | [Step1 README](../../../Part3_Chapter10-13/12_PBR_Step1_UnrealPBR/README.md) | [PBR Material](../../01_Topics/PBRAndIBL/PBRMaterialModel.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Docs/_assets PNG](../../_assets/captures/part3_chapter12_01_unreal_pbr.png) | 미게시 | 후보 | Chapter12 대표 후보 |
 | video | [Step4 Demo](10_04_Fireball.md) | [Step4 README](../../../Part3_Chapter10-13/10_GeometryPipeline_Step4_Fireball/README.md) | [Runtime Inputs](../../01_Topics/DirectX11Pipeline/ShadertoyRuntimeInputs.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | 없음 | 미게시 | 제외 | 정지 image로 형태와 phase 차이 확인 가능 |
 
 ## Chapter10 Geometry Pipeline
@@ -40,12 +41,21 @@ Chapter10의 순차 흐름은 point primitive 확장, billboard, diagnostic norm
 
 Chapter11의 순차 흐름은 texture LOD, shading normal, vertex displacement, HDR image 표시와 전체 post-process pipeline으로 이어진다. 대표 후보는 여러 stage의 결합과 시각적 차이를 함께 보여주는 Step5 HDRPipeline으로 둔다.
 
+## Chapter12 PBR
+
+| 단계 | 상세 Demo | Capture | 상태 |
+| --- | --- | --- | --- |
+| Step1 UnrealPBR | [Demo](12_01_UnrealPBR.md) | [PNG](../../_assets/captures/part3_chapter12_01_unreal_pbr.png) | 완료 |
+| Step2 PBRModels | [Demo](12_02_PBRModels.md) | [PNG](../../_assets/captures/part3_chapter12_02_pbr_models.png) | 완료 |
+
+Chapter12는 procedural sphere의 metallic-roughness material에서 imported model의 texture binding으로 확장한다. 대표 후보는 PBR 입력과 결과를 한 화면에서 명확히 읽을 수 있는 Step1 UnrealPBR로 둔다.
+
 ## 이후 Chapter 후보
 
 | Chapter | 순차 범위 | 상태 | 대표 후보 |
 | --- | --- | --- | --- |
 | Chapter11 | Mipmaps → HDR Pipeline | 현재 확인 완료 | HDR Pipeline |
-| Chapter12 | Unreal PBR → PBR Models | 현재 재검증 예정 | Unreal PBR material matrix |
+| Chapter12 | Unreal PBR → PBR Models | 현재 확인 완료 | Unreal PBR |
 | Chapter13 | Mirror → Unreal Sphere Light | 현재 재검증 예정 | ShadowMapping·PCF·PCSS 비교 |
 
 ## Video 판정
