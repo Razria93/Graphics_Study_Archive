@@ -33,7 +33,5 @@ Triangle-level picking, asynchronous readback, MSAA edge의 ID resolve와 다중
 ## 관련 문서
 
 - [Step2 Example](../../../Part3_Chapter09/09_UserInteraction_Step2_MousePicking/README.md)
-- [Step3 Example](../../../Part3_Chapter09/09_UserInteraction_Step3_MousePickingRayCollision/README.md)
 - [`Docs/03_Demos` Step2 Demo](../../03_Demos/Part3_Chapter09/09_02_MousePicking.md)
-- [`Docs/03_Demos` Step3 Demo](../../03_Demos/Part3_Chapter09/09_03_MousePickingRayCollision.md)
 - [`Docs/02_Verification`](../../02_Verification/Part3_Chapter09/verification-index.md)

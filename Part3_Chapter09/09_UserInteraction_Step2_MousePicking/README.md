@@ -41,4 +41,3 @@ Object ID color를 별도 render target에 기록하고 cursor의 한 pixel을 s
 - [Verification](../../Docs/02_Verification/Part3_Chapter09/verification-index.md)
 - [상세 Demo](../../Docs/03_Demos/Part3_Chapter09/09_02_MousePicking.md)
 - [이전 단계](../09_UserInteraction_Step1_FirstPersonView/README.md)
-- [다음 단계](../09_UserInteraction_Step3_MousePickingRayCollision/README.md)
