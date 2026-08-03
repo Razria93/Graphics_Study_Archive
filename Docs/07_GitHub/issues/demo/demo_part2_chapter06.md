@@ -61,7 +61,7 @@ Client size가 바뀌면 기존 render target과 depth resource를 해제하고 
 
 - 포함: DirectX11 초기화, MVP, shader·texture, Directional·Point·Spot lighting, viewport와 window resize
 - 한계: 단일 Light와 선형 distance attenuation을 사용하며 PBR, shadow와 HDR pipeline은 포함하지 않는다.
-- 한계: Resize interaction video는 후속 개선이며 현재 결과는 Compact·Default·Wide screenshot으로 검증한다.
+- 한계: 현재 resize 결과는 Compact·Default·Wide screenshot과 반복 resize로 검증한다.
 
 ## 검증
 
@@ -73,9 +73,9 @@ Client size가 바뀌면 기존 render target과 depth resource를 해제하고 
 
 ### Chapter 안내
 
-- [Part2 Chapter05-08 README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part2-chapter05-08-workflow/Part2_Chapter05-08/README.md)
-- [Chapter05-08 Demo Index](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part2-chapter05-08-workflow/Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
-- [Chapter05-08 Verification](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part2-chapter05-08-workflow/Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
+- [Part2 Chapter05-08 README](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Part2_Chapter05-08/README.md)
+- [Chapter05-08 Demo Index](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
+- [Chapter05-08 Verification](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 
 ### 대표 구현
 
@@ -89,5 +89,5 @@ Client size가 바뀌면 기존 render target과 depth resource를 해제하고 
 
 ### 관련 개념
 
-- [DirectX11 Pipeline Topics](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part2-chapter05-08-workflow/Docs/01_Topics/DirectX11Pipeline/README.md)
-- [Light Types](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part2-chapter05-08-workflow/Docs/01_Topics/LightingAndShading/LightTypes.md)
+- [DirectX11 Pipeline Topics](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/01_Topics/DirectX11Pipeline/README.md)
+- [Light Types](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/01_Topics/LightingAndShading/LightTypes.md)

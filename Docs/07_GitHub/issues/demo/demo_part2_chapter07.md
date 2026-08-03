@@ -73,9 +73,9 @@ Icosahedron triangle의 midpoint를 sphere에 다시 투영해 네 child triangl
 
 ### Chapter 안내
 
-- [Part2 Chapter05-08 README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part2-chapter05-08-workflow/Part2_Chapter05-08/README.md)
-- [Chapter05-08 Demo Index](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part2-chapter05-08-workflow/Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
-- [Chapter05-08 Verification](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part2-chapter05-08-workflow/Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
+- [Part2 Chapter05-08 README](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Part2_Chapter05-08/README.md)
+- [Chapter05-08 Demo Index](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
+- [Chapter05-08 Verification](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 
 ### 대표 구현
 

@@ -125,9 +125,9 @@ SubdivideTriangle(v0, v1, v2)
 - 20→80→320→1,280 triangle 증가와 최종 3,840 vertex 확인
 - Static UV 조사에서 seam-adjusted final triangle 50개와 pole duplicate U=0·1 분포 확인
 - Shader Model 5.0과 single texture SRV binding 확인
-- Resize·minimize/restore와 전체 창 screenshot은 최종 GUI 검수 후 확정
-- Generated input 1774×887 PNG의 dimensions, SHA-256와 metadata 검사 예정
-- Video는 seam·pole을 1~2개 screenshot으로 판독 가능한지 확인한 뒤 최종 제외 판정
+- Wide·compact resize, minimize/restore와 1282×992 전체 창 screenshot 확인
+- Generated input 1774×887 PNG와 capture의 dimensions, SHA-256와 metadata 검사 완료
+- Seam·pole과 mapping 결과를 정지 이미지에서 판독할 수 있어 video 제외
 
 ## 관련 코드
 
