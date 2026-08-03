@@ -6,7 +6,7 @@
 
 - 순차 흐름: Step1 camera → Step2 GPU picking → Step3 ray picking → Step4 quaternion → Step5 trackball → Step6 drag move
 - 주요 demo 후보: FirstPersonView, MousePicking, VirtualTrackball, MouseDragMove
-- 비고: Step1~6 screenshot과 interaction selected local video를 확보했으나 runtime asset 권리 근거 확인 전에는 GitHub 게시 후보로 선정하지 않는다.
+- 비고: 원본 runtime asset은 비공개로 유지하고 Step1~6의 직접 실행 visual은 승인된 Chapter09 Bundle 예외에 따라 공개 가능하다.
 
 ## Demo 목록
 
@@ -19,7 +19,7 @@
 | Step5 VirtualTrackball | [상세 Demo](09_05_VirtualTrackball.md) | [Example](../../../Part3_Chapter09/09_UserInteraction_Step5_VirtualTrackball/README.md) | [Quaternion And Virtual Trackball](../../01_Topics/AnimationAndPhysics/QuaternionAndVirtualTrackball.md) | [Verification](../../02_Verification/Part3_Chapter09/verification-index.md) | [surface drag](../../_assets/captures/part3_chapter09_05_virtual_trackball_storyboard.png) | 미게시 | 확보 | sphere surface vector 사이의 quaternion drag rotation |
 | Step6 MouseDragMove | [상세 Demo](09_06_MouseDragMove.md) | [Example](../../../Part3_Chapter09/09_UserInteraction_Step6_MouseDragMove/README.md) | [Picking And Screen Ray](../../01_Topics/AnimationAndPhysics/PickingAndScreenRay.md) | [Verification](../../02_Verification/Part3_Chapter09/verification-index.md) | [screen drag](../../_assets/captures/part3_chapter09_06_mouse_drag_move_storyboard.png) | 미게시 | 확보 | near/far hit ratio를 유지하는 object translation |
 | 최소 capture | [Step1 상세 Demo](09_01_FirstPersonView.md) | [Step1 Example](../../../Part3_Chapter09/09_UserInteraction_Step1_FirstPersonView/README.md) | [Camera Interaction](../../01_Topics/AnimationAndPhysics/CameraInteraction.md) | [Verification](../../02_Verification/Part3_Chapter09/verification-index.md) | [기본](../../_assets/captures/part3_chapter09_01_first_person_view.png) | 미게시 | 확보 | Chapter 최초 camera interaction visual |
-| 대표 capture | [Step2](09_02_MousePicking.md), [Step5](09_05_VirtualTrackball.md), [Step6](09_06_MouseDragMove.md) | [Chapter README](../../../Part3_Chapter09/README.md) | 관련 Topic | [Verification](../../02_Verification/Part3_Chapter09/verification-index.md) | [Picking](../../_assets/captures/part3_chapter09_02_mouse_picking.png), [Trackball](../../_assets/captures/part3_chapter09_05_virtual_trackball.png), [Drag](../../_assets/captures/part3_chapter09_06_mouse_drag_move.png) | 미게시 | 확보 | 권리 근거 확인 전 Publication 검토 필요 |
+| 대표 capture | [Step5](09_05_VirtualTrackball.md), [Step1](09_01_FirstPersonView.md), [Step6](09_06_MouseDragMove.md) | [Chapter README](../../../Part3_Chapter09/README.md) | 관련 Topic | [Verification](../../02_Verification/Part3_Chapter09/verification-index.md) | [Trackball](../../_assets/captures/part3_chapter09_05_virtual_trackball_storyboard.png), [Mouse-look](../../_assets/captures/part3_chapter09_01_first_person_view_mouse_look_storyboard.png), [Drag](../../_assets/captures/part3_chapter09_06_mouse_drag_move_storyboard.png) | [게시 후보](../../07_GitHub/issues/demo/demo_part3_chapter09.md) | 확보 | Step5를 대표, Step1과 Step6을 보조 visual로 선정 |
 | video | [Step1](09_01_FirstPersonView.md), [Step3](09_03_MousePickingRayCollision.md), [Step4](09_04_QuaternionRotation.md), [Step5](09_05_VirtualTrackball.md), [Step6](09_06_MouseDragMove.md) | [Chapter README](../../../Part3_Chapter09/README.md) | 관련 Topic | [Verification](../../02_Verification/Part3_Chapter09/verification-index.md) | selected local video 8개 | 미게시 | 확보 | Step별 조작과 길이는 [Video Plan](../video-plan.md)에 기록 |
 
 ## 갱신 기준
