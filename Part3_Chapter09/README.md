@@ -16,7 +16,7 @@ Chapter09는 camera 입력에서 시작해 GPU·CPU picking, quaternion 회전, 
 ## 검증 상태
 
 - Debug/Release x64 Clean/Rebuild와 run: Step1~6 성공, 2026-08-03 현재 확인
-- Capture: Step1~6 전체 창 PNG 확보
+- Capture: Step1~6 기본 PNG, Step2 hover·Step3 press PNG와 Step1·3·4·5·6 selected local video 확보
 - Runtime working directory: 각 project 폴더
 - Publication: cubemap, UV grid와 Earth texture의 권리 근거가 부족해 전체 bundle `검토 필요`
 

@@ -18,7 +18,9 @@
 - Step2와 Step3은 같은 문제의 GPU·CPU 비교이며 하나의 구현으로 합치지 않는다.
 - Raw `Quaternian` 경로는 유지하고 공개 문서에서는 `Quaternion`을 사용한다.
 - Cubemap, UV grid와 Earth texture는 권리 근거가 확인될 때까지 공개 대표 visual과 GitHub 게시 후보에서 제외한다.
-- 기본 screenshot 6장을 archive evidence로 추적하고 실패한 자동 interaction 후보는 `local/`에만 둔다.
+- 기본 screenshot 6장과 Step2 hover·Step3 press screenshot을 archive evidence로 추적한다.
+- Step1·3·4·5·6 selected video는 foreground 검증과 full decode를 통과한 local evidence로 유지한다.
+- 초기 foreground 검증 실패 후보와 39.77초 Step4 통합 take는 선택하지 않고 `local/`에만 둔다.
 
 ## 다음 작업
 
