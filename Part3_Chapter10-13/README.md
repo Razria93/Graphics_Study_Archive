@@ -7,7 +7,7 @@ Geometry pipeline, texturing, PBR와 light/shadow를 순차적으로 확장하�
 - Chapter10 Step1→5: 현재 Debug/Release x64 build/run과 capture 완료
 - Chapter11 Step1→5: 현재 Debug/Release x64 build/run과 capture 완료
 - Chapter12 Step1→2: 현재 Debug/Release x64 build/run과 capture 완료
-- Chapter13: 과거 build/run 확인, 현재 순차 재검증 진행 예정
+- Chapter13 Step1→8와 Step2B: 현재 Debug/Release x64 build/run과 capture 완료
 - Source provenance: [`SRC-P3-C10-13`](../Docs/99_Legacy/source-registry.md)
 - Public readiness: Chapter별 rendered evidence와 asset 기록을 확인해 판정
 
@@ -40,15 +40,17 @@ Geometry pipeline, texturing, PBR와 light/shadow를 순차적으로 확장하�
 
 ## Chapter13 Light And Shadow
 
-1. `13_LightAndShadow_Step1_Mirror`
-2. `13_LightAndShadow_Step2_PipelineStateObject`
-3. `13_LightAndShadow_Step2_Shadow` — 공개 표시 `Step2B Shadow Prototype`
-4. `13_LightAndShadow_Step3_DepthBufferAndFog`
-5. `13_LightAndShadow_Step4_ShadowMapping`
-6. `13_LightAndShadow_Step5_SoftShadowPCF`
-7. `13_LightAndShadow_Step6_SoftShadowPCSS`
-8. `13_LightAndShadow_Step7_Halo`
-9. `13_LightAndShadow_Step8_UnrealSphereLight`
+| 단계 | 핵심 변화 | 상태 |
+| --- | --- | --- |
+| [Step1 Mirror](13_LightAndShadow_Step1_Mirror/README.md) | Stencil mask와 reflected scene | 현재 확인 완료 |
+| [Step2 PipelineStateObject](13_LightAndShadow_Step2_PipelineStateObject/README.md) | Pipeline state 묶음과 같은 mirror 결과 | 현재 확인 완료 |
+| [Step2B Shadow Prototype](13_LightAndShadow_Step2_Shadow/README.md) | Depth pass와 shadowed main pass prototype | 현재 확인 완료 |
+| [Step3 DepthBufferAndFog](13_LightAndShadow_Step3_DepthBufferAndFog/README.md) | Depth reconstruction과 fog | 현재 확인 완료 |
+| [Step4 ShadowMapping](13_LightAndShadow_Step4_ShadowMapping/README.md) | Hard shadow와 depth bias | 현재 확인 완료 |
+| [Step5 SoftShadowPCF](13_LightAndShadow_Step5_SoftShadowPCF/README.md) | Fixed-kernel PCF | 현재 확인 완료 |
+| [Step6 SoftShadowPCSS](13_LightAndShadow_Step6_SoftShadowPCSS/README.md) | Blocker search와 variable penumbra | 현재 확인 완료 |
+| [Step7 Halo](13_LightAndShadow_Step7_Halo/README.md) | Depth-aware screen-space halo | 현재 확인 완료 |
+| [Step8 UnrealSphereLight](13_LightAndShadow_Step8_UnrealSphereLight/README.md) | Representative-point sphere light | 현재 확인 완료 |
 
 ## 문서 진입점
 

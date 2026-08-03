@@ -10,8 +10,8 @@
 - Chapter11 현재 재검증: 완료
 - Chapter12 확인 시점: 2026-08-04
 - Chapter12 현재 재검증: 완료
-- Chapter13 확인 근거: 과거 확인
-- Chapter13 현재 재검증: 필요
+- Chapter13 확인 시점: 2026-08-04
+- Chapter13 현재 재검증: 완료
 
 | 예제 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -27,15 +27,15 @@
 | `11_TexturingTechniques_Step5_HDRPipeline` | `Part3_Chapter10-13/11_TexturingTechniques_Step5_HDRPipeline/11_TexturingTechniques_Step5_HDRPipeline.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · bloom strength 0.2 |
 | `12_PBR_Step1_UnrealPBR` | `Part3_Chapter10-13/12_PBR_Step1_UnrealPBR/12_PBR_Step1_UnrealPBR.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · PBR map 5종 On |
 | `12_PBR_Step2_PBRModels` | `Part3_Chapter10-13/12_PBR_Step2_PBRModels/12_PBR_Step2_PBRModels.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · Assimp model과 material map 5종 |
-| `13_LightAndShadow_Step1_Mirror` | `Part3_Chapter10-13/13_LightAndShadow_Step1_Mirror/13_LightAndShadow_Step1_Mirror.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `13_LightAndShadow_Step2_PipelineStateObject` | `Part3_Chapter10-13/13_LightAndShadow_Step2_PipelineStateObject/13_LightAndShadow_Step2_PipelineStateObject.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `13_LightAndShadow_Step2_Shadow` | `Part3_Chapter10-13/13_LightAndShadow_Step2_Shadow/13_LightAndShadow_Step2_Shadow.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `13_LightAndShadow_Step3_DepthBufferAndFog` | `Part3_Chapter10-13/13_LightAndShadow_Step3_DepthBufferAndFog/13_LightAndShadow_Step3_DepthBufferAndFog.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `13_LightAndShadow_Step4_ShadowMapping` | `Part3_Chapter10-13/13_LightAndShadow_Step4_ShadowMapping/13_LightAndShadow_Step4_ShadowMapping.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `13_LightAndShadow_Step5_SoftShadowPCF` | `Part3_Chapter10-13/13_LightAndShadow_Step5_SoftShadowPCF/13_LightAndShadow_Step5_SoftShadowPCF.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `13_LightAndShadow_Step6_SoftShadowPCSS` | `Part3_Chapter10-13/13_LightAndShadow_Step6_SoftShadowPCSS/13_LightAndShadow_Step6_SoftShadowPCSS.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `13_LightAndShadow_Step7_Halo` | `Part3_Chapter10-13/13_LightAndShadow_Step7_Halo/13_LightAndShadow_Step7_Halo.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `13_LightAndShadow_Step8_UnrealSphereLight` | `Part3_Chapter10-13/13_LightAndShadow_Step8_UnrealSphereLight/13_LightAndShadow_Step8_UnrealSphereLight.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `13_LightAndShadow_Step1_Mirror` | `Part3_Chapter10-13/13_LightAndShadow_Step1_Mirror/13_LightAndShadow_Step1_Mirror.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · stencil mirror |
+| `13_LightAndShadow_Step2_PipelineStateObject` | `Part3_Chapter10-13/13_LightAndShadow_Step2_PipelineStateObject/13_LightAndShadow_Step2_PipelineStateObject.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · pipeline state abstraction |
+| `13_LightAndShadow_Step2_Shadow` | `Part3_Chapter10-13/13_LightAndShadow_Step2_Shadow/13_LightAndShadow_Step2_Shadow.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · 공개 표시 Step2B Shadow Prototype |
+| `13_LightAndShadow_Step3_DepthBufferAndFog` | `Part3_Chapter10-13/13_LightAndShadow_Step3_DepthBufferAndFog/13_LightAndShadow_Step3_DepthBufferAndFog.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · depth reconstruction과 fog |
+| `13_LightAndShadow_Step4_ShadowMapping` | `Part3_Chapter10-13/13_LightAndShadow_Step4_ShadowMapping/13_LightAndShadow_Step4_ShadowMapping.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · hard shadow |
+| `13_LightAndShadow_Step5_SoftShadowPCF` | `Part3_Chapter10-13/13_LightAndShadow_Step5_SoftShadowPCF/13_LightAndShadow_Step5_SoftShadowPCF.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · fixed-kernel PCF |
+| `13_LightAndShadow_Step6_SoftShadowPCSS` | `Part3_Chapter10-13/13_LightAndShadow_Step6_SoftShadowPCSS/13_LightAndShadow_Step6_SoftShadowPCSS.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · blocker search와 variable penumbra |
+| `13_LightAndShadow_Step7_Halo` | `Part3_Chapter10-13/13_LightAndShadow_Step7_Halo/13_LightAndShadow_Step7_Halo.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · depth-aware halo |
+| `13_LightAndShadow_Step8_UnrealSphereLight` | `Part3_Chapter10-13/13_LightAndShadow_Step8_UnrealSphereLight/13_LightAndShadow_Step8_UnrealSphereLight.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · sphere light approximation |
 
 ## 갱신 기준
 

@@ -17,15 +17,16 @@
 - [Rim Lighting](RimLighting.md)
 - [Image Based Lighting](ImageBasedLighting.md)
 - [Fresnel Reflectance](FresnelReflectance.md)
+- [Area Light Approximation](AreaLightApproximation.md)
 
 ## 상태
 
 - Topic 목록: 작성
-- 상세 Topic 문서: Phong Shading, Phong And Blinn-Phong, Light Types, Rim Lighting, Image Based Lighting과 Fresnel Reflectance 작성
-- 연결 예제 검토: Part1 Chapter03 Step5, Part2 Chapter04 Step9·10, Part2 Chapter05 Step2, Chapter06 Step9와 Chapter08 Step1·4·5 현재 확인
+- 상세 Topic 문서: 기존 lighting Topic과 Area Light Approximation 작성
+- 연결 예제 검토: Part1·Part2 lighting 예제와 Part3 Chapter13 Step8 현재 확인
 - demo 연결: 관련 Example의 상세 Demo 연결 완료
 
 ## 다음 작업
 
 1. Material Parameters Topic의 공통 책임을 검토한다.
-2. Part3 PBR 예제와 현재 lighting Topic의 경계를 연결한다.
+2. Full area-light integration은 실제 구현 예제가 추가될 때 확장한다.

@@ -10,7 +10,7 @@
 | Chapter | 코드 | Build/run | Example | Topic | Demo | Publication |
 | --- | --- | --- | --- | --- | --- | --- |
 | Chapter09 | 보관 완료 | Step1–6 현재 확인 | Step1–6 작성 | camera·picking·quaternion 작성 | Step1–6 작성 | Step5 public 후보, 나머지 공개 가능 |
-| Chapter10-13 | 보관 완료 | Chapter10→12 현재 확인 | Chapter10→12 작성 | geometry·texturing·PBR 작성 | Chapter10→12 작성 | rendered evidence 검토 |
+| Chapter10-13 | 보관 완료 | 21개 예제 현재 확인 | Chapter10→13 작성 | geometry·texturing·PBR·shadow 작성 | Chapter10→13 작성 | rendered evidence 공개 후보 |
 
 ## Chapter09 결정
 
@@ -43,16 +43,28 @@
 - 공개 안전한 대체 asset 교체는 필수 gate가 아닌 장기 선택 backlog로 유지한다.
 - 명확한 제한 근거, 삭제 요청 또는 사용 중단 요청이 확인되면 관련 visual을 교체하거나 비공개로 전환한다.
 
+## Chapter10-13 결정
+
+- 21개 Example은 Chapter10 geometry pipeline, Chapter11 texturing, Chapter12 PBR와 Chapter13 light/shadow 순서로 유지한다.
+- Chapter10 Step1은 point에서 네 vertex triangle strip을 생성한다.
+- Chapter10 Step5는 Manual을 기본 경로로 유지하고 Distance Adaptive를 사용자 확장으로 분리한다.
+- Chapter13의 중복 raw Step2 경로는 보존하고 공개 표시를 Step2 PipelineStateObject와 Step2B Shadow Prototype으로 구분한다.
+- Chapter13 대표 visual은 hard shadow→PCF→PCSS 비교 sheet로 둔다.
+- 출처 불완전 runtime asset은 원본과 직접 링크를 공개하지 않고 직접 실행한 rendered evidence만 후보로 사용한다.
+- Chapter13은 정지 image만으로 구현 차이가 분명하므로 video를 제외한다.
+
 ## 다음 작업
 
-1. Chapter09 review 수정 커밋을 push한 뒤 [PR #23](https://github.com/Razria93/Graphics_Study_Archive/pull/23)의 review 답글과 thread resolve를 별도 승인으로 수행한다.
-2. merge 직전 current-state와 unresolved actionable review를 다시 감사한다.
-3. 원본 runtime asset 교체는 시간과 필요성을 검토하는 backlog로 유지한다.
-4. Chapter13 light와 shadow를 현재 재검증하고 순차 정규화한다.
+1. Part3 Chapter10-13의 Publication과 GitHub 게시 후보를 최종 검증한다.
+2. 원본 runtime asset 교체는 시간과 필요성을 검토하는 backlog로 유지한다.
+3. 실제 PR, Demo Issue와 comment 게시는 별도 승인 단계로 수행한다.
 
 ## 관련 문서
 
 - [Chapter09 README](../../../Part3_Chapter09/README.md)
-- [Verification](../../02_Verification/Part3_Chapter09/verification-index.md)
-- [Demo Index](../../03_Demos/Part3_Chapter09/demo-index.md)
+- [Chapter10-13 README](../../../Part3_Chapter10-13/README.md)
+- [Chapter09 Verification](../../02_Verification/Part3_Chapter09/verification-index.md)
+- [Chapter10-13 Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md)
+- [Chapter09 Demo Index](../../03_Demos/Part3_Chapter09/demo-index.md)
+- [Chapter10-13 Demo Index](../../03_Demos/Part3_Chapter10-13/demo-index.md)
 - [Publication Candidate List](../../05_Publication/candidate-list.md)

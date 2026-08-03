@@ -1,0 +1,33 @@
+# Chapter13 Step6 SoftShadowPCSS
+
+Blocker search와 penumbra 추정으로 가변 폭 PCF를 적용한다.
+
+## 구현 요약
+
+- Step5의 고정 kernel을 receiver-blocker 관계에 따른 PCSS kernel로 바꾼다.
+- Chapter13 공통 scene, HDR post-process와 UI 구조를 유지한다.
+- 일반 이론은 Topic으로, build/run/capture 사실은 Verification으로 위임한다.
+
+## 핵심 코드
+
+- [Blocker search와 penumbra 추정 기반 가변 폭 PCF](./BasicPS.hlsl#L146-L236)
+
+## Build And Run
+
+| 항목 | 결과 | 비고 |
+| --- | --- | --- |
+| Debug x64 build/run | 성공 | Clean/Rebuild, project 폴더 CWD |
+| Release x64 build/run | 성공 | Clean/Rebuild, project 폴더 CWD |
+| Capture | 완료 | 전체 application window |
+
+## Capture/Result
+
+![Chapter13 Step6 SoftShadowPCSS](../../Docs/_assets/captures/part3_chapter13_06_soft_shadow_pcss.png)
+
+원본 runtime asset은 직접 연결하지 않고 rendered evidence만 사용한다.
+
+## 관련 문서
+
+- [상세 Demo](../../Docs/03_Demos/Part3_Chapter10-13/13_06_SoftShadowPCSS.md)
+- [Topic](../../Docs/01_Topics/Shadows/PercentageCloserFilteringAndPCSS.md)
+- [Verification](../../Docs/02_Verification/Part3_Chapter10-13/verification-index.md)
