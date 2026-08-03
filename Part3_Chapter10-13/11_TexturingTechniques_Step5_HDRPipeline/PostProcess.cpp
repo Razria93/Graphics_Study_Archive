@@ -111,7 +111,7 @@ void PostProcess::Initialize(
 	                           height);
 	m_combineFilter.SetShaderResources({resources[0], m_bloomSRVs[0]});
 	m_combineFilter.SetRenderTargets(targets);
-	m_combineFilter.m_constData.strength = 0.0f; // Bloom strength
+	m_combineFilter.m_constData.strength = 0.2f; // Bloom strength
 	m_combineFilter.m_constData.option1 = 1.0f;  // Exposure로 사용
 	m_combineFilter.m_constData.option2 = 2.2f;  // Gamma로 사용
 	m_combineFilter.UpdateConstantBuffers(device, context);

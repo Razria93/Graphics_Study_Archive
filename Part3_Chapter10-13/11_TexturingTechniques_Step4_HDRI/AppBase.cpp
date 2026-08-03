@@ -195,7 +195,7 @@ LRESULT AppBase::MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     switch (msg) {
     case WM_SIZE:
         // Reset and resize swapchain
-        if (m_swapChain) { // 처음 실행이 아닌지 확인
+        if (m_swapChain && LOWORD(lParam) > 0 && HIWORD(lParam) > 0) { // 처음 실행이 아닌지 확인
 
             m_screenWidth = int(LOWORD(lParam));
             m_screenHeight = int(HIWORD(lParam));
@@ -323,7 +323,7 @@ bool AppBase::InitMainWindow() {
     AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, false);
 
     // 윈도우를 만들때 위에서 계산한 wr 사용
-    m_mainWindow = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example",
+    m_mainWindow = CreateWindow(wc.lpszClassName, L"ComputerGraphics - Chapter11 Step4 HDRI",
                                 WS_OVERLAPPEDWINDOW,
                                 100, // 윈도우 좌측 상단의 x 좌표
                                 100, // 윈도우 좌측 상단의 y 좌표

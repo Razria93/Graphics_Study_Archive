@@ -68,6 +68,7 @@ bool ExampleApp::Initialize() {
         m_mainSphere.m_specularResView = m_cubeMapping.m_specularResView;
         m_mainSphere.UpdateModelWorld(Matrix::CreateTranslation(center));
         m_mainSphere.m_basicPixelConstantData.useTexture = true;
+        m_mainSphere.m_basicPixelConstantData.mipmapLevel = 3.0f;
         m_mainSphere.m_basicPixelConstantData.material.diffuse = Vector3(1.0f);
         m_mainSphere.m_basicPixelConstantData.material.specular = Vector3(0.3f);
         m_mainSphere.m_basicPixelConstantData.indexColor =
