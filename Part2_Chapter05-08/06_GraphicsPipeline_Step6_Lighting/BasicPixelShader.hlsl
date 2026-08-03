@@ -1,7 +1,6 @@
 #include "Common.hlsli" 
 
 Texture2D g_texture0 : register(t0);
-Texture2D g_texture1 : register(t1);
 SamplerState g_sampler : register(s0);
 
 cbuffer PixelConstantBuffer : register(b0)
@@ -16,7 +15,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
 {
     float3 toEye = normalize(eyeWorld - input.posWorld);
 
-    float3 color = float3(0.0, 0.0, 0.0);
+    float3 color = material.ambient;
     int i = 0;
     [unroll] 
     for (i = 0; i < NUM_DIR_LIGHTS; ++i)

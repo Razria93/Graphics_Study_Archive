@@ -18,6 +18,19 @@
 | Part2_Chapter04 Step5 | circle depth 순서 변경 | 필수 | Per-pixel depth test에 따른 visibility 반전 | 검증 완료 | 미게시 |
 | Part2_Chapter04 Step6 | 자동 square rotation | 선택 | CPU vertex stage의 per-frame transform 결과 | 검증 완료 | 미게시 |
 | Part2_Chapter04 Step7 | culling checkbox On→Off→On | 선택 | Post-transform winding에 따른 backface rejection 전환 | 기술·사용자 시각 검수 완료 | 미게시 |
+| Part2_Chapter05-08 Chapter06 Step8 | Default→Wide→Compact window resize | 필수 | Swap chain dependent resource 재생성과 projection aspect 유지 | 보류: recorder 고정 bounds 계약과 충돌 | 미게시 |
+| Part2_Chapter05-08 Chapter06 Step9 | Phong↔Blinn-Phong checkbox 전환 | 선택 | 동일 조건에서 reflection vector와 halfway vector 기반 highlight 변화 | 제외: 정적 screenshot 2장이 상태와 결과를 충분히 설명 | 미게시 |
+| Part2_Chapter05-08 Chapter07 Step1 | Solid↔Wireframe checkbox 전환 | 선택 | triangle-list mesh의 fill mode 변화 | 제외: Wireframe On과 UI를 담은 정적 screenshot 1장이 topology를 충분히 설명 | 미게시 |
+| Part2_Chapter05-08 Chapter07 Step2 | Vertex normal line 표시와 mesh 회전 | 선택 | 여러 면의 normal 방향과 분포 | 제외: 비스듬한 box와 normal line을 담은 정적 screenshot 1장이 구현을 충분히 설명 | 미게시 |
+| Part2_Chapter05-08 Chapter07 Step3 | Grid 분할 수와 topology 표시 | 선택 | Procedural sample과 cell triangulation | 제외: 5×3 wireframe screenshot 1장이 cell과 triangle 구성을 충분히 설명 | 미게시 |
+| Part2_Chapter05-08 Chapter07 Step4 | Cylinder ring·slice topology 표시 | 선택 | 열린 side surface의 ring 연결과 triangle 분할 | 제외: 비스듬한 wireframe screenshot 1장이 열린 top과 topology를 충분히 설명 | 미게시 |
+| Part2_Chapter05-08 Chapter07 Step5 | Sphere latitude·longitude·pole topology 표시 | 선택 | 두 반구 합성, equator 결합과 pole fan | 제외: wireframe screenshot 1장이 topology를 충분히 설명 | 미게시 |
+| Part2_Chapter05-08 Chapter07 Step6 | Subdivision 전후 triangle density와 sphere projection | 선택 | 1→4 triangle 분할과 2회 적용 결과 | 제외: 최종 wireframe screenshot 1장과 문서의 단계별 triangle 수로 충분히 설명 | 미게시 |
+| Part2_Chapter05-08 Chapter07 Step7 | Face normal 표시와 sphere 회전 | 선택 | Triangle winding과 face normal 방향 | 제외: solid surface와 corner 기반 normal line을 담은 정적 screenshot 1장이 방향과 분포를 충분히 설명 | 미게시 |
+| Part2_Chapter05-08 Chapter07 Step8 SphereMapping | Spherical UV seam과 pole 확인 | 제외 | Fictional planet texture의 U seam·pole mapping | 전체 창 screenshot 한 장에서 texture 방향과 seam 결과를 판독 가능 | 미게시 |
+| Part2_Chapter05-08 Chapter07 Step9 | Imported model 회전과 submesh 확인 | 선택 | Assimp node traversal 결과와 submesh별 texture binding | 제외: 정적 전체 창 screenshot 한 장에서 model과 material 경계를 판독 가능 | 미게시 |
+| Part2_Chapter05-08 Chapter08 Step1 | Rim power와 shaping 변화 | 선택 | Normal·view angle 기반 silhouette 강조 | 제외: 파란 rim과 parameter UI를 정적 전체 창 screenshot 한 장에서 판독 가능 | 미게시 |
+| Part2_Chapter05-08 Chapter08 Step7 | Star surface와 corona의 시간 변화 | 필수 | `iTime` 기반 procedural animation | 9.83초, 30 FPS selected local video 기술 검수 완료 | 미게시 |
 | Part3_Chapter09 | camera, picking, trackball 조작 | 필수 | interaction | 미확인 | 미게시 |
 | Part3_Chapter10-13 | shadow quality 비교 | 선택 | shadow mapping, PCF, PCSS | 미확인 | 미게시 |
 | Part4_Chapter14-20 | 대표 sample 실행 | 선택 | advanced graphics 후보 | 미확인 | 미게시 |

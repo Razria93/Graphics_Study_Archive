@@ -23,6 +23,7 @@ class ExampleApp : public AppBase {
     virtual void UpdateGUI() override;
     virtual void Update(float dt) override;
     virtual void Render() override;
+    virtual void OnResize() override;
 
     void BuildFilters();
 
@@ -57,5 +58,6 @@ class ExampleApp : public AppBase {
     float m_strength = 1.0f;
 
     bool isBlur = false;
+    bool m_filtersInitialized = false;
 };
 } // namespace hlab

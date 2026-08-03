@@ -15,7 +15,7 @@ ExampleApp::ExampleApp() : AppBase(), m_BasicPixelConstantBufferData() {}
 
 // 코드 구조가 조금씩 복잡해지고 있습니다.
 // 일단은 이해하기 단순하게 구현해봅시다.
-void ExampleApp::InitializeCubeMapping() {
+bool ExampleApp::InitializeCubeMapping() {
 
     // texassemble.exe cube -w 2048 -h 2048 -o saintpeters.dds posx.jpg negx.jpg
     // posy.jpg negy.jpg posz.jpg negz.jpg
@@ -33,9 +33,11 @@ void ExampleApp::InitializeCubeMapping() {
         L"./CubemapTextures/Stonewall_diffuseIBL.dds";
 
     // .dds 파일 읽어들여서 초기화
-    CreateCubemapTexture(atribumDiffuseFilename, m_cubeMapping.diffuseResView);
-    CreateCubemapTexture(atribumSpecularFilename,
-                         m_cubeMapping.specularResView);
+    if (!CreateCubemapTexture(atribumDiffuseFilename,
+                              m_cubeMapping.diffuseResView) ||
+        !CreateCubemapTexture(atribumSpecularFilename,
+                              m_cubeMapping.specularResView))
+        return false;
 
     m_cubeMapping.cubeMesh = std::make_shared<Mesh>();
 
@@ -84,6 +86,7 @@ void ExampleApp::InitializeCubeMapping() {
 
     // 기타
     // - 텍스춰 샘플러도 다른 텍스춰와 같이 사용
+    return true;
 }
 
 bool ExampleApp::Initialize() {
@@ -92,7 +95,8 @@ bool ExampleApp::Initialize() {
         return false;
 
     // 큐브매핑 준비
-    InitializeCubeMapping();
+    if (!InitializeCubeMapping())
+        return false;
 
     // Texture sampler 만들기
     D3D11_SAMPLER_DESC sampDesc;
@@ -106,7 +110,9 @@ bool ExampleApp::Initialize() {
     sampDesc.MaxLOD = D3D11_FLOAT32_MAX;
 
     // Create the Sample State
-    m_device->CreateSamplerState(&sampDesc, m_samplerState.GetAddressOf());
+    if (FAILED(m_device->CreateSamplerState(&sampDesc,
+                                            m_samplerState.GetAddressOf())))
+        return false;
 
     // Geometry 정의
 

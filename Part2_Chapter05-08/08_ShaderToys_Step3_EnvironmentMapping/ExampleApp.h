@@ -47,8 +47,7 @@ struct BasicPixelConstantBuffer {
     float rimPower;                     // 4
     float rimStrength = 0.0f;           // 4
     bool useSmoothstep = false;         // 1
-    bool useRelfection = false;         // 1
-    char dummy_0[2];                    // 2           
+    char dummy_0[3];                    // 3
     float dummy_1[2];                   // 8
 };
 
@@ -73,7 +72,7 @@ class ExampleApp : public AppBase {
     virtual void Update(float dt) override;
     virtual void Render() override;
 
-    void InitializeCubeMapping();
+    bool InitializeCubeMapping();
 
   protected:
     ComPtr<ID3D11VertexShader> m_basicVertexShader;

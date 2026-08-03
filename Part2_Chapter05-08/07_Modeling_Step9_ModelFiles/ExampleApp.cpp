@@ -10,7 +10,10 @@ namespace hlab
 
 using namespace std;
 
-ExampleApp::ExampleApp() : AppBase(), m_BasicPixelConstantBufferData() {}
+ExampleApp::ExampleApp() : AppBase(), m_BasicPixelConstantBufferData()
+{
+	m_BasicPixelConstantBufferData.useTexture = true;
+}
 
 bool ExampleApp::Initialize()
 {
@@ -30,7 +33,9 @@ bool ExampleApp::Initialize()
 	sampDesc.MaxLOD = D3D11_FLOAT32_MAX;
 
 	// Create the Sample State
-	m_device->CreateSamplerState(&sampDesc, m_samplerState.GetAddressOf());
+	if (FAILED(
+	        m_device->CreateSamplerState(&sampDesc, m_samplerState.GetAddressOf())))
+		return false;
 
 	// Geometry 정의
 
@@ -40,6 +45,11 @@ bool ExampleApp::Initialize()
 
 	auto meshes =
 	    GeometryGenerator::ReadFromFile("f3d-data/zelda/", "zeldaPosed001.fbx");
+	if (meshes.empty())
+	{
+		cout << "No meshes were loaded from the model file." << endl;
+		return false;
+	}
 
 	// 다른 glTF/OBJ 모델도 같은 방식으로 base path와 filename을 넘겨 테스트할 수 있습니다.
 
@@ -67,6 +77,8 @@ bool ExampleApp::Initialize()
 			cout << meshData.textureFilename << endl;
 			AppBase::CreateTexture(meshData.textureFilename, newMesh->texture,
 			                       newMesh->textureResourceView);
+			if (!newMesh->texture || !newMesh->textureResourceView)
+				return false;
 		}
 
 		newMesh->vertexConstantBuffer = vertexConstantBuffer;

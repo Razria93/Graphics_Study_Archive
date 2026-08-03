@@ -15,7 +15,7 @@ ExampleApp::ExampleApp() : AppBase(), m_BasicPixelConstantBufferData() {}
 
 // 코드 구조가 조금씩 복잡해지고 있습니다.
 // 일단은 이해하기 단순하게 구현해봅시다.
-void ExampleApp::InitializeCubeMapping() {
+bool ExampleApp::InitializeCubeMapping() {
 
     // texassemble.exe cube -w 2048 -h 2048 -o saintpeters.dds posx.jpg negx.jpg
     // posy.jpg negy.jpg posz.jpg negz.jpg
@@ -28,7 +28,9 @@ void ExampleApp::InitializeCubeMapping() {
     auto atribumDiffuseFilename = L"./CubemapTextures/Atrium_diffuseIBL.dds";
 
     // .dds 파일 읽어들여서 초기화
-    CreateCubemapTexture(nightPathFilename, m_cubeMapping.cubemapResourceView);
+    if (!CreateCubemapTexture(nightPathFilename,
+                              m_cubeMapping.cubemapResourceView))
+        return false;
 
     m_cubeMapping.cubeMesh = std::make_shared<Mesh>();
 
@@ -67,6 +69,7 @@ void ExampleApp::InitializeCubeMapping() {
 
     // 기타
     // - 텍스춰 샘플러도 다른 텍스춰와 같이 사용
+    return true;
 }
 
 bool ExampleApp::Initialize() {
@@ -75,7 +78,8 @@ bool ExampleApp::Initialize() {
         return false;
 
     // 큐브매핑 준비
-    InitializeCubeMapping();
+    if (!InitializeCubeMapping())
+        return false;
 
     // Texture sampler 만들기
     D3D11_SAMPLER_DESC sampDesc;
@@ -89,7 +93,9 @@ bool ExampleApp::Initialize() {
     sampDesc.MaxLOD = D3D11_FLOAT32_MAX;
 
     // Create the Sample State
-    m_device->CreateSamplerState(&sampDesc, m_samplerState.GetAddressOf());
+    if (FAILED(m_device->CreateSamplerState(&sampDesc,
+                                            m_samplerState.GetAddressOf())))
+        return false;
 
     // Geometry 정의
 
@@ -97,6 +103,8 @@ bool ExampleApp::Initialize() {
 
     auto meshes =
         GeometryGenerator::ReadFromFile("f3d-data/zelda/", "zeldaPosed001.fbx");
+    if (meshes.empty())
+        return false;
 
     // ConstantBuffer 만들기 (하나 만들어서 공유)
     m_BasicVertexConstantBufferData.model = Matrix();
@@ -322,7 +330,6 @@ void ExampleApp::Render() {
 void ExampleApp::UpdateGUI() {
 
     ImGui::Checkbox("Use Texture", &m_BasicPixelConstantBufferData.useTexture);
-    ImGui::Checkbox("Use Reflection", &m_BasicPixelConstantBufferData.useRelfection);
     ImGui::Checkbox("Wireframe", &m_drawAsWire);
     ImGui::Checkbox("Draw Normals", &m_drawNormals);
     if (ImGui::SliderFloat("Normal scale", &m_normalVertexConstantBufferData.scale, 0.0f, 1.0f)) {

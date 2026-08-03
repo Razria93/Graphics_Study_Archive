@@ -42,9 +42,9 @@ struct BasicPixelConstantBuffer {
     bool useTexture;          // 4
     Material material;        // 48
     Light lights[MAX_LIGHTS]; // 48 * MAX_LIGHTS
-    Vector3 rimColor = Vector3(1.0f);
-    float rimPower;
-    float rimStrength = 0.0f;
+    Vector3 rimColor = Vector3(0.15f, 0.65f, 1.0f);
+    float rimPower = 2.5f;
+    float rimStrength = 1.25f;
     bool useSmoothstep = false;
     float dummy[2];
 };

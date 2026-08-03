@@ -185,6 +185,16 @@ Assert-True ($recorderText -notmatch 'BlockInput') `
     "Capture tools must not block global user input."
 Assert-True ($captureText -notmatch 'BlockInput') `
     "Capture tools must not block global user input."
+Assert-True ($captureText -match 'function Set-CaptureWindowForeground') `
+    "Screenshot foreground helper is missing."
+Assert-True ($captureText -match 'AttachThreadInput') `
+    "Screenshot foreground helper must handle the current foreground input queue."
+Assert-True ($captureText -match 'BringWindowToTop') `
+    "Screenshot foreground helper must raise the target window before capture."
+Assert-True ($captureText -match 'GetForegroundWindow\(\) -ne \$WindowHandle') `
+    "Screenshot foreground helper must verify the actual foreground window."
+Assert-True ($captureText -match 'Set-CaptureWindowForeground \$process\.MainWindowHandle') `
+    "Screenshot capture must use the foreground helper."
 
 $isIconicCall = '[ExampleWindowCaptureNative]::IsIconic('
 $showWindowCall = '[ExampleWindowCaptureNative]::ShowWindow('

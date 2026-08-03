@@ -30,6 +30,7 @@ class AppBase {
     virtual void UpdateGUI() = 0;
     virtual void Update(float dt) = 0;
     virtual void Render() = 0;
+    virtual void OnResize() {}
 
     virtual LRESULT MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
@@ -45,6 +46,7 @@ class AppBase {
 
     void SetViewport();
     bool CreateRenderTargetView();
+    bool ResizeClientResources(UINT width, UINT height);
 
   public:
     // 변수 이름 붙이는 규칙은 VS DX11/12 기본 템플릿을 따릅니다.
@@ -73,5 +75,7 @@ class AppBase {
     ComPtr<ID3D11DepthStencilState> m_depthStencilState;
 
     D3D11_VIEWPORT m_screenViewport;
+    bool m_isMinimized = false;
+    bool m_renderResourcesReady = false;
 };
 } // namespace hlab

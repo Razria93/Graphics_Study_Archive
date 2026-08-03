@@ -23,7 +23,6 @@ bool ExampleApp::Initialize() {
     //                         L"./CubemapTextures/Stonewall_specularIBL.dds");
 
     //MeshData sphere = GeometryGenerator::MakeSphere(0.3f, 100, 100);
-    //sphere.textureFilename = "ojwD8.jpg";
     //m_meshGroupSphere.Initialize(m_device, {sphere});
     //m_meshGroupSphere.m_diffuseResView = m_cubeMapping.m_diffuseResView;
     //m_meshGroupSphere.m_specularResView = m_cubeMapping.m_specularResView;
@@ -33,6 +32,7 @@ bool ExampleApp::Initialize() {
     //m_meshGroupCharacter.m_specularResView = m_cubeMapping.m_specularResView;
 
     BuildFilters();
+    m_filtersInitialized = true;
 
     return true;
 }
@@ -170,6 +170,11 @@ void ExampleApp::BuildFilters() {
     shaderToy->SetShaderResources({textureResourceView});
     shaderToy->SetRenderTargets({m_renderTargetView});
     m_filters.push_back(shaderToy);
+}
+
+void ExampleApp::OnResize() {
+    if (m_filtersInitialized)
+        BuildFilters();
 }
 
 void ExampleApp::UpdateGUI() {

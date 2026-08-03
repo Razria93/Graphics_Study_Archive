@@ -92,8 +92,6 @@ class ExampleApp : public AppBase {
     // Texturing
     ComPtr<ID3D11Texture2D> m_texture;
     ComPtr<ID3D11ShaderResourceView> m_textureResourceView;
-    ComPtr<ID3D11Texture2D> m_texture2;
-    ComPtr<ID3D11ShaderResourceView> m_textureResourceView2;
     ComPtr<ID3D11SamplerState> m_samplerState;
 
     BasicVertexConstantBuffer m_BasicVertexConstantBufferData;

@@ -89,3 +89,21 @@ function Get-DemoPseudocodeFenceIssue {
 
     return @($issues)
 }
+
+function Get-PublicShellEnvironmentIssue {
+    param([string]$Content)
+
+    $issues = [System.Collections.Generic.List[string]]::new()
+    if ($Content -match '(?i)\bpwsh\.exe\b') {
+        $issues.Add(
+            "public document must not expose the local pwsh.exe warning"
+        )
+    }
+    if ($Content -match '(?i)(?:Windows\s+)?PowerShell\s+fallback') {
+        $issues.Add(
+            "public document must not explain a local PowerShell fallback"
+        )
+    }
+
+    return @($issues)
+}

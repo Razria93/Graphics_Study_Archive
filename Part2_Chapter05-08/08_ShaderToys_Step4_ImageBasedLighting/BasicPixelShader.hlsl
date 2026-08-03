@@ -53,7 +53,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
     float4 diffuse = g_diffuseCube.Sample(g_sampler, input.normalWorld);
     float4 specular = g_specularCube.Sample(g_sampler, reflect(-toEye, input.normalWorld));
     
-    float4 shininess = pow((specular.x + specular.y + specular.z) / 3.0, material.shininess);
+    float shininess = pow(saturate((specular.x + specular.y + specular.z) / 3.0), material.shininess);
     
     specular.xyz *= shininess;
     

@@ -255,10 +255,14 @@ MeshData GeometryGenerator::MakeGrid(const float width, const float height, cons
 	{
 		for (int i = 1; i <= numSlices; i++)
 		{
-			size_t i0 = ((numSlices + 1) * (j - 1) + (i - 1)) + 0;
-			size_t i1 = ((numSlices + 1) * (j - 1) + (i - 1)) + 1;
-			size_t i2 = ((numSlices + 1) * j + (i - 1)) + 0;
-			size_t i3 = ((numSlices + 1) * j + (i - 1)) + 1;
+			const uint16_t i0 = static_cast<uint16_t>(
+				((numSlices + 1) * (j - 1) + (i - 1)) + 0);
+			const uint16_t i1 = static_cast<uint16_t>(
+				((numSlices + 1) * (j - 1) + (i - 1)) + 1);
+			const uint16_t i2 = static_cast<uint16_t>(
+				((numSlices + 1) * j + (i - 1)) + 0);
+			const uint16_t i3 = static_cast<uint16_t>(
+				((numSlices + 1) * j + (i - 1)) + 1);
 
 			indices.push_back(i0);
 			indices.push_back(i2);

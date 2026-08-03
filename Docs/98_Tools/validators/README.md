@@ -12,8 +12,8 @@
 | `validate-topic-doc-quality.ps1` | 상세 Topic 정본 품질 검사(책임 구조, 핵심 개념, Example/Verification/Demo 연결) | `Docs/01_Topics` |
 | `validate-demo-index-quality.ps1` | Demo source docs 구현도 균일성 검사(필수 구조, 테이블 스키마, 상태값, 최소 capture 기준) | `Docs/03_Demos/**/demo-index.md` |
 | `test-demo-index-quality.ps1` | Demo index의 selected·published video reference fixture 검사 | `fixtures/demo-index-video` |
-| `validate-demo-doc-quality.ps1` | 상세 Demo 기술 정본 검사(구조, 링크, tracked visual, 금지 경로) | `Docs/03_Demos/**/[0-9][0-9]_*.md` |
-| `test-demo-doc-quality.ps1` | 상세 Demo 코드 근거 link label과 의사코드 fence fixture 검사 | `fixtures/demo-doc-link-label`, `fixtures/demo-doc-pseudocode` |
+| `validate-demo-doc-quality.ps1` | 상세 Demo 기술 정본과 Example 공개 환경 문구 검사 | 상세 Demo, `Part*_Chapter*/**/README.md` |
+| `test-demo-doc-quality.ps1` | 상세 Demo 형식과 공개 shell 환경 문구 fixture 검사 | `fixtures/demo-doc-*` |
 | `validate-video-asset-quality.ps1` | 예상하지 못한 tracked MP4, MOV와 WEBM 검사 | Git tracked path |
 | `test-video-asset-quality.ps1` | tracked video path fixture 검사 | `fixtures/video-asset-quality` |
 | `test-window-capture-tools.ps1` | screenshot·video 도구의 창 배치, countdown, 입력 안전 계약 검사 | `Docs/98_Tools/scripts` |
@@ -112,6 +112,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markd
 - `## 핵심 구현` source line 코드 근거 bullet의 명사형 label과 끝 마침표 금지
 - `Pseudo C++` 함수와 `if`, `else`, `for`, `while`의 Allman brace style
 - `local/`, Legacy, stale path, placeholder
+- 상세 Demo와 Example README의 `pwsh.exe` 경고·PowerShell fallback 해명 문구
 - fenced code의 80자 초과 warning과 120자 초과 failure
 - 같은 폴더 `demo-index.md`의 상세 Demo 연결
 

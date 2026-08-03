@@ -11,6 +11,7 @@
 | DirectX11 Pipeline | [DirectX11Pipeline](DirectX11Pipeline/README.md) | 진행 중 |
 | Texturing And Mapping | [TexturingAndMapping](TexturingAndMapping/README.md) | 골격 작성 |
 | Lighting And Shading | [LightingAndShading](LightingAndShading/README.md) | 진행 중 |
+| Modeling And Geometry | [ModelingAndGeometry](ModelingAndGeometry/README.md) | 진행 중 |
 | PBR And IBL | [PBRAndIBL](PBRAndIBL/README.md) | 골격 작성 |
 | Shadows | [Shadows](Shadows/README.md) | 골격 작성 |
 | Compute And Simulation | [ComputeAndSimulation](ComputeAndSimulation/README.md) | 골격 작성 |

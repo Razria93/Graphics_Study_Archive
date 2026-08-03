@@ -150,6 +150,11 @@ function Validate-DemoDocument {
         Add-Failure $relative "local, Legacy, or stale paths are not allowed"
     }
 
+    $shellEnvironmentIssues = @(Get-PublicShellEnvironmentIssue -Content $content)
+    foreach ($issue in $shellEnvironmentIssues) {
+        Add-Failure $relative $issue
+    }
+
     $inFence = $false
     for ($i = 0; $i -lt $lines.Count; ++$i) {
         $line = $lines[$i]
@@ -203,7 +208,8 @@ function Validate-DemoDocument {
             continue
         }
 
-        $resolved = [IO.Path]::GetFullPath((Join-Path $File.DirectoryName $target))
+        $decodedTarget = [Uri]::UnescapeDataString($target)
+        $resolved = [IO.Path]::GetFullPath((Join-Path $File.DirectoryName $decodedTarget))
         if (-not (Test-Path -LiteralPath $resolved)) {
             Add-Failure $relative "broken relative link: $target"
             continue
@@ -286,6 +292,20 @@ if ($demoFiles.Count -eq 0) {
 else {
     foreach ($file in $demoFiles) {
         Validate-DemoDocument -File $file
+    }
+}
+
+$exampleRoots = @(Get-ChildItem -Path $Root -Directory |
+    Where-Object { $_.Name -match '^Part\d+_Chapter' })
+$exampleReadmes = @($exampleRoots | ForEach-Object {
+    Get-ChildItem -Path $_.FullName -Filter README.md -File -Recurse
+})
+foreach ($file in $exampleReadmes) {
+    $relative = Get-RelativePath $file.FullName
+    $content = Get-Content -Raw -Encoding UTF8 $file.FullName
+    $shellEnvironmentIssues = @(Get-PublicShellEnvironmentIssue -Content $content)
+    foreach ($issue in $shellEnvironmentIssues) {
+        Add-Failure $relative $issue
     }
 }
 

@@ -7,6 +7,7 @@ $ErrorActionPreference = "Stop"
 
 $FixtureRoot = Join-Path $PSScriptRoot "fixtures/demo-doc-link-label"
 $PseudocodeFixtureRoot = Join-Path $PSScriptRoot "fixtures/demo-doc-pseudocode"
+$ShellFixtureRoot = Join-Path $PSScriptRoot "fixtures/demo-doc-public-shell"
 $Failures = [System.Collections.Generic.List[string]]::new()
 
 function ConvertTo-LineEnding {
@@ -73,6 +74,25 @@ foreach ($lineEnding in @("LF", "CRLF")) {
             $invalidPseudocodeIssues.Count
         )
     }
+}
+
+$validShellContent = Get-Content -Raw -LiteralPath `
+    (Join-Path $ShellFixtureRoot "valid.md.txt") -Encoding utf8
+$validShellIssues = @(Get-PublicShellEnvironmentIssue -Content $validShellContent)
+if ($validShellIssues.Count -gt 0) {
+    $Failures.Add("valid public shell fixture rejected")
+}
+
+$invalidShellContent = Get-Content -Raw -LiteralPath `
+    (Join-Path $ShellFixtureRoot "invalid.md.txt") -Encoding utf8
+$invalidShellIssues = @(
+    Get-PublicShellEnvironmentIssue -Content $invalidShellContent
+)
+if ($invalidShellIssues.Count -ne 2) {
+    $Failures.Add(
+        "invalid public shell fixture expected 2 issues, got " +
+        $invalidShellIssues.Count
+    )
 }
 
 if ($Failures.Count -gt 0) {

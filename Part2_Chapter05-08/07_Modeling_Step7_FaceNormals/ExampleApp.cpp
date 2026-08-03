@@ -16,11 +16,8 @@ bool ExampleApp::Initialize() {
     if (!AppBase::Initialize())
         return false;
 
-    // 지구 텍스춰 출처
-    // https://stackoverflow.com/questions/31799670/applying-map-of-the-earth-texture-a-sphere
-    AppBase::CreateTexture("ojwD8.jpg", m_texture, m_textureResourceView);
-
-    AppBase::CreateTexture("wall.jpg", m_texture2, m_textureResourceView2);
+    AppBase::CreateTexture("generated_dark_wood.png", m_texture,
+                           m_textureResourceView);
 
     // Texture sampler 만들기
     D3D11_SAMPLER_DESC sampDesc;
@@ -222,9 +219,9 @@ void ExampleApp::Render() {
     m_context->VSSetConstantBuffers(
         0, 1, m_mesh->m_vertexConstantBuffer.GetAddressOf());
 
-    ID3D11ShaderResourceView *pixelResources[2] = {
-        m_textureResourceView.Get(), m_textureResourceView2.Get()};
-    m_context->PSSetShaderResources(0, 2, pixelResources);
+    ID3D11ShaderResourceView *pixelResources[1] = {
+        m_textureResourceView.Get()};
+    m_context->PSSetShaderResources(0, 1, pixelResources);
     m_context->PSSetSamplers(0, 1, m_samplerState.GetAddressOf());
 
     m_context->PSSetConstantBuffers(

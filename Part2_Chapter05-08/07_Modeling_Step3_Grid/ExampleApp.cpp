@@ -10,7 +10,11 @@ namespace hlab
 
 using namespace std;
 
-ExampleApp::ExampleApp() : AppBase(), m_BasicPixelConstantBufferData() {}
+ExampleApp::ExampleApp() : AppBase(), m_BasicPixelConstantBufferData()
+{
+	m_BasicPixelConstantBufferData.useTexture = false;
+	m_drawAsWire = true;
+}
 
 bool ExampleApp::Initialize()
 {
@@ -20,9 +24,9 @@ bool ExampleApp::Initialize()
 
 
 
-	AppBase::CreateTexture("ojwD8.jpg", m_texture, m_textureResourceView);
-
-	AppBase::CreateTexture("wall.jpg", m_texture2, m_textureResourceView2);
+	if (!AppBase::CreateTexture("generated_dark_wood.png", m_texture,
+	                            m_textureResourceView))
+		return false;
 
 
 	D3D11_SAMPLER_DESC sampDesc;
@@ -36,27 +40,34 @@ bool ExampleApp::Initialize()
 	sampDesc.MaxLOD = D3D11_FLOAT32_MAX;
 
 
-	m_device->CreateSamplerState(&sampDesc, m_samplerState.GetAddressOf());
+	if (FAILED(m_device->CreateSamplerState(&sampDesc,
+	                                        m_samplerState.GetAddressOf())))
+		return false;
 
 
 	MeshData meshData = GeometryGenerator::MakeGrid(2.0f, 1.7f, 5, 3);
 
 	m_mesh = std::make_shared<Mesh>();
 
-	AppBase::CreateVertexBuffer(meshData.vertices, m_mesh->m_vertexBuffer);
+	if (!AppBase::CreateVertexBuffer(meshData.vertices,
+	                                 m_mesh->m_vertexBuffer))
+		return false;
 	m_mesh->m_indexCount = UINT(meshData.indices.size());
-	AppBase::CreateIndexBuffer(meshData.indices, m_mesh->m_indexBuffer);
+	if (!AppBase::CreateIndexBuffer(meshData.indices, m_mesh->m_indexBuffer))
+		return false;
 
 
 	m_BasicVertexConstantBufferData.model = Matrix();
 	m_BasicVertexConstantBufferData.view = Matrix();
 	m_BasicVertexConstantBufferData.projection = Matrix();
 
-	AppBase::CreateConstantBuffer(m_BasicVertexConstantBufferData,
-	                              m_mesh->m_vertexConstantBuffer);
+	if (!AppBase::CreateConstantBuffer(m_BasicVertexConstantBufferData,
+	                                   m_mesh->m_vertexConstantBuffer))
+		return false;
 
-	AppBase::CreateConstantBuffer(m_BasicPixelConstantBufferData,
-	                              m_mesh->m_pixelConstantBuffer);
+	if (!AppBase::CreateConstantBuffer(m_BasicPixelConstantBufferData,
+	                                   m_mesh->m_pixelConstantBuffer))
+		return false;
 
 
 
@@ -70,11 +81,14 @@ bool ExampleApp::Initialize()
 	     D3D11_INPUT_PER_VERTEX_DATA, 0},
 	};
 
-	AppBase::CreateVertexShaderAndInputLayout(
-	    L"BasicVertexShader.hlsl", basicInputElements, m_basicVertexShader,
-	    m_basicInputLayout);
+	if (!AppBase::CreateVertexShaderAndInputLayout(
+	        L"BasicVertexShader.hlsl", basicInputElements,
+	        m_basicVertexShader, m_basicInputLayout))
+		return false;
 
-	AppBase::CreatePixelShader(L"BasicPixelShader.hlsl", m_basicPixelShader);
+	if (!AppBase::CreatePixelShader(L"BasicPixelShader.hlsl",
+	                                m_basicPixelShader))
+		return false;
 
 
 
@@ -97,16 +111,31 @@ bool ExampleApp::Initialize()
 		normalIndices.push_back(uint16_t(2 * i + 1));
 	}
 
-	AppBase::CreateVertexBuffer(normalVertices, m_normalLines->m_vertexBuffer);
+	if (!AppBase::CreateVertexBuffer(normalVertices,
+	                                 m_normalLines->m_vertexBuffer))
+		return false;
 	m_normalLines->m_indexCount = UINT(normalIndices.size());
-	AppBase::CreateIndexBuffer(normalIndices, m_normalLines->m_indexBuffer);
-	AppBase::CreateConstantBuffer(m_normalVertexConstantBufferData,
-	                              m_normalLines->m_vertexConstantBuffer);
+	if (!AppBase::CreateIndexBuffer(normalIndices,
+	                                m_normalLines->m_indexBuffer))
+		return false;
 
-	AppBase::CreateVertexShaderAndInputLayout(
-	    L"NormalVertexShader.hlsl", basicInputElements, m_normalVertexShader,
-	    m_basicInputLayout);
-	AppBase::CreatePixelShader(L"NormalPixelShader.hlsl", m_normalPixelShader);
+	m_normalVertexConstantBufferData.model = Matrix();
+	m_normalVertexConstantBufferData.invTranspose = Matrix();
+	m_normalVertexConstantBufferData.view = Matrix();
+	m_normalVertexConstantBufferData.projection = Matrix();
+
+	if (!AppBase::CreateConstantBuffer(
+	        m_normalVertexConstantBufferData,
+	        m_normalLines->m_vertexConstantBuffer))
+		return false;
+
+	if (!AppBase::CreateVertexShaderAndInputLayout(
+	        L"NormalVertexShader.hlsl", basicInputElements,
+	        m_normalVertexShader, m_basicInputLayout))
+		return false;
+	if (!AppBase::CreatePixelShader(L"NormalPixelShader.hlsl",
+	                                m_normalPixelShader))
+		return false;
 
 	return true;
 }
@@ -125,12 +154,16 @@ void ExampleApp::Update(float dt)
 	    Matrix::CreateTranslation(m_modelTranslation);
 	m_BasicVertexConstantBufferData.model =
 	    m_BasicVertexConstantBufferData.model.Transpose();
+	m_normalVertexConstantBufferData.model =
+	    m_BasicVertexConstantBufferData.model;
 
 	m_BasicVertexConstantBufferData.invTranspose =
 	    m_BasicVertexConstantBufferData.model;
 	m_BasicVertexConstantBufferData.invTranspose.Translation(Vector3(0.0f));
 	m_BasicVertexConstantBufferData.invTranspose =
 	    m_BasicVertexConstantBufferData.invTranspose.Transpose().Invert();
+	m_normalVertexConstantBufferData.invTranspose =
+	    m_BasicVertexConstantBufferData.invTranspose;
 
 
 	m_BasicVertexConstantBufferData.view =
@@ -142,6 +175,8 @@ void ExampleApp::Update(float dt)
 
 	m_BasicVertexConstantBufferData.view =
 	    m_BasicVertexConstantBufferData.view.Transpose();
+	m_normalVertexConstantBufferData.view =
+	    m_BasicVertexConstantBufferData.view;
 
 
 	const float aspect = AppBase::GetAspectRatio();
@@ -158,6 +193,8 @@ void ExampleApp::Update(float dt)
 	}
 	m_BasicVertexConstantBufferData.projection =
 	    m_BasicVertexConstantBufferData.projection.Transpose();
+	m_normalVertexConstantBufferData.projection =
+	    m_BasicVertexConstantBufferData.projection;
 
 
 	AppBase::UpdateBuffer(m_BasicVertexConstantBufferData,
@@ -186,23 +223,10 @@ void ExampleApp::Update(float dt)
 	                      m_mesh->m_pixelConstantBuffer);
 
 
-	if (m_drawNormals && m_drawNormalsDirtyFlag)
-	{
-
-
-
-
-
-
-
-
-
-
-		AppBase::UpdateBuffer(m_normalVertexConstantBufferData,
-		                      m_normalLines->m_vertexConstantBuffer);
-
-		m_drawNormalsDirtyFlag = false;
-	}
+	m_normalVertexConstantBufferData.scale =
+	    m_drawNormals ? m_scale : 0.0f;
+	AppBase::UpdateBuffer(m_normalVertexConstantBufferData,
+	                      m_normalLines->m_vertexConstantBuffer);
 }
 
 void ExampleApp::Render()
@@ -214,7 +238,7 @@ void ExampleApp::Render()
 
 
 
-	SetViewport();
+	m_context->RSSetViewports(1, &m_screenViewport);
 
 	float clearColor[4] = {0.0f, 0.0f, 0.0f, 1.0f};
 	m_context->ClearRenderTargetView(m_renderTargetView.Get(), clearColor);
@@ -230,9 +254,9 @@ void ExampleApp::Render()
 	m_context->VSSetConstantBuffers(
 	    0, 1, m_mesh->m_vertexConstantBuffer.GetAddressOf());
 
-	ID3D11ShaderResourceView *pixelResources[2] = {
-	    m_textureResourceView.Get(), m_textureResourceView2.Get()};
-	m_context->PSSetShaderResources(0, 2, pixelResources);
+	ID3D11ShaderResourceView *pixelResources[1] = {
+	    m_textureResourceView.Get()};
+	m_context->PSSetShaderResources(0, 1, pixelResources);
 	m_context->PSSetSamplers(0, 1, m_samplerState.GetAddressOf());
 
 	m_context->PSSetConstantBuffers(
@@ -241,11 +265,11 @@ void ExampleApp::Render()
 
 	if (m_drawAsWire)
 	{
-		m_context->RSSetState(m_wireRasterizerSate.Get());
+		m_context->RSSetState(m_wireRasterizerState.Get());
 	}
 	else
 	{
-		m_context->RSSetState(m_solidRasterizerSate.Get());
+		m_context->RSSetState(m_solidRasterizerState.Get());
 	}
 
 
@@ -264,9 +288,8 @@ void ExampleApp::Render()
 	{
 		m_context->VSSetShader(m_normalVertexShader.Get(), 0, 0);
 
-		ID3D11Buffer *pptr[2] = {m_mesh->m_vertexConstantBuffer.Get(),
-		                         m_normalLines->m_vertexConstantBuffer.Get()};
-		m_context->VSSetConstantBuffers(0, 2, pptr);
+		m_context->VSSetConstantBuffers(
+		    0, 1, m_normalLines->m_vertexConstantBuffer.GetAddressOf());
 
 		m_context->PSSetShader(m_normalPixelShader.Get(), 0, 0);
 
@@ -286,10 +309,7 @@ void ExampleApp::UpdateGUI()
 	ImGui::Checkbox("Use Texture", &m_BasicPixelConstantBufferData.useTexture);
 	ImGui::Checkbox("Wireframe", &m_drawAsWire);
 	ImGui::Checkbox("Draw Normals", &m_drawNormals);
-	if (ImGui::SliderFloat("Normal scale", &m_normalVertexConstantBufferData.scale, 0.0f, 1.0f))
-	{
-		m_drawNormalsDirtyFlag = true;
-	}
+	ImGui::SliderFloat("Normal scale", &m_scale, 0.0f, 1.0f);
 
 	ImGui::SliderFloat3("m_modelTranslation", &m_modelTranslation.x, -2.0f, 2.0f);
 	ImGui::SliderFloat3("m_modelRotation", &m_modelRotation.x, -3.14f, 3.14f);

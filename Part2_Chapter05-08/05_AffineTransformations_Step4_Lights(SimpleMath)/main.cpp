@@ -32,13 +32,11 @@ int main() {
 
     AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, FALSE);
 
-    HWND hwnd = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example",
-                             WS_OVERLAPPEDWINDOW,
-                             100,
-                             100,
-                             wr.right - wr.left,
-                             wr.bottom - wr.top,
-                             NULL, NULL, wc.hInstance, NULL);
+    HWND hwnd = CreateWindow(
+        wc.lpszClassName,
+        L"ComputerGraphics - Chapter05 Step4 Lights(SimpleMath)",
+        WS_OVERLAPPEDWINDOW, 100, 100, wr.right - wr.left,
+        wr.bottom - wr.top, NULL, NULL, wc.hInstance, NULL);
 
     ShowWindow(hwnd, SW_SHOWDEFAULT);
     UpdateWindow(hwnd);
@@ -64,6 +62,8 @@ int main() {
             ImGui_ImplDX11_NewFrame();
             ImGui_ImplWin32_NewFrame();
             ImGui::NewFrame();
+            ImGui::SetNextWindowPos(ImVec2(46.0f, 71.0f), ImGuiCond_Once);
+            ImGui::SetNextWindowSize(ImVec2(500.0f, 420.0f), ImGuiCond_Once);
             ImGui::Begin("Scene Control");
 
 

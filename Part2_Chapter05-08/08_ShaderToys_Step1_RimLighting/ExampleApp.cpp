@@ -28,12 +28,16 @@ bool ExampleApp::Initialize() {
     sampDesc.MaxLOD = D3D11_FLOAT32_MAX;
 
     // Create the Sample State
-    m_device->CreateSamplerState(&sampDesc, m_samplerState.GetAddressOf());
+    if (FAILED(
+            m_device->CreateSamplerState(&sampDesc, m_samplerState.GetAddressOf())))
+        return false;
 
     // Geometry 정의
 
     vector<MeshData> meshes = {
         GeometryGenerator::ReadFromFile("./", "stanford_dragon.stl")};
+    if (meshes.empty())
+        return false;
 
     // 다른 mesh/model input으로 교체할 수 있지만 archive 기본 실행은
     // `stanford_dragon.stl`을 기준으로 확인합니다.

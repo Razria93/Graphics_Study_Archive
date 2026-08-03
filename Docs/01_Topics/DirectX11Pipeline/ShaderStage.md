@@ -14,6 +14,8 @@ Shader stage는 graphics pipeline의 각 처리 단계가 어떤 입력을 받�
 - Step6 고유 함수와 rotation은 [Step6 ShadersConcept Example](../../../Part2_Chapter04/04_Rasterization_Step6_ShadersConcept/README.md)로 위임한다.
 - 구현 흐름과 시각 결과는 `Docs/03_Demos`의 [Step6 ShadersConcept Demo](../../03_Demos/Part2_Chapter04/06_ShadersConcept.md)로 위임한다.
 - build/run/capture 사실은 `Docs/02_Verification`의 [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)로 위임한다.
+- 실제 D3D11 semantic, stage별 constant buffer와 UV 분기 구현은 [Chapter06 Step4 Shaders Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step4_Shaders/README.md)로 위임한다.
+- 해당 구현의 시각 결과는 [Chapter06 Step4 Shaders Demo](../../03_Demos/Part2_Chapter05-08/06_Shaders.md)로 위임한다.
 
 ## 핵심 개념
 
@@ -33,6 +35,12 @@ Rasterization은 transformed vertex로 primitive coverage를 계산하고 covere
 
 Pixel stage는 보간된 fragment input과 texture, material 또는 조명 data를 사용해 color 같은 출력을 결정한다. Depth test, blending과 render target write의 정확한 순서는 API와 pipeline 설정에 따라 달라질 수 있으므로 pixel stage의 계산 책임과 output merger의 저장 책임을 분리해 이해한다.
 
+### Semantic And Constant Buffer Binding
+
+Direct3D input layout과 HLSL 구조체는 `POSITION`, `COLOR`, `TEXCOORD` 같은 semantic으로 vertex data의 의미를 연결한다. Stage input과 output의 semantic 이름·index·type이 대응해야 attribute가 의도한 경로로 전달된다.
+
+Constant buffer register는 stage별 resource slot이다. 같은 draw에서 vertex shader의 transform data를 `b0`, pixel shader의 분기 parameter를 `b1`처럼 분리할 수 있다. CPU 구조체는 HLSL packing과 맞도록 16-byte 경계를 지켜야 하며, buffer 생성뿐 아니라 올바른 stage와 slot에 binding했는지도 함께 확인한다.
+
 ### CPU Simulation And GPU Presentation
 
 Shader stage의 contract는 CPU 함수로도 모사할 수 있다. CPU vertex 함수가 transform과 attribute 전달을 수행하고 CPU pixel 함수가 fragment color를 결정하면 stage 사이 data 흐름을 직접 관찰할 수 있다. 이 결과를 화면에 표시하기 위해 별도의 GPU shader가 framebuffer texture를 sampling할 수 있지만, presentation shader가 CPU에서 모사한 학습 stage와 같은 계산을 수행하는 것은 아니다.
@@ -49,6 +57,9 @@ Shader stage의 contract는 CPU 함수로도 모사할 수 있다. CPU vertex �
 
 - [Step6 ShadersConcept Example](../../../Part2_Chapter04/04_Rasterization_Step6_ShadersConcept/README.md)
 - [Step6 ShadersConcept Demo](../../03_Demos/Part2_Chapter04/06_ShadersConcept.md)
+- [Chapter06 Step4 Shaders Example](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step4_Shaders/README.md)
+- [Chapter06 Step4 Shaders Demo](../../03_Demos/Part2_Chapter05-08/06_Shaders.md)
 - [Triangle Rasterization](../Rasterization/TriangleRasterization.md)
 - [Part2 Chapter04 Verification](../../02_Verification/Part2_Chapter04/verification-index.md)
+- [Part2 Chapter05-08 Verification](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [DirectX11 Pipeline Topic Index](topic-index.md)

@@ -184,7 +184,8 @@ bool AppBase::InitMainWindow() {
     AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, false);
 
     
-    m_mainWindow = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example",
+    m_mainWindow = CreateWindow(
+        wc.lpszClassName, L"ComputerGraphics - Chapter06 Step4 Shaders",
                                 WS_OVERLAPPEDWINDOW,
                                 100, 
                                 100, 
@@ -533,4 +534,4 @@ void AppBase::CreateIndexBuffer(const std::vector<uint16_t> &indices,
                            m_indexBuffer.GetAddressOf());
 }
 
-} 
+}

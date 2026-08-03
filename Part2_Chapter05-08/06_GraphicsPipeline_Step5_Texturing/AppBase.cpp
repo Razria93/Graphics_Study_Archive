@@ -40,14 +40,13 @@ AppBase::AppBase()
 }
 
 AppBase::~AppBase() {
-    g_appBase = nullptr;
-
     
     ImGui_ImplDX11_Shutdown();
     ImGui_ImplWin32_Shutdown();
     ImGui::DestroyContext();
 
     DestroyWindow(m_mainWindow);
+    g_appBase = nullptr;
     
 
     
@@ -184,7 +183,8 @@ bool AppBase::InitMainWindow() {
     AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, false);
 
     
-    m_mainWindow = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example",
+    m_mainWindow = CreateWindow(wc.lpszClassName,
+                                L"ComputerGraphics - Chapter06 Step5 Texturing",
                                 WS_OVERLAPPEDWINDOW,
                                 100, 
                                 100, 
@@ -517,22 +517,21 @@ void AppBase::CreateIndexBuffer(const std::vector<uint16_t> &indices,
                            m_indexBuffer.GetAddressOf());
 }
 
-void AppBase::CreateTexture(
-    const std::string filename, ComPtr<ID3D11Texture2D> &texture,
+bool AppBase::CreateTexture(
+    const std::string &filename, ComPtr<ID3D11Texture2D> &texture,
     ComPtr<ID3D11ShaderResourceView> &textureResourceView) {
 
-    int width, height, channels;
+    int width = 0;
+    int height = 0;
+    int channels = 0;
 
     unsigned char *img =
         stbi_load(filename.c_str(), &width, &height, &channels, 4);
-    channels = 4;
-
-    
-
-    std::vector<uint8_t> image;
-
-    image.resize(width * height * channels);
-    memcpy(image.data(), img, image.size() * sizeof(uint8_t));
+    if (!img) {
+        cout << "Texture load failed: " << filename << " ("
+             << stbi_failure_reason() << ")" << endl;
+        return false;
+    }
 
     
     D3D11_TEXTURE2D_DESC txtDesc = {};
@@ -545,18 +544,31 @@ void AppBase::CreateTexture(
     txtDesc.BindFlags = D3D11_BIND_SHADER_RESOURCE;
 
     
-    D3D11_SUBRESOURCE_DATA InitData;
-    InitData.pSysMem = image.data();
-    InitData.SysMemPitch = txtDesc.Width * sizeof(uint8_t) * channels;
+    D3D11_SUBRESOURCE_DATA initData = {};
+    initData.pSysMem = img;
+    initData.SysMemPitch = txtDesc.Width * sizeof(uint8_t) * 4;
     
 
     
     
     
 
-    m_device->CreateTexture2D(&txtDesc, &InitData, texture.GetAddressOf());
-    m_device->CreateShaderResourceView(texture.Get(), nullptr,
-                                       textureResourceView.GetAddressOf());
+    const HRESULT textureResult =
+        m_device->CreateTexture2D(&txtDesc, &initData, texture.GetAddressOf());
+    stbi_image_free(img);
+    if (FAILED(textureResult)) {
+        cout << "CreateTexture2D() failed: " << filename << endl;
+        return false;
+    }
+
+    if (FAILED(m_device->CreateShaderResourceView(
+            texture.Get(), nullptr, textureResourceView.GetAddressOf()))) {
+        cout << "CreateShaderResourceView() failed: " << filename << endl;
+        texture.Reset();
+        return false;
+    }
+
+    return true;
 }
 
 }

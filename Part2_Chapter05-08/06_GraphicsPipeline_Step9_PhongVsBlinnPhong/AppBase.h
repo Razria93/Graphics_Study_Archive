@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <d3d11.h>
 #include <d3dcompiler.h>
@@ -42,22 +42,21 @@ class AppBase {
     bool InitMainWindow();
     bool InitDirect3D();
     bool InitGUI();
-
-    void SetViewport();
     bool CreateRenderTargetView();
     bool CreateDepthBuffer();
-    void CreateVertexShaderAndInputLayout(
+    bool ResizeClientResources(UINT width, UINT height);
+    bool CreateVertexShaderAndInputLayout(
         const wstring &filename,
         const vector<D3D11_INPUT_ELEMENT_DESC> &inputElements,
         ComPtr<ID3D11VertexShader> &vertexShader,
         ComPtr<ID3D11InputLayout> &inputLayout);
-    void CreatePixelShader(const wstring &filename,
+    bool CreatePixelShader(const wstring &filename,
                            ComPtr<ID3D11PixelShader> &pixelShader);
-    void CreateIndexBuffer(const vector<uint16_t> &indices,
+    bool CreateIndexBuffer(const vector<uint16_t> &indices,
                            ComPtr<ID3D11Buffer> &m_indexBuffer);
 
     template <typename T_VERTEX>
-    void CreateVertexBuffer(const vector<T_VERTEX> &vertices,
+    bool CreateVertexBuffer(const vector<T_VERTEX> &vertices,
                             ComPtr<ID3D11Buffer> &vertexBuffer) {
 
 
@@ -80,11 +79,14 @@ class AppBase {
         if (FAILED(hr)) {
             std::cout << "CreateBuffer() failed. " << std::hex << hr
                       << std::endl;
-        };
+            return false;
+        }
+
+        return true;
     }
 
     template <typename T_CONSTANT>
-    void CreateConstantBuffer(const T_CONSTANT &constantBufferData,
+    bool CreateConstantBuffer(const T_CONSTANT &constantBufferData,
                               ComPtr<ID3D11Buffer> &constantBuffer) {
 
         D3D11_BUFFER_DESC cbDesc;
@@ -105,32 +107,44 @@ class AppBase {
         if (FAILED(hr)) {
             std::cout << "CreateConstantBuffer() CreateBuffer failed()."
                       << std::endl;
+            return false;
         }
+
+        return true;
     }
 
     template <typename T_DATA>
-    void UpdateBuffer(const T_DATA &bufferData, ComPtr<ID3D11Buffer> &buffer) {
+    bool UpdateBuffer(const T_DATA &bufferData, ComPtr<ID3D11Buffer> &buffer) {
 
         if (!buffer) {
             std::cout << "UpdateBuffer() buffer was not initialized."
                       << std::endl;
+            return false;
         }
 
-        D3D11_MAPPED_SUBRESOURCE ms;
-        m_context->Map(buffer.Get(), NULL, D3D11_MAP_WRITE_DISCARD, NULL, &ms);
+        D3D11_MAPPED_SUBRESOURCE ms = {};
+        if (FAILED(m_context->Map(buffer.Get(), NULL, D3D11_MAP_WRITE_DISCARD,
+                                  NULL, &ms))) {
+            std::cout << "UpdateBuffer() Map failed." << std::endl;
+            return false;
+        }
         memcpy(ms.pData, &bufferData, sizeof(bufferData));
         m_context->Unmap(buffer.Get(), NULL);
+        return true;
     }
 
-    void CreateTexture(const std::string filename, ComPtr<ID3D11Texture2D> &texture,
+    bool CreateTexture(const std::string &filename,
+                       ComPtr<ID3D11Texture2D> &texture,
                        ComPtr<ID3D11ShaderResourceView> &textureResourceView);
+    void UpdateSceneViewport(float panelWidth);
 
   public:
     int m_screenWidth; 
     int m_screenHeight;
-    int m_guiWidth = 0;
     HWND m_mainWindow;
-    UINT numQualityLevels = 0;
+    bool m_isMinimized = false;
+    bool m_renderResourcesReady = false;
+    UINT m_msaaQualityLevels = 0;
 
     ComPtr<ID3D11Device> m_device;
     ComPtr<ID3D11DeviceContext> m_context;
@@ -142,6 +156,6 @@ class AppBase {
     ComPtr<ID3D11DepthStencilView> m_depthStencilView;
     ComPtr<ID3D11DepthStencilState> m_depthStencilState;
 
-    D3D11_VIEWPORT m_screenViewport;    
+    D3D11_VIEWPORT m_screenViewport;
 };
-} 
+}

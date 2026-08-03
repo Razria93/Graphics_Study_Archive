@@ -97,16 +97,20 @@ MeshData ModelLoader::ProcessMesh(aiMesh *mesh, const aiScene *scene) {
 
     // Walk through each of the mesh's vertices
     for (UINT i = 0; i < mesh->mNumVertices; i++) {
-        Vertex vertex;
+        Vertex vertex{};
 
         vertex.position.x = mesh->mVertices[i].x;
         vertex.position.y = mesh->mVertices[i].y;
         vertex.position.z = mesh->mVertices[i].z;
 
-        vertex.normal.x = mesh->mNormals[i].x;
-        vertex.normal.y = mesh->mNormals[i].y;
-        vertex.normal.z = mesh->mNormals[i].z;
-        vertex.normal.Normalize();
+        if (mesh->HasNormals()) {
+            vertex.normal.x = mesh->mNormals[i].x;
+            vertex.normal.y = mesh->mNormals[i].y;
+            vertex.normal.z = mesh->mNormals[i].z;
+            vertex.normal.Normalize();
+        } else {
+            vertex.normal = Vector3(0.0f, 1.0f, 0.0f);
+        }
 
         if (mesh->mTextureCoords[0]) {
             vertex.texcoord.x = (float)mesh->mTextureCoords[0][i].x;

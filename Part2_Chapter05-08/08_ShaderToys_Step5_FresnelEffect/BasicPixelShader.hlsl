@@ -1,4 +1,4 @@
-#include "Common.hlsli" // ½¦ÀÌ´õ¿¡¼­µµ include »ç¿ë °¡´É
+#include "Common.hlsli" // ì‰ì´ë”ì—ì„œë„ include ì‚¬ìš© ê°€ëŠ¥
 
 Texture2D g_texture0 : register(t0);
 TextureCube g_diffuseCube : register(t1);
@@ -18,7 +18,7 @@ cbuffer BasicPixelConstantBuffer : register(b0)
 };
 
 // Schlick approximation: Eq. 9.17 in "Real-Time Rendering 4th Ed."
-// fresnelR0´Â ¹°ÁúÀÇ °íÀ¯ ¼ºÁú
+// fresnelR0ëŠ” ë¬¼ì§ˆì˜ ê³ ìœ  ì„±ì§ˆ
 // Water : (0.02, 0.02, 0.02)
 // Glass : (0.08, 0.08, 0.08)
 // Plastic : (0.05, 0.05, 0.05)
@@ -27,18 +27,18 @@ cbuffer BasicPixelConstantBuffer : register(b0)
 // Copper: (0.95, 0.64, 0.54)
 float3 SchlickFresnel(float3 fresnelR0, float3 normal, float3 toEye)
 {
-    // Âü°í ÀÚ·áµé
+    // ì°¸ê³  ìë£Œë“¤
     // THE SCHLICK FRESNEL APPROXIMATION by Zander Majercik, NVIDIA
     // http://psgraphics.blogspot.com/2020/03/fresnel-equations-schlick-approximation.html
     
     float normalDotView = saturate(dot(normal, toEye));
 
-    float f0 = 1.0f - normalDotView; // 90µµÀÌ¸é f0 = 1, 0µµÀÌ¸é f0 = 0
+    float f0 = 1.0f - normalDotView; // 90ë„ì´ë©´ f0 = 1, 0ë„ì´ë©´ f0 = 0
 
-    // 1.0 º¸´Ù ÀÛÀº °ªÀº ¿©·¯ ¹ø °öÇÏ¸é ´õ ÀÛÀº °ªÀÌ µË´Ï´Ù.
-    // 0µµ -> f0 = 0 -> fresnelR0 ¹İÈ¯
-    // 90µµ -> f0 = 1.0 -> float3(1.0) ¹İÈ¯
-    // 0µµ¿¡ °¡±î¿î °¡ÀåÀÚ¸®´Â Specular »ö»ó, 90µµ¿¡ °¡±î¿î ¾ÈÂÊÀº °íÀ¯ »ö»ó(fresnelR0)
+    // 1.0 ë³´ë‹¤ ì‘ì€ ê°’ì€ ì—¬ëŸ¬ ë²ˆ ê³±í•˜ë©´ ë” ì‘ì€ ê°’ì´ ë©ë‹ˆë‹¤.
+    // 0ë„ -> f0 = 0 -> fresnelR0 ë°˜í™˜
+    // 90ë„ -> f0 = 1.0 -> float3(1.0) ë°˜í™˜
+    // ì •ë©´ì— ê°€ê¹Œìš°ë©´ fresnelR0, grazing angleì— ê°€ê¹Œìš°ë©´ 1ì— ì ‘ê·¼
     return fresnelR0 + (1.0f - fresnelR0) * pow(f0, 5.0);
 }
 
@@ -71,23 +71,25 @@ float4 main(PixelShaderInput input) : SV_TARGET
         color += ComputeSpotLight(light[i], material, input.posWorld, input.normalWorld, toEye);
     }
 
-    // ½±°Ô ÀÌÇØÇÒ ¼ö ÀÖ´Â °£´ÜÇÑ ±¸ÇöÀÔ´Ï´Ù.
-    // IBL°ú ´Ù¸¥ ½¦ÀÌµù ±â¹ı(¿¹: Æş ½¦ÀÌµù)À» °°ÀÌ »ç¿ëÇÒ ¼öµµ ÀÖ½À´Ï´Ù.
+    // ì‰½ê²Œ ì´í•´í•  ìˆ˜ ìˆëŠ” ê°„ë‹¨í•œ êµ¬í˜„ì…ë‹ˆë‹¤.
+    // IBLê³¼ ë‹¤ë¥¸ ì‰ì´ë”© ê¸°ë²•(ì˜ˆ: í ì‰ì´ë”©)ì„ ê°™ì´ ì‚¬ìš©í•  ìˆ˜ë„ ìˆìŠµë‹ˆë‹¤.
     
     float4 diffuse = g_diffuseCube.Sample(g_sampler, input.normalWorld);
     float4 specular = g_specularCube.Sample(g_sampler, reflect(-toEye, input.normalWorld));
     
     diffuse *= float4(material.diffuse, 1.0);
-    specular *= pow((specular.r + specular.g + specular.b)/3.0, material.shininess);
+    float shininess = pow(saturate((specular.r + specular.g + specular.b) / 3.0),
+                          material.shininess);
+    specular *= shininess;
     specular *= float4(material.specular, 1.0);
     
-    // Âü°í: https://www.shadertoy.com/view/lscBW4
+    // ì°¸ê³ : https://www.shadertoy.com/view/lscBW4
     float3 f = SchlickFresnel(material.fresnelR0, input.normalWorld, toEye);
     specular.xyz *= f;
     
     if (useTexture) {
         diffuse *= g_texture0.Sample(g_sampler, input.texcoord);
-        // Specular texture¸¦ º°µµ·Î »ç¿ëÇÒ ¼öµµ ÀÖ½À´Ï´Ù.
+        // Specular textureë¥¼ ë³„ë„ë¡œ ì‚¬ìš©í•  ìˆ˜ë„ ìˆìŠµë‹ˆë‹¤.
     }
     
     return diffuse + specular;

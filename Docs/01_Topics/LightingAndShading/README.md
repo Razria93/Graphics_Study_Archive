@@ -14,15 +14,18 @@
 - [Phong Shading](PhongShading.md)
 - [Phong And Blinn-Phong](PhongAndBlinnPhong.md)
 - [Light Types](LightTypes.md)
+- [Rim Lighting](RimLighting.md)
+- [Image Based Lighting](ImageBasedLighting.md)
+- [Fresnel Reflectance](FresnelReflectance.md)
 
 ## 상태
 
 - Topic 목록: 작성
-- 상세 Topic 문서: Phong Shading, Phong And Blinn-Phong과 Light Types 작성
-- 연결 예제 검토: Part1 Chapter03 Step5, Part2 Chapter04 Step9·10 현재 확인
-- demo 연결: Step5 PhongShading, Step9 Shading과 Step10 Lights 연결
+- 상세 Topic 문서: Phong Shading, Phong And Blinn-Phong, Light Types, Rim Lighting, Image Based Lighting과 Fresnel Reflectance 작성
+- 연결 예제 검토: Part1 Chapter03 Step5, Part2 Chapter04 Step9·10, Part2 Chapter05 Step2, Chapter06 Step9와 Chapter08 Step1·4·5 현재 확인
+- demo 연결: 관련 Example의 상세 Demo 연결 완료
 
 ## 다음 작업
 
-1. Part2 Chapter05-08의 Phong·Blinn-Phong 비교 예제를 연결한다.
-2. Material parameter와 Rim Lighting Topic을 순서대로 검토한다.
+1. Material Parameters Topic의 공통 책임을 검토한다.
+2. Part3 PBR 예제와 현재 lighting Topic의 경계를 연결한다.

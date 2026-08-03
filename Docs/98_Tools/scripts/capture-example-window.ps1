@@ -99,6 +99,24 @@ public static class ExampleWindowCaptureNative
 
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool BringWindowToTop(IntPtr hwnd);
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool AttachThreadInput(
+        uint sourceThread, uint targetThread, bool attach
+    );
+
+    [DllImport("user32.dll")]
+    public static extern uint GetWindowThreadProcessId(
+        IntPtr hwnd, IntPtr processId
+    );
+
+    [DllImport("kernel32.dll")]
+    public static extern uint GetCurrentThreadId();
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
     public static extern bool ShowWindow(IntPtr hwnd, int command);
 
     [DllImport("user32.dll")]
@@ -261,6 +279,61 @@ function Test-SameCaptureBounds
     )
 }
 
+function Set-CaptureWindowForeground
+{
+    param([Parameter(Mandatory = $true)][IntPtr]$WindowHandle)
+
+    if ([ExampleWindowCaptureNative]::GetForegroundWindow() -eq $WindowHandle)
+    {
+        return
+    }
+
+    $foregroundHandle = [ExampleWindowCaptureNative]::GetForegroundWindow()
+    $currentThread = [ExampleWindowCaptureNative]::GetCurrentThreadId()
+    $foregroundThread = [uint32]0
+    $inputAttached = $false
+
+    if ($foregroundHandle -ne [IntPtr]::Zero)
+    {
+        $foregroundThread = [ExampleWindowCaptureNative]::GetWindowThreadProcessId(
+            $foregroundHandle,
+            [IntPtr]::Zero
+        )
+    }
+
+    try
+    {
+        if ($foregroundThread -ne 0 -and $foregroundThread -ne $currentThread)
+        {
+            $inputAttached = [ExampleWindowCaptureNative]::AttachThreadInput(
+                $currentThread,
+                $foregroundThread,
+                $true
+            )
+        }
+
+        [void][ExampleWindowCaptureNative]::BringWindowToTop($WindowHandle)
+        [void][ExampleWindowCaptureNative]::SetForegroundWindow($WindowHandle)
+        Start-Sleep -Milliseconds 100
+    }
+    finally
+    {
+        if ($inputAttached)
+        {
+            [void][ExampleWindowCaptureNative]::AttachThreadInput(
+                $currentThread,
+                $foregroundThread,
+                $false
+            )
+        }
+    }
+
+    if ([ExampleWindowCaptureNative]::GetForegroundWindow() -ne $WindowHandle)
+    {
+        throw "The application window could not be brought to the foreground."
+    }
+}
+
 $process = $null
 $captureSucceeded = $false
 $temporaryOutput = Join-Path `
@@ -320,11 +393,7 @@ try {
 
     $plannedBounds = Get-CaptureBounds $process
 
-    if (-not [ExampleWindowCaptureNative]::SetForegroundWindow(
-        $process.MainWindowHandle
-    )) {
-        throw "The application window could not be brought to the foreground."
-    }
+    Set-CaptureWindowForeground $process.MainWindowHandle
     Write-Host "Do not use the mouse or keyboard until capture completes or fails."
     Invoke-WindowOperationCountdown -Seconds $CountdownSeconds
     Start-Sleep -Milliseconds $CaptureDelayMilliseconds

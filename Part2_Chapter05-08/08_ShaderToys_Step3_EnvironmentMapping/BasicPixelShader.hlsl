@@ -15,7 +15,7 @@ cbuffer BasicPixelConstantBuffer : register(b0)
     float rimPower;
     float rimStrength;
     bool useSmoothstep;
-    bool useRelfection;
+    float3 padding;
 };
 
 float4 main(PixelShaderInput input) : SV_TARGET
@@ -68,7 +68,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
     // color = g_textureCube0.Sample(g_sampler, reflectDir);
     
     // 올바른 코드_2 : 자체적으로 reflect를 계산해주는 함수가 있음
-    color = g_textureCube0.Sample(g_sampler, reflect(-toEye, input.normalWorld));
+    color = g_textureCube0.Sample(g_sampler, reflect(-toEye, input.normalWorld)).rgb;
     
     return useTexture ? float4(color, 1.0) * g_texture0.Sample(g_sampler, input.texcoord) : float4(color, 1.0);
 }

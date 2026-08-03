@@ -1,7 +1,6 @@
-#include "Common.hlsli" 
+#include "Common.hlsli"
 
 Texture2D g_texture0 : register(t0);
-Texture2D g_texture1 : register(t1);
 SamplerState g_sampler : register(s0);
 
 cbuffer PixelConstantBuffer : register(b0)
@@ -9,121 +8,142 @@ cbuffer PixelConstantBuffer : register(b0)
     float3 eyeWorld;
     bool useTexture;
     Material material;
-    Light light[MAX_LIGHTS];
-    bool useBlinnPhong;
-    float3 dummy;
+    Light lights[MAX_LIGHTS];
+    uint useBlinnPhong;
+    float3 padding;
 };
 
-float3 BlinnPhong(float3 lightStrength, float3 lightVec, float3 normal,
-                   float3 toEye, Material mat)
+float3 EvaluateSurface(float3 lightStrength, float3 lightVec, float3 normal,
+                       float3 toEye, Material mat)
 {
-    if (useBlinnPhong)
+    float3 specular = float3(0.0f, 0.0f, 0.0f);
+
+    if (useBlinnPhong != 0)
     {
-        float3 halfway = normalize(toEye + lightVec);
-        float hdotn = dot(halfway, normal);
-        float3 specular = mat.specular * pow(max(hdotn, 0.0f), mat.shininess * 2.0);
-        return mat.ambient + (mat.diffuse + specular) * lightStrength;
+        float3 halfwaySum = toEye + lightVec;
+        float halfwayLength = length(halfwaySum);
+        if (halfwayLength > 0.00001f)
+        {
+            float3 halfway = halfwaySum / halfwayLength;
+            float hdotn = max(dot(halfway, normal), 0.0f);
+            specular = mat.specular
+                     * pow(hdotn, mat.shininess * 2.0f);
+        }
     }
     else
     {
-        float3 r = -reflect(lightVec, normal);
-        float3 specular = mat.specular * pow(max(dot(toEye, r), 0.0f), mat.shininess);
-        return mat.ambient + (mat.diffuse + specular) * lightStrength;
+        float3 reflected = reflect(-lightVec, normal);
+        float rdotv = max(dot(reflected, toEye), 0.0f);
+        specular = mat.specular * pow(rdotv, mat.shininess);
     }
+
+    return (mat.diffuse + specular) * lightStrength;
 }
 
-float3 ComputeDirectionalLight(Light L, Material mat, float3 normal,
-                                float3 toEye)
+float3 EvaluateDirectionalComparison(Light light, Material mat,
+                                     float3 normal, float3 toEye)
 {
-    float3 lightVec = -L.direction;
-
+    float3 lightVec = normalize(-light.direction);
     float ndotl = max(dot(lightVec, normal), 0.0f);
-    float3 lightStrength = L.strength * ndotl;
+    float3 lightStrength = light.strength * ndotl;
 
-    return BlinnPhong(lightStrength, lightVec, normal, toEye, mat);
+    return EvaluateSurface(lightStrength, lightVec, normal, toEye, mat);
 }
 
-float CalcAttenuation(float d, float falloffStart, float falloffEnd)
+float CalculateComparisonAttenuation(float distanceToLight,
+                                     float falloffStart,
+                                     float falloffEnd)
 {
-    return saturate((falloffEnd - d) / (falloffEnd - falloffStart));
+    float range = max(falloffEnd - falloffStart, 0.00001f);
+    return saturate((falloffEnd - distanceToLight) / range);
 }
 
-float3 ComputePointLight(Light L, Material mat, float3 pos, float3 normal,
-                          float3 toEye)
+float3 EvaluatePointComparison(Light light, Material mat, float3 position,
+                               float3 normal, float3 toEye)
 {
-    float3 lightVec = L.position - pos;
+    float3 lightVec = light.position - position;
+    float distanceToLight = length(lightVec);
+    float3 result = float3(0.0f, 0.0f, 0.0f);
 
-    float d = length(lightVec);
-
-    if (d > L.fallOffEnd)
+    if (distanceToLight <= light.fallOffEnd
+        && distanceToLight > 0.00001f)
     {
-        return float3(0.0, 0.0, 0.0);
-    }
-    else
-    {
-        lightVec /= d;
+        lightVec /= distanceToLight;
 
         float ndotl = max(dot(lightVec, normal), 0.0f);
-        float3 lightStrength = L.strength * ndotl;
+        float3 lightStrength = light.strength * ndotl;
+        lightStrength *= CalculateComparisonAttenuation(
+            distanceToLight, light.fallOffStart, light.fallOffEnd);
 
-        float att = CalcAttenuation(d, L.fallOffStart, L.fallOffEnd);
-        lightStrength *= att;
-
-        return BlinnPhong(lightStrength, lightVec, normal, toEye, mat);
+        result = EvaluateSurface(
+            lightStrength, lightVec, normal, toEye, mat);
     }
+
+    return result;
 }
 
-float3 ComputeSpotLight(Light L, Material mat, float3 pos, float3 normal,
-                         float3 toEye)
+float3 EvaluateSpotComparison(Light light, Material mat, float3 position,
+                              float3 normal, float3 toEye)
 {
-    float3 lightVec = L.position - pos;
+    float3 lightVec = light.position - position;
+    float distanceToLight = length(lightVec);
+    float3 result = float3(0.0f, 0.0f, 0.0f);
 
-    float d = length(lightVec);
-
-    if (d > L.fallOffEnd)
+    if (distanceToLight <= light.fallOffEnd
+        && distanceToLight > 0.00001f)
     {
-        return float3(0.0f, 0.0f, 0.0f);
-    }
-    else
-    {
-        lightVec /= d;
+        lightVec /= distanceToLight;
 
         float ndotl = max(dot(lightVec, normal), 0.0f);
-        float3 lightStrength = L.strength * ndotl;
+        float3 lightStrength = light.strength * ndotl;
+        lightStrength *= CalculateComparisonAttenuation(
+            distanceToLight, light.fallOffStart, light.fallOffEnd);
 
-        float att = CalcAttenuation(d, L.fallOffStart, L.fallOffEnd);
-        lightStrength *= att;
-
-        float spotFactor = pow(max(-dot(lightVec, L.direction), 0.0f), L.spotPower);
+        float spotFactor = pow(
+            max(-dot(lightVec, normalize(light.direction)), 0.0f),
+            light.spotPower);
         lightStrength *= spotFactor;
 
-        return BlinnPhong(lightStrength, lightVec, normal, toEye, mat);
+        result = EvaluateSurface(
+            lightStrength, lightVec, normal, toEye, mat);
     }
+
+    return result;
 }
 
 float4 main(PixelShaderInput input) : SV_TARGET
 {
-
     float3 toEye = normalize(eyeWorld - input.posWorld);
+    float3 color = material.ambient;
 
-    float3 color = float3(0.0, 0.0, 0.0);
-    int i = 0;
-    [unroll] 
-    for (i = 0; i < NUM_DIR_LIGHTS; ++i)
-    {
-        color += ComputeDirectionalLight(light[i], material, input.normalWorld, toEye);
-    }
     [unroll]
-    for (i = NUM_DIR_LIGHTS; i < NUM_DIR_LIGHTS + NUM_POINT_LIGHTS; ++i)
+    for (int i = 0; i < NUM_DIR_LIGHTS; ++i)
     {
-        color += ComputePointLight(light[i], material, input.posWorld, input.normalWorld, toEye);
+        color += EvaluateDirectionalComparison(
+            lights[i], material, input.normalWorld, toEye);
     }
+
     [unroll]
-    for (i = NUM_DIR_LIGHTS + NUM_POINT_LIGHTS; i < NUM_DIR_LIGHTS + NUM_POINT_LIGHTS + NUM_SPOT_LIGHTS; ++i)
+    for (int j = NUM_DIR_LIGHTS;
+         j < NUM_DIR_LIGHTS + NUM_POINT_LIGHTS;
+         ++j)
     {
-        color += ComputeSpotLight(light[i], material, input.posWorld, input.normalWorld, toEye);
+        color += EvaluatePointComparison(
+            lights[j], material, input.posWorld, input.normalWorld, toEye);
     }
 
-    return useTexture ? float4(color, 1.0) * g_texture0.Sample(g_sampler, input.texcoord) : float4(color, 1.0);
+    [unroll]
+    for (int k = NUM_DIR_LIGHTS + NUM_POINT_LIGHTS;
+         k < NUM_DIR_LIGHTS + NUM_POINT_LIGHTS + NUM_SPOT_LIGHTS;
+         ++k)
+    {
+        color += EvaluateSpotComparison(
+            lights[k], material, input.posWorld, input.normalWorld, toEye);
+    }
 
+    float4 surfaceColor = useTexture
+        ? g_texture0.Sample(g_sampler, input.texcoord)
+        : float4(1.0f, 1.0f, 1.0f, 1.0f);
+
+    return float4(color, 1.0f) * surfaceColor;
 }

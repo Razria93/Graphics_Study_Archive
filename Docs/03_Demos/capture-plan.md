@@ -130,3 +130,41 @@ portfolio_raytracer_reflection.png
 - Step14 CubeEnvironment는 PosZ 중심과 PosX·NegX 경계를 보여주는 정적 environment screenshot을 확보했다. Camera 조작이 없어 video는 제외한다.
 - 각 Step은 독립 상세 Demo를 기본으로 하며 Chapter 전체를 하나의 Demo로 합치지 않는다.
 - 최소 Demo는 Step4, 대표 Demo는 Step8·13, 선택 Demo는 Step10·14로 확정한다. 나머지 Step은 순차 학습 Demo로 유지하고 정적 결과에 불필요한 video는 제외한다.
+
+## Part2 Chapter07 순차 계획
+
+- Step1 DrawingWireFrames는 `Wireframe=On`, `Use Texture=Off`와 비스듬한 box rotation을 사용한 전체 창 screenshot 한 장을 확보했다.
+- Box의 세 면과 face별 triangle diagonal, UI 상태와 공개 title을 한 frame에서 확인한다.
+- Step1 video는 fill mode의 고정 결과를 screenshot으로 충분히 설명할 수 있어 제외한다.
+- Step2 DrawingNormals는 `Draw Normals=On`, solid surface와 normal line을 함께 담은 전체 창 screenshot 한 장을 확보했다.
+- Step3 Grid는 `Wireframe=On`, `Use Texture=Off`, `Draw Normals=Off`로 5×3 cells와 triangle diagonal을 담은 전체 창 screenshot 한 장을 확보했다.
+- Step3 video는 정적 wireframe 한 장으로 procedural topology를 충분히 설명할 수 있어 제외한다.
+- Step4 Cylinder는 `Wireframe=On`, `Use Texture=Off`, `Draw Normals=Off`로 열린 top과 ring·slice 연결을 담은 전체 창 screenshot 한 장을 확보했다.
+- Step4 video는 정적 wireframe 한 장으로 열린 side surface와 triangle topology를 충분히 설명할 수 있어 제외한다.
+- Step5 Sphere는 `Wireframe=On`, `Use Texture=Off`, `Draw Normals=Off`로 두 반구, equator 결합과 pole fan을 담은 전체 창 screenshot 한 장을 확보했다.
+- Step5 video는 정적 wireframe 한 장으로 latitude·longitude·pole topology를 충분히 설명할 수 있어 제외한다.
+- Step6 Subdivision은 `Wireframe=On`, `Use Texture=Off`, `Draw Normals=Off`로 2회 분할한 800-triangle sphere surface를 담은 전체 창 screenshot 한 장을 확보했다.
+- Step6 video는 정적 wireframe 한 장으로 subdivision density와 sphere projection을 충분히 설명할 수 있어 제외한다.
+- Step7 FaceNormals는 `Draw Normals=On`, `Use Texture=Off`, `Wireframe=Off`, `Normal scale=0.1`로 solid surface와 corner 기반 face-normal line을 담은 전체 창 screenshot 한 장을 확보했다.
+- Step7 video는 정지 이미지에서 yellow start와 red endpoint의 방향, UI 상태와 outward 분포를 판독할 수 있어 제외한다.
+- Step8 SphereMapping은 generated fictional planet texture를 적용한 1282×992 전체 창 screenshot 한 장을 확보했다.
+- 한 장에서 texture 방향과 U seam 결과를 판독할 수 있어 같은 bounds의 보조 screenshot은 추가하지 않는다.
+- Step9 ModelFiles는 `Use Texture=On`, wireframe·normal 표시 Off 상태의 Zelda FBX 전체 창 screenshot 한 장을 확보했다.
+- Step9 video는 정적 model import와 submesh texture binding을 screenshot 한 장으로 판독할 수 있어 제외한다.
+
+## Part2 Chapter08 순차 계획
+
+- Chapter08 Step1 RimLighting은 texture·wireframe·normal 표시 Off, 파란 rim 기본값의 Dragon 전체 창 screenshot 한 장을 확보했다.
+- Step1 video는 정적 silhouette과 parameter UI를 한 frame에서 판독할 수 있어 제외한다.
+- Chapter08 Step2 Cubemapping은 skybox와 Zelda 전경 mesh가 함께 보이는 전체 창 screenshot 한 장을 확보했다.
+- Step2 video는 정적 frame에서 cube 방향 sampling과 전경·배경 분리를 판독할 수 있어 제외한다.
+- Chapter08 Step3 EnvironmentMapping은 NightPath 배경과 reflection이 함께 보이는 전체 창 screenshot 한 장을 확보했다.
+- Step3 camera 회전 video는 설명 가치가 있으나 이번 단계에서는 local 후보 없이 screenshot으로 마감한다.
+- Chapter08 Step4 ImageBasedLighting은 Atrium 환경과 IBL sphere가 함께 보이는 전체 창 screenshot 한 장을 확보했다.
+- Step4 video는 fixed diffuse/specular 결과를 정적 frame에서 판독할 수 있어 제외한다.
+- Chapter08 Step5 FresnelEffect는 Stonewall 환경과 Fresnel sphere, material UI가 함께 보이는 전체 창 screenshot 한 장을 확보했다.
+- Step5 video는 angle-dependent 결과와 parameter가 정적 frame에서 판독 가능해 제외한다.
+- Chapter08 Step6 BloomEffect는 bloom scene과 threshold·strength UI가 함께 보이는 전체 창 screenshot 한 장을 확보했다.
+- Step6 video는 정적 frame에서 glow와 parameter를 판독할 수 있어 제외한다.
+- Chapter08 Step7 Shadertoy는 star surface와 corona가 함께 보이는 전체 창 screenshot 한 장을 확보했다.
+- Step7의 시간 변화는 정지 이미지로 대체할 수 없어 9.83초 selected local video를 함께 확보했다.

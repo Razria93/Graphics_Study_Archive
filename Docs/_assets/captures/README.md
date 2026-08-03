@@ -70,6 +70,31 @@ part2_chapter04_depth-buffer.png
 | `part2_chapter04_10_lights_point.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step10_Lights` | 확보 | Position `(0, 0.5, 0.5)`과 선형 distance attenuation의 radial highlight 확인 |
 | `part2_chapter04_10_lights_spot.png` | screenshot | `Part2_Chapter04/04_Rasterization_Step10_Lights` | 확보 | Point 감쇠에 `spotPower=400` cone factor를 적용한 집중 영역 확인 |
 | `part2_chapter04_10_lights_comparison.png` | comparison image | `Part2_Chapter04/04_Rasterization_Step10_Lights` | 확보 | 동일한 기본 parameter의 Directional·Point·Spot screenshot을 원본 크기로 세로 배치한 GitHub Demo Issue용 비교 자료 |
+| `part2_chapter05_02_lights_glm_default.png` | screenshot | `Part2_Chapter05-08/05_AffineTransformations_Step2_Lights(GLM)` | 확보 | 기본 transform과 Directional Light의 전체 application window 확인 |
+| `part2_chapter05_02_lights_glm_adjusted.png` | screenshot | `Part2_Chapter05-08/05_AffineTransformations_Step2_Lights(GLM)` | 확보 | Y rotation과 non-uniform scale을 적용한 geometry·lighting 변화 확인 |
+| `part2_chapter05_04_lights_simplemath_adjusted.png` | screenshot | `Part2_Chapter05-08/05_AffineTransformations_Step4_Lights(SimpleMath)` | 확보 | Step2 GLM과 같은 transform 의도를 SimpleMath row-vector convention으로 재구성한 geometry·lighting 결과 확인 |
+| `part2_chapter06_02_initializing_d3d.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step2_InitializingD3D` | 확보 | 전체 application window에서 기본 perspective color cube, Scene Control과 D3D11 frame 출력 확인 |
+| `part2_chapter06_03_model_view_proj_perspective.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step3_ModelViewProj` | 확보 | 전체 application window에서 조정한 Model·View와 perspective projection 결과 확인 |
+| `part2_chapter06_03_model_view_proj_orthographic.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step3_ModelViewProj` | 확보 | 동일한 Model·View에서 orthographic projection의 일정한 투영 크기 확인 |
+| `part2_chapter06_04_shaders_default.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step4_Shaders` | 확보 | 전체 application window에서 `xSplitPoint=0.5`의 균등 UV X·Y 분기 확인 |
+| `part2_chapter06_04_shaders_split_adjusted.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step4_Shaders` | 확보 | 동일한 window에서 `xSplitPoint=0.25`의 세로·가로 경계 이동 확인 |
+| `part2_chapter06_05_texturing_default.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing` | 확보 | Generated 석재·목재 texture와 `xSplit=0.5`의 균등 선택 경계 확인 |
+| `part2_chapter06_05_texturing_split_adjusted.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing` | 확보 | 동일한 window에서 `xSplit=0.25`의 texture 선택 경계 이동 확인 |
+| `part2_chapter06_05a_texturing_lighting_self_default.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf` | 확보 | 기본 light position에서 textured box의 face별 밝기와 highlight 확인 |
+| `part2_chapter06_05a_texturing_lighting_self_light_adjusted.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf` | 확보 | Light position만 오른쪽 위로 옮긴 textured point-light 결과 확인 |
+| `part2_chapter06_06_lighting_directional.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 확보 | Directional Light의 위치와 무관한 일정한 입사 방향 결과 확인 |
+| `part2_chapter06_06_lighting_point.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 확보 | Point Light의 위치와 선형 distance attenuation 결과 확인 |
+| `part2_chapter06_06_lighting_spot.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting` | 확보 | Point와 같은 위치·falloff에서 `spotPower=16`으로 응축한 cone 결과 확인 |
+| `part2_chapter06_07_resizing_viewport_panel_420.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step7_ResizingViewport` | 확보 | 약 420px panel과 scene viewport 분리, projection 비율 유지 확인 |
+| `part2_chapter06_07_resizing_viewport_panel_640.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step7_ResizingViewport` | 확보 | 약 640px panel 확장 뒤 viewport 이동과 geometry 비율 유지 확인 |
+| `part2_chapter06_08_resizing_window_default.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow` | 확보 | 1280×960 client 기준 resource와 projection 결과 기술·시각 검수 완료 |
+| `part2_chapter06_08_resizing_window_wide.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow` | 확보 | 1600×900 client resize 뒤 scene aspect와 textured lighting 유지 기술·시각 검수 완료 |
+| `part2_chapter06_08_resizing_window_compact.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow` | 확보 | 960×720 client resize 뒤 panel·scene 배치와 resource 갱신 기술·시각 검수 완료 |
+| `part2_chapter06_09_phong.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step9_PhongVsBlinnPhong` | 확보 | 동일 scene·material·shininess 32의 reflection-vector 기반 Phong highlight 확인 |
+| `part2_chapter06_09_blinn_phong.png` | screenshot | `Part2_Chapter05-08/06_GraphicsPipeline_Step9_PhongVsBlinnPhong` | 확보 | 동일 scene·material·shininess 32와 exponent 보정의 halfway-vector 기반 Blinn-Phong highlight 확인 |
+| `part2_chapter07_01_drawing_wireframes.png` | screenshot | `Part2_Chapter05-08/07_Modeling_Step1_DrawingWireFrames` | 확보 | Wireframe On·texture Off와 비스듬한 box에서 face별 triangle diagonal 확인 |
+| `part2_chapter07_05_sphere.png` | screenshot | `Part2_Chapter05-08/07_Modeling_Step5_Sphere` | 확보 | 중앙 배치 wireframe에서 두 반구, equator 결합과 pole fan 확인 |
+| `part2_chapter07_08_sphere_mapping.png` | screenshot | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping` | 확보 | Generated fictional planet texture의 spherical UV와 seam 보정 결과 확인 |
 
 ## 승격 체크
 

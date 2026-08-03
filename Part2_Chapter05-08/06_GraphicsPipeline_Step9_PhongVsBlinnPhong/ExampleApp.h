@@ -1,6 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include <algorithm>
+#include <cstdint>
 #include <directxtk/SimpleMath.h>
 #include <iostream>
 #include <memory>
@@ -67,8 +68,8 @@ struct PixelConstantBuffer {
     bool useTexture;         
     Material material;       
     Light lights[MAX_LIGHTS]; 
-    bool useBlinnPhong = true;
-    Vector3 dummy;
+    std::uint32_t useBlinnPhong = 1;
+    Vector3 padding;
 };
 
 static_assert((sizeof(PixelConstantBuffer) % 16) == 0,
@@ -96,26 +97,26 @@ class ExampleApp : public AppBase {
 
     ComPtr<ID3D11Texture2D> m_texture;
     ComPtr<ID3D11ShaderResourceView> m_textureResourceView;
-    ComPtr<ID3D11Texture2D> m_texture2;
-    ComPtr<ID3D11ShaderResourceView> m_textureResourceView2;
     ComPtr<ID3D11SamplerState> m_samplerState;
 
     VertexConstantBuffer m_vertexConstantBufferData;
     PixelConstantBuffer m_pixelConstantBufferData;
 
     bool m_usePerspectiveProjection = true;
+    bool m_useBlinnPhong = true;
     Vector3 m_modelTranslation = Vector3(0.0f);
-    Vector3 m_modelRotation = Vector3(0.0f);
+    Vector3 m_modelRotation = Vector3(-0.35f, 0.55f, 0.0f);
     Vector3 m_modelScaling = Vector3(0.5f);
     float m_viewRot = 0.0f;
 
     float m_projFovAngleY = 70.0f;
     float m_nearZ = 0.01f;
     float m_farZ = 100.0f;
+    float m_aspect = AppBase::GetAspectRatio();
 
     int m_lightType = 0;
     Light m_lightFromGUI;
     float m_materialDiffuse = 1.0f;
     float m_materialSpecular = 1.0f;
 };
-} 
+}

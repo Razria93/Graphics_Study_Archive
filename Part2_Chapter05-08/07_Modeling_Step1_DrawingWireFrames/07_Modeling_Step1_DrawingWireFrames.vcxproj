@@ -143,8 +143,7 @@
     <ClInclude Include="GeometryGenerator.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="crate2_diffuse.png" />
-    <Image Include="wall.jpg" />
+    <Image Include="generated_dark_wood.png" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="BasicPixelShader.hlsl">

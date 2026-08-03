@@ -53,16 +53,25 @@ Normal, light direction과 view direction은 같은 좌표계에서 정규화해
 - Phong과 Blinn-Phong은 physically based energy conservation을 자동으로 보장하지 않는다.
 - 같은 shininess 값은 두 모델에서 같은 highlight를 의미하지 않는다.
 - Shadow, attenuation, gamma correction과 tone mapping은 별도 문제로 다룬다.
-- Step9 Shading은 Blinn-Phong만 구현하며 두 모델을 runtime에서 직접 비교하지 않는다.
-- Step9의 specular에 `N·L`을 추가로 곱하는 방식은 가능한 구현 variant이며 보편적인 유일한 식으로 일반화하지 않는다.
+- Part2 Chapter04 Step9 Shading은 Blinn-Phong만 구현하며 두 모델을 runtime에서 직접 비교하지 않는다.
+- Part2 Chapter04 Step9의 specular에 `N·L`을 추가로 곱하는 방식은 가능한 구현 variant이며 보편적인 유일한 식으로 일반화하지 않는다.
+- Part2 Chapter06 Step9은 같은 scene과 material에서 두 모델을 runtime 전환하고, Blinn-Phong branch에 `shininess * 2`를 사용해 lobe 폭을 조정하는 구현 선택을 포함한다.
 
 ## 관련 문서
 
 - Example: [Step9 Shading README](../../../Part2_Chapter04/04_Rasterization_Step9_Shading/README.md)
 - Example: [Step10 Lights README](../../../Part2_Chapter04/04_Rasterization_Step10_Lights/README.md)
+- Example: [Chapter05 Step2 Lights(GLM) README](../../../Part2_Chapter05-08/05_AffineTransformations_Step2_Lights%28GLM%29/README.md)
+- Example: [Chapter06 Step5A Texturing LightingSelf README](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf/README.md)
+- Example: [Chapter06 Step6 Lighting README](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting/README.md)
+- Example: [Chapter06 Step9 PhongVsBlinnPhong README](../../../Part2_Chapter05-08/06_GraphicsPipeline_Step9_PhongVsBlinnPhong/README.md)
 - Verification: [Part2 Chapter04 Verification](../../02_Verification/Part2_Chapter04/verification-index.md)
 - Demo: [Step9 Shading Demo](../../03_Demos/Part2_Chapter04/09_Shading.md)
 - Demo: [Step10 Lights Demo](../../03_Demos/Part2_Chapter04/10_Lights.md)
+- Demo: [Chapter05 Step2 Lights(GLM) Demo](../../03_Demos/Part2_Chapter05-08/05_LightsGLM.md)
+- Demo: [Chapter06 Step5A Texturing LightingSelf](../../03_Demos/Part2_Chapter05-08/06_TexturingLightingSelf.md)
+- Demo: [Chapter06 Step6 Lighting](../../03_Demos/Part2_Chapter05-08/06_Lighting.md)
+- Demo: [Chapter06 Step9 PhongVsBlinnPhong](../../03_Demos/Part2_Chapter05-08/09_PhongVsBlinnPhong.md)
 - Related Topic: [Phong Shading](PhongShading.md)
 - Related Topic: [Light Types](LightTypes.md)
 - Related Topic: [Perspective Projection](../Rasterization/PerspectiveProjection.md)

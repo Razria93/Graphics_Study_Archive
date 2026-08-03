@@ -1,0 +1,3 @@
+# Build And Run
+
+pwsh.exe 경고 뒤 Windows PowerShell fallback으로 build에 성공했다.

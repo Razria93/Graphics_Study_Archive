@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "D3D11Utils.h"
 #include "GeometryGenerator.h"
@@ -87,7 +87,7 @@ class ImageFilter {
         txtDesc.Width = width;
         txtDesc.Height = height;
         txtDesc.MipLevels = txtDesc.ArraySize = 1;
-        txtDesc.Format = DXGI_FORMAT_R32G32B32A32_FLOAT; //  ÀÌ¹ÌÁö Ã³¸®¿ëµµ
+        txtDesc.Format = DXGI_FORMAT_R32G32B32A32_FLOAT; //  ì´ë¯¸ì§€ ì²˜ë¦¬ìš©ë„
         txtDesc.SampleDesc.Count = 1;
         txtDesc.Usage = D3D11_USAGE_DEFAULT;
         txtDesc.BindFlags = D3D11_BIND_SHADER_RESOURCE |
@@ -109,11 +109,13 @@ class ImageFilter {
 
         m_pixelConstData.dx = 1.0f / width;
         m_pixelConstData.dy = 1.0f / height;
+        m_pixelConstData.iResolution[0] = float(width);
+        m_pixelConstData.iResolution[1] = float(height);
 
         D3D11Utils::CreateConstantBuffer(device, m_pixelConstData,
                                          m_mesh->pixelConstantBuffer);
 
-        // ±âº» ·»´õÅ¸°Ù
+        // ê¸°ë³¸ ë Œë”íƒ€ê²Ÿ
         this->SetRenderTargets({m_renderTargetView});
     }
 
@@ -129,7 +131,7 @@ class ImageFilter {
         //assert(m_shaderResources.size() > 0);
         assert(m_renderTargets.size() > 0);
 
-        // ¾îµð¿¡ ·»´õ¸µ ÇÒÁö¸¦ ÁöÁ¤
+        // ì–´ë””ì— ë Œë”ë§ í• ì§€ë¥¼ ì§€ì •
         context->OMSetRenderTargets(UINT(m_renderTargets.size()),
                                     m_renderTargets.data(), nullptr);
         //float clearColor[4] = {0.0f, 0.0f, 0.0f, 1.0f};
@@ -184,7 +186,8 @@ class ImageFilter {
         float threshold;
         float strength;
         float iTime;
-        float dummy[3];
+        float iResolution[2];
+        float dummy;
     };
 
     SamplingPixelConstantData m_pixelConstData;

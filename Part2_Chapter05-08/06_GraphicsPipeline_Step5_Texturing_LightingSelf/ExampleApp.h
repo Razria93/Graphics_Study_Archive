@@ -17,7 +17,6 @@ using DirectX::SimpleMath::Vector3;
 
 struct Vertex {
     Vector3 position;
-    Vector3 worldPosition;
     Vector3 normal;
     Vector2 texcoord;
 };
@@ -55,11 +54,10 @@ struct LightConstantBuffer
     float kc = 1.0f; 
     float kl = 0.09f; 
     float kq = 0.032f; 
-
-    float radius = 1.0f; 
+    float padding_4 = 0.0f;
 
     Vector3 viewPos = Vector3(0.0f, 0.0f, -2.0f);
-    float padding_4;
+    float padding_5 = 0.0f;
 };
 
 struct MaterialConstantBuffer 
@@ -72,10 +70,7 @@ struct MaterialConstantBuffer
     float padding_2;
 
     float shininess = 32.0f; 
-
-    float ks = 1.0f; 
-    float kd = 1.0f; 
-    float padding_3;
+    float padding_3[3] = {};
 };
 
 static_assert((sizeof(LightConstantBuffer) % 16) == 0,
@@ -106,9 +101,7 @@ class ExampleApp : public AppBase {
     UINT m_indexCount;
 
     ComPtr<ID3D11Texture2D> m_texture_0;
-    ComPtr<ID3D11Texture2D> m_texture_1;
     ComPtr<ID3D11ShaderResourceView> m_textureResourceView_0;
-    ComPtr<ID3D11ShaderResourceView> m_textureResourceView_1;
     ComPtr<ID3D11SamplerState> m_samplerState;
 
     ModelViewProjectionConstantBuffer m_constantBufferData;
@@ -117,7 +110,7 @@ class ExampleApp : public AppBase {
 
     bool m_usePerspectiveProjection = true;
     Vector3 m_modelTranslation = Vector3(0.0f);
-    Vector3 m_modelRotation = Vector3(0.0f);
+    Vector3 m_modelRotation = Vector3(-0.35f, 0.55f, 0.0f);
     Vector3 m_modelScaling = Vector3(0.5f);
     Vector3 m_viewEyePos = {0.0f, 0.0f, -2.0f};
     Vector3 m_viewEyeDir = {0.0f, 0.0f, 1.0f};
@@ -127,4 +120,4 @@ class ExampleApp : public AppBase {
     float m_farZ = 100.0f;
     float m_aspect = AppBase::GetAspectRatio();
 };
-} 
+}

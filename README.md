@@ -12,7 +12,7 @@
 
 ## Current Work
 
-`Part1_Chapter01-02` pilot, `Part1_Chapter03`과 `Part2_Chapter04` 순차 정규화를 마감했다. 다음 정규 작업은 `Part2_Chapter05-08`의 코드·project·shader·asset 사전 감사다.
+`Part1_Chapter01-02` pilot, `Part1_Chapter03`, `Part2_Chapter04`와 `Part2_Chapter05-08` 순차 정규화를 마감했다. Chapter05–08은 affine transformation, DirectX11 pipeline, procedural modeling과 shader toy 흐름을 연결한다.
 
 - [Part1 Chapter01-02](Part1_Chapter01-02/README.md): DirectX11 기반 렌더링 흐름과 bloom 후처리 pilot
 - [01_DX11InitAndImGui](Part1_Chapter01-02/01_DX11InitAndImGui/README.md): DirectX11 device, swap chain, render target, ImGui 기반 예제
@@ -23,6 +23,20 @@
 - [Part2 Chapter04](Part2_Chapter04/README.md): CPU software rasterization Step1~10 순차 작업
 - [Step1 Triangle](Part2_Chapter04/04_Rasterization_Step1_Triangle/README.md): edge function과 barycentric RGB interpolation 기반 최소 rasterizer
 - [Step1A Triangle To Circle](Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle/README.md): triangle fan과 segment-count slider를 사용하는 Personal Extension
+- [Part2 Chapter05-08](Part2_Chapter05-08/README.md): affine transformation부터 DirectX11 pipeline과 shader toy까지 이어지는 순차 작업
+- [Chapter06 Step5A Texturing LightingSelf](Part2_Chapter05-08/06_GraphicsPipeline_Step5_Texturing_LightingSelf/README.md): GPU texture와 point-light shading 결합
+- [Chapter06 Step6 Lighting](Part2_Chapter05-08/06_GraphicsPipeline_Step6_Lighting/README.md): Directional·Point·Spot GPU lighting 비교
+- [Chapter06 Step7 ResizingViewport](Part2_Chapter05-08/06_GraphicsPipeline_Step7_ResizingViewport/README.md): ImGui panel과 scene viewport 분리
+- [Chapter06 Step8 ResizingWindow](Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow/README.md): Window resize와 swap chain dependent resource 재생성
+- [Chapter06 Step9 PhongVsBlinnPhong](Part2_Chapter05-08/06_GraphicsPipeline_Step9_PhongVsBlinnPhong/README.md): 동일 조건의 Phong과 Blinn-Phong specular 비교
+- [Chapter07 Step1 DrawingWireFrames](Part2_Chapter05-08/07_Modeling_Step1_DrawingWireFrames/README.md): indexed triangle mesh의 wireframe rasterization
+- [Chapter07 Step2 DrawingNormals](Part2_Chapter05-08/07_Modeling_Step2_DrawingNormals/README.md): surface mesh와 vertex normal line의 분리
+- [Chapter07 Step3 Grid](Part2_Chapter05-08/07_Modeling_Step3_Grid/README.md): 분할 파라미터 기반 procedural Grid 생성
+- [Chapter07 Step4 Cylinder](Part2_Chapter05-08/07_Modeling_Step4_Cylinder/README.md): ring·slice 기반 열린 cylinder side surface 생성
+- [Chapter07 Step5 Sphere](Part2_Chapter05-08/07_Modeling_Step5_Sphere/README.md): 두 반구와 pole fan을 결합한 sphere 구현
+- [Chapter07 Step6 Subdivision](Part2_Chapter05-08/07_Modeling_Step6_Subdivision/README.md): triangle subdivision과 sphere surface projection
+- [Chapter07 Step7 FaceNormals](Part2_Chapter05-08/07_Modeling_Step7_FaceNormals/README.md): triangle winding과 face-normal diagnostic line
+- [Chapter07 Step8 SphereMapping](Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/README.md): icosahedron subdivision과 spherical UV seam 보정
 
 ## Featured Result
 
@@ -47,7 +61,7 @@
 | `Part1_Chapter01-02` | DirectX11 init, render loop, bloom post-processing | 완료 | pilot 마감 |
 | `Part1_Chapter03` | ray tracing basics와 cubemap sampling | 완료 | Step4~14 문서화·재검증 완료 |
 | `Part2_Chapter04` | rasterization foundation | 완료 | Step1~10·Step1A 문서화·재검증, GitHub 게시와 PR 마감 완료 |
-| `Part2_Chapter05-08` | DirectX11 pipeline, texture, mesh 흐름 | 완료 | 대기 |
+| `Part2_Chapter05-08` | DirectX11 pipeline, texture, mesh와 shader toy 흐름 | 완료 | Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 완료 |
 | `Part3_Chapter09` | texturing and mapping | 완료 | 대기 |
 | `Part3_Chapter10-13` | lighting, shadow, PBR/IBL | 완료 | 대기 |
 | `Part4_Chapter14-20` | compute shader, simulation, animation/physics | 완료 | 대기 |
