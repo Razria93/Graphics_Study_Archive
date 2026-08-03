@@ -23,6 +23,7 @@
 - 기본 screenshot 6장과 Step2 hover·Step3 press screenshot을 archive evidence로 추적한다.
 - Step1·3·4·5·6 selected video는 foreground 검증과 full decode를 통과한 local evidence로 유지한다.
 - 초기 foreground 검증 실패 후보와 39.77초 Step4 통합 take는 선택하지 않고 `local/`에만 둔다.
+- Step5 selected video는 [Demo Issue #21 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/21#issuecomment-5164633305)에 한 번 게시하고 나머지 7개는 local evidence로 유지한다.
 
 ## Chapter09 runtime asset limitation
 
@@ -44,7 +45,7 @@
 
 ## 다음 작업
 
-1. Chapter09 Demo Issue 후보를 검증하고 게시 여부를 별도 승인받는다.
+1. Chapter09 PR 후보를 작성하고 게시 범위를 판정한다.
 2. 원본 runtime asset 교체는 시간과 필요성을 검토하는 backlog로 유지한다.
 3. Chapter10-13 착수 감사를 수행한다.
 

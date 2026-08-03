@@ -34,7 +34,7 @@
 | Part3_Chapter09 Step1 | WASD 이동과 절대 cursor 시선 전환 | 필수 | camera translation과 orientation | 17.57초 WASD, 31초 mouse-look selected local video 검증 완료 | 미게시 |
 | Part3_Chapter09 Step3 | Press·marker 이동·release | 필수 | CPU picking ray collision lifecycle | 13.97초 selected local video 검증 완료 | 미게시 |
 | Part3_Chapter09 Step4 | X·Y·Z axis별 Theta drag | 필수 | Axis-angle quaternion rotation | 축별 15초 selected local video 3개 검증 완료 | 미게시 |
-| Part3_Chapter09 Step5 | Sphere 안쪽 virtual trackball drag | 필수 | Surface vector 기반 누적 quaternion 회전 | 18.6초 selected local video 검증 완료 | 미게시 |
+| Part3_Chapter09 Step5 | Sphere 안쪽 virtual trackball drag | 필수 | Surface vector 기반 누적 quaternion 회전 | 18.6초 selected local video 검증 완료 | [Demo Issue #21 attachment](https://github.com/user-attachments/assets/5217ba4b-1b18-4cbb-9635-ecd89d721cb9) |
 | Part3_Chapter09 Step6 | 오른쪽→위쪽 object drag | 필수 | 동일 ray depth의 world-space translation | 16.07초 selected local video 검증 완료 | 미게시 |
 | Part3_Chapter10-13 | shadow quality 비교 | 선택 | shadow mapping, PCF, PCSS | 미확인 | 미게시 |
 | Part4_Chapter14-20 | 대표 sample 실행 | 선택 | advanced graphics 후보 | 미확인 | 미게시 |

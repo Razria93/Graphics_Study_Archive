@@ -16,6 +16,7 @@
 | 범위 | Demo Issue | Attachment | 상태 |
 | --- | --- | --- | --- |
 | Part2_Chapter04 Step1A Triangle To Circle | [Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14) | [3→32 interaction video](https://github.com/user-attachments/assets/fc86477d-36bf-44bc-b279-a0824fa0c447) | published |
+| Part3_Chapter09 Step5 VirtualTrackball | [Issue #21](https://github.com/Razria93/Graphics_Study_Archive/issues/21) | [VirtualTrackball interaction video](https://github.com/user-attachments/assets/5217ba4b-1b18-4cbb-9635-ecd89d721cb9) | published |
 
 ## 연결 문서
 
