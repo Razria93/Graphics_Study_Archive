@@ -7,14 +7,42 @@
 | 항목 | 내용 |
 | --- | --- |
 | Part/Chapter/Example |  |
+| Plan revision | v1 |
+| 촬영 판정 | 기존 visual 유지 / 재촬영 / 보조 visual 추가 |
+| 기존 visual |  |
 | Capture 유형 | screenshot / video / result image |
+| Screenshot 수 |  |
+| Video 필요성 | 필요 / 불필요 |
 | 목표 visual |  |
 | Graphics 개념 |  |
+| Screenshot 표현 내용 |  |
+| Video 표현 내용 |  |
+| 최종 승인 기준 |  |
+| 촬영자 | AI / 사용자, 기본값 AI |
 | Executable |  |
 | Working directory |  |
 | Expected title |  |
 | Local output |  |
 | Tracked 승격 후보 |  |
+
+## 촬영 기준 승인
+
+```text
+작업자 초안
+→ 사용자 수정
+→ 구현·촬영 가능성 재검토
+→ 사용자 승인
+```
+
+| 항목 | 내용 |
+| --- | --- |
+| 구현 일치 | PASS / 확인 필요 |
+| 매체 구성 | PASS / 확인 필요 |
+| 조작 가능성 | PASS / 확인 필요 |
+| 공개 안전성 | PASS / 확인 필요 |
+| 사용자 수정 |  |
+| 사용자 기준 승인 | 대기 / 승인 |
+| Retain 사유 | 기존 visual 유지일 때 작성 |
 
 ## Window와 입력 안전
 

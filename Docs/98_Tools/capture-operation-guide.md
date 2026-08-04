@@ -15,6 +15,40 @@
 
 Example별 좌표와 parameter는 [Local Capture Operation Plan](templates/local-capture-operation-plan.md)을 `local/`에 복사해 기록한다.
 
+## Step visual 계획과 승인
+
+Step별 작업은 작업자가 실제 code, UI, 기존 문서와 capture를 조사해 촬영 기준 초안을 먼저 작성한다. 사용자는 빈 양식을 다시 작성하지 않고 의도와 다른 항목만 수정한다.
+
+```text
+촬영 기준 초안
+→ 사용자 수정
+→ 구현·촬영 가능성 재검토
+→ 사용자 기준 승인
+→ 기존 visual 유지 또는 촬영
+```
+
+초안에는 재촬영 여부, screenshot 수, video 필요성, 학습 목표, 각 매체에 표현할 내용, 시작 상태와 parameter, 승인 기준과 촬영자를 포함한다. 수정하지 않은 항목은 초안에 동의한 것으로 처리하고 구현과 충돌하거나 설명이 부족한 항목만 다시 확인한다.
+
+사용자 승인 뒤에는 screenshot 수, parameter, camera·model 상태, 조작 sequence와 승인 기준을 임의로 바꾸지 않는다. 기준 변경이 필요하면 local operation plan의 revision을 올리고 다시 승인받는다.
+
+## 기존 visual 유지
+
+다음 조건을 만족하면 새 촬영 없이 기존 visual을 유지할 수 있다.
+
+- Step의 핵심 결과가 기존 visual에서 분명하다.
+- 사용자 조작이나 시간 변화가 핵심이 아니다.
+- 비교할 mode 또는 parameter가 없다.
+- image 품질, 구도, UI와 title에 문제가 없다.
+- 추가 매체가 새로운 구현 정보를 제공하지 않는다.
+
+기존 visual 유지도 사용자 검수를 거쳐 `retained`로 마감한다. 정본 변경이 없으면 파일 수정과 commit을 만들지 않는다.
+
+## 촬영자 시프트
+
+촬영은 자동 조작을 기본값으로 둔다. 정확한 parameter 입력, 좌표 click·drag, 일정 시간 key press와 동일 bounds 반복 촬영은 자동 조작 대상으로 유지한다.
+
+사용자가 촬영 의도를 설명하고 반복 조율하는 비용보다 직접 촬영하는 비용이 낮다고 판단하면 사용자 촬영으로 전환할 수 있다. 사용자 촬영 중에는 자동 조작을 수행하지 않는다. 사용자가 촬영 완료를 알리면 작업자는 기술 검수부터 이어간다. 촬영자가 바뀌어도 검수와 승격 기준은 바뀌지 않는다.
+
 ## 입력 안전 안내
 
 ```text

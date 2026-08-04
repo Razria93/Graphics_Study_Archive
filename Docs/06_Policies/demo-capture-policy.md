@@ -171,6 +171,17 @@ Video 댓글은 게시 목적에 따라 다음과 같이 갱신한다.
 - 조작 전후에 결과를 확인할 수 있는 안정 구간을 둔다.
 - 재촬영하더라도 기존의 정상 attempt는 보존하고 selected 교체는 명시적 옵션으로만 허용한다.
 
+## 기존 visual 유지 판정
+
+각 Example은 새 capture 수량을 채우기보다 기존 visual이 학습 목표를 충분히 설명하는지 먼저 판단한다.
+
+- 기존 visual이 핵심 결과를 명확히 보여주고 동적 변화, 조작, mode 또는 parameter 비교가 새 정보를 추가하지 않으면 재촬영 없이 유지할 수 있다.
+- 재촬영 불필요 판정도 visual 검수 결과이며 검토 생략으로 취급하지 않는다.
+- 기존 visual 유지는 사용자 시각 검수를 거쳐 `retained`로 확정한다.
+- 새 후보는 사용자 승인 전까지 기존 tracked capture를 교체하거나 삭제하지 않는다.
+- 기존 visual을 그대로 유지하고 정본 상태도 정확하면 불필요한 파일 변경이나 빈 commit을 만들지 않는다.
+- 촬영자가 달라도 자동 기술 검수, 사용자 시각 검수와 tracked asset 승격 기준은 동일하게 적용한다.
+
 ## Capture/Result 승격 기준
 
 `local/`의 capture 후보나 ignored output의 result image는 다음 조건을 만족할 때만 `Docs/_assets`로 승격한다.
