@@ -16,6 +16,10 @@ Geometry shader billboard 위에서 time 기반 procedural fireball을 출력하
 
 세 billboard가 구형 fire surface처럼 보이며 서로 다른 procedural phase를 가진다.
 
+![Chapter10 Step4 Fireball billboard motion](../../_assets/captures/part3_chapter10_04_fireball_billboard-motion.png)
+
+FRAME 1 → FRAME 2 → FRAME 3 순서의 storyboard는 같은 camera-facing billboard 위에서 time과 primitive ID가 만드는 surface phase 변화가 누적되는 점을 보여준다.
+
 ## 입력과 출력
 
 | 구분 | 내용 |
@@ -37,7 +41,7 @@ Geometry shader billboard 위에서 time 기반 procedural fireball을 출력하
 
 ## 시각 결과
 
-정지 화면은 형태와 instance 차이를 증명한다. 연속 motion은 구현 이해에 보조적이므로 video는 local evidence 후보로만 둔다.
+정지 화면은 형태와 instance 차이를 증명한다. 3-frame storyboard는 연속 motion의 핵심 상태를 정적 visual로 압축한다. 현재 selected local video 후보는 frame-rate 기술 검수 재확인이 필요하므로 tracked Demo에는 포함하지 않는다.
 
 ## 구현 범위와 한계
 

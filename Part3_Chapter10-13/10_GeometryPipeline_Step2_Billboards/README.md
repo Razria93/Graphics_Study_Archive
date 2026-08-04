@@ -26,13 +26,17 @@ Step1의 geometry shader quad를 camera-facing billboard와 texture array로 확
 
 서로 다른 tree texture가 같은 draw 경로에서 camera를 향하는 평면으로 출력된다.
 
+![Chapter10 Step2 Billboards camera-facing comparison](../../Docs/_assets/captures/part3_chapter10_02_billboards_view-comparison.png)
+
+CENTER → LEFT → RIGHT camera 위치 비교에서도 billboard quad가 camera-facing basis를 유지한다.
+
 ## Verification
 
 | 항목 | 결과 | 비고 |
 | --- | --- | --- |
 | Debug x64 build/run | 성공 | 2026-08-04 현재 확인 |
 | Release x64 build/run | 성공 | project 폴더 CWD |
-| Capture/Result | 완료 | 전체 창 1282×752 PNG |
+| Capture/Result | 완료 | 전체 창 1282×752 PNG와 3-frame camera-facing storyboard |
 
 ## Limitations
 

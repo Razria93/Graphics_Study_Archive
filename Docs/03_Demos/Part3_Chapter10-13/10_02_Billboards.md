@@ -16,6 +16,10 @@ Point primitive를 camera-facing textured billboard로 확장하고 한 draw 경
 
 서로 다른 tree image가 같은 camera를 향하는 quad로 정렬된다.
 
+![Chapter10 Step2 Billboards camera-facing comparison](../../_assets/captures/part3_chapter10_02_billboards_view-comparison.png)
+
+CENTER → LEFT → RIGHT 순서의 camera 위치 변화에서도 각 tree quad가 화면을 향한다. 이 storyboard는 billboard plane 자체가 world에 고정되지 않고 camera basis로 재정렬되는 점을 확인하는 비교 evidence다.
+
 ## 입력과 출력
 
 | 구분 | 내용 |
@@ -38,6 +42,8 @@ Point primitive를 camera-facing textured billboard로 확장하고 한 draw 경
 ## 시각 결과
 
 Tree가 plane의 회전 방향을 드러내지 않고 camera를 향해 서 있으므로 foliage sprite의 silhouette을 읽을 수 있다.
+
+3-frame storyboard는 같은 tree set을 서로 다른 camera 위치에서 비교해 billboard가 camera-facing basis를 유지하는지 확인한다.
 
 ## 구현 범위와 한계
 
