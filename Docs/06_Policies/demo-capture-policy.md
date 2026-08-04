@@ -135,6 +135,22 @@ Video 댓글은 게시 목적에 따라 다음과 같이 갱신한다.
 - 범용 도구는 process·HWND·title과 bounds 안정화를 확인하고 example별 local driver는 rendering, ImGui와 parameter 준비 상태를 확인한다.
 - FFmpeg 또는 recorder를 시작한 뒤 자동 입력 직전에 대상 foreground를 다시 확인한다.
 
+## 자동 입력 primitive 기준
+
+자동 입력은 focus, keyboard toggle, axis key hold, mouse move, mouse click, slider drag와 numeric input primitive로 나누어 계획한다. 각 primitive는 사전 조건, 실행, 안정화 대기와 사후 확인을 local operation plan에 기록한다.
+
+- focus primitive는 target window handle, foreground, exact title과 bounds를 확인하고 client 또는 title bar click 뒤 최소 1초 안정화 시간을 둔다.
+- keyboard toggle primitive는 `F` 같은 toggle key를 key down/up으로 입력하고 최소 1초 대기한 뒤 UI 상태, frame hash 또는 camera 변화로 적용 여부를 확인한다.
+- axis key hold primitive는 `W`, `A`, `S`, `D` 같은 이동 key를 press, duration 유지, release 순서로 입력하고 최소 1초 대기한 뒤 결과 변화를 확인한다.
+- mouse move primitive는 camera rotation처럼 현재 cursor position이 기준점이 되는 기능에서 시작 cursor origin을 먼저 고정하고 최소 1초 대기한 뒤 drag 없이 이동한다.
+- mouse click primitive는 ImGui panel의 open/closed 상태를 먼저 확인하고 좌표 클릭이 panel toggle을 반대로 수행하지 않는지 확인한다.
+- slider drag primitive는 press, 짧은 hold, duration을 둔 이동, release와 결과 대기 순서로 수행한다.
+- numeric input primitive는 field focus, select/clear, 값 입력, Enter 또는 focus out과 결과 대기 순서로 수행한다.
+
+ImGui panel state가 실행 사이에 유지되는 예제는 좌표 기반 panel arrow click을 기본 조작으로 사용하지 않는다. keyboard toggle이나 numeric input으로 같은 상태를 만들 수 있으면 이를 우선한다.
+
+자동 조작이 실패하면 같은 window에서 조작을 계속 누적하지 않는다. 해당 take를 폐기하고 error dialog sweep, application restart와 primitive 단위 재시도를 순서대로 수행한다.
+
 ## FPV와 ImGui 증거 분리
 
 - ImGui 조작이 학습 목표이면 UI를 펼친 상태의 조작 video를 우선한다.

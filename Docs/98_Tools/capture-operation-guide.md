@@ -62,6 +62,26 @@ mouse와 keyboard를 조작하지 않는다.
 4. 사용자 입력으로 대상이 바뀌었다고 의심되면 현재 take를 폐기한다.
 5. Foreground 전환을 위해 input queue를 연결한 경우 대상 창을 올린 직후 해제하고 actual foreground를 다시 확인한다.
 
+## 자동 입력 primitive 실행 순서
+
+Example별 local driver는 GUI 조작을 한 번에 밀어 넣지 않고 primitive 단위로 실행한다. 기본 대기 시간은 1초로 시작하고 안정성이 확인된 경우에만 줄인다.
+
+| Primitive | 실행 순서 | 사후 확인 |
+| --- | --- | --- |
+| focus | foreground 전환, target window click, 1초 대기 | actual foreground, title, bounds |
+| keyboard toggle | key down/up, 1초 대기 | UI 상태, frame hash 또는 camera 변화 |
+| axis key hold | key down, 지정 duration 유지, key up, 1초 대기 | 이동 전후 visual 변화 |
+| mouse move | 시작 cursor origin 고정, 1초 대기, drag 없는 move | camera 방향과 cursor 위치 |
+| mouse click | control 상태 확인, click, 1초 대기 | toggle 또는 값 변화 |
+| slider drag | press, hold, duration 이동, release, 1초 대기 | 목표값과 rendering 변화 |
+| numeric input | field focus, select/clear, 값 입력, Enter 또는 focus out, 1초 대기 | UI 표시값과 결과 |
+
+FPV나 mouse-look처럼 현재 cursor 위치가 camera 회전 기준이 되는 기능은 toggle 전에 cursor를 client center 같은 명시한 origin으로 이동한다. cursor origin을 고정하지 않은 상태에서 FPV를 켜면 첫 frame에서 시야가 크게 돌아갈 수 있다.
+
+ImGui panel이 이전 실행의 open/closed 상태를 보존하면 panel arrow 좌표 클릭은 실패하기 쉽다. panel arrow click은 열기와 닫기가 같은 좌표이므로 가능하면 피하고, 동일 기능을 keyboard toggle, checkbox 상태 확인 또는 numeric input으로 만든다.
+
+Tracked helper `scripts/window-input-primitives.ps1`는 focus, key tap, key hold, mouse move, click과 drag primitive를 제공한다. 이 helper는 실제 DirectX app을 실행하지 않으며 example별 local driver가 필요한 sequence와 좌표를 결정한다.
+
 ## 기본 상태 screenshot
 
 ```powershell
@@ -189,3 +209,31 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 ```
 
 dialog 후보가 target example과 관련 있는지 확신할 수 없으면 닫지 않는다. 무인 모드에서는 사용자 알림으로 중단하고 재실행 루프를 돌지 않는다.
+
+## Troubleshooting: FPV 입력이 적용되지 않는 경우
+
+Chapter10 Step2 Billboards 촬영에서는 다음 원인으로 FPV와 이동 입력이 적용되지 않은 take가 발생했다.
+
+- cursor가 window 밖에 있는 상태에서 focus 확보 없이 keyboard input을 보냈다.
+- focus 확보와 `F` toggle 사이의 안정화 시간이 부족했다.
+- ImGui panel state가 이전 실행에서 보존되어 panel arrow 좌표 클릭이 열기 대신 닫기를 수행했다.
+- panel state가 달라진 뒤 checkbox 좌표를 클릭해 실제 control이 아니라 빈 영역을 클릭했다.
+- FPV toggle 확인 전에 axis key input을 연속으로 보내 시각 결과가 바뀌지 않았다.
+
+해당 유형의 예제는 다음 probe sequence로 먼저 입력 경로를 확인한다.
+
+```text
+focus 확보
+→ 1초 대기
+→ F key tap
+→ 1초 대기
+→ A key press 2초
+→ release
+→ 1초 대기
+→ D key press 4초
+→ release
+→ 1초 대기
+→ screenshot/hash/visual 변화 확인
+```
+
+이 probe가 실패하면 본 촬영으로 넘어가지 않는다. take를 폐기하고 error dialog sweep, application restart, focus primitive 재검증과 입력 간격 확대를 순서대로 수행한다.

@@ -94,6 +94,8 @@ MP4 brand, `handler_name`과 encoder library처럼 개인 정보가 아닌 기�
 
 촬영할 UI action, dwell time, retry와 reset은 [Capture Operation Guide](capture-operation-guide.md)와 local-only [Capture Operation Plan Template](templates/local-capture-operation-plan.md)에 먼저 기록한다.
 
+자동 입력이 포함된 video는 `scripts/window-input-primitives.ps1`의 primitive helper를 example별 local driver에서 선택적으로 사용할 수 있다. 특히 FPV, WASD 이동, mouse-look, slider drag와 numeric input은 focus 확보, 최소 대기 시간과 사후 확인을 local plan에 기록한 뒤 실행한다.
+
 ## Selected video 재검사
 
 기존 selected MP4는 application을 다시 실행하지 않고 read-only로 검사할 수 있다.

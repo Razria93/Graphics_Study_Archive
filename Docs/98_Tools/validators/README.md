@@ -17,6 +17,7 @@
 | `validate-video-asset-quality.ps1` | 예상하지 못한 tracked MP4, MOV와 WEBM 검사 | Git tracked path |
 | `test-video-asset-quality.ps1` | tracked video path fixture 검사 | `fixtures/video-asset-quality` |
 | `test-window-capture-tools.ps1` | screenshot·video 도구의 크기 보존 배치, readiness, foreground와 FullWindow·ClientOnly 계약 검사 | `Docs/98_Tools/scripts` |
+| `test-window-input-primitives.ps1` | 자동 GUI 입력 primitive helper의 load, function 계약, delay와 안전 기준 검사 | `Docs/98_Tools/scripts` |
 | `validate-markdown-wrap-quality.ps1` | 현재 정본 Markdown의 명백한 인위적 soft-wrap 검사 | Root·Example README, `Docs/00_Index`~`Docs/07_GitHub`, `Docs/98_Tools`, tracked `.github` Markdown |
 | `test-markdown-render-quality.ps1` | Markdown 범위 표기의 취소선 오해 방지 fixture 검사 | `fixtures/markdown-render-quality` |
 | `validate-markdown-render-quality.ps1` | 한 줄의 복수 단일-tilde 범위로 발생하는 의도하지 않은 취소선 검사 | Root·Example README, `Docs/00_Index`~`Docs/07_GitHub`, `Docs/98_Tools`, tracked `.github` Markdown |
@@ -37,6 +38,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-doc-
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-video-asset-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-video-asset-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-window-capture-tools.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-window-input-primitives.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-render-quality.ps1
@@ -67,6 +69,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-doc-
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-video-asset-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-video-asset-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-window-capture-tools.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-window-input-primitives.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-render-quality.ps1

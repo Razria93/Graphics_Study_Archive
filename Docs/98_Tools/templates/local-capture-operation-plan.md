@@ -72,9 +72,19 @@
 
 ## UI 조작 sequence
 
-| 순서 | UI control | DWM bounds 기준 상대 좌표 | 조작 | 목표값 | 전·후 대기 |
-| --- | --- | --- | --- | --- | --- |
-| 1 |  |  |  |  |  |
+| 순서 | Primitive | UI control | DWM bounds 기준 상대 좌표 | 조작 | 목표값 | 전·후 대기 | 사후 확인 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | focus / keyboard toggle / axis key hold / mouse move / mouse click / slider drag / numeric input |  |  |  |  |  |  |
+
+Primitive 기준:
+
+- focus: target window foreground, click, 최소 1초 대기, title·bounds 재확인
+- keyboard toggle: key down/up, 최소 1초 대기, toggle 결과 확인
+- axis key hold: press, duration 유지, release, 최소 1초 대기, 이동 결과 확인
+- mouse move: 시작 cursor origin 고정, 최소 1초 대기, drag 없는 이동, camera 변화 확인
+- mouse click: control 상태 확인, click, 최소 1초 대기, 값 또는 toggle 변화 확인
+- slider drag: press, hold, duration 이동, release, 최소 1초 대기, 목표값 확인
+- numeric input: field focus, select/clear, 값 입력, Enter 또는 focus out, 최소 1초 대기, UI 표시값 확인
 
 ## Capture 시점
 

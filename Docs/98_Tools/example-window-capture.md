@@ -77,6 +77,8 @@ capture 후보는 먼저 `local/`에 저장한다.
 
 parameter 변경 전후 상태, reset과 재촬영 순서는 [Capture Operation Guide](capture-operation-guide.md)와 local-only [Capture Operation Plan Template](templates/local-capture-operation-plan.md)에 기록한다.
 
+자동 parameter 조작이 필요하면 local driver에서 [Capture Operation Guide](capture-operation-guide.md)의 입력 primitive 순서를 따른다. `scripts/window-input-primitives.ps1`는 focus, key tap, key hold, mouse move, click과 drag helper를 제공하지만 좌표와 sequence 자체는 example별 local plan에 둔다.
+
 검수 후 `Docs/_assets`로 승격하고 관련 Verification, Demo와 Publication 문서를 갱신하는 절차는 [Demo Capture Policy](../06_Policies/demo-capture-policy.md)와 [Publication Policy](../06_Policies/publication-policy.md)를 따른다.
 
 ## 제한
