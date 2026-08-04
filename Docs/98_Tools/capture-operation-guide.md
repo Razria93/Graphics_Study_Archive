@@ -7,7 +7,7 @@
 | 책임 | Tracked 범용 도구 | Example별 local driver |
 | --- | --- | --- |
 | application 실행, PID·exact title | 담당 | 검사 결과 사용 |
-| foreground, DWM bounds, 중앙 배치 | 담당 | 조작 전 재확인 |
+| foreground, DWM·native·client bounds, 중앙 배치 | 담당 | 조작 전 재확인 |
 | screenshot, recording, 기술 검증, cleanup | 담당 | 범용 도구 호출 |
 | slider, checkbox, parameter | 비담당 | 담당 |
 | 상대 좌표, 조작 sequence, delay, cursor 대피 | 비담당 | 담당 |
@@ -101,6 +101,14 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 5. 조작 종료 후 cursor를 대피하고 결과 구간을 유지한다.
 6. F10으로 저장·검증한 뒤 시각 검수를 통과한 attempt만 F11로 selected한다.
 
+### Video capture mode
+
+- 기본값은 title bar와 border를 포함하는 `FullWindow`다.
+- `FullWindow` desktop crop에서 white frame, compositor artifact 또는 반복적인 UI 손상이 재현되고 같은 실행의 screenshot과 수동 run은 정상일 때만 `ClientOnly` fallback을 사용한다.
+- `ClientOnly`는 exact title로 client area를 녹화하며 같은 Demo의 `FullWindow` screenshot이 application identity와 필요한 UI 상태를 보완한다.
+- ImGui 조작이 핵심이면 UI를 숨기지 않고 함께 녹화한다. FPV와 펼친 UI 조합에서만 손상이 재현되면 `FullWindow` UI screenshot과 panel을 접은 동적 video로 증거를 분리한다.
+- 선택한 mode, fallback 사유와 보완 screenshot을 local operation plan에 기록한다.
+
 ## 사용자 수동 조작 video
 
 - 사용자에게 조작 순서, 초기값, 목표값과 종료 조건을 촬영 전에 안내한다.
@@ -134,6 +142,7 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 - 조작과 결과가 설명할 graphics 개념과 대응하는지 확인한다.
 - 불필요한 parameter 왕복, click, mouse movement와 대기를 확인한다.
 - screenshot대비 video가 추가 설명 가치를 갖는지 확인한다.
+- 시작 frame, 첫 상태 종료 frame, 전환 중간 frame, 마지막 상태 frame과 종료 frame을 추출해 white·black·stale frame, UI 가림, 잘못된 foreground, 움직임 부재와 종료 상태 불일치를 확인한다.
 
 ## Selected video 기반 Storyboard
 

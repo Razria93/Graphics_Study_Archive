@@ -88,6 +88,28 @@ $powerShellPath = [Diagnostics.Process]::GetCurrentProcess().MainModule.FileName
 - shader, texture, model 경로를 확인한다.
 - 실패는 `Docs/02_Verification/known-issues.md`에 기록한다.
 
+## 자동 capture 후 white frame 또는 crash
+
+증상:
+
+- 자동 중앙 배치 직후 rendering 영역이 white frame으로 바뀌거나 application이 종료된다.
+- 수동 실행과 같은 상태의 screenshot은 정상이지만 full-window video에서 compositor 또는 UI 손상이 반복된다.
+
+확인:
+
+- 창 배치 과정에서 DWM dimensions를 native resize 값으로 다시 사용했는지 확인한다.
+- 이동 전후 native bounds와 client dimensions가 같은지 확인한다.
+- resize 뒤 swap-chain resource와 별도 picking·post-processing resource의 dimensions가 일치하는지 확인한다.
+- recorder 시작 뒤 대상 application이 실제 foreground인지 확인한다.
+
+처리:
+
+- 명시적 resize가 없으면 size-preserving move를 사용한다.
+- process·HWND·exact title과 안정화된 bounds를 확인한 뒤 촬영한다.
+- FFmpeg 시작 뒤 foreground를 다시 확보하고 실패한 partial과 이번 실행에서 시작한 process만 정리한다.
+- full-window screenshot은 정상이고 동적 desktop crop만 반복적으로 손상되면 `ClientOnly` video fallback을 사용한다.
+- FPV와 펼친 ImGui 조합에서만 UI 손상이 재현되면 설정용 full-window screenshot과 panel을 접은 동적 video로 증거를 분리한다.
+
 ## 작업 분리 문제
 
 증상:

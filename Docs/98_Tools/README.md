@@ -25,7 +25,7 @@
 | [User Attention Notification](user-attention-notification.md) | 작업 종료, 승인 대기와 blocker 시 Windows 알림 실행 |
 | [Capture Operation Guide](capture-operation-guide.md) | screenshot·video 조작 계획, 입력 안전, window 배치, reset과 시각 검수 절차 |
 | [Example Window Capture](example-window-capture.md) | Windows/DWM 기반 application 전체 창 capture 후보 생성 |
-| [Example Window Recording](example-window-recording.md) | FFmpeg 기반 application 전체 창 video 후보 녹화 |
+| [Example Window Recording](example-window-recording.md) | FFmpeg 기반 전체 창 video와 client-only fallback 후보 녹화 |
 | `scripts/inspect-example-video.ps1` | 기존 selected MP4의 container, stream, CFR, metadata, decode와 hash 재검사 |
 | [UV Diagnostic Texture](uv-diagnostic-texture.md) | UV 방향·보간·seam 확인용 자작 PNG 생성 |
 

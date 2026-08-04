@@ -4,7 +4,7 @@ Windows에서 graphics example의 보이는 application window 전체를 PNG 후
 
 ## 도구
 
-`scripts/capture-example-window.ps1`은 실행 파일을 시작하고 exact window title을 확인한 뒤 DWM extended frame bounds 기준으로 화면을 캡처한다. `CopyFromScreen`을 사용하므로 대상 창 위에 다른 창이 겹치지 않게 유지해야 한다.
+`scripts/capture-example-window.ps1`은 실행 파일을 시작하고 exact window title과 연속된 DWM bounds 안정화를 확인한 뒤 DWM extended frame bounds 기준으로 화면을 캡처한다. `CopyFromScreen`을 사용하므로 대상 창 위에 다른 창이 겹치지 않게 유지해야 한다.
 
 필수 parameter는 다음과 같다.
 
@@ -56,7 +56,7 @@ powershell -NoProfile -ExecutionPolicy Bypass `
   -Overwrite
 ```
 
-`CenterWindow`는 application의 현재 크기를 바꾸지 않고 해당 monitor의 taskbar를 제외한 working area 중앙에 배치한다. 창이 working area보다 크거나 중앙 배치 후 bounds가 벗어나면 capture하지 않는다. countdown을 사용하는 동안 사용자는 마우스와 키보드를 조작하지 않는다. 도구는 global input을 잠그거나 system 설정을 변경하지 않는다.
+`CenterWindow`는 DWM bounds로 목표 위치를 계산하고 native window origin에 이동 delta만 적용하여 application의 현재 크기를 바꾸지 않는다. 창이 working area보다 크거나 중앙 배치 후 bounds가 벗어나면 capture하지 않는다. countdown을 사용하는 동안 사용자는 마우스와 키보드를 조작하지 않는다. 도구는 global input을 잠그거나 system 설정을 변경하지 않는다.
 
 성공 결과는 absolute output path, 실제 image dimensions와 SHA-256을 출력한다. OS theme, DPI와 window border에 따라 전체 image dimensions는 달라질 수 있다.
 

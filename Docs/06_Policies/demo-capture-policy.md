@@ -112,7 +112,10 @@ Video 댓글은 게시 목적에 따라 다음과 같이 갱신한다.
 ## Video 촬영과 검수 기준
 
 - 기본 게시 후보는 MP4, H.264, `yuv420p`, CFR 30 FPS와 audio stream 0개를 사용한다.
-- application 전체 창과 공개 가능한 title bar를 포함하고 Chapter와 Step을 식별할 수 있는 title을 사용한다.
+- 기본 촬영 방식은 application 전체 창과 공개 가능한 title bar를 포함하는 `FullWindow`이며 Chapter와 Step을 식별할 수 있는 title을 사용한다.
+- `FullWindow` desktop crop에서 white frame, compositor artifact, UI 손상 또는 반복적인 녹화 불안정이 재현된 경우에만 `ClientOnly`를 명시적 fallback으로 사용할 수 있다.
+- `ClientOnly` video는 exact window title로 대상을 고정하고 같은 Demo의 `FullWindow` screenshot이 application identity, title과 필요한 UI 상태를 보완한다.
+- `ClientOnly`는 동적 결과를 위한 예외이며 모든 Example의 기본값이나 screenshot 기본값으로 확대하지 않는다.
 - 한 video에는 하나의 변화 또는 interaction을 설명하고 권장 길이는 5~20초로 둔다.
 - 시작과 종료에 결과를 확인할 수 있는 안정 구간을 두고 불필요한 마우스 이동과 대기를 줄인다.
 - 녹화 중 대상 창을 이동하거나 resize하지 않는다.
@@ -124,17 +127,28 @@ Video 댓글은 게시 목적에 따라 다음과 같이 갱신한다.
 ## 자동 UI 조작 안전 기준
 
 - 자동 UI 조작 시작 전에 사용자가 mouse와 keyboard를 조작하지 않도록 안내하고 countdown을 실행한다.
-- countdown 종료 후에 도구가 시작한 process ID, exact window title, foreground window와 DWM bounds를 다시 확인한다.
+- countdown 종료 후에 도구가 시작한 process ID, exact window title, foreground window와 안정화된 DWM·native·client bounds를 다시 확인한다.
 - 대상 process, title, foreground 또는 bounds가 예상과 다르면 현재 screenshot 또는 video attempt를 폐기한다.
 - 자동 조작은 저장소 범위의 example application에만 적용하며 browser, terminal, system UI와 다른 application을 조작하지 않는다.
 - Windows 전체 input lock, global mouse hook과 system-wide keyboard hook은 사용하지 않는다.
 - 범용 도구는 application 실행, foreground, window bounds, capture, 검증과 cleanup을 담당하고 slider, checkbox, parameter, 상대 좌표와 조작 sequence는 example별 local driver에 둔다.
+- 범용 도구는 process·HWND·title과 bounds 안정화를 확인하고 example별 local driver는 rendering, ImGui와 parameter 준비 상태를 확인한다.
+- FFmpeg 또는 recorder를 시작한 뒤 자동 입력 직전에 대상 foreground를 다시 확인한다.
+
+## FPV와 ImGui 증거 분리
+
+- ImGui 조작이 학습 목표이면 UI를 펼친 상태의 조작 video를 우선한다.
+- FPV와 펼친 ImGui를 함께 사용할 때 UI 손상이나 부분 갱신이 재현되면 설정 증거와 동적 증거를 분리할 수 있다.
+- 설정 증거는 `FullWindow` screenshot으로 title과 전체 UI 상태를 기록하고 동적 증거는 필요한 경우 panel을 접은 `ClientOnly` video로 움직임을 기록한다.
+- UI를 접어도 학습 목표와 조작 결과가 유지되는 경우에만 증거를 분리하며 문제를 숨기기 위한 일반적인 UI 제거 규칙으로 사용하지 않는다.
 
 ## Window 배치와 bounds 기준
 
 - application window의 DWM extended frame bounds 전체가 monitor working area 안에 들어오도록 한다.
 - 화면 중앙 배치는 잘림과 taskbar 침범을 피하기 위한 선택적 권장 기본값으로 사용한다.
-- 중앙 배치는 기존 window size를 유지하며 window가 working area보다 크면 강제 resize 대신 실패로 처리한다.
+- 중앙 배치는 DWM bounds로 보이는 외곽의 목표 위치를 계산하고 native window origin에 이동 delta만 적용하여 기존 window size를 유지한다.
+- 사용자가 명시적으로 resize를 요청하지 않으면 `SetWindowPos`에 size 보존 flag를 적용하며 window가 working area보다 크면 강제 resize 대신 실패로 처리한다.
+- 창 이동 전후 native bounds와 client dimensions가 달라지면 현재 attempt를 폐기한다.
 - 같은 비교 묶음의 capture는 동일한 window size, position과 capture 방식을 유지한다.
 - title bar와 window border를 포함하며 녹화 중 window 이동과 resize가 확인되면 현재 attempt를 실패로 처리한다.
 

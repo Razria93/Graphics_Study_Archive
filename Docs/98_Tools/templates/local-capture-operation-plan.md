@@ -11,6 +11,9 @@
 | 촬영 판정 | 기존 visual 유지 / 재촬영 / 보조 visual 추가 |
 | 기존 visual |  |
 | Capture 유형 | screenshot / video / result image |
+| Capture mode | FullWindow / ClientOnly |
+| Fallback 사유 | ClientOnly일 때 작성 |
+| 보완 FullWindow screenshot | ClientOnly일 때 작성 |
 | Screenshot 수 |  |
 | Video 필요성 | 필요 / 불필요 |
 | 목표 visual |  |
@@ -54,6 +57,8 @@
 | 사용자 입력 중단 안내 |  |
 | Cursor 대피 위치 |  |
 | PID·title·bounds 재확인 |  |
+| Bounds 안정화 | DWM·native·client 연속 확인 |
+| 입력 직전 foreground 재확인 |  |
 
 ## 초기·목표 상태
 
@@ -104,6 +109,8 @@ Storyboard가 필요할 때만 작성한다. 균등 시간 간격이 아니라 �
 - [ ] metadata, hash와 전체 decode를 확인한다.
 - [ ] process, FFmpeg와 global hotkey 잔재가 없다.
 - [ ] 대상 PID, exact title과 bounds가 계획과 일치한다.
+- [ ] 창 이동 전후 native bounds와 client dimensions가 같다.
+- [ ] ClientOnly video는 FullWindow screenshot이 title과 필요한 UI 상태를 보완한다.
 
 ### 사용자 시각 검수
 
@@ -112,6 +119,7 @@ Storyboard가 필요할 때만 작성한다. 균등 시간 간격이 아니라 �
 - [ ] 조작과 결과의 대응이 명확하다.
 - [ ] 불필요한 parameter 왕복, click, mouse movement와 대기가 없다.
 - [ ] 시작·종료 안정 구간과 정지 이미지 대비 추가 설명 가치를 확인한다.
+- [ ] 시작·첫 상태 종료·전환 중간·마지막 상태·종료 frame을 추출해 white·black·stale frame과 UI 손상을 확인한다.
 
 ## Publication
 
