@@ -13,6 +13,19 @@
 - 같은 동작을 보완하는 재촬영은 기존 기준을 갱신하고, 다른 개념을 보여주는 visual은 별도 항목으로 추가한다.
 - `10_03 NormalLines`는 현재 정적 screenshot만으로 목적을 설명할 수 있으므로 재촬영 우선순위에서 제외한다.
 
+## Chapter11-13 노출 기준
+
+- Chapter11은 `NormalMapping`, `HeightMapping`, `HDRPipeline`을 대표 노출 축으로 둔다.
+- `Mipmaps`와 `HDRI`는 texture LOD와 HDR input을 설명하는 보조 축으로 유지한다.
+- Chapter12는 `UnrealPBR`과 `PBRModels`를 함께 대표 노출 축으로 둔다.
+- `PBRModels`의 character는 사용자 구매 asset 기반 rendered evidence로만 사용한다.
+- 원본 FBX, texture, 구매 자료와 license 원문은 공개 body에서 직접 링크하지 않는다.
+- Chapter13은 mirror, shadow, depth/fog, halo와 sphere light를 visual 노출 대상으로 둔다.
+- `PipelineStateObject`는 시각 차이보다 pipeline state 구조 개선을 설명하는 code 중심 단계로 둔다.
+- Chapter13 대표 비교는 `ShadowMapping` → `SoftShadowPCF` → `SoftShadowPCSS`로 둔다.
+- 권리·출처 risk가 남은 runtime asset은 blocker로 삼지 않고 rendered evidence only와 추후 수정 가능 상태를 함께 기록한다.
+- 이번 기준 정렬은 asset 교체, 생성, 삭제 없이 다음 capture와 GitHub body 선정을 위한 판단 기준만 고정한다.
+
 ## Step별 촬영 기준
 
 | 정본 대상 | Demo | 목적 | Screenshot 기준 | Video 기준 |
