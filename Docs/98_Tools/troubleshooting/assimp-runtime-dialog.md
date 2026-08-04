@@ -69,6 +69,17 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 
 모든 example을 무조건 Clean/Rebuild하지 않는다. 외부 DLL 사용 또는 dialog 의심 상황에서만 안정성을 우선한다.
 
+## Controlled Failure Rehearsal
+
+capture/run cleanup 도구를 바꾸거나 무인 촬영을 재개하기 전에는 실제 example을 반복 실행하지 않고 synthetic dialog fixture로 먼저 drain 동작을 확인한다.
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass `
+  -File Docs/98_Tools/validators/test-capture-run-state.ps1
+```
+
+이 rehearsal은 stale session lock, protected process target 거부, 다중 error dialog drain과 quiet period 재검사를 확인한다. 이 테스트가 실패하면 assimp 사용 example을 다시 실행하지 않고 원인을 먼저 조사한다.
+
 ## 중단 기준
 
 - error dialog 후보가 target example과 관련 있는지 확신할 수 없다.

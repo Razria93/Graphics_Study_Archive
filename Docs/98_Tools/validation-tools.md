@@ -9,6 +9,7 @@
 - 현재 정본 Markdown의 명백한 인위적 soft-wrap은 `validators/validate-markdown-wrap-quality.ps1`로 검사한다.
 - 현재 정본 Markdown table의 header, separator와 data row 열 정합성은 `validators/validate-markdown-table-quality.ps1`로 검사한다.
 - 현재 정본 Markdown의 복수 단일-tilde 범위가 만드는 의도하지 않은 취소선은 `validators/validate-markdown-render-quality.ps1`로 검사한다.
+- capture/run session의 stale lock, protected process 방어와 다중 error dialog drain은 `validators/test-capture-run-state.ps1`로 fixture 검사한다.
 - tracked Docs 전체 링크와 상태를 통합 검사하는 validator는 아직 없다.
 - 개별 validator와 [Document System Audit Guide](document-system-audit-guide.md)의 수동 감사를 함께 사용한다.
 

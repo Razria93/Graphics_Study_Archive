@@ -161,6 +161,7 @@ $powerShellPath = [Diagnostics.Process]::GetCurrentProcess().MainModule.FileName
 - 실패한 executable은 누락 DLL, working directory, build configuration 또는 Clean/Rebuild 필요성을 확인하기 전까지 반복 실행하지 않는다.
 - 사용자 중단 후에는 current session lock, runner PID, example PID, child process와 error dialog를 cleanup 대상으로 둔다.
 - cleanup 증거가 없으면 Chapter12~13 visual 촬영을 재개하지 않는다.
+- capture/run cleanup 도구를 바꾸면 실제 example 실행 전 `test-capture-run-state.ps1`로 stale lock, protected process 방어와 다중 dialog drain fixture를 확인한다.
 
 확인 명령:
 
@@ -178,6 +179,11 @@ powershell -NoProfile -ExecutionPolicy Bypass `
   -TargetProcessName <example-process-name> `
   -ExpectedTitle "<exact-title>" `
   -QuietSeconds 3
+```
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass `
+  -File Docs/98_Tools/validators/test-capture-run-state.ps1
 ```
 
 중단 기준:

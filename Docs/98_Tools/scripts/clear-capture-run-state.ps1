@@ -36,6 +36,17 @@ if (-not $CloseErrorDialogs -and -not $KillExampleProcess -and -not $RemoveSessi
     {
         $scanArguments += @("-ExpectedTitle", $ExpectedTitle)
     }
+    if ($SinceTime)
+    {
+        $scanArguments += @("-SinceTime", $SinceTime.ToString("o"))
+    }
+    foreach ($item in @($Pattern))
+    {
+        if (-not [string]::IsNullOrWhiteSpace($item))
+        {
+            $scanArguments += @("-Pattern", $item)
+        }
+    }
     & powershell @scanArguments
     exit $LASTEXITCODE
 }
@@ -153,6 +164,17 @@ if ($TargetProcessName)
 if ($ExpectedTitle)
 {
     $waitArguments += @("-ExpectedTitle", $ExpectedTitle)
+}
+if ($SinceTime)
+{
+    $waitArguments += @("-SinceTime", $SinceTime.ToString("o"))
+}
+foreach ($item in @($Pattern))
+{
+    if (-not [string]::IsNullOrWhiteSpace($item))
+    {
+        $waitArguments += @("-Pattern", $item)
+    }
 }
 & powershell @waitArguments
 exit $LASTEXITCODE
