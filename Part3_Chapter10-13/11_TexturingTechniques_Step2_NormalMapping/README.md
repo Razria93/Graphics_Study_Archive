@@ -23,6 +23,11 @@ Tangent-space normal texture를 TBN basis로 world space에 변환해 geometry�
 
 ![Chapter11 Step2 NormalMapping](../../Docs/_assets/captures/part3_chapter11_02_normal_mapping.png)
 
+비교 capture는 같은 camera와 material 배치에서 normal mapping만 전환한 결과를 사용한다.
+
+- [Normal mapping Off](../../Docs/_assets/captures/part3_chapter11_02_normal_mapping_off.png): albedo 기반의 상대적으로 평평한 조명 반응
+- [Normal mapping On](../../Docs/_assets/captures/part3_chapter11_02_normal_mapping_on.png): tangent-space normal이 TBN 변환을 거쳐 조명 방향에 반응하는 표면 디테일
+
 평면 geometry를 유지하면서 석재 요철 방향에 따른 diffuse 변화가 나타난다.
 
 ## Verification

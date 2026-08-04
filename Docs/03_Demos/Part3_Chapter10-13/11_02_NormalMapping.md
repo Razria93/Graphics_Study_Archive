@@ -14,6 +14,16 @@ Tangent-space normal texture가 낮은 polygon 수를 유지하면서 표면의 
 
 ![Chapter11 Step2 NormalMapping](../../_assets/captures/part3_chapter11_02_normal_mapping.png)
 
+비교 기준은 같은 camera와 material에서 normal mapping만 전환한 두 capture다.
+
+![Normal mapping Off](../../_assets/captures/part3_chapter11_02_normal_mapping_off.png)
+
+Off 상태는 albedo와 기본 normal 중심의 평평한 조명 반응을 보여준다.
+
+![Normal mapping On](../../_assets/captures/part3_chapter11_02_normal_mapping_on.png)
+
+On 상태는 tangent-space normal이 TBN basis를 거쳐 조명 방향에 반응하는 표면 디테일을 보여준다.
+
 석재 평면의 silhouette은 유지되지만 각 돌의 요철 방향에 따라 조명 반응이 달라진다.
 
 ## 입력과 출력

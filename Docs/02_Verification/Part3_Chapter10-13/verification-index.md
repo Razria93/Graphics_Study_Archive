@@ -42,3 +42,9 @@
 - 현재 실행 결과 또는 과거 확인 근거가 있을 때 상태를 변경한다.
 - 실패 또는 부분 성공 항목은 `../known-issues.md`에 연결한다.
 - capture/result는 `../capture-matrix.md`와 `Docs/03_Demos`에 연결한다.
+## Chapter11 visual 보강 확인
+
+- `11_TexturingTechniques_Step2_NormalMapping`: normal mapping Off/On 1282×752 comparison capture를 확인한다.
+- `11_TexturingTechniques_Step3_HeightMapping`: height mapping Off와 `HeightScale 0.1` On 1282×752 comparison capture를 확인한다.
+- `11_TexturingTechniques_Step5_HDRPipeline`: bloom strength 0/0.7 1282×752 comparison capture와 selected video evidence를 확인한다.
+- Step5 MP4는 Git history에 포함하지 않는다.

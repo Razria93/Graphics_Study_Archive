@@ -45,6 +45,13 @@ Chapter10의 순차 흐름은 point primitive 확장, billboard, diagnostic norm
 
 Chapter11의 순차 흐름은 texture LOD, shading normal, vertex displacement, HDR image 표시와 전체 post-process pipeline으로 이어진다. 대표 노출 축은 Step2 NormalMapping, Step3 HeightMapping, Step5 HDRPipeline으로 둔다. Step1 Mipmaps와 Step4 HDRI는 texture LOD와 HDR input 보조 축으로 유지한다.
 
+Chapter11 visual 보강은 기존 대표 PNG를 유지하고 비교 capture를 추가한다.
+
+- Step2 NormalMapping: [Off](../../_assets/captures/part3_chapter11_02_normal_mapping_off.png) · [On](../../_assets/captures/part3_chapter11_02_normal_mapping_on.png)
+- Step3 HeightMapping: [Off](../../_assets/captures/part3_chapter11_03_height_mapping_off.png) · [Scale 0.1](../../_assets/captures/part3_chapter11_03_height_mapping_on_scale_0_1.png)
+- Step5 HDRPipeline: [Bloom 0](../../_assets/captures/part3_chapter11_05_bloom_0.png) · [Bloom 0.7](../../_assets/captures/part3_chapter11_05_bloom_0_7.png)
+- Step5 HDRI 방향 변화 video는 local selected evidence로만 유지하고 Git history에 포함하지 않는다.
+
 ## Chapter12 PBR
 
 | 단계 | 상세 Demo | Capture | 상태 |

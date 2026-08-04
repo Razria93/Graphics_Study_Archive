@@ -24,6 +24,12 @@ Floating-point scene buffer를 resolve한 뒤 bloom downsample·upsample과 expo
 
 ![Chapter11 Step5 HDRPipeline](../../Docs/_assets/captures/part3_chapter11_05_hdr_pipeline.png)
 
+비교 capture는 같은 exposure 1.0, gamma 2.2 조건에서 bloom strength만 전환한 결과를 사용한다.
+
+- [Bloom strength 0](../../Docs/_assets/captures/part3_chapter11_05_bloom_0.png): HDR scene과 tone mapping 결과를 bloom 없이 확인한다.
+- [Bloom strength 0.7](../../Docs/_assets/captures/part3_chapter11_05_bloom_0_7.png): 밝은 창과 태양 주변의 확산이 증가한다.
+- HDRI 방향 변화는 selected video evidence로 확인한다. 이 MP4는 Git history에 포함하지 않는다.
+
 밝은 창과 태양 주변에서 bloom이 확산되고 exposure 1.0·gamma 2.2가 최종 display mapping에 적용된다.
 
 ## Verification

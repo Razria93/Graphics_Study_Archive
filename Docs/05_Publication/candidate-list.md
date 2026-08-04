@@ -100,3 +100,9 @@
 - 부적합 후보는 `private-only.md` 또는 `excluded-material.md`로 이동한다.
 - public repo로 옮길 때는 private archive 문서를 그대로 복사하지 않고 공개용 문장으로 다시 작성한다.
 - 최종 판정일과 redaction ID는 후보가 공개 후보로 좁혀진 뒤 추가한다.
+## Chapter11 visual evidence 보강
+
+- `Chapter11 Step2 NormalMapping`은 기존 대표 capture와 함께 `part3_chapter11_02_normal_mapping_off.png`, `part3_chapter11_02_normal_mapping_on.png`를 rendered evidence로 사용한다. 원본 PBR texture는 runtime dependency로 유지하고 직접 공개하지 않는다.
+- `Chapter11 Step3 HeightMapping`은 기존 대표 capture와 함께 `part3_chapter11_03_height_mapping_off.png`, `part3_chapter11_03_height_mapping_on_scale_0_1.png`를 rendered evidence로 사용한다. 원본 material texture는 직접 공개하지 않는다.
+- `Chapter11 Step5 HDRPipeline`은 기존 대표 capture와 함께 `part3_chapter11_05_bloom_0.png`, `part3_chapter11_05_bloom_0_7.png`를 rendered evidence로 사용한다. HDRI·material 원본은 직접 링크하지 않는다.
+- HDRI 방향 변화 video는 selected evidence로만 유지한다. MP4는 Git history에 포함하지 않고 필요 시 GitHub Issue comment 후보로만 사용한다.

@@ -14,6 +14,16 @@ Height texture가 vertex 위치를 normal 방향으로 이동시켜 실제 surfa
 
 ![Chapter11 Step3 HeightMapping](../../_assets/captures/part3_chapter11_03_height_mapping.png)
 
+비교 기준은 height mapping을 끈 기본 sphere와 `HeightScale 0.1`을 적용한 sphere다.
+
+![Height mapping Off](../../_assets/captures/part3_chapter11_03_height_mapping_off.png)
+
+Off 상태는 vertex displacement가 없는 기본 silhouette을 보여준다.
+
+![Height mapping On scale 0.1](../../_assets/captures/part3_chapter11_03_height_mapping_on_scale_0_1.png)
+
+On 상태는 height texture가 vertex를 normal 방향으로 이동시켜 표면 요철과 silhouette 변화를 만든다.
+
 Sphere의 `HeightScale` 0.04와 불규칙해진 silhouette을 함께 확인한다.
 
 ## 입력과 출력

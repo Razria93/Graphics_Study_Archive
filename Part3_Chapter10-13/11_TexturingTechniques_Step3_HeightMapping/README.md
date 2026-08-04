@@ -23,6 +23,11 @@ Vertex shader에서 height texture를 읽고 vertex를 world normal 방향으로
 
 ![Chapter11 Step3 HeightMapping](../../Docs/_assets/captures/part3_chapter11_03_height_mapping.png)
 
+비교 capture는 같은 sphere 배치에서 height mapping 적용 유무와 scale 차이를 확인한다.
+
+- [Height mapping Off](../../Docs/_assets/captures/part3_chapter11_03_height_mapping_off.png): sphere silhouette이 기본 mesh 형태를 유지한다.
+- [Height mapping On, scale 0.1](../../Docs/_assets/captures/part3_chapter11_03_height_mapping_on_scale_0_1.png): height texture가 vertex position을 normal 방향으로 이동시켜 요철과 silhouette 변화를 만든다.
+
 Normal mapping의 조명 변화에 더해 sphere 외곽선 자체가 height texture에 따라 변한다.
 
 ## Verification

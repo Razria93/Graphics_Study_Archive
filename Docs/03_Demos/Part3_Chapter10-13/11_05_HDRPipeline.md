@@ -14,6 +14,18 @@ HDR scene buffer에서 bloom pyramid를 만들고 exposure·gamma와 결합해 �
 
 ![Chapter11 Step5 HDRPipeline](../../_assets/captures/part3_chapter11_05_hdr_pipeline.png)
 
+비교 기준은 exposure 1.0, gamma 2.2를 유지하고 bloom strength만 바꾼 두 capture다.
+
+![Bloom strength 0](../../_assets/captures/part3_chapter11_05_bloom_0.png)
+
+Bloom strength 0은 HDR scene과 tone mapping 결과를 bloom 없이 보여준다.
+
+![Bloom strength 0.7](../../_assets/captures/part3_chapter11_05_bloom_0_7.png)
+
+Bloom strength 0.7은 밝은 창과 태양 주변의 glow가 composite에 더해지는 결과를 보여준다.
+
+HDRI 방향 변화는 selected video evidence로 확인한다. 이 video는 Git history에 포함하지 않는다.
+
 Bloom strength 0.2에서 태양과 창 주변의 밝은 영역이 확산되는 결과를 확인한다.
 
 ## 입력과 출력
