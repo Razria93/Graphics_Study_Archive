@@ -126,6 +126,11 @@ Video 댓글은 게시 목적에 따라 다음과 같이 갱신한다.
 
 ## 자동 UI 조작 안전 기준
 
+- 자동 capture/run은 single-flight session으로만 수행한다. 하나의 session이 runner, example process, error dialog와 lock을 소유하고 cleanup까지 책임진다.
+- 실행/capture를 수행하는 agent는 하나만 둔다. 하위 agent는 read-only 조사만 수행하고 example 실행, GUI 조작, screenshot, video, cleanup을 수행하지 않는다.
+- 새 session을 시작하기 전에 기존 runner, 관련 example process, capture driver, session lock과 runtime error dialog가 0건인지 확인한다.
+- stale 상태가 하나라도 남아 있으면 새 실행을 시작하지 않고 cleanup 또는 사용자 중단 보고를 먼저 수행한다.
+- 사용자 중단 요청 또는 목표 모드 중단이 발생하면 자동 재실행을 금지하고 current session lock, runner PID, example PID, child process와 error dialog를 cleanup 대상으로 둔다.
 - 자동 UI 조작 시작 전에 사용자가 mouse와 keyboard를 조작하지 않도록 안내하고 countdown을 실행한다.
 - countdown 종료 후에 도구가 시작한 process ID, exact window title, foreground window와 안정화된 DWM·native·client bounds를 다시 확인한다.
 - 대상 process, title, foreground 또는 bounds가 예상과 다르면 현재 screenshot 또는 video attempt를 폐기한다.
@@ -410,6 +415,9 @@ screenshot, video, result image를 추가하면 다음 문서를 함께 확인�
 - 실행 전 output 폴더에 필요한 DLL이 있는지 확인한다.
 - 실행 실패 후 target process와 error dialog 후보를 함께 확인한다.
 - error dialog 후보가 남아 있으면 해당 capture 후보를 폐기한다.
+- error dialog는 한 번에 1개만 생긴다고 가정하지 않는다. 후보가 0건이 될 때까지 drain loop를 수행하고 2~3초 quiet period 뒤 다시 scan해 0건일 때만 clear로 판정한다.
 - 안전 후보만 내부 `WM_CLOSE` 또는 UI Automation close 명령으로 닫고 mouse click 자동화로 우회하지 않는다.
 - 무인 모드에서 관련성이 불확실한 dialog가 있으면 사용자 알림으로 중단한다.
+- 실패한 executable은 누락 DLL, working directory, build configuration 또는 Clean/Rebuild 필요성을 확인하기 전까지 같은 상태로 반복 실행하지 않는다.
+- 정상 title window가 떠도 error dialog 0건, foreground target 일치와 capture 오염 없음이 확인되기 전까지 capture 가능 상태로 보지 않는다.
 - assimp 관련 절차는 `Docs/98_Tools/troubleshooting/assimp-runtime-dialog.md`를 따른다.

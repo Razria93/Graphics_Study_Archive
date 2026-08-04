@@ -135,3 +135,56 @@ $powerShellPath = [Diagnostics.Process]::GetCurrentProcess().MainModule.FileName
 - 안전 후보만 `WM_CLOSE` 또는 UI Automation close로 닫는다.
 - 후보가 불확실하면 사용자 알림으로 중단한다.
 - 상세 절차는 `troubleshooting/assimp-runtime-dialog.md`를 따른다.
+
+## CAPTURE-RUN-INTERRUPT-001: 중단 불응과 stale runner 누적
+
+증상:
+
+- 사용자가 중단 요청과 목표 모드 중단을 수행했지만 이전에 시작된 Chapter12 example 실행과 UI 조작이 반복된다.
+- VSCode 종료 후에야 반복 실행이 멈춘다.
+- DirectXTex, assimp 또는 DLL error dialog가 누적되어 정상 실행과 capture까지 오염된다.
+
+원인:
+
+- capture/run script가 session ownership을 갖지 않는다.
+- runner PID, child example PID, session lock과 error dialog handle 추적이 부족하다.
+- 실행 loop가 cancellation-aware하지 않다.
+- error dialog를 하나만 닫고 clear로 오판한다.
+- stale runner, 병렬 실행 또는 지연 실행이 같은 실패 artifact를 다시 실행할 수 있다.
+- Codex 목표 모드 중단은 이미 시작된 외부 runner, example EXE와 system dialog를 자동 회수하지 않는다.
+
+대응:
+
+- 자동 capture/run은 single-flight session으로만 수행한다.
+- 새 실행 전 session lock, 관련 example process, capture runner와 error dialog가 0건인지 확인한다.
+- error dialog는 drain loop로 닫고 quiet period 후 0건을 다시 확인한다.
+- 실패한 executable은 누락 DLL, working directory, build configuration 또는 Clean/Rebuild 필요성을 확인하기 전까지 반복 실행하지 않는다.
+- 사용자 중단 후에는 current session lock, runner PID, example PID, child process와 error dialog를 cleanup 대상으로 둔다.
+- cleanup 증거가 없으면 Chapter12~13 visual 촬영을 재개하지 않는다.
+
+확인 명령:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass `
+  -File Docs/98_Tools/scripts/find-capture-run-state.ps1 `
+  -TargetProcessName <example-process-name> `
+  -ExpectedTitle "<exact-title>" `
+  -FailOnFound
+```
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass `
+  -File Docs/98_Tools/scripts/wait-capture-run-quiet.ps1 `
+  -TargetProcessName <example-process-name> `
+  -ExpectedTitle "<exact-title>" `
+  -QuietSeconds 3
+```
+
+중단 기준:
+
+- stale runner 또는 dialog가 0건으로 떨어지지 않는다.
+- dialog 후보가 target example과 관련 있는지 확신할 수 없다.
+- broad process 종료 없이는 cleanup할 수 없다.
+- 같은 실패 artifact가 재실행될 가능성이 남아 있다.
+
+중단 시 사용자 알림을 실행하고 재실행 루프를 돌지 않는다.

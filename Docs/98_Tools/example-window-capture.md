@@ -95,6 +95,10 @@ Capture 실행 전후에 다음 도구를 사용할 수 있다.
 
 - `Docs/98_Tools/scripts/find-example-error-windows.ps1`
 - `Docs/98_Tools/scripts/clear-example-error-windows.ps1`
+- `Docs/98_Tools/scripts/find-capture-run-state.ps1`
+- `Docs/98_Tools/scripts/wait-capture-run-quiet.ps1`
 
 - error dialog 후보가 있으면 capture 후보를 폐기한다.
 - 후보가 target example과 관련 있는지 확신할 수 없으면 자동으로 닫지 않는다.
+- 후보를 닫은 뒤에는 2~3초 quiet period를 두고 다시 scan해 0건을 확인한다.
+- 이전 session lock, target example process 또는 error dialog가 남아 있으면 새 capture를 시작하지 않는다.

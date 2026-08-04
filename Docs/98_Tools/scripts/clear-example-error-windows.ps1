@@ -5,7 +5,11 @@ param(
     [Nullable[DateTime]]$SinceTime,
     [string[]]$Pattern,
     [switch]$Close,
-    [string]$DiagnosticsDirectory = "local/diagnostics/example-error-windows"
+    [string]$DiagnosticsDirectory = "local/diagnostics/example-error-windows",
+    [ValidateRange(1, 10)]
+    [int]$MaxDrainPasses = 5,
+    [ValidateRange(1, 10)]
+    [int]$QuietSeconds = 3
 )
 
 $ErrorActionPreference = "Stop"
@@ -43,14 +47,29 @@ if (-not $Close)
     exit 2
 }
 
-foreach ($candidate in $before)
+$current = $before
+for ($pass = 1; $pass -le $MaxDrainPasses -and $current.Count -gt 0; ++$pass)
 {
-    [void](Close-ExampleErrorWindow `
-        -HandleInt64 $candidate.HandleInt64 `
-        -Confirm:$false)
+    Write-Host "Drain pass ${pass}: closing $($current.Count) candidate(s)."
+    foreach ($candidate in $current)
+    {
+        [void](Close-ExampleErrorWindow `
+            -HandleInt64 $candidate.HandleInt64 `
+            -Confirm:$false)
+    }
+
+    Start-Sleep -Seconds 1
+    $current = @(Get-ExampleErrorWindowCandidate `
+        -TargetProcessName $TargetProcessName `
+        -ExpectedTitle $ExpectedTitle `
+        -SinceTime $SinceTime `
+        -Pattern $Pattern)
 }
 
-Start-Sleep -Milliseconds 500
+if ($current.Count -eq 0)
+{
+    Start-Sleep -Seconds $QuietSeconds
+}
 $after = @(Get-ExampleErrorWindowCandidate `
     -TargetProcessName $TargetProcessName `
     -ExpectedTitle $ExpectedTitle `

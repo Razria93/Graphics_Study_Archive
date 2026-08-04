@@ -62,6 +62,46 @@ mouse와 keyboard를 조작하지 않는다.
 4. 사용자 입력으로 대상이 바뀌었다고 의심되면 현재 take를 폐기한다.
 5. Foreground 전환을 위해 input queue를 연결한 경우 대상 창을 올린 직후 해제하고 actual foreground를 다시 확인한다.
 
+## Capture/run session preflight
+
+자동 capture/run은 하나의 session이 하나의 example 실행만 소유하는 single-flight 방식으로 수행한다. 새 session을 시작하기 전에 stale 상태를 먼저 확인한다.
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass `
+  -File Docs/98_Tools/scripts/find-capture-run-state.ps1 `
+  -TargetProcessName <example-process-name> `
+  -ExpectedTitle "<exact-title>" `
+  -FailOnFound
+```
+
+확인 대상은 session lock, 관련 example process, known error dialog와 target title이다. 하나라도 남아 있으면 새 example을 실행하지 않는다.
+
+중단 또는 실패 후에는 cleanup 명령으로 session 상태를 정리하고 quiet period 동안 0건을 유지하는지 확인한다.
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass `
+  -File Docs/98_Tools/scripts/clear-capture-run-state.ps1 `
+  -TargetProcessName <example-process-name> `
+  -ExpectedTitle "<exact-title>" `
+  -CloseErrorDialogs `
+  -QuietSeconds 3
+```
+
+`clear-capture-run-state.ps1`는 기본적으로 non-destructive scan만 수행한다. 실제 종료는 `-CloseErrorDialogs`, `-KillExampleProcess`, `-RemoveSessionLock`처럼 명시한 option이 있을 때만 수행한다. `powershell`, `pwsh`, VSCode, ChatGPT, Codex, explorer 같은 broad process는 종료 대상으로 사용하지 않는다.
+
+`wait-capture-run-quiet.ps1`는 error dialog가 늦게 뜨는 상황을 고려해 quiet period 동안 상태가 계속 0건인지 확인한다.
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass `
+  -File Docs/98_Tools/scripts/wait-capture-run-quiet.ps1 `
+  -TargetProcessName <example-process-name> `
+  -ExpectedTitle "<exact-title>" `
+  -QuietSeconds 3 `
+  -TimeoutSeconds 30
+```
+
+Codex 목표 모드 중단은 이미 시작된 외부 runner, example EXE, system dialog를 자동 회수한다고 가정하지 않는다. 자동 capture/run 작업은 session cleanup 명령으로 별도 종료 증거를 확보한 뒤 중단 완료로 본다.
+
 ## 자동 입력 primitive 실행 순서
 
 Example별 local driver는 GUI 조작을 한 번에 밀어 넣지 않고 primitive 단위로 실행한다. 기본 대기 시간은 1초로 시작하고 안정성이 확인된 경우에만 줄인다.
@@ -209,6 +249,8 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 ```
 
 dialog 후보가 target example과 관련 있는지 확신할 수 없으면 닫지 않는다. 무인 모드에서는 사용자 알림으로 중단하고 재실행 루프를 돌지 않는다.
+
+`clear-example-error-windows.ps1 -Close`는 후보를 한 번만 닫고 끝내지 않고 drain pass를 반복한다. 후보가 0건이 된 뒤에도 quiet period를 기다리고 다시 scan한다. quiet period 이후에도 후보가 남으면 실패로 보고하고 같은 executable을 재실행하지 않는다.
 
 ## Troubleshooting: FPV 입력이 적용되지 않는 경우
 
