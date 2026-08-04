@@ -166,3 +166,26 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 6. PR에서 video가 필요하면 Demo Issue의 comment permalink를 연결하고 attachment를 다시 업로드하지 않는다.
 7. 같은 설명 축의 개선은 기존 댓글 수정, 다른 설명 축은 새 댓글 추가로 처리한다.
 8. 승격과 게시는 자동 기술 검수와 사용자 시각 검수를 모두 통과한 후보만 사용한다.
+## Runtime error dialog preflight
+
+외부 DLL 또는 `assimp`를 사용하는 example은 capture/run 전후에 error dialog 상태를 확인한다. process 종료만으로 Windows loader error dialog가 사라졌다고 가정하지 않는다.
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass `
+  -File Docs/98_Tools/scripts/find-example-error-windows.ps1 `
+  -TargetProcessName <example-process-name> `
+  -ExpectedTitle "<exact-title>" `
+  -FailOnFound
+```
+
+실행 실패 후 안전 후보가 확인되면 내부 `WM_CLOSE` 또는 UI Automation close로 닫는다.
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass `
+  -File Docs/98_Tools/scripts/clear-example-error-windows.ps1 `
+  -TargetProcessName <example-process-name> `
+  -ExpectedTitle "<exact-title>" `
+  -Close
+```
+
+dialog 후보가 target example과 관련 있는지 확신할 수 없으면 닫지 않는다. 무인 모드에서는 사용자 알림으로 중단하고 재실행 루프를 돌지 않는다.

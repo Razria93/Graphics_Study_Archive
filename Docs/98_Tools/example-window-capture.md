@@ -85,3 +85,14 @@ parameter 변경 전후 상태, reset과 재촬영 순서는 [Capture Operation 
 - `CopyFromScreen` 방식이므로 다른 창이 대상 위에 겹치면 함께 저장될 수 있다.
 - application parameter 자동 조작, desktop fallback, taskbar crop 추정은 제공하지 않는다.
 - capture 생성 후 stage, commit, push 또는 remote 게시를 수행하지 않는다.
+## Error dialog guard
+
+`capture-example-window.ps1`는 target application window capture를 담당한다. 외부 DLL 누락처럼 Windows loader dialog가 남는 상황은 별도 guard 도구로 확인한다.
+
+Capture 실행 전후에 다음 도구를 사용할 수 있다.
+
+- `Docs/98_Tools/scripts/find-example-error-windows.ps1`
+- `Docs/98_Tools/scripts/clear-example-error-windows.ps1`
+
+- error dialog 후보가 있으면 capture 후보를 폐기한다.
+- 후보가 target example과 관련 있는지 확신할 수 없으면 자동으로 닫지 않는다.

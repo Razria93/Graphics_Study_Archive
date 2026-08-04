@@ -236,3 +236,11 @@ Video binary와 게시 상태는 다음 방식으로 함께 확인한다.
 - validator 통과는 GitHub 게시 승인이 아니다.
 - `git push`, `gh issue create`, `gh pr create`, Ready for Review 전환은 사용자 승인 후 진행한다.
 - local 초안 원문은 이 폴더에 두지 않는다.
+## Runtime dialog handling test
+
+`test-example-error-window-handling.ps1`는 assimp DLL 누락 상황을 build output 범위에서 재현하고, example error dialog 탐지와 safe close 도구가 동작하는지 확인한다. 이 테스트는 tracked source와 vcpkg 원본 DLL을 수정하지 않는다.
+
+```powershell
+powershell -ExecutionPolicy Bypass `
+  -File Docs/98_Tools/validators/test-example-error-window-handling.ps1
+```

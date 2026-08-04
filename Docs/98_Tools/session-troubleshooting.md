@@ -124,3 +124,14 @@ $powerShellPath = [Diagnostics.Process]::GetCurrentProcess().MainModule.FileName
 - Demo capture/result는 `Docs/03_Demos`에 둔다.
 - 작업 기록은 `Docs/04_WorkLogs`에 둔다.
 - 정책은 `Docs/06_Policies`에 둔다.
+## Assimp runtime dialog
+
+`assimp` 또는 외부 DLL을 사용하는 example은 DLL 누락 시 Windows loader error dialog를 남길 수 있다. 이 dialog는 target process 종료 후에도 화면 위에 남아 다음 capture에 함께 찍힐 수 있다.
+
+처리:
+
+- output 폴더의 DLL 존재 여부를 확인한다.
+- 실행 실패 후 error dialog 후보를 scan한다.
+- 안전 후보만 `WM_CLOSE` 또는 UI Automation close로 닫는다.
+- 후보가 불확실하면 사용자 알림으로 중단한다.
+- 상세 절차는 `troubleshooting/assimp-runtime-dialog.md`를 따른다.

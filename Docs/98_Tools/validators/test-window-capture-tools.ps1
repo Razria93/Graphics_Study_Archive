@@ -8,6 +8,9 @@ $scriptsRoot = Join-Path $toolsRoot "scripts"
 $helperPath = Join-Path $scriptsRoot "window-operation-rules.ps1"
 $capturePath = Join-Path $scriptsRoot "capture-example-window.ps1"
 $recorderPath = Join-Path $scriptsRoot "record-example-window.ps1"
+$errorWindowUtilsPath = Join-Path $scriptsRoot "example-error-window-utils.ps1"
+$findErrorWindowPath = Join-Path $scriptsRoot "find-example-error-windows.ps1"
+$clearErrorWindowPath = Join-Path $scriptsRoot "clear-example-error-windows.ps1"
 
 . $helperPath
 
@@ -125,7 +128,14 @@ Assert-Equal 772 $nativeMove.Height "Native move changed the window height."
 
 Invoke-WindowOperationCountdown -Seconds 0
 
-foreach ($path in @($helperPath, $capturePath, $recorderPath))
+foreach ($path in @(
+    $helperPath,
+    $capturePath,
+    $recorderPath,
+    $errorWindowUtilsPath,
+    $findErrorWindowPath,
+    $clearErrorWindowPath
+))
 {
     $tokens = $null
     $errors = $null
@@ -249,6 +259,20 @@ Assert-True ($recorderText -match 'ExpectedWidth = \$captureBounds\.PaddedWidth'
     "Recorder validation must use capture-mode dimensions."
 Assert-True ($recorderText -match 'FFmpeg startup cleanup failed') `
     "Recorder must clean up FFmpeg when startup fails."
+
+$findErrorWindowText = Get-Content -LiteralPath $findErrorWindowPath -Raw
+$clearErrorWindowText = Get-Content -LiteralPath $clearErrorWindowPath -Raw
+$errorWindowUtilsText = Get-Content -LiteralPath $errorWindowUtilsPath -Raw
+Assert-True ($findErrorWindowText -match 'FailOnFound') `
+    "Error-window finder must support FailOnFound."
+Assert-True ($clearErrorWindowText -match '\[switch\]\$Close') `
+    "Error-window clearer must require an explicit Close switch."
+Assert-True ($clearErrorWindowText -match 'DiagnosticsDirectory') `
+    "Error-window clearer must record local diagnostics."
+Assert-True ($errorWindowUtilsText -match 'WM_CLOSE') `
+    "Error-window helper must use WM_CLOSE."
+Assert-True ($errorWindowUtilsText -match 'UIAutomationClient') `
+    "Error-window helper must use UI Automation close fallback."
 
 $isIconicCall = '[ExampleWindowCaptureNative]::IsIconic('
 $showWindowCall = '[ExampleWindowCaptureNative]::ShowWindow('

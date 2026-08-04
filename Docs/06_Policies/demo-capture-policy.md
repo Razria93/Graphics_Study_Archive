@@ -387,3 +387,13 @@ screenshot, video, result image를 추가하면 다음 문서를 함께 확인�
 - 원본 asset과 직접 다운로드 링크는 tracked Demo와 GitHub body에 넣지 않는다.
 - 강의 화면, 워터마크, 개인정보, 계정, 로컬 경로와 외부 application UI가 없어야 한다.
 - 예외 승인 범위와 원본 asset 교체 backlog는 `Docs/05_Publication`에 기록한다.
+## Runtime error dialog 처리
+
+외부 DLL 또는 `assimp`를 사용하는 example은 runtime 실패를 process 반환값만으로 판정하지 않는다. Windows loader error dialog는 target process 종료 후에도 top-level modal window로 남을 수 있으므로 capture/run 재시도 전 dialog 잔존 여부를 확인한다.
+
+- 실행 전 output 폴더에 필요한 DLL이 있는지 확인한다.
+- 실행 실패 후 target process와 error dialog 후보를 함께 확인한다.
+- error dialog 후보가 남아 있으면 해당 capture 후보를 폐기한다.
+- 안전 후보만 내부 `WM_CLOSE` 또는 UI Automation close 명령으로 닫고 mouse click 자동화로 우회하지 않는다.
+- 무인 모드에서 관련성이 불확실한 dialog가 있으면 사용자 알림으로 중단한다.
+- assimp 관련 절차는 `Docs/98_Tools/troubleshooting/assimp-runtime-dialog.md`를 따른다.
