@@ -245,13 +245,15 @@ function Center-CaptureWindow
     {
         throw "GetWindowRect failed."
     }
-    $targetX = $nativeBounds.Left + $placement.DeltaX
-    $targetY = $nativeBounds.Top + $placement.DeltaY
+    $move = Get-SizePreservingWindowMove `
+        -NativeBounds $nativeBounds `
+        -VisibleBounds $bounds `
+        -TargetVisibleBounds $placement
     if (-not [ExampleWindowCaptureNative]::SetWindowPos(
         $Process.MainWindowHandle,
         [IntPtr]::Zero,
-        $targetX,
-        $targetY,
+        $move.Left,
+        $move.Top,
         0,
         0,
         0x0015
@@ -266,6 +268,38 @@ function Center-CaptureWindow
         throw "Centered application window does not fit inside the monitor working area."
     }
     return $centered
+}
+
+function Wait-CaptureWindowReady
+{
+    param(
+        [Parameter(Mandatory = $true)][Diagnostics.Process]$Process,
+        [ValidateRange(1, 10)][int]$StableSamples = 3,
+        [ValidateRange(10, 2000)][int]$PollMilliseconds = 250
+    )
+
+    $stable = 0
+    $previous = $null
+    $deadline = [DateTime]::UtcNow.AddSeconds(10)
+    while ([DateTime]::UtcNow -lt $deadline)
+    {
+        $current = Get-CaptureBounds $Process
+        if ($null -ne $previous -and (Test-SameCaptureBounds $previous $current))
+        {
+            ++$stable
+            if ($stable -ge $StableSamples)
+            {
+                return $current
+            }
+        }
+        else
+        {
+            $stable = 1
+        }
+        $previous = $current
+        Start-Sleep -Milliseconds $PollMilliseconds
+    }
+    throw "Application window bounds did not stabilize within 10 seconds."
 }
 
 function Test-SameCaptureBounds
@@ -369,6 +403,7 @@ try {
     if ($CenterWindow) {
         [void](Center-CaptureWindow $process)
     }
+    [void](Wait-CaptureWindowReady $process)
 
     if (-not $CaptureImmediately) {
         Write-Host ""
