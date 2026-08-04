@@ -56,6 +56,7 @@ Geometry pipeline, texturing, PBR와 light/shadow를 순차적으로 확장하�
 
 - [Verification](../Docs/02_Verification/Part3_Chapter10-13/verification-index.md)
 - [Demo Index](../Docs/03_Demos/Part3_Chapter10-13/demo-index.md)
+- [Capture Plan](capture-plan.md)
 - [Topics](../Docs/01_Topics/README.md)
 - [Publication](../Docs/05_Publication/candidate-list.md)
 

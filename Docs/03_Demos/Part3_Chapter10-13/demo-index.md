@@ -90,5 +90,6 @@ Chapter13은 stencil mirror와 pipeline state 정리에서 시작해 shadow prot
 ## 관련 문서
 
 - [Chapter README](../../../Part3_Chapter10-13/README.md)
+- [Capture Plan](../../../Part3_Chapter10-13/capture-plan.md)
 - [Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md)
 - [Publication](../../05_Publication/candidate-list.md)

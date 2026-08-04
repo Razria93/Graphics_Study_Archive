@@ -68,4 +68,5 @@
 - [Chapter10-13 Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md)
 - [Chapter09 Demo Index](../../03_Demos/Part3_Chapter09/demo-index.md)
 - [Chapter10-13 Demo Index](../../03_Demos/Part3_Chapter10-13/demo-index.md)
+- [Chapter10-13 Capture Plan](../../../Part3_Chapter10-13/capture-plan.md)
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
