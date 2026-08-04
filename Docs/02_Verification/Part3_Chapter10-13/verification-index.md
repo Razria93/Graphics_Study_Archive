@@ -19,7 +19,7 @@
 | `10_GeometryPipeline_Step2_Billboards` | `Part3_Chapter10-13/10_GeometryPipeline_Step2_Billboards/10_GeometryPipeline_Step2_Billboards.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · billboard texture array · CENTER/LEFT/RIGHT storyboard |
 | `10_GeometryPipeline_Step3_NormalLines` | `Part3_Chapter10-13/10_GeometryPipeline_Step3_NormalLines/10_GeometryPipeline_Step3_NormalLines.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · normal line 기본 표시 |
 | `10_GeometryPipeline_Step4_Fireball` | `Part3_Chapter10-13/10_GeometryPipeline_Step4_Fireball/10_GeometryPipeline_Step4_Fireball.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · procedural animation storyboard · selected local video frame-rate 재검증 필요 |
-| `10_GeometryPipeline_Step5_Tessellation` | `Part3_Chapter10-13/10_GeometryPipeline_Step5_Tessellation/10_GeometryPipeline_Step5_Tessellation.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · Manual/Distance Adaptive |
+| `10_GeometryPipeline_Step5_Tessellation` | `Part3_Chapter10-13/10_GeometryPipeline_Step5_Tessellation/10_GeometryPipeline_Step5_Tessellation.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · Manual factor 2/8/16 · Distance Adaptive |
 | `11_TexturingTechniques_Step1_Mipmaps` | `Part3_Chapter10-13/11_TexturingTechniques_Step1_Mipmaps/11_TexturingTechniques_Step1_Mipmaps.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · mip level 3 기본값 |
 | `11_TexturingTechniques_Step2_NormalMapping` | `Part3_Chapter10-13/11_TexturingTechniques_Step2_NormalMapping/11_TexturingTechniques_Step2_NormalMapping.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · normal mapping 기본 On |
 | `11_TexturingTechniques_Step3_HeightMapping` | `Part3_Chapter10-13/11_TexturingTechniques_Step3_HeightMapping/11_TexturingTechniques_Step3_HeightMapping.sln` | 성공 | 성공 | 성공 | 성공 | 완료 | 현재 확인 · sphere height scale 0.04 |

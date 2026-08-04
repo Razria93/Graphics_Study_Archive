@@ -26,9 +26,9 @@
 | Step2 Billboards | [Demo](10_02_Billboards.md) | [PNG](../../_assets/captures/part3_chapter10_02_billboards.png) · [Storyboard](../../_assets/captures/part3_chapter10_02_billboards_view-comparison.png) | 완료 |
 | Step3 NormalLines | [Demo](10_03_NormalLines.md) | [PNG](../../_assets/captures/part3_chapter10_03_normal_lines.png) | 완료 |
 | Step4 Fireball | [Demo](10_04_Fireball.md) | [PNG](../../_assets/captures/part3_chapter10_04_fireball.png) · [Storyboard](../../_assets/captures/part3_chapter10_04_fireball_billboard-motion.png) | 완료 |
-| Step5 Tessellation | [Demo](10_05_Tessellation.md) | [PNG](../../_assets/captures/part3_chapter10_05_tessellation.png) | 완료 |
+| Step5 Tessellation | [Demo](10_05_Tessellation.md) | [PNG](../../_assets/captures/part3_chapter10_05_tessellation.png) · [Low](../../_assets/captures/part3_chapter10_05_tessellation_low.png) · [High](../../_assets/captures/part3_chapter10_05_tessellation_high.png) | 완료 |
 
-Chapter10의 순차 흐름은 point primitive 확장, billboard, diagnostic normal, procedural animation과 tessellation으로 이어진다. Step5는 원래 Manual 경로와 사용자 확장 Distance Adaptive 경로를 하나의 상세 Demo에서 명확히 분리한다.
+Chapter10의 순차 흐름은 point primitive 확장, billboard, diagnostic normal, procedural animation과 tessellation으로 이어진다. Step5는 원래 Manual 경로와 사용자 확장 Distance Adaptive 경로를 하나의 상세 Demo에서 명확히 분리하고, Manual factor 2/16 비교 visual로 polygon density 변화를 보강한다.
 
 ## Chapter11 Texturing Techniques
 

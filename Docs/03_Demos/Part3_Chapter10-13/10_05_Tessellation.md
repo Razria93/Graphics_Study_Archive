@@ -16,6 +16,16 @@ Quad patch가 hull shader factor에 따라 세분되는 과정을 wireframe으�
 
 UI의 edge·inside factor 8과 중앙 quad의 subdivision topology를 함께 본다.
 
+### Manual factor 비교
+
+![Chapter10 Step5 Tessellation Low](../../_assets/captures/part3_chapter10_05_tessellation_low.png)
+
+Manual factor 2는 coarse quad subdivision을 만든다. Wireframe에서 적은 polygon density를 확인한다.
+
+![Chapter10 Step5 Tessellation High](../../_assets/captures/part3_chapter10_05_tessellation_high.png)
+
+Manual factor 16은 같은 quad patch를 더 촘촘한 triangle grid로 세분한다. 같은 mode와 camera 상태에서 factor 차이만 비교한다.
+
 ## 입력과 출력
 
 | 구분 | 내용 |
@@ -50,7 +60,7 @@ else
 
 ## 시각 결과
 
-Manual factor가 직접 반영된 8×8 분할을 첫 화면에서 확인한다. Adaptive mode는 near/far distance 변화로 같은 factor 범위를 선택한다.
+Manual factor가 직접 반영된 기본 8×8 분할을 첫 화면에서 확인한다. 보조 visual은 factor 2와 factor 16을 같은 Manual 경로에서 비교해 tessellation factor가 polygon density로 이어지는 흐름을 보여준다. Adaptive mode는 near/far distance 변화로 같은 factor 범위를 선택하지만 이번 visual 비교 대상에는 포함하지 않는다.
 
 ## 구현 범위와 한계
 

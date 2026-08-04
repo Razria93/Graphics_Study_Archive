@@ -26,13 +26,21 @@ Quad patch를 hull shader, tessellator와 domain shader로 분할한다. Manual 
 
 Manual edge·inside factor 8이 quad의 wireframe subdivision으로 직접 나타난다.
 
+![Chapter10 Step5 Tessellation Low](../../Docs/_assets/captures/part3_chapter10_05_tessellation_low.png)
+
+Manual factor 2는 낮은 polygon density를 보여준다.
+
+![Chapter10 Step5 Tessellation High](../../Docs/_assets/captures/part3_chapter10_05_tessellation_high.png)
+
+Manual factor 16은 같은 quad patch가 더 촘촘하게 세분되는 상태를 보여준다.
+
 ## Verification
 
 | 항목 | 결과 | 비고 |
 | --- | --- | --- |
 | Debug x64 build/run | 성공 | 2026-08-04 현재 확인 |
 | Release x64 build/run | 성공 | project 폴더 CWD |
-| Capture/Result | 완료 | Manual factor 8, Wireframe On |
+| Capture/Result | 완료 | Manual factor 8 기본, factor 2/16 비교, Wireframe On |
 
 ## Limitations
 
