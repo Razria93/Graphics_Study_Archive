@@ -58,6 +58,14 @@ Chapter10→13의 21개 예제를 Geometry Pipeline, Texturing Techniques, PBR�
 
 Related PR: [PR #24](https://github.com/Razria93/Graphics_Study_Archive/pull/24) - Part3 Chapter10-13 Geometry·Texturing·PBR·Light/Shadow 단계별 구현과 Demo
 
+## 진행 중
+
+### Phase 5-1. Part4 Chapter14 Compute Shader Evidence
+
+Chapter14 `Ex1401`~`Ex1408` compute shader 예제를 Debug x64 기준으로 재검증하고, `Ex1402`, `Ex1404`~`Ex1407`의 centered client-visible screenshot과 stdout/code evidence를 상세 Demo, Demo Issue 후보와 PR body 후보로 연결했다. Demo Issue, Phase 완료 댓글과 PR remote 게시는 승인 후 진행한다.
+
+Related PR: 예정 - Part4 Chapter14 Compute Shader evidence 문서화와 capture 승격
+
 ## 진행 예정
 
 ### Phase 2-5. Portfolio_RayTracer 연계 정리
