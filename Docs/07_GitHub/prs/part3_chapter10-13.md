@@ -66,6 +66,8 @@ Metallic-roughness map과 direct GGX BRDF·IBL을 결합해 PBR material의 입�
 
 ![Chapter13 Shadow Comparison](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter13_04_06_shadow_filtering_storyboard.png?raw=true)
 
+Material/IBL 결과 축은 [Chapter12 PBR Demo #27](https://github.com/Razria93/Graphics_Study_Archive/issues/27)의 UnrealPBR·PBR Models Off/On comparison으로 분리해 확인한다.
+
 ## 구현 범위와 한계
 
 - Chapter10 Step5의 Distance Adaptive tessellation은 원래 Manual 학습 경로와 분리한 사용자 확장이다.
