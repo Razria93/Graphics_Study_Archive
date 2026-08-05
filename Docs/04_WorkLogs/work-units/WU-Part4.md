@@ -74,6 +74,6 @@
 
 ## 다음 작업
 
-1. Chapter14 GitHub Demo Issue와 PR body 후보는 remote 게시 전 최종 검수와 사용자 승인을 거친다.
+1. Chapter14 GitHub remote 게시 전 승인 범위와 Ready 직전 감사 기준은 [Part4 Chapter14 Ready 전 원격 게시 승인안](../reviews/part4-chapter14-ready-preflight.md)을 따른다.
 2. Chapter14 `Ex1401_Basic` tracked capture 승격 여부는 desktop 재촬영 후 판단한다.
 3. Chapter15 진입 전 runtime DLL 복구 절차와 desktop video 후보 분리를 유지한다.
