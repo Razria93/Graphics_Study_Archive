@@ -15,7 +15,7 @@
 | 항목 | 상태 | GitHub 번호 | 게시 후보 파일 | 비고 |
 | --- | --- | --- | --- | --- |
 | 상위 Progress Issue | posted | [Issue #7](https://github.com/Razria93/Graphics_Study_Archive/issues/7) | `Docs/07_GitHub/plan/plan-body.md` | GitHub remote에 게시됨 |
-| 누적 진행 댓글 | posted | [댓글 5091068690](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690) | `Docs/07_GitHub/plan/plan-progress.md` | Phase 4-2 Chapter10-13 게시 상태와 PR #24 마감 상태를 tracked 후보와 동기화 |
+| 누적 진행 댓글 | posted | [댓글 5091068690](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690) | `Docs/07_GitHub/plan/plan-progress.md` | Phase 5-1 Chapter14 게시 상태를 tracked 후보와 동기화 |
 
 ## 관계 Index
 
@@ -29,7 +29,8 @@
 | `WU-Part3` | 하위 Chapter 행에서 관리 | 기본 제외 | 하위 Chapter 행에서 관리 | 하위 Chapter 행에서 관리 | 하위 Chapter 행에서 관리 | 하위 Chapter 행에서 관리 | [WU-Part3](work-units/WU-Part3.md) | Chapter09와 Chapter10-13의 게시·PR merge를 모두 마감했다. |
 | `WU-Part3 / Chapter09` | Chapter09 로컬 정규화 완료 | 기본 제외 | [Demo Issue #21](https://github.com/Razria93/Graphics_Study_Archive/issues/21) (`posted`) | `Docs/07_GitHub/issues/demo/demo_part3_chapter09.md` (`ready`) | [PR #23](https://github.com/Razria93/Graphics_Study_Archive/pull/23) (`Merged`; [`3467f09`](https://github.com/Razria93/Graphics_Study_Archive/commit/3467f0961c9717998cf4fab76112d01e88680d0a)) | `Docs/07_GitHub/prs/part3_chapter09.md` (`ready`) | [WU-Part3](work-units/WU-Part3.md) | Step5·1·6 rendered evidence와 [Step5 video 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/21#issuecomment-5164633305)을 게시하고 PR review 대응을 마감했다. |
 | `WU-Part3 / Chapter10-13` | [댓글 5189162548](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5189162548) (`posted`; `Docs/07_GitHub/plan/comments/phase-4-2-plan-comment.md`) | 기본 제외 | [#25](https://github.com/Razria93/Graphics_Study_Archive/issues/25) · [#26](https://github.com/Razria93/Graphics_Study_Archive/issues/26) · [#27](https://github.com/Razria93/Graphics_Study_Archive/issues/27) · [#28](https://github.com/Razria93/Graphics_Study_Archive/issues/28) (`posted`) | Chapter10·11·12·13 후보 4개 (`ready`) | [PR #24](https://github.com/Razria93/Graphics_Study_Archive/pull/24) (`Merged`; [`75d1c71`](https://github.com/Razria93/Graphics_Study_Archive/commit/75d1c715d90a2e031680f2f30a586eb54674ae5b)) | `Docs/07_GitHub/prs/part3_chapter10-13.md` (`ready`) | [WU-Part3](work-units/WU-Part3.md) | Demo Issues #25-#28, 누적 Progress comment와 Phase 4-2 완료 댓글을 게시하고 일반 merge commit으로 PR #24를 마감했다. |
-| `WU-Part4` | 예정 | 기본 제외 | 없음 | 예정 | 없음 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
+| `WU-Part4` | 하위 Chapter 행에서 관리 | 기본 제외 | 하위 Chapter 행에서 관리 | 하위 Chapter 행에서 관리 | 하위 Chapter 행에서 관리 | 하위 Chapter 행에서 관리 | [WU-Part4](work-units/WU-Part4.md) | Chapter14부터 Chapter별 게시 후보와 PR 상태를 하위 행에서 관리한다. |
+| `WU-Part4 / Chapter14` | [댓글 5196232081](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5196232081) (`posted`; `Docs/07_GitHub/plan/comments/phase-5-1-plan-comment.md`) | 기본 제외 | [Demo Issue #29](https://github.com/Razria93/Graphics_Study_Archive/issues/29) (`posted`) | `Docs/07_GitHub/issues/demo/demo_part4_chapter14.md` (`ready`) | [PR #30](https://github.com/Razria93/Graphics_Study_Archive/pull/30) (`Ready for Review`) | `Docs/07_GitHub/prs/part4_chapter14.md` (`ready`) | [WU-Part4](work-units/WU-Part4.md) | Demo Issue #29, 누적 Progress comment, Phase 5-1 완료 댓글과 Ready for Review 상태의 PR #30을 게시했다. 리뷰 지적사항 대응 commit과 thread 응답을 반영했다. |
 | `WU-Publication` | 예정 | 기본 제외 | 없음 | 예정 | 없음 | 예정 | 없음 | 별도 승인 범위가 생기면 선택 Issue를 생성한다. |
 | `WU-StructureCleanup` | 제외 | 제외 | 없음 | 없음 | PR #6 (`posted`) | 없음 | [WU-StructureCleanup](work-units/WU-StructureCleanup.md) | 정책 도입 이전 구조 정리 PR이라 완료 댓글을 예외로 둔다. |
 

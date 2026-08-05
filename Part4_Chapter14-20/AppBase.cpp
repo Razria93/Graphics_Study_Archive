@@ -1,6 +1,8 @@
 ﻿#include "AppBase.h"
 
 #include <algorithm>
+#include <cstdlib>
+#include <cstring>
 #include <directxtk/SimpleMath.h>
 
 #include "D3D11Utils.h"
@@ -21,6 +23,15 @@ using namespace DirectX;
 using namespace DirectX::SimpleMath;
 using DirectX::BoundingSphere;
 using DirectX::SimpleMath::Vector3;
+
+namespace
+{
+bool UseCollapsedCaptureUi()
+{
+	const char* value = std::getenv("HLAB_CAPTURE_UI");
+	return value && std::strcmp(value, "collapsed") == 0;
+}
+} // namespace
 
 AppBase* g_appBase = nullptr;
 
@@ -82,7 +93,14 @@ int AppBase::Run()
 			ImGui_ImplWin32_NewFrame();
 
 			ImGui::NewFrame();
-			ImGui::Begin("Scene Control");
+			ImGuiWindowFlags sceneControlFlags = ImGuiWindowFlags_None;
+			if (UseCollapsedCaptureUi())
+			{
+				ImGui::SetNextWindowPos(ImVec2(16.0f, 16.0f), ImGuiCond_Always);
+				ImGui::SetNextWindowCollapsed(true, ImGuiCond_Always);
+				sceneControlFlags |= ImGuiWindowFlags_NoSavedSettings;
+			}
+			ImGui::Begin("Scene Control", nullptr, sceneControlFlags);
 
 			// ImGui가 측정해주는 Framerate 출력
 			ImGui::Text("Average %.3f ms/frame (%.1f FPS)",

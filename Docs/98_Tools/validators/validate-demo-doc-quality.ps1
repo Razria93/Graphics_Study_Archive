@@ -216,7 +216,7 @@ function Validate-DemoDocument {
         }
 
         $repoTarget = Get-RelativePath $resolved
-        if ($repoTarget -match '^(?:Part[^/]+/.+|Portfolio_RayTracer(?:/.+)?)\/README\.md$') {
+        if ($repoTarget -match '^(?:Part[^/]+(?:/.+)?|Portfolio_RayTracer(?:/.+)?)\/README\.md$') {
             $hasExample = $true
         }
         if ($repoTarget -match '^Docs/01_Topics/') {
