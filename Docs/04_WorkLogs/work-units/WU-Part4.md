@@ -45,17 +45,20 @@
 - Debug build 후 ignored output의 runtime DLL이 정리되어 loader error가 발생했으며, vcpkg Debug runtime DLL을 `x64/Debug`에 복구한 뒤 run/capture를 진행했다.
 - 생성 후보는 `local/capture-run/Part4_Chapter14/pilot-1401-1403-rerun-20260806`, `local/capture-run/Part4_Chapter14/ex1402-remeasure-20260806`, `local/capture-run/Part4_Chapter14/pilot-1404-1408-20260806`에 둔다. 이 local 후보는 tracked asset이 아니다.
 - 노트북 환경에서는 Part4 video를 생성하지 않고 screenshot/stdout/code evidence 위주로 기록한다. video가 필요한 density trail, simulation, animation, physics, gameplay evidence는 desktop 환경 별도 목표로 분리한다.
-- 2026-08-06 capture UI mode를 `AppBase`에 추가했다. `HLAB_CAPTURE_UI=collapsed` 실행에서는 공통 `Scene Control` titlebar를 좌측 상단 margin에 고정하고 접힌 상태를 유지한다. `Ex1404_StructuredBuffer`, `Ex1406_DensityField` fixed UI 후보는 `local/capture-run/Part4_Chapter14/capture-ui-fixed-20260806`에 둔다.
+- 2026-08-06 capture UI mode를 `AppBase`에 추가했다. `HLAB_CAPTURE_UI=collapsed` 실행에서는 공통 `Scene Control` titlebar를 좌측 상단 margin에 고정하고 접힌 상태를 유지한다. `Ex1404_StructuredBuffer`, `Ex1405_ConsumeAppendBuffer`, `Ex1406_DensityField`, `Ex1407_IndirectArguments` fixed UI 후보는 `local/capture-run/Part4_Chapter14/capture-ui-fixed-20260806`에 둔다.
+- 2026-08-06 local capture helper의 visible client area probe로 taskbar 제외 capture를 확인했다. 큰 모니터 연결 후 `CenterWindow` 기준으로 `Ex1404_StructuredBuffer`, `Ex1405_ConsumeAppendBuffer`, `Ex1406_DensityField`, `Ex1407_IndirectArguments` 모두 taskbar-free 전체 client 후보를 확보했다. 생성 후보는 `local/capture-run/Part4_Chapter14/capture-ui-fixed-large-monitor-20260806`에 둔다.
 
 ## Chapter14 evidence 후보 선별
 
 - 최소 evidence set은 `Ex1401_Basic` checker visual, `Ex1402_Blur` RGB blur visual, `Ex1403_MatVecMult` stdout compare, `Ex1408_BitonicSort` stdout compare로 둔다.
-- 확장 evidence set은 `Ex1404_StructuredBuffer` fixed UI point cloud, `Ex1405_ConsumeAppendBuffer` append count stdout, `Ex1406_DensityField` fixed UI density trail, `Ex1407_IndirectArguments` indirect draw code evidence로 둔다.
-- tracked 승격 우선 screenshot 후보는 `Ex1404_StructuredBuffer`, `Ex1406_DensityField` fixed UI 후보로 둔다. 다만 taskbar와 window bounds가 남아 있으므로 현재 local 후보는 tracked asset이 아니다.
+- 확장 evidence set은 `Ex1404_StructuredBuffer` fixed UI point cloud, `Ex1405_ConsumeAppendBuffer` fixed UI point cloud와 append count stdout, `Ex1406_DensityField` fixed UI density trail, `Ex1407_IndirectArguments` fixed UI density trail과 indirect draw code evidence로 둔다.
+- tracked 승격 우선 screenshot 후보는 `Ex1404_StructuredBuffer`, `Ex1405_ConsumeAppendBuffer`, `Ex1406_DensityField`, `Ex1407_IndirectArguments` centered client-visible fixed UI 후보로 둔다. 현재 local 후보는 tracked asset이 아니며, tracked 승격 전 metadata와 public 노출 검수를 별도로 수행한다.
 - `Ex1401_Basic`, `Ex1402_Blur`는 최소 set 후보지만 fixed UI와 안정된 bounds 기준의 desktop 재촬영 후 승격 여부를 판단한다.
 - `Ex1403_MatVecMult`, `Ex1408_BitonicSort`는 stdout-only 후보로 두며 screenshot을 만들지 않는다.
-- `Ex1405_ConsumeAppendBuffer`는 `AppendBuffer count: 25600`을 핵심 evidence로 두고 screenshot은 보조 후보로 둔다.
-- `Ex1407_IndirectArguments`는 visual이 `Ex1406_DensityField`와 유사하므로 `DrawInstancedIndirect(m_argsGPU.Get(), offset)` code evidence를 우선한다.
+- `Ex1405_ConsumeAppendBuffer`는 Consume/Append buffer의 counter 흐름과 `AppendBuffer count: 25600`을 핵심 evidence로 두고 fixed UI screenshot을 visual 보조 evidence로 둔다.
+- `Ex1407_IndirectArguments`는 visual이 `Ex1406_DensityField`와 유사하므로 fixed UI screenshot과 `DrawInstancedIndirect(m_argsGPU.Get(), offset)` code evidence를 함께 사용한다.
+- `Ex1404_StructuredBuffer`와 `Ex1405_ConsumeAppendBuffer`는 point cloud visual이 유사하지만, `Ex1404`는 단일 StructuredBuffer SRV/UAV draw 흐름이고 `Ex1405`는 Consume/Append UAV counter와 append count 기반 draw 흐름이다.
+- `Ex1406_DensityField`와 `Ex1407_IndirectArguments`는 density trail visual이 유사하지만, `Ex1406`은 CPU가 particle count를 직접 넘기는 draw 흐름이고 `Ex1407`은 GPU argument buffer를 넘기는 `DrawInstancedIndirect` 흐름이다.
 
 ## 정본 연결
 

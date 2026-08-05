@@ -15,7 +15,7 @@
 | VI-004 | Part1_Chapter01-02/02_Bloom | 해소 | 기존 입력 이미지의 강의/출처 표기 문제는 ChatGPT 생성 입력 이미지로 교체해 해소함 | result image를 `Docs/_assets/captures`에 승격함. public 판단은 `Docs/05_Publication`에서 처리 |
 | VI-005 | Part4_Chapter14-20 | 확인 필요 | Debug x64 build 후 ignored output의 runtime DLL이 정리되어 terminal 실행에서 `PhysXCommon_64.dll` loader error가 발생함 | build output DLL copy 방식 또는 실행 전 runtime DLL 복구 절차를 Part4 build/run 기준에 반영 |
 | VI-006 | Part4_Chapter14-20/Ex1402_Blur | 조건부 해소 | 2026-08-06 Debug x64 파일럿 screenshot 후보가 white frame에 가까웠으나, delay sweep에서 5000ms capture가 RGB blur 결과를 확인함 | Ex1402 capture는 5000ms 안정화 대기 기준으로 사용하고 tracked 승격 전 metadata와 visual을 재검수 |
-| VI-007 | Part4_Chapter14-20 | 조건부 해소 | 노트북 환경의 Part4 local screenshot 후보 일부에 taskbar 또는 ImGui control panel이 크게 포함됨. `HLAB_CAPTURE_UI=collapsed` 실행에서는 `Scene Control` titlebar를 좌측 상단 margin에 고정하고 접힌 상태로 유지함 | tracked capture 승격 전 capture UI mode를 사용한다. taskbar와 window bounds 문제는 desktop 환경 또는 안정된 bounds에서 별도 재검수하고 video는 데스크탑 별도 목표로 분리 |
+| VI-007 | Part4_Chapter14-20 | 조건부 해소 | 노트북 환경의 Part4 local screenshot 후보 일부에 taskbar 또는 ImGui control panel이 크게 포함됨. `HLAB_CAPTURE_UI=collapsed` 실행에서는 `Scene Control` titlebar를 좌측 상단 margin에 고정하고 접힌 상태로 유지함. visible client area capture는 taskbar를 제외하며, 큰 모니터에서 중앙 배치 후 `Ex1404`~`Ex1407` 전체 client capture를 확인함 | tracked capture 승격 전 capture UI mode, centered window, visible client area capture를 사용한다. video는 데스크탑 별도 목표로 분리 |
 
 ## 기록 기준
 
