@@ -4,16 +4,18 @@
 
 ## 범위
 
-- 주요 demo 후보: advanced graphics, compute/simulation 후보
-- 비고: 구조 확인 필요
+- 주요 demo 후보: compute shader, simulation, animation, foliage, physics, gameplay 후보
+- 비고: baseline 후보 정리 단계이며 capture/result는 아직 확보하지 않음
 
 ## Demo 목록
 
 | Demo 후보 | 상세 Demo | 연결 Example | 연결 Topic | Verification | Capture/Result | GitHub Demo Issue | 상태 | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 최소 capture | 없음 | `14_SSAO` | 미확인 | `Docs/02_Verification` | 없음 | 미게시 | 후보 | build/run 확인 후 갱신 |
-| 대표 capture | 없음 | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 미게시 | 후보 | 대표 예제 선정 후 갱신 |
-| video | 없음 | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 미게시 | 미확인 | 필요 여부 검토 |
+| 최소 capture | 없음 | `Ex1401_Basic` | Compute Shader | [Verification](../../02_Verification/Part4_Chapter14-20/verification-index.md) | 없음 | 미게시 | 후보 | back buffer UAV와 compute dispatch 기준선 후보. build/run 재검증 후 갱신 |
+| 대표 capture | 없음 | `Ex1402_Blur`, `Ex1408_BitonicSort` | Compute Shader, Resource Synchronization | [Verification](../../02_Verification/Part4_Chapter14-20/verification-index.md) | 없음 | 미게시 | 후보 | blur dispatch 또는 CPU/GPU result compare 후보. 대표 선정 전 |
+| Simulation representative capture | 없음 | `Ex1601_StableFluids`, `Ex1604_RealtimeSmoke`, `Ex1606_HybridWater` | GPU Simulation | [Verification](../../02_Verification/Part4_Chapter14-20/verification-index.md) | 없음 | 미게시 | 후보 | runtime asset과 capture 안정성 검토 필요 |
+| Animation/Gameplay capture | 없음 | `Ex1701_SkeletalAnimation`, `Ex2001_GamePlay` | 미확인 | [Verification](../../02_Verification/Part4_Chapter14-20/verification-index.md) | 없음 | 미게시 | 후보 | Mixamo, PBR, HDRI, PhysX asset/public risk 검토 필요 |
+| video | 없음 | 미확인 | 미확인 | [Verification](../../02_Verification/Part4_Chapter14-20/verification-index.md) | 없음 | 미게시 | 미확인 | 시간 변화가 capture보다 설명력이 클 때만 후속 선정 |
 
 ## 갱신 기준
 

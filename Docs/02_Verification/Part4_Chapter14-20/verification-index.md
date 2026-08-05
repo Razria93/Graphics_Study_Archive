@@ -9,12 +9,41 @@
 - 현재 재검증: 필요
 - 근거: Chapter README에 기록된 Ex1401~Ex2001 Debug/Release build/run 성공
 
-| 예제 또는 단위 | solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `Part4_Chapter14-20` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요. 실행 argument와 sample 선택 방식 문서화 필요 |
+| 예제 | Command argument | Solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `Ex1401_Basic` | `1401` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1402_Blur` | `1402` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1403_MatVecMult` | `1403` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1404_StructuredBuffer` | `1404` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1405_ConsumeAppendBuffer` | `1405` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1406_DensityField` | `1406` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1407_IndirectArguments` | `1407` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1408_BitonicSort` | `1408` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1501_ParticleSystem` | `1501` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1502_SpriteFireEffect` | `1502` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1503_SphWater` | `1503` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1601_StableFluids` | `1601` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1602_CurlNoise` | `1602` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1603_Cloud` | `1603` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1604_RealtimeSmoke` | `1604` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1605_SmokeCpu` | `1605` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1606_HybridWater` | `1606` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1701_SkeletalAnimation` | `1701` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1801_Tree` | `1801` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1802_Grass` | `1802` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1803_Landscape` | `1803` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1901_PhysX` | `1901` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex2001_GamePlay` | `2001` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+
+## 실행 선택 방식
+
+- `Part4_Chapter14-20`은 `Examples` 단일 executable에서 command-line argument로 예제를 선택한다.
+- 인자가 없으면 `main.cpp`가 `Please specify the example number`를 출력하고 종료한다.
+- 알 수 없는 argument는 `not a valid example number`를 출력하고 종료한다.
+- 실제 재검증 시 working directory, Debugging command arguments와 runtime asset dependency를 예제별로 함께 확인한다.
 
 ## 갱신 기준
 
 - `Examples.sln`의 startup project와 실행 argument를 확인한다.
-- 실제 sample 단위가 확인되면 행을 분리한다.
+- 실제 sample 단위 재검증을 수행하면 확인 시점과 근거를 행별로 갱신한다.
 - 실패 또는 부분 성공 항목은 `../known-issues.md`에 연결한다.

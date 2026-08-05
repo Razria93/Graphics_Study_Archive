@@ -7,8 +7,8 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 ## 상태
 
 - 학습 코드 정리: import 완료
-- Build/run: Ex1401-Ex2001 Debug/Release 확인 완료
-- 캡처: 예정
+- Build/run: Ex1401-Ex2001 Debug/Release 과거 확인, 현재 재검증 필요
+- 캡처: 미확인
 
 ## Archive/Public 검토
 
@@ -17,8 +17,8 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 | Source provenance | [`SRC-P4-C14-20`](../Docs/99_Legacy/source-registry.md) |
 | Import status | 반영 완료 |
 | Public readiness | 검토 필요 |
-| Build/run status | 성공 |
-| Next action | PR merge 후 code import 완료 기준으로 문서 전체 재정리 |
+| Build/run status | 과거 성공 · 현재 재검증 필요 |
+| Next action | baseline 문서 축 정규화 후 Chapter14 또는 재검증 범위 선정 |
 
 ## 예정 주제
 
@@ -33,5 +33,7 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 ## 문서
 
 - [Part4 Verification](../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
+- [Part4 Demo Index](../Docs/03_Demos/Part4_Chapter14-20/demo-index.md)
+- [Compute And Simulation Topic Index](../Docs/01_Topics/ComputeAndSimulation/topic-index.md)
 - [Part4 source provenance](../Docs/99_Legacy/source-registry.md)
 
