@@ -42,6 +42,19 @@
 - 알 수 없는 argument는 `not a valid example number`를 출력하고 종료한다.
 - 실제 재검증 시 working directory, Debugging command arguments와 runtime asset dependency를 예제별로 함께 확인한다.
 
+## Chapter14 재검증 계획
+
+| Example | 현재 확인할 증거 | Capture 필요성 | 확인 포인트 |
+| --- | --- | --- | --- |
+| `Ex1401_Basic` | screenshot | 필요 | checker pattern, `Scale` GUI, back buffer UAV 출력 |
+| `Ex1402_Blur` | screenshot | 필요 | 고강도 RGB 점이 1000회 blur pass 뒤 넓게 퍼지는지 확인 |
+| `Ex1403_MatVecMult` | console output | 불필요 | `Result CPU`, `GPU Result`, `Error GPU 0`, exit code 0 |
+| `Ex1404_StructuredBuffer` | screenshot | 필요 | vertex buffer 없이 point cloud가 출력되고 particle이 움직이는지 확인 |
+| `Ex1405_ConsumeAppendBuffer` | screenshot + console output | 후보 | point cloud와 `AppendBuffer count` 출력 확인 |
+| `Ex1406_DensityField` | screenshot | 필요 | colored sprite/density trail 누적과 감쇠 확인 |
+| `Ex1407_IndirectArguments` | screenshot | 후보 | Ex1406 계열 density visual과 indirect argument buffer offset 0 draw 확인 |
+| `Ex1408_BitonicSort` | console output | 불필요 | element count별 CPU/GPU sort compare가 `OK`인지 확인 |
+
 ## 갱신 기준
 
 - `Examples.sln`의 startup project와 실행 argument를 확인한다.

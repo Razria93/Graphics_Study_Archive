@@ -23,6 +23,14 @@
 - 이번 범위에서는 build/run/capture를 수행하지 않고, 과거 확인과 현재 재검증 필요 상태를 분리한다.
 - Demo Issue, Progress comment, PR remote 게시는 후속 승인 범위로 둔다.
 
+## Chapter14 문서화 기준
+
+- `Ex1401_Basic`과 `Ex1402_Blur`는 compute shader visual 기준선과 대표 visual 후보로 둔다.
+- `Ex1403_MatVecMult`와 `Ex1408_BitonicSort`는 screenshot보다 console CPU/GPU result compare를 핵심 evidence로 둔다.
+- `Ex1404_StructuredBuffer`와 `Ex1405_ConsumeAppendBuffer`는 structured buffer update/render와 append counter 흐름을 확인한다.
+- `Ex1406_DensityField`와 `Ex1407_IndirectArguments`는 density trail visual을 공유하되, Ex1407은 indirect argument buffer 사용 여부를 code evidence와 함께 설명한다.
+- Chapter14 문서화 기준 수립 단계에서는 build/run/capture를 수행하지 않는다.
+
 ## 정본 연결
 
 | 책임 | 정본 |
@@ -36,6 +44,6 @@
 
 ## 다음 작업
 
-1. baseline 정규화 변경을 검증하고 커밋한다.
-2. 후속 목표에서 Chapter14 compute shader slice 또는 build/run revalidation plan 중 하나를 선택한다.
+1. Chapter14 build/run 재검증을 Ex1401부터 단일 실행 규칙으로 시작한다.
+2. console 중심 예제는 stdout과 exit code를 evidence로 기록하고, visual 중심 예제만 capture 후보로 둔다.
 3. 실제 build/run/capture를 시작할 때 Work Unit 상태를 `검증 중`으로 전환한다.
