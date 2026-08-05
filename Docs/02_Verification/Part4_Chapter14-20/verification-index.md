@@ -14,11 +14,11 @@
 | `Ex1401_Basic` | `1401` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-06 Debug x64 build/run과 checker screenshot 후보 확인. Release는 과거 확인 |
 | `Ex1402_Blur` | `1402` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-06 Debug x64 build/run과 5000ms 안정화 screenshot 후보 확인([VI-006](../known-issues.md)). Release는 과거 확인 |
 | `Ex1403_MatVecMult` | `1403` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 불필요 | 2026-08-06 Debug x64 stdout과 exit code 0 확인. Release는 과거 확인 |
-| `Ex1404_StructuredBuffer` | `1404` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex1405_ConsumeAppendBuffer` | `1405` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex1406_DensityField` | `1406` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex1407_IndirectArguments` | `1407` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex1408_BitonicSort` | `1408` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1404_StructuredBuffer` | `1404` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-06 Debug x64 point cloud screenshot 후보 확인. Release는 과거 확인 |
+| `Ex1405_ConsumeAppendBuffer` | `1405` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-06 Debug x64 point cloud screenshot 후보와 `AppendBuffer count: 25600` stdout 확인. Release는 과거 확인 |
+| `Ex1406_DensityField` | `1406` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-06 Debug x64 density trail screenshot 후보 확인. Release는 과거 확인 |
+| `Ex1407_IndirectArguments` | `1407` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-06 Debug x64 density trail screenshot 후보와 `DrawInstancedIndirect` code evidence 확인. Release는 과거 확인 |
+| `Ex1408_BitonicSort` | `1408` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 불필요 | 2026-08-06 Debug x64 element count별 CPU/GPU sort `OK`와 exit code 0 확인. Release는 과거 확인 |
 | `Ex1501_ParticleSystem` | `1501` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `Ex1502_SpriteFireEffect` | `1502` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `Ex1503_SphWater` | `1503` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
@@ -62,8 +62,30 @@
 | `Ex1401_Basic` | Debug x64 | `1401` | 성공 | local screenshot 후보 | checker pattern과 `HongLabGraphics Example` window 확인. tracked capture로 승격하지 않음 |
 | `Ex1402_Blur` | Debug x64 | `1402` | 성공 | local screenshot 후보 | 초기 capture는 white frame에 가까웠으나 5000ms 안정화 대기에서 RGB blur visual 확인 |
 | `Ex1403_MatVecMult` | Debug x64 | `1403` | 성공 | stdout log | `Result CPU`, `GPU Result`, `Error GPU 0`, `ExitCode: 0` 확인. screenshot 불필요 |
+| `Ex1404_StructuredBuffer` | Debug x64 | `1404` | 성공 | local screenshot 후보 | `RWStructuredBuffer` particle point cloud 확인. `HLAB_CAPTURE_UI=collapsed` fixed UI 후보 확인. tracked 승격 전 bounds 재검수 필요 |
+| `Ex1405_ConsumeAppendBuffer` | Debug x64 | `1405` | 성공 | local screenshot 후보 + stdout log | point cloud와 `AppendBuffer count: 25600` 확인. tracked 승격 전 bounds 재검수 필요 |
+| `Ex1406_DensityField` | Debug x64 | `1406` | 성공 | local screenshot 후보 | colored density trail 확인. `HLAB_CAPTURE_UI=collapsed` fixed UI 후보 확인. 시간 변화는 video 후보이나 노트북 환경에서는 screenshot만 기록 |
+| `Ex1407_IndirectArguments` | Debug x64 | `1407` | 성공 | local screenshot 후보 + code evidence | density trail visual과 `DrawInstancedIndirect(m_argsGPU.Get(), offset)` 확인. screenshot만으로 indirect draw 차이는 설명 부족 |
+| `Ex1408_BitonicSort` | Debug x64 | `1408` | 성공 | stdout log | element count `1024`~`1048576` CPU/GPU sort compare `OK`, `ExitCode: 0` 확인. screenshot 불필요 |
 
 Debug x64 build는 2026-08-06 `Examples.sln` 기준 경고 0개, 오류 0개로 확인했다. Git Bash 실행 환경에서는 build 후 Debug output의 runtime DLL이 정리되어 `PhysXCommon_64.dll` loader error가 발생했으며([VI-005](../known-issues.md)), vcpkg `x64-windows/debug/bin` runtime DLL을 ignored `x64/Debug` output에 복구한 뒤 파일럿 run을 수행했다. `Ex1402_Blur`는 500ms, 1500ms, 3000ms capture에서 white frame에 가까웠고 5000ms capture에서 RGB blur visual이 확인되어 timing/안정화 대기 이슈로 판정한다.
+
+노트북 환경에서는 Part4 visual 후보 일부에 taskbar 또는 ImGui control panel이 크게 포함된다([VI-007](../known-issues.md)). 2026-08-06 `AppBase`에 capture UI mode를 추가해 `HLAB_CAPTURE_UI=collapsed` 실행에서 공통 `Scene Control` titlebar를 좌측 상단 margin에 고정하고 접힌 상태로 유지하는 기준을 확인했다. `Ex1404_StructuredBuffer`, `Ex1406_DensityField` fixed UI local 후보는 `local/capture-run/Part4_Chapter14/capture-ui-fixed-20260806`에 둔다. 이 기준은 ImGui `imgui.ini`의 저장 위치를 덮지 않는다. taskbar와 window bounds 문제는 tracked capture 또는 video 승격 전 desktop 환경에서 별도 검수한다.
+
+## Chapter14 evidence 후보 선별
+
+| Example | Evidence 방향 | 현재 후보 | 승격 판단 | 후속 조치 |
+| --- | --- | --- | --- | --- |
+| `Ex1401_Basic` | 최소 compute visual | checker screenshot | desktop 재촬영 후보 | `HLAB_CAPTURE_UI=collapsed`와 안정된 bounds로 재촬영 후 tracked 여부 판단 |
+| `Ex1402_Blur` | 대표 blur visual | 5000ms RGB blur screenshot | desktop 재촬영 후보 | 5000ms 안정화 대기와 fixed UI 기준을 같이 적용해 재촬영 |
+| `Ex1403_MatVecMult` | console result compare | stdout log | stdout-only 후보 | screenshot 없이 log 요약과 exit code를 evidence로 사용 |
+| `Ex1404_StructuredBuffer` | structured buffer visual | fixed UI point cloud screenshot | tracked 승격 우선 후보 | taskbar와 bounds 재검수 후 Chapter14 확장 visual 후보로 판단 |
+| `Ex1405_ConsumeAppendBuffer` | append counter result | point cloud screenshot + stdout log | stdout 우선 후보 | `AppendBuffer count: 25600`을 핵심 evidence로 두고 screenshot은 보조 후보로 판단 |
+| `Ex1406_DensityField` | 대표 density visual | fixed UI density trail screenshot | tracked 승격 우선 후보 | taskbar와 bounds 재검수 후 screenshot 후보로 판단. 시간 변화는 desktop video 후보 |
+| `Ex1407_IndirectArguments` | indirect draw code evidence | density trail screenshot + code evidence | code 우선 후보 | visual은 Ex1406과 유사하므로 `DrawInstancedIndirect` code evidence를 함께 사용 |
+| `Ex1408_BitonicSort` | console sort compare | stdout log | stdout-only 후보 | screenshot 없이 element count별 `OK`와 exit code를 evidence로 사용 |
+
+Chapter14 최소 evidence set은 `Ex1401_Basic`, `Ex1402_Blur`, `Ex1403_MatVecMult`, `Ex1408_BitonicSort`로 둔다. Chapter14 확장 evidence set은 `Ex1404_StructuredBuffer`, `Ex1405_ConsumeAppendBuffer`, `Ex1406_DensityField`, `Ex1407_IndirectArguments`로 둔다. tracked screenshot 승격은 fixed UI, bounds, taskbar, metadata 검수 이후에만 수행한다.
 
 ## 갱신 기준
 

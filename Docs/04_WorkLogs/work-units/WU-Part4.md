@@ -10,8 +10,8 @@
 | --- | --- | --- |
 | Source/import | 반영 완료 | `SRC-P4-C14-20`으로 source provenance를 추적한다. |
 | Branch | 진행 중 | `docs/part4-chapter14-20-workflow`에서 baseline 문서 축 정규화를 시작한다. |
-| Build/run | 파일럿 검증 중 | Ex1401~Ex1403 Debug x64 build/run을 2026-08-06 현재 확인했다. Ex1404~Ex2001과 Release 현재 재검증은 남아 있다. |
-| Capture | local 후보 | Ex1401~Ex1402 local screenshot 후보와 Ex1403 stdout log 후보를 생성했다. tracked capture 승격은 하지 않았다. |
+| Build/run | Chapter14 Debug 확인 | Ex1401~Ex1408 Debug x64 build/run을 2026-08-06 현재 확인했다. Chapter15~20과 Release 현재 재검증은 남아 있다. |
+| Capture | local 후보 | Ex1401~Ex1402, Ex1404~Ex1407 local screenshot 후보와 Ex1403, Ex1405, Ex1408 stdout log 후보를 생성했다. tracked capture 승격은 하지 않았다. |
 | Demo | 후보 정리 중 | stale 후보를 제거하고 실제 Ex 기반 후보로 재정렬한다. |
 | Publication | 검토 필요 | public 후보 확정이 아니라 asset/public risk 검토 축으로만 기록한다. |
 | GitHub | 미게시 | Issue, PR, comment remote 게시를 이번 범위에 포함하지 않는다. |
@@ -37,8 +37,25 @@
 - `Ex1401_Basic`은 checker pattern screenshot 후보로 최소 compute visual 기준선을 확인했다.
 - `Ex1402_Blur`는 초기 capture가 white frame에 가까웠으나, 5000ms 안정화 대기 재측정에서 RGB blur visual을 확인했다.
 - `Ex1403_MatVecMult`는 `Result CPU`, `GPU Result`, `Error GPU 0`, `ExitCode: 0` stdout evidence를 확인했고 screenshot은 불필요로 둔다.
+- `Ex1404_StructuredBuffer`는 structured buffer 기반 particle point cloud screenshot 후보를 확인했다.
+- `Ex1405_ConsumeAppendBuffer`는 point cloud screenshot 후보와 `AppendBuffer count: 25600` stdout evidence를 확인했다.
+- `Ex1406_DensityField`는 colored density trail screenshot 후보를 확인했다. 시간 변화는 video 후보이나 노트북 환경에서는 screenshot만 남긴다.
+- `Ex1407_IndirectArguments`는 density trail screenshot 후보와 `DrawInstancedIndirect` code evidence를 확인했다.
+- `Ex1408_BitonicSort`는 element count별 CPU/GPU sort compare `OK`와 `ExitCode: 0` stdout evidence를 확인했다.
 - Debug build 후 ignored output의 runtime DLL이 정리되어 loader error가 발생했으며, vcpkg Debug runtime DLL을 `x64/Debug`에 복구한 뒤 run/capture를 진행했다.
-- 생성 후보는 `local/capture-run/Part4_Chapter14/pilot-1401-1403-rerun-20260806`에 둔다. 이 local 후보는 tracked asset이 아니다.
+- 생성 후보는 `local/capture-run/Part4_Chapter14/pilot-1401-1403-rerun-20260806`, `local/capture-run/Part4_Chapter14/ex1402-remeasure-20260806`, `local/capture-run/Part4_Chapter14/pilot-1404-1408-20260806`에 둔다. 이 local 후보는 tracked asset이 아니다.
+- 노트북 환경에서는 Part4 video를 생성하지 않고 screenshot/stdout/code evidence 위주로 기록한다. video가 필요한 density trail, simulation, animation, physics, gameplay evidence는 desktop 환경 별도 목표로 분리한다.
+- 2026-08-06 capture UI mode를 `AppBase`에 추가했다. `HLAB_CAPTURE_UI=collapsed` 실행에서는 공통 `Scene Control` titlebar를 좌측 상단 margin에 고정하고 접힌 상태를 유지한다. `Ex1404_StructuredBuffer`, `Ex1406_DensityField` fixed UI 후보는 `local/capture-run/Part4_Chapter14/capture-ui-fixed-20260806`에 둔다.
+
+## Chapter14 evidence 후보 선별
+
+- 최소 evidence set은 `Ex1401_Basic` checker visual, `Ex1402_Blur` RGB blur visual, `Ex1403_MatVecMult` stdout compare, `Ex1408_BitonicSort` stdout compare로 둔다.
+- 확장 evidence set은 `Ex1404_StructuredBuffer` fixed UI point cloud, `Ex1405_ConsumeAppendBuffer` append count stdout, `Ex1406_DensityField` fixed UI density trail, `Ex1407_IndirectArguments` indirect draw code evidence로 둔다.
+- tracked 승격 우선 screenshot 후보는 `Ex1404_StructuredBuffer`, `Ex1406_DensityField` fixed UI 후보로 둔다. 다만 taskbar와 window bounds가 남아 있으므로 현재 local 후보는 tracked asset이 아니다.
+- `Ex1401_Basic`, `Ex1402_Blur`는 최소 set 후보지만 fixed UI와 안정된 bounds 기준의 desktop 재촬영 후 승격 여부를 판단한다.
+- `Ex1403_MatVecMult`, `Ex1408_BitonicSort`는 stdout-only 후보로 두며 screenshot을 만들지 않는다.
+- `Ex1405_ConsumeAppendBuffer`는 `AppendBuffer count: 25600`을 핵심 evidence로 두고 screenshot은 보조 후보로 둔다.
+- `Ex1407_IndirectArguments`는 visual이 `Ex1406_DensityField`와 유사하므로 `DrawInstancedIndirect(m_argsGPU.Get(), offset)` code evidence를 우선한다.
 
 ## 정본 연결
 
@@ -53,6 +70,6 @@
 
 ## 다음 작업
 
-1. Chapter14 `Ex1404`~`Ex1408` 재검증을 같은 단일 실행 규칙으로 확장한다.
-2. visual capture 후보는 예제별 안정화 대기 시간을 기록하고, tracked 승격 전 metadata와 visual을 재검수한다.
-3. console 중심 예제는 stdout과 exit code를 evidence로 기록하고, visual 중심 예제만 capture 후보로 둔다.
+1. Chapter14 tracked capture 승격은 `HLAB_CAPTURE_UI=collapsed`, 안정된 bounds, taskbar 노출, metadata를 검수한 뒤 수행한다.
+2. Chapter14 GitHub Demo Issue 후보는 최소 evidence set과 확장 evidence set 중 게시 범위를 선택해 작성한다.
+3. Chapter15 진입 전 runtime DLL 복구 절차와 desktop video 후보 분리를 유지한다.
