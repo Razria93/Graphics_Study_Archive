@@ -23,6 +23,14 @@
 - 이번 범위에서는 build/run/capture를 수행하지 않고, 과거 확인과 현재 재검증 필요 상태를 분리한다.
 - Demo Issue, Progress comment, PR remote 게시는 후속 승인 범위로 둔다.
 
+## Part4 장기 브랜치 운영 기준
+
+Part4 Chapter14-20은 `Examples.sln` 단일 project와 command argument 기반 예제 선택 구조를 공유하므로 `docs/part4-chapter14-20-workflow` 장기 브랜치를 유지한다. 작업은 예제 단위로 build/run/capture/document evidence 후보를 생성하고, 증거자료 승인과 remote 게시, PR, merge는 Chapter 단위로 수행한다.
+
+각 Chapter PR merge 후에는 `main`의 merge commit을 장기 브랜치에 반영한 뒤 다음 Chapter 작업을 시작한다. 다음 PR 생성 전에는 `origin/main..HEAD` 범위에 해당 Chapter 작업 commit만 남는지 확인한다.
+
+증거자료는 예제 단위 local 후보로 먼저 만들고, Chapter 단위 검수에서 tracked 승격 여부를 승인한다. 승인 전에는 `Docs/_assets` 승격, GitHub Issue/Progress/PR remote 게시를 진행하지 않는다.
+
 ## Chapter14 문서화 기준
 
 - `Ex1401_Basic`과 `Ex1402_Blur`는 compute shader visual 기준선과 대표 visual 후보로 둔다.

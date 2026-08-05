@@ -10,6 +10,13 @@
 - 제외 예제:
 - 실행 진입점:
 
+## Branch 운영 기준
+
+- 장기 브랜치 사용 여부:
+- 이전 Chapter PR merge 후 main 반영 여부:
+- `origin/main..HEAD` 범위:
+- 이번 PR 예상 commit 범위:
+
 ## 실행 기준선
 
 | 항목 | 판단 |
