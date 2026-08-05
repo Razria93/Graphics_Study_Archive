@@ -36,7 +36,7 @@ Point cloud visual과 `AppendBuffer count: 25600` stdout을 함께 evidence로 �
 
 - [Consume/Append buffer 준비](../../../Part4_Chapter14-20/Ex1405_ConsumeAppendBuffer.cpp#L26-L55)
 - [Append counter 복사와 append count draw](../../../Part4_Chapter14-20/Ex1405_ConsumeAppendBuffer.cpp#L98-L130)
-- [Consume/Append buffer swap](../../../Part4_Chapter14-20/Ex1405_ConsumeAppendBuffer.cpp#L140-L145)
+- [Consume/Append buffer swap](../../../Part4_Chapter14-20/Ex1405_ConsumeAppendBuffer.cpp#L134-L139)
 
 ## Stdout evidence
 

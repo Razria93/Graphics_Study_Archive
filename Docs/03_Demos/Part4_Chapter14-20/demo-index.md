@@ -5,7 +5,7 @@
 ## 범위
 
 - 주요 demo 후보: compute shader, simulation, animation, foliage, physics, gameplay 후보
-- 비고: baseline 후보 정리 단계이며 capture/result는 아직 확보하지 않음
+- 비고: Chapter14 tracked capture/result는 확보했으며 Chapter15~20, video와 desktop 재촬영 후보는 후속 검토 범위다.
 
 ## Demo 목록
 

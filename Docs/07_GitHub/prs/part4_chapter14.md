@@ -46,7 +46,7 @@ Density trail visual은 `Ex1406` 계열을 공유하지만, indirect argument bu
 `Ex1403`은 matrix-vector multiplication CPU/GPU result compare에서 `Error GPU 0`, `ExitCode: 0`을 확인한다. `Ex1408`은 `1024`부터 `1048576`까지 element count를 늘리며 CPU sort와 GPU bitonic sort 결과가 모두 `OK`인지 확인한다.
 
 - [MatVecMult CPU/GPU result compare](https://github.com/Razria93/Graphics_Study_Archive/blob/44e3c118f80994949b5089f90b388fdcbea15e1c/Part4_Chapter14-20/Ex1403_MatVecMult.cpp#L30-L72)
-- [BitonicSort element count별 CPU/GPU compare](https://github.com/Razria93/Graphics_Study_Archive/blob/44e3c118f80994949b5089f90b388fdcbea15e1c/Part4_Chapter14-20/BitonicSort.cpp#L180-L263)
+- [BitonicSort element count별 CPU/GPU compare](https://github.com/Razria93/Graphics_Study_Archive/blob/44e3c118f80994949b5089f90b388fdcbea15e1c/Part4_Chapter14-20/BitonicSort.cpp#L180-L253)
 
 ## 검증
 

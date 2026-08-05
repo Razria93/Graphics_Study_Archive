@@ -37,7 +37,7 @@ Particle sourcing과 density dissipation이 만든 colored trail을 확인한다
 - [Density resource와 shader 준비](../../../Part4_Chapter14-20/Ex1406_DensityField.cpp#L21-L78)
 - [Density field render sequence](../../../Part4_Chapter14-20/Ex1406_DensityField.cpp#L84-L100)
 - [Density dissipation과 particle sourcing](../../../Part4_Chapter14-20/Ex1406_DensityField.cpp#L103-L139)
-- [Sprite draw와 accumulate blend](../../../Part4_Chapter14-20/Ex1406_DensityField.cpp#L142-L220)
+- [Sprite draw와 accumulate blend](../../../Part4_Chapter14-20/Ex1406_DensityField.cpp#L142-L195)
 
 ## 시각 결과
 

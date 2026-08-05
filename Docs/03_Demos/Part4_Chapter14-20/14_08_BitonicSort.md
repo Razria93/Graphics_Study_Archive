@@ -34,7 +34,7 @@ GPU compute shader bitonic sort 결과를 CPU sort 기준 결과와 비교하고
 
 - [BitonicSort test entry](../../../Part4_Chapter14-20/Ex1408_BitonicSort.cpp#L13-L22)
 - [GPU bitonic sort dispatch loop](../../../Part4_Chapter14-20/BitonicSort.cpp#L95-L116)
-- [Element count별 CPU/GPU compare](../../../Part4_Chapter14-20/BitonicSort.cpp#L180-L263)
+- [Element count별 CPU/GPU compare](../../../Part4_Chapter14-20/BitonicSort.cpp#L180-L253)
 
 ## Stdout evidence
 
