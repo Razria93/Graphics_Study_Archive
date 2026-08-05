@@ -8,9 +8,7 @@ Metallic-roughness sphere에서 시작해 imported model의 submesh와 material 
 
 ### UnrealPBR Off
 
-PBR map을 끈 기준 장면이다.
-
-![UnrealPBR Off](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter12_01_pbr_off.png?raw=true)
+PBR map을 끈 기준 장면은 [UnrealPBR Off capture](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter12_01_pbr_off.png?raw=true)로 둔다.
 
 ### UnrealPBR On + Height 0.015
 
@@ -20,9 +18,7 @@ PBR map과 height scale 0.015를 적용한 장면이다.
 
 ### Imported PBR Model Off
 
-Imported model에서 PBR option을 끈 기준 장면이다.
-
-![PBR Models Off](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter12_02_pbr_models_off.png?raw=true)
+Imported model에서 PBR option을 끈 기준 장면은 [PBR Models Off capture](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter12_02_pbr_models_off.png?raw=true)로 둔다.
 
 ### Imported PBR Model On
 
