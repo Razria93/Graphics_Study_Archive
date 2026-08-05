@@ -7,7 +7,7 @@
 ## 책임 범위
 
 - 주 PSO 계보와 별개인 실험 branch를 Step2B로 표시한다.
-- 일반 이론은 [Topic](../../01_Topics/Shadows/ShadowMappingAndDepthBias.md)으로 위임한다.
+- 일반 이론은 [Shadow Mapping And Depth Bias](../../01_Topics/Shadows/ShadowMappingAndDepthBias.md)으로 위임한다.
 - Build/run/capture 사실은 [Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md)으로 위임한다.
 
 ## 결과 미리보기

@@ -7,7 +7,7 @@ Light-space depth 비교로 hard shadow를 만든다.
 ## 책임 범위
 
 - Camera depth와 별개로 light depth map과 shadow coordinate를 추가한다.
-- 일반 이론은 [Topic](../../01_Topics/Shadows/ShadowMappingAndDepthBias.md)으로 위임한다.
+- 일반 이론은 [Shadow Mapping And Depth Bias](../../01_Topics/Shadows/ShadowMappingAndDepthBias.md)으로 위임한다.
 - Build/run/capture 사실은 [Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md)으로 위임한다.
 
 ## 결과 미리보기
@@ -15,6 +15,12 @@ Light-space depth 비교로 hard shadow를 만든다.
 ![Chapter13 Step4 ShadowMapping](../../_assets/captures/part3_chapter13_04_shadow_mapping.png)
 
 Binary hard shadow 결과를 확인한다.
+
+### Shadow Filtering Progression
+
+![Chapter13 Step4-6 Shadow Filtering](../../_assets/captures/part3_chapter13_04_06_shadow_filtering_storyboard.png)
+
+Hard shadow, fixed-kernel PCF와 blocker 기반 PCSS의 shadow edge 차이를 같은 layout에서 비교한다.
 
 ## 입력과 출력
 
@@ -35,7 +41,7 @@ Binary hard shadow 결과를 확인한다.
 
 ## 시각 결과
 
-전체 창 capture에서 UI 기본값과 Binary hard shadow의 대응을 확인한다.
+전체 창 capture에서 Binary hard shadow의 날카로운 edge와 이후 Step5·6 filtering 결과의 차이를 확인한다.
 
 ## 구현 범위와 한계
 

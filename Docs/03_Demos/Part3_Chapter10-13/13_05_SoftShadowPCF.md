@@ -7,14 +7,20 @@
 ## 책임 범위
 
 - Step4의 단일 hard comparison을 64-sample PCF kernel로 확장한다.
-- 일반 이론은 [Topic](../../01_Topics/Shadows/PercentageCloserFilteringAndPCSS.md)으로 위임한다.
+- 일반 이론은 [Percentage Closer Filtering And PCSS](../../01_Topics/Shadows/PercentageCloserFilteringAndPCSS.md)으로 위임한다.
 - Build/run/capture 사실은 [Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md)으로 위임한다.
 
 ## 결과 미리보기
 
-![Chapter13 Step5 SoftShadowPCF](../../_assets/captures/part3_chapter13_05_soft_shadow_pcf.png)
+![Chapter13 Step5 SoftShadowPCF](../../_assets/captures/part3_chapter13_05_soft_shadow_pcf_ui_left.png)
 
 고정 폭의 filtered shadow 결과를 확인한다.
+
+### Shadow Filtering Progression
+
+![Chapter13 Step4-6 Shadow Filtering](../../_assets/captures/part3_chapter13_04_06_shadow_filtering_storyboard.png)
+
+Step4 hard shadow와 Step6 PCSS 사이에서 PCF가 고정 kernel filtering으로 edge를 부드럽게 만드는 위치를 확인한다.
 
 ## 입력과 출력
 
@@ -35,7 +41,7 @@
 
 ## 시각 결과
 
-전체 창 capture에서 UI 기본값과 고정 폭의 filtered shadow의 대응을 확인한다.
+전체 창 capture에서 고정 폭의 filtered shadow와 hard shadow·PCSS 사이의 차이를 확인한다.
 
 ## 구현 범위와 한계
 

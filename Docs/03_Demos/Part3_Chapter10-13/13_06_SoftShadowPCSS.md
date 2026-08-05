@@ -7,14 +7,20 @@ Blocker search와 penumbra 추정으로 가변 폭 PCF를 적용한다.
 ## 책임 범위
 
 - Step5의 고정 kernel을 receiver-blocker 관계에 따른 PCSS kernel로 바꾼다.
-- 일반 이론은 [Topic](../../01_Topics/Shadows/PercentageCloserFilteringAndPCSS.md)으로 위임한다.
+- 일반 이론은 [Percentage Closer Filtering And PCSS](../../01_Topics/Shadows/PercentageCloserFilteringAndPCSS.md)으로 위임한다.
 - Build/run/capture 사실은 [Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md)으로 위임한다.
 
 ## 결과 미리보기
 
-![Chapter13 Step6 SoftShadowPCSS](../../_assets/captures/part3_chapter13_06_soft_shadow_pcss.png)
+![Chapter13 Step6 SoftShadowPCSS](../../_assets/captures/part3_chapter13_06_soft_shadow_pcss_ui_left.png)
 
 거리에 따라 폭이 달라지는 soft shadow 결과를 확인한다.
+
+### Shadow Filtering Progression
+
+![Chapter13 Step4-6 Shadow Filtering](../../_assets/captures/part3_chapter13_04_06_shadow_filtering_storyboard.png)
+
+Hard shadow, fixed-kernel PCF와 variable penumbra PCSS를 한 화면에서 비교한다.
 
 ## 입력과 출력
 
@@ -35,7 +41,7 @@ Blocker search와 penumbra 추정으로 가변 폭 PCF를 적용한다.
 
 ## 시각 결과
 
-전체 창 capture에서 UI 기본값과 거리에 따라 폭이 달라지는 soft shadow의 대응을 확인한다.
+전체 창 capture에서 blocker search와 penumbra 추정이 만든 variable penumbra를 hard shadow·PCF 결과와 비교한다.
 
 ## 구현 범위와 한계
 

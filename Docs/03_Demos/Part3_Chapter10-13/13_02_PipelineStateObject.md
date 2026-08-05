@@ -7,7 +7,7 @@ Shader와 fixed-function state를 PSO abstraction으로 묶는다.
 ## 책임 범위
 
 - Step1과 같은 결과를 유지하면서 pipeline binding 책임을 구조화한다.
-- 일반 이론은 [Topic](../../01_Topics/DirectX11Pipeline/StencilBufferAndMirrorRendering.md)으로 위임한다.
+- 일반 이론은 [Stencil Buffer And Mirror Rendering](../../01_Topics/DirectX11Pipeline/StencilBufferAndMirrorRendering.md)으로 위임한다.
 - Build/run/capture 사실은 [Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md)으로 위임한다.
 
 ## 결과 미리보기

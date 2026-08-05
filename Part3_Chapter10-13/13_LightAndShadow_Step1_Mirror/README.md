@@ -6,7 +6,7 @@ Stencil mask와 reflection matrix로 planar mirror를 그린다.
 
 - Scene을 stencil에 제한해 반사 geometry를 별도 pass로 렌더링한다.
 - Chapter13 공통 scene, HDR post-process와 UI 구조를 유지한다.
-- 일반 이론은 Topic으로, build/run/capture 사실은 Verification으로 위임한다.
+- 일반 이론은 [Stencil Buffer And Mirror Rendering](../../Docs/01_Topics/DirectX11Pipeline/StencilBufferAndMirrorRendering.md)으로, build/run/capture 사실은 Verification으로 위임한다.
 
 ## 핵심 코드
 
@@ -22,12 +22,14 @@ Stencil mask와 reflection matrix로 planar mirror를 그린다.
 
 ## Capture/Result
 
-![Chapter13 Step1 Mirror](../../Docs/_assets/captures/part3_chapter13_01_mirror.png)
+![Chapter13 Step1 Non-Mirror](../../Docs/_assets/captures/part3_chapter13_01_mirror_non_mirror.png)
+
+![Chapter13 Step1 Mirror](../../Docs/_assets/captures/part3_chapter13_01_mirror_reflection.png)
 
 원본 runtime asset은 직접 연결하지 않고 rendered evidence만 사용한다.
 
 ## 관련 문서
 
 - [상세 Demo](../../Docs/03_Demos/Part3_Chapter10-13/13_01_Mirror.md)
-- [Topic](../../Docs/01_Topics/DirectX11Pipeline/StencilBufferAndMirrorRendering.md)
+- [Stencil Buffer And Mirror Rendering](../../Docs/01_Topics/DirectX11Pipeline/StencilBufferAndMirrorRendering.md)
 - [Verification](../../Docs/02_Verification/Part3_Chapter10-13/verification-index.md)

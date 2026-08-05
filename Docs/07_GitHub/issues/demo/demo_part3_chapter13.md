@@ -10,19 +10,19 @@ Stencil mirror와 pipeline state 정리에서 시작해 shadow prototype, depth 
 
 Stencil mask로 mirror 영역을 제한하고 reflection transform을 적용한 scene을 합성한다.
 
-![Planar mirror](https://github.com/Razria93/Graphics_Study_Archive/blob/623cb8ccbc984584f47a7c68365d69840ed65c60/Docs/_assets/captures/part3_chapter13_01_mirror.png?raw=true)
+![Planar mirror](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter13_01_mirror_reflection.png?raw=true)
 
 ### Hard Shadow → PCF → PCSS
 
 왼쪽에서 오른쪽으로 읽으면 단일 depth comparison의 hard edge, 고정 kernel PCF의 균일한 blur와 blocker 거리에 따라 penumbra 폭이 달라지는 PCSS를 비교할 수 있다.
 
-![Shadow comparison](https://github.com/Razria93/Graphics_Study_Archive/blob/623cb8ccbc984584f47a7c68365d69840ed65c60/Docs/_assets/captures/part3_chapter13_shadow_comparison.png?raw=true)
+![Shadow comparison](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter13_04_06_shadow_filtering_storyboard.png?raw=true)
 
-### Sphere light approximation
+### Sphere light radius
 
-Sphere 위 representative point를 사용해 point light보다 넓은 highlight response를 근사한다.
+Radius 0.0, 0.2와 0.5를 비교해 representative point 보정과 highlight 폭 변화를 확인한다.
 
-![Sphere light approximation](https://github.com/Razria93/Graphics_Study_Archive/blob/623cb8ccbc984584f47a7c68365d69840ed65c60/Docs/_assets/captures/part3_chapter13_08_unreal_sphere_light.png?raw=true)
+![Sphere light radius](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter13_08_sphere_light_radius_storyboard.png?raw=true)
 
 ## 핵심 구현
 
@@ -60,7 +60,7 @@ Hard shadow의 light-space depth 비교에서 fixed-kernel PCF를 거쳐 blocker
 ## 검증
 
 - Step1–8와 Step2B Debug/Release x64 Clean/Rebuild와 run 성공
-- 전체 창 PNG 9장과 shadow comparison sheet full decode·metadata·공개 안전성 확인
+- 전체 창 PNG와 shadow filtering·sphere light radius storyboard full decode·metadata·공개 안전성 확인
 - Shadow, Lighting, Pipeline Topic과 validator 통과
 
 ## 더 자세히 보기
@@ -71,5 +71,6 @@ Hard shadow의 light-space depth 비교에서 fixed-kernel PCF를 거쳐 blocker
 - [Step4 ShadowMapping 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/03_Demos/Part3_Chapter10-13/13_04_ShadowMapping.md)
 - [Step5 SoftShadowPCF 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/03_Demos/Part3_Chapter10-13/13_05_SoftShadowPCF.md)
 - [Step6 SoftShadowPCSS 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/03_Demos/Part3_Chapter10-13/13_06_SoftShadowPCSS.md)
+- [Step7 Halo 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/03_Demos/Part3_Chapter10-13/13_07_Halo.md)
 - [Step8 UnrealSphereLight 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/03_Demos/Part3_Chapter10-13/13_08_UnrealSphereLight.md)
 - [Verification](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/02_Verification/Part3_Chapter10-13/verification-index.md)

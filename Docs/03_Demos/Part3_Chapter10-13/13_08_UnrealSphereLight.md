@@ -7,14 +7,20 @@ Sphere 위 representative point로 area-light response를 근사한다.
 ## 책임 범위
 
 - Point light 위치를 sphere radius와 reflection 방향에 따라 보정한다.
-- 일반 이론은 [Topic](../../01_Topics/LightingAndShading/AreaLightApproximation.md)으로 위임한다.
+- 일반 이론은 [Area Light Approximation](../../01_Topics/LightingAndShading/AreaLightApproximation.md)으로 위임한다.
 - Build/run/capture 사실은 [Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md)으로 위임한다.
 
 ## 결과 미리보기
 
-![Chapter13 Step8 UnrealSphereLight](../../_assets/captures/part3_chapter13_08_unreal_sphere_light.png)
+![Chapter13 Step8 UnrealSphereLight Radius 0.2](../../_assets/captures/part3_chapter13_08_sphere_light_radius_0p2.png)
 
 Radius 영향을 반영한 broad highlight와 lighting 결과를 확인한다.
+
+### Sphere Light Radius 비교
+
+![Chapter13 Step8 Radius Storyboard](../../_assets/captures/part3_chapter13_08_sphere_light_radius_storyboard.png)
+
+Radius 0.0, 0.2와 0.5를 비교해 representative point 보정과 highlight 폭 변화를 확인한다.
 
 ## 입력과 출력
 
@@ -35,7 +41,7 @@ Radius 영향을 반영한 broad highlight와 lighting 결과를 확인한다.
 
 ## 시각 결과
 
-전체 창 capture에서 UI 기본값과 Radius 영향을 반영한 broad highlight와 lighting의 대응을 확인한다.
+전체 창 capture에서 sphere light radius가 커질수록 point-like response에서 broad highlight response로 이동하는 변화를 확인한다.
 
 ## 구현 범위와 한계
 

@@ -7,14 +7,20 @@ Stencil mask와 reflection matrix로 planar mirror를 그린다.
 ## 책임 범위
 
 - Scene을 stencil에 제한해 반사 geometry를 별도 pass로 렌더링한다.
-- 일반 이론은 [Topic](../../01_Topics/DirectX11Pipeline/StencilBufferAndMirrorRendering.md)으로 위임한다.
+- 일반 이론은 [Stencil Buffer And Mirror Rendering](../../01_Topics/DirectX11Pipeline/StencilBufferAndMirrorRendering.md)으로 위임한다.
 - Build/run/capture 사실은 [Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md)으로 위임한다.
 
 ## 결과 미리보기
 
-![Chapter13 Step1 Mirror](../../_assets/captures/part3_chapter13_01_mirror.png)
+### Non-Mirror
 
-Mirror 영역에 제한된 reflected scene 결과를 확인한다.
+![Chapter13 Step1 Non-Mirror](../../_assets/captures/part3_chapter13_01_mirror_non_mirror.png)
+
+### Mirror
+
+![Chapter13 Step1 Mirror](../../_assets/captures/part3_chapter13_01_mirror_reflection.png)
+
+Stencil mask와 reflection matrix 적용 전후를 비교해 mirror 영역에 제한된 reflected scene 결과를 확인한다.
 
 ## 입력과 출력
 
@@ -35,7 +41,7 @@ Mirror 영역에 제한된 reflected scene 결과를 확인한다.
 
 ## 시각 결과
 
-전체 창 capture에서 UI 기본값과 Mirror 영역에 제한된 reflected scene의 대응을 확인한다.
+전체 창 capture에서 Non-Mirror 기준 scene과 Mirror 영역에 합성된 reflected scene의 대응을 확인한다.
 
 ## 구현 범위와 한계
 

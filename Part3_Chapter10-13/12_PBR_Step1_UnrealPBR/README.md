@@ -30,7 +30,9 @@ Chapter11에서 분리해 확인한 texture, normal, HDR과 bloom 경로를 하�
 
 ## Capture/Result
 
-![Chapter12 Step1 UnrealPBR](../../Docs/_assets/captures/part3_chapter12_01_unreal_pbr.png)
+![Chapter12 Step1 UnrealPBR Off](../../Docs/_assets/captures/part3_chapter12_01_pbr_off.png)
+
+![Chapter12 Step1 UnrealPBR On](../../Docs/_assets/captures/part3_chapter12_01_pbr_on_height_0_015.png)
 
 Rendered evidence는 공개 후보로 사용하고 원본 PBR texture와 HDRI는 runtime dependency로 유지한다.
 

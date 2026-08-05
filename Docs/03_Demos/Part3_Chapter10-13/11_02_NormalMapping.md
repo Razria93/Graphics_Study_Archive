@@ -12,13 +12,13 @@ Tangent-space normal texture가 낮은 polygon 수를 유지하면서 표면의 
 
 ## 결과 미리보기
 
-![Chapter11 Step2 NormalMapping](../../_assets/captures/part3_chapter11_02_normal_mapping.png)
-
-비교 기준은 같은 camera와 material에서 normal mapping만 전환한 두 capture다.
+### Normal Mapping Off
 
 ![Normal mapping Off](../../_assets/captures/part3_chapter11_02_normal_mapping_off.png)
 
 Off 상태는 albedo와 기본 normal 중심의 평평한 조명 반응을 보여준다.
+
+### Normal Mapping On
 
 ![Normal mapping On](../../_assets/captures/part3_chapter11_02_normal_mapping_on.png)
 
@@ -54,7 +54,7 @@ float3 worldNormal = normalize(mul(tangentNormal, tbn));
 
 ## 시각 결과
 
-Stone pattern의 작은 경계와 홈이 실제 geometry 변화 없이 조명으로 드러난다. 검은 배경은 material plane 외부이며 clipping 오류가 아니다.
+대표 이미지는 Normal Mapping On 상태로 둔다. Stone pattern의 작은 경계와 홈이 실제 geometry 변화 없이 조명으로 드러난다. 검은 배경은 material plane 외부이며 clipping 오류가 아니다.
 
 ## 구현 범위와 한계
 

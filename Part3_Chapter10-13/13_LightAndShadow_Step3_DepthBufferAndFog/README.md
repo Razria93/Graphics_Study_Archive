@@ -6,7 +6,7 @@ Depth buffer를 reconstruct해 distance fog post effect를 계산한다.
 
 - PSO scene에 depth-only resource와 fog post-process를 추가한다.
 - Chapter13 공통 scene, HDR post-process와 UI 구조를 유지한다.
-- 일반 이론은 Topic으로, build/run/capture 사실은 Verification으로 위임한다.
+- 일반 이론은 [Depth Reconstruction And Fog](../../Docs/01_Topics/DirectX11Pipeline/DepthReconstructionAndFog.md)로, build/run/capture 사실은 Verification으로 위임한다.
 
 ## 핵심 코드
 
@@ -22,12 +22,14 @@ Depth buffer를 reconstruct해 distance fog post effect를 계산한다.
 
 ## Capture/Result
 
-![Chapter13 Step3 DepthBufferAndFog](../../Docs/_assets/captures/part3_chapter13_03_depth_buffer_and_fog.png)
+![Chapter13 Step3 Render](../../Docs/_assets/captures/part3_chapter13_03_render_depthscale_0p5.png)
+
+![Chapter13 Step3 Depth](../../Docs/_assets/captures/part3_chapter13_03_depth_depthscale_0p5.png)
 
 원본 runtime asset은 직접 연결하지 않고 rendered evidence만 사용한다.
 
 ## 관련 문서
 
 - [상세 Demo](../../Docs/03_Demos/Part3_Chapter10-13/13_03_DepthBufferAndFog.md)
-- [Topic](../../Docs/01_Topics/DirectX11Pipeline/DepthReconstructionAndFog.md)
+- [Depth Reconstruction And Fog](../../Docs/01_Topics/DirectX11Pipeline/DepthReconstructionAndFog.md)
 - [Verification](../../Docs/02_Verification/Part3_Chapter10-13/verification-index.md)

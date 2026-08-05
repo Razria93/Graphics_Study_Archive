@@ -6,17 +6,29 @@ Metallic-roughness sphere에서 시작해 imported model의 submesh와 material 
 
 ## 결과
 
-### UnrealPBR material sphere
+### UnrealPBR Off
 
-Albedo, normal, AO, metallic과 roughness map을 direct GGX BRDF와 IBL에 결합한다.
+PBR map을 끈 기준 장면이다.
 
-![UnrealPBR](https://github.com/Razria93/Graphics_Study_Archive/blob/623cb8ccbc984584f47a7c68365d69840ed65c60/Docs/_assets/captures/part3_chapter12_01_unreal_pbr.png?raw=true)
+![UnrealPBR Off](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter12_01_pbr_off.png?raw=true)
 
-### Imported PBR model
+### UnrealPBR On + Height 0.015
 
-Assimp가 읽은 model의 submesh와 material map을 mesh별 resource binding으로 연결한다.
+PBR map과 height scale 0.015를 적용한 장면이다.
 
-![PBR Models](https://github.com/Razria93/Graphics_Study_Archive/blob/623cb8ccbc984584f47a7c68365d69840ed65c60/Docs/_assets/captures/part3_chapter12_02_pbr_models.png?raw=true)
+![UnrealPBR On](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter12_01_pbr_on_height_0_015.png?raw=true)
+
+### Imported PBR Model Off
+
+Imported model에서 PBR option을 끈 기준 장면이다.
+
+![PBR Models Off](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter12_02_pbr_models_off.png?raw=true)
+
+### Imported PBR Model On
+
+Imported model에서 PBR option을 켠 장면이다.
+
+![PBR Models On](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter12_02_pbr_models_on.png?raw=true)
 
 ## 핵심 구현
 
@@ -50,8 +62,8 @@ Assimp material에서 texture를 추출하고 각 mesh group의 shader resource�
 ## 검증
 
 - Step1–2 Debug/Release x64 Clean/Rebuild와 run 성공
-- PBR map 5종과 imported model material binding 확인
-- 전체 창 PNG 2장 full decode·metadata·공개 안전성과 validator 통과
+- PBR map Off/On과 imported model PBR option Off/On 비교 확인
+- 전체 창 PNG 4장 full decode·metadata·공개 안전성과 validator 통과
 
 ## 더 자세히 보기
 

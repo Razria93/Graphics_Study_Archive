@@ -12,9 +12,15 @@ Step1의 PBR pipeline을 Assimp로 불러온 character mesh와 여러 material t
 
 ## 결과 미리보기
 
-![Chapter12 Step2 PBRModels](../../_assets/captures/part3_chapter12_02_pbr_models.png)
+### PBR option Off
 
-Imported character의 armor, fabric와 emissive detail이 같은 environment와 PBR shader에서 서로 다른 surface response를 만든다.
+![Chapter12 Step2 PBRModels Off](../../_assets/captures/part3_chapter12_02_pbr_models_off.png)
+
+### PBR option On (height mapping 제외)
+
+![Chapter12 Step2 PBRModels On](../../_assets/captures/part3_chapter12_02_pbr_models_on.png)
+
+Imported character의 armor, fabric와 emissive detail이 같은 environment와 PBR shader에서 어떻게 달라지는지 비교한다.
 
 ## 입력과 출력
 

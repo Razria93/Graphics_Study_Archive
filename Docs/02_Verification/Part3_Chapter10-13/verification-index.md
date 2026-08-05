@@ -48,3 +48,18 @@
 - `11_TexturingTechniques_Step3_HeightMapping`: height mapping Off와 `HeightScale 0.1` On 1282×752 comparison capture를 확인한다.
 - `11_TexturingTechniques_Step5_HDRPipeline`: bloom strength 0/0.7 1282×752 comparison capture와 selected video evidence를 확인한다.
 - Step5 MP4는 Git history에 포함하지 않는다.
+
+## Chapter12 visual 보강 확인
+
+- `12_PBR_Step1_UnrealPBR`: `part3_chapter12_01_pbr_off.png`와 `part3_chapter12_01_pbr_on_height_0_015.png` 비교 capture를 확인한다.
+- `12_PBR_Step2_PBRModels`: `part3_chapter12_02_pbr_models_off.png`와 `part3_chapter12_02_pbr_models_on.png` 비교 capture를 확인한다.
+- Chapter12 trackball MP4는 selected local evidence로만 유지하고 Git history에 포함하지 않는다.
+
+## Chapter13 visual 보강 확인
+
+- `13_LightAndShadow_Step1_Mirror`: `part3_chapter13_01_mirror_non_mirror.png`와 `part3_chapter13_01_mirror_reflection.png` 비교 capture를 확인한다.
+- `13_LightAndShadow_Step3_DepthBufferAndFog`: `part3_chapter13_03_render_depthscale_0p5.png`와 `part3_chapter13_03_depth_depthscale_0p5.png` 비교 capture를 확인한다.
+- `13_LightAndShadow_Step4_ShadowMapping`→`13_LightAndShadow_Step6_SoftShadowPCSS`: `part3_chapter13_04_06_shadow_filtering_storyboard.png`로 hard shadow, PCF와 PCSS를 비교한다.
+- `13_LightAndShadow_Step7_Halo`: `part3_chapter13_07_halo_strength_0p0.png`와 `part3_chapter13_07_halo_strength_0p6.png`로 Halo Strength Off/On을 비교한다.
+- `13_LightAndShadow_Step8_UnrealSphereLight`: `part3_chapter13_08_sphere_light_radius_0p0.png`, `part3_chapter13_08_sphere_light_radius_0p2.png`, `part3_chapter13_08_sphere_light_radius_0p5.png`와 `part3_chapter13_08_sphere_light_radius_storyboard.png`로 sphere light radius 변화를 비교한다.
+- Chapter13 MP4는 selected local evidence 또는 GitHub Issue comment 후보로만 유지한다.

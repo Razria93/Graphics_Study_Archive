@@ -16,9 +16,9 @@
 | 대표 capture | [Chapter11 Step2 Demo](11_02_NormalMapping.md) | [Step2 README](../../../Part3_Chapter10-13/11_TexturingTechniques_Step2_NormalMapping/README.md) | [Normal Mapping](../../01_Topics/TexturingAndMapping/NormalMappingAndTangentSpace.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Docs/_assets PNG](../../_assets/captures/part3_chapter11_02_normal_mapping.png) | 미게시 | 후보 | Chapter11 normal detail 노출 축 |
 | 대표 capture | [Chapter11 Step3 Demo](11_03_HeightMapping.md) | [Step3 README](../../../Part3_Chapter10-13/11_TexturingTechniques_Step3_HeightMapping/README.md) | [Height Mapping](../../01_Topics/TexturingAndMapping/HeightMapping.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Docs/_assets PNG](../../_assets/captures/part3_chapter11_03_height_mapping.png) | 미게시 | 후보 | Chapter11 height detail 노출 축 |
 | 대표 capture | [Chapter11 Step5 Demo](11_05_HDRPipeline.md) | [Step5 README](../../../Part3_Chapter10-13/11_TexturingTechniques_Step5_HDRPipeline/README.md) | [HDR Pipeline](../../01_Topics/TexturingAndMapping/HDRRenderingPipeline.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Docs/_assets PNG](../../_assets/captures/part3_chapter11_05_hdr_pipeline.png) | 미게시 | 후보 | Chapter11 HDRPipeline 노출 축 |
-| 대표 capture | [Chapter12 Step1 Demo](12_01_UnrealPBR.md) | [Step1 README](../../../Part3_Chapter10-13/12_PBR_Step1_UnrealPBR/README.md) | [PBR Material](../../01_Topics/PBRAndIBL/PBRMaterialModel.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Docs/_assets PNG](../../_assets/captures/part3_chapter12_01_unreal_pbr.png) | 미게시 | 후보 | Chapter12 material model 노출 축 |
-| 대표 capture | [Chapter12 Step2 Demo](12_02_PBRModels.md) | [Step2 README](../../../Part3_Chapter10-13/12_PBR_Step2_PBRModels/README.md) | [PBR Material](../../01_Topics/PBRAndIBL/PBRMaterialModel.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Docs/_assets PNG](../../_assets/captures/part3_chapter12_02_pbr_models.png) | 미게시 | 후보 | 사용자 구매 character rendered evidence |
-| 대표 capture | [Chapter13 Step6 Demo](13_06_SoftShadowPCSS.md) | [Step6 README](../../../Part3_Chapter10-13/13_LightAndShadow_Step6_SoftShadowPCSS/README.md) | [PCF And PCSS](../../01_Topics/Shadows/PercentageCloserFilteringAndPCSS.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Shadow Comparison](../../_assets/captures/part3_chapter13_shadow_comparison.png) | 미게시 | 후보 | Chapter13 대표 비교 visual |
+| 대표 capture | [Chapter12 Step1 Demo](12_01_UnrealPBR.md) | [Step1 README](../../../Part3_Chapter10-13/12_PBR_Step1_UnrealPBR/README.md) | [PBR Material](../../01_Topics/PBRAndIBL/PBRMaterialModel.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Off](../../_assets/captures/part3_chapter12_01_pbr_off.png) · [On + Height 0.015](../../_assets/captures/part3_chapter12_01_pbr_on_height_0_015.png) | 미게시 | 후보 | Chapter12 material model 비교 축 |
+| 대표 capture | [Chapter12 Step2 Demo](12_02_PBRModels.md) | [Step2 README](../../../Part3_Chapter10-13/12_PBR_Step2_PBRModels/README.md) | [PBR Material](../../01_Topics/PBRAndIBL/PBRMaterialModel.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Off](../../_assets/captures/part3_chapter12_02_pbr_models_off.png) · [On](../../_assets/captures/part3_chapter12_02_pbr_models_on.png) | 미게시 | 후보 | 사용자 구매 character rendered evidence 비교 축 |
+| 대표 capture | [Chapter13 Step6 Demo](13_06_SoftShadowPCSS.md) | [Step6 README](../../../Part3_Chapter10-13/13_LightAndShadow_Step6_SoftShadowPCSS/README.md) | [PCF And PCSS](../../01_Topics/Shadows/PercentageCloserFilteringAndPCSS.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Shadow Filtering Storyboard](../../_assets/captures/part3_chapter13_04_06_shadow_filtering_storyboard.png) | 미게시 | 후보 | Chapter13 대표 shadow filtering 비교 visual |
 | video | [Step4 Demo](10_04_Fireball.md) | [Step4 README](../../../Part3_Chapter10-13/10_GeometryPipeline_Step4_Fireball/README.md) | [Runtime Inputs](../../01_Topics/DirectX11Pipeline/ShadertoyRuntimeInputs.md) | [Docs/02_Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | 없음 | 미게시 | 제외 | 정지 image로 형태와 phase 차이 확인 가능 |
 
 ## Chapter10 Geometry Pipeline
@@ -56,26 +56,39 @@ Chapter11 visual 보강은 기존 대표 PNG를 유지하고 비교 capture를 �
 
 | 단계 | 상세 Demo | Capture | 상태 |
 | --- | --- | --- | --- |
-| Step1 UnrealPBR | [Demo](12_01_UnrealPBR.md) | [PNG](../../_assets/captures/part3_chapter12_01_unreal_pbr.png) | 완료 |
-| Step2 PBRModels | [Demo](12_02_PBRModels.md) | [PNG](../../_assets/captures/part3_chapter12_02_pbr_models.png) | 완료 |
+| Step1 UnrealPBR | [Demo](12_01_UnrealPBR.md) | [Off](../../_assets/captures/part3_chapter12_01_pbr_off.png) · [On + Height 0.015](../../_assets/captures/part3_chapter12_01_pbr_on_height_0_015.png) | 완료 |
+| Step2 PBRModels | [Demo](12_02_PBRModels.md) | [Off](../../_assets/captures/part3_chapter12_02_pbr_models_off.png) · [On](../../_assets/captures/part3_chapter12_02_pbr_models_on.png) | 완료 |
 
 Chapter12는 procedural sphere의 metallic-roughness material에서 imported model의 texture binding으로 확장한다. 대표 노출 축은 Step1 UnrealPBR과 Step2 PBRModels/Character로 둔다. Step2 character는 사용자 구매 asset 기반 rendered evidence로만 사용하고 원본 asset과 구매·license 자료는 공개 body에서 직접 링크하지 않는다.
+
+Chapter12 visual 보강은 단일 대표 PNG보다 Off/On 비교를 우선한다.
+
+- Step1 UnrealPBR: [PBR Off](../../_assets/captures/part3_chapter12_01_pbr_off.png) · [PBR On + Height 0.015](../../_assets/captures/part3_chapter12_01_pbr_on_height_0_015.png)
+- Step2 PBRModels: [PBR Off](../../_assets/captures/part3_chapter12_02_pbr_models_off.png) · [PBR On (height 제외)](../../_assets/captures/part3_chapter12_02_pbr_models_on.png)
 
 ## Chapter13 Light And Shadow
 
 | 단계 | 상세 Demo | Capture | 상태 |
 | --- | --- | --- | --- |
-| Step1 Mirror | [Demo](13_01_Mirror.md) | [PNG](../../_assets/captures/part3_chapter13_01_mirror.png) | 완료 |
+| Step1 Mirror | [Demo](13_01_Mirror.md) | [Non-Mirror](../../_assets/captures/part3_chapter13_01_mirror_non_mirror.png) · [Mirror](../../_assets/captures/part3_chapter13_01_mirror_reflection.png) | 완료 |
 | Step2 PipelineStateObject | [Demo](13_02_PipelineStateObject.md) | [PNG](../../_assets/captures/part3_chapter13_02_pipeline_state_object.png) | 완료 |
 | Step2B Shadow Prototype | [Demo](13_02B_ShadowPrototype.md) | [PNG](../../_assets/captures/part3_chapter13_02b_shadow_prototype.png) | 완료 |
-| Step3 DepthBufferAndFog | [Demo](13_03_DepthBufferAndFog.md) | [PNG](../../_assets/captures/part3_chapter13_03_depth_buffer_and_fog.png) | 완료 |
+| Step3 DepthBufferAndFog | [Demo](13_03_DepthBufferAndFog.md) | [Render](../../_assets/captures/part3_chapter13_03_render_depthscale_0p5.png) · [Depth](../../_assets/captures/part3_chapter13_03_depth_depthscale_0p5.png) | 완료 |
 | Step4 ShadowMapping | [Demo](13_04_ShadowMapping.md) | [PNG](../../_assets/captures/part3_chapter13_04_shadow_mapping.png) | 완료 |
-| Step5 SoftShadowPCF | [Demo](13_05_SoftShadowPCF.md) | [PNG](../../_assets/captures/part3_chapter13_05_soft_shadow_pcf.png) | 완료 |
-| Step6 SoftShadowPCSS | [Demo](13_06_SoftShadowPCSS.md) | [PNG](../../_assets/captures/part3_chapter13_06_soft_shadow_pcss.png) | 완료 |
-| Step7 Halo | [Demo](13_07_Halo.md) | [PNG](../../_assets/captures/part3_chapter13_07_halo.png) | 완료 |
-| Step8 UnrealSphereLight | [Demo](13_08_UnrealSphereLight.md) | [PNG](../../_assets/captures/part3_chapter13_08_unreal_sphere_light.png) | 완료 |
+| Step5 SoftShadowPCF | [Demo](13_05_SoftShadowPCF.md) | [Left UI](../../_assets/captures/part3_chapter13_05_soft_shadow_pcf_ui_left.png) | 완료 |
+| Step6 SoftShadowPCSS | [Demo](13_06_SoftShadowPCSS.md) | [Left UI](../../_assets/captures/part3_chapter13_06_soft_shadow_pcss_ui_left.png) · [Storyboard](../../_assets/captures/part3_chapter13_04_06_shadow_filtering_storyboard.png) | 완료 |
+| Step7 Halo | [Demo](13_07_Halo.md) | [Strength 0.0](../../_assets/captures/part3_chapter13_07_halo_strength_0p0.png) · [Strength 0.6](../../_assets/captures/part3_chapter13_07_halo_strength_0p6.png) | 완료 |
+| Step8 UnrealSphereLight | [Demo](13_08_UnrealSphereLight.md) | [Radius 0.2](../../_assets/captures/part3_chapter13_08_sphere_light_radius_0p2.png) · [Storyboard](../../_assets/captures/part3_chapter13_08_sphere_light_radius_storyboard.png) | 완료 |
 
-Chapter13은 stencil mirror와 pipeline state 정리에서 시작해 shadow prototype, depth fog, hard shadow, PCF, PCSS, halo와 sphere light로 확장한다. 대표 visual은 같은 장면의 hard shadow→PCF→PCSS 경계 변화를 한 번에 비교한다. `PipelineStateObject`는 시각 차이보다 pipeline state 구조 개선을 설명하는 code 중심 단계로 둔다.
+Chapter13은 stencil mirror와 pipeline state 정리에서 시작해 shadow prototype, depth fog, hard shadow, PCF, PCSS, halo와 sphere light로 확장한다. 대표 visual은 mirror On/Off, render/depth view, hard shadow→PCF→PCSS filtering, halo strength와 sphere light radius처럼 각 Step의 핵심 parameter 변화가 드러나는 image로 구성한다. `PipelineStateObject`는 시각 차이보다 pipeline state 구조 개선을 설명하는 code 중심 단계로 둔다.
+
+Chapter13 visual 보강은 Step별 책임을 분리한다.
+
+- Step1 Mirror: [Non-Mirror](../../_assets/captures/part3_chapter13_01_mirror_non_mirror.png) · [Mirror](../../_assets/captures/part3_chapter13_01_mirror_reflection.png)
+- Step3 DepthBufferAndFog: [Render](../../_assets/captures/part3_chapter13_03_render_depthscale_0p5.png) · [Depth](../../_assets/captures/part3_chapter13_03_depth_depthscale_0p5.png)
+- Step4-6 Shadow Filtering: [Storyboard](../../_assets/captures/part3_chapter13_04_06_shadow_filtering_storyboard.png)
+- Step7 Halo: [Strength 0.0](../../_assets/captures/part3_chapter13_07_halo_strength_0p0.png) · [Strength 0.6](../../_assets/captures/part3_chapter13_07_halo_strength_0p6.png)
+- Step8 UnrealSphereLight: [Radius 0.0](../../_assets/captures/part3_chapter13_08_sphere_light_radius_0p0.png) · [Radius 0.2](../../_assets/captures/part3_chapter13_08_sphere_light_radius_0p2.png) · [Radius 0.5](../../_assets/captures/part3_chapter13_08_sphere_light_radius_0p5.png) · [Storyboard](../../_assets/captures/part3_chapter13_08_sphere_light_radius_storyboard.png)
 
 ## Chapter 대표 후보
 
@@ -83,7 +96,7 @@ Chapter13은 stencil mirror와 pipeline state 정리에서 시작해 shadow prot
 | --- | --- | --- | --- |
 | Chapter11 | Mipmaps → HDR Pipeline | 현재 확인 완료 | NormalMapping · HeightMapping · HDRPipeline |
 | Chapter12 | Unreal PBR → PBR Models | 현재 확인 완료 | UnrealPBR · PBRModels/Character |
-| Chapter13 | Mirror → Unreal Sphere Light | 현재 확인 완료 | ShadowMapping → SoftShadowPCF → SoftShadowPCSS 비교 |
+| Chapter13 | Mirror → Unreal Sphere Light | 현재 확인 완료 | Shadow filtering storyboard · Sphere light radius storyboard |
 
 ## Video 판정
 

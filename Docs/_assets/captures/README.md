@@ -95,6 +95,25 @@ part2_chapter04_depth-buffer.png
 | `part2_chapter07_01_drawing_wireframes.png` | screenshot | `Part2_Chapter05-08/07_Modeling_Step1_DrawingWireFrames` | 확보 | Wireframe On·texture Off와 비스듬한 box에서 face별 triangle diagonal 확인 |
 | `part2_chapter07_05_sphere.png` | screenshot | `Part2_Chapter05-08/07_Modeling_Step5_Sphere` | 확보 | 중앙 배치 wireframe에서 두 반구, equator 결합과 pole fan 확인 |
 | `part2_chapter07_08_sphere_mapping.png` | screenshot | `Part2_Chapter05-08/07_Modeling_Step8_SphereMapping` | 확보 | Generated fictional planet texture의 spherical UV와 seam 보정 결과 확인 |
+| `part3_chapter12_01_pbr_off.png` | screenshot | `Part3_Chapter10-13/12_PBR_Step1_UnrealPBR` | 확보 | PBR map Off 기준의 sphere material 결과 확인 |
+| `part3_chapter12_01_pbr_on_height_0_015.png` | screenshot | `Part3_Chapter10-13/12_PBR_Step1_UnrealPBR` | 확보 | PBR map On + height scale 0.015의 micro surface response와 IBL highlight 확인 |
+| `part3_chapter12_02_pbr_models_off.png` | screenshot | `Part3_Chapter10-13/12_PBR_Step2_PBRModels` | 확보 | Imported character의 PBR option Off 기준 결과 확인 |
+| `part3_chapter12_02_pbr_models_on.png` | screenshot | `Part3_Chapter10-13/12_PBR_Step2_PBRModels` | 확보 | Imported character의 PBR option On 결과 확인 |
+| `part3_chapter13_01_mirror_non_mirror.png` | screenshot | `Part3_Chapter10-13/13_LightAndShadow_Step1_Mirror` | 확보 | Non-Mirror 기준 scene 확인 |
+| `part3_chapter13_01_mirror_reflection.png` | screenshot | `Part3_Chapter10-13/13_LightAndShadow_Step1_Mirror` | 확보 | Stencil mirror 영역의 reflected scene 확인 |
+| `part3_chapter13_03_render_depthscale_0p5.png` | screenshot | `Part3_Chapter10-13/13_LightAndShadow_Step3_DepthBufferAndFog` | 확보 | DepthScale 0.5 render view 확인 |
+| `part3_chapter13_03_depth_depthscale_0p5.png` | screenshot | `Part3_Chapter10-13/13_LightAndShadow_Step3_DepthBufferAndFog` | 확보 | DepthScale 0.5 reconstructed depth view 확인 |
+| `part3_chapter13_05_soft_shadow_pcf_ui_left.png` | screenshot | `Part3_Chapter10-13/13_LightAndShadow_Step5_SoftShadowPCF` | 확보 | 왼쪽 UI 기준 PCF representative capture 확인 |
+| `part3_chapter13_05_soft_shadow_pcf_non_ui.png` | screenshot | `Part3_Chapter10-13/13_LightAndShadow_Step5_SoftShadowPCF` | 확보 | UI 없이 shadow edge만 남긴 PCF comparison frame 확인 |
+| `part3_chapter13_06_soft_shadow_pcss_ui_left.png` | screenshot | `Part3_Chapter10-13/13_LightAndShadow_Step6_SoftShadowPCSS` | 확보 | 왼쪽 UI 기준 PCSS representative capture 확인 |
+| `part3_chapter13_06_soft_shadow_pcss_non_ui.png` | screenshot | `Part3_Chapter10-13/13_LightAndShadow_Step6_SoftShadowPCSS` | 확보 | UI 없이 penumbra 변화만 남긴 PCSS comparison frame 확인 |
+| `part3_chapter13_04_06_shadow_filtering_storyboard.png` | storyboard | `Part3_Chapter10-13/13_LightAndShadow_Step4_ShadowMapping`, `Part3_Chapter10-13/13_LightAndShadow_Step5_SoftShadowPCF`, `Part3_Chapter10-13/13_LightAndShadow_Step6_SoftShadowPCSS` | 확보 | Hard shadow, PCF와 PCSS의 shadow filtering 차이를 dark card layout으로 비교 |
+| `part3_chapter13_07_halo_strength_0p0.png` | screenshot | `Part3_Chapter10-13/13_LightAndShadow_Step7_Halo` | 확보 | Halo Strength 0.0 기준 post effect 결과 확인 |
+| `part3_chapter13_07_halo_strength_0p6.png` | screenshot | `Part3_Chapter10-13/13_LightAndShadow_Step7_Halo` | 확보 | Halo Strength 0.6의 screen-space halo composite 확인 |
+| `part3_chapter13_08_sphere_light_radius_0p0.png` | screenshot | `Part3_Chapter10-13/13_LightAndShadow_Step8_UnrealSphereLight` | 확보 | Radius 0.0의 point-like sphere light response 확인 |
+| `part3_chapter13_08_sphere_light_radius_0p2.png` | screenshot | `Part3_Chapter10-13/13_LightAndShadow_Step8_UnrealSphereLight` | 확보 | Radius 0.2 대표 sphere light response 확인 |
+| `part3_chapter13_08_sphere_light_radius_0p5.png` | screenshot | `Part3_Chapter10-13/13_LightAndShadow_Step8_UnrealSphereLight` | 확보 | Radius 0.5의 broad highlight response 확인 |
+| `part3_chapter13_08_sphere_light_radius_storyboard.png` | storyboard | `Part3_Chapter10-13/13_LightAndShadow_Step8_UnrealSphereLight` | 확보 | Radius 0.0, 0.2와 0.5 차이를 dark card layout으로 비교 |
 
 ## 승격 체크
 

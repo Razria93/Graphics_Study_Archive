@@ -7,14 +7,20 @@ Depth buffer를 reconstruct해 distance fog post effect를 계산한다.
 ## 책임 범위
 
 - PSO scene에 depth-only resource와 fog post-process를 추가한다.
-- 일반 이론은 [Topic](../../01_Topics/DirectX11Pipeline/DepthReconstructionAndFog.md)으로 위임한다.
+- 일반 이론은 [Depth Reconstruction And Fog](../../01_Topics/DirectX11Pipeline/DepthReconstructionAndFog.md)으로 위임한다.
 - Build/run/capture 사실은 [Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md)으로 위임한다.
 
 ## 결과 미리보기
 
-![Chapter13 Step3 DepthBufferAndFog](../../_assets/captures/part3_chapter13_03_depth_buffer_and_fog.png)
+### Render View
 
-Depth 기반 fog가 적용된 scene 결과를 확인한다.
+![Chapter13 Step3 Render](../../_assets/captures/part3_chapter13_03_render_depthscale_0p5.png)
+
+### Depth View
+
+![Chapter13 Step3 Depth](../../_assets/captures/part3_chapter13_03_depth_depthscale_0p5.png)
+
+DepthScale 0.5 기준에서 render view와 reconstructed depth view를 비교한다.
 
 ## 입력과 출력
 
@@ -35,7 +41,7 @@ Depth 기반 fog가 적용된 scene 결과를 확인한다.
 
 ## 시각 결과
 
-전체 창 capture에서 UI 기본값과 Depth 기반 fog가 적용된 scene의 대응을 확인한다.
+전체 창 capture에서 render view와 depth view 전환에 따른 depth reconstruction 결과를 확인한다.
 
 ## 구현 범위와 한계
 

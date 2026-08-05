@@ -8,8 +8,8 @@
 
 - Chapter10: Geometry Shader, billboard, normal lines, fireball과 Manual·Distance Adaptive tessellation
 - Chapter11: Mipmap, normal·height mapping, HDRI와 bloom을 포함한 HDR pipeline
-- Chapter12: Metallic-roughness PBR sphere와 imported PBR model material binding
-- Chapter13: Stencil mirror, pipeline state, shadow prototype, fog, shadow mapping, PCF·PCSS, halo와 sphere light
+- Chapter12: Metallic-roughness PBR sphere와 imported PBR model material binding, Off/On comparison evidence
+- Chapter13: Stencil mirror, pipeline state, shadow prototype, fog, shadow mapping, PCF·PCSS, halo strength와 sphere light radius evidence
 - 문서·검증: Example README 21개, Topic, Verification, 상세 Demo 21개와 전체 창 capture
 
 ## 핵심 개념
@@ -54,7 +54,7 @@ Metallic-roughness map과 direct GGX BRDF·IBL을 결합해 PBR material의 입�
 
 - 21개 예제 Debug/Release x64 Clean/Rebuild와 run 성공
 - Application title, project CWD, runtime DLL·resource load와 핵심 시각 결과 확인
-- 전체 application window screenshot 21장과 Chapter13 shadow comparison sheet 검수
+- 전체 application window screenshot과 Chapter13 shadow filtering·sphere light radius storyboard 검수
 - PNG full decode, dimensions, SHA-256, metadata·개인 식별자와 공개 안전성 확인
 - GitHub body, Demo, Topic, Markdown wrap·render·table과 video asset validator 통과
 
@@ -64,7 +64,7 @@ Metallic-roughness map과 direct GGX BRDF·IBL을 결합해 PBR material의 입�
 
 왼쪽에서 오른쪽으로 단일 depth comparison, 고정 kernel filtering과 blocker 기반 variable penumbra를 비교한다.
 
-![Chapter13 Shadow Comparison](https://github.com/Razria93/Graphics_Study_Archive/blob/623cb8ccbc984584f47a7c68365d69840ed65c60/Docs/_assets/captures/part3_chapter13_shadow_comparison.png?raw=true)
+![Chapter13 Shadow Comparison](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter13_04_06_shadow_filtering_storyboard.png?raw=true)
 
 ## 구현 범위와 한계
 

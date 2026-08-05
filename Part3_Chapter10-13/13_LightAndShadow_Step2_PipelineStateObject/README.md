@@ -6,7 +6,7 @@ Shader와 fixed-function state를 PSO abstraction으로 묶는다.
 
 - Step1과 같은 결과를 유지하면서 pipeline binding 책임을 구조화한다.
 - Chapter13 공통 scene, HDR post-process와 UI 구조를 유지한다.
-- 일반 이론은 Topic으로, build/run/capture 사실은 Verification으로 위임한다.
+- 일반 이론은 [Stencil Buffer And Mirror Rendering](../../Docs/01_Topics/DirectX11Pipeline/StencilBufferAndMirrorRendering.md)으로, build/run/capture 사실은 Verification으로 위임한다.
 
 ## 핵심 코드
 
@@ -29,5 +29,5 @@ Shader와 fixed-function state를 PSO abstraction으로 묶는다.
 ## 관련 문서
 
 - [상세 Demo](../../Docs/03_Demos/Part3_Chapter10-13/13_02_PipelineStateObject.md)
-- [Topic](../../Docs/01_Topics/DirectX11Pipeline/StencilBufferAndMirrorRendering.md)
+- [Stencil Buffer And Mirror Rendering](../../Docs/01_Topics/DirectX11Pipeline/StencilBufferAndMirrorRendering.md)
 - [Verification](../../Docs/02_Verification/Part3_Chapter10-13/verification-index.md)

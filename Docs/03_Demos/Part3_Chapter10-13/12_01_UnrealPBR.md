@@ -12,9 +12,15 @@ Metallic-roughness texture와 environment lighting을 결합한 PBR sphere를 �
 
 ## 결과 미리보기
 
-![Chapter12 Step1 UnrealPBR](../../_assets/captures/part3_chapter12_01_unreal_pbr.png)
+### PBR map Off
 
-Albedo, normal, AO, metallic과 roughness map이 활성화된 painted-metal sphere와 IBL reflection을 확인한다.
+![Chapter12 Step1 UnrealPBR Off](../../_assets/captures/part3_chapter12_01_pbr_off.png)
+
+### PBR map On + Height Scale 0.015
+
+![Chapter12 Step1 UnrealPBR On](../../_assets/captures/part3_chapter12_01_pbr_on_height_0_015.png)
+
+동일한 camera와 UI 기준에서 PBR map Off 대비 On 상태의 micro surface response와 IBL highlight 변화를 확인한다.
 
 ## 입력과 출력
 

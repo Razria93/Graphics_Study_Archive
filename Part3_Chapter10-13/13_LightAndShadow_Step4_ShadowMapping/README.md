@@ -6,7 +6,7 @@ Light-space depth 비교로 hard shadow를 만든다.
 
 - Camera depth와 별개로 light depth map과 shadow coordinate를 추가한다.
 - Chapter13 공통 scene, HDR post-process와 UI 구조를 유지한다.
-- 일반 이론은 Topic으로, build/run/capture 사실은 Verification으로 위임한다.
+- 일반 이론은 [Shadow Mapping And Depth Bias](../../Docs/01_Topics/Shadows/ShadowMappingAndDepthBias.md)로, build/run/capture 사실은 Verification으로 위임한다.
 
 ## 핵심 코드
 
@@ -29,5 +29,5 @@ Light-space depth 비교로 hard shadow를 만든다.
 ## 관련 문서
 
 - [상세 Demo](../../Docs/03_Demos/Part3_Chapter10-13/13_04_ShadowMapping.md)
-- [Topic](../../Docs/01_Topics/Shadows/ShadowMappingAndDepthBias.md)
+- [Shadow Mapping And Depth Bias](../../Docs/01_Topics/Shadows/ShadowMappingAndDepthBias.md)
 - [Verification](../../Docs/02_Verification/Part3_Chapter10-13/verification-index.md)

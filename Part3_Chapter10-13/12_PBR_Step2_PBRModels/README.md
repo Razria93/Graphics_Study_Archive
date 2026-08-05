@@ -30,7 +30,9 @@ Procedural sphere의 단일 material 검증에서 imported model과 texture bind
 
 ## Capture/Result
 
-![Chapter12 Step2 PBRModels](../../Docs/_assets/captures/part3_chapter12_02_pbr_models.png)
+![Chapter12 Step2 PBRModels Off](../../Docs/_assets/captures/part3_chapter12_02_pbr_models_off.png)
+
+![Chapter12 Step2 PBRModels On](../../Docs/_assets/captures/part3_chapter12_02_pbr_models_on.png)
 
 Rendered evidence는 공개 후보로 사용하고 원본 FBX·texture·HDRI는 직접 연결하지 않는다.
 
