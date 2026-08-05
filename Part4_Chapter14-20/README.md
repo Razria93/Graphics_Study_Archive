@@ -7,8 +7,8 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 ## 상태
 
 - 학습 코드 정리: import 완료
-- Build/run: Ex1401-Ex2001 Debug/Release 과거 확인, 현재 재검증 필요
-- 캡처: 미확인
+- Build/run: Chapter14 Ex1401-Ex1408 Debug x64 현재 확인, Chapter15-20과 Release 현재 재검증 필요
+- 캡처: Chapter14 tracked capture 확보, Chapter15-20 capture 후속
 
 ## Archive/Public 검토
 
@@ -17,8 +17,8 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 | Source provenance | [`SRC-P4-C14-20`](../Docs/99_Legacy/source-registry.md) |
 | Import status | 반영 완료 |
 | Public readiness | 검토 필요 |
-| Build/run status | 과거 성공 · 현재 재검증 필요 |
-| Next action | baseline 문서 축 정규화 후 Chapter14 또는 재검증 범위 선정 |
+| Build/run status | Chapter14 Debug x64 현재 확인 · Chapter15-20과 Release 현재 재검증 필요 |
+| Next action | Chapter14 PR merge 후 Chapter15 재검증 범위 선정 |
 
 ## 예정 주제
 
@@ -32,7 +32,7 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 
 ## Chapter14 Compute Shader 기준
 
-Chapter14는 compute shader의 기본 dispatch에서 structured buffer, append/consume buffer, indirect draw와 GPU sort로 확장되는 흐름이다. 현재 작업에서는 build/run/capture를 수행하지 않고, 후속 재검증에서 확인할 evidence 기준만 정리한다.
+Chapter14는 compute shader의 기본 dispatch에서 structured buffer, append/consume buffer, indirect draw와 GPU sort로 확장되는 흐름이다. 현재 작업에서는 `Ex1401`-`Ex1408` Debug x64 build/run을 확인하고, `Ex1402`, `Ex1404`-`Ex1407` tracked capture와 `Ex1403`, `Ex1405`, `Ex1408` stdout evidence를 정본 문서에 연결한다.
 
 | Example | Command argument | 핵심 개념 | Evidence 후보 | 비고 |
 | --- | --- | --- | --- | --- |
@@ -40,7 +40,7 @@ Chapter14는 compute shader의 기본 dispatch에서 structured buffer, append/c
 | `Ex1402_Blur` | `1402` | separable blur, SRV/UAV ping-pong, compute barrier | screenshot | compute blur 대표 visual 후보 |
 | `Ex1403_MatVecMult` | `1403` | matrix-vector multiplication, GPU result download, CPU/GPU compare | console output | 렌더링 없이 `exit(0)`로 종료하는 result compare 예제 |
 | `Ex1404_StructuredBuffer` | `1404` | `RWStructuredBuffer`, `SV_VertexID`, point rendering | screenshot | structured buffer update/render 기준 후보 |
-| `Ex1405_ConsumeAppendBuffer` | `1405` | consume/append counter, `CopyStructureCount`, append count draw | screenshot + console output | `AppendBuffer count` 출력 확인 필요 |
+| `Ex1405_ConsumeAppendBuffer` | `1405` | consume/append counter, `CopyStructureCount`, append count draw | screenshot + console output | `AppendBuffer count: 25600` 확인 |
 | `Ex1406_DensityField` | `1406` | density texture, sprite geometry shader, accumulate blend | screenshot | density trail visual 후보 |
 | `Ex1407_IndirectArguments` | `1407` | indirect argument buffer, `DrawInstancedIndirect` | screenshot | Ex1406 visual 흐름에 indirect draw call을 결합 |
 | `Ex1408_BitonicSort` | `1408` | bitonic sort, structured buffer GPU sort, CPU/GPU compare | console output | 렌더링 없이 `exit(0)`로 종료하는 result compare 예제 |
