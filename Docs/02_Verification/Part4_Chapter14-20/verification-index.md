@@ -11,9 +11,9 @@
 
 | 예제 | Command argument | Solution | Debug build | Debug run | Release build | Release run | Capture | 비고 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `Ex1401_Basic` | `1401` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex1402_Blur` | `1402` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex1403_MatVecMult` | `1403` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1401_Basic` | `1401` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-06 Debug x64 build/run과 checker screenshot 후보 확인. Release는 과거 확인 |
+| `Ex1402_Blur` | `1402` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-06 Debug x64 build/run과 5000ms 안정화 screenshot 후보 확인([VI-006](../known-issues.md)). Release는 과거 확인 |
+| `Ex1403_MatVecMult` | `1403` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 불필요 | 2026-08-06 Debug x64 stdout과 exit code 0 확인. Release는 과거 확인 |
 | `Ex1404_StructuredBuffer` | `1404` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `Ex1405_ConsumeAppendBuffer` | `1405` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `Ex1406_DensityField` | `1406` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
@@ -54,6 +54,16 @@
 | `Ex1406_DensityField` | screenshot | 필요 | colored sprite/density trail 누적과 감쇠 확인 |
 | `Ex1407_IndirectArguments` | screenshot | 후보 | Ex1406 계열 density visual과 indirect argument buffer offset 0 draw 확인 |
 | `Ex1408_BitonicSort` | console output | 불필요 | element count별 CPU/GPU sort compare가 `OK`인지 확인 |
+
+## Chapter14 파일럿 결과
+
+| Example | Configuration | Command argument | 결과 | Evidence | 비고 |
+| --- | --- | --- | --- | --- | --- |
+| `Ex1401_Basic` | Debug x64 | `1401` | 성공 | local screenshot 후보 | checker pattern과 `HongLabGraphics Example` window 확인. tracked capture로 승격하지 않음 |
+| `Ex1402_Blur` | Debug x64 | `1402` | 성공 | local screenshot 후보 | 초기 capture는 white frame에 가까웠으나 5000ms 안정화 대기에서 RGB blur visual 확인 |
+| `Ex1403_MatVecMult` | Debug x64 | `1403` | 성공 | stdout log | `Result CPU`, `GPU Result`, `Error GPU 0`, `ExitCode: 0` 확인. screenshot 불필요 |
+
+Debug x64 build는 2026-08-06 `Examples.sln` 기준 경고 0개, 오류 0개로 확인했다. Git Bash 실행 환경에서는 build 후 Debug output의 runtime DLL이 정리되어 `PhysXCommon_64.dll` loader error가 발생했으며([VI-005](../known-issues.md)), vcpkg `x64-windows/debug/bin` runtime DLL을 ignored `x64/Debug` output에 복구한 뒤 파일럿 run을 수행했다. `Ex1402_Blur`는 500ms, 1500ms, 3000ms capture에서 white frame에 가까웠고 5000ms capture에서 RGB blur visual이 확인되어 timing/안정화 대기 이슈로 판정한다.
 
 ## 갱신 기준
 
