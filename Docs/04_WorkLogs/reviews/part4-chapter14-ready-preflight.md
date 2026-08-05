@@ -106,6 +106,14 @@ PR 생성 후 PR URL, head ref, base ref와 PR head commit을 확인한다.
 - `Docs Validation` run이 생성되면 성공 여부를 확인한다.
 - 위 항목을 통과한 뒤 `gh pr ready` 실행 여부를 별도 승인받는다.
 
+## 실행 결과
+
+- Branch push: `origin/docs/part4-chapter14-20-workflow` 생성, local HEAD·tracking ref·remote branch head `af666ee885888e091f29fba8c6644ef700cdcaca` 일치 확인
+- Demo Issue: [Issue #29](https://github.com/Razria93/Graphics_Study_Archive/issues/29) 생성
+- Progress 누적 진행 댓글: [댓글 5091068690](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690) 수정
+- Phase 5-1 완료 댓글: [댓글 5196232081](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5196232081) 생성
+- PR 생성과 Ready for Review 전환은 후속 승인 범위로 남긴다.
+
 ## 검증 명령
 
 ```bash

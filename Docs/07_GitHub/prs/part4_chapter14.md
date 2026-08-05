@@ -83,5 +83,5 @@ Density trail visual은 `Ex1406` 계열을 공유하지만, indirect argument bu
 
 ## 관련 이슈
 
-- Demo Issue 후보: [Part4 Chapter14 Compute Shader Evidence Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/07_GitHub/issues/demo/demo_part4_chapter14.md)
-- Progress 완료 댓글 후보: [Phase 5-1 완료 기록](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/07_GitHub/plan/comments/phase-5-1-plan-comment.md)
+- Demo Issue: [Part4 Chapter14 Compute Shader Evidence Demo #29](https://github.com/Razria93/Graphics_Study_Archive/issues/29)
+- Progress 완료 댓글: [Phase 5-1 완료 기록](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5196232081)
