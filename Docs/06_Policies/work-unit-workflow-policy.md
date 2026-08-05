@@ -44,6 +44,25 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | 21 | 사용자 검토 요청 | 변경 요약, 미확인 항목, follow-up | 대화 보고 또는 WorkLog | `github-workflow-policy.md` |
 | 22 | commit readiness 보고 | 변경 파일, 검증 결과, 권장 commit 메시지 | 대화 보고 | `github-workflow-policy.md` |
 
+## Chapter 시작 체크포인트
+
+Chapter 단위 Work Unit은 문서 작성, build/run, capture 승격 또는 GitHub 게시 후보 작성 전에 시작 체크포인트를 먼저 만든다. 시작 체크포인트는 작업 기준선이며 remote 변경 승인이 아니다.
+
+시작 체크포인트는 다음 범위를 최소 확인한다.
+
+- 예제 목록과 실행 진입점
+- build/run 대상과 제외 대상
+- screenshot, stdout, video evidence 분류
+- 외부 asset, 공개 위험, 민감 정보 가능성
+- Debug와 Release 검증 범위
+- runtime DLL, working directory, command argument, capture mode
+- capture 후보의 local/tracked 승격 기준
+- Demo, Verification, WorkLog, GitHub body 갱신 필요 여부
+- remote 게시와 실제 URL 역동기화 필요 여부
+- Ready, review, merge 전 감사 필요 여부
+
+시작 체크포인트가 있어도 `git push`, GitHub Issue/PR/comment 생성·수정, Ready for Review 전환, review 답글, thread resolve, merge는 [GitHub Workflow Policy](github-workflow-policy.md)의 승인 게이트를 따른다.
+
 ## 산출물별 책임
 
 | 산출물 | 정본 위치 | 내용 |
