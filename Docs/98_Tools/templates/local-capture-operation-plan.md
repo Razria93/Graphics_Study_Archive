@@ -84,7 +84,7 @@ Primitive 기준:
 - mouse move: 시작 cursor origin 고정, 최소 1초 대기, drag 없는 이동, camera 변화 확인
 - mouse click: control 상태 확인, click, 최소 1초 대기, 값 또는 toggle 변화 확인
 - slider drag: press, hold, duration 이동, release, 최소 1초 대기, 목표값 확인
-- numeric input: field focus, select/clear, 값 입력, Enter 또는 focus out, 최소 1초 대기, UI 표시값 확인
+- numeric input: focus 확보, 1초 대기, value field pointer 이동, 1초 대기, `Ctrl + Left Click`, 0.5초 대기, `Ctrl + A`, 0.5초 대기, `Backspace`, 0.5초 대기, 값 입력, 0.5초 대기, `Enter`, 0.5초 대기, UI 표시값 확인
 
 ## Capture 시점
 

@@ -42,6 +42,10 @@ function Resolve-ExampleVirtualKey
     if ($normalized.Length -eq 1)
     {
         $code = [int][char]$normalized
+        if ($normalized -eq ".")
+        {
+            return [byte]0xBE
+        }
         if (
             ($code -ge [int][char]'A' -and $code -le [int][char]'Z') -or
             ($code -ge [int][char]'0' -and $code -le [int][char]'9')
@@ -55,8 +59,13 @@ function Resolve-ExampleVirtualKey
     {
         "SPACE" { return [byte]0x20 }
         "ENTER" { return [byte]0x0D }
+        "BACKSPACE" { return [byte]0x08 }
         "ESC" { return [byte]0x1B }
         "ESCAPE" { return [byte]0x1B }
+        "CTRL" { return [byte]0x11 }
+        "CONTROL" { return [byte]0x11 }
+        "SHIFT" { return [byte]0x10 }
+        "ALT" { return [byte]0x12 }
         "LEFT" { return [byte]0x25 }
         "UP" { return [byte]0x26 }
         "RIGHT" { return [byte]0x27 }
@@ -181,6 +190,87 @@ function Invoke-ExampleMouseClick
     Start-Sleep -Milliseconds $DelayAfterMilliseconds
 }
 
+function Invoke-ExampleModifiedMouseClick
+{
+    param(
+        [Parameter(Mandatory = $true)][string[]]$ModifierKeys,
+        [ValidateSet("Left", "Right")][string]$Button = "Left",
+        [Parameter(Mandatory = $true)][int]$X,
+        [Parameter(Mandatory = $true)][int]$Y,
+        [switch]$MoveFirst,
+        [ValidateRange(0, 5000)][int]$DelayAfterMilliseconds = 1000
+    )
+
+    $virtualKeys = @()
+    foreach ($modifierKey in $ModifierKeys)
+    {
+        $virtualKeys += Resolve-ExampleVirtualKey -Key $modifierKey
+    }
+
+    if ($MoveFirst)
+    {
+        Move-ExampleMouse -X $X -Y $Y -DelayAfterMilliseconds 250
+    }
+
+    foreach ($virtualKey in $virtualKeys)
+    {
+        [ExampleWindowInputNative]::keybd_event($virtualKey, 0, 0, [UIntPtr]::Zero)
+    }
+
+    try
+    {
+        Invoke-ExampleMouseClick -Button $Button -X $X -Y $Y -DelayAfterMilliseconds 0
+    }
+    finally
+    {
+        [array]::Reverse($virtualKeys)
+        foreach ($virtualKey in $virtualKeys)
+        {
+            [ExampleWindowInputNative]::keybd_event($virtualKey, 0, 0x0002, [UIntPtr]::Zero)
+        }
+    }
+
+    Start-Sleep -Milliseconds $DelayAfterMilliseconds
+}
+
+function Send-ExampleModifiedKeyTap
+{
+    param(
+        [Parameter(Mandatory = $true)][string[]]$ModifierKeys,
+        [Parameter(Mandatory = $true)][string]$Key,
+        [ValidateRange(0, 5000)][int]$DelayAfterMilliseconds = 1000
+    )
+
+    $modifierVirtualKeys = @()
+    foreach ($modifierKey in $ModifierKeys)
+    {
+        $modifierVirtualKeys += Resolve-ExampleVirtualKey -Key $modifierKey
+    }
+
+    $virtualKey = Resolve-ExampleVirtualKey -Key $Key
+
+    foreach ($modifierVirtualKey in $modifierVirtualKeys)
+    {
+        [ExampleWindowInputNative]::keybd_event($modifierVirtualKey, 0, 0, [UIntPtr]::Zero)
+    }
+
+    try
+    {
+        [ExampleWindowInputNative]::keybd_event($virtualKey, 0, 0, [UIntPtr]::Zero)
+        [ExampleWindowInputNative]::keybd_event($virtualKey, 0, 0x0002, [UIntPtr]::Zero)
+    }
+    finally
+    {
+        [array]::Reverse($modifierVirtualKeys)
+        foreach ($modifierVirtualKey in $modifierVirtualKeys)
+        {
+            [ExampleWindowInputNative]::keybd_event($modifierVirtualKey, 0, 0x0002, [UIntPtr]::Zero)
+        }
+    }
+
+    Start-Sleep -Milliseconds $DelayAfterMilliseconds
+}
+
 function Invoke-ExampleMouseDrag
 {
     param(
@@ -206,4 +296,35 @@ function Invoke-ExampleMouseDrag
     }
     [ExampleWindowInputNative]::mouse_event(0x0004, 0, 0, 0, [UIntPtr]::Zero)
     Start-Sleep -Milliseconds $DelayAfterMilliseconds
+}
+
+function Invoke-ExampleNumericInput
+{
+    param(
+        [Parameter(Mandatory = $true)][IntPtr]$WindowHandle,
+        [Parameter(Mandatory = $true)][int]$X,
+        [Parameter(Mandatory = $true)][int]$Y,
+        [Parameter(Mandatory = $true)][string]$Value,
+        [ValidateRange(0, 5000)][int]$FocusDelayMilliseconds = 1000,
+        [ValidateRange(0, 5000)][int]$MoveDelayMilliseconds = 1000,
+        [ValidateRange(0, 5000)][int]$CtrlClickDelayMilliseconds = 500,
+        [ValidateRange(0, 5000)][int]$SelectAllDelayMilliseconds = 500,
+        [ValidateRange(0, 5000)][int]$ClearDelayMilliseconds = 500,
+        [ValidateRange(0, 5000)][int]$ValueDelayMilliseconds = 500,
+        [ValidateRange(0, 5000)][int]$EnterDelayMilliseconds = 500
+    )
+
+    Set-ExampleWindowFocus -WindowHandle $WindowHandle -DelayAfterMilliseconds $FocusDelayMilliseconds
+    Move-ExampleMouse -X $X -Y $Y -DelayAfterMilliseconds $MoveDelayMilliseconds
+    Invoke-ExampleModifiedMouseClick -ModifierKeys @("Ctrl") -Button Left -X $X -Y $Y -DelayAfterMilliseconds $CtrlClickDelayMilliseconds
+    Send-ExampleModifiedKeyTap -ModifierKeys @("Ctrl") -Key "A" -DelayAfterMilliseconds $SelectAllDelayMilliseconds
+    Send-ExampleKeyTap -Key "Backspace" -DelayAfterMilliseconds $ClearDelayMilliseconds
+
+    foreach ($character in $Value.ToCharArray())
+    {
+        Send-ExampleKeyTap -Key ([string]$character) -DelayAfterMilliseconds 0
+    }
+    Start-Sleep -Milliseconds $ValueDelayMilliseconds
+
+    Send-ExampleKeyTap -Key "Enter" -DelayAfterMilliseconds $EnterDelayMilliseconds
 }

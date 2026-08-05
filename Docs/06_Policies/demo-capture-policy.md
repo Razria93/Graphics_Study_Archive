@@ -150,7 +150,9 @@ Video 댓글은 게시 목적에 따라 다음과 같이 갱신한다.
 - mouse move primitive는 camera rotation처럼 현재 cursor position이 기준점이 되는 기능에서 시작 cursor origin을 먼저 고정하고 최소 1초 대기한 뒤 drag 없이 이동한다.
 - mouse click primitive는 ImGui panel의 open/closed 상태를 먼저 확인하고 좌표 클릭이 panel toggle을 반대로 수행하지 않는지 확인한다.
 - slider drag primitive는 press, 짧은 hold, duration을 둔 이동, release와 결과 대기 순서로 수행한다.
-- numeric input primitive는 field focus, select/clear, 값 입력, Enter 또는 focus out과 결과 대기 순서로 수행한다.
+- numeric input primitive는 strict sequence를 사용한다. focus 확보, 1초 대기, value field pointer 이동, 1초 대기, `Ctrl + Left Click`, 0.5초 대기, `Ctrl + A`, 0.5초 대기, `Backspace`, 0.5초 대기, 값 입력, 0.5초 대기, `Enter`, 0.5초 대기 순서로 수행한다.
+
+빠른 입력으로 command가 씹히는 상황을 줄이기 위해 numeric input의 단계별 대기를 생략하지 않는다. exact value 재현이 필요한 경우 slider drag보다 numeric input을 우선한다.
 
 ImGui panel state가 실행 사이에 유지되는 예제는 좌표 기반 panel arrow click을 기본 조작으로 사용하지 않는다. keyboard toggle이나 numeric input으로 같은 상태를 만들 수 있으면 이를 우선한다.
 

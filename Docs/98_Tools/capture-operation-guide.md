@@ -114,13 +114,32 @@ Example별 local driver는 GUI 조작을 한 번에 밀어 넣지 않고 primiti
 | mouse move | 시작 cursor origin 고정, 1초 대기, drag 없는 move | camera 방향과 cursor 위치 |
 | mouse click | control 상태 확인, click, 1초 대기 | toggle 또는 값 변화 |
 | slider drag | press, hold, duration 이동, release, 1초 대기 | 목표값과 rendering 변화 |
-| numeric input | field focus, select/clear, 값 입력, Enter 또는 focus out, 1초 대기 | UI 표시값과 결과 |
+| numeric input | strict sequence로 field focus, numeric edit activation, select/clear, 값 입력, Enter, 단계별 대기 | UI 표시값과 결과 |
 
 FPV나 mouse-look처럼 현재 cursor 위치가 camera 회전 기준이 되는 기능은 toggle 전에 cursor를 client center 같은 명시한 origin으로 이동한다. cursor origin을 고정하지 않은 상태에서 FPV를 켜면 첫 frame에서 시야가 크게 돌아갈 수 있다.
 
 ImGui panel이 이전 실행의 open/closed 상태를 보존하면 panel arrow 좌표 클릭은 실패하기 쉽다. panel arrow click은 열기와 닫기가 같은 좌표이므로 가능하면 피하고, 동일 기능을 keyboard toggle, checkbox 상태 확인 또는 numeric input으로 만든다.
 
 Tracked helper `scripts/window-input-primitives.ps1`는 focus, key tap, key hold, mouse move, click과 drag primitive를 제공한다. 이 helper는 실제 DirectX app을 실행하지 않으며 example별 local driver가 필요한 sequence와 좌표를 결정한다.
+
+정확값을 재현해야 하는 `numeric input`은 일반 click 조합으로 축약하지 않고 다음 strict sequence를 사용한다.
+
+1. focus 확보
+2. 1초 대기
+3. 변경할 값이 있는 slider의 value field로 pointer 이동
+4. 1초 대기
+5. `Ctrl + Left Click`
+6. 0.5초 대기
+7. `Ctrl + A`
+8. 0.5초 대기
+9. `Backspace`
+10. 0.5초 대기
+11. 원하는 값 입력
+12. 0.5초 대기
+13. `Enter`
+14. 0.5초 대기
+
+위 대기 시간은 빠른 입력으로 command가 씹히는 상황을 줄이기 위한 안정화 기준으로 사용한다. exact value가 필요한 screenshot과 verification capture에서는 slider drag보다 numeric input을 우선한다.
 
 ## 기본 상태 screenshot
 

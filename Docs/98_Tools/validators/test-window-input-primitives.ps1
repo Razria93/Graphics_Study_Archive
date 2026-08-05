@@ -47,7 +47,10 @@ foreach ($functionName in @(
     "Send-ExampleKeyHold",
     "Move-ExampleMouse",
     "Invoke-ExampleMouseClick",
-    "Invoke-ExampleMouseDrag"
+    "Invoke-ExampleModifiedMouseClick",
+    "Send-ExampleModifiedKeyTap",
+    "Invoke-ExampleMouseDrag",
+    "Invoke-ExampleNumericInput"
 ))
 {
     Assert-True `
@@ -84,10 +87,14 @@ Assert-True ($helperText -match 'GetForegroundWindow\(\) -ne \$WindowHandle') `
     "Focus primitive must verify actual foreground state."
 Assert-True ($helperText -match 'keybd_event') `
     "Keyboard primitive must use explicit key down and key up events."
+Assert-True ($helperText -match 'Send-ExampleModifiedKeyTap') `
+    "Modified key tap primitive must be implemented for strict numeric input selection."
 Assert-True ($helperText -match 'SetCursorPos') `
     "Mouse primitive must support explicit cursor origin placement."
 Assert-True ($helperText -match 'mouse_event') `
     "Mouse click and drag primitive must support button down and up events."
+Assert-True ($helperText -match 'Invoke-ExampleModifiedMouseClick') `
+    "Modified mouse click primitive must be implemented for numeric input activation."
 Assert-True ($helperText -notmatch 'BlockInput') `
     "Input primitives must not block global user input."
 
@@ -95,8 +102,10 @@ foreach ($functionName in @(
     "Set-ExampleWindowFocus",
     "Send-ExampleKeyTap",
     "Send-ExampleKeyHold",
+    "Send-ExampleModifiedKeyTap",
     "Move-ExampleMouse",
     "Invoke-ExampleMouseClick",
+    "Invoke-ExampleModifiedMouseClick",
     "Invoke-ExampleMouseDrag"
 ))
 {
@@ -112,5 +121,31 @@ Assert-True `
 Assert-True `
     ((Get-Command Invoke-ExampleMouseDrag).Parameters.ContainsKey("DurationMilliseconds")) `
     "Mouse drag primitive must expose drag duration."
+Assert-True `
+    ((Get-Command Invoke-ExampleModifiedMouseClick).Parameters.ContainsKey("ModifierKeys")) `
+    "Modified click primitive must expose modifier key input."
+Assert-True `
+    ((Get-Command Send-ExampleModifiedKeyTap).Parameters.ContainsKey("ModifierKeys")) `
+    "Modified key tap primitive must expose modifier key input."
+
+$numericInputCommand = Get-Command Invoke-ExampleNumericInput -CommandType Function
+foreach ($parameterName in @(
+    "WindowHandle",
+    "X",
+    "Y",
+    "Value",
+    "FocusDelayMilliseconds",
+    "MoveDelayMilliseconds",
+    "CtrlClickDelayMilliseconds",
+    "SelectAllDelayMilliseconds",
+    "ClearDelayMilliseconds",
+    "ValueDelayMilliseconds",
+    "EnterDelayMilliseconds"
+))
+{
+    Assert-True `
+        ($numericInputCommand.Parameters.ContainsKey($parameterName)) `
+        "Invoke-ExampleNumericInput must expose parameter $parameterName."
+}
 
 Write-Host "Window input primitive tests passed."
