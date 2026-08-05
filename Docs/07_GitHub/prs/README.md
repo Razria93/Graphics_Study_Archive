@@ -11,6 +11,7 @@
 ## 게시 후보
 
 - [Part3 Chapter10-13](part3_chapter10-13.md)
+- [Part4 Chapter14](part4_chapter14.md)
 
 ## 권장 본문 흐름
 

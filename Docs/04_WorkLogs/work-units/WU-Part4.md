@@ -11,10 +11,10 @@
 | Source/import | 반영 완료 | `SRC-P4-C14-20`으로 source provenance를 추적한다. |
 | Branch | 진행 중 | `docs/part4-chapter14-20-workflow`에서 baseline 문서 축 정규화를 시작한다. |
 | Build/run | Chapter14 Debug 확인 | Ex1401~Ex1408 Debug x64 build/run을 2026-08-06 현재 확인했다. Chapter15~20과 Release 현재 재검증은 남아 있다. |
-| Capture | local 후보 | Ex1401~Ex1402, Ex1404~Ex1407 local screenshot 후보와 Ex1403, Ex1405, Ex1408 stdout log 후보를 생성했다. tracked capture 승격은 하지 않았다. |
-| Demo | 후보 정리 중 | stale 후보를 제거하고 실제 Ex 기반 후보로 재정렬한다. |
+| Capture | tracked 후보 | Ex1402, Ex1404~Ex1407 centered client-visible screenshot 후보를 `Docs/_assets/captures`에 승격했다. Ex1401은 local screenshot 후보, Ex1403, Ex1405, Ex1408은 stdout log 후보를 유지한다. |
+| Demo | Chapter14 Step별 후보 작성 | stale 후보를 제거하고 Chapter14 Ex1401~Ex1408 Step별 상세 Demo와 tracked capture 연결을 작성했다. |
 | Publication | 검토 필요 | public 후보 확정이 아니라 asset/public risk 검토 축으로만 기록한다. |
-| GitHub | 미게시 | Issue, PR, comment remote 게시를 이번 범위에 포함하지 않는다. |
+| GitHub | body 후보 작성 | Chapter14 Demo Issue와 PR body 후보를 작성했다. remote 게시와 Ready for Review는 별도 승인 범위다. |
 
 ## 시작 결정
 
@@ -46,14 +46,15 @@
 - 생성 후보는 `local/capture-run/Part4_Chapter14/pilot-1401-1403-rerun-20260806`, `local/capture-run/Part4_Chapter14/ex1402-remeasure-20260806`, `local/capture-run/Part4_Chapter14/pilot-1404-1408-20260806`에 둔다. 이 local 후보는 tracked asset이 아니다.
 - 노트북 환경에서는 Part4 video를 생성하지 않고 screenshot/stdout/code evidence 위주로 기록한다. video가 필요한 density trail, simulation, animation, physics, gameplay evidence는 desktop 환경 별도 목표로 분리한다.
 - 2026-08-06 capture UI mode를 `AppBase`에 추가했다. `HLAB_CAPTURE_UI=collapsed` 실행에서는 공통 `Scene Control` titlebar를 좌측 상단 margin에 고정하고 접힌 상태를 유지한다. `Ex1404_StructuredBuffer`, `Ex1405_ConsumeAppendBuffer`, `Ex1406_DensityField`, `Ex1407_IndirectArguments` fixed UI 후보는 `local/capture-run/Part4_Chapter14/capture-ui-fixed-20260806`에 둔다.
-- 2026-08-06 local capture helper의 visible client area probe로 taskbar 제외 capture를 확인했다. 큰 모니터 연결 후 `CenterWindow` 기준으로 `Ex1404_StructuredBuffer`, `Ex1405_ConsumeAppendBuffer`, `Ex1406_DensityField`, `Ex1407_IndirectArguments` 모두 taskbar-free 전체 client 후보를 확보했다. 생성 후보는 `local/capture-run/Part4_Chapter14/capture-ui-fixed-large-monitor-20260806`에 둔다.
+- 2026-08-06 local capture helper의 visible client area probe로 taskbar 제외 capture를 확인했다. 큰 모니터 연결 후 `CenterWindow` 기준으로 `Ex1404_StructuredBuffer`, `Ex1405_ConsumeAppendBuffer`, `Ex1406_DensityField`, `Ex1407_IndirectArguments` 모두 taskbar-free 전체 client 후보를 확보했다. 생성 후보는 `local/capture-run/Part4_Chapter14/capture-ui-fixed-large-monitor-20260806`에 두고, 대표 PNG 4개는 `Docs/_assets/captures`에 승격했다.
+- 2026-08-06 `Ex1402_Blur`는 5000ms 안정화 대기, `HLAB_CAPTURE_UI=collapsed`, `CenterWindow`, visible client area 기준으로 1280×768 taskbar-free 전체 client 후보를 확보하고 `Docs/_assets/captures`에 승격했다.
 
 ## Chapter14 evidence 후보 선별
 
 - 최소 evidence set은 `Ex1401_Basic` checker visual, `Ex1402_Blur` RGB blur visual, `Ex1403_MatVecMult` stdout compare, `Ex1408_BitonicSort` stdout compare로 둔다.
 - 확장 evidence set은 `Ex1404_StructuredBuffer` fixed UI point cloud, `Ex1405_ConsumeAppendBuffer` fixed UI point cloud와 append count stdout, `Ex1406_DensityField` fixed UI density trail, `Ex1407_IndirectArguments` fixed UI density trail과 indirect draw code evidence로 둔다.
-- tracked 승격 우선 screenshot 후보는 `Ex1404_StructuredBuffer`, `Ex1405_ConsumeAppendBuffer`, `Ex1406_DensityField`, `Ex1407_IndirectArguments` centered client-visible fixed UI 후보로 둔다. 현재 local 후보는 tracked asset이 아니며, tracked 승격 전 metadata와 public 노출 검수를 별도로 수행한다.
-- `Ex1401_Basic`, `Ex1402_Blur`는 최소 set 후보지만 fixed UI와 안정된 bounds 기준의 desktop 재촬영 후 승격 여부를 판단한다.
+- tracked screenshot 후보는 `Ex1404_StructuredBuffer`, `Ex1405_ConsumeAppendBuffer`, `Ex1406_DensityField`, `Ex1407_IndirectArguments` centered client-visible fixed UI 후보로 둔다. 승격 PNG는 `file` 기준 RGBA non-interlaced이고 PNG text metadata chunk가 없다. public 확정 여부는 `Docs/05_Publication`에서 별도 판단한다.
+- `Ex1401_Basic`은 최소 set 후보지만 fixed UI와 안정된 bounds 기준의 desktop 재촬영 후 승격 여부를 판단한다. `Ex1402_Blur`는 5000ms 안정화 기준으로 tracked screenshot을 승격했다.
 - `Ex1403_MatVecMult`, `Ex1408_BitonicSort`는 stdout-only 후보로 두며 screenshot을 만들지 않는다.
 - `Ex1405_ConsumeAppendBuffer`는 Consume/Append buffer의 counter 흐름과 `AppendBuffer count: 25600`을 핵심 evidence로 두고 fixed UI screenshot을 visual 보조 evidence로 둔다.
 - `Ex1407_IndirectArguments`는 visual이 `Ex1406_DensityField`와 유사하므로 fixed UI screenshot과 `DrawInstancedIndirect(m_argsGPU.Get(), offset)` code evidence를 함께 사용한다.
@@ -73,6 +74,6 @@
 
 ## 다음 작업
 
-1. Chapter14 tracked capture 승격은 `HLAB_CAPTURE_UI=collapsed`, 안정된 bounds, taskbar 노출, metadata를 검수한 뒤 수행한다.
-2. Chapter14 GitHub Demo Issue 후보는 최소 evidence set과 확장 evidence set 중 게시 범위를 선택해 작성한다.
+1. Chapter14 GitHub Demo Issue와 PR body 후보는 remote 게시 전 최종 검수와 사용자 승인을 거친다.
+2. Chapter14 `Ex1401_Basic` tracked capture 승격 여부는 desktop 재촬영 후 판단한다.
 3. Chapter15 진입 전 runtime DLL 복구 절차와 desktop video 후보 분리를 유지한다.
