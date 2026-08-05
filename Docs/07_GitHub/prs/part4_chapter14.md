@@ -70,7 +70,7 @@ Density trail visual은 `Ex1406` 계열을 공유하지만, indirect argument bu
 - Release 현재 재검증은 과거 확인 상태를 유지하고 후속 범위로 둔다.
 - `Ex1401_Basic`은 local screenshot 후보만 있으며 desktop 재촬영 후 tracked 승격 여부를 판단한다.
 - `Ex1406`과 `Ex1407`의 시간 변화는 video 후보지만 현재 PR은 static screenshot과 code evidence 중심으로 정리한다.
-- GitHub remote Issue/PR 게시와 Ready for Review 전환은 별도 승인 후 수행한다.
+- Ready for Review 전환은 별도 승인 후 수행한다.
 
 ## 문서
 

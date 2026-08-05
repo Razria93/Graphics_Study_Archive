@@ -5,10 +5,10 @@
 ## 현재 로컬 상태
 
 - 작업 branch는 `docs/part4-chapter14-20-workflow`다.
-- 현재 branch는 upstream이 없다.
-- `origin/main..HEAD` 대상 커밋은 Chapter14 baseline, evidence, capture UI, Demo/GitHub 후보와 Progress 후보 정렬 커밋 7개다.
-- 원격 branch `origin/docs/part4-chapter14-20-workflow`는 아직 없다.
-- 현재 branch head 기준 PR은 없다.
+- 현재 branch는 `origin/docs/part4-chapter14-20-workflow`를 upstream으로 추적한다.
+- `origin/main..HEAD` 대상 커밋은 Chapter14 baseline, evidence, capture UI, Demo/GitHub 후보, Progress 후보 정렬과 게시 URL 동기화 커밋이다.
+- 원격 branch `origin/docs/part4-chapter14-20-workflow`가 생성되어 있다.
+- 현재 branch head 기준 Draft PR #30이 있다.
 - [Docs/07_GitHub/issues/demo/demo_part3_chapter10.md](../../07_GitHub/issues/demo/demo_part3_chapter10.md)는 content diff 없이 LF/CRLF working copy 표시만 남아 있다.
 
 ## 승인 대상
@@ -108,11 +108,12 @@ PR 생성 후 PR URL, head ref, base ref와 PR head commit을 확인한다.
 
 ## 실행 결과
 
-- Branch push: `origin/docs/part4-chapter14-20-workflow` 생성, local HEAD·tracking ref·remote branch head `af666ee885888e091f29fba8c6644ef700cdcaca` 일치 확인
+- Branch push: `origin/docs/part4-chapter14-20-workflow` 생성, 게시 URL 동기화 시점의 local HEAD·tracking ref·remote branch head 일치 확인
 - Demo Issue: [Issue #29](https://github.com/Razria93/Graphics_Study_Archive/issues/29) 생성
 - Progress 누적 진행 댓글: [댓글 5091068690](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690) 수정
 - Phase 5-1 완료 댓글: [댓글 5196232081](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5196232081) 생성
-- PR 생성과 Ready for Review 전환은 후속 승인 범위로 남긴다.
+- Draft PR: [PR #30](https://github.com/Razria93/Graphics_Study_Archive/pull/30) 생성, head ref `docs/part4-chapter14-20-workflow`, base ref `main`, PR 생성 시점 head 확인
+- Ready for Review 전환은 후속 승인 범위로 남긴다.
 
 ## 검증 명령
 

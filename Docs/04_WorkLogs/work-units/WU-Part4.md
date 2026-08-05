@@ -14,7 +14,7 @@
 | Capture | tracked 후보 | Ex1402, Ex1404~Ex1407 centered client-visible screenshot 후보를 `Docs/_assets/captures`에 승격했다. Ex1401은 local screenshot 후보, Ex1403, Ex1405, Ex1408은 stdout log 후보를 유지한다. |
 | Demo | Chapter14 Step별 후보 작성 | stale 후보를 제거하고 Chapter14 Ex1401~Ex1408 Step별 상세 Demo와 tracked capture 연결을 작성했다. |
 | Publication | 검토 필요 | public 후보 확정이 아니라 asset/public risk 검토 축으로만 기록한다. |
-| GitHub | 일부 posted | Chapter14 Demo Issue #29와 Progress Phase 5-1 완료 댓글을 게시했다. PR remote 게시와 Ready for Review는 별도 승인 범위다. |
+| GitHub | Draft PR | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 Draft PR #30을 게시했다. Ready for Review는 별도 승인 범위다. |
 
 ## 시작 결정
 
@@ -74,6 +74,6 @@
 
 ## 다음 작업
 
-1. Chapter14 PR remote 생성과 Ready 직전 감사는 [Part4 Chapter14 Ready 전 원격 게시 승인안](../reviews/part4-chapter14-ready-preflight.md)의 남은 범위를 따른다.
+1. Chapter14 Ready 직전 감사와 Ready for Review 전환 판단은 [Part4 Chapter14 Ready 전 원격 게시 승인안](../reviews/part4-chapter14-ready-preflight.md)의 남은 범위를 따른다.
 2. Chapter14 `Ex1401_Basic` tracked capture 승격 여부는 desktop 재촬영 후 판단한다.
 3. Chapter15 진입 전 runtime DLL 복구 절차와 desktop video 후보 분리를 유지한다.

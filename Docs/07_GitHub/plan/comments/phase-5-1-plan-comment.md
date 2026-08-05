@@ -5,7 +5,7 @@
 - `Part4_Chapter14-20`의 Chapter14 `Ex1401_Basic`~`Ex1408_BitonicSort`를 Debug x64 기준으로 재검증했다.
 - `Ex1402`, `Ex1404`~`Ex1407`의 centered client-visible screenshot 5개를 tracked capture asset으로 승격했다.
 - `Ex1403_MatVecMult`, `Ex1405_ConsumeAppendBuffer`, `Ex1408_BitonicSort`의 stdout evidence와 `Ex1407_IndirectArguments` code evidence를 상세 Demo와 GitHub body 후보에 연결했다.
-- Chapter14 [Demo Issue 후보](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/07_GitHub/issues/demo/demo_part4_chapter14.md)와 PR body 후보를 작성했다.
+- Chapter14 [Demo Issue #29](https://github.com/Razria93/Graphics_Study_Archive/issues/29)와 [PR #30](https://github.com/Razria93/Graphics_Study_Archive/pull/30)을 연결했다.
 
 ## 검증
 
@@ -24,4 +24,4 @@
 
 ## Related PR
 
-- 예정 - Part4 Chapter14 Compute Shader evidence 문서화와 capture 승격
+- [PR #30](https://github.com/Razria93/Graphics_Study_Archive/pull/30) - Part4 Chapter14 Compute Shader evidence 문서화와 capture 승격
