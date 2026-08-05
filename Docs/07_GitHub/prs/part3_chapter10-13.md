@@ -83,4 +83,7 @@ Metallic-roughness map과 direct GGX BRDF·IBL을 결합해 PBR material의 입�
 
 ## 관련 이슈
 
-- 없음
+- [Chapter10 Geometry Pipeline Demo #25](https://github.com/Razria93/Graphics_Study_Archive/issues/25)
+- [Chapter11 Texturing Techniques Demo #26](https://github.com/Razria93/Graphics_Study_Archive/issues/26)
+- [Chapter12 Physically Based Rendering Demo #27](https://github.com/Razria93/Graphics_Study_Archive/issues/27)
+- [Chapter13 Light And Shadow Demo #28](https://github.com/Razria93/Graphics_Study_Archive/issues/28)

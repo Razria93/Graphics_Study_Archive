@@ -5,7 +5,7 @@
 - `Part3_Chapter10-13`의 21개 예제를 Chapter10 Geometry Pipeline, Chapter11 Texturing Techniques, Chapter12 PBR와 Chapter13 Light/Shadow 순서로 재검증했다.
 - Example README 21개, 관련 Topic, Verification과 독립 상세 Demo 21개를 연결했다.
 - Chapter10 Step1의 quad strip, Step5 Manual·Distance Adaptive 분리와 Chapter13 Step2B 공개 표시를 확정했다.
-- Chapter별 공개 안전한 rendered evidence와 Demo Issue 본문을 구성했다.
+- Chapter10 [Demo Issue #25](https://github.com/Razria93/Graphics_Study_Archive/issues/25), Chapter11 [Demo Issue #26](https://github.com/Razria93/Graphics_Study_Archive/issues/26), Chapter12 [Demo Issue #27](https://github.com/Razria93/Graphics_Study_Archive/issues/27), Chapter13 [Demo Issue #28](https://github.com/Razria93/Graphics_Study_Archive/issues/28)에 공개 안전한 rendered evidence와 Demo Issue 본문을 게시했다.
 
 ## 검증
 
@@ -23,4 +23,4 @@
 
 ## Related PR
 
-- Part3 Chapter10-13 Geometry·Texturing·PBR·Light/Shadow 단계별 구현과 Demo: 예정
+- [PR #24](https://github.com/Razria93/Graphics_Study_Archive/pull/24) - Part3 Chapter10-13 Geometry·Texturing·PBR·Light/Shadow 단계별 구현과 Demo
