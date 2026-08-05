@@ -12,6 +12,17 @@
 | Chapter09 | 보관 완료 | Step1–6 현재 확인 | Step1–6 작성 | camera·picking·quaternion 작성 | Step1–6 작성 | Step5 public 후보, 나머지 공개 가능 |
 | Chapter10-13 | 보관 완료 | 21개 예제 현재 확인 | Chapter10→13 작성 | geometry·texturing·PBR·shadow 작성 | Chapter10→13 작성 | rendered evidence 공개 후보 |
 
+## GitHub 마감 snapshot
+
+| 범위 | Demo Issue | Progress comment | PR | 상태 |
+| --- | --- | --- | --- | --- |
+| Chapter09 | [Issue #21](https://github.com/Razria93/Graphics_Study_Archive/issues/21) | Chapter09 로컬 정규화 완료 | [PR #23](https://github.com/Razria93/Graphics_Study_Archive/pull/23) · [`3467f09`](https://github.com/Razria93/Graphics_Study_Archive/commit/3467f0961c9717998cf4fab76112d01e88680d0a) | Merged |
+| Chapter10-13 | [#25](https://github.com/Razria93/Graphics_Study_Archive/issues/25) · [#26](https://github.com/Razria93/Graphics_Study_Archive/issues/26) · [#27](https://github.com/Razria93/Graphics_Study_Archive/issues/27) · [#28](https://github.com/Razria93/Graphics_Study_Archive/issues/28) | [Phase 4-2 완료 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5189162548) | [PR #24](https://github.com/Razria93/Graphics_Study_Archive/pull/24) · [`75d1c71`](https://github.com/Razria93/Graphics_Study_Archive/commit/75d1c715d90a2e031680f2f30a586eb54674ae5b) | Merged |
+
+- 누적 Progress comment [댓글 5091068690](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690)은 Phase 4-2 Chapter10-13 게시 상태와 PR #24 마감 상태를 반영한다.
+- `docs/part3-chapter10-13-workflow` local/remote branch는 PR #24 merge 후에도 보존한다.
+- Part4 작업은 이 snapshot 시점에 시작하지 않았다.
+
 ## Chapter09 결정
 
 - Step1–6은 camera → GPU picking → CPU picking → quaternion → trackball → drag 순서로 유지한다.
@@ -53,12 +64,17 @@
 - 출처 불완전 runtime asset은 원본과 직접 링크를 공개하지 않고 직접 실행한 rendered evidence만 후보로 사용한다.
 - Chapter13은 정지 image만으로 구현 차이가 분명하므로 video를 제외한다.
 
-## 다음 작업
+## 마감 결과
 
-1. Chapter10→13 Demo Issue 4개를 Chapter10→11→12→13 순서로 별도 승인 후 게시한다.
-2. 실제 Issue URL을 PR body에 동기화한 뒤 Part3 Chapter10-13 PR을 별도 승인 후 생성한다.
-3. 실제 PR URL을 확보한 뒤 Progress 누적 댓글과 Phase 4-2 완료 댓글을 게시한다.
-4. 원본 runtime asset 교체는 시간과 필요성을 검토할 선택 backlog로 유지한다.
+- Chapter10→13 Demo Issue 4개를 Chapter10→11→12→13 순서로 게시했다.
+- 실제 Issue URL을 Demo index, PR body와 Progress comment 후보에 동기화했다.
+- PR #24를 Ready for Review로 전환하고 review feedback을 반영한 뒤 일반 merge commit으로 병합했다.
+- Progress 누적 댓글과 Phase 4-2 완료 댓글을 게시했다.
+
+## 남은 선택 backlog
+
+- 원본 runtime asset 교체는 시간과 필요성을 검토할 선택 backlog로 유지한다.
+- Part4 진입 전에는 main 기준 checkout과 WorkLog 상태를 확인한다.
 
 ## 관련 문서
 

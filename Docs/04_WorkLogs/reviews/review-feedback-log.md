@@ -57,3 +57,15 @@
 - Fix: `c67c198`
 - Status: `resolved`
 - Regression check: Demo Issue 후보는 정적 visual만 본문에 두고 동적 evidence는 전용 comment permalink로 연결한다.
+
+### RF-005 — 자동 numeric input의 signed value 입력 누락
+
+- Source: [PR #24 review comment](https://github.com/Razria93/Graphics_Study_Archive/pull/24#discussion_r3718880498)
+- Category: `capture`
+- Affected: `Docs/98_Tools/scripts/window-input-primitives.ps1`, `Docs/98_Tools/validators/test-window-input-primitives.ps1`, `.github/workflows/docs-validation.yml`
+- Finding: `Invoke-ExampleNumericInput`는 값을 문자 단위로 입력하지만 `Resolve-ExampleVirtualKey`가 `-`를 매핑하지 않아 `-2.0` 같은 signed numeric input에서 실패할 수 있었다.
+- Response: `-`, `MINUS`, `OEM_MINUS`를 `VK_OEM_MINUS(0xBD)`로 매핑하고 decimal/minus 회귀 테스트를 추가했다. 해당 primitive contract test를 `Docs Validation` workflow에 연결했다.
+- Verification: window input primitive contract test, 로컬 전체 Docs Validation 명령 묶음, 원격 PR/push `Docs Validation`
+- Fix: `5fe65dc`
+- Status: `resolved`
+- Regression check: capture driver가 numeric field에 signed value를 입력하면 `Resolve-ExampleVirtualKey`의 punctuation mapping과 `test-window-input-primitives.ps1` 회귀 테스트를 함께 확인한다.
