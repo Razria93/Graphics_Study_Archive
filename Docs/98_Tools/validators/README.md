@@ -16,7 +16,9 @@
 | `test-demo-doc-quality.ps1` | 상세 Demo 형식과 공개 shell 환경 문구 fixture 검사 | `fixtures/demo-doc-*` |
 | `validate-video-asset-quality.ps1` | 예상하지 못한 tracked MP4, MOV와 WEBM 검사 | Git tracked path |
 | `test-video-asset-quality.ps1` | tracked video path fixture 검사 | `fixtures/video-asset-quality` |
-| `test-window-capture-tools.ps1` | screenshot·video 도구의 창 배치, countdown, 입력 안전 계약 검사 | `Docs/98_Tools/scripts` |
+| `test-window-capture-tools.ps1` | screenshot·video 도구의 크기 보존 배치, readiness, foreground와 FullWindow·ClientOnly 계약 검사 | `Docs/98_Tools/scripts` |
+| `test-window-input-primitives.ps1` | 자동 GUI 입력 primitive helper의 load, function 계약, delay와 안전 기준 검사 | `Docs/98_Tools/scripts` |
+| `test-capture-run-state.ps1` | capture/run session의 stale lock, protected process 방어와 다중 error dialog drain fixture 검사 | `Docs/98_Tools/scripts`, `local/capture-run` 임시 fixture |
 | `validate-markdown-wrap-quality.ps1` | 현재 정본 Markdown의 명백한 인위적 soft-wrap 검사 | Root·Example README, `Docs/00_Index`~`Docs/07_GitHub`, `Docs/98_Tools`, tracked `.github` Markdown |
 | `test-markdown-render-quality.ps1` | Markdown 범위 표기의 취소선 오해 방지 fixture 검사 | `fixtures/markdown-render-quality` |
 | `validate-markdown-render-quality.ps1` | 한 줄의 복수 단일-tilde 범위로 발생하는 의도하지 않은 취소선 검사 | Root·Example README, `Docs/00_Index`~`Docs/07_GitHub`, `Docs/98_Tools`, tracked `.github` Markdown |
@@ -37,6 +39,8 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-doc-
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-video-asset-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-video-asset-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-window-capture-tools.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-window-input-primitives.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-capture-run-state.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-render-quality.ps1
@@ -67,6 +71,8 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-doc-
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-video-asset-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-video-asset-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-window-capture-tools.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-window-input-primitives.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-capture-run-state.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-render-quality.ps1
@@ -236,3 +242,15 @@ Video binary와 게시 상태는 다음 방식으로 함께 확인한다.
 - validator 통과는 GitHub 게시 승인이 아니다.
 - `git push`, `gh issue create`, `gh pr create`, Ready for Review 전환은 사용자 승인 후 진행한다.
 - local 초안 원문은 이 폴더에 두지 않는다.
+## Runtime dialog handling test
+
+`test-example-error-window-handling.ps1`는 assimp DLL 누락 상황을 build output 범위에서 재현하고, example error dialog 탐지와 safe close 도구가 동작하는지 확인한다. 이 테스트는 tracked source와 vcpkg 원본 DLL을 수정하지 않는다.
+
+`test-capture-run-state.ps1`는 실제 graphics example을 실행하지 않고 capture/run session lock, protected process target 거부, synthetic error dialog 2개 drain과 quiet period 재검사를 확인한다. 이 테스트는 `local/capture-run` 아래 임시 lock만 사용하고 종료 시 제거한다.
+
+```powershell
+powershell -ExecutionPolicy Bypass `
+  -File Docs/98_Tools/validators/test-example-error-window-handling.ps1
+powershell -ExecutionPolicy Bypass `
+  -File Docs/98_Tools/validators/test-capture-run-state.ps1
+```

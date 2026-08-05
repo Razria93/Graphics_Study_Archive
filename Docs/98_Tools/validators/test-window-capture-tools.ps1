@@ -8,6 +8,9 @@ $scriptsRoot = Join-Path $toolsRoot "scripts"
 $helperPath = Join-Path $scriptsRoot "window-operation-rules.ps1"
 $capturePath = Join-Path $scriptsRoot "capture-example-window.ps1"
 $recorderPath = Join-Path $scriptsRoot "record-example-window.ps1"
+$errorWindowUtilsPath = Join-Path $scriptsRoot "example-error-window-utils.ps1"
+$findErrorWindowPath = Join-Path $scriptsRoot "find-example-error-windows.ps1"
+$clearErrorWindowPath = Join-Path $scriptsRoot "clear-example-error-windows.ps1"
 
 . $helperPath
 
@@ -96,9 +99,43 @@ catch
 }
 Assert-True $oversizeFailed "An oversized window must fail centering."
 
+$nativeBounds = [PSCustomObject]@{
+    Left = 100
+    Top = 80
+    Right = 1398
+    Bottom = 852
+}
+$visibleBounds = [PSCustomObject]@{
+    Left = 108
+    Top = 80
+    Right = 1390
+    Bottom = 844
+}
+$targetVisibleBounds = [PSCustomObject]@{
+    Left = 319
+    Top = 24
+    Right = 1601
+    Bottom = 788
+}
+$nativeMove = Get-SizePreservingWindowMove `
+    -NativeBounds $nativeBounds `
+    -VisibleBounds $visibleBounds `
+    -TargetVisibleBounds $targetVisibleBounds
+Assert-Equal 311 $nativeMove.Left "Native horizontal move delta is incorrect."
+Assert-Equal 24 $nativeMove.Top "Native vertical move delta is incorrect."
+Assert-Equal 1298 $nativeMove.Width "Native move changed the window width."
+Assert-Equal 772 $nativeMove.Height "Native move changed the window height."
+
 Invoke-WindowOperationCountdown -Seconds 0
 
-foreach ($path in @($helperPath, $capturePath, $recorderPath))
+foreach ($path in @(
+    $helperPath,
+    $capturePath,
+    $recorderPath,
+    $errorWindowUtilsPath,
+    $findErrorWindowPath,
+    $clearErrorWindowPath
+))
 {
     $tokens = $null
     $errors = $null
@@ -158,7 +195,8 @@ foreach ($name in @(
     "KeepApplicationOpen",
     "OverwriteSelection",
     "CenterWindow",
-    "CountdownSeconds"
+    "CountdownSeconds",
+    "CaptureMode"
 ))
 {
     Assert-True ($recorderParameters -contains $name) `
@@ -195,6 +233,46 @@ Assert-True ($captureText -match 'GetForegroundWindow\(\) -ne \$WindowHandle') `
     "Screenshot foreground helper must verify the actual foreground window."
 Assert-True ($captureText -match 'Set-CaptureWindowForeground \$process\.MainWindowHandle') `
     "Screenshot capture must use the foreground helper."
+Assert-True ($captureText -match 'function Wait-CaptureWindowReady') `
+    "Screenshot readiness polling is missing."
+Assert-True ($captureText -match 'Get-SizePreservingWindowMove') `
+    "Screenshot centering must use the size-preserving move helper."
+Assert-True ($captureText -match '0x0015') `
+    "Screenshot centering must preserve size and z-order."
+Assert-True ($recorderText -match 'CaptureMode\s*=\s*"FullWindow"') `
+    "FullWindow must remain the default recorder capture mode."
+Assert-True ($recorderText -match 'ValidateSet\("FullWindow",\s*"ClientOnly"\)') `
+    "Recorder client-only mode must be explicit and opt-in."
+Assert-True ($recorderText -match 'function Wait-RecorderWindowReady') `
+    "Recorder readiness polling is missing."
+Assert-True ($recorderText -match 'function Set-RecorderWindowForeground') `
+    "Recorder foreground recovery helper is missing."
+Assert-True ($recorderText -match 'GetForegroundWindow\(\) -ne \$WindowHandle') `
+    "Recorder foreground helper must verify the actual foreground window."
+Assert-True ($recorderText -match 'Get-SizePreservingWindowMove') `
+    "Recorder centering must use the size-preserving move helper."
+Assert-True ($recorderText -match '"-i",\s*"desktop"') `
+    "Full-window recording must keep the desktop crop input."
+Assert-True ($recorderText -match '"-i",\s*\("title=\{0\}" -f \$ExpectedTitle\)') `
+    "Client-only recording must use the exact title input."
+Assert-True ($recorderText -match 'ExpectedWidth = \$captureBounds\.PaddedWidth') `
+    "Recorder validation must use capture-mode dimensions."
+Assert-True ($recorderText -match 'FFmpeg startup cleanup failed') `
+    "Recorder must clean up FFmpeg when startup fails."
+
+$findErrorWindowText = Get-Content -LiteralPath $findErrorWindowPath -Raw
+$clearErrorWindowText = Get-Content -LiteralPath $clearErrorWindowPath -Raw
+$errorWindowUtilsText = Get-Content -LiteralPath $errorWindowUtilsPath -Raw
+Assert-True ($findErrorWindowText -match 'FailOnFound') `
+    "Error-window finder must support FailOnFound."
+Assert-True ($clearErrorWindowText -match '\[switch\]\$Close') `
+    "Error-window clearer must require an explicit Close switch."
+Assert-True ($clearErrorWindowText -match 'DiagnosticsDirectory') `
+    "Error-window clearer must record local diagnostics."
+Assert-True ($errorWindowUtilsText -match 'WM_CLOSE') `
+    "Error-window helper must use WM_CLOSE."
+Assert-True ($errorWindowUtilsText -match 'UIAutomationClient') `
+    "Error-window helper must use UI Automation close fallback."
 
 $isIconicCall = '[ExampleWindowCaptureNative]::IsIconic('
 $showWindowCall = '[ExampleWindowCaptureNative]::ShowWindow('

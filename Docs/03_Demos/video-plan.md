@@ -36,6 +36,8 @@
 | Part3_Chapter09 Step4 | X·Y·Z axis별 Theta drag | 필수 | Axis-angle quaternion rotation | 축별 15초 selected local video 3개 검증 완료 | 미게시 |
 | Part3_Chapter09 Step5 | Sphere 안쪽 virtual trackball drag | 필수 | Surface vector 기반 누적 quaternion 회전 | 18.6초 selected local video 검증 완료 | [Video comment](https://github.com/Razria93/Graphics_Study_Archive/issues/21#issuecomment-5164633305) · [Attachment](https://github.com/user-attachments/assets/5217ba4b-1b18-4cbb-9635-ecd89d721cb9) |
 | Part3_Chapter09 Step6 | 오른쪽→위쪽 object drag | 필수 | 동일 ray depth의 world-space translation | 16.07초 selected local video 검증 완료 | 미게시 |
+| Part3_Chapter10-13 Step2 Billboards | camera 위치 CENTER/LEFT/RIGHT 비교 | 제외 | Billboard camera-facing basis | 3-frame storyboard가 camera 위치별 결과를 충분히 설명 | 미게시 |
+| Part3_Chapter10-13 Step4 Fireball | time 기반 procedural fireball animation | 선택 | Billboard 위 procedural phase 변화 | 3-frame storyboard 확보. Selected local video 후보는 frame-rate 기술 검수 재확인 필요 | 미게시 |
 | Part3_Chapter10-13 | shadow quality 비교 | 선택 | shadow mapping, PCF, PCSS | 미확인 | 미게시 |
 | Part4_Chapter14-20 | 대표 sample 실행 | 선택 | advanced graphics 후보 | 미확인 | 미게시 |
 | Portfolio_RayTracer | feature progression | 선택 | ray tracing extension | 미확인 | 미게시 |

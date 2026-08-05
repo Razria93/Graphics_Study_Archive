@@ -5,8 +5,10 @@ cbuffer ConstantData : register(b0)
     Matrix model;
     Matrix view;
     Matrix proj;
-    float time = 0.0f;
-    float3 padding;
+    uint tessellationMode;
+    float distanceMin;
+    float distanceMax;
+    float modePadding;
     float4 edges;
     float2 inside;
     float2 padding2;
@@ -32,27 +34,34 @@ PatchConstOutput MyPatchConstantFunc(InputPatch<VertexOut, 4> patch,
                                      uint patchID : SV_PrimitiveID)
 {
     PatchConstOutput pt;
-    
-    // float4 patchCenter = ((patch[0].pos + patch[1].pos + patch[2].pos + patch[3].pos) / 4);
-    float3 patchCenter = ((patch[0].pos + patch[1].pos + patch[2].pos + patch[3].pos).xyz * 0.25);
-    float dist = length(patchCenter.xyz - eyeWorld);
-    // float4 lod_Edges = edges / EtoC;
-    // float2 lod_Inside = inside / EtoC;
-    float distMin = 0.5;
-    float distMax = 2.0;
-    // saturate() : clamp(x, 0, 1) 과 동일함
-    // 아래 tess의 방식의 경우 distMin ~ distMax 사이를 정규화하는 방식
-    // 1.0은 보장되어야 하는 최소값이며, 64.0은 팩터의 최대값. 팩터의 최대값을 기준으로 거리별로 정규화된 값을 통해 부드럽게 LOD가 이루어짐
-    float tess = 64.0 * saturate(distMax - dist / distMax - distMin) + 1.0;
-        
-    // TODO : 해당 패치의 중심과 눈과의 거리
-    pt.edges[0] = tess;
-    pt.edges[1] = tess;
-    pt.edges[2] = tess;
-    pt.edges[3] = tess;
-    pt.inside[0] = tess;
-    pt.inside[1] = tess;
-	
+
+    if (tessellationMode == 0)
+    {
+        pt.edges[0] = edges.x;
+        pt.edges[1] = edges.y;
+        pt.edges[2] = edges.z;
+        pt.edges[3] = edges.w;
+        pt.inside[0] = inside.x;
+        pt.inside[1] = inside.y;
+    }
+    else
+    {
+        float3 patchCenter =
+            (patch[0].pos + patch[1].pos + patch[2].pos + patch[3].pos).xyz * 0.25;
+        float3 patchCenterWorld = mul(float4(patchCenter, 1.0), model).xyz;
+        float distanceToPatch = length(patchCenterWorld - eyeWorld);
+        float distanceRange = max(distanceMax - distanceMin, 0.0001);
+        float ratio = saturate((distanceMax - distanceToPatch) / distanceRange);
+        float tess = lerp(1.0, 64.0, ratio);
+
+        pt.edges[0] = tess;
+        pt.edges[1] = tess;
+        pt.edges[2] = tess;
+        pt.edges[3] = tess;
+        pt.inside[0] = tess;
+        pt.inside[1] = tess;
+    }
+
     return pt;
 }
 // 아래 []에 있는걸 Attributes 라고 함

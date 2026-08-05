@@ -48,6 +48,35 @@ function Get-CenteredWindowPlacement
     }
 }
 
+function Get-SizePreservingWindowMove
+{
+    param(
+        [Parameter(Mandatory = $true)]$NativeBounds,
+        [Parameter(Mandatory = $true)]$VisibleBounds,
+        [Parameter(Mandatory = $true)]$TargetVisibleBounds
+    )
+
+    $nativeWidth = $NativeBounds.Right - $NativeBounds.Left
+    $nativeHeight = $NativeBounds.Bottom - $NativeBounds.Top
+    if ($nativeWidth -le 0 -or $nativeHeight -le 0)
+    {
+        throw "Native window bounds must have positive dimensions."
+    }
+
+    return [PSCustomObject]@{
+        Left = [int](
+            $NativeBounds.Left +
+            ($TargetVisibleBounds.Left - $VisibleBounds.Left)
+        )
+        Top = [int](
+            $NativeBounds.Top +
+            ($TargetVisibleBounds.Top - $VisibleBounds.Top)
+        )
+        Width = [int]$nativeWidth
+        Height = [int]$nativeHeight
+    }
+}
+
 function Invoke-WindowOperationCountdown
 {
     param(

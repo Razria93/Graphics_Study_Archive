@@ -42,6 +42,9 @@ bool ExampleApp::Initialize() {
 
         string path = "../Assets/Characters/armored-female-future-soldier/";
         auto meshes = GeometryGenerator::ReadFromFile(path, "angel_armor.fbx");
+        if (meshes.empty())
+            return false;
+
         meshes[0].albedoTextureFilename = path + "angel_armor_albedo.jpg";
         meshes[0].emissiveTextureFilename = path + "angel_armor_e.jpg";
         meshes[0].metallicTextureFilename = path + "angel_armor_metalness.jpg";
@@ -55,6 +58,11 @@ bool ExampleApp::Initialize() {
         m_mainObj.m_irradianceSRV = m_cubeMapping.m_irradianceSRV;
         m_mainObj.m_specularSRV = m_cubeMapping.m_specularSRV;
         m_mainObj.m_brdfSRV = m_cubeMapping.m_brdfSRV;
+        m_mainObj.m_basicPixelConstData.useAlbedoMap = 1;
+        m_mainObj.m_basicPixelConstData.useEmissiveMap = 1;
+        m_mainObj.m_basicPixelConstData.useNormalMap = 1;
+        m_mainObj.m_basicPixelConstData.useMetallicMap = 1;
+        m_mainObj.m_basicPixelConstData.useRoughnessMap = 1;
         m_mainObj.UpdateModelWorld(Matrix::CreateTranslation(center));
         m_mainObj.UpdateConstantBuffers(m_device, m_context);
 

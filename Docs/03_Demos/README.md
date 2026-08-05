@@ -55,7 +55,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 | Part2 Chapter04 | [Part2_Chapter04](Part2_Chapter04/demo-index.md) | Step1–10 순차 상세 Demo 작성 |
 | Part2 Chapter05-08 | [Part2_Chapter05-08](Part2_Chapter05-08/demo-index.md) | Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–7 순차 상세 Demo 작성 |
 | Part3 Chapter09 | [Part3_Chapter09](Part3_Chapter09/demo-index.md) | Step1~6 순차 상세 Demo 작성 |
-| Part3 Chapter10-13 | [Part3_Chapter10-13](Part3_Chapter10-13/demo-index.md) | 골격 작성 |
+| Part3 Chapter10-13 | [Part3_Chapter10-13](Part3_Chapter10-13/demo-index.md) | Chapter10→13 순차 Demo 완료 |
 | Part4 Chapter14-20 | [Part4_Chapter14-20](Part4_Chapter14-20/demo-index.md) | 골격 작성 |
 | Portfolio RayTracer | [Portfolio_RayTracer](Portfolio_RayTracer/demo-index.md) | 골격 작성 |
 

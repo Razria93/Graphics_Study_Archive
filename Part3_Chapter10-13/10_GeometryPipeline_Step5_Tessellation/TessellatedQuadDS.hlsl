@@ -5,8 +5,10 @@ cbuffer ConstantData : register(b0)
     Matrix model;
     Matrix view;
     Matrix proj;
-    float time = 0.0f;
-    float3 padding;
+    uint tessellationMode;
+    float distanceMin;
+    float distanceMax;
+    float modePadding;
 };
 // HullShader Output 1
 struct PatchConstOutput
@@ -49,7 +51,7 @@ DomainOut main(PatchConstOutput patchConst,
     float3 v2 = lerp(quad[2].pos, quad[3].pos, uv.x);
     float3 p = lerp(v1, v2, uv.y);
     
-    dout.pos = float4(p, 1.0);
+    dout.pos = mul(float4(p, 1.0), model);
     dout.pos = mul(dout.pos, view);
     dout.pos = mul(dout.pos, proj);
 	

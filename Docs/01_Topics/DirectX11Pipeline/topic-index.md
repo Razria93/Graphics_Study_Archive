@@ -9,3 +9,5 @@
 | [Swap Chain And Viewport](SwapChainAndViewport.md) | Part2_Chapter05-08 Chapter06 Step2·7·8 | P1 | 작성 | 성공 | 확보 |
 | [Post Processing And Bloom](PostProcessingAndBloom.md) | Part1_Chapter01-02/02_Bloom, Part2_Chapter05-08 Chapter08 Step6 | P0 | 작성 | 성공 | 확보 |
 | [Shadertoy Runtime Inputs](ShadertoyRuntimeInputs.md) | Part2_Chapter05-08 Chapter08 Step7 | P1 | 작성 | 성공 | 확보 |
+| [Stencil Buffer And Mirror Rendering](StencilBufferAndMirrorRendering.md) | Part3_Chapter10-13 Chapter13 Step1 | P1 | 작성 | 성공 | 확보 |
+| [Depth Reconstruction And Fog](DepthReconstructionAndFog.md) | Part3_Chapter10-13 Chapter13 Step3 | P1 | 작성 | 성공 | 확보 |

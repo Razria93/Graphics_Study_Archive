@@ -22,7 +22,9 @@ param(
     [switch]$OverwriteSelection,
     [switch]$CenterWindow,
     [ValidateRange(0, 10)]
-    [int]$CountdownSeconds = 0
+    [int]$CountdownSeconds = 0,
+    [ValidateSet("FullWindow", "ClientOnly")]
+    [string]$CaptureMode = "FullWindow"
 )
 
 $ErrorActionPreference = "Stop"
@@ -250,11 +252,33 @@ public static class ExampleWindowRecorderNative
     public static extern bool SetForegroundWindow(IntPtr hwnd);
 
     [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool BringWindowToTop(IntPtr hwnd);
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool AttachThreadInput(
+        uint sourceThread, uint targetThread, bool attach
+    );
+
+    [DllImport("user32.dll")]
+    public static extern uint GetWindowThreadProcessId(
+        IntPtr hwnd, IntPtr processId
+    );
+
+    [DllImport("kernel32.dll")]
+    public static extern uint GetCurrentThreadId();
+
+    [DllImport("user32.dll")]
     public static extern IntPtr GetForegroundWindow();
 
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
     public static extern bool GetWindowRect(IntPtr hwnd, out RECT rect);
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool GetClientRect(IntPtr hwnd, out RECT rect);
 
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
@@ -415,34 +439,41 @@ function Start-ExampleApplication
         -FilePath $resolvedExecutable `
         -WorkingDirectory $resolvedWorkingDirectory `
         -PassThru
-
-    $attempts = $StartTimeoutSeconds * 4
-    for ($attempt = 0; $attempt -lt $attempts; ++$attempt)
+    try
     {
+        $attempts = $StartTimeoutSeconds * 4
+        for ($attempt = 0; $attempt -lt $attempts; ++$attempt)
+        {
+            $process.Refresh()
+            if ($process.HasExited)
+            {
+                throw "Application exited before its main window became available."
+            }
+            if ($process.MainWindowHandle -ne [IntPtr]::Zero)
+            {
+                break
+            }
+            Start-Sleep -Milliseconds 250
+        }
         $process.Refresh()
-        if ($process.HasExited)
+        if ($process.MainWindowHandle -eq [IntPtr]::Zero)
         {
-            throw "Application exited before its main window became available."
+            throw "Application main window was not found within $StartTimeoutSeconds seconds."
         }
-        if ($process.MainWindowHandle -ne [IntPtr]::Zero)
+        if ($process.MainWindowTitle -cne $ExpectedTitle)
         {
-            break
+            throw (
+                "Unexpected window title. Expected '{0}', actual '{1}'." -f `
+                    $ExpectedTitle, $process.MainWindowTitle
+            )
         }
-        Start-Sleep -Milliseconds 250
+        return $process
     }
-    $process.Refresh()
-    if ($process.MainWindowHandle -eq [IntPtr]::Zero)
+    catch
     {
-        throw "Application main window was not found within $StartTimeoutSeconds seconds."
+        Stop-ExampleApplication $process
+        throw
     }
-    if ($process.MainWindowTitle -cne $ExpectedTitle)
-    {
-        throw (
-            "Unexpected window title. Expected '{0}', actual '{1}'." -f `
-                $ExpectedTitle, $process.MainWindowTitle
-        )
-    }
-    return $process
 }
 
 function Stop-ExampleApplication
@@ -558,6 +589,42 @@ function Get-ApplicationBounds
     }
 }
 
+function Get-ApplicationClientBounds
+{
+    param([Parameter(Mandatory = $true)][Diagnostics.Process]$Process)
+
+    $Process.Refresh()
+    if (
+        $Process.HasExited -or
+        $Process.MainWindowHandle -eq [IntPtr]::Zero -or
+        $Process.MainWindowTitle -cne $ExpectedTitle
+    )
+    {
+        throw "Application client area is unavailable."
+    }
+
+    $bounds = New-Object ExampleWindowRecorderNative+RECT
+    if (-not [ExampleWindowRecorderNative]::GetClientRect(
+        $Process.MainWindowHandle,
+        [ref]$bounds
+    ))
+    {
+        throw "The application client rectangle could not be read."
+    }
+    $width = $bounds.Right - $bounds.Left
+    $height = $bounds.Bottom - $bounds.Top
+    if ($width -le 0 -or $height -le 0)
+    {
+        throw "The application client area has invalid dimensions."
+    }
+    return [PSCustomObject]@{
+        Width = $width
+        Height = $height
+        PaddedWidth = $width + ($width % 2)
+        PaddedHeight = $height + ($height % 2)
+    }
+}
+
 function Test-SameBounds
 {
     param($Expected, $Actual)
@@ -567,6 +634,102 @@ function Test-SameBounds
         $Expected.Right -eq $Actual.Right -and
         $Expected.Bottom -eq $Actual.Bottom
     )
+}
+
+function Wait-RecorderWindowReady
+{
+    param(
+        [Parameter(Mandatory = $true)][Diagnostics.Process]$Process,
+        [ValidateRange(1, 10)][int]$StableSamples = 3,
+        [ValidateRange(10, 2000)][int]$PollMilliseconds = 250
+    )
+
+    $deadline = [DateTime]::UtcNow.AddSeconds($StartTimeoutSeconds)
+    $stable = 0
+    $previousWindow = $null
+    $previousClient = $null
+    while ([DateTime]::UtcNow -lt $deadline)
+    {
+        $window = Get-ApplicationBounds $Process
+        $client = Get-ApplicationClientBounds $Process
+        if (
+            $null -ne $previousWindow -and
+            (Test-SameBounds $previousWindow $window) -and
+            $previousClient.Width -eq $client.Width -and
+            $previousClient.Height -eq $client.Height
+        )
+        {
+            ++$stable
+            if ($stable -ge $StableSamples)
+            {
+                return [PSCustomObject]@{
+                    Window = $window
+                    Client = $client
+                }
+            }
+        }
+        else
+        {
+            $stable = 1
+        }
+        $previousWindow = $window
+        $previousClient = $client
+        Start-Sleep -Milliseconds $PollMilliseconds
+    }
+    throw "Application window bounds did not stabilize within $StartTimeoutSeconds seconds."
+}
+
+function Set-RecorderWindowForeground
+{
+    param([Parameter(Mandatory = $true)][IntPtr]$WindowHandle)
+
+    if ([ExampleWindowRecorderNative]::GetForegroundWindow() -eq $WindowHandle)
+    {
+        return
+    }
+
+    $foregroundHandle = [ExampleWindowRecorderNative]::GetForegroundWindow()
+    $currentThread = [ExampleWindowRecorderNative]::GetCurrentThreadId()
+    $foregroundThread = [uint32]0
+    $inputAttached = $false
+    if ($foregroundHandle -ne [IntPtr]::Zero)
+    {
+        $foregroundThread = [ExampleWindowRecorderNative]::GetWindowThreadProcessId(
+            $foregroundHandle,
+            [IntPtr]::Zero
+        )
+    }
+
+    try
+    {
+        if ($foregroundThread -ne 0 -and $foregroundThread -ne $currentThread)
+        {
+            $inputAttached = [ExampleWindowRecorderNative]::AttachThreadInput(
+                $currentThread,
+                $foregroundThread,
+                $true
+            )
+        }
+        [void][ExampleWindowRecorderNative]::BringWindowToTop($WindowHandle)
+        [void][ExampleWindowRecorderNative]::SetForegroundWindow($WindowHandle)
+        Start-Sleep -Milliseconds 100
+    }
+    finally
+    {
+        if ($inputAttached)
+        {
+            [void][ExampleWindowRecorderNative]::AttachThreadInput(
+                $currentThread,
+                $foregroundThread,
+                $false
+            )
+        }
+    }
+
+    if ([ExampleWindowRecorderNative]::GetForegroundWindow() -ne $WindowHandle)
+    {
+        throw "The application window could not be brought to the foreground."
+    }
 }
 
 function Get-RecorderMonitorWorkingArea
@@ -613,13 +776,15 @@ function Center-RecorderApplicationWindow
     {
         throw "The application window rectangle could not be read."
     }
-    $nativeLeft = $nativeBounds.Left + $placement.DeltaX
-    $nativeTop = $nativeBounds.Top + $placement.DeltaY
+    $move = Get-SizePreservingWindowMove `
+        -NativeBounds $nativeBounds `
+        -VisibleBounds $bounds `
+        -TargetVisibleBounds $placement
     if (-not [ExampleWindowRecorderNative]::SetWindowPos(
         $Process.MainWindowHandle,
         [IntPtr]::Zero,
-        $nativeLeft,
-        $nativeTop,
+        $move.Left,
+        $move.Top,
         0,
         0,
         0x0015
@@ -658,12 +823,7 @@ function Start-Recording
         ) | Out-Null
         Start-Sleep -Milliseconds 250
     }
-    if (-not [ExampleWindowRecorderNative]::SetForegroundWindow(
-        $ApplicationProcess.MainWindowHandle
-    ))
-    {
-        throw "The application window could not be brought to the foreground."
-    }
+    Set-RecorderWindowForeground $ApplicationProcess.MainWindowHandle
     Write-Host "Automatic recording control starts after the countdown. Do not use the mouse or keyboard."
     Set-RecorderStatus $StatusWindow "STARTING" "Do not use the mouse or keyboard during the countdown."
     Invoke-WindowOperationCountdown -Seconds $CountdownSeconds -OnTick {
@@ -685,7 +845,8 @@ function Start-Recording
     {
         throw "Application lost foreground focus during recording preparation."
     }
-    $bounds = Get-ApplicationBounds $ApplicationProcess
+    $ready = Wait-RecorderWindowReady $ApplicationProcess
+    $bounds = $ready.Window
     if (-not (Test-SameBounds $PlannedBounds $bounds))
     {
         throw "Application moved or resized during recording preparation."
@@ -700,12 +861,28 @@ function Start-Recording
         "-loglevel", "warning",
         "-y",
         "-f", "gdigrab",
-        "-framerate", $FrameRate.ToString(),
-        "-offset_x", $bounds.Left.ToString(),
-        "-offset_y", $bounds.Top.ToString(),
-        "-video_size", ("{0}x{1}" -f $bounds.Width, $bounds.Height),
-        "-draw_mouse", "0",
-        "-i", "desktop",
+        "-framerate", $FrameRate.ToString()
+    )
+    if ($CaptureMode -eq "FullWindow")
+    {
+        $captureBounds = $bounds
+        $arguments += @(
+            "-offset_x", $bounds.Left.ToString(),
+            "-offset_y", $bounds.Top.ToString(),
+            "-video_size", ("{0}x{1}" -f $bounds.Width, $bounds.Height),
+            "-draw_mouse", "0",
+            "-i", "desktop"
+        )
+    }
+    else
+    {
+        $captureBounds = $ready.Client
+        $arguments += @(
+            "-draw_mouse", "0",
+            "-i", ("title={0}" -f $ExpectedTitle)
+        )
+    }
+    $arguments += @(
         "-an",
         "-c:v", "libx264",
         "-preset", "veryfast",
@@ -731,26 +908,77 @@ function Start-Recording
 
     $process = New-Object Diagnostics.Process
     $process.StartInfo = $startInfo
-    if (-not $process.Start())
+    $errorTask = $null
+    try
     {
-        throw "FFmpeg could not be started."
+        if (-not $process.Start())
+        {
+            throw "FFmpeg could not be started."
+        }
+        $errorTask = $process.StandardError.ReadToEndAsync()
+        $aliveSamples = 0
+        $deadline = [DateTime]::UtcNow.AddSeconds($StartTimeoutSeconds)
+        while ([DateTime]::UtcNow -lt $deadline)
+        {
+            if ($process.HasExited)
+            {
+                $errorText = $errorTask.GetAwaiter().GetResult()
+                throw "FFmpeg exited before recording: $errorText"
+            }
+            ++$aliveSamples
+            if ($aliveSamples -ge 3)
+            {
+                break
+            }
+            Start-Sleep -Milliseconds 250
+        }
+        if ($aliveSamples -lt 3)
+        {
+            throw "FFmpeg did not remain ready within $StartTimeoutSeconds seconds."
+        }
+        Set-RecorderWindowForeground $ApplicationProcess.MainWindowHandle
     }
-    $errorTask = $process.StandardError.ReadToEndAsync()
-    Start-Sleep -Milliseconds 500
-    if ($process.HasExited)
+    catch
     {
-        $errorText = $errorTask.GetAwaiter().GetResult()
-        throw "FFmpeg exited before recording: $errorText"
+        if (-not $process.HasExited)
+        {
+            try
+            {
+                $process.Kill()
+                $process.WaitForExit()
+            }
+            catch
+            {
+                Write-Warning "FFmpeg startup cleanup failed: $_"
+            }
+        }
+        if (Test-Path -LiteralPath $partial)
+        {
+            Remove-Item -LiteralPath $partial -Force
+        }
+        throw
     }
 
     Write-Host "Recording started."
-    Write-Host ("Bounds: {0},{1} {2}x{3}" -f `
-        $bounds.Left, $bounds.Top, $bounds.Width, $bounds.Height)
+    Write-Host "Capture mode: $CaptureMode"
+    if ($CaptureMode -eq "FullWindow")
+    {
+        Write-Host ("Bounds: {0},{1} {2}x{3}" -f `
+            $bounds.Left, $bounds.Top, $bounds.Width, $bounds.Height)
+    }
+    else
+    {
+        Write-Host ("Client dimensions: {0}x{1}" -f `
+            $captureBounds.Width, $captureBounds.Height)
+    }
     return [PSCustomObject]@{
         Process = $process
         ErrorTask = $errorTask
         PartialPath = $partial
         Bounds = $bounds
+        ExpectedWidth = $captureBounds.PaddedWidth
+        ExpectedHeight = $captureBounds.PaddedHeight
+        CaptureMode = $CaptureMode
     }
 }
 
@@ -821,8 +1049,8 @@ function Test-RecordedVideo
         -FfprobePath $resolvedFfprobe `
         -FfmpegPath $resolvedFfmpeg `
         -ExpectedFrameRate $FrameRate `
-        -ExpectedWidth $Recording.Bounds.PaddedWidth `
-        -ExpectedHeight $Recording.Bounds.PaddedHeight
+        -ExpectedWidth $Recording.ExpectedWidth `
+        -ExpectedHeight $Recording.ExpectedHeight
 }
 
 function Get-NextAttemptPath
@@ -950,11 +1178,11 @@ try
     {
         $initialBounds = Get-ApplicationBounds $applicationProcess
     }
+    $initialReady = Wait-RecorderWindowReady $applicationProcess
+    $initialBounds = $initialReady.Window
     $statusWindow = New-RecorderStatusWindow $initialBounds
     Set-RecorderStatus $statusWindow "READY" "F9 starts recording. F10 saves and validates.`r`nF11 requires a SAVED attempt."
-    [void][ExampleWindowRecorderNative]::SetForegroundWindow(
-        $applicationProcess.MainWindowHandle
-    )
+    Set-RecorderWindowForeground $applicationProcess.MainWindowHandle
     Write-Host ""
     Write-Host "Example Window Recorder ready."
     foreach ($hotkey in $hotkeys)
@@ -994,6 +1222,8 @@ try
                         {
                             $restartBounds = Get-ApplicationBounds $applicationProcess
                         }
+                        $restartReady = Wait-RecorderWindowReady $applicationProcess
+                        $restartBounds = $restartReady.Window
                         $statusWindow.OutsideTarget = Set-RecorderStatusWindowPosition `
                             -StatusWindow $statusWindow -Bounds $restartBounds
                         Set-RecorderStatus $statusWindow "RESTARTED" "Application restarted. F9 starts a new recording."
@@ -1021,7 +1251,19 @@ try
                         }
                         else
                         {
-                            $readyBounds = Get-ApplicationBounds $applicationProcess
+                            $applicationProcess.Refresh()
+                            if ([ExampleWindowRecorderNative]::IsIconic(
+                                $applicationProcess.MainWindowHandle
+                            ))
+                            {
+                                [ExampleWindowRecorderNative]::ShowWindow(
+                                    $applicationProcess.MainWindowHandle,
+                                    9
+                                ) | Out-Null
+                                Start-Sleep -Milliseconds 250
+                            }
+                            $ready = Wait-RecorderWindowReady $applicationProcess
+                            $readyBounds = $ready.Window
                             $statusWindow.OutsideTarget = Set-RecorderStatusWindowPosition `
                                 -StatusWindow $statusWindow -Bounds $readyBounds
                             $recording = Start-Recording `

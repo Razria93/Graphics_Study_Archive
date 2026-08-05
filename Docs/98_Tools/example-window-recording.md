@@ -1,10 +1,10 @@
 # Example Window Recording
 
-Windows graphics example의 application 전체 창을 MP4 후보로 녹화하는 반복 실행 도구를 정의한다. 이 도구는 raw video를 `local/`에만 만들며 tracked asset 승격, Publication 판정과 Git 작업은 수행하지 않는다.
+Windows graphics example의 application 전체 창을 기본값으로 MP4 후보를 녹화하고 필요한 경우 client area fallback을 제공하는 반복 실행 도구를 정의한다. 이 도구는 raw video를 `local/`에만 만들며 tracked asset 승격, Publication 판정과 Git 작업은 수행하지 않는다.
 
 ## 준비
 
-`scripts/record-example-window.ps1`은 실행 파일을 직접 시작하고 exact window title과 DWM extended frame bounds를 확인한 뒤 FFmpeg `gdigrab`으로 해당 영역을 녹화한다. 별도 topmost 상태 창은 대상 영역 밖에서 `READY`, `STARTING`, `RECORDING`, `FINALIZING`, `SAVED`, `DISCARDED`, `RESTARTED`와 단축키를 표시한다. 녹화 중 창을 이동하거나 크기를 바꾸면 현재 attempt를 중단한다. 다른 창이 대상 위를 가리면 함께 녹화될 수 있으므로 대상 창을 계속 보이게 둔다.
+`scripts/record-example-window.ps1`은 실행 파일을 직접 시작하고 exact window title과 안정화된 DWM·native·client bounds를 확인한 뒤 FFmpeg `gdigrab`으로 녹화한다. 기본 `FullWindow`는 DWM 영역을 desktop crop으로 녹화하고 명시적 `ClientOnly` fallback은 exact title에 해당하는 client area를 녹화한다. 별도 topmost 상태 창은 대상 영역 밖에서 `READY`, `STARTING`, `RECORDING`, `FINALIZING`, `SAVED`, `DISCARDED`, `RESTARTED`와 단축키를 표시한다. 녹화 중 창을 이동하거나 크기를 바꾸면 현재 attempt를 중단한다.
 
 FFmpeg 탐색 순서는 다음과 같다.
 
@@ -44,6 +44,9 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 | `OverwriteSelection` | 기존 selected 파일 교체 허용 |
 | `CenterWindow` | 시작·재시작 시 monitor working area 중앙으로 창 이동 |
 | `CountdownSeconds` | F9 뒤 녹화 시작까지 countdown, 기본값 `0`, 범위 `0`~`10` |
+| `CaptureMode` | `FullWindow` 또는 `ClientOnly`, 기본값 `FullWindow` |
+
+`ClientOnly`는 `FullWindow` desktop crop에서 white frame, compositor artifact 또는 반복적인 UI 손상이 재현될 때만 사용하는 opt-in fallback이다. 이 mode는 title bar와 border를 포함하지 않으므로 같은 Demo의 `FullWindow` screenshot으로 application identity, title과 필요한 UI 상태를 보완한다.
 
 ## Global hotkey
 
@@ -57,7 +60,7 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 
 F8은 recording 중에 사용하는 재촬영 준비 동작이다. 저장된 attempt를 삭제하지 않는다. F7도 exact PID만 종료하며 같은 title의 다른 process를 종료하지 않는다. F11은 F9로 시작하고 F10으로 정상 저장한 attempt가 있어야 동작한다. 단축키 등록에 실패하면 충돌한 조합을 보고하고 등록한 단축키를 해제한다.
 
-F9는 일반 크기와 최대화 상태를 유지한다. 대상 창이 최소화된 경우에만 이전 상태로 복원한다. 상태 창을 녹화 영역 밖에 배치할 공간이 없으면 녹화를 시작하지 않는다. `CenterWindow`를 사용하면 application 크기를 유지한 채 monitor working area 중앙으로 이동한다. countdown 동안 사용자는 마우스와 키보드를 조작하지 않는다. countdown 뒤 exact PID·title·foreground·bounds를 다시 확인하고 하나라도 달라지면 녹화를 시작하지 않는다.
+F9는 일반 크기와 최대화 상태를 유지한다. 대상 창이 최소화된 경우에만 이전 상태로 복원한다. 상태 창을 녹화 영역 밖에 배치할 공간이 없으면 녹화를 시작하지 않는다. `CenterWindow`를 사용하면 application 크기를 유지한 채 monitor working area 중앙으로 이동한다. countdown 동안 사용자는 마우스와 키보드를 조작하지 않는다. countdown 뒤 exact PID·title·foreground와 연속적으로 안정된 DWM·native·client bounds를 다시 확인한다. FFmpeg 시작 뒤 foreground를 다시 확보하며 하나라도 달라지면 녹화를 시작하지 않는다.
 
 ## 파일과 검증
 
@@ -70,7 +73,7 @@ F9는 일반 크기와 최대화 상태를 유지한다. 대상 창이 최소화
 - CFR 지정 FPS
 - 양수 duration
 - video stream 1개와 audio stream 0개
-- DWM bounds에 대응하는 dimensions
+- 선택한 capture mode의 DWM 또는 client bounds에 대응하는 dimensions
 - 민감한 title, author, comment, location, date와 software metadata tag 부재
 - 전체 frame decode 성공
 
@@ -82,7 +85,7 @@ MP4 brand, `handler_name`과 encoder library처럼 개인 정보가 아닌 기�
 
 자동 검증은 실제 화면 의미와 공개 안전성을 대신하지 않는다. selected video를 직접 재생해 다음을 확인한다.
 
-- title bar와 border 포함
+- `FullWindow`는 title bar와 border 포함, `ClientOnly`는 보완 `FullWindow` screenshot 존재
 - frame 잘림, black frame과 손상 부재
 - 다른 window, notification, 계정과 개인 정보 미노출
 - 조작 흐름과 시각 결과의 설명 가능성
@@ -90,6 +93,8 @@ MP4 brand, `handler_name`과 encoder library처럼 개인 정보가 아닌 기�
 검토가 끝난 selected video도 기본적으로 `local/`에 유지한다. 독립적으로 다시 검사할 때는 `scripts/inspect-example-video.ps1`을 사용한다. 게시와 reference 연결은 [Demo Capture Policy](../06_Policies/demo-capture-policy.md), [Assets Policy](../06_Policies/assets-policy.md)와 [Video Plan](../03_Demos/video-plan.md)을 따른다.
 
 촬영할 UI action, dwell time, retry와 reset은 [Capture Operation Guide](capture-operation-guide.md)와 local-only [Capture Operation Plan Template](templates/local-capture-operation-plan.md)에 먼저 기록한다.
+
+자동 입력이 포함된 video는 `scripts/window-input-primitives.ps1`의 primitive helper를 example별 local driver에서 선택적으로 사용할 수 있다. 특히 FPV, WASD 이동, mouse-look, slider drag와 numeric input은 focus 확보, 최소 대기 시간과 사후 확인을 local plan에 기록한 뒤 실행한다.
 
 ## Selected video 재검사
 
@@ -107,7 +112,8 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 ## 제한
 
 - Windows interactive desktop과 DWM 환경만 지원한다.
-- exact native window capture가 아니라 desktop 영역 crop을 사용한다.
+- 기본 `FullWindow`는 exact native window capture가 아니라 desktop 영역 crop을 사용한다.
+- `ClientOnly`는 exact title 기반 client area를 녹화하며 같은 title의 다른 window를 함께 열지 않는다.
 - 녹화 중 대상 창 이동과 resize는 허용하지 않는다.
 - application 내부 parameter를 자동 조작하지 않는다.
 - stage, commit, push와 GitHub 게시를 수행하지 않는다.

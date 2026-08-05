@@ -76,7 +76,7 @@ class AppBase {
 
     ComPtr<ID3D11RasterizerState> m_rasterizerSate;
     ComPtr<ID3D11RasterizerState> m_wireRasterizerSate;
-    bool m_drawAsWire = false;
+    bool m_drawAsWire = true;
     bool m_usePostProcessing = true;
 
     // Depth buffer 관련

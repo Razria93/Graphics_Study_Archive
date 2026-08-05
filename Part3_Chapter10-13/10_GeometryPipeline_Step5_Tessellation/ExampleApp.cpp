@@ -473,16 +473,40 @@ void ExampleApp::UpdateGUI() {
     }
 
     int flag = 0;
-    flag += ImGui::SliderFloat4(
-        "Edges", &m_tesselatedQuad.m_constantData.edges.x, 1, 8);
-    flag += ImGui::SliderFloat2(
-        "Inside", &m_tesselatedQuad.m_constantData.inside.x, 1, 8);
+    const char *tessellationModes[] = {"Manual", "Distance Adaptive"};
+    int tessellationMode = int(m_tesselatedQuad.m_constantData.tessellationMode);
+    if (ImGui::Combo("Tessellation Mode", &tessellationMode,
+                     tessellationModes, IM_ARRAYSIZE(tessellationModes))) {
+        m_tesselatedQuad.m_constantData.tessellationMode =
+            uint32_t(tessellationMode);
+        flag++;
+    }
+
+    if (m_tesselatedQuad.m_constantData.tessellationMode == 0) {
+        flag += ImGui::SliderFloat4(
+            "Edges", &m_tesselatedQuad.m_constantData.edges.x, 1, 64);
+        flag += ImGui::SliderFloat2(
+            "Inside", &m_tesselatedQuad.m_constantData.inside.x, 1, 64);
+    } else {
+        flag += ImGui::SliderFloat(
+            "Distance Min", &m_tesselatedQuad.m_constantData.distanceMin,
+            0.1f, 10.0f);
+        flag += ImGui::SliderFloat(
+            "Distance Max", &m_tesselatedQuad.m_constantData.distanceMax,
+            0.2f, 20.0f);
+        if (m_tesselatedQuad.m_constantData.distanceMax <=
+            m_tesselatedQuad.m_constantData.distanceMin) {
+            m_tesselatedQuad.m_constantData.distanceMax =
+                m_tesselatedQuad.m_constantData.distanceMin + 0.1f;
+            flag++;
+        }
+        ImGui::TextUnformatted("Tessellation factor follows camera distance.");
+    }
     if (flag) {
         D3D11Utils::UpdateBuffer(m_device, m_context,
                                  m_tesselatedQuad.m_constantData,
                                  m_tesselatedQuad.m_constantBuffer);
     }
-
     m_dirtyflag = 0;
     // m_dirtyflag +=
     //     ImGui::SliderFloat("Bloom Threshold", &m_threshold, 0.0f, 1.0f);

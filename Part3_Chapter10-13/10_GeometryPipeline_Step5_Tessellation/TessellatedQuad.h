@@ -19,10 +19,12 @@ struct TessellatedQuadConstantData {
     Matrix model; // Vertex shader
     Matrix view;  // Vertex shader
     Matrix proj;  // Pixel shader
-    float time = 0.0f;
-    Vector3 padding;
-    Vector4 edges = Vector4(1.0f);  // 엣지 수
-    Vector2 inside = Vector2(1.0f); // 인사이드 수
+    uint32_t tessellationMode = 0; // 0: Manual, 1: Distance Adaptive
+    float distanceMin = 0.5f;
+    float distanceMax = 2.0f;
+    float modePadding = 0.0f;
+    Vector4 edges = Vector4(8.0f);  // 엣지 수
+    Vector2 inside = Vector2(8.0f); // 인사이드 수
     Vector2 padding2;
 };
 

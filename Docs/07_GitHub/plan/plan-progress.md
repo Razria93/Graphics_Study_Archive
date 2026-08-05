@@ -46,6 +46,18 @@ Chapter05–08의 30개 예제를 순서대로 재검증하고 Example README, T
 
 Related PR: [PR #20](https://github.com/Razria93/Graphics_Study_Archive/pull/20) (Merged) - Part2 Chapter05-08 DirectX11 Pipeline·Modeling·Shader 예제 정규화와 Demo
 
+### Phase 4-1. Part3 Chapter09 User Interaction
+
+Step1–6의 camera, GPU·CPU picking, quaternion rotation, VirtualTrackball과 MouseDragMove를 재검증하고 정적 storyboard와 상세 Demo로 연결했다. 대표 interaction은 [Demo Issue #21](https://github.com/Razria93/Graphics_Study_Archive/issues/21)에 게시했다.
+
+Related PR: [PR #23](https://github.com/Razria93/Graphics_Study_Archive/pull/23) (Merged) - Part3 Chapter09 User Interaction 구현과 Demo
+
+### Phase 4-2. Part3 Chapter10-13
+
+Chapter10→13의 21개 예제를 Geometry Pipeline, Texturing Techniques, PBR와 Light/Shadow 흐름으로 재검증하고 Example README, Topic, Verification과 독립 상세 Demo로 연결했다. Chapter10 [Demo Issue #25](https://github.com/Razria93/Graphics_Study_Archive/issues/25), Chapter11 [Demo Issue #26](https://github.com/Razria93/Graphics_Study_Archive/issues/26), Chapter12 [Demo Issue #27](https://github.com/Razria93/Graphics_Study_Archive/issues/27), Chapter13 [Demo Issue #28](https://github.com/Razria93/Graphics_Study_Archive/issues/28)에 Chapter별 rendered evidence와 GitHub 본문을 게시했다.
+
+Related PR: [PR #24](https://github.com/Razria93/Graphics_Study_Archive/pull/24) - Part3 Chapter10-13 Geometry·Texturing·PBR·Light/Shadow 단계별 구현과 Demo
+
 ## 진행 예정
 
 ### Phase 2-5. Portfolio_RayTracer 연계 정리
@@ -60,3 +72,5 @@ Related PR: 예정
 - [PR #11](https://github.com/Razria93/Graphics_Study_Archive/pull/11) (Merged): Part1 Chapter03 CPU Ray Tracing 단계별 구현과 Demo
 - [PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15) (Merged): Part2 Chapter04 CPU Software Rasterization 단계별 정규화와 Demo
 - [PR #20](https://github.com/Razria93/Graphics_Study_Archive/pull/20) (Merged): Part2 Chapter05-08 DirectX11 Pipeline·Modeling·Shader 예제 정규화와 Demo
+- [PR #23](https://github.com/Razria93/Graphics_Study_Archive/pull/23) (Merged): Part3 Chapter09 User Interaction 구현과 Demo
+- [PR #24](https://github.com/Razria93/Graphics_Study_Archive/pull/24): Part3 Chapter10-13 Geometry·Texturing·PBR·Light/Shadow 단계별 구현과 Demo

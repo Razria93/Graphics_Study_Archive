@@ -9,6 +9,7 @@
 #include <dxgi1_4.h>                    // DXGIFactory4
 #include <fp16.h>
 #include <iostream>
+#include <stdexcept>
 
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_WRITE_IMPLEMENTATION
@@ -227,12 +228,12 @@ void ReadEXRImage(const std::string filename, std::vector<uint8_t> &image,
     // DX 데이터 활용방식 그대로
     TexMetadata metadata;
     if (FAILED(GetMetadataFromEXRFile(wFilename.c_str(), metadata))) {
-        wcout << "GetMetadataFromEXRFile() failed: " << wFilename << endl;
+        throw runtime_error("GetMetadataFromEXRFile() failed: " + filename);
     }
 
     ScratchImage scratchImage;
     if (FAILED(LoadFromEXRFile(wFilename.c_str(), nullptr, scratchImage))) {
-        wcout << "LoadFromEXRFile() failed: " << wFilename << endl;
+        throw runtime_error("LoadFromEXRFile() failed: " + filename);
     }
 
     // DX와 호환이 되는 라이브러리이기에 메타데이터의 형식이 같음

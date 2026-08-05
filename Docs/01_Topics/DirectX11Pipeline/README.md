@@ -17,15 +17,17 @@
 - [Shader Stage](ShaderStage.md)
 - [Post Processing And Bloom](PostProcessingAndBloom.md)
 - [Shadertoy Runtime Inputs](ShadertoyRuntimeInputs.md)
+- [Stencil Buffer And Mirror Rendering](StencilBufferAndMirrorRendering.md)
+- [Depth Reconstruction And Fog](DepthReconstructionAndFog.md)
 
 ## 상태
 
 - Topic 목록: 작성
-- 상세 Topic 문서: Device And Context, COM And Resource Lifetime, Swap Chain And Viewport, Shader Stage, Post Processing And Bloom과 Shadertoy Runtime Inputs 작성
-- 연결 예제 검토: Part1 Chapter01-02 일부, Part2 Chapter04 Step6, Part2 Chapter05-08 Chapter06 Step1–9와 Chapter08 Step6·7 현재 확인
-- demo 연결: Part1 Chapter01-02 일부, Part2 Chapter04 Step6, Part2 Chapter05-08 Chapter06 Step1–9와 Chapter08 Step6·7 연결
+- 상세 Topic 문서: 기존 pipeline Topic과 Stencil Buffer And Mirror Rendering, Depth Reconstruction And Fog 작성
+- 연결 예제 검토: Part1·Part2 pipeline 예제와 Part3 Chapter13 Step1–3 현재 확인
+- demo 연결: 관련 Example의 상세 Demo 연결 완료
 
 ## 다음 작업
 
 1. Buffer And Input Layout 상세 Topic을 순차 승격한다.
-2. Part3 예제와 post-processing pipeline의 확장 범위를 연결한다.
+2. Pipeline State Object 추상화는 공통 구현이 늘어날 때 별도 Topic 승격을 검토한다.

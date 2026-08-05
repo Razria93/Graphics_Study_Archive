@@ -155,7 +155,7 @@ LRESULT AppBase::MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	{
 	case WM_SIZE:
 		// 화면 해상도가 바뀌면 SwapChain을 다시 생성
-		if (m_swapChain)
+		if (m_swapChain && LOWORD(lParam) > 0 && HIWORD(lParam) > 0)
 		{
 
 			m_screenWidth = int(LOWORD(lParam));
@@ -527,7 +527,7 @@ bool AppBase::InitMainWindow()
 
 	RECT wr = {0, 0, m_screenWidth, m_screenHeight};
 	AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, false);
-	m_mainWindow = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example",
+	m_mainWindow = CreateWindow(wc.lpszClassName, L"ComputerGraphics - Chapter13 Step3 DepthBufferAndFog",
 	                            WS_OVERLAPPEDWINDOW,
 	                            100,                // 윈도우 좌측 상단의 x 좌표
 	                            100,                // 윈도우 좌측 상단의 y 좌표

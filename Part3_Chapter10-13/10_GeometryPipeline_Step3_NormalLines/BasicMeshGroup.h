@@ -44,7 +44,7 @@ class BasicMeshGroup {
     // GUI에서 업데이트 할 때 사용
     NormalVertexConstantData m_normalVertexConstantData;
     bool m_drawNormalsDirtyFlag = true;
-    bool m_drawNormals = false;
+    bool m_drawNormals = true;
 
   private:
     // 메쉬 그리기
