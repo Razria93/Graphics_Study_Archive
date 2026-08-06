@@ -8,7 +8,7 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 
 - 학습 코드 정리: import 완료
 - Build/run: Chapter14 Ex1401-Ex1408과 Chapter15 Ex1501-Ex1503 Debug x64 현재 확인, Chapter16-20과 Release 현재 재검증 필요
-- 캡처: Chapter14 tracked capture 확보, Chapter15 Ex1501·Ex1503 tracked capture 확보, Ex1502 보류, Chapter16-20 capture 후속
+- 캡처: Chapter14 tracked capture 확보, Chapter15 Ex1501·Ex1502·Ex1503 tracked capture 확보, Chapter16-20 capture 후속
 
 ## Archive/Public 검토
 
@@ -18,7 +18,7 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 | Import status | 반영 완료 |
 | Public readiness | 검토 필요 |
 | Build/run status | Chapter14 Debug x64 현재 확인 · Chapter15 Debug x64 smoke 확인 · Chapter16-20과 Release 재검증 필요 |
-| Next action | Chapter15 Demo 상세 문서와 `flare0.dds` public risk 판단 |
+| Next action | Chapter15 Demo Issue와 Progress comment remote 게시 승인안 작성 |
 
 ## 예정 주제
 

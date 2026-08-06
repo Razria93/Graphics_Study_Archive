@@ -12,14 +12,16 @@ Textured particle sprite와 buoyancy update를 결합해 fire-like particle effe
 
 ## 결과 미리보기
 
-`Ex1502`는 Debug x64 run/capture smoke에서 sprite fire visual을 확인했다. 다만 현재 texture input인 `Assets/Textures/flare0.dds`의 provenance와 공개 가능 범위가 확정되지 않았으므로 tracked preview image는 연결하지 않는다.
+![Chapter15 SpriteFireEffect](../../_assets/captures/part4_chapter15_02_sprite_fire_effect.png)
+
+`Ex1502`는 Debug x64 run/capture smoke에서 sprite fire visual을 확인했다. 현재 texture input인 `Assets/Textures/flare0.dds` 원본은 직접 링크하지 않고, 위 screenshot은 직접 실행한 rendered evidence로만 사용한다.
 
 ## 입력과 출력
 
 | 구분 | 내용 |
 | --- | --- |
 | 입력 | command argument `1502`, CPU particle pool, structured buffer SRV/UAV, `flare0.dds` sprite texture |
-| 출력 | local sprite fire screenshot 후보, public 대표 visual은 asset provenance 확인 또는 대체 asset 검토 후 판단 |
+| 출력 | taskbar-free 1282x1312 centered client-visible sprite fire screenshot |
 
 ## 구현 흐름
 
@@ -39,13 +41,13 @@ Textured particle sprite와 buoyancy update를 결합해 fire-like particle effe
 
 ## 시각 결과
 
-이 예제는 Chapter15 textured particle 보조 축이다. 원본 texture 파일을 직접 링크하거나 공개 asset으로 주장하지 않고, 직접 실행한 rendered evidence만 후보로 다룬다. 공개 안전한 대체 texture로 교체하거나 provenance가 확인되면 tracked 대표 visual 승격을 다시 판단한다.
+이 예제는 Chapter15 textured particle 보조 축이다. 원본 texture 파일을 직접 링크하거나 공개 asset으로 주장하지 않고, 직접 실행한 rendered evidence로 시각 결과를 설명한다. 공개 안전한 대체 texture로 교체하거나 provenance가 확인되면 visual 유지 범위를 다시 판단한다.
 
 ## 구현 범위와 한계
 
 - Particle simulation은 CPU update 후 structured buffer upload로 진행한다.
 - `flare0.dds` 원본 asset의 권리 확보를 주장하지 않는다.
-- 현재 문서는 implementation evidence와 local capture 후보를 기록하며, GitHub 대표 visual은 `Ex1501`과 `Ex1503`을 우선한다.
+- 현재 문서는 implementation evidence와 tracked rendered capture를 함께 기록한다.
 - 명확한 제한 근거, 삭제 요청 또는 사용 중단 요청이 확인되면 관련 visual은 교체하거나 비공개로 전환한다.
 - Release 현재 재검증은 별도 범위다.
 
@@ -53,7 +55,7 @@ Textured particle sprite와 buoyancy update를 결합해 fire-like particle effe
 
 - [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
 - Debug x64 build/run/capture smoke 성공
-- Local PNG 후보는 taskbar-free fixed UI 기준 충족과 text metadata chunk 없음 확인
+- Tracked PNG는 taskbar-free fixed UI 기준 충족과 text metadata chunk 없음 확인
 
 ## 관련 코드
 

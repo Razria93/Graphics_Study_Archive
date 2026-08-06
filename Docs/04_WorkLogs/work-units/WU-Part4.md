@@ -11,8 +11,8 @@
 | Source/import | 반영 완료 | `SRC-P4-C14-20`으로 source provenance를 추적한다. |
 | Branch | 진행 중 | `docs/part4-chapter14-20-workflow`에서 baseline 문서 축 정규화를 시작한다. |
 | Build/run | Chapter14와 Chapter15 Debug 일부 확인 | Chapter14 `Ex1401`-`Ex1408`과 Chapter15 `Ex1501`-`Ex1503` Debug x64 build/run을 2026-08-06 현재 확인했다. Chapter16-20과 Release 현재 재검증은 남아 있다. |
-| Capture | tracked/local 후보 | Ex1402, Ex1404~Ex1407, Ex1501, Ex1503 centered client-visible screenshot 후보를 `Docs/_assets/captures`에 승격했다. Ex1502는 `flare0.dds` provenance 확인 전 승격 보류로 둔다. |
-| Demo | Chapter14 작성 · Chapter15 상세 후보 작성 | Chapter14 Ex1401~Ex1408 Step별 상세 Demo와 tracked capture 연결을 작성했다. Chapter15 Ex1501과 Ex1503 상세 Demo, Demo Issue body 후보와 tracked capture 연결을 작성했다. |
+| Capture | tracked/local 후보 | Ex1402, Ex1404~Ex1407, Ex1501, Ex1502, Ex1503 centered client-visible screenshot 후보를 `Docs/_assets/captures`에 승격했다. Ex1502는 원본 `flare0.dds`를 직접 링크하지 않고 rendered evidence로만 다룬다. |
+| Demo | Chapter14 작성 · Chapter15 상세 후보 작성 | Chapter14 Ex1401~Ex1408 Step별 상세 Demo와 tracked capture 연결을 작성했다. Chapter15 Ex1501~Ex1503 상세 Demo, Demo Issue body 후보와 tracked capture 연결을 작성했다. |
 | Publication | 검토 필요 | public 후보 확정이 아니라 asset/public risk 검토 축으로만 기록한다. |
 | GitHub | Chapter14 merged · Chapter15 body 후보 작성 | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시·review 대응·merge까지 마감했다. Chapter15 Demo Issue body와 Phase 5-2 완료 댓글 후보는 local 문서로만 준비했다. |
 
@@ -76,14 +76,15 @@ Part4 Chapter14-20은 `Examples.sln` 단일 project와 command argument 기반 �
 - `Ex1501_ParticleSystem`, `Ex1502_SpriteFireEffect`, `Ex1503_SphWater`는 `HLAB_CAPTURE_UI=collapsed`, `CenterWindow`, immediate screenshot 기준으로 local 후보를 확보했다.
 - 생성 후보는 `local/capture-run/Part4_Chapter15/debug-smoke-20260806`에 둔다. PNG 3개는 text metadata chunk가 없고 taskbar-free fixed UI 기준을 충족한다.
 - `Ex1501_ParticleSystem`은 particle stream baseline tracked capture로 승격했다.
-- `Ex1502_SpriteFireEffect`는 `Assets/Textures/flare0.dds`를 사용하므로 provenance와 공개 가능 범위 확인 전 tracked/public 대표 visual 승격을 보류한다.
+- `Ex1502_SpriteFireEffect`는 sprite fire rendered evidence를 tracked capture로 승격했다. 원본 `Assets/Textures/flare0.dds`는 직접 링크하지 않고 권리 확보를 주장하지 않는다.
 - `Ex1503_SphWater`는 10초 지연 capture에서 아래에 쌓인 SPH particle cluster를 tracked capture로 승격했다. Movement 설명은 desktop video 후속 후보로 분리한다.
 
 ## Chapter15 Demo body 후보
 
 - `Ex1501_ParticleSystem`은 CPU particle pool update, gravity/collision과 structured buffer sprite draw를 설명하는 상세 Demo로 연결했다.
+- `Ex1502_SpriteFireEffect`는 buoyancy update, sprite texture binding과 tracked rendered evidence를 설명하는 상세 Demo로 연결했다.
 - `Ex1503_SphWater`는 dual source spawn, SPH density/pressure/viscosity force, boundary collision과 10초 지연 selected capture를 설명하는 상세 Demo로 연결했다.
-- Chapter15 Demo Issue body는 `Ex1501`과 `Ex1503` screenshot 2개를 대표 visual로 사용하고 `Ex1502`는 `flare0.dds` provenance gate로 제외한다.
+- Chapter15 Demo Issue body는 `Ex1501`, `Ex1502`와 `Ex1503` screenshot 3개를 대표 visual로 사용한다. `Ex1502`는 원본 `flare0.dds`를 직접 링크하지 않고 rendered evidence로만 다룬다.
 
 ## 정본 연결
 
