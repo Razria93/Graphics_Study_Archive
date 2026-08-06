@@ -30,24 +30,24 @@ Chapter15는 CPU-side particle simulation 결과를 structured buffer와 geometr
 
 `Ex1501`은 fixed-size CPU particle pool을 inactive 상태로 유지하다가 source와 input 조건에서 일부 particle을 활성화한다. 갱신된 CPU 배열은 staging buffer를 거쳐 structured buffer로 업로드되고, geometry shader가 point list를 screen-space sprite로 확장한다.
 
-- [Particle pool update와 collision](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Part4_Chapter14-20/Ex1501_ParticleSystem.cpp#L88)
-- [Structured buffer sprite draw](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Part4_Chapter14-20/Ex1501_ParticleSystem.cpp#L231)
+- [Particle pool update와 collision](https://github.com/Razria93/Graphics_Study_Archive/blob/388d2b0c950d3d978179431b1006d8406ef391f4/Part4_Chapter14-20/Ex1501_ParticleSystem.cpp#L88-L155)
+- [Structured buffer sprite draw](https://github.com/Razria93/Graphics_Study_Archive/blob/388d2b0c950d3d978179431b1006d8406ef391f4/Part4_Chapter14-20/Ex1501_ParticleSystem.cpp#L231-L247)
 
 ### SPH update and accumulation evidence
 
 `Ex1503`은 좌우 source에서 particles를 공급하고 `SphSimulation::Update`에서 density, pressure와 viscosity force를 계산한다. Screenshot은 immediate frame보다 10초 지연 frame을 선택해 particle cluster accumulation을 더 명확하게 보여 준다.
 
-- [Dual source spawn과 SPH update 호출](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Part4_Chapter14-20/Ex1503_SphWater.cpp#L80)
-- [SPH density 계산](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Part4_Chapter14-20/SphSimulation.cpp#L31)
-- [SPH force 계산](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Part4_Chapter14-20/SphSimulation.cpp#L78)
+- [Dual source spawn과 SPH update 호출](https://github.com/Razria93/Graphics_Study_Archive/blob/388d2b0c950d3d978179431b1006d8406ef391f4/Part4_Chapter14-20/Ex1503_SphWater.cpp#L80-L151)
+- [SPH density 계산](https://github.com/Razria93/Graphics_Study_Archive/blob/388d2b0c950d3d978179431b1006d8406ef391f4/Part4_Chapter14-20/SphSimulation.cpp#L31-L73)
+- [SPH force 계산](https://github.com/Razria93/Graphics_Study_Archive/blob/388d2b0c950d3d978179431b1006d8406ef391f4/Part4_Chapter14-20/SphSimulation.cpp#L78-L139)
 
 ### Sprite fire texture path
 
 `Ex1502_SpriteFireEffect`는 source에서 활성화한 particles에 buoyancy를 적용하고 `flare0.dds` sprite texture를 pixel shader에 바인딩해 fire-like particles를 표시한다. 원본 texture의 권리 확보를 주장하지 않으며, 공개 안전한 대체 texture로 교체하거나 provenance가 확인되면 visual 유지 범위를 다시 판단한다.
 
-- [Particle spawn/update와 buoyancy](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Part4_Chapter14-20/Ex1502_SpriteFireEffect.cpp#L72)
-- [Sprite texture load](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Part4_Chapter14-20/Ex1502_SpriteFireEffect.cpp#L66)
-- [Textured sprite draw](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Part4_Chapter14-20/Ex1502_SpriteFireEffect.cpp#L155)
+- [Particle spawn/update와 buoyancy](https://github.com/Razria93/Graphics_Study_Archive/blob/388d2b0c950d3d978179431b1006d8406ef391f4/Part4_Chapter14-20/Ex1502_SpriteFireEffect.cpp#L72-L128)
+- [Sprite texture load](https://github.com/Razria93/Graphics_Study_Archive/blob/388d2b0c950d3d978179431b1006d8406ef391f4/Part4_Chapter14-20/Ex1502_SpriteFireEffect.cpp#L66-L68)
+- [Textured sprite draw](https://github.com/Razria93/Graphics_Study_Archive/blob/388d2b0c950d3d978179431b1006d8406ef391f4/Part4_Chapter14-20/Ex1502_SpriteFireEffect.cpp#L155-L174)
 
 ## 처리 흐름
 

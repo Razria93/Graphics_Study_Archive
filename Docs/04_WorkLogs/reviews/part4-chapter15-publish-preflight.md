@@ -127,3 +127,11 @@ git diff --check
 ## 승인안
 
 Chapter15 remote 게시 전 로컬 문서와 capture evidence는 게시 후보로 정렬되어 있다. 사용자가 승인하면 다음 목표모드에서 branch push, Chapter15 Demo Issue 생성, Progress 누적 댓글 수정과 Phase 5-2 완료 댓글 생성을 순서대로 진행할 수 있다.
+
+## 실행 결과
+
+- Branch push: `origin/docs/part4-chapter14-20-workflow`를 `388d2b0c950d3d978179431b1006d8406ef391f4`까지 갱신했고 local HEAD, tracking ref와 remote branch head 일치를 확인했다.
+- Demo Issue: [Issue #31](https://github.com/Razria93/Graphics_Study_Archive/issues/31) 생성 후 UTF-8 명시 읽기 방식으로 body를 교정했다.
+- Progress 누적 진행 댓글: [댓글 5091068690](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690)을 Phase 5-2 포함 body로 수정했다.
+- Phase 5-2 완료 댓글: [댓글 5200004532](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5200004532)을 생성했다.
+- 원격 body 검사: Issue #31은 `## 요약`으로 시작하고 Chapter15 한글 본문을 포함한다. Progress 누적 댓글과 Phase 5-2 완료 댓글도 대상 문구 포함을 확인했다.

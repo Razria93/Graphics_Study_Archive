@@ -14,7 +14,7 @@
 | Capture | tracked/local 후보 | Ex1402, Ex1404~Ex1407, Ex1501, Ex1502, Ex1503 centered client-visible screenshot 후보를 `Docs/_assets/captures`에 승격했다. Ex1502는 원본 `flare0.dds`를 직접 링크하지 않고 rendered evidence로만 다룬다. |
 | Demo | Chapter14 작성 · Chapter15 상세 후보 작성 | Chapter14 Ex1401~Ex1408 Step별 상세 Demo와 tracked capture 연결을 작성했다. Chapter15 Ex1501~Ex1503 상세 Demo, Demo Issue body 후보와 tracked capture 연결을 작성했다. |
 | Publication | 검토 필요 | public 후보 확정이 아니라 asset/public risk 검토 축으로만 기록한다. |
-| GitHub | Chapter14 merged · Chapter15 body 후보 작성 | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시·review 대응·merge까지 마감했다. Chapter15 Demo Issue body와 Phase 5-2 완료 댓글 후보는 local 문서로만 준비했다. |
+| GitHub | Chapter14 merged · Chapter15 remote 게시 | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시·review 대응·merge까지 마감했다. Chapter15 Demo Issue #31, Progress 누적 댓글 갱신과 Phase 5-2 완료 댓글을 게시했다. |
 
 ## 시작 결정
 
@@ -84,7 +84,14 @@ Part4 Chapter14-20은 `Examples.sln` 단일 project와 command argument 기반 �
 - `Ex1501_ParticleSystem`은 CPU particle pool update, gravity/collision과 structured buffer sprite draw를 설명하는 상세 Demo로 연결했다.
 - `Ex1502_SpriteFireEffect`는 buoyancy update, sprite texture binding과 tracked rendered evidence를 설명하는 상세 Demo로 연결했다.
 - `Ex1503_SphWater`는 dual source spawn, SPH density/pressure/viscosity force, boundary collision과 10초 지연 selected capture를 설명하는 상세 Demo로 연결했다.
-- Chapter15 Demo Issue body는 `Ex1501`, `Ex1502`와 `Ex1503` screenshot 3개를 대표 visual로 사용한다. `Ex1502`는 원본 `flare0.dds`를 직접 링크하지 않고 rendered evidence로만 다룬다.
+- Chapter15 Demo Issue #31은 `Ex1501`, `Ex1502`와 `Ex1503` screenshot 3개를 대표 visual로 사용한다. `Ex1502`는 원본 `flare0.dds`를 직접 링크하지 않고 rendered evidence로만 다룬다.
+
+## Chapter15 원격 게시 결과
+
+- Branch `docs/part4-chapter14-20-workflow`는 `388d2b0c950d3d978179431b1006d8406ef391f4`까지 push했다.
+- Chapter15 Demo Issue는 [Issue #31](https://github.com/Razria93/Graphics_Study_Archive/issues/31)에 게시했다.
+- Progress 누적 진행 댓글 [5091068690](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690)은 Phase 5-2 내용을 포함하도록 갱신했다.
+- Phase 5-2 완료 댓글은 [댓글 5200004532](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5200004532)에 게시했다.
 
 ## 정본 연결
 
@@ -99,6 +106,5 @@ Part4 Chapter14-20은 `Examples.sln` 단일 project와 command argument 기반 �
 
 ## 다음 작업
 
-1. Chapter15 Demo Issue와 Phase 5-2 완료 댓글 remote 게시는 별도 승인 후 진행한다.
-2. Chapter15 PR 후보는 long branch 기준선과 remote 게시 상태를 확인한 뒤 작성한다.
-3. Chapter14 `Ex1401_Basic` tracked capture 승격 여부와 Chapter15 desktop video 후보는 후속 범위로 둔다.
+1. Chapter15 PR 후보는 long branch 기준선과 remote 게시 상태를 확인한 뒤 작성한다.
+2. Chapter14 `Ex1401_Basic` tracked capture 승격 여부와 Chapter15 desktop video 후보는 후속 범위로 둔다.
