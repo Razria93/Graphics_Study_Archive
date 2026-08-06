@@ -19,9 +19,9 @@
 | `Ex1406_DensityField` | `1406` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | 2026-08-06 Debug x64 density trail screenshot 후보를 `Docs/_assets/captures`에 승격. Release는 과거 확인 |
 | `Ex1407_IndirectArguments` | `1407` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | 2026-08-06 Debug x64 density trail screenshot 후보를 `Docs/_assets/captures`에 승격하고 `DrawInstancedIndirect` code evidence 확인. Release는 과거 확인 |
 | `Ex1408_BitonicSort` | `1408` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 불필요 | 2026-08-06 Debug x64 element count별 CPU/GPU sort `OK`와 exit code 0 확인. Release는 과거 확인 |
-| `Ex1501_ParticleSystem` | `1501` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-06 Debug x64 build/run smoke와 particle stream screenshot 후보 확인. Release는 과거 확인 |
+| `Ex1501_ParticleSystem` | `1501` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | 2026-08-06 Debug x64 build/run smoke와 particle stream screenshot 후보를 `Docs/_assets/captures`에 승격. Release는 과거 확인 |
 | `Ex1502_SpriteFireEffect` | `1502` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-06 Debug x64 build/run smoke와 sprite fire screenshot 후보 확인. `flare0.dds` provenance 확인 전 tracked/public 승격 보류. Release는 과거 확인 |
-| `Ex1503_SphWater` | `1503` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-06 Debug x64 build/run smoke와 SPH particle screenshot 후보 확인. Release는 과거 확인 |
+| `Ex1503_SphWater` | `1503` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | 2026-08-06 Debug x64 build/run smoke와 10초 지연 SPH particle screenshot 후보를 `Docs/_assets/captures`에 승격. Release는 과거 확인 |
 | `Ex1601_StableFluids` | `1601` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `Ex1602_CurlNoise` | `1602` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
 | `Ex1603_Cloud` | `1603` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
@@ -91,19 +91,19 @@ Chapter14 최소 evidence set은 `Ex1401_Basic`, `Ex1402_Blur`, `Ex1403_MatVecMu
 
 | Example | Configuration | Command argument | 결과 | Evidence | 비고 |
 | --- | --- | --- | --- | --- | --- |
-| `Ex1501_ParticleSystem` | Debug x64 | `1501` | 성공 | local screenshot 후보 | colored particle stream, collapsed `Scene Control`, taskbar-free screenshot 확인 |
+| `Ex1501_ParticleSystem` | Debug x64 | `1501` | 성공 | [tracked screenshot](../../_assets/captures/part4_chapter15_01_particle_system.png) | colored particle stream, collapsed `Scene Control`, taskbar-free screenshot 확인 |
 | `Ex1502_SpriteFireEffect` | Debug x64 | `1502` | 성공 | local screenshot 후보 | sprite fire texture visual 확인. `Assets/Textures/flare0.dds`는 tracked runtime asset이나 provenance 확인 전 public 대표 승격 보류 |
-| `Ex1503_SphWater` | Debug x64 | `1503` | 성공 | local screenshot 후보 | SPH particle cluster, collapsed `Scene Control`, taskbar-free screenshot 확인 |
+| `Ex1503_SphWater` | Debug x64 | `1503` | 성공 | [tracked screenshot](../../_assets/captures/part4_chapter15_03_sph_water.png) | 10초 지연 capture에서 SPH particles가 아래에 쌓인 상태와 collapsed `Scene Control`, taskbar-free screenshot 확인 |
 
-Debug x64 build는 2026-08-06 `Examples.sln` 기준 경고 0개, 오류 0개로 확인했다. `capture-example-window.ps1`에 `ArgumentList` option을 추가해 `Examples.exe 1501`, `1502`, `1503` 단일 executable command argument 구조를 직접 실행했다. Capture는 `HLAB_CAPTURE_UI=collapsed`, `CenterWindow`, immediate screenshot 기준으로 수행했으며 후보는 `local/capture-run/Part4_Chapter15/debug-smoke-20260806`에 둔다. PNG 후보 3개는 text metadata chunk가 없고, capture/run 종료 후 `Examples` process와 error dialog가 남지 않았다.
+Debug x64 build는 2026-08-06 `Examples.sln` 기준 경고 0개, 오류 0개로 확인했다. `capture-example-window.ps1`에 `ArgumentList` option을 추가해 `Examples.exe 1501`, `1502`, `1503` 단일 executable command argument 구조를 직접 실행했다. Capture는 `HLAB_CAPTURE_UI=collapsed`, `CenterWindow`, immediate screenshot 기준으로 수행했으며 후보는 `local/capture-run/Part4_Chapter15/debug-smoke-20260806`에 둔다. `Ex1501`과 10초 지연 `Ex1503` 후보는 text metadata chunk가 없고 taskbar-free fixed UI 기준을 충족해 `Docs/_assets/captures`에 승격했다. `Ex1502` 후보는 `flare0.dds` provenance 확인 전까지 local 후보로 유지한다. Capture/run 종료 후 `Examples` process와 error dialog가 남지 않았다.
 
 ## Chapter15 evidence 승격 후보 감사
 
 | Example | Local 후보 | 감사 결과 | 승격 판단 | 후속 조치 |
 | --- | --- | --- | --- | --- |
-| `Ex1501_ParticleSystem` | `ex1501-particle-system.png` | particle stream과 fixed UI 기준 확인. PNG text metadata chunk 없음 | tracked 승격 후보 | Chapter15 대표 set에서 particle baseline으로 사용할지 결정 |
+| `Ex1501_ParticleSystem` | `ex1501-particle-system.png` | particle stream과 fixed UI 기준 확인. PNG text metadata chunk 없음 | tracked 승격 | [tracked screenshot](../../_assets/captures/part4_chapter15_01_particle_system.png)을 Chapter15 particle baseline 후보로 사용 |
 | `Ex1502_SpriteFireEffect` | `ex1502-sprite-fire-effect.png` | sprite fire visual 확인. `flare0.dds` runtime asset을 사용함 | 보류 | `Assets/Textures/flare0.dds` provenance와 공개 가능 범위 확인 전 tracked/public 대표 승격 금지 |
-| `Ex1503_SphWater` | `ex1503-sph-water.png` | SPH particle cluster와 fixed UI 기준 확인. PNG text metadata chunk 없음 | tracked 승격 후보 | 정적 screenshot만으로 simulation movement 설명이 충분한지 검토하고 video는 desktop 후속 후보로 분리 |
+| `Ex1503_SphWater` | `ex1503-sph-water-10s.png` | 10초 지연 capture에서 SPH particle accumulation과 fixed UI 기준 확인. PNG text metadata chunk 없음 | tracked 승격 | [tracked screenshot](../../_assets/captures/part4_chapter15_03_sph_water.png)을 사용하고 video는 desktop 후속 후보로 분리 |
 
 ## 갱신 기준
 
