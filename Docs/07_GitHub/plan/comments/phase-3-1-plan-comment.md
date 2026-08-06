@@ -2,7 +2,7 @@
 
 ## 완료 내용
 
-- `Part2_Chapter04`의 기존 Step1~10 CPU software rasterization 예제를 순서대로 재검증하고 Example README, Topic, Verification과 상세 Demo를 연결했다.
+- `Part2_Chapter04`의 기존 Step1부터 Step10까지 CPU software rasterization 예제를 순서대로 재검증하고 Example README, Topic, Verification과 상세 Demo를 연결했다.
 - Step8 PerspectiveProjection을 Chapter 대표 Demo, Step10 Lights를 기술 보조 Demo로 확정했다.
 - Step1A Triangle To Circle을 사용자 Personal Extension, Step4 Animation2D를 시간 변화 Demo로 분리했다.
 - [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14)에 Chapter 대표 결과와 핵심 구현 요약을 게시했다.
@@ -11,7 +11,7 @@
 
 ## 검증
 
-- Step1, Step1A와 Step2~10 Debug/Release x64 build/run: 성공
+- Step1, Step1A와 Step2부터 Step10까지 Debug/Release x64 build/run: 성공
 - Chapter04 tracked capture 19개: 확보와 공개 안전성 확인
 - 필수 문서·Markdown rendering·video asset validator: 통과
 - GitHub Actions `Docs Validation`: 문서·fixture·asset 정책 검사 구성

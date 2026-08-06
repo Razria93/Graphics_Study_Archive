@@ -9,7 +9,7 @@
 - Docs 정본의 상세 설명을 그대로 복제하지 않고 요약과 링크 중심으로 작성한다.
 - GitHub remote 게시, 수정, Ready for Review, merge는 사용자 승인 후에만 진행한다.
 
-Issue/PR body 후보는 첫 H1을 title source로 유지한다. 실제 remote body에서는 첫 H1과 바로 뒤 빈 줄을 제거한다. tracked 후보와 remote body를 비교할 때도 같은 변환을 적용한다. comment body는 title이 없으므로 H1을 사용하지 않는다.
+Issue/PR body 후보는 첫 H1을 title source로 유지한다. 실제 `gh issue create`와 `gh pr create`에서는 title을 H1에서 사용하고 body는 tracked 정본을 그대로 게시한다. comment body는 title이 없으므로 H1을 사용하지 않는다.
 
 ## 폴더
 
@@ -29,7 +29,7 @@ Issue/PR body 후보는 첫 H1을 title source로 유지한다. 실제 remote bo
 ## Source Docs와의 관계
 
 ```text
-Docs/00_Index~06_Policies + Docs/_assets
+Docs/00_Index부터 Docs/06_Policies까지 + Docs/_assets
 -> source docs / archive 정본 / 상태 기록 / 근거 자료
 
 Docs/07_GitHub
@@ -44,7 +44,7 @@ Docs/07_GitHub
 local/ 임시 초안
 -> Docs/07_GitHub 게시 후보
 -> GitHub remote
--> 필요 시 local/ 게시 후 snapshot
+-> local/ 게시 후 snapshot
 ```
 
 - `local/`은 임시 초안, 게시 후 사본, 검토 메모를 둘 수 있는 작업 공간이다.

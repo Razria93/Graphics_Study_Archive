@@ -1,114 +1,124 @@
-# Demo Name
+# Demo Note
 
-이 template은 `Docs/03_Demos/<Part*>`의 상세 Demo 기술 정본에 사용한다. GitHub Demo Issue는 이 문서를 복제하지 않고 공개 가치가 높은 결과와 구현을 선별해 작성한다.
+이 문서는 Demo source docs 작성용 템플릿이다. GitHub 게시 문장은 `Docs/07_GitHub`에서 이 내용을 요약/재구성한다.
 
-## 목적
+## 대상
 
-Demo가 보여주는 결과와 기술적 목표를 2~4문장으로 정의한다.
+- 루트 코드 폴더:
+- 예제 폴더:
+- 연결 Topic:
+- 연결 Verification:
 
-## 책임 범위
+## Demo 목표
 
-- 포함:
-- 위임: 개념과 이론은 Topic, 검증 사실은 Verification으로 연결한다.
+- 최소 capture/result: screenshot 최소 1개 필수
+- 대표 capture/result:
+- video 필요 여부:
 
-## 결과 미리보기
+## 구현 하이라이트 초안
 
-대표 visual을 1개 이상 연결하고 결과가 보여주는 차이를 설명한다.
+- 구현 목표(3줄 이내):
+- 처리 흐름(번호 목록 4부터 6단계):
+- 핵심 파일 맵(파일/역할 3부터 5개):
 
-![Result](../../_assets/captures/<tracked-result>.png)
+## C++ 스타일 의사코드 초안
 
-동적 입력이나 상태 전환을 storyboard로 설명할 때는 다음 항목을 사용한다.
-
-### <Storyboard 제목>
-
-`<초기 상태> → <입력 상태> → <결과 상태>` 순서로 왼쪽 위에서 오른쪽 아래로 본다.
-
-![Storyboard](../../_assets/captures/<tracked-storyboard>.png)
-
-- 입력 변화:
-- 관찰 지점:
-- 구현 결과:
-
-## 입력과 출력
-
-| 구분 | 내용 |
-| --- | --- |
-| 입력 |  |
-| 출력 |  |
-
-## 구현 흐름
-
-1. 입력을 준비한다.
-2. 핵심 처리를 수행한다.
-3. 결과를 출력한다.
-
-## 핵심 구현
-
-### Implementation Choice
-
-선택한 구현 방식, 주요 코드 위치, 선택 이유를 설명한다.
-
-### 선택형 의사코드
-
-처리 단계가 여러 함수나 CPU/GPU 경계를 넘어 prose만으로 구조를 파악하기 어려울 때만 사용한다. 실제 코드를 복제하지 않고 입력, 핵심 처리, 출력 흐름을 짧게 요약한다. 함수와 제어문 block은 Allman brace style을 사용한다.
+문서 가독성 중심 구조 요약만 기록한다. 원본 코드는 링크로 위임한다.
 
 ```cpp
-// Pseudo C++: 구현 구조 요약
-auto input = PrepareInput();
-if (!input.IsValid())
+// Pseudo C++: 구조 설명용 요약
+void FunctionPseudo(...)
 {
-    return;
-}
+	// 입력/전처리
+	if (...) {
+		return;
+	}
 
-auto result = Process(input);
-Publish(result);
+	// 핵심 처리
+	for (...) {
+		...
+	}
+
+	// 출력/반영
+}
 ```
 
-- [입력 준비와 핵심 처리](../../../Part_Chapter/Example/Example.cpp#L1-L20)
+- 원본 코드 링크 1:
+- 원본 코드 링크 2:
+- 가독성 체크: 한 줄 80부터 120자 범위를 권장하고 긴 식은 2부터 3줄로 분해한다.
 
-## 시각 결과
+## 사용자 요청 조건
 
-시각 자료가 구현 단계나 결과 차이를 어떻게 보여주는지 설명한다. 같은 asset을 README와 GitHub body에서도 사용할 수 있지만 설명은 이 문서 책임에 맞게 쓴다.
+- 요청 유형: screenshot / video / result image
+- 찍어야 할 화면 또는 출력 파일:
+- before/after 또는 input/result 비교 필요 여부:
+- README 연결 대상 여부 또는 local 검토 후보 여부:
+- 피해야 할 노출 요소: 강의명, 강사명, 워터마크, 개인 식별자, 계정, 로컬 경로, 불필요한 IDE/terminal/browser UI
+- 권장 비율과 구도:
+- 권장 파일명:
 
-Video가 필수 또는 선택이면 필요성, 관찰할 변화, selected와 published 상태를 짧게 기록한다. Tracked 상세 Demo는 핵심 screenshot을 유지하고 published video는 실제 Demo Issue로 연결한다.
+## Capture/Result 후보
 
-## 구현 범위와 한계
+| 항목 | 위치 | 상태 | 비고 |
+| --- | --- | --- | --- |
+| screenshot | `local/` | 미확인 | 화면 이미지 캡처 |
+| video | `local/` | 미확인 | 화면 녹화 |
+| result image | ignored output 또는 `local/` | 미확인 | 프로그램이 파일로 출력한 이미지 |
 
-- 포함하는 구현 범위:
-- 다루지 않는 범위:
-- 성능 또는 품질 trade-off:
+## 검수 단계
 
-## 검증
+- 정책 검수:
+- 후보 검수:
+- 승격 검수:
 
-최신 build/run/capture 사실을 복제하지 않고 Verification 정본으로 연결한다.
+## GitHub Body 전환 체크
 
-- Verification:
+- Demo Issue 필수 섹션 순서 점검 여부:
+- 시각 자료(소제목/설명/이미지) 순서 점검 여부:
+- 의사코드(C++ 스타일, Pseudo C++ 표기) 점검 여부:
+- 원본 코드 링크 쌍 점검 여부:
+- body validator 결과:
+- quality validator 결과:
 
-## 관련 코드
+## 공개 전 확인
 
-- Example README:
-- [Scene 구성과 핵심 처리](../../../Part_Chapter/Example/Example.cpp#L1-L20)
-- [결과 texture sampling](../../../Part_Chapter/Example/PS.hlsl#L1-L20)
+- 직접 실행 결과인지:
+- 강의 화면 캡처가 아닌지:
+- 강의명/강사명/강의 브랜드 표기가 없는지:
+- 워터마크가 없는지:
+- window title 또는 overlay text가 public-safe인지:
+- debug HUD, browser tab, taskbar, notification 노출 여부:
+- video audio/subtitle/metadata 확인 여부:
+- asset 권리와 출처:
+- 개인 이름/계정/로컬 경로 포함 여부:
+- 민감 정보 포함 여부:
+- 파일명 규칙:
+- `Docs/_assets` 승격 가능 여부:
 
-## 관련 문서
+## 갱신 위치
 
-- Topic:
-- Verification:
-- Demo index:
-- GitHub Demo Issue 후보:
+- `Docs/03_Demos/demo-priority.md`
+- `Docs/03_Demos/capture-plan.md`
+- `Docs/03_Demos/<Part*>/demo-index.md`
+- `Docs/02_Verification/capture-matrix.md`
+- `Docs/_assets`
 
-## 작성 기준
+## Metadata 확인
 
-- Example README의 코드 map과 실행 안내를 장문으로 복제하지 않는다.
-- Topic의 일반 개념과 수학적 설명을 복제하지 않는다.
-- 실제 Markdown 링크와 tracked `Docs/_assets`만 사용한다.
-- `local/`, Legacy, placeholder, 로컬 절대 경로를 남기지 않는다.
-- 상세 Demo의 `cpp` fence는 첫 비공백 줄에 `// Pseudo C++:`와 요약을 두고 대응 원본 코드 링크를 함께 둔다.
-- 실제 C++ source는 code block으로 복제하지 않고 source line 링크로 연결한다.
-- 함수와 `if`, `else`, `for`, `while`의 여는 중괄호는 다음 줄에 둔다.
-- 제어문과 함수 block을 한 줄로 압축하지 않는다.
-- braced initializer와 multiline signature는 의미를 유지하고 수동 확인한다.
-- 의사코드는 모든 Demo의 필수 항목으로 강제하지 않는다.
-- Source line 코드 근거 bullet은 구현 역할을 나타내는 명사형 link label을 사용하고 끝에 마침표를 붙이지 않는다.
-- 일반 문단과 하나의 목록 항목은 각각 하나의 물리적 줄로 작성한다. 상세 기준은 [Docs Authoring Flow Policy](../../06_Policies/docs-authoring-flow-policy.md)를 따른다.
-- 의사코드와 code block은 한 줄 80자 내외를 권장하고 120자를 초과하지 않는다.
+- screenshot/result image metadata: 미확인
+- video metadata/audio/subtitle: 미확인
+- external input asset source/license: 미확인
+- lecture name/instructor/watermark/personal identifier: 미확인
+
+## 생성 이미지 출처 기록
+
+- 생성 도구:
+- 생성 날짜:
+- 프롬프트 원문:
+- 작업용 원본 이미지:
+- provenance screenshot:
+- 원본 파일 SHA256:
+- 변환 입력 SHA256:
+- result image SHA256:
+- public 게시 가능성:
+- 비고:

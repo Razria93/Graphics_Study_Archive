@@ -2,9 +2,28 @@
 
 ## 요약
 
-`Part1_Chapter03`은 CPU ray tracing의 primary ray와 sphere intersection에서 시작해 shadow visibility와 recursive refraction까지 단계적으로 확장한다. Step4, Step8과 Step13은 동일 장면의 단일 변수 비교가 아니라 구현 범위가 넓어지는 세 milestone이며, CPU 결과는 DirectX11 dynamic texture와 full-screen quad로 표시한다. Step14 CubeEnvironment는 이 흐름의 누적판이 아닌 독립적인 environment sampling 변형이다.
+`Part1_Chapter03`은 CPU ray tracing의 primary ray와 sphere intersection에서 시작해 shadow visibility와
+recursive refraction까지 단계적으로 확장한다. Step4, Step8과 Step13은 동일 장면의 단일 변수 비교가 아니라
+구현 범위가 넓어지는 세 milestone이며, CPU 결과는 DirectX11 dynamic texture와 full-screen quad로 표시한다.
+Step14 CubeEnvironment는 이 흐름의 누적판이 아닌 독립적인 environment sampling 변형이다.
 
-## 결과
+## 핵심 목표
+
+- Orthographic primary ray와 sphere intersection의 최소 ray tracing 기준을 확인한다.
+- Shadow ray blocker 판정으로 direct lighting visibility를 분기한다.
+- Recursive refraction과 material weight로 background 왜곡을 합성한다.
+- CPU RGBA32F 결과를 DirectX11 dynamic texture로 표시한다.
+
+## Demo Assets
+
+| Type | Asset | Purpose |
+| --- | --- | --- |
+| Input screenshot | 없음 | 구현 단계 확장 Demo이므로 공통 입력 화면을 사용하지 않는다. |
+| Result screenshot | Step4, Step8, Step13 capture | primary ray, shadow, transparency 결과를 확인한다. |
+| Result image | 없음 | 별도 합성 result image를 사용하지 않는다. |
+| Video | 없음 | 정적 결과와 구현 변화는 세 screenshot으로 충분히 확인한다. |
+
+## 시각 정보
 
 ### Step4 — Ray-Sphere 기준선
 
@@ -24,11 +43,12 @@ Air와 glass 경계를 드나드는 refracted ray가 해수면·하늘 backgroun
 
 ![Step13 Transparency](https://github.com/Razria93/Graphics_Study_Archive/blob/f8c475a24abd534f4f1c461d0e7cc6bf6adeed43/Docs/_assets/captures/part1_chapter03_13_transparency.png?raw=true)
 
-## 핵심 구현
+## 구현 하이라이트
 
 ### Primary ray와 sphere intersection
 
-Step4는 화면 좌표에서 orthographic primary ray를 만들고 quadratic equation의 가장 가까운 양수 root를 선택한다. 이 선택이 구체 표면의 hit 여부와 diagnostic shading을 결정하며 이후 단계가 공유하는 ray와 intersection의 기준이 된다.
+Step4는 화면 좌표에서 orthographic primary ray를 만들고 quadratic equation의 가장 가까운 양수 root를 선택한다.
+이 선택이 구체 표면의 hit 여부와 diagnostic shading을 결정하며 이후 단계가 공유하는 기준이 된다.
 
 - [화면 좌표의 orthographic camera-plane 변환](https://github.com/Razria93/Graphics_Study_Archive/blob/f8c475a24abd534f4f1c461d0e7cc6bf6adeed43/Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/Raytracer.h#L26-L34)
 - [Pixel 순회와 primary ray 생성](https://github.com/Razria93/Graphics_Study_Archive/blob/f8c475a24abd534f4f1c461d0e7cc6bf6adeed43/Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/Raytracer.h#L59-L72)
@@ -36,7 +56,8 @@ Step4는 화면 좌표에서 orthographic primary ray를 만들고 quadratic equ
 
 ### Shadow ray와 visibility
 
-Step8은 Square child hit를 parent object에 연결하고 surface에서 light 방향으로 shadow ray를 보낸다. Light보다 가까운 blocker가 있으면 ambient만 남기고, blocker가 없으면 diffuse와 specular를 더해 구체 아래의 hard shadow를 만든다.
+Step8은 Square child hit를 parent object에 연결하고 surface에서 light 방향으로 shadow ray를 보낸다.
+Light보다 가까운 blocker가 있으면 ambient만 남기고, 없으면 diffuse와 specular를 더해 hard shadow를 만든다.
 
 - [Square child 구성과 closest child hit](https://github.com/Razria93/Graphics_Study_Archive/blob/f8c475a24abd534f4f1c461d0e7cc6bf6adeed43/Part1_Chapter03/03_Raytracing_Step8_Shadow/Square.h#L7-L33)
 - [Scene closest-hit와 parent object 연결](https://github.com/Razria93/Graphics_Study_Archive/blob/f8c475a24abd534f4f1c461d0e7cc6bf6adeed43/Part1_Chapter03/03_Raytracing_Step8_Shadow/Raytracer.h#L48-L63)
@@ -44,18 +65,35 @@ Step8은 Square child hit를 parent object에 연결하고 surface에서 light �
 
 ### Recursive refraction과 color composition
 
-Step13은 ray와 surface normal의 방향으로 enter/exit를 구분하고 air/glass IOR ratio를 전환한다. Renderer는 total internal reflection fallback과 local·reflected·refracted result의 material-weighted 결합을 지원한다. 현재 glass sphere는 transparency 1.0과 reflection 0을 사용하므로 refracted result가 background 왜곡을 만든다.
+Step13은 ray와 surface normal의 방향으로 enter/exit를 구분하고 air/glass IOR ratio를 전환한다.
+Renderer는 total internal reflection fallback과 local·reflected·refracted result의 material-weighted 결합을 지원한다.
+현재 glass sphere는 transparency 1.0과 reflection 0을 사용하므로 refracted result가 background 왜곡을 만든다.
 
 - [Inside/outside 판정과 TIR fallback](https://github.com/Razria93/Graphics_Study_Archive/blob/f8c475a24abd534f4f1c461d0e7cc6bf6adeed43/Part1_Chapter03/03_Raytracing_Step13_Transparency/Raytracer.h#L140-L155)
 - [Local·reflected·refracted color 결합](https://github.com/Razria93/Graphics_Study_Archive/blob/f8c475a24abd534f4f1c461d0e7cc6bf6adeed43/Part1_Chapter03/03_Raytracing_Step13_Transparency/Raytracer.h#L158-L185)
 
-## 처리 흐름
+## 핵심 로직 의사코드
 
-1. 화면 pixel마다 camera 기준 primary ray를 만든다.
-2. Scene object 중 가장 가까운 양수 hit를 선택한다.
-3. Surface normal, light visibility와 material로 local shading을 계산한다.
-4. Material에 따라 reflected 또는 refracted secondary ray를 재귀 추적한다.
-5. CPU RGBA32F buffer를 DirectX11 dynamic texture로 올리고 full-screen quad에 표시한다.
+```cpp
+// Pseudo C++
+void TraceRayPseudo(const Ray& primaryRay)
+{
+	Hit hit = FindClosestPositiveHit(primaryRay);
+	if (!hit.isValid) return WriteBackground();
+
+	Color local = ShadeWithShadowVisibility(hit);
+	Color refracted = TraceRefractionWhenEnabled(hit);
+	return WriteMaterialWeightedColor(local, refracted);
+}
+```
+
+원본 코드: [Step13 inside/outside 판정과 TIR fallback](https://github.com/Razria93/Graphics_Study_Archive/blob/f8c475a24abd534f4f1c461d0e7cc6bf6adeed43/Part1_Chapter03/03_Raytracing_Step13_Transparency/Raytracer.h#L140-L155)
+
+## 검증 상태
+
+- Step4부터 Step14까지 Debug/Release x64 build/run 성공을 확인한다.
+- 전체 application window capture와 공개 안전성 검사를 완료한다.
+- 상세 build/run/capture 상태는 Verification 정본에서 관리한다.
 
 ## 구현 범위와 한계
 
@@ -66,13 +104,7 @@ Step13은 ray와 surface normal의 방향으로 enter/exit를 구분하고 air/g
 - Step14는 geometry와 recursive refraction의 누적 확장이 아니라 cubemap direction sampling을 다루는 독립 변형이다.
 - Video는 사용하지 않으며 정적 결과와 구현 변화는 세 screenshot으로 충분히 확인한다.
 
-## 검증
-
-- Step4~14 Debug/Release x64 build/run 성공
-- Step4~14 전체 application window capture 확보와 공개 안전성 검사 완료
-- 상세 build/run/capture 상태는 Verification 정본에서 관리
-
-## 더 자세히 보기
+## 관련 문서
 
 ### Chapter 안내
 
