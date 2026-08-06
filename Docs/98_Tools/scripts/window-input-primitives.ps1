@@ -46,10 +46,6 @@ function Resolve-ExampleVirtualKey
         {
             return [byte]0xBE
         }
-        if ($normalized -eq "-")
-        {
-            return [byte]0xBD
-        }
         if (
             ($code -ge [int][char]'A' -and $code -le [int][char]'Z') -or
             ($code -ge [int][char]'0' -and $code -le [int][char]'9')
@@ -70,8 +66,6 @@ function Resolve-ExampleVirtualKey
         "CONTROL" { return [byte]0x11 }
         "SHIFT" { return [byte]0x10 }
         "ALT" { return [byte]0x12 }
-        "MINUS" { return [byte]0xBD }
-        "OEM_MINUS" { return [byte]0xBD }
         "LEFT" { return [byte]0x25 }
         "UP" { return [byte]0x26 }
         "RIGHT" { return [byte]0x27 }

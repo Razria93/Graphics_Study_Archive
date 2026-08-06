@@ -7,124 +7,58 @@
 | Script | 목적 | 입력 |
 | --- | --- | --- |
 | `validate-github-body.ps1` | GitHub Issue/PR/comment 게시 전 Markdown body 검사 | `Docs/07_GitHub` |
-| `validate-github-quality.ps1` | Demo Issue 품질 검사(전개, 시각 자료, 구현 설명, 가독성) | `Docs/07_GitHub/issues/demo` |
-| `test-github-visual-quality.ps1` | GitHub visual 합산, Demo Issue video 위치와 댓글 template 계약 fixture 검사 | inline fixture, `fixtures/github-visual-quality`와 `Docs/98_Tools/templates` |
+| `validate-github-quality.ps1` | Demo Issue 품질 검사(전개, 시각 자료, C++ 스타일 의사코드, 가독성) | `Docs/07_GitHub/issues/demo` |
 | `validate-topic-doc-quality.ps1` | 상세 Topic 정본 품질 검사(책임 구조, 핵심 개념, Example/Verification/Demo 연결) | `Docs/01_Topics` |
 | `validate-demo-index-quality.ps1` | Demo source docs 구현도 균일성 검사(필수 구조, 테이블 스키마, 상태값, 최소 capture 기준) | `Docs/03_Demos/**/demo-index.md` |
-| `test-demo-index-quality.ps1` | Demo index의 selected·published video reference와 stale scope fixture 검사 | `fixtures/demo-index-video` |
-| `validate-demo-doc-quality.ps1` | 상세 Demo 기술 정본과 Example 공개 환경 문구 검사 | 상세 Demo, `Part*_Chapter*/**/README.md` |
-| `test-demo-doc-quality.ps1` | 상세 Demo 형식과 공개 shell 환경 문구 fixture 검사 | `fixtures/demo-doc-*` |
-| `validate-video-asset-quality.ps1` | 예상하지 못한 tracked MP4, MOV와 WEBM 검사 | Git tracked path |
-| `test-video-asset-quality.ps1` | tracked video path fixture 검사 | `fixtures/video-asset-quality` |
-| `test-window-capture-tools.ps1` | screenshot·video 도구의 크기 보존 배치, readiness, foreground와 FullWindow·ClientOnly 계약 검사 | `Docs/98_Tools/scripts` |
-| `test-window-input-primitives.ps1` | 자동 GUI 입력 primitive helper의 load, function 계약, delay와 안전 기준 검사 | `Docs/98_Tools/scripts` |
-| `test-capture-run-state.ps1` | capture/run session의 stale lock, protected process 방어와 다중 error dialog drain fixture 검사 | `Docs/98_Tools/scripts`, `local/capture-run` 임시 fixture |
-| `validate-markdown-wrap-quality.ps1` | 현재 정본 Markdown의 명백한 인위적 soft-wrap 검사 | Root·Example README, `Docs/00_Index`~`Docs/07_GitHub`, `Docs/98_Tools`, tracked `.github` Markdown |
-| `test-markdown-render-quality.ps1` | Markdown 범위 표기의 취소선 오해 방지 fixture 검사 | `fixtures/markdown-render-quality` |
-| `validate-markdown-render-quality.ps1` | 한 줄의 복수 단일-tilde 범위로 발생하는 의도하지 않은 취소선 검사 | Root·Example README, `Docs/00_Index`~`Docs/07_GitHub`, `Docs/98_Tools`, tracked `.github` Markdown |
-| `test-markdown-table-quality.ps1` | Markdown table 열 정합성 fixture 검사 | `fixtures/markdown-table-quality` |
-| `validate-markdown-table-quality.ps1` | 현재 정본 Markdown table의 header·separator·data row 열 정합성 검사 | Root·Example README, `Docs/00_Index`~`Docs/07_GitHub`, `Docs/98_Tools`, tracked `.github` Markdown |
 
 ## 사용법
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-body.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-github-visual-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-topic-doc-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-index-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-index-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-doc-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-doc-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-video-asset-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-video-asset-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-window-capture-tools.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-window-input-primitives.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-capture-run-state.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-wrap-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-render-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-render-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-table-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-table-quality.ps1
 ```
 
 GitHub body validator의 기본 입력은 `Docs/07_GitHub`이다. Topic과 Demo source docs validator는 각각 `Docs/01_Topics`, `Docs/03_Demos`를 기본 입력으로 사용한다.
 
-## GitHub Actions
-
-`.github/workflows/docs-validation.yml`의 `Docs Validation` workflow는 push와 pull request에서 문서 validator, Demo·Markdown 줄바꿈·Markdown table fixture, capture tool 계약과 현재 정본 검사를 같은 입력 기준으로 실행한다. Actions는 검사 기준의 정본이 아니라 로컬 validator를 실행하는 원격 환경이다.
-
-GitHub의 Actions tab 또는 PR Checks에서 `Docs Validation` run을 열고 validator별 step과 log를 확인한다. validator step 실패와 checkout, runner 또는 GitHub infrastructure 실패를 구분하며 상세 판정은 [GitHub Workflow Policy](../../06_Policies/github-workflow-policy.md)를 따른다.
-
-Fixture가 validator의 exit code를 확인하기 위해 자식 PowerShell process를 실행할 때는 현재 host executable을 사용한다. 로컬 Windows PowerShell과 Actions의 `pwsh` 사이에서 host를 바꾸지 않아 BOM 없는 UTF-8 script의 해석 기준을 유지한다. 관련 장애 처리는 [Session Troubleshooting](../session-troubleshooting.md)을 따른다.
-
 ```powershell
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-body.ps1 -GitHubRoot Docs/07_GitHub
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-quality.ps1 -GitHubRoot Docs/07_GitHub
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-github-visual-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-topic-doc-quality.ps1 -TopicsRoot Docs/01_Topics
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-index-quality.ps1 -DemosRoot Docs/03_Demos
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-index-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-doc-quality.ps1 -DemosRoot Docs/03_Demos
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-demo-doc-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-video-asset-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-video-asset-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-window-capture-tools.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-window-input-primitives.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-capture-run-state.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-wrap-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-render-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-render-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-markdown-table-quality.ps1
-powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markdown-table-quality.ps1
 ```
+
+새로 작성하거나 수정한 GitHub body, Demo Issue, Demo index는 작업 범위의 파일만 `-InputPath` 배열로 지정해 strict 검사를 실행한다.
+
+```powershell
+powershell -ExecutionPolicy Bypass -Command "& 'Docs/98_Tools/validators/validate-github-body.ps1' -InputPath @('Docs/07_GitHub/prs/part4_chapter15.md')"
+powershell -ExecutionPolicy Bypass -Command "& 'Docs/98_Tools/validators/validate-github-quality.ps1' -InputPath @('Docs/07_GitHub/issues/demo/demo_part4_chapter15.md')"
+powershell -ExecutionPolicy Bypass -Command "& 'Docs/98_Tools/validators/validate-demo-index-quality.ps1' -InputPath @('Docs/03_Demos/Part4_Chapter14-20/demo-index.md')"
+```
+
+인수를 생략한 기본 실행은 해당 정본 폴더를 전수 검사한다. 미수정 기존 정본 문서의 전수 실패는 별도 이관 backlog로 기록하며, 현재 작업 범위의 strict 검사 결과와 구분한다.
 
 `validate-github-quality.ps1`는 현재 `issues/demo/demo_*.md`를 대상으로 다음을 검사한다.
 
-- curated Demo Issue 필수 섹션과 순서
-- 대표 GitHub visual 1~3개와 screenshot 최소 1개
-- Demo Issue 본문의 standalone video attachment 금지와 video comment permalink 허용
-- 상세 Demo와 Verification 링크
-- 핵심 구현의 commit-pinned C++ source line 링크
-- 선택적 C++ 의사코드와 같은 섹션의 source line 링크
-- `Pseudo C++` 함수와 `if`, `else`, `for`, `while`의 Allman brace style
-- fenced code의 80자 초과 warning과 120자 초과 failure
-
-대표 visual 1~3개 검사는 구조와 수량만 확인한다. 단일 Example 또는 Chapter·Bundle 범위에 맞는 대표성, visual 간 독립 설명 가치와 중복 여부는 게시 전 수동 감사로 확인한다.
+- 필수 섹션 존재와 순서(`검증 상태` 뒤 `구현 범위와 한계`, `관련 문서`)
+- Demo Assets 표의 필수 행(`Input screenshot`, `Result screenshot`, `Result image`, `Video`)
+- `## 핵심 로직 의사코드` 섹션 존재
+- C++ fenced pseudocode(````cpp`) 사용 여부
+- `Pseudo C++` 표기, `*Pseudo(...)` 함수 시그니처 여부
+- 의사코드 아래 원본 코드 링크 존재 여부
+- 긴 줄(기본 100자 초과) 가독성 경고
 
 `validate-demo-index-quality.ps1`는 현재 `Docs/03_Demos/**/demo-index.md`를 대상으로 다음을 검사한다.
 
 - 필수 섹션 존재와 순서(`## 범위`, `## Demo 목록`, `## 갱신 기준`)
 - `## 범위`의 `주요 demo 후보`, `비고` 항목 존재
-- Demo 목록 테이블 필수 컬럼 존재(`상세 Demo`, `GitHub Demo Issue` 포함)
+- Demo 목록 테이블 필수 컬럼 존재
 - Demo 목록의 필수 행(`최소 capture`, `대표 capture`, `video`) 존재
 - 상태값 허용 목록 준수(`미확인`, `후보`, `확보`, `보류`, `제외`)
-- `확보` 상태일 때 Capture/Result가 `없음`이 아니며 tracked asset, selected local video 또는 published Demo Issue 중 하나를 참조하는지 확인
-- `확보` 상태일 때 상세 Demo Markdown 링크가 있는지 확인
-- `## 범위` 비고의 `ChapterN~M` pending range가 같은 table의 tracked capture/result 또는 published Demo Issue row와 충돌하지 않는지 확인
-- 상세 Demo와 Demo Issue 후보의 상대 링크 대상 존재 여부 확인
-- Demo Issue가 `게시 후보`, `미게시`, 실제 GitHub Issue URL 중 하나로 표현되는지 확인
+- `확보` 상태일 때 Capture/Result가 `없음`이 아니고 `Docs/_assets` 경로를 포함하는지 확인
 - 각 행 `비고` 비어있지 않은지 확인
 - `최소 capture` 행의 Example 대상 지정 여부 확인
-
-`validate-demo-doc-quality.ps1`는 상세 Demo 문서를 대상으로 다음을 검사한다.
-
-- 필수 섹션과 순서, 의미 있는 본문
-- Example, Topic, Verification Markdown 링크
-- repo-relative 링크 대상 존재 여부
-- tracked `Docs/_assets` visual
-- 모든 `cpp` fence의 `Pseudo C++` 표기와 대응 source line 링크
-- C++ 함수 block을 `text` fence로 분류한 의사코드 탐지
-- `## 핵심 구현` source line 코드 근거 bullet의 명사형 label과 끝 마침표 금지
-- `Pseudo C++` 함수와 `if`, `else`, `for`, `while`의 Allman brace style
-- `local/`, Legacy, stale path, placeholder
-- 상세 Demo와 Example README의 `pwsh.exe` 경고·PowerShell fallback 해명 문구
-- fenced code의 80자 초과 warning과 120자 초과 failure
-- 같은 폴더 `demo-index.md`의 상세 Demo 연결
-
-상세 Demo는 실제 C++ source를 복제하지 않고 source line 링크로 연결한다. `cpp` fence는 첫 비공백 줄에 `// Pseudo C++:`와 요약을 두며 Allman style을 적용한다. 함수 block을 포함하지 않는 화살표 기반 흐름도는 `text` fence로 유지한다. multiline signature, brace balance, indentation, source link의 의미상 대응은 수동 검수한다.
 
 `validate-topic-doc-quality.ps1`는 `Docs/01_Topics`의 승격된 상세 Topic 문서를 대상으로 다음을 검사한다.
 
@@ -138,17 +72,6 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markd
 
 ## 검사 기준
 
-- 일반 문단과 하나의 목록 항목은 각각 하나의 물리적 줄로 작성하고 특정 글자 수 상한을 두지 않는다.
-- 같은 문단·목록 항목의 연속 물리 줄처럼 구조적으로 확실한 인위적 soft-wrap은 `validate-markdown-wrap-quality.ps1`로 검사한다.
-- 애매한 들여쓰기 continuation은 warning으로 보고하며 `-WarningAsFailure`에서만 실패로 승격한다.
-- Markdown table은 header, separator와 data row의 열 수가 일치하는지 검사하고 separator cell의 alignment marker 문법을 확인한다.
-- 일반 문장의 단계·숫자·날짜 범위는 en dash를 사용한다. 같은 줄의 복수 단일-tilde 범위는 의도하지 않은 취소선으로 렌더링될 수 있어 render validator로 검사한다.
-- code span, fenced code, escaped tilde와 `~~`로 표시한 의도적 취소선은 render validator에서 제외한다.
-- escaped pipe는 cell 내용으로 처리하고 fenced code block과 HTML table은 table 검사에서 제외한다.
-- 문장 흐름과 렌더링 가독성처럼 문맥 판단이 필요한 항목은 agent 또는 수동 검수에서 확인한다.
-- 실제 GitHub UI에서 table, 목록과 이미지가 의도대로 렌더링되는지는 validator가 보장하지 않으며 [Validation Tools](../validation-tools.md)의 Browser 표본 검수에서 확인한다.
-- validator는 Markdown을 자동 reflow하거나 수정하지 않는다.
-- fenced code는 80자를 권장하고 120자를 상한으로 검사한다.
 - GitHub 게시 전 body에 draft/local-only 경로가 남아 있지 않은지 확인한다.
 - 필수 섹션이 빠지지 않았는지 확인한다.
 - 필수 섹션이 비어 있거나 `-`만 있는지 확인한다.
@@ -158,10 +81,8 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markd
 - screenshot/result image는 GitHub absolute URL을 사용해야 한다.
 - 허용 URL은 `https://github.com/<owner>/<repo>/blob/<branch>/Docs/_assets/captures/<file>?raw=true` 또는 `https://raw.githubusercontent.com/<owner>/<repo>/<branch>/Docs/_assets/captures/<file>` 형식이다.
 - image URL 검사는 형식 검사이며 실제 파일 존재를 보증하지 않는다.
-- PR은 screenshot 또는 storyboard 대표 visual을 최대 1개 사용하고 상세 Demo, Demo Issue 후보 또는 게시된 Demo Issue를 연결한다.
-- PR body에는 standalone video attachment를 삽입하지 않고 Demo Issue video comment permalink를 연결한다.
 - template에 특정 Issue 번호가 하드코딩되어 있지 않은지 확인한다.
-- Issue/PR 후보는 첫 H1을 title source로 유지한다. 실제 remote body에서는 첫 H1과 바로 뒤 빈 줄을 제거하고 remote/tracked 비교에도 같은 변환을 적용한다.
+- Issue/PR 후보는 첫 H1을 title source로 유지한다. 실제 `gh issue create`와 `gh pr create`에서는 title을 H1에서 사용하고 body는 `Docs/07_GitHub` tracked 정본을 그대로 게시한다.
 
 ## 지원 범위
 
@@ -223,35 +144,9 @@ Progress comment는 Docs 정본을 복제하지 않고 진행 상태와 링크�
 - `local/` 하위 snapshot 생성 여부
 - `Docs/04_WorkLogs`와 `work-unit-github-index.md` 동기화 여부
 - build/run/capture 실제 성공 여부
-- asset 출처 상태, 외부 자료 복제 여부, 라이선스와 metadata
-- 실행 입력과 tracked asset의 hash 또는 decoded pixel 관계
-- prompt 원문, 생성 화면 screenshot, 생성 날짜와 작업용 원본
-- 상세 Demo와 Example 또는 Demo Issue의 의미 중복
-- visual 대표성과 limitation의 기술적 정확성
-- video 필요성, 조작과 결과의 대응, 시작·종료 frame과 공개 화면 안전성
-- private repository attachment의 실제 재생과 비인가 독자 접근 가능성
-
-Video binary와 게시 상태는 다음 방식으로 함께 확인한다.
-
-- 기존 selected MP4의 기술 검사는 `../scripts/inspect-example-video.ps1`을 사용한다.
-- 예상하지 못한 tracked MP4, MOV와 WEBM은 `validate-video-asset-quality.ps1`로 검사한다.
-- Demo Issue video attachment의 실제 GitHub UI 재생은 Browser 수동 검수로 확인한다.
-- 같은 video의 중복 업로드와 PR 대표성은 게시 전 수동 감사로 확인한다.
 
 ## 주의
 
 - validator 통과는 GitHub 게시 승인이 아니다.
 - `git push`, `gh issue create`, `gh pr create`, Ready for Review 전환은 사용자 승인 후 진행한다.
 - local 초안 원문은 이 폴더에 두지 않는다.
-## Runtime dialog handling test
-
-`test-example-error-window-handling.ps1`는 assimp DLL 누락 상황을 build output 범위에서 재현하고, example error dialog 탐지와 safe close 도구가 동작하는지 확인한다. 이 테스트는 tracked source와 vcpkg 원본 DLL을 수정하지 않는다.
-
-`test-capture-run-state.ps1`는 실제 graphics example을 실행하지 않고 capture/run session lock, protected process target 거부, synthetic error dialog 2개 drain과 quiet period 재검사를 확인한다. 이 테스트는 `local/capture-run` 아래 임시 lock만 사용하고 종료 시 제거한다.
-
-```powershell
-powershell -ExecutionPolicy Bypass `
-  -File Docs/98_Tools/validators/test-example-error-window-handling.ps1
-powershell -ExecutionPolicy Bypass `
-  -File Docs/98_Tools/validators/test-capture-run-state.ps1
-```
