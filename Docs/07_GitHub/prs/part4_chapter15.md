@@ -55,7 +55,7 @@ Source에서 활성화한 particles에 buoyancy를 적용하고 `flare0.dds` spr
 - Demo index, 상세 Demo, GitHub body, GitHub quality와 Markdown validator 통과 대상
 - 최신 branch push 기준 `Docs Validation` run success 확인
 
-## 대표 Visual
+## 스크린샷
 
 ### Chapter15 SPH water accumulation
 
@@ -63,7 +63,7 @@ Source에서 활성화한 particles에 buoyancy를 적용하고 `flare0.dds` spr
 
 ![Chapter15 SPH water accumulation](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter15_03_sph_water.png?raw=true)
 
-## 구현 범위와 한계
+## 미확인 / 제한
 
 - 이 PR의 현재 재검증 범위는 Chapter15 Debug x64다.
 - Release 현재 재검증은 과거 확인 상태와 분리하고 후속 범위로 둔다.
@@ -85,3 +85,7 @@ Source에서 활성화한 particles에 buoyancy를 적용하고 `flare0.dds` spr
 
 - Demo Issue: [Part4 Chapter15 Particle Simulation Demo #31](https://github.com/Razria93/Graphics_Study_Archive/issues/31)
 - Progress 완료 댓글: [Phase 5-2 완료 기록](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5200004532)
+
+## 다음 단계
+
+- Chapter16 이후 GPU compute simulation과 Chapter15 Release 재검증 범위를 별도 작업으로 결정한다.

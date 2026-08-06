@@ -41,7 +41,11 @@
 - Local validator: GitHub body, Demo, Topic, video asset, Markdown과 capture tool contract 검사 통과
 - Remote validator: `Docs Validation` workflow에 capture tool contract test를 연결
 
-## 구현 범위와 한계
+## 스크린샷
+
+- 없음
+
+## 미확인 / 제한
 
 - Windows interactive desktop, DWM과 FFmpeg `gdigrab` 환경을 대상으로 한다.
 - 범용 도구는 application 내부 parameter, slider와 checkbox를 자동 조작하지 않는다.
@@ -59,3 +63,7 @@
 ## 관련 이슈
 
 - 없음
+
+## 다음 단계
+
+- 다음 Chapter capture 작업에서 예제별 비추적 operation plan을 적용해 재현성을 확인한다.

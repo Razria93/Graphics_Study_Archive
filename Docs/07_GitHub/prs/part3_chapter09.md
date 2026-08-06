@@ -52,7 +52,7 @@ Axis-angle quaternion에서 VirtualTrackball 누적 회전으로 확장하고, �
 - Video: interaction 동적 근거 8개 기술 검수, Step5 한 개를 Demo Issue 전용 댓글로 게시
 - 문서: GitHub body, Demo, Topic, Markdown rendering·table·wrap과 video asset validator 통과
 
-## 대표 Visual
+## 스크린샷
 
 ### Step5 VirtualTrackball 누적 회전
 
@@ -62,7 +62,7 @@ Axis-angle quaternion에서 VirtualTrackball 누적 회전으로 확장하고, �
 
 - 동적 근거: [VirtualTrackball video 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/21#issuecomment-5164633305)
 
-## 구현 범위와 한계
+## 미확인 / 제한
 
 - Step1 mouse-look은 상대 mouse delta가 아니라 client cursor의 절대 NDC 위치를 사용한다.
 - Step2는 picking pixel을 CPU로 동기 readback한다.
@@ -85,3 +85,7 @@ Axis-angle quaternion에서 VirtualTrackball 누적 회전으로 확장하고, �
 - [Part2 Chapter08 Shader Experiments Demo #22](https://github.com/Razria93/Graphics_Study_Archive/issues/22)
 - [Part3 Chapter09 User Interaction Demo #21](https://github.com/Razria93/Graphics_Study_Archive/issues/21)
 - [Step5 VirtualTrackball video 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/21#issuecomment-5164633305)
+
+## 다음 단계
+
+- interaction video와 resize resource lifetime의 후속 검증 범위를 별도 작업으로 결정한다.
