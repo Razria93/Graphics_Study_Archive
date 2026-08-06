@@ -2,7 +2,7 @@
 
 ## 목적
 
-Chapter15 PR 생성 전 로컬 PR body 후보, remote 게시물, branch 상태와 validator 결과를 감사한다. PR 생성 자체는 사용자 승인 뒤 별도 수행한다.
+Chapter15 PR 생성 전 로컬 PR body 후보, remote 게시물, branch 상태와 validator 결과를 감사하고 Draft PR 생성 결과를 기록한다.
 
 ## 감사 기준선
 
@@ -90,3 +90,10 @@ git diff --check
 ## 판정
 
 Chapter15 PR body 후보와 remote 게시 연결은 PR 생성 전 감사 대상으로 정렬되어 있다. 현재 PR 후보 작성 commit은 local ahead 1 상태이므로, 사용자 승인 후 branch push와 Draft PR 생성을 순서대로 진행할 수 있다.
+
+## 실행 결과
+
+- Branch push: `origin/docs/part4-chapter14-20-workflow`를 `ce2645e5449a8d685926854e839f61126cbc8511`까지 갱신했고 local HEAD, tracking ref와 remote branch head 일치를 확인했다.
+- Draft PR: [PR #32](https://github.com/Razria93/Graphics_Study_Archive/pull/32) 생성, base `main`, head `docs/part4-chapter14-20-workflow`, 생성 시점 head `ce2645e5449a8d685926854e839f61126cbc8511` 확인.
+- PR body 검사: remote body는 `## 요약`으로 시작하고 한글 본문, 대표 visual 1개와 Chapter15 설명을 포함한다.
+- 후속 동기화: PR #32 URL을 Work Unit, Progress와 preflight 정본에 반영한다.

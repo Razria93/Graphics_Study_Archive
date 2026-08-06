@@ -14,7 +14,7 @@
 | Capture | tracked/local 후보 | Ex1402, Ex1404~Ex1407, Ex1501, Ex1502, Ex1503 centered client-visible screenshot 후보를 `Docs/_assets/captures`에 승격했다. Ex1502는 원본 `flare0.dds`를 직접 링크하지 않고 rendered evidence로만 다룬다. |
 | Demo | Chapter14 작성 · Chapter15 상세 후보 작성 | Chapter14 Ex1401~Ex1408 Step별 상세 Demo와 tracked capture 연결을 작성했다. Chapter15 Ex1501~Ex1503 상세 Demo, Demo Issue body 후보와 tracked capture 연결을 작성했다. |
 | Publication | 검토 필요 | public 후보 확정이 아니라 asset/public risk 검토 축으로만 기록한다. |
-| GitHub | Chapter14 merged · Chapter15 PR 후보 작성 | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시·review 대응·merge까지 마감했다. Chapter15 Demo Issue #31, Progress 누적 댓글 갱신과 Phase 5-2 완료 댓글을 게시하고 PR body 후보를 작성했다. |
+| GitHub | Chapter14 merged · Chapter15 Draft PR 생성 | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시·review 대응·merge까지 마감했다. Chapter15 Demo Issue #31, Progress 누적 댓글 갱신, Phase 5-2 완료 댓글과 Draft PR #32를 게시했다. |
 
 ## 시작 결정
 
@@ -92,6 +92,7 @@ Part4 Chapter14-20은 `Examples.sln` 단일 project와 command argument 기반 �
 - Chapter15 Demo Issue는 [Issue #31](https://github.com/Razria93/Graphics_Study_Archive/issues/31)에 게시했다.
 - Progress 누적 진행 댓글 [5091068690](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690)은 Phase 5-2 내용을 포함하도록 갱신했다.
 - Phase 5-2 완료 댓글은 [댓글 5200004532](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5200004532)에 게시했다.
+- Draft PR은 [PR #32](https://github.com/Razria93/Graphics_Study_Archive/pull/32)에 생성했다.
 
 ## 정본 연결
 
@@ -106,5 +107,5 @@ Part4 Chapter14-20은 `Examples.sln` 단일 project와 command argument 기반 �
 
 ## 다음 작업
 
-1. Chapter15 PR 생성은 별도 승인 후 진행한다.
+1. Chapter15 Draft PR #32의 Actions 완료와 Ready for Review 전환 여부를 별도 승인으로 확인한다.
 2. Chapter14 `Ex1401_Basic` tracked capture 승격 여부와 Chapter15 desktop video 후보는 후속 범위로 둔다.
