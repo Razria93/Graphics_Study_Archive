@@ -158,6 +158,7 @@ function Test-DemoTable {
         [string[]]$Lines
     )
 
+    $Scope = "## " + (New-Text @(0xBC94, 0xC704))
     $DemoList = "## Demo " + (New-Text @(0xBAA9, 0xB85D))
     $section = Get-SectionLines -Lines $Lines -Heading $DemoList
     if ($null -eq $section) {
@@ -231,6 +232,39 @@ function Test-DemoTable {
         }
         if (-not $found) {
             Add-Failure $RelativePath "demo table missing row: $required"
+        }
+    }
+
+    $scopeSection = Get-SectionLines -Lines $Lines -Heading $Scope
+    if ($null -ne $scopeSection) {
+        $scopeText = $scopeSection -join "`n"
+        $pendingRanges = [regex]::Matches($scopeText, 'Chapter(\d{1,2})~(\d{1,2})')
+        $exampleIndex = [Array]::IndexOf($header, $ColExample)
+        $captureIndex = [Array]::IndexOf($header, $ColCaptureResult)
+        $githubIssueIndex = [Array]::IndexOf($header, $ColGitHubIssue)
+
+        foreach ($range in $pendingRanges) {
+            $startChapter = [int]$range.Groups[1].Value
+            $endChapter = [int]$range.Groups[2].Value
+            for ($chapter = $startChapter; $chapter -le $endChapter; ++$chapter) {
+                $chapterToken = "Ex{0:D2}" -f $chapter
+                foreach ($row in $rows) {
+                    $name = $row[[Array]::IndexOf($header, $ColDemoCandidate)]
+                    $example = $row[$exampleIndex]
+                    $capture = $row[$captureIndex]
+                    $githubIssue = $row[$githubIssueIndex]
+
+                    $hasChapterExample = $example -match [regex]::Escape($chapterToken)
+                    $hasPromotedEvidence = (
+                        $capture -match '(Docs/)?_assets/(captures|videos|diagrams)' -or
+                        $capture -match '(?i)\btracked\s+(capture|result|asset)\b' -or
+                        $githubIssue -match 'https://github\.com/[^/]+/[^/]+/issues/\d+'
+                    )
+                    if ($hasChapterExample -and $hasPromotedEvidence) {
+                        Add-Failure $RelativePath "scope section lists Chapter$chapter in pending range $($range.Value), but row '$name' has promoted capture/result or published Demo Issue"
+                    }
+                }
+            }
         }
     }
 

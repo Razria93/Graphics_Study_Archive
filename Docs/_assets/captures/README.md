@@ -114,6 +114,9 @@ part2_chapter04_depth-buffer.png
 | `part3_chapter13_08_sphere_light_radius_0p2.png` | screenshot | `Part3_Chapter10-13/13_LightAndShadow_Step8_UnrealSphereLight` | 확보 | Radius 0.2 대표 sphere light response 확인 |
 | `part3_chapter13_08_sphere_light_radius_0p5.png` | screenshot | `Part3_Chapter10-13/13_LightAndShadow_Step8_UnrealSphereLight` | 확보 | Radius 0.5의 broad highlight response 확인 |
 | `part3_chapter13_08_sphere_light_radius_storyboard.png` | storyboard | `Part3_Chapter10-13/13_LightAndShadow_Step8_UnrealSphereLight` | 확보 | Radius 0.0, 0.2와 0.5 차이를 dark card layout으로 비교 |
+| `part4_chapter15_01_particle_system.png` | screenshot | `Part4_Chapter14-20/Ex1501_ParticleSystem` | 확보 | Debug x64에서 colored particle stream과 collapsed fixed UI 기준 확인 |
+| `part4_chapter15_02_sprite_fire_effect.png` | screenshot | `Part4_Chapter14-20/Ex1502_SpriteFireEffect` | 확보 | Debug x64에서 textured sprite fire rendered evidence와 collapsed fixed UI 기준 확인. 원본 `flare0.dds`는 직접 링크하지 않음 |
+| `part4_chapter15_03_sph_water.png` | screenshot | `Part4_Chapter14-20/Ex1503_SphWater` | 확보 | 10초 지연 capture에서 SPH particles가 아래에 쌓인 상태와 collapsed fixed UI 기준 확인 |
 
 ## 승격 체크
 

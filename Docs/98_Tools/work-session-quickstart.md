@@ -27,6 +27,65 @@
 
 문서 감사 keyword와 세부 구성은 [Document System Audit Policy](../06_Policies/document-system-audit-policy.md)와 [Document System Audit Guide](document-system-audit-guide.md)를 따른다.
 
+### Chapter 시작 체크리스트
+
+Chapter Work Unit을 시작할 때는 [Work Unit Workflow Policy](../06_Policies/work-unit-workflow-policy.md)의 Chapter 시작 체크포인트를 먼저 정리한다. 반복 사용하는 초안은 [Local Chapter Start Checkpoint](templates/local-chapter-start-checkpoint.md)를 사용한다.
+
+1. Chapter 범위 확정
+   - 예제 목록과 command argument를 확인한다.
+   - build/run 대상과 제외 대상을 구분한다.
+   - screenshot, stdout, video evidence를 분리한다.
+   - 외부 asset 또는 공개 위험 요소를 확인한다.
+2. 검증 기준선 작성
+   - Debug x64 build/run을 우선 확인한다.
+   - Release는 현재 재검증 대상인지 후속인지 구분한다.
+   - runtime DLL, working directory, command argument, capture mode를 확인한다.
+   - 실패는 `미확인`으로 뭉뚱그리지 않고 실패 원인과 다음 action으로 기록한다.
+3. Capture 후보 생성 기준
+   - target window/client area 기준을 사용한다.
+   - overlay, taskbar, 녹화 툴, 알림 노출 여부를 확인한다.
+   - video가 필요하면 desktop 환경 별도 목표로 분리한다.
+   - local 후보와 tracked 승격 후보를 구분한다.
+4. Demo 문서화 기준
+   - Step별 상세 Demo 작성 여부를 판단한다.
+   - Demo index에 representative, auxiliary, follow-up 상태를 기록한다.
+   - code evidence link는 실제 source line count 안에 있는지 확인한다.
+   - stdout-only 예제는 representative visual 없음이 의도된 상태인지 기록한다.
+5. GitHub 게시 후보 기준
+   - Demo Issue, PR body, Progress comment 후보 필요 여부를 판단한다.
+   - Work Unit GitHub Index 갱신 후보를 확인한다.
+   - H1 title source와 remote body 변환 규칙을 적용한다.
+6. Remote 게시 전 승인안
+   - push, Issue 생성, Progress comment, PR create/edit 명령을 분리한다.
+   - 예상 remote 변경 객체와 rollback이 어려운 작업을 명시한다.
+   - 승인 전 remote 변경을 실행하지 않는다.
+7. Remote 게시 후 역동기화
+   - Issue 번호, comment URL, PR URL을 확보한다.
+   - 영향받는 정본에 실제 URL을 반영한다.
+   - Chapter README `Next action`, Demo index `범위` 비고, WorkLog/GitHub index, Progress comment 후보, PR/Issue body 후보의 상태 문구를 같은 lifecycle 단계로 맞춘다.
+   - validator, commit, push, Actions를 확인한다.
+8. Ready for Review 감사
+   - PR head와 branch head 일치를 확인한다.
+   - remote body와 tracked 후보 일치를 확인한다.
+   - Browser에서 Issue, Progress comment, PR body 렌더링 표본을 확인한다.
+   - 이미지 로딩을 확인한다.
+   - Ready 전환은 별도 승인 후 실행한다.
+9. Review 대응
+   - 지적사항별 원인, 대응, 검증, 반영 commit을 기록한다.
+   - thread 답글을 작성한다.
+   - thread resolve 상태를 확인한다.
+   - PR/Issue body에 필요한 링크를 보정한다.
+10. Merge 전 최종 감사
+   - stale 상태 문구를 검색한다. `Next action`, `후보 작성`, `게시 예정`, `ChapterN~M 후속 범위`, `capture/result 미확보`, `Draft`, `Ready for Review` 같은 lifecycle 문구가 실제 remote 상태와 충돌하지 않는지 확인한다.
+   - validators 전체를 실행한다.
+   - code anchor를 검사한다.
+   - remote body 동기화를 확인한다.
+   - Browser UI를 확인한다.
+   - merge blocker, post-merge follow-up, no action을 분류한다.
+   - merge readiness 문서를 작성한다.
+   - commit, push, Actions success를 확인한다.
+   - 일반 merge commit 승인안을 작성한다.
+
 ## 3. 책임 정본 찾기
 
 먼저 [Docs Index](../00_Index/README.md)와 [Canonical Docs Policy](../06_Policies/canonical-docs-policy.md)에서 수정할 정본을 찾는다.

@@ -19,6 +19,7 @@
 | [Plan Progress Comment](plan-progress-comment.md) | `Docs/07_GitHub/plan/plan-progress.md` | GitHub 게시 후보 | 누적 진행 요약 댓글 |
 | [Plan Comment](work-unit-completion-comment.md) | `Docs/07_GitHub/plan/comments/*.md` | GitHub 게시 후보 | PR 마감 단위 기록 |
 | [Local Study Review](local-study-review.md) | `local/study-review` | local-only 검토용 | raw/source 주석 inventory와 diff 검토 메모 |
+| [Local Chapter Start Checkpoint](local-chapter-start-checkpoint.md) | `local/mini-plans` 또는 local-only 작업 초안 | local-only 계획용 | Chapter 범위, 검증 기준선, evidence 분류, remote 승인 범위 |
 | [Local Publication Review](local-publication-review.md) | `local/publication` | local-only 검토용 | 공개 전 점검 메모 |
 | [Local Capture Operation Plan](local-capture-operation-plan.md) | `local/` 하위 capture 작업 폴더 | local-only 조작 계획용 | 초기 상태, UI 조작, 대기, capture, reset과 검수 |
 | [PR Review Response](pr-review-response.md) | GitHub PR review comment 답변 | GitHub 게시용 짧은 댓글 | 원인, 대응 또는 판단, 검증, 반영 commit |

@@ -16,7 +16,7 @@
 | Part2_Chapter05-08 | 확보 | 후보 | 확보 | Chapter05 Step1·3과 Chapter06 Step1 console 예제는 capture를 제외한다. Chapter05 Step2·4, Chapter06 Step2–9, Chapter07 Step1–9와 Chapter08 Step1–7 screenshot을 확보했다. Chapter06 Step3와 Chapter08 Step7 selected local video를 확인했다 |
 | Part3_Chapter09 | 확보 | 확보 | 확보 | Step1~6 기본 PNG, Step2 hover, Step3 press PNG와 Step1·3·4·5·6 selected local video를 foreground 검증 경로로 확보했다. |
 | Part3_Chapter10-13 | 확보 | 확보 | 제외 | 21개 예제의 전체 창 screenshot을 확보했다. Chapter13은 9개 개별 capture와 hard shadow→PCF→PCSS 비교 sheet를 사용하며 video는 필요하지 않다 |
-| Part4_Chapter14-20 | 미확인 | 미확인 | 미확인 | 구조 확인 후 후보 확정 |
+| Part4_Chapter14-20 | 후보 | 후보 | 미확인 | Chapter14 tracked screenshot 일부 확보. Chapter15 Ex1501, Ex1502와 10초 지연 Ex1503 selected screenshot을 tracked 승격했다. `Ex1502`는 원본 `flare0.dds`를 직접 링크하지 않고 rendered evidence로만 사용한다 |
 | Portfolio_RayTracer | 미확인 | 미확인 | 미확인 | 대표 포트폴리오 후보 |
 
 ## 갱신 기준

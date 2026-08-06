@@ -11,7 +11,7 @@
 | `test-github-visual-quality.ps1` | GitHub visual 합산, Demo Issue video 위치와 댓글 template 계약 fixture 검사 | inline fixture, `fixtures/github-visual-quality`와 `Docs/98_Tools/templates` |
 | `validate-topic-doc-quality.ps1` | 상세 Topic 정본 품질 검사(책임 구조, 핵심 개념, Example/Verification/Demo 연결) | `Docs/01_Topics` |
 | `validate-demo-index-quality.ps1` | Demo source docs 구현도 균일성 검사(필수 구조, 테이블 스키마, 상태값, 최소 capture 기준) | `Docs/03_Demos/**/demo-index.md` |
-| `test-demo-index-quality.ps1` | Demo index의 selected·published video reference fixture 검사 | `fixtures/demo-index-video` |
+| `test-demo-index-quality.ps1` | Demo index의 selected·published video reference와 stale scope fixture 검사 | `fixtures/demo-index-video` |
 | `validate-demo-doc-quality.ps1` | 상세 Demo 기술 정본과 Example 공개 환경 문구 검사 | 상세 Demo, `Part*_Chapter*/**/README.md` |
 | `test-demo-doc-quality.ps1` | 상세 Demo 형식과 공개 shell 환경 문구 fixture 검사 | `fixtures/demo-doc-*` |
 | `validate-video-asset-quality.ps1` | 예상하지 못한 tracked MP4, MOV와 WEBM 검사 | Git tracked path |
@@ -103,6 +103,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-markd
 - 상태값 허용 목록 준수(`미확인`, `후보`, `확보`, `보류`, `제외`)
 - `확보` 상태일 때 Capture/Result가 `없음`이 아니며 tracked asset, selected local video 또는 published Demo Issue 중 하나를 참조하는지 확인
 - `확보` 상태일 때 상세 Demo Markdown 링크가 있는지 확인
+- `## 범위` 비고의 `ChapterN~M` pending range가 같은 table의 tracked capture/result 또는 published Demo Issue row와 충돌하지 않는지 확인
 - 상세 Demo와 Demo Issue 후보의 상대 링크 대상 존재 여부 확인
 - Demo Issue가 `게시 후보`, `미게시`, 실제 GitHub Issue URL 중 하나로 표현되는지 확인
 - 각 행 `비고` 비어있지 않은지 확인

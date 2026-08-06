@@ -62,9 +62,15 @@ Related PR: [PR #24](https://github.com/Razria93/Graphics_Study_Archive/pull/24)
 
 ### Phase 5-1. Part4 Chapter14 Compute Shader Evidence
 
-Chapter14 `Ex1401`~`Ex1408` compute shader 예제를 Debug x64 기준으로 재검증하고, `Ex1402`, `Ex1404`~`Ex1407`의 centered client-visible screenshot과 stdout/code evidence를 상세 Demo, [Demo Issue #29](https://github.com/Razria93/Graphics_Study_Archive/issues/29)와 Draft PR로 연결했다. Phase 5-1 완료 댓글은 게시했고 Ready for Review 전환은 후속 승인 범위로 둔다.
+Chapter14 `Ex1401`~`Ex1408` compute shader 예제를 Debug x64 기준으로 재검증하고, `Ex1402`, `Ex1404`~`Ex1407`의 centered client-visible screenshot과 stdout/code evidence를 상세 Demo, [Demo Issue #29](https://github.com/Razria93/Graphics_Study_Archive/issues/29)와 PR #30으로 연결했다. Phase 5-1 완료 댓글, Demo Issue와 PR review 대응을 마감하고 PR #30을 일반 merge commit 방식으로 병합했다.
 
-Related PR: [PR #30](https://github.com/Razria93/Graphics_Study_Archive/pull/30) (Draft) - Part4 Chapter14 Compute Shader evidence 문서화와 capture 승격
+Related PR: [PR #30](https://github.com/Razria93/Graphics_Study_Archive/pull/30) (Merged) - Part4 Chapter14 Compute Shader evidence 문서화와 capture 승격
+
+### Phase 5-2. Part4 Chapter15 Particle Simulation Evidence
+
+Chapter15 `Ex1501_ParticleSystem`, `Ex1502_SpriteFireEffect`, `Ex1503_SphWater`를 Debug x64 기준으로 smoke 확인했다. `Ex1501` particle stream, `Ex1502` sprite fire와 10초 지연 `Ex1503` SPH water accumulation screenshot을 tracked capture asset으로 승격하고 상세 Demo와 [Demo Issue #31](https://github.com/Razria93/Graphics_Study_Archive/issues/31)에 게시했다. `Ex1502`는 원본 `flare0.dds`를 직접 링크하지 않고 직접 실행한 rendered evidence로만 다룬다.
+
+Related PR: [PR #32](https://github.com/Razria93/Graphics_Study_Archive/pull/32) (Ready for Review) - Part4 Chapter15 Particle Simulation evidence 문서화와 capture 승격
 
 ## 진행 예정
 
@@ -82,3 +88,4 @@ Related PR: 예정
 - [PR #20](https://github.com/Razria93/Graphics_Study_Archive/pull/20) (Merged): Part2 Chapter05-08 DirectX11 Pipeline·Modeling·Shader 예제 정규화와 Demo
 - [PR #23](https://github.com/Razria93/Graphics_Study_Archive/pull/23) (Merged): Part3 Chapter09 User Interaction 구현과 Demo
 - [PR #24](https://github.com/Razria93/Graphics_Study_Archive/pull/24): Part3 Chapter10-13 Geometry·Texturing·PBR·Light/Shadow 단계별 구현과 Demo
+- [PR #30](https://github.com/Razria93/Graphics_Study_Archive/pull/30) (Merged): Part4 Chapter14 Compute Shader evidence 문서화와 capture 승격

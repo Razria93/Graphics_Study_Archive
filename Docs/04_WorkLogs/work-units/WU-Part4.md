@@ -10,11 +10,11 @@
 | --- | --- | --- |
 | Source/import | 반영 완료 | `SRC-P4-C14-20`으로 source provenance를 추적한다. |
 | Branch | 진행 중 | `docs/part4-chapter14-20-workflow`에서 baseline 문서 축 정규화를 시작한다. |
-| Build/run | Chapter14 Debug 확인 | Ex1401~Ex1408 Debug x64 build/run을 2026-08-06 현재 확인했다. Chapter15~20과 Release 현재 재검증은 남아 있다. |
-| Capture | tracked 후보 | Ex1402, Ex1404~Ex1407 centered client-visible screenshot 후보를 `Docs/_assets/captures`에 승격했다. Ex1401은 local screenshot 후보, Ex1403, Ex1405, Ex1408은 stdout log 후보를 유지한다. |
-| Demo | Chapter14 Step별 후보 작성 | stale 후보를 제거하고 Chapter14 Ex1401~Ex1408 Step별 상세 Demo와 tracked capture 연결을 작성했다. |
+| Build/run | Chapter14와 Chapter15 Debug 일부 확인 | Chapter14 `Ex1401`-`Ex1408`과 Chapter15 `Ex1501`-`Ex1503` Debug x64 build/run을 2026-08-06 현재 확인했다. Chapter16-20과 Release 현재 재검증은 남아 있다. |
+| Capture | tracked/local 후보 | Ex1402, Ex1404~Ex1407, Ex1501, Ex1502, Ex1503 centered client-visible screenshot 후보를 `Docs/_assets/captures`에 승격했다. Ex1502는 원본 `flare0.dds`를 직접 링크하지 않고 rendered evidence로만 다룬다. |
+| Demo | Chapter14 작성 · Chapter15 상세 후보 작성 | Chapter14 Ex1401~Ex1408 Step별 상세 Demo와 tracked capture 연결을 작성했다. Chapter15 Ex1501~Ex1503 상세 Demo, Demo Issue body 후보와 tracked capture 연결을 작성했다. |
 | Publication | 검토 필요 | public 후보 확정이 아니라 asset/public risk 검토 축으로만 기록한다. |
-| GitHub | Ready for Review | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시하고 Ready for Review로 전환했다. 리뷰 지적사항 대응 commit과 thread 응답을 반영했다. |
+| GitHub | Chapter14 merged · Chapter15 Ready for Review | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시·review 대응·merge까지 마감했다. Chapter15 Demo Issue #31, Progress 누적 댓글 갱신, Phase 5-2 완료 댓글과 PR #32를 게시하고 Ready for Review로 전환했다. |
 
 ## 시작 결정
 
@@ -22,6 +22,14 @@
 - 첫 작업은 Chapter14 compute slice나 build/run 재검증이 아니라 baseline 문서 축 정규화로 제한한다.
 - 이번 범위에서는 build/run/capture를 수행하지 않고, 과거 확인과 현재 재검증 필요 상태를 분리한다.
 - Demo Issue, Progress comment, PR remote 게시는 후속 승인 범위로 둔다.
+
+## Part4 장기 브랜치 운영 기준
+
+Part4 Chapter14-20은 `Examples.sln` 단일 project와 command argument 기반 예제 선택 구조를 공유하므로 `docs/part4-chapter14-20-workflow` 장기 브랜치를 유지한다. 작업은 예제 단위로 build/run/capture/document evidence 후보를 생성하고, 증거자료 승인과 remote 게시, PR, merge는 Chapter 단위로 수행한다.
+
+각 Chapter PR merge 후에는 `main`의 merge commit을 장기 브랜치에 반영한 뒤 다음 Chapter 작업을 시작한다. 다음 PR 생성 전에는 `origin/main..HEAD` 범위에 해당 Chapter 작업 commit만 남는지 확인한다.
+
+증거자료는 예제 단위 local 후보로 먼저 만들고, Chapter 단위 검수에서 tracked 승격 여부를 승인한다. 승인 전에는 `Docs/_assets` 승격, GitHub Issue/Progress/PR remote 게시를 진행하지 않는다.
 
 ## Chapter14 문서화 기준
 
@@ -61,6 +69,31 @@
 - `Ex1404_StructuredBuffer`와 `Ex1405_ConsumeAppendBuffer`는 point cloud visual이 유사하지만, `Ex1404`는 단일 StructuredBuffer SRV/UAV draw 흐름이고 `Ex1405`는 Consume/Append UAV counter와 append count 기반 draw 흐름이다.
 - `Ex1406_DensityField`와 `Ex1407_IndirectArguments`는 density trail visual이 유사하지만, `Ex1406`은 CPU가 particle count를 직접 넘기는 draw 흐름이고 `Ex1407`은 GPU argument buffer를 넘기는 `DrawInstancedIndirect` 흐름이다.
 
+## Chapter15 파일럿과 승격 감사
+
+- 2026-08-06 `Examples.sln` Debug x64 build를 경고 0개, 오류 0개로 확인했다.
+- `capture-example-window.ps1`에 `ArgumentList` option을 추가해 `Examples.exe 1501`, `1502`, `1503` command argument 실행을 capture 도구에서 직접 지원했다.
+- `Ex1501_ParticleSystem`, `Ex1502_SpriteFireEffect`, `Ex1503_SphWater`는 `HLAB_CAPTURE_UI=collapsed`, `CenterWindow`, immediate screenshot 기준으로 local 후보를 확보했다.
+- 생성 후보는 `local/capture-run/Part4_Chapter15/debug-smoke-20260806`에 둔다. PNG 3개는 text metadata chunk가 없고 taskbar-free fixed UI 기준을 충족한다.
+- `Ex1501_ParticleSystem`은 particle stream baseline tracked capture로 승격했다.
+- `Ex1502_SpriteFireEffect`는 sprite fire rendered evidence를 tracked capture로 승격했다. 원본 `Assets/Textures/flare0.dds`는 직접 링크하지 않고 권리 확보를 주장하지 않는다.
+- `Ex1503_SphWater`는 10초 지연 capture에서 아래에 쌓인 SPH particle cluster를 tracked capture로 승격했다. Movement 설명은 desktop video 후속 후보로 분리한다.
+
+## Chapter15 Demo body 후보
+
+- `Ex1501_ParticleSystem`은 CPU particle pool update, gravity/collision과 structured buffer sprite draw를 설명하는 상세 Demo로 연결했다.
+- `Ex1502_SpriteFireEffect`는 buoyancy update, sprite texture binding과 tracked rendered evidence를 설명하는 상세 Demo로 연결했다.
+- `Ex1503_SphWater`는 dual source spawn, SPH density/pressure/viscosity force, boundary collision과 10초 지연 selected capture를 설명하는 상세 Demo로 연결했다.
+- Chapter15 Demo Issue #31은 `Ex1501`, `Ex1502`와 `Ex1503` screenshot 3개를 대표 visual로 사용한다. `Ex1502`는 원본 `flare0.dds`를 직접 링크하지 않고 rendered evidence로만 다룬다.
+
+## Chapter15 원격 게시 결과
+
+- Branch `docs/part4-chapter14-20-workflow`는 `388d2b0c950d3d978179431b1006d8406ef391f4`까지 push했다.
+- Chapter15 Demo Issue는 [Issue #31](https://github.com/Razria93/Graphics_Study_Archive/issues/31)에 게시했다.
+- Progress 누적 진행 댓글 [5091068690](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690)은 Phase 5-2 내용을 포함하도록 갱신했다.
+- Phase 5-2 완료 댓글은 [댓글 5200004532](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5200004532)에 게시했다.
+- Draft PR은 [PR #32](https://github.com/Razria93/Graphics_Study_Archive/pull/32)에 생성했다.
+
 ## 정본 연결
 
 | 책임 | 정본 |
@@ -74,6 +107,5 @@
 
 ## 다음 작업
 
-1. Chapter14 merge 전 최종 감사와 merge 승인 판단은 [Part4 Chapter14 Merge Readiness](../reviews/part4-chapter14-merge-readiness.md)를 따른다.
-2. Chapter14 `Ex1401_Basic` tracked capture 승격 여부는 desktop 재촬영 후 판단한다.
-3. Chapter15 진입 전 runtime DLL 복구 절차와 desktop video 후보 분리를 유지한다.
+1. Chapter15 PR #32 review 대응과 merge 전 감사는 후속 승인 범위로 둔다.
+2. Chapter14 `Ex1401_Basic` tracked capture 승격 여부와 Chapter15 desktop video 후보는 후속 범위로 둔다.

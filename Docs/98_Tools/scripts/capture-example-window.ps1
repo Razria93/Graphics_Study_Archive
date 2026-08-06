@@ -8,6 +8,7 @@ param(
     [string]$ExpectedTitle,
     [Parameter(Mandatory = $true)]
     [string]$OutputPath,
+    [string[]]$ArgumentList = @(),
     [ValidateRange(0, 10000)]
     [int]$CaptureDelayMilliseconds = 750,
     [switch]$Overwrite,
@@ -377,6 +378,7 @@ $temporaryOutput = Join-Path `
 try {
     $process = Start-Process `
         -FilePath $resolvedExecutable `
+        -ArgumentList $ArgumentList `
         -WorkingDirectory $resolvedWorkingDirectory `
         -PassThru
 

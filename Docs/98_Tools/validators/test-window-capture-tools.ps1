@@ -169,6 +169,7 @@ foreach ($name in @(
     "WorkingDirectory",
     "ExpectedTitle",
     "OutputPath",
+    "ArgumentList",
     "CaptureDelayMilliseconds",
     "Overwrite",
     "KeepApplicationOpen",

@@ -19,6 +19,7 @@ Windows에서 graphics example의 보이는 application window 전체를 PNG 후
 
 | Parameter | 기본값과 의미 |
 | --- | --- |
+| `ArgumentList` | executable에 전달할 command argument, 기본값 없음 |
 | `CaptureDelayMilliseconds` | foreground 전환 후 대기 시간, 기본값 `750` |
 | `Overwrite` | 기존 output 교체 허용 |
 | `KeepApplicationOpen` | 성공 후 application 유지 |
@@ -59,6 +60,20 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 `CenterWindow`는 DWM bounds로 목표 위치를 계산하고 native window origin에 이동 delta만 적용하여 application의 현재 크기를 바꾸지 않는다. 창이 working area보다 크거나 중앙 배치 후 bounds가 벗어나면 capture하지 않는다. countdown을 사용하는 동안 사용자는 마우스와 키보드를 조작하지 않는다. 도구는 global input을 잠그거나 system 설정을 변경하지 않는다.
 
 성공 결과는 absolute output path, 실제 image dimensions와 SHA-256을 출력한다. OS theme, DPI와 window border에 따라 전체 image dimensions는 달라질 수 있다.
+
+단일 executable이 command argument로 example을 선택하는 구조에서는 `ArgumentList`를 사용한다. 예를 들어 Part4 `Examples.exe`의 `1501` 실행은 다음처럼 호출한다.
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass `
+  -File Docs/98_Tools/scripts/capture-example-window.ps1 `
+  -ExecutablePath Part4_Chapter14-20/x64/Debug/Examples.exe `
+  -ArgumentList 1501 `
+  -WorkingDirectory Part4_Chapter14-20 `
+  -ExpectedTitle "HongLabGraphics Example" `
+  -OutputPath local/capture-run/Part4_Chapter15/ex1501-base.png `
+  -CenterWindow `
+  -CaptureImmediately
+```
 
 ## 실패 처리
 
