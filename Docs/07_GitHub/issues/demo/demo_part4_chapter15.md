@@ -4,7 +4,22 @@
 
 Chapter15는 CPU-side particle simulation 결과를 structured buffer와 geometry shader sprite draw로 표시하는 particle simulation evidence 묶음이다. 대표 visual은 각 시연 video에서 선택한 timestamp frame 3개를 배치한 storyboard로 구성한다. `Ex1502`는 원본 `flare0.dds`를 직접 링크하지 않고 직접 실행한 rendered evidence만 사용한다.
 
-## 결과
+## 핵심 목표
+
+- CPU particle pool의 활성화, physics update와 structured buffer upload 연결
+- Geometry shader sprite draw와 accumulate blend로 particle state 표시
+- SPH density·pressure·viscosity force와 boundary collision 결과 기록
+
+## Demo Assets
+
+| 구분 | 파일 | 설명 |
+| --- | --- | --- |
+| Input screenshot | 없음 | 별도 입력 screenshot을 사용하지 않음 |
+| Result screenshot | 없음 | 단일 screenshot 대신 timestamp storyboard를 사용함 |
+| Result image | Chapter15 storyboard 3장 | 각 시연 video에서 선택한 timestamp frame 3개를 배치한 rendered evidence |
+| Video | 없음 | GitHub attachment URL을 아직 게시하지 않음 |
+
+## 시각 정보
 
 ### Particle stream baseline
 
@@ -24,7 +39,7 @@ Chapter15는 CPU-side particle simulation 결과를 structured buffer와 geometr
 
 ![SPH water accumulation](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter15_03_sph_water.png?raw=true)
 
-## 핵심 구현
+## 구현 하이라이트
 
 ### Particle pool and sprite draw
 
@@ -49,13 +64,44 @@ Chapter15는 CPU-side particle simulation 결과를 structured buffer와 geometr
 - [Sprite texture load](https://github.com/Razria93/Graphics_Study_Archive/blob/388d2b0c950d3d978179431b1006d8406ef391f4/Part4_Chapter14-20/Ex1502_SpriteFireEffect.cpp#L66-L68)
 - [Textured sprite draw](https://github.com/Razria93/Graphics_Study_Archive/blob/388d2b0c950d3d978179431b1006d8406ef391f4/Part4_Chapter14-20/Ex1502_SpriteFireEffect.cpp#L155-L174)
 
-## 처리 흐름
+### 처리 흐름
 
 1. `Examples.exe` command argument `1501`, `1502`, `1503`으로 Chapter15 예제를 선택한다.
 2. `Ex1501`, `Ex1502`와 `Ex1503`은 CPU particle state를 갱신하고 structured buffer로 업로드한다.
 3. Geometry shader sprite draw와 accumulate blend가 particle state를 visual로 변환한다.
 4. `Ex1503`은 SPH density/pressure/viscosity force를 계산한 뒤 gravity와 boundary collision을 적용한다.
 5. 시연 video에서 선택한 timestamp frame 3개를 01부터 03까지 순서와 함께 storyboard로 기록한다.
+
+## 핵심 로직 의사코드
+
+```cpp
+// Pseudo C++
+void UpdateParticleSimulationPseudo(float deltaTime)
+{
+	if (deltaTime <= 0.0f) {
+		return;
+	}
+
+	for (Particle& particle : particles) {
+		if (!particle.active) {
+			TrySpawnFromSource(particle);
+			continue;
+		}
+		IntegrateForcesAndCollision(particle, deltaTime);
+	}
+
+	UploadStructuredBuffer(particles);
+	DrawGeometryShaderSprites();
+}
+```
+
+원본 코드: [Particle pool update와 collision](https://github.com/Razria93/Graphics_Study_Archive/blob/388d2b0c950d3d978179431b1006d8406ef391f4/Part4_Chapter14-20/Ex1501_ParticleSystem.cpp#L88-L155)
+
+## 검증 상태
+
+- `Part4_Chapter14-20/Examples.sln` Debug x64 build: 경고 0개, 오류 0개
+- `Ex1501_ParticleSystem`, `Ex1502_SpriteFireEffect`, `Ex1503_SphWater` Debug x64 run/capture smoke 성공
+- `Ex1501`부터 `Ex1503`까지 storyboard PNG는 `ComputerGraphics` title, 01부터 03까지 timestamp frame과 text metadata chunk 부재를 확인함
 
 ## 구현 범위와 한계
 
@@ -66,22 +112,7 @@ Chapter15는 CPU-side particle simulation 결과를 structured buffer와 geometr
 - Video attachment URL은 미게시이며, storyboard는 시연 video의 선택 frame만 기록한다.
 - Release 현재 재검증과 Chapter16부터 Chapter20까지 재검증은 별도 범위다.
 
-## 검증
-
-- `Part4_Chapter14-20/Examples.sln` Debug x64 build: 경고 0개, 오류 0개
-- `Ex1501_ParticleSystem`, `Ex1502_SpriteFireEffect`, `Ex1503_SphWater` Debug x64 run/capture smoke 성공
-- `Ex1501`부터 `Ex1503`까지 storyboard PNG는 `ComputerGraphics` title, 01부터 03까지 timestamp frame과 text metadata chunk 부재를 확인함
-
-## Demo Assets
-
-| 구분 | 파일 | 설명 |
-| --- | --- | --- |
-| Input screenshot | 없음 | 별도 입력 screenshot을 사용하지 않음 |
-| Result screenshot | 없음 | 단일 screenshot 대신 timestamp storyboard를 사용함 |
-| Result image | Chapter15 storyboard 3장 | 각 시연 video에서 선택한 timestamp frame 3개를 배치한 rendered evidence |
-| Video | 없음 | GitHub attachment URL을 아직 게시하지 않음 |
-
-## 더 자세히 보기
+## 관련 문서
 
 - [Part4 Chapter14-20 README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Part4_Chapter14-20/README.md)
 - [Ex1501 ParticleSystem 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/03_Demos/Part4_Chapter14-20/15_01_ParticleSystem.md)

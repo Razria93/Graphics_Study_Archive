@@ -4,7 +4,22 @@
 
 Chapter06은 COM 기반 resource ownership에서 시작해 swap chain과 첫 graphics frame, shader·texture·lighting, viewport와 window resize까지 DirectX11 pipeline을 단계적으로 확장한다. 세 결과는 pipeline 기준선, Spot Light의 cone 집중과 resize-dependent resource 재생성이라는 서로 다른 구현 축을 보여준다.
 
-## 결과
+## 핵심 목표
+
+- DirectX11 device·context와 swap chain 기반의 첫 graphics frame 구성
+- Directional·Point·Spot Light의 공통 shading과 spot cone factor 비교
+- Window resize에 따른 dependent resource와 projection aspect 갱신
+
+## Demo Assets
+
+| 구분 | 파일 | 설명 |
+| --- | --- | --- |
+| Input screenshot | 없음 | 별도 입력 screenshot을 사용하지 않음 |
+| Result screenshot | Step2·Step6·Step8 screenshot | 아래 시각 정보에서 pipeline 결과를 확인함 |
+| Result image | Step2·Step6·Step8 rendered result | frame, spot cone, wide resize 결과를 기록함 |
+| Video | 없음 | 정적 screenshot으로 구현 축을 비교함 |
+
+## 시각 정보
 
 ### Step2 — First Direct3D Frame
 
@@ -24,7 +39,7 @@ Point Light와 같은 위치·감쇠 조건에 spot cone factor를 추가해 ill
 
 ![Step8 Wide Resize](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Docs/_assets/captures/part2_chapter06_08_resizing_window_wide.png?raw=true)
 
-## 핵심 구현
+## 구현 하이라이트
 
 ### Device resource에서 indexed draw까지
 
@@ -48,7 +63,7 @@ Client size가 바뀌면 기존 render target과 depth resource를 해제하고 
 - [Resize dependent resource 재생성](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow/AppBase.cpp#L486-L518)
 - [Projection aspect 갱신](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow/ExampleApp.cpp#L223-L234)
 
-## 처리 흐름
+### 처리 흐름
 
 1. COM interface ownership과 D3D11 device·context를 준비한다.
 2. Swap chain, render target, depth buffer와 viewport를 연결한다.
@@ -57,19 +72,45 @@ Client size가 바뀌면 기존 render target과 depth resource를 해제하고 
 5. Window size 변경 시 dependent resource와 projection을 갱신한다.
 6. Indexed scene과 ImGui를 합성하고 frame을 present한다.
 
+## 핵심 로직 의사코드
+
+```cpp
+// Pseudo C++
+void RenderResizeAwareFramePseudo(Size clientSize)
+{
+	if (clientSize.IsEmpty()) {
+		return;
+	}
+
+	if (clientSize != renderTargetSize) {
+		RecreateDependentResources(clientSize);
+		UpdateProjectionAspect(clientSize);
+	}
+
+	for (Light light : lights) {
+		AccumulateBlinnPhong(light);
+	}
+
+	DrawIndexedScene();
+	PresentFrame();
+}
+```
+
+원본 코드: [Resize dependent resource 재생성](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Part2_Chapter05-08/06_GraphicsPipeline_Step8_ResizingWindow/AppBase.cpp#L486-L518)
+
+## 검증 상태
+
+- Build/Run: Chapter06 Step1–9 Debug/Release x64 성공
+- Capture/Result: graphics Example 전체 screenshot 확보, Step7–9 사용자 시각 확인 완료
+- Resize: 반복 resize와 minimize/restore 후 geometry 비율과 resource 상태 확인
+
 ## 구현 범위와 한계
 
 - 포함: DirectX11 초기화, MVP, shader·texture, Directional·Point·Spot lighting, viewport와 window resize
 - 한계: 단일 Light와 선형 distance attenuation을 사용하며 PBR, shadow와 HDR pipeline은 포함하지 않는다.
 - 한계: 현재 resize 결과는 Compact·Default·Wide screenshot과 반복 resize로 검증한다.
 
-## 검증
-
-- Build/Run: Chapter06 Step1–9 Debug/Release x64 성공
-- Capture/Result: graphics Example 전체 screenshot 확보, Step7–9 사용자 시각 확인 완료
-- Resize: 반복 resize와 minimize/restore 후 geometry 비율과 resource 상태 확인
-
-## 더 자세히 보기
+## 관련 문서
 
 ### Chapter 안내
 

@@ -4,7 +4,22 @@
 
 Chapter08은 surface rim lighting에서 시작해 GPU post-processing과 procedural full-screen shader로 확장되는 shader experiment 흐름이다. 대표 결과는 서로 다른 세 축인 silhouette shading, bloom filter chain과 시간 기반 star shader를 보여준다.
 
-## 결과
+## 핵심 목표
+
+- Normal과 view direction으로 view-dependent rim contribution 구성
+- Threshold·downsample·blur·composite bloom filter chain 연결
+- Time·resolution·texture channel을 full-screen procedural shader에 전달
+
+## Demo Assets
+
+| 구분 | 파일 | 설명 |
+| --- | --- | --- |
+| Input screenshot | 없음 | 별도 입력 screenshot을 사용하지 않음 |
+| Result screenshot | Step1·Step6·Step7 screenshot | 아래 시각 정보에서 shader 결과를 확인함 |
+| Result image | Step1·Step6·Step7 rendered result | rim, bloom, star 결과를 기록함 |
+| Video | 없음 | 정적 결과만으로 구현과 출력을 설명함 |
+
+## 시각 정보
 
 ### Step1 — Rim Lighting
 
@@ -36,7 +51,7 @@ Full-screen pixel shader가 누적 시간, 현재 resolution과 texture channel�
 - 관찰 결과: procedural noise로 구성된 star surface와 corona
 - 구현 목적: Shadertoy 형태의 runtime input을 DirectX11 full-screen pass에 연결
 
-## 핵심 구현
+## 구현 하이라이트
 
 ### View angle 기반 rim contribution
 
@@ -59,12 +74,39 @@ Back buffer를 shader-readable texture로 복사하고 threshold pass 뒤에 dow
 - [Texture 입력과 multi-frequency noise](https://github.com/Razria93/Graphics_Study_Archive/blob/6d0823763dffebd77c60d029e114efafcf73c3b8/Part2_Chapter05-08/08_ShaderToys_Step7_Shadertoy/StarPixelShader.hlsl#L58-L94)
 - [Star surface와 corona 합성](https://github.com/Razria93/Graphics_Study_Archive/blob/6d0823763dffebd77c60d029e114efafcf73c3b8/Part2_Chapter05-08/08_ShaderToys_Step7_Shadertoy/StarPixelShader.hlsl#L98-L127)
 
-## 처리 흐름
+### 처리 흐름
 
 1. Step1에서 normal·view angle 기반 rim lighting을 surface에 더한다.
 2. Step2–5에서 cubemap sampling, environment reflection, IBL과 Fresnel로 확장한다.
 3. Step6에서 scene 결과를 threshold·downsample·blur·composite post-process chain에 연결한다.
 4. Step7에서 time·resolution·texture channel을 받는 full-screen procedural shader로 전환한다.
+
+## 핵심 로직 의사코드
+
+```cpp
+// Pseudo C++
+void ApplyBloomFilterChainPseudo(Texture scene, Size renderSize)
+{
+	if (!scene.IsValid() || renderSize.IsEmpty()) {
+		return;
+	}
+
+	Texture bright = ApplyThreshold(scene);
+	for (int level = 0; level < blurPassCount; ++level) {
+		bright = DownsampleAndBlur(bright);
+	}
+
+	CompositeSceneAndBloom(scene, bright);
+}
+```
+
+원본 코드: [Threshold·downsample·blur 구성](https://github.com/Razria93/Graphics_Study_Archive/blob/b939291f87e7cf84f02b8519fa2b2aa06fd8da42/Part2_Chapter05-08/08_ShaderToys_Step6_BloomEffect/ExampleApp.cpp#L168-L241)
+
+## 검증 상태
+
+- Build/Run: Chapter08 Step1–7 Debug/Release x64 성공
+- Capture/Result: Step1–7 전체 창 PNG 확보, 1282×992 full decode와 공개 안전성 확인
+- Video: 본문은 정적 결과만으로 구현과 출력이 이해되도록 구성
 
 ## 구현 범위와 한계
 
@@ -72,13 +114,7 @@ Back buffer를 shader-readable texture로 복사하고 threshold pass 뒤에 dow
 - 한계: 학습용 DirectX11 shader experiment이며 production renderer의 tone mapping, exposure adaptation과 multi-pass Shadertoy runtime은 포함하지 않는다.
 - Asset: 강의 제공 또는 출처 정보가 불완전한 runtime asset 원본은 첨부하거나 직접 링크하지 않고, 직접 실행해 생성한 rendered evidence만 공개한다.
 
-## 검증
-
-- Build/Run: Chapter08 Step1–7 Debug/Release x64 성공
-- Capture/Result: Step1–7 전체 창 PNG 확보, 1282×992 full decode와 공개 안전성 확인
-- Video: 본문은 정적 결과만으로 구현과 출력이 이해되도록 구성
-
-## 더 자세히 보기
+## 관련 문서
 
 ### Chapter 안내
 

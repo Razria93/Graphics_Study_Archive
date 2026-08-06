@@ -4,7 +4,22 @@
 
 Chapter07은 indexed box와 wireframe rasterizer state에서 시작해 procedural primitive, subdivision과 spherical texture mapping으로 확장한다. Step1, Step5와 Step8은 mesh 표현의 기준선, 사용자가 구성한 Sphere topology, generated planet texture의 spherical UV와 seam 보정이라는 세 milestone을 보여준다.
 
-## 결과
+## 핵심 목표
+
+- Indexed triangle mesh와 wireframe state로 surface topology 확인
+- Hemisphere ring과 pole fan으로 procedural Sphere topology 구성
+- Subdivision, spherical UV와 triangle-local U seam 보정 적용
+
+## Demo Assets
+
+| 구분 | 파일 | 설명 |
+| --- | --- | --- |
+| Input screenshot | 없음 | 별도 입력 screenshot을 사용하지 않음 |
+| Result screenshot | Step1·Step5·Step8 screenshot | 아래 시각 정보에서 topology와 mapping을 확인함 |
+| Result image | Step1·Step5·Step8 rendered result | wireframe, Sphere, mapping 결과를 기록함 |
+| Video | 없음 | 정적 screenshot으로 mesh 변화를 비교함 |
+
+## 시각 정보
 
 ### Step1 — Wireframe Mesh
 
@@ -24,7 +39,7 @@ Icosahedron을 세 번 subdivision하고 sphere에 투영한 뒤 generated ficti
 
 ![Step8 Sphere Mapping](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Docs/_assets/captures/part2_chapter07_08_sphere_mapping.png?raw=true)
 
-## 핵심 구현
+## 구현 하이라이트
 
 ### Indexed mesh와 wireframe state
 
@@ -48,7 +63,7 @@ Icosahedron triangle의 midpoint를 sphere에 다시 투영해 네 child triangl
 - [Triangle-local U seam 보정](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/GeometryGenerator.cpp#L448-L530)
 - [반복 subdivision과 child triangle 구성](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/GeometryGenerator.cpp#L532-L572)
 
-## 처리 흐름
+### 처리 흐름
 
 1. Vertex와 index로 triangle surface mesh를 구성한다.
 2. Rasterizer state 또는 diagnostic line으로 topology와 normal을 확인한다.
@@ -57,19 +72,47 @@ Icosahedron triangle의 midpoint를 sphere에 다시 투영해 네 child triangl
 5. Radial normal과 spherical UV를 계산하고 seam triangle을 보정한다.
 6. Generated texture를 sampling해 mapped sphere를 표시한다.
 
+## 핵심 로직 의사코드
+
+```cpp
+// Pseudo C++
+void BuildMappedSpherePseudo(int subdivisionCount)
+{
+	if (subdivisionCount < 0) {
+		return;
+	}
+
+	for (int level = 0; level < subdivisionCount; ++level) {
+		SubdivideEachTriangle();
+	}
+
+	for (Triangle& triangle : triangles) {
+		ProjectVerticesToSphere(triangle);
+		if (CrossesUSeam(triangle)) {
+			DuplicateTriangleLocalVertices(triangle);
+		}
+		CalculateSphericalUv(triangle);
+	}
+
+	DrawTexturedSphere();
+}
+```
+
+원본 코드: [Triangle-local U seam 보정](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/GeometryGenerator.cpp#L448-L530)
+
+## 검증 상태
+
+- Build/Run: Chapter07 Step1–9 Debug/Release x64 성공
+- Capture/Result: Step1–9 전체 application window screenshot 확보
+- Asset: Step5는 검증된 generated wood, Step8은 공개 안전성을 확인한 generated fictional planet texture 사용
+
 ## 구현 범위와 한계
 
 - 포함: indexed triangle mesh, wireframe, vertex·face normal, Grid·Cylinder·Sphere, subdivision과 spherical UV
 - 한계: SphereMapping은 shared indexed mesh가 아닌 triangle-local vertex 구조를 사용한다.
 - 한계: Spherical UV는 U seam을 보정하지만 별도의 pole correction과 tangent-space normal mapping은 포함하지 않는다.
 
-## 검증
-
-- Build/Run: Chapter07 Step1–9 Debug/Release x64 성공
-- Capture/Result: Step1–9 전체 application window screenshot 확보
-- Asset: Step5는 검증된 generated wood, Step8은 공개 안전성을 확인한 generated fictional planet texture 사용
-
-## 더 자세히 보기
+## 관련 문서
 
 ### Chapter 안내
 
