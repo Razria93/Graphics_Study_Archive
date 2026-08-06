@@ -9,14 +9,14 @@ Chapter15 PR 생성 전 로컬 PR body 후보, remote 게시물, branch 상태�
 | 항목 | 확인 결과 |
 | --- | --- |
 | Branch | `docs/part4-chapter14-20-workflow` |
-| Local HEAD | `a49af4e31bfe02ce06d05dd1ac338d29819a014c` |
+| Local PR 후보 기준 | `a49af4e31bfe02ce06d05dd1ac338d29819a014c`에서 PR body 후보 작성과 local validation 통과 |
 | Upstream HEAD | `813d57c89aba283ab40b45e2ed94dfce30866c9c` |
 | Remote branch head | `813d57c89aba283ab40b45e2ed94dfce30866c9c` |
 | Base | `main` |
 | Open PR on branch | 없음 |
 | Latest remote Docs Validation | success, run `31068322068`, head `813d57c89aba283ab40b45e2ed94dfce30866c9c` |
 | Local validation | PR 후보 작성 후 GitHub body, GitHub quality, Demo index, Markdown table/render/wrap, `git diff --check` 통과 |
-| Worktree | PR 후보 감사 문서 보정 전 clean, 보정 후 재검증 대상 |
+| Worktree | 감사 문서 커밋 후 재확인 대상 |
 
 ## PR 후보
 
@@ -28,7 +28,7 @@ Chapter15 PR 생성 전 로컬 PR body 후보, remote 게시물, branch 상태�
 | Head branch | `docs/part4-chapter14-20-workflow` |
 | Base branch | `main` |
 | 권장 생성 상태 | Draft PR |
-| Push 필요 여부 | PR 후보 작성 commit `a49af4e31bfe02ce06d05dd1ac338d29819a014c` push 필요 |
+| Push 필요 여부 | PR 생성 직전 최신 local HEAD 확인 후 push 필요 |
 
 ## 원격 게시 연결
 
@@ -41,7 +41,13 @@ Chapter15 PR 생성 전 로컬 PR body 후보, remote 게시물, branch 상태�
 
 ## PR 생성 승인 대상
 
-PR 생성 전 먼저 PR 후보 작성 commit을 remote branch에 push한다.
+PR 생성 전 먼저 최신 local HEAD를 확인하고 remote branch에 push한다.
+
+```bash
+git rev-parse HEAD
+git rev-parse @{u}
+git status --short --branch
+```
 
 ```bash
 git push origin docs/part4-chapter14-20-workflow
@@ -58,7 +64,7 @@ gh pr create \
   --body-file <h1-removed-pr-body>
 ```
 
-PR 생성 후에는 PR URL, PR number, head ref, base ref와 PR head commit이 `a49af4e31bfe02ce06d05dd1ac338d29819a014c`인지 확인한다.
+PR 생성 후에는 PR URL, PR number, head ref, base ref와 PR head commit이 push 직전 확인한 local HEAD인지 확인한다.
 
 ## 생성 전 감사 항목
 
