@@ -152,10 +152,11 @@ powershell -NoProfile -ExecutionPolicy Bypass `
   -OutputPath local/<work-unit>/<example>/base.png `
   -CenterWindow `
   -CountdownSeconds 5 `
+  -MainWindowTimeoutSeconds 10 `
   -CaptureImmediately
 ```
 
-기본 상태는 application 실행 후 안정화를 대기하고 바로 촬영한다. 결과를 확인한 뒤 도구가 시작한 application을 종료한다.
+기본 상태는 application 실행 후 안정화를 대기하고 바로 촬영한다. 결과를 확인한 뒤 도구가 시작한 application을 종료한다. `MainWindowTimeoutSeconds`는 main window handle이 생성될 때까지 기다리는 시간이다. simulation, volume, gameplay처럼 초기화가 무거운 예제는 Chapter별 smoke 기준에서 값을 늘리고, loader error dialog 여부는 별도 preflight와 quiet 확인으로 구분한다.
 
 ## Parameter-adjusted screenshot
 

@@ -16,7 +16,9 @@ param(
     [switch]$CaptureImmediately,
     [switch]$CenterWindow,
     [ValidateRange(0, 10)]
-    [int]$CountdownSeconds = 0
+    [int]$CountdownSeconds = 0,
+    [ValidateRange(1, 120)]
+    [int]$MainWindowTimeoutSeconds = 10
 )
 
 $ErrorActionPreference = "Stop"
@@ -382,7 +384,8 @@ try {
         -WorkingDirectory $resolvedWorkingDirectory `
         -PassThru
 
-    for ($attempt = 0; $attempt -lt 40; ++$attempt) {
+    $maxMainWindowAttempts = [Math]::Ceiling($MainWindowTimeoutSeconds * 4)
+    for ($attempt = 0; $attempt -lt $maxMainWindowAttempts; ++$attempt) {
         $process.Refresh()
         if ($process.HasExited) {
             throw "Application exited before its main window became available."
@@ -393,7 +396,7 @@ try {
         Start-Sleep -Milliseconds 250
     }
     if ($process.MainWindowHandle -eq [IntPtr]::Zero) {
-        throw "Application main window was not found within 10 seconds."
+        throw "Application main window was not found within $MainWindowTimeoutSeconds seconds."
     }
     if ($process.MainWindowTitle -cne $ExpectedTitle) {
         throw (
