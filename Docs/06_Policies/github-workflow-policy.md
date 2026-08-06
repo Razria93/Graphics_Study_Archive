@@ -181,6 +181,8 @@ GitHub 게시
 
 게시 후에는 실제 Issue/PR 번호와 URL을 기록하고, 변경 영향이 있는 Chapter README, 상세 Demo, Demo index, PR 후보, WorkLog, Publication 후보만 동기화한다. 모든 문서를 기계적으로 갱신하지 않는다.
 
+역동기화에서는 실제 URL뿐 아니라 현재 상태 문구도 대조한다. Chapter README의 `Next action`, Demo index의 `범위` 비고와 row, Work Unit GitHub index, Progress comment 후보, PR body 후보, Demo Issue body 후보가 같은 PR lifecycle 단계와 capture/result 확보 상태를 가리켜야 한다. Ready for Review, review 대응, merge 전 감사처럼 remote 상태가 한 단계 진행되면 이전 단계의 `후보 작성`, `게시 예정`, `ChapterN~M 후속 범위` 문구가 남아 있는지 먼저 검색한다.
+
 ## Progress Issue 운영 기준
 
 상위 Progress Issue는 Graphics Study Archive의 장기 진행판으로 운영한다. Work Unit마다 새 Progress Issue를 만들지 않는다.

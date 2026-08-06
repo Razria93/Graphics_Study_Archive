@@ -173,6 +173,7 @@ Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.
 - Progress Issue 누적 진행 댓글 및 Chapter/Bundle 완료 댓글 갱신 필요 여부가 판단되어 있다.
 - `Docs/04_WorkLogs/work-unit-github-index.md`에 Issue/PR/Progress comment 상태가 반영되어 있다.
 - `Docs/00_Index` map이 필요한 범위만큼 갱신되어 있다.
+- Chapter README `Next action`, Demo index `범위` 비고, WorkLog, GitHub index, PR/Issue/comment 후보의 현재 상태 문구가 같은 lifecycle 단계와 capture/result 상태를 가리킨다.
 - Root, Chapter, Example, Docs, Folder README의 갱신 필요 여부가 판단되어 있고, 필요한 README만 갱신되어 있다.
 - README를 갱신하지 않은 경우 그 이유가 WorkLog 또는 검토 보고에 남아 있다.
 - 오래된 `Docs/99_Legacy` 문서와 폐기된 `Docs/01_Examples` 본문을 정본처럼 링크하지 않는다.

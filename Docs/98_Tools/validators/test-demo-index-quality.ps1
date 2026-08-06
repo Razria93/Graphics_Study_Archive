@@ -26,6 +26,10 @@ if ($invalidOutput -notmatch 'has no tracked asset, selected local video, or pub
 {
     throw "Invalid Demo index video fixture did not report the expected failure."
 }
+if ($invalidOutput -notmatch 'scope section lists Chapter1 in pending range Chapter01~01')
+{
+    throw "Invalid Demo index stale scope fixture did not report the expected failure."
+}
 
 Write-Host "Demo index video fixture validation passed." -ForegroundColor Green
 exit 0

@@ -28,6 +28,7 @@ Actions 성공은 validator가 담당하는 자동 검사만 증명한다. build
 | 공백 검사 | trailing whitespace, EOF 문제 확인 | `git diff --check` |
 | 문체 검사 | 존댓말, 대화체, draft 문구 확인 | `Select-String` 또는 `rg` |
 | stale path 검사 | 오래된 `_repo/workflow`, legacy import 기록의 이전 경로, `Docs/Part*` 정본 경로 확인. `Docs/99_Legacy`의 과거 경로 기록은 문맥을 확인한다. | `rg` |
+- stale status 검사 | `Next action`, pending range, capture/result 상태 문구가 WorkLog와 remote lifecycle보다 뒤처지지 않는지 확인 | `Select-String` 또는 `rg` |
 | 정책 링크 검사 | rename된 정책 파일명과 Index 링크 확인 | `rg` |
 | stage 검사 | 커밋 대상 파일 범위 확인 | `git diff --cached --stat` |
 

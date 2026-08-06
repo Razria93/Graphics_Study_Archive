@@ -62,6 +62,7 @@ Chapter Work Unit을 시작할 때는 [Work Unit Workflow Policy](../06_Policies
 7. Remote 게시 후 역동기화
    - Issue 번호, comment URL, PR URL을 확보한다.
    - 영향받는 정본에 실제 URL을 반영한다.
+   - Chapter README `Next action`, Demo index `범위` 비고, WorkLog/GitHub index, Progress comment 후보, PR/Issue body 후보의 상태 문구를 같은 lifecycle 단계로 맞춘다.
    - validator, commit, push, Actions를 확인한다.
 8. Ready for Review 감사
    - PR head와 branch head 일치를 확인한다.
@@ -75,7 +76,7 @@ Chapter Work Unit을 시작할 때는 [Work Unit Workflow Policy](../06_Policies
    - thread resolve 상태를 확인한다.
    - PR/Issue body에 필요한 링크를 보정한다.
 10. Merge 전 최종 감사
-   - stale 상태 문구를 검색한다.
+   - stale 상태 문구를 검색한다. `Next action`, `후보 작성`, `게시 예정`, `ChapterN~M 후속 범위`, `capture/result 미확보`, `Draft`, `Ready for Review` 같은 lifecycle 문구가 실제 remote 상태와 충돌하지 않는지 확인한다.
    - validators 전체를 실행한다.
    - code anchor를 검사한다.
    - remote body 동기화를 확인한다.
