@@ -2,7 +2,7 @@
 
 ## 요약
 
-Chapter15는 CPU-side particle simulation 결과를 structured buffer와 geometry shader sprite draw로 표시하는 particle simulation evidence 묶음이다. 대표 visual은 `Ex1501_ParticleSystem`의 colored particle stream과 `Ex1503_SphWater`의 10초 지연 SPH particle accumulation으로 구성한다. `Ex1502_SpriteFireEffect`는 sprite fire visual을 확인했지만 `flare0.dds` provenance 확인 전까지 public 대표 visual에서 제외한다.
+Chapter15는 CPU-side particle simulation 결과를 structured buffer와 geometry shader sprite draw로 표시하는 particle simulation evidence 묶음이다. 대표 visual은 `Ex1501_ParticleSystem`의 colored particle stream과 `Ex1503_SphWater`의 10초 지연 SPH particle accumulation으로 구성한다. `Ex1502_SpriteFireEffect`는 textured sprite fire 구현 흐름을 보조 evidence로 설명하되, 원본 `flare0.dds`는 직접 링크하지 않고 rendered evidence 후보로만 다룬다.
 
 ## 결과
 
@@ -35,9 +35,13 @@ Chapter15는 CPU-side particle simulation 결과를 structured buffer와 geometr
 - [SPH density 계산](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Part4_Chapter14-20/SphSimulation.cpp#L31)
 - [SPH force 계산](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Part4_Chapter14-20/SphSimulation.cpp#L78)
 
-### Sprite fire hold
+### Sprite fire texture path
 
-`Ex1502_SpriteFireEffect`는 Debug x64 run과 local screenshot 후보를 확인했지만 `Assets/Textures/flare0.dds`를 사용한다. Asset provenance와 공개 가능 범위가 확정되기 전에는 GitHub body 대표 visual로 사용하지 않는다.
+`Ex1502_SpriteFireEffect`는 source에서 활성화한 particles에 buoyancy를 적용하고 `flare0.dds` sprite texture를 pixel shader에 바인딩해 fire-like particles를 표시한다. 원본 texture의 권리 확보를 주장하지 않으며, 공개 안전한 대체 texture로 교체하거나 provenance가 확인되면 대표 visual 승격을 다시 판단한다.
+
+- [Particle spawn/update와 buoyancy](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Part4_Chapter14-20/Ex1502_SpriteFireEffect.cpp#L72)
+- [Sprite texture load](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Part4_Chapter14-20/Ex1502_SpriteFireEffect.cpp#L66)
+- [Textured sprite draw](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Part4_Chapter14-20/Ex1502_SpriteFireEffect.cpp#L155)
 
 ## 처리 흐름
 
@@ -50,7 +54,8 @@ Chapter15는 CPU-side particle simulation 결과를 structured buffer와 geometr
 ## 구현 범위와 한계
 
 - 현재 public 대표 visual 후보는 `Ex1501`과 10초 지연 `Ex1503` screenshot 2개다.
-- `Ex1502`는 `flare0.dds` provenance 확인 전까지 local 후보와 보류 상태로 유지한다.
+- `Ex1502`는 원본 `flare0.dds`를 직접 링크하지 않고 직접 실행한 rendered evidence 후보로만 다룬다. 공개 안전한 대체 texture 또는 provenance가 확인되면 visual 승격을 다시 판단한다.
+- 명확한 제한 근거, 삭제 요청 또는 사용 중단 요청이 확인되면 관련 visual은 교체하거나 비공개로 전환한다.
 - `Ex1501`과 `Ex1503`의 simulation update는 CPU-side이며 GPU compute simulation으로 확장한 사례는 Chapter16 후속 범위에서 다룬다.
 - Particle movement와 SPH stability는 video 후보지만, 이 본문은 static screenshot으로 읽히는 상태 증거를 우선한다.
 - Release 현재 재검증과 Chapter16~20 재검증은 별도 범위다.
@@ -65,6 +70,7 @@ Chapter15는 CPU-side particle simulation 결과를 structured buffer와 geometr
 
 - [Part4 Chapter14-20 README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Part4_Chapter14-20/README.md)
 - [Ex1501 ParticleSystem 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/03_Demos/Part4_Chapter14-20/15_01_ParticleSystem.md)
+- [Ex1502 SpriteFireEffect 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/03_Demos/Part4_Chapter14-20/15_02_SpriteFireEffect.md)
 - [Ex1503 SphWater 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/03_Demos/Part4_Chapter14-20/15_03_SphWater.md)
 - [Chapter15 Verification](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Compute And Simulation Topic Index](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/01_Topics/ComputeAndSimulation/topic-index.md)
