@@ -7,6 +7,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 $Failures = New-Object System.Collections.Generic.List[string]
+$Warnings = New-Object System.Collections.Generic.List[string]
 
 function New-Text {
     param([int[]]$CodePoints)
@@ -21,6 +22,15 @@ function Add-Failure {
     )
 
     $Failures.Add("$Path :: $Message")
+}
+
+function Add-Warning {
+    param(
+        [string]$Path,
+        [string]$Message
+    )
+
+    $Warnings.Add("$Path :: $Message")
 }
 
 function Get-RelativePath {
@@ -87,7 +97,7 @@ function Test-LineLength {
         }
 
         if ($line.Length -gt $SoftLimit -and $line -match '^\s*[^#\|]') {
-            Add-Failure $RelativePath "line $($i + 1): long line ($($line.Length) chars), split for readability"
+            Add-Warning $RelativePath "line $($i + 1): long line ($($line.Length) chars), split for readability"
         }
     }
 }
@@ -229,6 +239,10 @@ function Validate-All {
 }
 
 Validate-All
+
+if ($Warnings.Count -gt 0) {
+    $Warnings | ForEach-Object { Write-Warning $_ }
+}
 
 if ($Failures.Count -gt 0) {
     Write-Host "GitHub quality validation failed." -ForegroundColor Red

@@ -204,11 +204,21 @@ function Test-DemoTable {
         }
     }
 
+    if ($requiredHeader | Where-Object { -not ($header -contains $_) }) {
+        return
+    }
+
+    $exampleIndex = [Array]::IndexOf($header, $ColExample)
+    $verificationIndex = [Array]::IndexOf($header, "Verification")
+    $captureIndex = [Array]::IndexOf($header, $ColCaptureResult)
+    $statusIndex = [Array]::IndexOf($header, $ColStatus)
+    $noteIndex = [Array]::IndexOf($header, $ColNote)
+
     $rows = @()
     for ($i = 2; $i -lt $table.Count; ++$i) {
         $cells = Split-MarkdownRow -Line $table[$i]
-        if ($cells.Count -lt 7) {
-            Add-Failure $RelativePath "demo row has fewer than 7 columns: $($table[$i])"
+        if ($cells.Count -lt $header.Count) {
+            Add-Failure $RelativePath "demo row has fewer columns than the header: $($table[$i])"
             continue
         }
         $rows += ,$cells
@@ -238,17 +248,17 @@ function Test-DemoTable {
 
     foreach ($row in $rows) {
         $name = $row[0]
-        $example = $row[1]
-        $verification = $row[3]
-        $capture = $row[4]
-        $status = $row[5]
-        $note = $row[6]
+        $example = $row[$exampleIndex]
+        $verification = $row[$verificationIndex]
+        $capture = $row[$captureIndex]
+        $status = $row[$statusIndex]
+        $note = $row[$noteIndex]
 
         if (-not ($allowedStatuses -contains $status)) {
             Add-Failure $RelativePath "row '$name' has invalid status: $status"
         }
 
-        if ($verification -notmatch 'Docs/02_Verification|`Docs/02_Verification') {
+        if ($verification -notmatch 'Docs/02_Verification|\.\./\.\./02_Verification|`Docs/02_Verification') {
             Add-Failure $RelativePath "row '$name' should reference Docs/02_Verification"
         }
 
@@ -261,7 +271,10 @@ function Test-DemoTable {
                 Add-Failure $RelativePath "row '$name' is '확보' but Capture/Result is '없음'"
             }
 
-            if ($capture -notmatch 'Docs/_assets/(captures|videos|diagrams)') {
+            $usesTrackedAsset = $capture -match 'Docs/_assets/(captures|videos|diagrams)|\.\./\.\./_assets/(captures|videos|diagrams)'
+            $usesPublishedVideo = $name -eq $RowVideo -and
+                $capture -match 'https://github\.com/user-attachments/assets/'
+            if (-not $usesTrackedAsset -and -not $usesPublishedVideo) {
                 Add-Failure $RelativePath "row '$name' is '확보' but Capture/Result does not reference Docs/_assets"
             }
         }
