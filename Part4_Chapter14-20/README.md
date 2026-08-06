@@ -7,8 +7,8 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 ## 상태
 
 - 학습 코드 정리: import 완료
-- Build/run: Chapter14 Ex1401부터 Ex1408까지, Chapter15 Ex1501부터 Ex1503까지와 Chapter16 Ex1601부터 Chapter20 Ex2001까지 Debug x64 현재 확인, Release 현재 재검증 필요
-- 캡처: Chapter14 tracked capture 확보, Chapter15 Ex1501·Ex1502·Ex1503 tracked capture 확보, Chapter16부터 Chapter20까지 local capture 후보 확보
+- Build/run: Chapter14 Ex1401부터 Ex1408까지, Chapter15 Ex1501부터 Ex1503까지 Debug x64 현재 확인, Chapter16 Ex1601부터 Chapter20 Ex2001까지 Debug와 Release x64 현재 확인
+- 캡처: Chapter14 tracked capture 확보, Chapter15 Ex1501·Ex1502·Ex1503 tracked capture 확보, Chapter16부터 Chapter20까지 local capture와 선택한 `GraphicsVideo` storyboard 후보 확보
 
 ## Archive/Public 검토
 
@@ -17,8 +17,8 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 | Source provenance | [`SRC-P4-C14-20`](../Docs/99_Legacy/source-registry.md) |
 | Import status | 반영 완료 |
 | Public readiness | 검토 필요 |
-| Build/run status | Chapter14 Debug x64 현재 확인 · Chapter15부터 Chapter20까지 Debug x64 smoke 확인 · Release 재검증 필요 |
-| Next action | Chapter16부터 Chapter20까지 local candidate 검토와 Release x64 representative revalidation 범위 결정 |
+| Build/run status | Chapter14와 Chapter15 Debug x64 현재 확인 · Chapter16부터 Chapter20까지 Debug와 Release x64 smoke 확인 · Chapter14~15 Release 재검증 필요 |
+| Next action | Chapter16부터 Chapter20까지 선택한 `GraphicsVideo` storyboard PNG 승격과 상세 Demo 검토 |
 
 ## 예정 주제
 
