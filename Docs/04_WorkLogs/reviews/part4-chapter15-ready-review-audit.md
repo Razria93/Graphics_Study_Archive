@@ -49,3 +49,9 @@ gh pr ready 32
 ## 판정
 
 Ready 전환 blocker는 없다. PR #32는 Draft 상태이며, 사용자 승인 후 `Ready for Review`로 전환할 수 있다.
+
+## 실행 결과
+
+- 사용자 승인 후 `gh pr ready 32`를 실행했다.
+- PR #32는 `isDraft: false`, `state: OPEN`, `MERGEABLE` 상태이며 전환 직후 head는 `d82838bda841f1fb569bb8bf9c240e799699d121`이다.
+- Ready 전환 결과를 Work Unit, Progress와 completion comment 후보에 동기화한다.
