@@ -58,6 +58,11 @@ $invalidCases = @(
         Name = "table range pair"
         File = "table-cell.md.txt"
         Line = 3
+    },
+    @{
+        Name = "inline code range delimiter"
+        File = "inline-code-range.md.txt"
+        Line = 1
     }
 )
 

@@ -55,22 +55,22 @@ Chapter15는 CPU-side particle simulation 결과를 structured buffer와 geometr
 2. `Ex1501`, `Ex1502`와 `Ex1503`은 CPU particle state를 갱신하고 structured buffer로 업로드한다.
 3. Geometry shader sprite draw와 accumulate blend가 particle state를 visual로 변환한다.
 4. `Ex1503`은 SPH density/pressure/viscosity force를 계산한 뒤 gravity와 boundary collision을 적용한다.
-5. 시연 video에서 선택한 timestamp frame 3개를 01~03 순서와 함께 storyboard로 기록한다.
+5. 시연 video에서 선택한 timestamp frame 3개를 01부터 03까지 순서와 함께 storyboard로 기록한다.
 
 ## 구현 범위와 한계
 
-- 현재 public 대표 visual 후보는 `Ex1501`~`Ex1503` timestamp storyboard 3개다.
+- 현재 public 대표 visual 후보는 `Ex1501`부터 `Ex1503`까지 timestamp storyboard 3개다.
 - `Ex1502`는 원본 `flare0.dds`를 직접 링크하지 않고 직접 실행한 rendered evidence로만 다룬다. 공개 안전한 대체 texture 또는 provenance가 확인되면 visual 유지 범위를 다시 판단한다.
 - 명확한 제한 근거, 삭제 요청 또는 사용 중단 요청이 확인되면 관련 visual은 교체하거나 비공개로 전환한다.
 - `Ex1501`, `Ex1502`와 `Ex1503`의 simulation update는 CPU-side이며 GPU compute simulation으로 확장한 사례는 Chapter16 후속 범위에서 다룬다.
 - Video attachment URL은 미게시이며, storyboard는 시연 video의 선택 frame만 기록한다.
-- Release 현재 재검증과 Chapter16~20 재검증은 별도 범위다.
+- Release 현재 재검증과 Chapter16부터 Chapter20까지 재검증은 별도 범위다.
 
 ## 검증
 
 - `Part4_Chapter14-20/Examples.sln` Debug x64 build: 경고 0개, 오류 0개
 - `Ex1501_ParticleSystem`, `Ex1502_SpriteFireEffect`, `Ex1503_SphWater` Debug x64 run/capture smoke 성공
-- `Ex1501`~`Ex1503` storyboard PNG는 `ComputerGraphics` title, 01~03 timestamp frame과 text metadata chunk 부재를 확인함
+- `Ex1501`부터 `Ex1503`까지 storyboard PNG는 `ComputerGraphics` title, 01부터 03까지 timestamp frame과 text metadata chunk 부재를 확인함
 
 ## Demo Assets
 

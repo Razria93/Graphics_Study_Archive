@@ -109,21 +109,22 @@ function Test-MarkdownFile {
             continue
         }
 
-        $plain = [regex]::Replace($line, '`[^`]*`', '')
+        # Preserve code-span boundaries so `Ex1501`~`Ex1503` remains detectable.
+        $plain = [regex]::Replace($line, '`[^`]*`', 'CODE')
         $plain = [regex]::Replace($plain, '\]\([^)]+\)', ']()')
         $plain = [regex]::Replace($plain, '<https?://[^>]+>', '')
         $plain = [regex]::Replace($plain, '\\\~', '')
         $plain = [regex]::Replace($plain, '~~.*?~~', '')
-        $rangeTildes = [regex]::Matches(
+        $rangeTilde = [regex]::Match(
             $plain,
-            '(?<=\d)~(?=\d)'
+            '(?:CODE|\w+)\s*~\s*(?:CODE|\w+)'
         )
 
-        if ($rangeTildes.Count -ge 2) {
+        if ($rangeTilde.Success) {
             $Failures.Add(
                 "${relative}:${lineNumber}: MDRENDER-001 " +
-                "multiple single-tilde ranges may render as strikethrough; " +
-                "use an en dash for ranges"
+                "single tilde ranges may render as strikethrough; " +
+                "use '부터 ... 까지' wording for ranges"
             )
         }
     }

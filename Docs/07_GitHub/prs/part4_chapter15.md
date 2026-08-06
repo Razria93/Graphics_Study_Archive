@@ -7,10 +7,10 @@
 ## 범위
 
 - Chapter15 `Ex1501_ParticleSystem`, `Ex1502_SpriteFireEffect`, `Ex1503_SphWater` Debug x64 build/run/capture smoke 정리
-- `Ex1501`~`Ex1503` 시연 video의 timestamp frame 3개로 구성한 storyboard 3개를 `Docs/_assets/captures`로 승격
+- `Ex1501`부터 `Ex1503`까지 시연 video의 timestamp frame 3개로 구성한 storyboard 3개를 `Docs/_assets/captures`로 승격
 - `Examples.exe 1501`, `1502`, `1503` 실행을 지원하도록 capture helper `ArgumentList` option 문서화와 contract test 반영
 - Chapter15 상세 Demo, Demo Issue #31, Phase 5-2 Progress comment와 PR body 후보 작성
-- Chapter16~20 재검증, Release 현재 재검증, desktop video capture는 제외
+- Chapter16부터 Chapter20까지 재검증, Release 현재 재검증, desktop video capture는 제외
 
 ## 핵심 개념
 
@@ -51,7 +51,7 @@ Source에서 활성화한 particles에 buoyancy를 적용하고 `flare0.dds` spr
 
 - `Part4_Chapter14-20/Examples.sln` Debug x64 build 경고 0개, 오류 0개 확인
 - `Ex1501`, `Ex1502`, `Ex1503` Debug x64 run/capture smoke 성공
-- `Ex1501`~`Ex1503` PNG storyboard에 `ComputerGraphics` title, 01~03 timestamp frame과 text metadata chunk 부재 확인
+- `Ex1501`부터 `Ex1503`까지 PNG storyboard에 `ComputerGraphics` title, 01부터 03까지 timestamp frame과 text metadata chunk 부재 확인
 - Demo index, 상세 Demo, GitHub body, GitHub quality와 Markdown validator 통과 대상
 - 최신 branch push 기준 `Docs Validation` run success 확인
 
