@@ -10,8 +10,8 @@
 | --- | --- | --- |
 | Source/import | 반영 완료 | `SRC-P4-C14-20`으로 source provenance를 추적한다. |
 | Branch | 진행 중 | `docs/part4-chapter14-20-workflow`를 PR #32 merge commit 기준으로 정렬하고 Chapter16 시작 기준선을 준비한다. |
-| Build/run | Chapter14와 Chapter15 Debug 일부 확인 | Chapter14 `Ex1401`-`Ex1408`과 Chapter15 `Ex1501`-`Ex1503` Debug x64 build/run을 2026-08-06 현재 확인했다. Chapter16-20과 Release 현재 재검증은 남아 있다. |
-| Capture | tracked/local 후보 | Ex1402, Ex1404~Ex1407, Ex1501, Ex1502, Ex1503 centered client-visible screenshot 후보를 `Docs/_assets/captures`에 승격했다. Ex1502는 원본 `flare0.dds`를 직접 링크하지 않고 rendered evidence로만 다룬다. |
+| Build/run | Chapter14~Chapter20 Debug 일부 확인 | Chapter14 `Ex1401`부터 `Ex1408`까지와 Chapter15 `Ex1501`부터 `Ex1503`까지를 2026-08-06, Chapter16 `Ex1601`부터 Chapter20 `Ex2001`까지를 2026-08-07 Debug x64로 현재 확인했다. Release 현재 재검증은 남아 있다. |
+| Capture | tracked/local 후보 | Ex1402, Ex1404~Ex1407, Ex1501, Ex1502, Ex1503 centered client-visible screenshot 후보를 `Docs/_assets/captures`에 승격했다. Chapter16~20 후보는 local에만 두며 Ex1604·Ex1605 HDRI asset의 공개 판단과 Ex1802·Ex1803 visual 품질 판단은 보류한다. |
 | Demo | Chapter14 작성 · Chapter15 상세 후보 작성 | Chapter14 Ex1401~Ex1408 Step별 상세 Demo와 tracked capture 연결을 작성했다. Chapter15 Ex1501~Ex1503 상세 Demo, Demo Issue body 후보와 tracked capture 연결을 작성했다. |
 | Publication | 검토 필요 | public 후보 확정이 아니라 asset/public risk 검토 축으로만 기록한다. |
 | GitHub | Chapter14 merged · Chapter15 merged | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시·review 대응·merge까지 마감했다. Chapter15 Demo Issue #31, Progress 누적 댓글 갱신, Phase 5-2 완료 댓글과 PR #32를 게시·review 대응·merge까지 마감했다. |
@@ -94,6 +94,23 @@ Part4 Chapter14-20은 `Examples.sln` 단일 project와 command argument 기반 �
 - Phase 5-2 완료 댓글은 [댓글 5200004532](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5200004532)에 게시했다.
 - Draft PR은 [PR #32](https://github.com/Razria93/Graphics_Study_Archive/pull/32)에 생성했다.
 
+## Chapter16 Debug x64 smoke
+
+- 2026-08-07 `Examples.sln` Debug x64 build를 경고 0개, 오류 0개로 확인했다.
+- `Examples.exe 1601`부터 `1606`까지는 source root working directory, `HLAB_CAPTURE_UI=collapsed`, `CenterWindow` 조건에서 실행과 local capture를 완료했다.
+- build가 ignored Debug output의 runtime DLL을 정리하므로 vcpkg Debug DLL 23개를 복구한 뒤 실행했다.
+- `Ex1601_StableFluids`는 source injection 전 초기 frame이 검정이므로 interaction capture를 후속 후보로 둔다.
+- `Ex1602_CurlNoise`, `Ex1603_Cloud`, `Ex1606_HybridWater`는 local visual 후보를 확인했다.
+- `Ex1604_RealtimeSmoke`, `Ex1605_SmokeCpu`는 HDRI runtime asset을 포함하므로 public 판단 전 local-only 후보로 유지한다.
+- local capture 후보는 `local/capture-run/Part4_Chapter16/debug-smoke-20260807`에 둔다. `Docs/_assets` 승격, 상세 Demo, GitHub body와 remote 변경은 수행하지 않는다.
+
+## Chapter17~20 Debug x64 smoke
+
+- `Examples.exe 1701`, `1801`, `1802`, `1803`, `1901`, `2001`은 source root working directory, `HLAB_CAPTURE_UI=collapsed`, `CenterWindow` 조건에서 실행과 local capture를 완료했다.
+- `Ex1701_SkeletalAnimation`은 skeletal animation scene, `Ex1801_Tree`는 tree scene, `Ex1901_PhysX`는 block simulation, `Ex2001_GamePlay`는 gameplay scene의 local visual 후보를 확인했다.
+- `Ex1802_Grass`는 강한 녹색 grass material 표현, `Ex1803_Landscape`는 과노출된 landscape/ocean 표현이므로 품질 검토 전 local-only 후보로 유지한다.
+- local capture 후보는 `local/capture-run/Part4_Chapter17/debug-smoke-20260807`, `local/capture-run/Part4_Chapter18/debug-smoke-20260807`, `local/capture-run/Part4_Chapter19/debug-smoke-20260807`, `local/capture-run/Part4_Chapter20/debug-smoke-20260807`에 둔다. `Docs/_assets` 승격, 상세 Demo, GitHub body와 remote 변경은 수행하지 않는다.
+
 ## 정본 연결
 
 | 책임 | 정본 |
@@ -107,5 +124,14 @@ Part4 Chapter14-20은 `Examples.sln` 단일 project와 command argument 기반 �
 
 ## 다음 작업
 
-1. Chapter16 `Ex1601_StableFluids`~`Ex1606_HybridWater` Debug x64 build/run smoke와 evidence 후보 생성을 후속 범위로 둔다.
-2. Chapter14 `Ex1401_Basic` tracked capture 승격 여부와 Chapter15 desktop video 후보는 후속 범위로 둔다.
+1. Chapter16부터 Chapter20까지 local candidate의 interaction·motion evidence, tracked capture 승격 여부와 상세 Demo 범위를 검토한다.
+2. Part4 Release x64 representative revalidation 범위와 증거 기준을 결정한다.
+3. Chapter14 `Ex1401_Basic` tracked capture 승격 여부와 Chapter15 desktop video 후보는 후속 범위로 둔다.
+
+## Chapter 완료 후 전수 정비 TODO
+
+1. Demo Issue를 catalogue로 유지하고, 완료된 Chapter의 Issue body에 published evidence 상태를 일괄 표기한다.
+2. Progress Issue #7 본문을 최종 진행 상태로 정합화하고, 누락된 Phase comment는 인근 comment에 번호 순서대로 보강한다.
+3. Markdown single tilde 범위 표기를 `부터`와 `까지` 형식으로 전수 교정하고 render validator를 통과시킨다.
+4. 학습용 코드 comment를 전수 정리한다. 유지할 기술 comment는 API 제약, invariant, resource lifetime, workaround 또는 성능 근거만 남기고 간결한 English로 변환한다.
+5. portfolio/publication 후보를 최종 검토한다.

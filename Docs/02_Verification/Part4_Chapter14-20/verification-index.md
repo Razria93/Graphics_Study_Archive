@@ -22,18 +22,18 @@
 | `Ex1501_ParticleSystem` | `1501` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | Debug x64 시연 video의 1.163s, 3.878s, 6.593s frame storyboard를 `Docs/_assets/captures`에 승격. Release는 과거 확인 |
 | `Ex1502_SpriteFireEffect` | `1502` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | Debug x64 시연 video의 1.695s, 5.650s, 9.605s frame storyboard를 `Docs/_assets/captures`에 승격. 원본 `flare0.dds`는 직접 링크하지 않음. Release는 과거 확인 |
 | `Ex1503_SphWater` | `1503` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | Debug x64 시연 video의 2.200s, 4.600s, 12.467s frame storyboard를 `Docs/_assets/captures`에 승격. Release는 과거 확인 |
-| `Ex1601_StableFluids` | `1601` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex1602_CurlNoise` | `1602` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex1603_Cloud` | `1603` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex1604_RealtimeSmoke` | `1604` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex1605_SmokeCpu` | `1605` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex1606_HybridWater` | `1606` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex1701_SkeletalAnimation` | `1701` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex1801_Tree` | `1801` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex1802_Grass` | `1802` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex1803_Landscape` | `1803` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex1901_PhysX` | `1901` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
-| `Ex2001_GamePlay` | `2001` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 미확인 | 과거 확인 · 현재 재검증 필요 |
+| `Ex1601_StableFluids` | `1601` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug x64 build/run/capture smoke 성공. 입력 전 초기 frame은 검정이며 interaction capture가 필요함. Release는 과거 확인 |
+| `Ex1602_CurlNoise` | `1602` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug x64 build/run/capture smoke 성공. colored curl-noise density trail local candidate 확인. Release는 과거 확인 |
+| `Ex1603_Cloud` | `1603` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug x64 build/run/capture smoke 성공. volumetric cloud local candidate 확인. Release는 과거 확인 |
+| `Ex1604_RealtimeSmoke` | `1604` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug x64 build/run/capture smoke 성공. HDRI runtime asset을 포함한 smoke candidate는 public 판단 전 local로 유지함. Release는 과거 확인 |
+| `Ex1605_SmokeCpu` | `1605` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug x64 build/run/capture smoke 성공. HDRI runtime asset을 포함한 CPU smoke candidate는 public 판단 전 local로 유지함. Release는 과거 확인 |
+| `Ex1606_HybridWater` | `1606` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug x64 build/run/capture smoke 성공. hybrid particle/grid surface local candidate 확인. Release는 과거 확인 |
+| `Ex1701_SkeletalAnimation` | `1701` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug x64 build/run/capture smoke 성공. skeletal animation local candidate 확인. Release는 과거 확인 |
+| `Ex1801_Tree` | `1801` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug x64 build/run/capture smoke 성공. tree scene local candidate 확인. Release는 과거 확인 |
+| `Ex1802_Grass` | `1802` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug x64 build/run/capture smoke 성공. grass material 표현은 품질 검토 전 local로 유지함. Release는 과거 확인 |
+| `Ex1803_Landscape` | `1803` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug x64 build/run/capture smoke 성공. landscape/ocean 표현은 품질 검토 전 local로 유지함. Release는 과거 확인 |
+| `Ex1901_PhysX` | `1901` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug x64 build/run/capture smoke 성공. PhysX block simulation local candidate 확인. Release는 과거 확인 |
+| `Ex2001_GamePlay` | `2001` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug x64 build/run/capture smoke 성공. gameplay scene local candidate 확인. Release는 과거 확인 |
 
 ## 실행 선택 방식
 
@@ -104,6 +104,32 @@ Debug x64 build는 2026-08-06 `Examples.sln` 기준 경고 0개, 오류 0개로 
 | `Ex1501_ParticleSystem` | video timestamp storyboard | 1.163s, 3.878s, 6.593s frame과 `ComputerGraphics` title 확인. PNG text metadata chunk 없음 | tracked 승격 | [tracked storyboard](../../_assets/captures/part4_chapter15_01_particle_system.png)을 Chapter15 particle baseline으로 사용 |
 | `Ex1502_SpriteFireEffect` | video timestamp storyboard | 1.695s, 5.650s, 9.605s frame과 `ComputerGraphics` title 확인. PNG text metadata chunk 없음. `flare0.dds` runtime asset을 사용함 | tracked 승격 | [tracked storyboard](../../_assets/captures/part4_chapter15_02_sprite_fire_effect.png)을 rendered evidence로 사용하고 원본 `flare0.dds`는 직접 링크하지 않음 |
 | `Ex1503_SphWater` | video timestamp storyboard | 2.200s, 4.600s, 12.467s frame과 `ComputerGraphics` title 확인. PNG text metadata chunk 없음 | tracked 승격 | [tracked storyboard](../../_assets/captures/part4_chapter15_03_sph_water.png)을 사용하고 video attachment URL은 미게시 |
+
+## Chapter16 Debug x64 smoke
+
+`Examples.sln`은 2026-08-07 Debug x64 build에서 경고 0개, 오류 0개를 기록한다. `Examples.exe`는 source root `Part4_Chapter14-20`을 working directory로 사용하고 `HLAB_CAPTURE_UI=collapsed`, `CenterWindow` 조건에서 command argument `1601`부터 `1606`까지를 실행했다. build 후 ignored Debug output에서 runtime DLL이 정리되므로 vcpkg `x64-windows/debug/bin` DLL을 복구한 뒤 smoke를 수행했다.
+
+| Example | 결과 | Local evidence | 판단 | 후속 조치 |
+| --- | --- | --- | --- | --- |
+| `Ex1601_StableFluids` | 성공 | 초기 frame capture | run smoke | source injection 전 화면이 검정이므로 interaction capture를 별도 후보로 둠 |
+| `Ex1602_CurlNoise` | 성공 | colored density trail capture | local visual 후보 | 안정화 대기와 desktop video 필요성을 후속 검토 |
+| `Ex1603_Cloud` | 성공 | volumetric cloud capture | local visual 후보 | animation과 lighting 조정은 후속 검토 |
+| `Ex1604_RealtimeSmoke` | 성공 | HDRI background와 smoke capture | local-only 후보 | runtime HDRI asset의 공개 위험을 별도 판단 |
+| `Ex1605_SmokeCpu` | 성공 | HDRI background와 CPU smoke capture | local-only 후보 | runtime HDRI asset의 공개 위험을 별도 판단 |
+| `Ex1606_HybridWater` | 성공 | hybrid particle/grid surface capture | local visual 후보 | state 안정화와 motion evidence를 후속 검토 |
+
+## Chapter17~20 Debug x64 smoke
+
+`Examples.sln` Debug x64 build는 2026-08-07 경고 0개, 오류 0개로 확인했다. `Examples.exe`는 source root `Part4_Chapter14-20`을 working directory로 사용하고 `HLAB_CAPTURE_UI=collapsed`, `CenterWindow` 조건에서 Chapter17부터 Chapter20까지 command argument를 실행했다. build 후 vcpkg `x64-windows/debug/bin` DLL을 복구하는 runtime precondition은 Chapter16과 동일하게 적용한다.
+
+| Chapter | Example | 결과 | Local evidence | 판단 | 후속 조치 |
+| --- | --- | --- | --- | --- | --- |
+| Chapter17 | `Ex1701_SkeletalAnimation` | 성공 | skeletal animation capture | local visual 후보 | animation state를 포함한 evidence 방향을 별도 검토 |
+| Chapter18 | `Ex1801_Tree` | 성공 | tree scene capture | local visual 후보 | foliage asset과 framing을 별도 검토 |
+| Chapter18 | `Ex1802_Grass` | 성공 | grass field capture | local-only 후보 | 강한 grass material 표현의 품질 검토 후 승격 여부 판단 |
+| Chapter18 | `Ex1803_Landscape` | 성공 | landscape/ocean capture | local-only 후보 | 과노출된 landscape/ocean 표현의 품질 검토 후 승격 여부 판단 |
+| Chapter19 | `Ex1901_PhysX` | 성공 | block simulation capture | local visual 후보 | physics motion evidence를 별도 검토 |
+| Chapter20 | `Ex2001_GamePlay` | 성공 | gameplay scene capture | local visual 후보 | gameplay state와 framing을 별도 검토 |
 
 ## 갱신 기준
 

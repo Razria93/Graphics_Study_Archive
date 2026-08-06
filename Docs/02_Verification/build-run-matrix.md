@@ -19,7 +19,7 @@
 | Part2_Chapter05-08 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 현재 확인 | 완료 | 혼합 | Chapter05 Step1–4, Chapter06 Step1–9와 Chapter07 Step1–7은 2026-08-02 현재 확인. Chapter07 Step8–9와 Chapter08 Step1–7은 2026-08-03 Debug/Release x64 현재 확인 |
 | Part3_Chapter09 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 현재 확인 | 완료 | 확보 | Step1–6은 2026-08-03 Debug/Release x64 Clean/Rebuild와 run을 현재 확인했다. 전체 창 PNG, storyboard 7장과 selected local video 8개를 확보했다. |
 | Part3_Chapter10-13 | 예제별 `.sln` | 성공 | 성공 | 성공 | 성공 | 현재 확인 | 완료 | 확보 | 21개 예제는 2026-08-04 Debug/Release x64 build와 run을 현재 확인했다. Chapter13의 Step2B 공개 표시와 Step4→6 shadow 비교를 포함한다 |
-| Part4_Chapter14-20 | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 부분 현재 확인 | 진행 중 | 후보 | 2026-08-06 Ex1401~Ex1408과 Ex1501~Ex1503 Debug x64 build/run smoke 확인. Chapter16~20과 Release는 과거 확인·재검증 필요 |
+| Part4_Chapter14-20 | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | 부분 현재 확인 | 진행 중 | 후보 | 2026-08-06 Ex1401부터 Ex1408까지와 Ex1501부터 Ex1503까지, 2026-08-07 Ex1601부터 Ex2001까지 Debug x64 build/run smoke 확인. Release는 과거 확인·재검증 필요 |
 | Portfolio_RayTracer | solution 확인 필요 | 미확인 | 미확인 | 미확인 | 미확인 | 없음 | 해당 없음 | 미확인 | 프로젝트 구조와 실행 진입점 확인 필요 |
 
 ## 갱신 규칙
