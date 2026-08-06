@@ -10,9 +10,9 @@
 | --- | --- | --- |
 | Source/import | 반영 완료 | `SRC-P4-C14-20`으로 source provenance를 추적한다. |
 | Branch | 진행 중 | `docs/part4-chapter14-20-workflow`에서 baseline 문서 축 정규화를 시작한다. |
-| Build/run | Chapter14 Debug 확인 | Ex1401~Ex1408 Debug x64 build/run을 2026-08-06 현재 확인했다. Chapter15~20과 Release 현재 재검증은 남아 있다. |
-| Capture | tracked 후보 | Ex1402, Ex1404~Ex1407 centered client-visible screenshot 후보를 `Docs/_assets/captures`에 승격했다. Ex1401은 local screenshot 후보, Ex1403, Ex1405, Ex1408은 stdout log 후보를 유지한다. |
-| Demo | Chapter14 Step별 후보 작성 | stale 후보를 제거하고 Chapter14 Ex1401~Ex1408 Step별 상세 Demo와 tracked capture 연결을 작성했다. |
+| Build/run | Chapter14와 Chapter15 Debug 일부 확인 | Chapter14 `Ex1401`-`Ex1408`과 Chapter15 `Ex1501`-`Ex1503` Debug x64 build/run을 2026-08-06 현재 확인했다. Chapter16-20과 Release 현재 재검증은 남아 있다. |
+| Capture | tracked/local 후보 | Ex1402, Ex1404~Ex1407 centered client-visible screenshot 후보를 `Docs/_assets/captures`에 승격했다. Ex1501~Ex1503은 local screenshot 후보를 유지하고, Ex1502는 `flare0.dds` provenance 확인 전 승격 보류로 둔다. |
+| Demo | Chapter14 작성 · Chapter15 후보 등록 | Chapter14 Ex1401~Ex1408 Step별 상세 Demo와 tracked capture 연결을 작성했다. Chapter15 Ex1501~Ex1503은 Demo Index에 local 후보와 승격 감사 상태로 등록했다. |
 | Publication | 검토 필요 | public 후보 확정이 아니라 asset/public risk 검토 축으로만 기록한다. |
 | GitHub | Ready for Review | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시하고 Ready for Review로 전환했다. 리뷰 지적사항 대응 commit과 thread 응답을 반영했다. |
 
@@ -68,6 +68,16 @@ Part4 Chapter14-20은 `Examples.sln` 단일 project와 command argument 기반 �
 - `Ex1407_IndirectArguments`는 visual이 `Ex1406_DensityField`와 유사하므로 fixed UI screenshot과 `DrawInstancedIndirect(m_argsGPU.Get(), offset)` code evidence를 함께 사용한다.
 - `Ex1404_StructuredBuffer`와 `Ex1405_ConsumeAppendBuffer`는 point cloud visual이 유사하지만, `Ex1404`는 단일 StructuredBuffer SRV/UAV draw 흐름이고 `Ex1405`는 Consume/Append UAV counter와 append count 기반 draw 흐름이다.
 - `Ex1406_DensityField`와 `Ex1407_IndirectArguments`는 density trail visual이 유사하지만, `Ex1406`은 CPU가 particle count를 직접 넘기는 draw 흐름이고 `Ex1407`은 GPU argument buffer를 넘기는 `DrawInstancedIndirect` 흐름이다.
+
+## Chapter15 파일럿과 승격 감사
+
+- 2026-08-06 `Examples.sln` Debug x64 build를 경고 0개, 오류 0개로 확인했다.
+- `capture-example-window.ps1`에 `ArgumentList` option을 추가해 `Examples.exe 1501`, `1502`, `1503` command argument 실행을 capture 도구에서 직접 지원했다.
+- `Ex1501_ParticleSystem`, `Ex1502_SpriteFireEffect`, `Ex1503_SphWater`는 `HLAB_CAPTURE_UI=collapsed`, `CenterWindow`, immediate screenshot 기준으로 local 후보를 확보했다.
+- 생성 후보는 `local/capture-run/Part4_Chapter15/debug-smoke-20260806`에 둔다. PNG 3개는 text metadata chunk가 없고 taskbar-free fixed UI 기준을 충족한다.
+- `Ex1501_ParticleSystem`은 particle stream baseline tracked 승격 후보로 둔다.
+- `Ex1502_SpriteFireEffect`는 `Assets/Textures/flare0.dds`를 사용하므로 provenance와 공개 가능 범위 확인 전 tracked/public 대표 visual 승격을 보류한다.
+- `Ex1503_SphWater`는 SPH particle cluster tracked 승격 후보로 두되, movement 설명은 desktop video 후속 후보로 분리한다.
 
 ## 정본 연결
 

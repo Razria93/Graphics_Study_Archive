@@ -7,8 +7,8 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 ## 상태
 
 - 학습 코드 정리: import 완료
-- Build/run: Chapter14 Ex1401-Ex1408 Debug x64 현재 확인, Chapter15-20과 Release 현재 재검증 필요
-- 캡처: Chapter14 tracked capture 확보, Chapter15-20 capture 후속
+- Build/run: Chapter14 Ex1401-Ex1408과 Chapter15 Ex1501-Ex1503 Debug x64 현재 확인, Chapter16-20과 Release 현재 재검증 필요
+- 캡처: Chapter14 tracked capture 확보, Chapter15 Ex1501-Ex1503 local 후보 확보, Chapter16-20 capture 후속
 
 ## Archive/Public 검토
 
@@ -17,8 +17,8 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 | Source provenance | [`SRC-P4-C14-20`](../Docs/99_Legacy/source-registry.md) |
 | Import status | 반영 완료 |
 | Public readiness | 검토 필요 |
-| Build/run status | Chapter14 Debug x64 현재 확인 · Chapter15-20과 Release 현재 재검증 필요 |
-| Next action | Chapter14 PR merge 후 Chapter15 재검증 범위 선정 |
+| Build/run status | Chapter14 Debug x64 현재 확인 · Chapter15 Debug x64 smoke 확인 · Chapter16-20과 Release 재검증 필요 |
+| Next action | Chapter15 evidence 승격 범위와 `flare0.dds` public risk 판단 |
 
 ## 예정 주제
 
