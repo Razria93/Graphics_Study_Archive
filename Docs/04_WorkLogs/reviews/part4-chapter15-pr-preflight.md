@@ -9,13 +9,14 @@ Chapter15 PR 생성 전 로컬 PR body 후보, remote 게시물, branch 상태�
 | 항목 | 확인 결과 |
 | --- | --- |
 | Branch | `docs/part4-chapter14-20-workflow` |
-| Local HEAD | `813d57c89aba283ab40b45e2ed94dfce30866c9c` |
+| Local HEAD | `a49af4e31bfe02ce06d05dd1ac338d29819a014c` |
 | Upstream HEAD | `813d57c89aba283ab40b45e2ed94dfce30866c9c` |
 | Remote branch head | `813d57c89aba283ab40b45e2ed94dfce30866c9c` |
 | Base | `main` |
 | Open PR on branch | 없음 |
-| Latest Docs Validation | success, run `31068322068` |
-| Worktree | clean |
+| Latest remote Docs Validation | success, run `31068322068`, head `813d57c89aba283ab40b45e2ed94dfce30866c9c` |
+| Local validation | PR 후보 작성 후 GitHub body, GitHub quality, Demo index, Markdown table/render/wrap, `git diff --check` 통과 |
+| Worktree | PR 후보 감사 문서 보정 전 clean, 보정 후 재검증 대상 |
 
 ## PR 후보
 
@@ -27,6 +28,7 @@ Chapter15 PR 생성 전 로컬 PR body 후보, remote 게시물, branch 상태�
 | Head branch | `docs/part4-chapter14-20-workflow` |
 | Base branch | `main` |
 | 권장 생성 상태 | Draft PR |
+| Push 필요 여부 | PR 후보 작성 commit `a49af4e31bfe02ce06d05dd1ac338d29819a014c` push 필요 |
 
 ## 원격 게시 연결
 
@@ -39,6 +41,14 @@ Chapter15 PR 생성 전 로컬 PR body 후보, remote 게시물, branch 상태�
 
 ## PR 생성 승인 대상
 
+PR 생성 전 먼저 PR 후보 작성 commit을 remote branch에 push한다.
+
+```bash
+git push origin docs/part4-chapter14-20-workflow
+```
+
+push 후 local HEAD, upstream HEAD, remote branch head와 새 Docs Validation run을 확인한다.
+
 ```bash
 gh pr create \
   --base main \
@@ -48,7 +58,7 @@ gh pr create \
   --body-file <h1-removed-pr-body>
 ```
 
-PR 생성 후에는 PR URL, PR number, head ref, base ref와 PR head commit이 `813d57c89aba283ab40b45e2ed94dfce30866c9c`인지 확인한다.
+PR 생성 후에는 PR URL, PR number, head ref, base ref와 PR head commit이 `a49af4e31bfe02ce06d05dd1ac338d29819a014c`인지 확인한다.
 
 ## 생성 전 감사 항목
 
@@ -57,7 +67,7 @@ PR 생성 후에는 PR URL, PR number, head ref, base ref와 PR head commit이 `
 - 대표 visual은 1개만 사용하고 상세 visual은 Demo Issue #31로 위임한다.
 - Ex1502는 원본 `flare0.dds`를 직접 링크하지 않고 rendered evidence로만 다룬다.
 - 기존 open PR이 같은 head branch에 없는지 확인한다.
-- PR 생성 전 local HEAD, upstream HEAD와 remote branch head가 일치하는지 확인한다.
+- PR 생성 전 PR 후보 작성 commit을 push하고 local HEAD, upstream HEAD와 remote branch head가 일치하는지 확인한다.
 
 ## 검증 명령
 
@@ -73,4 +83,4 @@ git diff --check
 
 ## 판정
 
-Chapter15 PR body 후보와 remote 게시 연결은 PR 생성 전 감사 대상으로 정렬되어 있다. 사용자 승인 후 Draft PR을 생성할 수 있다.
+Chapter15 PR body 후보와 remote 게시 연결은 PR 생성 전 감사 대상으로 정렬되어 있다. 현재 PR 후보 작성 commit은 local ahead 1 상태이므로, 사용자 승인 후 branch push와 Draft PR 생성을 순서대로 진행할 수 있다.
