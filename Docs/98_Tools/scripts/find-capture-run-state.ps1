@@ -149,7 +149,8 @@ else
         if ($errorDialogs.Count -gt 0)
         {
             Write-Host "Error dialog candidate(s):"
-            $errorDialogs | Format-Table Handle, Title, ClassName, ProcessId, ProcessName -AutoSize
+            $errorDialogs | Format-Table `
+                Handle, Title, ClassName, ProcessId, ProcessName, MessageText, Fingerprint -AutoSize
         }
     }
 }

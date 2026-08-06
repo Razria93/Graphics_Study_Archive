@@ -31,7 +31,7 @@ else
     {
         Write-Host "FOUND: $($candidates.Count) example error window candidate(s)."
         $candidates | Format-Table `
-            Handle, Title, ClassName, ProcessId, ProcessName -AutoSize
+            Handle, Title, ClassName, ProcessId, ProcessName, MessageText, Fingerprint -AutoSize
     }
 }
 

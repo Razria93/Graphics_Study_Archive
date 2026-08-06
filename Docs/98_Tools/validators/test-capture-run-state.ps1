@@ -48,6 +48,23 @@ Add-Type -AssemblyName System.Windows.Forms
         -PassThru
 }
 
+function Start-FixtureDialogChain
+{
+    param([string]$Title, [string]$FirstMessage, [string]$SecondMessage)
+
+    $encodedCommand = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes(@"
+Add-Type -AssemblyName System.Windows.Forms
+[void][System.Windows.Forms.MessageBox]::Show('$FirstMessage', '$Title')
+[void][System.Windows.Forms.MessageBox]::Show('$SecondMessage', '$Title')
+"@))
+
+    return Start-Process `
+        -FilePath powershell `
+        -ArgumentList @("-NoProfile", "-ExecutionPolicy", "Bypass", "-EncodedCommand", $encodedCommand) `
+        -WindowStyle Hidden `
+        -PassThru
+}
+
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot "../../..")).Path
 $scriptsRoot = Join-Path $repoRoot "Docs/98_Tools/scripts"
 $findScript = Join-Path $scriptsRoot "find-capture-run-state.ps1"
@@ -56,6 +73,7 @@ $waitScript = Join-Path $scriptsRoot "wait-capture-run-quiet.ps1"
 $lockPath = [IO.Path]::GetFullPath((Join-Path $repoRoot $SessionLockPath))
 $lockDirectory = Split-Path -Parent $lockPath
 $fixtureTitle = "CaptureRunFixtureError"
+$chainFixtureTitle = "CaptureRunFixtureChainError"
 $dialogProcesses = @()
 $dialogSinceTime = Get-Date
 
@@ -173,6 +191,12 @@ try
         Start-Sleep -Milliseconds 250
     }
     Assert-True ($detectedCount -ge 2) "Expected two fixture dialogs, detected $detectedCount."
+    $detectedDialogs = @($state.ErrorDialogs)
+    $fingerprints = @($detectedDialogs | Select-Object -ExpandProperty Fingerprint -Unique)
+    $messages = @($detectedDialogs | Select-Object -ExpandProperty MessageText)
+    Assert-True ($fingerprints.Count -ge 2) "Expected distinct fixture dialog fingerprints."
+    Assert-True (($messages -contains "Fixture dialog 1") -and ($messages -contains "Fixture dialog 2")) `
+        "Expected fixture dialog message text to be captured."
 
     Invoke-ExpectExitCode `
         -ExpectedExitCode 0 `
@@ -195,6 +219,58 @@ try
                 -File $waitScript `
                 -SinceTime $dialogSinceTime `
                 -Pattern $fixtureTitle `
+                -TimeoutSeconds 5 `
+                -QuietSeconds 1 `
+                -PollMilliseconds 250
+        }
+
+    $chainSinceTime = Get-Date
+    $dialogProcesses += Start-FixtureDialogChain `
+        -Title $chainFixtureTitle `
+        -FirstMessage "Fixture chain dialog 1" `
+        -SecondMessage "Fixture chain dialog 2"
+
+    $deadline = [DateTime]::UtcNow.AddSeconds($DialogTimeoutSeconds)
+    $chainDetectedCount = 0
+    while ([DateTime]::UtcNow -lt $deadline)
+    {
+        $json = & powershell -NoProfile -ExecutionPolicy Bypass `
+            -File $findScript `
+            -SinceTime $chainSinceTime `
+            -Pattern $chainFixtureTitle `
+            -AsJson
+        $state = $json | ConvertFrom-Json
+        $chainDetectedCount = @($state.ErrorDialogs).Count
+        if ($chainDetectedCount -ge 1)
+        {
+            break
+        }
+        Start-Sleep -Milliseconds 250
+    }
+    Assert-True ($chainDetectedCount -ge 1) "Expected first chained fixture dialog, detected $chainDetectedCount."
+
+    $chainOutput = & powershell -NoProfile -ExecutionPolicy Bypass `
+        -File $clearScript `
+        -SinceTime $chainSinceTime `
+        -Pattern $chainFixtureTitle `
+        -CloseErrorDialogs `
+        -MaxDrainPasses 5 `
+        -QuietSeconds 1 2>&1
+    $chainExitCode = $LASTEXITCODE
+    $chainText = ($chainOutput | Out-String)
+    Assert-True ($chainExitCode -eq 0) `
+        "Chained fixture dialog drain failed. Exit=$chainExitCode Output=$chainText"
+    Assert-True ($chainText -like "*Outcome: Replaced*") `
+        "Chained fixture did not report replacement. Output=$chainText"
+
+    Invoke-ExpectExitCode `
+        -ExpectedExitCode 0 `
+        -Message "Quiet wait failed after chained fixture dialog drain." `
+        -ScriptBlock {
+            & powershell -NoProfile -ExecutionPolicy Bypass `
+                -File $waitScript `
+                -SinceTime $chainSinceTime `
+                -Pattern $chainFixtureTitle `
                 -TimeoutSeconds 5 `
                 -QuietSeconds 1 `
                 -PollMilliseconds 250

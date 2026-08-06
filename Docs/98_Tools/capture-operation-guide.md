@@ -257,7 +257,7 @@ powershell -NoProfile -ExecutionPolicy Bypass `
   -FailOnFound
 ```
 
-실행 실패 후 안전 후보가 확인되면 내부 `WM_CLOSE` 또는 UI Automation close로 닫는다.
+실행 실패 후 안전 후보가 확인되면 내부 `WM_CLOSE`, UI Automation close, button `BM_CLICK` 순서로 닫는다. mouse 좌표 클릭은 사용하지 않는다.
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass `
@@ -269,7 +269,7 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 
 dialog 후보가 target example과 관련 있는지 확신할 수 없으면 닫지 않는다. 무인 모드에서는 사용자 알림으로 중단하고 재실행 루프를 돌지 않는다.
 
-`clear-example-error-windows.ps1 -Close`는 후보를 한 번만 닫고 끝내지 않고 drain pass를 반복한다. 후보가 0건이 된 뒤에도 quiet period를 기다리고 다시 scan한다. quiet period 이후에도 후보가 남으면 실패로 보고하고 같은 executable을 재실행하지 않는다.
+`clear-example-error-windows.ps1 -Close`는 후보를 한 번만 닫고 끝내지 않고 drain pass를 반복한다. 각 후보는 title, class, process id/name/start time, child message text, button text로 만든 fingerprint를 기록한다. 닫기 직후 다시 scan해 같은 fingerprint가 남으면 `StillPresent`, 다른 fingerprint가 나타나면 `Replaced`, 후보가 0건이면 `Quiet`으로 보고한다. Windows loader dialog는 DirectXTK 누락 dialog를 닫은 뒤 assimp 누락 dialog가 새로 나타나는 방식으로 순차 발생할 수 있으므로 `Replaced`는 실패가 아니라 다음 drain 대상으로 처리한다. 후보가 0건이 된 뒤에도 quiet period를 기다리고 다시 scan한다. quiet period 이후에도 후보가 남으면 실패로 보고하고 같은 executable을 재실행하지 않는다.
 
 ## Troubleshooting: FPV 입력이 적용되지 않는 경우
 

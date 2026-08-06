@@ -26,6 +26,10 @@ public static class ExampleErrorWindowNative
 
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool EnumChildWindows(IntPtr hWndParent, EnumWindowsProc lpEnumFunc, IntPtr lParam);
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
     public static extern bool IsWindowVisible(IntPtr hWnd);
 
     [DllImport("user32.dll", CharSet = CharSet.Unicode)]
@@ -40,6 +44,9 @@ public static class ExampleErrorWindowNative
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
     public static extern bool PostMessage(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
+
+    [DllImport("user32.dll")]
+    public static extern IntPtr SendMessage(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
 
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
@@ -133,6 +140,76 @@ function ConvertTo-ErrorWindowPattern
     return ($defaultPattern | ForEach-Object { [regex]::Escape($_) }) -join "|"
 }
 
+function Get-WindowChildTextSnapshot
+{
+    param([IntPtr]$WindowHandle)
+
+    $children = New-Object System.Collections.Generic.List[object]
+    $callback = [ExampleErrorWindowNative+EnumWindowsProc]{
+        param([IntPtr]$ChildHandle, [IntPtr]$Parameter)
+
+        $titleBuilder = New-Object Text.StringBuilder 2048
+        [void][ExampleErrorWindowNative]::GetWindowText(
+            $ChildHandle,
+            $titleBuilder,
+            $titleBuilder.Capacity
+        )
+        $classBuilder = New-Object Text.StringBuilder 256
+        [void][ExampleErrorWindowNative]::GetClassName(
+            $ChildHandle,
+            $classBuilder,
+            $classBuilder.Capacity
+        )
+
+        $text = $titleBuilder.ToString()
+        if (-not [string]::IsNullOrWhiteSpace($text))
+        {
+            $children.Add([PSCustomObject]@{
+                Handle = ("0x{0:X}" -f $ChildHandle.ToInt64())
+                HandleInt64 = $ChildHandle.ToInt64()
+                ClassName = $classBuilder.ToString()
+                Text = $text
+            })
+        }
+        return $true
+    }
+
+    [void][ExampleErrorWindowNative]::EnumChildWindows(
+        $WindowHandle,
+        $callback,
+        [IntPtr]::Zero
+    )
+    return @($children.ToArray())
+}
+
+function New-ErrorWindowFingerprint
+{
+    param(
+        [string]$Title,
+        [string]$ClassName,
+        [int]$ProcessId,
+        [string]$ProcessName,
+        [Nullable[DateTime]]$ProcessStartTime,
+        [string]$MessageText,
+        [string]$ButtonText
+    )
+
+    $start = ""
+    if ($null -ne $ProcessStartTime)
+    {
+        $start = ([DateTime]$ProcessStartTime).ToString("o")
+    }
+    return @(
+        $Title,
+        $ClassName,
+        $ProcessId,
+        $ProcessName,
+        $start,
+        $MessageText,
+        $ButtonText
+    ) -join "|"
+}
+
 function Get-ExampleErrorWindowCandidate
 {
     [CmdletBinding()]
@@ -190,6 +267,25 @@ function Get-ExampleErrorWindowCandidate
 
         if ($isCandidate)
         {
+            $childTexts = @(Get-WindowChildTextSnapshot `
+                -WindowHandle ([IntPtr]$window.HandleInt64))
+            $messageParts = @($childTexts |
+                Where-Object { $_.ClassName -eq "Static" } |
+                Select-Object -ExpandProperty Text)
+            $buttonParts = @($childTexts |
+                Where-Object { $_.ClassName -eq "Button" } |
+                Select-Object -ExpandProperty Text)
+            $messageText = [string]::Join(" ", $messageParts).Trim()
+            $buttonText = [string]::Join(" ", $buttonParts).Trim()
+            $fingerprint = New-ErrorWindowFingerprint `
+                -Title $window.Title `
+                -ClassName $window.ClassName `
+                -ProcessId $window.ProcessId `
+                -ProcessName $window.ProcessName `
+                -ProcessStartTime $window.ProcessStartTime `
+                -MessageText $messageText `
+                -ButtonText $buttonText
+
             [PSCustomObject]@{
                 Handle = $window.Handle
                 HandleInt64 = $window.HandleInt64
@@ -198,6 +294,10 @@ function Get-ExampleErrorWindowCandidate
                 ProcessId = $window.ProcessId
                 ProcessName = $window.ProcessName
                 ProcessStartTime = $window.ProcessStartTime
+                MessageText = $messageText
+                ButtonText = $buttonText
+                Fingerprint = $fingerprint
+                ChildTexts = $childTexts
                 Visible = $window.Visible
                 MatchesPattern = $matchesPattern
                 MatchesTargetProcess = $matchesTargetProcess
@@ -258,7 +358,20 @@ function Close-ExampleErrorWindow
         }
         catch
         {
-            return $false
+        }
+
+        $button = @(Get-WindowChildTextSnapshot -WindowHandle $handle |
+            Where-Object { $_.ClassName -eq "Button" } |
+            Select-Object -First 1)
+        if ($button.Count -gt 0)
+        {
+            [void][ExampleErrorWindowNative]::SendMessage(
+                ([IntPtr]$button[0].HandleInt64),
+                0x00F5,
+                [IntPtr]::Zero,
+                [IntPtr]::Zero
+            )
+            Start-Sleep -Milliseconds 500
         }
 
         return (-not [ExampleErrorWindowNative]::IsWindow($handle))
