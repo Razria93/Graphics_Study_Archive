@@ -22,4 +22,4 @@
 
 ## Related PR
 
-- [PR #32](https://github.com/Razria93/Graphics_Study_Archive/pull/32) (Ready for Review) - Part4 Chapter15 Particle Simulation evidence 문서화와 capture 승격
+- [PR #32](https://github.com/Razria93/Graphics_Study_Archive/pull/32) - Part4 Chapter15 Particle Simulation evidence 문서화와 capture 승격

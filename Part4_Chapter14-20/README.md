@@ -18,7 +18,7 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 | Import status | 반영 완료 |
 | Public readiness | 검토 필요 |
 | Build/run status | Chapter14 Debug x64 현재 확인 · Chapter15 Debug x64 smoke 확인 · Chapter16-20과 Release 재검증 필요 |
-| Next action | Chapter15 PR #32 review 대응과 merge 전 감사 |
+| Next action | Chapter16 시작 체크포인트와 Debug x64 build/run smoke |
 
 ## 예정 주제
 

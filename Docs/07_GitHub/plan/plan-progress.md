@@ -70,7 +70,7 @@ Related PR: [PR #30](https://github.com/Razria93/Graphics_Study_Archive/pull/30)
 
 Chapter15 `Ex1501_ParticleSystem`, `Ex1502_SpriteFireEffect`, `Ex1503_SphWater`를 Debug x64 기준으로 smoke 확인했다. `Ex1501` particle stream, `Ex1502` sprite fire와 10초 지연 `Ex1503` SPH water accumulation screenshot을 tracked capture asset으로 승격하고 상세 Demo와 [Demo Issue #31](https://github.com/Razria93/Graphics_Study_Archive/issues/31)에 게시했다. `Ex1502`는 원본 `flare0.dds`를 직접 링크하지 않고 직접 실행한 rendered evidence로만 다룬다.
 
-Related PR: [PR #32](https://github.com/Razria93/Graphics_Study_Archive/pull/32) (Ready for Review) - Part4 Chapter15 Particle Simulation evidence 문서화와 capture 승격
+Related PR: [PR #32](https://github.com/Razria93/Graphics_Study_Archive/pull/32) (Merged) - Part4 Chapter15 Particle Simulation evidence 문서화와 capture 승격
 
 ## 진행 예정
 
