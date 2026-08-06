@@ -12,9 +12,9 @@
 | Branch | 진행 중 | `docs/part4-chapter14-20-workflow`에서 baseline 문서 축 정규화를 시작한다. |
 | Build/run | Chapter14와 Chapter15 Debug 일부 확인 | Chapter14 `Ex1401`-`Ex1408`과 Chapter15 `Ex1501`-`Ex1503` Debug x64 build/run을 2026-08-06 현재 확인했다. Chapter16-20과 Release 현재 재검증은 남아 있다. |
 | Capture | tracked/local 후보 | Ex1402, Ex1404~Ex1407, Ex1501, Ex1503 centered client-visible screenshot 후보를 `Docs/_assets/captures`에 승격했다. Ex1502는 `flare0.dds` provenance 확인 전 승격 보류로 둔다. |
-| Demo | Chapter14 작성 · Chapter15 후보 등록 | Chapter14 Ex1401~Ex1408 Step별 상세 Demo와 tracked capture 연결을 작성했다. Chapter15 Ex1501~Ex1503은 Demo Index에 local 후보와 승격 감사 상태로 등록했다. |
+| Demo | Chapter14 작성 · Chapter15 상세 후보 작성 | Chapter14 Ex1401~Ex1408 Step별 상세 Demo와 tracked capture 연결을 작성했다. Chapter15 Ex1501과 Ex1503 상세 Demo, Demo Issue body 후보와 tracked capture 연결을 작성했다. |
 | Publication | 검토 필요 | public 후보 확정이 아니라 asset/public risk 검토 축으로만 기록한다. |
-| GitHub | Ready for Review | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시하고 Ready for Review로 전환했다. 리뷰 지적사항 대응 commit과 thread 응답을 반영했다. |
+| GitHub | Chapter14 merged · Chapter15 body 후보 작성 | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시·review 대응·merge까지 마감했다. Chapter15 Demo Issue body와 Phase 5-2 완료 댓글 후보는 local 문서로만 준비했다. |
 
 ## 시작 결정
 
@@ -79,6 +79,12 @@ Part4 Chapter14-20은 `Examples.sln` 단일 project와 command argument 기반 �
 - `Ex1502_SpriteFireEffect`는 `Assets/Textures/flare0.dds`를 사용하므로 provenance와 공개 가능 범위 확인 전 tracked/public 대표 visual 승격을 보류한다.
 - `Ex1503_SphWater`는 10초 지연 capture에서 아래에 쌓인 SPH particle cluster를 tracked capture로 승격했다. Movement 설명은 desktop video 후속 후보로 분리한다.
 
+## Chapter15 Demo body 후보
+
+- `Ex1501_ParticleSystem`은 CPU particle pool update, gravity/collision과 structured buffer sprite draw를 설명하는 상세 Demo로 연결했다.
+- `Ex1503_SphWater`는 dual source spawn, SPH density/pressure/viscosity force, boundary collision과 10초 지연 selected capture를 설명하는 상세 Demo로 연결했다.
+- Chapter15 Demo Issue body는 `Ex1501`과 `Ex1503` screenshot 2개를 대표 visual로 사용하고 `Ex1502`는 `flare0.dds` provenance gate로 제외한다.
+
 ## 정본 연결
 
 | 책임 | 정본 |
@@ -92,6 +98,6 @@ Part4 Chapter14-20은 `Examples.sln` 단일 project와 command argument 기반 �
 
 ## 다음 작업
 
-1. Chapter14 merge 전 최종 감사와 merge 승인 판단은 [Part4 Chapter14 Merge Readiness](../reviews/part4-chapter14-merge-readiness.md)를 따른다.
-2. Chapter14 `Ex1401_Basic` tracked capture 승격 여부는 desktop 재촬영 후 판단한다.
-3. Chapter15 진입 전 runtime DLL 복구 절차와 desktop video 후보 분리를 유지한다.
+1. Chapter15 Demo Issue와 Phase 5-2 완료 댓글 remote 게시는 별도 승인 후 진행한다.
+2. Chapter15 PR 후보는 long branch 기준선과 remote 게시 상태를 확인한 뒤 작성한다.
+3. Chapter14 `Ex1401_Basic` tracked capture 승격 여부와 Chapter15 desktop video 후보는 후속 범위로 둔다.
