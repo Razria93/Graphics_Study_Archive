@@ -12,16 +12,16 @@ CPU에서 particle 생명주기와 충돌을 갱신하고 structured buffer spri
 
 ## 결과 미리보기
 
-![Chapter15 ParticleSystem](../../_assets/captures/part4_chapter15_01_particle_system.png)
+![Chapter15 ParticleSystem video storyboard](../../_assets/captures/part4_chapter15_01_particle_system.png)
 
-우상단 source에서 생성된 colored particles가 중력, 벽 충돌과 수명 감소를 거치며 stream 형태로 표시된다.
+시연 video에서 선택한 1.163s, 3.878s, 6.593s frame을 순서대로 배치한다. 상단 `01`~`03`과 timestamp는 frame 순서와 원본 video 위치를 기록한다.
 
 ## 입력과 출력
 
 | 구분 | 내용 |
 | --- | --- |
 | 입력 | command argument `1501`, CPU particle pool, structured buffer SRV/UAV |
-| 출력 | taskbar-free 1024x1024 centered client-visible particle stream screenshot |
+| 출력 | 1.163s, 3.878s, 6.593s timestamp frame으로 구성한 particle stream storyboard |
 
 ## 구현 흐름
 
@@ -40,19 +40,19 @@ CPU에서 particle 생명주기와 충돌을 갱신하고 structured buffer spri
 
 ## 시각 결과
 
-이 예제는 Chapter15 particle baseline으로 사용한다. Screenshot은 particle source, velocity variation, gravity와 collision이 만든 stream shape를 한 장에서 확인하는 정적 evidence다.
+이 예제는 Chapter15 particle baseline으로 사용한다. Storyboard는 particle source, velocity variation, gravity와 collision이 만든 stream shape의 시연 구간을 기록한다.
 
 ## 구현 범위와 한계
 
 - Particle simulation은 GPU compute가 아니라 CPU update 후 structured buffer upload로 진행한다.
-- Screenshot은 single frame evidence이며 particle movement 설명은 필요하면 desktop video 후보로 분리한다.
+- Storyboard는 시연 video의 선택 frame만 기록하며 연속 motion 전체를 대체하지 않는다.
 - Release 현재 재검증은 별도 범위다.
 
 ## 검증
 
 - [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
 - Debug x64 build/run 성공
-- PNG taskbar-free fixed UI 기준 충족과 text metadata chunk 없음
+- Storyboard PNG에 `ComputerGraphics` title과 01~03 timestamp frame을 포함하며 text metadata chunk가 없음
 
 ## 관련 코드
 

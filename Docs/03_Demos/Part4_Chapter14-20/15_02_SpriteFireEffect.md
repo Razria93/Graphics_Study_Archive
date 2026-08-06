@@ -12,16 +12,16 @@ Textured particle sprite와 buoyancy update를 결합해 fire-like particle effe
 
 ## 결과 미리보기
 
-![Chapter15 SpriteFireEffect](../../_assets/captures/part4_chapter15_02_sprite_fire_effect.png)
+![Chapter15 SpriteFireEffect video storyboard](../../_assets/captures/part4_chapter15_02_sprite_fire_effect.png)
 
-`Ex1502`는 Debug x64 run/capture smoke에서 sprite fire visual을 확인했다. 현재 texture input인 `Assets/Textures/flare0.dds` 원본은 직접 링크하지 않고, 위 screenshot은 직접 실행한 rendered evidence로만 사용한다.
+`Ex1502`는 Debug x64 run/capture smoke에서 sprite fire visual을 확인했다. 위 storyboard는 시연 video의 1.695s, 5.650s, 9.605s frame을 순서대로 배치한다. `flare0.dds` 원본은 직접 링크하지 않고 rendered evidence로만 사용한다.
 
 ## 입력과 출력
 
 | 구분 | 내용 |
 | --- | --- |
 | 입력 | command argument `1502`, CPU particle pool, structured buffer SRV/UAV, `flare0.dds` sprite texture |
-| 출력 | taskbar-free 1282x1312 centered client-visible sprite fire screenshot |
+| 출력 | 1.695s, 5.650s, 9.605s timestamp frame으로 구성한 sprite fire storyboard |
 
 ## 구현 흐름
 
@@ -47,7 +47,7 @@ Textured particle sprite와 buoyancy update를 결합해 fire-like particle effe
 
 - Particle simulation은 CPU update 후 structured buffer upload로 진행한다.
 - `flare0.dds` 원본 asset의 권리 확보를 주장하지 않는다.
-- 현재 문서는 implementation evidence와 tracked rendered capture를 함께 기록한다.
+- 현재 문서는 implementation evidence와 tracked rendered storyboard를 함께 기록한다.
 - 명확한 제한 근거, 삭제 요청 또는 사용 중단 요청이 확인되면 관련 visual은 교체하거나 비공개로 전환한다.
 - Release 현재 재검증은 별도 범위다.
 
@@ -55,7 +55,7 @@ Textured particle sprite와 buoyancy update를 결합해 fire-like particle effe
 
 - [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
 - Debug x64 build/run/capture smoke 성공
-- Tracked PNG는 taskbar-free fixed UI 기준 충족과 text metadata chunk 없음 확인
+- Storyboard PNG에 `ComputerGraphics` title과 01~03 timestamp frame을 포함하며 text metadata chunk가 없음
 
 ## 관련 코드
 
