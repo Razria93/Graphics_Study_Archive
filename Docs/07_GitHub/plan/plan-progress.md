@@ -70,13 +70,13 @@ Chapter15 `Ex1501_ParticleSystem`, `Ex1502_SpriteFireEffect`, `Ex1503_SphWater`�
 
 Related PR: [PR #32](https://github.com/Razria93/Graphics_Study_Archive/pull/32) (Merged) - Part4 Chapter15 Particle Simulation evidence 문서화와 capture 승격
 
-## 진행 중
-
 ### Phase 5-3. Part4 Chapter14-20 Demo 문서 closeout과 검증 기준 정리
 
-Part4 Chapter14부터 Chapter20까지의 Demo 문서 closeout과 validator 기준 정리를 PR #38에서 진행 중이다. PR은 Draft/Open 상태이며, Docs Validation은 성공했다. selected video comment closeout은 이 PR 범위에서 분리한다.
+Part4 Chapter14부터 Chapter20까지의 Demo 문서 closeout과 validator 기준 정리를 완료했다. PR #38은 Docs Validation 성공 상태의 Draft/Open이며, merge와 Ready for Review 전환은 별도 lifecycle로 유지한다. selected video comment closeout은 이 PR 범위에서 분리한다.
 
 Related PR: [PR #38](https://github.com/Razria93/Graphics_Study_Archive/pull/38) (Open, Draft) - Part4 Chapter14-20 Demo 문서 closeout과 검증 기준 정리
+
+## 진행 중
 
 ## 진행 예정
 
