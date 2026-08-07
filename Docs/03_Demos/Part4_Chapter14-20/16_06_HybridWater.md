@@ -14,14 +14,14 @@ Particle simulation과 grid velocity projection을 결합하고, particle-to-gri
 
 ![Chapter16 HybridWater storyboard](../../_assets/captures/part4_chapter16_06_hybrid_water.png)
 
-시연 video에서 선택한 2.510s, 6.280s, 10.050s frame을 순서대로 배치한다. 상단 `01`부터 `03`까지와 timestamp는 frame 순서와 local-only 원본 video 위치를 기록한다.
+시연 video에서 선택한 1.885s, 6.283s, 10.682s frame을 순서대로 배치한다. 상단 `01`부터 `03`까지와 timestamp는 frame 순서와 local-only 원본 video 위치를 기록한다.
 
 ## 입력과 출력
 
 | 구분 | 내용 |
 | --- | --- |
 | 입력 | command argument `1606`, structured particle buffer, grid velocity/pressure/density/SDF Texture3D, source strength와 rendering checkbox |
-| 출력 | 2.510s, 6.280s, 10.050s timestamp frame으로 구성한 raycasting surface와 density volume display storyboard |
+| 출력 | 1.885s, 6.283s, 10.682s timestamp frame으로 구성한 raycasting surface와 density volume display storyboard |
 
 ## 구현 흐름
 
@@ -57,7 +57,7 @@ Storyboard는 raycasting surface 표시와 `RenderDensity` density volume 표시
 
 - [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
 - 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공
-- Storyboard PNG는 `1880x710` RGBA, non-interlaced이며 full decode와 metadata chunk 부재를 확인함
+- Storyboard PNG는 `1880x444` RGBA, non-interlaced이며 full decode와 metadata chunk 부재를 확인함
 
 ## 관련 코드
 

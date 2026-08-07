@@ -14,14 +14,14 @@ Raw heightmap에서 terrain mesh와 normal을 생성하고, procedural ocean sha
 
 ![Chapter18 Landscape storyboard](../../_assets/captures/part4_chapter18_03_landscape.png)
 
-시연 video에서 선택한 1.520s, 3.800s, 6.080s frame을 순서대로 배치한다. 상단 `01`부터 `03`까지와 timestamp는 frame 순서와 local-only 원본 video 위치를 기록한다.
+시연 video에서 선택한 1.140s, 3.800s, 6.460s frame을 순서대로 배치한다. 상단 `01`부터 `03`까지와 timestamp는 frame 순서와 local-only 원본 video 위치를 기록한다.
 
 ## 입력과 출력
 
 | 구분 | 내용 |
 | --- | --- |
 | 입력 | command argument `1803`, `terrain.raw` heightmap, terrain material, ocean square mesh와 `globalTime` |
-| 출력 | 1.520s, 3.800s, 6.080s timestamp frame으로 구성한 terrain/ocean storyboard |
+| 출력 | 1.140s, 3.800s, 6.460s timestamp frame으로 구성한 terrain/ocean storyboard |
 
 ## 구현 흐름
 
@@ -58,7 +58,7 @@ Storyboard는 heightmap terrain 위에 표시된 ocean surface가 `globalTime` w
 
 - [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
 - 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공
-- Storyboard PNG는 `1880x710` RGBA, non-interlaced이며 full decode와 metadata chunk 부재를 확인함
+- Storyboard PNG는 `1880x444` RGBA, non-interlaced이며 full decode와 metadata chunk 부재를 확인함
 
 ## 관련 코드
 

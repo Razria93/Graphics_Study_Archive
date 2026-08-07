@@ -14,14 +14,14 @@ Character mesh와 animation clip을 분리해 읽고, frame별 bone transform을
 
 ![Chapter17 SkeletalAnimation storyboard](../../_assets/captures/part4_chapter17_01_skeletal_animation.png)
 
-시연 video에서 선택한 1.010s, 2.530s, 4.050s frame을 순서대로 배치한다. 상단 `01`부터 `03`까지와 timestamp는 frame 순서와 local-only 원본 video 위치를 기록한다.
+시연 video에서 선택한 0.800s, 2.500s, 4.300s frame을 순서대로 배치한다. 상단 `01`부터 `03`까지와 timestamp는 frame 순서와 local-only 원본 video 위치를 기록한다.
 
 ## 입력과 출력
 
 | 구분 | 내용 |
 | --- | --- |
 | 입력 | command argument `1701`, character mesh, FBX animation clip, bone hierarchy와 frame index |
-| 출력 | 1.010s, 2.530s, 4.050s timestamp frame으로 구성한 skeletal pose storyboard |
+| 출력 | 0.800s, 2.500s, 4.300s timestamp frame으로 구성한 skeletal pose storyboard |
 
 ## 구현 흐름
 
@@ -56,7 +56,7 @@ Storyboard는 동일 character mesh가 frame별 bone transform에 따라 다른 
 
 - [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
 - 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공
-- Storyboard PNG는 `1880x710` RGBA, non-interlaced이며 full decode와 metadata chunk 부재를 확인함
+- Storyboard PNG는 `1880x444` RGBA, non-interlaced이며 full decode와 metadata chunk 부재를 확인함
 
 ## 관련 코드
 

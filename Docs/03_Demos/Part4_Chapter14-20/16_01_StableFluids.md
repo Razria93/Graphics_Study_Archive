@@ -14,14 +14,14 @@ Mouse source가 주입하는 velocity와 color density를 2D stable fluids compu
 
 ![Chapter16 StableFluids storyboard](../../_assets/captures/part4_chapter16_01_stable_fluids.png)
 
-시연 video에서 선택한 5.200s, 13.000s, 20.800s frame을 순서대로 배치한다. 상단 `01`부터 `03`까지와 timestamp는 frame 순서와 local-only 원본 video 위치를 기록한다.
+시연 video에서 선택한 5.200s, 13.000s, 22.100s frame을 순서대로 배치한다. 상단 `01`부터 `03`까지와 timestamp는 frame 순서와 local-only 원본 video 위치를 기록한다.
 
 ## 입력과 출력
 
 | 구분 | 내용 |
 | --- | --- |
 | 입력 | command argument `1601`, mouse position, left-button source, velocity 및 RGBA density texture |
-| 출력 | 5.200s, 13.000s, 20.800s timestamp frame으로 구성한 color density field storyboard |
+| 출력 | 5.200s, 13.000s, 22.100s timestamp frame으로 구성한 color density field storyboard |
 
 ## 구현 흐름
 

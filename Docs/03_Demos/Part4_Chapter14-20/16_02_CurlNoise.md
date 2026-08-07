@@ -14,14 +14,14 @@ Tileable noise gradient에서 만든 2D curl velocity로 particle을 갱신하�
 
 ![Chapter16 CurlNoise storyboard](../../_assets/captures/part4_chapter16_02_curl_noise.png)
 
-0.765s, 1.500s, 3.000s frame은 curl field를 따라 particle sprite와 density trail이 감쇠하는 과정을 기록한다.
+0.765s, 1.500s, 4.335s frame은 curl field를 따라 particle sprite와 density trail이 감쇠하는 과정을 기록한다.
 
 ## 입력과 출력
 
 | 구분 | 내용 |
 | --- | --- |
 | 입력 | command argument `1602`, seeded CPU particle position/color, GPU structured particle buffer와 RGBA density texture |
-| 출력 | 0.765s, 1.500s, 3.000s timestamp frame으로 구성한 colored curl-noise density trail storyboard |
+| 출력 | 0.765s, 1.500s, 4.335s timestamp frame으로 구성한 colored curl-noise density trail storyboard |
 
 ## 구현 흐름
 
@@ -54,7 +54,7 @@ Tileable noise gradient에서 만든 2D curl velocity로 particle을 갱신하�
 
 - [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
 - 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공
-- 0.765s, 1.500s, 3.000s timestamp frame storyboard를 tracked evidence로 확인
+- 0.765s, 1.500s, 4.335s timestamp frame storyboard를 tracked evidence로 확인
 - Release 상태는 Verification Index의 과거 확인 기록으로 유지
 
 ## 관련 코드

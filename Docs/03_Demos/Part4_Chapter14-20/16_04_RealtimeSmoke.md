@@ -14,14 +14,14 @@
 
 ![Chapter16 RealtimeSmoke storyboard](../../_assets/captures/part4_chapter16_04_realtime_smoke.png)
 
-시연 video에서 선택한 5.370s, 13.420s, 21.470s frame을 순서대로 배치한다. 상단 `01`부터 `03`까지와 timestamp는 frame 순서와 local-only 원본 video 위치를 기록한다.
+시연 video에서 선택한 4.025s, 13.417s, 22.808s frame을 순서대로 배치한다. 상단 `01`부터 `03`까지와 timestamp는 frame 순서와 local-only 원본 video 위치를 기록한다.
 
 ## 입력과 출력
 
 | 구분 | 내용 |
 | --- | --- |
 | 입력 | command argument `1604`, low/high-resolution velocity 및 density Texture3D, source strength와 buoyancy parameter |
-| 출력 | 5.370s, 13.420s, 21.470s timestamp frame으로 구성한 HDRI rendered smoke storyboard |
+| 출력 | 4.025s, 13.417s, 22.808s timestamp frame으로 구성한 HDRI rendered smoke storyboard |
 
 ## 구현 흐름
 
@@ -57,7 +57,7 @@ Storyboard는 source 영역에서 시작한 density가 확산되고, buoyancy pa
 
 - [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
 - 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공
-- Storyboard PNG는 `1880x710` RGBA, non-interlaced이며 full decode와 metadata chunk 부재를 확인함
+- Storyboard PNG는 `1880x444` RGBA, non-interlaced이며 full decode와 metadata chunk 부재를 확인함
 
 ## 관련 코드
 
