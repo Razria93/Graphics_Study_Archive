@@ -2,7 +2,17 @@
 
 ## 요약
 
-Chapter14는 compute shader dispatch에서 시작해 blur, structured buffer, consume/append counter, density field, indirect draw와 GPU sort로 확장되는 evidence 묶음이다. Visual evidence는 `Ex1402`, `Ex1404`부터 `Ex1407`까지의 centered client-visible screenshot으로 구성하고, console 중심 예제는 CPU/GPU result compare와 exit code로 확인한다. `Ex1407`은 `Ex1406`과 visual이 유사하므로 indirect argument buffer 생성과 `DrawInstancedIndirect` 호출을 code evidence로 함께 본다.
+Chapter14는 compute shader dispatch에서 시작하는 evidence 묶음이다.
+
+흐름은 blur, structured buffer, consume/append counter와 density field로 확장된다.
+
+후반 evidence는 indirect draw와 GPU sort까지 포함한다.
+
+Visual evidence는 `Ex1402`, `Ex1404`부터 `Ex1407`까지의 screenshot으로 구성한다.
+
+Console 중심 예제는 CPU/GPU result compare와 exit code로 확인한다.
+
+`Ex1407`은 indirect argument buffer 생성과 `DrawInstancedIndirect` 호출을 함께 본다.
 
 ## 핵심 목표
 
@@ -24,19 +34,29 @@ Chapter14는 compute shader dispatch에서 시작해 blur, structured buffer, co
 
 ### StructuredBuffer point cloud
 
-`Ex1404_StructuredBuffer`는 25600개 particle을 structured buffer에 두고 compute shader update 뒤 point list로 그린다.
+`Ex1404_StructuredBuffer`는 25600개 particle을 structured buffer에 둔다.
+
+Compute shader update 뒤 point list로 그린다.
 
 ![StructuredBuffer point cloud](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter14_04_structured_buffer.png?raw=true)
 
 ### Consume/Append counter
 
-`Ex1405_ConsumeAppendBuffer`는 consume buffer에서 읽은 particle을 append buffer에 다시 쌓는다. `AppendBuffer count: 25600` stdout으로 counter 결과를 확인한다.
+`Ex1405_ConsumeAppendBuffer`는 consume buffer에서 particle을 읽는다.
+
+읽은 particle은 append buffer에 다시 쌓는다.
+
+`AppendBuffer count: 25600` stdout으로 counter 결과를 확인한다.
 
 ![ConsumeAppendBuffer point cloud](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter14_05_consume_append_buffer.png?raw=true)
 
 ### Density field trail
 
-`Ex1406_DensityField`는 particle sourcing과 density dissipation을 compute shader로 수행하고 sprite draw를 누적해 color trail을 만든다.
+`Ex1406_DensityField`는 particle sourcing과 density dissipation을 수행한다.
+
+두 작업은 compute shader로 처리한다.
+
+Sprite draw를 누적해 color trail을 만든다.
 
 ![Density field trail](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter14_06_density_field.png?raw=true)
 
@@ -44,26 +64,44 @@ Chapter14는 compute shader dispatch에서 시작해 blur, structured buffer, co
 
 ### Structured buffer render path
 
-`Ex1404`는 vertex buffer를 사용하지 않고 `StructuredBuffer<Particle>`을 vertex shader SRV로 바인딩한다. 이후 particle 수만큼 draw한다.
+`Ex1404`는 vertex buffer를 사용하지 않는다.
+
+`StructuredBuffer<Particle>`을 vertex shader SRV로 바인딩한다.
+
+이후 particle 수만큼 draw한다.
 
 - [StructuredBuffer update와 point draw](https://github.com/Razria93/Graphics_Study_Archive/blob/44e3c118f80994949b5089f90b388fdcbea15e1c/Part4_Chapter14-20/Ex1404_StructuredBuffer.cpp#L80-L119)
 
 ### Append counter evidence
 
-`Ex1405`는 `CopyStructureCount`로 append buffer counter를 staging buffer에 복사한다. 내려받은 `appendCount`를 `Draw(appendCount, 0)`에 사용한다.
+`Ex1405`는 `CopyStructureCount`로 append buffer counter를 복사한다.
+
+복사 대상은 staging buffer다.
+
+내려받은 `appendCount`를 `Draw(appendCount, 0)`에 사용한다.
 
 - [Append counter 복사와 append count draw](https://github.com/Razria93/Graphics_Study_Archive/blob/44e3c118f80994949b5089f90b388fdcbea15e1c/Part4_Chapter14-20/Ex1405_ConsumeAppendBuffer.cpp#L98-L130)
 
 ### Indirect draw evidence
 
-`Ex1407`은 `D3D11_RESOURCE_MISC_DRAWINDIRECT_ARGS` 용도의 argument buffer를 만든다. Offset이 가리키는 argument 묶음을 `DrawInstancedIndirect`에 넘긴다.
+`Ex1407`은 indirect draw용 argument buffer를 만든다.
+
+Buffer는 `D3D11_RESOURCE_MISC_DRAWINDIRECT_ARGS` 용도로 생성한다.
+
+Offset이 가리키는 argument 묶음을 `DrawInstancedIndirect`에 넘긴다.
 
 - [Indirect argument buffer 생성](https://github.com/Razria93/Graphics_Study_Archive/blob/44e3c118f80994949b5089f90b388fdcbea15e1c/Part4_Chapter14-20/Ex1407_IndirectArguments.cpp#L56-L64)
 - [DrawInstancedIndirect 호출](https://github.com/Razria93/Graphics_Study_Archive/blob/44e3c118f80994949b5089f90b388fdcbea15e1c/Part4_Chapter14-20/Ex1407_IndirectArguments.cpp#L165-L190)
 
 ### Stdout result compare
 
-`Ex1403_MatVecMult`는 CPU와 GPU matrix-vector multiplication 결과를 비교한다. `Error GPU 0`, `ExitCode: 0`을 확인한다. `Ex1408_BitonicSort`는 `1024`부터 `1048576`까지 element count를 늘린다. CPU sort와 GPU bitonic sort가 모두 `OK`인지 확인한다.
+`Ex1403_MatVecMult`는 CPU와 GPU matrix-vector multiplication 결과를 비교한다.
+
+`Error GPU 0`과 `ExitCode: 0`을 확인한다.
+
+`Ex1408_BitonicSort`는 `1024`부터 `1048576`까지 element count를 늘린다.
+
+CPU sort와 GPU bitonic sort가 모두 `OK`인지 확인한다.
 
 - [MatVecMult CPU/GPU result compare](https://github.com/Razria93/Graphics_Study_Archive/blob/44e3c118f80994949b5089f90b388fdcbea15e1c/Part4_Chapter14-20/Ex1403_MatVecMult.cpp#L30-L72)
 - [BitonicSort element count별 CPU/GPU compare](https://github.com/Razria93/Graphics_Study_Archive/blob/44e3c118f80994949b5089f90b388fdcbea15e1c/Part4_Chapter14-20/BitonicSort.cpp#L180-L253)

@@ -2,7 +2,11 @@
 
 ## 요약
 
-Chapter08은 surface rim lighting에서 시작해 GPU post-processing과 procedural full-screen shader로 확장되는 shader experiment 흐름이다. 대표 결과는 서로 다른 세 축인 silhouette shading, bloom filter chain과 시간 기반 star shader를 보여준다.
+Chapter08은 surface rim lighting에서 시작하는 shader experiment 흐름이다.
+
+후반부는 GPU post-processing과 procedural full-screen shader로 확장된다.
+
+대표 결과는 silhouette shading, bloom filter chain과 시간 기반 star shader를 보여준다.
 
 ## 핵심 목표
 
@@ -23,7 +27,11 @@ Chapter08은 surface rim lighting에서 시작해 GPU post-processing과 procedu
 
 ### Step1 — Rim Lighting
 
-검은 배경의 Dragon 외곽을 따라 파란 rim이 나타난다. Normal과 view direction이 수직에 가까워질수록 rim contribution이 커지며 UI의 color·power·strength가 윤곽의 색과 폭을 제어한다.
+검은 배경의 Dragon 외곽을 따라 파란 rim이 나타난다.
+
+Normal과 view direction이 수직에 가까워질수록 rim contribution이 커진다.
+
+UI의 color, power, strength는 윤곽의 색과 폭을 제어한다.
 
 ![Step1 Rim Lighting](https://github.com/Razria93/Graphics_Study_Archive/blob/b4feaf756ab197f896934adb9038972fb8923285/Docs/_assets/captures/part2_chapter08_01_rim_lighting.png?raw=true)
 
@@ -33,7 +41,13 @@ Chapter08은 surface rim lighting에서 시작해 GPU post-processing과 procedu
 
 ### Step6 — Bloom Post-Processing
 
-밝은 skybox와 sphere highlight가 threshold를 통과한 뒤 주변으로 부드럽게 확산된다. Scene render와 blur 결과를 다시 합성해 원본 형태를 유지하면서 glow를 더한다.
+밝은 skybox와 sphere highlight가 threshold를 통과한다.
+
+통과한 밝은 영역은 주변으로 부드럽게 확산된다.
+
+Scene render와 blur 결과를 다시 합성한다.
+
+원본 형태를 유지하면서 glow를 더한다.
 
 ![Step6 Bloom](https://github.com/Razria93/Graphics_Study_Archive/blob/13d90c183379f3b8a5b0b90464d8297709d3f634/Docs/_assets/captures/part2_chapter08_06_bloom_effect.png?raw=true)
 
@@ -43,7 +57,11 @@ Chapter08은 surface rim lighting에서 시작해 GPU post-processing과 procedu
 
 ### Step7 — Procedural Star
 
-Full-screen pixel shader가 누적 시간, 현재 resolution과 texture channel을 사용해 star surface와 corona를 합성한다. 정지 frame에서도 중심 표면 noise와 바깥 glow의 서로 다른 주파수 구조를 확인할 수 있다.
+Full-screen pixel shader는 누적 시간, resolution과 texture channel을 사용한다.
+
+Shader는 star surface와 corona를 합성한다.
+
+정지 frame에서도 중심 표면 noise와 바깥 glow의 주파수 차이를 확인할 수 있다.
 
 ![Step7 Shadertoy](https://github.com/Razria93/Graphics_Study_Archive/blob/7b516a72cea5a40e981a881d9fe24115410fce7f/Docs/_assets/captures/part2_chapter08_07_shadertoy.png?raw=true)
 
@@ -55,13 +73,25 @@ Full-screen pixel shader가 누적 시간, 현재 resolution과 texture channel�
 
 ### View angle 기반 rim contribution
 
-정규화한 normal과 eye direction의 내적을 반전해 silhouette 쪽에서 커지는 rim base를 만든다. Power 또는 smoothstep shaping을 거친 값을 color와 strength에 곱해 surface lighting에 더한다.
+정규화한 normal과 eye direction의 내적을 반전한다.
+
+Silhouette 쪽에서 커지는 rim base를 만든다.
+
+Power 또는 smoothstep shaping을 거친 값을 color와 strength에 곱한다.
+
+그 결과를 surface lighting에 더한다.
 
 - [Rim base와 shaping 적용](https://github.com/Razria93/Graphics_Study_Archive/blob/905120c0a305f1efb1d08bfe2459b137dd05a0f8/Part2_Chapter05-08/08_ShaderToys_Step1_RimLighting/BasicPixelShader.hlsl#L59-L70)
 
 ### Threshold·blur·composite filter chain
 
-Back buffer를 shader-readable texture로 복사하고 threshold pass 뒤에 downsample과 separable blur를 반복한다. 마지막 pass는 blur 결과와 원본을 합성하며 resize 시 크기 의존 filter chain을 다시 만든다.
+Back buffer를 shader-readable texture로 복사한다.
+
+Threshold pass 뒤에 downsample과 separable blur를 반복한다.
+
+마지막 pass는 blur 결과와 원본을 합성한다.
+
+Resize 시 크기 의존 filter chain을 다시 만든다.
 
 - [Back buffer 복사와 filter 실행](https://github.com/Razria93/Graphics_Study_Archive/blob/b939291f87e7cf84f02b8519fa2b2aa06fd8da42/Part2_Chapter05-08/08_ShaderToys_Step6_BloomEffect/ExampleApp.cpp#L153-L164)
 - [Threshold·downsample·blur 구성](https://github.com/Razria93/Graphics_Study_Archive/blob/b939291f87e7cf84f02b8519fa2b2aa06fd8da42/Part2_Chapter05-08/08_ShaderToys_Step6_BloomEffect/ExampleApp.cpp#L168-L241)
@@ -69,7 +99,13 @@ Back buffer를 shader-readable texture로 복사하고 threshold pass 뒤에 dow
 
 ### Multi-frequency star surface와 corona
 
-여러 주파수의 procedural noise를 시간에 따라 이동시키고 radial mask로 star 본체와 바깥 corona를 나눈다. Texture channel의 밝기 입력과 noise를 결합해 surface 세부와 glow를 만든다.
+여러 주파수의 procedural noise를 시간에 따라 이동시킨다.
+
+Radial mask로 star 본체와 바깥 corona를 나눈다.
+
+Texture channel의 밝기 입력과 noise를 결합한다.
+
+결과는 surface 세부와 glow를 만든다.
 
 - [Texture 입력과 multi-frequency noise](https://github.com/Razria93/Graphics_Study_Archive/blob/6d0823763dffebd77c60d029e114efafcf73c3b8/Part2_Chapter05-08/08_ShaderToys_Step7_Shadertoy/StarPixelShader.hlsl#L58-L94)
 - [Star surface와 corona 합성](https://github.com/Razria93/Graphics_Study_Archive/blob/6d0823763dffebd77c60d029e114efafcf73c3b8/Part2_Chapter05-08/08_ShaderToys_Step7_Shadertoy/StarPixelShader.hlsl#L98-L127)
@@ -111,8 +147,12 @@ void ApplyBloomFilterChainPseudo(Texture scene, Size renderSize)
 ## 구현 범위와 한계
 
 - 포함: Rim lighting, cubemap·environment mapping, IBL·Fresnel, bloom과 Shadertoy runtime input
-- 한계: 학습용 DirectX11 shader experiment이며 production renderer의 tone mapping, exposure adaptation과 multi-pass Shadertoy runtime은 포함하지 않는다.
-- Asset: 강의 제공 또는 출처 정보가 불완전한 runtime asset 원본은 첨부하거나 직접 링크하지 않고, 직접 실행해 생성한 rendered evidence만 공개한다.
+- 한계: 학습용 DirectX11 shader experiment 범위다.
+- 한계: production renderer의 tone mapping과 exposure adaptation은 포함하지 않는다.
+- 한계: multi-pass Shadertoy runtime도 포함하지 않는다.
+- Asset: 출처 정보가 불완전한 runtime asset 원본은 첨부하지 않는다.
+- Asset: 강의 제공 asset 원본도 직접 링크하지 않는다.
+- Asset: 직접 실행해 생성한 rendered evidence만 공개한다.
 
 ## 관련 문서
 

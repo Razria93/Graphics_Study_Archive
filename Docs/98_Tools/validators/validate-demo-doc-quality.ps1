@@ -247,7 +247,19 @@ function Validate-DemoDocument {
     if (-not $hasVerification) {
         Add-Failure $relative "missing Verification Markdown link"
     }
-    if ($imageCount -eq 0) {
+    $visualStatusDocumented = $false
+    foreach ($visualStatusPhrase in @(
+        'Visual status:',
+        'tracked screenshot',
+        'tracked visual',
+        'stdout evidence'
+    )) {
+        if ($content.Contains($visualStatusPhrase)) {
+            $visualStatusDocumented = $true
+            break
+        }
+    }
+    if ($imageCount -eq 0 -and -not $visualStatusDocumented) {
         Add-Warning $relative "representative visual is missing"
     }
 

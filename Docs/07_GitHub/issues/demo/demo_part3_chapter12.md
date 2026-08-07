@@ -49,7 +49,9 @@ Imported model에서 PBR option을 켠 장면이다.
 
 ### Metallic-roughness BRDF와 IBL
 
-Metallic 값으로 dielectric F0와 albedo를 보간하고 roughness를 GGX distribution과 prefiltered environment sampling에 반영한다.
+Metallic 값으로 dielectric F0와 albedo를 보간한다.
+
+Roughness는 GGX distribution과 prefiltered environment sampling에 반영한다.
 
 - [Normal·IBL·GGX 계산](https://github.com/Razria93/Graphics_Study_Archive/blob/623cb8ccbc984584f47a7c68365d69840ed65c60/Part3_Chapter10-13/12_PBR_Step1_UnrealPBR/BasicPS.hlsl#L50-L181)
 

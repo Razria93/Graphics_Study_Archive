@@ -2,7 +2,9 @@
 
 ## 요약
 
-Point primitive 확장에서 시작해 billboard, diagnostic normal, procedural fireball과 tessellation으로 이어지는 Geometry Pipeline 흐름이다.
+Point primitive 확장에서 시작하는 Geometry Pipeline 흐름이다.
+
+흐름은 billboard, diagnostic normal, procedural fireball과 tessellation으로 이어진다.
 
 ## 핵심 목표
 
@@ -35,7 +37,11 @@ Surface draw와 별도의 line geometry를 사용해 vertex normal의 위치와 
 
 ### Manual Tessellation
 
-UI factor가 Hull Shader의 edge와 inside factor에 직접 반영되는 원래 학습 경로다. Distance Adaptive mode는 camera 거리에 따라 같은 factor를 계산하는 사용자 확장으로 분리한다.
+UI factor가 Hull Shader의 edge와 inside factor에 직접 반영되는 학습 경로다.
+
+Distance Adaptive mode는 camera 거리에 따라 같은 factor를 계산한다.
+
+이 mode는 사용자 확장으로 분리한다.
 
 ![Manual Tessellation](https://github.com/Razria93/Graphics_Study_Archive/blob/623cb8ccbc984584f47a7c68365d69840ed65c60/Docs/_assets/captures/part3_chapter10_05_tessellation.png?raw=true)
 

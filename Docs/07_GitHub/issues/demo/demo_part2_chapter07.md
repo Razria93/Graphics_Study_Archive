@@ -2,7 +2,13 @@
 
 ## 요약
 
-Chapter07은 indexed box와 wireframe rasterizer state에서 시작해 procedural primitive, subdivision과 spherical texture mapping으로 확장한다. Step1, Step5와 Step8은 mesh 표현의 기준선, 사용자가 구성한 Sphere topology, generated planet texture의 spherical UV와 seam 보정이라는 세 milestone을 보여준다.
+Chapter07은 indexed box와 wireframe rasterizer state에서 시작한다.
+
+흐름은 procedural primitive, subdivision과 spherical texture mapping으로 확장한다.
+
+Step1, Step5와 Step8은 mesh 표현 기준선, Sphere topology, planet texture milestone이다.
+
+마지막 milestone은 spherical UV와 seam 보정을 함께 보여준다.
 
 ## 핵심 목표
 
@@ -23,19 +29,29 @@ Chapter07은 indexed box와 wireframe rasterizer state에서 시작해 procedura
 
 ### Step1 — Wireframe Mesh
 
-Triangle-list box의 fill mode만 wireframe으로 바꾸어 face별 triangle diagonal과 indexed surface topology를 확인한다.
+Triangle-list box의 fill mode만 wireframe으로 바꾼다.
+
+Face별 triangle diagonal과 indexed surface topology를 확인한다.
 
 ![Step1 Wireframe](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Docs/_assets/captures/part2_chapter07_01_drawing_wireframes.png?raw=true)
 
 ### Step5 — Procedural Sphere
 
-두 반구의 latitude ring을 equator에서 연결하고 pole fan으로 닫은 사용자 Sphere 구현이다. Wireframe은 longitude slice가 pole로 수렴하는 topology를 드러낸다.
+두 반구의 latitude ring을 equator에서 연결한다.
+
+Pole fan으로 닫은 사용자 Sphere 구현이다.
+
+Wireframe은 longitude slice가 pole로 수렴하는 topology를 드러낸다.
 
 ![Step5 Sphere](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Docs/_assets/captures/part2_chapter07_05_sphere.png?raw=true)
 
 ### Step8 — Sphere Mapping
 
-Icosahedron을 세 번 subdivision하고 sphere에 투영한 뒤 generated fictional planet texture를 spherical UV로 sampling한다. 비대칭 대륙과 극지방이 방향과 U seam 결과를 구분한다.
+Icosahedron을 세 번 subdivision하고 sphere에 투영한다.
+
+Generated fictional planet texture는 spherical UV로 sampling한다.
+
+비대칭 대륙과 극지방이 방향과 U seam 결과를 구분한다.
 
 ![Step8 Sphere Mapping](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Docs/_assets/captures/part2_chapter07_08_sphere_mapping.png?raw=true)
 
@@ -43,21 +59,39 @@ Icosahedron을 세 번 subdivision하고 sphere에 투영한 뒤 generated ficti
 
 ### Indexed mesh와 wireframe state
 
-Box는 triangle-list surface mesh를 유지하고 rasterizer fill mode만 전환한다. 따라서 보이는 diagonal은 별도 line geometry가 아니라 실제 triangle topology의 edge다.
+Box는 triangle-list surface mesh를 유지한다.
+
+Rasterizer fill mode만 wireframe으로 전환한다.
+
+따라서 보이는 diagonal은 별도 line geometry가 아니다.
+
+실제 triangle topology의 edge가 그대로 드러난다.
 
 - [Box mesh 생성](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Part2_Chapter05-08/07_Modeling_Step1_DrawingWireFrames/GeometryGenerator.cpp#L55-L188)
 - [Fill mode 선택과 indexed draw](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Part2_Chapter05-08/07_Modeling_Step1_DrawingWireFrames/ExampleApp.cpp#L203-L231)
 
 ### Hemisphere와 pole topology
 
-Sphere는 위·아래 반구의 ring을 따로 만들고 offset index로 연결한다. Pole band에는 하나의 triangle만 생성해 중복된 면적 0 triangle을 피한다.
+Sphere는 위와 아래 반구의 ring을 따로 만든다.
+
+두 ring은 offset index로 연결한다.
+
+Pole band에는 하나의 triangle만 생성한다.
+
+이 방식은 중복된 면적 0 triangle을 피한다.
 
 - [위쪽 반구 vertex와 triangle 생성](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Part2_Chapter05-08/07_Modeling_Step5_Sphere/GeometryGenerator.cpp#L279-L371)
 - [아래쪽 반구 vertex와 triangle 생성](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Part2_Chapter05-08/07_Modeling_Step5_Sphere/GeometryGenerator.cpp#L377-L468)
 
 ### Subdivision과 spherical UV seam
 
-Icosahedron triangle의 midpoint를 sphere에 다시 투영해 네 child triangle로 나눈다. U=0·1 경계를 가로지르는 triangle은 outlier vertex를 triangle-local로 복제해 중앙을 가로지르는 잘못된 interpolation을 막는다.
+Icosahedron triangle의 midpoint를 sphere에 다시 투영한다.
+
+각 triangle은 네 child triangle로 나눈다.
+
+U=0 또는 U=1 경계를 가로지르는 triangle은 outlier vertex를 복제한다.
+
+복제는 triangle-local로 수행해 중앙을 가로지르는 잘못된 interpolation을 막는다.
 
 - [Sphere projection과 spherical UV 계산](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/GeometryGenerator.cpp#L416-L445)
 - [Triangle-local U seam 보정](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Part2_Chapter05-08/07_Modeling_Step8_SphereMapping/GeometryGenerator.cpp#L448-L530)
@@ -108,7 +142,8 @@ void BuildMappedSpherePseudo(int subdivisionCount)
 
 ## 구현 범위와 한계
 
-- 포함: indexed triangle mesh, wireframe, vertex·face normal, Grid·Cylinder·Sphere, subdivision과 spherical UV
+- 포함: indexed triangle mesh, wireframe, vertex normal과 face normal을 다룬다.
+- 포함: Grid, Cylinder, Sphere, subdivision과 spherical UV를 다룬다.
 - 한계: SphereMapping은 shared indexed mesh가 아닌 triangle-local vertex 구조를 사용한다.
 - 한계: Spherical UV는 U seam을 보정하지만 별도의 pole correction과 tangent-space normal mapping은 포함하지 않는다.
 

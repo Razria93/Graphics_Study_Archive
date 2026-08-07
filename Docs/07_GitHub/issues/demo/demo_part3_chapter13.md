@@ -2,7 +2,11 @@
 
 ## 요약
 
-Stencil mirror와 pipeline state 정리에서 시작해 shadow prototype, depth fog, hard shadow, PCF, PCSS, halo와 sphere light로 확장되는 아홉 단계다.
+Stencil mirror와 pipeline state 정리에서 시작하는 아홉 단계 흐름이다.
+
+중간 단계는 shadow prototype, depth fog, hard shadow, PCF와 PCSS로 확장된다.
+
+후반 단계는 halo와 sphere light까지 포함한다.
 
 ## 핵심 목표
 
@@ -29,7 +33,11 @@ Stencil mask로 mirror 영역을 제한하고 reflection transform을 적용한 
 
 ### Hard Shadow → PCF → PCSS
 
-왼쪽에서 오른쪽으로 읽으면 단일 depth comparison의 hard edge, 고정 kernel PCF의 균일한 blur와 blocker 거리에 따라 penumbra 폭이 달라지는 PCSS를 비교할 수 있다.
+왼쪽에서 오른쪽으로 단일 depth comparison의 hard edge를 읽는다.
+
+그다음 고정 kernel PCF의 균일한 blur를 비교한다.
+
+마지막으로 blocker 거리에 따라 penumbra 폭이 달라지는 PCSS를 확인한다.
 
 ![Shadow comparison](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter13_04_06_shadow_filtering_storyboard.png?raw=true)
 
@@ -49,7 +57,11 @@ Mirror surface를 stencil에 기록하고 reflected scene draw를 해당 영역�
 
 ### Shadow filtering progression
 
-Hard shadow의 light-space depth 비교에서 fixed-kernel PCF를 거쳐 blocker search와 penumbra 추정을 사용하는 PCSS로 확장한다.
+Hard shadow의 light-space depth 비교에서 출발한다.
+
+다음 단계는 fixed-kernel PCF다.
+
+마지막 단계는 blocker search와 penumbra 추정을 사용하는 PCSS다.
 
 - [Hard shadow depth comparison](https://github.com/Razria93/Graphics_Study_Archive/blob/623cb8ccbc984584f47a7c68365d69840ed65c60/Part3_Chapter10-13/13_LightAndShadow_Step4_ShadowMapping/BasicPS.hlsl#L158-L180)
 - [Fixed-kernel PCF](https://github.com/Razria93/Graphics_Study_Archive/blob/623cb8ccbc984584f47a7c68365d69840ed65c60/Part3_Chapter10-13/13_LightAndShadow_Step5_SoftShadowPCF/BasicPS.hlsl#L215-L275)

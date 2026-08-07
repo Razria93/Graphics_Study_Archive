@@ -2,7 +2,15 @@
 
 ## 요약
 
-Chapter17은 character mesh와 animation clip을 분리해 읽고, frame별 bone transform을 GPU structured buffer로 전달하는 skeletal animation evidence다. 대표 visual은 `Ex1701_SkeletalAnimation` 시연 video에서 선택한 timestamp frame 3개를 배치한 storyboard로 구성한다. character mesh, animation FBX, texture와 HDRI 원본 asset은 직접 게시하지 않고 rendered storyboard만 사용한다.
+Chapter17은 character mesh와 animation clip을 분리해 읽는 skeletal animation evidence다.
+
+Frame별 bone transform은 GPU structured buffer로 전달한다.
+
+대표 visual은 `Ex1701_SkeletalAnimation`의 timestamp frame storyboard로 구성한다.
+
+Character mesh, animation FBX, texture와 HDRI 원본 asset은 직접 게시하지 않는다.
+
+대신 rendered storyboard만 사용한다.
 
 ## 핵심 목표
 
@@ -23,7 +31,11 @@ Chapter17은 character mesh와 animation clip을 분리해 읽고, frame별 bone
 
 ### Skeletal pose progression
 
-`Ex1701_SkeletalAnimation`은 현재 clip과 frame index를 기준으로 bone hierarchy를 갱신하고, skinned vertex shader가 업로드된 bone transform을 사용해 pose를 표시한다. Storyboard는 0.800s, 2.500s, 4.300s frame을 순서대로 기록한다.
+`Ex1701_SkeletalAnimation`은 현재 clip과 frame index를 기준으로 bone hierarchy를 갱신한다.
+
+Skinned vertex shader는 업로드된 bone transform을 사용해 pose를 표시한다.
+
+Storyboard는 0.800s, 2.500s, 4.300s frame을 순서대로 기록한다.
 
 ![Skeletal pose progression](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter17_01_skeletal_animation.png?raw=true)
 
@@ -31,14 +43,30 @@ Chapter17은 character mesh와 animation clip을 분리해 읽고, frame별 bone
 
 ### Animation clip and bone hierarchy
 
-`ModelLoader`는 vertex deformation에 참여하는 bone을 root부터 child 순서로 index화하고, clip channel의 position, rotation, scale key를 bone index별 배열에 저장한다. `AnimationData::Update`는 parent transform을 반영해 hierarchy를 갱신하고 root motion을 accumulated root transform으로 분리한다.
+`ModelLoader`는 vertex deformation에 참여하는 bone을 index화한다.
+
+Index 순서는 root부터 child 순서다.
+
+Clip channel의 position, rotation, scale key를 bone index별 배열에 저장한다.
+
+`AnimationData::Update`는 parent transform을 반영해 hierarchy를 갱신한다.
+
+Root motion은 accumulated root transform으로 분리한다.
 
 - [Animation clip key 추출](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/ModelLoader.cpp#L72-L197)
 - [Bone hierarchy와 root motion 갱신](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/AnimationClip.h#L117-L191)
 
 ### Skinned render resource binding
 
-`SkinnedMeshModel`은 frame별 bone transform을 transpose해 structured buffer에 업로드하고, render 시 vertex shader resource slot `9`에 연결한다. Visual frame의 pose 차이는 camera 또는 material 변경이 아니라 animation clip key와 hierarchy transform이 skinned vertex에 반영된 결과다.
+`SkinnedMeshModel`은 frame별 bone transform을 transpose한다.
+
+Transposed bone transform은 structured buffer에 업로드한다.
+
+Render 시 vertex shader resource slot `9`에 연결한다.
+
+Visual frame의 pose 차이는 camera 또는 material 변경이 아니다.
+
+Animation clip key와 hierarchy transform이 skinned vertex에 반영된 결과다.
 
 - [Frame count 기반 animation update](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/Ex1701_SkeletalAnimation.cpp#L225-L232)
 - [Bone transform upload와 skinned render binding](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/SkinnedMeshModel.h#L88-L125)
@@ -72,7 +100,8 @@ void UpdateSkeletalAnimationPseudo(int state, int frameCount)
 
 - `Part4_Chapter14-20/Examples.sln` Debug x64 build/run/capture smoke 성공
 - `Part4_Chapter14-20/Examples.sln` Release x64 build/run/capture smoke 성공
-- Storyboard PNG는 `ComputerGraphics` title, 01부터 03까지 timestamp frame, full decode와 text metadata chunk 부재를 확인함
+- Storyboard PNG는 `ComputerGraphics` title을 확인함
+- 01부터 03까지 timestamp frame, full decode와 text metadata chunk 부재를 확인함
 
 ## 구현 범위와 한계
 

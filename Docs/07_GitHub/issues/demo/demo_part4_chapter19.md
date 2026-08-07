@@ -2,7 +2,11 @@
 
 ## 요약
 
-Chapter19는 PhysX rigid-body scene을 fixed time step으로 갱신하고, actor shape pose를 render model world transform에 반영하는 physics integration evidence다. 대표 visual은 `Ex1901_PhysX` 시연 video에서 선택한 timestamp frame 3개를 배치한 storyboard로 구성한다.
+Chapter19는 PhysX rigid-body scene을 fixed time step으로 갱신한다.
+
+Actor shape pose는 render model world transform에 반영한다.
+
+대표 visual은 `Ex1901_PhysX` 시연 video의 timestamp frame storyboard로 구성한다.
 
 ## 핵심 목표
 
@@ -23,7 +27,11 @@ Chapter19는 PhysX rigid-body scene을 fixed time step으로 갱신하고, actor
 
 ### Rigid-body block collapse
 
-`Ex1901_PhysX`는 static ground와 rigid dynamic block wall을 PhysX scene에 추가하고, simulation result의 actor pose를 render model world matrix에 반영한다. Storyboard는 1.415s, 4.717s, 8.018s frame을 순서대로 기록한다.
+`Ex1901_PhysX`는 static ground와 rigid dynamic block wall을 PhysX scene에 추가한다.
+
+Simulation result의 actor pose를 render model world matrix에 반영한다.
+
+Storyboard는 1.415s, 4.717s, 8.018s frame을 순서대로 기록한다.
 
 ![Rigid-body block collapse](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter19_01_physx.png?raw=true)
 
@@ -31,14 +39,28 @@ Chapter19는 PhysX rigid-body scene을 fixed time step으로 갱신하고, actor
 
 ### PhysX scene construction
 
-`InitPhysics`는 foundation, physics instance, dispatcher, gravity scene과 material을 만들고 default simulation filter를 설정한다. Scene에는 static ground plane과 `createStack`으로 만든 rigid dynamic block wall이 배치된다.
+`InitPhysics`는 foundation, physics instance, dispatcher를 만든다.
+
+Gravity scene과 material도 만들고 default simulation filter를 설정한다.
+
+Scene에는 static ground plane을 배치한다.
+
+`createStack`으로 만든 rigid dynamic block wall도 함께 배치한다.
 
 - [PhysX foundation, gravity scene과 material 초기화](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/Ex1901_Physx.cpp#L13-L55)
 - [Ground plane과 rigid dynamic stack 구성](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/Ex1901_Physx.cpp#L57-L78)
 
 ### Fixed-step simulation and render synchronization
 
-Frame update는 `simulate(1.0f / 60.0f)`와 `fetchResults(true)`로 fixed time step 결과를 확보한다. 그 뒤 scene actor와 shape를 순회해 dynamic actor global pose를 읽고 render model world matrix와 constant buffer에 반영한다.
+Frame update는 `simulate(1.0f / 60.0f)`와 `fetchResults(true)`를 사용한다.
+
+이 호출로 fixed time step 결과를 확보한다.
+
+그 뒤 scene actor와 shape를 순회한다.
+
+Dynamic actor global pose를 읽어 render model world matrix에 반영한다.
+
+같은 pose를 constant buffer에도 반영한다.
 
 - [Fixed-step simulation과 result fetch](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/Ex1901_Physx.cpp#L85-L93)
 - [Actor shape pose를 render world transform으로 동기화](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/Ex1901_Physx.cpp#L99-L123)
@@ -75,7 +97,8 @@ void UpdatePhysXScenePseudo()
 
 - `Part4_Chapter14-20/Examples.sln` Debug x64 build/run/capture smoke 성공
 - `Part4_Chapter14-20/Examples.sln` Release x64 build/run/capture smoke 성공
-- Storyboard PNG는 `ComputerGraphics` title, 01부터 03까지 timestamp frame, full decode와 text metadata chunk 부재를 확인함
+- Storyboard PNG는 `ComputerGraphics` title을 확인함
+- 01부터 03까지 timestamp frame, full decode와 text metadata chunk 부재를 확인함
 
 ## 구현 범위와 한계
 

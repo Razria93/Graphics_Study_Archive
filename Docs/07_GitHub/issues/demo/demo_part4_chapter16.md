@@ -2,7 +2,15 @@
 
 ## 요약
 
-Chapter16은 particle, 2D fluid, 3D volume과 hybrid particle-grid water를 하나의 compute/simulation chapter로 묶은 demo evidence다. 대표 visual은 `Ex1601`부터 `Ex1606`까지 각 시연 video에서 선택한 timestamp frame 3개를 배치한 storyboard로 구성한다. 원본 MP4, HDRI와 runtime asset은 직접 게시하지 않고 직접 실행한 rendered storyboard만 사용한다.
+Chapter16은 particle, 2D fluid, 3D volume을 묶은 demo evidence다.
+
+같은 chapter 안에서 hybrid particle-grid water도 함께 다룬다.
+
+대표 visual은 `Ex1601`부터 `Ex1606`까지의 timestamp frame storyboard로 구성한다.
+
+원본 MP4, HDRI와 runtime asset은 직접 게시하지 않는다.
+
+대신 직접 실행한 rendered storyboard만 사용한다.
 
 ## 핵심 목표
 
@@ -24,37 +32,69 @@ Chapter16은 particle, 2D fluid, 3D volume과 hybrid particle-grid water를 하�
 
 ### Stable fluids source field
 
-`Ex1601_StableFluids`는 mouse source가 주입한 velocity와 color density를 2D stable fluids compute pass로 갱신한다. Storyboard는 5.200s, 13.000s, 22.100s frame을 순서대로 기록한다.
+`Ex1601_StableFluids`는 mouse source가 주입한 velocity와 color density를 다룬다.
+
+2D stable fluids compute pass로 field를 갱신한다.
+
+Storyboard는 5.200s, 13.000s, 22.100s frame을 순서대로 기록한다.
 
 ![Stable fluids source field](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter16_01_stable_fluids.png?raw=true)
 
 ### Curl-noise density trail
 
-`Ex1602_CurlNoise`는 tileable noise gradient에서 만든 2D curl velocity로 particle을 이동시키고, geometry shader sprite와 accumulate blend로 colored density trail을 만든다. Storyboard는 0.765s, 1.500s, 4.335s frame을 순서대로 기록한다.
+`Ex1602_CurlNoise`는 tileable noise gradient로 2D curl velocity를 만든다.
+
+Velocity로 particle을 이동시킨다.
+
+Geometry shader sprite와 accumulate blend로 colored density trail을 만든다.
+
+Storyboard는 0.765s, 1.500s, 4.335s frame을 순서대로 기록한다.
 
 ![Curl-noise density trail](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter16_02_curl_noise.png?raw=true)
 
 ### Procedural cloud volume
 
-`Ex1603_Cloud`는 procedural noise로 3D density와 lighting field를 compute shader에서 만들고, volume ray marching으로 cloud volume을 표시한다. Storyboard는 0.870s, 2.900s, 4.930s frame을 순서대로 기록한다.
+`Ex1603_Cloud`는 procedural noise로 3D density와 lighting field를 만든다.
+
+계산은 compute shader에서 수행한다.
+
+Volume ray marching으로 cloud volume을 표시한다.
+
+Storyboard는 0.870s, 2.900s, 4.930s frame을 순서대로 기록한다.
 
 ![Procedural cloud volume](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter16_03_cloud.png?raw=true)
 
 ### Realtime smoke volume
 
-`Ex1604_RealtimeSmoke`는 low-resolution velocity projection과 high-resolution density advection을 결합하고, volume pixel shader에서 density를 ray march한다. Storyboard는 4.025s, 13.417s, 22.808s frame을 순서대로 기록한다.
+`Ex1604_RealtimeSmoke`는 low-resolution velocity projection을 사용한다.
+
+High-resolution density advection도 결합한다.
+
+Volume pixel shader에서 density를 ray march한다.
+
+Storyboard는 4.025s, 13.417s, 22.808s frame을 순서대로 기록한다.
 
 ![Realtime smoke volume](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter16_04_realtime_smoke.png?raw=true)
 
 ### CPU smoke upload
 
-`Ex1605_SmokeCpu`는 CPU fluid simulation이 계산한 3D density grid를 Texture3D로 업로드하고 같은 volume render path에서 smoke-like field로 표시한다. Storyboard는 1.350s, 4.500s, 7.650s frame을 순서대로 기록한다.
+`Ex1605_SmokeCpu`는 CPU fluid simulation이 계산한 3D density grid를 업로드한다.
+
+업로드 대상은 Texture3D다.
+
+같은 volume render path에서 smoke-like field로 표시한다.
+
+Storyboard는 1.350s, 4.500s, 7.650s frame을 순서대로 기록한다.
 
 ![CPU smoke upload](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter16_05_smoke_cpu.png?raw=true)
 
 ### Hybrid particle-grid water
 
-`Ex1606_HybridWater`는 particle simulation과 grid velocity projection을 결합하고, particle-to-grid density 또는 signed-distance field를 rendering branch로 표시한다. Storyboard는 1.885s, 6.283s, 10.682s frame을 순서대로 기록한다.
+`Ex1606_HybridWater`는 particle simulation과 grid velocity projection을 결합한다.
+
+Particle-to-grid density 또는 signed-distance field를 rendering branch로 표시한다.
+
+Storyboard는 1.885s, 6.283s, 10.682s frame을 순서대로 기록한다.
 
 ![Hybrid particle-grid water](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter16_06_hybrid_water.png?raw=true)
 
@@ -62,14 +102,26 @@ Chapter16은 particle, 2D fluid, 3D volume과 hybrid particle-grid water를 하�
 
 ### Compute fluid update sequence
 
-`Ex1601`은 mouse source를 density와 velocity field에 주입한 뒤 diffusion, projection, advection 순서로 2D field를 갱신한다. Projection은 divergence와 pressure iteration을 사용해 velocity field를 보정한다.
+`Ex1601`은 mouse source를 density와 velocity field에 주입한다.
+
+이후 diffusion, projection, advection 순서로 2D field를 갱신한다.
+
+Projection은 divergence와 pressure iteration으로 velocity field를 보정한다.
 
 - [Stable fluids update 순서](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/StableFluids.cpp#L76-L117)
 - [Source density와 velocity 주입](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/Ex1601_SourcingCS.hlsl#L23-L66)
 
 ### Volume density rendering paths
 
-`Ex1603`, `Ex1604`와 `Ex1605`는 모두 Texture3D density를 volume rendering으로 표시하지만 density 생성 책임이 다르다. `Ex1603`은 procedural noise, `Ex1604`는 GPU smoke simulation, `Ex1605`는 CPU simulation upload 경로를 사용한다.
+`Ex1603`, `Ex1604`와 `Ex1605`는 Texture3D density를 volume rendering으로 표시한다.
+
+세 예제는 density 생성 책임이 다르다.
+
+`Ex1603`은 procedural noise를 사용한다.
+
+`Ex1604`는 GPU smoke simulation을 사용한다.
+
+`Ex1605`는 CPU simulation upload 경로를 사용한다.
 
 - [Cloud density와 lighting dispatch](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/Ex1603_Cloud.cpp#L91-L136)
 - [Realtime smoke substep simulation](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/Ex1604_RealtimeSmoke.cpp#L170-L331)
@@ -77,7 +129,13 @@ Chapter16은 particle, 2D fluid, 3D volume과 hybrid particle-grid water를 하�
 
 ### Hybrid particle-to-grid display
 
-`Ex1606`은 grid projection과 particle step 뒤 particle을 cell index로 정렬하고, 인접 particle의 weighted contribution으로 density, velocity와 signed-distance field를 만든다. Rendering toggle은 physics mode가 아니라 density volume display와 SDF raycasting display를 선택한다.
+`Ex1606`은 grid projection과 particle step 뒤 particle을 cell index로 정렬한다.
+
+인접 particle의 weighted contribution으로 density, velocity와 SDF를 만든다.
+
+Rendering toggle은 physics mode가 아니다.
+
+Toggle은 density volume display와 SDF raycasting display를 선택한다.
 
 - [Particle sort와 particle-to-grid dispatch](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/Ex1606_HybridWater.cpp#L334-L373)
 - [Density volume rendering과 SDF raycasting 분기](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/Ex1606_HybridWater.cpp#L375-L406)
@@ -86,7 +144,8 @@ Chapter16은 particle, 2D fluid, 3D volume과 hybrid particle-grid water를 하�
 
 1. `Examples.exe` command argument `1601`부터 `1606`까지 Chapter16 예제를 선택한다.
 2. 각 예제는 particle buffer, Texture2D 또는 Texture3D resource를 초기화하고 compute pass를 dispatch한다.
-3. Projection, advection, source injection, procedural density 또는 CPU upload 경로가 simulation state를 갱신한다.
+3. Projection, advection과 source injection이 simulation state를 갱신한다.
+4. Procedural density 또는 CPU upload 경로도 simulation state 갱신에 참여한다.
 4. 갱신된 density, particle sprite 또는 signed-distance field를 back buffer에 표시한다.
 5. 시연 video에서 선택한 timestamp frame 3개를 01부터 03까지 순서와 함께 storyboard로 기록한다.
 
@@ -122,8 +181,10 @@ void UpdateFluidSimulationPseudo(float deltaTime)
 
 - Chapter16 visual은 local-only MP4에서 선별한 storyboard frame이며 연속 interaction 전체를 대체하지 않는다.
 - `Ex1603`, `Ex1604`, `Ex1605`의 HDRI와 runtime 원본 asset은 첨부하거나 직접 링크하지 않는다.
-- `Ex1604`의 `DiffUpSample`은 projection 전후 low-resolution difference를 high-resolution field에 반영하는 경로이며 별도 physical diffusion solve가 아니다.
-- `Ex1606`의 `RenderDensity`는 Texture3D density display toggle이며 particle physics 또는 material state를 바꾸지 않는다.
+- `Ex1604`의 `DiffUpSample`은 low-resolution difference를 high-resolution field에 반영한다.
+- 이 경로는 projection 전후 차이를 옮기며 별도 physical diffusion solve가 아니다.
+- `Ex1606`의 `RenderDensity`는 Texture3D density display toggle이다.
+- 이 toggle은 particle physics 또는 material state를 바꾸지 않는다.
 - 원본 MP4와 raw preview는 Git에 추가하지 않는다.
 
 ## 관련 문서

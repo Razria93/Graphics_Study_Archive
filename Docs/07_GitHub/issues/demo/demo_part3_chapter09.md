@@ -2,7 +2,11 @@
 
 ## 요약
 
-Camera 입력에서 시작해 GPU·CPU picking, quaternion 회전, virtual trackball과 depth-preserving drag로 확장되는 여섯 단계의 interaction 흐름이다. 대표 visual은 구 표면 drag 회전, mouse-look camera 전환, 화면 drag에 따른 object translation을 서로 다른 설명 축으로 보여준다.
+Camera 입력에서 시작해 GPU와 CPU picking으로 확장되는 interaction 흐름이다.
+
+후반 단계는 quaternion 회전, virtual trackball과 depth-preserving drag를 다룬다.
+
+대표 visual은 구 표면 drag 회전, mouse-look camera 전환, object translation을 보여준다.
 
 ## 핵심 목표
 
@@ -44,13 +48,21 @@ Camera 입력에서 시작해 GPU·CPU picking, quaternion 회전, virtual track
 
 ### Sphere surface vector 기반 VirtualTrackball
 
-Picking ray가 sphere와 만나는 지점을 중심 기준 vector로 바꾸고 두 vector 사이의 quaternion을 계산한다. 기준 vector를 매 frame 갱신해 drag 경로를 object rotation에 누적한다.
+Picking ray가 sphere와 만나는 지점을 중심 기준 vector로 바꾼다.
+
+두 vector 사이의 quaternion을 계산한다.
+
+기준 vector를 매 frame 갱신해 drag 경로를 object rotation에 누적한다.
 
 - [Sphere hit와 frame별 quaternion 누적](https://github.com/Razria93/Graphics_Study_Archive/blob/b9ca69933057894e0d124632018dca74735ecc5f/Part3_Chapter09/09_UserInteraction_Step5_VirtualTrackball/ExampleApp.cpp#L120-L193)
 
 ### Cursor NDC 기반 camera 조작
 
-Client cursor 위치를 NDC로 바꿔 yaw와 pitch를 계산하고 WASD 상태를 camera 이동으로 연결한다. Mouse-look과 keyboard 이동이 같은 view matrix에 반영된다.
+Client cursor 위치를 NDC로 바꿔 yaw와 pitch를 계산한다.
+
+WASD 상태는 camera 이동으로 연결한다.
+
+Mouse-look과 keyboard 이동이 같은 view matrix에 반영된다.
 
 - [Cursor 위치의 NDC 변환과 camera 전달](https://github.com/Razria93/Graphics_Study_Archive/blob/b9ca69933057894e0d124632018dca74735ecc5f/Part3_Chapter09/09_UserInteraction_Step1_FirstPersonView/AppBase.cpp#L136-L155)
 - [WASD 상태의 camera 이동 반영](https://github.com/Razria93/Graphics_Study_Archive/blob/b9ca69933057894e0d124632018dca74735ecc5f/Part3_Chapter09/09_UserInteraction_Step1_FirstPersonView/ExampleApp.cpp#L53-L68)
@@ -58,7 +70,11 @@ Client cursor 위치를 NDC로 바꿔 yaw와 pitch를 계산하고 WASD 상태�
 
 ### Hit depth를 보존하는 object drag
 
-Drag 시작 시 near–far segment에서 hit가 차지하는 비율을 저장한다. 이후 cursor ray에서도 같은 비율의 world position을 계산하고 model translation과 bounding sphere에 반영한다.
+Drag 시작 시 near-far segment에서 hit가 차지하는 비율을 저장한다.
+
+이후 cursor ray에서도 같은 비율의 world position을 계산한다.
+
+계산 결과는 model translation과 bounding sphere에 반영한다.
 
 - [Picking depth ratio와 world-space translation](https://github.com/Razria93/Graphics_Study_Archive/blob/b9ca69933057894e0d124632018dca74735ecc5f/Part3_Chapter09/09_UserInteraction_Step6_MouseDragMove/ExampleApp.cpp#L121-L183)
 

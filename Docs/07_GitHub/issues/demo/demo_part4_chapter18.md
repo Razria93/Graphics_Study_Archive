@@ -2,7 +2,15 @@
 
 ## 요약
 
-Chapter18은 foliage mesh wind deformation, instanced grass field와 heightmap terrain plus procedural ocean rendering을 묶은 environment rendering evidence다. 대표 visual은 `Ex1801`부터 `Ex1803`까지 각 시연 video에서 선택한 timestamp frame 3개를 배치한 storyboard로 구성한다. foliage, terrain, texture와 HDRI 원본 asset은 직접 게시하지 않고 rendered storyboard만 사용한다.
+Chapter18은 foliage mesh wind deformation과 instanced grass field를 다룬다.
+
+같은 environment rendering evidence 안에서 heightmap terrain과 procedural ocean도 묶는다.
+
+대표 visual은 `Ex1801`부터 `Ex1803`까지의 timestamp frame storyboard로 구성한다.
+
+Foliage, terrain, texture와 HDRI 원본 asset은 직접 게시하지 않는다.
+
+대신 rendered storyboard만 사용한다.
 
 ## 핵심 목표
 
@@ -23,19 +31,33 @@ Chapter18은 foliage mesh wind deformation, instanced grass field와 heightmap t
 
 ### Tree wind deformation
 
-`Ex1801_Tree`는 imported foliage mesh를 leaves와 trunk/branches group으로 분리하고, `windTrunk`, `windLeaves`, `globalTime`을 vertex shader deformation에 연결한다. Storyboard는 1.140s, 3.800s, 6.460s frame을 순서대로 기록한다.
+`Ex1801_Tree`는 imported foliage mesh를 leaves와 trunk/branches group으로 분리한다.
+
+`windTrunk`, `windLeaves`, `globalTime`을 vertex shader deformation에 연결한다.
+
+Storyboard는 1.140s, 3.800s, 6.460s frame을 순서대로 기록한다.
 
 ![Tree wind deformation](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter18_01_tree.png?raw=true)
 
 ### Instanced grass wind phase
 
-`Ex1802_Grass`는 100,000개 grass instance를 instance buffer로 그리며, `globalTime`과 wind strength로 tip 쪽 deformation이 커지는 blade rotation을 계산한다. Storyboard는 1.190s, 3.967s, 6.743s frame을 순서대로 기록한다.
+`Ex1802_Grass`는 100,000개 grass instance를 instance buffer로 그린다.
+
+`globalTime`과 wind strength로 blade rotation을 계산한다.
+
+Tip 쪽 deformation이 더 커지는 방식이다.
+
+Storyboard는 1.190s, 3.967s, 6.743s frame을 순서대로 기록한다.
 
 ![Instanced grass wind phase](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter18_02_grass.png?raw=true)
 
 ### Terrain and procedural ocean
 
-`Ex1803_Landscape`는 raw heightmap에서 terrain mesh와 normal을 생성하고, procedural ocean pixel shader를 같은 scene에 렌더링한다. Storyboard는 1.140s, 3.800s, 6.460s frame을 순서대로 기록한다.
+`Ex1803_Landscape`는 raw heightmap에서 terrain mesh와 normal을 생성한다.
+
+Procedural ocean pixel shader를 같은 scene에 렌더링한다.
+
+Storyboard는 1.140s, 3.800s, 6.460s frame을 순서대로 기록한다.
 
 ![Terrain and procedural ocean](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter18_03_landscape.png?raw=true)
 
@@ -43,14 +65,26 @@ Chapter18은 foliage mesh wind deformation, instanced grass field와 heightmap t
 
 ### Foliage mesh group and wind parameters
 
-`Ex1801`은 foliage FBX mesh를 leaves group과 trunk/branches group으로 나누고, 각 model의 mesh constant에 trunk wind와 leaf wind parameter를 설정한다. Wind deformation은 vertex shader procedural transform이며 branch physics 또는 leaf collision을 계산하지 않는다.
+`Ex1801`은 foliage FBX mesh를 leaves group과 trunk/branches group으로 나눈다.
+
+각 model의 mesh constant에 trunk wind와 leaf wind parameter를 설정한다.
+
+Wind deformation은 vertex shader procedural transform이다.
+
+Branch physics 또는 leaf collision은 계산하지 않는다.
 
 - [Foliage mesh group 분리와 wind parameter 설정](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/Ex1801_Tree.cpp#L58-L78)
 - [Trunk rotation과 leaf displacement shader path](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/BasicVS.hlsl#L68-L103)
 
 ### Grass instancing and shader deformation
 
-`Ex1802`는 seeded random distribution으로 grass instance transform을 만들고, blade vertex buffer와 instance buffer를 함께 input assembler에 연결한다. 매 frame UI wind value를 모든 instance의 wind strength에 반영한 뒤 `DrawIndexedInstanced`를 호출한다.
+`Ex1802`는 seeded random distribution으로 grass instance transform을 만든다.
+
+Blade vertex buffer와 instance buffer를 함께 input assembler에 연결한다.
+
+매 frame UI wind value를 모든 instance의 wind strength에 반영한다.
+
+그 뒤 `DrawIndexedInstanced`를 호출한다.
 
 - [100,000개 grass instance 생성](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/Ex1802_Grass.cpp#L54-L100)
 - [Instance buffer binding과 instanced draw](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/GrassModel.h#L54-L82)
@@ -58,7 +92,13 @@ Chapter18은 foliage mesh wind deformation, instanced grass field와 heightmap t
 
 ### Heightmap terrain and ocean shader
 
-`Ex1803`은 `terrain.raw` sample을 fixed grid terrain으로 downsample하고, 이웃 height 차에서 normal을 만든다. Ocean path는 procedural pixel shader ray march이며 physical fluid simulation 또는 terrain-water interaction을 계산하지 않는다.
+`Ex1803`은 `terrain.raw` sample을 fixed grid terrain으로 downsample한다.
+
+이웃 height 차에서 normal을 만든다.
+
+Ocean path는 procedural pixel shader ray march다.
+
+Physical fluid simulation 또는 terrain-water interaction은 계산하지 않는다.
 
 - [Heightmap sample, terrain vertex와 index 생성](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/Ex1803_Landscape.cpp#L23-L112)
 - [Time-varying ocean wave와 Fresnel composition](https://github.com/Razria93/Graphics_Study_Archive/blob/7fbaccfee1180e5686b29aea663ebcaa283ef4e8/Part4_Chapter14-20/Ex1803_OceanPS.hlsl#L25-L151)

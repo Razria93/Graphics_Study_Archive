@@ -2,7 +2,9 @@
 
 ## 요약
 
-Texture LOD에서 시작해 normal·height mapping, HDR image 표시와 bloom을 포함한 HDR post-process pipeline으로 확장되는 다섯 단계다.
+Texture LOD에서 시작해 normal mapping과 height mapping으로 확장되는 다섯 단계다.
+
+후반 흐름은 HDR image 표시와 bloom을 포함한 HDR post-process pipeline을 다룬다.
 
 ## 핵심 목표
 
