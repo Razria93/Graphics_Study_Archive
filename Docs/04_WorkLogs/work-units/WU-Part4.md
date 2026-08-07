@@ -11,8 +11,8 @@
 | Source/import | 반영 완료 | `SRC-P4-C14-20`으로 source provenance를 추적한다. |
 | Branch | 진행 중 | `docs/part4-chapter14-20-workflow`를 PR #32 merge commit 기준으로 정렬하고 Chapter16 시작 기준선을 준비한다. |
 | Build/run | Chapter14~Chapter20 Debug 일부 확인 · Chapter16~20 Release 확인 | Chapter14 `Ex1401`부터 `Ex1408`까지와 Chapter15 `Ex1501`부터 `Ex1503`까지를 2026-08-06, Chapter16 `Ex1601`부터 Chapter20 `Ex2001`까지를 2026-08-07 Debug와 Release x64로 현재 확인했다. Chapter14~15 Release 현재 재검증은 남아 있다. |
-| Capture | tracked/local 후보 | Ex1402, Ex1404부터 Ex1407까지, Ex1501, Ex1502, Ex1503 centered client-visible screenshot 후보와 Chapter16부터 Chapter20까지 선택한 8개 `GraphicsVideo` storyboard PNG를 `Docs/_assets/captures`에 승격했다. 원본 MP4와 preview는 local-only로 유지한다. |
-| Demo | Chapter14부터 Chapter18까지 작성 | Chapter14부터 Chapter18까지 모든 Example별 상세 Demo를 작성했다. tracked storyboard가 없는 Ex1602·Ex1603·Ex1605·Ex1801은 local candidate 상태를 유지하고, 나머지 대표 Example은 tracked storyboard를 연결했다. |
+| Capture | tracked/local 후보 | Ex1402, Ex1404부터 Ex1407까지, Ex1501, Ex1502, Ex1503 centered client-visible screenshot 후보와 Chapter16부터 Chapter20까지 모든 Example의 `GraphicsVideo` storyboard PNG 12장을 `Docs/_assets/captures`에 승격했다. 원본 MP4와 raw preview는 local-only로 유지한다. |
+| Demo | Chapter14부터 Chapter18까지 작성 | Chapter14부터 Chapter18까지 모든 Example별 상세 Demo를 작성했다. 각 Example은 tracked storyboard 또는 static capture를 연결한다. |
 | Publication | 검토 필요 | public 후보 확정이 아니라 asset/public risk 검토 축으로만 기록한다. |
 | GitHub | Chapter14 merged · Chapter15 merged | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시·review 대응·merge까지 마감했다. Chapter15 Demo Issue #31, Progress 누적 댓글 갱신, Phase 5-2 완료 댓글과 PR #32를 게시·review 대응·merge까지 마감했다. |
 

@@ -120,6 +120,12 @@ portfolio_raytracer_reflection.png
 - public 후보 여부는 `Docs/05_Publication`에서 별도로 판단한다.
 - GitHub 게시 후보를 만들 때는 `Docs/07_GitHub` 본문이 `_assets`의 검토된 capture/result만 참조하는지 확인한다.
 
+## Part4 Chapter14-20 storyboard
+
+- Chapter16부터 Chapter20까지 모든 Example은 3-frame timestamp storyboard를 `Docs/_assets/captures`에 둔다.
+- `Ex1602_CurlNoise`, `Ex1603_Cloud`, `Ex1605_SmokeCpu`, `Ex1801_Tree`는 2026-08-07 source MP4에서 추출한 storyboard로 결과 미리보기를 보강한다.
+- 원본 MP4, 개별 raw frame과 runtime HDRI, character, foliage, terrain asset은 local-only로 유지하고 직접 게시하지 않는다.
+
 ## Part1 Chapter03 순차 계획
 
 - Step4 DrawingSphere와 Step5 PhongShading의 기본·파라미터 조정 screenshot, Step6 PerspectiveView부터 Step14 CubeEnvironment까지의 기본 screenshot을 동일한 전체 application window 규격으로 확보했다.

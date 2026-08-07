@@ -12,14 +12,16 @@ Tileable noise gradient에서 만든 2D curl velocity로 particle을 갱신하�
 
 ## 결과 미리보기
 
-Tracked storyboard는 없다. 2026-08-07 Debug x64 smoke에서 colored curl-noise density trail local candidate를 확인한다.
+![Chapter16 CurlNoise storyboard](../../_assets/captures/part4_chapter16_02_curl_noise.png)
+
+0.765s, 1.500s, 3.000s frame은 curl field를 따라 particle sprite와 density trail이 감쇠하는 과정을 기록한다.
 
 ## 입력과 출력
 
 | 구분 | 내용 |
 | --- | --- |
 | 입력 | command argument `1602`, seeded CPU particle position/color, GPU structured particle buffer와 RGBA density texture |
-| 출력 | accumulate blend로 기록하는 colored curl-noise density trail local candidate |
+| 출력 | 0.765s, 1.500s, 3.000s timestamp frame으로 구성한 colored curl-noise density trail storyboard |
 
 ## 구현 흐름
 
@@ -39,19 +41,20 @@ Tracked storyboard는 없다. 2026-08-07 Debug x64 smoke에서 colored curl-nois
 
 ## 시각 결과
 
-이 예제의 visual evidence는 colored particle sprite가 누적되며 형성하는 density trail이다. 현재 정본에는 local candidate 상태만 기록하며 tracked PNG 또는 storyboard가 있다고 주장하지 않는다.
+이 예제의 visual evidence는 colored particle sprite가 누적되며 형성하는 density trail이다. Storyboard는 trail이 조밀한 상태에서 감쇠한 상태까지의 변화를 기록한다.
 
 ## 구현 범위와 한계
 
 - Compute shader의 `dt`는 constant buffer가 아닌 shader 내부 상수 `0.005`로 고정한다.
 - Particle의 x, y position을 curl field로 이동하지만 screen boundary 재진입 또는 lifetime 관리는 이 경로에 없다.
 - Density trail은 accumulate blend와 dissipation의 결과이며 physical fluid pressure projection을 수행하지 않는다.
-- Local candidate와 raw capture는 Git에 추가하지 않는다.
+- 원본 MP4와 raw frame은 local-only로 유지한다.
 
 ## 검증
 
 - [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
-- 2026-08-07 Debug x64 build/run/capture smoke 성공
+- 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공
+- 0.765s, 1.500s, 3.000s timestamp frame storyboard를 tracked evidence로 확인
 - Release 상태는 Verification Index의 과거 확인 기록으로 유지
 
 ## 관련 코드
