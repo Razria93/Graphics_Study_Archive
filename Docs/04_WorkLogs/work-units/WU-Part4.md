@@ -11,8 +11,8 @@
 | Source/import | 반영 완료 | `SRC-P4-C14-20`으로 source provenance를 추적한다. |
 | Branch | 진행 중 | `docs/part4-chapter14-20-workflow`를 PR #32 merge commit 기준으로 정렬하고 Chapter16 시작 기준선을 준비한다. |
 | Build/run | Chapter14~Chapter20 Debug 일부 확인 · Chapter16~20 Release 확인 | Chapter14 `Ex1401`부터 `Ex1408`까지와 Chapter15 `Ex1501`부터 `Ex1503`까지를 2026-08-06, Chapter16 `Ex1601`부터 Chapter20 `Ex2001`까지를 2026-08-07 Debug와 Release x64로 현재 확인했다. Chapter14~15 Release 현재 재검증은 남아 있다. |
-| Capture | tracked/local 후보 | Ex1402, Ex1404~Ex1407, Ex1501, Ex1502, Ex1503 centered client-visible screenshot 후보를 `Docs/_assets/captures`에 승격했다. Chapter16~20 후보는 local에만 두며 선택한 8개 `GraphicsVideo` storyboard는 timestamp 선별을 완료했다. |
-| Demo | Chapter14 작성 · Chapter15 상세 후보 작성 | Chapter14 Ex1401~Ex1408 Step별 상세 Demo와 tracked capture 연결을 작성했다. Chapter15 Ex1501~Ex1503 상세 Demo, Demo Issue body 후보와 tracked capture 연결을 작성했다. |
+| Capture | tracked/local 후보 | Ex1402, Ex1404부터 Ex1407까지, Ex1501, Ex1502, Ex1503 centered client-visible screenshot 후보와 Chapter16부터 Chapter20까지 선택한 8개 `GraphicsVideo` storyboard PNG를 `Docs/_assets/captures`에 승격했다. 원본 MP4와 preview는 local-only로 유지한다. |
+| Demo | Chapter14 작성 · Chapter15 작성 · Chapter16 작성 | Chapter14 Ex1401부터 Ex1408까지 Step별 상세 Demo와 tracked capture 연결, Chapter15 Ex1501부터 Ex1503까지 상세 Demo, Chapter16 Ex1601·Ex1604·Ex1606 상세 Demo와 storyboard 연결을 작성했다. |
 | Publication | 검토 필요 | public 후보 확정이 아니라 asset/public risk 검토 축으로만 기록한다. |
 | GitHub | Chapter14 merged · Chapter15 merged | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시·review 대응·merge까지 마감했다. Chapter15 Demo Issue #31, Progress 누적 댓글 갱신, Phase 5-2 완료 댓글과 PR #32를 게시·review 대응·merge까지 마감했다. |
 
@@ -111,13 +111,13 @@ Part4 Chapter14-20은 `Examples.sln` 단일 project와 command argument 기반 �
 - `Ex1802_Grass`는 강한 녹색 grass material 표현, `Ex1803_Landscape`는 과노출된 landscape/ocean 표현이므로 품질 검토 전 local-only 후보로 유지한다.
 - local capture 후보는 `local/capture-run/Part4_Chapter17/debug-smoke-20260807`, `local/capture-run/Part4_Chapter18/debug-smoke-20260807`, `local/capture-run/Part4_Chapter19/debug-smoke-20260807`, `local/capture-run/Part4_Chapter20/debug-smoke-20260807`에 둔다. `Docs/_assets` 승격, 상세 Demo, GitHub body와 remote 변경은 수행하지 않는다.
 
-## Chapter16~20 Release x64와 GraphicVideo 후보
+## Chapter16부터 Chapter20까지 Release x64와 GraphicsVideo storyboard
 
 - 2026-08-07 `Examples.sln` Release x64 build는 경고 4개, 오류 0개를 기록했다. warning은 Chapter14 `Ex1402_BlurXGroupCacheCS.hlsl`의 signed/unsigned mismatch 2개와 FXC performance/internal warning 2개다.
 - `Examples.exe 1601`부터 `1606`, `1701`, `1801`부터 `1803`, `1901`, `2001`은 source root working directory, `HLAB_CAPTURE_UI=collapsed`, `CenterWindow` 조건에서 Release x64 실행과 local capture를 완료했다.
 - build가 ignored output의 runtime DLL을 정리하므로 vcpkg Release DLL 23개를 `x64/Release`에 복구한 뒤 실행했다.
 - `local/GraphicsVideo`의 MP4는 local 원본으로 유지한다. `Ex1601`, `Ex1604`, `Ex1606`, `Ex1701`, `Ex1802`, `Ex1803`, `Ex1901`, `Ex2001`의 start, middle, end timestamp preview는 `local/storyboard-candidates/Part4_Chapter16-20/20260807`에 생성했다.
-- storyboard PNG 승격, 상세 Demo, GitHub body와 remote 변경은 별도 목표로 둔다. HDRI, foliage, terrain, character asset은 rendered evidence만 사용하고 원본 asset은 직접 게시하지 않는다.
+- 선택한 8개 timestamp storyboard PNG는 `Docs/_assets/captures`에 tracked evidence로 승격했다. `Ex1601`, `Ex1604`, `Ex1606`은 상세 Demo로 연결했다. HDRI, foliage, terrain, character asset은 rendered evidence만 사용하고 원본 asset은 직접 게시하지 않는다.
 
 ## 정본 연결
 
@@ -132,7 +132,7 @@ Part4 Chapter14-20은 `Examples.sln` 단일 project와 command argument 기반 �
 
 ## 다음 작업
 
-1. Chapter16부터 Chapter20까지 선택한 8개 `GraphicsVideo` timestamp storyboard의 tracked PNG 승격과 상세 Demo 범위를 검토한다.
+1. Chapter17부터 Chapter20까지 선택한 storyboard의 상세 Demo 범위를 결정한다.
 2. Chapter14~15 Release x64 재검증 범위와 증거 기준을 결정한다.
 3. Chapter14 `Ex1401_Basic` tracked capture 승격 여부와 Chapter15 desktop video 후보는 후속 범위로 둔다.
 
