@@ -14,14 +14,14 @@
 | Capture | tracked/local 후보 | Ex1402, Ex1404부터 Ex1407까지, Ex1501, Ex1502, Ex1503 centered client-visible screenshot 후보와 Chapter16부터 Chapter20까지 모든 Example의 `GraphicsVideo` storyboard PNG 12장을 `Docs/_assets/captures`에 승격했다. 원본 MP4와 raw preview는 local-only로 유지한다. 최신 capture 상태는 [Demo Index](../../03_Demos/Part4_Chapter14-20/demo-index.md)에서 확인한다. |
 | Demo | Chapter14부터 Chapter20까지 작성 | Chapter14부터 Chapter20까지 모든 Example별 상세 Demo를 작성했다. 각 Example은 tracked storyboard, static capture 또는 stdout result를 연결한다. 최신 Demo 상태는 [Demo Index](../../03_Demos/Part4_Chapter14-20/demo-index.md)에서 확인한다. |
 | Publication | 검토 필요 | public 후보 확정이 아니라 asset/public risk 검토 축으로만 기록한다. |
-| GitHub | Chapter14 merged · Chapter15 merged · Chapter16부터 Chapter20까지 미게시 | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시·review 대응·merge까지 마감했다. Chapter15 Demo Issue #31, Progress 누적 댓글 갱신, Phase 5-2 완료 댓글과 PR #32를 게시·review 대응·merge까지 마감했다. Chapter16부터 Chapter20까지 GitHub body와 원격 게시는 후속 승인 범위로 둔다. |
+| GitHub | Chapter14 merged · Chapter15 merged · Chapter16부터 Chapter20까지 게시 진행 중 | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시·review 대응·merge까지 마감했다. Chapter15 Demo Issue #31, Progress 누적 댓글 갱신, Phase 5-2 완료 댓글과 PR #32를 게시·review 대응·merge까지 마감했다. Chapter16부터 Chapter20까지 Demo Issue #33부터 #37까지를 생성했고, Progress와 Draft PR 게시를 이어서 진행한다. |
 
 ## 마감 snapshot
 
 - Publication: Chapter16부터 Chapter20까지 12개 storyboard evidence는 `Docs/05_Publication/candidate-list.md`에서 검토 필요 후보로 유지한다. HDRI, character, foliage, terrain 원본 asset은 직접 첨부하거나 링크하지 않고 rendered evidence만 사용한다.
 - Topic: compute/simulation, animation/physics/gameplay, foliage/landscape Topic은 Part4 Example 범위를 연결하고 build/run/capture 사실은 Verification과 Demo 정본으로 위임한다.
-- WorkLog: Chapter14와 Chapter15는 GitHub 게시와 merge를 마감했고, Chapter16부터 Chapter20까지는 source docs 완료와 GitHub body 미게시 상태를 분리한다.
-- GitHub body 준비: 다음 단계에서는 Chapter16부터 Chapter20까지 Demo Issue, Progress comment, PR body 후보를 작성하기 전 representative visual과 public risk 표현을 검토한다.
+- WorkLog: Chapter14와 Chapter15는 GitHub 게시와 merge를 마감했고, Chapter16부터 Chapter20까지는 Demo Issue 게시와 Draft PR 게시 흐름을 분리한다.
+- GitHub body 준비: Chapter16부터 Chapter20까지 Demo Issue body, Progress comment와 PR body 후보를 작성하고 Demo Issue #33부터 #37까지를 생성했다.
 
 ## 시작 결정
 

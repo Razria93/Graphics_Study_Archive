@@ -72,13 +72,13 @@ Chapter16 대표 visual은 particle-to-grid density field와 signed-distance ray
 ## 관련 이슈
 
 - Progress Issue: #7
-- Chapter16 Demo Issue: 원격 생성 후 number 동기화
-- Chapter17 Demo Issue: 원격 생성 후 number 동기화
-- Chapter18 Demo Issue: 원격 생성 후 number 동기화
-- Chapter19 Demo Issue: 원격 생성 후 number 동기화
-- Chapter20 Demo Issue: 원격 생성 후 number 동기화
+- Chapter16 Demo Issue: #33
+- Chapter17 Demo Issue: #34
+- Chapter18 Demo Issue: #35
+- Chapter19 Demo Issue: #36
+- Chapter20 Demo Issue: #37
 
 ## 다음 단계
 
-- 사용자 승인 후 branch push, Demo Issue 5개 생성, Progress Issue Phase 5-3 comment 반영, Draft PR 생성을 순서대로 진행한다.
+- Progress Issue Phase 5-3 comment를 반영하고 Draft PR을 생성한다.
 - Draft PR 생성 뒤 Ready for Review, review 대응, merge는 별도 승인 단계를 유지한다.
