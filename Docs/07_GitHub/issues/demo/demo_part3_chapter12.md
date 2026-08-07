@@ -2,8 +2,7 @@
 
 ## 요약
 
-Metallic-roughness sphere에서 시작해 imported model의 submesh와 material texture binding으로 확장하는
-PBR 흐름이다.
+Metallic-roughness sphere에서 시작해 imported model의 submesh와 material texture binding으로 확장하는 PBR 흐름이다.
 
 ## 핵심 목표
 

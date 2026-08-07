@@ -2,7 +2,7 @@
 
 ## 요약
 
-결과와 핵심 구현을 2~4문장으로 설명한다.
+결과와 핵심 구현을 2부터 4문장으로 설명한다.
 
 ## 결과
 
@@ -75,7 +75,7 @@ Chapter·Bundle 범위에서 대표 결과와 다른 구현 선택이나 비교 
 
 - 일반 문단과 하나의 목록 항목은 각각 하나의 물리적 줄로 작성한다. 상세 기준은 [Docs Authoring Flow Policy](../../06_Policies/docs-authoring-flow-policy.md)를 따른다.
 - 상세 Demo 전체를 복제하지 않는다.
-- 대표 visual 1~3개와 핵심 구현 요약을 자체 포함한다.
+- 대표 visual 1개부터 3개와 핵심 구현 요약을 자체 포함한다.
 - 단일 Example은 대표 결과를 우선하고 Chapter·Bundle은 서로 다른 설명 축을 보여주는 visual만 선별한다.
 - Supporting/Comparison Result를 사용하지 않으면 해당 소제목과 placeholder를 제거한다.
 - Screenshot 또는 storyboard를 최소 1개 유지하고 동적 변화도 본문만으로 이해할 수 있게 설명한다.

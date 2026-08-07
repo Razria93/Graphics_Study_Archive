@@ -2,10 +2,7 @@
 
 ## 요약
 
-`Part2_Chapter05-08` Chapter05는 GLM으로 확인한 matrix와 affine transformation을
-DirectXMath·SimpleMath 환경으로 옮기는 학습 흐름이다.
-서로 다른 vector convention에 맞춰 matrix composition 순서를 구성하면 같은 transform
-의도와 lighting 결과를 만들 수 있음을 Step2와 Step4의 대응 결과로 확인한다.
+`Part2_Chapter05-08` Chapter05는 GLM으로 확인한 matrix와 affine transformation을 DirectXMath·SimpleMath 환경으로 옮기는 학습 흐름이다. 서로 다른 vector convention에 맞춰 matrix composition 순서를 구성하면 같은 transform 의도와 lighting 결과를 만들 수 있음을 Step2와 Step4의 대응 결과로 확인한다.
 
 ## 핵심 목표
 
@@ -26,15 +23,13 @@ DirectXMath·SimpleMath 환경으로 옮기는 학습 흐름이다.
 
 ### Step2 — GLM Transform
 
-GLM column-vector convention으로 Y rotation과 non-uniform scale을 적용한 cube다.
-Inverse-transpose normal matrix를 분리해 변형된 geometry의 면별 Directional Light 결과를 유지한다.
+GLM column-vector convention으로 Y rotation과 non-uniform scale을 적용한 cube다. Inverse-transpose normal matrix를 분리해 변형된 geometry의 면별 Directional Light 결과를 유지한다.
 
 ![Step2 GLM Transform](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Docs/_assets/captures/part2_chapter05_02_lights_glm_adjusted.png?raw=true)
 
 ### Step4 — SimpleMath Transform
 
-SimpleMath row-vector convention으로 같은 적용 순서를 다시 구성한 결과다.
-API와 multiplication 표기는 달라지지만 대응하는 silhouette와 lighting 의도를 유지한다.
+SimpleMath row-vector convention으로 같은 적용 순서를 다시 구성한 결과다. API와 multiplication 표기는 달라지지만 대응하는 silhouette와 lighting 의도를 유지한다.
 
 ![Step4 SimpleMath Transform](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Docs/_assets/captures/part2_chapter05_04_lights_simplemath_adjusted.png?raw=true)
 
@@ -42,19 +37,14 @@ API와 multiplication 표기는 달라지지만 대응하는 silhouette와 light
 
 ### Convention에 맞춘 model matrix
 
-GLM은 column-vector convention에 맞춰 오른쪽 matrix부터 적용한다.
-SimpleMath는 row-vector convention에 맞춰 반대 방향으로 composition을 구성한다.
-이 선택은 같은 transform 적용 순서를 서로 다른 API 표현으로 연결한다.
+GLM은 column-vector convention에 맞춰 오른쪽 matrix부터 적용한다. SimpleMath는 row-vector convention에 맞춰 반대 방향으로 composition을 구성한다. 이 선택은 같은 transform 적용 순서를 서로 다른 API 표현으로 연결한다.
 
 - [GLM model과 inverse-transpose normal matrix 구성](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Part2_Chapter05-08/05_AffineTransformations_Step2_Lights%28GLM%29/Rasterization.cpp#L140-L160)
 - [SimpleMath model과 inverse-transpose normal matrix 구성](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Part2_Chapter05-08/05_AffineTransformations_Step4_Lights%28SimpleMath%29/Rasterization.cpp#L157-L175)
 
 ### Position과 normal의 분리
 
-Position은 translation의 영향을 받는 homogeneous coordinate로 변환한다.
-Normal은 방향 vector로 변환한다.
-Non-uniform scale에서는 model matrix 대신 inverse transpose를 normal에 적용해
-surface와의 직교 관계를 보존한다.
+Position은 translation의 영향을 받는 homogeneous coordinate로 변환한다. Normal은 방향 vector로 변환한다. Non-uniform scale에서는 model matrix 대신 inverse transpose를 normal에 적용해 surface와의 직교 관계를 보존한다.
 
 - [GLM position과 normal 변환](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Part2_Chapter05-08/05_AffineTransformations_Step2_Lights%28GLM%29/MyShader.h#L90-L110)
 - [SimpleMath position과 normal 변환](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Part2_Chapter05-08/05_AffineTransformations_Step4_Lights%28SimpleMath%29/MyShader.h#L104-L123)

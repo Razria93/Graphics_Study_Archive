@@ -72,7 +72,7 @@ Point Light의 거리 감쇠에 `spotPower=400` cone factor를 곱해 중심의 
 
 ### Point Light And Distance Attenuation
 
-Point 경로는 Light position에서 fragment까지의 거리를 구한다. `fallOffEnd` 밖의 fragment를 제외하고 구간 안에서는 `(fallOffEnd - distance) / (fallOffEnd - fallOffStart)`를 0~1로 제한해 strength에 곱한다.
+Point 경로는 Light position에서 fragment까지의 거리를 구한다. `fallOffEnd` 밖의 fragment를 제외하고 구간 안에서는 `(fallOffEnd - distance) / (fallOffEnd - fallOffStart)`를 0부터 1까지로 제한해 strength에 곱한다.
 
 - [선형 distance attenuation](../../../Part2_Chapter04/04_Rasterization_Step10_Lights/MyShader.h#L51-L57)
 - [Point Light 방향과 감쇠](../../../Part2_Chapter04/04_Rasterization_Step10_Lights/MyShader.h#L59-L77)

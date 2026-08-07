@@ -106,7 +106,7 @@ EvaluateSpecular(light, view, normal, material, useBlinnPhong)
 - Blinn-Phong exponent 2배는 highlight 폭을 위한 경험적 비교 조건이며 동일 exponent의 엄밀한 수학 비교가 아니다.
 - Directional·Point·Spot helper는 공유하지만 capture는 변수 통제를 위해 Directional Light만 사용한다.
 - PBR microfacet BRDF, Fresnel, roughness와 energy conservation은 포함하지 않는다.
-- Generated 목재 texture는 Step5~8과 같은 SHA-256 asset을 사용한다.
+- Generated 목재 texture는 Step5부터 Step8까지와 같은 SHA-256 asset을 사용한다.
 - Video는 제외하며 checkbox 상태가 보이는 정적 screenshot 두 장을 비교 근거로 사용한다.
 
 ## 검증
@@ -117,7 +117,7 @@ EvaluateSpecular(light, view, normal, material, useBlinnPhong)
 - Shading mode: Phong·Blinn-Phong checkbox 전환과 동일 조건 결과 확인
 - Numerical stability: halfway zero vector, 0 거리와 falloff 분모 방어 확인
 - Resize: 반복 resize와 minimize/restore 자동 sequence 통과
-- Resource: Generated 목재 PNG load, Step5~8과 동일 SHA-256
+- Resource: Generated 목재 PNG load, Step5부터 Step8까지와 동일 SHA-256
 - Capture: PNG 1282×992 두 장, metadata·기술·시각 검수 완료
 - Video: 제외, 정적 mode 비교로 학습 차이 설명 가능
 

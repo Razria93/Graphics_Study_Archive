@@ -15,6 +15,20 @@
 | 대표 capture | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 후보 | 대표 예제 선정 후 갱신 |
 | video | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 미확인 | 필요 여부 검토 |
 
+## 상세 Demo 문서
+
+- [Step4 DrawingSphere](04_DrawingSphere.md)
+- [Step5 PhongShading](05_PhongShading.md)
+- [Step6 PerspectiveView](06_PerspectiveView.md)
+- [Step7 Triangle](07_Triangle.md)
+- [Step8 Shadow](08_Shadow.md)
+- [Step9 BarycentricCoordinates](09_BarycentricCoordinates.md)
+- [Step10 Texturing](10_Texturing.md)
+- [Step11 Supersampling](11_Supersampling.md)
+- [Step12 Reflection](12_Reflection.md)
+- [Step13 Transparency](13_Transparency.md)
+- [Step14 CubeEnvironment](14_CubeEnvironment.md)
+
 ## 갱신 기준
 
 - 실제 capture/result가 확보되면 `Docs/_assets` 경로를 연결한다.

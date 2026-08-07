@@ -30,7 +30,7 @@ Step1A는 단일 triangle rasterizer를 triangle fan으로 반복해 polygonal c
 
 | 구분 | 내용 |
 | --- | --- |
-| 입력 | radius 0.5, triangle count 3~100, center red와 boundary blue |
+| 입력 | radius 0.5, triangle count 3부터 100까지, center red와 boundary blue |
 | 중간 결과 | 독립 `MyTriangle` 목록, raster bounding box와 barycentric weight |
 | CPU 출력 | 1200×900 RGBA32F pixel buffer |
 | 화면 출력 | slider UI와 dynamic texture를 표시한 application window |

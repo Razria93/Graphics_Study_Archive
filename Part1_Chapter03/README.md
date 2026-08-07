@@ -4,20 +4,20 @@
 
 ## 상태
 
-- 학습 코드: Step4~14 보관 완료
-- 현재 문서화: Step4~14 완료
-- 현재 재검증: Step4~14 Debug/Release x64 build/run 완료
-- Capture: Step4~14 screenshot 확보
+- 학습 코드: Step4부터 Step14까지 보관 완료
+- 현재 문서화: Step4부터 Step14까지 완료
+- 현재 재검증: Step4부터 Step14까지 Debug/Release x64 build/run 완료
+- Capture: Step4부터 Step14까지 screenshot 확보
 
 ## Archive/Public 검토
 
 | 항목 | 상태 |
 | --- | --- |
 | Source provenance | [`SRC-P1-C03`](../Docs/99_Legacy/source-registry.md) |
-| Import status | Step4~14 반영 |
+| Import status | Step4부터 Step14까지 반영 |
 | Public readiness | Step4·8·13 대표 흐름과 Step10·14 선택 Demo 확정, [Demo Issue #12](https://github.com/Razria93/Graphics_Study_Archive/issues/12) 게시 완료 |
-| Build/run status | Step4~14 현재 확인 |
-| Texture/environment asset | Step10~13 검수 asset 적용, Step14는 Humus CC BY 3.0 cubemap 6면과 attribution 원문 유지 |
+| Build/run status | Step4부터 Step14까지 현재 확인 |
+| Texture/environment asset | Step10부터 Step13까지 검수 asset 적용, Step14는 Humus CC BY 3.0 cubemap 6면과 attribution 원문 유지 |
 | Verification | [Part1 Chapter03 Verification](../Docs/02_Verification/Part1_Chapter03/verification-index.md) |
 | Demo | [Part1 Chapter03 Demo Index](../Docs/03_Demos/Part1_Chapter03/demo-index.md) |
 | Topic | [Ray Tracing Topics](../Docs/01_Topics/RayTracing/README.md), [Lighting And Shading Topics](../Docs/01_Topics/LightingAndShading/README.md), [Shadow Topics](../Docs/01_Topics/Shadows/README.md), [Texturing And Mapping Topics](../Docs/01_Topics/TexturingAndMapping/README.md) |

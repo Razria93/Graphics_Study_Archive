@@ -61,7 +61,7 @@
 - Chapter05 Step3 DirectXMath의 Debug/Release x64 현재 재검증과 문서 정규화를 완료했다.
 - Step3은 결정적 console 예제로 screenshot과 video를 제외하고 DirectXMath·SimpleMath API 비교를 상세 Demo에 기록한다.
 - Chapter05 Step4 Lights(SimpleMath)의 코드 정합성 보완, Debug/Release x64 현재 재검증과 screenshot 승격을 완료했다.
-- Chapter05 Step1~4를 GLM matrix 기초·적용에서 DirectXMath/SimpleMath API·graphics 적용으로 이어지는 하나의 affine transformation bundle로 정리한다.
+- Chapter05 Step1부터 Step4까지를 GLM matrix 기초·적용에서 DirectXMath/SimpleMath API·graphics 적용으로 이어지는 하나의 affine transformation bundle로 정리한다.
 - Step2 GLM과 Step4 SimpleMath는 같은 transform 의도의 대응 visual로 유지하고, Step1·3 console 예제는 설명 중심 단계로 둔다.
 - `RowPitch`, `Map()` 실패, runtime shader path와 Step1A project identity는 별도 code task로 둔다.
 
@@ -107,7 +107,7 @@
 - Step9은 정규화된 Step8의 resource·resize 경로를 유지하고 동일 scene에서 Phong reflection vector와 Blinn halfway vector branch를 전환한다.
 - Constant buffer flag를 32-bit 정수로 고정하고 halfway vector의 zero-length guard, ambient 중복 제거와 attenuation denominator 제한을 적용했다.
 - Blinn-Phong branch의 `shininess * 2`는 같은 입력값에서 lobe 폭을 조정하는 예제 고유 선택으로 유지하고 상세 Demo에 명시했다.
-- 출처 불명 texture를 제거하고 Step5~8에서 검수한 generated 목재 PNG의 동일 바이트 사본을 사용했다.
+- 출처 불명 texture를 제거하고 Step5부터 Step8까지에서 검수한 generated 목재 PNG의 동일 바이트 사본을 사용했다.
 - Step9 Debug/Release x64와 반복 resize·minimize/restore를 현재 확인하고, 동일 material·shininess 32의 Phong·Blinn-Phong screenshot 2장을 기술·시각 검수했다.
 - Step9 video는 두 정적 상태가 specular model 차이를 충분히 설명하므로 제외했다.
 

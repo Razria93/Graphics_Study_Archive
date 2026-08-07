@@ -7,7 +7,7 @@
 - DirectX11 initialization과 render loop 구성
 - CPU-side image processing 결과의 DirectX11 texture upload
 - Bloom post-processing과 original/result 비교
-- CPU ray tracing Step4~14와 cubemap environment sampling
+- CPU ray tracing Step4부터 Step14까지와 cubemap environment sampling
 - Compute shader와 simulation 예제 정리 예정
 
 ## Current Work
@@ -18,9 +18,9 @@
 - [01_DX11InitAndImGui](Part1_Chapter01-02/01_DX11InitAndImGui/README.md): DirectX11 device, swap chain, render target, ImGui 기반 예제
 - [02_Bloom](Part1_Chapter01-02/02_Bloom/README.md): original input과 bloom result를 비교하는 post-processing 예제
 - [PostProcessingAndBloom](Docs/01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md): bloom 처리 흐름과 DirectX11 표시 경로
-- [Part1 Chapter03](Part1_Chapter03/README.md): CPU ray tracing Step4~14 순차 작업
+- [Part1 Chapter03](Part1_Chapter03/README.md): CPU ray tracing Step4부터 Step14까지 순차 작업
 - [Step14 CubeEnvironment](Part1_Chapter03/03_Raytracing_Step14_CubeEnvironment/README.md): direction 기반 cubemap environment sampling
-- [Part2 Chapter04](Part2_Chapter04/README.md): CPU software rasterization Step1~10 순차 작업
+- [Part2 Chapter04](Part2_Chapter04/README.md): CPU software rasterization Step1부터 Step10까지 순차 작업
 - [Step1 Triangle](Part2_Chapter04/04_Rasterization_Step1_Triangle/README.md): edge function과 barycentric RGB interpolation 기반 최소 rasterizer
 - [Step1A Triangle To Circle](Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle/README.md): triangle fan과 segment-count slider를 사용하는 Personal Extension
 - [Part2 Chapter05-08](Part2_Chapter05-08/README.md): affine transformation부터 DirectX11 pipeline과 shader toy까지 이어지는 순차 작업
@@ -59,10 +59,10 @@
 | 범위 | 주요 내용 | 코드 보관 | 문서화 |
 | --- | --- | --- | --- |
 | `Part1_Chapter01-02` | DirectX11 init, render loop, bloom post-processing | 완료 | pilot 마감 |
-| `Part1_Chapter03` | ray tracing basics와 cubemap sampling | 완료 | Step4~14 문서화·재검증 완료 |
-| `Part2_Chapter04` | rasterization foundation | 완료 | Step1~10·Step1A 문서화·재검증, GitHub 게시와 PR 마감 완료 |
+| `Part1_Chapter03` | ray tracing basics와 cubemap sampling | 완료 | Step4부터 Step14까지 문서화·재검증 완료 |
+| `Part2_Chapter04` | rasterization foundation | 완료 | Step1부터 Step10까지·Step1A 문서화·재검증, GitHub 게시와 PR 마감 완료 |
 | `Part2_Chapter05-08` | DirectX11 pipeline, texture, mesh와 shader toy 흐름 | 완료 | Chapter05 Step1–4, Chapter06 Step1–9, Chapter07 Step1–9와 Chapter08 Step1–7 완료 |
-| `Part3_Chapter09` | camera, picking, quaternion과 object interaction | 완료 | Step1~6 정규화 완료 |
+| `Part3_Chapter09` | camera, picking, quaternion과 object interaction | 완료 | Step1부터 Step6까지 정규화 완료 |
 | `Part3_Chapter10-13` | lighting, shadow, PBR/IBL | 완료 | 대기 |
 | `Part4_Chapter14-20` | compute shader, simulation, animation/physics | 완료 | 대기 |
 | `Portfolio_RayTracer` | Part1 기반 ray tracing 확장 작업 | 확인 필요 | 대기 |

@@ -37,7 +37,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File Docs/98_Tools/scripts/notify
 powershell -NoProfile -ExecutionPolicy Bypass -File Docs/98_Tools/scripts/notify-user.ps1 -Event Complete -DelaySeconds 60
 ```
 
-`DelaySeconds`의 기본값은 `0`이고 허용 범위는 0~300초다. 값이 `0`이면 기존처럼 현재 process에서 `PlaySync()`를 실행하고, 양수이면 숨김 PowerShell helper를 한 번 시작한 뒤 호출 process는 즉시 종료한다. helper는 지정 시간 뒤 알림음을 한 번 재생하고 자동 종료한다.
+`DelaySeconds`의 기본값은 `0`이고 허용 범위는 0초부터 300초까지다. 값이 `0`이면 기존처럼 현재 process에서 `PlaySync()`를 실행하고, 양수이면 숨김 PowerShell helper를 한 번 시작한 뒤 호출 process는 즉시 종료한다. helper는 지정 시간 뒤 알림음을 한 번 재생하고 자동 종료한다.
 
 60초 고정 지연은 응답 길이, network와 client rendering 시간을 신뢰성 있게 측정할 수 없기 때문에 사용한다. 동적 출력 시간 추정은 사용하지 않는다.
 

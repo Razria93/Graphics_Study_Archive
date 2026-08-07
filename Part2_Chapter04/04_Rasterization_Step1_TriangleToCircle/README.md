@@ -11,7 +11,7 @@ Step1A는 Step1의 단일 triangle rasterization을 여러 triangle로 구성한
 - Solution: `04_Rasterization_Step1_TriangleToCircle.sln`
 - Application title: `ComputerGraphics - Step1A Triangle To Circle`
 - Runtime working directory: project 폴더
-- UI: `Triangles Number`, 3~100
+- UI: `Triangles Number`, 3부터 100까지
 - 기본값: 32
 
 ## Code Map

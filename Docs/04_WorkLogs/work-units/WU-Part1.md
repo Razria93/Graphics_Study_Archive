@@ -64,7 +64,7 @@
 - Part1 Work Unit 자체는 아직 진행 중이다.
 - GitHub PR #8은 일반 merge commit [`e14f5e3`](https://github.com/Razria93/Graphics_Study_Archive/commit/e14f5e39d1352fb4f1f55bd6b06fb1e9840cb88c)으로 병합했다.
 - Chapter01-02 파일럿은 마감했지만 WU-Part1 전체는 진행 중이다.
-- Chapter03 Step4~14 문서·재검증·capture와 최소·대표·선택 Demo 등급 정리를 완료했다.
+- Chapter03 Step4부터 Step14까지 문서·재검증·capture와 최소·대표·선택 Demo 등급 정리를 완료했다.
 
 ## 다음 작업
 
