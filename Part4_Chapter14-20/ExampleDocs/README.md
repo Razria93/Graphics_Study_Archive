@@ -13,7 +13,7 @@
 
 | Chapter | ExampleDocs | 상태 |
 | --- | --- | --- |
-| Chapter14 | [Ex1401 Basic](14_01_Basic.md) | pilot |
+| Chapter14 | [Ex1401 Basic](14_01_Basic.md), [Ex1402 Blur](14_02_Blur.md), [Ex1403 MatVecMult](14_03_MatVecMult.md), [Ex1404 StructuredBuffer](14_04_StructuredBuffer.md) | 작성 중 |
 
 ## 관련 문서
 

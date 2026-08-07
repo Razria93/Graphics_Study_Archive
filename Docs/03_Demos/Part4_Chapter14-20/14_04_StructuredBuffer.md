@@ -54,7 +54,7 @@ StructuredBuffer particle data를 compute shader에서 갱신하고 vertex buffe
 
 ## 관련 코드
 
-- [Example README](../../../Part4_Chapter14-20/README.md)
+- [ExampleDocs](../../../Part4_Chapter14-20/ExampleDocs/14_04_StructuredBuffer.md)
 - [Example selection entry point](../../../Part4_Chapter14-20/main.cpp)
 
 ## 관련 문서
