@@ -7,7 +7,7 @@ Matrix-vector multiplication을 compute shader로 수행하고 CPU 결과와 GPU
 ## 책임 범위
 
 - `Ex1403_MatVecMult`의 CPU/GPU result compare와 stdout evidence를 설명한다.
-- Build/run 사실은 [Verification](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
+- Build/run 사실은 [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
 - public 후보 판단은 [Publication Candidate List](../../05_Publication/candidate-list.md)로 위임한다.
 
 ## 결과 미리보기
@@ -56,7 +56,6 @@ ExitCode: 0
 
 ## 검증
 
-- [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
 - Debug x64 run 성공
 - `Error GPU 0`, `ExitCode: 0` 확인
 

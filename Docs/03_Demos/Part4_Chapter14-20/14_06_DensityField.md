@@ -7,7 +7,7 @@ Compute shader particle sourcing과 density dissipation을 결합해 color trail
 ## 책임 범위
 
 - `Ex1406_DensityField`의 density texture update, sprite draw와 tracked screenshot을 설명한다.
-- Build/run/capture 사실은 [Verification](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
+- Build/run/capture 사실은 [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
 - public 후보 판단은 [Publication Candidate List](../../05_Publication/candidate-list.md)로 위임한다.
 
 ## 결과 미리보기
@@ -51,7 +51,6 @@ Particle sourcing과 density dissipation이 만든 colored trail을 확인한다
 
 ## 검증
 
-- [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
 - Debug x64 build/run 성공
 - PNG RGBA non-interlaced, text metadata chunk 없음
 

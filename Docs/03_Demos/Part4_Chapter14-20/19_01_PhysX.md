@@ -7,7 +7,7 @@ PhysX rigid-body scene을 fixed time step으로 갱신하고, actor shape pose�
 ## 책임 범위
 
 - `Ex1901_PhysX`의 PhysX scene 초기화, fixed-step simulation과 render transform synchronization을 설명한다.
-- Build/run/capture 사실은 [Verification](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
+- Build/run/capture 사실은 [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
 - public 후보 판단은 [Publication Candidate List](../../05_Publication/candidate-list.md)로 위임한다.
 
 ## 결과 미리보기
@@ -53,7 +53,6 @@ Storyboard는 static ground와 block stack이 gravity와 collision에 따라 col
 
 ## 검증
 
-- [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
 - 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공
 - Storyboard PNG는 `1880x444` RGBA, non-interlaced이며 full decode와 metadata chunk 부재를 확인함
 

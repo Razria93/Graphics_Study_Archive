@@ -7,7 +7,7 @@ Procedural noise로 3D cloud density와 lighting field를 compute shader에서 �
 ## 책임 범위
 
 - `Ex1603_Cloud`의 density/lighting Texture3D 생성, texture coordinate offset과 volume render path를 설명한다.
-- Build/run/capture 사실은 [Verification](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
+- Build/run/capture 사실은 [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
 - public 후보 판단은 [Publication Candidate List](../../05_Publication/candidate-list.md)로 위임한다.
 
 ## 결과 미리보기
@@ -52,7 +52,6 @@ Procedural noise로 3D cloud density와 lighting field를 compute shader에서 �
 
 ## 검증
 
-- [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
 - 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공
 - 0.870s, 2.900s, 4.930s timestamp frame storyboard를 tracked evidence로 확인
 - Release 상태는 Verification Index의 과거 확인 기록으로 유지

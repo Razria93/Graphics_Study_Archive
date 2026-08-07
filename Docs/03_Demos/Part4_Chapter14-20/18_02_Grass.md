@@ -7,7 +7,7 @@ Grass blade mesh와 instance transform을 분리하고, per-instance wind streng
 ## 책임 범위
 
 - `Ex1802_Grass`의 grass instance 생성, per-frame wind update와 instanced render path를 설명한다.
-- Build/run/capture 사실은 [Verification](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
+- Build/run/capture 사실은 [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
 - public 후보 판단은 [Publication Candidate List](../../05_Publication/candidate-list.md)로 위임한다.
 
 ## 결과 미리보기
@@ -54,7 +54,6 @@ Storyboard는 같은 grass field가 `globalTime`에 따른 wave phase와 instanc
 
 ## 검증
 
-- [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
 - 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공
 - Storyboard PNG는 `1880x444` RGBA, non-interlaced이며 full decode와 metadata chunk 부재를 확인함
 

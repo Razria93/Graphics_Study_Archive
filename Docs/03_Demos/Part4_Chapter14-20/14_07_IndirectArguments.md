@@ -7,7 +7,7 @@ Indirect argument buffer를 생성하고 `DrawInstancedIndirect`로 GPU buffer�
 ## 책임 범위
 
 - `Ex1407_IndirectArguments`의 indirect argument buffer, density visual과 code evidence를 설명한다.
-- Build/run/capture 사실은 [Verification](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
+- Build/run/capture 사실은 [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
 - public 후보 판단은 [Publication Candidate List](../../05_Publication/candidate-list.md)로 위임한다.
 
 ## 결과 미리보기
@@ -49,7 +49,6 @@ Visual은 `Ex1406` 계열 density trail과 유사하므로, indirect draw 여부
 
 ## 검증
 
-- [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
 - Debug x64 build/run 성공
 - `DrawInstancedIndirect(m_argsGPU.Get(), offset)` code evidence 확인
 - PNG RGBA non-interlaced, text metadata chunk 없음
