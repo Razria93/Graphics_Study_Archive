@@ -9,7 +9,7 @@
 | Part2_Chapter04 | Step1 Triangle | Step8 PerspectiveProjection | Step1A Personal Extension, Step4 Animation2D, Step10 Lights | 확보 | Step1–10 순차 Demo와 capture 확보. Step8은 Chapter 대표, Step10은 기술 보조, Step1A는 사용자 확장, Step4는 시간 변화 Demo로 유지 |
 | Part2_Chapter05-08 | Chapter05 Step2·4 affine 비교 | Chapter06 Step2·6·8 pipeline·lighting·resize, Chapter07 Step1·5·8 modeling·mapping, Chapter08 Step1·6·7 shader experiment | Chapter06 Step9, Chapter07 Step2·6·7 | 확보 | Chapter08은 원본 runtime asset을 비공개로 유지하고 Step1·6·7 rendered evidence를 [Demo Issue #22](https://github.com/Razria93/Graphics_Study_Archive/issues/22)에 게시한다. |
 | Part3_Chapter09 | Step1 FirstPersonView | Step5 VirtualTrackball | Step6 MouseDragMove | 확보 | Step5를 대표, Step1과 Step6을 보조 visual로 선정한다. 원본 runtime asset은 비공개로 유지하고 직접 실행 visual은 승인된 Chapter09 Bundle 예외에 따라 공개 가능하다. |
-| Part3_Chapter10-13 | normal mapping 또는 PBR | shadow mapping, PCF/PCSS | HDR pipeline, halo | 후보 | 시각 임팩트 우선순위 높음 |
+| Part3_Chapter10-13 | Chapter11 Step2 NormalMapping | Chapter13 Step4–6 shadow mapping·PCF·PCSS | HDR pipeline, halo | 확보 | NormalMapping On/Off와 hard shadow→PCF→PCSS tracked 비교 자료 확보 |
 | Part4_Chapter14-20 | Chapter14 compute 기준선 | Chapter16부터 Chapter20까지 Example별 storyboard | Chapter15 particle simulation | 확보 | Chapter14 static capture와 Chapter15부터 Chapter20까지 Example별 tracked storyboard를 연결함 |
 | Portfolio_RayTracer | 대표 ray tracing 결과 | portfolio hero capture | step 비교 영상 | 미확인 | solution 확인 필요 |
 

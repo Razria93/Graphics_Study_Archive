@@ -11,9 +11,9 @@
 
 | Demo 후보 | 연결 Example | 연결 Topic | Verification | Capture/Result | 상태 | 비고 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 최소 capture | `04_Rasterization_Step5_DepthBuffer` | 미확인 | `Docs/02_Verification` | 없음 | 후보 | build/run 확인 후 갱신 |
-| 대표 capture | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 후보 | 대표 예제 선정 후 갱신 |
-| video | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 미확인 | 필요 여부 검토 |
+| 최소 capture | [Step1 Triangle](../../../Part2_Chapter04/04_Rasterization_Step1_Triangle/README.md) | [Triangle Rasterization](../../01_Topics/Rasterization/TriangleRasterization.md) | [Verification](../../02_Verification/Part2_Chapter04/verification-index.md) | [Triangle](../../_assets/captures/part2_chapter04_01_triangle.png) | 확보 | [상세 Demo](01_Triangle.md) · CPU software rasterization 기준선 |
+| 대표 capture | [Step8 PerspectiveProjection](../../../Part2_Chapter04/04_Rasterization_Step8_PerspectiveProjection/README.md) | [Perspective Projection](../../01_Topics/Rasterization/PerspectiveProjection.md) | [Verification](../../02_Verification/Part2_Chapter04/verification-index.md) | [Orthographic](../../_assets/captures/part2_chapter04_08_perspective_projection_orthographic.png), [Affine](../../_assets/captures/part2_chapter04_08_perspective_projection_affine.png), [Perspective-Correct](../../_assets/captures/part2_chapter04_08_perspective_projection_correct.png) | 확보 | [상세 Demo](08_PerspectiveProjection.md) · [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14) |
+| video | [Step1A TriangleToCircle](../../../Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle/README.md) | [Triangle Rasterization](../../01_Topics/Rasterization/TriangleRasterization.md) | [Verification](../../02_Verification/Part2_Chapter04/verification-index.md) | [3 segments](../../_assets/captures/part2_chapter04_01a_triangle_to_circle_segments_3.png), [32 segments](../../_assets/captures/part2_chapter04_01a_triangle_to_circle_segments_32.png) | 확보 | [상세 Demo](01_TriangleToCircle.md) · selected video를 [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14)에 게시함 |
 
 ## 상세 Demo 문서
 
@@ -31,6 +31,7 @@
 
 ## 갱신 기준
 
-- 실제 capture/result가 확보되면 `Docs/_assets` 경로를 연결한다.
-- build/run 상태가 확인되지 않은 demo는 `확보`로 바꾸지 않는다.
+- Step1을 최소 기준선, Step8을 Chapter 대표 Demo로 유지한다.
+- Step1A는 사용자 확장과 video, Step4는 시간 변화, Step10은 기술 보조 Demo로 유지한다.
+- selected video의 기술·시각 검수와 Demo Issue 게시 상태를 함께 기록한다.
 - public 후보 여부는 `Docs/05_Publication`에서 별도로 판단한다.

@@ -5,15 +5,15 @@
 ## 범위
 
 - 주요 demo 후보: PBR, shadow mapping, PCF, PCSS, HDR
-- 비고: 대표 demo 우선순위 높음
+- 비고: NormalMapping 기준선과 shadow filtering progression 선별 완료
 
 ## Demo 목록
 
 | Demo 후보 | 연결 Example | 연결 Topic | Verification | Capture/Result | 상태 | 비고 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 최소 capture | `13_ShadowMapping` | 미확인 | `Docs/02_Verification` | 없음 | 후보 | build/run 확인 후 갱신 |
-| 대표 capture | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 후보 | 대표 예제 선정 후 갱신 |
-| video | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 미확인 | 필요 여부 검토 |
+| 최소 capture | [Chapter11 Step2 NormalMapping](../../../Part3_Chapter10-13/11_TexturingTechniques_Step2_NormalMapping/README.md) | [Normal Mapping And Tangent Space](../../01_Topics/TexturingAndMapping/NormalMappingAndTangentSpace.md) | [Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Off](../../_assets/captures/part3_chapter11_02_normal_mapping_off.png), [On](../../_assets/captures/part3_chapter11_02_normal_mapping_on.png) | 확보 | [상세 Demo](11_02_NormalMapping.md) · [Chapter11 Demo Issue #26](https://github.com/Razria93/Graphics_Study_Archive/issues/26) |
+| 대표 capture | [Step4 ShadowMapping](../../../Part3_Chapter10-13/13_LightAndShadow_Step4_ShadowMapping/README.md), [Step5 SoftShadowPCF](../../../Part3_Chapter10-13/13_LightAndShadow_Step5_SoftShadowPCF/README.md), [Step6 SoftShadowPCSS](../../../Part3_Chapter10-13/13_LightAndShadow_Step6_SoftShadowPCSS/README.md) | [Shadow Mapping And Depth Bias](../../01_Topics/Shadows/ShadowMappingAndDepthBias.md), [Percentage Closer Filtering And PCSS](../../01_Topics/Shadows/PercentageCloserFilteringAndPCSS.md) | [Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | [Shadow Filtering Progression](../../_assets/captures/part3_chapter13_04_06_shadow_filtering_storyboard.png) | 확보 | 상세 Demo [Step4](13_04_ShadowMapping.md)·[Step5](13_05_SoftShadowPCF.md)·[Step6](13_06_SoftShadowPCSS.md) · [Issue #28](https://github.com/Razria93/Graphics_Study_Archive/issues/28) |
+| video | [Step4 ShadowMapping](../../../Part3_Chapter10-13/13_LightAndShadow_Step4_ShadowMapping/README.md), [Step5 SoftShadowPCF](../../../Part3_Chapter10-13/13_LightAndShadow_Step5_SoftShadowPCF/README.md), [Step6 SoftShadowPCSS](../../../Part3_Chapter10-13/13_LightAndShadow_Step6_SoftShadowPCSS/README.md) | [Percentage Closer Filtering And PCSS](../../01_Topics/Shadows/PercentageCloserFilteringAndPCSS.md) | [Verification](../../02_Verification/Part3_Chapter10-13/verification-index.md) | 없음 | 제외 | tracked 정적 비교 sheet로 filtering 차이가 분명해 video를 사용하지 않음 |
 
 ## 상세 Demo 문서
 
@@ -41,6 +41,7 @@
 
 ## 갱신 기준
 
-- 실제 capture/result가 확보되면 `Docs/_assets` 경로를 연결한다.
-- build/run 상태가 확인되지 않은 demo는 `확보`로 바꾸지 않는다.
+- Chapter11 NormalMapping을 최소 visual, Chapter13 shadow filtering progression을 대표 visual로 유지한다.
+- HDR pipeline과 Halo는 선택 Demo로 유지한다.
+- shadow mapping·PCF·PCSS 차이는 정적 비교 sheet로 설명하고 video는 제외한다.
 - public 후보 여부는 `Docs/05_Publication`에서 별도로 판단한다.
