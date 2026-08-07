@@ -117,6 +117,14 @@ part2_chapter04_depth-buffer.png
 | `part4_chapter15_01_particle_system.png` | storyboard | `Part4_Chapter14-20/Ex1501_ParticleSystem` | 확보 | `ComputerGraphics` title의 1.163s, 3.878s, 6.593s timestamp frame을 배치한 particle stream evidence |
 | `part4_chapter15_02_sprite_fire_effect.png` | storyboard | `Part4_Chapter14-20/Ex1502_SpriteFireEffect` | 확보 | `ComputerGraphics` title의 1.695s, 5.650s, 9.605s timestamp frame을 배치한 sprite fire rendered evidence |
 | `part4_chapter15_03_sph_water.png` | storyboard | `Part4_Chapter14-20/Ex1503_SphWater` | 확보 | `ComputerGraphics` title의 2.200s, 4.600s, 12.467s timestamp frame을 배치한 SPH water evidence |
+| `part4_chapter16_01_stable_fluids.png` | storyboard | `Part4_Chapter14-20/Ex1601_StableFluids` | 확보 | `ComputerGraphics` title의 5.200s, 13.000s, 20.800s source injection density 변화 evidence |
+| `part4_chapter16_04_realtime_smoke.png` | storyboard | `Part4_Chapter14-20/Ex1604_RealtimeSmoke` | 확보 | 5.370s, 13.420s, 21.470s HDRI rendered smoke source·확산·buoyancy evidence. 원본 HDRI는 직접 게시하지 않음 |
+| `part4_chapter16_06_hybrid_water.png` | storyboard | `Part4_Chapter14-20/Ex1606_HybridWater` | 확보 | 2.510s, 6.280s, 10.050s particle-to-grid density field의 volume rendering evidence |
+| `part4_chapter17_01_skeletal_animation.png` | storyboard | `Part4_Chapter14-20/Ex1701_SkeletalAnimation` | 확보 | 1.010s, 2.530s, 4.050s skeletal animation pose evidence. 원본 character asset은 직접 게시하지 않음 |
+| `part4_chapter18_02_grass.png` | storyboard | `Part4_Chapter14-20/Ex1802_Grass` | 확보 | 1.590s, 3.970s, 6.350s instanced grass wind phase evidence. 원본 foliage asset은 직접 게시하지 않음 |
+| `part4_chapter18_03_landscape.png` | storyboard | `Part4_Chapter14-20/Ex1803_Landscape` | 확보 | 1.520s, 3.800s, 6.080s terrain과 animated ocean surface evidence. 원본 terrain asset은 직접 게시하지 않음 |
+| `part4_chapter19_01_physx.png` | storyboard | `Part4_Chapter14-20/Ex1901_PhysX` | 확보 | 1.890s, 4.720s, 7.550s block wall collapse evidence |
+| `part4_chapter20_01_gameplay.png` | storyboard | `Part4_Chapter14-20/Ex2001_GamePlay` | 확보 | 5.680s, 14.200s, 22.720s gameplay destruction evidence. 원본 character asset은 직접 게시하지 않음 |
 
 ## 승격 체크
 

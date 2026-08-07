@@ -22,18 +22,18 @@
 | `Ex1501_ParticleSystem` | `1501` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | Debug x64 시연 video의 1.163s, 3.878s, 6.593s frame storyboard를 `Docs/_assets/captures`에 승격. Release는 과거 확인 |
 | `Ex1502_SpriteFireEffect` | `1502` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | Debug x64 시연 video의 1.695s, 5.650s, 9.605s frame storyboard를 `Docs/_assets/captures`에 승격. 원본 `flare0.dds`는 직접 링크하지 않음. Release는 과거 확인 |
 | `Ex1503_SphWater` | `1503` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | Debug x64 시연 video의 2.200s, 4.600s, 12.467s frame storyboard를 `Docs/_assets/captures`에 승격. Release는 과거 확인 |
-| `Ex1601_StableFluids` | `1601` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공. `GraphicsVideo` interaction storyboard 후보를 local에 둠 |
+| `Ex1601_StableFluids` | `1601` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공. 5.200s, 13.000s, 20.800s interaction storyboard를 `Docs/_assets/captures`에 승격함 |
 | `Ex1602_CurlNoise` | `1602` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug x64 build/run/capture smoke 성공. colored curl-noise density trail local candidate 확인. Release는 과거 확인 |
 | `Ex1603_Cloud` | `1603` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug x64 build/run/capture smoke 성공. volumetric cloud local candidate 확인. Release는 과거 확인 |
-| `Ex1604_RealtimeSmoke` | `1604` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공. HDRI rendered evidence 후보를 local에 두며 원본 asset은 직접 게시하지 않음 |
+| `Ex1604_RealtimeSmoke` | `1604` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공. 5.370s, 13.420s, 21.470s HDRI rendered storyboard를 승격하고 원본 HDRI는 직접 게시하지 않음 |
 | `Ex1605_SmokeCpu` | `1605` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug x64 build/run/capture smoke 성공. HDRI runtime asset을 포함한 CPU smoke candidate는 public 판단 전 local로 유지함. Release는 과거 확인 |
-| `Ex1606_HybridWater` | `1606` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공. `RenderDensity` storyboard 후보를 local에 둠 |
-| `Ex1701_SkeletalAnimation` | `1701` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공. skeletal pose storyboard 후보를 local에 둠 |
+| `Ex1606_HybridWater` | `1606` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공. 2.510s, 6.280s, 10.050s `RenderDensity` storyboard를 승격함 |
+| `Ex1701_SkeletalAnimation` | `1701` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공. 1.010s, 2.530s, 4.050s skeletal pose storyboard를 승격하고 원본 character asset은 직접 게시하지 않음 |
 | `Ex1801_Tree` | `1801` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug x64 build/run/capture smoke 성공. tree scene local candidate 확인. Release는 과거 확인 |
-| `Ex1802_Grass` | `1802` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공. wind phase storyboard 후보를 local에 둠 |
-| `Ex1803_Landscape` | `1803` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공. terrain/ocean storyboard 후보를 local에 둠 |
-| `Ex1901_PhysX` | `1901` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공. block collapse storyboard 후보를 local에 둠 |
-| `Ex2001_GamePlay` | `2001` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | local 후보 | 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공. gameplay destruction storyboard 후보를 local에 둠 |
+| `Ex1802_Grass` | `1802` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공. 1.590s, 3.970s, 6.350s wind phase storyboard를 승격함 |
+| `Ex1803_Landscape` | `1803` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공. 1.520s, 3.800s, 6.080s terrain/ocean storyboard를 승격함 |
+| `Ex1901_PhysX` | `1901` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공. 1.890s, 4.720s, 7.550s block collapse storyboard를 승격함 |
+| `Ex2001_GamePlay` | `2001` | `Part4_Chapter14-20/Examples.sln` | 성공 | 성공 | 성공 | 성공 | tracked 후보 | 2026-08-07 Debug와 Release x64 build/run/capture smoke 성공. 5.680s, 14.200s, 22.720s gameplay destruction storyboard를 승격하고 원본 character asset은 직접 게시하지 않음 |
 
 ## 실행 선택 방식
 
@@ -135,18 +135,18 @@ Debug x64 build는 2026-08-06 `Examples.sln` 기준 경고 0개, 오류 0개로 
 
 `Examples.sln`은 2026-08-07 Release x64 build에서 경고 4개, 오류 0개를 기록한다. warning은 `Ex1402_BlurXGroupCacheCS.hlsl`의 signed/unsigned mismatch 2개와 FXC performance/internal warning 2개이며 Chapter16~20 source 오류는 아니다. vcpkg `x64-windows/bin` DLL 23개를 `x64/Release`에 복구한 뒤 source root working directory, `HLAB_CAPTURE_UI=collapsed`, `CenterWindow` 조건에서 command argument `1601`부터 `1606`, `1701`, `1801`부터 `1803`, `1901`, `2001`을 실행하고 local capture 12개를 확인했다.
 
-`local/GraphicsVideo` 원본 MP4는 Git에 추가하지 않는다. 상세 Demo 대상으로 선택한 8개 예제는 start, middle, end preview를 `local/storyboard-candidates/Part4_Chapter16-20/20260807`에 생성했다. timestamp storyboard PNG 승격은 별도 검수와 승인 뒤 수행한다.
+`local/GraphicsVideo` 원본 MP4는 Git에 추가하지 않는다. 상세 Demo 대상으로 선택한 8개 예제는 start, middle, end preview를 `local/storyboard-candidates/Part4_Chapter16-20/20260807`에 생성했고, 검수한 timestamp storyboard PNG만 `Docs/_assets/captures`에 승격했다.
 
 | Example | Timestamp 후보 | Storyboard 설명 | Asset 주의 |
 | --- | --- | --- | --- |
-| `Ex1601_StableFluids` | 5.20s, 13.00s, 20.80s | source injection 뒤 색 density field 변화 | 없음 |
-| `Ex1604_RealtimeSmoke` | 5.37s, 13.42s, 21.47s | HDRI 배경의 source, 확산, buoyancy 변화 | rendered evidence만 사용하고 원본 HDRI는 직접 게시하지 않음 |
-| `Ex1606_HybridWater` | 2.51s, 6.28s, 10.05s | raycasting surface와 `RenderDensity` volume 표시 비교 | density field 시각화이며 물성 mode 전환으로 설명하지 않음 |
-| `Ex1701_SkeletalAnimation` | 1.01s, 2.53s, 4.05s | animation pose 변화 | character asset의 공개 범위는 별도 검토 |
-| `Ex1802_Grass` | 1.59s, 3.97s, 6.35s | wind phase에 따른 instanced grass field 변화 | rendered evidence만 사용 |
-| `Ex1803_Landscape` | 1.52s, 3.80s, 6.08s | terrain과 animated ocean surface | rendered evidence만 사용 |
-| `Ex1901_PhysX` | 1.89s, 4.72s, 7.55s | block wall collapse 단계 | 없음 |
-| `Ex2001_GamePlay` | 5.68s, 14.20s, 22.72s | gameplay destruction 진행 | character asset의 공개 범위는 별도 검토 |
+| `Ex1601_StableFluids` | 5.200s, 13.000s, 20.800s | source injection 뒤 색 density field 변화 | [tracked storyboard](../../_assets/captures/part4_chapter16_01_stable_fluids.png) |
+| `Ex1604_RealtimeSmoke` | 5.370s, 13.420s, 21.470s | HDRI 배경의 source, 확산, buoyancy 변화 | [tracked storyboard](../../_assets/captures/part4_chapter16_04_realtime_smoke.png). rendered evidence만 사용하고 원본 HDRI는 직접 게시하지 않음 |
+| `Ex1606_HybridWater` | 2.510s, 6.280s, 10.050s | raycasting surface와 `RenderDensity` volume 표시 비교 | [tracked storyboard](../../_assets/captures/part4_chapter16_06_hybrid_water.png). density field 시각화이며 물성 mode 전환으로 설명하지 않음 |
+| `Ex1701_SkeletalAnimation` | 1.010s, 2.530s, 4.050s | animation pose 변화 | [tracked storyboard](../../_assets/captures/part4_chapter17_01_skeletal_animation.png). 원본 character asset은 직접 게시하지 않음 |
+| `Ex1802_Grass` | 1.590s, 3.970s, 6.350s | wind phase에 따른 instanced grass field 변화 | [tracked storyboard](../../_assets/captures/part4_chapter18_02_grass.png). rendered evidence만 사용 |
+| `Ex1803_Landscape` | 1.520s, 3.800s, 6.080s | terrain과 animated ocean surface | [tracked storyboard](../../_assets/captures/part4_chapter18_03_landscape.png). rendered evidence만 사용 |
+| `Ex1901_PhysX` | 1.890s, 4.720s, 7.550s | block wall collapse 단계 | [tracked storyboard](../../_assets/captures/part4_chapter19_01_physx.png) |
+| `Ex2001_GamePlay` | 5.680s, 14.200s, 22.720s | gameplay destruction 진행 | [tracked storyboard](../../_assets/captures/part4_chapter20_01_gameplay.png). 원본 character asset은 직접 게시하지 않음 |
 
 ## 갱신 기준
 
