@@ -7,7 +7,7 @@
 - 확인 근거: 과거 확인
 - 확인 시점: 문서화 이전(날짜 미기록)
 - 현재 재검증: 필요
-- 근거: Chapter README에 기록된 Ex1401~Ex2001 Debug/Release build/run 성공
+- 근거: Chapter README에 기록된 Ex1401부터 Ex2001까지 Debug/Release build/run 성공
 
 | 예제                           | Command argument | Solution                          | Debug build | Debug run | Release build | Release run | Capture    | 비고                                                                                                                                                      |
 | ---------------------------- | ---------------- | --------------------------------- | ----------- | --------- | ------------- | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -66,7 +66,7 @@
 | `Ex1405_ConsumeAppendBuffer` | Debug x64 | `1405` | 성공 | [tracked screenshot](../../_assets/captures/part4_chapter14_05_consume_append_buffer.png) + stdout log | point cloud와 `AppendBuffer count: 25600` 확인. centered client-visible fixed UI capture를 승격 |
 | `Ex1406_DensityField` | Debug x64 | `1406` | 성공 | [tracked screenshot](../../_assets/captures/part4_chapter14_06_density_field.png) | colored density trail 확인. centered client-visible fixed UI capture를 승격. 시간 변화는 video 후보 |
 | `Ex1407_IndirectArguments` | Debug x64 | `1407` | 성공 | [tracked screenshot](../../_assets/captures/part4_chapter14_07_indirect_arguments.png) + code evidence | density trail visual과 `DrawInstancedIndirect(m_argsGPU.Get(), offset)` 확인. screenshot만으로 indirect draw 차이는 설명 부족 |
-| `Ex1408_BitonicSort` | Debug x64 | `1408` | 성공 | stdout log | element count `1024`~`1048576` CPU/GPU sort compare `OK`, `ExitCode: 0` 확인. screenshot 불필요 |
+| `Ex1408_BitonicSort` | Debug x64 | `1408` | 성공 | stdout log | element count `1024`부터 `1048576`까지 CPU/GPU sort compare `OK`, `ExitCode: 0` 확인. screenshot 불필요 |
 
 Debug x64 build는 2026-08-06 `Examples.sln` 기준 경고 0개, 오류 0개로 확인했다. Git Bash 실행 환경에서는 build 후 Debug output의 runtime DLL이 정리되어 `PhysXCommon_64.dll` loader error가 발생했으며([VI-005](../known-issues.md)), vcpkg `x64-windows/debug/bin` runtime DLL을 ignored `x64/Debug` output에 복구한 뒤 파일럿 run을 수행했다. `Ex1402_Blur`는 500ms, 1500ms, 3000ms capture에서 white frame에 가까웠고 5000ms capture에서 RGB blur visual이 확인되어 timing/안정화 대기 이슈로 판정한다.
 
@@ -95,7 +95,7 @@ Chapter14 최소 evidence set은 `Ex1401_Basic`, `Ex1402_Blur`, `Ex1403_MatVecMu
 | `Ex1502_SpriteFireEffect` | Debug x64 | `1502` | 성공 | [tracked storyboard](../../_assets/captures/part4_chapter15_02_sprite_fire_effect.png) | 1.695s, 5.650s, 9.605s frame과 `ComputerGraphics` title 확인. 원본 `Assets/Textures/flare0.dds`는 직접 링크하지 않고 rendered evidence만 사용 |
 | `Ex1503_SphWater` | Debug x64 | `1503` | 성공 | [tracked storyboard](../../_assets/captures/part4_chapter15_03_sph_water.png) | 2.200s, 4.600s, 12.467s frame과 `ComputerGraphics` title 확인 |
 
-Debug x64 build는 2026-08-06 `Examples.sln` 기준 경고 0개, 오류 0개로 확인했다. `capture-example-window.ps1`에 `ArgumentList` option을 추가해 `Examples.exe 1501`, `1502`, `1503` 단일 executable command argument 구조를 직접 실행했다. 기존 capture smoke는 run 확인 근거로 유지하고, tracked evidence는 `ComputerGraphics` title이 보이는 시연 video timestamp storyboard로 교체한다. `Ex1501`, `Ex1502`, `Ex1503` storyboard는 text metadata chunk가 없으며 01~03 timestamp frame을 기록한다. `Ex1502`는 원본 `flare0.dds`를 직접 링크하지 않고 rendered evidence만 사용한다. Capture/run 종료 후 `Examples` process와 error dialog가 남지 않았다.
+Debug x64 build는 2026-08-06 `Examples.sln` 기준 경고 0개, 오류 0개로 확인했다. `capture-example-window.ps1`에 `ArgumentList` option을 추가해 `Examples.exe 1501`, `1502`, `1503` 단일 executable command argument 구조를 직접 실행했다. 기존 capture smoke는 run 확인 근거로 유지하고, tracked evidence는 `ComputerGraphics` title이 보이는 시연 video timestamp storyboard로 교체한다. `Ex1501`, `Ex1502`, `Ex1503` storyboard는 text metadata chunk가 없으며 01부터 03까지 timestamp frame을 기록한다. `Ex1502`는 원본 `flare0.dds`를 직접 링크하지 않고 rendered evidence만 사용한다. Capture/run 종료 후 `Examples` process와 error dialog가 남지 않았다.
 
 ## Chapter15 evidence 승격 후보 감사
 
@@ -118,7 +118,7 @@ Debug x64 build는 2026-08-06 `Examples.sln` 기준 경고 0개, 오류 0개로 
 | `Ex1605_SmokeCpu` | 성공 | HDRI background와 CPU smoke capture | local-only 후보 | runtime HDRI asset의 공개 위험을 별도 판단 |
 | `Ex1606_HybridWater` | 성공 | hybrid particle/grid surface capture | local visual 후보 | state 안정화와 motion evidence를 후속 검토 |
 
-## Chapter17~20 Debug x64 smoke
+## Chapter17부터 Chapter20까지 Debug x64 smoke
 
 `Examples.sln` Debug x64 build는 2026-08-07 경고 0개, 오류 0개로 확인했다. `Examples.exe`는 source root `Part4_Chapter14-20`을 working directory로 사용하고 `HLAB_CAPTURE_UI=collapsed`, `CenterWindow` 조건에서 Chapter17부터 Chapter20까지 command argument를 실행했다. build 후 vcpkg `x64-windows/debug/bin` DLL을 복구하는 runtime precondition은 Chapter16과 동일하게 적용한다.
 
@@ -131,18 +131,22 @@ Debug x64 build는 2026-08-06 `Examples.sln` 기준 경고 0개, 오류 0개로 
 | Chapter19 | `Ex1901_PhysX` | 성공 | block simulation capture | local visual 후보 | physics motion evidence를 별도 검토 |
 | Chapter20 | `Ex2001_GamePlay` | 성공 | gameplay scene capture | local visual 후보 | gameplay state와 framing을 별도 검토 |
 
-## Chapter16~20 Release x64 smoke와 storyboard 후보
+## Chapter16부터 Chapter20까지 Release x64 smoke와 storyboard
 
-`Examples.sln`은 2026-08-07 Release x64 build에서 경고 4개, 오류 0개를 기록한다. warning은 `Ex1402_BlurXGroupCacheCS.hlsl`의 signed/unsigned mismatch 2개와 FXC performance/internal warning 2개이며 Chapter16~20 source 오류는 아니다. vcpkg `x64-windows/bin` DLL 23개를 `x64/Release`에 복구한 뒤 source root working directory, `HLAB_CAPTURE_UI=collapsed`, `CenterWindow` 조건에서 command argument `1601`부터 `1606`, `1701`, `1801`부터 `1803`, `1901`, `2001`을 실행하고 local capture 12개를 확인했다.
+`Examples.sln`은 2026-08-07 Release x64 build에서 경고 4개, 오류 0개를 기록한다. warning은 `Ex1402_BlurXGroupCacheCS.hlsl`의 signed/unsigned mismatch 2개와 FXC performance/internal warning 2개이며 Chapter16부터 Chapter20까지 source 오류는 아니다. vcpkg `x64-windows/bin` DLL 23개를 `x64/Release`에 복구한 뒤 source root working directory, `HLAB_CAPTURE_UI=collapsed`, `CenterWindow` 조건에서 command argument `1601`부터 `1606`, `1701`, `1801`부터 `1803`, `1901`, `2001`을 실행하고 local capture 12개를 확인했다.
 
-`local/GraphicsVideo` 원본 MP4는 Git에 추가하지 않는다. 상세 Demo 대상으로 선택한 8개 예제는 start, middle, end preview를 `local/storyboard-candidates/Part4_Chapter16-20/20260807`에 생성했고, 검수한 timestamp storyboard PNG만 `Docs/_assets/captures`에 승격했다.
+`local/GraphicsVideo` 원본 MP4는 Git에 추가하지 않는다. Chapter16부터 Chapter20까지 모든 Example의 start, middle, end preview를 `local/storyboard-candidates/Part4_Chapter16-20/20260807`에 생성했고, 검수한 final timestamp storyboard PNG 12개를 `Docs/_assets/captures`에 승격했다.
 
 | Example | Timestamp 후보 | Storyboard 설명 | Asset 주의 |
 | --- | --- | --- | --- |
 | `Ex1601_StableFluids` | 5.200s, 13.000s, 22.100s | source injection 뒤 색 density field 변화 | [tracked storyboard](../../_assets/captures/part4_chapter16_01_stable_fluids.png) |
+| `Ex1602_CurlNoise` | 0.765s, 1.500s, 4.335s | colored curl-noise density trail 변화 | [tracked storyboard](../../_assets/captures/part4_chapter16_02_curl_noise.png) |
+| `Ex1603_Cloud` | 0.870s, 2.900s, 4.930s | procedural cloud volume 변화 | [tracked storyboard](../../_assets/captures/part4_chapter16_03_cloud.png) |
 | `Ex1604_RealtimeSmoke` | 4.025s, 13.417s, 22.808s | HDRI 배경의 source, 확산, buoyancy 변화 | [tracked storyboard](../../_assets/captures/part4_chapter16_04_realtime_smoke.png). rendered evidence만 사용하고 원본 HDRI는 직접 게시하지 않음 |
+| `Ex1605_SmokeCpu` | 1.350s, 4.500s, 7.650s | CPU density upload와 volume smoke 변화 | [tracked storyboard](../../_assets/captures/part4_chapter16_05_smoke_cpu.png). rendered evidence만 사용하고 원본 HDRI는 직접 게시하지 않음 |
 | `Ex1606_HybridWater` | 1.885s, 6.283s, 10.682s | raycasting surface와 `RenderDensity` volume 표시 비교 | [tracked storyboard](../../_assets/captures/part4_chapter16_06_hybrid_water.png). density field 시각화이며 물성 mode 전환으로 설명하지 않음 |
 | `Ex1701_SkeletalAnimation` | 0.800s, 2.500s, 4.300s | animation pose 변화 | [tracked storyboard](../../_assets/captures/part4_chapter17_01_skeletal_animation.png). 원본 character asset은 직접 게시하지 않음 |
+| `Ex1801_Tree` | 1.140s, 3.800s, 6.460s | trunk/branch와 leaves mesh group tree scene | [tracked storyboard](../../_assets/captures/part4_chapter18_01_tree.png). 원본 foliage asset은 직접 게시하지 않음 |
 | `Ex1802_Grass` | 1.190s, 3.967s, 6.743s | wind phase에 따른 instanced grass field 변화 | [tracked storyboard](../../_assets/captures/part4_chapter18_02_grass.png). rendered evidence만 사용 |
 | `Ex1803_Landscape` | 1.140s, 3.800s, 6.460s | terrain과 animated ocean surface | [tracked storyboard](../../_assets/captures/part4_chapter18_03_landscape.png). rendered evidence만 사용 |
 | `Ex1901_PhysX` | 1.415s, 4.717s, 8.018s | block wall collapse 단계 | [tracked storyboard](../../_assets/captures/part4_chapter19_01_physx.png) |

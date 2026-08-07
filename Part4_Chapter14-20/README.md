@@ -7,9 +7,9 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 ## 상태
 
 - 학습 코드 정리: import 완료
-- Build/run: Chapter14 Ex1401부터 Ex1408까지, Chapter15 Ex1501부터 Ex1503까지 Debug x64 현재 확인, Chapter16 Ex1601부터 Chapter20 Ex2001까지 Debug와 Release x64 현재 확인
-- 캡처: Chapter14 tracked capture 확보, Chapter15 Ex1501·Ex1502·Ex1503 tracked capture 확보, Chapter16부터 Chapter20까지 모든 Example의 `GraphicsVideo` storyboard PNG 12장을 tracked evidence로 승격함
-- Demo: Chapter14부터 Chapter18까지 모든 Example별 상세 Demo 정본을 작성함
+- Build/run: Chapter14 `Ex1401`부터 `Ex1408`까지, Chapter15 `Ex1501`부터 `Ex1503`까지 Debug x64 현재 확인, Chapter16 `Ex1601`부터 Chapter20 `Ex2001`까지 Debug와 Release x64 현재 확인
+- 캡처: Chapter14 tracked capture 확보, Chapter15 `Ex1501`·`Ex1502`·`Ex1503` tracked capture 확보, Chapter16부터 Chapter20까지 모든 Example의 `GraphicsVideo` storyboard PNG 12장을 tracked evidence로 승격함
+- Demo: Chapter14부터 Chapter18까지 모든 Example별 상세 Demo 정본을 작성함. Chapter19부터 Chapter20까지 상세 Demo는 후속 범위로 둠
 
 ## Archive/Public 검토
 
@@ -18,7 +18,7 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 | Source provenance | [`SRC-P4-C14-20`](../Docs/99_Legacy/source-registry.md) |
 | Import status | 반영 완료 |
 | Public readiness | 검토 필요 |
-| Build/run status | Chapter14와 Chapter15 Debug x64 현재 확인 · Chapter16부터 Chapter20까지 Debug와 Release x64 smoke 확인 · Chapter14~15 Release 재검증 필요 |
+| Build/run status | Chapter14와 Chapter15 Debug x64 현재 확인 · Chapter16부터 Chapter20까지 Debug와 Release x64 smoke 확인 · Chapter14부터 Chapter15까지 Release 재검증 필요 |
 | Next action | Chapter19부터 Chapter20까지 storyboard 상세 Demo와 Chapter14부터 Chapter15까지 Release 재검증 범위 검토 |
 
 ## 예정 주제
@@ -33,7 +33,7 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 
 ## Chapter14 Compute Shader 기준
 
-Chapter14는 compute shader의 기본 dispatch에서 structured buffer, append/consume buffer, indirect draw와 GPU sort로 확장되는 흐름이다. 현재 작업에서는 `Ex1401`-`Ex1408` Debug x64 build/run을 확인하고, `Ex1402`, `Ex1404`-`Ex1407` tracked capture와 `Ex1403`, `Ex1405`, `Ex1408` stdout evidence를 정본 문서에 연결한다.
+Chapter14는 compute shader의 기본 dispatch에서 structured buffer, append/consume buffer, indirect draw와 GPU sort로 확장되는 흐름이다. 현재 작업에서는 `Ex1401`부터 `Ex1408`까지 Debug x64 build/run을 확인하고, `Ex1402`, `Ex1404`부터 `Ex1407`까지 tracked capture와 `Ex1403`, `Ex1405`, `Ex1408` stdout evidence를 정본 문서에 연결한다.
 
 | Example | Command argument | 핵심 개념 | Evidence 후보 | 비고 |
 | --- | --- | --- | --- | --- |
