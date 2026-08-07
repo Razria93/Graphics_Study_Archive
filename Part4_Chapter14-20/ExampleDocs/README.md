@@ -11,6 +11,8 @@
 
 ## 현재 문서
 
+`Ex1401`부터 `Ex2001`까지 23개 ExampleDocs를 완료한다. 각 문서는 command argument, source 또는 shader anchor, 관련 Topic, Verification, 상세 Demo와 capture/result 경계를 연결한다.
+
 | Chapter | ExampleDocs | 상태 |
 | --- | --- | --- |
 | Chapter14 (1-4) | [Ex1401 Basic](14_01_Basic.md), [Ex1402 Blur](14_02_Blur.md), [Ex1403 MatVecMult](14_03_MatVecMult.md), [Ex1404 StructuredBuffer](14_04_StructuredBuffer.md) | 완료 |

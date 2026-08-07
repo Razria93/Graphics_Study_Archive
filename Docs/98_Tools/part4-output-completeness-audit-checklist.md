@@ -108,18 +108,18 @@ Topic은 모든 Example에 하나씩 만드는 문서가 아니다. 여러 Examp
 - Demo, Topic, GitHub, Markdown render/table/wrap validator 결과를 감사 기준선과 종료 시점에 같은 조건으로 기록한다.
 - validator 통과와 의미적 완결성을 구분하고, 책임 중복, Topic 부재 사유, snapshot 시점 차이는 수동 판정으로 남긴다.
 
-## Part4 우선 확인 항목
+## Part4 이력 기반 확인 항목
 
-아래 항목은 현재 inventory에서 이미 확인할 수 있는 감사 출발점이다. 감사 전에는 해결로 간주하지 않는다.
+아래 항목은 ExampleDocs 도입 전 inventory에서 발견한 우선 검토 이력이다. 현재 감사에서는 해결을 가정하지 않고 현재 정본과 다시 대조한다.
 
 | ID | 우선 항목 | 현재 관찰 | 감사 판정 기준 |
 | --- | --- | --- | --- |
-| P4-COMP-001 | Topic 실체 | Compute And Simulation topic-index의 모든 항목이 `예정`이며 상세 Topic이 없음 | 우선순위, 보류 사유, 상세 Topic 승격 계획 또는 의도적 제외가 정본에 있는지 확인 |
-| P4-COMP-002 | Animation/foliage Topic routing | Part4 README에는 주제 후보가 있으나 group별 정본 연결이 완결되지 않음 | 적절한 Topic group, index, Example/Demo 링크 또는 부재 사유를 확인 |
-| P4-COMP-003 | Chapter19와 Chapter20 상세 Demo | Demo index가 `후속`으로 표시하고 상세 Demo 파일이 없음 | `Ex1901`, `Ex2001` 독립 상세 Demo와 index/verification/asset 연결을 확인 |
-| P4-COMP-004 | Demo index 최신성 | Chapter16부터 Chapter20까지 storyboard 확보 상태와 “대표 storyboard” 및 후속 문구가 섞여 있음 | 23개 상세 Demo, 12개 storyboard, stdout-only 또는 제외 상태를 현재 상태로 분리하는지 확인 |
-| P4-COMP-005 | WorkLog 최신성 | WU-Part4의 8개 storyboard 후보 기록과 이후 12개 final storyboard, 상세 Demo 확장이 시점상 분리됨 | historical snapshot인지, 최신 산출물과 충돌하는 현재 주장인지 판정 |
-| P4-COMP-006 | README 완료 주장 | Chapter README의 Demo/next action과 실제 Chapter19와 Chapter20 상세 Demo 부재가 함께 존재함 | 완료 문구, 다음 작업, 정본 링크가 같은 현재 상태를 설명하는지 확인 |
+| P4-COMP-001 | Topic 실체 | 상세 Topic 정본을 작성함 | Topic이 current state와 관련 Example을 정확히 가리키는지 확인 |
+| P4-COMP-002 | Animation/foliage Topic routing | Animation, physics, foliage와 landscape Topic을 연결함 | group README, index, ExampleDocs와 Demo link가 유지되는지 확인 |
+| P4-COMP-003 | Chapter19와 Chapter20 상세 Demo | `Ex1901`, `Ex2001` 상세 Demo와 ExampleDocs를 작성함 | Demo, Verification, asset link가 현재 정본과 일치하는지 확인 |
+| P4-COMP-004 | Demo index 최신성 | 23개 상세 Demo와 12개 storyboard 상태를 분리함 | stdout-only, representative visual과 follow-up 문구를 재확인 |
+| P4-COMP-005 | WorkLog 최신성 | 초기 storyboard 후보는 historical snapshot으로 분리함 | 최신 정본을 현재 사실로 복제하지 않는지 판정 |
+| P4-COMP-006 | README 완료 주장 | Chapter README의 Demo와 23개 ExampleDocs 상태를 정합화함 | 완료 문구, 다음 작업과 정본 link가 같은 상태를 설명하는지 확인 |
 
 ## 감사 실행 순서
 
