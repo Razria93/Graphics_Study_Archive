@@ -24,7 +24,7 @@
 | `WU-Part1` | comment-ready (`Docs/07_GitHub/plan/comments/phase-2-1-plan-comment.md`) | 제외 | `Docs/07_GitHub/prs/part1_chapter01-02.md` (ready) | [WU-Part1](active/WU-Part1.md) | WU-Part1의 일부 범위인 Chapter01-02 완료 기록이다. WU-Part1 전체 완료가 아니다. |
 | `WU-Part2` | 예정 | 기본 제외 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
 | `WU-Part3` | 예정 | 기본 제외 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
-| `WU-Part4` | posted (Phase 5-1, Phase 5-2) | 기본 제외 | PR #30, PR #32 (merged) | [WU-Part4](work-units/WU-Part4.md) | Chapter14와 Chapter15 GitHub 작업을 마감했다. Chapter16부터 Chapter20까지는 별도 승인 범위로 둔다. |
+| `WU-Part4` | posted (Phase 5-1, Phase 5-2, Phase 5-3) | 기본 제외 | PR #30, PR #32 (merged), PR #38 (draft) | [WU-Part4](work-units/WU-Part4.md) | Chapter14와 Chapter15 GitHub 작업을 마감했다. Chapter16부터 Chapter20까지 Draft PR을 생성했다. |
 | `WU-Publication` | 예정 | 기본 제외 | 예정 | 없음 | 별도 승인 범위가 생기면 선택 Issue를 생성한다. |
 | `WU-StructureCleanup` | 제외 | 제외 | PR #6 (posted) | [WU-StructureCleanup](completed/WU-StructureCleanup.md) | 정책 도입 이전 구조 정리 PR이라 완료 댓글을 예외로 둔다. |
 

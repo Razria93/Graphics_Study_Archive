@@ -80,5 +80,5 @@ Chapter16 대표 visual은 particle-to-grid density field와 signed-distance ray
 
 ## 다음 단계
 
-- Progress Issue Phase 5-3 comment를 반영하고 Draft PR을 생성한다.
-- Draft PR 생성 뒤 Ready for Review, review 대응, merge는 별도 승인 단계를 유지한다.
+- Draft PR #38의 Docs Validation 결과를 확인한다.
+- Ready for Review, review 대응, merge는 별도 승인 단계를 유지한다.
