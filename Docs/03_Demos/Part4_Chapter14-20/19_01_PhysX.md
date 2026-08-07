@@ -59,7 +59,7 @@ Storyboard는 static ground와 block stack이 gravity와 collision에 따라 col
 
 ## 관련 코드
 
-- [Part4 Chapter14-20 README](../../../Part4_Chapter14-20/README.md)
+- [ExampleDocs](../../../Part4_Chapter14-20/ExampleDocs/19_01_PhysX.md)
 - [Example selection entry point](../../../Part4_Chapter14-20/main.cpp)
 
 ## 관련 문서

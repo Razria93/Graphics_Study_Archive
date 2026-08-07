@@ -62,7 +62,7 @@ Storyboard는 heightmap terrain 위에 표시된 ocean surface가 `globalTime` w
 
 ## 관련 코드
 
-- [Part4 Chapter14-20 README](../../../Part4_Chapter14-20/README.md)
+- [ExampleDocs](../../../Part4_Chapter14-20/ExampleDocs/18_03_Landscape.md)
 - [Example selection entry point](../../../Part4_Chapter14-20/main.cpp)
 
 ## 관련 문서

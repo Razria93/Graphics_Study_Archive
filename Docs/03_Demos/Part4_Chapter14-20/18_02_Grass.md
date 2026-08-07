@@ -60,7 +60,7 @@ Storyboard는 같은 grass field가 `globalTime`에 따른 wave phase와 instanc
 
 ## 관련 코드
 
-- [Part4 Chapter14-20 README](../../../Part4_Chapter14-20/README.md)
+- [ExampleDocs](../../../Part4_Chapter14-20/ExampleDocs/18_02_Grass.md)
 - [Example selection entry point](../../../Part4_Chapter14-20/main.cpp)
 
 ## 관련 문서
