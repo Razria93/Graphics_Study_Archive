@@ -6,6 +6,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+. (Join-Path $PSScriptRoot "github-visual-rules.ps1")
+
 $Failures = New-Object System.Collections.Generic.List[string]
 $Warnings = New-Object System.Collections.Generic.List[string]
 
@@ -206,6 +208,10 @@ function Validate-DemoIssue {
 
     if ($content -notmatch '!\[[^\]]+\]\(https://github\.com/.+\?raw=true\)') {
         Add-Failure $relative "visual section should include GitHub absolute image URLs"
+    }
+
+    if (Test-GitHubStandaloneVideoAttachment -Content $content) {
+        Add-Failure $relative "Demo Issue must link a dedicated video comment instead of embedding a standalone video attachment"
     }
 }
 
