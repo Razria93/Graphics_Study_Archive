@@ -66,4 +66,5 @@ Storyboard는 같은 grass field가 `globalTime`에 따른 wave phase와 instanc
 ## 관련 문서
 
 - [Demo Index](demo-index.md)
+- [Foliage Terrain And Ocean Rendering](../../01_Topics/FoliageAndLandscape/FoliageTerrainAndOceanRendering.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)

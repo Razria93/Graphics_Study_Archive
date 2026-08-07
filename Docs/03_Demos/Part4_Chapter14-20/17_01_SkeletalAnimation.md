@@ -66,4 +66,5 @@ Storyboard는 동일 character mesh가 frame별 bone transform에 따라 다른 
 ## 관련 문서
 
 - [Demo Index](demo-index.md)
+- [Animation Physics And Gameplay Integration](../../01_Topics/AnimationAndPhysics/AnimationPhysicsAndGameplayIntegration.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)

@@ -63,5 +63,5 @@ Particle sourcing과 density dissipation이 만든 colored trail을 확인한다
 ## 관련 문서
 
 - [Demo Index](demo-index.md)
-- [Compute And Simulation Topic Index](../../01_Topics/ComputeAndSimulation/topic-index.md)
+- [Compute Shader And Resource Flow](../../01_Topics/ComputeAndSimulation/ComputeShaderAndResourceFlow.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)

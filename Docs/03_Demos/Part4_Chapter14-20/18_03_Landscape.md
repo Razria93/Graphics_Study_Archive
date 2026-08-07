@@ -68,4 +68,5 @@ Storyboard는 heightmap terrain 위에 표시된 ocean surface가 `globalTime` w
 ## 관련 문서
 
 - [Demo Index](demo-index.md)
+- [Foliage Terrain And Ocean Rendering](../../01_Topics/FoliageAndLandscape/FoliageTerrainAndOceanRendering.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)

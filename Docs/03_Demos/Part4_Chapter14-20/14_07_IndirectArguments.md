@@ -62,5 +62,5 @@ Visual은 `Ex1406` 계열 density trail과 유사하므로, indirect draw 여부
 ## 관련 문서
 
 - [Demo Index](demo-index.md)
-- [Compute And Simulation Topic Index](../../01_Topics/ComputeAndSimulation/topic-index.md)
+- [Compute Shader And Resource Flow](../../01_Topics/ComputeAndSimulation/ComputeShaderAndResourceFlow.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)

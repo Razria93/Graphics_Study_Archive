@@ -64,5 +64,5 @@ Storyboard는 source injection 뒤 color density가 주변 field로 퍼지고 �
 ## 관련 문서
 
 - [Demo Index](demo-index.md)
-- [Compute And Simulation Topic Index](../../01_Topics/ComputeAndSimulation/topic-index.md)
+- [GPU Particle And Fluid Simulation](../../01_Topics/ComputeAndSimulation/GpuParticleAndFluidSimulation.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)

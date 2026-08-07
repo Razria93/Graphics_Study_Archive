@@ -66,5 +66,5 @@ CPU-side fluid simulation이 계산한 3D density grid를 Texture3D로 업로드
 ## 관련 문서
 
 - [Demo Index](demo-index.md)
-- [Compute And Simulation Topic Index](../../01_Topics/ComputeAndSimulation/topic-index.md)
+- [GPU Particle And Fluid Simulation](../../01_Topics/ComputeAndSimulation/GpuParticleAndFluidSimulation.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)

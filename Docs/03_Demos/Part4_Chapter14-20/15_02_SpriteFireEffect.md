@@ -65,5 +65,5 @@ Textured particle sprite와 buoyancy update를 결합해 fire-like particle effe
 ## 관련 문서
 
 - [Demo Index](demo-index.md)
-- [Compute And Simulation Topic Index](../../01_Topics/ComputeAndSimulation/topic-index.md)
+- [GPU Particle And Fluid Simulation](../../01_Topics/ComputeAndSimulation/GpuParticleAndFluidSimulation.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)

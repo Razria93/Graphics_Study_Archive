@@ -59,5 +59,5 @@ Back buffer UAV를 compute shader 출력 대상으로 사용하는 Chapter14의 
 ## 관련 문서
 
 - [Demo Index](demo-index.md)
-- [Compute And Simulation Topic Index](../../01_Topics/ComputeAndSimulation/topic-index.md)
+- [Compute Shader And Resource Flow](../../01_Topics/ComputeAndSimulation/ComputeShaderAndResourceFlow.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)
