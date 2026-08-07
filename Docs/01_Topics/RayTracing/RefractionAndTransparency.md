@@ -8,7 +8,7 @@ Ray가 서로 다른 refractive index를 가진 매질 경계를 통과할 때 �
 
 - Snell’s law, IOR ratio, enter/exit normal 전환, total internal reflection과 transparency weight의 일반 개념을 다룬다.
 - Reflection vector와 reflected secondary ray는 [Recursive Reflection](RecursiveReflection.md)으로 위임한다.
-- Step13의 scene, 함수 구조와 DirectX11 표시 경로는 [Step13 Example README](../../../Part1_Chapter03/03_Raytracing_Step13_Transparency/README.md)와 [상세 Demo](../../03_Demos/Part1_Chapter03/13_Transparency.md)로 위임한다.
+- Step13의 scene, 함수 구조와 DirectX11 표시 경로는 [Step13 Example README](../../../Part1_Chapter03/03_Raytracing_Step13_Transparency/README.md)와 [상세 Demo](../../03_Demos/Part1_Chapter03/03_13_Transparency.md)로 위임한다.
 - 실제 build/run/capture 상태는 [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)로 위임한다.
 
 ## 핵심 개념
@@ -44,7 +44,7 @@ Refracted ray는 object 내부에서 exit surface를 다시 만나고 이후 다
 
 - Example: [Step13 Transparency README](../../../Part1_Chapter03/03_Raytracing_Step13_Transparency/README.md)
 - Verification: [`Docs/02_Verification/Part1_Chapter03/verification-index.md`](../../02_Verification/Part1_Chapter03/verification-index.md)
-- Demo: [`Docs/03_Demos/Part1_Chapter03/13_Transparency.md`](../../03_Demos/Part1_Chapter03/13_Transparency.md)
+- Demo: [`Docs/03_Demos/Part1_Chapter03/03_13_Transparency.md`](../../03_Demos/Part1_Chapter03/03_13_Transparency.md)
 - Related Topic: [Recursive Reflection](RecursiveReflection.md)
 - Related Topic: [Ray](Ray.md)
 - Related Topic: [Intersection](Intersection.md)

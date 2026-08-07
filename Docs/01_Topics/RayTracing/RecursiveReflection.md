@@ -7,7 +7,7 @@ Surface hit에서 reflected direction을 계산하고 secondary ray를 재귀 �
 ## 책임 범위
 
 - Reflection vector, recursive secondary ray, depth termination, origin bias와 color weight의 일반 개념을 다룬다.
-- Step12의 scene, 함수 구조와 DirectX11 표시 경로는 [Step12 Example README](../../../Part1_Chapter03/03_Raytracing_Step12_Reflection/README.md)와 [상세 Demo](../../03_Demos/Part1_Chapter03/12_Reflection.md)로 위임한다.
+- Step12의 scene, 함수 구조와 DirectX11 표시 경로는 [Step12 Example README](../../../Part1_Chapter03/03_Raytracing_Step12_Reflection/README.md)와 [상세 Demo](../../03_Demos/Part1_Chapter03/03_12_Reflection.md)로 위임한다.
 - Phong specular highlight에 사용하는 light reflection vector는 [Phong Shading](../LightingAndShading/PhongShading.md)으로 위임한다.
 - 실제 build/run/capture 상태는 [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)로 위임한다.
 
@@ -40,7 +40,7 @@ Material reflection weight를 `k`라고 하면 단순한 결합은 `local × (1 
 
 - Example: [Step12 Reflection README](../../../Part1_Chapter03/03_Raytracing_Step12_Reflection/README.md)
 - Verification: [`Docs/02_Verification/Part1_Chapter03/verification-index.md`](../../02_Verification/Part1_Chapter03/verification-index.md)
-- Demo: [`Docs/03_Demos/Part1_Chapter03/12_Reflection.md`](../../03_Demos/Part1_Chapter03/12_Reflection.md)
+- Demo: [`Docs/03_Demos/Part1_Chapter03/03_12_Reflection.md`](../../03_Demos/Part1_Chapter03/03_12_Reflection.md)
 - Related Topic: [Ray](Ray.md)
 - Related Topic: [Intersection](Intersection.md)
 - Related Topic: [Phong Shading](../LightingAndShading/PhongShading.md)

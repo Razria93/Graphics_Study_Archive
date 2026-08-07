@@ -33,7 +33,7 @@
 
 Step6는 z=0 image plane과 `(0, 0, -1.5)` eye 위치를 사용한다. 각 pixel을 image-plane position으로 변환하고 eye에서 그 위치로 향하는 direction을 normalize한다. 실제 primary ray origin은 eye가 아니라 image-plane position이므로 z=0 앞쪽 구간부터 교차를 검사한다.
 
-Scene은 깊이와 위치가 다른 red, green, blue sphere 세 개로 구성한다. 모든 object의 양수 hit를 검사해 가장 작은 거리를 선택하고, 선택한 object의 material로 Step5의 ambient, diffuse와 specular shading을 계산한다. 상세 처리 흐름과 의사코드는 [Step6 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/06_PerspectiveView.md)에서 확인한다.
+Scene은 깊이와 위치가 다른 red, green, blue sphere 세 개로 구성한다. 모든 object의 양수 hit를 검사해 가장 작은 거리를 선택하고, 선택한 object의 material로 Step5의 ambient, diffuse와 specular shading을 계산한다. 상세 처리 흐름과 의사코드는 [Step6 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_06_PerspectiveView.md)에서 확인한다.
 
 ## Build And Run
 
@@ -66,5 +66,5 @@ Scene은 깊이와 위치가 다른 red, green, blue sphere 세 개로 구성한
 - [Intersection Topic](../../Docs/01_Topics/RayTracing/Intersection.md)
 - [Phong Shading Topic](../../Docs/01_Topics/LightingAndShading/PhongShading.md)
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
-- [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/06_PerspectiveView.md)
+- [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/03_06_PerspectiveView.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)

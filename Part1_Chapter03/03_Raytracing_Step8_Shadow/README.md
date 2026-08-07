@@ -36,7 +36,7 @@
 
 Step8은 red sphere와 두 child triangle을 묶은 `Square` 바닥을 배치한다. Square는 child intersection 가운데 가까운 hit의 distance, point와 normal을 반환한다. Scene closest-hit는 parent Square를 `hit.obj`에 연결하므로 바닥 전체가 Square에 설정한 material을 사용한다.
 
-Primary ray가 가장 가까운 surface를 찾으면 hit point를 normal 방향으로 `1e-4`만큼 이동한 뒤 point light 방향으로 shadow ray를 보낸다. Shadow ray의 가장 가까운 hit가 light까지의 거리보다 짧으면 blocker가 있다고 판단한다. 가려진 surface는 ambient만 반환하고, visible surface는 기존 diffuse와 specular 계산을 이어간다. 실제 composite primitive와 visibility 흐름은 [Step8 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/08_Shadow.md)에서 확인한다.
+Primary ray가 가장 가까운 surface를 찾으면 hit point를 normal 방향으로 `1e-4`만큼 이동한 뒤 point light 방향으로 shadow ray를 보낸다. Shadow ray의 가장 가까운 hit가 light까지의 거리보다 짧으면 blocker가 있다고 판단한다. 가려진 surface는 ambient만 반환하고, visible surface는 기존 diffuse와 specular 계산을 이어간다. 실제 composite primitive와 visibility 흐름은 [Step8 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_08_Shadow.md)에서 확인한다.
 
 ## Build And Run
 
@@ -72,5 +72,5 @@ Primary ray가 가장 가까운 surface를 찾으면 hit point를 normal 방향�
 - [Intersection Topic](../../Docs/01_Topics/RayTracing/Intersection.md)
 - [Phong Shading Topic](../../Docs/01_Topics/LightingAndShading/PhongShading.md)
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
-- [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/08_Shadow.md)
+- [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/03_08_Shadow.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)

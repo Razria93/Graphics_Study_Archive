@@ -56,7 +56,7 @@ Step9 Demo의 triangle 세 꼭짓점은 red, green, blue에 대응한다. Step10
 - Example: [Step9 Barycentric Coordinates README](../../../Part1_Chapter03/03_Raytracing_Step9_BarycentricCordinates/README.md)
 - Example: [Step10 Texturing README](../../../Part1_Chapter03/03_Raytracing_Step10_Texturing/README.md)
 - Verification: [`Docs/02_Verification/Part1_Chapter03/verification-index.md`](../../02_Verification/Part1_Chapter03/verification-index.md)
-- Demo: [`Docs/03_Demos/Part1_Chapter03/09_BarycentricCoordinates.md`](../../03_Demos/Part1_Chapter03/09_BarycentricCoordinates.md)
+- Demo: [`Docs/03_Demos/Part1_Chapter03/03_09_BarycentricCoordinates.md`](../../03_Demos/Part1_Chapter03/03_09_BarycentricCoordinates.md)
 - Related Topic: [Intersection](Intersection.md)
 - Related Topic: [Ray](Ray.md)
 - Related Topic: [Texture Sampling](../TexturingAndMapping/TextureSampling.md)

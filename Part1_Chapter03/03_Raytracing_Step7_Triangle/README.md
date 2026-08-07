@@ -34,7 +34,7 @@
 
 Step7은 Step6의 perspective primary ray와 closest-hit 탐색을 유지하면서 red sphere 하나와 gray triangle 하나를 같은 object 목록에 둔다. Triangle은 vertex winding으로 face normal을 만들고 back face를 제거한 뒤 ray-plane 교차점이 세 directed edge의 안쪽에 있는지 검사한다.
 
-현재 triangle의 vertex 순서는 camera를 향하는 `-Z` normal을 만든다. Triangle은 전체 면에서 하나의 normal을 사용하고 sphere는 hit 위치별 radial normal을 사용하므로 같은 Phong 계산에서도 서로 다른 shading 형태가 나타난다. 실제 장면 구성과 교차 단계는 [Step7 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/07_Triangle.md)에서 확인한다.
+현재 triangle의 vertex 순서는 camera를 향하는 `-Z` normal을 만든다. Triangle은 전체 면에서 하나의 normal을 사용하고 sphere는 hit 위치별 radial normal을 사용하므로 같은 Phong 계산에서도 서로 다른 shading 형태가 나타난다. 실제 장면 구성과 교차 단계는 [Step7 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_07_Triangle.md)에서 확인한다.
 
 ## Build And Run
 
@@ -69,5 +69,5 @@ Step7은 Step6의 perspective primary ray와 closest-hit 탐색을 유지하면�
 - [Intersection Topic](../../Docs/01_Topics/RayTracing/Intersection.md)
 - [Phong Shading Topic](../../Docs/01_Topics/LightingAndShading/PhongShading.md)
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
-- [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/07_Triangle.md)
+- [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/03_07_Triangle.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)

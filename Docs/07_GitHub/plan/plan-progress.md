@@ -8,7 +8,7 @@ Graphics Study Archive의 Part/Chapter 진행 상태를 누적 기록한다. 상
 
 Docs 구조를 Topic, Verification, Demo, WorkLog, Publication, GitHub body 축으로 재정렬했다. Legacy 문서와 Legacy PartDocs가 최신 정본이 아님을 명시하고, 새 문서화 workflow가 참조할 정책과 템플릿을 정리했다.
 
-Related PR: 예정
+Related PR: [PR #6](https://github.com/Razria93/Graphics_Study_Archive/pull/6) (Merged) - 문서 산출물 축 구조 정리
 
 ### Phase 2-1. Part1 Chapter01-02 문서화 workflow 검증
 
@@ -20,7 +20,7 @@ Related PR: [PR #8](https://github.com/Razria93/Graphics_Study_Archive/pull/8) (
 
 Progress Issue, 누적 진행 댓글, Chapter/Bundle 완료 댓글, Chapter PR의 기본 게시 객체를 기준으로 Part1 pilot 본문 구성을 정리했다.
 
-Related PR: 예정 - GitHub 게시 workflow 보완 PR
+Related PR: [PR #10](https://github.com/Razria93/Graphics_Study_Archive/pull/10) (Merged) - Part1 pilot GitHub 본문과 원격 상태 동기화
 
 ### Phase 2-3. Part1 Chapter01-02 PR 마감
 
@@ -42,13 +42,13 @@ Related PR: [PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15)
 
 ### Phase 3-2. Part2 Chapter05-08
 
-Chapter05부터 Chapter08까지의 30개 예제를 순서대로 재검증하고 Example README, Topic, Verification과 독립 상세 Demo로 연결했다. Chapter05는 affine transformation API 비교, Chapter06은 DirectX11 pipeline, lighting, resize, Chapter07은 procedural modeling과 SphereMapping 흐름으로 정리했다. 공개 안전한 대표 visual을 Chapter05 [Demo Issue #17](https://github.com/Razria93/Graphics_Study_Archive/issues/17), Chapter06 [Demo Issue #18](https://github.com/Razria93/Graphics_Study_Archive/issues/18), Chapter07 [Demo Issue #19](https://github.com/Razria93/Graphics_Study_Archive/issues/19)에 게시하고, 외부 asset 권리 근거가 충분하지 않은 Chapter08은 archive 검증 상태로 유지한다.
+Chapter05부터 Chapter08까지의 30개 예제를 순서대로 재검증하고 Example README, Topic, Verification과 독립 상세 Demo로 연결했다. Chapter05는 affine transformation API 비교, Chapter06은 DirectX11 pipeline, lighting, resize, Chapter07은 procedural modeling과 SphereMapping 흐름으로 정리했다. 공개 안전한 대표 visual을 Chapter05 [Demo Issue #17](https://github.com/Razria93/Graphics_Study_Archive/issues/17), Chapter06 [Demo Issue #18](https://github.com/Razria93/Graphics_Study_Archive/issues/18), Chapter07 [Demo Issue #19](https://github.com/Razria93/Graphics_Study_Archive/issues/19)에 게시했다. Chapter08은 원본 runtime asset을 비공개로 유지하고 승인된 rendered evidence를 [Demo Issue #22](https://github.com/Razria93/Graphics_Study_Archive/issues/22)에 게시했다.
 
 Related PR: [PR #20](https://github.com/Razria93/Graphics_Study_Archive/pull/20) (Merged) - Part2 Chapter05-08 DirectX11 Pipeline, Modeling, Shader 예제 정규화와 Demo
 
 ### Phase 4-1. Part3 Chapter09 User Interaction
 
-Step1부터 Step6까지의 camera, GPU, CPU picking, quaternion rotation, VirtualTrackball과 MouseDragMove를 재검증하고 정적 storyboard와 상세 Demo로 연결했다. 대표 interaction은 [Demo Issue #21](https://github.com/Razria93/Graphics_Study_Archive/issues/21)에 게시했다.
+Step1부터 Step6까지의 camera, GPU, CPU picking, quaternion rotation, VirtualTrackball과 MouseDragMove를 재검증하고 정적 storyboard와 상세 Demo로 연결했다. 대표 interaction은 [Demo Issue #21](https://github.com/Razria93/Graphics_Study_Archive/issues/21)에 게시하고 Step5 selected video는 [전용 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/21#issuecomment-5164633305)로 분리했다.
 
 Related PR: [PR #23](https://github.com/Razria93/Graphics_Study_Archive/pull/23) (Merged) - Part3 Chapter09 User Interaction 구현과 Demo
 
@@ -92,7 +92,9 @@ Related PR: 예정
 
 ## Related PRs
 
+- [PR #6](https://github.com/Razria93/Graphics_Study_Archive/pull/6) (Merged): 문서 산출물 축 구조 정리
 - [PR #8](https://github.com/Razria93/Graphics_Study_Archive/pull/8) (Merged): Part1 Chapter01-02 DirectX11 Initialization and CPU Bloom
+- [PR #10](https://github.com/Razria93/Graphics_Study_Archive/pull/10) (Merged): Part1 pilot GitHub 본문과 원격 상태 동기화
 - [PR #11](https://github.com/Razria93/Graphics_Study_Archive/pull/11) (Merged): Part1 Chapter03 CPU Ray Tracing 단계별 구현과 Demo
 - [PR #15](https://github.com/Razria93/Graphics_Study_Archive/pull/15) (Merged): Part2 Chapter04 CPU Software Rasterization 단계별 정규화와 Demo
 - [PR #20](https://github.com/Razria93/Graphics_Study_Archive/pull/20) (Merged): Part2 Chapter05-08 DirectX11 Pipeline, Modeling, Shader 예제 정규화와 Demo

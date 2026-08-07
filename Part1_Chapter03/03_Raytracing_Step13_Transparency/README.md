@@ -32,7 +32,7 @@
 
 `TraceRefraction`은 `dot(ray.dir, hit.normal)`의 부호로 ray의 진입과 이탈을 구분한다. 진입할 때는 outward normal과 `1 / 1.5`, 이탈할 때는 반전 normal과 `1.5`를 `glm::refract`에 전달한다. 반환 방향이 zero vector이면 total internal reflection으로 보고 reflection path를 사용한다.
 
-Transparent sphere의 transparency는 1.0이고 reflection은 0이므로 local Phong weight는 0이며 refracted result만 사용한다. Miss와 depth 종료는 black을 반환하지만 z=10의 textured Square가 scene background 역할을 한다. 세부 구현과 시각 결과는 [Step13 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/13_Transparency.md)에서 확인한다.
+Transparent sphere의 transparency는 1.0이고 reflection은 0이므로 local Phong weight는 0이며 refracted result만 사용한다. Miss와 depth 종료는 black을 반환하지만 z=10의 textured Square가 scene background 역할을 한다. 세부 구현과 시각 결과는 [Step13 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_13_Transparency.md)에서 확인한다.
 
 ## Build And Run
 
@@ -69,5 +69,5 @@ Sphere 내부에서 background의 수평선과 구름, 수면 반사가 확대�
 - [Recursive Reflection Topic](../../Docs/01_Topics/RayTracing/RecursiveReflection.md)
 - [Texture Sampling Topic](../../Docs/01_Topics/TexturingAndMapping/TextureSampling.md)
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
-- [Step13 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/13_Transparency.md)
+- [Step13 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_13_Transparency.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)

@@ -32,7 +32,7 @@
 
 `traceRay`는 closest positive hit를 찾고 local Phong color에 `1 - reflection - transparency` weight를 적용한다. Reflection weight가 양수이면 incoming ray의 진행 방향을 surface normal에 대해 반사하고, hit point에서 반사 방향으로 `1e-4` 이동한 secondary ray를 재귀 추적한다. 반사 sphere는 local color와 reflected color를 각각 0.5 weight로 합성한다.
 
-재귀는 depth 5에서 시작해 `depth < 0`에서 black을 반환한다. Miss도 black이며 environment map은 사용하지 않는다. 세부 구현과 시각 결과는 [Step12 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/12_Reflection.md)에서 확인한다.
+재귀는 depth 5에서 시작해 `depth < 0`에서 black을 반환한다. Miss도 black이며 environment map은 사용하지 않는다. 세부 구현과 시각 결과는 [Step12 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_12_Reflection.md)에서 확인한다.
 
 ## Build And Run
 
@@ -67,5 +67,5 @@ Red sphere의 아래쪽에는 석재 ground가 반사되고 오른쪽에는 blue
 - [Phong Shading Topic](../../Docs/01_Topics/LightingAndShading/PhongShading.md)
 - [Texture Sampling Topic](../../Docs/01_Topics/TexturingAndMapping/TextureSampling.md)
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
-- [Step12 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/12_Reflection.md)
+- [Step12 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_12_Reflection.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)

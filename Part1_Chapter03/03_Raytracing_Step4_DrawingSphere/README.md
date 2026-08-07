@@ -31,7 +31,7 @@
 
 `Raytracer::Render()`는 1280×720 pixel을 camera plane 좌표로 변환하고 `(0, 0, 1)` 방향의 orthographic ray를 만든다. `Sphere::CheckRayCollision()`은 quadratic discriminant와 두 root를 계산해 가장 가까운 양수 hit를 선택한다.
 
-CPU에서 만든 결과는 `D3D11_USAGE_DYNAMIC` texture에 매 frame 복사한다. HLSL은 ray tracing을 수행하지 않고 업로드된 texture를 화면에 표시한다. 처리 단계와 의사코드는 [Step4 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/04_DrawingSphere.md)에서 확인한다.
+CPU에서 만든 결과는 `D3D11_USAGE_DYNAMIC` texture에 매 frame 복사한다. HLSL은 ray tracing을 수행하지 않고 업로드된 texture를 화면에 표시한다. 처리 단계와 의사코드는 [Step4 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_04_DrawingSphere.md)에서 확인한다.
 
 ## Build And Run
 
@@ -46,7 +46,7 @@ CPU에서 만든 결과는 `D3D11_USAGE_DYNAMIC` texture에 매 frame 복사한�
 
 ![Step4 DrawingSphere result](../../Docs/_assets/captures/part1_chapter03_04_drawing-sphere.png)
 
-화면에는 검은 배경과 hit distance 기반으로 밝기가 달라지는 sphere가 나타난다. ImGui에서 center, radius와 RGB 값을 바꾸면 다음 CPU render 결과에 반영된다. 기본값과 파라미터 조정 결과의 비교는 [Step4 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/04_DrawingSphere.md)에서 확인한다.
+화면에는 검은 배경과 hit distance 기반으로 밝기가 달라지는 sphere가 나타난다. ImGui에서 center, radius와 RGB 값을 바꾸면 다음 CPU render 결과에 반영된다. 기본값과 파라미터 조정 결과의 비교는 [Step4 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_04_DrawingSphere.md)에서 확인한다.
 
 ## Limitations
 
@@ -61,5 +61,5 @@ CPU에서 만든 결과는 `D3D11_USAGE_DYNAMIC` texture에 매 frame 복사한�
 - [Ray Topic](../../Docs/01_Topics/RayTracing/Ray.md)
 - [Intersection Topic](../../Docs/01_Topics/RayTracing/Intersection.md)
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
-- [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/04_DrawingSphere.md)
+- [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/03_04_DrawingSphere.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)

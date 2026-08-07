@@ -58,7 +58,7 @@ GPU cubemap resource는 direction을 직접 받아 face 경계를 처리할 수 
 - Example: [Chapter08 Step3 EnvironmentMapping README](../../../Part2_Chapter05-08/08_ShaderToys_Step3_EnvironmentMapping/README.md)
 - Verification: [`Docs/02_Verification/Part1_Chapter03/verification-index.md`](../../02_Verification/Part1_Chapter03/verification-index.md)
 - Verification: [`Docs/02_Verification/Part2_Chapter05-08/verification-index.md`](../../02_Verification/Part2_Chapter05-08/verification-index.md)
-- Demo: [`Docs/03_Demos/Part1_Chapter03/14_CubeEnvironment.md`](../../03_Demos/Part1_Chapter03/14_CubeEnvironment.md)
+- Demo: [`Docs/03_Demos/Part1_Chapter03/03_14_CubeEnvironment.md`](../../03_Demos/Part1_Chapter03/03_14_CubeEnvironment.md)
 - Demo: [`Docs/03_Demos/Part2_Chapter05-08/08_02_Cubemapping.md`](../../03_Demos/Part2_Chapter05-08/08_02_Cubemapping.md)
 - Demo: [`Docs/03_Demos/Part2_Chapter05-08/08_03_EnvironmentMapping.md`](../../03_Demos/Part2_Chapter05-08/08_03_EnvironmentMapping.md)
 - Related Topic: [Texture Sampling](TextureSampling.md)

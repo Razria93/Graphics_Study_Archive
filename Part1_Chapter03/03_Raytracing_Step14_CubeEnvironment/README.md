@@ -31,7 +31,7 @@
 
 `Render`는 1280×720 screen point를 z=0 plane으로 옮기고 `(0, 0, -1.5)` eye에서 향하는 normalized ray를 만든다. `SampleEnvironment`는 ray direction의 절댓값이 가장 큰 axis로 cubemap face를 선택하고, 나머지 두 성분을 face UV로 변환한다.
 
-선택한 face는 CPU에서 bilinear sampling한다. 결과는 RGBA32F dynamic texture에 row별로 복사하고 full-screen quad로 표시한다. 세부 구현과 시각 결과는 [Step14 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/14_CubeEnvironment.md)에서 확인한다.
+선택한 face는 CPU에서 bilinear sampling한다. 결과는 RGBA32F dynamic texture에 row별로 복사하고 full-screen quad로 표시한다. 세부 구현과 시각 결과는 [Step14 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_14_CubeEnvironment.md)에서 확인한다.
 
 ## Build And Run
 
@@ -73,5 +73,5 @@ Runtime에서 참조하지 않는 blurred face와 별도 `skybox` asset 묶음�
 - [Cubemap And Environment Mapping](../../Docs/01_Topics/TexturingAndMapping/CubemapAndEnvironmentMapping.md)
 - [Texture Sampling](../../Docs/01_Topics/TexturingAndMapping/TextureSampling.md)
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
-- [Step14 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/14_CubeEnvironment.md)
+- [Step14 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_14_CubeEnvironment.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)

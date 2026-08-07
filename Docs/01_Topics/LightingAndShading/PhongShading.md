@@ -57,7 +57,7 @@ color =
 
 - Example: [Step5 PhongShading README](../../../Part1_Chapter03/03_Raytracing_Step5_PhongShading/README.md)
 - Verification: [Part1 Chapter03 Verification](../../02_Verification/Part1_Chapter03/verification-index.md)
-- Demo: [Step5 PhongShading Demo](../../03_Demos/Part1_Chapter03/05_PhongShading.md)
+- Demo: [Step5 PhongShading Demo](../../03_Demos/Part1_Chapter03/03_05_PhongShading.md)
 - Related Topic: [Phong And Blinn-Phong](PhongAndBlinnPhong.md)
 - Related Topic: [Ray](../RayTracing/Ray.md)
 - Related Topic: [Intersection](../RayTracing/Intersection.md)
