@@ -14,7 +14,7 @@ CPU에서 particle 생명주기와 충돌을 갱신하고 structured buffer spri
 
 ![Chapter15 ParticleSystem video storyboard](../../_assets/captures/part4_chapter15_01_particle_system.png)
 
-시연 video에서 선택한 1.163s, 3.878s, 6.593s frame을 순서대로 배치한다. 상단 `01`~`03`과 timestamp는 frame 순서와 원본 video 위치를 기록한다.
+시연 video에서 선택한 1.163s, 3.878s, 6.593s frame을 순서대로 배치한다. 상단 `01`부터 `03`까지와 timestamp는 frame 순서와 원본 video 위치를 기록한다.
 
 ## 입력과 출력
 
@@ -52,11 +52,11 @@ CPU에서 particle 생명주기와 충돌을 갱신하고 structured buffer spri
 
 - [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
 - Debug x64 build/run 성공
-- Storyboard PNG에 `ComputerGraphics` title과 01~03 timestamp frame을 포함하며 text metadata chunk가 없음
+- Storyboard PNG에 `ComputerGraphics` title과 01부터 03까지 timestamp frame을 포함하며 text metadata chunk가 없음
 
 ## 관련 코드
 
-- [Example README](../../../Part4_Chapter14-20/README.md)
+- [ExampleDocs](../../../Part4_Chapter14-20/ExampleDocs/15_01_ParticleSystem.md)
 - [Example selection entry point](../../../Part4_Chapter14-20/main.cpp)
 
 ## 관련 문서

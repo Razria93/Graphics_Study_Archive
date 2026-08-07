@@ -59,7 +59,7 @@ Tileable noise gradient에서 만든 2D curl velocity로 particle을 갱신하�
 
 ## 관련 코드
 
-- [Part4 Chapter14-20 README](../../../Part4_Chapter14-20/README.md)
+- [ExampleDocs](../../../Part4_Chapter14-20/ExampleDocs/16_02_CurlNoise.md)
 - [Example selection entry point](../../../Part4_Chapter14-20/main.cpp)
 
 ## 관련 문서

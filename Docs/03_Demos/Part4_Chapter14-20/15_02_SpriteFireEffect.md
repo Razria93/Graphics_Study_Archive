@@ -55,11 +55,11 @@ Textured particle sprite와 buoyancy update를 결합해 fire-like particle effe
 
 - [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)
 - Debug x64 build/run/capture smoke 성공
-- Storyboard PNG에 `ComputerGraphics` title과 01~03 timestamp frame을 포함하며 text metadata chunk가 없음
+- Storyboard PNG에 `ComputerGraphics` title과 01부터 03까지 timestamp frame을 포함하며 text metadata chunk가 없음
 
 ## 관련 코드
 
-- [Example README](../../../Part4_Chapter14-20/README.md)
+- [ExampleDocs](../../../Part4_Chapter14-20/ExampleDocs/15_02_SpriteFireEffect.md)
 - [Example selection entry point](../../../Part4_Chapter14-20/main.cpp)
 
 ## 관련 문서
