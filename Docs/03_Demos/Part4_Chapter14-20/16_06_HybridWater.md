@@ -61,7 +61,7 @@ Storyboard는 raycasting surface 표시와 `RenderDensity` density volume 표시
 
 ## 관련 코드
 
-- [Part4 Chapter14-20 README](../../../Part4_Chapter14-20/README.md)
+- [ExampleDocs](../../../Part4_Chapter14-20/ExampleDocs/16_06_HybridWater.md)
 - [Example selection entry point](../../../Part4_Chapter14-20/main.cpp)
 
 ## 관련 문서

@@ -60,7 +60,7 @@ Storyboard는 동일 character mesh가 frame별 bone transform에 따라 다른 
 
 ## 관련 코드
 
-- [Part4 Chapter14-20 README](../../../Part4_Chapter14-20/README.md)
+- [ExampleDocs](../../../Part4_Chapter14-20/ExampleDocs/17_01_SkeletalAnimation.md)
 - [Example selection entry point](../../../Part4_Chapter14-20/main.cpp)
 
 ## 관련 문서

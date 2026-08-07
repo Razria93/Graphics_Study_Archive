@@ -60,7 +60,7 @@ CPU-side fluid simulation이 계산한 3D density grid를 Texture3D로 업로드
 
 ## 관련 코드
 
-- [Part4 Chapter14-20 README](../../../Part4_Chapter14-20/README.md)
+- [ExampleDocs](../../../Part4_Chapter14-20/ExampleDocs/16_05_SmokeCpu.md)
 - [Example selection entry point](../../../Part4_Chapter14-20/main.cpp)
 
 ## 관련 문서

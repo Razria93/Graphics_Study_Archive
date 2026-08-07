@@ -61,7 +61,7 @@ Storyboard는 source 영역에서 시작한 density가 확산되고, buoyancy pa
 
 ## 관련 코드
 
-- [Part4 Chapter14-20 README](../../../Part4_Chapter14-20/README.md)
+- [ExampleDocs](../../../Part4_Chapter14-20/ExampleDocs/16_04_RealtimeSmoke.md)
 - [Example selection entry point](../../../Part4_Chapter14-20/main.cpp)
 
 ## 관련 문서
