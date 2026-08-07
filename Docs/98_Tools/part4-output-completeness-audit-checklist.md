@@ -83,7 +83,8 @@ Topic은 모든 Example에 하나씩 만드는 문서가 아니다. 여러 Examp
 
 ### 4. Demo와 asset
 
-- 일반 정책은 대표 Example 중심 상세 Demo를 허용하지만, Part4는 사용자 결정에 따라 23개 모든 Example의 독립 상세 Demo를 작성 대상으로 둔다.
+- `Docs/03_Demos`는 Example별 기술 구현 흐름과 시각 결과의 정본이다. 모든 Part의 실제 관행과 Part4 요구에 따라 23개 모든 Example의 독립 상세 Demo를 작성 대상으로 둔다.
+- 대표 Example과 대표 visual의 선별은 상세 Demo 축이 아니라 `Docs/07_GitHub/issues/demo`의 Chapter별 curated publication view에서만 적용한다.
 - 따라서 `14_01`부터 `20_01`까지 23개 상세 Demo의 존재, Example 연결, Verification 연결, Topic 연결 또는 부재 사유를 확인한다.
 - 각 상세 Demo는 구현 목표, 입력과 출력, 처리 흐름, 구현 선택, 주요 코드, 시각 결과, trade-off 또는 limitation, 관련 문서를 책임 범위로 갖는지 확인한다.
 - visual capture가 부적합하거나 불필요한 Example은 `없음`으로 비워 두지 않고 stdout-only, local-only, 제외, 후속 촬영 중 하나로 이유를 기록하는지 확인한다.
@@ -96,6 +97,7 @@ Topic은 모든 Example에 하나씩 만드는 문서가 아니다. 여러 Examp
 - WorkLog는 Example, Topic, Verification, Demo, Publication 본문을 복제하지 않는지 확인한다.
 - Publication은 모든 Part4 evidence에 대해 `검토 필요`, `public 후보`, `private-only`, `excluded` 중 하나와 asset 위험 판단을 기록하는지 확인한다.
 - HDRI, character, foliage, terrain을 포함한 capture는 원본 권리 보유를 주장하지 않고 rendered evidence만 다루는지 확인한다.
+- GitHub Demo Issue는 Chapter당 하나의 curated publication view로 확인한다. 해당 Issue는 대표 visual과 핵심 구현 요약만 포함하고 모든 상세 Demo를 복제하지 않는지 확인한다.
 - GitHub Issue, PR, comment는 게시된 Chapter에만 확인한다. 아직 게시하지 않은 Chapter의 body 부재는 결함이 아니며, WorkLog에 게시 필요 여부와 후보 상태가 기록되었는지 확인한다.
 
 ### 6. Index, 링크, validator
