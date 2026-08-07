@@ -5,8 +5,116 @@
 ## 현재 상태
 
 - GitHub body validator는 `validators/validate-github-body.ps1`에 둔다.
-- tracked Docs 전용 통합 validator script는 아직 없다.
 - GitHub 게시 전 body 검수는 tracked validator와 수동 검색을 함께 사용한다.
+- GitHub Actions는 `.github/workflows/docs-validation.yml`의 `Docs Validation` workflow를 기준으로 한다.
+- local preflight는 full-scan 결과와 Actions 동일 조건 결과를 분리해 기록한다.
+
+## Actions validator scope
+
+GitHub Actions는 checkout된 head에서 `HEAD~1`과 `HEAD`를 비교해 `changed-files.txt`를 만든다. Local에서 아직 커밋하지 않은 변경을 Actions 입력처럼 재현할 때는 `git diff --name-only HEAD`를 사용한다.
+
+| Actions 단계 | Validator | Scope | 입력 기준 |
+| --- | --- | --- | --- |
+| Validate GitHub bodies | `validate-github-body.ps1` | full-scan | 기본 입력 `Docs/07_GitHub` |
+| Validate GitHub quality | `validate-github-quality.ps1` | full-scan | 기본 입력 `Docs/07_GitHub/issues/demo` |
+| Test GitHub visual validator fixtures | `test-github-visual-quality.ps1` | full-scan fixture | fixture 전체 |
+| Validate Demo indexes | `validate-demo-index-quality.ps1` | full-scan | 기본 입력 `Docs/03_Demos` |
+| Test Demo index validator fixtures | `test-demo-index-quality.ps1` | full-scan fixture | fixture 전체 |
+| Validate Demo documents | `validate-demo-doc-quality.ps1` | changed-file scope | `Docs/03_Demos/.+/\d{2}_.+\.md` 또는 `Part\d+_Chapter.*/README.md` |
+| Test Demo document validator fixtures | `test-demo-doc-quality.ps1` | full-scan fixture | fixture 전체 |
+| Validate tracked video assets | `validate-video-asset-quality.ps1` | full-scan | tracked video asset 전체 |
+| Test video asset validator fixtures | `test-video-asset-quality.ps1` | full-scan fixture | fixture 전체 |
+| Test window capture tool contracts | `test-window-capture-tools.ps1` | full-scan fixture | tool contract 전체 |
+| Test window input primitive contracts | `test-window-input-primitives.ps1` | full-scan fixture | input primitive 전체 |
+| Validate Topic documents | `validate-topic-doc-quality.ps1` | full-scan | 기본 입력 `Docs/01_Topics` |
+| Test Markdown wrap validator fixtures | `test-markdown-wrap-quality.ps1` | full-scan fixture | fixture 전체 |
+| Validate Markdown wrapping | `validate-markdown-wrap-quality.ps1` | changed-file scope | 변경된 `.md` 파일 |
+| Test Markdown render validator fixtures | `test-markdown-render-quality.ps1` | full-scan fixture | fixture 전체 |
+| Validate Markdown rendering | `validate-markdown-render-quality.ps1` | changed-file scope | 변경된 `.md` 파일 |
+| Test Markdown table validator fixtures | `test-markdown-table-quality.ps1` | full-scan fixture | fixture 전체 |
+| Validate Markdown tables | `validate-markdown-table-quality.ps1` | changed-file scope | 변경된 `.md` 파일 |
+
+## Local preflight
+
+Full-scan preflight는 기존 문서 부채를 포함한 저장소 전체 상태를 확인한다.
+
+```powershell
+$fullScanCommands = @(
+	'./Docs/98_Tools/validators/validate-github-body.ps1',
+	'./Docs/98_Tools/validators/validate-github-quality.ps1',
+	'./Docs/98_Tools/validators/test-github-visual-quality.ps1',
+	'./Docs/98_Tools/validators/validate-demo-index-quality.ps1',
+	'./Docs/98_Tools/validators/test-demo-index-quality.ps1',
+	'./Docs/98_Tools/validators/validate-demo-doc-quality.ps1',
+	'./Docs/98_Tools/validators/test-demo-doc-quality.ps1',
+	'./Docs/98_Tools/validators/validate-video-asset-quality.ps1',
+	'./Docs/98_Tools/validators/test-video-asset-quality.ps1',
+	'./Docs/98_Tools/validators/test-window-capture-tools.ps1',
+	'./Docs/98_Tools/validators/test-window-input-primitives.ps1',
+	'./Docs/98_Tools/validators/validate-topic-doc-quality.ps1',
+	'./Docs/98_Tools/validators/test-markdown-wrap-quality.ps1',
+	'./Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1',
+	'./Docs/98_Tools/validators/test-markdown-render-quality.ps1',
+	'./Docs/98_Tools/validators/validate-markdown-render-quality.ps1',
+	'./Docs/98_Tools/validators/test-markdown-table-quality.ps1',
+	'./Docs/98_Tools/validators/validate-markdown-table-quality.ps1'
+)
+
+foreach ($command in $fullScanCommands) {
+	& $command
+}
+```
+
+Actions 동일 조건 preflight는 현재 변경분이 workflow의 changed-file scope에서 통과하는지 확인한다. 커밋 전에는 `git diff --name-only HEAD`를 사용하고, 커밋 후에는 workflow와 같이 `HEAD~1`부터 `HEAD`까지의 변경 파일을 사용한다.
+
+```powershell
+$changed = @(
+	git diff --name-only HEAD |
+		Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+)
+Write-Host "changed files:" $changed.Count
+
+$demoFiles = @(
+	$changed |
+		Where-Object {
+			($_ -match '^Docs/03_Demos/.+/\d{2}_.+\.md$') -or
+			($_ -match '^Part\d+_Chapter.*/README\.md$')
+		}
+)
+Write-Host "demo scoped files:" $demoFiles.Count
+if ($demoFiles.Count -gt 0) {
+	./Docs/98_Tools/validators/validate-demo-doc-quality.ps1 -InputPath $demoFiles
+}
+else {
+	Write-Host "No changed Demo documents or example README files."
+}
+
+$markdownFiles = @($changed | Where-Object { $_ -match '\.md$' })
+Write-Host "markdown scoped files:" $markdownFiles.Count
+if ($markdownFiles.Count -gt 0) {
+	./Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1 -InputPath $markdownFiles
+	./Docs/98_Tools/validators/validate-markdown-render-quality.ps1 -InputPath $markdownFiles
+	./Docs/98_Tools/validators/validate-markdown-table-quality.ps1 -InputPath $markdownFiles
+}
+else {
+	Write-Host "No changed Markdown files."
+}
+```
+
+Whitespace preflight는 validator 결과와 별도로 실행한다.
+
+```powershell
+git diff --check
+```
+
+## 결과 기록 기준
+
+- `full-scan 통과`는 Local preflight의 full-scan command가 실패와 warning 없이 끝난 상태를 뜻한다.
+- `Actions 동일 조건 통과`는 현재 변경 파일 목록으로 changed-file scope validator를 재현해 통과한 상태를 뜻한다.
+- 두 결과는 서로 대체하지 않는다. full-scan은 저장소 전체 품질을 보고, Actions 동일 조건은 현재 PR 또는 push에서 실제로 걸릴 scope를 본다.
+- warning이 남아 있으면 `통과, warning only`로 분리해 적고 warning 항목과 처리 방침을 함께 기록한다.
+- `git diff --check` 결과는 validator 통과와 별도로 기록한다.
+- 검증하지 않은 항목은 `미확인`으로 기록한다.
 
 ## 최소 검수
 
