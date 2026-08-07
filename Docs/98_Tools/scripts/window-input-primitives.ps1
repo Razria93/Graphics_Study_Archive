@@ -60,6 +60,9 @@ function Resolve-ExampleVirtualKey
         "SPACE" { return [byte]0x20 }
         "ENTER" { return [byte]0x0D }
         "BACKSPACE" { return [byte]0x08 }
+        "-" { return [byte]0xBD }
+        "MINUS" { return [byte]0xBD }
+        "OEM_MINUS" { return [byte]0xBD }
         "ESC" { return [byte]0x1B }
         "ESCAPE" { return [byte]0x1B }
         "CTRL" { return [byte]0x11 }

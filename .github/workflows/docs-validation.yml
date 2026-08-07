@@ -28,8 +28,15 @@ jobs:
       - name: Detect changed files
         shell: pwsh
         run: |
-          $base = "HEAD~1"
-          git diff --name-only $base HEAD |
+          if ($env:GITHUB_EVENT_NAME -eq "pull_request") {
+            $base = "${{ github.event.pull_request.base.sha }}"
+          } else {
+            $base = "${{ github.event.before }}"
+            if ($base -eq "0000000000000000000000000000000000000000") {
+              $base = "HEAD~1"
+            }
+          }
+          git diff --name-only --diff-filter=AM $base HEAD |
             Where-Object { -not [string]::IsNullOrWhiteSpace($_) } |
             Set-Content -Encoding UTF8 changed-files.txt
           Get-Content changed-files.txt

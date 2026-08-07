@@ -69,7 +69,7 @@ powershell -NoProfile -ExecutionPolicy Bypass `
   -ExecutablePath Part4_Chapter14-20/x64/Debug/Examples.exe `
   -ArgumentList 1501 `
   -WorkingDirectory Part4_Chapter14-20 `
-  -ExpectedTitle "HongLabGraphics Example" `
+  -ExpectedTitle "ComputerGraphics" `
   -OutputPath local/capture-run/Part4_Chapter15/ex1501-base.png `
   -CenterWindow `
   -CaptureImmediately
