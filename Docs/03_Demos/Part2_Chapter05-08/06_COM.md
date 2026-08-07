@@ -101,6 +101,8 @@ Assert(queriedDevice Is Null);
 
 이 예제는 console application이며 graphics frame을 만들지 않는다. Raw pointer 주소는 실행마다 달라 screenshot의 비교 기준으로 사용할 수 없고, ownership 의미는 source와 출력 종류로 더 정확하게 설명할 수 있어 screenshot과 video를 제외한다.
 
+Visual status: console evidence로 기록하며 screenshot과 video는 제외한다.
+
 ## 구현 범위와 한계
 
 - `copiedDevice.Reset()`은 해당 wrapper의 reference만 해제하며 underlying device의 최종 파괴를 증명하지 않는다.

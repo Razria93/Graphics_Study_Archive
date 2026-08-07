@@ -2,7 +2,7 @@
 
 ## 목적
 
-이 Topic이 설명하는 graphics concept를 2~4문장으로 정리한다.
+이 Topic이 설명하는 graphics concept를 2부터 4문장으로 정리한다.
 
 ## 책임 범위
 

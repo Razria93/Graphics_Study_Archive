@@ -11,7 +11,7 @@
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 최소 capture | [상세 Demo](01_Demo.md) | Example | Topic | `Docs/02_Verification` | `Docs/_assets/captures/min.png` | 미게시 | 확보 | 최소 capture |
 | 대표 capture | [상세 Demo](01_Demo.md) | Example | Topic | `Docs/02_Verification` | `Docs/_assets/captures/representative.png` | 미게시 | 확보 | 대표 capture |
-| video | [상세 Demo](01_Demo.md) | Example | Topic | `Docs/02_Verification` | selected local video | 미게시 | 확보 | 자동·사용자 검수 완료 |
+| video | [상세 Demo](01_Demo.md) | Example | Topic | `Docs/02_Verification` | `Docs/_assets/videos/fixture.mp4` | 미게시 | 확보 | 자동·사용자 검수 완료 |
 
 ## 갱신 기준
 

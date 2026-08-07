@@ -21,6 +21,7 @@
 | [Validators](validators/README.md) | GitHub body 등 반복 검수 script 색인 |
 | [Validation Tools](validation-tools.md) | 최소 검수 명령과 validator 승격 기준 |
 | [Document System Audit Guide](document-system-audit-guide.md) | 문서 체계 감사 실행, 에이전트 분담, 재검증 절차 |
+| [Part4 Output Completeness Audit Checklist](part4-output-completeness-audit-checklist.md) | Part4 Chapter14-20 산출물 축, evidence provenance, 누락 판정 기준 |
 | [Session Troubleshooting](session-troubleshooting.md) | 세션/권한/인코딩/작업 분리 문제 대응 |
 | [User Attention Notification](user-attention-notification.md) | 작업 종료, 승인 대기와 blocker 시 Windows 알림 실행 |
 | [Capture Operation Guide](capture-operation-guide.md) | screenshot·video 조작 계획, 입력 안전, window 배치, reset과 시각 검수 절차 |

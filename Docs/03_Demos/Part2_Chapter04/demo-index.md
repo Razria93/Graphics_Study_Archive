@@ -4,29 +4,30 @@
 
 ## 범위
 
-- 순차 Demo 시작: Step1 Triangle
-- Personal Extension: Step1A Triangle To Circle 독립 Demo 확보
-- 순차 Demo 진행: Step1 Triangle부터 Step10 Lights까지 정규화 완료
 - 주요 demo 후보: rasterization, depth buffer, projection, lighting
 - 비고: 개념 비교 screenshot 중심
 
 ## Demo 목록
 
-| Demo 후보 | 상세 Demo | 연결 Example | 연결 Topic | Verification | Capture/Result | GitHub Demo Issue | 상태 | 비고 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 최소 capture | [Step1 Triangle 상세 Demo](01_Triangle.md) | [Step1 Triangle Example](../../../Part2_Chapter04/04_Rasterization_Step1_Triangle/README.md) | [Triangle Rasterization](../../01_Topics/Rasterization/TriangleRasterization.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [Docs/_assets screenshot](../../_assets/captures/part2_chapter04_01_triangle.png) | [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14) | 확보 | 최소 software rasterization 기반 |
-| Personal Extension: Triangle To Circle | [Step1A 상세 Demo](01_TriangleToCircle.md) | [Step1A Example](../../../Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle/README.md) | [Triangle Rasterization](../../01_Topics/Rasterization/TriangleRasterization.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [3 segments](../../_assets/captures/part2_chapter04_01a_triangle_to_circle_segments_3.png), [32 segments](../../_assets/captures/part2_chapter04_01a_triangle_to_circle_segments_32.png), [published video](https://github.com/user-attachments/assets/fc86477d-36bf-44bc-b279-a0824fa0c447) | [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14) | 확보 | 사용자 개인 응용, Step2와 분리 |
-| Step2 Circle | [Step2 상세 Demo](02_Circle.md) | [Step2 Circle Example](../../../Part2_Chapter04/04_Rasterization_Step2_Circle/README.md) | [Triangle Rasterization](../../01_Topics/Rasterization/TriangleRasterization.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [전체 창 screenshot](../../_assets/captures/part2_chapter04_02_circle.png) | 미게시 | 확보 | 공유 CPU vertex/color 배열과 index 기반 triangle fan |
-| Step3 Transformations2D | [Step3 상세 Demo](03_Transformations2D.md) | [Step3 Transformations2D Example](../../../Part2_Chapter04/04_Rasterization_Step3_Transformations2D/README.md) | [2D Transformations](../../01_Topics/Rasterization/Transformations2D.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [기본](../../_assets/captures/part2_chapter04_03_transformations2d_default.png), [조정](../../_assets/captures/part2_chapter04_03_transformations2d_composed.png) | 미게시 | 확보 | 5-segment 원본 mesh와 순차 CPU transform composition |
-| Step4 Animation2D | [Step4 상세 Demo](04_Animation2D.md) | [Step4 Animation2D Example](../../../Part2_Chapter04/04_Rasterization_Step4_Animation2D/README.md) | [2D Animation And Hierarchical Orbit](../../01_Topics/AnimationAndPhysics/Animation2D.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [전체 창 screenshot](../../_assets/captures/part2_chapter04_04_animation2d.png) | [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14) | 확보 | Sun·Earth·Moon 계층적 orbit, selected local video 검수 완료 |
-| Step5 DepthBuffer | [Step5 상세 Demo](05_DepthBuffer.md) | [Step5 DepthBuffer Example](../../../Part2_Chapter04/04_Rasterization_Step5_DepthBuffer/README.md) | [Depth Buffer](../../01_Topics/Rasterization/DepthBuffer.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [기본](../../_assets/captures/part2_chapter04_05_depth_buffer_default.png), [반전](../../_assets/captures/part2_chapter04_05_depth_buffer_reordered.png) | 미게시 | 확보 | Per-pixel depth test와 순서 반전, selected local video 검수 완료 |
-| Step6 ShadersConcept | [Step6 상세 Demo](06_ShadersConcept.md) | [Step6 ShadersConcept Example](../../../Part2_Chapter04/04_Rasterization_Step6_ShadersConcept/README.md) | [Shader Stage](../../01_Topics/DirectX11Pipeline/ShaderStage.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [전체 창 screenshot](../../_assets/captures/part2_chapter04_06_shaders_concept.png) | 미게시 | 확보 | CPU shader stage 모사와 DirectX11 presentation 분리, selected local video 검수 완료 |
-| Step7 BackfaceCulling | [Step7 상세 Demo](07_BackfaceCulling.md) | [Step7 BackfaceCulling Example](../../../Part2_Chapter04/04_Rasterization_Step7_BackfaceCulling/README.md) | [Backface Culling](../../01_Topics/Rasterization/BackfaceCulling.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [Culling On](../../_assets/captures/part2_chapter04_07_backface_culling_on.png), [Culling Off](../../_assets/captures/part2_chapter04_07_backface_culling_off.png) | 미게시 | 확보 | 동일 topology와 X축 π transform의 post-transform winding 반전, selected local video 사용자 검수 완료 |
-| Step8 PerspectiveProjection | [Step8 상세 Demo](08_PerspectiveProjection.md) | [Step8 PerspectiveProjection Example](../../../Part2_Chapter04/04_Rasterization_Step8_PerspectiveProjection/README.md) | [Perspective Projection](../../01_Topics/Rasterization/PerspectiveProjection.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [Orthographic](../../_assets/captures/part2_chapter04_08_perspective_projection_orthographic.png), [Affine](../../_assets/captures/part2_chapter04_08_perspective_projection_affine.png), [Corrected](../../_assets/captures/part2_chapter04_08_perspective_projection_correct.png) | [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14) | 확보 | 같은 Z 상태에서 projection과 perspective-correct interpolation을 단계별 비교, video 제외 |
-| Step9 Shading | [Step9 상세 Demo](09_Shading.md) | [Step9 Shading Example](../../../Part2_Chapter04/04_Rasterization_Step9_Shading/README.md) | [Phong And Blinn-Phong](../../01_Topics/LightingAndShading/PhongAndBlinnPhong.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [전체 창 screenshot](../../_assets/captures/part2_chapter04_09_shading.png) | 미게시 | 확보 | Face별 flat normal과 directional Blinn-Phong shading, video 제외 |
-| Step10 Lights | [Step10 상세 Demo](10_Lights.md) | [Step10 Lights Example](../../../Part2_Chapter04/04_Rasterization_Step10_Lights/README.md) | [Light Types](../../01_Topics/LightingAndShading/LightTypes.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [Directional](../../_assets/captures/part2_chapter04_10_lights_directional.png), [Point](../../_assets/captures/part2_chapter04_10_lights_point.png), [Spot](../../_assets/captures/part2_chapter04_10_lights_spot.png) | [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14) | 확보 | 같은 기본 parameter에서 Directional·Point·Spot Light 비교, video 제외 |
-| 대표 capture | [Step8 상세 Demo](08_PerspectiveProjection.md) | [Step8 Example](../../../Part2_Chapter04/04_Rasterization_Step8_PerspectiveProjection/README.md) | [Perspective Projection](../../01_Topics/Rasterization/PerspectiveProjection.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [Corrected](../../_assets/captures/part2_chapter04_08_perspective_projection_correct.png) | [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14) | 확보 | Projection과 perspective-correct interpolation의 단계 차이가 명확해 Chapter 대표로 유지, Step10은 기술 보조 Demo로 확정 |
-| video | [Step1A 상세 Demo](01_TriangleToCircle.md), [Step4 상세 Demo](04_Animation2D.md), [Step5 상세 Demo](05_DepthBuffer.md), [Step6 상세 Demo](06_ShadersConcept.md), [Step7 상세 Demo](07_BackfaceCulling.md) | [Step1A Example](../../../Part2_Chapter04/04_Rasterization_Step1_TriangleToCircle/README.md), [Step4 Example](../../../Part2_Chapter04/04_Rasterization_Step4_Animation2D/README.md), [Step5 Example](../../../Part2_Chapter04/04_Rasterization_Step5_DepthBuffer/README.md), [Step6 Example](../../../Part2_Chapter04/04_Rasterization_Step6_ShadersConcept/README.md), [Step7 Example](../../../Part2_Chapter04/04_Rasterization_Step7_BackfaceCulling/README.md) | [Triangle Rasterization](../../01_Topics/Rasterization/TriangleRasterization.md), [2D Animation](../../01_Topics/AnimationAndPhysics/Animation2D.md), [Depth Buffer](../../01_Topics/Rasterization/DepthBuffer.md), [Shader Stage](../../01_Topics/DirectX11Pipeline/ShaderStage.md), [Backface Culling](../../01_Topics/Rasterization/BackfaceCulling.md) | [현재 확인](../../02_Verification/Part2_Chapter04/verification-index.md) | [Step1A published video](https://github.com/user-attachments/assets/fc86477d-36bf-44bc-b279-a0824fa0c447), Step4·Step5·Step6·Step7 selected local video | [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14) | 확보 | Step1A 게시 완료, 나머지 selected video는 미게시 판단 유지 |
+| Demo 후보 | 연결 Example | 연결 Topic | Verification | Capture/Result | 상태 | 비고 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 최소 capture | `04_Rasterization_Step5_DepthBuffer` | 미확인 | `Docs/02_Verification` | 없음 | 후보 | build/run 확인 후 갱신 |
+| 대표 capture | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 후보 | 대표 예제 선정 후 갱신 |
+| video | 미확인 | 미확인 | `Docs/02_Verification` | 없음 | 미확인 | 필요 여부 검토 |
+
+## 상세 Demo 문서
+
+- [Step1 Triangle](01_Triangle.md)
+- [Step1A TriangleToCircle](01_TriangleToCircle.md)
+- [Step2 Circle](02_Circle.md)
+- [Step3 Transformations2D](03_Transformations2D.md)
+- [Step4 Animation2D](04_Animation2D.md)
+- [Step5 DepthBuffer](05_DepthBuffer.md)
+- [Step6 ShadersConcept](06_ShadersConcept.md)
+- [Step7 BackfaceCulling](07_BackfaceCulling.md)
+- [Step8 PerspectiveProjection](08_PerspectiveProjection.md)
+- [Step9 Shading](09_Shading.md)
+- [Step10 Lights](10_Lights.md)
 
 ## 갱신 기준
 

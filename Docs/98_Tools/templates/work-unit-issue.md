@@ -2,11 +2,11 @@
 
 ## 요약
 
-이 Issue가 추적하는 Work Unit의 핵심을 1~2문장으로 요약한다. source docs를 요약해 범위와 완료 조건만 남긴다.
+이 Issue가 추적하는 Work Unit의 핵심을 1부터 2문장으로 요약한다. source docs를 요약해 범위와 완료 조건만 남긴다.
 
 ## 목표
 
-이 Work Unit이 어떤 archive/portfolio 상태를 만들기 위한 작업인지 2~4문장으로 정리한다.
+이 Work Unit이 어떤 archive/portfolio 상태를 만들기 위한 작업인지 2부터 4문장으로 정리한다.
 
 ## 범위
 

@@ -139,7 +139,7 @@ Color TraceRay(Ray ray, int depth)
 }
 ```
 
-Local weight는 `clamp(1 - reflection - transparency, 0, 1)`이다. Reflection과 transparency weight 자체는 normalize하지 않으며 최종 pixel을 저장할 때 color를 0~1 범위로 clamp한다. 현재 sphere는 transparency 1.0과 reflection 0이므로 refracted result만 남는다.
+Local weight는 `clamp(1 - reflection - transparency, 0, 1)`이다. Reflection과 transparency weight 자체는 normalize하지 않으며 최종 pixel을 저장할 때 color를 0부터 1까지의 범위로 clamp한다. 현재 sphere는 transparency 1.0과 reflection 0이므로 refracted result만 남는다.
 
 - [Recursive 종료와 miss 처리](../../../Part1_Chapter03/03_Raytracing_Step13_Transparency/Raytracer.h#L158-L170)
 - [Local·reflected·refracted color 결합](../../../Part1_Chapter03/03_Raytracing_Step13_Transparency/Raytracer.h#L172-L185)
@@ -174,7 +174,7 @@ Ray tracing은 CPU에서 최초 frame에 한 번 수행한다. HLSL은 ray traci
 - 출처 상태: 사용자 직접 생성
 - 규격: 1024×1024, RGB PNG
 - Input SHA-256: `D0960C2380D0D4432BECEA77A579ACAB2C6A04EDCD8AC0BFA15B1756866348D9`
-- 관계: Step10~12 검증 input의 동일 바이트 사본을 Step13 ground에서 사용한다.
+- 관계: Step10부터 Step12까지 검증 input의 동일 바이트 사본을 Step13 ground에서 사용한다.
 
 - 파일: `part1_chapter03_ocean_sunset.png`
 - 출처 상태: 사용자 직접 생성

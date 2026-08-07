@@ -29,7 +29,7 @@ D3D11 graphics pipeline, modeling, shader toy 예제를 정리하는 폴더다.
 
 ## Chapter05 Affine Transformations Bundle
 
-Chapter05 Step1~4는 GLM에서 익힌 matrix와 affine transformation을 DirectXMath·SimpleMath 환경으로 옮기는 하나의 학습 흐름이다. 서로 다른 API와 vector convention을 사용해도 각 convention에 맞는 matrix composition을 구성하면 같은 transform 역할과 시각 결과를 얻을 수 있음을 확인한다.
+Chapter05 Step1부터 Step4까지는 GLM에서 익힌 matrix와 affine transformation을 DirectXMath·SimpleMath 환경으로 옮기는 하나의 학습 흐름이다. 서로 다른 API와 vector convention을 사용해도 각 convention에 맞는 matrix composition을 구성하면 같은 transform 역할과 시각 결과를 얻을 수 있음을 확인한다.
 
 | 단계 | 역할 |
 | --- | --- |

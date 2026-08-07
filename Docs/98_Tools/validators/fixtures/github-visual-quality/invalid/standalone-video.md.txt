@@ -4,7 +4,24 @@
 
 본문에 standalone video attachment를 삽입한 invalid fixture다.
 
-## 결과
+## 핵심 목표
+
+- Standalone video attachment를 invalid case로 검출한다.
+
+## Demo Assets
+
+| 구분 | 파일 | 설명 |
+| --- | --- | --- |
+| Input screenshot | 없음 | 별도 입력 screenshot을 사용하지 않음 |
+| Result screenshot | 없음 | 단일 screenshot 대신 result image를 사용함 |
+| Result image | fixture image | fixture static result |
+| Video | standalone attachment | invalid fixture가 검출해야 하는 attachment |
+
+## 시각 정보
+
+### Static result
+
+Fixture는 static result image 아래에 standalone attachment URL을 둔다.
 
 ![Static result](https://github.com/example/repository/blob/1111111111111111111111111111111111111111/Docs/_assets/captures/example.png?raw=true)
 
@@ -12,24 +29,39 @@ https://github.com/user-attachments/assets/12345678-1234-1234-1234-123456789abc
 
 https://github.com/user-attachments/assets/12345678-1234-1234-1234-123456789abc
 
-## 핵심 구현
+## 구현 하이라이트
+
+### Static image evidence
 
 - [구현 근거](https://github.com/example/repository/blob/1111111111111111111111111111111111111111/Part2_Chapter04/Example/Example.cpp#L1-L8)
 
-## 처리 흐름
+### 처리 흐름
 
 1. 입력을 처리한다.
 2. 결과를 출력한다.
+
+## 핵심 로직 의사코드
+
+```cpp
+// Pseudo C++
+void RenderFixturePseudo()
+{
+	PrepareInput();
+	RenderStaticResult();
+}
+```
+
+원본 코드: [구현 근거](https://github.com/example/repository/blob/1111111111111111111111111111111111111111/Part2_Chapter04/Example/Example.cpp#L1-L8)
+
+## 검증 상태
+
+- Build/Run: fixture
 
 ## 구현 범위와 한계
 
 - Fixture 검증 범위만 포함한다.
 
-## 검증
-
-- Build/Run: fixture
-
-## 더 자세히 보기
+## 관련 문서
 
 - [상세 Demo](https://github.com/example/repository/blob/main/Docs/03_Demos/example.md)
 - [Verification](https://github.com/example/repository/blob/main/Docs/02_Verification/example.md)

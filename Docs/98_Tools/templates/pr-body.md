@@ -2,7 +2,7 @@
 
 ## 요약
 
-이 PR이 어떤 Chapter 또는 Chapter 묶음을 설명 가능하게 만드는지 2~4문장으로 정리한다. source docs를 읽고 GitHub review용으로 요약/재구성한다.
+이 PR이 어떤 Chapter 또는 Chapter 묶음을 설명 가능하게 만드는지 2부터 4문장으로 정리한다. source docs를 읽고 GitHub review용으로 요약/재구성한다.
 
 ## 범위
 
@@ -34,7 +34,7 @@
 
 ## 대표 Visual
 
-대표 visual이 review에 도움이 될 때만 0~1개 사용한다. 상세 visual은 Demo Issue로 연결한다.
+대표 visual이 review에 도움이 될 때만 0개 또는 1개 사용한다. 상세 visual은 Demo Issue로 연결한다.
 
 ### Example Capture
 

@@ -152,10 +152,11 @@ powershell -NoProfile -ExecutionPolicy Bypass `
   -OutputPath local/<work-unit>/<example>/base.png `
   -CenterWindow `
   -CountdownSeconds 5 `
+  -MainWindowTimeoutSeconds 10 `
   -CaptureImmediately
 ```
 
-기본 상태는 application 실행 후 안정화를 대기하고 바로 촬영한다. 결과를 확인한 뒤 도구가 시작한 application을 종료한다.
+기본 상태는 application 실행 후 안정화를 대기하고 바로 촬영한다. 결과를 확인한 뒤 도구가 시작한 application을 종료한다. `MainWindowTimeoutSeconds`는 main window handle이 생성될 때까지 기다리는 시간이다. simulation, volume, gameplay처럼 초기화가 무거운 예제는 Chapter별 smoke 기준에서 값을 늘리고, loader error dialog 여부는 별도 preflight와 quiet 확인으로 구분한다.
 
 ## Parameter-adjusted screenshot
 
@@ -225,7 +226,7 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 
 ## Selected video 기반 Storyboard
 
-1. Selected video에서 입력 전, 입력 중과 결과 상태처럼 의미가 다른 frame을 2~5개 고른다.
+1. Selected video에서 입력 전, 입력 중과 결과 상태처럼 의미가 다른 frame을 2개부터 5개까지 고른다.
 2. Frame을 같은 application bounds, crop과 scale로 맞춘다.
 3. 각 frame에 읽기 순서와 짧은 상태 label을 넣는다.
 4. 2장은 2열, 3장은 3열, 4장은 2×2, 5장은 3+2 구성을 기본으로 사용한다.
@@ -257,7 +258,7 @@ powershell -NoProfile -ExecutionPolicy Bypass `
   -FailOnFound
 ```
 
-실행 실패 후 안전 후보가 확인되면 내부 `WM_CLOSE` 또는 UI Automation close로 닫는다.
+실행 실패 후 안전 후보가 확인되면 내부 `WM_CLOSE`, UI Automation close, button `BM_CLICK` 순서로 닫는다. mouse 좌표 클릭은 사용하지 않는다.
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass `
@@ -269,7 +270,7 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 
 dialog 후보가 target example과 관련 있는지 확신할 수 없으면 닫지 않는다. 무인 모드에서는 사용자 알림으로 중단하고 재실행 루프를 돌지 않는다.
 
-`clear-example-error-windows.ps1 -Close`는 후보를 한 번만 닫고 끝내지 않고 drain pass를 반복한다. 후보가 0건이 된 뒤에도 quiet period를 기다리고 다시 scan한다. quiet period 이후에도 후보가 남으면 실패로 보고하고 같은 executable을 재실행하지 않는다.
+`clear-example-error-windows.ps1 -Close`는 후보를 한 번만 닫고 끝내지 않고 drain pass를 반복한다. 각 후보는 title, class, process id/name/start time, child message text, button text로 만든 fingerprint를 기록한다. 닫기 직후 다시 scan해 같은 fingerprint가 남으면 `StillPresent`, 다른 fingerprint가 나타나면 `Replaced`, 후보가 0건이면 `Quiet`으로 보고한다. Windows loader dialog는 DirectXTK 누락 dialog를 닫은 뒤 assimp 누락 dialog가 새로 나타나는 방식으로 순차 발생할 수 있으므로 `Replaced`는 실패가 아니라 다음 drain 대상으로 처리한다. 후보가 0건이 된 뒤에도 quiet period를 기다리고 다시 scan한다. quiet period 이후에도 후보가 남으면 실패로 보고하고 같은 executable을 재실행하지 않는다.
 
 ## Troubleshooting: FPV 입력이 적용되지 않는 경우
 

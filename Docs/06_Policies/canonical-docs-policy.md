@@ -33,6 +33,7 @@
 | 전체 진입점과 map | `Docs/00_Index/` | 산출물 위치와 작업 흐름 안내 |
 | Chapter README | `Part*_Chapter*/README.md` | Chapter 또는 Chapter 묶음의 목표, 예제 구성, 대표 Topic, Demo, Verification 링크 |
 | 예제별 README | `Part*_Chapter*/ExampleName/README.md` | 예제 목적, 실행 진입점, 주요 코드 위치, 예제 고유 구조, 관련 정본 링크 |
+| 단일 project ExampleDocs | `Part4_Chapter14-20/ExampleDocs/<Chapter>_<Example>.md` | 예제 폴더가 없는 Part4의 예제 목적, 실행 진입점, 주요 코드 위치, 예제 고유 구조, 관련 정본 링크 |
 | Part별 예제 지도 | `Part*_Chapter*/README.md`, `Docs/00_Index/study-map.md` | 예제 목록과 대표 예제 안내 |
 | graphics 개념 | `Docs/01_Topics/` | 여러 예제를 관통하는 Topic 설명 |
 | build/run/capture 검증 | `Docs/02_Verification/` | 검증 상태와 known issue |
@@ -58,7 +59,7 @@ Root README / Chapter README
 
 Chapter README는 해당 Chapter 또는 Chapter 묶음의 지도 역할을 한다. 본문 설명을 길게 반복하지 않고 목표, 예제 구성, 핵심 Topic, 대표 Demo, 검증 상태, 관련 문서 링크를 제공한다.
 
-Example README는 예제 코드의 근거리 안내 정본이다. 목적, 실행 진입점, 주요 source/shader 위치, 예제 고유 구조, 짧은 실행 요약, limitation, 관련 정본 링크를 둔다. 대표 visual은 0~1개만 사용하고 상세 구현 흐름과 단계별 시각 결과는 상세 Demo로 연결한다.
+Example README는 예제 코드의 근거리 안내 정본이다. 목적, 실행 진입점, 주요 source/shader 위치, 예제 고유 구조, 짧은 실행 요약, limitation, 관련 정본 링크를 둔다. 대표 visual은 최대 1개만 사용하고 상세 구현 흐름과 단계별 시각 결과는 상세 Demo로 연결한다. 예제별 폴더가 없는 `Part4_Chapter14-20`은 `ExampleDocs`의 같은 책임 문서로 이 예외를 적용한다.
 
 상세 Demo 문서는 기술 구현과 시각 결과의 정본이다. 구현 목표, 입력과 출력, 처리 흐름, 구현 선택, 주요 코드, 시각 결과, trade-off, 구현 범위와 한계를 둔다.
 
@@ -86,7 +87,7 @@ README는 위치에 따라 다른 책임을 가진다. 같은 내용을 여러 R
 | --- | --- | --- | --- |
 | Root README | portfolio archive의 첫 화면 | repository 목적, 대표 graphics 주제, 현재 pilot/result, 주요 guide 링크 | 내부 조사 기록, stale 판단, raw/origin 비교, 정책 원문 |
 | Chapter README | Chapter 또는 Chapter 묶음의 지도 | Chapter 목표, 예제 목록, 대표 Topic/Demo/Verification, 상태 요약 | 예제별 코드 상세, Topic 본문 전체, WorkLog 상세 |
-| Example README | 예제 코드의 근거리 안내 정본 | 예제 목적, 실행 진입점, 주요 코드 위치, 예제 고유 구조, 실행 요약, 대표 visual 0~1개, limitation, 관련 정본 링크 | 상세 구현 흐름, 단계별 시각 분석, raw/reference 원문, source comment inventory |
+| Example README 또는 ExampleDocs | 예제 코드의 근거리 안내 정본 | 예제 목적, 실행 진입점, 주요 코드 위치, 예제 고유 구조, 실행 요약, 대표 visual 최대 1개, limitation, 관련 정본 링크 | 상세 구현 흐름, 단계별 시각 분석, raw/reference 원문, source comment inventory |
 | Docs README | Docs 산출물 축의 입구 | 폴더 구조, 각 축의 책임, 먼저 볼 문서 | 세부 정책 원문, 예제별 상세 설명 |
 | Folder README | 해당 폴더의 하위 안내 | 하위 문서 목록, 작성 위치, 관련 정책 링크 | 다른 폴더 책임의 본문 반복 |
 | GitHub body | review/posting용 요약 | 게시 시점의 요약, 핵심 링크, 검증 요약 | README 본문 복제, 내부 draft/metadata |

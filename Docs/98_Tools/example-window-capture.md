@@ -25,7 +25,7 @@ Windows에서 graphics example의 보이는 application window 전체를 PNG 후
 | `KeepApplicationOpen` | 성공 후 application 유지 |
 | `CaptureImmediately` | parameter 조작을 위한 Enter 대기 생략 |
 | `CenterWindow` | monitor working area 중앙으로 창을 이동하고 크기는 유지 |
-| `CountdownSeconds` | 입력 중단 안내 뒤 capture까지 countdown, 기본값 `0`, 범위 `0`~`10` |
+| `CountdownSeconds` | 입력 중단 안내 뒤 capture까지 countdown, 기본값 `0`, 범위 `0`부터 `10`까지 |
 
 ## Interactive capture
 
@@ -69,7 +69,7 @@ powershell -NoProfile -ExecutionPolicy Bypass `
   -ExecutablePath Part4_Chapter14-20/x64/Debug/Examples.exe `
   -ArgumentList 1501 `
   -WorkingDirectory Part4_Chapter14-20 `
-  -ExpectedTitle "HongLabGraphics Example" `
+  -ExpectedTitle "ComputerGraphics" `
   -OutputPath local/capture-run/Part4_Chapter15/ex1501-base.png `
   -CenterWindow `
   -CaptureImmediately
@@ -115,5 +115,5 @@ Capture 실행 전후에 다음 도구를 사용할 수 있다.
 
 - error dialog 후보가 있으면 capture 후보를 폐기한다.
 - 후보가 target example과 관련 있는지 확신할 수 없으면 자동으로 닫지 않는다.
-- 후보를 닫은 뒤에는 2~3초 quiet period를 두고 다시 scan해 0건을 확인한다.
+- 후보를 닫은 뒤에는 2초부터 3초까지 quiet period를 두고 다시 scan해 0건을 확인한다.
 - 이전 session lock, target example process 또는 error dialog가 남아 있으면 새 capture를 시작하지 않는다.

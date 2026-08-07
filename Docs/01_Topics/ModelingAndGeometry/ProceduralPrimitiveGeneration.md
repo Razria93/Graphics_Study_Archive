@@ -27,7 +27,7 @@ Sphere는 longitude slice와 latitude stack을 조합한다. Pole을 일반 quad
 
 - Position: 폭과 높이를 분할 간격으로 나눈 실제 공간 좌표
 - Normal: surface 방향을 나타내는 단위 vector
-- Texture coordinate: 분할 위치를 0~1 범위로 정규화한 UV
+- Texture coordinate: 분할 위치를 0부터 1까지의 범위로 정규화한 UV
 
 Grid는 일정한 간격으로 sample하지만 cylinder와 sphere는 각도와 높이를 함께 사용한다. 생성식이 달라도 sample parameter에서 vertex attribute를 계산한다는 책임은 같다.
 

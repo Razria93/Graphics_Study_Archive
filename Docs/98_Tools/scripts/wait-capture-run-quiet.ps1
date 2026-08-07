@@ -16,6 +16,7 @@ param(
 $ErrorActionPreference = "Stop"
 $deadline = [DateTime]::UtcNow.AddSeconds($TimeoutSeconds)
 $quietStart = $null
+$lastState = $null
 
 while ([DateTime]::UtcNow -lt $deadline)
 {
@@ -51,6 +52,7 @@ while ([DateTime]::UtcNow -lt $deadline)
 
     $json = & powershell @arguments
     $state = $json | ConvertFrom-Json
+    $lastState = $state
     if (-not $state.HasFindings)
     {
         if ($null -eq $quietStart)
@@ -73,4 +75,26 @@ while ([DateTime]::UtcNow -lt $deadline)
 }
 
 Write-Host "FAIL: capture/run state did not stay quiet within ${TimeoutSeconds}s."
+if ($null -ne $lastState)
+{
+    if ($null -ne $lastState.SessionLock)
+    {
+        Write-Host "Last session lock: $($lastState.SessionLock.Path)"
+        Write-Host "Last runner alive: $($lastState.SessionLock.RunnerAlive)"
+        Write-Host "Last example alive: $($lastState.SessionLock.ExampleAlive)"
+    }
+    $lastProcesses = @($lastState.ExampleProcesses)
+    if ($lastProcesses.Count -gt 0)
+    {
+        Write-Host "Last example process candidate(s):"
+        $lastProcesses | Format-Table Id, ProcessName, MainWindowTitle -AutoSize
+    }
+    $lastDialogs = @($lastState.ErrorDialogs)
+    if ($lastDialogs.Count -gt 0)
+    {
+        Write-Host "Last error dialog candidate(s):"
+        $lastDialogs | Format-Table `
+            Handle, Title, ClassName, ProcessId, ProcessName, MessageText, Fingerprint -AutoSize
+    }
+}
 exit 2

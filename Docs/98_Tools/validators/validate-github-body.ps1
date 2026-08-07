@@ -1,11 +1,11 @@
 param(
 	[string]$Root = (Resolve-Path (Join-Path $PSScriptRoot "..\..\..")).Path,
 	[string]$GitHubRoot = (Join-Path $Root "Docs/07_GitHub"),
-	[string]$TemplatesRoot = (Join-Path $Root "Docs/98_Tools/templates")
+	[string]$TemplatesRoot = (Join-Path $Root "Docs/98_Tools/templates"),
+	[string[]]$InputPath
 )
 
 $ErrorActionPreference = "Stop"
-. (Join-Path $PSScriptRoot "github-visual-rules.ps1")
 
 $Failures = New-Object System.Collections.Generic.List[string]
 $Warnings = New-Object System.Collections.Generic.List[string]
@@ -576,45 +576,15 @@ function Test-Templates {
 	}
 }
 
-function Test-PrVisualAndDemoLinks {
-	param([System.IO.FileInfo]$File)
-
-	$RelativePath = Get-RelativePath $File.FullName
-	$Content = Get-Content -Encoding UTF8 $File.FullName -Raw
-	$Images = [regex]::Matches($Content, '!\[[^\]]+\]\(([^)]+)\)')
-	$VisualCount = Get-GitHubRepresentativeVisualCount `
-		-Content $Content `
-		-ImageCount $Images.Count
-
-	if ($VisualCount -gt 1) {
-		Add-Failure $RelativePath "PR body must use no more than one representative visual"
-	}
-
-	if (Test-GitHubStandaloneVideoAttachment -Content $Content) {
-		Add-Failure $RelativePath "PR body must link the Demo Issue video comment instead of embedding a video attachment"
-	}
-
-	foreach ($Image in $Images) {
-		$Url = $Image.Groups[1].Value
-		if (-not (Test-GitHubImageUrl -Url $Url)) {
-			Add-Failure $RelativePath "PR visual must use a GitHub absolute Docs/_assets URL"
-		}
-	}
-
-	if ($Content -notmatch
-		'\]\(https://github\.com/(?:[^/]+/[^/]+/(?:blob/.+/(?:Docs/03_Demos/|Docs/07_GitHub/issues/demo/).+\.md|issues/\d+))\)') {
-		Add-Failure $RelativePath "PR body must link a detailed Demo, Demo Issue candidate, or published Demo Issue"
-	}
-}
-
 $SummarySection = New-Text @(0xC694, 0xC57D)
 $CoreConceptsSection = New-Text @(0xD575, 0xC2EC, 0x20, 0xAC1C, 0xB150)
 $RepresentativeExamplesSection = New-Text @(0xB300, 0xD45C, 0x20, 0xC608, 0xC81C)
 $VerificationSection = New-Text @(0xAC80, 0xC99D)
 $ScreenshotsSection = New-Text @(0xC2A4, 0xD06C, 0xB9B0, 0xC0F7)
-$ImplementationScopeLimitationsSection = New-Text @(0xAD6C, 0xD604, 0x20, 0xBC94, 0xC704, 0xC640, 0x20, 0xD55C, 0xACC4)
+$UnverifiedLimitationsSection = New-Text @(0xBBF8, 0xD655, 0xC778, 0x20, 0x2F, 0x20, 0xC81C, 0xD55C)
 $DocumentationSection = New-Text @(0xBB38, 0xC11C)
 $RelatedIssuesSection = New-Text @(0xAD00, 0xB828, 0x20, 0xC774, 0xC288)
+$NextStepSection = New-Text @(0xB2E4, 0xC74C, 0x20, 0xB2E8, 0xACC4)
 $UnverifiedSection = New-Text @(0xBBF8, 0xD655, 0xC778)
 $RelatedPrSectionName = New-Text @(0xAD00, 0xB828, 0x20, 0x0050, 0x0052)
 $ScopeSection = New-Text @(0xBC94, 0xC704)
@@ -632,9 +602,11 @@ $PrRequiredSections = @(
 	$CoreConceptsSection,
 	$RepresentativeExamplesSection,
 	$VerificationSection,
-	$ImplementationScopeLimitationsSection,
+	$ScreenshotsSection,
+	$UnverifiedLimitationsSection,
 	$DocumentationSection,
-	$RelatedIssuesSection
+	$RelatedIssuesSection,
+	$NextStepSection
 )
 
 $VerificationRequiredSections = @(
@@ -684,78 +656,102 @@ function Test-IsGuidanceMarkdown {
 	return ($File.Name -eq "README.md" -or $File.Name -eq "AGENTS.md")
 }
 
+function Invoke-GitHubBodyValidation {
+	param([System.IO.FileInfo]$File)
+
+	$RelativePath = (Get-RelativePath $File.FullName) -replace '\\', '/'
+	if ($RelativePath -match '/prs/.+\.md$') {
+		Test-PublicBody -File $File -RequiredSections $PrRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true -RequireLeadingH1 $true
+		return
+	}
+
+	if ($RelativePath -match '/plan/plan-body\.md$') {
+		$Raw = Get-Content -Encoding UTF8 $File.FullName -Raw
+		$Lines = $Raw -split "`r?`n"
+		$FirstMeaningfulLine = $Lines | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Select-Object -First 1
+		if ($null -eq $FirstMeaningfulLine -or $FirstMeaningfulLine -notmatch '^#\s+.+') {
+			Add-Failure $RelativePath "Issue/PR body must start with an H1 title source"
+		}
+		Test-ProgressIssue -File $File
+		return
+	}
+
+	if ($RelativePath -match '/issues/work-unit/work-unit_.+\.md$') {
+		Test-PublicBody -File $File -RequiredSections $WorkUnitRequiredSections -RequireScreenshots $false -RequireLeadingH1 $true
+		return
+	}
+
+	if ($RelativePath -match '/issues/verification/verification_.+\.md$') {
+		Test-PublicBody -File $File -RequiredSections $VerificationRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true -RequireLeadingH1 $true
+		return
+	}
+
+	if ($RelativePath -match '/plan/plan-progress\.md$') {
+		Test-PlanProgressComment -File $File
+		return
+	}
+
+	if ($RelativePath -match '/plan/comments/.+\.md$') {
+		Test-ChapterBundleCompletionComment -File $File
+		return
+	}
+
+	Add-Failure $RelativePath "unsupported GitHub body path for this validator"
+}
+
+function Get-GitHubBodyFiles {
+	if ($InputPath) {
+		$files = foreach ($path in $InputPath) {
+			if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+				throw "Input path is not a file: $path"
+			}
+
+			Get-Item -LiteralPath $path
+		}
+
+		return @($files | Sort-Object FullName -Unique)
+	}
+
+	return @(
+		Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "prs") -Recurse |
+			Where-Object { -not (Test-IsGuidanceMarkdown -File $_) }
+		Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "plan") -Filter "plan-body.md"
+		Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues/work-unit") -Filter "work-unit_*.md"
+		Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues/verification") -Filter "verification_*.md"
+		if (Test-Path (Join-Path $GitHubRoot "plan/plan-progress.md")) {
+			Get-Item -LiteralPath (Join-Path $GitHubRoot "plan/plan-progress.md")
+		}
+		Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "plan/comments") -Filter "*.md"
+	)
+}
+
 $CheckedFileCount = 0
 
-Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "prs") -Recurse | ForEach-Object {
-	if (Test-IsGuidanceMarkdown -File $_) {
-		return
-	}
 
+foreach ($file in Get-GitHubBodyFiles) {
 	++$CheckedFileCount
-	Test-PublicBody -File $_ -RequiredSections $PrRequiredSections -RequireScreenshots $false -RequireLeadingH1 $true
-	Test-PrVisualAndDemoLinks -File $_
+	Invoke-GitHubBodyValidation -File $file
 }
 
-Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "plan") -Filter "plan-body.md" | ForEach-Object {
-	++$CheckedFileCount
-	$RelativePath = Get-RelativePath $_.FullName
-	$Raw = Get-Content -Encoding UTF8 $_.FullName -Raw
-	$Lines = $Raw -split "`r?`n"
-	$FirstMeaningfulLine = $null
-	foreach ($Line in $Lines) {
-		if (-not [string]::IsNullOrWhiteSpace($Line)) {
-			$FirstMeaningfulLine = $Line
-			break
+if (-not $InputPath) {
+	Get-OptionalMarkdownFiles -Path $GitHubRoot -Recurse | ForEach-Object {
+		if (Test-IsGuidanceMarkdown -File $_) {
+			return
 		}
+
+		$RelativePath = (Get-RelativePath $_.FullName) -replace '\\', '/'
+		if ($RelativePath -match '/prs/.+\.md$' -or
+			$RelativePath -match '/plan/plan-body\.md$' -or
+			$RelativePath -match '/plan/plan-progress\.md$' -or
+			$RelativePath -match '/plan/comments/.+\.md$' -or
+			$RelativePath -match '/issues/work-unit/work-unit_.+\.md$' -or
+			$RelativePath -match '/issues/verification/verification_.+\.md$' -or
+			$RelativePath -match '/issues/demo/demo_.+\.md$') {
+			return
+		}
+
+		Add-Failure $RelativePath "unsupported GitHub body path"
 	}
-
-	if ($null -eq $FirstMeaningfulLine -or $FirstMeaningfulLine -notmatch '^#\s+.+') {
-		Add-Failure $RelativePath "Issue/PR body must start with an H1 title source"
-	}
-
-	Test-ProgressIssue -File $_
-}
-
-Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues/work-unit") -Filter "work-unit_*.md" | ForEach-Object {
-    ++$CheckedFileCount
-	Test-PublicBody -File $_ -RequiredSections $WorkUnitRequiredSections -RequireScreenshots $false -RequireLeadingH1 $true
-}
-
-Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "issues/verification") -Filter "verification_*.md" | ForEach-Object {
-	++$CheckedFileCount
-	Test-PublicBody -File $_ -RequiredSections $VerificationRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true -RequireLeadingH1 $true
-}
-
-$PlanProgressPath = Join-Path $GitHubRoot "plan/plan-progress.md"
-if (Test-Path $PlanProgressPath) {
-	++$CheckedFileCount
-	Test-PlanProgressComment -File (Get-Item $PlanProgressPath)
-}
-
-Get-OptionalMarkdownFiles -Path (Join-Path $GitHubRoot "plan/comments") -Filter "*.md" | ForEach-Object {
-	++$CheckedFileCount
-	Test-ChapterBundleCompletionComment -File $_
-}
-
-Get-OptionalMarkdownFiles -Path $GitHubRoot -Recurse | ForEach-Object {
-	if (Test-IsGuidanceMarkdown -File $_) {
-		return
-	}
-
-	$RelativePath = (Get-RelativePath $_.FullName) -replace '\\', '/'
-	if ($RelativePath -match '/prs/.+\.md$') {
-		return
-	}
-
-	if ($RelativePath -match '/plan/plan-body\.md$' -or $RelativePath -match '/plan/plan-progress\.md$' -or $RelativePath -match '/plan/comments/.+\.md$') {
-		return
-	}
-
-	if ($RelativePath -match '/issues/work-unit/work-unit_.+\.md$' -or $RelativePath -match '/issues/verification/verification_.+\.md$' -or $RelativePath -match '/issues/demo/demo_.+\.md$') {
-		return
-	}
-
-	Add-Failure $RelativePath "unsupported GitHub body path"
 }
 
 Test-Templates

@@ -1,0 +1,33 @@
+# Part4 ExampleDocs
+
+이 폴더는 `Examples.sln` 단일 project에 모인 Part4 Example의 근거리 안내 정본을 둔다. Part4는 예제별 코드 폴더를 만들지 않으므로, 이 폴더의 Markdown 문서가 다른 Part의 예제 폴더 `README.md`와 같은 책임을 맡는다.
+
+## 작성 기준
+
+- 파일명은 상세 Demo와 같은 `Chapter_ExampleName.md` 형식을 사용한다.
+- 각 문서는 예제 목적, command argument, 주요 source 또는 shader, 예제 고유 구조, limitation과 관련 정본 링크를 둔다.
+- build/run/capture 결과는 [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)으로, 구현 흐름과 시각 결과는 [Part4 Demo Index](../../Docs/03_Demos/Part4_Chapter14-20/demo-index.md)로 위임한다.
+- capture/result가 있는 경우 대표 visual은 최대 1개만 연결하고 다중 frame 해석은 상세 Demo로 위임한다.
+
+## 현재 문서
+
+`Ex1401`부터 `Ex2001`까지 23개 ExampleDocs를 완료한다. 각 문서는 command argument, source 또는 shader anchor, 관련 Topic, Verification, 상세 Demo와 capture/result 경계를 연결한다.
+
+| Chapter | ExampleDocs | 상태 |
+| --- | --- | --- |
+| Chapter14 (1-4) | [Ex1401 Basic](14_01_Basic.md), [Ex1402 Blur](14_02_Blur.md), [Ex1403 MatVecMult](14_03_MatVecMult.md), [Ex1404 StructuredBuffer](14_04_StructuredBuffer.md) | 완료 |
+| Chapter14 (5-8) | [Ex1405 ConsumeAppendBuffer](14_05_ConsumeAppendBuffer.md), [Ex1406 DensityField](14_06_DensityField.md), [Ex1407 IndirectArguments](14_07_IndirectArguments.md), [Ex1408 BitonicSort](14_08_BitonicSort.md) | 완료 |
+| Chapter15 | [Ex1501 ParticleSystem](15_01_ParticleSystem.md), [Ex1502 SpriteFireEffect](15_02_SpriteFireEffect.md), [Ex1503 SphWater](15_03_SphWater.md) | 완료 |
+| Chapter16 (1-3) | [Ex1601 StableFluids](16_01_StableFluids.md), [Ex1602 CurlNoise](16_02_CurlNoise.md), [Ex1603 Cloud](16_03_Cloud.md) | 완료 |
+| Chapter16 (4-6) | [Ex1604 RealtimeSmoke](16_04_RealtimeSmoke.md), [Ex1605 SmokeCpu](16_05_SmokeCpu.md), [Ex1606 HybridWater](16_06_HybridWater.md) | 완료 |
+| Chapter17 | [Ex1701 SkeletalAnimation](17_01_SkeletalAnimation.md) | 완료 |
+| Chapter18 (1) | [Ex1801 Tree](18_01_Tree.md) | 완료 |
+| Chapter18 (2-3) | [Ex1802 Grass](18_02_Grass.md), [Ex1803 Landscape](18_03_Landscape.md) | 완료 |
+| Chapter19 | [Ex1901 PhysX](19_01_PhysX.md) | 완료 |
+| Chapter20 | [Ex2001 GamePlay](20_01_GamePlay.md) | 완료 |
+
+## 관련 문서
+
+- [Part4 Chapter14-20 README](../README.md)
+- [Example README Template](../../Docs/98_Tools/templates/example-readme.md)
+- [ExampleDocs Validator](../../Docs/98_Tools/validators/validate-example-doc-quality.ps1)

@@ -2,7 +2,7 @@
 
 ## 목적
 
-Chapter05 Step1~4의 GLM → DirectXMath/SimpleMath 전환을 마무리한다. Step2 GLM과 같은 CPU rasterization·lighting 장면을 SimpleMath로 옮겼을 때 matrix 식은 달라져도 vertex에 적용되는 transform 순서와 시각 결과가 유지되는지 비교한다.
+Chapter05 Step1부터 Step4까지의 GLM → DirectXMath/SimpleMath 전환을 마무리한다. Step2 GLM과 같은 CPU rasterization·lighting 장면을 SimpleMath로 옮겼을 때 matrix 식은 달라져도 vertex에 적용되는 transform 순서와 시각 결과가 유지되는지 비교한다.
 
 ## 책임 범위
 

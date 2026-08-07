@@ -33,7 +33,11 @@ Step4 DrawingSphere, Step8 Shadow와 Step13 Transparency의 대표 결과를 [De
 - Browser: Verification 취소선 제거와 table 렌더링, Demo Issue #12의 heading·링크·대표 visual 확인
 - Remote body: Demo Issue #12, 누적 Progress 댓글과 Phase 2-4 완료 댓글의 tracked 후보 일치 확인
 
-## 구현 범위와 한계
+## 스크린샷
+
+- 없음
+
+## 미확인 / 제한
 
 - 현재 확인된 같은 root cause의 두 범위 표기만 en dash로 교정하며 Verification 표의 열 구성은 바꾸지 않는다.
 - Render validator는 code span, fenced code, escaped tilde, link destination과 의도한 취소선을 제외하고 한 줄의 복수 숫자 범위만 검사한다.
@@ -52,3 +56,7 @@ Step4 DrawingSphere, Step8 Shadow와 Step13 Transparency의 대표 결과를 [De
 - [Demo Issue #12](https://github.com/Razria93/Graphics_Study_Archive/issues/12)
 - [Progress Issue #7 누적 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5091068690)
 - [Progress Issue #7 Phase 2-4 완료 댓글](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5142322616)
+
+## 다음 단계
+
+- 이후 Chapter 게시 마감에서도 Markdown render fixture와 remote body 일치 검수를 적용한다.

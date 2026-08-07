@@ -1,6 +1,7 @@
 param(
     [string]$Root = (Resolve-Path (Join-Path $PSScriptRoot "..\..\..")).Path,
-    [string]$DemosRoot = (Join-Path $Root "Docs/03_Demos")
+    [string]$DemosRoot = (Join-Path $Root "Docs/03_Demos"),
+    [string[]]$InputPath
 )
 
 $ErrorActionPreference = "Stop"
@@ -216,7 +217,8 @@ function Validate-DemoDocument {
         }
 
         $repoTarget = Get-RelativePath $resolved
-        if ($repoTarget -match '^(?:Part[^/]+(?:/.+)?|Portfolio_RayTracer(?:/.+)?)\/README\.md$') {
+        if ($repoTarget -match '^(?:Part[^/]+(?:/.+)?|Portfolio_RayTracer(?:/.+)?)\/README\.md$' -or
+            $repoTarget -match '^Part4_Chapter14-20/ExampleDocs/\d{2}_.+\.md$') {
             $hasExample = $true
         }
         if ($repoTarget -match '^Docs/01_Topics/') {
@@ -237,7 +239,7 @@ function Validate-DemoDocument {
     }
 
     if (-not $hasExample) {
-        Add-Failure $relative "missing Example README Markdown link"
+        Add-Failure $relative "missing Example README or Part4 ExampleDocs Markdown link"
     }
     if (-not $hasTopic) {
         Add-Failure $relative "missing Topic Markdown link"
@@ -245,7 +247,19 @@ function Validate-DemoDocument {
     if (-not $hasVerification) {
         Add-Failure $relative "missing Verification Markdown link"
     }
-    if ($imageCount -eq 0) {
+    $visualStatusDocumented = $false
+    foreach ($visualStatusPhrase in @(
+        'Visual status:',
+        'tracked screenshot',
+        'tracked visual',
+        'stdout evidence'
+    )) {
+        if ($content.Contains($visualStatusPhrase)) {
+            $visualStatusDocumented = $true
+            break
+        }
+    }
+    if ($imageCount -eq 0 -and -not $visualStatusDocumented) {
         Add-Warning $relative "representative visual is missing"
     }
 
@@ -284,22 +298,48 @@ if (-not (Test-Path $DemosRoot)) {
     throw "Demos root not found: $DemosRoot"
 }
 
-$demoFiles = @(Get-ChildItem -Path $DemosRoot -File -Recurse |
-    Where-Object { $_.Name -match '^\d{2}_.+\.md$' })
-if ($demoFiles.Count -eq 0) {
-    $Failures.Add("Docs/03_Demos :: no detailed Demo documents found")
+$demoFiles = @()
+$exampleReadmes = @()
+if ($InputPath) {
+    $resolvedInput = foreach ($path in $InputPath) {
+        if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+            continue
+        }
+
+        Get-Item -LiteralPath $path
+    }
+
+    $demosRootFull = [IO.Path]::GetFullPath($DemosRoot).TrimEnd('\') + '\'
+    $rootFull = [IO.Path]::GetFullPath($Root).TrimEnd('\') + '\'
+    $demoFiles = @($resolvedInput | Where-Object {
+        $full = [IO.Path]::GetFullPath($_.FullName)
+        $full.StartsWith($demosRootFull, [StringComparison]::OrdinalIgnoreCase) -and
+            $_.Name -match '^\d{2}_.+\.md$'
+    })
+    $exampleReadmes = @($resolvedInput | Where-Object {
+        $full = [IO.Path]::GetFullPath($_.FullName)
+        $repoRelative = $full.Substring($rootFull.Length).Replace('\', '/')
+        $_.Name -eq 'README.md' -and $repoRelative -match '^Part\d+_Chapter'
+    })
 }
 else {
-    foreach ($file in $demoFiles) {
-        Validate-DemoDocument -File $file
+    $demoFiles = @(Get-ChildItem -Path $DemosRoot -File -Recurse |
+        Where-Object { $_.Name -match '^\d{2}_.+\.md$' })
+    if ($demoFiles.Count -eq 0) {
+        $Failures.Add("Docs/03_Demos :: no detailed Demo documents found")
     }
+
+    $exampleRoots = @(Get-ChildItem -Path $Root -Directory |
+        Where-Object { $_.Name -match '^Part\d+_Chapter' })
+    $exampleReadmes = @($exampleRoots | ForEach-Object {
+        Get-ChildItem -Path $_.FullName -Filter README.md -File -Recurse
+    })
 }
 
-$exampleRoots = @(Get-ChildItem -Path $Root -Directory |
-    Where-Object { $_.Name -match '^Part\d+_Chapter' })
-$exampleReadmes = @($exampleRoots | ForEach-Object {
-    Get-ChildItem -Path $_.FullName -Filter README.md -File -Recurse
-})
+foreach ($file in $demoFiles) {
+    Validate-DemoDocument -File $file
+}
+
 foreach ($file in $exampleReadmes) {
     $relative = Get-RelativePath $file.FullName
     $content = Get-Content -Raw -Encoding UTF8 $file.FullName

@@ -58,7 +58,7 @@ Metallic-roughness map과 direct GGX BRDF·IBL을 결합해 PBR material의 입�
 - PNG full decode, dimensions, SHA-256, metadata·개인 식별자와 공개 안전성 확인
 - GitHub body, Demo, Topic, Markdown wrap·render·table과 video asset validator 통과
 
-## 대표 Visual
+## 스크린샷
 
 ### Chapter13 Hard Shadow → PCF → PCSS
 
@@ -66,9 +66,7 @@ Metallic-roughness map과 direct GGX BRDF·IBL을 결합해 PBR material의 입�
 
 ![Chapter13 Shadow Comparison](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter13_04_06_shadow_filtering_storyboard.png?raw=true)
 
-Material/IBL 결과 축은 [Chapter12 PBR Demo #27](https://github.com/Razria93/Graphics_Study_Archive/issues/27)의 UnrealPBR·PBR Models Off/On comparison으로 분리해 확인한다.
-
-## 구현 범위와 한계
+## 미확인 / 제한
 
 - Chapter10 Step5의 Distance Adaptive tessellation은 원래 Manual 학습 경로와 분리한 사용자 확장이다.
 - Chapter13의 raw 중복 Step2 경로는 유지하고 공개 표시만 Step2 PipelineStateObject와 Step2B Shadow Prototype으로 구분한다.
@@ -85,7 +83,8 @@ Material/IBL 결과 축은 [Chapter12 PBR Demo #27](https://github.com/Razria93/
 
 ## 관련 이슈
 
-- [Chapter10 Geometry Pipeline Demo #25](https://github.com/Razria93/Graphics_Study_Archive/issues/25)
-- [Chapter11 Texturing Techniques Demo #26](https://github.com/Razria93/Graphics_Study_Archive/issues/26)
-- [Chapter12 Physically Based Rendering Demo #27](https://github.com/Razria93/Graphics_Study_Archive/issues/27)
-- [Chapter13 Light And Shadow Demo #28](https://github.com/Razria93/Graphics_Study_Archive/issues/28)
+- 없음
+
+## 다음 단계
+
+- Chapter10부터 Chapter13까지의 대표 Demo Issue와 public subset 게시 범위를 별도 검수로 결정한다.

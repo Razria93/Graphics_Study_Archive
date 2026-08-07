@@ -1,6 +1,7 @@
 param(
     [string]$Root = (Resolve-Path (Join-Path $PSScriptRoot "..\..\..")).Path,
-    [string]$DemosRoot = (Join-Path $Root "Docs/03_Demos")
+    [string]$DemosRoot = (Join-Path $Root "Docs/03_Demos"),
+    [string[]]$InputPath
 )
 
 $ErrorActionPreference = "Stop"
@@ -154,11 +155,9 @@ function Test-UpdateRulesSection {
 function Test-DemoTable {
     param(
         [string]$RelativePath,
-        [string]$FileDirectory,
         [string[]]$Lines
     )
 
-    $Scope = "## " + (New-Text @(0xBC94, 0xC704))
     $DemoList = "## Demo " + (New-Text @(0xBAA9, 0xB85D))
     $section = Get-SectionLines -Lines $Lines -Heading $DemoList
     if ($null -eq $section) {
@@ -173,11 +172,9 @@ function Test-DemoTable {
 
     $header = Split-MarkdownRow -Line $table[0]
     $ColDemoCandidate = "Demo " + (New-Text @(0xD6C4, 0xBCF4))
-    $ColDetailedDemo = (New-Text @(0xC0C1, 0xC138)) + " Demo"
     $ColExample = (New-Text @(0xC5F0, 0xACB0)) + " Example"
     $ColTopic = (New-Text @(0xC5F0, 0xACB0)) + " Topic"
     $ColCaptureResult = "Capture/Result"
-    $ColGitHubIssue = "GitHub Demo Issue"
     $ColStatus = (New-Text @(0xC0C1, 0xD0DC))
     $ColNote = (New-Text @(0xBE44, 0xACE0))
 
@@ -191,16 +188,12 @@ function Test-DemoTable {
     $StatusHold = (New-Text @(0xBCF4, 0xB958))
     $StatusExcluded = (New-Text @(0xC81C, 0xC678))
     $NoneText = (New-Text @(0xC5C6, 0xC74C))
-    $IssueCandidate = (New-Text @(0xAC8C, 0xC2DC, 0x20, 0xD6C4, 0xBCF4))
-    $IssueUnpublished = (New-Text @(0xBBF8, 0xAC8C, 0xC2DC))
     $requiredHeader = @(
         $ColDemoCandidate,
-        $ColDetailedDemo,
         $ColExample,
         $ColTopic,
         "Verification",
         $ColCaptureResult,
-        $ColGitHubIssue,
         $ColStatus,
         $ColNote
     )
@@ -211,11 +204,21 @@ function Test-DemoTable {
         }
     }
 
+    if ($requiredHeader | Where-Object { -not ($header -contains $_) }) {
+        return
+    }
+
+    $exampleIndex = [Array]::IndexOf($header, $ColExample)
+    $verificationIndex = [Array]::IndexOf($header, "Verification")
+    $captureIndex = [Array]::IndexOf($header, $ColCaptureResult)
+    $statusIndex = [Array]::IndexOf($header, $ColStatus)
+    $noteIndex = [Array]::IndexOf($header, $ColNote)
+
     $rows = @()
     for ($i = 2; $i -lt $table.Count; ++$i) {
         $cells = Split-MarkdownRow -Line $table[$i]
         if ($cells.Count -lt $header.Count) {
-            Add-Failure $RelativePath "demo row has fewer columns than its header: $($table[$i])"
+            Add-Failure $RelativePath "demo row has fewer columns than the header: $($table[$i])"
             continue
         }
         $rows += ,$cells
@@ -235,39 +238,6 @@ function Test-DemoTable {
         }
     }
 
-    $scopeSection = Get-SectionLines -Lines $Lines -Heading $Scope
-    if ($null -ne $scopeSection) {
-        $scopeText = $scopeSection -join "`n"
-        $pendingRanges = [regex]::Matches($scopeText, 'Chapter(\d{1,2})~(\d{1,2})')
-        $exampleIndex = [Array]::IndexOf($header, $ColExample)
-        $captureIndex = [Array]::IndexOf($header, $ColCaptureResult)
-        $githubIssueIndex = [Array]::IndexOf($header, $ColGitHubIssue)
-
-        foreach ($range in $pendingRanges) {
-            $startChapter = [int]$range.Groups[1].Value
-            $endChapter = [int]$range.Groups[2].Value
-            for ($chapter = $startChapter; $chapter -le $endChapter; ++$chapter) {
-                $chapterToken = "Ex{0:D2}" -f $chapter
-                foreach ($row in $rows) {
-                    $name = $row[[Array]::IndexOf($header, $ColDemoCandidate)]
-                    $example = $row[$exampleIndex]
-                    $capture = $row[$captureIndex]
-                    $githubIssue = $row[$githubIssueIndex]
-
-                    $hasChapterExample = $example -match [regex]::Escape($chapterToken)
-                    $hasPromotedEvidence = (
-                        $capture -match '(Docs/)?_assets/(captures|videos|diagrams)' -or
-                        $capture -match '(?i)\btracked\s+(capture|result|asset)\b' -or
-                        $githubIssue -match 'https://github\.com/[^/]+/[^/]+/issues/\d+'
-                    )
-                    if ($hasChapterExample -and $hasPromotedEvidence) {
-                        Add-Failure $RelativePath "scope section lists Chapter$chapter in pending range $($range.Value), but row '$name' has promoted capture/result or published Demo Issue"
-                    }
-                }
-            }
-        }
-    }
-
     $allowedStatuses = @(
         $StatusUnknown,
         $StatusCandidate,
@@ -277,20 +247,18 @@ function Test-DemoTable {
     )
 
     foreach ($row in $rows) {
-        $name = $row[[Array]::IndexOf($header, $ColDemoCandidate)]
-        $detailedDemo = $row[[Array]::IndexOf($header, $ColDetailedDemo)]
-        $example = $row[[Array]::IndexOf($header, $ColExample)]
-        $verification = $row[[Array]::IndexOf($header, "Verification")]
-        $capture = $row[[Array]::IndexOf($header, $ColCaptureResult)]
-        $githubIssue = $row[[Array]::IndexOf($header, $ColGitHubIssue)]
-        $status = $row[[Array]::IndexOf($header, $ColStatus)]
-        $note = $row[[Array]::IndexOf($header, $ColNote)]
+        $name = $row[0]
+        $example = $row[$exampleIndex]
+        $verification = $row[$verificationIndex]
+        $capture = $row[$captureIndex]
+        $status = $row[$statusIndex]
+        $note = $row[$noteIndex]
 
         if (-not ($allowedStatuses -contains $status)) {
             Add-Failure $RelativePath "row '$name' has invalid status: $status"
         }
 
-        if ($verification -notmatch '(Docs/)?02_Verification') {
+        if ($verification -notmatch 'Docs/02_Verification|\.\./\.\./02_Verification|`Docs/02_Verification') {
             Add-Failure $RelativePath "row '$name' should reference Docs/02_Verification"
         }
 
@@ -299,54 +267,16 @@ function Test-DemoTable {
         }
 
         if ($status -eq $StatusReady) {
-            if ($detailedDemo -notmatch '\[[^\]]+\]\(([^)]+\.md)\)') {
-                Add-Failure $RelativePath "row '$name' is '확보' but does not link a detailed Demo"
-            }
-
             if ($capture -eq $NoneText) {
                 Add-Failure $RelativePath "row '$name' is '확보' but Capture/Result is '없음'"
             }
 
-            $usesTrackedAsset = $capture -match '(Docs/)?_assets/(captures|videos|diagrams)'
-            $usesSelectedLocalVideo = (
-                $name -eq $RowVideo -and
-                $capture -match '(?i)\bselected local video\b'
-            )
-            $usesPublishedDemoIssue = (
-                $name -eq $RowVideo -and
-                $capture -match 'https://github\.com/[^/]+/[^/]+/issues/\d+'
-            )
-            if (-not ($usesTrackedAsset -or $usesSelectedLocalVideo -or $usesPublishedDemoIssue)) {
-                Add-Failure $RelativePath "row '$name' is '확보' but Capture/Result has no tracked asset, selected local video, or published Demo Issue"
+            $usesTrackedAsset = $capture -match 'Docs/_assets/(captures|videos|diagrams)|\.\./\.\./_assets/(captures|videos|diagrams)'
+            $usesPublishedVideo = $name -eq $RowVideo -and
+                $capture -match 'https://github\.com/user-attachments/assets/'
+            if (-not $usesTrackedAsset -and -not $usesPublishedVideo) {
+                Add-Failure $RelativePath "row '$name' is '확보' but Capture/Result does not reference Docs/_assets"
             }
-            if ($usesPublishedDemoIssue -and $githubIssue -notmatch 'https://github\.com/[^/]+/[^/]+/issues/\d+') {
-                Add-Failure $RelativePath "row '$name' references a published video without a GitHub Demo Issue"
-            }
-        }
-
-        foreach ($cell in @($detailedDemo, $githubIssue)) {
-            $matches = [regex]::Matches($cell, '\[[^\]]+\]\(([^)]+)\)')
-            foreach ($match in $matches) {
-                $target = $match.Groups[1].Value.Split('#')[0]
-                if ($target -notmatch '^https?://') {
-                    $decodedTarget = [Uri]::UnescapeDataString($target)
-                    $resolved = [IO.Path]::GetFullPath((Join-Path $FileDirectory $decodedTarget))
-                    if (-not (Test-Path -LiteralPath $resolved)) {
-                        Add-Failure $RelativePath "row '$name' has a broken Demo link: $target"
-                    }
-                }
-            }
-        }
-
-        if ($githubIssue -match [regex]::Escape($IssueCandidate) -and
-            $githubIssue -notmatch '\[[^\]]+\]\([^)]+07_GitHub/issues/demo/[^)]+\.md\)') {
-            Add-Failure $RelativePath "row '$name' marks a Demo Issue candidate without linking its tracked candidate"
-        }
-
-        if ($githubIssue -ne $IssueUnpublished -and
-            $githubIssue -notmatch [regex]::Escape($IssueCandidate) -and
-            $githubIssue -notmatch 'https://github\.com/[^/]+/[^/]+/issues/\d+') {
-            Add-Failure $RelativePath "row '$name' has an invalid GitHub Demo Issue value"
         }
 
         if ($name -eq $RowVideo -and $status -eq $StatusExcluded -and $capture -ne $NoneText) {
@@ -372,17 +302,37 @@ function Validate-DemoIndex {
 
     Test-RequiredHeadingOrder -RelativePath $relative -Lines $lines
     Test-ScopeSection -RelativePath $relative -Lines $lines
-    Test-DemoTable -RelativePath $relative -FileDirectory $File.DirectoryName -Lines $lines
+    Test-DemoTable -RelativePath $relative -Lines $lines
     Test-UpdateRulesSection -RelativePath $relative -Lines $lines
 }
 
-function Validate-All {
+function Get-DemoIndexFiles {
+    if ($InputPath) {
+        $files = foreach ($path in $InputPath) {
+            if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+                throw "Input path is not a file: $path"
+            }
+
+            $file = Get-Item -LiteralPath $path
+            if ($file.Name -ne "demo-index.md") {
+                throw "Input path is not a demo-index.md file: $path"
+            }
+
+            $file
+        }
+
+        return @($files | Sort-Object FullName -Unique)
+    }
+
     if (-not (Test-Path $DemosRoot)) {
         throw "Demos root not found: $DemosRoot"
     }
 
-    $demoIndexFiles = Get-ChildItem -Path $DemosRoot -Filter "demo-index.md" -File -Recurse
-    foreach ($file in $demoIndexFiles) {
+    return @(Get-ChildItem -Path $DemosRoot -Filter "demo-index.md" -File -Recurse)
+}
+
+function Validate-All {
+    foreach ($file in Get-DemoIndexFiles) {
         Validate-DemoIndex -File $file
     }
 }

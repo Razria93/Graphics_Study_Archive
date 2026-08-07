@@ -43,7 +43,7 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 | `KeepApplicationOpen` | 최종 선택 뒤 application 유지 |
 | `OverwriteSelection` | 기존 selected 파일 교체 허용 |
 | `CenterWindow` | 시작·재시작 시 monitor working area 중앙으로 창 이동 |
-| `CountdownSeconds` | F9 뒤 녹화 시작까지 countdown, 기본값 `0`, 범위 `0`~`10` |
+| `CountdownSeconds` | F9 뒤 녹화 시작까지 countdown, 기본값 `0`, 범위 `0`부터 `10`까지 |
 | `CaptureMode` | `FullWindow` 또는 `ClientOnly`, 기본값 `FullWindow` |
 
 `ClientOnly`는 `FullWindow` desktop crop에서 white frame, compositor artifact 또는 반복적인 UI 손상이 재현될 때만 사용하는 opt-in fallback이다. 이 mode는 title bar와 border를 포함하지 않으므로 같은 Demo의 `FullWindow` screenshot으로 application identity, title과 필요한 UI 상태를 보완한다.

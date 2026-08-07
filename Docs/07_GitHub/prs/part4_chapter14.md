@@ -6,11 +6,11 @@
 
 ## 범위
 
-- Chapter14 `Ex1401_Basic`~`Ex1408_BitonicSort` Debug x64 build/run/capture evidence 정리
-- `Ex1402`, `Ex1404`~`Ex1407` centered client-visible screenshot 5개를 `Docs/_assets/captures`로 승격
+- Chapter14 `Ex1401_Basic`부터 `Ex1408_BitonicSort`까지 Debug x64 build/run/capture evidence 정리
+- `Ex1402`, `Ex1404`부터 `Ex1407`까지 centered client-visible screenshot 5개를 `Docs/_assets/captures`로 승격
 - `Ex1403`, `Ex1405`, `Ex1408` stdout evidence와 `Ex1407` indirect draw code evidence 정리
 - Chapter14 상세 Demo와 Demo Issue 후보, PR body 후보 작성
-- Chapter15~20 재검증, Release 현재 재검증, desktop video capture는 제외
+- Chapter15부터 Chapter20까지 재검증, Release 현재 재검증, desktop video capture는 제외
 
 ## 핵심 개념
 
@@ -51,12 +51,12 @@ Density trail visual은 `Ex1406` 계열을 공유하지만, indirect argument bu
 ## 검증
 
 - `Part4_Chapter14-20/Examples.sln` Debug x64 build 경고 0개, 오류 0개 확인
-- `Ex1401`~`Ex1408` Debug x64 run 성공과 exit code 확인
+- `Ex1401`부터 `Ex1408`까지 Debug x64 run 성공과 exit code 확인
 - `Ex1403` CPU/GPU result compare, `Ex1405` append count, `Ex1408` element count별 sort compare stdout 확인
-- `Ex1402`, `Ex1404`~`Ex1407` PNG full format, dimensions, taskbar-free centered client-visible capture와 text metadata chunk 없음 확인
+- `Ex1402`, `Ex1404`부터 `Ex1407`까지 PNG full format, dimensions, taskbar-free centered client-visible capture와 text metadata chunk 없음 확인
 - Demo index, 상세 Demo, GitHub body와 Markdown validator 통과 대상
 
-## 대표 Visual
+## 스크린샷
 
 ### Chapter14 DensityField
 
@@ -64,7 +64,7 @@ Density trail visual은 `Ex1406` 계열을 공유하지만, indirect argument bu
 
 ![Chapter14 DensityField](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter14_06_density_field.png?raw=true)
 
-## 구현 범위와 한계
+## 미확인 / 제한
 
 - 이 PR의 현재 재검증 범위는 Chapter14 Debug x64다.
 - Release 현재 재검증은 과거 확인 상태를 유지하고 후속 범위로 둔다.
@@ -85,3 +85,7 @@ Density trail visual은 `Ex1406` 계열을 공유하지만, indirect argument bu
 
 - Demo Issue: [Part4 Chapter14 Compute Shader Evidence Demo #29](https://github.com/Razria93/Graphics_Study_Archive/issues/29)
 - Progress 완료 댓글: [Phase 5-1 완료 기록](https://github.com/Razria93/Graphics_Study_Archive/issues/7#issuecomment-5196232081)
+
+## 다음 단계
+
+- Chapter15부터 Chapter20까지의 재검증은 별도 작업 단위로 진행한다.

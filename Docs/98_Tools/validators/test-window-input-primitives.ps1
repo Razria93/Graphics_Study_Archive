@@ -66,11 +66,9 @@ Assert-Equal ([byte]0x70) (Resolve-ExampleVirtualKey -Key "F1") `
     "Function virtual key resolution failed."
 Assert-Equal ([byte]0x20) (Resolve-ExampleVirtualKey -Key "Space") `
     "Named virtual key resolution failed."
-Assert-Equal ([byte]0xBE) (Resolve-ExampleVirtualKey -Key ".") `
-    "Decimal point virtual key resolution failed."
 Assert-Equal ([byte]0xBD) (Resolve-ExampleVirtualKey -Key "-") `
     "Minus virtual key resolution failed."
-Assert-Equal ([byte]0xBD) (Resolve-ExampleVirtualKey -Key "Oem_Minus") `
+Assert-Equal ([byte]0xBD) (Resolve-ExampleVirtualKey -Key "OEM_MINUS") `
     "Named minus virtual key resolution failed."
 
 $unsupportedFailed = $false

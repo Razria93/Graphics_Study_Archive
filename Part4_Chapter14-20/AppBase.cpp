@@ -1030,7 +1030,7 @@ bool AppBase::InitMainWindow()
 	                 NULL,
 	                 NULL,
 	                 NULL,
-	                 L"HongLabGraphics", // lpszClassName, L-string
+	                 L"ComputerGraphics", // lpszClassName, L-string
 	                 NULL};
 
 	if (!RegisterClassEx(&wc))
@@ -1041,7 +1041,7 @@ bool AppBase::InitMainWindow()
 
 	RECT wr = {0, 0, m_screenWidth, m_screenHeight};
 	AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, false);
-	m_mainWindow = CreateWindow(wc.lpszClassName, L"HongLabGraphics Example",
+	m_mainWindow = CreateWindow(wc.lpszClassName, L"ComputerGraphics",
 	                            WS_OVERLAPPEDWINDOW,
 	                            100,                // 윈도우 좌측 상단의 x 좌표
 	                            100,                // 윈도우 좌측 상단의 y 좌표

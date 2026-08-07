@@ -20,10 +20,12 @@ Windows loader error dialog는 target example process와 별개의 top-level win
 - 실행 실패 후에는 target process뿐 아니라 top-level error dialog 잔존 여부를 확인한다.
 - error dialog 후보가 남아 있으면 해당 capture 후보를 폐기한다.
 - error dialog가 하나만 생긴다고 가정하지 않는다.
-- 후보를 닫은 뒤 2~3초 quiet period를 두고 다시 scan해 0건을 확인한다.
+- DirectXTK, assimp 같은 loader dialog는 하나를 닫은 뒤 다음 dialog가 순차로 나타날 수 있으므로 남은 후보 수만으로 close 실패를 판정하지 않는다.
+- 닫기 전후의 handle, title, class, process, start time, child message text, button text 기반 fingerprint를 비교해 같은 dialog 잔존과 새 dialog 교체를 구분한다.
+- 후보를 닫은 뒤 2초부터 3초까지 quiet period를 두고 다시 scan해 0건을 확인한다.
 - 실패한 executable은 DLL, working directory, build configuration 또는 Clean/Rebuild 필요성을 확인하기 전까지 반복 실행하지 않는다.
 - 무인 모드에서는 관련성이 불확실한 dialog를 닫지 않고 사용자 알림으로 중단한다.
-- error dialog는 mouse click이 아니라 `WM_CLOSE`와 UI Automation close 기반 내부 명령으로만 닫는다.
+- error dialog는 mouse click이 아니라 `WM_CLOSE`, UI Automation close, button `BM_CLICK` 기반 내부 명령으로만 닫는다.
 
 ## 확인 명령
 
@@ -78,12 +80,12 @@ powershell -NoProfile -ExecutionPolicy Bypass `
   -File Docs/98_Tools/validators/test-capture-run-state.ps1
 ```
 
-이 rehearsal은 stale session lock, protected process target 거부, 다중 error dialog drain과 quiet period 재검사를 확인한다. 이 테스트가 실패하면 assimp 사용 example을 다시 실행하지 않고 원인을 먼저 조사한다.
+이 rehearsal은 stale session lock, protected process target 거부, message/fingerprint 수집, 다중 error dialog drain, 순차 dialog chain의 `Replaced` 판정, quiet period 재검사를 확인한다. 이 테스트가 실패하면 assimp 사용 example을 다시 실행하지 않고 원인을 먼저 조사한다.
 
 ## 중단 기준
 
 - error dialog 후보가 target example과 관련 있는지 확신할 수 없다.
-- `WM_CLOSE` 후에도 후보가 남는다.
+- close 후에도 같은 fingerprint 후보가 `StillPresent`로 남는다.
 - quiet period 뒤에도 후보가 다시 나타난다.
 - DLL 임시 rename 테스트 후 DLL 복원에 실패한다.
 - GUI/window enumeration이 현재 세션에서 동작하지 않는다.

@@ -89,6 +89,8 @@ Print(point, direction, translation);
 
 이 예제의 결과는 입력에 따라 항상 같은 console text다. Screenshot은 source와 stdout보다 정보 밀도가 낮고 video는 시간 변화를 설명하지 못하므로 둘 다 제외한다. Chapter 최소 visual은 Step2 Lights(GLM)의 기본·조정 screenshot을 유지한다.
 
+Visual status: console evidence로 기록하며 screenshot과 video는 제외한다.
+
 ## 구현 범위와 한계
 
 - DirectXMath의 vector length와 translation API만 다룬다.

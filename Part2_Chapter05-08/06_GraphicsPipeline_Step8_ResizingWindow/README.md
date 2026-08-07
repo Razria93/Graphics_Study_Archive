@@ -33,7 +33,7 @@ Viewport와 projection은 resource 재생성 이후의 client size와 현재 pan
 
 `WM_SIZE`는 최소화 또는 0×0 크기일 때 마지막 유효 resource를 보존한다. 유효한 resize에서는 output-merger target을 unbind하고 RTV, DSV와 depth texture를 해제한 뒤 `ResizeBuffers()`를 호출한다. 새 back buffer의 RTV와 같은 크기의 depth resource를 만든 경우에만 rendering을 재개한다.
 
-Frame에서는 Step7과 같은 panel width 기반 scene viewport를 계산한다. `GetAspectRatio()`는 이 viewport의 실제 너비와 높이를 사용하므로 window 크기가 바뀌어도 box가 stretch되지 않는다. Step5~7에서 검수한 generated 목재 texture와 Directional·Point·Spot lighting 경로는 그대로 유지한다.
+Frame에서는 Step7과 같은 panel width 기반 scene viewport를 계산한다. `GetAspectRatio()`는 이 viewport의 실제 너비와 높이를 사용하므로 window 크기가 바뀌어도 box가 stretch되지 않는다. Step5부터 Step7까지에서 검수한 generated 목재 texture와 Directional·Point·Spot lighting 경로는 그대로 유지한다.
 
 ## Build And Run
 

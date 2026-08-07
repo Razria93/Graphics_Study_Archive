@@ -2,9 +2,28 @@
 
 ## 요약
 
-Stencil mirror와 pipeline state 정리에서 시작해 shadow prototype, depth fog, hard shadow, PCF, PCSS, halo와 sphere light로 확장되는 아홉 단계다.
+Stencil mirror와 pipeline state 정리에서 시작하는 아홉 단계 흐름이다.
 
-## 결과
+중간 단계는 shadow prototype, depth fog, hard shadow, PCF와 PCSS로 확장된다.
+
+후반 단계는 halo와 sphere light까지 포함한다.
+
+## 핵심 목표
+
+- Stencil mask와 reflection transform으로 planar mirror pass 구성
+- Hard shadow, fixed-kernel PCF, blocker 기반 PCSS 비교
+- Representative-point sphere light 근사와 radius 변화 확인
+
+## Demo Assets
+
+| 구분 | 파일 | 설명 |
+| --- | --- | --- |
+| Input screenshot | 없음 | 별도 입력 screenshot을 사용하지 않음 |
+| Result screenshot | Mirror·filtering·radius screenshot | 아래 시각 정보에서 결과를 비교함 |
+| Result image | 대표 storyboard 3장 | mirror, shadow filtering, sphere light를 기록함 |
+| Video | 없음 | 정적 storyboard로 shadow 변화를 비교함 |
+
+## 시각 정보
 
 ### Planar mirror
 
@@ -14,7 +33,11 @@ Stencil mask로 mirror 영역을 제한하고 reflection transform을 적용한 
 
 ### Hard Shadow → PCF → PCSS
 
-왼쪽에서 오른쪽으로 읽으면 단일 depth comparison의 hard edge, 고정 kernel PCF의 균일한 blur와 blocker 거리에 따라 penumbra 폭이 달라지는 PCSS를 비교할 수 있다.
+왼쪽에서 오른쪽으로 단일 depth comparison의 hard edge를 읽는다.
+
+그다음 고정 kernel PCF의 균일한 blur를 비교한다.
+
+마지막으로 blocker 거리에 따라 penumbra 폭이 달라지는 PCSS를 확인한다.
 
 ![Shadow comparison](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter13_04_06_shadow_filtering_storyboard.png?raw=true)
 
@@ -24,7 +47,7 @@ Radius 0.0, 0.2와 0.5를 비교해 representative point 보정과 highlight 폭
 
 ![Sphere light radius](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/_assets/captures/part3_chapter13_08_sphere_light_radius_storyboard.png?raw=true)
 
-## 핵심 구현
+## 구현 하이라이트
 
 ### Stencil 기반 mirror pass
 
@@ -34,13 +57,17 @@ Mirror surface를 stencil에 기록하고 reflected scene draw를 해당 영역�
 
 ### Shadow filtering progression
 
-Hard shadow의 light-space depth 비교에서 fixed-kernel PCF를 거쳐 blocker search와 penumbra 추정을 사용하는 PCSS로 확장한다.
+Hard shadow의 light-space depth 비교에서 출발한다.
+
+다음 단계는 fixed-kernel PCF다.
+
+마지막 단계는 blocker search와 penumbra 추정을 사용하는 PCSS다.
 
 - [Hard shadow depth comparison](https://github.com/Razria93/Graphics_Study_Archive/blob/623cb8ccbc984584f47a7c68365d69840ed65c60/Part3_Chapter10-13/13_LightAndShadow_Step4_ShadowMapping/BasicPS.hlsl#L158-L180)
 - [Fixed-kernel PCF](https://github.com/Razria93/Graphics_Study_Archive/blob/623cb8ccbc984584f47a7c68365d69840ed65c60/Part3_Chapter10-13/13_LightAndShadow_Step5_SoftShadowPCF/BasicPS.hlsl#L215-L275)
 - [Blocker search와 variable penumbra](https://github.com/Razria93/Graphics_Study_Archive/blob/623cb8ccbc984584f47a7c68365d69840ed65c60/Part3_Chapter10-13/13_LightAndShadow_Step6_SoftShadowPCSS/BasicPS.hlsl#L146-L236)
 
-## 처리 흐름
+### 처리 흐름
 
 1. Step1에서 stencil mirror를 구성한다.
 2. Step2에서 같은 결과를 PipelineStateObject abstraction으로 정리한다.
@@ -50,6 +77,36 @@ Hard shadow의 light-space depth 비교에서 fixed-kernel PCF를 거쳐 blocker
 6. Step7에서 depth-aware halo를 합성한다.
 7. Step8에서 sphere light response를 근사한다.
 
+## 핵심 로직 의사코드
+
+```cpp
+// Pseudo C++
+void FilterShadowPseudo(ShadowMap shadowMap, bool usesPcss)
+{
+	if (!shadowMap.IsValid()) {
+		return;
+	}
+
+	float filterRadius = fixedKernelRadius;
+	if (usesPcss) {
+		float blockerDepth = SearchBlockers(shadowMap);
+		filterRadius = EstimatePenumbra(blockerDepth);
+	}
+
+	for (Sample sample : FilterKernel(filterRadius)) {
+		AccumulateDepthComparison(sample);
+	}
+}
+```
+
+원본 코드: [Blocker search와 variable penumbra](https://github.com/Razria93/Graphics_Study_Archive/blob/623cb8ccbc984584f47a7c68365d69840ed65c60/Part3_Chapter10-13/13_LightAndShadow_Step6_SoftShadowPCSS/BasicPS.hlsl#L146-L236)
+
+## 검증 상태
+
+- Step1–8와 Step2B Debug/Release x64 Clean/Rebuild와 run 성공
+- 전체 창 PNG와 shadow filtering·sphere light radius storyboard full decode·metadata·공개 안전성 확인
+- Shadow, Lighting, Pipeline Topic과 validator 통과
+
 ## 구현 범위와 한계
 
 - Raw 중복 Step2 경로는 보존하고 공개 표시만 Step2와 Step2B로 구분한다.
@@ -57,13 +114,7 @@ Hard shadow의 light-space depth 비교에서 fixed-kernel PCF를 거쳐 blocker
 - Sphere light는 representative-point approximation이며 full Unreal Engine lighting parity를 의미하지 않는다.
 - 원본 HDRI·texture·model을 직접 링크하지 않고 rendered evidence만 사용한다.
 
-## 검증
-
-- Step1–8와 Step2B Debug/Release x64 Clean/Rebuild와 run 성공
-- 전체 창 PNG와 shadow filtering·sphere light radius storyboard full decode·metadata·공개 안전성 확인
-- Shadow, Lighting, Pipeline Topic과 validator 통과
-
-## 더 자세히 보기
+## 관련 문서
 
 - [Part3 Chapter10-13 README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Part3_Chapter10-13/README.md)
 - [Chapter10-13 Demo Index](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part3-chapter10-13-workflow/Docs/03_Demos/Part3_Chapter10-13/demo-index.md)

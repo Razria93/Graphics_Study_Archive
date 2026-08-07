@@ -41,7 +41,7 @@ Transparent sphere의 transparency는 1.0이고 reflection은 0이므로 local P
 | Solution | 존재 | `03_Raytracing_Step13_Transparency.sln` |
 | Debug x64 build/run | 성공 | project 폴더를 working directory로 사용 |
 | Release x64 build/run | 성공 | project 폴더를 working directory로 사용 |
-| Ground texture | 포함 | `part1_chapter03_stone_mosaic.png`, Step10~12 검증 asset과 동일 SHA-256 |
+| Ground texture | 포함 | `part1_chapter03_stone_mosaic.png`, Step10부터 Step12까지 검증 asset과 동일 SHA-256 |
 | Background texture | 포함 | `part1_chapter03_ocean_sunset.png`, 사용자 요청으로 생성한 해수면·하늘 asset |
 | Capture/Result | 확보 | Sphere 내부의 background 왜곡과 경계 굴절 확인 |
 

@@ -2,7 +2,7 @@
 
 ## 완료 내용
 
-- `Part1_Chapter03` Step4~14의 README, Topic, Verification과 독립 상세 Demo 연결을 정리했다.
+- `Part1_Chapter03` Step4부터 Step14까지의 README, Topic, Verification과 독립 상세 Demo 연결을 정리했다.
 - Debug/Release x64 build/run과 전체 application window capture를 확인했다.
 - Step4 DrawingSphere, Step8 Shadow와 Step13 Transparency를 Chapter 대표 흐름으로 확정했다.
 - 세 대표 결과와 핵심 구현을 [Demo Issue #12](https://github.com/Razria93/Graphics_Study_Archive/issues/12)에 게시했다.
@@ -11,9 +11,9 @@
 
 ## 검증
 
-- Step4~14 Debug x64 build/run: 확인
-- Step4~14 Release x64 build/run: 확인
-- Step4~14 capture와 공개 안전성: 확인
+- Step4부터 Step14까지 Debug x64 build/run: 확인
+- Step4부터 Step14까지 Release x64 build/run: 확인
+- Step4부터 Step14까지 capture와 공개 안전성: 확인
 - 필수 문서 validator와 fixture: 통과
 - GitHub Actions `Docs Validation` workflow: 구성
 

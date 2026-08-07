@@ -22,8 +22,8 @@
 
 - Topic 목록: 작성
 - 상세 Topic 문서: Ray, Intersection, Barycentric Coordinates, Sampling And Anti Aliasing, Recursive Reflection, Refraction And Transparency 작성
-- 연결 예제 검토: Step4~13 현재 확인
-- demo 연결: Step4~13 순차 Demo 연결
+- 연결 예제 검토: Step4부터 Step13까지 현재 확인
+- demo 연결: Step4부터 Step13까지 순차 Demo 연결
 
 ## 다음 작업
 

@@ -6,7 +6,7 @@
 
 - 순차 흐름: Step1 camera → Step2 GPU picking → Step3 ray picking → Step4 quaternion → Step5 trackball → Step6 drag move
 - 주요 demo 후보: FirstPersonView, MousePicking, VirtualTrackball, MouseDragMove
-- 비고: 원본 runtime asset은 비공개로 유지하고 Step1~6의 직접 실행 visual은 승인된 Chapter09 Bundle 예외에 따라 공개 가능하다.
+- 비고: 원본 runtime asset은 비공개로 유지하고 Step1부터 Step6까지의 직접 실행 visual은 승인된 Chapter09 Bundle 예외에 따라 공개 가능하다.
 
 ## Demo 목록
 

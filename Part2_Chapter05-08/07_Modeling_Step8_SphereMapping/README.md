@@ -38,7 +38,7 @@ Icosahedron seed를 반복 세분화해 sphere surface로 투영하고, 위치�
 | Geometry | 성공 | 20→80→320→1,280 triangles, 최종 3,840 triangle-local vertices |
 | UV seam | 성공 | U span이 0.5를 넘는 triangle에서 outlier vertex를 U=0 또는 1로 복제 |
 | Capture/Result | 확보 | 1282×992 전체 창 PNG 기술·시각 검수 완료 |
-| Video | 제외 예정 | 1~2개 정지 이미지에서 seam·pole·landmark를 판독할 수 있는지 최종 확인 |
+| Video | 제외 예정 | 1개 또는 2개 정지 이미지에서 seam·pole·landmark를 판독할 수 있는지 최종 확인 |
 
 ## 구현 범위와 한계
 

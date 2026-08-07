@@ -2,7 +2,7 @@
 
 ## 요약
 
-이 PR은 기존 `Part2_Chapter04` Step1~10 CPU software rasterization 예제를 순서대로 재검증하고, 코드 폴더 README, Topic, Verification과 상세 Demo로 설명 가능한 구조를 정리한다. Step8 PerspectiveProjection을 Chapter 대표 결과로 두고 Step10 Lights, Step1A Personal Extension과 Step4 Animation2D를 보조 흐름으로 연결하며, 반복 capture·video 검수와 문서 자동 검증 기준도 실제 작업에 맞게 보완한다.
+이 PR은 기존 `Part2_Chapter04` Step1부터 Step10까지 CPU software rasterization 예제를 순서대로 재검증하고, 코드 폴더 README, Topic, Verification과 상세 Demo로 설명 가능한 구조를 정리한다. Step8 PerspectiveProjection을 Chapter 대표 결과로 두고 Step10 Lights, Step1A Personal Extension과 Step4 Animation2D를 보조 흐름으로 연결하며, 반복 capture·video 검수와 문서 자동 검증  기준도 실제 작업에 맞게 보완한다.
 
 ## 범위
 
@@ -48,13 +48,13 @@ Edge function coverage와 barycentric RGB interpolation으로 Chapter의 최소 
 
 ## 검증
 
-- Debug x64 build/run: Step1, Step1A와 Step2~10 전체 성공
-- Release x64 build/run: Step1, Step1A와 Step2~10 전체 성공
+- Debug x64 build/run: Step1, Step1A와 Step2부터 Step10까지 전체 성공
+- Release x64 build/run: Step1, Step1A와 Step2부터 Step10까지 전체 성공
 - capture/result: 전체 application window screenshot 19개 확보와 사용자 시각 검수 완료
 - validator: GitHub body, Demo·Topic·Markdown rendering과 video asset 정책 validator 통과
 - Actions: `Docs Validation`은 문서·fixture·asset 정책을 검사하며 C++ graphics build/run은 로컬 Verification을 기준으로 유지
 
-## 대표 Visual
+## 스크린샷
 
 ### Step8 Perspective-Correct Interpolation
 
@@ -62,9 +62,9 @@ Affine weight로 휘어진 checker를 reciprocal-depth weight로 보정한 Chapt
 
 ![Step8 Perspective-Correct Interpolation](https://github.com/Razria93/Graphics_Study_Archive/blob/0249770306c636e298f33f97dd7873046f481b3b/Docs/_assets/captures/part2_chapter04_08_perspective_projection_correct.png?raw=true)
 
-## 구현 범위와 한계
+## 미확인 / 제한
 
-- 기존 Step1~10 예제를 새로 구현한 PR이 아니라 실행 기준, 기본 parameter, 공개 application title, 검증 근거와 설명 책임을 순차 정규화한 작업이다.
+- 기존 Step1부터 Step10까지 예제를 새로 구현한 PR이 아니라 실행 기준, 기본 parameter, 공개 application title, 검증 근거와 설명 책임을 순차 정규화한 작업이다.
 - CPU rasterizer 결과를 DirectX11 dynamic texture로 표시하며 GPU rasterization pipeline 구현을 목표로 하지 않는다.
 - Step8은 near/far clipping과 일반적인 clip-space pipeline을 포함하지 않는 간소화 projection이다.
 - Step10은 단일 Light와 선형 거리 감쇠를 사용하며 PBR, inverse-transpose normal 처리, gamma correction과 tone mapping을 포함하지 않는다.
@@ -81,3 +81,7 @@ Affine weight로 휘어진 checker를 reciprocal-depth weight로 보정한 Chapt
 ## 관련 이슈
 
 - [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14)
+
+## 다음 단계
+
+- Demo Issue와 public subset 후보의 게시 범위를 별도 검수로 결정한다.

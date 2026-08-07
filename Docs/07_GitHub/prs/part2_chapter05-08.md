@@ -52,7 +52,7 @@ Triangle topology의 wireframe 기준선에서 사용자 Sphere, subdivision과 
 - Tracked capture·generated asset의 metadata와 개인 식별자 검사 완료
 - 문서·Markdown rendering·table·video asset validator와 fixture 검사 통과
 
-## 대표 Visual
+## 스크린샷
 
 ### Chapter07 Step8 SphereMapping
 
@@ -60,7 +60,7 @@ Procedural subdivision, radial normal, spherical UV와 seam 보정을 공개 안
 
 ![Chapter07 Step8 SphereMapping](https://github.com/Razria93/Graphics_Study_Archive/blob/e21200073e8c2cab2938b64f1deb4519c13ef185/Docs/_assets/captures/part2_chapter07_08_sphere_mapping.png?raw=true)
 
-## 구현 범위와 한계
+## 미확인 / 제한
 
 - Chapter05–08의 학습용 DirectX11 예제를 설명 가능한 archive 구조로 정리하며 production renderer나 engine framework를 목표로 하지 않는다.
 - Chapter06의 resize 결과는 Compact·Default·Wide screenshot과 반복 resize로 검증한다.
@@ -79,3 +79,7 @@ Procedural subdivision, radial normal, spherical UV와 seam 보정을 공개 안
 - [Chapter05 Affine Transformations Demo #17](https://github.com/Razria93/Graphics_Study_Archive/issues/17)
 - [Chapter06 DirectX11 Graphics Pipeline Demo #18](https://github.com/Razria93/Graphics_Study_Archive/issues/18)
 - [Chapter07 Procedural Modeling Demo #19](https://github.com/Razria93/Graphics_Study_Archive/issues/19)
+
+## 다음 단계
+
+- Chapter08 대표 visual과 public Demo Issue 게시 범위를 별도 검수로 결정한다.

@@ -35,6 +35,7 @@ function Test-IncludedPath {
         $RelativePath -eq "README.md" -or
         $RelativePath -eq "AGENTS.md" -or
         $RelativePath -match '^Part[^/]+/(?:.+/)?README\.md$' -or
+        $RelativePath -match '^Part4_Chapter14-20/ExampleDocs/.+\.md$' -or
         $RelativePath -eq "Portfolio_RayTracer/README.md" -or
         $RelativePath -match '^Docs/(?:0[0-7]_[^/]+|98_Tools)/.+\.md$' -or
         $RelativePath -match '^\.github/.+\.md$'
@@ -109,21 +110,22 @@ function Test-MarkdownFile {
             continue
         }
 
-        $plain = [regex]::Replace($line, '`[^`]*`', '')
+        # Preserve code-span boundaries so `Ex1501`~`Ex1503` remains detectable.
+        $plain = [regex]::Replace($line, '`[^`]*`', 'CODE')
         $plain = [regex]::Replace($plain, '\]\([^)]+\)', ']()')
         $plain = [regex]::Replace($plain, '<https?://[^>]+>', '')
         $plain = [regex]::Replace($plain, '\\\~', '')
         $plain = [regex]::Replace($plain, '~~.*?~~', '')
-        $rangeTildes = [regex]::Matches(
+        $rangeTilde = [regex]::Match(
             $plain,
-            '(?<=\d)~(?=\d)'
+            '(?:CODE|\w+)\s*~\s*(?:CODE|\w+)'
         )
 
-        if ($rangeTildes.Count -ge 2) {
+        if ($rangeTilde.Success) {
             $Failures.Add(
                 "${relative}:${lineNumber}: MDRENDER-001 " +
-                "multiple single-tilde ranges may render as strikethrough; " +
-                "use an en dash for ranges"
+                "single tilde ranges may render as strikethrough; " +
+                "use '부터 ... 까지' wording for ranges"
             )
         }
     }

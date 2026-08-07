@@ -5,21 +5,116 @@
 ## 현재 상태
 
 - GitHub body validator는 `validators/validate-github-body.ps1`에 둔다.
-- GitHub quality, Demo index, 상세 Demo, Topic 문서는 각각의 tracked validator로 검사한다.
-- 현재 정본 Markdown의 명백한 인위적 soft-wrap은 `validators/validate-markdown-wrap-quality.ps1`로 검사한다.
-- 현재 정본 Markdown table의 header, separator와 data row 열 정합성은 `validators/validate-markdown-table-quality.ps1`로 검사한다.
-- 현재 정본 Markdown의 복수 단일-tilde 범위가 만드는 의도하지 않은 취소선은 `validators/validate-markdown-render-quality.ps1`로 검사한다.
-- capture/run session의 stale lock, protected process 방어와 다중 error dialog drain은 `validators/test-capture-run-state.ps1`로 fixture 검사한다.
-- tracked Docs 전체 링크와 상태를 통합 검사하는 validator는 아직 없다.
-- 개별 validator와 [Document System Audit Guide](document-system-audit-guide.md)의 수동 감사를 함께 사용한다.
+- GitHub 게시 전 body 검수는 tracked validator와 수동 검색을 함께 사용한다.
+- GitHub Actions는 `.github/workflows/docs-validation.yml`의 `Docs Validation` workflow를 기준으로 한다.
+- local preflight는 full-scan 결과와 Actions 동일 조건 결과를 분리해 기록한다.
 
-## 로컬과 Actions 실행
+## Actions validator scope
 
-로컬 검증은 commit과 push 전에 현재 worktree의 문제를 찾는다. GitHub Actions의 `Docs Validation` workflow는 push와 pull request의 commit을 clean checkout한 `windows-latest` runner에서 다시 검사해 실행 누락과 환경 의존 문제를 찾는다.
+GitHub Actions는 checkout된 head에서 `HEAD~1`과 `HEAD`를 비교해 `changed-files.txt`를 만든다. Local에서 아직 커밋하지 않은 변경을 Actions 입력처럼 재현할 때는 `git diff --name-only HEAD`를 사용한다.
 
-Actions run의 validator step 실패는 실제 검사 실패로 분류하고 로컬에서 같은 commit과 명령으로 재현한다. checkout, runner 할당과 GitHub infrastructure 실패는 문서 품질 실패와 구분한다.
+| Actions 단계 | Validator | Scope | 입력 기준 |
+| --- | --- | --- | --- |
+| Validate GitHub bodies | `validate-github-body.ps1` | full-scan | 기본 입력 `Docs/07_GitHub` |
+| Validate GitHub quality | `validate-github-quality.ps1` | full-scan | 기본 입력 `Docs/07_GitHub/issues/demo` |
+| Test GitHub visual validator fixtures | `test-github-visual-quality.ps1` | full-scan fixture | fixture 전체 |
+| Validate Demo indexes | `validate-demo-index-quality.ps1` | full-scan | 기본 입력 `Docs/03_Demos` |
+| Test Demo index validator fixtures | `test-demo-index-quality.ps1` | full-scan fixture | fixture 전체 |
+| Validate Demo documents | `validate-demo-doc-quality.ps1` | changed-file scope | `Docs/03_Demos/.+/\d{2}_.+\.md` 또는 `Part\d+_Chapter.*/README.md` |
+| Test Demo document validator fixtures | `test-demo-doc-quality.ps1` | full-scan fixture | fixture 전체 |
+| Validate tracked video assets | `validate-video-asset-quality.ps1` | full-scan | tracked video asset 전체 |
+| Test video asset validator fixtures | `test-video-asset-quality.ps1` | full-scan fixture | fixture 전체 |
+| Test window capture tool contracts | `test-window-capture-tools.ps1` | full-scan fixture | tool contract 전체 |
+| Test window input primitive contracts | `test-window-input-primitives.ps1` | full-scan fixture | input primitive 전체 |
+| Validate Topic documents | `validate-topic-doc-quality.ps1` | full-scan | 기본 입력 `Docs/01_Topics` |
+| Test Markdown wrap validator fixtures | `test-markdown-wrap-quality.ps1` | full-scan fixture | fixture 전체 |
+| Validate Markdown wrapping | `validate-markdown-wrap-quality.ps1` | changed-file scope | 변경된 `.md` 파일 |
+| Test Markdown render validator fixtures | `test-markdown-render-quality.ps1` | full-scan fixture | fixture 전체 |
+| Validate Markdown rendering | `validate-markdown-render-quality.ps1` | changed-file scope | 변경된 `.md` 파일 |
+| Test Markdown table validator fixtures | `test-markdown-table-quality.ps1` | full-scan fixture | fixture 전체 |
+| Validate Markdown tables | `validate-markdown-table-quality.ps1` | changed-file scope | 변경된 `.md` 파일 |
 
-Actions 성공은 validator가 담당하는 자동 검사만 증명한다. build/run 사실, capture의 시각 안전성, 문서 책임 분리와 설명의 기술적 정확성은 기존 수동 검수를 유지한다.
+## Local preflight
+
+Full-scan preflight는 기존 문서 부채를 포함한 저장소 전체 상태를 확인한다.
+
+```powershell
+$fullScanCommands = @(
+	'./Docs/98_Tools/validators/validate-github-body.ps1',
+	'./Docs/98_Tools/validators/validate-github-quality.ps1',
+	'./Docs/98_Tools/validators/test-github-visual-quality.ps1',
+	'./Docs/98_Tools/validators/validate-demo-index-quality.ps1',
+	'./Docs/98_Tools/validators/test-demo-index-quality.ps1',
+	'./Docs/98_Tools/validators/validate-demo-doc-quality.ps1',
+	'./Docs/98_Tools/validators/test-demo-doc-quality.ps1',
+	'./Docs/98_Tools/validators/validate-video-asset-quality.ps1',
+	'./Docs/98_Tools/validators/test-video-asset-quality.ps1',
+	'./Docs/98_Tools/validators/test-window-capture-tools.ps1',
+	'./Docs/98_Tools/validators/test-window-input-primitives.ps1',
+	'./Docs/98_Tools/validators/validate-topic-doc-quality.ps1',
+	'./Docs/98_Tools/validators/test-markdown-wrap-quality.ps1',
+	'./Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1',
+	'./Docs/98_Tools/validators/test-markdown-render-quality.ps1',
+	'./Docs/98_Tools/validators/validate-markdown-render-quality.ps1',
+	'./Docs/98_Tools/validators/test-markdown-table-quality.ps1',
+	'./Docs/98_Tools/validators/validate-markdown-table-quality.ps1'
+)
+
+foreach ($command in $fullScanCommands) {
+	& $command
+}
+```
+
+Actions 동일 조건 preflight는 현재 변경분이 workflow의 changed-file scope에서 통과하는지 확인한다. 커밋 전에는 `git diff --name-only HEAD`를 사용하고, 커밋 후에는 workflow와 같이 `HEAD~1`부터 `HEAD`까지의 변경 파일을 사용한다.
+
+```powershell
+$changed = @(
+	git diff --name-only HEAD |
+		Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+)
+Write-Host "changed files:" $changed.Count
+
+$demoFiles = @(
+	$changed |
+		Where-Object {
+			($_ -match '^Docs/03_Demos/.+/\d{2}_.+\.md$') -or
+			($_ -match '^Part\d+_Chapter.*/README\.md$')
+		}
+)
+Write-Host "demo scoped files:" $demoFiles.Count
+if ($demoFiles.Count -gt 0) {
+	./Docs/98_Tools/validators/validate-demo-doc-quality.ps1 -InputPath $demoFiles
+}
+else {
+	Write-Host "No changed Demo documents or example README files."
+}
+
+$markdownFiles = @($changed | Where-Object { $_ -match '\.md$' })
+Write-Host "markdown scoped files:" $markdownFiles.Count
+if ($markdownFiles.Count -gt 0) {
+	./Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1 -InputPath $markdownFiles
+	./Docs/98_Tools/validators/validate-markdown-render-quality.ps1 -InputPath $markdownFiles
+	./Docs/98_Tools/validators/validate-markdown-table-quality.ps1 -InputPath $markdownFiles
+}
+else {
+	Write-Host "No changed Markdown files."
+}
+```
+
+Whitespace preflight는 validator 결과와 별도로 실행한다.
+
+```powershell
+git diff --check
+```
+
+## 결과 기록 기준
+
+- `full-scan 통과`는 Local preflight의 full-scan command가 실패와 warning 없이 끝난 상태를 뜻한다.
+- `Actions 동일 조건 통과`는 현재 변경 파일 목록으로 changed-file scope validator를 재현해 통과한 상태를 뜻한다.
+- 두 결과는 서로 대체하지 않는다. full-scan은 저장소 전체 품질을 보고, Actions 동일 조건은 현재 PR 또는 push에서 실제로 걸릴 scope를 본다.
+- warning이 남아 있으면 `통과, warning only`로 분리해 적고 warning 항목과 처리 방침을 함께 기록한다.
+- `git diff --check` 결과는 validator 통과와 별도로 기록한다.
+- 검증하지 않은 항목은 `미확인`으로 기록한다.
 
 ## 최소 검수
 
@@ -28,13 +123,8 @@ Actions 성공은 validator가 담당하는 자동 검사만 증명한다. build
 | 공백 검사 | trailing whitespace, EOF 문제 확인 | `git diff --check` |
 | 문체 검사 | 존댓말, 대화체, draft 문구 확인 | `Select-String` 또는 `rg` |
 | stale path 검사 | 오래된 `_repo/workflow`, legacy import 기록의 이전 경로, `Docs/Part*` 정본 경로 확인. `Docs/99_Legacy`의 과거 경로 기록은 문맥을 확인한다. | `rg` |
-- stale status 검사 | `Next action`, pending range, capture/result 상태 문구가 WorkLog와 remote lifecycle보다 뒤처지지 않는지 확인 | `Select-String` 또는 `rg` |
 | 정책 링크 검사 | rename된 정책 파일명과 Index 링크 확인 | `rg` |
 | stage 검사 | 커밋 대상 파일 범위 확인 | `git diff --cached --stat` |
-
-일반 본문에는 특정 글자 수 상한을 적용하지 않는다. fenced code는 80자 초과를 warning, 120자 초과를 failure로 분리한다.
-
-같은 문단·목록 항목을 여러 물리 줄로 나눈 명백한 인위적 soft-wrap은 `validate-markdown-wrap-quality.ps1`로 검사한다. 문장 흐름, 렌더링 가독성과 포괄적인 link label처럼 문맥이 필요한 항목은 agent 또는 수동 검수에서 확인한다. 상세 줄바꿈 기준은 [Docs Authoring Flow Policy](../06_Policies/docs-authoring-flow-policy.md)를 따른다.
 
 ## Work Unit 검수 연결
 
@@ -42,54 +132,10 @@ Actions 성공은 validator가 담당하는 자동 검사만 증명한다. build
 | --- | --- |
 | Example 작성 | `templates/example-readme.md`, 코드 폴더 README 정책 |
 | Topic 작성 | `templates/topic.md`, `Docs/01_Topics/AGENTS.md` |
-| Demo index 작성 | `Docs/03_Demos/AGENTS.md`, `validators/validate-demo-index-quality.ps1` |
-| 상세 Demo 작성 | `templates/demo-note.md`, `validators/validate-demo-doc-quality.ps1` |
 | WorkLog 마감 | `templates/worklog.md`, `Docs/04_WorkLogs/AGENTS.md` |
 | local study review | `templates/local-study-review.md`, `Docs/06_Policies/local-review-policy.md` |
 | publication review | `templates/local-publication-review.md`, `Docs/05_Publication/AGENTS.md` |
 | GitHub body 검수 | `Docs/06_Policies/github-workflow-policy.md`, `validators/validate-github-body.ps1` |
-| Markdown 원문 가독성 | `Docs/06_Policies/docs-authoring-flow-policy.md`, `validators/validate-markdown-wrap-quality.ps1` |
-| Markdown table 구조 | `validators/validate-markdown-table-quality.ps1`, `validators/test-markdown-table-quality.ps1` |
-| Markdown 범위 렌더링 | `validators/validate-markdown-render-quality.ps1`, `validators/test-markdown-render-quality.ps1` |
-
-## 전체 감사와 Validator 경계
-
-Validator는 링크 형식, section, 상태값처럼 반복 가능한 기계 검사를 담당한다. 문서 책임 충돌, 설명 중복, 탐색 흐름, 상태 provenance, public narrative는 수동 감사에서 판단한다. Validator 통과는 전체 문서 감사 통과를 의미하지 않는다.
-
-Publication 검수의 출처 상태, 외부 자료 복제 여부, 라이선스, metadata, decoded pixel 관계와 강화 출처 검수 필요 여부는 수동으로 판단한다. 현재 validator는 prompt 원문, 생성 화면 screenshot, 생성 날짜와 작업용 원본을 요구하지 않는다.
-
-향후 audit runner의 계획된 interface와 자동화 경계는 `document-system-audit-guide.md`를 따른다. 현재 runner와 전체 링크·상태 validator는 구현되지 않았다.
-
-## GitHub UI 렌더링 표본 검수
-
-자동 validator는 Markdown source의 반복 가능한 구조, 문법과 링크 형식을 검사한다. Browser 검수는 로그인된 GitHub UI에서 실제 layout과 media 표시를 확인한다. 두 검사는 서로 대체하지 않는다.
-
-Browser 표본 검수 대상:
-
-- 새로 게시하거나 본문 구조를 크게 바꾼 PR과 Issue
-- Root와 Chapter README 같은 공개 진입점
-- 큰 table이 있는 Verification와 Demo Index
-- 대표 상세 Demo와 대표 visual
-- Markdown policy, template 또는 validator 변경의 영향 문서
-- merge 직전 공개 문서 표본
-
-일반적인 문장 수정과 내부 WorkLog는 자동 validator와 source 검수로 충분하면 Browser 필수 대상에서 제외한다. 한 PR의 같은 유형 문서를 모두 열지 않고 구조와 visual 차이를 대표하는 표본을 선택한다.
-
-검수 순서:
-
-1. local, tracking, remote와 PR head가 같은 commit인지 확인한다.
-2. GitHub UI에서 대상 문서를 열고 heading, 문단과 목록 indentation을 확인한다.
-3. table이 pipe 문단으로 표시되지 않는지, 열 정렬과 필요한 가로 스크롤이 읽기 가능한지 확인한다.
-4. 의도하지 않은 문단·목록 줄바꿈과 link label 분리가 없는지 확인한다.
-5. 이미지가 alt text나 broken image로 대체되지 않고 비율, 잘림과 대표성이 적절한지 확인한다.
-6. PR 또는 Issue의 README, Verification, Demo Index와 상세 Demo 링크를 표본 이동한다.
-7. 확인한 URL, commit과 결과를 보고하고 remote 객체는 별도 승인 없이 수정하지 않는다.
-
-Browser에서 반복 가능한 결함을 발견하면 source를 최소 수정하고 같은 유형의 회귀를 자동 판정할 수 있는지 검토한다. 확실한 구조 규칙이면 validator와 PASS/FAIL fixture로 환류하고, 브라우저 layout이나 문맥 판단이면 수동 checklist에 남긴다.
-
-Browser 연결이 없거나 private repository를 열 수 없으면 `렌더링 미확인`으로 보고한다. source와 URL 형식이 정상이라는 사실만으로 렌더링 통과를 선언하지 않는다. 확인된 broken table, broken image 또는 잘린 대표 visual은 수정 후 같은 GitHub UI에서 재검수한다.
-
-Part1 Chapter03 PR의 merge 전 대표 표본은 PR body, Chapter README, Verification Index, Demo Index, Step4 DrawingSphere, Step8 Shadow, Step13 Transparency 상세 Demo와 Step13 대표 visual이다. Step14 attribution은 Publication과 문서 내용 검수 대상이며 layout 변경이 없으면 필수 Browser 표본으로 중복 지정하지 않는다.
 
 ## tracked validator 기준
 
@@ -109,9 +155,15 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 
 기본 입력 위치는 `Docs/07_GitHub`이다. GitHub에 게시하기 전 후보 Markdown을 이 위치에 둔 뒤 실행한다.
 
+새로 작성하거나 수정한 GitHub body는 `-InputPath` 배열로 작업 대상만 지정해 strict 검사를 실행한다. 기본 전수 실행에서 미수정 기존 정본 문서가 실패하면, 현재 작업의 실패로 섞지 않고 별도 이관 backlog로 기록한다.
+
+```powershell
+powershell -ExecutionPolicy Bypass -Command "& 'Docs/98_Tools/validators/validate-github-body.ps1' -InputPath @('Docs/07_GitHub/prs/part4_chapter15.md')"
+```
+
 지원 디렉터리와 미보장 범위는 `validators/README.md`를 기준으로 확인한다.
 
-Issue/PR 후보 본문의 첫 H1은 title source로 유지한다. 실제 remote body에서는 첫 H1과 바로 뒤 빈 줄을 제거한다. remote/tracked 비교에도 같은 변환을 적용한다. comment body는 H1을 사용하지 않는다.
+Issue/PR 후보 본문의 첫 H1은 title source로 유지한다. 실제 `gh issue create`와 `gh pr create`에서는 title을 H1에서 사용하고 body는 `Docs/07_GitHub` tracked 정본을 그대로 게시한다. comment body는 H1을 사용하지 않는다.
 
 ## 금지사항
 

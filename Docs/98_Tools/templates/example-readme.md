@@ -1,8 +1,10 @@
 # Example Name
 
+`Part4_Chapter14-20`처럼 예제별 폴더가 없는 단일 project는 `ExampleDocs/<Chapter>_<Example>.md`에 이 구조를 사용한다.
+
 ## Overview
 
-이 예제의 목적과 실행 결과를 2~4문장으로 정리한다. Chapter 지도, Topic 이론, 상세 Demo 구현 흐름을 반복하지 않는다.
+이 예제의 목적과 실행 결과를 두 문장부터 네 문장까지 정리한다. Chapter 지도, Topic 이론, 상세 Demo 구현 흐름을 반복하지 않는다.
 
 ## 실행 진입점
 
@@ -19,7 +21,7 @@
 
 ## Capture/Result
 
-capture/result가 확보된 경우 대표 visual을 최대 1개 연결한다.
+capture/result가 확보된 경우 대표 visual은 최대 1개 연결한다.
 
 ![Result image](../../Docs/_assets/captures/example_result.png)
 

@@ -15,15 +15,16 @@
 - [Camera Interaction](CameraInteraction.md)
 - [Picking And Screen Ray](PickingAndScreenRay.md)
 - [Quaternion And Virtual Trackball](QuaternionAndVirtualTrackball.md)
+- [Animation Physics And Gameplay Integration](AnimationPhysicsAndGameplayIntegration.md)
 
 ## 상태
 
 - Topic 목록: 작성
 - 상세 Topic 문서: 작성
-- 연결 예제 검토: Part2 Chapter04 Step4 확인
-- demo 연결: Step4 Animation2D 연결
+- 연결 예제 검토: Part2 Chapter04 Step4, Part3 Chapter09 interaction, Part4 Chapter17·19·20 연결
+- demo 연결: Step4 Animation2D, Part3 Chapter09 interaction Demo, Part4 Chapter17·19·20 Demo 정본 연결
 
 ## 다음 작업
 
-1. Part3·4 연결 후보에서 공통 timestep 책임을 확인한다.
-2. Interaction과 physics 후보를 순서대로 검토한다.
+1. Part4 GitHub body 작성 시 Chapter17·19·20의 animation, physics, gameplay 설명 범위를 이 Topic으로 연결한다.
+2. build/run/capture 상태는 Verification과 Demo 정본으로 위임하고 Topic 문서에는 개념 연결만 유지한다.

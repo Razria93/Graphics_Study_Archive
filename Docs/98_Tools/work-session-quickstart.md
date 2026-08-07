@@ -16,11 +16,11 @@
 | 작업 유형 | 목표 모드 | 하위 agent |
 | --- | --- | --- |
 | 단일 파일의 명확한 수정 | 선택 | 사용하지 않음 |
-| 여러 정본에 영향을 주는 조사 | 권장 | read-only 1~2개 |
+| 여러 정본에 영향을 주는 조사 | 권장 | read-only 1개 또는 2개 |
 | 문서 전수감사 | 사용 | read-only 최대 3개 |
 | dirty worktree commit 분리 | 권장 | 사용하지 않음 |
 | push와 remote body 동기화 | 권장 | 사용하지 않음 |
-| PR 최종 read-only 감사 | 권장 | read-only 1~2개 |
+| PR 최종 read-only 감사 | 권장 | read-only 1개 또는 2개 |
 | Ready 전환과 merge | 권장 | 사용하지 않음 |
 
 조사와 비교는 read-only 범위에서 병렬화할 수 있다. 파일 수정, stage, commit과 remote 변경은 메인 agent가 직렬로 수행한다. 하위 agent 결과는 실제 파일과 상태를 메인 agent가 다시 확인한다.
