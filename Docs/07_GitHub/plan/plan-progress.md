@@ -22,6 +22,13 @@ Progress Issue, 누적 진행 댓글, Chapter/Bundle 완료 댓글, Chapter PR�
 
 Related PR: 예정 - GitHub 게시 workflow 보완 PR
 
+### Phase 5-3. Part4 Chapter16-20 GitHub body closeout
+
+- Part4 Chapter16부터 Chapter20까지 Demo Issue 후보를 챕터별로 정리하고, Chapter16부터 Chapter20까지 통합 PR body와 완료 댓글 흐름을 준비했다.
+- 원격 변경은 수행하지 않고 local tracked body와 승인 전 preflight 단계로 분리했다.
+
+Related PR: 예정 - Part4 Chapter16-20 advanced graphics closeout
+
 ## 진행 예정
 
 ### Phase 2-3. Part1 Chapter01-02 PR 게시 준비
