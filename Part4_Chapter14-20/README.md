@@ -9,6 +9,7 @@ Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio 
 - 학습 코드 정리: import 완료
 - Build/run: Chapter14 Ex1401부터 Ex1408까지, Chapter15 Ex1501부터 Ex1503까지 Debug x64 현재 확인, Chapter16 Ex1601부터 Chapter20 Ex2001까지 Debug와 Release x64 현재 확인
 - 캡처: Chapter14 tracked capture 확보, Chapter15 Ex1501·Ex1502·Ex1503 tracked capture 확보, Chapter16부터 Chapter20까지 선택한 `GraphicsVideo` storyboard PNG 8장을 tracked evidence로 승격함
+- Demo: Chapter14부터 Chapter18까지 모든 Example별 상세 Demo 정본을 작성함
 
 ## Archive/Public 검토
 
