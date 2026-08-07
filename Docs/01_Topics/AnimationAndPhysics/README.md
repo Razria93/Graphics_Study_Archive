@@ -15,13 +15,14 @@
 - [Camera Interaction](CameraInteraction.md)
 - [Picking And Screen Ray](PickingAndScreenRay.md)
 - [Quaternion And Virtual Trackball](QuaternionAndVirtualTrackball.md)
+- [Animation Physics And Gameplay Integration](AnimationPhysicsAndGameplayIntegration.md)
 
 ## 상태
 
 - Topic 목록: 작성
 - 상세 Topic 문서: 작성
-- 연결 예제 검토: Part2 Chapter04 Step4 확인
-- demo 연결: Step4 Animation2D 연결
+- 연결 예제 검토: Part2 Chapter04 Step4와 Part4 Chapter17·19·20 연결
+- demo 연결: Step4 Animation2D와 Part4 Demo 정본 연결
 
 ## 다음 작업
 

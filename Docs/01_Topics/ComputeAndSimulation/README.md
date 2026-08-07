@@ -11,16 +11,17 @@
 ## 문서 목록
 
 - [Topic Index](topic-index.md)
+- [Compute Shader And Resource Flow](ComputeShaderAndResourceFlow.md)
+- [GPU Particle And Fluid Simulation](GpuParticleAndFluidSimulation.md)
 
 ## 상태
 
 - Topic 목록: 작성
-- 상세 Topic 문서: 예정
-- 연결 예제 검토: 후보 정리 중
-- demo 연결: 미확인
+- 상세 Topic 문서: 작성
+- 연결 예제 검토: Part4 Chapter14부터 Chapter16까지 연결
+- demo 연결: Part4 Demo 정본으로 위임
 
 ## 다음 작업
 
-1. Part4 baseline 정규화 결과를 기준으로 연결 예제 후보를 확정한다.
-2. 대표 Topic을 P0/P1/P2로 확정한다.
-3. build/run/capture 재검증 이후 상세 Topic 문서를 승격한다.
+1. ExampleDocs 도입 후 예제별 Topic 연결을 추가한다.
+2. Chapter16 GPU simulation의 성능과 solver parameter 설명 필요성을 별도 검토한다.

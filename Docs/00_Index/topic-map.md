@@ -16,6 +16,7 @@
 | Shadows | `Docs/01_Topics/Shadows` | `Part1_Chapter03`, `Part3_Chapter10-13` |
 | Compute And Simulation | `Docs/01_Topics/ComputeAndSimulation` | `Part4_Chapter14-20` |
 | Animation And Physics | `Docs/01_Topics/AnimationAndPhysics` | `Part2_Chapter04`, `Part3_Chapter09`, `Part4_Chapter14-20` |
+| Foliage And Landscape | `Docs/01_Topics/FoliageAndLandscape` | `Part4_Chapter14-20` Chapter18 |
 
 ## Topic 작성 깊이
 

@@ -14,8 +14,9 @@
 | Modeling And Geometry | [ModelingAndGeometry](ModelingAndGeometry/README.md) | 진행 중 |
 | PBR And IBL | [PBRAndIBL](PBRAndIBL/README.md) | 골격 작성 |
 | Shadows | [Shadows](Shadows/README.md) | 골격 작성 |
-| Compute And Simulation | [ComputeAndSimulation](ComputeAndSimulation/README.md) | 골격 작성 |
+| Compute And Simulation | [ComputeAndSimulation](ComputeAndSimulation/README.md) | 진행 중 |
 | Animation And Physics | [AnimationAndPhysics](AnimationAndPhysics/README.md) | 진행 중 |
+| Foliage And Landscape | [FoliageAndLandscape](FoliageAndLandscape/README.md) | 작성 |
 
 ## 작성 기준
 
