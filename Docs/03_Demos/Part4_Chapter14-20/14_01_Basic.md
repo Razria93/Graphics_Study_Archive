@@ -53,7 +53,7 @@ Back buffer UAV를 compute shader 출력 대상으로 사용하는 Chapter14의 
 
 ## 관련 코드
 
-- [Example README](../../../Part4_Chapter14-20/README.md)
+- [ExampleDocs](../../../Part4_Chapter14-20/ExampleDocs/14_01_Basic.md)
 - [Example selection entry point](../../../Part4_Chapter14-20/main.cpp)
 
 ## 관련 문서

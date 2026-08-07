@@ -216,7 +216,8 @@ function Validate-DemoDocument {
         }
 
         $repoTarget = Get-RelativePath $resolved
-        if ($repoTarget -match '^(?:Part[^/]+(?:/.+)?|Portfolio_RayTracer(?:/.+)?)\/README\.md$') {
+        if ($repoTarget -match '^(?:Part[^/]+(?:/.+)?|Portfolio_RayTracer(?:/.+)?)\/README\.md$' -or
+            $repoTarget -match '^Part4_Chapter14-20/ExampleDocs/\d{2}_.+\.md$') {
             $hasExample = $true
         }
         if ($repoTarget -match '^Docs/01_Topics/') {
@@ -237,7 +238,7 @@ function Validate-DemoDocument {
     }
 
     if (-not $hasExample) {
-        Add-Failure $relative "missing Example README Markdown link"
+        Add-Failure $relative "missing Example README or Part4 ExampleDocs Markdown link"
     }
     if (-not $hasTopic) {
         Add-Failure $relative "missing Topic Markdown link"

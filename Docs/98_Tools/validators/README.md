@@ -9,6 +9,7 @@
 | `validate-github-body.ps1` | GitHub Issue/PR/comment 게시 전 Markdown body 검사 | `Docs/07_GitHub` |
 | `validate-github-quality.ps1` | Demo Issue 품질 검사(전개, 시각 자료, C++ 스타일 의사코드, 가독성) | `Docs/07_GitHub/issues/demo` |
 | `validate-topic-doc-quality.ps1` | 상세 Topic 정본 품질 검사(책임 구조, 핵심 개념, Example/Verification/Demo 연결) | `Docs/01_Topics` |
+| `validate-example-doc-quality.ps1` | Part4 `ExampleDocs` 품질 검사(실행 진입점, 코드 지도, Verification/Demo/Topic 연결) | `Part4_Chapter14-20/ExampleDocs` |
 | `validate-demo-index-quality.ps1` | Demo source docs 구현도 균일성 검사(필수 구조, 테이블 스키마, 상태값, 최소 capture 기준) | `Docs/03_Demos/**/demo-index.md` |
 
 ## 사용법
@@ -17,6 +18,7 @@
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-body.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-topic-doc-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-example-doc-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-index-quality.ps1
 ```
 
@@ -26,6 +28,7 @@ GitHub body validator의 기본 입력은 `Docs/07_GitHub`이다. Topic과 Demo 
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-body.ps1 -GitHubRoot Docs/07_GitHub
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-github-quality.ps1 -GitHubRoot Docs/07_GitHub
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-topic-doc-quality.ps1 -TopicsRoot Docs/01_Topics
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-example-doc-quality.ps1 -ExampleDocsRoot Part4_Chapter14-20/ExampleDocs
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-index-quality.ps1 -DemosRoot Docs/03_Demos
 ```
 

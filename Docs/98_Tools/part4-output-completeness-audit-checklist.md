@@ -36,7 +36,7 @@
 | 축 | 필수 확인 대상 | 완료 조건 |
 | --- | --- | --- |
 | Chapter 지도 | `Part4_Chapter14-20/README.md` | 23개 Example 범위, 현재 검증 요약, 대표 Topic, Demo, Verification 링크와 후속 범위가 최신 정본을 가리킴 |
-| Example README | 23개 Example 코드 폴더 `README.md` | 목적, 실행 진입점, 주요 코드 위치, 고유 구조, limitation, 관련 정본 링크가 있음 |
+| ExampleDocs | `Part4_Chapter14-20/ExampleDocs`의 23개 예제 문서 | 목적, 실행 진입점, 주요 코드 위치, 고유 구조, limitation, 관련 정본 링크가 있음 |
 | Topic | `Docs/01_Topics` group README와 topic-index | concept group별 후보, 우선순위, 관련 Example, 상세 Topic 또는 부재 사유가 있음 |
 | Verification | `Docs/02_Verification/Part4_Chapter14-20/verification-index.md`와 관련 known issue | Example별 build/run/capture 상태, configuration, 날짜, evidence 유형, 미확인 범위가 직접 근거와 일치함 |
 | Demo | `Docs/03_Demos/Part4_Chapter14-20/demo-index.md`와 Example별 상세 Demo | Demo 필요 여부, capture/result, 결과 해석, limitation, Verification 연결이 있음 |
@@ -52,9 +52,9 @@
 
 - Chapter README의 Example 수와 command argument 범위가 `Examples.sln`과 일치하는지 확인한다.
 - Chapter README는 Topic, Verification, Demo 정본을 링크하고 상세 구현 또는 과거 조사 기록을 복제하지 않는지 확인한다.
-- 23개 Example README가 모두 존재하는지 확인한다.
-- 각 Example README는 실행 argument, source 또는 shader anchor, 예제 고유 구조, limitation, 관련 Topic/Verification/Demo 연결을 갖추는지 확인한다.
-- capture/result를 연결한 Example README는 대표 visual을 최대 1개만 사용하고 다중 frame 해석은 상세 Demo에 위임하는지 확인한다.
+- 23개 `ExampleDocs` 문서가 모두 존재하는지 확인한다.
+- 각 ExampleDocs는 실행 argument, source 또는 shader anchor, 예제 고유 구조, limitation, 관련 Topic/Verification/Demo 연결을 갖추는지 확인한다.
+- capture/result를 연결한 ExampleDocs는 대표 visual을 최대 1개만 사용하고 다중 frame 해석은 상세 Demo에 위임하는지 확인한다.
 
 ### 2. Topic
 
