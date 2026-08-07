@@ -57,7 +57,7 @@ Particle sourcing과 density dissipation이 만든 colored trail을 확인한다
 
 ## 관련 코드
 
-- [Example README](../../../Part4_Chapter14-20/README.md)
+- [ExampleDocs](../../../Part4_Chapter14-20/ExampleDocs/14_06_DensityField.md)
 - [Example selection entry point](../../../Part4_Chapter14-20/main.cpp)
 
 ## 관련 문서

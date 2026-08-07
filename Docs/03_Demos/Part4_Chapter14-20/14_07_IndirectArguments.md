@@ -56,7 +56,7 @@ Visual은 `Ex1406` 계열 density trail과 유사하므로, indirect draw 여부
 
 ## 관련 코드
 
-- [Example README](../../../Part4_Chapter14-20/README.md)
+- [ExampleDocs](../../../Part4_Chapter14-20/ExampleDocs/14_07_IndirectArguments.md)
 - [Example selection entry point](../../../Part4_Chapter14-20/main.cpp)
 
 ## 관련 문서

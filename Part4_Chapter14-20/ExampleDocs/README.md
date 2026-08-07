@@ -13,7 +13,8 @@
 
 | Chapter | ExampleDocs | 상태 |
 | --- | --- | --- |
-| Chapter14 | [Ex1401 Basic](14_01_Basic.md), [Ex1402 Blur](14_02_Blur.md), [Ex1403 MatVecMult](14_03_MatVecMult.md), [Ex1404 StructuredBuffer](14_04_StructuredBuffer.md) | 작성 중 |
+| Chapter14 (1-4) | [Ex1401 Basic](14_01_Basic.md), [Ex1402 Blur](14_02_Blur.md), [Ex1403 MatVecMult](14_03_MatVecMult.md), [Ex1404 StructuredBuffer](14_04_StructuredBuffer.md) | 완료 |
+| Chapter14 (5-8) | [Ex1405 ConsumeAppendBuffer](14_05_ConsumeAppendBuffer.md), [Ex1406 DensityField](14_06_DensityField.md), [Ex1407 IndirectArguments](14_07_IndirectArguments.md), [Ex1408 BitonicSort](14_08_BitonicSort.md) | 완료 |
 
 ## 관련 문서
 
