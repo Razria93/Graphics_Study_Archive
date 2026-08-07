@@ -1,4 +1,4 @@
-# Part4 Chapter14-20 Demo closeout와 validator preflight 정리
+# Part4 Chapter14-20 Demo 문서 closeout과 검증 기준 정리
 
 ## 요약
 
@@ -40,23 +40,23 @@ Chapter17부터 Chapter20까지는 animation, physics와 gameplay integration을
 | Release x64 | Chapter14부터 Chapter20까지 build/run/capture smoke 성공 |
 | Capture evidence | Chapter14부터 Chapter20까지 tracked storyboard PNG 확보 |
 | Local full-scan | GitHub body, GitHub quality, visual fixture, Demo index/detail, video asset, window capture/input, Topic validator 통과 |
-| Actions parity | `HEAD~5..HEAD` changed-file 기준 Demo scoped 38개, Markdown scoped 79개 통과 |
+| Actions parity | validator cleanup 커밋 범위 기준 Demo scoped 38개, Markdown scoped 79개 통과 |
 | Whitespace | `git diff --check HEAD~5 HEAD` 통과 |
 | PR checks | Docs Validation 2개 success |
 
 ## 스크린샷
-
-### Gameplay destruction storyboard
-
-Chapter20 대표 visual은 fire animation notify frame에서 projectile actor가 생성되고, PhysX simulation pose가 render transform으로 동기화되어 block stack destruction이 진행되는 상태를 보여준다.
-
-![Gameplay destruction storyboard](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter20_01_gameplay.png?raw=true)
 
 ### Hybrid water storyboard
 
 Chapter16 대표 visual은 particle-to-grid density field와 signed-distance raycasting display를 같은 hybrid water 예제 안에서 비교할 수 있게 기록한다.
 
 ![Hybrid water storyboard](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter16_06_hybrid_water.png?raw=true)
+
+### Gameplay destruction storyboard
+
+Chapter20 대표 visual은 fire animation notify frame에서 projectile actor가 생성되고, PhysX simulation pose가 render transform으로 동기화되어 block stack destruction이 진행되는 상태를 보여준다.
+
+![Gameplay destruction storyboard](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part4-chapter14-20-workflow/Docs/_assets/captures/part4_chapter20_01_gameplay.png?raw=true)
 
 ## 미확인 / 제한
 
