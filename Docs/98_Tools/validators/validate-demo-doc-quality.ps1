@@ -1,6 +1,7 @@
 param(
     [string]$Root = (Resolve-Path (Join-Path $PSScriptRoot "..\..\..")).Path,
-    [string]$DemosRoot = (Join-Path $Root "Docs/03_Demos")
+    [string]$DemosRoot = (Join-Path $Root "Docs/03_Demos"),
+    [string[]]$InputPath
 )
 
 $ErrorActionPreference = "Stop"
@@ -285,22 +286,48 @@ if (-not (Test-Path $DemosRoot)) {
     throw "Demos root not found: $DemosRoot"
 }
 
-$demoFiles = @(Get-ChildItem -Path $DemosRoot -File -Recurse |
-    Where-Object { $_.Name -match '^\d{2}_.+\.md$' })
-if ($demoFiles.Count -eq 0) {
-    $Failures.Add("Docs/03_Demos :: no detailed Demo documents found")
+$demoFiles = @()
+$exampleReadmes = @()
+if ($InputPath) {
+    $resolvedInput = foreach ($path in $InputPath) {
+        if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+            continue
+        }
+
+        Get-Item -LiteralPath $path
+    }
+
+    $demosRootFull = [IO.Path]::GetFullPath($DemosRoot).TrimEnd('\') + '\'
+    $rootFull = [IO.Path]::GetFullPath($Root).TrimEnd('\') + '\'
+    $demoFiles = @($resolvedInput | Where-Object {
+        $full = [IO.Path]::GetFullPath($_.FullName)
+        $full.StartsWith($demosRootFull, [StringComparison]::OrdinalIgnoreCase) -and
+            $_.Name -match '^\d{2}_.+\.md$'
+    })
+    $exampleReadmes = @($resolvedInput | Where-Object {
+        $full = [IO.Path]::GetFullPath($_.FullName)
+        $repoRelative = $full.Substring($rootFull.Length).Replace('\', '/')
+        $_.Name -eq 'README.md' -and $repoRelative -match '^Part\d+_Chapter'
+    })
 }
 else {
-    foreach ($file in $demoFiles) {
-        Validate-DemoDocument -File $file
+    $demoFiles = @(Get-ChildItem -Path $DemosRoot -File -Recurse |
+        Where-Object { $_.Name -match '^\d{2}_.+\.md$' })
+    if ($demoFiles.Count -eq 0) {
+        $Failures.Add("Docs/03_Demos :: no detailed Demo documents found")
     }
+
+    $exampleRoots = @(Get-ChildItem -Path $Root -Directory |
+        Where-Object { $_.Name -match '^Part\d+_Chapter' })
+    $exampleReadmes = @($exampleRoots | ForEach-Object {
+        Get-ChildItem -Path $_.FullName -Filter README.md -File -Recurse
+    })
 }
 
-$exampleRoots = @(Get-ChildItem -Path $Root -Directory |
-    Where-Object { $_.Name -match '^Part\d+_Chapter' })
-$exampleReadmes = @($exampleRoots | ForEach-Object {
-    Get-ChildItem -Path $_.FullName -Filter README.md -File -Recurse
-})
+foreach ($file in $demoFiles) {
+    Validate-DemoDocument -File $file
+}
+
 foreach ($file in $exampleReadmes) {
     $relative = Get-RelativePath $file.FullName
     $content = Get-Content -Raw -Encoding UTF8 $file.FullName

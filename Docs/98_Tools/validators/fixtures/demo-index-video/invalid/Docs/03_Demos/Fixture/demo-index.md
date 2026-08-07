@@ -3,7 +3,7 @@
 ## 범위
 
 - 주요 demo 후보: fixture
-- 비고: Chapter01~01 capture/result는 후속 범위이며 invalid video reference fixture
+- 비고: Chapter01 capture/result는 후속 범위이며 invalid video reference fixture
 
 ## Demo 목록
 

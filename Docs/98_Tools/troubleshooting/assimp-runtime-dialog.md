@@ -22,7 +22,7 @@ Windows loader error dialog는 target example process와 별개의 top-level win
 - error dialog가 하나만 생긴다고 가정하지 않는다.
 - DirectXTK, assimp 같은 loader dialog는 하나를 닫은 뒤 다음 dialog가 순차로 나타날 수 있으므로 남은 후보 수만으로 close 실패를 판정하지 않는다.
 - 닫기 전후의 handle, title, class, process, start time, child message text, button text 기반 fingerprint를 비교해 같은 dialog 잔존과 새 dialog 교체를 구분한다.
-- 후보를 닫은 뒤 2~3초 quiet period를 두고 다시 scan해 0건을 확인한다.
+- 후보를 닫은 뒤 2초부터 3초까지 quiet period를 두고 다시 scan해 0건을 확인한다.
 - 실패한 executable은 DLL, working directory, build configuration 또는 Clean/Rebuild 필요성을 확인하기 전까지 반복 실행하지 않는다.
 - 무인 모드에서는 관련성이 불확실한 dialog를 닫지 않고 사용자 알림으로 중단한다.
 - error dialog는 mouse click이 아니라 `WM_CLOSE`, UI Automation close, button `BM_CLICK` 기반 내부 명령으로만 닫는다.

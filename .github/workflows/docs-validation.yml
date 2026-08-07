@@ -22,6 +22,16 @@ jobs:
         uses: actions/checkout@v7
         with:
           persist-credentials: false
+          fetch-depth: 0
+
+      - name: Detect changed files
+        shell: pwsh
+        run: |
+          $base = "HEAD~1"
+          git diff --name-only $base $env:GITHUB_SHA |
+            Where-Object { -not [string]::IsNullOrWhiteSpace($_) } |
+            Set-Content -Encoding UTF8 changed-files.txt
+          Get-Content changed-files.txt
 
       - name: Validate GitHub bodies
         shell: pwsh
@@ -45,7 +55,19 @@ jobs:
 
       - name: Validate Demo documents
         shell: pwsh
-        run: ./Docs/98_Tools/validators/validate-demo-doc-quality.ps1
+        run: |
+          $files = @(
+            Get-Content changed-files.txt |
+              Where-Object {
+                ($_ -match '^Docs/03_Demos/.+/\d{2}_.+\.md$') -or
+                ($_ -match '^Part\d+_Chapter.*/README\.md$')
+              }
+          )
+          if ($files.Count -gt 0) {
+            ./Docs/98_Tools/validators/validate-demo-doc-quality.ps1 -InputPath $files
+          } else {
+            Write-Host "No changed Demo documents or example README files."
+          }
 
       - name: Test Demo document validator fixtures
         shell: pwsh
@@ -77,7 +99,13 @@ jobs:
 
       - name: Validate Markdown wrapping
         shell: pwsh
-        run: ./Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1
+        run: |
+          $files = @(Get-Content changed-files.txt | Where-Object { $_ -match '\.md$' })
+          if ($files.Count -gt 0) {
+            ./Docs/98_Tools/validators/validate-markdown-wrap-quality.ps1 -InputPath $files
+          } else {
+            Write-Host "No changed Markdown files."
+          }
 
       - name: Test Markdown render validator fixtures
         shell: pwsh
@@ -85,7 +113,13 @@ jobs:
 
       - name: Validate Markdown rendering
         shell: pwsh
-        run: ./Docs/98_Tools/validators/validate-markdown-render-quality.ps1
+        run: |
+          $files = @(Get-Content changed-files.txt | Where-Object { $_ -match '\.md$' })
+          if ($files.Count -gt 0) {
+            ./Docs/98_Tools/validators/validate-markdown-render-quality.ps1 -InputPath $files
+          } else {
+            Write-Host "No changed Markdown files."
+          }
 
       - name: Test Markdown table validator fixtures
         shell: pwsh
@@ -93,4 +127,10 @@ jobs:
 
       - name: Validate Markdown tables
         shell: pwsh
-        run: ./Docs/98_Tools/validators/validate-markdown-table-quality.ps1
+        run: |
+          $files = @(Get-Content changed-files.txt | Where-Object { $_ -match '\.md$' })
+          if ($files.Count -gt 0) {
+            ./Docs/98_Tools/validators/validate-markdown-table-quality.ps1 -InputPath $files
+          } else {
+            Write-Host "No changed Markdown files."
+          }

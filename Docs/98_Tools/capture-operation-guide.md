@@ -226,7 +226,7 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 
 ## Selected video 기반 Storyboard
 
-1. Selected video에서 입력 전, 입력 중과 결과 상태처럼 의미가 다른 frame을 2~5개 고른다.
+1. Selected video에서 입력 전, 입력 중과 결과 상태처럼 의미가 다른 frame을 2개부터 5개까지 고른다.
 2. Frame을 같은 application bounds, crop과 scale로 맞춘다.
 3. 각 frame에 읽기 순서와 짧은 상태 label을 넣는다.
 4. 2장은 2열, 3장은 3열, 4장은 2×2, 5장은 3+2 구성을 기본으로 사용한다.
