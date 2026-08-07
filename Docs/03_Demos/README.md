@@ -52,7 +52,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-
 | Part2 Chapter05-08 | [Part2_Chapter05-08](Part2_Chapter05-08/demo-index.md) | 골격 작성 |
 | Part3 Chapter09 | [Part3_Chapter09](Part3_Chapter09/demo-index.md) | 골격 작성 |
 | Part3 Chapter10-13 | [Part3_Chapter10-13](Part3_Chapter10-13/demo-index.md) | 골격 작성 |
-| Part4 Chapter14-20 | [Part4_Chapter14-20](Part4_Chapter14-20/demo-index.md) | 골격 작성 |
+| Part4 Chapter14-20 | [Part4_Chapter14-20](Part4_Chapter14-20/demo-index.md) | Chapter14부터 Chapter20까지 상세 Demo와 tracked capture/storyboard 연결 완료 |
 | Portfolio RayTracer | [Portfolio_RayTracer](Portfolio_RayTracer/demo-index.md) | 골격 작성 |
 
 ## 문서 상태값

@@ -9,12 +9,12 @@
 | 항목 | 상태 | 비고 |
 | --- | --- | --- |
 | Source/import | 반영 완료 | `SRC-P4-C14-20`으로 source provenance를 추적한다. |
-| Branch | 진행 중 | `docs/part4-chapter14-20-workflow`를 PR #32 merge commit 기준으로 정렬하고 Chapter16 시작 기준선을 준비한다. |
+| Branch | 진행 중 | `docs/part4-chapter14-20-workflow`에서 Chapter14부터 Chapter20까지 local source docs와 상위 index를 동기화하고 Publication, WorkLog, GitHub body closeout을 준비한다. |
 | Build/run | Chapter14부터 Chapter20까지 Debug 일부 확인 · Chapter16부터 Chapter20까지 Release 확인 | Chapter14 `Ex1401`부터 `Ex1408`까지와 Chapter15 `Ex1501`부터 `Ex1503`까지를 2026-08-06, Chapter16 `Ex1601`부터 Chapter20 `Ex2001`까지를 2026-08-07 Debug와 Release x64로 현재 확인했다. Chapter14부터 Chapter15까지 Release 현재 재검증은 남아 있다. |
 | Capture | tracked/local 후보 | Ex1402, Ex1404부터 Ex1407까지, Ex1501, Ex1502, Ex1503 centered client-visible screenshot 후보와 Chapter16부터 Chapter20까지 모든 Example의 `GraphicsVideo` storyboard PNG 12장을 `Docs/_assets/captures`에 승격했다. 원본 MP4와 raw preview는 local-only로 유지한다. 최신 capture 상태는 [Demo Index](../../03_Demos/Part4_Chapter14-20/demo-index.md)에서 확인한다. |
-| Demo | Chapter14부터 Chapter18까지 작성 | Chapter14부터 Chapter18까지 모든 Example별 상세 Demo를 작성했다. 각 Example은 tracked storyboard 또는 static capture를 연결한다. 최신 Demo 상태는 [Demo Index](../../03_Demos/Part4_Chapter14-20/demo-index.md)에서 확인한다. |
+| Demo | Chapter14부터 Chapter20까지 작성 | Chapter14부터 Chapter20까지 모든 Example별 상세 Demo를 작성했다. 각 Example은 tracked storyboard, static capture 또는 stdout result를 연결한다. 최신 Demo 상태는 [Demo Index](../../03_Demos/Part4_Chapter14-20/demo-index.md)에서 확인한다. |
 | Publication | 검토 필요 | public 후보 확정이 아니라 asset/public risk 검토 축으로만 기록한다. |
-| GitHub | Chapter14 merged · Chapter15 merged | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시·review 대응·merge까지 마감했다. Chapter15 Demo Issue #31, Progress 누적 댓글 갱신, Phase 5-2 완료 댓글과 PR #32를 게시·review 대응·merge까지 마감했다. |
+| GitHub | Chapter14 merged · Chapter15 merged · Chapter16부터 Chapter20까지 미게시 | Chapter14 Demo Issue #29, Progress Phase 5-1 완료 댓글과 PR #30을 게시·review 대응·merge까지 마감했다. Chapter15 Demo Issue #31, Progress 누적 댓글 갱신, Phase 5-2 완료 댓글과 PR #32를 게시·review 대응·merge까지 마감했다. Chapter16부터 Chapter20까지 GitHub body와 원격 게시는 후속 승인 범위로 둔다. |
 
 ## 시작 결정
 
@@ -116,8 +116,8 @@ Part4 Chapter14-20은 `Examples.sln` 단일 project와 command argument 기반 �
 - 2026-08-07 `Examples.sln` Release x64 build는 경고 4개, 오류 0개를 기록했다. warning은 Chapter14 `Ex1402_BlurXGroupCacheCS.hlsl`의 signed/unsigned mismatch 2개와 FXC performance/internal warning 2개다.
 - `Examples.exe 1601`부터 `1606`, `1701`, `1801`부터 `1803`, `1901`, `2001`은 source root working directory, `HLAB_CAPTURE_UI=collapsed`, `CenterWindow` 조건에서 Release x64 실행과 local capture를 완료했다.
 - build가 ignored output의 runtime DLL을 정리하므로 vcpkg Release DLL 23개를 `x64/Release`에 복구한 뒤 실행했다.
-- `local/GraphicsVideo`의 MP4는 local 원본으로 유지한다. `Ex1601`, `Ex1604`, `Ex1606`, `Ex1701`, `Ex1802`, `Ex1803`, `Ex1901`, `Ex2001`의 start, middle, end timestamp preview는 `local/storyboard-candidates/Part4_Chapter16-20/20260807`에 생성했다.
-- 이 시점에 선택한 8개 timestamp storyboard PNG는 `Docs/_assets/captures`에 tracked evidence로 승격했다. 이 항목은 2026-08-07 선별 snapshot이며 최신 12개 storyboard 승격 상태와 상세 Demo 연결은 [Demo Index](../../03_Demos/Part4_Chapter14-20/demo-index.md)와 [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)에서 확인한다. HDRI, foliage, terrain, character asset은 rendered evidence만 사용하고 원본 asset은 직접 게시하지 않는다.
+- `local/GraphicsVideo`의 MP4는 local 원본으로 유지한다. `Ex1601`부터 `Ex1606`까지, `Ex1701`, `Ex1801`부터 `Ex1803`까지, `Ex1901`, `Ex2001`의 start, middle, end timestamp preview는 `local/storyboard-candidates/Part4_Chapter16-20/20260807`에 생성했다.
+- 선택한 12개 timestamp storyboard PNG는 `Docs/_assets/captures`에 tracked evidence로 승격했다. 이 항목은 2026-08-07 선별 snapshot이며 최신 12개 storyboard 승격 상태와 상세 Demo 연결은 [Demo Index](../../03_Demos/Part4_Chapter14-20/demo-index.md)와 [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)에서 확인한다. HDRI, foliage, terrain, character asset은 rendered evidence만 사용하고 원본 asset은 직접 게시하지 않는다.
 
 ## 정본 연결
 
@@ -132,9 +132,9 @@ Part4 Chapter14-20은 `Examples.sln` 단일 project와 command argument 기반 �
 
 ## 다음 작업
 
-1. Chapter19부터 Chapter20까지 선택한 storyboard의 상세 Demo 범위를 결정한다.
-2. Chapter14부터 Chapter15까지 Release x64 재검증 범위와 증거 기준을 결정한다.
-3. Chapter14 `Ex1401_Basic` tracked capture 승격 여부와 Chapter15 desktop video 후보는 후속 범위로 둔다.
+1. Publication, Topic, WorkLog closeout을 수행하고 GitHub body 후보 작성 범위를 결정한다.
+2. Chapter16부터 Chapter20까지 Demo Issue, Progress comment와 PR body 후보를 작성하기 전 공개 위험과 대표 visual 범위를 전수 검토한다.
+3. Chapter14부터 Chapter15까지 Release x64 재검증 범위, Chapter14 `Ex1401_Basic` tracked capture 승격 여부와 Chapter15 desktop video 후보는 후속 범위로 둔다.
 
 ## Chapter 완료 후 전수 정비 TODO
 

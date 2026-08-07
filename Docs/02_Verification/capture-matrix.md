@@ -11,12 +11,12 @@
 | 범위 | 최소 capture/result | 대표 capture/result | video | 비고 |
 | --- | --- | --- | --- | --- |
 | Part1_Chapter01-02 | 확보 | 확보 | 제외 | `02_Bloom` input/result image를 `Docs/_assets/captures/part1_chapter01-02_02_bloom_input.jpg`, `Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png`로 승격함. `01_DX11InitAndImGui` capture/result는 제외함 |
-| Part1_Chapter03 | 확보 | 확보 | 제외 | 최소 Step4, 대표 Step8·13, 선택 Step10·14 screenshot을 확정함. Step4~14 전체 창 screenshot을 확보했고 Step14는 PosZ 중심과 X face 경계를 확인함 |
+| Part1_Chapter03 | 확보 | 확보 | 제외 | 최소 Step4, 대표 Step8·13, 선택 Step10·14 screenshot을 확정함. Step4부터 Step14까지 전체 창 screenshot을 확보했고 Step14는 PosZ 중심과 X face 경계를 확인함 |
 | Part2_Chapter04 | 확보 | 확보 | 확보 | Step1 Triangle부터 Step10 Lights까지 순차 screenshot을 확보했다. Step10은 Directional·Point·Spot 3장을 같은 기본 parameter로 비교하며 video를 제외한다. Chapter 대표 Demo는 Step8 PerspectiveProjection으로 유지하고 Step10은 기술 보조 Demo로 확정한다 |
 | Part2_Chapter05-08 | 확보 | 후보 | 확보 | Chapter05 Step1·3과 Chapter06 Step1 console 예제는 capture를 제외한다. Chapter05 Step2·4, Chapter06 Step2–9, Chapter07 Step1–9와 Chapter08 Step1–7 screenshot을 확보했다. Chapter06 Step3와 Chapter08 Step7 selected local video를 확인했다 |
-| Part3_Chapter09 | 확보 | 확보 | 확보 | Step1~6 기본 PNG, Step2 hover, Step3 press PNG와 Step1·3·4·5·6 selected local video를 foreground 검증 경로로 확보했다. |
+| Part3_Chapter09 | 확보 | 확보 | 확보 | Step1부터 Step6까지 기본 PNG, Step2 hover, Step3 press PNG와 Step1·3·4·5·6 selected local video를 foreground 검증 경로로 확보했다. |
 | Part3_Chapter10-13 | 확보 | 확보 | 제외 | 21개 예제의 전체 창 screenshot을 확보했다. Chapter13은 9개 개별 capture와 hard shadow→PCF→PCSS 비교 sheet를 사용하며 video는 필요하지 않다 |
-| Part4_Chapter14-20 | 확보 | 확보 | 미확인 | Chapter14 tracked screenshot 일부와 Chapter15 storyboard 3장을 확보했다. Chapter16부터 Chapter20까지 모든 Example의 12개 timestamp storyboard를 tracked 승격했다. 원본 MP4와 runtime asset은 local-only로 유지한다 |
+| Part4_Chapter14-20 | 확보 | 확보 | local-only | Chapter14 tracked screenshot 일부, Chapter15 storyboard 3장, Chapter16부터 Chapter20까지 모든 Example의 12개 timestamp storyboard를 tracked 승격했다. 원본 MP4와 runtime asset은 local-only로 유지하고 GitHub video attachment는 미게시 상태다 |
 | Portfolio_RayTracer | 미확인 | 미확인 | 미확인 | 대표 포트폴리오 후보 |
 
 ## 갱신 기준

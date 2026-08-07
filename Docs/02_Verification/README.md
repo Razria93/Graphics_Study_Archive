@@ -29,7 +29,7 @@
 | Part2 Chapter05-08 | [Part2_Chapter05-08](Part2_Chapter05-08/verification-index.md) | Chapter05 Step1–4와 Chapter06 Step1–5A 현재 확인 |
 | Part3 Chapter09 | [Part3_Chapter09](Part3_Chapter09/verification-index.md) | Step1–6 현재 확인 완료 |
 | Part3 Chapter10-13 | [Part3_Chapter10-13](Part3_Chapter10-13/verification-index.md) | Chapter10→13 현재 확인 완료 |
-| Part4 Chapter14-20 | [Part4_Chapter14-20](Part4_Chapter14-20/verification-index.md) | 골격 작성 |
+| Part4 Chapter14-20 | [Part4_Chapter14-20](Part4_Chapter14-20/verification-index.md) | Chapter14부터 Chapter20까지 Debug 확인 · Chapter16부터 Chapter20까지 Release smoke 확인 |
 | Portfolio RayTracer | [Portfolio_RayTracer](Portfolio_RayTracer/verification-index.md) | 골격 작성 |
 
 ## 문서 상태값
@@ -52,7 +52,7 @@ Part/Chapter 표의 `문서 상태`는 build/run/capture 결과가 아니라 검
 - P0 또는 대표 예제의 build/run 상태가 직접 확인되어 있다.
 - capture/result 상태가 `확보`, `미확인`, `보류`, `제외`로 구분되어 있다.
 - known issue와 follow-up이 최신 상태로 정리되어 있다.
-- `Portfolio_RayTracer`와 Part1~Part4의 대표 검증 결과를 한 문서에서 비교할 필요가 있다.
+- `Portfolio_RayTracer`와 Part1부터 Part4까지의 대표 검증 결과를 한 문서에서 비교할 필요가 있다.
 
 문서 책임:
 
