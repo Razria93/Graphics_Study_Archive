@@ -7,6 +7,7 @@ Raw heightmap에서 terrain mesh와 normal을 생성하고, procedural ocean sha
 ## 책임 범위
 
 - `Ex1803_Landscape`의 heightmap terrain 생성, ocean surface path와 `OceanHeight` control을 설명한다.
+- 일반 이론은 [Foliage Terrain And Ocean Rendering](../../01_Topics/FoliageAndLandscape/FoliageTerrainAndOceanRendering.md)으로 위임한다.
 - Build/run/capture 사실은 [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
 - public 후보 판단은 [Publication Candidate List](../../05_Publication/candidate-list.md)로 위임한다.
 
@@ -67,5 +68,4 @@ Storyboard는 heightmap terrain 위에 표시된 ocean surface가 `globalTime` w
 ## 관련 문서
 
 - [Demo Index](demo-index.md)
-- [Foliage Terrain And Ocean Rendering](../../01_Topics/FoliageAndLandscape/FoliageTerrainAndOceanRendering.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)

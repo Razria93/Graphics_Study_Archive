@@ -7,6 +7,7 @@ Tileable noise gradient에서 만든 2D curl velocity로 particle을 갱신하�
 ## 책임 범위
 
 - `Ex1602_CurlNoise`의 structured particle buffer, curl-noise compute update와 density trail render path를 설명한다.
+- 일반 이론은 [GPU Particle And Fluid Simulation](../../01_Topics/ComputeAndSimulation/GpuParticleAndFluidSimulation.md)으로 위임한다.
 - Build/run/capture 사실은 [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
 - public 후보 판단은 [Publication Candidate List](../../05_Publication/candidate-list.md)로 위임한다.
 
@@ -64,5 +65,4 @@ Tileable noise gradient에서 만든 2D curl velocity로 particle을 갱신하�
 ## 관련 문서
 
 - [Demo Index](demo-index.md)
-- [GPU Particle And Fluid Simulation](../../01_Topics/ComputeAndSimulation/GpuParticleAndFluidSimulation.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)

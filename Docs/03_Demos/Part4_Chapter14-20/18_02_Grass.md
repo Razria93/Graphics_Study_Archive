@@ -7,6 +7,7 @@ Grass blade mesh와 instance transform을 분리하고, per-instance wind streng
 ## 책임 범위
 
 - `Ex1802_Grass`의 grass instance 생성, per-frame wind update와 instanced render path를 설명한다.
+- 일반 이론은 [Foliage Terrain And Ocean Rendering](../../01_Topics/FoliageAndLandscape/FoliageTerrainAndOceanRendering.md)으로 위임한다.
 - Build/run/capture 사실은 [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
 - public 후보 판단은 [Publication Candidate List](../../05_Publication/candidate-list.md)로 위임한다.
 
@@ -65,5 +66,4 @@ Storyboard는 같은 grass field가 `globalTime`에 따른 wave phase와 instanc
 ## 관련 문서
 
 - [Demo Index](demo-index.md)
-- [Foliage Terrain And Ocean Rendering](../../01_Topics/FoliageAndLandscape/FoliageTerrainAndOceanRendering.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)

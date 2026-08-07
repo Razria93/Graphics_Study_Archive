@@ -7,6 +7,7 @@ Indirect argument buffer를 생성하고 `DrawInstancedIndirect`로 GPU buffer�
 ## 책임 범위
 
 - `Ex1407_IndirectArguments`의 indirect argument buffer, density visual과 code evidence를 설명한다.
+- 일반 이론은 [Compute Shader And Resource Flow](../../01_Topics/ComputeAndSimulation/ComputeShaderAndResourceFlow.md)으로 위임한다.
 - Build/run/capture 사실은 [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
 - public 후보 판단은 [Publication Candidate List](../../05_Publication/candidate-list.md)로 위임한다.
 
@@ -61,5 +62,4 @@ Visual은 `Ex1406` 계열 density trail과 유사하므로, indirect draw 여부
 ## 관련 문서
 
 - [Demo Index](demo-index.md)
-- [Compute Shader And Resource Flow](../../01_Topics/ComputeAndSimulation/ComputeShaderAndResourceFlow.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)

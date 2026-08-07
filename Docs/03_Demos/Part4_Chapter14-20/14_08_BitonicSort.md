@@ -7,6 +7,7 @@ GPU compute shader bitonic sort 결과를 CPU sort 기준 결과와 비교하고
 ## 책임 범위
 
 - `Ex1408_BitonicSort`의 element count별 CPU/GPU compare와 stdout evidence를 설명한다.
+- 일반 이론은 [Compute Shader And Resource Flow](../../01_Topics/ComputeAndSimulation/ComputeShaderAndResourceFlow.md)으로 위임한다.
 - Build/run 사실은 [Verification Index](../../02_Verification/Part4_Chapter14-20/verification-index.md)으로 위임한다.
 - public 후보 판단은 [Publication Candidate List](../../05_Publication/candidate-list.md)로 위임한다.
 
@@ -72,5 +73,4 @@ ExitCode: 0
 ## 관련 문서
 
 - [Demo Index](demo-index.md)
-- [Compute Shader And Resource Flow](../../01_Topics/ComputeAndSimulation/ComputeShaderAndResourceFlow.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)
