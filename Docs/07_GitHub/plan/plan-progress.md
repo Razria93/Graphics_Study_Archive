@@ -72,11 +72,9 @@ Related PR: [PR #32](https://github.com/Razria93/Graphics_Study_Archive/pull/32)
 
 ### Phase 5-3. Part4 Chapter14-20 Demo 문서 closeout과 검증 기준 정리
 
-Part4 Chapter14부터 Chapter20까지의 Demo 문서 closeout과 validator 기준 정리를 완료했다. PR #38은 Docs Validation 성공 상태의 Draft/Open이며, merge와 Ready for Review 전환은 별도 lifecycle로 유지한다. selected video comment closeout은 이 PR 범위에서 분리한다.
+Part4 Chapter14부터 Chapter20까지의 Demo 문서 closeout과 validator 기준 정리를 완료했다. PR #38은 Docs Validation과 review 대응을 마치고 일반 merge commit 방식으로 병합했다. selected video comment closeout은 이 PR 범위에서 분리한다.
 
-Related PR: [PR #38](https://github.com/Razria93/Graphics_Study_Archive/pull/38) (Open, Draft) - Part4 Chapter14-20 Demo 문서 closeout과 검증 기준 정리
-
-## 진행 중
+Related PR: [PR #38](https://github.com/Razria93/Graphics_Study_Archive/pull/38) (Merged) - Part4 Chapter14-20 Demo 문서 closeout과 검증 기준 정리
 
 ## 진행 예정
 
@@ -102,4 +100,4 @@ Related PR: 예정
 - [PR #24](https://github.com/Razria93/Graphics_Study_Archive/pull/24) (Merged): Part3 Chapter10-13 Geometry, Texturing, PBR, Light/Shadow 단계별 구현과 Demo
 - [PR #30](https://github.com/Razria93/Graphics_Study_Archive/pull/30) (Merged): Part4 Chapter14 Compute Shader evidence 문서화와 capture 승격
 - [PR #32](https://github.com/Razria93/Graphics_Study_Archive/pull/32) (Merged): Part4 Chapter15 Particle Simulation evidence 문서화와 capture 승격
-- [PR #38](https://github.com/Razria93/Graphics_Study_Archive/pull/38) (Open, Draft): Part4 Chapter14-20 Demo 문서 closeout과 검증 기준 정리
+- [PR #38](https://github.com/Razria93/Graphics_Study_Archive/pull/38) (Merged): Part4 Chapter14-20 Demo 문서 closeout과 검증 기준 정리

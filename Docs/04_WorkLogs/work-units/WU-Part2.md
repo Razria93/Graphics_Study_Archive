@@ -5,8 +5,8 @@
 | 항목 | 내용 |
 | --- | --- |
 | Work Unit | `WU-Part2` |
-| 현재 마감 대상 | Chapter08 rendered evidence와 Demo Issue #22 게시 마감 |
-| 후속 코드 범위 | Chapter05–08 순차 정규화 완료, 원본 runtime asset은 비공개 유지 |
+| 마감 상태 | Chapter04와 Chapter05–08 정규화·재검증, Demo Issue와 PR merge 완료 |
+| 후속 선택 범위 | selected video comment와 원본 runtime asset 교체 여부는 별도 작업으로 유지 |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
 ## Chapter04 마감 snapshot
