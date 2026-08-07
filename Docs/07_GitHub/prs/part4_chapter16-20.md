@@ -82,8 +82,8 @@ Chapter16 대표 visual은 particle-to-grid density field와 signed-distance ray
 ## 관련 이슈
 
 - Progress Issue: #7
-- Chapter14 Demo Issue: #31
-- Chapter15 Demo Issue: #32
+- Chapter14 Demo Issue: #29
+- Chapter15 Demo Issue: #31
 - Chapter16 Demo Issue: #33
 - Chapter17 Demo Issue: #34
 - Chapter18 Demo Issue: #35
