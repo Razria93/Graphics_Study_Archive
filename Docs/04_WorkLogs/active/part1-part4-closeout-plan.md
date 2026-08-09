@@ -2,11 +2,7 @@
 
 ## 목적
 
-이 문서는 Part1부터 Part4까지 완료된 작업의 상태 정합성을 먼저 복구하고,
-`Portfolio_RayTracer` 작업으로 빠르게 전환하기 위한 closeout 범위를 정의한다.
-문서 정리와 링크 수정처럼 실행 부담이 작은 작업을 우선 수행하고, 전체 코드
-주석 정리, Part4 Release 재검증, runtime DLL 자동화와 video 게시 작업은 후속
-작업으로 분리한다.
+이 문서는 Part1부터 Part4까지 완료된 작업의 상태 정합성을 먼저 복구하고, `Portfolio_RayTracer` 작업으로 빠르게 전환하기 위한 closeout 범위를 정의한다. 문서 정리와 링크 수정처럼 실행 부담이 작은 작업을 우선 수행하고, 전체 코드 주석 정리, Part4 Release 재검증, runtime DLL 자동화와 video 게시 작업은 후속 작업으로 분리한다.
 
 ## 브랜치와 제외 범위
 
@@ -23,29 +19,23 @@
 
 - PR #38 상태를 `Merged`로 갱신한다.
 - Root README의 Part3 Chapter10-13과 Part4 Chapter14-20 진행 상태를 갱신한다.
-- Root README의 compute shader와 simulation `정리 예정` 표현을 현재 상태로
-  교체한다.
+- Root README의 compute shader와 simulation `정리 예정` 표현을 현재 상태로 교체한다.
 - `Docs/07_GitHub/plan/plan-progress.md`의 Phase 5-3과 PR #38 상태를 마감한다.
 - `WU-Part4`, `work-unit-index`, `work-unit-github-index`의 상태를 교차 검증한다.
-- current 문서에 남은 `Draft/Open`, `대기`, `정리 예정` 표현을 검색하고 실제
-  상태와 다른 항목만 수정한다.
-- Part2 Work Unit은 publication과 GitHub 게시 잔여 범위를 확인한 뒤 마감 여부를
-  판정한다.
+- current 문서에 남은 `Draft/Open`, `대기`, `정리 예정` 표현을 검색하고 실제 상태와 다른 항목만 수정한다.
+- Part2 Work Unit은 publication과 GitHub 게시 잔여 범위를 확인한 뒤 마감 여부를 판정한다.
 - Part4 검증과 Phase 6 video closeout은 완료로 올리지 않고 `후속 필요`로 남긴다.
 
 ### 완료된 Demo index 정리
 
-다음 Demo index의 초기 placeholder 행을 실제 최소·대표 Demo, capture,
-Verification과 GitHub Issue 연결로 교체한다.
+다음 Demo index의 초기 placeholder 행을 실제 최소·대표 Demo, capture, Verification과 GitHub Issue 연결로 교체한다.
 
 - `Part1_Chapter03`
 - `Part2_Chapter04`
 - `Part2_Chapter05-08`
 - `Part3_Chapter10-13`
 
-상세 Demo와 capture가 이미 확보된 범위에 `미확인`, `후보`, `대표 예제 선정 후
-갱신`이 남지 않도록 한다. video를 의도적으로 제외하거나 local-only로 유지한
-경우에는 해당 판단과 이유를 보존한다.
+상세 Demo와 capture가 이미 확보된 범위에 `미확인`, `후보`, `대표 예제 선정 후 갱신`이 남지 않도록 한다. video를 의도적으로 제외하거나 local-only로 유지한 경우에는 해당 판단과 이유를 보존한다.
 
 ### Workplan 후보 보완
 
@@ -55,8 +45,7 @@ Verification과 GitHub Issue 연결로 교체한다.
 - Phase 2-5 `Portfolio_RayTracer`를 다음 주요 작업으로 유지한다.
 - Phase 6 Part4 selected video closeout을 후속 예정으로 유지한다.
 - PR, Demo Issue와 완료 comment 링크를 검증한다.
-- 원격 Workplan comment를 수정하기 전에 tracked 후보를 먼저 완성하고 validator를
-  통과시킨다.
+- 원격 Workplan comment를 수정하기 전에 tracked 후보를 먼저 완성하고 validator를 통과시킨다.
 
 ### Part1 Ray Tracing Demo 번호 정리
 
@@ -64,12 +53,10 @@ Verification과 GitHub Issue 연결로 교체한다.
 
 - 기본 규칙은 `<Chapter>_<Step>_<Name>.md`로 둔다.
 - 예: `03_04_DrawingSphere.md`, `03_14_CubeEnvironment.md`
-- Demo index, Example README, Topic, Verification, Publication, WorkLog와 GitHub body
-  후보의 링크를 함께 갱신한다.
+- Demo index, Example README, Topic, Verification, Publication, WorkLog와 GitHub body 후보의 링크를 함께 갱신한다.
 - 이전 파일명 참조가 남아 있지 않은지 전수 검색한다.
 
-Part2 Demo 번호 통일은 빠른 closeout의 필수 완료 조건에서 제외한다. Part1 번호
-변경 결과와 link 영향 범위를 확인한 뒤 후속 일반 정비에서 적용한다.
+Part2 Demo 번호 통일은 빠른 closeout의 필수 완료 조건에서 제외한다. Part1 번호 변경 결과와 link 영향 범위를 확인한 뒤 후속 일반 정비에서 적용한다.
 
 ## 1차 작업 완료 조건
 
@@ -97,8 +84,7 @@ docs: Part1 Ray Tracing Demo 번호 체계 통일
 ### Part2 Demo 번호 통일
 
 - Part2 Chapter04와 Chapter05-08에 `<Chapter>_<Step>_<Name>.md` 규칙을 적용한다.
-- `06_07_ResizingViewport`, `06_08_ResizingWindow`,
-  `06_09_PhongVsBlinnPhong`처럼 Chapter와 Step을 구분한다.
+- `06_07_ResizingViewport`, `06_08_ResizingWindow`, `06_09_PhongVsBlinnPhong`처럼 Chapter와 Step을 구분한다.
 - 모든 current 문서 링크를 갱신하고 stale path를 검사한다.
 
 ### Part1-Part4 코드 주석 정리
@@ -124,8 +110,7 @@ docs: Part1 Ray Tracing Demo 번호 체계 통일
 - 외부 코드 attribution과 license
 - 코드만으로 확인하기 어려운 invariant
 
-주석 정리는 Part 단위로 수행하고 각 Part의 Debug/Release x64 build와 대표 smoke를
-통과한 뒤 다음 Part로 이동한다. 코드 로직 변경은 주석 정리 커밋에 포함하지 않는다.
+주석 정리는 Part 단위로 수행하고 각 Part의 Debug/Release x64 build와 대표 smoke를 통과한 뒤 다음 Part로 이동한다. 코드 로직 변경은 주석 정리 커밋에 포함하지 않는다.
 
 ## 3차 작업: Part4 검증 마감
 
@@ -143,8 +128,7 @@ docs: Part1 Ray Tracing Demo 번호 체계 통일
 - 요구되는 working directory를 기록한다.
 - Debug/Release executable과 runtime asset 탐색 기준을 기록한다.
 - 대표 smoke 순서와 실패 진단 절차를 기록한다.
-- Part4 README와 Verification을 상세 정본으로 사용하고 Root BUILD 문서는 진입
-  링크와 공통 기준만 유지한다.
+- Part4 README와 Verification을 상세 정본으로 사용하고 Root BUILD 문서는 진입 링크와 공통 기준만 유지한다.
 
 ### runtime DLL 배치 방식 검토
 
@@ -155,27 +139,22 @@ docs: Part1 Ray Tracing Demo 번호 체계 통일
 3. vcpkg integration 활용
 4. executable 또는 runtime search path 정리
 
-Debug/Release DLL 혼용 방지, 새 checkout 재현성, sample별 중복 설정, ignored output
-배치와 Visual Studio build 흐름을 기준으로 판정한다. 자동화의 영향 범위가
-불명확하면 수동 절차를 정본화하고 구현은 별도 build 작업으로 남긴다.
+Debug/Release DLL 혼용 방지, 새 checkout 재현성, sample별 중복 설정, ignored output 배치와 Visual Studio build 흐름을 기준으로 판정한다. 자동화의 영향 범위가 불명확하면 수동 절차를 정본화하고 구현은 별도 build 작업으로 남긴다.
 
 ## 4차 작업: Phase 6 video closeout
 
 ### 로컬 검수
 
 - selected video와 Example, Demo Issue 대응을 확인한다.
-- container, codec, resolution, frame rate, CFR/VFR, decode, audio, stream, duration과
-  metadata를 검사한다.
-- 개인정보, 계정, 로컬 경로, 강의 화면, 워터마크, 불필요한 UI와 외부 asset
-  노출 위험을 육안 검수한다.
+- container, codec, resolution, frame rate, CFR/VFR, decode, audio, stream, duration과 metadata를 검사한다.
+- 개인정보, 계정, 로컬 경로, 강의 화면, 워터마크, 불필요한 UI와 외부 asset 노출 위험을 육안 검수한다.
 - 각 video를 `게시`, `local-only`, `재촬영 필요`, `제외` 중 하나로 판정한다.
 
 ### 원격 게시 gate
 
 - Demo Issue 댓글 본문과 Workplan 수정 후보를 먼저 완성한다.
 - 게시할 video, 대상 Issue, 댓글 본문과 게시하지 않을 이유를 사용자에게 보고한다.
-- 사용자 승인 후에만 Workplan comment 수정과 Demo Issue video 댓글 게시를
-  수행한다.
+- 사용자 승인 후에만 Workplan comment 수정과 Demo Issue video 댓글 게시를 수행한다.
 - 게시 후 attachment URL, comment permalink와 실제 재생 상태를 확인한다.
 
 ### 게시 결과 동기화
