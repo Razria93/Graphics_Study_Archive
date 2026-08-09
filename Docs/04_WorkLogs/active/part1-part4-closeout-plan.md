@@ -188,4 +188,3 @@ runtime DLL 자동화를 구현하지 않으면 관련 commit은 만들지 않�
 - `Examples.sln` 실행 절차와 runtime DLL 운용 판단을 기록한다.
 - selected video를 검수하고 승인된 원격 게시와 permalink 동기화를 완료한다.
 - 전체 validator와 필요한 build/run 검증을 통과한다.
-
