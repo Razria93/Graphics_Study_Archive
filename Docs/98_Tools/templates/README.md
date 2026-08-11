@@ -11,7 +11,8 @@
 | [Verification Note](verification-note.md) | `Docs/02_Verification` | tracked 정본 문서용 | build/run/capture 확인 기록 |
 | [Demo Note](demo-note.md) | `Docs/03_Demos` 또는 `local/<work-unit>` | tracked/local 검토용 | demo 목표, capture/result 후보, generated image provenance 기록 |
 | [WorkLog](worklog.md) | `Docs/04_WorkLogs` | tracked 정본 문서용 | Work Unit 결정 요약과 마감 snapshot |
-| [PR Body](pr-body.md) | `Docs/07_GitHub/prs` | GitHub 게시 후보 | 핵심 개념, 대표 예제, 검증, demo 중심 PR 본문 |
+| [Chapter PR Body](pr-body.md) | `Docs/07_GitHub/prs` | GitHub 게시 후보 | 핵심 개념, 대표 예제, 검증, demo 중심 PR 본문 |
+| [Maintenance PR Body](pr-maintenance-body.md) | `Docs/07_GitHub/prs` | GitHub 게시 후보 | closeout, 구조 정리, 문서와 운영 규칙 변경 중심 PR 본문 |
 | [Progress Issue](progress-issue.md) | `Docs/07_GitHub/plan/plan-body.md` | GitHub 게시 후보 | 전체 목표, 운영 기준, 완료 조건 |
 | [Work Unit Issue](work-unit-issue.md) | `Docs/07_GitHub/issues/work-unit/work-unit_*.md` | GitHub 게시 후보 | Work Unit 범위, 검증 기준, 완료 조건 |
 | [Plan Progress Comment](plan-progress-comment.md) | `Docs/07_GitHub/plan/plan-progress.md` | GitHub 게시 후보 | 누적 진행 요약 댓글 |
