@@ -73,7 +73,7 @@
 
 ## 다음 단계
 
-- WU-R1에서 Win32 window와 DirectX11 device, swap chain, render target을 구성한다.
-- CPU framebuffer를 dynamic texture와 full-screen quad로 표시하는 presentation path를 구현한다.
-- ImGui Win32/DX11 lifecycle과 executable-relative shader load를 검증한다.
-- Window/presentation 기반을 먼저 마감한 뒤 `Rendering/RayTracing` reconstruction을 별도 milestone로 시작한다.
+- Phase S에서 original evidence를 보존하면서 새 구조에 기능 단위로 재구성하는 개발 전략을 고정한다.
+- Phase A에서 2025년 raw source와 media의 범위, 변천사와 주요 구현 상태를 read-only evidence 기준으로 정리한다.
+- WU-A0에서 Part1부터 Part4까지의 구조적 요구를 분석하고 GraphicsLab architecture, dependency 방향과 Part1 roadmap을 확정한다.
+- Architecture 검수 후 WU-R1에서 Win32 window, DirectX11 presentation과 CPU framebuffer 표시 기반을 구현한다.
