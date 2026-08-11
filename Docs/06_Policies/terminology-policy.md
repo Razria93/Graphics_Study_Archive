@@ -6,7 +6,7 @@
 
 | 표준 용어 | 의미 | 비표준 또는 주의 표현 |
 | --- | --- | --- |
-| 루트 코드 폴더 | repo root에 있는 `Part*_Chapter*`와 `Portfolio_RayTracer` 코드/build 기준 폴더 | root code folder, code folder 단독 표현 |
+| 루트 코드 폴더 | repo root에 있는 `Part*_Chapter*`와 `Portfolio_GraphicsLab` 코드/build 기준 폴더 | root code folder, code folder 단독 표현 |
 | 산출물 축 폴더 | `Docs/00_Index`부터 `Docs/05_Publication`까지의 문서 산출물 폴더 | Part 중심 문서 구조 |
 | 정본 문서 | 최신 기준으로 유지하는 tracked Docs 문서 | tracked Docs 정본, 공식 문서 |
 | Legacy 문서 | `Docs/99_Legacy` 아래의 과거 import 기록과 이전 문서 구조 | legacy docs, 이전 문서 |

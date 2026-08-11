@@ -25,7 +25,7 @@
 | `C:\ComputerGraphics\Part3_Chapter09` | `Part3_Chapter09` | User interaction, picking 참고 | 반영 완료 | 최신 검증 상태는 Verification 기준 |
 | `C:\ComputerGraphics\Part3_Chapter10_13` | `Part3_Chapter10-13` | Geometry pipeline, texturing, PBR, shadows 참고 | 반영 완료 | `_2`는 reference-only snapshot으로 본다 |
 | `C:\ComputerGraphics\Part4_HongLabGraphics` | `Part4_Chapter14-20` | Compute shader, particles, fluids, animation, physics 참고 | 반영 완료 | `_2`와 `OriginalExamples`는 reference-only baseline으로 본다 |
-| `C:\ComputerGraphics\_00_Graphics_Portfolio` | `Portfolio_RayTracer` | ray tracing portfolio extension 참고 | 검토 필요 | 포트폴리오 대표 작업물 후보 |
+| `C:\ComputerGraphics\_00_Graphics_Portfolio` | `Portfolio_GraphicsLab/Source/Rendering/RayTracing` | original software ray tracer reconstruction 참고 | 진행 예정 | raw snapshot과 media는 evidence로 보존 |
 
 ## 다음 확인 순서
 

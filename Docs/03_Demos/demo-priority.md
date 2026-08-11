@@ -11,7 +11,7 @@
 | Part3_Chapter09 | Step1 FirstPersonView | Step5 VirtualTrackball | Step6 MouseDragMove | 확보 | Step5를 대표, Step1과 Step6을 보조 visual로 선정한다. 원본 runtime asset은 비공개로 유지하고 직접 실행 visual은 승인된 Chapter09 Bundle 예외에 따라 공개 가능하다. |
 | Part3_Chapter10-13 | Chapter11 Step2 NormalMapping | Chapter13 Step4–6 shadow mapping·PCF·PCSS | HDR pipeline, halo | 확보 | NormalMapping On/Off와 hard shadow→PCF→PCSS tracked 비교 자료 확보 |
 | Part4_Chapter14-20 | Chapter14 compute 기준선 | Chapter16부터 Chapter20까지 Example별 storyboard | Chapter15 particle simulation | 확보 | Chapter14 static capture와 Chapter15부터 Chapter20까지 Example별 tracked storyboard를 연결함 |
-| Portfolio_RayTracer | 대표 ray tracing 결과 | portfolio hero capture | step 비교 영상 | 미확인 | solution 확인 필요 |
+| Portfolio_GraphicsLab | RayTracing 대표 결과 | graphics pipeline 확장 결과 | milestone 비교 영상 | 미확인 | WU-R0 이후 rendering 구현 필요 |
 
 ## 우선순위 기준
 

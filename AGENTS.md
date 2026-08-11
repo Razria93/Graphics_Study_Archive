@@ -6,7 +6,7 @@
 
 - 작업 전 `git status --short --branch`를 확인한다.
 - 사용자가 명시적으로 요청하거나 현재 대화에서 커밋까지 승인한 작업 단위가 아니면 commit, push, PR, Issue 생성/수정을 하지 않는다.
-- root의 `Part*_Chapter*`와 `Portfolio_RayTracer` 폴더는 코드와 build 기준으로 유지한다.
+- root의 `Part*_Chapter*`와 `Portfolio_GraphicsLab` 폴더는 코드와 build 기준으로 유지한다.
 - 문서 용어는 `Docs/06_Policies/terminology-policy.md`를 따른다.
 - 문서 정본은 코드 폴더 README와 `Docs/00_Index`부터 `Docs/07_GitHub`까지의 산출물 축 구조, `Docs/98_Tools`, `Docs/99_Legacy` 책임 경계를 기준으로 작성한다.
 - 기존 `Docs/Part*` 문서는 정본으로 사용하지 않고 `Docs/99_Legacy/PartDocs`의 전환기 참고 자료로만 사용한다.

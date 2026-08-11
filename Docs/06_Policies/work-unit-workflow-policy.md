@@ -22,7 +22,7 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | --- | --- | --- | --- | --- |
 | 0 | Work Unit 선택과 조사 계획 작성 | `Docs/00_Index`, 루트 코드 폴더 | `local/mini-plans` | 이 문서 |
 | 1 | 사용자에게 조사 계획 보고 | `local/mini-plans`, 대상 코드 목록 | final report | `github-workflow-policy.md` |
-| 2 | 코드 구조 확인 | root `Part*_Chapter*`, `Portfolio_RayTracer` | 조사 메모는 `local/` | `agent-safety-policy.md` |
+| 2 | 코드 구조 확인 | root `Part*_Chapter*`, `Portfolio_GraphicsLab` | 조사 메모는 `local/` | `agent-safety-policy.md` |
 | 3 | 소스 주석 inventory 작성 | 관련 source/header/shader | `local/study-review` | `docs-authoring-flow-policy.md` |
 | 4 | raw/reference와 origin 기준 확인 | raw/reference repo, origin 또는 원본 예제, `Docs/99_Legacy/ImportHistory` | 검토 메모는 `local/` | `canonical-docs-policy.md`, `local-review-policy.md` |
 | 5 | current/raw/origin diff 조사 | 현재 코드, raw/reference, origin 기준 | `local/study-review` | `docs-authoring-flow-policy.md` |

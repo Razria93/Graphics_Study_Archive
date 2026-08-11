@@ -12,7 +12,7 @@ Progress Issue 1개, 누적 진행 댓글 1개, PR 마감 단위 plan comment, C
 
 - Phase 1: 문서 구조와 GitHub 게시 workflow 정리
 - Phase 2: Part1 정리
-- Phase 3: Portfolio_RayTracer 연계
+- Phase 3: Portfolio_GraphicsLab RayTracing 연계
 - Phase 4: Part2 정리
 - Phase 5: Part3 정리
 - Phase 6: Part4 정리
@@ -48,4 +48,4 @@ Progress Issue 1개, 누적 진행 댓글 1개, PR 마감 단위 plan comment, C
 
 - 강의 원문, 슬라이드, 정답, 워터마크가 있는 자료의 게시
 - public subset 최종 확정
-- Part1부터 Part4까지와 Portfolio_RayTracer 범위 밖의 예제 정리
+- Part1부터 Part4까지와 Portfolio_GraphicsLab 범위 밖의 예제 정리

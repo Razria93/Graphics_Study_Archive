@@ -17,7 +17,7 @@
 | Part3_Chapter09 | 확보 | 확보 | 확보 | Step1부터 Step6까지 기본 PNG, Step2 hover, Step3 press PNG와 Step1·3·4·5·6 selected local video를 foreground 검증 경로로 확보했다. |
 | Part3_Chapter10-13 | 확보 | 확보 | 제외 | 21개 예제의 전체 창 screenshot을 확보했다. Chapter13은 9개 개별 capture와 hard shadow→PCF→PCSS 비교 sheet를 사용하며 video는 필요하지 않다 |
 | Part4_Chapter14-20 | 확보 | 확보 | local-only | Chapter14 tracked screenshot 일부, Chapter15 storyboard 3장, Chapter16부터 Chapter20까지 모든 Example의 12개 timestamp storyboard를 tracked 승격했다. 원본 MP4와 runtime asset은 local-only로 유지하고 GitHub video attachment는 미게시 상태다 |
-| Portfolio_RayTracer | 미확인 | 미확인 | 미확인 | 대표 포트폴리오 후보 |
+| Portfolio_GraphicsLab | 미확인 | 미확인 | 미확인 | WU-R0는 capture 범위에서 제외하고 Rendering milestone부터 확보 |
 
 ## 갱신 기준
 

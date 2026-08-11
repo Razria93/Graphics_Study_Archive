@@ -12,7 +12,7 @@
 
 ## Current Work
 
-`Part1_Chapter01-02` pilot부터 `Part4_Chapter14-20`까지의 순차 정규화와 Demo 문서 closeout을 마감했다. `Portfolio_RayTracer` 연계 정리와 Part4 selected video comment closeout은 후속 작업으로 유지한다.
+`Part1_Chapter01-02` pilot부터 `Part4_Chapter14-20`까지의 순차 정규화와 Demo 문서 closeout을 마감했다. `Portfolio_GraphicsLab` 정본 기반 구성과 Part4 selected video comment closeout을 후속 작업으로 유지한다.
 
 - [Part1 Chapter01-02](Part1_Chapter01-02/README.md): DirectX11 기반 렌더링 흐름과 bloom 후처리 pilot
 - [01_DX11InitAndImGui](Part1_Chapter01-02/01_DX11InitAndImGui/README.md): DirectX11 device, swap chain, render target, ImGui 기반 예제
@@ -65,7 +65,7 @@
 | `Part3_Chapter09` | camera, picking, quaternion과 object interaction | 완료 | Step1부터 Step6까지 정규화 완료 |
 | `Part3_Chapter10-13` | lighting, shadow, PBR/IBL | 완료 | 21개 예제 문서화·재검증, Demo Issue와 PR 마감 완료 |
 | `Part4_Chapter14-20` | compute shader, simulation, animation/physics | 완료 | 전체 Demo 문서 closeout과 PR #38 merge 완료 · Chapter14–15 Release 재검증과 selected video 후속 필요 |
-| `Portfolio_RayTracer` | Part1 기반 ray tracing 확장 작업 | 확인 필요 | 연계 범위와 실행 진입점 정리 예정 |
+| `Portfolio_GraphicsLab` | RayTracing부터 graphics pipeline까지 확장하는 개인 graphics 구현 | 구성 중 | canonical scaffold와 첫 `Rendering/RayTracing` 축 준비 |
 
 ## Main Guides
 
@@ -80,7 +80,7 @@
 | 위치 | 책임 |
 | --- | --- |
 | `Part*_Chapter*` | code/build 기준 예제 프로젝트 |
-| `Portfolio_RayTracer` | Part1 기반 ray tracing 확장 작업 |
+| `Portfolio_GraphicsLab` | 개인 graphics 구현을 단계적으로 확장하는 정본 project |
 | `Part*_Chapter*/ExampleName/README.md` | 예제 설명 정본 |
 | `Docs/01_Topics` | graphics 개념 정본 |
 | `Docs/02_Verification` | build/run/capture 검증 정본 |

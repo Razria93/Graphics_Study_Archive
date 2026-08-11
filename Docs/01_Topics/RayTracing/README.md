@@ -5,7 +5,7 @@
 ## 범위
 
 - 주요 개념: ray, intersection, shading, reflection, transparency, sampling
-- 연결 예제 후보: Part1_Chapter03, Portfolio_RayTracer
+- 연결 예제 후보: Part1_Chapter03, Portfolio_GraphicsLab의 `Rendering/RayTracing`
 - 우선순위: P0
 
 ## 문서 목록

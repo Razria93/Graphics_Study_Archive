@@ -14,7 +14,7 @@
 | 영역 | 성격 | 처리 판단 |
 | --- | --- | --- |
 | `local/Part1_Chapter01-02` | Part1 초기 예제 검토 메모 | 필요한 내용만 코드 폴더 README, Topic, Verification 작성 시 참고 |
-| `local/Part1_Chapter03` | Ray tracing 단계별 검토 메모 | 필요한 내용만 `Portfolio_RayTracer`와 RayTracing Topic 작성 시 참고 |
+| `local/Part1_Chapter03` | Ray tracing 단계별 검토 메모 | 필요한 내용만 `Portfolio_GraphicsLab/Rendering/RayTracing`과 RayTracing Topic 작성 시 참고 |
 | `local/Part2_Chapter04` | Software rasterization source comment cache | raw/source 원문 성격이 강하므로 직접 승격 금지 |
 | `local/Part2_Chapter05-08` | Pipeline, modeling, ShaderToys 검토 메모 | `study-review.local.md`만 우선 참고 후보 |
 | `local/Part4_Chapter14-20` | Assimp/SkeletalAnimation 재현 메모 | 필요한 경우 현재 Example/Verification 문서로 재작성 |

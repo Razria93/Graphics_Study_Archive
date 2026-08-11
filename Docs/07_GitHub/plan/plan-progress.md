@@ -78,9 +78,9 @@ Related PR: [PR #38](https://github.com/Razria93/Graphics_Study_Archive/pull/38)
 
 ## 진행 예정
 
-### Phase 2-5. Portfolio_RayTracer 연계 정리
+### Phase 2-5. Portfolio_GraphicsLab RayTracing 연계 정리
 
-Part1 ray tracing 범위와 Portfolio_RayTracer의 연결 범위, 검증 상태, PR 분할 단위를 정리한다.
+Portfolio_GraphicsLab canonical scaffold를 구성하고 Part1 ray tracing과 `Rendering/RayTracing`의 연결 범위, 검증 상태, PR 분할 단위를 정리한다.
 
 Related PR: 예정
 
