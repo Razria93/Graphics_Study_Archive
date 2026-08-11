@@ -48,7 +48,7 @@ function Test-IncludedPath {
         $RelativePath -eq "AGENTS.md" -or
         $RelativePath -match '^Part[^/]+/(?:.+/)?README\.md$' -or
         $RelativePath -match '^Part4_Chapter14-20/ExampleDocs/.+\.md$' -or
-        $RelativePath -eq "Portfolio_RayTracer/README.md" -or
+        $RelativePath -eq "Portfolio_GraphicsLab/README.md" -or
         $RelativePath -match '^Docs/(?:0[0-7]_[^/]+|98_Tools)/.+\.md$' -or
         $RelativePath -match '^\.github/.+\.md$'
     )
