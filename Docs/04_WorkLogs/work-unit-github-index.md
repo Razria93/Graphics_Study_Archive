@@ -14,17 +14,17 @@
 
 | 항목 | 상태 | GitHub 번호 | 게시 후보 파일 | 비고 |
 | --- | --- | --- | --- | --- |
-| 상위 Progress Issue | ready | 없음 | `Docs/07_GitHub/plan/plan-body.md` | 게시 전 사용자 승인 필요 |
-| 누적 진행 댓글 | comment-ready | 없음 | `Docs/07_GitHub/plan/plan-progress.md` | Progress Issue 생성 후 작성 |
+| 상위 Progress Issue | posted | #7 | `Docs/07_GitHub/plan/plan-body.md` | 전체 진행판으로 유지 |
+| 누적 진행 댓글 | posted | #7 comment 5091068690 | `Docs/07_GitHub/plan/plan-progress.md` | Phase 5-3까지 게시 · 최신 상태 보완 후보 |
 
 ## 관계 Index
 
 | Work Unit | Chapter/Bundle 완료 댓글 | 선택 Issue | Chapter PR 목록 | 관련 WorkLog | 비고 |
 | --- | --- | --- | --- | --- | --- |
-| `WU-Part1` | comment-ready (`Docs/07_GitHub/plan/comments/phase-2-1-plan-comment.md`) | 제외 | `Docs/07_GitHub/prs/part1_chapter01-02.md` (ready) | [WU-Part1](active/WU-Part1.md) | WU-Part1의 일부 범위인 Chapter01-02 완료 기록이다. WU-Part1 전체 완료가 아니다. |
-| `WU-Part2` | 예정 | 기본 제외 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
-| `WU-Part3` | 예정 | 기본 제외 | 예정 | 없음 | 독립 작업이 생기면 선택 Issue 생성 여부를 판단한다. |
-| `WU-Part4` | posted (Phase 5-1, Phase 5-2, Phase 5-3) | 기본 제외 | PR #30, PR #32 (merged), PR #38 (draft) | [WU-Part4](work-units/WU-Part4.md) | Chapter14와 Chapter15 GitHub 작업을 마감했다. Chapter16부터 Chapter20까지 Draft PR을 생성했다. |
+| `WU-Part1` | posted (Phase 2-1, Phase 2-4) | Demo Issue #9, #12 | PR #8, PR #11 (merged) | [WU-Part1](work-units/WU-Part1.md) | Chapter01-02와 Chapter03은 마감했다. `Portfolio_RayTracer` 연계가 남아 있어 WU-Part1 전체는 진행 중이다. |
+| `WU-Part2` | posted (Phase 3-1, Phase 3-2) | Demo Issue #14, #17, #18, #19, #22 | PR #15, PR #20 (merged) | [WU-Part2](work-units/WU-Part2.md) | Chapter04와 Chapter05–08 게시·merge를 마감했다. |
+| `WU-Part3` | posted (Phase 4-1, Phase 4-2) | Demo Issue #21, #25, #26, #27, #28 | PR #23, PR #24 (merged) | [WU-Part3](work-units/WU-Part3.md) | Chapter09와 Chapter10–13 게시·merge를 마감했다. |
+| `WU-Part4` | posted (Phase 5-1, Phase 5-2, Phase 5-3) | Demo Issue #29, #31, #33–#37 | PR #30, PR #32, PR #38 (merged) | [WU-Part4](work-units/WU-Part4.md) | Chapter14부터 Chapter20까지 GitHub body closeout과 PR merge를 마감했다. selected video comment는 후속 작업이다. |
 | `WU-Publication` | 예정 | 기본 제외 | 예정 | 없음 | 별도 승인 범위가 생기면 선택 Issue를 생성한다. |
 | `WU-StructureCleanup` | 제외 | 제외 | PR #6 (posted) | [WU-StructureCleanup](completed/WU-StructureCleanup.md) | 정책 도입 이전 구조 정리 PR이라 완료 댓글을 예외로 둔다. |
 

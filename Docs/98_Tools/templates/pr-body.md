@@ -32,9 +32,9 @@
 - capture/result:
 - validator:
 
-## 대표 Visual
+## 스크린샷
 
-대표 visual이 review에 도움이 될 때만 0개 또는 1개 사용한다. 상세 visual은 Demo Issue로 연결한다.
+대표 visual이 review에 도움이 될 때만 0개 또는 1개 사용한다. visual을 사용하지 않으면 `- 없음`을 기록하고 상세 visual은 Demo Issue로 연결한다.
 
 ### Example Capture
 
@@ -44,7 +44,7 @@ capture/result가 보여주는 내용을 한 문장으로 설명한다.
 
 Video가 review에 필요한 경우 대표 screenshot 또는 storyboard는 유지하고 관련 Demo Issue의 video comment permalink를 문서나 관련 이슈에 연결한다.
 
-## 구현 범위와 한계
+## 미확인 / 제한
 
 -
 

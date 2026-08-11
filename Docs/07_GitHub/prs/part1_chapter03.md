@@ -27,7 +27,7 @@
 Orthographic primary ray와 ray-sphere intersection으로 Chapter의 최소 CPU ray tracing 기준선을 만든다.
 
 - README: [Step4 DrawingSphere README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Part1_Chapter03/03_Raytracing_Step4_DrawingSphere/README.md)
-- Demo: [Step4 DrawingSphere 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/03_Demos/Part1_Chapter03/04_DrawingSphere.md)
+- Demo: [Step4 DrawingSphere 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/03_Demos/Part1_Chapter03/03_04_DrawingSphere.md)
 - Verification: [Chapter03 Verification](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/02_Verification/Part1_Chapter03/verification-index.md)
 
 ### Step8 Shadow
@@ -35,7 +35,7 @@ Orthographic primary ray와 ray-sphere intersection으로 Chapter의 최소 CPU 
 Sphere와 Square 바닥을 하나의 scene으로 구성하고 shadow ray의 light 구간 blocker 판정으로 hard shadow를 만든다.
 
 - README: [Step8 Shadow README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Part1_Chapter03/03_Raytracing_Step8_Shadow/README.md)
-- Demo: [Step8 Shadow 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/03_Demos/Part1_Chapter03/08_Shadow.md)
+- Demo: [Step8 Shadow 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/03_Demos/Part1_Chapter03/03_08_Shadow.md)
 - Topic: [Shadow Ray](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/01_Topics/Shadows/ShadowRay.md)
 
 ### Step13 Transparency
@@ -43,7 +43,7 @@ Sphere와 Square 바닥을 하나의 scene으로 구성하고 shadow ray의 ligh
 Enter/exit 상태에 따라 IOR ratio와 normal을 전환하고 reflected·refracted ray를 재귀 추적해 background가 투명 구체에서 왜곡되는 결과를 만든다.
 
 - README: [Step13 Transparency README](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Part1_Chapter03/03_Raytracing_Step13_Transparency/README.md)
-- Demo: [Step13 Transparency 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/03_Demos/Part1_Chapter03/13_Transparency.md)
+- Demo: [Step13 Transparency 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/03_Demos/Part1_Chapter03/03_13_Transparency.md)
 - Topic: [Refraction And Transparency](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/01_Topics/RayTracing/RefractionAndTransparency.md)
 
 ## 검증
@@ -77,7 +77,7 @@ Recursive refraction이 해수면·하늘 background를 투명 구체 내부에�
 - Topic: [Ray Tracing Topics](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/01_Topics/RayTracing/README.md)
 - Verification: [Part1 Chapter03 Verification](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/02_Verification/Part1_Chapter03/verification-index.md)
 - Demo: [Part1 Chapter03 Demo Index](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/03_Demos/Part1_Chapter03/demo-index.md)
-- Step14 attribution: [CubeEnvironment 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/docs/part1-chapter03-workflow/Docs/03_Demos/Part1_Chapter03/14_CubeEnvironment.md)
+- Step14 attribution: [CubeEnvironment 상세 Demo](https://github.com/Razria93/Graphics_Study_Archive/blob/main/Docs/03_Demos/Part1_Chapter03/03_14_CubeEnvironment.md)
 
 ## 관련 이슈
 

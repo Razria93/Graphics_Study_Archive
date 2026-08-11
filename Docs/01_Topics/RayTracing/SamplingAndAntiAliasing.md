@@ -7,7 +7,7 @@ Raster pixel 하나를 한 지점의 값으로만 평가할 때 생기는 spatia
 ## 책임 범위
 
 - Spatial aliasing, subpixel sample, sample pattern과 평균의 일반 개념을 다룬다.
-- Step11의 재귀 함수, scene과 DirectX11 표시 경로는 [Step11 Example README](../../../Part1_Chapter03/03_Raytracing_Step11_Supersampling/README.md)와 [상세 Demo](../../03_Demos/Part1_Chapter03/11_Supersampling.md)로 위임한다.
+- Step11의 재귀 함수, scene과 DirectX11 표시 경로는 [Step11 Example README](../../../Part1_Chapter03/03_Raytracing_Step11_Supersampling/README.md)와 [상세 Demo](../../03_Demos/Part1_Chapter03/03_11_Supersampling.md)로 위임한다.
 - 실제 build/run/capture 상태는 [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)로 위임한다.
 
 ## 핵심 개념
@@ -42,7 +42,7 @@ Full-scene supersampling은 각 subpixel에서 shader와 texture 결과까지 �
 
 - Example: [Step11 Supersampling README](../../../Part1_Chapter03/03_Raytracing_Step11_Supersampling/README.md)
 - Verification: [`Docs/02_Verification/Part1_Chapter03/verification-index.md`](../../02_Verification/Part1_Chapter03/verification-index.md)
-- Demo: [`Docs/03_Demos/Part1_Chapter03/11_Supersampling.md`](../../03_Demos/Part1_Chapter03/11_Supersampling.md)
+- Demo: [`Docs/03_Demos/Part1_Chapter03/03_11_Supersampling.md`](../../03_Demos/Part1_Chapter03/03_11_Supersampling.md)
 - Related Topic: [Ray](Ray.md)
 - Related Topic: [Intersection](Intersection.md)
 - Related Topic: [Texture Sampling](../TexturingAndMapping/TextureSampling.md)

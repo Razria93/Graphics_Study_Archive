@@ -202,7 +202,7 @@ PR body는 README의 미러가 아니라 GitHub review를 위한 요약과 링�
 
 PR 초안은 `local/`에서 작성할 수 있고, 게시 후보 정본은 `Docs/07_GitHub/prs`에 둔다.
 
-PR에 포함할 항목:
+Chapter 또는 Chapter 묶음 PR에 포함할 항목:
 
 - Chapter 또는 Chapter 묶음 범위
 - 핵심 개념과 간단한 설명
@@ -215,7 +215,9 @@ PR에 포함할 항목:
 
 Part 단위 PR은 예제가 적고 변경 범위가 작을 때만 예외로 허용한다. Part 전체 진행은 Progress Issue, WorkLog, milestone 성격으로 추적한다.
 
-PR body 작성 기준:
+closeout, 구조 정리, 문서 정합화, 운영 규칙과 validator 변경처럼 그래픽 개념과 대표 예제가 중심이 아닌 PR은 maintenance 형식을 사용한다. maintenance PR은 `## 주요 변경` heading으로 식별하며 요약, 범위, 주요 변경, 검증, 제한, 문서, 관련 이슈와 다음 단계를 기록한다. 그래픽 결과를 새로 만들거나 검증하지 않은 maintenance PR에는 핵심 개념, 대표 예제와 screenshot을 강제하지 않는다.
+
+Chapter PR body 작성 기준:
 
 - `핵심 개념`과 `대표 예제`는 문단과 짧은 리스트를 기본으로 한다.
 - 표는 검증, 상태, 링크 매트릭스처럼 짧은 정보를 비교할 때만 사용한다.
@@ -225,13 +227,21 @@ PR body 작성 기준:
 - draft PR 후보는 작업 branch 기준 `https://github.com/<owner>/<repo>/blob/<branch>/Docs/_assets/...?...raw=true` 형식을 사용한다.
 - merge 후 main 기준 게시본 또는 snapshot이 필요하면 main 기준 URL로 정리한다.
 
+Maintenance PR body 작성 기준:
+
+- `## 주요 변경`을 유형 식별자이자 변경 내용의 중심 section으로 사용한다.
+- Chapter PR 전용 section인 `핵심 개념`, `대표 예제`, `스크린샷`을 함께 사용하지 않는다.
+- 새 build/run/capture를 수행하지 않았다면 검증 section에 그 사실과 유지하는 기존 정본을 기록한다.
+- 파일 목록을 복제하지 않고 상태 정합화, 구조 이동, 운영 규칙과 validator 변경의 review point를 요약한다.
+
 ## GitHub body 유형
 
 GitHub에 게시하는 Markdown body는 `Docs/07_GitHub` 파일을 기준으로 검수한다. source docs와 상세 설명은 `Docs/00_Index`부터 `Docs/06_Policies`, `Docs/_assets`에 두고, GitHub body는 요약과 링크 중심으로 재구성한다.
 
 | 유형 | 위치 | 최소 책임 |
 | --- | --- | --- |
-| PR Body | `Docs/07_GitHub/prs/**/*.md` | 핵심 개념, 대표 예제, 검증, Demo capture/result, 제한, 관련 Issue/PR |
+| Chapter PR Body | `Docs/07_GitHub/prs/**/*.md` | 핵심 개념, 대표 예제, 검증, Demo capture/result, 제한, 관련 Issue/PR |
+| Maintenance PR Body | `Docs/07_GitHub/prs/**/*.md` | 범위, 주요 변경, 검증, 제한, 관련 Issue/PR |
 | Work Unit Issue | `Docs/07_GitHub/issues/work-unit/work-unit_*.md` | Work Unit 범위, 검증 기준, 완료 조건 |
 | Verification Issue | `Docs/07_GitHub/issues/verification/verification_*.md` | build/run/capture 검증 결과와 미확인 항목 |
 | Demo Issue | `Docs/07_GitHub/issues/demo/demo_*.md` | demo 범위, 생성 기준, 승인 필요 범위 |

@@ -32,7 +32,7 @@
 
 Step4의 고정 `+Z` orthographic primary ray와 sphere intersection을 유지한다. Hit가 있으면 point에서 light까지의 방향과 surface normal로 diffuse 항을 계산하고, reflection vector와 view direction으로 specular 항을 계산한다. Ambient와 두 조명 항을 더한 결과는 `0~1` 범위로 clamp해 pixel buffer에 기록한다.
 
-HLSL은 ray tracing이나 lighting을 수행하지 않는다. CPU가 만든 결과를 dynamic texture로 전달받아 화면에 표시한다. 상세 처리 흐름과 의사코드는 [Step5 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/05_PhongShading.md)에서 확인한다.
+HLSL은 ray tracing이나 lighting을 수행하지 않는다. CPU가 만든 결과를 dynamic texture로 전달받아 화면에 표시한다. 상세 처리 흐름과 의사코드는 [Step5 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_05_PhongShading.md)에서 확인한다.
 
 ## Build And Run
 
@@ -65,5 +65,5 @@ HLSL은 ray tracing이나 lighting을 수행하지 않는다. CPU가 만든 결�
 - [Ray Topic](../../Docs/01_Topics/RayTracing/Ray.md)
 - [Intersection Topic](../../Docs/01_Topics/RayTracing/Intersection.md)
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
-- [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/05_PhongShading.md)
+- [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/03_05_PhongShading.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)

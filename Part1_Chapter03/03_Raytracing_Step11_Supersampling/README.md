@@ -31,7 +31,7 @@
 
 `Raytracer`는 1280×720 client 크기를 각 축에서 8로 나눈 160×90 output grid를 사용한다. `TraceRay2x2`는 한 output cell을 depth 3까지 재귀 분할하므로 8×8 규칙 grid의 leaf ray 64개를 만들고, 각 단계에서 네 child color를 평균한다. 총 primary ray 수는 `160 × 90 × 64 = 921,600`이다.
 
-각 leaf ray는 sphere와 두 triangle으로 구성한 Square의 closest hit를 찾고 ambient, diffuse texture와 specular shading을 계산한다. DirectX11 swap chain과 canvas texture의 sample count는 1이므로 이 과정은 GPU MSAA가 아니라 CPU spatial supersampling이다. 세부 구현과 시각 결과는 [Step11 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/11_Supersampling.md)에서 확인한다.
+각 leaf ray는 sphere와 두 triangle으로 구성한 Square의 closest hit를 찾고 ambient, diffuse texture와 specular shading을 계산한다. DirectX11 swap chain과 canvas texture의 sample count는 1이므로 이 과정은 GPU MSAA가 아니라 CPU spatial supersampling이다. 세부 구현과 시각 결과는 [Step11 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_11_Supersampling.md)에서 확인한다.
 
 ## Build And Run
 
@@ -65,5 +65,5 @@
 - [Texture Sampling Topic](../../Docs/01_Topics/TexturingAndMapping/TextureSampling.md)
 - [Intersection Topic](../../Docs/01_Topics/RayTracing/Intersection.md)
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
-- [Step11 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/11_Supersampling.md)
+- [Step11 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_11_Supersampling.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)

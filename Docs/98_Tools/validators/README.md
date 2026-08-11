@@ -11,6 +11,7 @@
 | `validate-topic-doc-quality.ps1` | 상세 Topic 정본 품질 검사(책임 구조, 핵심 개념, Example/Verification/Demo 연결) | `Docs/01_Topics` |
 | `validate-example-doc-quality.ps1` | Part4 `ExampleDocs` 품질 검사(실행 진입점, 코드 지도, Verification/Demo/Topic 연결) | `Part4_Chapter14-20/ExampleDocs` |
 | `validate-demo-index-quality.ps1` | Demo source docs 구현도 균일성 검사(필수 구조, 테이블 스키마, 상태값, 최소 capture 기준) | `Docs/03_Demos/**/demo-index.md` |
+| `test-github-body.ps1` | Chapter/maintenance PR body 유형 분리 회귀 검사 | `fixtures/github-body` |
 
 ## 사용법
 
@@ -20,6 +21,7 @@ powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-githu
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-topic-doc-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-example-doc-quality.ps1
 powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/validate-demo-index-quality.ps1
+powershell -ExecutionPolicy Bypass -File Docs/98_Tools/validators/test-github-body.ps1
 ```
 
 GitHub body validator의 기본 입력은 `Docs/07_GitHub`이다. Topic과 Demo source docs validator는 각각 `Docs/01_Topics`, `Docs/03_Demos`를 기본 입력으로 사용한다.
@@ -86,6 +88,17 @@ powershell -ExecutionPolicy Bypass -Command "& 'Docs/98_Tools/validators/validat
 - image URL 검사는 형식 검사이며 실제 파일 존재를 보증하지 않는다.
 - template에 특정 Issue 번호가 하드코딩되어 있지 않은지 확인한다.
 - Issue/PR 후보는 첫 H1을 title source로 유지한다. 실제 `gh issue create`와 `gh pr create`에서는 title을 H1에서 사용하고 body는 `Docs/07_GitHub` tracked 정본을 그대로 게시한다.
+
+## PR body schema
+
+PR body는 Chapter와 maintenance 유형을 구분한다.
+
+| 유형 | 식별 기준 | 필수 section | screenshot |
+| --- | --- | --- | --- |
+| Chapter PR | `## 주요 변경` 없음 | 요약, 범위, 핵심 개념, 대표 예제, 검증, 스크린샷, 미확인 / 제한, 문서, 관련 이슈, 다음 단계 | image Markdown 또는 `- 없음` 필수 |
+| Maintenance PR | `## 주요 변경` 있음 | 요약, 범위, 주요 변경, 검증, 미확인 / 제한, 문서, 관련 이슈, 다음 단계 | 강제하지 않음 |
+
+Maintenance PR에 실제 heading으로 `핵심 개념`, `대표 예제`, `스크린샷`을 함께 사용하면 유형 혼합으로 실패한다. fenced code 안의 heading 예시는 유형 판별에서 제외한다. 회귀 test는 두 유형의 정상 fixture, fenced heading, 필수 section 누락과 유형 혼합 fixture를 검사한다.
 
 ## 지원 범위
 

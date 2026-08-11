@@ -34,7 +34,7 @@
 
 Triangle은 plane 교차와 edge half-space test를 통과한 hit point에 대해 세 sub-triangle의 면적 비율을 계산한다. `w0`, `w1`, `w2`는 각각 `v0`, `v1`, `v2`의 weight이며 합은 1이다.
 
-Raytracer는 hit object가 vertex-color triangle일 때 red, green, blue를 weight로 합성한다. Sphere는 기존 material과 Phong lighting을 유지한다. HLSL은 ray tracing을 수행하지 않고 CPU 결과 texture를 표시한다. 세부 계산과 시각 결과는 [Step9 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/09_BarycentricCoordinates.md)에서 확인한다.
+Raytracer는 hit object가 vertex-color triangle일 때 red, green, blue를 weight로 합성한다. Sphere는 기존 material과 Phong lighting을 유지한다. HLSL은 ray tracing을 수행하지 않고 CPU 결과 texture를 표시한다. 세부 계산과 시각 결과는 [Step9 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_09_BarycentricCoordinates.md)에서 확인한다.
 
 ## Build And Run
 
@@ -67,5 +67,5 @@ Triangle의 세 꼭짓점은 red, green, blue에 대응하고 내부는 barycent
 - [Ray Topic](../../Docs/01_Topics/RayTracing/Ray.md)
 - [Phong Shading Topic](../../Docs/01_Topics/LightingAndShading/PhongShading.md)
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
-- [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/09_BarycentricCoordinates.md)
+- [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/03_09_BarycentricCoordinates.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)

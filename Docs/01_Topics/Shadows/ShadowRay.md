@@ -41,7 +41,7 @@ Visibility는 light에서 직접 도달하는 diffuse와 specular 항에 적용�
 ## 관련 문서
 
 - [Step8 Shadow Example](../../../Part1_Chapter03/03_Raytracing_Step8_Shadow/README.md)
-- [Step8 Shadow Demo](../../03_Demos/Part1_Chapter03/08_Shadow.md)
+- [Step8 Shadow Demo](../../03_Demos/Part1_Chapter03/03_08_Shadow.md)
 - [Part1 Chapter03 Verification](../../02_Verification/Part1_Chapter03/verification-index.md)
 - [Ray](../RayTracing/Ray.md)
 - [Intersection](../RayTracing/Intersection.md)

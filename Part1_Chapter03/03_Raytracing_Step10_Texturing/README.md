@@ -38,7 +38,7 @@ Square의 네 vertex는 image의 좌상단부터 시계 방향으로 `(0,0)`, `(
 
 `Texture::SampleLinear`는 UV를 texel center 기준 좌표로 변환하고 네 이웃 pixel을 wrap address 방식으로 bilinear 보간한다. CPU shading은 texture가 있는 object의 diffuse color에 이 sample을 곱한다. HLSL은 입력 PNG를 직접 sampling하지 않고 CPU가 계산한 RGBA32F canvas를 표시한다.
 
-세부 흐름과 시각 결과는 [Step10 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/10_Texturing.md)에서 확인한다.
+세부 흐름과 시각 결과는 [Step10 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_10_Texturing.md)에서 확인한다.
 
 ## Build And Run
 
@@ -72,5 +72,5 @@ Square의 네 vertex는 image의 좌상단부터 시계 방향으로 `(0,0)`, `(
 - [Intersection Topic](../../Docs/01_Topics/RayTracing/Intersection.md)
 - [Phong Shading Topic](../../Docs/01_Topics/LightingAndShading/PhongShading.md)
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
-- [Step10 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/10_Texturing.md)
+- [Step10 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_10_Texturing.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)

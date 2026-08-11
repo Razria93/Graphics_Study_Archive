@@ -596,13 +596,25 @@ $DoneCriteriaSection = New-Text @(0xC644, 0xB8CC, 0x20, 0xC870, 0xAC74)
 $RelatedDocsSection = New-Text @(0xAD00, 0xB828, 0x20, 0xBB38, 0xC11C)
 $ExcludedScopeSection = New-Text @(0xC81C, 0xC678, 0x20, 0xBC94, 0xC704)
 
-$PrRequiredSections = @(
+$ChapterPrRequiredSections = @(
 	$SummarySection,
 	$ScopeSection,
 	$CoreConceptsSection,
 	$RepresentativeExamplesSection,
 	$VerificationSection,
 	$ScreenshotsSection,
+	$UnverifiedLimitationsSection,
+	$DocumentationSection,
+	$RelatedIssuesSection,
+	$NextStepSection
+)
+
+$MajorChangesSection = New-Text @(0xC8FC, 0xC694, 0x20, 0xBCC0, 0xACBD)
+$MaintenancePrRequiredSections = @(
+	$SummarySection,
+	$ScopeSection,
+	$MajorChangesSection,
+	$VerificationSection,
 	$UnverifiedLimitationsSection,
 	$DocumentationSection,
 	$RelatedIssuesSection,
@@ -656,12 +668,83 @@ function Test-IsGuidanceMarkdown {
 	return ($File.Name -eq "README.md" -or $File.Name -eq "AGENTS.md")
 }
 
+function Get-MarkdownHeadingLines {
+	param([string[]]$Lines)
+
+	$HeadingLines = New-Object System.Collections.Generic.List[string]
+	$FenceCharacter = $null
+	$FenceLength = 0
+
+	foreach ($Line in $Lines) {
+		if ($null -ne $FenceCharacter) {
+			$ClosingPattern = '^\s*' + [regex]::Escape(
+				([string]$FenceCharacter * $FenceLength)
+			) + [regex]::Escape([string]$FenceCharacter) + '*\s*$'
+			if ($Line -match $ClosingPattern) {
+				$FenceCharacter = $null
+				$FenceLength = 0
+			}
+			continue
+		}
+
+		if ($Line -match '^\s*(`{3,}|~{3,})') {
+			$FenceCharacter = $Matches[1][0]
+			$FenceLength = $Matches[1].Length
+			continue
+		}
+
+		if ($Line -match '^#{1,6}\s+.+') {
+			$HeadingLines.Add($Line)
+		}
+	}
+
+	return $HeadingLines.ToArray()
+}
+
+function Test-PrBody {
+	param([System.IO.FileInfo]$File)
+
+	$RelativePath = Get-RelativePath $File.FullName
+	$Lines = (Get-Content -Encoding UTF8 $File.FullName -Raw) -split "`r?`n"
+	$HeadingLines = Get-MarkdownHeadingLines -Lines $Lines
+	$MajorChangesHeading = "## $MajorChangesSection"
+	$IsMaintenancePr = $HeadingLines -contains $MajorChangesHeading
+
+	if (-not $IsMaintenancePr) {
+		Test-PublicBody `
+			-File $File `
+			-RequiredSections $ChapterPrRequiredSections `
+			-RequireScreenshots $true `
+			-RequireGitHubImageUrl $true `
+			-RequireLeadingH1 $true
+		return
+	}
+
+	Test-PublicBody `
+		-File $File `
+		-RequiredSections $MaintenancePrRequiredSections `
+		-RequireScreenshots $false `
+		-RequireLeadingH1 $true
+
+	$ChapterOnlySections = @(
+		$CoreConceptsSection,
+		$RepresentativeExamplesSection,
+		$ScreenshotsSection
+	)
+	foreach ($Section in $ChapterOnlySections) {
+		$Heading = "## $Section"
+		if ($HeadingLines -contains $Heading) {
+			Add-Failure $RelativePath "maintenance PR mixes Chapter-only section: $Heading"
+		}
+	}
+}
+
 function Invoke-GitHubBodyValidation {
 	param([System.IO.FileInfo]$File)
 
 	$RelativePath = (Get-RelativePath $File.FullName) -replace '\\', '/'
 	if ($RelativePath -match '/prs/.+\.md$') {
-		Test-PublicBody -File $File -RequiredSections $PrRequiredSections -RequireScreenshots $true -RequireGitHubImageUrl $true -RequireLeadingH1 $true
+		Test-PrBody -File $File
 		return
 	}
 
