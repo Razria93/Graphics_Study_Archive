@@ -16,7 +16,11 @@
 | 초기 platform | `x64-windows` Debug/Release |
 | Dependency | vcpkg manifest mode |
 
-## 구현 축
+## Architecture 진입점
+
+프로젝트의 module, ownership, coordinate와 Part1 reconstruction 순서는 [ARCHITECTURE.md](ARCHITECTURE.md)를 정본으로 사용한다. original implementation은 직접 import하지 않고 [Reconstruction Strategy](../Docs/04_WorkLogs/decisions/graphics-lab-reconstruction-strategy.md)에 따라 기능 단위로 검증하며 재구성한다.
+
+## 계획한 구현 축
 
 ```text
 GraphicsLab
@@ -30,13 +34,14 @@ GraphicsLab
         └── RayTracing
 ```
 
-WU-R0에서는 renderer 구현 전 canonical project, dependency와 asset path contract를 구성한다. `Rendering/RayTracing`은 이후 milestone에서 초기 기능부터 단계적으로 재구성한다. graphics pipeline과 다른 rendering 기능은 같은 project의 별도 구현 축으로 추가한다.
+WU-R0에서는 renderer 구현 전 canonical project, dependency와 asset path contract를 구성했다. `Rendering/RayTracing`은 WU-R1부터 WU-R14까지 presentation, math, primary ray, intersection, shading, sampling과 recursive effect 순서로 재구성한다. graphics pipeline과 다른 rendering 기능은 실제 두 번째 consumer가 생길 때 같은 project의 별도 구현 축으로 추가한다.
 
 ## 상태
 
 - Canonical scaffold: WU-R0 구성 완료
 - Debug/Release x64 build/run: 2026-08-11 현재 확인
-- RayTracing reconstruction: 예정
+- Architecture와 Part1 roadmap: WU-A0 사용자 검수 전
+- RayTracing reconstruction: WU-R1부터 순차 진행 예정
 - Renderer capture/result: WU-R0 제외, rendering milestone부터 확인
 
 ## Asset와 공개 범위
@@ -51,4 +56,7 @@ WU-R0에서는 renderer 구현 전 canonical project, dependency와 asset path c
 - [Verification](../Docs/02_Verification/Portfolio_GraphicsLab/verification-index.md)
 - [Demo Index](../Docs/03_Demos/Portfolio_GraphicsLab/demo-index.md)
 - [Ray Tracing Topics](../Docs/01_Topics/RayTracing/README.md)
+- [Reconstruction Strategy](../Docs/04_WorkLogs/decisions/graphics-lab-reconstruction-strategy.md)
+- [Original Evidence Review](../Docs/04_WorkLogs/reviews/graphics-lab-original-evidence.md)
+- [Architecture WorkLog](../Docs/04_WorkLogs/work-units/WU-GraphicsLab-Architecture.md)
 - [Source Registry](../Docs/99_Legacy/source-registry.md)

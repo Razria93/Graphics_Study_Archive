@@ -13,7 +13,7 @@
 | `Part3_Chapter09` | 예제 폴더별 README | `Docs/01_Topics`, `Docs/02_Verification`, `Docs/03_Demos` |
 | `Part3_Chapter10-13` | 예제 폴더별 README | `Docs/01_Topics`, `Docs/02_Verification`, `Docs/03_Demos` |
 | `Part4_Chapter14-20` | `ExampleDocs` 예제별 문서 | `Docs/01_Topics`, `Docs/02_Verification`, `Docs/03_Demos` |
-| `Portfolio_GraphicsLab` | 프로젝트 README | `Docs/01_Topics`, `Docs/02_Verification`, `Docs/03_Demos`, `Docs/05_Publication` |
+| `Portfolio_GraphicsLab` | [프로젝트 README](../../Portfolio_GraphicsLab/README.md), [Architecture](../../Portfolio_GraphicsLab/ARCHITECTURE.md) | `Docs/01_Topics`, `Docs/02_Verification`, `Docs/03_Demos`, `Docs/04_WorkLogs`, `Docs/05_Publication` |
 
 ## 산출물 축
 
