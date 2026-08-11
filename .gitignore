@@ -13,6 +13,7 @@ Debug/
 Release/
 bin/
 obj/
+vcpkg_installed/
 *.ilk
 *.pdb
 *.exe

@@ -40,7 +40,7 @@
 | Part3_Chapter10-13 Step4 Fireball | time 기반 procedural fireball animation | 선택 | Billboard 위 procedural phase 변화 | 3-frame storyboard 확보. Selected local video 후보는 frame-rate 기술 검수 재확인 필요 | 미게시 |
 | Part3_Chapter10-13 | shadow quality 비교 | 선택 | shadow mapping, PCF, PCSS | 미확인 | 미게시 |
 | Part4_Chapter14-20 | 대표 sample 실행 | 선택 | advanced graphics 후보 | 미확인 | 미게시 |
-| Portfolio_RayTracer | feature progression | 선택 | ray tracing extension | 미확인 | 미게시 |
+| Portfolio_GraphicsLab | feature progression | 선택 | RayTracing부터 graphics pipeline까지의 확장 | 미확인 | 미게시 |
 
 ## Video Checklist
 

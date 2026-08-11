@@ -21,7 +21,7 @@
 | Verification | [Part1 Chapter03 Verification](../Docs/02_Verification/Part1_Chapter03/verification-index.md) |
 | Demo | [Part1 Chapter03 Demo Index](../Docs/03_Demos/Part1_Chapter03/demo-index.md) |
 | Topic | [Ray Tracing Topics](../Docs/01_Topics/RayTracing/README.md), [Lighting And Shading Topics](../Docs/01_Topics/LightingAndShading/README.md), [Shadow Topics](../Docs/01_Topics/Shadows/README.md), [Texturing And Mapping Topics](../Docs/01_Topics/TexturingAndMapping/README.md) |
-| Next action | `Portfolio_RayTracer` 연계 범위 정리 |
+| Next action | `Portfolio_GraphicsLab`의 `Rendering/RayTracing` 재구성 연계 범위 정리 |
 
 ## 순차 Step
 

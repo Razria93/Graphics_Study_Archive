@@ -5,7 +5,7 @@
 | 항목 | 내용 |
 | --- | --- |
 | Work Unit | `WU-Part1` |
-| 코드 범위 | `Part1_Chapter01-02`, `Part1_Chapter03`, `Portfolio_RayTracer` |
+| 코드 범위 | `Part1_Chapter01-02`, `Part1_Chapter03`, `Portfolio_GraphicsLab/Rendering/RayTracing` |
 | pilot 완료 대상 | `Part1_Chapter01-02/02_Bloom` |
 | 주요 문서 축 | 코드 폴더 README, `01_Topics`, `02_Verification`, `03_Demos`, `05_Publication` |
 
@@ -68,4 +68,4 @@
 
 ## 다음 작업
 
-1. `Portfolio_RayTracer`와 Part1 ray tracing 범위의 연결 단위를 정리한다.
+1. `Portfolio_GraphicsLab` canonical scaffold를 구성하고 `Rendering/RayTracing`과 Part1 ray tracing 범위의 연결 단위를 정리한다.

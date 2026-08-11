@@ -6,7 +6,7 @@
 
 | Topic 그룹 | 위치 | 주 연결 후보 |
 | --- | --- | --- |
-| Ray Tracing | `Docs/01_Topics/RayTracing` | `Part1_Chapter03`, `Portfolio_RayTracer` |
+| Ray Tracing | `Docs/01_Topics/RayTracing` | `Part1_Chapter03`, `Portfolio_GraphicsLab/Rendering/RayTracing` |
 | Rasterization | `Docs/01_Topics/Rasterization` | `Part2_Chapter04` |
 | DirectX11 Pipeline | `Docs/01_Topics/DirectX11Pipeline` | `Part1_Chapter01-02`, `Part2_Chapter04`, `Part2_Chapter05-08` |
 | Texturing And Mapping | `Docs/01_Topics/TexturingAndMapping` | `Part2_Chapter05-08`, `Part3_Chapter10-13` |
