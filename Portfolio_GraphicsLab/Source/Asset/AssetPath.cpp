@@ -44,7 +44,9 @@ namespace GraphicsLab::Asset
 
     std::filesystem::path AssetPath::Resolve(const std::filesystem::path& relativePath)
     {
-        if (relativePath.empty() || relativePath.is_absolute())
+        if (relativePath.empty() ||
+            relativePath.has_root_name() ||
+            relativePath.has_root_directory())
         {
             throw std::invalid_argument("Asset paths must be non-empty and relative");
         }
