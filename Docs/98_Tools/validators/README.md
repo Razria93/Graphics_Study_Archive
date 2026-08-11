@@ -98,7 +98,7 @@ PR body는 Chapter와 maintenance 유형을 구분한다.
 | Chapter PR | `## 주요 변경` 없음 | 요약, 범위, 핵심 개념, 대표 예제, 검증, 스크린샷, 미확인 / 제한, 문서, 관련 이슈, 다음 단계 | image Markdown 또는 `- 없음` 필수 |
 | Maintenance PR | `## 주요 변경` 있음 | 요약, 범위, 주요 변경, 검증, 미확인 / 제한, 문서, 관련 이슈, 다음 단계 | 강제하지 않음 |
 
-Maintenance PR에 `핵심 개념`, `대표 예제`, `스크린샷`을 함께 사용하면 유형 혼합으로 실패한다. 회귀 test는 두 유형의 정상 fixture, 필수 section 누락과 유형 혼합 fixture를 검사한다.
+Maintenance PR에 실제 heading으로 `핵심 개념`, `대표 예제`, `스크린샷`을 함께 사용하면 유형 혼합으로 실패한다. fenced code 안의 heading 예시는 유형 판별에서 제외한다. 회귀 test는 두 유형의 정상 fixture, fenced heading, 필수 section 누락과 유형 혼합 fixture를 검사한다.
 
 ## 지원 범위
 

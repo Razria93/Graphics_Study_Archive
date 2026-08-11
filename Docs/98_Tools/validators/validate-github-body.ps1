@@ -668,13 +668,47 @@ function Test-IsGuidanceMarkdown {
 	return ($File.Name -eq "README.md" -or $File.Name -eq "AGENTS.md")
 }
 
+function Get-MarkdownHeadingLines {
+	param([string[]]$Lines)
+
+	$HeadingLines = New-Object System.Collections.Generic.List[string]
+	$FenceCharacter = $null
+	$FenceLength = 0
+
+	foreach ($Line in $Lines) {
+		if ($null -ne $FenceCharacter) {
+			$ClosingPattern = '^\s*' + [regex]::Escape(
+				([string]$FenceCharacter * $FenceLength)
+			) + [regex]::Escape([string]$FenceCharacter) + '*\s*$'
+			if ($Line -match $ClosingPattern) {
+				$FenceCharacter = $null
+				$FenceLength = 0
+			}
+			continue
+		}
+
+		if ($Line -match '^\s*(`{3,}|~{3,})') {
+			$FenceCharacter = $Matches[1][0]
+			$FenceLength = $Matches[1].Length
+			continue
+		}
+
+		if ($Line -match '^#{1,6}\s+.+') {
+			$HeadingLines.Add($Line)
+		}
+	}
+
+	return $HeadingLines.ToArray()
+}
+
 function Test-PrBody {
 	param([System.IO.FileInfo]$File)
 
 	$RelativePath = Get-RelativePath $File.FullName
 	$Lines = (Get-Content -Encoding UTF8 $File.FullName -Raw) -split "`r?`n"
+	$HeadingLines = Get-MarkdownHeadingLines -Lines $Lines
 	$MajorChangesHeading = "## $MajorChangesSection"
-	$IsMaintenancePr = $Lines -contains $MajorChangesHeading
+	$IsMaintenancePr = $HeadingLines -contains $MajorChangesHeading
 
 	if (-not $IsMaintenancePr) {
 		Test-PublicBody `
@@ -699,7 +733,7 @@ function Test-PrBody {
 	)
 	foreach ($Section in $ChapterOnlySections) {
 		$Heading = "## $Section"
-		if ($Lines -contains $Heading) {
+		if ($HeadingLines -contains $Heading) {
 			Add-Failure $RelativePath "maintenance PR mixes Chapter-only section: $Heading"
 		}
 	}

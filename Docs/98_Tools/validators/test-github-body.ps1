@@ -38,6 +38,12 @@ $Cases = @(
         ExpectedPattern = "GitHub body validation passed."
     }
     @{
+        Name = "valid Chapter PR with fenced maintenance heading"
+        Path = "valid/chapter-fenced-major-changes/prs/chapter.md"
+        ExpectedExitCode = 0
+        ExpectedPattern = "GitHub body validation passed."
+    }
+    @{
         Name = "valid maintenance PR"
         Path = "valid/maintenance/prs/maintenance.md"
         ExpectedExitCode = 0

@@ -9,7 +9,7 @@
 - root README, work unit, publication candidate와 progress plan의 완료 상태 정합화
 - Part1 Chapter03, Part2 Chapter04, Part2 Chapter05-08, Part3 Chapter10-13의 완료된 Demo index 정리
 - Part1 Chapter03 Demo 파일명을 `03_04_DrawingSphere.md`와 같이 Chapter와 Step을 함께 표시하는 형식으로 통일하고 관련 링크 갱신
-- Phase 4-1 계획 댓글 후보와 Part1-Part4 후속 작업 계획 추가
+- Phase 1, Phase 2 Part1과 Phase 4 Part3 완료 댓글 구조와 Part1-Part4 후속 작업 계획 정리
 - maintenance PR 정책, template, validator와 회귀 fixture 추가
 - 문서와 README만 변경하며 예제 코드, build 산출물, capture와 video는 변경하지 않음
 
@@ -18,6 +18,7 @@
 - GitHub 병합 결과, work unit, publication 상태와 전체 진행 계획을 같은 완료 기록으로 맞춘다.
 - 완료된 상세 Demo를 index와 코드 폴더 README에서 직접 찾을 수 있도록 연결한다.
 - Part1 Chapter03 Demo 이름에 Chapter 번호와 Step 번호를 함께 기록해 다른 Part의 번호 체계와 구분한다.
+- 기존 Progress 완료 댓글의 permalink와 시간 순서를 유지하면서 Phase별 작업 묶음으로 tracked 후보를 통합한다.
 - `## 주요 변경`을 maintenance PR 식별자로 정의하고 Chapter 전용 section과 혼합하지 않도록 검사한다.
 - 정상 Chapter PR, 정상 maintenance PR, 필수 section 누락과 유형 혼합을 fixture로 검증한다.
 
