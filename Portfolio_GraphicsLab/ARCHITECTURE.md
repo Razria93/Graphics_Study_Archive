@@ -6,12 +6,12 @@
 
 ## Architecture 원칙
 
-- Application은 프로그램 시작·종료, window event, frame loop와 renderer 호출을 관리한다. Ray 생성, intersection, shading과 같은 이미지 생성 알고리즘은 Rendering module에 두어 application lifecycle을 변경하지 않고 rendering 방식을 교체할 수 있게 한다.
-- Scene의 Mesh, Material, Camera와 Light는 graphics API에 의존하지 않는 domain data로 유지한다. `ID3D11Buffer`, `ID3D11Texture2D`와 같은 D3D11 resource는 D3D11 backend가 별도로 생성하고 소유해 같은 Scene data를 CPU RayTracing과 이후 renderer가 함께 사용할 수 있게 한다.
-- Asset은 executable 옆 `Assets` directory를 기준으로 한 canonical relative path 또는 stable ID로 참조한다. 프로그램을 실행한 current working directory와 사용자별 absolute path에 의존하지 않아 Visual Studio, repository root와 output directory에서 같은 asset을 찾게 한다.
-- 각 객체는 명확한 단일 owner를 기본으로 한다. 소유권이 필요한 경우 value 또는 `std::unique_ptr`를 사용하고, 객체를 사용하지만 수명을 관리하지 않는 관계는 reference, non-owning pointer 또는 stable ID로 표현한다. 실제 shared lifetime이 확인된 경우에만 `std::shared_ptr`를 사용한다.
-- Application, Scene과 각 Rendering module의 책임 경계는 처음부터 분리하지만, 여러 renderer를 위한 공통 interface, factory와 RHI는 미리 만들지 않는다. CPU RayTracing과 두 번째 실제 renderer를 구현한 뒤 두 구현에서 반복되는 책임이 확인될 때 필요한 최소 공통 abstraction을 추출한다.
-- Part2부터 Part4까지의 기능은 현재 구조가 미래 확장을 막지 않는지 판단하는 capability constraint로 사용한다. CPU Rasterization, D3D11 graphics pipeline, PBR, compute, animation과 physics module은 해당 Work Unit이 시작될 때 설계하고 구현하며 Part1 단계에서 미리 만들지 않는다.
+- **Lifecycle과 rendering 분리:** Application은 프로그램 시작·종료, window event, frame loop와 renderer 호출을 관리한다. 이미지 생성 알고리즘은 Rendering module에 두어 application lifecycle을 바꾸지 않고 rendering 방식을 교체할 수 있게 한다.
+- **Domain data와 backend resource 분리:** Mesh, Material, Camera와 Light는 graphics API에 의존하지 않는 data로 유지한다. D3D11 resource는 backend가 별도로 소유해 같은 Scene을 CPU RayTracing과 이후 renderer가 함께 사용할 수 있게 한다.
+- **실행 위치와 무관한 asset 경로:** Asset은 executable 옆 `Assets`를 기준으로 한 relative path 또는 stable ID로 참조한다. CWD와 사용자별 absolute path에는 의존하지 않는다.
+- **명확한 단일 ownership:** Value와 `std::unique_ptr`를 기본 ownership으로 사용하고, non-owning 관계는 reference, pointer 또는 stable ID로 표현한다. 실제 shared lifetime이 필요한 경우에만 `std::shared_ptr`를 사용한다.
+- **검증된 공통점만 추상화:** Module 책임은 처음부터 분리하지만 공통 renderer interface, factory와 RHI는 미리 만들지 않는다. 두 번째 실제 renderer에서 반복 책임이 확인된 뒤 최소 abstraction을 추출한다.
+- **미래 기능은 constraint로만 사용:** Part2부터 Part4까지의 기능은 현재 구조가 미래 확장을 막지 않는지 판단하는 기준으로 사용한다. 관련 module은 해당 Work Unit이 시작될 때 구현한다.
 
 ## Module 경계
 
