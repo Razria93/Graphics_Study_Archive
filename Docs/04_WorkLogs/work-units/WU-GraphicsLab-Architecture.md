@@ -80,8 +80,8 @@
 
 ## 다음 작업
 
-Architecture branch의 push와 Draft PR 생성, review와 일반 merge commit 방식의 closeout을 진행한다. Merge 이후 WU-R1 Window/Presentation 계획을 작성하며 WU-R1은 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation까지만 포함한다.
+PR #41 review 대응과 일반 merge commit을 진행한다. Merge 이후 별도 closeout branch에서 WU-A0 최종 마감 기록과 Work Unit closeout 정책을 정리한다. 해당 closeout이 끝난 뒤 WU-R1 Window/Presentation 계획을 작성하며 WU-R1은 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation까지만 포함한다.
 
 ## 판정
 
-WU-A0 문서 기준으로 WU-R1을 시작할 기술 blocker는 없다. 책임 구조 방향은 사용자 검수를 마쳤고 상세화 문서와 PR body 검증을 통과했다. 다음 gate는 architecture branch의 원격 게시 승인이다.
+WU-A0 문서 기준으로 WU-R1을 시작할 기술 blocker는 없다. 책임 구조 방향은 사용자 검수를 마쳤고 상세화 문서와 PR body 검증을 통과했다. 다음 gate는 PR #41 review 대응 완료와 merge 승인이다.
