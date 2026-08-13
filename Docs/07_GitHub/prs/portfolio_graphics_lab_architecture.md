@@ -14,6 +14,9 @@ Original source를 bulk import하거나 완성본을 먼저 옮긴 뒤 전면 re
 - ownership, coordinate, transform, error와 threading contract
 - Part1 WU-R1부터 WU-R14까지의 reconstruction roadmap
 - Part2부터 Part4까지의 capability를 future constraint로 반영
+- 전체 책임 지도, frame·asset 흐름과 lifetime 구조 상세화
+- Module별 역할, 비책임 범위, 구성 근거와 확장 조건 기록
+- Unreal 지향 책임 원칙과 미래 abstraction 도입 조건 기록
 - Work Unit, project README, study map과 publication candidate 연결 갱신
 - renderer code, project/build contract, asset와 capture/result 변경 제외
 
@@ -26,6 +29,8 @@ Original source를 bulk import하거나 완성본을 먼저 옮긴 뒤 전면 re
 - Backend 독립 domain data와 D3D11 resource ownership을 분리하고 단일 ownership을 기본으로 사용한다.
 - Left-handed world/view, column-vector matrix, inverse-transpose normal과 world-space hit ordering을 canonical transform contract로 정한다.
 - 두 번째 실제 consumer가 생기기 전에는 범용 renderer interface, RHI, render graph, ECS와 job system을 만들지 않는다.
+- Unreal Engine의 구체 class hierarchy를 복제하지 않고 module encapsulation, lifetime 기반 subsystem과 domain/resource 분리 방향을 참고한다.
+- `World`, Object/Component, Asset Registry, rendering frontend, common D3D11 backend, Render Graph, job system과 RHI의 도입 조건을 고정한다.
 - WU-R1 Window/Presentation부터 WU-R14 Environment/Part1 Closeout까지 기능과 검증 단위로 진행한다.
 - 출처와 재배포 조건이 확인되지 않은 original texture를 canonical/public tree에서 제외한다.
 
@@ -55,6 +60,7 @@ Original source를 bulk import하거나 완성본을 먼저 옮긴 뒤 전면 re
 
 - Project 안내: [Portfolio GraphicsLab README](https://github.com/Razria93/Graphics_Study_Archive/blob/portfolio/graphics-lab-architecture/Portfolio_GraphicsLab/README.md)
 - Architecture 정본: [GraphicsLab Architecture](https://github.com/Razria93/Graphics_Study_Archive/blob/portfolio/graphics-lab-architecture/Portfolio_GraphicsLab/ARCHITECTURE.md)
+- Architecture 확장 결정: [GraphicsLab Architecture Evolution Decision](https://github.com/Razria93/Graphics_Study_Archive/blob/portfolio/graphics-lab-architecture/Docs/04_WorkLogs/decisions/graphics-lab-architecture-evolution.md)
 - Reconstruction 전략: [GraphicsLab Reconstruction Strategy](https://github.com/Razria93/Graphics_Study_Archive/blob/portfolio/graphics-lab-architecture/Docs/04_WorkLogs/decisions/graphics-lab-reconstruction-strategy.md)
 - Original evidence 판단: [GraphicsLab Original Evidence Review](https://github.com/Razria93/Graphics_Study_Archive/blob/portfolio/graphics-lab-architecture/Docs/04_WorkLogs/reviews/graphics-lab-original-evidence.md)
 - Work Unit 기록: [WU-GraphicsLab-Architecture](https://github.com/Razria93/Graphics_Study_Archive/blob/portfolio/graphics-lab-architecture/Docs/04_WorkLogs/work-units/WU-GraphicsLab-Architecture.md)

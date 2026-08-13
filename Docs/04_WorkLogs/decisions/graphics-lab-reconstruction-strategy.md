@@ -59,4 +59,5 @@ tracked 문서에는 공개 가능한 판단과 검증 결과만 둔다. 절대 
 
 - [Original Evidence Review](../reviews/graphics-lab-original-evidence.md)
 - [GraphicsLab Architecture](../../../Portfolio_GraphicsLab/ARCHITECTURE.md)
+- [Architecture Evolution Decision](graphics-lab-architecture-evolution.md)
 - [WU-GraphicsLab-Architecture](../work-units/WU-GraphicsLab-Architecture.md)

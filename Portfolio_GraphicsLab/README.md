@@ -18,7 +18,7 @@
 
 ## Architecture 진입점
 
-프로젝트의 module, ownership, coordinate와 Part1 reconstruction 순서는 [ARCHITECTURE.md](ARCHITECTURE.md)를 정본으로 사용한다. original implementation은 직접 import하지 않고 [Reconstruction Strategy](../Docs/04_WorkLogs/decisions/graphics-lab-reconstruction-strategy.md)에 따라 기능 단위로 검증하며 재구성한다.
+프로젝트의 전체 책임 구조, 실행 흐름, module별 역할·구성 근거·확장 조건, ownership, coordinate와 Part1 reconstruction 순서는 [ARCHITECTURE.md](ARCHITECTURE.md)를 정본으로 사용한다. Unreal Engine의 구체 class를 복제하지 않고 module과 lifetime 중심 책임 구조를 참고한 범위는 [Architecture Evolution Decision](../Docs/04_WorkLogs/decisions/graphics-lab-architecture-evolution.md)에 기록한다. Original implementation은 직접 import하지 않고 [Reconstruction Strategy](../Docs/04_WorkLogs/decisions/graphics-lab-reconstruction-strategy.md)에 따라 기능 단위로 검증하며 재구성한다.
 
 ## 계획한 구현 축
 
@@ -29,18 +29,24 @@ GraphicsLab
     ├── Application
     ├── Asset
     ├── Core
+    ├── Math
     ├── Platform
+    ├── Scene
     └── Rendering
-        └── RayTracing
+        ├── Common
+        ├── Presentation/D3D11
+        ├── RayTracing/CPU
+        ├── Rasterization/CPU          (future)
+        └── GraphicsPipeline/D3D11     (future)
 ```
 
-WU-R0에서는 renderer 구현 전 canonical project, dependency와 asset path contract를 구성했다. `Rendering/RayTracing`은 WU-R1부터 WU-R14까지 presentation, math, primary ray, intersection, shading, sampling과 recursive effect 순서로 재구성한다. graphics pipeline과 다른 rendering 기능은 실제 두 번째 consumer가 생길 때 같은 project의 별도 구현 축으로 추가한다.
+이 tree는 현재 physical folder 목록이 아니라 책임 구조와 확장 위치를 보여준다. WU-R0에서는 renderer 구현 전 canonical project, dependency와 asset path contract를 구성했다. `Rendering/RayTracing/CPU`는 WU-R1부터 WU-R14까지 presentation, math, primary ray, intersection, shading, sampling과 recursive effect 순서로 재구성한다. Graphics pipeline과 다른 rendering 기능은 실제 Work Unit이 시작될 때 별도 구현 축으로 추가한다.
 
 ## 상태
 
 - Canonical scaffold: WU-R0 구성 완료
 - Debug/Release x64 build/run: 2026-08-11 현재 확인
-- Architecture와 Part1 roadmap: WU-A0 사용자 검수 전
+- Architecture와 Part1 roadmap: 책임 구조 방향 사용자 승인, 상세 문서 검증 중
 - RayTracing reconstruction: WU-R1부터 순차 진행 예정
 - Renderer capture/result: WU-R0 제외, rendering milestone부터 확인
 
@@ -57,6 +63,7 @@ WU-R0에서는 renderer 구현 전 canonical project, dependency와 asset path c
 - [Demo Index](../Docs/03_Demos/Portfolio_GraphicsLab/demo-index.md)
 - [Ray Tracing Topics](../Docs/01_Topics/RayTracing/README.md)
 - [Reconstruction Strategy](../Docs/04_WorkLogs/decisions/graphics-lab-reconstruction-strategy.md)
+- [Architecture Evolution Decision](../Docs/04_WorkLogs/decisions/graphics-lab-architecture-evolution.md)
 - [Original Evidence Review](../Docs/04_WorkLogs/reviews/graphics-lab-original-evidence.md)
 - [Architecture WorkLog](../Docs/04_WorkLogs/work-units/WU-GraphicsLab-Architecture.md)
 - [Source Registry](../Docs/99_Legacy/source-registry.md)

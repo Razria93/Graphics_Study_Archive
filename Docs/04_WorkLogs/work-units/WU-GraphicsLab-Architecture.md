@@ -19,7 +19,7 @@
 | 2단계 | Phase A source·media inventory, 마지막 snapshot hash와 known issue 재확인 | tracked review와 local evidence baseline 작성 |
 | 3단계 | Part1부터 Part4까지 capability와 original 구조 비교 | stable boundary와 deferred abstraction 분류 |
 | 4단계 | WU-A0 module, ownership, coordinate, error, threading과 Part1 roadmap 작성 | architecture 정본 작성 |
-| 5단계 | index·publication 연결, Markdown·UTF-8·link·Git 검사 | 사용자 1차 검수 전 상태로 정렬 |
+| 5단계 | index·publication 연결, Markdown·UTF-8·link·Git 검사 | 초기 검수 후 책임 구조 상세화와 PR push 전 검증으로 확장 |
 
 ## Phase S 결과
 
@@ -42,11 +42,21 @@
 - Part1 reconstruction을 WU-R1부터 WU-R14까지 기능과 검증 단위로 나눈다.
 - Part2부터 Part4까지의 기능은 future capability constraint로만 반영하고 선행 engine framework는 만들지 않는다.
 
+## 책임 구조 상세화 결과
+
+- Architecture 정본에서 전체 책임 지도, frame·asset 실행 흐름과 Application·Window·Scene·Frame·Asset lifetime을 구분한다.
+- Application부터 미래 D3D11 graphics pipeline까지 11개 module을 같은 schema로 설명한다.
+- 각 module에 역할, 담당하지 않는 것, 구성 근거, 현재 범위와 확장 조건을 기록한다.
+- Unreal Engine의 구체 class hierarchy를 복제하지 않고 module encapsulation, lifetime 기반 subsystem, asset reference와 rendering resource 분리 방향을 참고한다.
+- `World`, Object/Component, lifetime subsystem, Asset Registry, rendering frontend, common D3D11 backend, Render Graph, job system과 RHI의 도입 조건을 명시한다.
+- 새로운 공통 abstraction은 최소 두 concrete consumer에서 반복 책임을 확인한 뒤 별도 decision으로 검수한다.
+
 ## 변경 산출물
 
 | 산출물 | 책임 |
 | --- | --- |
 | `Docs/04_WorkLogs/decisions/graphics-lab-reconstruction-strategy.md` | reconstruction 전략과 변경 기준 |
+| `Docs/04_WorkLogs/decisions/graphics-lab-architecture-evolution.md` | Unreal 지향 책임 원칙, 채택·보류 구조와 도입 조건 |
 | `Docs/04_WorkLogs/reviews/graphics-lab-original-evidence.md` | public-safe original evidence 판단 요약 |
 | `Portfolio_GraphicsLab/ARCHITECTURE.md` | module, data, transform와 Part1 roadmap 정본 |
 | `Portfolio_GraphicsLab/README.md` | 정본 문서 진입점과 현재 상태 |
@@ -58,20 +68,20 @@
 
 ## 검증 범위
 
-이번 Work Unit은 source와 project를 변경하지 않으므로 build/run을 다시 수행하지 않는다. 변경 tracked Markdown 9개의 render, table, wrap 검사를 통과했다. 저장소 전체 validator 18종과 Markdown 465개 전수 검사를 통과했다. 변경 문서의 strict UTF-8과 상대 링크 검사, `git diff --check`를 통과했다. raw/reference source와 local media에는 쓰기 작업을 수행하지 않았다.
+이번 Work Unit은 source와 project를 변경하지 않으므로 build/run을 다시 수행하지 않는다. 책임 구조 상세화 범위의 tracked Markdown 7개가 render, table, wrap 검사를 통과했다. 저장소 전체 validator 18종, Markdown 469개와 table 534개 전수 검사를 통과했다. 변경 문서의 strict UTF-8과 상대 링크 검사, `git diff --check`를 통과했다. raw/reference source와 local media에는 쓰기 작업을 수행하지 않았다.
 
-## 사용자 검수 기준
+## 사용자 검수 결과
 
-- verified reconstruction이 original authorship와 canonical history를 올바르게 구분하는지 확인한다.
-- module 경계가 현재 Part1에 충분하면서 speculative engine 구조를 만들지 않는지 확인한다.
-- left-handed coordinate, column-vector matrix와 transform contract를 승인할지 확인한다.
-- WU-R1부터 WU-R14까지의 기능 순서와 완료 기준을 확인한다.
-- 기존 texture를 제외하고 replacement asset을 사용하는 기준을 확인한다.
+- Verified reconstruction과 original evidence 구분을 승인했다.
+- Application, Scene, Asset, Rendering과 backend resource 분리 방향을 승인했다.
+- Unreal Engine과 유사한 module·lifetime 중심 책임 구조로 확장하되 구체 class hierarchy는 복제하지 않는 방향을 승인했다.
+- Architecture를 전체 구성, module 역할, 구성 근거와 확장 조건 순서로 언제든 다시 읽을 수 있게 상세화하는 방향을 승인했다.
+- Left-handed coordinate, column-vector matrix와 WU-R1부터 WU-R14까지의 순서는 이 architecture 기준으로 유지한다.
 
 ## 다음 작업
 
-사용자 검수와 commit 이후 WU-R1 Window/Presentation 계획을 작성한다. WU-R1은 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation까지만 포함한다.
+Architecture branch의 push와 Draft PR 생성, review와 일반 merge commit 방식의 closeout을 진행한다. Merge 이후 WU-R1 Window/Presentation 계획을 작성하며 WU-R1은 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation까지만 포함한다.
 
 ## 판정
 
-WU-A0 문서 기준으로 WU-R1을 시작할 기술 blocker는 없다. coordinate·ownership contract와 WU-R1부터 WU-R14까지의 순서는 사용자 1차 검수 전 상태이며, 승인 전에는 code 구현과 commit을 진행하지 않는다.
+WU-A0 문서 기준으로 WU-R1을 시작할 기술 blocker는 없다. 책임 구조 방향은 사용자 검수를 마쳤고 상세화 문서와 PR body 검증을 통과했다. 다음 gate는 architecture branch의 원격 게시 승인이다.
