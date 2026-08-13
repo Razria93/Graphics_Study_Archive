@@ -33,7 +33,7 @@
 
 - 변경 Markdown 9개 wrap·render·table validator 통과
 - 저장소 전체 validator 18종 통과
-- 전체 Markdown 475개, table 543개, Demo 문서 103개와 Topic 문서 52개 검사 통과
+- 전체 Markdown 476개, table 543개, Demo 문서 103개와 Topic 문서 52개 검사 통과
 - 변경 문서 strict UTF-8과 상대 링크 검사 통과
 - lifecycle 단계·상태·복귀·종료 정의의 책임 위치 수동 감사 통과
 - 제외 범위 변경 없음과 `git diff --check` 통과
