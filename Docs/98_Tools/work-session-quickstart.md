@@ -29,7 +29,7 @@
 - 목표, 범위, 제외 범위, 필수 산출물, 검증과 종료 조건
 - 각 산출물의 `Created`, `Updated`, `Linked`, `N/A` 판정과 근거
 
-`Closes Work Unit: Yes`이면 WorkLog 최종 snapshot, Work Unit Index, 안정적인 GitHub 연결, 제한, 다음 Work Unit과 필요한 Progress payload를 같은 branch의 pre-merge finalization에서 완성한다. 상세 산출물과 종료 조건은 Work Profile Policy, 상태와 마감 lifecycle은 [Work Unit Workflow Policy](../06_Policies/work-unit-workflow-policy.md)를 따른다.
+Profile 산출물과 검증 후보 조건은 Work Profile Policy를 따른다. 공통 단계 순서, Work Unit 상태, finalization, 복귀와 종료 조건은 [Work Unit Workflow Policy](../06_Policies/work-unit-workflow-policy.md)만 정의한다.
 
 이미 진행 중인 branch를 마감할 때는 branch diff, 현재 PR, WorkLog와 Index에서 Work Contract를 먼저 복원한다. 사용자에게는 실제 Work type, `Closes Work Unit`, `Progress impact`, 산출물 판정, 현재 단계와 누락을 먼저 보고하고 남은 merge 절차를 안내한다.
 
@@ -126,7 +126,7 @@ Remote 변경은 사용자에게 대상, 명령과 예상 효과를 보고하고
 -> 실제 remote 상태 확인
 ```
 
-조건부 terminal execution에서는 merge 성공을 확인한 경우에만 Progress 동기화를 이어서 수행한다. Merge 후 Progress 작업만 실패하면 tracked 문서를 수정하지 않고 같은 remote 작업만 재시도한다.
+조건부 terminal execution의 진입·완료와 실패 시 복귀는 [Work Unit Workflow Policy](../06_Policies/work-unit-workflow-policy.md)를 따르고, 실제 remote 명령과 승인 조건은 [GitHub Workflow Policy](../06_Policies/github-workflow-policy.md)를 따른다.
 
 Issue와 PR 후보의 첫 H1은 remote title source다. remote body에서는 첫 H1과 바로 뒤 빈 줄을 제거한다. comment body에는 H1을 사용하지 않는다.
 
@@ -134,22 +134,11 @@ Issue와 PR 후보의 첫 H1은 remote title source다. remote body에서는 첫
 
 Remote body와 사용한 tracked payload의 일치만 확인한다. 실제 게시 여부, comment ID·URL과 게시 시각은 GitHub remote에 두며 tracked 역동기화를 만들지 않는다.
 
-## 11. Ready, Review와 Merge
+## 11. 현재 lifecycle 단계 확인
 
-| 단계 | 확인 범위 | 실패 시 복귀 |
-| --- | --- | --- |
-| Review 전 최종 검사 | scope, PR body, 변경 범위 validator, build/test, 링크와 render | 작업 단계 |
-| Ready for Review | PR 상태 전환과 remote 확인 | Ready 단계 |
-| Review 대응 | actionable feedback, 영향 범위 regression, 답글과 resolve | Review 대응 |
-| Pre-merge finalization | WorkLog, Index, 제한, 다음 작업, Progress payload와 전체 validator | Finalization |
-| Merge 전 최종 검사 | 고정 SHA, clean/sync, Actions, review, conflict와 remote body | Review 또는 finalization |
-| Terminal execution | 일반 merge, 기본 branch 확인, 조건부 Progress 동기화와 body 확인 | Remote 재시도 |
+현재 단계와 다음 단계의 진입·완료 조건, HEAD 변경과 실패 시 복귀는 [Work Unit Workflow Policy](../06_Policies/work-unit-workflow-policy.md)에서 확인한다. 이 문서는 해당 순서를 복제하지 않는다.
 
-Finalization 문서는 merge 후 기본 branch에서 읽힐 상태로 작성한다. `Draft`, `Ready 대기`, `merge 시 반영`, `merge 승인 대기` 같은 현재 PR 과도 상태는 canonical 문서에 두지 않는다. Finalization 이후 HEAD가 바뀌면 종결 검사 증거와 merge 승인을 폐기하고 변경 성격에 맞는 단계로 돌아간다.
-
-Finalization에서 전체 validator, `git diff --check`, lifecycle 정합성과 필요한 Browser 표본을 한 번 확인한다. Merge 전에는 같은 검사를 반복하지 않고 local HEAD, tracking, remote branch와 PR head 일치, clean worktree, Actions 성공, mergeable, `CHANGES_REQUESTED`와 미해결 actionable thread 부재만 확인한다.
-
-Merge와 Progress 동기화를 함께 승인할 때는 PR 번호와 HEAD SHA, `--merge`, 대상 Issue와 comment, 사용할 payload를 명시한다. Merge가 실패하면 Progress 작업을 실행하지 않으며, Progress 작업만 실패하면 새 tracked 수정 없이 같은 remote 작업만 재시도한다. 둘 다 성공해야 작업 목표를 종료한다.
+Ready 전환, review 답글, merge와 Progress remote 실행이 필요한 단계에서는 [GitHub Workflow Policy](../06_Policies/github-workflow-policy.md)의 승인 게이트와 실행 규칙을 확인한다.
 
 ## 12. 종료와 Handoff
 

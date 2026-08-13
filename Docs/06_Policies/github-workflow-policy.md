@@ -1,6 +1,6 @@
 # GitHub Workflow Policy
 
-이 문서는 GitHub Issue, PR, gh CLI, pull, push, rebase, merge, Ready for Review 작업의 승인 흐름을 정의한다.
+이 문서는 GitHub Issue, PR, gh CLI, pull, push, rebase, merge와 Ready for Review 작업의 승인 및 remote 실행 규칙을 정의한다. Lifecycle 단계의 순서, 전환, 복귀와 종료 조건은 [Work Unit Workflow Policy](work-unit-workflow-policy.md)를 따르며 이 문서에서 다시 정의하지 않는다.
 
 ## 책임 경계
 
@@ -13,18 +13,6 @@
 | 실제 게시 여부, comment ID와 URL | GitHub remote |
 | Progress Issue 진행판 | GitHub remote |
 | 실제 Issue/PR 상태 | GitHub remote |
-
-## 기본 흐름
-
-```text
-작업과 PR draft 작성
--> Review 전 최종 검사
--> Ready for Review
--> Review 대응 및 comment 처리
--> 같은 작업 branch의 pre-merge finalization
--> merge 전 최종 검사
--> 일반 merge와 조건부 Progress 동기화
-```
 
 ## 승인 게이트
 
@@ -62,36 +50,11 @@ merge 방식:
 - `--squash`, `--rebase`, history rewrite, force push는 사용자가 별도로 지시하고 위험도를 확인한 경우가 아니면 사용하지 않는다.
 - `--delete-branch`는 사용자가 별도로 요청하지 않는 한 사용하지 않는다.
 
-## 작업 PR lifecycle과 예외 closeout PR
+## 작업 PR과 예외 closeout PR
 
-작업 PR은 코드·문서 산출물, review 대응과 Work Unit finalization을 함께 merge하는 기본 단위다. Work Unit 상태와 완료 조건의 정본은 `work-unit-workflow-policy.md`를 따른다.
+작업 PR은 코드·문서 산출물, review 대응과 필요한 Work Unit finalization을 함께 merge하는 기본 단위다. 단계별 책임과 완료·복귀 조건은 [Work Unit Workflow Policy](work-unit-workflow-policy.md)를 따른다. 이 문서는 해당 단계에서 사용하는 승인과 GitHub 실행 방법만 제공한다.
 
-기본 lifecycle은 다음 책임으로 고정한다.
-
-1. Review 전 최종 검사는 현재 pushed HEAD가 review 가능한지만 판정한다.
-2. Ready for Review는 PR 상태만 전환한다.
-3. Review 대응은 actionable feedback 수정, 영향 범위 검증, 답글과 resolve만 처리한다.
-4. Pre-merge finalization은 같은 작업 branch에서 merge될 tracked 마감 snapshot을 완성한다.
-5. Merge 전 최종 검사는 finalization HEAD가 바뀌지 않았는지와 remote merge blocker만 확인한다.
-6. Terminal execution은 일반 merge와 merge 성공을 조건으로 한 Progress 원격 동기화를 연속 수행한다.
-
-Pre-merge finalization에서는 WorkLog, `work-unit-index.md`, `work-unit-github-index.md`, PR 연결, 제한, 다음 Work Unit과 Progress payload를 모두 merge 후 기본 branch에서 읽힐 최종 관점으로 작성한다. Canonical 문서에 현재 PR의 `Draft`, `Ready 대기`, `merge 시 반영`, `merge 승인 대기` 같은 과도 상태를 기록하지 않는다. 현재 PR 상태와 승인 gate는 GitHub remote와 사용자 보고가 담당한다.
-
-Finalization 이후 HEAD가 바뀌면 이전 종결 검증과 merge 승인은 무효다. 기능·설계 변경이나 새 actionable review는 review 대응 단계로, 마감 문서와 payload 변경은 finalization 단계로 돌아간다.
-
-별도 closeout branch와 PR은 여러 작업 PR의 결과 종합 자체가 review 대상이거나 finalization 누락으로 기본 branch의 정본이 실제로 거짓이고 다음 작업을 막을 때만 사용한다. Merge SHA, posted 상태, comment ID·URL, branch URL을 기록하기 위한 closeout은 만들지 않는다.
-
-예외 closeout PR 기준:
-
-- 새로운 기능 구현, 별도 refactoring, source·asset 변경과 새로운 build/capture 결과를 포함하지 않는다.
-- 관련 작업 PR, review 대응, 남은 제한과 다음 Work Unit을 하나의 마감 snapshot으로 기록한다.
-- 같은 closeout branch에서 tracked 마감 snapshot과 Progress payload를 완성한다.
-- 기본 lifecycle의 review, finalization, merge 전 검사와 terminal execution을 그대로 적용한다.
-- 대상 Work Unit을 종료하는 terminal PR이며 별도 Work Unit으로 등록하거나 추가 closeout PR을 만들지 않는다.
-- Closeout 중 구현 변경이 필요하면 현재 PR을 확장하지 않고 별도 작업 PR로 분리한다.
-- 이 정책 도입 전에 기본 branch에서 이미 마감한 Work Unit에는 소급 적용하지 않는다.
-
-작업 PR과 예외 closeout PR의 push, Ready for Review, review comment, merge와 Progress Issue 동기화에는 이 문서의 승인 게이트를 그대로 적용한다.
+예외 closeout의 허용 조건과 범위는 Work Unit Workflow Policy만 정의한다. 예외 closeout PR은 maintenance PR body 형식을 사용하며 push, Ready for Review, review comment, merge와 Progress Issue 동기화에는 이 문서의 승인 게이트를 그대로 적용한다.
 
 ## gh CLI 실행 오류 대응
 

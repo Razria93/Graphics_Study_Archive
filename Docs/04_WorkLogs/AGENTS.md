@@ -23,14 +23,11 @@
 - GitHub 게시 후보 정본은 `Docs/07_GitHub`에 둔다.
 - `local/github/draft`는 임시 초안으로만 사용한다.
 
-## 상태 전환
+## 상태 기준
 
-- 작업과 review 중인 기본 branch의 Work Unit은 `진행 중`으로 둔다.
-- `검증 중`은 build/run/capture를 실제로 확인하는 기간에만 사용한다.
-- 같은 작업 branch의 pre-merge finalization에서 WorkLog, Index와 `마감` 상태를 merge 후 관점으로 완성한다.
-- Finalization tree가 기본 branch에 merge되면 `마감` 상태가 정본으로 효력을 가진다.
-- Merge 후에는 준비된 Progress payload만 remote에 동기화하고 tracked 문서를 다시 수정하지 않는다.
-- 상세 완료 조건과 GitHub 절차는 `../06_Policies/work-unit-workflow-policy.md`와 `../06_Policies/github-workflow-policy.md`를 따른다.
+- 허용 상태값과 현재 snapshot은 `work-unit-index.md`에 표시한다.
+- 상태 전환, finalization, 실패 시 복귀와 종료 조건은 [Work Unit Workflow Policy](../06_Policies/work-unit-workflow-policy.md)만 정의한다.
+- GitHub 승인과 remote 실행 방법은 [GitHub Workflow Policy](../06_Policies/github-workflow-policy.md)를 따른다.
 
 ## 작성 기준
 

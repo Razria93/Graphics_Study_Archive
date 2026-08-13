@@ -1,6 +1,6 @@
 # Work Profile Policy
 
-이 문서는 저장소 작업을 `Graphics Work`와 `Maintenance Work` 두 profile로 분류하고, 각 profile의 필수 산출물, 고정 작업 순서, 검증과 종료 조건을 정의한다.
+이 문서는 저장소 작업을 `Graphics Work`와 `Maintenance Work` 두 profile로 분류하고, 각 profile의 필수 산출물, 내부 작업 순서, 검증과 사용자 검수용 완료 후보 조건을 정의한다. 공통 lifecycle과 Work Unit 종료 조건은 [Work Unit Workflow Policy](work-unit-workflow-policy.md)를 따른다.
 
 ## 기본 원칙
 
@@ -28,7 +28,7 @@
 | `Validation profile` | 산출물과 변경 영향에 맞는 검증 |
 | `Completion condition` | 사용자 검수, review, merge와 remote 동기화를 포함한 종료 조건 |
 
-`Progress impact: Pending`은 계획 시점에만 사용할 수 있다. Pre-merge finalization 전에는 `Required` 또는 `Not required`로 확정하고 판단 근거를 WorkLog 또는 검토 보고에 남긴다.
+`Progress impact: Pending`은 계획 시점의 임시 값이다. 확정 시점과 이후 단계의 진입 조건은 [Work Unit Workflow Policy](work-unit-workflow-policy.md)를 따른다.
 
 이미 진행 중인 branch에 명시적인 Work Contract가 없으면 branch diff, PR body와 상태, WorkLog, Work Unit Index와 GitHub Index를 읽어 현재 contract를 복원한다. 작업 유형, 종료 여부 또는 필수 산출물을 근거로 판정할 수 없으면 일반적인 merge 절차만 제시하지 않고 사용자에게 누락된 결정을 요청한다.
 
@@ -76,7 +76,7 @@
 
 모든 Graphics Work에서 새 Topic이나 Demo 파일을 만들 필요는 없다. 기존 정본이 충분하면 `Linked`로 판정하고, scaffold처럼 시각 결과를 의도적으로 만들지 않는 작업은 `Demo: N/A`와 이유를 기록한다.
 
-### 고정 작업 순서
+### Profile 작업 순서
 
 1. Work Contract를 확정한다.
 2. current code, raw/reference와 기존 정본을 조사한다.
@@ -86,12 +86,7 @@
 6. 필요한 Demo capture/result를 생성하고 검수한다.
 7. README, Topic, Verification과 Demo 정본을 작성하거나 연결한다.
 8. WorkLog, Index, PR body와 필요한 Progress payload를 작성한다.
-9. 사용자 1차 검수를 받는다.
-10. Review 전 최종 검사를 수행하고 승인 후 Ready for Review로 전환한다.
-11. Review feedback과 comment를 처리한다.
-12. 같은 작업 branch에서 pre-merge finalization을 수행한다.
-13. 고정된 finalization HEAD로 merge 전 read-only 최종 검사를 수행한다.
-14. 승인된 일반 merge와 필요한 Progress 동기화를 수행한다.
+9. 산출물 판정과 제한을 정리해 사용자 검수 가능한 완료 후보로 만든다.
 
 Current/raw/reference 조사와 문서 작성의 세부 기준은 [Docs Authoring Flow Policy](docs-authoring-flow-policy.md)를 따르고, build/run/capture는 [Verification Policy](verification-policy.md)와 [Demo Capture Policy](demo-capture-policy.md)를 따른다.
 
@@ -105,16 +100,15 @@ Current/raw/reference 조사와 문서 작성의 세부 기준은 [Docs Authorin
 - 변경된 Markdown과 GitHub body validator
 - `git diff --check`와 작업 범위 밖 변경 부재
 
-### 종료 조건
+### Profile 완료 후보 조건
 
 - 약속한 기능 또는 reconstruction 결과가 구현됐다.
 - 관련 build, test와 run을 직접 확인했거나 확인하지 못한 이유를 기록했다.
 - 모든 Graphics 산출물을 `Created`, `Updated`, `Linked`, `N/A` 중 하나로 판정했다.
 - README, Topic, Verification, Demo와 WorkLog가 현재 구현과 일치한다.
 - 필요한 Index, PR body와 Progress payload가 준비됐다.
-- Review와 같은 branch의 pre-merge finalization을 완료했다.
-- Finalization HEAD의 검증과 merge 전 read-only gate를 통과했다.
-- 일반 merge와 `Progress impact: Required`인 remote 동기화를 완료했다.
+
+사용자 검수 이후의 공통 lifecycle은 [Work Unit Workflow Policy](work-unit-workflow-policy.md)를 따른다.
 
 ## Maintenance Work
 
@@ -145,7 +139,7 @@ Current/raw/reference 조사와 문서 작성의 세부 기준은 [Docs Authorin
 
 Maintenance Work에는 graphics Topic, Demo, screenshot/video, graphics build/run, Example README와 Publication 판단을 기본 산출물로 요구하지 않는다. Build 또는 실행 계약을 바꾸면 관련 build/test를 Regression verification에 포함하되 작업 유형은 Maintenance로 유지한다.
 
-### 고정 작업 순서
+### Profile 작업 순서
 
 1. Work Contract를 확정한다.
 2. 현재 policy, 문서, 도구와 문제 원인을 조사한다.
@@ -153,12 +147,7 @@ Maintenance Work에는 graphics Topic, Demo, screenshot/video, graphics build/ru
 4. Policy, README, template, validator 또는 설정을 수정한다.
 5. 관련 regression과 문서 검증을 수행한다.
 6. Maintenance PR body와 필요한 WorkLog, Index와 Progress payload를 작성한다.
-7. 사용자 1차 검수를 받는다.
-8. Review 전 최종 검사를 수행하고 승인 후 Ready for Review로 전환한다.
-9. Review feedback과 comment를 처리한다.
-10. 같은 작업 branch에서 pre-merge finalization을 수행한다.
-11. 고정된 finalization HEAD로 merge 전 read-only 최종 검사를 수행한다.
-12. 승인된 일반 merge와 조건부 Progress 동기화를 수행한다.
+7. 산출물 판정과 제한을 정리해 사용자 검수 가능한 완료 후보로 만든다.
 
 ### 검증 profile
 
@@ -170,30 +159,16 @@ Maintenance Work에는 graphics Topic, Demo, screenshot/video, graphics build/ru
 - Build 또는 실행 계약을 변경한 경우 관련 build/test
 - `git diff --check`와 작업 범위 밖 변경 부재
 
-### 종료 조건
+### Profile 완료 후보 조건
 
 - 문제 원인과 수정 책임이 일치한다.
 - 반대되는 정본이나 중복된 규칙이 남지 않는다.
 - 관련 regression, 문서와 필요한 build/test 검증이 통과한다.
 - 변경한 README와 router의 탐색 경로가 실제로 작동한다.
 - Maintenance PR body가 변경 범위, 영향과 검증 결과를 설명한다.
-- Review와 같은 branch의 pre-merge finalization을 완료했다.
-- Finalization HEAD의 검증과 merge 전 read-only gate를 통과했다.
-- 일반 merge와 `Progress impact: Required`인 remote 동기화를 완료했다.
-- Merge 후 tracked 역동기화나 추가 closeout이 남지 않는다.
 
-## Work Unit 종료 추가 조건
+사용자 검수 이후의 공통 lifecycle은 [Work Unit Workflow Policy](work-unit-workflow-policy.md)를 따른다.
 
-`Closes Work Unit: Yes`이면 선택한 profile의 기본 산출물에 다음 마감 산출물을 추가한다.
+## 공통 lifecycle 연결
 
-- WorkLog 최종 snapshot
-- `work-unit-index.md`의 최종 상태와 비고
-- `work-unit-github-index.md`의 안정적인 PR·Issue와 Progress payload 연결
-- 남은 제한과 다음 Work Unit
-- `Progress impact: Required`인 누적·완료 payload
-- 같은 작업 branch의 pre-merge finalization
-- 일반 merge와 필요한 remote 동기화 완료 조건
-
-`Closes Work Unit: No`인 작업은 해당 작업 결과를 merge할 수 있지만 Work Unit 상태를 `마감`으로 바꾸지 않는다. Work Unit 상태와 finalization 세부 조건은 [Work Unit Workflow Policy](work-unit-workflow-policy.md), 승인과 remote 실행은 [GitHub Workflow Policy](github-workflow-policy.md)를 따른다.
-
-기존 branch의 마감을 안내할 때는 실제 branch와 PR을 기준으로 복원한 Work Contract, 산출물별 판정, 현재 lifecycle 단계와 누락을 먼저 보고한다. 그 다음 현재 단계부터 finalization, merge gate와 terminal execution까지의 남은 절차를 제안한다.
+`Closes Work Unit`과 `Progress impact`는 profile 산출물의 종류가 아니라 공통 lifecycle의 finalization과 terminal 조건을 결정한다. Work Unit 마감 산출물, 상태 전환, 단계별 완료와 복귀 조건은 [Work Unit Workflow Policy](work-unit-workflow-policy.md)만 정의한다. GitHub 승인과 remote 실행 방법은 [GitHub Workflow Policy](github-workflow-policy.md)를 따른다.
