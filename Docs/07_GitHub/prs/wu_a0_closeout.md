@@ -2,32 +2,34 @@
 
 ## 요약
 
-이 PR은 WU-A0 architecture 작업 PR #41의 review와 merge 결과를 정본에 연결하고, 작업 PR과 Work Unit closeout PR을 분리하는 운영 정책을 정한다.
+이 PR은 WU-A0 architecture 작업 PR #41의 review와 merge 결과를 정본에 연결하고, 같은 작업 PR에서 Work Unit finalization을 완료하는 기본 정책을 정한다.
 
-작업 PR이 review·merge되기 전에 Work Unit을 `마감`으로 표시하지 않는다. 관련 작업 PR이 merge된 뒤 별도 closeout PR에서 최종 상태를 검수하고, Ready for Review 이후 review와 merge 승인을 거쳐 finalization commit에서 `마감` 전환을 준비한다.
+작업 PR review가 끝나기 전에는 Work Unit을 `마감`으로 표시하지 않는다. Review 완료와 merge 승인 후 같은 작업 branch의 finalization commit에서 최종 상태와 Progress 게시 후보를 확정하고, 재검증을 통과한 작업 PR을 merge해 `마감` 상태를 기본 branch에 반영한다.
+
+PR #41은 이 정책 확정 전에 이미 merge됐으므로 PR #42를 누락된 마감 기록과 정책 교정을 위한 전환기 예외 closeout PR로 사용한다.
 
 ## 범위
 
-- Work Unit 구현 완료와 운영 마감의 분리
-- 작업 PR merge 이후 closeout branch와 maintenance PR을 사용하는 흐름
+- Work Unit 구현 완료와 운영 마감 시점의 구분
+- 같은 작업 branch와 PR에서 review 이후 finalization을 완료하는 기본 흐름
 - `진행 중`, `검증 중`, `마감` 상태 전환 조건
-- Closeout PR의 책임, 금지 범위와 terminal transition 정의
+- 별도 closeout branch와 PR을 허용하는 예외 조건
+- 예외 closeout PR의 책임, 금지 범위와 terminal transition 정의
 - PR #41 review 대응, Docs Validation과 일반 merge 결과 기록
-- WU-A0 WorkLog, Work Unit Index와 GitHub Index 정합화
+- WU-A0를 전환기 closeout 예외로 기록하고 WorkLog와 Index 정합화
 - 정책과 closeout 문서만 변경하며 source, project, asset과 capture/result 변경 제외
 
 ## 주요 변경
 
-- 작업 PR에서는 Work Unit을 `진행 중`으로 유지하고 `검증 중`은 build/run/capture를 실제로 확인하는 기간에만 사용한다.
-- 관련 작업 PR merge 후 최신 기본 branch에서 `docs/{work-unit}-closeout` branch를 만든다.
-- Closeout PR은 WorkLog, Work Unit Index, GitHub Index와 필요한 Progress 게시 후보만 최종화한다.
-- Draft closeout PR에서는 `진행 중`을 유지하고 사용자 검수 후 Ready for Review로 전환한다.
-- Review 완료와 merge 승인 후 finalization commit에서 `마감` 전환, PR 연결과 Progress 게시 후보를 준비한다.
-- Finalization commit의 Actions와 review 상태를 다시 확인한 뒤 일반 merge commit 방식으로 병합한다.
-- Finalization commit을 포함한 closeout PR이 기본 branch에 merge되면 Work Unit의 `마감` 상태가 정본에 반영된다.
-- Closeout PR은 별도 Work Unit으로 등록하지 않으며 추가 closeout PR을 만들지 않는다.
+- 작업 PR에서는 review와 merge 승인 전까지 Work Unit을 `진행 중`으로 유지하고 `검증 중`은 build/run/capture를 실제로 확인하는 기간에만 사용한다.
+- Review 완료와 merge 승인 후 같은 작업 branch의 finalization commit에서 `마감` 전환, WorkLog, Index, PR 연결과 Progress 게시 후보를 확정한다.
+- Finalization commit의 Actions와 review 상태를 다시 확인한 뒤 작업 PR을 일반 merge commit 방식으로 병합한다.
+- 별도 closeout branch는 여러 작업 PR 종합, post-merge 사실 기록, 누락된 finalization 복구 또는 광범위한 정책·Index 정리에만 사용한다.
+- 예외 closeout PR은 새로운 기능을 포함하지 않는 terminal maintenance PR이며 별도 Work Unit이나 추가 closeout PR을 만들지 않는다.
 - WU-A0에 PR #41의 P2 review 대응 commit `e943237`, Docs Validation 2건과 일반 merge commit `9566afa`를 기록한다.
-- Draft 사용자 검수를 완료했으며 WU-A0는 Ready review와 finalization이 남아 있어 `진행 중`을 유지한다.
+- PR #41이 이미 merge되어 PR #42를 전환기 예외 closeout PR로 사용한다.
+- PR #42 Draft 사용자 검수를 완료했으며 WU-A0는 Ready review와 finalization이 남아 있어 `진행 중`을 유지한다.
+- WU-R1부터는 예외 조건이 없으면 같은 작업 PR finalization을 기본으로 사용한다.
 - Closeout merge 이후 WU-R1 Window/Presentation 계획으로 전환한다.
 
 ## 검증
@@ -42,7 +44,7 @@
 ## 미확인 / 제한
 
 - Ready for Review 직전 상태에서는 WU-A0를 `마감`으로 전환하지 않는다.
-- Ready for Review, review 대응, merge 승인, finalization commit과 closeout PR merge는 후속 단계로 남긴다.
+- PR #42 Ready for Review, review 대응, merge 승인, finalization commit과 merge는 후속 단계로 남긴다.
 - Progress Issue #7 누적 진행판과 완료 댓글 후보는 finalization commit에서 확정하고 실제 원격 게시는 closeout merge 이후 별도 승인으로 수행한다.
 - WU-R1 Window/Presentation 계획과 구현은 closeout merge 이후 별도 branch에서 진행한다.
 - Renderer code, D3D11 presentation, RayTracing 기능과 asset은 변경하지 않는다.
@@ -64,9 +66,9 @@
 
 ## 다음 단계
 
-- Draft PR에서 closeout 정책, WU-A0 merge 증빙과 상태 전환 시점을 검수한다.
-- Ready for Review 전환 후 review와 필요한 대응을 마친다.
-- Merge 승인 후 finalization commit에서 closeout PR 번호, WU-A0 `마감` 상태와 Progress 게시 후보를 확정한다.
+- PR #42를 Ready for Review로 전환한 뒤 정책, WU-A0 merge 증빙과 전환기 예외 범위를 review한다.
+- Review와 필요한 대응을 마치고 merge 승인을 확인한다.
+- 같은 PR #42 branch의 finalization commit에서 PR 번호, WU-A0 `마감` 상태와 Progress 게시 후보를 확정한다.
 - Finalization commit의 Actions와 review 상태를 다시 확인한 뒤 일반 merge commit으로 병합한다.
-- 일반 merge commit으로 closeout PR을 merge하고 기본 branch의 최종 상태를 확인한다.
+- 기본 branch의 최종 상태를 확인하고 Progress Issue #7을 merge된 tracked 후보와 동기화한다.
 - WU-R1에서 Win32 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation을 계획한다.
