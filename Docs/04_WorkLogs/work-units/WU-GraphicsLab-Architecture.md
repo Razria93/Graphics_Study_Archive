@@ -10,6 +10,18 @@
 | Evidence 범위 | original 단계별 source와 local media의 read-only 조사 |
 | 제외 범위 | renderer code, asset import, build contract 변경, raw/reference와 local media 수정 |
 
+## Work Contract
+
+| 항목 | 결정 |
+| --- | --- |
+| Work type | `Maintenance` |
+| Work Unit | `WU-GraphicsLab-Architecture` |
+| Closes Work Unit | `Yes` |
+| Progress impact | `Required` |
+| Goal | WU-A0 정본과 마감 workflow를 일관된 lifecycle로 확정하고 Phase 2-5 Progress를 동기화 가능한 상태로 만든다. |
+| Scope | 정책, 실행 안내, WorkLog·Index, PR body와 Progress payload 정합화 |
+| Excluded | source, project, asset, capture/result와 GraphicsLab 기능 구현 |
+
 ## 0단계부터 5단계까지의 수행 결과
 
 | 단계 | 수행 내용 | 결과 |
@@ -79,18 +91,33 @@
 - Review thread를 해결하고 일반 merge commit `9566afa`로 `main`에 병합했다.
 - Architecture 작업 branch는 삭제하지 않고 증빙 branch로 유지한다.
 
-## PR #42 전환기 closeout과 finalization
+## PR #42 전환기 closeout 결과
 
 - PR #41이 Work Unit finalization 정책 확정 전에 merge되어 같은 작업 PR에 마감 기록을 추가할 수 없다.
 - [PR #42](https://github.com/Razria93/Graphics_Study_Archive/pull/42)는 이 누락을 복구하고 기본 finalization 정책을 정립하는 전환기 예외 closeout PR이다.
-- 기본 정책은 review와 finalization 진행 승인 후 같은 작업 branch와 PR에서 finalization을 완료하고, 최신 PR HEAD의 merge 실행 승인을 다시 받는 흐름으로 정한다.
 - Draft 사용자 검수와 Ready 전환을 완료하고, P2 review 2건을 `92581d3`에서 교정했다.
-- Finalization 전·후 사용자 승인 게이트를 분리하고 Progress 원격 댓글을 merge 후 동기화하도록 정책과 quickstart를 맞췄다.
 - Review 대응 commit의 저장소 전체 validator 18종, strict UTF-8, 상대 링크, `git diff --check`와 Docs Validation 2건을 통과했다.
 - Review thread 2건에 원인, 대응, 검증과 반영 commit을 답글로 남기고 모두 resolve했다.
-- 사용자의 finalization 진행 승인 후 WU-A0 상태, PR #42 연결과 Progress Issue #7 누적·완료 댓글 후보를 확정했다.
-- PR #42가 기본 branch에 merge되면 finalization의 `마감` 상태가 정본에 반영되며 추가 closeout PR은 만들지 않는다.
-- WU-R1부터는 하나의 Work Unit이 여러 PR로 나뉘는 예외가 아니면 같은 작업 PR finalization을 사용한다.
+- Finalization commit `5d16e2b`에서 WU-A0 상태, PR #42 연결과 Progress Issue #7 누적·완료 payload를 확정했다.
+- PR #42를 일반 merge commit `415417ff`로 병합하고 merge commit의 Docs Validation 성공을 확인했다.
+- WU-A0 architecture와 reconstruction 진입 기준은 기본 branch에서 `마감` 상태다.
+
+## 마감 lifecycle 확정
+
+- Review 전 검사, Ready 전환, Review 대응, pre-merge finalization, merge 전 검사와 terminal execution의 6단계로 단순화한다.
+- 같은 작업 branch의 finalization에서 tracked 마감 snapshot과 Progress payload를 모두 완성한다.
+- Merge와 merge 성공을 조건으로 한 Progress 동기화를 한 작업 목표로 묶고 둘 다 성공해야 종료한다.
+- 실제 merge, 게시 여부와 comment ID·URL은 GitHub remote에 두며 tracked 역동기화와 후속 closeout을 만들지 않는다.
+- WorkLog는 마감 snapshot, Work Unit Index는 lifecycle, GitHub Index는 안정적인 객체와 payload 연결만 담당한다.
+
+## PR #43 lifecycle 단순화와 finalization
+
+- [PR #43](https://github.com/Razria93/Graphics_Study_Archive/pull/43)에서 작업 유형을 `Graphics Work`와 `Maintenance Work`로 고정하고 공통 Work Contract를 도입했다.
+- Work Unit 종료 여부와 Progress 영향은 별도 작업 유형이 아니라 `Closes Work Unit`과 `Progress impact` 속성으로 표현한다.
+- 상위 GitHub body 안내와 Plan README의 완료 댓글 cadence 충돌을 `d808856`에서 교정했다.
+- Review 대응 댓글에 원인, 대응, 검증과 반영 commit을 기록하고 review thread를 resolve했다.
+- Finalization에서 PR #43 연결, WorkLog, Index, PR body와 Phase 2-5 누적·완료 payload를 같은 snapshot으로 확정했다.
+- 새 graphics 기능, source, project, asset과 capture/result는 변경하지 않았다.
 
 ## 사용자 검수 결과
 
@@ -102,8 +129,8 @@
 
 ## 다음 작업
 
-PR #42 finalization commit의 validator, Actions와 review 상태를 확인하고 최신 PR HEAD의 merge 실행 승인을 받는다. PR #42 merge 후 Progress Issue #7을 merge된 tracked 후보와 별도 승인으로 동기화한다. 이후 WU-R1 Window/Presentation 계획을 작성하며 WU-R1은 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation까지만 포함한다.
+WU-R1 Window/Presentation 계획을 작성한다. WU-R1은 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation까지만 포함한다.
 
 ## 판정
 
-WU-A0 구현, architecture 결정, PR review 대응과 finalization 기록은 완료됐다. Work Unit 상태는 finalization commit에서 `마감`으로 확정했으며 PR #42 merge 시 기본 branch에 반영된다. WU-R1을 시작할 기술 blocker는 없고 다음 gate는 최신 PR HEAD의 merge 실행 승인이다.
+WU-A0 구현, architecture 결정과 전환기 closeout은 기본 branch에서 `마감` 상태다. PR #43 finalization은 반복 closeout 없이 같은 branch에서 정책과 Phase 2-5 terminal payload를 완성하며, 일반 merge와 Progress 동기화 뒤 WU-R1을 시작할 기술 blocker는 없다.

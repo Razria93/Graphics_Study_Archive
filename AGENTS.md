@@ -43,6 +43,12 @@
 - import/history 원문은 `Docs/99_Legacy`에 둔다.
 - 에이전트는 파일 수정 전 해당 작업 범위의 README와 AGENTS를 먼저 확인한다.
 
+## 작업 profile 진입점
+
+- 모든 작업은 `Docs/98_Tools/work-session-quickstart.md`에서 `Graphics Work` 또는 `Maintenance Work`로 먼저 분류한다.
+- 유형별 필수 산출물, 고정 작업 순서, 검증과 종료 조건은 `Docs/06_Policies/work-profile-policy.md`를 따른다.
+- Work Unit 상태와 마감은 `Docs/06_Policies/work-unit-workflow-policy.md`, GitHub 승인과 remote 실행은 `Docs/06_Policies/github-workflow-policy.md`를 따른다.
+
 ## 문서 감사 진입점
 
 - `문서 단일검수 시작`, `문서 영향감사 시작`, `문서 전수감사 시작`, `감사 결과 반영 시작`, `감사 결과 게시 시작`을 문서 감사 workflow keyword로 사용한다.

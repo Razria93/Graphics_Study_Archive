@@ -38,7 +38,7 @@ Related PR: [PR #11](https://github.com/Razria93/Graphics_Study_Archive/pull/11)
 
 `GraphicsLab.sln`, C++17, vcpkg manifest와 executable 기준 asset path contract로 canonical scaffold를 구성했다. Original evidence를 보존하는 verified reconstruction 전략을 정하고 Application, Platform, Asset, Scene, Rendering module의 책임과 lifetime, ownership, coordinate contract를 확정했다. WU-R1부터 CPU ray tracing을 기능 단위로 새로 구현하며 Part2부터 Part4까지의 기능은 future capability constraint로만 사용한다.
 
-Related PR: [PR #40](https://github.com/Razria93/Graphics_Study_Archive/pull/40) (Merged), [PR #41](https://github.com/Razria93/Graphics_Study_Archive/pull/41) (Merged), [PR #42](https://github.com/Razria93/Graphics_Study_Archive/pull/42) (Merged)
+Related PR: [PR #40](https://github.com/Razria93/Graphics_Study_Archive/pull/40) (Merged), [PR #41](https://github.com/Razria93/Graphics_Study_Archive/pull/41) (Merged), [PR #42](https://github.com/Razria93/Graphics_Study_Archive/pull/42) (Merged), [PR #43](https://github.com/Razria93/Graphics_Study_Archive/pull/43) (Merged)
 
 ### Phase 3-1. Part2 Chapter04 Software Rasterization
 
@@ -112,3 +112,4 @@ Related PR: 예정
 - [PR #40](https://github.com/Razria93/Graphics_Study_Archive/pull/40) (Merged): Portfolio GraphicsLab canonical scaffold와 build contract
 - [PR #41](https://github.com/Razria93/Graphics_Study_Archive/pull/41) (Merged): GraphicsLab reconstruction 전략과 architecture 기준
 - [PR #42](https://github.com/Razria93/Graphics_Study_Archive/pull/42) (Merged): WU-A0 전환기 closeout과 Work Unit finalization 정책
+- [PR #43](https://github.com/Razria93/Graphics_Study_Archive/pull/43) (Merged): Work Unit 마감 lifecycle과 작업 profile 단순화

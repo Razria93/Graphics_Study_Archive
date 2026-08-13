@@ -109,7 +109,7 @@ Maintenance PR에 실제 heading으로 `핵심 개념`, `대표 예제`, `스크
 | `prs/**/*.md` | PR body |
 | `plan/plan-body.md` | Progress issue |
 | `plan/plan-progress.md` | Progress Issue 누적 진행 댓글 |
-| `plan/comments/*.md` | PR 마감 plan comment |
+| `plan/comments/*.md` | Phase, Chapter 묶음 또는 Work Unit 완료 comment |
 | `issues/work-unit/work-unit_*.md` | Work Unit issue |
 | `issues/verification/verification_*.md` | Verification issue |
 | `issues/demo/demo_*.md` | Demo issue |
@@ -141,7 +141,7 @@ Progress Issue 관련 GitHub body는 두 종류만 검사한다.
 | 파일 | 책임 | 주요 검사 |
 | --- | --- | --- |
 | `plan/plan-progress.md` | 전체 진행판 | `## Graphics Study 진행 요약`, `## 완료`, `## 진행 예정`, `## Related PRs` 구조와 Phase heading |
-| `plan/comments/*.md` | PR 마감 기록 | `## Phase <n-n> 완료 기록`, 완료 내용, 검증, 남은 제한, 관련 PR |
+| `plan/comments/*.md` | 의미 있는 마감 단위 완료 기록 | `## Phase <n-n> 완료 기록`, 완료 내용, 검증, 남은 제한, 관련 PR |
 
 comment body는 H1과 내부 안내 문구를 허용하지 않는다.
 
