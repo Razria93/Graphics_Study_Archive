@@ -68,7 +68,7 @@
 
 ## 검증 범위
 
-이번 Work Unit은 source와 project를 변경하지 않으므로 build/run을 다시 수행하지 않는다. 책임 구조 상세화 범위의 tracked Markdown 7개가 render, table, wrap 검사를 통과했다. 저장소 전체 validator 18종, Markdown 469개와 table 534개 전수 검사를 통과했다. 변경 문서의 strict UTF-8과 상대 링크 검사, `git diff --check`를 통과했다. raw/reference source와 local media에는 쓰기 작업을 수행하지 않았다.
+이번 Work Unit은 source와 project를 변경하지 않으므로 build/run을 다시 수행하지 않는다. 책임 구조 상세화 범위의 tracked Markdown 7개가 render, table, wrap 검사를 통과했다. 저장소 전체 validator 18종, Markdown 470개와 table 536개 전수 검사를 통과했다. 변경 문서의 strict UTF-8과 상대 링크 검사, `git diff --check`를 통과했다. raw/reference source와 local media에는 쓰기 작업을 수행하지 않았다.
 
 ## 사용자 검수 결과
 
