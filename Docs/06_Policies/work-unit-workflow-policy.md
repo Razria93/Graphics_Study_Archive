@@ -43,13 +43,12 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | 20 | 최종 검수 | 변경 파일 전체 | 검수 결과는 final report 또는 WorkLog | `style-policy.md`, `../98_Tools/validation-tools.md` |
 | 21 | 사용자 검토 요청 | 변경 요약, 미확인 항목, follow-up | 대화 보고 또는 WorkLog | `github-workflow-policy.md` |
 | 22 | commit readiness 보고 | 변경 파일, 검증 결과, 권장 commit 메시지 | 대화 보고 | `github-workflow-policy.md` |
-| 23 | 작업 PR Ready와 review 대응 | 게시된 PR, review, Actions | 작업 branch와 GitHub remote | `github-workflow-policy.md` |
-| 24 | finalization 진행 승인과 commit | review 결과, 검증 결과 | 같은 작업 branch의 WorkLog, Index, Progress 후보 | 이 문서, `github-workflow-policy.md` |
-| 25 | finalization 재검증과 merge 실행 승인 | finalization commit, Actions, review 상태 | GitHub remote | `github-workflow-policy.md` |
-| 26 | 작업 PR merge | 승인된 최신 PR HEAD | GitHub remote | `github-workflow-policy.md` |
-| 27 | Work Unit 마감 확인 | merge된 finalization 문서 | 기본 branch의 WorkLog와 Index | 이 문서 |
-| 28 | Progress Issue 동기화 | merge된 Progress 게시 후보 | GitHub remote | `github-workflow-policy.md` |
-| 29 | 다음 Work Unit 제안 | 마감 결과와 follow-up | 대화 보고 또는 다음 계획 | 이 문서 |
+| 23 | Review 전 최종 검사와 Ready | 작업 branch, PR body, 검증 결과 | 작업 branch와 GitHub remote | `github-workflow-policy.md` |
+| 24 | Review 대응과 comment 처리 | actionable review, 영향 범위 | 작업 branch와 GitHub remote | `github-workflow-policy.md` |
+| 25 | Pre-merge finalization | review 결과, 마감 산출물 | 같은 작업 branch의 WorkLog, Index, Progress payload | 이 문서 |
+| 26 | Merge 전 최종 검사 | finalization HEAD, Actions, review 상태 | read-only 판정 | `github-workflow-policy.md` |
+| 27 | 일반 merge와 Progress 동기화 | 승인된 HEAD, tracked Progress payload | GitHub remote | `github-workflow-policy.md` |
+| 28 | 다음 Work Unit 제안 | 마감 결과와 follow-up | 대화 보고 또는 다음 계획 | 이 문서 |
 
 ## 산출물별 책임
 
@@ -133,37 +132,31 @@ local/
 
 ## 작업 완료와 Work Unit 마감
 
-작업 PR의 구현 완료와 Work Unit의 운영 마감 시점은 구분하되 기본적으로 같은 작업 branch와 PR에서 처리한다. Review가 끝나기 전에는 `진행 중`을 유지하고, finalization 진행 승인 후 finalization commit에서 최종 상태와 GitHub 연결을 확정한다.
+Work Unit의 tracked 마감 처리는 같은 작업 branch와 PR 안에서 끝낸다. Merge 후에는 새 tracked 수정 없이 준비된 Progress payload만 remote에 동기화한다.
 
 ```text
-작업과 검증
--> 작업 PR 사용자 검수와 Ready for Review
--> review 대응 완료
--> finalization 진행 승인
--> 같은 작업 branch에서 finalization commit
--> finalization validator와 review 상태 재확인
--> 최신 PR HEAD 기준 merge 실행 승인
--> 작업 PR merge
--> 기본 branch에서 Work Unit 마감 확인
--> Progress Issue 원격 동기화
+Review 전 최종 검사
+-> Ready for Review
+-> Review 대응 및 comment 처리
+-> 같은 작업 branch의 pre-merge finalization
+-> merge 전 최종 검사
+-> 일반 merge와 조건부 Progress 동기화
 ```
 
-- 작업 PR review, finalization 또는 merge가 남아 있는 Work Unit은 `진행 중`으로 둔다.
+- 작업과 review 중인 기본 branch의 Work Unit은 `진행 중`으로 둔다.
 - `검증 중`은 build/run/capture를 실제로 확인하는 기간에만 사용한다.
-- Review 완료와 finalization 진행 승인 후 같은 작업 branch의 finalization commit에서 `마감` 전환, WorkLog, Index, PR 연결과 Progress 게시 후보를 확정한다.
-- Finalization commit의 validator, Actions와 review 상태를 다시 확인하며 실패나 새 지적이 있으면 merge 실행 승인을 요청하지 않는다.
-- 변경된 최신 PR HEAD와 최종 상태를 사용자에게 보고하고 명시적인 merge 실행 승인을 다시 받은 뒤 merge한다.
-- Finalization commit을 포함한 작업 PR이 기본 branch에 merge되면 `마감` 상태가 정본에 반영된다.
-- Progress Issue 원격 댓글은 merge된 tracked 후보를 기준으로 별도 승인 후 동기화한다.
+- Pre-merge finalization에서 WorkLog, Index, 안정적인 PR·Issue 연결, 제한, 다음 Work Unit과 Progress payload를 merge 후 관점으로 완성한다.
+- 작업 branch의 `마감`은 merge될 최종 상태이며, 해당 tree가 기본 branch에 merge될 때 정본으로 효력이 생긴다.
+- Merge 전 최종 검사는 finalization HEAD의 불변, clean worktree, Actions, review, conflict와 remote body만 read-only로 확인한다.
+- 일반 merge와 Progress 동기화는 하나의 terminal execution으로 승인할 수 있으며 둘 다 성공해야 작업 목표를 종료한다.
+- Progress 동기화 결과는 GitHub remote에서 확인하고 tracked 문서에 다시 기록하지 않는다.
 
 별도 closeout branch와 PR은 다음 조건 중 하나를 만족할 때만 사용한다.
 
 - 하나의 Work Unit이 여러 작업 PR로 구성되어 결과 종합이 필요하다.
-- 작업 PR merge 후에만 확인할 수 있는 사실을 정본에 기록해야 한다.
-- 작업 PR에서 finalization 기록을 누락했다.
-- 여러 Work Unit에 걸친 광범위한 정책·Index 정리가 작업 PR 범위를 벗어난다.
+- Finalization 누락으로 기본 branch의 정본이 실제로 거짓이고 다음 작업을 막는다.
 
-예외 closeout PR은 관련 작업 PR이 merge된 최신 기본 branch에서 만든다. 새로운 기능 구현, 별도 refactoring과 graphics 결과를 포함하지 않으며, 구현 변경이 필요하면 별도 Work Unit 또는 작업 PR로 분리한다. 대상 Work Unit을 종료하는 terminal maintenance PR로 취급하고 별도 Work Unit으로 등록하거나 추가 closeout PR을 만들지 않는다. 이 정책 도입 전에 기본 branch에서 이미 `마감`으로 기록된 Work Unit에는 소급 적용하지 않는다. Issue/PR/comment 게시와 merge 승인 절차는 `github-workflow-policy.md`를 따른다.
+예외 closeout PR은 관련 작업 PR이 merge된 최신 기본 branch에서 만든다. 새로운 기능 구현, refactoring과 새 graphics 결과를 포함하지 않으며 terminal maintenance PR 한 번으로 끝낸다. Merge SHA, posted 상태, comment ID·URL과 URL 치환은 closeout 사유가 아니다. Issue/PR/comment 게시와 merge 승인 절차는 `github-workflow-policy.md`를 따른다.
 
 ## 사용자 검토 지점
 
@@ -193,7 +186,7 @@ local/
 - 작업 결정, 마감 snapshot, follow-up이 `Docs/04_WorkLogs`에 기록되어 있다.
 - GitHub Issue/PR을 운영하는 Work Unit이면 `Docs/07_GitHub` 후보와 validator 결과가 준비되어 있다.
 - Progress Issue 누적 진행 댓글 및 Chapter/Bundle 완료 댓글 갱신 필요 여부가 판단되어 있다.
-- `Docs/04_WorkLogs/work-unit-github-index.md`에 Issue/PR/Progress comment 상태가 반영되어 있다.
+- `Docs/04_WorkLogs/work-unit-github-index.md`에 안정적인 Issue/PR 연결과 Progress payload 경로가 반영되어 있다.
 - `Docs/00_Index` map이 필요한 범위만큼 갱신되어 있다.
 - Root, Chapter, Example, Docs, Folder README의 갱신 필요 여부가 판단되어 있고, 필요한 README만 갱신되어 있다.
 - README를 갱신하지 않은 경우 그 이유가 WorkLog 또는 검토 보고에 남아 있다.
@@ -202,14 +195,16 @@ local/
 
 ## Work Unit 마감 기준
 
-Work Unit은 다음 조건을 모두 만족한 finalization commit이 포함된 PR이 기본 branch에 merge된 뒤 `마감`으로 확정한다. 별도 closeout PR을 사용하는 예외에도 같은 기준을 적용한다.
+Work Unit은 다음 조건을 모두 만족한 finalization commit이 일반 merge되고 필요한 Progress 동기화가 끝났을 때 작업 목표를 종료한다.
 
-- 작업 PR review 대응이 완료되고 merge 승인을 받았다.
+- 작업 PR review 대응과 comment 처리가 완료됐다.
 - finalization commit에서 review 대응과 최종 검증 결과를 WorkLog에 요약했다.
 - `work-unit-index.md`의 상태와 비고가 최종 결과를 가리킨다.
-- `work-unit-github-index.md`에 관련 Issue와 작업 PR이 연결되어 있다.
+- `work-unit-github-index.md`에 안정적인 Issue·PR과 Progress payload가 연결되어 있다.
 - 남은 제한과 다음 Work Unit이 기록되어 있다.
 - Finalization 범위에 새로운 기능 구현과 미검증 결과가 섞이지 않았다.
-- Finalization commit에서 `마감` 전환, PR 연결과 Progress 게시 후보를 확정했다.
+- Finalization commit에서 `마감` 전환, PR 연결과 Progress payload를 확정했다.
 - Finalization commit의 validator와 `git diff --check`가 통과했다.
-- Finalization commit의 validator와 review 상태를 다시 확인했다.
+- Merge 전 검사에서 같은 HEAD, Actions 성공, review clear와 mergeable 상태를 확인했다.
+- 일반 merge와 필요한 Progress 원격 동기화를 완료하고 remote body 일치를 확인했다.
+- Merge 후 tracked 수정, 별도 closeout과 게시 결과 역동기화가 남아 있지 않다.

@@ -6,7 +6,7 @@
 - Original evidence를 read-only로 고정하고 기능 단위로 새로 작성하는 verified reconstruction 전략을 확정했다.
 - Application, Platform, Asset, Scene, Rendering module의 책임과 lifetime, ownership, coordinate contract를 정했다.
 - WU-R1부터 WU-R14까지 CPU ray tracing reconstruction 순서와 future capability constraint를 정리했다.
-- PR #42에서 같은 작업 PR finalization과 예외 closeout 기준, finalization 전·후 사용자 승인 게이트를 확정했다.
+- Work Unit 마감을 Review 전 검사부터 일반 merge와 Progress 동기화까지 하나의 목표로 끝내는 6단계 lifecycle을 확정했다.
 
 ## 검증
 

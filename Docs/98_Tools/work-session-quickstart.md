@@ -56,18 +56,16 @@ Chapter Work Unit을 시작할 때는 [Work Unit Workflow Policy](../06_Policies
    - Work Unit GitHub Index 갱신 후보를 확인한다.
    - H1 title source와 remote body 변환 규칙을 적용한다.
 6. Remote 게시 전 승인안
-   - push, Issue 생성, Progress comment, PR create/edit 명령을 분리한다.
+   - push, Issue 생성, PR create/edit와 Ready 전환 대상을 분리한다.
    - 예상 remote 변경 객체와 rollback이 어려운 작업을 명시한다.
    - 승인 전 remote 변경을 실행하지 않는다.
-7. Remote 게시 후 역동기화
-   - Issue 번호, comment URL, PR URL을 확보한다.
-   - 영향받는 정본에 실제 URL을 반영한다.
-   - Chapter README `Next action`, Demo index `범위` 비고, WorkLog/GitHub index, Progress comment 후보, PR/Issue body 후보의 상태 문구를 같은 lifecycle 단계로 맞춘다.
-   - validator, commit, push, Actions를 확인한다.
+7. Remote 게시 확인
+   - 실제 remote body와 사용한 tracked payload가 일치하는지 확인한다.
+   - Comment ID·URL과 posted 상태를 tracked 문서에 역동기화하지 않는다.
 8. Ready for Review 감사
    - PR head와 branch head 일치를 확인한다.
    - remote body와 tracked 후보 일치를 확인한다.
-   - Browser에서 Issue, Progress comment, PR body 렌더링 표본을 확인한다.
+   - 필요한 validator와 Browser 렌더링 표본을 확인한다.
    - 이미지 로딩을 확인한다.
    - Ready 전환은 별도 승인 후 실행한다.
 9. Review 대응
@@ -75,16 +73,11 @@ Chapter Work Unit을 시작할 때는 [Work Unit Workflow Policy](../06_Policies
    - thread 답글을 작성한다.
    - thread resolve 상태를 확인한다.
    - PR/Issue body에 필요한 링크를 보정한다.
-10. Merge 전 최종 감사
-   - stale 상태 문구를 검색한다. `Next action`, `후보 작성`, `게시 예정`, `ChapterN~M 후속 범위`, `capture/result 미확보`, `Draft`, `Ready for Review` 같은 lifecycle 문구가 실제 remote 상태와 충돌하지 않는지 확인한다.
-   - validators 전체를 실행한다.
-   - code anchor를 검사한다.
-   - remote body 동기화를 확인한다.
-   - Browser UI를 확인한다.
-   - merge blocker, post-merge follow-up, no action을 분류한다.
-   - merge readiness 문서를 작성한다.
-   - commit, push, Actions success를 확인한다.
-   - 일반 merge commit 승인안을 작성한다.
+10. Pre-merge finalization과 merge 검사
+   - 같은 작업 branch에서 WorkLog, Index, PR 연결, 제한, 다음 작업과 Progress payload를 merge 후 관점으로 완성한다.
+   - Finalization commit에서 전체 validator와 lifecycle 정합성 검사를 한 번 실행한다.
+   - Merge 전에는 같은 SHA, clean worktree, Actions, review, conflict와 remote body만 read-only로 확인한다.
+   - 일반 merge와 merge 성공을 조건으로 한 Progress 동기화 대상을 하나의 terminal 승인안으로 작성한다.
 
 ## 3. 책임 정본 찾기
 
@@ -155,45 +148,38 @@ push 또는 pull request에 `Docs Validation` run이 생성되면 완료 상태�
 
 ## 8. Remote 반영
 
-remote 변경은 사용자에게 대상, 명령과 예상 효과를 보고하고 승인받은 뒤 한 객체씩 수행한다.
+Remote 변경은 사용자에게 대상, 명령과 예상 효과를 보고하고 승인받은 뒤 수행한다.
 
 ```text
-한 객체 변경
+대상과 조건 확인
+-> remote 변경
 -> 실제 remote 상태 확인
--> 다음 객체 변경
 ```
 
-일부 변경이 실패하면 후속 변경을 중단한다. 성공한 대상과 미실행 대상을 구분하고 read-only로 현재 상태를 다시 확인한 뒤 복구 승인을 받는다.
+조건부 terminal execution에서는 merge 성공을 확인한 경우에만 Progress 동기화를 이어서 수행한다. Merge 후 Progress 작업만 실패하면 tracked 문서를 수정하지 않고 같은 remote 작업만 재시도한다.
 
 Issue와 PR 후보의 첫 H1은 remote title source다. remote body에서는 첫 H1과 바로 뒤 빈 줄을 제거한다. comment body에는 H1을 사용하지 않는다.
 
-## 9. 게시 후 정본 동기화
+## 9. 게시 후 확인
 
-게시 후 실제 번호, URL과 상태를 WorkLog index와 영향받는 정본에 반영한다. 모든 문서를 일괄 갱신하지 않는다. 실제 게시본이나 리뷰 대응 내용을 별도로 보존할 필요가 있을 때만 `local/` snapshot을 만든다.
+Remote body와 사용한 tracked payload의 일치만 확인한다. 실제 게시 여부, comment ID·URL과 게시 시각은 GitHub remote에 두며 tracked 역동기화를 만들지 않는다.
 
 ## 10. Ready, Review와 Merge
 
-Ready 감사는 read-only로 수행하고 실제 상태 전환과 분리한다.
+| 단계 | 확인 범위 | 실패 시 복귀 |
+| --- | --- | --- |
+| Review 전 최종 검사 | scope, PR body, 변경 범위 validator, build/test, 링크와 render | 작업 단계 |
+| Ready for Review | PR 상태 전환과 remote 확인 | Ready 단계 |
+| Review 대응 | actionable feedback, 영향 범위 regression, 답글과 resolve | Review 대응 |
+| Pre-merge finalization | WorkLog, Index, 제한, 다음 작업, Progress payload와 전체 validator | Finalization |
+| Merge 전 최종 검사 | 고정 SHA, clean/sync, Actions, review, conflict와 remote body | Review 또는 finalization |
+| Terminal execution | 일반 merge, 기본 branch 확인, 조건부 Progress 동기화와 body 확인 | Remote 재시도 |
 
-Chapter PR은 merge 전에 publication closeout 범위와 게시 여부를 확정한다. Review 입력으로 필요한 Demo Issue와 기타 독립 Issue는 별도 승인 후 merge 전에 게시할 수 있다. Progress 누적 댓글과 Chapter/Bundle 완료 댓글은 finalization commit에서 tracked 후보만 확정하며, 원격 댓글은 merge된 후보를 기준으로 merge 후 별도 승인을 받아 동기화한다. 의도적 미게시 대상은 이유를 기록한다. Finalization commit·push, Actions와 Browser 표본 검수를 통과한 최신 PR HEAD를 사용자에게 보고하고 merge 실행 승인을 다시 받은 뒤 merge한다.
+Finalization 문서는 merge 후 기본 branch에서 읽힐 상태로 작성한다. `Draft`, `Ready 대기`, `merge 시 반영`, `merge 승인 대기` 같은 현재 PR 과도 상태는 canonical 문서에 두지 않는다. Finalization 이후 HEAD가 바뀌면 종결 검사 증거와 merge 승인을 폐기하고 변경 성격에 맞는 단계로 돌아간다.
 
-- local HEAD, tracking, remote와 PR head 일치 및 clean worktree
-- upstream 대비 commit 범위와 예상 작업 범위 일치
-- PR title/body와 실제 변경 범위 일치
-- 관련 local validator, 작업별 build/test와 수동 문서·링크·public safety 검사 통과
-- 변경 범위에 해당하는 GitHub UI 렌더링 표본 확인 또는 `렌더링 미확인` warning 기록
-- 핵심 링크, asset과 commit permalink 확인
-- merge conflict, 현재 `CHANGES_REQUESTED` review와 미해결 actionable review thread 확인
-- 현재 PR의 `open` feedback과 변경 파일에 관련된 과거 regression check 확인
-- Chapter publication closeout 후보 확정 또는 의도적 미게시 근거 확인
-- Progress 원격 댓글은 merge 전 게시되지 않았고 merge 후 별도 승인 대상으로 분리됐는지 확인
-- blocker와 warning 구분
+Finalization에서 전체 validator, `git diff --check`, lifecycle 정합성과 필요한 Browser 표본을 한 번 확인한다. Merge 전에는 같은 검사를 반복하지 않고 local HEAD, tracking, remote branch와 PR head 일치, clean worktree, Actions 성공, mergeable, `CHANGES_REQUESTED`와 미해결 actionable thread 부재만 확인한다.
 
-GitHub Actions 구성 여부, required status check와 branch protection은 현재 Ready 기본 판정에서 제외한다. 기본 감사에서는 protection과 required check 존재 여부를 별도로 조회하지 않는다. Actions는 원격 검증 결과를 만들고 보호 규칙은 그 결과를 merge 조건으로 강제하는 독립 기능이다. 구성된 `Docs Validation` run이 현재 변경에 존재하면 결과를 확인하며 세부 판정 기준은 [GitHub Workflow Policy](../06_Policies/github-workflow-policy.md)를 따른다.
-
-review 대응은 actionable thread 확인, 영향 범위 조사, 수정 또는 유지 판단, 검증, 필요한 [Review Feedback Log](../04_WorkLogs/reviews/review-feedback-log.md) 기록과 답글 후보 준비 순서로 진행한다. 과거 log 전체가 아니라 현재 변경 파일에 관련된 regression check만 다시 확인한다.
-
-감사 결과가 `READY`여도 `gh pr ready`는 별도 승인 후 실행한다. review 답글, thread resolve와 merge도 각각 승인 범위를 확인한다. 기본 merge 방식과 branch 보존 기준은 GitHub Workflow Policy를 따른다.
+Merge와 Progress 동기화를 함께 승인할 때는 PR 번호와 HEAD SHA, `--merge`, 대상 Issue와 comment, 사용할 payload를 명시한다. Merge가 실패하면 Progress 작업을 실행하지 않으며, Progress 작업만 실패하면 새 tracked 수정 없이 같은 remote 작업만 재시도한다. 둘 다 성공해야 작업 목표를 종료한다.
 
 ## 11. 종료와 Handoff
 

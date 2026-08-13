@@ -25,18 +25,16 @@
 
 ## 상태 전환
 
-- 작업 PR review, finalization 또는 merge가 남아 있는 Work Unit은 `진행 중`으로 둔다.
+- 작업과 review 중인 기본 branch의 Work Unit은 `진행 중`으로 둔다.
 - `검증 중`은 build/run/capture를 실제로 확인하는 기간에만 사용한다.
-- 작업 PR review 완료와 finalization 진행 승인 후 같은 작업 branch의 finalization commit에서 최종 WorkLog와 Index, `마감` 전환을 준비한다.
-- Finalization commit의 validator와 review 상태를 다시 확인하고 최신 PR HEAD에 대한 merge 실행 승인을 다시 받은 뒤 merge한다.
-- Finalization commit을 포함한 PR이 기본 branch에 merge되면 Work Unit의 `마감` 상태가 정본에 반영된다.
-- 여러 작업 PR 종합이나 post-merge 정리가 필요한 경우에만 별도 closeout branch와 PR을 사용한다.
-- 예외 closeout PR은 별도 Work Unit으로 등록하거나 추가 closeout 대상으로 삼지 않는다.
+- 같은 작업 branch의 pre-merge finalization에서 WorkLog, Index와 `마감` 상태를 merge 후 관점으로 완성한다.
+- Finalization tree가 기본 branch에 merge되면 `마감` 상태가 정본으로 효력을 가진다.
+- Merge 후에는 준비된 Progress payload만 remote에 동기화하고 tracked 문서를 다시 수정하지 않는다.
 - 상세 완료 조건과 GitHub 절차는 `../06_Policies/work-unit-workflow-policy.md`와 `../06_Policies/github-workflow-policy.md`를 따른다.
 
 ## 작성 기준
 
-- WorkLog는 최신 상태표가 아니라 마감 시점 snapshot이다.
+- WorkLog는 live remote 상태표가 아니라 merge될 마감 snapshot이다.
 - build/run/capture 상세는 `Docs/02_Verification`에 둔다.
 - demo capture/result 최신 상태는 `Docs/03_Demos`에 둔다.
 - public 후보와 제외 판단은 `Docs/05_Publication`에 둔다.
