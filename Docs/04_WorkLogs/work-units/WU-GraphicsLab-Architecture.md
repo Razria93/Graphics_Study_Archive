@@ -10,6 +10,18 @@
 | Evidence 범위 | original 단계별 source와 local media의 read-only 조사 |
 | 제외 범위 | renderer code, asset import, build contract 변경, raw/reference와 local media 수정 |
 
+## Work Contract
+
+| 항목 | 결정 |
+| --- | --- |
+| Work type | `Maintenance` |
+| Work Unit | `WU-GraphicsLab-Architecture` |
+| Closes Work Unit | `Yes` |
+| Progress impact | `Required` |
+| Goal | WU-A0 정본과 마감 workflow를 일관된 lifecycle로 확정하고 Phase 2-5 Progress를 동기화 가능한 상태로 만든다. |
+| Scope | 정책, 실행 안내, WorkLog·Index, PR body와 Progress payload 정합화 |
+| Excluded | source, project, asset, capture/result와 GraphicsLab 기능 구현 |
+
 ## 0단계부터 5단계까지의 수행 결과
 
 | 단계 | 수행 내용 | 결과 |
@@ -98,6 +110,15 @@
 - 실제 merge, 게시 여부와 comment ID·URL은 GitHub remote에 두며 tracked 역동기화와 후속 closeout을 만들지 않는다.
 - WorkLog는 마감 snapshot, Work Unit Index는 lifecycle, GitHub Index는 안정적인 객체와 payload 연결만 담당한다.
 
+## PR #43 lifecycle 단순화와 finalization
+
+- [PR #43](https://github.com/Razria93/Graphics_Study_Archive/pull/43)에서 작업 유형을 `Graphics Work`와 `Maintenance Work`로 고정하고 공통 Work Contract를 도입했다.
+- Work Unit 종료 여부와 Progress 영향은 별도 작업 유형이 아니라 `Closes Work Unit`과 `Progress impact` 속성으로 표현한다.
+- 상위 GitHub body 안내와 Plan README의 완료 댓글 cadence 충돌을 `d808856`에서 교정했다.
+- Review 대응 댓글에 원인, 대응, 검증과 반영 commit을 기록하고 review thread를 resolve했다.
+- Finalization에서 PR #43 연결, WorkLog, Index, PR body와 Phase 2-5 누적·완료 payload를 같은 snapshot으로 확정했다.
+- 새 graphics 기능, source, project, asset과 capture/result는 변경하지 않았다.
+
 ## 사용자 검수 결과
 
 - Verified reconstruction과 original evidence 구분을 승인했다.
@@ -112,4 +133,4 @@ WU-R1 Window/Presentation 계획을 작성한다. WU-R1은 window lifecycle, res
 
 ## 판정
 
-WU-A0 구현, architecture 결정, PR review 대응, finalization과 일반 merge를 완료했다. Work Unit은 기본 branch에서 `마감`이며 WU-R1을 시작할 기술 blocker는 없다.
+WU-A0 구현, architecture 결정과 전환기 closeout은 기본 branch에서 `마감` 상태다. PR #43 finalization은 반복 closeout 없이 같은 branch에서 정책과 Phase 2-5 terminal payload를 완성하며, 일반 merge와 Progress 동기화 뒤 WU-R1을 시작할 기술 blocker는 없다.

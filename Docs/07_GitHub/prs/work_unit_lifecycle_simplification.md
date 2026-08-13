@@ -13,6 +13,14 @@
 - WU-A0 PR #42 merge 결과와 WU-R1 다음 작업 정합화
 - 정책, WorkLog와 GitHub body 문서만 변경하며 source, project, asset과 capture/result 제외
 
+## Work Contract
+
+- Work type: `Maintenance`
+- Work Unit: `WU-GraphicsLab-Architecture`
+- Closes Work Unit: `Yes`
+- Progress impact: `Required`
+- Required artifacts: maintenance change, rationale, impact, regression verification, PR body, WorkLog, Index와 Progress payload
+
 ## 주요 변경
 
 - Workflow를 Review 전 검사, Ready, Review 대응, pre-merge finalization, merge 전 검사와 terminal execution으로 고정한다.
@@ -26,12 +34,18 @@
 
 ## 검증
 
-- 변경 범위 GitHub body와 Markdown validator
-- 저장소 전체 validator 1회
+- 변경 Markdown wrap·render·table validator 통과
+- GitHub body, strict UTF-8와 상대 링크 검사 통과
+- 저장소 전체 validator 18종 통과
 - WorkLog, Work Unit Index, GitHub Index, PR body와 Progress payload lifecycle 수동 대조
-- 변경 문서 strict UTF-8과 상대 링크 검사
 - `git diff --check`
 - 새 build/run/capture는 수행하지 않음
+
+## Review와 finalization
+
+- 상위 GitHub body 안내에 남아 있던 PR별 완료 댓글 cadence를 `d808856`에서 의미 있는 마감 단위 기준으로 교정했다.
+- Review 대응 댓글에 원인, 대응, 검증과 반영 commit을 기록하고 actionable thread를 resolve했다.
+- Finalization에서 WU-A0 WorkLog, Index, PR #43 연결과 Phase 2-5 Progress payload를 같은 snapshot으로 확정했다.
 
 ## 미확인 / 제한
 
@@ -50,11 +64,11 @@
 
 ## 관련 이슈
 
+- [PR #43](https://github.com/Razria93/Graphics_Study_Archive/pull/43)
 - [PR #42](https://github.com/Razria93/Graphics_Study_Archive/pull/42)
 - [Progress Issue #7](https://github.com/Razria93/Graphics_Study_Archive/issues/7)
 
 ## 다음 단계
 
-- 이 PR의 review와 pre-merge finalization을 같은 branch에서 완료한다.
-- 승인된 finalization HEAD를 일반 merge하고 준비된 Phase 2-5 Progress payload를 연속 동기화한다.
+- 고정된 finalization HEAD를 일반 merge하고 준비된 Phase 2-5 Progress payload를 연속 동기화한다.
 - 추가 tracked 마감 작업 없이 WU-R1 Window/Presentation 계획으로 전환한다.
