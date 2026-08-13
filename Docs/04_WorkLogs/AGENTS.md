@@ -28,8 +28,9 @@
 - 작업 PR review, merge 또는 closeout이 남아 있는 Work Unit은 `진행 중`으로 둔다.
 - `검증 중`은 build/run/capture를 실제로 확인하는 기간에만 사용한다.
 - 관련 작업 PR merge 후 별도 closeout PR에서 최종 WorkLog와 Index를 갱신한다.
-- Draft closeout PR의 사용자 검수 승인 후 finalization commit에서 `마감` 전환을 준비한다.
-- Finalization commit의 validator와 review를 확인한 뒤 merge 승인을 받는다.
+- Draft closeout PR의 사용자 검수 후 Ready for Review로 전환하고 review를 마친다.
+- Review 완료와 merge 승인 후 finalization commit에서 `마감` 전환을 준비한다.
+- Finalization commit의 validator와 review 상태를 다시 확인한 뒤 merge한다.
 - closeout PR이 기본 branch에 merge되면 Work Unit의 `마감` 상태가 정본에 반영된다.
 - closeout PR은 별도 Work Unit으로 등록하거나 추가 closeout 대상으로 삼지 않는다.
 - 상세 완료 조건과 GitHub 절차는 `../06_Policies/work-unit-workflow-policy.md`와 `../06_Policies/github-workflow-policy.md`를 따른다.

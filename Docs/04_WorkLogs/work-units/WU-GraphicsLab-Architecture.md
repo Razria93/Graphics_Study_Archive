@@ -79,6 +79,13 @@
 - Review thread를 해결하고 일반 merge commit `9566afa`로 `main`에 병합했다.
 - Architecture 작업 branch는 삭제하지 않고 증빙 branch로 유지한다.
 
+## PR #42 closeout 준비
+
+- [PR #42](https://github.com/Razria93/Graphics_Study_Archive/pull/42)에서 작업 PR과 Work Unit closeout PR을 분리하는 정책을 첫 적용 사례로 검수한다.
+- Draft 사용자 검수를 완료했고 WU-A0 상태는 Ready review와 finalization이 남아 있어 `진행 중`으로 유지한다.
+- Progress Issue #7 누적 진행판과 완료 댓글 후보는 review 완료와 merge 승인 후 finalization commit에서 확정한다.
+- Closeout PR이 기본 branch에 merge되면 finalization의 `마감` 상태가 정본에 반영되며 추가 closeout PR은 만들지 않는다.
+
 ## 사용자 검수 결과
 
 - Verified reconstruction과 original evidence 구분을 승인했다.
@@ -89,8 +96,8 @@
 
 ## 다음 작업
 
-별도 closeout PR에서 Work Unit closeout 정책, 최종 GitHub 연결과 상태 전환을 검수한다. Closeout PR merge 후 WU-R1 Window/Presentation 계획을 작성하며 WU-R1은 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation까지만 포함한다.
+PR #42를 Ready for Review로 전환해 review와 필요한 대응을 마친다. Merge 승인 후 finalization commit에서 WU-A0 `마감`, PR #42 연결과 Progress 게시 후보를 확정한다. Closeout PR merge 후 WU-R1 Window/Presentation 계획을 작성하며 WU-R1은 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation까지만 포함한다.
 
 ## 판정
 
-WU-A0 구현과 architecture 결정은 완료됐고 WU-R1을 시작할 기술 blocker는 없다. 현재 상태는 작업 PR merge 후 closeout 진행 중이며, 다음 gate는 closeout PR review와 merge 승인이다. Draft closeout PR에서는 `진행 중`을 유지하고 finalization commit과 merge를 거쳐 `마감`으로 확정한다.
+WU-A0 구현과 architecture 결정은 완료됐고 WU-R1을 시작할 기술 blocker는 없다. 현재 상태는 PR #42 Draft 사용자 검수 완료와 Ready for Review 대기이며 Work Unit은 `진행 중`으로 유지한다. 다음 gate는 Ready review와 merge 승인이다.

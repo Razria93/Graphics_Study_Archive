@@ -141,7 +141,8 @@ local/
 -> merge된 기본 branch에서 closeout branch 생성
 -> WorkLog·Work Unit Index·GitHub Index 최종화
 -> Draft closeout PR 사용자 검수
--> finalization commit, Ready for Review와 review
+-> Ready for Review와 review
+-> merge 승인과 finalization commit
 -> closeout PR merge
 -> 기본 branch에서 Work Unit 마감 확인
 ```
@@ -151,8 +152,9 @@ local/
 - 작업 PR이 모두 merge되고 closeout 기록이 기본 branch에 반영된 뒤 `마감`으로 확정한다.
 - closeout branch는 관련 작업 PR이 merge된 최신 기본 branch에서 만든다.
 - Draft closeout PR에서는 Work Unit을 `진행 중`으로 유지한다.
-- Draft closeout PR의 사용자 검수 승인 후 finalization commit에서 `마감` 전환을 준비한다.
-- Finalization commit의 validator와 review를 확인한 뒤 merge 승인을 받는다.
+- Draft closeout PR의 사용자 검수 후 Ready for Review로 전환하고 review를 마친다.
+- Review 완료와 merge 승인 후 finalization commit에서 `마감` 전환과 Progress 게시 후보를 준비한다.
+- Finalization commit의 validator와 review 상태를 다시 확인한 뒤 merge한다.
 - finalization commit을 포함한 closeout PR이 기본 branch에 merge되면 `마감` 상태가 정본에 반영된다.
 - closeout PR에는 새로운 기능 구현, 별도 refactoring과 새로운 graphics 결과를 포함하지 않는다.
 - closeout 과정에서 새 구현이 필요해지면 별도 Work Unit 또는 작업 PR로 분리한다.
@@ -206,5 +208,6 @@ Work Unit은 다음 조건을 모두 만족한 closeout PR이 기본 branch에 m
 - 남은 제한과 다음 Work Unit이 기록되어 있다.
 - closeout 변경 범위에 새로운 기능 구현과 미검증 결과가 섞이지 않았다.
 - closeout PR의 validator와 `git diff --check`가 통과했다.
-- Draft 사용자 검수 후 finalization commit에서 `마감` 전환과 closeout PR 연결을 확정했다.
-- Finalization commit의 validator와 review를 확인하고 merge 승인을 받았다.
+- Ready for Review 이후 review를 마치고 merge 승인을 받았다.
+- Finalization commit에서 `마감` 전환, closeout PR 연결과 Progress 게시 후보를 확정했다.
+- Finalization commit의 validator와 review 상태를 다시 확인했다.

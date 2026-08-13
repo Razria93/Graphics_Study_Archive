@@ -35,7 +35,8 @@
 -> merge된 기본 branch에서 closeout branch 생성
 -> WorkLog·Index와 GitHub 연결 최종화
 -> Draft closeout PR 사용자 검수
--> finalization commit, Ready for Review와 review
+-> Ready for Review와 review
+-> merge 승인과 finalization commit
 -> closeout PR merge
 -> 브랜치와 Work Unit 마감 상태 확인
 -> 다음 작업 제안
@@ -92,8 +93,9 @@ Closeout PR 기준:
 - WorkLog, `work-unit-index.md`, `work-unit-github-index.md`와 필요한 Progress 게시 후보만 최종 상태로 갱신한다.
 - merge된 작업 PR, review 대응, Actions 결과, 남은 제한과 다음 Work Unit을 기록한다.
 - Draft closeout PR에서는 대상 Work Unit을 `진행 중`으로 유지한다.
-- Draft closeout PR의 사용자 검수 승인 후 finalization commit에서 `마감` 상태와 closeout PR 연결을 확정한다.
-- Finalization commit의 Actions와 review를 확인한 뒤 merge 승인을 받는다.
+- Draft closeout PR의 사용자 검수 후 Ready for Review로 전환하고 review를 마친다.
+- Review 완료와 merge 승인 후 finalization commit에서 `마감` 상태, closeout PR 연결과 Progress 게시 후보를 확정한다.
+- Finalization commit의 Actions와 review 상태를 다시 확인한 뒤 merge한다.
 - 새로운 기능 구현, 별도 refactoring, source·asset 변경과 새로운 build/capture 결과를 포함하지 않는다.
 - maintenance PR 형식을 사용하고 일반 merge commit 방식으로 merge한다.
 - closeout PR merge가 대상 Work Unit의 `마감` 상태를 기본 branch에 반영하는 terminal transition이다.
