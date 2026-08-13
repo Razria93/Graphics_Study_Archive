@@ -15,6 +15,7 @@
 | --- | --- |
 | [Canonical Docs Policy](canonical-docs-policy.md) | 문서 정본 위치와 산출물 책임 경계 |
 | [Docs Authoring Flow Policy](docs-authoring-flow-policy.md) | 산출물 축 문서 작성 순서 |
+| [Work Profile Policy](work-profile-policy.md) | Graphics와 Maintenance 작업의 필수 산출물, 순서, 검증과 종료 조건 |
 | [Work Unit Workflow Policy](work-unit-workflow-policy.md) | Work Unit 전체 진행 흐름 |
 | [GitHub Workflow Policy](github-workflow-policy.md) | Issue, PR, gh, push/pull/rebase/merge 승인 흐름 |
 | [Verification Policy](verification-policy.md) | build/run/capture 검증 기준 |
