@@ -34,6 +34,12 @@ Step4부터 Step14까지 CPU ray tracing 예제를 README, Topic, Verification�
 
 Related PR: [PR #11](https://github.com/Razria93/Graphics_Study_Archive/pull/11) (Merged) - Part1 Chapter03 CPU Ray Tracing 단계별 구현과 Demo
 
+### Phase 2-5. Portfolio_GraphicsLab 기반과 architecture 확정
+
+`GraphicsLab.sln`, C++17, vcpkg manifest와 executable 기준 asset path contract로 canonical scaffold를 구성했다. Original evidence를 보존하는 verified reconstruction 전략을 정하고 Application, Platform, Asset, Scene, Rendering module의 책임과 lifetime, ownership, coordinate contract를 확정했다. WU-R1부터 CPU ray tracing을 기능 단위로 새로 구현하며 Part2부터 Part4까지의 기능은 future capability constraint로만 사용한다.
+
+Related PR: [PR #40](https://github.com/Razria93/Graphics_Study_Archive/pull/40) (Merged), [PR #41](https://github.com/Razria93/Graphics_Study_Archive/pull/41) (Merged), [PR #42](https://github.com/Razria93/Graphics_Study_Archive/pull/42) (Merged)
+
 ### Phase 3-1. Part2 Chapter04 Software Rasterization
 
 Step1 Triangle부터 Step10 Lights까지와 사용자 Personal Extension인 Step1A Triangle To Circle을 README, Topic, Verification과 독립 상세 Demo로 연결했다. Debug/Release x64 build/run과 전체 application window capture를 확인하고 Step8을 Chapter 대표, Step10을 기술 보조, Step1A를 사용자 확장, Step4를 시간 변화 Demo로 정리했다. Publication 판정을 완료하고 [Demo Issue #14](https://github.com/Razria93/Graphics_Study_Archive/issues/14)에 Step1A, Step8과 Step10 공개 구성을 게시했다.
@@ -78,9 +84,9 @@ Related PR: [PR #38](https://github.com/Razria93/Graphics_Study_Archive/pull/38)
 
 ## 진행 예정
 
-### Phase 2-5. Portfolio_GraphicsLab RayTracing 연계 정리
+### Phase 2-6. Portfolio_GraphicsLab Part1 RayTracing reconstruction
 
-Portfolio_GraphicsLab canonical scaffold를 구성하고 Part1 ray tracing과 `Rendering/RayTracing`의 연결 범위, 검증 상태, PR 분할 단위를 정리한다.
+WU-R1 Window/Presentation부터 WU-R14 Sampling Finalization까지 CPU ray tracing을 architecture contract 위에 기능 단위로 새로 구현한다. Original implementation의 의도와 evidence를 확인하되 source를 bulk import하지 않는다.
 
 Related PR: 예정
 
@@ -103,3 +109,6 @@ Related PR: 예정
 - [PR #30](https://github.com/Razria93/Graphics_Study_Archive/pull/30) (Merged): Part4 Chapter14 Compute Shader evidence 문서화와 capture 승격
 - [PR #32](https://github.com/Razria93/Graphics_Study_Archive/pull/32) (Merged): Part4 Chapter15 Particle Simulation evidence 문서화와 capture 승격
 - [PR #38](https://github.com/Razria93/Graphics_Study_Archive/pull/38) (Merged): Part4 Chapter14-20 Demo 문서 closeout과 검증 기준 정리
+- [PR #40](https://github.com/Razria93/Graphics_Study_Archive/pull/40) (Merged): Portfolio GraphicsLab canonical scaffold와 build contract
+- [PR #41](https://github.com/Razria93/Graphics_Study_Archive/pull/41) (Merged): GraphicsLab reconstruction 전략과 architecture 기준
+- [PR #42](https://github.com/Razria93/Graphics_Study_Archive/pull/42) (Merged): WU-A0 전환기 closeout과 Work Unit finalization 정책

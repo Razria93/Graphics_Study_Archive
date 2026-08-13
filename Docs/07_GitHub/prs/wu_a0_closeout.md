@@ -28,24 +28,27 @@ PR #41은 이 정책 확정 전에 이미 merge됐으므로 PR #42를 누락된 
 - 예외 closeout PR은 새로운 기능을 포함하지 않는 terminal maintenance PR이며 별도 Work Unit이나 추가 closeout PR을 만들지 않는다.
 - WU-A0에 PR #41의 P2 review 대응 commit `e943237`, Docs Validation 2건과 일반 merge commit `9566afa`를 기록한다.
 - PR #41이 이미 merge되어 PR #42를 전환기 예외 closeout PR로 사용한다.
-- PR #42 Draft 사용자 검수를 완료했으며 WU-A0는 Ready review와 finalization이 남아 있어 `진행 중`을 유지한다.
+- PR #42 Draft 사용자 검수, Ready 전환과 P2 review 2건 대응을 완료했다.
+- `92581d3`에서 finalization 이후 최신 PR HEAD의 merge 실행 승인을 다시 받도록 승인 게이트를 분리하고, Progress 원격 댓글을 merge 후 동기화하도록 quickstart를 교정했다.
+- Finalization 진행 승인에 따라 WU-A0 `마감`, PR #42 연결과 Phase 2-5 Progress 게시 후보를 확정했다.
 - WU-R1부터는 예외 조건이 없으면 같은 작업 PR finalization을 기본으로 사용한다.
 - Closeout merge 이후 WU-R1 Window/Presentation 계획으로 전환한다.
 
 ## 검증
 
 - 저장소 전체 문서 validator 18종 통과
-- 변경 Markdown wrap, render와 table validator 통과
+- Markdown 472개와 table 536개 wrap, render와 table validator 통과
 - 변경 문서 strict UTF-8과 상대 링크 검사 통과
-- `git diff --check origin/main...HEAD` 통과
+- `git diff --check` 통과
+- Review 대응 commit `92581d3`의 Docs Validation 2건 통과
+- PR #42 review thread 2건 대응 댓글과 resolve 완료
 - source, project, tracked asset과 raw/reference 변경 없음 확인
 - 새 build/run/capture는 수행하지 않으며 PR #41의 문서 검증 결과를 유지함
 
 ## 미확인 / 제한
 
-- Ready for Review 직전 상태에서는 WU-A0를 `마감`으로 전환하지 않는다.
-- PR #42 review 대응 이후 finalization 진행 승인, finalization commit, 최신 HEAD의 merge 실행 승인과 merge는 후속 단계로 남긴다.
-- Progress Issue #7 누적 진행판과 완료 댓글 후보는 finalization commit에서 확정하고 실제 원격 게시는 closeout merge 이후 별도 승인으로 수행한다.
+- Finalization commit을 포함한 최신 PR HEAD의 Actions와 review 상태 확인, merge 실행 승인과 merge는 후속 단계로 남긴다.
+- Progress Issue #7 누적 진행판과 Phase 2-5 완료 댓글의 실제 원격 게시는 closeout merge 이후 별도 승인으로 수행한다.
 - WU-R1 Window/Presentation 계획과 구현은 closeout merge 이후 별도 branch에서 진행한다.
 - Renderer code, D3D11 presentation, RayTracing 기능과 asset은 변경하지 않는다.
 
@@ -66,9 +69,7 @@ PR #41은 이 정책 확정 전에 이미 merge됐으므로 PR #42를 누락된 
 
 ## 다음 단계
 
-- PR #42를 Ready for Review로 전환한 뒤 정책, WU-A0 merge 증빙과 전환기 예외 범위를 review한다.
-- Review와 필요한 대응을 마치고 finalization 진행 승인을 확인한다.
-- 같은 PR #42 branch의 finalization commit에서 PR 번호, WU-A0 `마감` 상태와 Progress 게시 후보를 확정한다.
-- Finalization commit의 Actions와 review 상태를 다시 확인하고 최신 PR HEAD의 merge 실행 승인을 다시 받은 뒤 일반 merge commit으로 병합한다.
+- Finalization commit의 Actions와 review 상태를 확인한다.
+- 최신 PR HEAD와 최종 변경 범위를 보고하고 merge 실행 승인을 받은 뒤 일반 merge commit으로 병합한다.
 - 기본 branch의 최종 상태를 확인하고 Progress Issue #7을 merge된 tracked 후보와 동기화한다.
 - WU-R1에서 Win32 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation을 계획한다.
