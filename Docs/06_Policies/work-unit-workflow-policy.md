@@ -69,7 +69,7 @@ Graphics Work는 current code, raw/reference와 기존 정본을 조사하고 �
 | 0. Contract | 작업 요청과 현재 repository 상태를 확인함 | Work type, Work Unit, 종료 여부, Progress 영향, 범위, 산출물과 검증을 확정함 |
 | 1. Profile 작업 | Contract가 확정됨 | 선택한 profile의 산출물과 검증을 완료 후보로 판정함 |
 | 2. 사용자 검수 | Profile 완료 후보와 제한을 보고할 수 있음 | 사용자가 산출물과 다음 remote 제외 범위를 확인함 |
-| 3. Review | 사용자 검수와 Review 전 검사를 통과함 | Ready 전환, actionable feedback, 답글과 resolve를 완료함 |
+| 3. Review | 사용자 검수를 완료함 | Review 전 검사, Ready 전환, actionable feedback, 답글과 resolve를 완료함 |
 | 4. Finalization | Review가 끝나고 `Progress impact`를 확정한 뒤 finalization 진행 승인을 받음 | 같은 branch에서 마감 snapshot, 제한, 다음 작업과 필요한 payload를 검증함 |
 | 5. Merge gate | Finalization HEAD가 고정됨 | 동일 HEAD, clean/sync, Actions, review와 mergeable 상태를 read-only로 확인함 |
 | 6. Terminal execution | 특정 HEAD와 remote 대상에 terminal 승인을 받음 | 일반 merge와 필요한 remote 동기화를 완료하고 body 일치를 확인함 |
@@ -123,7 +123,7 @@ Pre-merge finalization은 review가 끝난 같은 작업 branch에서 수행한�
 
 Canonical 문서에는 `Draft`, `Ready 대기`, `merge 시 반영`과 `merge 승인 대기` 같은 현재 PR 과도 상태를 기록하지 않는다. Finalization tree가 기본 branch에 merge되면 작성해 둔 `마감` 상태가 정본이 된다.
 
-Finalization에서 전체 validator, `git diff --check`, lifecycle 정합성과 필요한 Browser 표본을 한 번 확인한다. 이후 HEAD가 바뀌면 기존 finalization 검증은 무효다. 기능·설계 변경이나 새 actionable review는 Review 단계로 돌아가고, 마감 문서와 payload 변경은 Finalization을 다시 수행한다.
+Finalization에서 전체 validator, `git diff --check`, lifecycle 정합성과 필요한 Browser 표본을 한 번 확인한다. 이후 HEAD가 바뀌면 기존 finalization 검증은 무효다. 기능·설계 변경은 Profile 작업 단계로, 새 actionable review는 Review 단계로 돌아가고, 마감 문서와 payload 변경은 Finalization을 다시 수행한다.
 
 ## Merge 전 검사와 terminal execution
 
