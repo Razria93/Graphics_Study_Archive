@@ -22,6 +22,7 @@
 | Work Unit | Chapter/Bundle 완료 댓글 | 선택 Issue | Chapter PR 목록 | 관련 WorkLog | 비고 |
 | --- | --- | --- | --- | --- | --- |
 | `WU-Part1` | posted (Phase 2-1, Phase 2-4) | Demo Issue #9, #12 | PR #8, PR #11 (merged) | [WU-Part1](work-units/WU-Part1.md) | Chapter01-02와 Chapter03은 마감했다. `Portfolio_GraphicsLab/Rendering/RayTracing` 연계가 남아 있어 WU-Part1 전체는 진행 중이다. |
+| `WU-GraphicsLab-Architecture` | 기본 제외 | 기본 제외 | PR #41 (merged), closeout PR 준비 중 | [WU-GraphicsLab-Architecture](work-units/WU-GraphicsLab-Architecture.md) | Phase S, Phase A와 WU-A0 architecture 작업 PR을 merge했고 별도 closeout PR에서 최종 상태를 정리한다. |
 | `WU-Part2` | posted (Phase 3-1, Phase 3-2) | Demo Issue #14, #17, #18, #19, #22 | PR #15, PR #20 (merged) | [WU-Part2](work-units/WU-Part2.md) | Chapter04와 Chapter05–08 게시·merge를 마감했다. |
 | `WU-Part3` | posted (Phase 4-1, Phase 4-2) | Demo Issue #21, #25, #26, #27, #28 | PR #23, PR #24 (merged) | [WU-Part3](work-units/WU-Part3.md) | Chapter09와 Chapter10–13 게시·merge를 마감했다. |
 | `WU-Part4` | posted (Phase 5-1, Phase 5-2, Phase 5-3) | Demo Issue #29, #31, #33–#37 | PR #30, PR #32, PR #38 (merged) | [WU-Part4](work-units/WU-Part4.md) | Chapter14부터 Chapter20까지 GitHub body closeout과 PR merge를 마감했다. selected video comment는 후속 작업이다. |

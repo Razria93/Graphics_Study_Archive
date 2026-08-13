@@ -8,7 +8,7 @@
 | Phase | Phase S, Phase A, WU-A0 |
 | 코드 범위 | `Portfolio_GraphicsLab` architecture와 Part1 roadmap |
 | Evidence 범위 | original 단계별 source와 local media의 read-only 조사 |
-| 제외 범위 | renderer code, asset import, build contract 변경, remote 작업 |
+| 제외 범위 | renderer code, asset import, build contract 변경, raw/reference와 local media 수정 |
 
 ## 0단계부터 5단계까지의 수행 결과
 
@@ -70,6 +70,15 @@
 
 이번 Work Unit은 source와 project를 변경하지 않으므로 build/run을 다시 수행하지 않는다. 책임 구조 상세화 범위의 tracked Markdown 7개가 render, table, wrap 검사를 통과했다. 저장소 전체 validator 18종, Markdown 470개와 table 536개 전수 검사를 통과했다. 변경 문서의 strict UTF-8과 상대 링크 검사, `git diff --check`를 통과했다. raw/reference source와 local media에는 쓰기 작업을 수행하지 않았다.
 
+## PR #41 review와 merge
+
+- Architecture 작업 PR은 [PR #41](https://github.com/Razria93/Graphics_Study_Archive/pull/41)로 게시했다.
+- Work Unit 상태의 `검증 중` 표현이 build/run/capture 상태 정의와 맞지 않는다는 P2 review를 반영했다.
+- `e943237`에서 상태를 `진행 중`으로 되돌리고 비고와 다음 gate를 PR review 단계로 교정했다.
+- Markdown validator, strict UTF-8, 상대 링크, `git diff --check`와 Docs Validation 2건을 통과했다.
+- Review thread를 해결하고 일반 merge commit `9566afa`로 `main`에 병합했다.
+- Architecture 작업 branch는 삭제하지 않고 증빙 branch로 유지한다.
+
 ## 사용자 검수 결과
 
 - Verified reconstruction과 original evidence 구분을 승인했다.
@@ -80,8 +89,8 @@
 
 ## 다음 작업
 
-PR #41 review 대응과 일반 merge commit을 진행한다. Merge 이후 별도 closeout branch에서 WU-A0 최종 마감 기록과 Work Unit closeout 정책을 정리한다. 해당 closeout이 끝난 뒤 WU-R1 Window/Presentation 계획을 작성하며 WU-R1은 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation까지만 포함한다.
+별도 closeout PR에서 Work Unit closeout 정책, 최종 GitHub 연결과 상태 전환을 검수한다. Closeout PR merge 후 WU-R1 Window/Presentation 계획을 작성하며 WU-R1은 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation까지만 포함한다.
 
 ## 판정
 
-WU-A0 문서 기준으로 WU-R1을 시작할 기술 blocker는 없다. 책임 구조 방향은 사용자 검수를 마쳤고 상세화 문서와 PR body 검증을 통과했다. 다음 gate는 PR #41 review 대응 완료와 merge 승인이다.
+WU-A0 구현과 architecture 결정은 완료됐고 WU-R1을 시작할 기술 blocker는 없다. 현재 상태는 작업 PR merge 후 closeout 진행 중이며, 다음 gate는 closeout PR review와 merge 승인이다. Draft closeout PR에서는 `진행 중`을 유지하고 finalization commit과 merge를 거쳐 `마감`으로 확정한다.
