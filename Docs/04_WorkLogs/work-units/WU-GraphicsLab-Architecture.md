@@ -83,9 +83,9 @@
 
 - PR #41이 Work Unit finalization 정책 확정 전에 merge되어 같은 작업 PR에 마감 기록을 추가할 수 없다.
 - [PR #42](https://github.com/Razria93/Graphics_Study_Archive/pull/42)는 이 누락을 복구하고 기본 finalization 정책을 정립하는 전환기 예외 closeout PR이다.
-- 기본 정책은 review와 merge 승인 후 같은 작업 branch와 PR에서 finalization을 완료하는 흐름으로 정한다.
+- 기본 정책은 review와 finalization 진행 승인 후 같은 작업 branch와 PR에서 finalization을 완료하고, 최신 PR HEAD의 merge 실행 승인을 다시 받는 흐름으로 정한다.
 - Draft 사용자 검수를 완료했고 WU-A0 상태는 PR #42 Ready review와 finalization이 남아 있어 `진행 중`으로 유지한다.
-- Progress Issue #7 누적 진행판과 완료 댓글 후보는 review 완료와 merge 승인 후 finalization commit에서 확정한다.
+- Progress Issue #7 누적 진행판과 완료 댓글 후보는 review 완료와 finalization 진행 승인 후 finalization commit에서 확정한다.
 - PR #42가 기본 branch에 merge되면 finalization의 `마감` 상태가 정본에 반영되며 추가 closeout PR은 만들지 않는다.
 - WU-R1부터는 하나의 Work Unit이 여러 PR로 나뉘는 예외가 아니면 같은 작업 PR finalization을 사용한다.
 
@@ -99,8 +99,8 @@
 
 ## 다음 작업
 
-PR #42를 Ready for Review로 전환해 review와 필요한 대응을 마친다. Merge 승인 후 finalization commit에서 WU-A0 `마감`, PR #42 연결과 Progress 게시 후보를 확정한다. PR #42 merge 후 WU-R1 Window/Presentation 계획을 작성하며 WU-R1은 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation까지만 포함한다.
+PR #42를 Ready for Review로 전환해 review와 필요한 대응을 마친다. Finalization 진행 승인 후 finalization commit에서 WU-A0 `마감`, PR #42 연결과 Progress 게시 후보를 확정하고, 최신 PR HEAD의 merge 실행 승인을 다시 받는다. PR #42 merge 후 WU-R1 Window/Presentation 계획을 작성하며 WU-R1은 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation까지만 포함한다.
 
 ## 판정
 
-WU-A0 구현과 architecture 결정은 완료됐고 WU-R1을 시작할 기술 blocker는 없다. 현재 상태는 PR #42 Draft 사용자 검수 완료와 Ready for Review 대기이며 Work Unit은 `진행 중`으로 유지한다. 다음 gate는 Ready review와 merge 승인이다.
+WU-A0 구현과 architecture 결정은 완료됐고 WU-R1을 시작할 기술 blocker는 없다. 현재 상태는 PR #42 Ready review 대응 중이며 Work Unit은 `진행 중`으로 유지한다. 다음 gate는 review 대응 완료와 finalization 진행 승인이다.

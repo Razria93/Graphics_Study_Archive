@@ -4,7 +4,7 @@
 
 이 PR은 WU-A0 architecture 작업 PR #41의 review와 merge 결과를 정본에 연결하고, 같은 작업 PR에서 Work Unit finalization을 완료하는 기본 정책을 정한다.
 
-작업 PR review가 끝나기 전에는 Work Unit을 `마감`으로 표시하지 않는다. Review 완료와 merge 승인 후 같은 작업 branch의 finalization commit에서 최종 상태와 Progress 게시 후보를 확정하고, 재검증을 통과한 작업 PR을 merge해 `마감` 상태를 기본 branch에 반영한다.
+작업 PR review가 끝나기 전에는 Work Unit을 `마감`으로 표시하지 않는다. Review 완료와 finalization 진행 승인 후 같은 작업 branch의 finalization commit에서 최종 상태와 Progress 게시 후보를 확정한다. Finalization이 포함된 최신 PR HEAD를 재검증하고 merge 실행 승인을 다시 받은 뒤 merge해 `마감` 상태를 기본 branch에 반영한다.
 
 PR #41은 이 정책 확정 전에 이미 merge됐으므로 PR #42를 누락된 마감 기록과 정책 교정을 위한 전환기 예외 closeout PR로 사용한다.
 
@@ -21,9 +21,9 @@ PR #41은 이 정책 확정 전에 이미 merge됐으므로 PR #42를 누락된 
 
 ## 주요 변경
 
-- 작업 PR에서는 review와 merge 승인 전까지 Work Unit을 `진행 중`으로 유지하고 `검증 중`은 build/run/capture를 실제로 확인하는 기간에만 사용한다.
-- Review 완료와 merge 승인 후 같은 작업 branch의 finalization commit에서 `마감` 전환, WorkLog, Index, PR 연결과 Progress 게시 후보를 확정한다.
-- Finalization commit의 Actions와 review 상태를 다시 확인한 뒤 작업 PR을 일반 merge commit 방식으로 병합한다.
+- 작업 PR에서는 review와 finalization 전까지 Work Unit을 `진행 중`으로 유지하고 `검증 중`은 build/run/capture를 실제로 확인하는 기간에만 사용한다.
+- Review 완료와 finalization 진행 승인 후 같은 작업 branch의 finalization commit에서 `마감` 전환, WorkLog, Index, PR 연결과 Progress 게시 후보를 확정한다.
+- Finalization commit의 Actions와 review 상태를 다시 확인하고 최신 PR HEAD의 merge 실행 승인을 다시 받은 뒤 작업 PR을 일반 merge commit 방식으로 병합한다.
 - 별도 closeout branch는 여러 작업 PR 종합, post-merge 사실 기록, 누락된 finalization 복구 또는 광범위한 정책·Index 정리에만 사용한다.
 - 예외 closeout PR은 새로운 기능을 포함하지 않는 terminal maintenance PR이며 별도 Work Unit이나 추가 closeout PR을 만들지 않는다.
 - WU-A0에 PR #41의 P2 review 대응 commit `e943237`, Docs Validation 2건과 일반 merge commit `9566afa`를 기록한다.
@@ -44,7 +44,7 @@ PR #41은 이 정책 확정 전에 이미 merge됐으므로 PR #42를 누락된 
 ## 미확인 / 제한
 
 - Ready for Review 직전 상태에서는 WU-A0를 `마감`으로 전환하지 않는다.
-- PR #42 Ready for Review, review 대응, merge 승인, finalization commit과 merge는 후속 단계로 남긴다.
+- PR #42 review 대응 이후 finalization 진행 승인, finalization commit, 최신 HEAD의 merge 실행 승인과 merge는 후속 단계로 남긴다.
 - Progress Issue #7 누적 진행판과 완료 댓글 후보는 finalization commit에서 확정하고 실제 원격 게시는 closeout merge 이후 별도 승인으로 수행한다.
 - WU-R1 Window/Presentation 계획과 구현은 closeout merge 이후 별도 branch에서 진행한다.
 - Renderer code, D3D11 presentation, RayTracing 기능과 asset은 변경하지 않는다.
@@ -67,8 +67,8 @@ PR #41은 이 정책 확정 전에 이미 merge됐으므로 PR #42를 누락된 
 ## 다음 단계
 
 - PR #42를 Ready for Review로 전환한 뒤 정책, WU-A0 merge 증빙과 전환기 예외 범위를 review한다.
-- Review와 필요한 대응을 마치고 merge 승인을 확인한다.
+- Review와 필요한 대응을 마치고 finalization 진행 승인을 확인한다.
 - 같은 PR #42 branch의 finalization commit에서 PR 번호, WU-A0 `마감` 상태와 Progress 게시 후보를 확정한다.
-- Finalization commit의 Actions와 review 상태를 다시 확인한 뒤 일반 merge commit으로 병합한다.
+- Finalization commit의 Actions와 review 상태를 다시 확인하고 최신 PR HEAD의 merge 실행 승인을 다시 받은 뒤 일반 merge commit으로 병합한다.
 - 기본 branch의 최종 상태를 확인하고 Progress Issue #7을 merge된 tracked 후보와 동기화한다.
 - WU-R1에서 Win32 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation을 계획한다.

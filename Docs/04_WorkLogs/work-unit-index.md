@@ -31,8 +31,8 @@ Work Unit은 Part 또는 portfolio 흐름을 추적하는 운영 단위다. GitH
 - Work Unit을 시작하면 상태를 `진행 중`으로 바꾼다.
 - build/run/capture 확인을 시작하면 상태를 `검증 중`으로 바꾼다.
 - build/run/capture 확인을 마치고 작업 PR review 또는 finalization이 남아 있으면 `진행 중`으로 되돌린다.
-- 작업 PR review 완료와 merge 승인 후 같은 branch의 finalization commit에서 WorkLog, Index와 `마감` 전환을 확정한다.
-- Finalization commit의 validator와 review 상태를 다시 확인한 뒤 merge한다.
+- 작업 PR review 완료와 finalization 진행 승인 후 같은 branch의 finalization commit에서 WorkLog, Index와 `마감` 전환을 확정한다.
+- Finalization commit의 validator와 review 상태를 다시 확인하고 최신 PR HEAD에 대한 merge 실행 승인을 다시 받은 뒤 merge한다.
 - Finalization commit을 포함한 PR이 기본 branch에 merge되면 `마감` 상태가 정본에 반영된다.
 - 여러 작업 PR 종합이나 post-merge 정리가 필요한 경우에만 별도 closeout PR을 사용한다.
 - 상세 조건은 [Work Unit Workflow Policy](../06_Policies/work-unit-workflow-policy.md)를 따른다.
