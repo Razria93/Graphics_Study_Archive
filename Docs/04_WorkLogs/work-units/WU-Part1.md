@@ -68,4 +68,4 @@
 
 ## 다음 작업
 
-1. `Portfolio_GraphicsLab` canonical scaffold를 구성하고 `Rendering/RayTracing`과 Part1 ray tracing 범위의 연결 단위를 정리한다.
+1. `Portfolio_GraphicsLab` WU-A0 architecture를 사용자 검수하고 WU-R1 Window/Presentation부터 Part1 reconstruction을 진행한다.
