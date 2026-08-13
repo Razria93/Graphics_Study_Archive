@@ -46,8 +46,8 @@
 ## 작업 profile 진입점
 
 - 모든 작업은 `Docs/98_Tools/work-session-quickstart.md`에서 `Graphics Work` 또는 `Maintenance Work`로 먼저 분류한다.
-- 유형별 필수 산출물, 고정 작업 순서, 검증과 종료 조건은 `Docs/06_Policies/work-profile-policy.md`를 따른다.
-- Work Unit 상태와 마감은 `Docs/06_Policies/work-unit-workflow-policy.md`, GitHub 승인과 remote 실행은 `Docs/06_Policies/github-workflow-policy.md`를 따른다.
+- 유형별 필수 산출물, profile 내부 작업 순서와 검증 후보 조건은 `Docs/06_Policies/work-profile-policy.md`를 따른다.
+- 공통 lifecycle, Work Unit 상태와 종료는 `Docs/06_Policies/work-unit-workflow-policy.md`, GitHub 승인과 remote 실행은 `Docs/06_Policies/github-workflow-policy.md`를 따른다.
 
 ## 문서 감사 진입점
 

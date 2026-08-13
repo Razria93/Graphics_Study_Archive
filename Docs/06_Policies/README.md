@@ -15,9 +15,9 @@
 | --- | --- |
 | [Canonical Docs Policy](canonical-docs-policy.md) | 문서 정본 위치와 산출물 책임 경계 |
 | [Docs Authoring Flow Policy](docs-authoring-flow-policy.md) | 산출물 축 문서 작성 순서 |
-| [Work Profile Policy](work-profile-policy.md) | Graphics와 Maintenance 작업의 필수 산출물, 순서, 검증과 종료 조건 |
-| [Work Unit Workflow Policy](work-unit-workflow-policy.md) | Work Unit 전체 진행 흐름 |
-| [GitHub Workflow Policy](github-workflow-policy.md) | Issue, PR, gh, push/pull/rebase/merge 승인 흐름 |
+| [Work Profile Policy](work-profile-policy.md) | Graphics와 Maintenance 작업의 산출물, 내부 순서와 검증 후보 조건 |
+| [Work Unit Workflow Policy](work-unit-workflow-policy.md) | 공통 lifecycle, Work Unit 상태, 전환과 종료 조건 |
+| [GitHub Workflow Policy](github-workflow-policy.md) | Issue, PR, gh, push/pull/rebase/merge 승인과 remote 실행 |
 | [Verification Policy](verification-policy.md) | build/run/capture 검증 기준 |
 | [Demo Capture Policy](demo-capture-policy.md) | screenshot/video 관리 기준 |
 | [Publication Policy](publication-policy.md) | public subset 후보와 제외 기준 |
@@ -35,4 +35,4 @@
 - 정책 문서는 이 폴더에만 둔다.
 - 세부 작업 초안은 `local/`에 둘 수 있고, GitHub에 게시하기 직전의 후보 정본은 `Docs/07_GitHub`에 둔다.
 - 과거 import 기록은 `Docs/99_Legacy`를 기준으로 참조한다.
-- 작업 세션의 실행 순서는 [Work Session Quickstart](../98_Tools/work-session-quickstart.md)에서 확인한다.
+- 작업 세션의 공통 lifecycle은 [Work Unit Workflow Policy](work-unit-workflow-policy.md), 실행 진입점은 [Work Session Quickstart](../98_Tools/work-session-quickstart.md)에서 확인한다.

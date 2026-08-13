@@ -28,10 +28,5 @@ Work Unit은 Part 또는 portfolio 흐름을 추적하는 운영 단위다. GitH
 
 ## 갱신 기준
 
-- Work Unit을 시작하면 상태를 `진행 중`으로 바꾼다.
-- build/run/capture 확인을 시작하면 상태를 `검증 중`으로 바꾼다.
-- build/run/capture 확인을 마치고 review가 남아 있으면 `진행 중`으로 되돌린다.
-- Review 대응 후 같은 branch의 pre-merge finalization에서 WorkLog, Index와 `마감` 상태를 merge 후 관점으로 완성한다.
-- Finalization tree가 기본 branch에 merge되면 `마감` 상태가 정본으로 효력을 가진다.
-- Merge 후 Progress 게시 결과는 GitHub remote에서 확인하고 이 Index에 역동기화하지 않는다.
-- 상세 조건은 [Work Unit Workflow Policy](../06_Policies/work-unit-workflow-policy.md)를 따른다.
+- 이 문서는 각 Work Unit의 현재 snapshot만 기록한다.
+- 상태 전환, finalization, 실패 시 복귀와 종료 조건은 [Work Unit Workflow Policy](../06_Policies/work-unit-workflow-policy.md)만 정의한다.
