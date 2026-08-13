@@ -35,7 +35,7 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | 12 | capture/result 요청 조건 판단 | 검증 결과, 예제 유형, demo 후보 | 사용자 요청 문구 또는 `Docs/03_Demos` 초안 | `demo-capture-policy.md` |
 | 13 | Demo capture/result 정리 | 실행 결과, capture 후보 | `Docs/03_Demos`, `Docs/_assets`, 코드 폴더 README | `demo-capture-policy.md`, `assets-policy.md` |
 | 14 | public subset 판단 | example, topic, demo, asset 정보 | `Docs/05_Publication` | `publication-policy.md` |
-| 15 | 작업 기록 마감 | 변경된 Docs, 검증 결과 | `Docs/04_WorkLogs/active` 또는 `Docs/04_WorkLogs/completed` | `github-workflow-policy.md` |
+| 15 | 작업 PR용 기록 정리 | 변경된 Docs, 검증 결과 | `Docs/04_WorkLogs/work-units` | `github-workflow-policy.md` |
 | 16 | GitHub Issue/PR draft 작성 | WorkLog, Example, Verification, Demo | `local/github/draft` 또는 `Docs/07_GitHub` | `github-workflow-policy.md` |
 | 17 | GitHub body 검수 | `Docs/07_GitHub`, WorkLog, Verification | validator 결과와 사용자 검토 보고 | `github-workflow-policy.md`, `../98_Tools/validators/README.md` |
 | 18 | Index 갱신 | 전체 산출물 | `Docs/00_Index`, `Docs/04_WorkLogs/work-unit-github-index.md` | `canonical-docs-policy.md`, `github-workflow-policy.md` |
@@ -43,6 +43,13 @@ Work Unit은 코드, 주석, raw/reference, origin 기준 확인에서 시작해
 | 20 | 최종 검수 | 변경 파일 전체 | 검수 결과는 final report 또는 WorkLog | `style-policy.md`, `../98_Tools/validation-tools.md` |
 | 21 | 사용자 검토 요청 | 변경 요약, 미확인 항목, follow-up | 대화 보고 또는 WorkLog | `github-workflow-policy.md` |
 | 22 | commit readiness 보고 | 변경 파일, 검증 결과, 권장 commit 메시지 | 대화 보고 | `github-workflow-policy.md` |
+| 23 | 작업 PR Ready와 review 대응 | 게시된 PR, review, Actions | 작업 branch와 GitHub remote | `github-workflow-policy.md` |
+| 24 | finalization 진행 승인과 commit | review 결과, 검증 결과 | 같은 작업 branch의 WorkLog, Index, Progress 후보 | 이 문서, `github-workflow-policy.md` |
+| 25 | finalization 재검증과 merge 실행 승인 | finalization commit, Actions, review 상태 | GitHub remote | `github-workflow-policy.md` |
+| 26 | 작업 PR merge | 승인된 최신 PR HEAD | GitHub remote | `github-workflow-policy.md` |
+| 27 | Work Unit 마감 확인 | merge된 finalization 문서 | 기본 branch의 WorkLog와 Index | 이 문서 |
+| 28 | Progress Issue 동기화 | merge된 Progress 게시 후보 | GitHub remote | `github-workflow-policy.md` |
+| 29 | 다음 Work Unit 제안 | 마감 결과와 follow-up | 대화 보고 또는 다음 계획 | 이 문서 |
 
 ## 산출물별 책임
 
@@ -124,6 +131,40 @@ local/
 - 내부 source review와 stale 판단은 코드 폴더 README에 노출하지 않는다.
 - 상세 조사 기록은 `local/study-review/`에 두고, 재사용 가능한 판단 요약만 `Docs/04_WorkLogs/study-review-summaries/`에 둔다.
 
+## 작업 완료와 Work Unit 마감
+
+작업 PR의 구현 완료와 Work Unit의 운영 마감 시점은 구분하되 기본적으로 같은 작업 branch와 PR에서 처리한다. Review가 끝나기 전에는 `진행 중`을 유지하고, finalization 진행 승인 후 finalization commit에서 최종 상태와 GitHub 연결을 확정한다.
+
+```text
+작업과 검증
+-> 작업 PR 사용자 검수와 Ready for Review
+-> review 대응 완료
+-> finalization 진행 승인
+-> 같은 작업 branch에서 finalization commit
+-> finalization validator와 review 상태 재확인
+-> 최신 PR HEAD 기준 merge 실행 승인
+-> 작업 PR merge
+-> 기본 branch에서 Work Unit 마감 확인
+-> Progress Issue 원격 동기화
+```
+
+- 작업 PR review, finalization 또는 merge가 남아 있는 Work Unit은 `진행 중`으로 둔다.
+- `검증 중`은 build/run/capture를 실제로 확인하는 기간에만 사용한다.
+- Review 완료와 finalization 진행 승인 후 같은 작업 branch의 finalization commit에서 `마감` 전환, WorkLog, Index, PR 연결과 Progress 게시 후보를 확정한다.
+- Finalization commit의 validator, Actions와 review 상태를 다시 확인하며 실패나 새 지적이 있으면 merge 실행 승인을 요청하지 않는다.
+- 변경된 최신 PR HEAD와 최종 상태를 사용자에게 보고하고 명시적인 merge 실행 승인을 다시 받은 뒤 merge한다.
+- Finalization commit을 포함한 작업 PR이 기본 branch에 merge되면 `마감` 상태가 정본에 반영된다.
+- Progress Issue 원격 댓글은 merge된 tracked 후보를 기준으로 별도 승인 후 동기화한다.
+
+별도 closeout branch와 PR은 다음 조건 중 하나를 만족할 때만 사용한다.
+
+- 하나의 Work Unit이 여러 작업 PR로 구성되어 결과 종합이 필요하다.
+- 작업 PR merge 후에만 확인할 수 있는 사실을 정본에 기록해야 한다.
+- 작업 PR에서 finalization 기록을 누락했다.
+- 여러 Work Unit에 걸친 광범위한 정책·Index 정리가 작업 PR 범위를 벗어난다.
+
+예외 closeout PR은 관련 작업 PR이 merge된 최신 기본 branch에서 만든다. 새로운 기능 구현, 별도 refactoring과 graphics 결과를 포함하지 않으며, 구현 변경이 필요하면 별도 Work Unit 또는 작업 PR로 분리한다. 대상 Work Unit을 종료하는 terminal maintenance PR로 취급하고 별도 Work Unit으로 등록하거나 추가 closeout PR을 만들지 않는다. 이 정책 도입 전에 기본 branch에서 이미 `마감`으로 기록된 Work Unit에는 소급 적용하지 않는다. Issue/PR/comment 게시와 merge 승인 절차는 `github-workflow-policy.md`를 따른다.
+
 ## 사용자 검토 지점
 
 다음 지점에서는 작업자가 사용자에게 상태를 보고하고 진행 방향을 확인한다.
@@ -138,9 +179,9 @@ local/
 - GitHub Issue/PR draft를 게시하기 전
 - commit readiness를 보고할 때
 
-## Done 기준
+## 구현 완료 기준
 
-Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.
+작업 PR은 다음 조건을 만족할 때 구현 완료 후보로 둔다. 이 조건만으로 Work Unit 상태를 `마감`으로 바꾸지 않는다.
 
 - 예제 README 정본이 대상 코드 폴더에 있다.
 - 소스 주석 inventory와 raw/origin/current 비교 상세는 `local/study-review/`에 있고, 반복 가능한 판단 요약은 필요한 경우 `Docs/04_WorkLogs/study-review-summaries/`에 있다.
@@ -158,3 +199,17 @@ Work Unit은 다음 조건을 만족할 때 완료 상태로 둔다.
 - README를 갱신하지 않은 경우 그 이유가 WorkLog 또는 검토 보고에 남아 있다.
 - 오래된 `Docs/99_Legacy` 문서와 폐기된 `Docs/01_Examples` 본문을 정본처럼 링크하지 않는다.
 - 사용자 검토 요청과 commit readiness 보고가 끝나 있다.
+
+## Work Unit 마감 기준
+
+Work Unit은 다음 조건을 모두 만족한 finalization commit이 포함된 PR이 기본 branch에 merge된 뒤 `마감`으로 확정한다. 별도 closeout PR을 사용하는 예외에도 같은 기준을 적용한다.
+
+- 작업 PR review 대응이 완료되고 merge 승인을 받았다.
+- finalization commit에서 review 대응과 최종 검증 결과를 WorkLog에 요약했다.
+- `work-unit-index.md`의 상태와 비고가 최종 결과를 가리킨다.
+- `work-unit-github-index.md`에 관련 Issue와 작업 PR이 연결되어 있다.
+- 남은 제한과 다음 Work Unit이 기록되어 있다.
+- Finalization 범위에 새로운 기능 구현과 미검증 결과가 섞이지 않았다.
+- Finalization commit에서 `마감` 전환, PR 연결과 Progress 게시 후보를 확정했다.
+- Finalization commit의 validator와 `git diff --check`가 통과했다.
+- Finalization commit의 validator와 review 상태를 다시 확인했다.

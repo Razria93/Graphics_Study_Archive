@@ -15,13 +15,14 @@
 | 항목 | 상태 | GitHub 번호 | 게시 후보 파일 | 비고 |
 | --- | --- | --- | --- | --- |
 | 상위 Progress Issue | posted | #7 | `Docs/07_GitHub/plan/plan-body.md` | 전체 진행판으로 유지 |
-| 누적 진행 댓글 | posted | #7 comment 5091068690 | `Docs/07_GitHub/plan/plan-progress.md` | Phase 5-3까지 게시 · 최신 상태 보완 후보 |
+| 누적 진행 댓글 | comment-ready | #7 comment 5091068690 | `Docs/07_GitHub/plan/plan-progress.md` | Phase 2-5 GraphicsLab 기반·architecture 마감 반영 후보 · PR #42 merge 후 게시 |
 
 ## 관계 Index
 
 | Work Unit | Chapter/Bundle 완료 댓글 | 선택 Issue | Chapter PR 목록 | 관련 WorkLog | 비고 |
 | --- | --- | --- | --- | --- | --- |
 | `WU-Part1` | posted (Phase 2-1, Phase 2-4) | Demo Issue #9, #12 | PR #8, PR #11 (merged) | [WU-Part1](work-units/WU-Part1.md) | Chapter01-02와 Chapter03은 마감했다. `Portfolio_GraphicsLab/Rendering/RayTracing` 연계가 남아 있어 WU-Part1 전체는 진행 중이다. |
+| `WU-GraphicsLab-Architecture` | comment-ready (Phase 2-5) | 기본 제외 | PR #41 (merged), PR #42 (Ready, finalization 완료) | [WU-GraphicsLab-Architecture](work-units/WU-GraphicsLab-Architecture.md) | PR #42 merge 후 누적 진행 댓글과 Phase 2-5 완료 댓글을 별도 승인으로 게시한다. |
 | `WU-Part2` | posted (Phase 3-1, Phase 3-2) | Demo Issue #14, #17, #18, #19, #22 | PR #15, PR #20 (merged) | [WU-Part2](work-units/WU-Part2.md) | Chapter04와 Chapter05–08 게시·merge를 마감했다. |
 | `WU-Part3` | posted (Phase 4-1, Phase 4-2) | Demo Issue #21, #25, #26, #27, #28 | PR #23, PR #24 (merged) | [WU-Part3](work-units/WU-Part3.md) | Chapter09와 Chapter10–13 게시·merge를 마감했다. |
 | `WU-Part4` | posted (Phase 5-1, Phase 5-2, Phase 5-3) | Demo Issue #29, #31, #33–#37 | PR #30, PR #32, PR #38 (merged) | [WU-Part4](work-units/WU-Part4.md) | Chapter14부터 Chapter20까지 GitHub body closeout과 PR merge를 마감했다. selected video comment는 후속 작업이다. |

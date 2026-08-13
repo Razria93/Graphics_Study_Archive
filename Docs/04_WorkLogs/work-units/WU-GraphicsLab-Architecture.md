@@ -8,7 +8,7 @@
 | Phase | Phase S, Phase A, WU-A0 |
 | 코드 범위 | `Portfolio_GraphicsLab` architecture와 Part1 roadmap |
 | Evidence 범위 | original 단계별 source와 local media의 read-only 조사 |
-| 제외 범위 | renderer code, asset import, build contract 변경, remote 작업 |
+| 제외 범위 | renderer code, asset import, build contract 변경, raw/reference와 local media 수정 |
 
 ## 0단계부터 5단계까지의 수행 결과
 
@@ -70,6 +70,28 @@
 
 이번 Work Unit은 source와 project를 변경하지 않으므로 build/run을 다시 수행하지 않는다. 책임 구조 상세화 범위의 tracked Markdown 7개가 render, table, wrap 검사를 통과했다. 저장소 전체 validator 18종, Markdown 470개와 table 536개 전수 검사를 통과했다. 변경 문서의 strict UTF-8과 상대 링크 검사, `git diff --check`를 통과했다. raw/reference source와 local media에는 쓰기 작업을 수행하지 않았다.
 
+## PR #41 review와 merge
+
+- Architecture 작업 PR은 [PR #41](https://github.com/Razria93/Graphics_Study_Archive/pull/41)로 게시했다.
+- Work Unit 상태의 `검증 중` 표현이 build/run/capture 상태 정의와 맞지 않는다는 P2 review를 반영했다.
+- `e943237`에서 상태를 `진행 중`으로 되돌리고 비고와 다음 gate를 PR review 단계로 교정했다.
+- Markdown validator, strict UTF-8, 상대 링크, `git diff --check`와 Docs Validation 2건을 통과했다.
+- Review thread를 해결하고 일반 merge commit `9566afa`로 `main`에 병합했다.
+- Architecture 작업 branch는 삭제하지 않고 증빙 branch로 유지한다.
+
+## PR #42 전환기 closeout과 finalization
+
+- PR #41이 Work Unit finalization 정책 확정 전에 merge되어 같은 작업 PR에 마감 기록을 추가할 수 없다.
+- [PR #42](https://github.com/Razria93/Graphics_Study_Archive/pull/42)는 이 누락을 복구하고 기본 finalization 정책을 정립하는 전환기 예외 closeout PR이다.
+- 기본 정책은 review와 finalization 진행 승인 후 같은 작업 branch와 PR에서 finalization을 완료하고, 최신 PR HEAD의 merge 실행 승인을 다시 받는 흐름으로 정한다.
+- Draft 사용자 검수와 Ready 전환을 완료하고, P2 review 2건을 `92581d3`에서 교정했다.
+- Finalization 전·후 사용자 승인 게이트를 분리하고 Progress 원격 댓글을 merge 후 동기화하도록 정책과 quickstart를 맞췄다.
+- Review 대응 commit의 저장소 전체 validator 18종, strict UTF-8, 상대 링크, `git diff --check`와 Docs Validation 2건을 통과했다.
+- Review thread 2건에 원인, 대응, 검증과 반영 commit을 답글로 남기고 모두 resolve했다.
+- 사용자의 finalization 진행 승인 후 WU-A0 상태, PR #42 연결과 Progress Issue #7 누적·완료 댓글 후보를 확정했다.
+- PR #42가 기본 branch에 merge되면 finalization의 `마감` 상태가 정본에 반영되며 추가 closeout PR은 만들지 않는다.
+- WU-R1부터는 하나의 Work Unit이 여러 PR로 나뉘는 예외가 아니면 같은 작업 PR finalization을 사용한다.
+
 ## 사용자 검수 결과
 
 - Verified reconstruction과 original evidence 구분을 승인했다.
@@ -80,8 +102,8 @@
 
 ## 다음 작업
 
-PR #41 review 대응과 일반 merge commit을 진행한다. Merge 이후 별도 closeout branch에서 WU-A0 최종 마감 기록과 Work Unit closeout 정책을 정리한다. 해당 closeout이 끝난 뒤 WU-R1 Window/Presentation 계획을 작성하며 WU-R1은 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation까지만 포함한다.
+PR #42 finalization commit의 validator, Actions와 review 상태를 확인하고 최신 PR HEAD의 merge 실행 승인을 받는다. PR #42 merge 후 Progress Issue #7을 merge된 tracked 후보와 별도 승인으로 동기화한다. 이후 WU-R1 Window/Presentation 계획을 작성하며 WU-R1은 window lifecycle, resize, CPU framebuffer upload와 D3D11 presentation까지만 포함한다.
 
 ## 판정
 
-WU-A0 문서 기준으로 WU-R1을 시작할 기술 blocker는 없다. 책임 구조 방향은 사용자 검수를 마쳤고 상세화 문서와 PR body 검증을 통과했다. 다음 gate는 PR #41 review 대응 완료와 merge 승인이다.
+WU-A0 구현, architecture 결정, PR review 대응과 finalization 기록은 완료됐다. Work Unit 상태는 finalization commit에서 `마감`으로 확정했으며 PR #42 merge 시 기본 branch에 반영된다. WU-R1을 시작할 기술 blocker는 없고 다음 gate는 최신 PR HEAD의 merge 실행 승인이다.
