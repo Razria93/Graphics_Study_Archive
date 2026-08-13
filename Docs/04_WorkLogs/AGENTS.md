@@ -23,6 +23,17 @@
 - GitHub 게시 후보 정본은 `Docs/07_GitHub`에 둔다.
 - `local/github/draft`는 임시 초안으로만 사용한다.
 
+## 상태 전환
+
+- 작업 PR review, merge 또는 closeout이 남아 있는 Work Unit은 `진행 중`으로 둔다.
+- `검증 중`은 build/run/capture를 실제로 확인하는 기간에만 사용한다.
+- 관련 작업 PR merge 후 별도 closeout PR에서 최종 WorkLog와 Index를 갱신한다.
+- Draft closeout PR의 사용자 검수 승인 후 finalization commit에서 `마감` 전환을 준비한다.
+- Finalization commit의 validator와 review를 확인한 뒤 merge 승인을 받는다.
+- closeout PR이 기본 branch에 merge되면 Work Unit의 `마감` 상태가 정본에 반영된다.
+- closeout PR은 별도 Work Unit으로 등록하거나 추가 closeout 대상으로 삼지 않는다.
+- 상세 완료 조건과 GitHub 절차는 `../06_Policies/work-unit-workflow-policy.md`와 `../06_Policies/github-workflow-policy.md`를 따른다.
+
 ## 작성 기준
 
 - WorkLog는 최신 상태표가 아니라 마감 시점 snapshot이다.

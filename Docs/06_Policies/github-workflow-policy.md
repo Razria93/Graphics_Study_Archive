@@ -32,7 +32,12 @@
 -> 리뷰 검토와 대응
 -> merge 승인 확인
 -> merge
--> 브랜치 마감 상태 확인
+-> merge된 기본 branch에서 closeout branch 생성
+-> WorkLog·Index와 GitHub 연결 최종화
+-> Draft closeout PR 사용자 검수
+-> finalization commit, Ready for Review와 review
+-> closeout PR merge
+-> 브랜치와 Work Unit 마감 상태 확인
 -> 다음 작업 제안
 ```
 
@@ -69,6 +74,34 @@ merge 방식:
 - `gh pr merge`를 사용할 때는 기본적으로 `--merge`를 사용한다.
 - `--squash`, `--rebase`, history rewrite, force push는 사용자가 별도로 지시하고 위험도를 확인한 경우가 아니면 사용하지 않는다.
 - `--delete-branch`는 사용자가 별도로 요청하지 않는 한 사용하지 않는다.
+
+## 작업 PR과 Work Unit closeout PR
+
+작업 PR은 코드·문서 산출물과 검증 결과를 review하고 merge하는 단위다. Work Unit closeout PR은 관련 작업 PR이 merge된 뒤 최종 상태, review 결과와 GitHub 연결을 정본에 반영하는 terminal maintenance PR이다.
+
+작업 PR 기준:
+
+- Work Unit 상태를 `진행 중`으로 유지한다.
+- `검증 중`은 build/run/capture를 실제 수행하는 기간에만 사용한다.
+- PR body의 검증 결과는 해당 작업 PR 시점의 snapshot으로 기록한다.
+- review 대응과 merge 전에는 Work Unit을 `마감`으로 표시하지 않는다.
+
+Closeout PR 기준:
+
+- 관련 작업 PR이 모두 merge된 최신 기본 branch에서 `docs/{work-unit}-closeout` 형식의 별도 branch를 만든다.
+- WorkLog, `work-unit-index.md`, `work-unit-github-index.md`와 필요한 Progress 게시 후보만 최종 상태로 갱신한다.
+- merge된 작업 PR, review 대응, Actions 결과, 남은 제한과 다음 Work Unit을 기록한다.
+- Draft closeout PR에서는 대상 Work Unit을 `진행 중`으로 유지한다.
+- Draft closeout PR의 사용자 검수 승인 후 finalization commit에서 `마감` 상태와 closeout PR 연결을 확정한다.
+- Finalization commit의 Actions와 review를 확인한 뒤 merge 승인을 받는다.
+- 새로운 기능 구현, 별도 refactoring, source·asset 변경과 새로운 build/capture 결과를 포함하지 않는다.
+- maintenance PR 형식을 사용하고 일반 merge commit 방식으로 merge한다.
+- closeout PR merge가 대상 Work Unit의 `마감` 상태를 기본 branch에 반영하는 terminal transition이다.
+- closeout PR 자체는 별도 Work Unit으로 등록하지 않으며 추가 closeout PR을 만들지 않는다.
+- 이 정책 도입 전에 기본 branch에서 이미 마감한 Work Unit에는 closeout PR을 소급 적용하지 않는다.
+- closeout 중 구현 변경이 필요하면 현재 PR을 확장하지 않고 별도 작업 PR로 분리한다.
+
+Work Unit 상태와 완료 조건의 정본은 `work-unit-workflow-policy.md`를 따른다. Closeout PR의 push, 생성, Ready for Review와 merge도 이 문서의 승인 게이트를 그대로 적용한다.
 
 ## gh CLI 실행 오류 대응
 
