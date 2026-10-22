@@ -1,37 +1,45 @@
-<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Assimp · 검증 결과 발췌</title><style>body{margin:0;background:#edf1f5;color:#172d40;font:16px/1.75 "Malgun Gothic",sans-serif}main{max-width:1120px;margin:30px auto;padding:28px;background:white;border-radius:10px}h1,h2{color:#008d98}a{color:#075e98;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf3f7;padding:14px}table{display:block;overflow:auto;border-collapse:collapse}th,td{border:1px solid #dce4eb;padding:8px}.note{background:#fff7e7;padding:14px}video,img{max-width:100%}@media(max-width:700px){main{margin:10px;padding:18px}h1{font-size:27px}h2{font-size:22px}}</style><main><h1>Assimp · 검증 결과 발췌</h1><p class="note">기존 실행 기록에서 구조 요약·종료 결과·수치 검사 결과만 발췌했다. 새 실험이나 당시 실행 기록을 의미하지 않는다.</p><h2>Pivot 보존 ON · 구조 요약 원문 발췌</h2><pre>REPRO_ASSIMP 6.0.2 revision=0
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Assimp · 검증 결과 발췌</title><style>body{margin:0;background:#edf1f5;color:#172d40;font:16px/1.75 "Malgun Gothic",sans-serif}main{max-width:1120px;margin:30px auto;padding:28px;background:white;border-radius:10px}h1,h2{color:#008d98}a{color:#075e98;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf3f7;padding:14px}table{display:block;overflow:auto;border-collapse:collapse}th,td{border:1px solid #dce4eb;padding:8px}.note{background:#fff7e7;padding:14px}video,img{max-width:100%}@media(max-width:700px){main{margin:10px;padding:18px}h1{font-size:27px}h2{font-size:22px}}</style><main><h1>Assimp · 검증 결과 발췌</h1><p class="note">기존 실행 기록에서 구조 요약·종료 결과·수치 검사 결과만 발췌했다. 새 실험이나 당시 실행 기록을 의미하지 않는다.</p><h2 id="structure-on">Pivot 보존 ON · 구조 요약 원문 발췌</h2><pre>REPRO_ASSIMP 6.0.2 revision=0
 REPRO_SUMMARY	character.fbx	pivots=1	nodes=163	helpers=96	bones=52	channels=0	unmatched=0	keyCountMismatch=0
 REPRO_SUMMARY	CatwalkIdle.fbx	pivots=1	nodes=211	helpers=144	bones=52	channels=52	unmatched=48	keyCountMismatch=42
 REPRO_SUMMARY	CatwalkIdleToWalkForward.fbx	pivots=1	nodes=211	helpers=144	bones=52	channels=52	unmatched=48	keyCountMismatch=48
 REPRO_SUMMARY	CatwalkWalkForward.fbx	pivots=1	nodes=211	helpers=144	bones=52	channels=52	unmatched=48	keyCountMismatch=48
 REPRO_SUMMARY	CatwalkWalkStop.fbx	pivots=1	nodes=211	helpers=144	bones=52	channels=52	unmatched=48	keyCountMismatch=48
-REPRO_SUMMARY	BreakdanceFreezeVar2.fbx	pivots=1	nodes=211	helpers=144	bones=52	channels=52	unmatched=48	keyCountMismatch=48</pre><h2>Pivot 보존 OFF · 구조 요약 원문 발췌</h2><pre>REPRO_ASSIMP 6.0.2 revision=0
+REPRO_SUMMARY	BreakdanceFreezeVar2.fbx	pivots=1	nodes=211	helpers=144	bones=52	channels=52	unmatched=48	keyCountMismatch=48</pre><h2 id="structure-off">Pivot 보존 OFF · 구조 요약 원문 발췌</h2><pre>REPRO_ASSIMP 6.0.2 revision=0
 REPRO_SUMMARY	character.fbx	pivots=0	nodes=67	helpers=0	bones=52	channels=0	unmatched=0	keyCountMismatch=0
 REPRO_SUMMARY	CatwalkIdle.fbx	pivots=0	nodes=67	helpers=0	bones=52	channels=52	unmatched=0	keyCountMismatch=0
 REPRO_SUMMARY	CatwalkIdleToWalkForward.fbx	pivots=0	nodes=67	helpers=0	bones=52	channels=52	unmatched=0	keyCountMismatch=0
 REPRO_SUMMARY	CatwalkWalkForward.fbx	pivots=0	nodes=67	helpers=0	bones=52	channels=52	unmatched=0	keyCountMismatch=0
 REPRO_SUMMARY	CatwalkWalkStop.fbx	pivots=0	nodes=67	helpers=0	bones=52	channels=52	unmatched=0	keyCountMismatch=0
-REPRO_SUMMARY	BreakdanceFreezeVar2.fbx	pivots=0	nodes=67	helpers=0	bones=52	channels=52	unmatched=0	keyCountMismatch=0</pre><h2>Pivot ON 촬영 종료</h2><pre>{
-  &quot;exitCode&quot;: 0,
-  &quot;exitMode&quot;: &quot;WM_CLOSE&quot;,
-  &quot;frames&quot;: 240,
-  &quot;variant&quot;: &quot;before&quot;,
-  &quot;pivot&quot;: &quot;1&quot;,
-  &quot;timestamp&quot;: &quot;2026-10-21T14:10:42.5557800+09:00&quot;,
-  &quot;rootFix&quot;: true
-}</pre><h2>Pivot OFF 촬영 종료</h2><pre>{
-  &quot;exitCode&quot;: 0,
-  &quot;exitMode&quot;: &quot;WM_CLOSE&quot;,
-  &quot;frames&quot;: 240,
-  &quot;variant&quot;: &quot;after&quot;,
-  &quot;pivot&quot;: &quot;0&quot;,
-  &quot;timestamp&quot;: &quot;2026-10-21T14:10:20.2704782+09:00&quot;,
-  &quot;rootFix&quot;: true
-}</pre><h2>이번 초기 자세 보완 전 · 수치 검사 발췌</h2><pre>ROOT_POSE_TEST initial_nonzero_root_height FAIL root=0,0,0 childY=10 expectedRoot=0,100,0
+REPRO_SUMMARY	BreakdanceFreezeVar2.fbx	pivots=0	nodes=67	helpers=0	bones=52	channels=52	unmatched=0	keyCountMismatch=0</pre><h2 id="exit-before">초기 자세 보완 전 촬영 종료</h2><pre>{
+  "frames": 240,
+  "variant": "before-root",
+  "pivot": "0",
+  "exitMode": "WM_CLOSE",
+  "exitCode": 0,
+  "timestamp": "2026-10-21T14:09:39.7381008+09:00",
+  "rootFix": false
+}</pre><h2 id="exit-on">Pivot ON 촬영 종료</h2><pre>{
+  "exitCode": 0,
+  "exitMode": "WM_CLOSE",
+  "frames": 240,
+  "variant": "before",
+  "pivot": "1",
+  "timestamp": "2026-10-21T14:10:42.5557800+09:00",
+  "rootFix": true
+}</pre><h2 id="exit-off">Pivot OFF 촬영 종료</h2><pre>{
+  "exitCode": 0,
+  "exitMode": "WM_CLOSE",
+  "frames": 240,
+  "variant": "after",
+  "pivot": "0",
+  "timestamp": "2026-10-21T14:10:20.2704782+09:00",
+  "rootFix": true
+}</pre><h2 id="pose-before">이번 초기 자세 보완 전 · 수치 검사 발췌</h2><pre>ROOT_POSE_TEST initial_nonzero_root_height FAIL root=0,0,0 childY=10 expectedRoot=0,100,0
 ROOT_POSE_TEST current_frame_root_motion FAIL root=0,100,0 childY=110 expectedRoot=2,105,3
 ROOT_POSE_TEST restart_height_preserves_horizontal_motion FAIL root=2,105,3 childY=115 expectedRoot=2,100,3
 ROOT_POSE_TEST zero_height_root PASS root=0,0,0 childY=10 expectedRoot=0,0,0
-ROOT_POSE_TEST_SUMMARY failures=3 cases=4</pre><h2>이번 초기 자세 보완 후 · 수치 검사 발췌</h2><pre>ROOT_POSE_TEST initial_nonzero_root_height PASS root=0,100,0 childY=110 expectedRoot=0,100,0
+ROOT_POSE_TEST_SUMMARY failures=3 cases=4</pre><h2 id="pose-after">이번 초기 자세 보완 후 · 수치 검사 발췌</h2><pre>ROOT_POSE_TEST initial_nonzero_root_height PASS root=0,100,0 childY=110 expectedRoot=0,100,0
 ROOT_POSE_TEST current_frame_root_motion PASS root=2,105,3 childY=115 expectedRoot=2,105,3
 ROOT_POSE_TEST restart_height_preserves_horizontal_motion PASS root=2,100,3 childY=110 expectedRoot=2,100,3
 ROOT_POSE_TEST zero_height_root PASS root=0,0,0 childY=10 expectedRoot=0,0,0
-ROOT_POSE_TEST_SUMMARY failures=0 cases=4</pre><p><a href="index.html">검증 보고서</a></p></main></html>
+ROOT_POSE_TEST_SUMMARY failures=0 cases=4</pre><p><a href="index.html">검증 보고서</a></p></main></head></html>
