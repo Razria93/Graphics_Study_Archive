@@ -2,7 +2,7 @@
 
 그래픽스 학습 기록을 설명 가능한 코드·문서·실행 자료로 정리하고, 그 반복 작업을 AI로 확장한 경험을 소개한다. 이 문서는 **23쪽 포트폴리오와 저장소의 상세 근거를 연결하는 안내**다.
 
-[공개 PDF 열기 · 2026-10-22](https://razria93.github.io/Graphics_Study_Archive/portfolio/files/graphics-portfolio-20261022-v2.pdf) · [저장소 소개](README.md) · [비교 영상·검증 보고서](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/)
+[공개 PDF 열기 · 2026-10-22](https://razria93.github.io/Graphics_Study_Archive/portfolio/files/graphics-portfolio-20261022-v3.pdf) · [저장소 소개](README.md) · [비교 영상·검증 보고서](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/)
 
 ## 읽는 순서
 
@@ -75,8 +75,8 @@ PDF의 2쪽 색인에서 각 본문으로 이동하고, 상세 페이지의 영�
 
 ## 공개본과 갱신 기준
 
-- **현재 공개본:** 2026-10-22 v2, 23쪽. 실행 영상 링크와 도식을 보완했다. 확정한 제출용 PDF와 동일한 파일이다.
-- **파일명:** `graphics-portfolio-20261022-v2.pdf`. [GitHub Pages에서 열기](https://razria93.github.io/Graphics_Study_Archive/portfolio/files/graphics-portfolio-20261022-v2.pdf)
+- **현재 공개본:** 2026-10-22 v3, 23쪽. 실행 영상 링크의 표기와 위치 정렬까지 반영한 최종 제출용 PDF와 동일한 파일이다.
+- **파일명:** `graphics-portfolio-20261022-v3.pdf`. [GitHub Pages에서 열기](https://razria93.github.io/Graphics_Study_Archive/portfolio/files/graphics-portfolio-20261022-v3.pdf)
 - **원본 보존:** 기존 제출용 PPTX·PDF와 공개 PDF 주소는 보존한다. 이번 보완본은 별도 파일로 제공한다.
 - **갱신 방식:** 내용 변경 시 새 버전 PDF를 추가하고 이 안내의 날짜·페이지 범위·대표 링크를 함께 갱신한다. 기존 버전 파일과 주소는 보존한다.
 - **문서 기준:** 포트폴리오는 해당 날짜의 요약본이다. 예제 구현·검증의 상세 내용은 연결된 저장소 문서를 기준으로 확인한다.
