@@ -14,7 +14,7 @@ DirectX11 기반 그래픽스 학습 코드와 일부 개인 확장 구현을 �
 
 | 경험 구분 | 대표 사례 | 핵심 내용 | 바로 보기 |
 | --- | --- | --- | --- |
-| **AI 활용** | 아카이브 구축 자동화 | 작업 규격·대표 예제 검토<br>자동화 확대·검수 | [진행 과정](#automation) |
+| **AI 활용** | 아카이브 구축 자동화 | 작업 규격 설정·대표 예제 검토<br>자동화 확대·검수 | [진행 과정](#automation) |
 | **문제 해결 01** | 자동 촬영 도구 보완 | 오류 대응 반복 원인 확인<br>정리 완료 판별 보완 | [문제·해결·검증](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/capture/index.html) |
 | **문제 해결 02** | Assimp 호환 문제 | 임포트 구조 불일치 확인<br>Pivot 보존 설정 보정 | [옵션 비교·검증](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/assimp/index.html) |
 | **그래픽스<br>학습·구현** | 렌더링과 GPU 연산 | 렌더링 기초·재질·후처리<br>애니메이션·GPU 연산 | [학습 범위](#learning)<br>[주제별 포트폴리오](PORTFOLIO.md#graphics) |
@@ -83,7 +83,7 @@ git clone https://github.com/Razria93/Graphics_Study_Archive.git
 
 [빌드·실행 기준](BUILD.md) · [기존 Debug/Release 검증 기록](Docs/02_Verification/Part1_Chapter01-02/verification-index.md) · [알려진 이슈](Docs/02_Verification/known-issues.md)
 
-실행 상태는 연결한 검증 기록의 환경과 범위를 기준으로 확인한다. 이번 안내 개편은 문서 작업이며 그래픽스 예제를 다시 빌드·실행한 결과를 추가하지 않는다.
+실행 상태는 연결한 검증 기록의 환경과 범위를 기준으로 확인한다.
 
 ## 학습 출처와 작업 범위
 
