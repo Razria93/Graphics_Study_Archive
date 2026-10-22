@@ -1,16 +1,21 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Assimp · 검증 결과 발췌</title><style>body{margin:0;background:#edf1f5;color:#172d40;font:16px/1.75 "Malgun Gothic",sans-serif}main{max-width:1120px;margin:30px auto;padding:28px;background:white;border-radius:10px}h1,h2{color:#008d98}a{color:#075e98;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf3f7;padding:14px}table{display:block;overflow:auto;border-collapse:collapse}th,td{border:1px solid #dce4eb;padding:8px}.note{background:#fff7e7;padding:14px}video,img{max-width:100%}@media(max-width:700px){main{margin:10px;padding:18px}h1{font-size:27px}h2{font-size:22px}}</style><main><h1>Assimp · 검증 결과 발췌</h1><p class="note">기존 실행 기록에서 구조 요약·종료 결과·수치 검사 결과만 발췌했다. 새 실험이나 당시 실행 기록을 의미하지 않는다.</p><h2 id="structure-on">Pivot 보존 ON · 구조 요약 원문 발췌</h2><pre>REPRO_ASSIMP 6.0.2 revision=0
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Assimp · 검증 결과 발췌</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#edf1f5;color:#172d40;font:16px/1.75 "Malgun Gothic",sans-serif}header{padding:60px max(calc((100vw - 1120px)/2),28px) 42px;background:#102333;color:#f4f8fb}.eyebrow{font-size:13px;letter-spacing:2px;color:#85dcd4}h1{font-size:38px;line-height:1.35;margin:14px 0}h2{font-size:27px;line-height:1.4;margin:10px 0 18px}h3{font-size:21px}.lead{font-size:24px;font-weight:bold;color:#82e6ba}nav{max-width:1120px;margin:22px auto;display:flex;gap:12px;flex-wrap:wrap}nav a{padding:7px 14px;background:white;border-radius:8px;text-decoration:none}a{color:#075e98;overflow-wrap:anywhere}section,.notice{max-width:1120px;margin:24px auto;padding:30px;background:white;border-radius:12px;border:1px solid #dce4eb}.notice{background:#fff7e7;border-color:#ecd7a6}p{margin:12px 0}code{background:#edf3f7;border-radius:4px;padding:2px 5px;font-size:14px;word-break:break-all}.tag{background:#ddf6e9;color:#176d4a;font-weight:bold;font-size:13px;padding:4px 10px;border-radius:4px}video{width:100%;max-height:690px;margin:16px 0;background:#101923;border-radius:6px}.caption,.small,figcaption{font-size:13px;color:#5d7284}.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}figure{margin:12px 0}img{width:100%;border-radius:5px}table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}th,td{border-bottom:1px solid #dbe4eb;padding:10px;text-align:left;vertical-align:top}th{background:#edf4f8}.tablewrap{overflow-x:auto}summary{cursor:pointer;font-weight:bold;padding:12px;background:#edf3f7;border-radius:5px}details{margin:18px 0}li{margin:8px 0}footer{max-width:1120px;margin:30px auto 60px;color:#61768a;font-size:13px}@media(max-width:800px){section,.notice,nav{margin:18px 12px}section{padding:20px}.gallery{grid-template-columns:1fr}h1{font-size:29px}h2{font-size:23px}}
+.tag.failed{background:#fbe5e5;color:#9d2828}.tag.partial,.tag.unverified{background:#fff0d2;color:#805100}.tag.observed{background:#e4edf9;color:#28598c}p,li,figcaption{overflow-wrap:anywhere}.skip{position:absolute;left:12px;top:-100px;background:white;padding:8px}.skip:focus{top:8px}a:focus-visible,summary:focus-visible,video:focus-visible{outline:3px solid #138b88;outline-offset:3px}@media print{body{background:white}section{break-inside:avoid;border:1px solid #aaa}nav,video,.skip{display:none}header{background:white;color:#172d40}.eyebrow,.lead{color:#172d40}}
+
+main{min-width:0}header>p{max-width:1120px}header .lead{font-size:21px}h2{color:#172d40}pre{margin:16px 0;padding:18px 20px;background:#edf3f7;border-radius:6px;font:14px/1.7 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;overflow-x:auto}pre code{padding:0}video{display:block;height:auto}img{display:block;height:auto}.gallery:has(>figure:only-child){grid-template-columns:1fr}.note{padding:18px 20px;background:#fff7e7;border:1px solid #ecd7a6;border-radius:8px}.tablewrap{max-width:100%}.tablewrap table{min-width:600px}th{font-weight:700}td a{white-space:normal}header h1{color:#f4f8fb}header p{color:#d9e5ec}header .lead{color:#82e6ba}header .eyebrow{color:#85dcd4}section>:first-child{margin-top:0}section>:last-child{margin-bottom:0}section h2:not(:first-child){margin-top:12px}footer{padding:0 12px}nav a{line-height:1.6}
+@media(max-width:800px){header{padding:36px 20px 28px}header .lead{font-size:18px}section,.notice{padding:20px}pre{padding:14px;font-size:13px}footer{margin:24px 12px 40px}video{margin:14px 0}h1{overflow-wrap:anywhere}}
+</style></head><body><header><h1>Assimp · 검증 결과 발췌</h1><p class="note">기존 실행 기록에서 구조 요약·종료 결과·수치 검사 결과만 발췌했다. 새 실험이나 당시 실행 기록을 의미하지 않는다.</p></header><main><section><h2 id="structure-on">Pivot 보존 ON · 구조 요약 원문 발췌</h2><pre>REPRO_ASSIMP 6.0.2 revision=0
 REPRO_SUMMARY	character.fbx	pivots=1	nodes=163	helpers=96	bones=52	channels=0	unmatched=0	keyCountMismatch=0
 REPRO_SUMMARY	CatwalkIdle.fbx	pivots=1	nodes=211	helpers=144	bones=52	channels=52	unmatched=48	keyCountMismatch=42
 REPRO_SUMMARY	CatwalkIdleToWalkForward.fbx	pivots=1	nodes=211	helpers=144	bones=52	channels=52	unmatched=48	keyCountMismatch=48
 REPRO_SUMMARY	CatwalkWalkForward.fbx	pivots=1	nodes=211	helpers=144	bones=52	channels=52	unmatched=48	keyCountMismatch=48
 REPRO_SUMMARY	CatwalkWalkStop.fbx	pivots=1	nodes=211	helpers=144	bones=52	channels=52	unmatched=48	keyCountMismatch=48
-REPRO_SUMMARY	BreakdanceFreezeVar2.fbx	pivots=1	nodes=211	helpers=144	bones=52	channels=52	unmatched=48	keyCountMismatch=48</pre><h2 id="structure-off">Pivot 보존 OFF · 구조 요약 원문 발췌</h2><pre>REPRO_ASSIMP 6.0.2 revision=0
+REPRO_SUMMARY	BreakdanceFreezeVar2.fbx	pivots=1	nodes=211	helpers=144	bones=52	channels=52	unmatched=48	keyCountMismatch=48</pre></section><section><h2 id="structure-off">Pivot 보존 OFF · 구조 요약 원문 발췌</h2><pre>REPRO_ASSIMP 6.0.2 revision=0
 REPRO_SUMMARY	character.fbx	pivots=0	nodes=67	helpers=0	bones=52	channels=0	unmatched=0	keyCountMismatch=0
 REPRO_SUMMARY	CatwalkIdle.fbx	pivots=0	nodes=67	helpers=0	bones=52	channels=52	unmatched=0	keyCountMismatch=0
 REPRO_SUMMARY	CatwalkIdleToWalkForward.fbx	pivots=0	nodes=67	helpers=0	bones=52	channels=52	unmatched=0	keyCountMismatch=0
 REPRO_SUMMARY	CatwalkWalkForward.fbx	pivots=0	nodes=67	helpers=0	bones=52	channels=52	unmatched=0	keyCountMismatch=0
 REPRO_SUMMARY	CatwalkWalkStop.fbx	pivots=0	nodes=67	helpers=0	bones=52	channels=52	unmatched=0	keyCountMismatch=0
-REPRO_SUMMARY	BreakdanceFreezeVar2.fbx	pivots=0	nodes=67	helpers=0	bones=52	channels=52	unmatched=0	keyCountMismatch=0</pre><h2 id="exit-before">초기 자세 보완 전 촬영 종료</h2><pre>{
+REPRO_SUMMARY	BreakdanceFreezeVar2.fbx	pivots=0	nodes=67	helpers=0	bones=52	channels=52	unmatched=0	keyCountMismatch=0</pre></section><section><h2 id="exit-before">초기 자세 보완 전 촬영 종료</h2><pre>{
   "frames": 240,
   "variant": "before-root",
   "pivot": "0",
@@ -18,7 +23,7 @@ REPRO_SUMMARY	BreakdanceFreezeVar2.fbx	pivots=0	nodes=67	helpers=0	bones=52	chan
   "exitCode": 0,
   "timestamp": "2026-10-21T14:09:39.7381008+09:00",
   "rootFix": false
-}</pre><h2 id="exit-on">Pivot ON 촬영 종료</h2><pre>{
+}</pre></section><section><h2 id="exit-on">Pivot ON 촬영 종료</h2><pre>{
   "exitCode": 0,
   "exitMode": "WM_CLOSE",
   "frames": 240,
@@ -26,7 +31,7 @@ REPRO_SUMMARY	BreakdanceFreezeVar2.fbx	pivots=0	nodes=67	helpers=0	bones=52	chan
   "pivot": "1",
   "timestamp": "2026-10-21T14:10:42.5557800+09:00",
   "rootFix": true
-}</pre><h2 id="exit-off">Pivot OFF 촬영 종료</h2><pre>{
+}</pre></section><section><h2 id="exit-off">Pivot OFF 촬영 종료</h2><pre>{
   "exitCode": 0,
   "exitMode": "WM_CLOSE",
   "frames": 240,
@@ -34,12 +39,12 @@ REPRO_SUMMARY	BreakdanceFreezeVar2.fbx	pivots=0	nodes=67	helpers=0	bones=52	chan
   "pivot": "0",
   "timestamp": "2026-10-21T14:10:20.2704782+09:00",
   "rootFix": true
-}</pre><h2 id="pose-before">이번 초기 자세 보완 전 · 수치 검사 발췌</h2><pre>ROOT_POSE_TEST initial_nonzero_root_height FAIL root=0,0,0 childY=10 expectedRoot=0,100,0
+}</pre></section><section><h2 id="pose-before">이번 초기 자세 보완 전 · 수치 검사 발췌</h2><pre>ROOT_POSE_TEST initial_nonzero_root_height FAIL root=0,0,0 childY=10 expectedRoot=0,100,0
 ROOT_POSE_TEST current_frame_root_motion FAIL root=0,100,0 childY=110 expectedRoot=2,105,3
 ROOT_POSE_TEST restart_height_preserves_horizontal_motion FAIL root=2,105,3 childY=115 expectedRoot=2,100,3
 ROOT_POSE_TEST zero_height_root PASS root=0,0,0 childY=10 expectedRoot=0,0,0
-ROOT_POSE_TEST_SUMMARY failures=3 cases=4</pre><h2 id="pose-after">이번 초기 자세 보완 후 · 수치 검사 발췌</h2><pre>ROOT_POSE_TEST initial_nonzero_root_height PASS root=0,100,0 childY=110 expectedRoot=0,100,0
+ROOT_POSE_TEST_SUMMARY failures=3 cases=4</pre></section><section><h2 id="pose-after">이번 초기 자세 보완 후 · 수치 검사 발췌</h2><pre>ROOT_POSE_TEST initial_nonzero_root_height PASS root=0,100,0 childY=110 expectedRoot=0,100,0
 ROOT_POSE_TEST current_frame_root_motion PASS root=2,105,3 childY=115 expectedRoot=2,105,3
 ROOT_POSE_TEST restart_height_preserves_horizontal_motion PASS root=2,100,3 childY=110 expectedRoot=2,100,3
 ROOT_POSE_TEST zero_height_root PASS root=0,0,0 childY=10 expectedRoot=0,0,0
-ROOT_POSE_TEST_SUMMARY failures=0 cases=4</pre><p><a href="index.html">검증 보고서</a></p></main></head></html>
+ROOT_POSE_TEST_SUMMARY failures=0 cases=4</pre><p><a href="index.html">검증 보고서</a></p></section></main></body></html>
