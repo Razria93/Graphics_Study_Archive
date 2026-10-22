@@ -2,7 +2,7 @@
 
 그래픽스 학습 기록을 설명 가능한 코드·문서·실행 자료로 정리하고, 그 반복 작업을 AI로 확장한 경험을 소개한다. 이 문서는 **23쪽 포트폴리오와 저장소의 상세 근거를 연결하는 안내**다.
 
-[공개 PDF 열기 · 2026-10-22](https://razria93.github.io/Graphics_Study_Archive/portfolio/files/graphics-portfolio-20261022.pdf) · [저장소 소개](README.md) · [비교 영상·검증 보고서](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/)
+[공개 PDF 열기 · 2026-10-22](https://razria93.github.io/Graphics_Study_Archive/portfolio/files/graphics-portfolio-20261022-v2.pdf) · [저장소 소개](README.md) · [비교 영상·검증 보고서](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/)
 
 ## 읽는 순서
 
@@ -64,10 +64,10 @@ PDF의 2쪽 색인에서 각 본문으로 이동하고, 상세 페이지의 영�
 | 07 · 17쪽 | PBR·IBL의 재질 입력과 조명 계산 | [Unreal PBR](Docs/03_Demos/Part3_Chapter10-13/12_01_UnrealPBR.md) |
 | 08 · 18쪽 | HDR·Bloom의 후처리 흐름 | [HDR Pipeline](Docs/03_Demos/Part3_Chapter10-13/11_05_HDRPipeline.md) |
 | 09 · 19쪽 | 화면 입력과 3D 선택·조작 | [Virtual Trackball](Docs/03_Demos/Part3_Chapter09/09_05_VirtualTrackball.md) |
-| 10 · 20쪽 | 스켈레탈 애니메이션의 변환 흐름 | [Skeletal Animation](Docs/03_Demos/Part4_Chapter14-20/17_01_SkeletalAnimation.md) |
+| 10 · 20쪽 | 스켈레탈 애니메이션의 변환 흐름 | [Skeletal Animation](Docs/03_Demos/Part4_Chapter14-20/17_01_SkeletalAnimation.md) · [실행 영상](https://razria93.github.io/Graphics_Study_Archive/portfolio-demos/#skeletal-animation) |
 | 11 · 21쪽 | GPU Blur의 구현 경로와 리소스 교대 | [Compute Shader Blur](Docs/03_Demos/Part4_Chapter14-20/14_02_Blur.md) |
-| 12 · 22쪽 | GPU 연기의 시뮬레이션과 볼륨 렌더링 | [Realtime Smoke](Docs/03_Demos/Part4_Chapter14-20/16_04_RealtimeSmoke.md) |
-| 13 · 23쪽 | 잔디 인스턴싱과 셰이더 변형 | [Grass](Docs/03_Demos/Part4_Chapter14-20/18_02_Grass.md) |
+| 12 · 22쪽 | GPU 연기의 시뮬레이션과 볼륨 렌더링 | [Realtime Smoke](Docs/03_Demos/Part4_Chapter14-20/16_04_RealtimeSmoke.md) · [실행 영상](https://razria93.github.io/Graphics_Study_Archive/portfolio-demos/#realtime-smoke) |
+| 13 · 23쪽 | 잔디 인스턴싱과 셰이더 변형 | [Grass](Docs/03_Demos/Part4_Chapter14-20/18_02_Grass.md) · [실행 영상](https://razria93.github.io/Graphics_Study_Archive/portfolio-demos/#grass) |
 
 개별 기능의 학습·개인 확장 범위는 예제 README와 [학습 출처 안내](NOTICE.md)를 따른다. 포트폴리오의 문서화·자료 정리를 기존 학습 코드 전체의 독자 구현으로 해석하지 않는다.
 
@@ -75,9 +75,9 @@ PDF의 2쪽 색인에서 각 본문으로 이동하고, 상세 페이지의 영�
 
 ## 공개본과 갱신 기준
 
-- **현재 공개본:** 2026-10-22, 23쪽. 확정한 제출용 PDF와 동일한 파일이다.
-- **파일명:** `graphics-portfolio-20261022.pdf`. [GitHub Pages에서 열기](https://razria93.github.io/Graphics_Study_Archive/portfolio/files/graphics-portfolio-20261022.pdf)
-- **원본 보존:** 기존 제출용 PPTX·PDF는 그대로 유지하며, 공개본을 위해 슬라이드 내용이나 링크를 변경하지 않는다.
+- **현재 공개본:** 2026-10-22 v2, 23쪽. 실행 영상 링크와 도식을 보완했다. 확정한 제출용 PDF와 동일한 파일이다.
+- **파일명:** `graphics-portfolio-20261022-v2.pdf`. [GitHub Pages에서 열기](https://razria93.github.io/Graphics_Study_Archive/portfolio/files/graphics-portfolio-20261022-v2.pdf)
+- **원본 보존:** 기존 제출용 PPTX·PDF와 공개 PDF 주소는 보존한다. 이번 보완본은 별도 파일로 제공한다.
 - **갱신 방식:** 내용 변경 시 새 버전 PDF를 추가하고 이 안내의 날짜·페이지 범위·대표 링크를 함께 갱신한다. 기존 버전 파일과 주소는 보존한다.
 - **문서 기준:** 포트폴리오는 해당 날짜의 요약본이다. 예제 구현·검증의 상세 내용은 연결된 저장소 문서를 기준으로 확인한다.
 
