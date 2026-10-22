@@ -60,3 +60,6 @@ footer code, footer .literal-url {
 @media print{header{background:white!important;color:#172d40!important;padding:20px 0}
 header .report-title,header .report-intro,header .report-meta,.verification-conditions{color:#172d40!important}
 nav.report-index,.skip{display:none}section{break-inside:auto}h2,h3{break-after:avoid}figure,tr,pre{break-inside:avoid}}
+
+/* Demo header metadata contrast */
+header p.small{color:#a9cbd7}
