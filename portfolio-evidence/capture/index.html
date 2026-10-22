@@ -36,6 +36,16 @@ nav.report-index{max-width:1120px;margin:24px auto;display:block}
 .notice{font-size:14px;line-height:1.8;padding:20px 24px;margin:24px auto}
 [id]{scroll-margin-top:20px}
 @media(max-width:800px){header{padding:30px 20px 28px}header .report-title{font-size:29px}header .report-intro{font-size:17px}.index-items{grid-template-columns:repeat(2,minmax(0,1fr))}nav.report-index{margin:20px 12px}.notice{margin:20px 12px;padding:18px 20px}header .verification-conditions{grid-template-columns:64px 1fr;gap:6px 10px}}
+</style><style class="body-word-wrap">
+/* Korean prose wraps at word boundaries; only code and literal URLs may split. */
+main, main p, main li, main figcaption, main a, main th, main td,
+main h2, main h3, main summary, footer, footer p, footer a {
+  word-break:keep-all; overflow-wrap:normal;
+}
+main pre, main code, main kbd, main samp, main .literal-url,
+footer code, footer .literal-url {
+  word-break:normal; overflow-wrap:anywhere;
+}
 </style></head><body><header><span class="eyebrow report-meta">Graphics Study Archive · 검증일 2026.10.19</span><h1 class="report-title">자동 촬영 도구의 오류 창 정리 검증</h1><p class="report-intro">순차 오류 창이 남는 상황을 재현하고, 기존 정리 코드의 동작을 확인했습니다.<br>정리 성공과 실패 보고를 구분해 5개 조건에서 검증했습니다.</p><dl class="verification-conditions"><dt>검증 조건</dt><dd>원본 정리 스크립트 · 합성 테스트 창 · 최대 정리 5회 · 안정 대기 3초</dd><dt>검증 구성</dt><dd>5개 조건 × 3회 = 총 15회 · 별도 기존 회귀 테스트 기록</dd></dl></header><nav class="report-index" aria-label="검증 항목 바로가기"><h2>검증 항목 바로가기</h2><div class="index-items"><a href="#video"><span>01</span>비교 재현 시연</a><a href="#target"><span>02</span>대상과 범위</a><a href="#results"><span>03</span>조건과 판정 결과</a><a href="#limits"><span>04</span>확인한 한계</a><a href="#prior"><span>05</span>기존 회귀 테스트</a><a href="#video-role"><span>06</span>영상의 역할</a><a href="#public-scope"><span>07</span>공개 자료 범위</a></div></nav><main><div class="notice">기존 정리 코드에 합성 테스트 창을 적용한 현재 검증입니다. 역사적 사건 당시의 실행 기록으로 소급하지 않습니다.</div><section id="video"><h2 class="section-title">오류 창 정리 전·후 비교 재현 시연</h2><p class="body-copy">기본 Windows 창과 MessageBox로 현상과 대응 순서를 재현한 영상이다. 실제 DLL 오류나 원본 정리 스크립트의 실행 영상이 아니며, 기능 검증 근거는 아래 테스트 로그와 창 상태이다.</p><video controls playsinline preload="metadata" aria-label="오류 창 정리 전후 비교 재현 시연"><source src="../media/capture-comparison.mp4" type="video/mp4"></source></video><p class="body-copy evidence-links"><a href="#results" class="evidence-link">15회 검증 결과로 이동</a> · <a href="../index.html" class="evidence-link">근거자료 목록</a></p></section><section id="target"><h2 class="section-title">대상과 범위</h2><p class="body-copy">commit <code>4ae56f4d37fc0ad019021a80e705e77f546ebb2b</code>의 원본 정리 스크립트를 변경 없이 실행했습니다. 호출용 래퍼와 테스트 창은 이번 검증을 위해 Codex가 작성했습니다. 본인은 검증 방향과 조건을 검토하고 실행을 요청했습니다.</p>
 <p class="body-copy evidence-links"><a href="https://github.com/Razria93/Graphics_Study_Archive/blob/4ae56f4d37fc0ad019021a80e705e77f546ebb2b/Docs/98_Tools/scripts/clear-example-error-windows.ps1" class="evidence-link">원본 정리 코드</a> · <a href="https://github.com/Razria93/Graphics_Study_Archive/blob/4ae56f4d37fc0ad019021a80e705e77f546ebb2b/Docs/98_Tools/scripts/example-error-window-utils.ps1" class="evidence-link">원본 후보 조회·종료 코드</a> · <a href="results.json" class="evidence-link">15회 판정 필드 JSON</a></p>
 <pre>TargetProcessName = ArchiveCaseFixture
