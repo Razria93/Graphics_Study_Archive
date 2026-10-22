@@ -1,0 +1,167 @@
+[
+  {
+    "case": "normal",
+    "trial": 1,
+    "durationSeconds": 4.25,
+    "exitCode": 0,
+    "remainingErrorWindows": 0,
+    "ordinaryWindowsRemaining": 1,
+    "quietStageTriggered": false,
+    "timedOut": false,
+    "passed": true
+  },
+  {
+    "case": "chain",
+    "trial": 1,
+    "durationSeconds": 19.32,
+    "exitCode": 0,
+    "remainingErrorWindows": 0,
+    "ordinaryWindowsRemaining": 0,
+    "quietStageTriggered": false,
+    "timedOut": false,
+    "passed": true
+  },
+  {
+    "case": "delayed",
+    "trial": 1,
+    "durationSeconds": 13.8,
+    "exitCode": 3,
+    "remainingErrorWindows": 1,
+    "ordinaryWindowsRemaining": 0,
+    "quietStageTriggered": true,
+    "timedOut": false,
+    "passed": true
+  },
+  {
+    "case": "refuse",
+    "trial": 1,
+    "durationSeconds": 9.24,
+    "exitCode": 3,
+    "remainingErrorWindows": 1,
+    "ordinaryWindowsRemaining": 0,
+    "quietStageTriggered": false,
+    "timedOut": false,
+    "passed": true
+  },
+  {
+    "case": "mixed",
+    "trial": 1,
+    "durationSeconds": 15.2,
+    "exitCode": 0,
+    "remainingErrorWindows": 0,
+    "ordinaryWindowsRemaining": 1,
+    "quietStageTriggered": false,
+    "timedOut": false,
+    "passed": true
+  },
+  {
+    "case": "normal",
+    "trial": 2,
+    "durationSeconds": 4.22,
+    "exitCode": 0,
+    "remainingErrorWindows": 0,
+    "ordinaryWindowsRemaining": 1,
+    "quietStageTriggered": false,
+    "timedOut": false,
+    "passed": true
+  },
+  {
+    "case": "chain",
+    "trial": 2,
+    "durationSeconds": 19.36,
+    "exitCode": 0,
+    "remainingErrorWindows": 0,
+    "ordinaryWindowsRemaining": 0,
+    "quietStageTriggered": false,
+    "timedOut": false,
+    "passed": true
+  },
+  {
+    "case": "delayed",
+    "trial": 2,
+    "durationSeconds": 13.87,
+    "exitCode": 3,
+    "remainingErrorWindows": 1,
+    "ordinaryWindowsRemaining": 0,
+    "quietStageTriggered": true,
+    "timedOut": false,
+    "passed": true
+  },
+  {
+    "case": "refuse",
+    "trial": 2,
+    "durationSeconds": 9.29,
+    "exitCode": 3,
+    "remainingErrorWindows": 1,
+    "ordinaryWindowsRemaining": 0,
+    "quietStageTriggered": false,
+    "timedOut": false,
+    "passed": true
+  },
+  {
+    "case": "mixed",
+    "trial": 2,
+    "durationSeconds": 14.87,
+    "exitCode": 0,
+    "remainingErrorWindows": 0,
+    "ordinaryWindowsRemaining": 1,
+    "quietStageTriggered": false,
+    "timedOut": false,
+    "passed": true
+  },
+  {
+    "case": "normal",
+    "trial": 3,
+    "durationSeconds": 4.13,
+    "exitCode": 0,
+    "remainingErrorWindows": 0,
+    "ordinaryWindowsRemaining": 1,
+    "quietStageTriggered": false,
+    "timedOut": false,
+    "passed": true
+  },
+  {
+    "case": "chain",
+    "trial": 3,
+    "durationSeconds": 18.96,
+    "exitCode": 0,
+    "remainingErrorWindows": 0,
+    "ordinaryWindowsRemaining": 0,
+    "quietStageTriggered": false,
+    "timedOut": false,
+    "passed": true
+  },
+  {
+    "case": "delayed",
+    "trial": 3,
+    "durationSeconds": 13.84,
+    "exitCode": 3,
+    "remainingErrorWindows": 1,
+    "ordinaryWindowsRemaining": 0,
+    "quietStageTriggered": true,
+    "timedOut": false,
+    "passed": true
+  },
+  {
+    "case": "refuse",
+    "trial": 3,
+    "durationSeconds": 9.39,
+    "exitCode": 3,
+    "remainingErrorWindows": 1,
+    "ordinaryWindowsRemaining": 0,
+    "quietStageTriggered": false,
+    "timedOut": false,
+    "passed": true
+  },
+  {
+    "case": "mixed",
+    "trial": 3,
+    "durationSeconds": 14.75,
+    "exitCode": 0,
+    "remainingErrorWindows": 0,
+    "ordinaryWindowsRemaining": 1,
+    "quietStageTriggered": false,
+    "timedOut": false,
+    "passed": true
+  }
+]

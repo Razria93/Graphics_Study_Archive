@@ -1,0 +1,152 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>오류 창 정리 · 실행 결과 발췌</title><style>body{margin:0;background:#edf1f5;color:#172d40;font:16px/1.75 "Malgun Gothic",sans-serif}main{max-width:1120px;margin:30px auto;padding:28px;background:white;border-radius:10px}h1,h2{color:#008d98}a{color:#075e98;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#edf3f7;padding:14px}table{display:block;overflow:auto;border-collapse:collapse}th,td{border:1px solid #dce4eb;padding:8px}.note{background:#fff7e7;padding:14px}video,img{max-width:100%}@media(max-width:700px){main{margin:10px;padding:18px}h1{font-size:27px}h2{font-size:22px}}</style><main><h1>오류 창 정리 · 실행 결과 발췌</h1><p class="note">기존 15회 실행 집계에서 판정에 필요한 필드만 발췌했다. 원시 로그 전체나 새 실행 결과가 아니다. passed는 기대 동작 충족 여부이며, 실패 감지 사례의 오류 정리 성공을 뜻하지 않는다.</p><h2 id="normal-1">normal · 1회</h2><pre>{
+  &quot;case&quot;: &quot;normal&quot;,
+  &quot;trial&quot;: 1,
+  &quot;durationSeconds&quot;: 4.25,
+  &quot;exitCode&quot;: 0,
+  &quot;remainingErrorWindows&quot;: 0,
+  &quot;ordinaryWindowsRemaining&quot;: 1,
+  &quot;quietStageTriggered&quot;: false,
+  &quot;timedOut&quot;: false,
+  &quot;passed&quot;: true
+}</pre><h2 id="chain-1">chain · 1회</h2><pre>{
+  &quot;case&quot;: &quot;chain&quot;,
+  &quot;trial&quot;: 1,
+  &quot;durationSeconds&quot;: 19.32,
+  &quot;exitCode&quot;: 0,
+  &quot;remainingErrorWindows&quot;: 0,
+  &quot;ordinaryWindowsRemaining&quot;: 0,
+  &quot;quietStageTriggered&quot;: false,
+  &quot;timedOut&quot;: false,
+  &quot;passed&quot;: true
+}</pre><h2 id="delayed-1">delayed · 1회</h2><pre>{
+  &quot;case&quot;: &quot;delayed&quot;,
+  &quot;trial&quot;: 1,
+  &quot;durationSeconds&quot;: 13.8,
+  &quot;exitCode&quot;: 3,
+  &quot;remainingErrorWindows&quot;: 1,
+  &quot;ordinaryWindowsRemaining&quot;: 0,
+  &quot;quietStageTriggered&quot;: true,
+  &quot;timedOut&quot;: false,
+  &quot;passed&quot;: true
+}</pre><h2 id="refuse-1">refuse · 1회</h2><pre>{
+  &quot;case&quot;: &quot;refuse&quot;,
+  &quot;trial&quot;: 1,
+  &quot;durationSeconds&quot;: 9.24,
+  &quot;exitCode&quot;: 3,
+  &quot;remainingErrorWindows&quot;: 1,
+  &quot;ordinaryWindowsRemaining&quot;: 0,
+  &quot;quietStageTriggered&quot;: false,
+  &quot;timedOut&quot;: false,
+  &quot;passed&quot;: true
+}</pre><h2 id="mixed-1">mixed · 1회</h2><pre>{
+  &quot;case&quot;: &quot;mixed&quot;,
+  &quot;trial&quot;: 1,
+  &quot;durationSeconds&quot;: 15.2,
+  &quot;exitCode&quot;: 0,
+  &quot;remainingErrorWindows&quot;: 0,
+  &quot;ordinaryWindowsRemaining&quot;: 1,
+  &quot;quietStageTriggered&quot;: false,
+  &quot;timedOut&quot;: false,
+  &quot;passed&quot;: true
+}</pre><h2 id="normal-2">normal · 2회</h2><pre>{
+  &quot;case&quot;: &quot;normal&quot;,
+  &quot;trial&quot;: 2,
+  &quot;durationSeconds&quot;: 4.22,
+  &quot;exitCode&quot;: 0,
+  &quot;remainingErrorWindows&quot;: 0,
+  &quot;ordinaryWindowsRemaining&quot;: 1,
+  &quot;quietStageTriggered&quot;: false,
+  &quot;timedOut&quot;: false,
+  &quot;passed&quot;: true
+}</pre><h2 id="chain-2">chain · 2회</h2><pre>{
+  &quot;case&quot;: &quot;chain&quot;,
+  &quot;trial&quot;: 2,
+  &quot;durationSeconds&quot;: 19.36,
+  &quot;exitCode&quot;: 0,
+  &quot;remainingErrorWindows&quot;: 0,
+  &quot;ordinaryWindowsRemaining&quot;: 0,
+  &quot;quietStageTriggered&quot;: false,
+  &quot;timedOut&quot;: false,
+  &quot;passed&quot;: true
+}</pre><h2 id="delayed-2">delayed · 2회</h2><pre>{
+  &quot;case&quot;: &quot;delayed&quot;,
+  &quot;trial&quot;: 2,
+  &quot;durationSeconds&quot;: 13.87,
+  &quot;exitCode&quot;: 3,
+  &quot;remainingErrorWindows&quot;: 1,
+  &quot;ordinaryWindowsRemaining&quot;: 0,
+  &quot;quietStageTriggered&quot;: true,
+  &quot;timedOut&quot;: false,
+  &quot;passed&quot;: true
+}</pre><h2 id="refuse-2">refuse · 2회</h2><pre>{
+  &quot;case&quot;: &quot;refuse&quot;,
+  &quot;trial&quot;: 2,
+  &quot;durationSeconds&quot;: 9.29,
+  &quot;exitCode&quot;: 3,
+  &quot;remainingErrorWindows&quot;: 1,
+  &quot;ordinaryWindowsRemaining&quot;: 0,
+  &quot;quietStageTriggered&quot;: false,
+  &quot;timedOut&quot;: false,
+  &quot;passed&quot;: true
+}</pre><h2 id="mixed-2">mixed · 2회</h2><pre>{
+  &quot;case&quot;: &quot;mixed&quot;,
+  &quot;trial&quot;: 2,
+  &quot;durationSeconds&quot;: 14.87,
+  &quot;exitCode&quot;: 0,
+  &quot;remainingErrorWindows&quot;: 0,
+  &quot;ordinaryWindowsRemaining&quot;: 1,
+  &quot;quietStageTriggered&quot;: false,
+  &quot;timedOut&quot;: false,
+  &quot;passed&quot;: true
+}</pre><h2 id="normal-3">normal · 3회</h2><pre>{
+  &quot;case&quot;: &quot;normal&quot;,
+  &quot;trial&quot;: 3,
+  &quot;durationSeconds&quot;: 4.13,
+  &quot;exitCode&quot;: 0,
+  &quot;remainingErrorWindows&quot;: 0,
+  &quot;ordinaryWindowsRemaining&quot;: 1,
+  &quot;quietStageTriggered&quot;: false,
+  &quot;timedOut&quot;: false,
+  &quot;passed&quot;: true
+}</pre><h2 id="chain-3">chain · 3회</h2><pre>{
+  &quot;case&quot;: &quot;chain&quot;,
+  &quot;trial&quot;: 3,
+  &quot;durationSeconds&quot;: 18.96,
+  &quot;exitCode&quot;: 0,
+  &quot;remainingErrorWindows&quot;: 0,
+  &quot;ordinaryWindowsRemaining&quot;: 0,
+  &quot;quietStageTriggered&quot;: false,
+  &quot;timedOut&quot;: false,
+  &quot;passed&quot;: true
+}</pre><h2 id="delayed-3">delayed · 3회</h2><pre>{
+  &quot;case&quot;: &quot;delayed&quot;,
+  &quot;trial&quot;: 3,
+  &quot;durationSeconds&quot;: 13.84,
+  &quot;exitCode&quot;: 3,
+  &quot;remainingErrorWindows&quot;: 1,
+  &quot;ordinaryWindowsRemaining&quot;: 0,
+  &quot;quietStageTriggered&quot;: true,
+  &quot;timedOut&quot;: false,
+  &quot;passed&quot;: true
+}</pre><h2 id="refuse-3">refuse · 3회</h2><pre>{
+  &quot;case&quot;: &quot;refuse&quot;,
+  &quot;trial&quot;: 3,
+  &quot;durationSeconds&quot;: 9.39,
+  &quot;exitCode&quot;: 3,
+  &quot;remainingErrorWindows&quot;: 1,
+  &quot;ordinaryWindowsRemaining&quot;: 0,
+  &quot;quietStageTriggered&quot;: false,
+  &quot;timedOut&quot;: false,
+  &quot;passed&quot;: true
+}</pre><h2 id="mixed-3">mixed · 3회</h2><pre>{
+  &quot;case&quot;: &quot;mixed&quot;,
+  &quot;trial&quot;: 3,
+  &quot;durationSeconds&quot;: 14.75,
+  &quot;exitCode&quot;: 0,
+  &quot;remainingErrorWindows&quot;: 0,
+  &quot;ordinaryWindowsRemaining&quot;: 1,
+  &quot;quietStageTriggered&quot;: false,
+  &quot;timedOut&quot;: false,
+  &quot;passed&quot;: true
+}</pre><h2 id="prior">별도 대기 한도 검사 · 결과 문구 발췌</h2><p>5초 원본은 실패, 대기 한도만 15초로 늘린 사본은 통과했다. 실패 원인은 확정하지 않았고 원본 전체 통과로 표현하지 않는다.</p><pre>5초 원본: Quiet wait failed after fixture dialog drain. Expected 0, got 2.
+15초 사본: PASS: capture/run state rehearsal passed.</pre><p><a href="index.html#results">검증 보고서</a></p></main></html>
