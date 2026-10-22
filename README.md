@@ -12,12 +12,12 @@ DirectX11 기반 그래픽스 학습 코드와 일부 개인 확장 구현을 �
 
 ## 이 저장소에서 볼 수 있는 경험
 
-| 주제 | 핵심 내용 | 바로 보기 |
-| --- | --- | --- |
-| AI 아카이브 자동화 | 정리 기준 설정, 대표 예제 검토, 후속 예제 확대와 산출물 검수 | [진행 과정](#automation) |
-| 자동 촬영 도구 보완 | 잔존 오류 창으로 대응이 반복되는 상황과 정리 완료 판별 | [문제·해결·검증](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/capture/index.html) |
-| Assimp 호환 문제 | Pivot 보존 설정과 기존 로더의 구조 불일치로 발생한 캐릭터 형태 붕괴 | [옵션 비교·검증](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/assimp/index.html) |
-| 그래픽스 학습·구현 | 렌더링 기초부터 재질·후처리·애니메이션·GPU 연산까지 | [학습 범위](#learning) · [주제별 포트폴리오](PORTFOLIO.md#graphics) |
+| 경험 구분 | 대표 사례 | 핵심 내용 | 바로 보기 |
+| --- | --- | --- | --- |
+| **AI 활용** | 아카이브 구축 자동화 | 작업 규격 설정, 대표 예제 검토와 자동화 확대·검수 | [진행 과정](#automation) |
+| **문제 해결 01** | 자동 촬영 도구 보완 | 오류 대응 반복 원인 확인과 정리 완료 판별 보완 | [문제·해결·검증](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/capture/index.html) |
+| **문제 해결 02** | Assimp 호환 문제 | 임포트 구조 불일치 확인과 Pivot 보존 설정 보정 | [옵션 비교·검증](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/assimp/index.html) |
+| **그래픽스 학습·구현** | 렌더링과 GPU 연산 | 렌더링 기초·재질·후처리·애니메이션·GPU 연산 | [학습 범위](#learning) · [주제별 포트폴리오](PORTFOLIO.md#graphics) |
 
 <a id="automation"></a>
 
