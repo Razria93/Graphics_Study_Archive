@@ -4,7 +4,7 @@
 
 DirectX11 기반 그래픽스 학습 코드와 일부 개인 확장 구현을 정리한 프로젝트다. 코드 주석과 옵시디언에 분산된 학습 기록을 예제 설명·실행 결과·검증 자료로 구성하고, 반복되는 정리·실행·기록 작업을 Codex로 자동화한다.
 
-[포트폴리오 안내](PORTFOLIO.md) · [포트폴리오 PDF · 23쪽](https://razria93.github.io/Graphics_Study_Archive/portfolio/files/graphics-portfolio-20261022-v3.pdf) · [영상·검증 보고서](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/) · [실행 안내](#quickstart)
+[포트폴리오 안내](PORTFOLIO.md) · [포트폴리오 PDF · 25쪽](https://razria93.github.io/Graphics_Study_Archive/portfolio/files/graphics-portfolio-20261022-v4.pdf) · [영상·검증 보고서](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/) · [실행 안내](#quickstart)
 
 [![Bloom 예제의 처리 결과](Docs/_assets/captures/part1_chapter01-02_02_bloom_result.png)](Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)
 

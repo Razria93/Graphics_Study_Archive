@@ -1,20 +1,20 @@
 # 그래픽스 학습·구현과 AI 아카이브 자동화 포트폴리오
 
-그래픽스 학습 기록을 설명 가능한 코드·문서·실행 자료로 정리하고, 그 반복 작업을 AI로 확장한 경험을 소개한다. 이 문서는 **23쪽 포트폴리오와 저장소의 상세 근거를 연결하는 안내**다.
+그래픽스 학습 기록을 설명 가능한 코드·문서·실행 자료로 정리하고, 그 반복 작업을 AI로 확장한 경험을 소개한다. 이 문서는 **25쪽 포트폴리오와 저장소의 상세 근거를 연결하는 안내**다.
 
-[공개 PDF 열기 · 2026-10-22](https://razria93.github.io/Graphics_Study_Archive/portfolio/files/graphics-portfolio-20261022-v3.pdf) · [저장소 소개](README.md) · [비교 영상·검증 보고서](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/)
+[공개 PDF 열기 · 2026-10-22](https://razria93.github.io/Graphics_Study_Archive/portfolio/files/graphics-portfolio-20261022-v4.pdf) · [저장소 소개](README.md) · [비교 영상·검증 보고서](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/)
 
 ## 읽는 순서
 
 | 포트폴리오 구간 | 살펴볼 내용 | 관련 자료 |
 | --- | --- | --- |
-| 소개·색인 (1–2쪽) | 프로젝트 목적과 전체 구성 | [README](README.md) |
-| AI 아카이브 자동화 (3쪽) | 공통 규격, 대표 예제 검토, 작업 확대와 검수 | [적용 기록](Docs/04_WorkLogs/reviews/Part1_Chapter01-02.md) · [촬영 도구](Docs/98_Tools/example-window-recording.md) |
-| 문제 해결 01 (4–6쪽) | 자동 촬영 중 오류 대응 반복, 정리 완료 판별과 실패 조건 | [영상·검증 보고서](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/capture/index.html) |
-| 문제 해결 02 (7–9쪽) | Assimp의 FBX 구조 호환과 캐릭터 형태 복원 | [영상·검증 보고서](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/assimp/index.html) |
-| 그래픽스 학습·구현 (10–23쪽) | 학습 기반과 13개 상세 주제의 원리·구현·결과 | [아래 주제별 안내](#graphics) |
+| 표지·개요·색인·소개 (1–4쪽) | 프로젝트 목적과 전체 구성 | [README](README.md) |
+| AI 아카이브 자동화 (5쪽) | 공통 규격, 대표 예제 검토, 작업 확대와 검수 | [적용 기록](Docs/04_WorkLogs/reviews/Part1_Chapter01-02.md) · [촬영 도구](Docs/98_Tools/example-window-recording.md) |
+| 문제 해결 01 (6–8쪽) | 자동 촬영 중 오류 대응 반복, 정리 완료 판별과 실패 조건 | [영상·검증 보고서](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/capture/index.html) |
+| 문제 해결 02 (9–11쪽) | Assimp의 FBX 구조 호환과 캐릭터 형태 복원 | [영상·검증 보고서](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/assimp/index.html) |
+| 그래픽스 학습·구현 (12–25쪽) | 학습 기반과 13개 상세 주제의 원리·구현·결과 | [아래 주제별 안내](#graphics) |
 
-PDF의 2쪽 색인에서 각 본문으로 이동하고, 상세 페이지의 영상·문서·코드 링크로 근거를 확인한다. 그래픽스 내용이 우선이면 10쪽의 학습 범위부터 원하는 주제로 이동한다.
+PDF의 3쪽 색인에서 각 본문으로 이동하고, 상세 페이지의 영상·문서·코드 링크로 근거를 확인한다. 그래픽스 내용이 우선이면 12쪽의 학습 범위부터 원하는 주제로 이동한다.
 
 ## 자동화 과정과 작업 기여
 
@@ -51,23 +51,23 @@ PDF의 2쪽 색인에서 각 본문으로 이동하고, 상세 페이지의 영�
 
 ## 그래픽스 학습·구현 주제별 안내
 
-10쪽은 교재·강의 기반 학습, 일부 개인 확장과 이후 AI를 활용한 정리 범위를 설명한다. 아래 문서는 코드·실행 결과·한계를 연결하며, 실행 영상은 해당 문서에서 제공하는 경우 함께 확인할 수 있다.
+12쪽은 교재·강의 기반 학습, 일부 개인 확장과 이후 AI를 활용한 정리 범위를 설명한다. 아래 문서는 코드·실행 결과·한계를 연결하며, 실행 영상은 해당 문서에서 제공하는 경우 함께 확인할 수 있다.
 
 | 번호·페이지 | 주제 | 예제 설명·실행 근거 |
 | --- | --- | --- |
-| 01 · 11쪽 | CPU Ray Tracing의 반사·굴절 | [반사](Docs/03_Demos/Part1_Chapter03/03_12_Reflection.md) · [굴절](Docs/03_Demos/Part1_Chapter03/03_13_Transparency.md) |
-| 02 · 12쪽 | 원근 투영과 UV 보간 보정 | [원근 투영](Docs/03_Demos/Part2_Chapter04/08_PerspectiveProjection.md) |
-| 03 · 13쪽 | DirectX11의 데이터·셰이더 연결 | [Texturing LightingSelf](Docs/03_Demos/Part2_Chapter05-08/06_TexturingLightingSelf.md) |
-| 04 · 14쪽 | Normal Mapping의 법선 변환 | [Normal Mapping](Docs/03_Demos/Part3_Chapter10-13/11_02_NormalMapping.md) |
-| 05 · 15쪽 | Height Mapping의 정점 변위 | [Height Mapping](Docs/03_Demos/Part3_Chapter10-13/11_03_HeightMapping.md) |
-| 06 · 16쪽 | Tessellation의 분할 밀도 제어 | [Tessellation](Docs/03_Demos/Part3_Chapter10-13/10_05_Tessellation.md) |
-| 07 · 17쪽 | PBR·IBL의 재질 입력과 조명 계산 | [Unreal PBR](Docs/03_Demos/Part3_Chapter10-13/12_01_UnrealPBR.md) |
-| 08 · 18쪽 | HDR·Bloom의 후처리 흐름 | [HDR Pipeline](Docs/03_Demos/Part3_Chapter10-13/11_05_HDRPipeline.md) |
-| 09 · 19쪽 | 화면 입력과 3D 선택·조작 | [Virtual Trackball](Docs/03_Demos/Part3_Chapter09/09_05_VirtualTrackball.md) |
-| 10 · 20쪽 | 스켈레탈 애니메이션의 변환 흐름 | [Skeletal Animation](Docs/03_Demos/Part4_Chapter14-20/17_01_SkeletalAnimation.md) · [실행 영상](https://razria93.github.io/Graphics_Study_Archive/portfolio-demos/#skeletal-animation) |
-| 11 · 21쪽 | GPU Blur의 구현 경로와 리소스 교대 | [Compute Shader Blur](Docs/03_Demos/Part4_Chapter14-20/14_02_Blur.md) |
-| 12 · 22쪽 | GPU 연기의 시뮬레이션과 볼륨 렌더링 | [Realtime Smoke](Docs/03_Demos/Part4_Chapter14-20/16_04_RealtimeSmoke.md) · [실행 영상](https://razria93.github.io/Graphics_Study_Archive/portfolio-demos/#realtime-smoke) |
-| 13 · 23쪽 | 잔디 인스턴싱과 셰이더 변형 | [Grass](Docs/03_Demos/Part4_Chapter14-20/18_02_Grass.md) · [실행 영상](https://razria93.github.io/Graphics_Study_Archive/portfolio-demos/#grass) |
+| 01 · 13쪽 | CPU Ray Tracing의 반사·굴절 | [반사](Docs/03_Demos/Part1_Chapter03/03_12_Reflection.md) · [굴절](Docs/03_Demos/Part1_Chapter03/03_13_Transparency.md) |
+| 02 · 14쪽 | 원근 투영과 UV 보간 보정 | [원근 투영](Docs/03_Demos/Part2_Chapter04/08_PerspectiveProjection.md) |
+| 03 · 15쪽 | DirectX11의 데이터·셰이더 연결 | [Texturing LightingSelf](Docs/03_Demos/Part2_Chapter05-08/06_TexturingLightingSelf.md) |
+| 04 · 16쪽 | Normal Mapping의 법선 변환 | [Normal Mapping](Docs/03_Demos/Part3_Chapter10-13/11_02_NormalMapping.md) |
+| 05 · 17쪽 | Height Mapping의 정점 변위 | [Height Mapping](Docs/03_Demos/Part3_Chapter10-13/11_03_HeightMapping.md) |
+| 06 · 18쪽 | Tessellation의 분할 밀도 제어 | [Tessellation](Docs/03_Demos/Part3_Chapter10-13/10_05_Tessellation.md) |
+| 07 · 19쪽 | PBR·IBL의 재질 입력과 조명 계산 | [Unreal PBR](Docs/03_Demos/Part3_Chapter10-13/12_01_UnrealPBR.md) |
+| 08 · 20쪽 | HDR·Bloom의 후처리 흐름 | [HDR Pipeline](Docs/03_Demos/Part3_Chapter10-13/11_05_HDRPipeline.md) |
+| 09 · 21쪽 | 화면 입력과 3D 선택·조작 | [Virtual Trackball](Docs/03_Demos/Part3_Chapter09/09_05_VirtualTrackball.md) |
+| 10 · 22쪽 | 스켈레탈 애니메이션의 변환 흐름 | [Skeletal Animation](Docs/03_Demos/Part4_Chapter14-20/17_01_SkeletalAnimation.md) · [실행 영상](https://razria93.github.io/Graphics_Study_Archive/portfolio-demos/#skeletal-animation) |
+| 11 · 23쪽 | GPU Blur의 구현 경로와 리소스 교대 | [Compute Shader Blur](Docs/03_Demos/Part4_Chapter14-20/14_02_Blur.md) |
+| 12 · 24쪽 | GPU 연기의 시뮬레이션과 볼륨 렌더링 | [Realtime Smoke](Docs/03_Demos/Part4_Chapter14-20/16_04_RealtimeSmoke.md) · [실행 영상](https://razria93.github.io/Graphics_Study_Archive/portfolio-demos/#realtime-smoke) |
+| 13 · 25쪽 | 잔디 인스턴싱과 셰이더 변형 | [Grass](Docs/03_Demos/Part4_Chapter14-20/18_02_Grass.md) · [실행 영상](https://razria93.github.io/Graphics_Study_Archive/portfolio-demos/#grass) |
 
 개별 기능의 학습·개인 확장 범위는 예제 README와 [학습 출처 안내](NOTICE.md)를 따른다. 포트폴리오의 문서화·자료 정리를 기존 학습 코드 전체의 독자 구현으로 해석하지 않는다.
 
@@ -75,8 +75,8 @@ PDF의 2쪽 색인에서 각 본문으로 이동하고, 상세 페이지의 영�
 
 ## 공개본과 갱신 기준
 
-- **현재 공개본:** 2026-10-22 v3, 23쪽. 실행 영상 링크의 표기와 위치 정렬까지 반영한 최종 제출용 PDF와 동일한 파일이다.
-- **파일명:** `graphics-portfolio-20261022-v3.pdf`. [GitHub Pages에서 열기](https://razria93.github.io/Graphics_Study_Archive/portfolio/files/graphics-portfolio-20261022-v3.pdf)
+- **현재 공개본:** 2026-10-22 v4, 25쪽. 표지·프로젝트 개요 추가와 PROFILE·CONTACT 통일을 반영한 최종 제출용 PDF와 동일한 파일이다.
+- **파일명:** `graphics-portfolio-20261022-v4.pdf`. [GitHub Pages에서 열기](https://razria93.github.io/Graphics_Study_Archive/portfolio/files/graphics-portfolio-20261022-v4.pdf)
 - **원본 보존:** 기존 제출용 PPTX·PDF와 공개 PDF 주소는 보존한다. 이번 보완본은 별도 파일로 제공한다.
 - **갱신 방식:** 내용 변경 시 새 버전 PDF를 추가하고 이 안내의 날짜·페이지 범위·대표 링크를 함께 갱신한다. 기존 버전 파일과 주소는 보존한다.
 - **문서 기준:** 포트폴리오는 해당 날짜의 요약본이다. 예제 구현·검증의 상세 내용은 연결된 저장소 문서를 기준으로 확인한다.
