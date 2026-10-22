@@ -14,10 +14,10 @@ DirectX11 기반 그래픽스 학습 코드와 일부 개인 확장 구현을 �
 
 | 경험 구분 | 대표 사례 | 핵심 내용 | 바로 보기 |
 | --- | --- | --- | --- |
-| **AI 활용** | 아카이브 구축<br>자동화 | 작업 규격·대표 예제 검토<br>자동화 확대·검수 | [진행 과정](#automation) |
-| **문제 해결 01** | 자동 촬영<br>도구 보완 | 오류 대응 반복 원인 확인<br>정리 완료 판별 보완 | [문제·해결·검증](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/capture/index.html) |
-| **문제 해결 02** | Assimp<br>호환 문제 | 임포트 구조 불일치 확인<br>Pivot 보존 설정 보정 | [옵션 비교·검증](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/assimp/index.html) |
-| **그래픽스<br>학습·구현** | 렌더링과<br>GPU 연산 | 렌더링 기초·재질·후처리<br>애니메이션·GPU 연산 | [학습 범위](#learning)<br>[주제별 포트폴리오](PORTFOLIO.md#graphics) |
+| **AI 활용** | 아카이브 구축 자동화 | 작업 규격·대표 예제 검토<br>자동화 확대·검수 | [진행 과정](#automation) |
+| **문제 해결 01** | 자동 촬영 도구 보완 | 오류 대응 반복 원인 확인<br>정리 완료 판별 보완 | [문제·해결·검증](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/capture/index.html) |
+| **문제 해결 02** | Assimp 호환 문제 | 임포트 구조 불일치 확인<br>Pivot 보존 설정 보정 | [옵션 비교·검증](https://razria93.github.io/Graphics_Study_Archive/portfolio-evidence/assimp/index.html) |
+| **그래픽스<br>학습·구현** | 렌더링과 GPU 연산 | 렌더링 기초·재질·후처리<br>애니메이션·GPU 연산 | [학습 범위](#learning)<br>[주제별 포트폴리오](PORTFOLIO.md#graphics) |
 
 <a id="automation"></a>
 
