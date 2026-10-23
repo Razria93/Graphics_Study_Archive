@@ -1,0 +1,18 @@
+/* Shared portfolio navigation: aligned with the Plugin Portfolio evidence pages. */
+.portfolio-actions{max-width:1120px;margin:22px auto;display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:0}
+.portfolio-actions a{padding:7px 14px;background:#fff;border-radius:8px;text-decoration:none;color:#075e98;font-size:16px;line-height:1.6;word-break:keep-all;overflow-wrap:normal}
+nav.return-links{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:baseline;border-top:1px solid #dce4eb;padding:14px 0 0;margin:18px 0 0;max-width:none;font-size:14px}
+nav.return-links a{padding:0;border-radius:0;background:transparent;color:#075e98;font-size:14px;line-height:1.8;text-decoration:underline;word-break:keep-all;overflow-wrap:normal}
+.portfolio-bottom{max-width:1120px;margin:24px auto;padding:0}
+.navigation-summary{font-size:16px;line-height:1.8;color:#5d7284}
+header p.navigation-summary{color:#d9e5ec}
+header .note{color:#172d40}
+.navigation-header{box-sizing:border-box;background:#102333;padding:40px max(calc((100% - 1120px)/2),28px) 32px;color:#f4f8fb}
+.navigation-header h1{color:#f4f8fb;font-size:38px;line-height:1.35;margin:14px 0}
+.navigation-header .eyebrow{font-size:13px;color:#85dcd4}
+.navigation-header p{margin:12px 0;line-height:1.8}
+body p,body li,body h1,body h2,body h3,body a{word-break:keep-all;overflow-wrap:normal}
+body pre,body code,body kbd,body samp{word-break:normal;overflow-wrap:anywhere}
+a:focus-visible{outline:3px solid #138b88;outline-offset:3px}
+@media(max-width:800px){.portfolio-actions{margin:18px 12px}.portfolio-actions a{max-width:100%}.portfolio-bottom{margin:18px 12px}nav.return-links{gap:10px 20px}.navigation-header{padding:36px 20px 28px}.navigation-header h1{font-size:29px}}
+@media print{.portfolio-actions,.portfolio-bottom,nav.return-links{display:none}}
