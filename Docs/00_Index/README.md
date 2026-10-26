@@ -6,7 +6,7 @@
 
 ## 찾는 자료로 바로 이동
 
-처음 방문했다면 [전체 예제·실행 결과](examples.md)에서 관심 있는 장면이나 주제를 고른다. 예제별 Demo에는 결과 이미지, 입력과 출력, 구현 흐름, 원본 코드와 검증 기록이 연결되어 있다.
+처음 방문했다면 전체 예제·실행 결과 목록에서 관심 있는 장면이나 주제를 고른다. 예제별 Demo에는 결과 이미지, 입력과 출력, 구현 흐름, 원본 코드와 검증 기록이 연결되어 있다.
 
 | 찾는 내용 | 바로 가기 | 확인할 내용 |
 | --- | --- | --- |
@@ -15,7 +15,7 @@
 | 실행 조건과 검증 범위 | [검증 기록](../02_Verification/README.md) | Debug·Release 빌드·실행, 촬영 상태, 알려진 이슈 |
 | 문서화·자동화 과정 | [대표 예제 검토](../04_WorkLogs/reviews/Part1_Chapter01-02.md) · [리뷰 개선 기록](../04_WorkLogs/reviews/review-feedback-log.md) | 파일럿 적용과 문제를 회귀 검사로 남긴 과정 |
 | 촬영·문서 검사 도구 | [도구 안내](../98_Tools/README.md) · [검사 기준](../98_Tools/validation-tools.md) | 반복 촬영 도구와 문서 검사기의 역할·한계 |
-| 공개 데모와 작업 진행 | [전체 예제·Demo 안내](examples.md) · [GitHub 진행판](https://github.com/Razria93/Graphics_Study_Archive/issues/7) | 챕터별 공개 자료와 작업 기록 |
+| 공개 자료·작업 진행 | [GitHub 진행판](https://github.com/Razria93/Graphics_Study_Archive/issues/7) | 챕터별 공개 자료와 작업 기록 |
 
 이미지·영상·stdout 기록은 예제에 따라 다르다. 검증 결과는 각 기록의 시점과 조건을 따르며, 문서 검사 통과를 실제 실행 성공이나 현재 전체 재검증으로 해석하지 않는다.
 

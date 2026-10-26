@@ -152,8 +152,8 @@ Compute Shader로 3차원 속도장·밀도장을 갱신하고, 밀도 텍스처
 
 | 사례 | 핵심 결과 | 자료 | 영상 |
 | --- | --- | --- | --- |
-| 자동 촬영 도구<br>오류 창 정리 | 이전 오류 창과 새 실행 결과의 혼재에 대응.<br>오류 창 정리 완료와 실패 감지를 구분 | [테스트 결과·한계](https://razria93.github.io/site/details/Graphics_Study_Archive/portfolio-evidence/capture/index.html#results)<br>[검증 조건](#자동-촬영-도구) | [오류 창 정리<br>비교 재현](https://razria93.github.io/site/details/Graphics_Study_Archive/portfolio-evidence/capture/index.html#video) |
-| Assimp<br>구조 호환 | Pivot 보조 노드·채널 구조를 로더 처리 방식에 맞춤.<br>동일 자산·Assimp 버전에서 옵션 전후 비교 | [구조 검사 결과](https://razria93.github.io/site/details/Graphics_Study_Archive/portfolio-evidence/assimp/index.html#case-3)<br>[검증 조건](#assimp-구조-호환) | [옵션 적용 전후<br>보행 비교](https://razria93.github.io/site/details/Graphics_Study_Archive/portfolio-evidence/assimp/index.html#comparison-video) |
+| 자동 촬영 도구<br>오류 창 정리 | 이전 오류 창과 새 실행 결과의 혼재에 대응.<br>오류 창 정리 완료와 실패 감지를 구분 | [PDF 6–8쪽](https://razria93.github.io/files/pdf/graphics-review.pdf#page=6)<br>[조건·한계](#자동-촬영-도구) | [오류 창 정리<br>재현 영상](https://razria93.github.io/site/details/Graphics_Study_Archive/portfolio-evidence/capture/index.html#video) |
+| Assimp<br>구조 호환 | Pivot 보조 노드·채널 구조를 로더 처리 방식에 맞춤.<br>동일 자산·Assimp 버전에서 옵션 전후 비교 | [PDF 9–11쪽](https://razria93.github.io/files/pdf/graphics-review.pdf#page=9)<br>[조건·한계](#assimp-구조-호환) | [보행 비교<br>영상](https://razria93.github.io/site/details/Graphics_Study_Archive/portfolio-evidence/assimp/index.html#comparison-video) |
 
 - **촬영 도구:** 실패 감지는 오류 창 정리 성공과 다릅니다. 실제 DLL 복구·Clean/Rebuild·원래 촬영 재개까지 확인한 결과는 아닙니다.
 - **Assimp:** 초기 자세 보완은 별도 재현 사본 양쪽에 동일하게 적용했으며 원본 미반영입니다. 실제 재생 비교는 보행 클립에 한정합니다.
@@ -172,19 +172,21 @@ Compute Shader로 3차원 속도장·밀도장을 갱신하고, 밀도 텍스처
 - **별도 회귀 테스트:** 완료 대기 한도 5초의 원본이 실패하고 한도만 15초로 늘린 사본이 통과했으나, 실패 원인은 확정하지 못했습니다.
 - **확인하지 않은 범위:** 실제 DLL 복구·Clean/Rebuild·원래 촬영 재개를 검증한 결과로 표현하지 않습니다.
 
+[테스트 결과·한계](https://razria93.github.io/site/details/Graphics_Study_Archive/portfolio-evidence/capture/index.html#results)
+
 <a id="02--assimp--임포트-구조를-로더의-처리-방식에-맞춤"></a>
 
 ### Assimp 구조 호환
 
 Pivot 보존으로 생성되는 보조 노드와 애니메이션 채널 구조가 기존 로더의 처리 방식과 맞지 않아 캐릭터 형태가 무너지는 사례입니다. 동일한 자산과 Assimp 버전에서 옵션 적용 전후의 구조와 보행 결과를 비교합니다.
 
-[당시 기록과 이번 작업 구분](https://razria93.github.io/site/details/Graphics_Study_Archive/portfolio-evidence/assimp/index.html#case-4)
-
 - **당시 확인:** 당시 수정 결과는 본인이 직접 실행해 확인했습니다.
 - **이번 비교 조건:** 별도 재현 사본에서 Codex가 초기 자세 보완을 양쪽에 동일하게 적용하고 Pivot 옵션을 바꿔 수행했습니다.
 - **원본 반영 여부:** 초기 자세 보완은 원본에 반영하지 않았습니다.
 - **확인 범위:** 구조 검사는 5개 클립·실제 재생 비교는 보행 클립에 한정합니다.
 - **미검증 범위:** 다른 클립 전체 재생·장시간 실행·임의 자산은 미검증입니다.
+
+[구조 검사 결과](https://razria93.github.io/site/details/Graphics_Study_Archive/portfolio-evidence/assimp/index.html#case-3) · [당시 기록과 이번 작업 구분](https://razria93.github.io/site/details/Graphics_Study_Archive/portfolio-evidence/assimp/index.html#case-4)
 
 ## 관련 자료
 
@@ -245,10 +247,10 @@ git clone https://github.com/Razria93/Graphics_Study_Archive.git
 
 | 경로 | 역할 |
 | --- | --- |
-| [Part1_Chapter01–02](Part1_Chapter01-02/README.md) · [03](Part1_Chapter03/README.md) | DirectX11 기초·CPU Ray Tracing 예제 |
-| [Part2_Chapter04](Part2_Chapter04/README.md) · [05–08](Part2_Chapter05-08/README.md) | 래스터화·변환·조명·렌더링 파이프라인 예제 |
-| [Part3_Chapter09](Part3_Chapter09/README.md) · [10–13](Part3_Chapter10-13/README.md) | 조작·재질·HDR·그림자 예제 |
-| [Part4_Chapter14–20](Part4_Chapter14-20/README.md) | GPU 연산·시뮬레이션·애니메이션 예제 |
+| [Part1_Chapter01-02](Part1_Chapter01-02/README.md)<br>[Part1_Chapter03](Part1_Chapter03/README.md) | DirectX11 기초·CPU Ray Tracing 예제 |
+| [Part2_Chapter04](Part2_Chapter04/README.md)<br>[Part2_Chapter05-08](Part2_Chapter05-08/README.md) | 래스터화·변환·조명·렌더링 파이프라인 예제 |
+| [Part3_Chapter09](Part3_Chapter09/README.md)<br>[Part3_Chapter10-13](Part3_Chapter10-13/README.md) | 조작·재질·HDR·그림자 예제 |
+| [Part4_Chapter14-20](Part4_Chapter14-20/README.md) | GPU 연산·시뮬레이션·애니메이션 예제 |
 | [Docs/00_Index](Docs/00_Index/README.md) | 전체 예제·개념·실행 결과·검증의 진입점 |
 | [Docs/03_Demos](Docs/03_Demos/) | 실행 화면·입력·구현 흐름·결과 해석 |
 | [Docs/02_Verification](Docs/02_Verification/) | 빌드·실행 검증과 알려진 한계 |
