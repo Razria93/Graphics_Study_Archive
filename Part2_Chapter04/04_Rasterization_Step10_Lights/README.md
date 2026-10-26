@@ -1,8 +1,6 @@
 # Step10 Lights
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -76,6 +74,4 @@ Directional Light는 저장된 진행 방향의 반대를 surface-to-light vecto
 - [Chapter README](../README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

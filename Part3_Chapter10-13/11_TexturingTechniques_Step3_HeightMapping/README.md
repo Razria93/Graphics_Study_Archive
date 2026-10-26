@@ -1,8 +1,6 @@
 # Chapter11 Step3 HeightMapping
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -56,6 +54,4 @@ Normal mapping의 조명 변화에 더해 sphere 외곽선 자체가 height text
 - [다음 단계](../11_TexturingTechniques_Step4_HDRI/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

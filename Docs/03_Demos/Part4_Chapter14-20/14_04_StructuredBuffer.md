@@ -1,8 +1,6 @@
 # Chapter14 Ex1404 StructuredBuffer Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -67,6 +65,4 @@ StructuredBuffer particle data를 compute shader에서 갱신하고 vertex buffe
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
-<!-- portfolio-navigation:end -->

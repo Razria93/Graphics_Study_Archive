@@ -1,8 +1,6 @@
 # Step10 Texturing
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -80,6 +78,4 @@ Square의 네 vertex는 image의 좌상단부터 시계 방향으로 `(0,0)`, `(
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

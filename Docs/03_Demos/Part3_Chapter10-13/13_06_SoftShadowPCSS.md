@@ -1,8 +1,6 @@
 # Chapter13 Step6 SoftShadowPCSS Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -67,6 +65,4 @@ Hard shadow, fixed-kernel PCF와 variable penumbra PCSS를 한 화면에서 비�
 - [다음 Demo](13_07_Halo.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->

@@ -1,8 +1,6 @@
 # Chapter14 Ex1403 MatVecMult Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -75,6 +73,4 @@ ExitCode: 0
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
-<!-- portfolio-navigation:end -->

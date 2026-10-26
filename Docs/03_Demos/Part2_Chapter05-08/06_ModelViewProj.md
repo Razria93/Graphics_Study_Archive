@@ -1,8 +1,6 @@
 # Chapter06 Step3 ModelViewProj Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -165,6 +163,4 @@ Local selected video는 Model rotation Y만 `0.000 → 0.785`로 바꾼다. 7.27
 - [Demo Index](demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
-<!-- portfolio-navigation:end -->

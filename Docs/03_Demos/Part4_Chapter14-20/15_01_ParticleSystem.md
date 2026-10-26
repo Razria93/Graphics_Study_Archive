@@ -1,8 +1,6 @@
 # Chapter15 Ex1501 ParticleSystem Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -68,6 +66,4 @@ CPU에서 particle 생명주기와 충돌을 갱신하고 structured buffer spri
 - [Demo Index](demo-index.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
-<!-- portfolio-navigation:end -->

@@ -1,8 +1,6 @@
 # Chapter05 Step4 Lights(SimpleMath) Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -153,6 +151,4 @@ Capture는 convention 변환과 inverse-transpose 계산을 단독으로 증명�
 - [Demo Index](demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
-<!-- portfolio-navigation:end -->

@@ -1,8 +1,6 @@
 # Step1 Triangle Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -112,6 +110,4 @@ Triangle 꼭짓점에 가까운 영역은 해당 vertex color의 비중이 높�
 - [Demo Index](demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
-<!-- portfolio-navigation:end -->

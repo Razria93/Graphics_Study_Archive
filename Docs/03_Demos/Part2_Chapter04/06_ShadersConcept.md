@@ -1,8 +1,6 @@
 # Step6 ShadersConcept Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -164,6 +162,4 @@ Screenshot 후보의 white square는 원본 axis-aligned vertex가 CPU vertex st
 - [Demo Index](demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
-<!-- portfolio-navigation:end -->

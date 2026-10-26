@@ -1,8 +1,6 @@
 # Part1_Chapter01-02 Demo Index
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter01-02/README.md)
-<!-- portfolio-navigation:end -->
 
 이 문서는 `Part1_Chapter01-02`의 demo capture/result 후보와 capture/result 연결 상태를 기록한다.
 

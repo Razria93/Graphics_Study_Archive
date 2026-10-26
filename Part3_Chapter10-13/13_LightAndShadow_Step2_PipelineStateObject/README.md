@@ -1,8 +1,6 @@
 # Chapter13 Step2 PipelineStateObject
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 Shader와 fixed-function state를 PSO abstraction으로 묶는다.
 
@@ -37,6 +35,4 @@ Shader와 fixed-function state를 PSO abstraction으로 묶는다.
 - [Verification](../../Docs/02_Verification/Part3_Chapter10-13/verification-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

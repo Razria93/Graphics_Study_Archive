@@ -1,8 +1,6 @@
 # Chapter08 Step7 Shadertoy Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -111,6 +109,4 @@ Aspect ratio는 고정 `1280/960` 대신 현재 `iResolution`에서 계산한다
 - [Demo Index](demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
-<!-- portfolio-navigation:end -->

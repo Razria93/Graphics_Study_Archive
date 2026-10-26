@@ -1,8 +1,6 @@
 # Step4 DrawingSphere
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -69,6 +67,4 @@ CPU에서 만든 결과는 `D3D11_USAGE_DYNAMIC` texture에 매 frame 복사한�
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

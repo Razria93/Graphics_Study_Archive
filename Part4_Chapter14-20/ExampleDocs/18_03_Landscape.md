@@ -1,8 +1,6 @@
 # Chapter18 Ex1803 Landscape
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -52,6 +50,4 @@
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter18 Ex1803 Landscape Demo](../../Docs/03_Demos/Part4_Chapter14-20/18_03_Landscape.md)
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

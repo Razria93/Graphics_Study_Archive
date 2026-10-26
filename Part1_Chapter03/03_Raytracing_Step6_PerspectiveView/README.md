@@ -1,8 +1,6 @@
 # Step6 PerspectiveView
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -74,6 +72,4 @@ Scene은 깊이와 위치가 다른 red, green, blue sphere 세 개로 구성한
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

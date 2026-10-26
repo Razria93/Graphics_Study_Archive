@@ -1,8 +1,6 @@
 # Step12 Reflection
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -75,6 +73,4 @@ Red sphere의 아래쪽에는 석재 ground가 반사되고 오른쪽에는 blue
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

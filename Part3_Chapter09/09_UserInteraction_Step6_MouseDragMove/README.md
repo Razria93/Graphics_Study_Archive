@@ -1,8 +1,6 @@
 # Chapter09 Step6 MouseDragMove
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 Drag 시작점의 near/far ray depth 비율을 보존하고 현재 cursor ray의 같은 비율 지점을 구해 object translation을 갱신한다.
 
@@ -49,6 +47,4 @@ Drag 시작점의 near/far ray depth 비율을 보존하고 현재 cursor ray의
 - [이전 단계](../09_UserInteraction_Step5_VirtualTrackball/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

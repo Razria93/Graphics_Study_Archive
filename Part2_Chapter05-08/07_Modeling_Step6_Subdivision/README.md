@@ -1,8 +1,6 @@
 # Chapter07 Step6 Subdivision
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 위도·경도 sphere를 seed mesh로 만든 뒤 각 triangle을 4개로 분할하고 새 midpoint를 sphere 표면에 투영해 topology를 세밀하게 만드는 예제다. Step5의 두 반구 Sphere를 직접 확장하지 않고 별도의 subdivision 기반 refinement 경로를 보여준다.
 
@@ -61,6 +59,4 @@
 - [다음 단계: Chapter07 Step7 FaceNormals](../07_Modeling_Step7_FaceNormals/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

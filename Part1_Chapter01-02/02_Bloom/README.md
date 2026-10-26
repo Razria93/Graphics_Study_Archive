@@ -1,8 +1,6 @@
 # 02_Bloom
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -64,6 +62,4 @@ Input/result 비교와 결과 해석은 상세 Demo로 연결한다.
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter01-02/demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

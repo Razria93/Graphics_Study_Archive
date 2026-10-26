@@ -1,8 +1,6 @@
 # Step14 CubeEnvironment
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -81,6 +79,4 @@ Runtime에서 참조하지 않는 blurred face와 별도 `skybox` asset 묶음�
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

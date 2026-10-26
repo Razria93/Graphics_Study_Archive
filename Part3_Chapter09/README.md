@@ -1,8 +1,6 @@
 # Part3 Chapter09 User Interaction
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../README.md) · [전체 예제](../Docs/00_Index/examples.md#part3-ch09) · [해당 Part의 Demo](../Docs/03_Demos/Part3_Chapter09/demo-index.md)
-<!-- portfolio-navigation:end -->
 
 Chapter09는 camera 입력에서 시작해 GPU·CPU picking, quaternion 회전, virtual trackball과 depth-preserving drag로 확장되는 사용자 상호작용 흐름을 다룬다.
 

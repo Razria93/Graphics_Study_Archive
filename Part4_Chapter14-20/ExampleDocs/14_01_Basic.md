@@ -1,8 +1,6 @@
 # Chapter14 Ex1401 Basic
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -48,6 +46,4 @@ tracked capture는 아직 없다. checker pattern은 local 후보로만 확인�
 - [Chapter14 Ex1401 Basic Demo](../../Docs/03_Demos/Part4_Chapter14-20/14_01_Basic.md)
 - [Publication Candidate List](../../Docs/05_Publication/candidate-list.md)
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

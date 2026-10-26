@@ -1,8 +1,6 @@
 # Chapter07 Step8 SphereMapping Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -156,6 +154,4 @@ SubdivideTriangle(v0, v1, v2)
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
-<!-- portfolio-navigation:end -->

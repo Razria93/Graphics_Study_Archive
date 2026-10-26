@@ -1,8 +1,6 @@
 # Chapter11 Step3 HeightMapping Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -84,6 +82,4 @@ Normal mapping만 사용한 Step2와 달리 sphere의 외곽선이 실제로 변
 - [다음 Demo](11_04_HDRI.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->

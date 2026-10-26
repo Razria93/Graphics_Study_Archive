@@ -1,8 +1,6 @@
 # Chapter11 Step5 HDRPipeline
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -58,6 +56,4 @@ Floating-point scene buffer를 resolve한 뒤 bloom downsample·upsample과 expo
 - 다음 Chapter: `12_PBR_Step1_UnrealPBR`
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

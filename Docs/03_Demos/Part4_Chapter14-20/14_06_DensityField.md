@@ -1,8 +1,6 @@
 # Chapter14 Ex1406 DensityField Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -70,6 +68,4 @@ Particle sourcing과 density dissipation이 만든 colored trail을 확인한다
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
-<!-- portfolio-navigation:end -->

@@ -1,8 +1,6 @@
 # Chapter08 Step5 FresnelEffect Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -95,6 +93,4 @@ Stonewall environment가 sphere에 반사되며 view angle과 `fresnelR0`에 따
 - [Demo Index](demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
-<!-- portfolio-navigation:end -->

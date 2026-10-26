@@ -1,8 +1,6 @@
 # Chapter08 Step6 BloomEffect
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## 예제 목적
 
@@ -55,6 +53,4 @@ Step5의 environment-lit scene을 GPU post-processing texture chain으로 전달
 - 다음 단계: Chapter08 Step7 Shadertoy
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

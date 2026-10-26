@@ -1,8 +1,6 @@
 # Chapter11 Step1 Mipmaps
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -50,6 +48,4 @@ Level 3을 선택한 sphere에서 고해상도 원본보다 완화된 texture de
 - [다음 단계](../11_TexturingTechniques_Step2_NormalMapping/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

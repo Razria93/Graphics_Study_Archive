@@ -1,8 +1,6 @@
 # Chapter06 Step3 ModelViewProj
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 이 예제는 Step2에서 연결한 D3D11 frame에 조작 가능한 Model·View·Projection matrix를 추가한다. ImGui parameter를 바꾸면 같은 indexed color cube의 object transform, camera 기준과 projection 방식이 매 frame 갱신된다.
 
@@ -75,6 +73,4 @@ Perspective·Orthographic screenshot 2장은 기술 검사와 사용자 시각 �
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

@@ -1,8 +1,6 @@
 # Chapter14 Ex1408 BitonicSort
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -49,6 +47,4 @@ tracked screenshot은 사용하지 않는다. `1024`부터 `1048576`까지의 el
 - [Chapter14 Ex1408 BitonicSort Demo](../../Docs/03_Demos/Part4_Chapter14-20/14_08_BitonicSort.md)
 - [Publication Candidate List](../../Docs/05_Publication/candidate-list.md)
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

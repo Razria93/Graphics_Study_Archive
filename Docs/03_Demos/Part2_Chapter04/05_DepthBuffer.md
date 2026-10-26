@@ -1,8 +1,6 @@
 # Step5 DepthBuffer Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -140,6 +138,4 @@ Selected video는 두 최종 상태 사이를 왕복한다. 동일 depth는 stri
 - [Demo Index](demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
-<!-- portfolio-navigation:end -->

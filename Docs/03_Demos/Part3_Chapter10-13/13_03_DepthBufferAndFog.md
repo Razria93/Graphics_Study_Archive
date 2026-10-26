@@ -1,8 +1,6 @@
 # Chapter13 Step3 DepthBufferAndFog Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -67,6 +65,4 @@ DepthScale 0.5 기준에서 render view와 reconstructed depth view를 비교한
 - [다음 Demo](13_04_ShadowMapping.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->

@@ -1,8 +1,6 @@
 # Chapter08 Step5 FresnelEffect
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## 예제 목적
 
@@ -54,6 +52,4 @@ Stonewall environment가 sphere에 반사되고 `fresnelR0`가 angle-dependent s
 - [다음 단계: Chapter08 Step6 BloomEffect](../08_ShaderToys_Step6_BloomEffect/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

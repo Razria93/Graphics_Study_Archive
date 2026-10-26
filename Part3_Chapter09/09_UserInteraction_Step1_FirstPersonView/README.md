@@ -1,8 +1,6 @@
 # Chapter09 Step1 FirstPersonView
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 절대 cursor 위치와 WASD 입력을 camera orientation과 translation에 반영한다. Chapter09 상호작용 흐름의 camera 기준선을 만든다.
 
@@ -49,6 +47,4 @@ WASD 이동과 절대 cursor 위치 기반 시선 전환은 서로 분리한 sel
 - [다음 단계](../09_UserInteraction_Step2_MousePicking/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

@@ -1,8 +1,6 @@
 # Chapter08 Step1 RimLighting
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -53,6 +51,4 @@ Surface normal과 eye direction의 각도 차이를 사용해 silhouette 주변�
 - [다음 단계: Chapter08 Step2 Cubemapping](../08_ShaderToys_Step2_Cubemapping/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

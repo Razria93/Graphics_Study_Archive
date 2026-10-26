@@ -1,8 +1,6 @@
 # Chapter11 Step1 Mipmaps Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -71,6 +69,4 @@ Level 3은 level 0보다 고주파 texture detail을 줄인다. 이 예제는 �
 - [다음 Demo](11_02_NormalMapping.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->

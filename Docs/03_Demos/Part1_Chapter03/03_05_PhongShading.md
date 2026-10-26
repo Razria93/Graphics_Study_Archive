@@ -1,8 +1,6 @@
 # Step5 PhongShading Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -166,6 +164,4 @@ Step4와 비교하면 silhouette 확인용 밝기 대신 normal과 조명 방향
 - [Demo Index](demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
-<!-- portfolio-navigation:end -->

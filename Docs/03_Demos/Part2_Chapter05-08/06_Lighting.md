@@ -1,8 +1,6 @@
 # Chapter06 Step6 Lighting Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -178,6 +176,4 @@ Point와 Spot의 공통 parameter를 유지했기 때문에 넓은 위치 중심
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
-<!-- portfolio-navigation:end -->

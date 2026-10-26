@@ -1,8 +1,6 @@
 # Part1 Chapter03
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../README.md) · [전체 예제](../Docs/00_Index/examples.md#part1-ch03) · [해당 Part의 Demo](../Docs/03_Demos/Part1_Chapter03/demo-index.md)
-<!-- portfolio-navigation:end -->
 
 이 Chapter는 CPU ray tracing의 기반부터 environment sampling까지 Step 단위로 확장하는 예제를 정리한다. 각 Step은 코드 폴더 README, Verification와 독립 상세 Demo를 같은 순서로 연결한다.
 

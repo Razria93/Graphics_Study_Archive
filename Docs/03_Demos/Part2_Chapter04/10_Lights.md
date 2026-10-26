@@ -1,8 +1,6 @@
 # Step10 Lights Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -157,6 +155,4 @@ Directional은 전체 face에 같은 입사 방향을 적용해 넓고 균일한
 - [Demo Index](demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
-<!-- portfolio-navigation:end -->

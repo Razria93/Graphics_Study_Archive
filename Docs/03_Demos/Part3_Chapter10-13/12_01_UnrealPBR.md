@@ -1,8 +1,6 @@
 # Chapter12 Step1 UnrealPBR Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -80,6 +78,4 @@ return direct + ambient;
 - [다음 Demo](12_02_PBRModels.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->

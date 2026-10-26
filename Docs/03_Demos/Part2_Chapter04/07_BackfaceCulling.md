@@ -1,8 +1,6 @@
 # Step7 BackfaceCulling Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -174,6 +172,4 @@ Selected local video는 On → Off → On 순서로 checkbox와 결과가 전환
 - [Demo Index](demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
-<!-- portfolio-navigation:end -->

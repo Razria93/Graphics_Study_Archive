@@ -1,8 +1,6 @@
 # Chapter10 Step4 Fireball
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -57,6 +55,4 @@ FRAME 1 → FRAME 2 → FRAME 3 비교는 billboard geometry는 유지하면서 
 - [다음 단계](../10_GeometryPipeline_Step5_Tessellation/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

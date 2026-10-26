@@ -1,8 +1,6 @@
 # Chapter09 Step3 MousePickingRayCollision Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter09/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -77,6 +75,4 @@ Earth sphere는 picking 대상과 bounding volume의 위치를 명확히 보여�
 - [Demo Index](demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter09/README.md)
-<!-- portfolio-navigation:end -->

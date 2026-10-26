@@ -1,8 +1,6 @@
 # Chapter08 Step4 ImageBasedLighting
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -50,6 +48,4 @@ Diffuse irradiance와 specular environment cubemap을 surface lighting 입력으
 - [다음 단계: Chapter08 Step5 FresnelEffect](../08_ShaderToys_Step5_FresnelEffect/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

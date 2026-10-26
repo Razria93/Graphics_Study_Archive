@@ -1,8 +1,6 @@
 # Chapter13 Step5 SoftShadowPCF Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -67,6 +65,4 @@ Step4 hard shadow와 Step6 PCSS 사이에서 PCF가 고정 kernel filtering으�
 - [다음 Demo](13_06_SoftShadowPCSS.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->

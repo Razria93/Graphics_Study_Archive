@@ -1,8 +1,6 @@
 # Chapter10 Step5 Tessellation
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -59,6 +57,4 @@ Manual factor 16은 같은 quad patch가 더 촘촘하게 세분되는 상태를
 - [이전 단계](../10_GeometryPipeline_Step4_Fireball/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

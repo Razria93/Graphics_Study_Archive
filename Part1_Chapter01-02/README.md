@@ -1,8 +1,6 @@
 # Part1 Chapter01-02
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../README.md) · [전체 예제](../Docs/00_Index/examples.md#part1-ch01-02) · [해당 Part의 Demo](../Docs/03_Demos/Part1_Chapter01-02/demo-index.md)
-<!-- portfolio-navigation:end -->
 
 이 Chapter는 DirectX11 window/render loop를 구성하고, CPU에서 처리한 image post-processing 결과를 DirectX11 texture로 표시하는 흐름을 정리한다.
 

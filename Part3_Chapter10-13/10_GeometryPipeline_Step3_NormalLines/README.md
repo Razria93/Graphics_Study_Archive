@@ -1,8 +1,6 @@
 # Chapter10 Step3 NormalLines
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -52,6 +50,4 @@ Mesh vertex의 position과 normal을 geometry shader의 line primitive로 시각
 - [다음 단계](../10_GeometryPipeline_Step4_Fireball/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

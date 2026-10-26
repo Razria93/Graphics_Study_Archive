@@ -1,8 +1,6 @@
 # Chapter07 Step7 FaceNormals
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 Triangle-soup mesh의 winding으로 face normal을 계산하고, 각 triangle corner에서 같은 face normal 방향의 diagnostic line을 그리는 예제다. Step6의 세분화 개념을 사용하지만 subdivision은 한 번만 적용해 normal 분포를 읽을 수 있는 200-triangle surface로 유지한다.
 
@@ -62,6 +60,4 @@ Triangle-soup mesh의 winding으로 face normal을 계산하고, 각 triangle co
 - [다음 단계: Chapter07 Step8 SphereMapping](../07_Modeling_Step8_SphereMapping/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

@@ -1,8 +1,6 @@
 # Chapter07 Step6 Subdivision Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -117,6 +115,4 @@ Wireframe은 seed의 각 triangle이 두 pass를 거치며 16개 child triangle�
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
-<!-- portfolio-navigation:end -->

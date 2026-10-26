@@ -1,8 +1,6 @@
 # Chapter10 Step4 Fireball Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -70,6 +68,4 @@ FRAME 1 → FRAME 2 → FRAME 3 순서의 storyboard는 같은 camera-facing bil
 - [다음 Demo](10_05_Tessellation.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->

@@ -1,8 +1,6 @@
 # Chapter05 Step3 DirectXMath
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 이 예제는 Step1에서 확인한 affine transformation을 DirectXMath의 SIMD 연산형과 저장형으로 다시 구성한다. Native DirectXMath와 SimpleMath wrapper의 translation 결과를 비교해 다음 graphics 예제로 이어지는 math library 전환 지점을 설명한다.
 
@@ -63,6 +61,4 @@ SimpleMath 비교에서는 같은 translation matrix에 `w=1` point와 `w=0` dir
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

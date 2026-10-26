@@ -1,8 +1,6 @@
 # Step5 DepthBuffer
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -76,6 +74,4 @@ Step5는 Step4까지의 CPU triangle rasterization에 per-pixel depth buffer를 
 - [Chapter README](../README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

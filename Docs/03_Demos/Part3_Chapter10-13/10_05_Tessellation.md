@@ -1,8 +1,6 @@
 # Chapter10 Step5 Tessellation Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -87,6 +85,4 @@ Manual factor가 직접 반영된 기본 8×8 분할을 첫 화면에서 확인�
 - [이전 Demo](10_04_Fireball.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->

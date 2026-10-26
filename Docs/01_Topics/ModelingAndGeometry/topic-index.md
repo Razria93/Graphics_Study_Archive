@@ -1,8 +1,6 @@
 # Modeling And Geometry Topic Index
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
-<!-- portfolio-navigation:end -->
 
 | Topic | 연결 예제 후보 | 우선순위 | 문서 상태 | Build/Run 결과 | Capture/Result 상태 |
 | --- | --- | --- | --- | --- | --- |

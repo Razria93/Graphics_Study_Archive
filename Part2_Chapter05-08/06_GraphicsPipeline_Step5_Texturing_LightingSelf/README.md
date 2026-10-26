@@ -1,8 +1,6 @@
 # Chapter06 Step5A Texturing LightingSelf
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 이 예제는 Step5의 texture sampling을 box geometry와 point-light shading으로 확장한다. Vertex shader가 world position과 inverse-transpose normal을 전달하고, pixel shader가 texture color에 ambient·diffuse·Blinn-Phong specular와 거리 감쇠를 결합한다.
 
@@ -79,6 +77,4 @@ Vertex shader는 model transform이 적용된 world position과 inverse-transpos
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

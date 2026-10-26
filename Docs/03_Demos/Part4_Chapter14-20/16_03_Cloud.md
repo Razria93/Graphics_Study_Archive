@@ -1,8 +1,6 @@
 # Chapter16 Ex1603 Cloud Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -72,6 +70,4 @@ Procedural noise로 3D cloud density와 lighting field를 compute shader에서 �
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
-<!-- portfolio-navigation:end -->

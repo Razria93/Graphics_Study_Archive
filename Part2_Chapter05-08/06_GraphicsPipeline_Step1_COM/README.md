@@ -1,8 +1,6 @@
 # Chapter06 Step1 COM
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 이 예제는 graphics window와 swap chain을 만들기 전에 최소 D3D11 device·immediate context를 생성하고 COM-style interface lifetime을 WRL `ComPtr`로 관리한다. `As()`, `Get()`과 `Reset()`이 각각 interface query, borrowed pointer 접근과 소유 참조 해제를 담당하는 차이를 console 출력과 코드로 확인한다.
 
@@ -64,6 +62,4 @@
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

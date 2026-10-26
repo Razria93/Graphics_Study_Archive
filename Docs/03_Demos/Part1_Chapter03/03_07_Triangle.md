@@ -1,8 +1,6 @@
 # Step7 Triangle Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -188,6 +186,4 @@ Sphere와 triangle은 같은 object 목록에서 검사된다. 가장 작은 non
 - [Demo Index](demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
-<!-- portfolio-navigation:end -->

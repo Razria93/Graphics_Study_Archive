@@ -1,8 +1,6 @@
 # Chapter14 Ex1403 MatVecMult
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -49,6 +47,4 @@ tracked screenshot은 사용하지 않는다. 이 예제의 evidence는 `Result 
 - [Chapter14 Ex1403 MatVecMult Demo](../../Docs/03_Demos/Part4_Chapter14-20/14_03_MatVecMult.md)
 - [Publication Candidate List](../../Docs/05_Publication/candidate-list.md)
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

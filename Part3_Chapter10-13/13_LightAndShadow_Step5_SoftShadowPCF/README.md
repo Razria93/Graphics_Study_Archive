@@ -1,8 +1,6 @@
 # Chapter13 Step5 SoftShadowPCF
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 여러 depth comparison sample을 평균해 shadow edge를 부드럽게 만든다.
 
@@ -37,6 +35,4 @@
 - [Verification](../../Docs/02_Verification/Part3_Chapter10-13/verification-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

@@ -1,8 +1,6 @@
 # Chapter09 Step6 MouseDragMove Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter09/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -76,6 +74,4 @@ Textured sphere와 background가 screen-space drag의 depth 기준을 보여준�
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter09/README.md)
-<!-- portfolio-navigation:end -->

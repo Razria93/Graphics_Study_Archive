@@ -1,8 +1,6 @@
 # Chapter11 Step2 NormalMapping
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -56,6 +54,4 @@ Tangent-space normal texture를 TBN basis로 world space에 변환해 geometry�
 - [다음 단계](../11_TexturingTechniques_Step3_HeightMapping/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

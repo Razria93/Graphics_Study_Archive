@@ -1,8 +1,6 @@
 # Chapter13 Step4 ShadowMapping Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -67,6 +65,4 @@ Hard shadow, fixed-kernel PCF와 blocker 기반 PCSS의 shadow edge 차이를 �
 - [다음 Demo](13_05_SoftShadowPCF.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->

@@ -1,8 +1,6 @@
 # Chapter10 Step2 Billboards Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -71,6 +69,4 @@ Tree가 plane의 회전 방향을 드러내지 않고 camera를 향해 서 있�
 - [다음 Demo](10_03_NormalLines.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->

@@ -1,8 +1,6 @@
 # Chapter05 Step2 Lights(GLM)
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 이 예제는 Step1에서 확인한 GLM affine transformation을 CPU rasterizer의 model transform과 normal transform에 적용하고, Directional·Point·Spot Light를 Blinn-Phong 항으로 계산한다. DirectX11과 HLSL은 CPU가 만든 pixel buffer를 화면에 표시하는 presentation 경로를 담당한다.
 
@@ -70,6 +68,4 @@ CPU rasterizer는 triangle coverage, depth와 perspective-correct interpolation�
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

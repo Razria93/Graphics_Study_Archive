@@ -1,8 +1,6 @@
 # Chapter12 Step1 UnrealPBR
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 Metallic-roughness material과 image-based lighting을 procedural sphere에 적용하는 예제다.
 
@@ -50,6 +48,4 @@ Rendered evidence는 공개 후보로 사용하고 원본 PBR texture와 HDRI는
 - [다음 단계](../12_PBR_Step2_PBRModels/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

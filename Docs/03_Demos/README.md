@@ -1,8 +1,6 @@
 # Demos
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../00_Index/examples.md) · [문서 탐색](../00_Index/README.md)
-<!-- portfolio-navigation:end -->
 
 이 폴더는 demo capture/result 계획과 시연 우선순위의 source docs다. 실제 build/run 검증 상태는 `Docs/02_Verification`을 기준으로 하고, 검토된 asset 파일은 `Docs/_assets`에 둔다.
 

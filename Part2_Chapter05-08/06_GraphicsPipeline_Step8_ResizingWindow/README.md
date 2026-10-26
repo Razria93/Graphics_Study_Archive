@@ -1,8 +1,6 @@
 # Chapter06 Step8 ResizingWindow
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 이 예제는 Step7의 ImGui panel·scene viewport 분리를 유지하면서 실제 window client size 변경에 맞춰 swap chain back buffer와 depth resource를 재생성한다. 최소화에서는 0×0 resource 생성을 건너뛰고 복원 후 새 크기의 render target, depth buffer, viewport와 projection을 다시 연결한다.
 
@@ -87,6 +85,4 @@ Compact, default와 wide 전체 창 screenshot은 같은 camera, geometry와 Lig
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

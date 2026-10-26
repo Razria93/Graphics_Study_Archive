@@ -1,8 +1,6 @@
 # Lighting And Shading
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
-<!-- portfolio-navigation:end -->
 
 이 폴더는 Lighting And Shading 관련 graphics concept 문서의 정본 위치다.
 

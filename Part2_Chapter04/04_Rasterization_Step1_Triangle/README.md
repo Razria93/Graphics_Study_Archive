@@ -1,8 +1,6 @@
 # Step1 Triangle
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -63,6 +61,4 @@ CPU에서 만든 결과는 `D3D11_USAGE_DYNAMIC` texture로 복사한다. HLSL�
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter04/demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

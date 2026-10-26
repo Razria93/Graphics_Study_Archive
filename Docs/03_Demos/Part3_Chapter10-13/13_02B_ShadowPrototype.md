@@ -1,8 +1,6 @@
 # Chapter13 Step2B Shadow Prototype Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -61,6 +59,4 @@ Prototype shadow가 적용된 scene 결과를 확인한다.
 - [다음 Demo](13_03_DepthBufferAndFog.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
-<!-- portfolio-navigation:end -->

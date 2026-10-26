@@ -1,8 +1,6 @@
 # Chapter06 Step2 InitializingD3D
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 이 예제는 Win32 window와 D3D11 device resource를 초기화하고 shader·buffer·MVP constant buffer를 연결해 회전 color cube를 화면에 표시한다. Chapter06 Step1의 device·context ownership에서 출발해 swap chain, render target, depth buffer, viewport와 frame loop를 연결하는 첫 end-to-end graphics pipeline 단계다.
 
@@ -71,6 +69,4 @@ Cube는 position과 face color를 가진 indexed geometry다. Model matrix는 Y�
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

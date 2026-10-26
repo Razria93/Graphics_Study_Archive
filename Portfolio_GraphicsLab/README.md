@@ -1,8 +1,6 @@
 # Portfolio GraphicsLab
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../README.md) · [전체 예제](../Docs/00_Index/examples.md) · [문서 탐색](../Docs/00_Index/README.md)
-<!-- portfolio-navigation:end -->
 
 `Portfolio_GraphicsLab`은 RayTracing부터 graphics pipeline과 후속 rendering 기능까지 단계적으로 확장하는 개인 graphics 구현의 루트 코드 폴더다.
 

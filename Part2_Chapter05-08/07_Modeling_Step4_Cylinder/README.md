@@ -1,8 +1,6 @@
 # Chapter07 Step4 Cylinder
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 두 개의 Y축 ring을 40개 slice로 sample하고 인접 vertex를 triangle로 연결해 cap이 없는 cylinder side surface를 절차적으로 생성한다. Step3의 평면 Grid에서 각도 기반 곡면 sampling으로 확장되는 과정을 확인한다.
 
@@ -57,6 +55,4 @@
 - [다음 단계: Chapter07 Step5 Sphere](../07_Modeling_Step5_Sphere/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

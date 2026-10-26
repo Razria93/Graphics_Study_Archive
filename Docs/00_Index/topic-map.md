@@ -1,8 +1,6 @@
 # Topic Map
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](examples.md) · [문서 탐색](README.md)
-<!-- portfolio-navigation:end -->
 
 이 문서는 graphics Topic 문서의 정본 위치를 안내한다. Topic별 최신 작성 상태와 우선순위는 각 그룹의 `topic-index.md`에 둔다.
 

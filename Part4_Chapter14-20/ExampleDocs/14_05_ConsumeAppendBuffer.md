@@ -1,8 +1,6 @@
 # Chapter14 Ex1405 ConsumeAppendBuffer
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -51,6 +49,4 @@ tracked screenshot 후보의 point cloud와 `AppendBuffer count: 25600` stdout�
 - [Chapter14 Ex1405 ConsumeAppendBuffer Demo](../../Docs/03_Demos/Part4_Chapter14-20/14_05_ConsumeAppendBuffer.md)
 - [Publication Candidate List](../../Docs/05_Publication/candidate-list.md)
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

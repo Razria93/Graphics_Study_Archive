@@ -1,8 +1,6 @@
 # 02_Bloom Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter01-02/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -155,6 +153,4 @@ Vertex shader는 full-screen quad를 만들고 pixel shader는 업로드된 text
 - [PR #8](https://github.com/Razria93/Graphics_Study_Archive/pull/8)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter01-02/README.md)
-<!-- portfolio-navigation:end -->

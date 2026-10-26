@@ -1,8 +1,6 @@
 # Chapter09 Step5 VirtualTrackball Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter09/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -75,6 +73,4 @@ Textured sphere의 표면 방향 변화가 회전을 판독하게 한다. Screen
 - [Demo Index](demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter09/README.md)
-<!-- portfolio-navigation:end -->

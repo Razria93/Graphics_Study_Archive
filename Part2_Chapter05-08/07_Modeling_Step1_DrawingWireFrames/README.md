@@ -1,8 +1,6 @@
 # Chapter07 Step1 DrawingWireFrames
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 이 예제는 절차적으로 생성한 box mesh를 triangle list로 전달하고 rasterizer의 fill mode를 wireframe으로 전환한다. 별도 line geometry를 만들지 않으므로 각 사각 face를 나눈 triangle diagonal도 결과에 나타난다.
 
@@ -58,6 +56,4 @@
 - [다음 단계: Chapter07 Step2 DrawingNormals](../07_Modeling_Step2_DrawingNormals/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->

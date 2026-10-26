@@ -1,8 +1,6 @@
 # Chapter09 Step4 QuaternionRotation Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter09/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -75,6 +73,4 @@ UI는 quaternion axis와 angle을 노출하고 sphere texture 방향으로 회�
 - [Demo Index](demo-index.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter09/README.md)
-<!-- portfolio-navigation:end -->

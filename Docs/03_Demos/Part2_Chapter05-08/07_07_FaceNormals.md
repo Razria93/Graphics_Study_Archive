@@ -1,8 +1,6 @@
 # Chapter07 Step7 FaceNormals Demo
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
-<!-- portfolio-navigation:end -->
 
 ## 목적
 
@@ -120,6 +118,4 @@ Solid surface가 뒤쪽 line을 depth test로 가려 전면 face의 방향을 �
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
-<!-- portfolio-navigation:end -->

@@ -1,8 +1,6 @@
 # Chapter11 Step4 HDRI
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
 
 ## Overview
 
@@ -51,6 +49,4 @@ Exposure 1.0과 gamma 1.0에서 EXR panorama의 넓은 luminance 범위를 displ
 - [다음 단계](../11_TexturingTechniques_Step5_HDRPipeline/README.md)
 
 
-<!-- portfolio-navigation:start -->
 [프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
-<!-- portfolio-navigation:end -->
