@@ -1,5 +1,9 @@
 # Barycentric Coordinates
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Triangle 내부의 한 점을 세 vertex의 weight로 표현하고, vertex color나 UV 같은 attribute를 보간하는 원리를 설명한다.

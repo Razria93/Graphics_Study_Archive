@@ -1,5 +1,9 @@
 # Chapter14 Ex1401 Basic
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `Ex1401_Basic`은 compute shader가 back buffer UAV에 checker pattern을 기록하는 최소 Chapter14 예제다. `Examples.exe 1401`은 back buffer format, UAV binding, thread group dispatch와 compute resource binding 해제의 연결을 보여 준다.
@@ -43,3 +47,7 @@ tracked capture는 아직 없다. checker pattern은 local 후보로만 확인�
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter14 Ex1401 Basic Demo](../../Docs/03_Demos/Part4_Chapter14-20/14_01_Basic.md)
 - [Publication Candidate List](../../Docs/05_Publication/candidate-list.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

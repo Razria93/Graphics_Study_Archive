@@ -1,5 +1,9 @@
 # Sampling And Anti Aliasing
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Raster pixel 하나를 한 지점의 값으로만 평가할 때 생기는 spatial aliasing과, pixel 영역 안의 여러 sample을 결합해 coverage와 signal 변화를 더 안정적으로 추정하는 supersampling의 기본 원리를 설명한다.

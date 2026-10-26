@@ -1,5 +1,9 @@
 # 02_Bloom Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter01-02/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 `02_Bloom`은 CPU에서 bright-pass, Gaussian blur, 원본 합성을 수행한 뒤 결과 픽셀을 DirectX11 dynamic texture로 업로드하는 흐름을 보여준다. 입력과 결과를 함께 제시해 기본 bloom 효과와 CPU 결과의 GPU 표시 경로를 연결한다.
@@ -149,3 +153,8 @@ Vertex shader는 full-screen quad를 만들고 pixel shader는 업로드된 text
 - [Demo Index](demo-index.md)
 - [Demo Issue #9](https://github.com/Razria93/Graphics_Study_Archive/issues/9)
 - [PR #8](https://github.com/Razria93/Graphics_Study_Archive/pull/8)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter01-02/README.md)
+<!-- portfolio-navigation:end -->

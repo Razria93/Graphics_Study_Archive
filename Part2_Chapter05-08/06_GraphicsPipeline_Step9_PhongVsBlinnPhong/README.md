@@ -1,5 +1,9 @@
 # Chapter06 Step9 PhongVsBlinnPhong
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 이 예제는 Step8의 resize-safe textured lighting scene을 유지하면서 specular reflection vector를 사용하는 Phong과 halfway vector를 사용하는 Blinn-Phong을 같은 scene·material·light 조건에서 전환해 비교한다.
 
 ## 실행 진입점
@@ -72,3 +76,8 @@ Capture는 texture를 끄고 Point Light, diffuse 0.35, specular 1.0과 shinines
 - [Step9 상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/09_PhongVsBlinnPhong.md)
 - [Verification Index](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

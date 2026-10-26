@@ -1,5 +1,9 @@
 # COM And Resource Lifetime
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 COM-style graphics interface는 object 구현과 interface pointer를 분리하고 reference count로 lifetime을 관리한다. 이 문서는 Direct3D interface를 소유하거나 잠시 참조할 때 ownership을 구분하고 WRL `ComPtr`로 참조를 안전하게 관리하는 기준을 설명한다.

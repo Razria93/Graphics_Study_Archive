@@ -1,5 +1,9 @@
 # Chapter06 Step1 COM Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step1은 full graphics pipeline을 구성하기 전에 D3D11 device와 immediate context를 최소 조건으로 생성하고 WRL `ComPtr`가 COM-style interface reference를 소유·조회·해제하는 흐름을 분리해 확인한다. Graphics 결과보다 lifetime 연산의 의미를 코드와 결정적 console 출력으로 설명한다.
@@ -132,3 +136,8 @@ Visual status: console evidence로 기록하며 screenshot과 video는 제외한
 - [COM And Resource Lifetime Topic](../../01_Topics/DirectX11Pipeline/COMAndResourceLifetime.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

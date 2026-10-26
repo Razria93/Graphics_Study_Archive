@@ -1,5 +1,9 @@
 # Step8 PerspectiveProjection
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 Step8은 Step7의 CPU software rasterizer에 depth 기반 perspective projection과 perspective-correct interpolation을 추가한다. 서로 다른 Z에 놓인 두 square로 원근에 따른 화면 크기 변화와 affine 보간의 왜곡, 보정된 attribute 보간 결과를 비교한다.
@@ -69,3 +73,8 @@ Raster-space barycentric weight는 기본적으로 affine 보간에 사용한다
 - [Detailed Demo](../../Docs/03_Demos/Part2_Chapter04/08_PerspectiveProjection.md)
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter04/demo-index.md)
 - [Chapter README](../README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

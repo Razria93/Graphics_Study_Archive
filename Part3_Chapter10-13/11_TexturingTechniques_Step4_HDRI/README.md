@@ -1,5 +1,9 @@
 # Chapter11 Step4 HDRI
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 EXR의 floating-point HDR image를 읽고 exposure와 gamma 변환을 적용해 LDR display에 표시한다. Load 실패를 빈 image로 계속 사용하지 않고 명시적 오류로 중단한다.
@@ -45,3 +49,8 @@ Exposure 1.0과 gamma 1.0에서 EXR panorama의 넓은 luminance 범위를 displ
 - [상세 Demo](../../Docs/03_Demos/Part3_Chapter10-13/11_04_HDRI.md)
 - [이전 단계](../11_TexturingTechniques_Step3_HeightMapping/README.md)
 - [다음 단계](../11_TexturingTechniques_Step5_HDRPipeline/README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

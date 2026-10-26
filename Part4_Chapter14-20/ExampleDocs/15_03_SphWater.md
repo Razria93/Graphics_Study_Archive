@@ -1,5 +1,9 @@
 # Chapter15 Ex1503 SphWater
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `Ex1503_SphWater`는 dual source에서 particle을 생성하고 CPU SPH update, gravity, boundary collision을 적용해 water-like cluster를 만드는 예제다. `Examples.exe 1503`은 CPU-side density/pressure/viscosity 계산과 structured buffer sprite rendering을 연결한다.
@@ -45,3 +49,7 @@
 - [Gpu Particle And Fluid Simulation](../../Docs/01_Topics/ComputeAndSimulation/GpuParticleAndFluidSimulation.md)
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter15 Ex1503 SphWater Demo](../../Docs/03_Demos/Part4_Chapter14-20/15_03_SphWater.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

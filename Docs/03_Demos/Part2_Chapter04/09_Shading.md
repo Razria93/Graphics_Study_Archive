@@ -1,5 +1,9 @@
 # Step9 Shading Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step9은 Step8의 perspective-correct CPU software rasterizer에 box topology, face normal과 directional Blinn-Phong shading을 추가한다. Position과 normal이 CPU pipeline을 따라 이동하고 material과 light parameter가 최종 framebuffer color를 만드는 흐름을 확인한다.
@@ -133,3 +137,8 @@ Scene Control에 표시된 material과 light parameter는 shading 결과가 geom
 - [Perspective Projection](../../01_Topics/Rasterization/PerspectiveProjection.md)
 - [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->

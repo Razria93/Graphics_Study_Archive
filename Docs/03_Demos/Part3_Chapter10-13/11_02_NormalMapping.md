@@ -1,5 +1,9 @@
 # Chapter11 Step2 NormalMapping Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Tangent-space normal texture가 낮은 polygon 수를 유지하면서 표면의 조명 방향 변화를 만드는 경로를 보여준다.
@@ -76,3 +80,8 @@ float3 worldNormal = normalize(mul(tangentNormal, tbn));
 - [Demo Index](demo-index.md)
 - [이전 Demo](11_01_Mipmaps.md)
 - [다음 Demo](11_03_HeightMapping.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Chapter06 Step4 Shaders Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step4는 Step3의 MVP transform에 실제 GPU shader stage contract와 pixel constant buffer를 추가한다. Square의 UV를 `xSplitPoint`와 비교해 fragment 색상을 선택하고, CPU UI 값이 pixel shader 결과를 어떻게 바꾸는지 확인한다.
@@ -156,3 +160,8 @@ DrawIndexed(square);
 - [Shader Stage Topic](../../01_Topics/DirectX11Pipeline/ShaderStage.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

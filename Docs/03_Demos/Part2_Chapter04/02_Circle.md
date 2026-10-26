@@ -1,5 +1,9 @@
 # Step2 Circle Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step2는 circle을 구성하는 center와 outer-ring data를 공유 CPU 배열에 저장하고 index 세 개로 각 triangle을 조립해 rasterize하는 indexed representation을 보여준다. Step1A의 가변 triangle fan과 시각 결과가 비슷해도 자료 구조와 갱신 책임이 다른 정규 학습 단계다.
@@ -121,3 +125,8 @@ Red center에서 green boundary로 이어지는 color interpolation은 각 trian
 - [Triangle Rasterization Topic](../../01_Topics/Rasterization/TriangleRasterization.md)
 - [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->

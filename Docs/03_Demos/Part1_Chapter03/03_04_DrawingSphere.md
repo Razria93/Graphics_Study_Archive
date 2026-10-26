@@ -1,5 +1,9 @@
 # Step4 DrawingSphere Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step4는 화면의 각 pixel에서 orthographic primary ray를 만들고 sphere와 교차시켜 최초 형상을 그리는 CPU ray tracing 기반을 보여준다. 결과 pixel을 DirectX11 dynamic texture로 전달해 계산과 화면 표시의 경계도 함께 확인한다.
@@ -154,3 +158,8 @@ return hit;
 - [Intersection Topic](../../01_Topics/RayTracing/Intersection.md)
 - [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->

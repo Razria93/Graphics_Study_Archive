@@ -1,5 +1,9 @@
 # Chapter05 Step1 Matrix(GLM) Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step1은 graphics transform에 앞서 GLM matrix의 column access, 곱셈 순서, homogeneous point/vector와 affine composition을 결정적 console 출력으로 확인한다. 같은 matrix라도 적용 순서가 달라지면 결과가 바뀌는 이유를 실제 수치와 연결한다.
@@ -131,3 +135,8 @@ Visual status: console evidence로 기록하며 screenshot과 video는 제외한
 - [Matrix And Affine Transformations Topic](../../01_Topics/Rasterization/MatrixAndAffineTransformations.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Chapter07 Step8 SphereMapping Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Icosahedron subdivision으로 만든 sphere에 spherical UV를 계산하고, U seam을 triangle-local vertex 복제로 보정해 2D 진단 texture를 연속적으로 표시한다.
@@ -150,3 +154,8 @@ SubdivideTriangle(v0, v1, v2)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

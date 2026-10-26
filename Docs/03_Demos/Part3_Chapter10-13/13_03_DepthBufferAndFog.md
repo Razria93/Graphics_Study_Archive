@@ -1,5 +1,9 @@
 # Chapter13 Step3 DepthBufferAndFog Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Depth buffer를 reconstruct해 distance fog post effect를 계산한다.
@@ -61,3 +65,8 @@ DepthScale 0.5 기준에서 render view와 reconstructed depth view를 비교한
 - [Demo Index](demo-index.md)
 - [이전 Demo](13_02B_ShadowPrototype.md)
 - [다음 Demo](13_04_ShadowMapping.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
+<!-- portfolio-navigation:end -->

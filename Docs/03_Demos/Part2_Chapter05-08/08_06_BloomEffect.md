@@ -1,5 +1,9 @@
 # Chapter08 Step6 BloomEffect Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Scene render 결과를 GPU post-processing pass에 연결하고 밝은 영역 분리, 반복 blur와 원본 합성으로 bloom을 만드는 과정을 보여준다.
@@ -100,3 +104,8 @@ BuildBloom(source, threshold, strength)
 - [Post Processing And Bloom](../../01_Topics/DirectX11Pipeline/PostProcessingAndBloom.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

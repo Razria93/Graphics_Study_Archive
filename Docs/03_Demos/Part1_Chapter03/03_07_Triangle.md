@@ -1,5 +1,9 @@
 # Step7 Triangle Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step7은 Step6의 perspective ray와 closest-hit 흐름에 triangle primitive를 추가한다. Sphere와 triangle을 같은 scene query로 처리하면서 winding, ray-plane intersection과 edge half-space 내부 판정이 화면의 삼각형 경계와 flat surface shading으로 이어지는 과정을 보여준다.
@@ -182,3 +186,8 @@ Sphere와 triangle은 같은 object 목록에서 검사된다. 가장 작은 non
 - [Phong Shading Topic](../../01_Topics/LightingAndShading/PhongShading.md)
 - [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->

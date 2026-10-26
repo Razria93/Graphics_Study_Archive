@@ -1,5 +1,9 @@
 # Triangle Rasterization
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Triangle rasterization은 세 vertex가 정의하는 연속 영역을 raster pixel 표본으로 변환하고 vertex attribute를 내부 pixel로 보간하는 과정을 설명한다. 특정 예제의 API 호출보다 edge function, bounding box와 barycentric coordinate의 공통 원리를 다룬다.

@@ -1,5 +1,9 @@
 # 그래픽스 학습·구현과 AI 아카이브 자동화 포트폴리오
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](README.md) · [전체 예제](Docs/00_Index/examples.md) · [문서 탐색](Docs/00_Index/README.md)
+<!-- portfolio-navigation:end -->
+
 그래픽스 학습 기록을 설명 가능한 코드·문서·실행 자료로 정리하고, 그 반복 작업을 AI로 확장한 경험을 소개한다. 이 문서는 **25쪽 포트폴리오와 저장소의 상세 근거를 연결하는 안내**다.
 
 [현재 프로젝트 안내](https://razria93.github.io/site/graphics.html) · [프로젝트 PDF · 25쪽](https://razria93.github.io/files/pdf/graphics-review.pdf) · [저장소 소개](README.md) · [비교 영상·검증 보고서](https://razria93.github.io/site/details/Graphics_Study_Archive/portfolio-evidence/)

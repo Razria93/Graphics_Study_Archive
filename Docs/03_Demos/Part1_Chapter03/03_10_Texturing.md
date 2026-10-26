@@ -1,5 +1,9 @@
 # Step10 Texturing Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Triangle hit의 barycentric weight로 UV를 보간하고 CPU에서 image texture를 bilinear sampling하는 흐름을 확인한다. 사용자 직접 생성 석재 texture를 사용해 두 triangle으로 구성한 Square에서 판석과 줄눈이 연속적으로 이어지는지도 함께 확인한다.
@@ -210,3 +214,8 @@ Ray tracing, UV interpolation과 image sampling은 CPU에서 수행한다. Direc
 - [Phong Shading](../../01_Topics/LightingAndShading/PhongShading.md)
 - [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->

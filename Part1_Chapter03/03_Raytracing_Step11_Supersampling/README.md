@@ -1,5 +1,9 @@
 # Step11 Supersampling
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 이 예제는 160×90 output cell마다 화면 영역을 재귀적으로 2×2 분할하고 64개 primary ray의 shading 결과를 평균한다. 평균한 CPU 결과는 DirectX11 point sampler로 1280×720 window에 확대해 표시하며, 규칙적인 subpixel sampling과 저해상도 출력의 trade-off를 함께 보여준다.
@@ -67,3 +71,8 @@
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
 - [Step11 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_11_Supersampling.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

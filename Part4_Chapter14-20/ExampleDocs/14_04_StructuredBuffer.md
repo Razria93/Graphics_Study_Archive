@@ -1,5 +1,9 @@
 # Chapter14 Ex1404 StructuredBuffer
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `Ex1404_StructuredBuffer`는 25600개 particle의 position/color를 custom structured buffer에 올리고, compute shader가 UAV로 위치를 갱신한 뒤 vertex shader가 같은 resource를 SRV로 읽어 point cloud를 그리는 예제다. `Examples.exe 1404`는 vertex buffer 없이 structured buffer 기반 draw를 확인한다.
@@ -46,3 +50,7 @@
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter14 Ex1404 StructuredBuffer Demo](../../Docs/03_Demos/Part4_Chapter14-20/14_04_StructuredBuffer.md)
 - [Publication Candidate List](../../Docs/05_Publication/candidate-list.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

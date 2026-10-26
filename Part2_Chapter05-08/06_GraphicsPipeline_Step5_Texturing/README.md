@@ -1,5 +1,9 @@
 # Chapter06 Step5 Texturing
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 이 예제는 Step4의 UV와 pixel shader constant buffer 흐름에 두 개의 GPU texture와 sampler를 추가한다. Pixel shader는 `xSplit`을 기준으로 석재와 목재 texture를 선택하고 같은 UV로 sampling한다.
 
 ## 실행 진입점
@@ -74,3 +78,8 @@ Pixel shader는 `uv.x > xSplit`이면 목재를, 나머지 영역에서는 석�
 - [Step5 Texturing 상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/06_Texturing.md)
 - [Verification Index](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

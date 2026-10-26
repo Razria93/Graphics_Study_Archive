@@ -1,5 +1,9 @@
 # Chapter12 Step2 PBRModels
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 Step1의 PBR pipeline을 Assimp로 불러온 multi-surface character model에 적용하는 예제다.
 
 ## 구현 요약
@@ -44,3 +48,8 @@ Rendered evidence는 공개 후보로 사용하고 원본 FBX·texture·HDRI는 
 - [Verification](../../Docs/02_Verification/Part3_Chapter10-13/verification-index.md)
 - [이전 단계](../12_PBR_Step1_UnrealPBR/README.md)
 - 다음 Chapter: `13_LightAndShadow_Step1_Mirror`
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Chapter10 Step1 GeometryShader Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 하나의 point를 geometry shader에서 quad로 확장하는 최소 primitive amplification 경로를 보여준다.
@@ -66,3 +70,8 @@ stream.RestartStrip();
 - [Geometry Shader And Billboards](../../01_Topics/ModelingAndGeometry/GeometryShaderAndBillboards.md)
 - [Demo Index](demo-index.md)
 - [다음 Demo](10_02_Billboards.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
+<!-- portfolio-navigation:end -->

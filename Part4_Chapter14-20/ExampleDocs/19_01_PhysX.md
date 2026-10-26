@@ -1,5 +1,9 @@
 # Chapter19 Ex1901 PhysX
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `Ex1901_PhysX`는 PhysX gravity scene의 dynamic block stack을 fixed simulation step으로 갱신하고 actor shape pose를 render model world transform으로 동기화하는 예제다. `Examples.exe 1901`은 PhysX runtime DLL과 SDK dependency를 필요로 하며 block collapse storyboard를 rendered evidence로 사용한다.
@@ -47,3 +51,7 @@
 - [Animation Physics And Gameplay Integration](../../Docs/01_Topics/AnimationAndPhysics/AnimationPhysicsAndGameplayIntegration.md)
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter19 Ex1901 PhysX Demo](../../Docs/03_Demos/Part4_Chapter14-20/19_01_PhysX.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

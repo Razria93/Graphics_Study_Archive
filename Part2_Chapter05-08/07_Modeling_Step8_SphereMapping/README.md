@@ -1,5 +1,9 @@
 # Chapter07 Step8 SphereMapping
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 Icosahedron seed를 반복 세분화해 sphere surface로 투영하고, 위치에서 spherical UV를 계산해 2D texture를 구면에 연결하는 사용자 구현 예제다. Triangle-local vertex 복제로 seam을 보정하며 Step7의 face normal에서 radial smooth normal로 전환한다.
 
 ## 실행 진입점
@@ -60,3 +64,8 @@ Icosahedron seed를 반복 세분화해 sphere surface로 투영하고, 위치�
 - [상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/07_08_SphereMapping.md)
 - [이전 단계: Chapter07 Step7 FaceNormals](../07_Modeling_Step7_FaceNormals/README.md)
 - [다음 단계: Chapter07 Step9 ModelFiles](../07_Modeling_Step9_ModelFiles/README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

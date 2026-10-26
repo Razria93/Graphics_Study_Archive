@@ -1,5 +1,9 @@
 # Step3 Transformations2D
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 Step3은 5-segment polygonal fan의 원본 mesh를 보존하고 현재 UI parameter로 derived vertex buffer를 매 frame 다시 계산한다. `Rotation1 → Scale → Translation1 → Rotation2 → Translation2` 순서로 CPU 좌표를 변환해 non-uniform scale, local orientation과 원점 기준 orbit 이동을 함께 보여준다.
@@ -65,3 +69,8 @@ Step2의 32-segment circle과 달리 회전 방향과 non-uniform scale을 쉽�
 - [Detailed Demo](../../Docs/03_Demos/Part2_Chapter04/03_Transformations2D.md)
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter04/demo-index.md)
 - [Chapter README](../README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

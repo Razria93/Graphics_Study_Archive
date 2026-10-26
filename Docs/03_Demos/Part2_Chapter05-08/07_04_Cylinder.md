@@ -1,5 +1,9 @@
 # Chapter07 Step4 Cylinder Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Bottom·top ring을 40개 slice로 sample하고 ring 사이를 80개 triangle로 연결해 cap 없는 cylinder side surface를 생성하는 과정을 확인한다.
@@ -106,3 +110,8 @@ BuildCylinderSideIndices(slices)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

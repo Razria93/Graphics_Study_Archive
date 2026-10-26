@@ -1,5 +1,9 @@
 # Chapter06 Step3 ModelViewProj Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step3는 Step2의 고정 MVP에서 벗어나 Model transform, camera 기준과 projection parameter를 UI로 분리한다. 같은 cube와 draw pipeline을 유지한 채 각 matrix가 화면 결과에 미치는 영향을 직접 비교한다.
@@ -159,3 +163,8 @@ Local selected video는 Model rotation Y만 `0.000 → 0.785`로 바꾼다. 7.27
 - [Perspective Projection Topic](../../01_Topics/Rasterization/PerspectiveProjection.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

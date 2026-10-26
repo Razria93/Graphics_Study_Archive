@@ -1,5 +1,9 @@
 # Chapter05 Step4 Lights(SimpleMath)
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 이 예제는 Step2의 GLM 기반 CPU rasterizer와 lighting 경로를 DirectXTK SimpleMath로 옮긴다. 같은 cube, affine transform과 Directional·Point·Spot Light를 유지하면서 row-vector convention에 맞는 matrix composition과 inverse-transpose normal transform을 확인한다.
 
 ## 실행 진입점
@@ -65,3 +69,8 @@ Step2와 같은 장면에서 Y rotation, translation과 non-uniform scale을 적
 - [Step4 Lights(SimpleMath) 상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/05_LightsSimpleMath.md)
 - [Verification Index](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

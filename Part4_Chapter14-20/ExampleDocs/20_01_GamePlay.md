@@ -1,5 +1,9 @@
 # Chapter20 Ex2001 GamePlay
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `Ex2001_GamePlay`는 character fire animation notify frame에서 PhysX projectile과 billboard fire effect를 생성하고, dynamic actor pose를 render transform으로 동기화하는 integration 예제다. `Examples.exe 2001`은 Mixamo animation, PhysX runtime DLL, PBR texture와 HDRI asset을 필요로 한다.
@@ -48,3 +52,7 @@
 - [Animation Physics And Gameplay Integration](../../Docs/01_Topics/AnimationAndPhysics/AnimationPhysicsAndGameplayIntegration.md)
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter20 Ex2001 GamePlay Demo](../../Docs/03_Demos/Part4_Chapter14-20/20_01_GamePlay.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

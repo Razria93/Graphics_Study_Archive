@@ -1,5 +1,9 @@
 # Step1 Triangle Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step1은 세 vertex로 정의한 triangle을 CPU에서 pixel 단위로 rasterize하고 RGB vertex color를 내부에 보간하는 최소 software rasterization 흐름을 보여준다. CPU 계산과 DirectX11 presentation의 책임 경계도 함께 확인한다.
@@ -106,3 +110,8 @@ Triangle 꼭짓점에 가까운 영역은 해당 vertex color의 비중이 높�
 - [Triangle Rasterization Topic](../../01_Topics/Rasterization/TriangleRasterization.md)
 - [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->

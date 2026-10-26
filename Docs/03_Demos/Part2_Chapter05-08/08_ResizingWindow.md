@@ -1,5 +1,9 @@
 # Chapter06 Step8 ResizingWindow Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step8은 Step7의 panel·scene viewport 분리를 유지하면서 실제 window client size 변경에 맞춰 swap chain dependent resource와 projection을 다시 연결한다. Compact, default와 wide window에서 같은 box 비율과 textured lighting 결과가 유지되는지 확인한다.
@@ -151,3 +155,8 @@ Debug와 Release에서 추가 크기 전환을 반복하고 최소화·복원했
 - [Swap Chain And Viewport Topic](../../01_Topics/DirectX11Pipeline/SwapChainAndViewport.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Step4 Animation2D Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step4는 Sun, Earth와 Moon의 2D polygonal fan에 시간 기반 angle update와 계층적 transform을 적용해 parent orbit과 child local orbit이 결합되는 결과를 보여준다. 정지 screenshot은 천체와 UI 구성을 제시하고 selected video는 시간에 따른 상대 운동을 증명한다.
@@ -132,3 +136,8 @@ White Sun은 화면 중심에 고정된다. Blue Earth는 radius `0.5` 경로를
 - [2D Transformations](../../01_Topics/Rasterization/Transformations2D.md)
 - [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Step5 DepthBuffer Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step5는 겹치는 세 circle의 fragment Z를 CPU depth buffer와 비교해 draw order와 분리된 visibility를 구성한다. 기본 screenshot과 depth 순서를 반전한 screenshot은 같은 geometry에서도 Z 값에 따라 앞뒤 관계가 바뀌는 결과를 보여준다.
@@ -134,3 +138,8 @@ Selected video는 두 최종 상태 사이를 왕복한다. 동일 depth는 stri
 - [Triangle Rasterization](../../01_Topics/Rasterization/TriangleRasterization.md)
 - [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->

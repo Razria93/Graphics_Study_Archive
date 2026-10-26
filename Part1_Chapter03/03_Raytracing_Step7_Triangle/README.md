@@ -1,5 +1,9 @@
 # Step7 Triangle
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 이 예제는 Step6의 perspective primary ray, polymorphic closest-hit와 Phong shading 흐름에 triangle primitive를 추가한다. CPU는 sphere와 triangle의 교차를 함께 검사하고 가장 가까운 표면을 shading하며, DirectX11은 계산된 RGBA32F texture를 full-screen quad로 표시한다.
@@ -71,3 +75,8 @@ Step7은 Step6의 perspective primary ray와 closest-hit 탐색을 유지하면�
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
 - [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/03_07_Triangle.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Light Types
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Directional, Point와 Spot Light가 surface-to-light vector와 세기 범위를 어떻게 정의하는지 설명한다. 같은 shading model을 사용해도 Light의 위치, 방향, 거리 감쇠와 cone factor에 따라 fragment에 도달하는 Light strength가 달라지는 구조를 구분한다.

@@ -1,5 +1,9 @@
 # Chapter11 Step5 HDRPipeline
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 Floating-point scene buffer를 resolve한 뒤 bloom downsample·upsample과 exposure·gamma composite를 거쳐 back buffer에 표시하는 HDR post-process chain을 구성한다. 기본 bloom strength는 0.2로 둔다.
@@ -52,3 +56,8 @@ Floating-point scene buffer를 resolve한 뒤 bloom downsample·upsample과 expo
 - [상세 Demo](../../Docs/03_Demos/Part3_Chapter10-13/11_05_HDRPipeline.md)
 - [이전 단계](../11_TexturingTechniques_Step4_HDRI/README.md)
 - 다음 Chapter: `12_PBR_Step1_UnrealPBR`
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

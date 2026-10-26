@@ -1,5 +1,9 @@
 # Chapter05 Step3 DirectXMath Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step3은 Step1의 affine transformation 개념을 DirectXMath의 storage type과 SIMD 연산형으로 옮긴다. Native DirectXMath와 SimpleMath wrapper가 point와 direction의 translation 의미를 표현하는 방식을 결정적 console 출력으로 비교한다.
@@ -122,3 +126,8 @@ Visual status: console evidence로 기록하며 screenshot과 video는 제외한
 - [Matrix And Affine Transformations Topic](../../01_Topics/Rasterization/MatrixAndAffineTransformations.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

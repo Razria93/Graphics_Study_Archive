@@ -1,5 +1,9 @@
 # Step12 Reflection
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 이 예제는 closest hit의 local Phong color와 secondary reflection ray가 반환한 color를 material weight로 합성한다. 반사 sphere는 local shading과 reflected scene color를 각각 50% 사용하며, 고정 depth의 recursive trace로 sphere와 textured ground 사이의 반사를 계산한다.
@@ -69,3 +73,8 @@ Red sphere의 아래쪽에는 석재 ground가 반사되고 오른쪽에는 blue
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
 - [Step12 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_12_Reflection.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

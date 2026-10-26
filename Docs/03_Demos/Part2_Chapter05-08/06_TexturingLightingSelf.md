@@ -1,5 +1,9 @@
 # Chapter06 Step5A Texturing LightingSelf Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step5A는 Step5의 GPU texture sampling을 world-space normal과 point-light shading으로 확장한다. 같은 texture와 model·camera·material을 유지한 채 light position만 바꿔 face별 밝기와 highlight가 이동하는 결과를 확인한다.
@@ -149,3 +153,8 @@ Color Shade(PixelInput input)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

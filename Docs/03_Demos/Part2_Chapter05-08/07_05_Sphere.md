@@ -1,5 +1,9 @@
 # Chapter07 Step5 Sphere Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 위·아래 반구를 독립적으로 생성하고 equator에서 결합하는 사용자 sphere 구현을 확인한다. 일반 stack·slice grid와 달리 pole band를 별도 triangle fan으로 처리해 면적 0 pole triangle을 피하는 선택을 설명한다.
@@ -123,3 +127,8 @@ Wireframe은 equator를 중심으로 위·아래 latitude ring이 이어지고, 
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

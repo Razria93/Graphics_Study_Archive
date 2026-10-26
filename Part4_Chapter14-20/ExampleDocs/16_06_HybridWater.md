@@ -1,5 +1,9 @@
 # Chapter16 Ex1606 HybridWater
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `Ex1606_HybridWater`는 grid velocity projection과 particle step을 결합하고, sorted particle을 grid density와 signed-distance field로 변환해 volume 또는 raycast surface로 표시하는 예제다. `Examples.exe 1606`은 GPU particle-grid hybrid data flow와 rendering toggle의 책임을 구분한다.
@@ -47,3 +51,7 @@
 - [Gpu Particle And Fluid Simulation](../../Docs/01_Topics/ComputeAndSimulation/GpuParticleAndFluidSimulation.md)
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter16 Ex1606 HybridWater Demo](../../Docs/03_Demos/Part4_Chapter14-20/16_06_HybridWater.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

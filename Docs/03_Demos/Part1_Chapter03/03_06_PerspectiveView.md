@@ -1,5 +1,9 @@
 # Step6 PerspectiveView Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step6는 Step5의 고정 방향 orthographic ray를 perspective 방향으로 바꾸고, 깊이가 다른 sphere 세 개에서 가장 가까운 교차를 선택한다. Image-plane sample과 eye 위치가 ray 방향을 만들고 object depth가 화면 크기와 가림 순서로 나타나는 흐름을 보여준다.
@@ -156,3 +160,8 @@ Sphere가 서로 겹치는 영역에서는 red, green, blue 순으로 앞쪽 sur
 - [Phong Shading Topic](../../01_Topics/LightingAndShading/PhongShading.md)
 - [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->

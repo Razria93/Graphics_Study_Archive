@@ -1,5 +1,9 @@
 # 01_DX11InitAndImGui
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 이 예제는 Win32 window 위에 DirectX11 device, device context, swap chain, back buffer render target을 만들고, CPU에서 갱신한 작은 canvas texture를 full-screen quad로 출력하는 최소 렌더링 루프를 보여준다. ImGui overlay는 배경색을 조정하는 UI로 사용된다.
@@ -79,3 +83,8 @@ Texture resource를 pixel shader에서 읽으려면 `ShaderResourceView`가 필�
 
 - `Docs/02_Verification/Part1_Chapter01-02/verification-index.md`
 - `Docs/03_Demos/Part1_Chapter01-02/demo-index.md`
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

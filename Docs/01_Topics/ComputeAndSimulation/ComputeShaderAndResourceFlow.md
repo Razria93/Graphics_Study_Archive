@@ -1,5 +1,9 @@
 # Compute Shader And Resource Flow
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Compute shader는 rasterization 경로와 분리된 thread group 실행 모델로 texture와 buffer를 갱신한다. 이 Topic은 Part4 Chapter14의 compute dispatch, SRV/UAV view 전환, GPU draw argument 전달을 설명한다.

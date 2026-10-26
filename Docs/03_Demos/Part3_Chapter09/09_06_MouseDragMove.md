@@ -1,5 +1,9 @@
 # Chapter09 Step6 MouseDragMove Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter09/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Picking ray의 drag 시작 depth를 보존해 sphere를 world space에서 이동하는 translation interaction을 보여준다.
@@ -70,3 +74,8 @@ Textured sphere와 background가 screen-space drag의 depth 기준을 보여준�
 - [이전 Demo](09_05_VirtualTrackball.md)
 - [Demo Index](demo-index.md)
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter09/README.md)
+<!-- portfolio-navigation:end -->

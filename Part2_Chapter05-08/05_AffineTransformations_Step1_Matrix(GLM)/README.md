@@ -1,5 +1,9 @@
 # Chapter05 Step1 Matrix(GLM)
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 이 예제는 GLM matrix의 column access, 곱셈 순서와 homogeneous coordinate를 console 출력으로 확인한다. Graphics pipeline에 좌표 변환을 적용하기 전에 affine transformation의 수치 관계를 분리해 다룬다.
 
 ## 실행 진입점
@@ -55,3 +59,8 @@ Translation matrix는 homogeneous coordinate의 `w`를 이용해 point와 direct
 - [Step1 Matrix 상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/05_MatrixGLM.md)
 - [Verification Index](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

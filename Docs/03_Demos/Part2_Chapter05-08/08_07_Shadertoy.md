@@ -1,5 +1,9 @@
 # Chapter08 Step7 Shadertoy Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Full-screen pixel shader에 time, resolution과 texture channel을 공급하고 procedural noise로 움직이는 star surface와 corona를 만드는 과정을 보여준다.
@@ -105,3 +109,8 @@ Aspect ratio는 고정 `1280/960` 대신 현재 `iResolution`에서 계산한다
 - [Shadertoy Runtime Inputs](../../01_Topics/DirectX11Pipeline/ShadertoyRuntimeInputs.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Chapter05 Step4 Lights(SimpleMath) Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Chapter05 Step1부터 Step4까지의 GLM → DirectXMath/SimpleMath 전환을 마무리한다. Step2 GLM과 같은 CPU rasterization·lighting 장면을 SimpleMath로 옮겼을 때 matrix 식은 달라져도 vertex에 적용되는 transform 순서와 시각 결과가 유지되는지 비교한다.
@@ -147,3 +151,8 @@ Capture는 convention 변환과 inverse-transpose 계산을 단독으로 증명�
 - [Light Types Topic](../../01_Topics/LightingAndShading/LightTypes.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Chapter14 Ex1403 MatVecMult
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `Ex1403_MatVecMult`는 deterministic matrix/vector data의 row-wise dot product를 CPU와 compute shader에서 각각 계산하고 결과를 비교하는 console 중심 예제다. `Examples.exe 1403`은 GPU result를 download한 뒤 error sum을 출력하고 rendering 없이 종료한다.
@@ -44,3 +48,7 @@ tracked screenshot은 사용하지 않는다. 이 예제의 evidence는 `Result 
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter14 Ex1403 MatVecMult Demo](../../Docs/03_Demos/Part4_Chapter14-20/14_03_MatVecMult.md)
 - [Publication Candidate List](../../Docs/05_Publication/candidate-list.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

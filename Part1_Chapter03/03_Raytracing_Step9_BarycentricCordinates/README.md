@@ -1,5 +1,9 @@
 # Step9 Barycentric Coordinates
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 이 예제는 triangle hit point의 barycentric coordinate로 세 vertex color를 보간한다. CPU ray tracer가 red, green, blue vertex 사이의 연속 색을 계산하고 DirectX11은 RGBA32F texture를 화면에 표시한다.
@@ -69,3 +73,8 @@ Triangle의 세 꼭짓점은 red, green, blue에 대응하고 내부는 barycent
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
 - [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/03_09_BarycentricCoordinates.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

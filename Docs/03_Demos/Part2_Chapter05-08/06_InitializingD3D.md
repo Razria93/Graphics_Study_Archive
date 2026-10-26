@@ -1,5 +1,9 @@
 # Chapter06 Step2 InitializingD3D Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step2는 Win32 window에 D3D11 presentation resource와 최소 shader pipeline을 연결해 indexed color cube를 매 frame 그린다. Step1에서 분리한 device·context ownership이 swap chain, render target, depth buffer, viewport, buffer·shader binding과 `Present()`로 이어지는 첫 graphics frame을 보여준다.
@@ -152,3 +156,8 @@ PresentWithVSync();
 - [Swap Chain And Viewport Topic](../../01_Topics/DirectX11Pipeline/SwapChainAndViewport.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Animation Physics And Gameplay Integration
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Character animation, rigid-body simulation, gameplay input은 서로 다른 update source를 render transform과 visual event에 연결한다. 이 Topic은 animation pose, physics pose, gameplay state의 ownership을 구분하고 frame update에서 render state로 합치는 경계를 설명한다.

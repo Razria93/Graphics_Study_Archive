@@ -1,5 +1,9 @@
 # Step2 Circle
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 Step2는 Step1의 triangle rasterizer를 공유 CPU vertex/color 배열과 index 배열로 확장해 고정된 triangle fan을 구성한다. Step1A가 독립 `MyTriangle` 목록과 slider로 segment 변화를 보여주는 Personal Extension이라면, Step2는 position과 color를 한 번 저장하고 index 세 개로 triangle을 조립하는 정규 학습 단계다.
@@ -63,3 +67,8 @@ Red center에서 green boundary로 색이 연속적으로 보간되며 32개 out
 - [Detailed Demo](../../Docs/03_Demos/Part2_Chapter04/02_Circle.md)
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter04/demo-index.md)
 - [Chapter README](../README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

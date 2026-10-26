@@ -1,5 +1,9 @@
 # Post Processing And Bloom
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 이 문서는 bloom 후처리의 개념과 CPU image-processing 결과 표시, GPU multi-pass 구현 흐름을 정리한다. `02_Bloom`은 CPU에서 결과를 만든 뒤 dynamic texture로 표시하고 Chapter08 Step6은 scene render target을 GPU threshold·blur·composite pass에 연결한다.

@@ -1,5 +1,9 @@
 # Chapter14 Ex1406 DensityField
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `Ex1406_DensityField`는 particle structured buffer와 density texture를 compute shader로 갱신하고 sprite draw의 accumulate blend로 colored density trail을 만드는 예제다. `Examples.exe 1406`은 density dissipation, particle sourcing, geometry shader sprite draw의 순서를 확인한다.
@@ -47,3 +51,7 @@
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter14 Ex1406 DensityField Demo](../../Docs/03_Demos/Part4_Chapter14-20/14_06_DensityField.md)
 - [Publication Candidate List](../../Docs/05_Publication/candidate-list.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

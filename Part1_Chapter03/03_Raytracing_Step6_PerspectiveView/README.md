@@ -1,5 +1,9 @@
 # Step6 PerspectiveView
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 이 예제는 Step5의 orthographic primary ray를 perspective 방향으로 바꾸고 깊이가 다른 sphere 세 개 중 가장 가까운 교차를 선택한다. CPU가 primary ray, closest-hit와 Phong shading을 계산하고, DirectX11은 계산된 RGBA32F texture를 full-screen quad로 표시한다.
@@ -68,3 +72,8 @@ Scene은 깊이와 위치가 다른 red, green, blue sphere 세 개로 구성한
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
 - [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/03_06_PerspectiveView.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

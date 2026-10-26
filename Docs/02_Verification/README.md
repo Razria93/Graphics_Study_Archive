@@ -1,5 +1,9 @@
 # Verification
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../00_Index/examples.md) · [문서 탐색](../00_Index/README.md)
+<!-- portfolio-navigation:end -->
+
 이 폴더는 build, run, capture, known issue의 최신 상태를 기록하는 source docs다. 문서 작성 여부와 실제 검증 여부를 분리해서 기록한다.
 
 ## 책임

@@ -1,5 +1,9 @@
 # Step7 BackfaceCulling
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 Step7은 동일한 square topology 두 개를 좌우에 배치하고 오른쪽 square에 X축 180도 회전을 적용해 post-transform winding을 반전한다. CPU software rasterizer는 raster-space signed area로 front/back face를 분류하고 `cullBackface`가 활성화된 경우 back-facing triangle을 coverage 계산 전에 제외한다.
@@ -70,3 +74,8 @@ Culling On과 Off 전체 창 screenshot, On → Off → On selected local video�
 - [Detailed Demo](../../Docs/03_Demos/Part2_Chapter04/07_BackfaceCulling.md)
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter04/demo-index.md)
 - [Chapter README](../README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

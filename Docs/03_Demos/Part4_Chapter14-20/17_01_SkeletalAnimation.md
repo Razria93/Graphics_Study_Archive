@@ -1,5 +1,9 @@
 # Chapter17 Ex1701 SkeletalAnimation Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Character mesh와 animation clip을 분리해 읽고, frame별 bone transform을 GPU structured buffer로 전달해 skinned mesh pose를 표시한다.
@@ -67,3 +71,7 @@ Storyboard는 동일 character mesh가 frame별 bone transform에 따라 다른 
 
 - [Demo Index](demo-index.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->

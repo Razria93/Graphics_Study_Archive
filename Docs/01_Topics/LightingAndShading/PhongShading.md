@@ -1,5 +1,9 @@
 # Phong Shading
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Surface normal, light direction과 view direction으로 ambient, diffuse와 specular 항을 구성하는 Phong shading의 기본 원리를 설명한다. 여러 예제에서 반복되는 lighting 이론을 하나의 개념 정본으로 제공한다.

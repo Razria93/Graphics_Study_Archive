@@ -1,5 +1,9 @@
 # Chapter10 Step5 Tessellation Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Quad patch가 hull shader factor에 따라 세분되는 과정을 wireframe으로 보여준다. Manual은 원래 학습 경로이고 Distance Adaptive는 같은 pipeline의 사용자 확장으로 분리한다.
@@ -81,3 +85,8 @@ Manual factor가 직접 반영된 기본 8×8 분할을 첫 화면에서 확인�
 - [Tessellation Pipeline](../../01_Topics/ModelingAndGeometry/TessellationPipeline.md)
 - [Demo Index](demo-index.md)
 - [이전 Demo](10_04_Fireball.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
+<!-- portfolio-navigation:end -->

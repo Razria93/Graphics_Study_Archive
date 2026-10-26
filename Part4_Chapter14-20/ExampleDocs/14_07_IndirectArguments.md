@@ -1,5 +1,9 @@
 # Chapter14 Ex1407 IndirectArguments
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `Ex1407_IndirectArguments`는 density field particle update 뒤 GPU indirect argument buffer를 `DrawInstancedIndirect`에 직접 전달하는 예제다. `Examples.exe 1407`은 visual이 유사한 `Ex1406`과 달리 CPU draw count가 아닌 GPU buffer의 argument를 사용하는 흐름을 확인한다.
@@ -46,3 +50,7 @@
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter14 Ex1407 IndirectArguments Demo](../../Docs/03_Demos/Part4_Chapter14-20/14_07_IndirectArguments.md)
 - [Publication Candidate List](../../Docs/05_Publication/candidate-list.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Step14 CubeEnvironment
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 이 예제는 camera ray 방향을 cubemap의 여섯 face 중 하나와 2D UV로 변환하고, CPU에서 bilinear sampling한 environment color를 화면에 표시한다. Step13의 geometry trace를 확장한 장면이 아니라 direction-based environment lookup을 분리해 보여주는 독립 예제다.
@@ -75,3 +79,8 @@ Runtime에서 참조하지 않는 blurred face와 별도 `skybox` asset 묶음�
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
 - [Step14 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_14_CubeEnvironment.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

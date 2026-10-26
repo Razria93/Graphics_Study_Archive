@@ -1,5 +1,9 @@
 # Chapter14 Ex1408 BitonicSort Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 GPU compute shader bitonic sort 결과를 CPU sort 기준 결과와 비교하고 stdout evidence로 검증한다.
@@ -74,3 +78,8 @@ ExitCode: 0
 
 - [Demo Index](demo-index.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->

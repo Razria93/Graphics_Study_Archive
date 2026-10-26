@@ -1,5 +1,9 @@
 # Study Map
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](examples.md) · [문서 탐색](README.md)
+<!-- portfolio-navigation:end -->
+
 이 문서는 코드 기준 폴더와 문서 산출물 축의 연결 방식을 안내한다. 예제별 README 정본은 코드 폴더 아래에 두며, 단일 project Part4는 `ExampleDocs`를 예외 경로로 사용한다. 최신 build/run, capture/result, publication 상태는 이 문서에 복제하지 않는다.
 
 ## 코드 기준 폴더

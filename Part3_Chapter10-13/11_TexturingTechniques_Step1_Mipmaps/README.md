@@ -1,5 +1,9 @@
 # Chapter11 Step1 Mipmaps
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 Pixel shader가 명시적인 mip level을 선택해 texture의 축소 단계가 화면 결과에 미치는 영향을 확인한다. 기본값은 level 3으로 두어 level 0과 구분되는 filtering 결과를 즉시 판독할 수 있게 한다.
@@ -44,3 +48,8 @@ Level 3을 선택한 sphere에서 고해상도 원본보다 완화된 texture de
 - [Verification](../../Docs/02_Verification/Part3_Chapter10-13/verification-index.md)
 - [상세 Demo](../../Docs/03_Demos/Part3_Chapter10-13/11_01_Mipmaps.md)
 - [다음 단계](../11_TexturingTechniques_Step2_NormalMapping/README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

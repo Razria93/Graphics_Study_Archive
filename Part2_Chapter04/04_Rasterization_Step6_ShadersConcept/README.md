@@ -1,5 +1,9 @@
 # Step6 ShadersConcept
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 Step6는 CPU software rasterizer에 vertex stage와 pixel stage의 입출력 계약을 분리한다. `MyVertexShader()`는 mesh position에 scale, Z rotation과 translation을 적용하고 color와 UV를 다음 단계로 전달한다. Rasterizer는 vertex output을 보간해 `MyPixelShader()`의 입력을 구성한다.
@@ -69,3 +73,8 @@ Step6는 CPU software rasterizer에 vertex stage와 pixel stage의 입출력 계
 - [Detailed Demo](../../Docs/03_Demos/Part2_Chapter04/06_ShadersConcept.md)
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter04/demo-index.md)
 - [Chapter README](../README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

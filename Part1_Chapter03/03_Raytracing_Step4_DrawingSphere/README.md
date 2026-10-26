@@ -1,5 +1,9 @@
 # Step4 DrawingSphere
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 이 예제는 화면의 각 pixel에서 고정된 `+Z` 방향의 primary ray를 만들고 하나의 sphere와 교차시켜 CPU pixel buffer에 결과를 기록한다. 계산한 RGBA32F buffer는 DirectX11 dynamic texture로 업로드하고 full-screen quad로 표시한다.
@@ -63,3 +67,8 @@ CPU에서 만든 결과는 `D3D11_USAGE_DYNAMIC` texture에 매 frame 복사한�
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
 - [Detailed Demo](../../Docs/03_Demos/Part1_Chapter03/03_04_DrawingSphere.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

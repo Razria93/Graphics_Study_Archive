@@ -1,5 +1,9 @@
 # Step11 Supersampling Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 한 output cell의 화면 영역을 재귀적으로 2×2 분할하고 64개 primary ray의 shading 결과를 평균하는 CPU supersampling 흐름을 확인한다. 160×90 결과를 1280×720 viewport에 point-upscale하는 구현을 통해 edge coverage 완화와 낮은 공간 해상도의 trade-off를 함께 확인한다.
@@ -158,3 +162,8 @@ Ray tracing과 supersampling은 CPU에서 최초 frame에 한 번 수행한다. 
 - [Intersection](../../01_Topics/RayTracing/Intersection.md)
 - [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->

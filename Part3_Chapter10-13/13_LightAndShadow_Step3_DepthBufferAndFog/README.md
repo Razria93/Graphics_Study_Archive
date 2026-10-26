@@ -1,5 +1,9 @@
 # Chapter13 Step3 DepthBufferAndFog
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 Depth buffer를 reconstruct해 distance fog post effect를 계산한다.
 
 ## 구현 요약
@@ -33,3 +37,8 @@ Depth buffer를 reconstruct해 distance fog post effect를 계산한다.
 - [상세 Demo](../../Docs/03_Demos/Part3_Chapter10-13/13_03_DepthBufferAndFog.md)
 - [Depth Reconstruction And Fog](../../Docs/01_Topics/DirectX11Pipeline/DepthReconstructionAndFog.md)
 - [Verification](../../Docs/02_Verification/Part3_Chapter10-13/verification-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

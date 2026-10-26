@@ -1,5 +1,9 @@
 # GPU Particle And Fluid Simulation
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Particle, SPH water, stable fluids, smoke와 hybrid water 예제는 시간에 따라 변하는 simulation state를 update하고 render 단계에서 그 state를 읽는다. 이 Topic은 CPU update와 GPU compute update를 구분하고 particle 또는 grid state를 visual output으로 연결하는 공통 구조를 설명한다.

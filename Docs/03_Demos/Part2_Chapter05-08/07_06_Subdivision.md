@@ -1,5 +1,9 @@
 # Chapter07 Step6 Subdivision Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 기존 triangle mesh의 edge midpoint를 만들고 parent triangle 하나를 child triangle 네 개로 재구성한 뒤, 새 vertex를 sphere 표면에 투영하는 subdivision 흐름을 확인한다.
@@ -111,3 +115,8 @@ Wireframe은 seed의 각 triangle이 두 pass를 거치며 16개 child triangle�
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

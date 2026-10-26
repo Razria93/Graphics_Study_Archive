@@ -1,5 +1,9 @@
 # Chapter16 Ex1605 SmokeCpu Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 CPU-side fluid simulation이 계산한 3D density grid를 Texture3D로 업로드하고, volume ray marching으로 smoke-like density field를 표시한다.
@@ -67,3 +71,8 @@ CPU-side fluid simulation이 계산한 3D density grid를 Texture3D로 업로드
 
 - [Demo Index](demo-index.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->

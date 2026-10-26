@@ -1,5 +1,9 @@
 # Part4 Chapter14-20
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../README.md) · [전체 예제](../Docs/00_Index/examples.md#part4-ch14-20) · [해당 Part의 Demo](../Docs/03_Demos/Part4_Chapter14-20/demo-index.md)
+<!-- portfolio-navigation:end -->
+
 Compute shader, simulation, animation, foliage, physics, gameplay 예제를 정리한 Part4 archive 폴더입니다.
 
 Part4 source는 예제별 solution이 아니라 `Examples` 단일 Visual Studio project 안에 `Ex1401`-`Ex2001` 파일이 모인 구조다. Primary와 reference-only baseline의 관계는 [`SRC-P4-C14-20`](../Docs/99_Legacy/source-registry.md)으로 추적한다.

@@ -1,5 +1,9 @@
 # Step1 Triangle
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 이 예제는 세 vertex를 raster 좌표로 변환하고 CPU에서 triangle coverage와 barycentric RGB interpolation을 계산하는 software rasterization의 최소 기반이다. 계산한 RGBA32F pixel buffer는 DirectX11 dynamic texture를 거쳐 full-screen quad에 표시한다.
@@ -57,3 +61,8 @@ CPU에서 만든 결과는 `D3D11_USAGE_DYNAMIC` texture로 복사한다. HLSL�
 - [Verification](../../Docs/02_Verification/Part2_Chapter04/verification-index.md)
 - [Detailed Demo](../../Docs/03_Demos/Part2_Chapter04/01_Triangle.md)
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter04/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

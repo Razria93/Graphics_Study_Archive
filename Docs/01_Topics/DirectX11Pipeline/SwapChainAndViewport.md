@@ -1,5 +1,9 @@
 # Swap Chain And Viewport
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Swap chain은 application의 render buffer와 window presentation을 연결하고 viewport는 render target 안에서 rasterized 결과가 놓일 영역을 정의한다. 이 문서는 back buffer, render target view, depth resource, viewport와 `Present()`가 하나의 frame 출력 경로를 이루는 관계를 설명한다.

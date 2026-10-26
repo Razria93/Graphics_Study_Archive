@@ -1,5 +1,9 @@
 # Chapter16 Ex1602 CurlNoise
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `Ex1602_CurlNoise`는 curl-noise compute shader가 structured particle buffer를 갱신하고, sprite accumulation이 colored density trail을 만드는 예제다. `Examples.exe 1602`는 density dissipation과 curl vector update가 이어지는 GPU resource flow를 확인한다.
@@ -46,3 +50,7 @@
 - [Gpu Particle And Fluid Simulation](../../Docs/01_Topics/ComputeAndSimulation/GpuParticleAndFluidSimulation.md)
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter16 Ex1602 CurlNoise Demo](../../Docs/03_Demos/Part4_Chapter14-20/16_02_CurlNoise.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Step6 ShadersConcept Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step6는 CPU software rasterizer의 transform과 fragment color 계산을 vertex stage와 pixel stage의 입출력 계약으로 분리한다. 회전하는 white square는 CPU vertex stage가 position을 갱신하고 rasterizer와 CPU pixel stage를 거쳐 framebuffer를 만드는 end-to-end 결과를 보여준다.
@@ -158,3 +162,8 @@ Screenshot 후보의 white square는 원본 axis-aligned vertex가 CPU vertex st
 - [Triangle Rasterization](../../01_Topics/Rasterization/TriangleRasterization.md)
 - [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->

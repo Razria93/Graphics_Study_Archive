@@ -1,5 +1,9 @@
 # Chapter10 Step5 Tessellation
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 Quad patch를 hull shader, tessellator와 domain shader로 분할한다. Manual mode는 UI factor를 직접 사용하며 Distance Adaptive mode는 camera distance로 같은 factor를 계산하는 사용자 확장이다.
@@ -53,3 +57,8 @@ Manual factor 16은 같은 quad patch가 더 촘촘하게 세분되는 상태를
 - [Verification](../../Docs/02_Verification/Part3_Chapter10-13/verification-index.md)
 - [상세 Demo](../../Docs/03_Demos/Part3_Chapter10-13/10_05_Tessellation.md)
 - [이전 단계](../10_GeometryPipeline_Step4_Fireball/README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

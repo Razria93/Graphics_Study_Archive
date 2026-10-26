@@ -1,5 +1,9 @@
 # Chapter16 Ex1605 SmokeCpu
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `Ex1605_SmokeCpu`는 CPU fluid simulation이 계산한 3D density grid를 매 frame GPU Texture3D로 upload하고 volume ray marching으로 smoke-like field를 표시하는 예제다. `Examples.exe 1605`는 GPU compute simulation이 아닌 CPU update와 upload 비용 경로를 비교 기준으로 둔다.
@@ -47,3 +51,7 @@
 - [Gpu Particle And Fluid Simulation](../../Docs/01_Topics/ComputeAndSimulation/GpuParticleAndFluidSimulation.md)
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter16 Ex1605 SmokeCpu Demo](../../Docs/03_Demos/Part4_Chapter14-20/16_05_SmokeCpu.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

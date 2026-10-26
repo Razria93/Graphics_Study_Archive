@@ -1,5 +1,9 @@
 # Chapter16 Ex1604 RealtimeSmoke
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `Ex1604_RealtimeSmoke`는 GPU Texture3D velocity와 density field를 projection, difference upsample, advection으로 갱신하고 volume ray marching으로 smoke를 그리는 예제다. `Examples.exe 1604`는 GPU compute simulation과 HDRI가 포함된 rendered evidence를 분리해 확인한다.
@@ -47,3 +51,7 @@
 - [Gpu Particle And Fluid Simulation](../../Docs/01_Topics/ComputeAndSimulation/GpuParticleAndFluidSimulation.md)
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter16 Ex1604 RealtimeSmoke Demo](../../Docs/03_Demos/Part4_Chapter14-20/16_04_RealtimeSmoke.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

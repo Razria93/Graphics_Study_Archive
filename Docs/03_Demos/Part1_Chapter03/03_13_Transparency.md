@@ -1,5 +1,9 @@
 # Step13 Transparency Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Recursive reflection trace에 refraction path를 추가하고, air와 glass 경계를 드나드는 secondary ray가 textured background를 왜곡하는 결과를 확인한다. Fixed IOR, enter/exit normal 전환과 total internal reflection fallback을 실제 코드에 연결한다.
@@ -231,3 +235,8 @@ Ray tracing은 CPU에서 최초 frame에 한 번 수행한다. HLSL은 ray traci
 - [Texture Sampling](../../01_Topics/TexturingAndMapping/TextureSampling.md)
 - [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->

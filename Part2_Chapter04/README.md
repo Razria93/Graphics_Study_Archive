@@ -1,5 +1,9 @@
 # Part2 Chapter04
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../README.md) · [전체 예제](../Docs/00_Index/examples.md#part2-ch04) · [해당 Part의 Demo](../Docs/03_Demos/Part2_Chapter04/demo-index.md)
+<!-- portfolio-navigation:end -->
+
 CPU software rasterization에서 triangle coverage와 attribute interpolation을 시작으로 2D primitive, transform, depth, culling, perspective projection과 lighting까지 확장하는 예제 묶음이다. 각 Step의 CPU 결과는 DirectX11 texture를 통해 화면에 표시한다.
 
 ## 상태

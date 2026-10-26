@@ -1,5 +1,9 @@
 # Chapter06 Step7 ResizingViewport Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step7은 Step6의 textured lighting scene을 유지하면서 ImGui control panel과 scene viewport를 하나의 render target 안에서 분리한다. Panel 너비를 viewport의 시작 위치로 사용하고 남은 영역의 aspect ratio를 projection에 반영해 UI와 geometry가 겹치거나 늘어나지 않게 한다.
@@ -134,3 +138,8 @@ Panel 아래와 scene 밖의 검은 영역은 전체 render target clear 결과�
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

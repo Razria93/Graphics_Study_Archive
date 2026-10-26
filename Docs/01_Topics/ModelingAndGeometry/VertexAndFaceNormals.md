@@ -1,5 +1,9 @@
 # Vertex And Face Normals
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Mesh surface의 방향을 표현하는 vertex normal과 face normal의 책임을 구분하고, normal을 line geometry로 시각화할 때 필요한 변환을 정리한다.

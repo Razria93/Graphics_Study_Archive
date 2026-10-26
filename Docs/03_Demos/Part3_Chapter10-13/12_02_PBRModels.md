@@ -1,5 +1,9 @@
 # Chapter12 Step2 PBRModels Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step1의 PBR pipeline을 Assimp로 불러온 character mesh와 여러 material texture에 적용한다.
@@ -78,3 +82,8 @@ RenderWithIBL(meshes);
 - [Metallic Roughness Workflow](../../01_Topics/PBRAndIBL/MetallicRoughnessWorkflow.md)
 - [Demo Index](demo-index.md)
 - [이전 Demo](12_01_UnrealPBR.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
+<!-- portfolio-navigation:end -->

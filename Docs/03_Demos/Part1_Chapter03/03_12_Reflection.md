@@ -1,5 +1,9 @@
 # Step12 Reflection Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Closest hit의 local Phong shading과 recursive reflection ray가 반환한 color를 material weight로 결합하는 CPU ray tracing 흐름을 확인한다. Red sphere에 ground와 blue sphere가 반사되는 결과를 실제 코드와 연결한다.
@@ -177,3 +181,8 @@ Ray tracing은 CPU에서 최초 frame에 한 번 수행한다. HLSL은 ray traci
 - [Texture Sampling](../../01_Topics/TexturingAndMapping/TextureSampling.md)
 - [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->

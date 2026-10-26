@@ -1,5 +1,9 @@
 # Chapter11 Step5 HDRPipeline Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 HDR scene buffer에서 bloom pyramid를 만들고 exposure·gamma와 결합해 최종 display image를 만드는 post-process chain을 보여준다.
@@ -82,3 +86,8 @@ return GammaEncode(ToneMap(combined, exposure), gamma);
 - [HDR Rendering Pipeline](../../01_Topics/TexturingAndMapping/HDRRenderingPipeline.md)
 - [Demo Index](demo-index.md)
 - [이전 Demo](11_04_HDRI.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
+<!-- portfolio-navigation:end -->

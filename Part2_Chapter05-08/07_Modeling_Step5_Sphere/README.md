@@ -1,5 +1,9 @@
 # Chapter07 Step5 Sphere
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 위·아래 반구를 별도로 생성하고 equator에서 결합해 sphere mesh를 만드는 사용자 구현이다. 각 반구의 pole band를 triangle fan 형태로 마감해 일반 quad 분할에서 생길 수 있는 면적 0 pole triangle을 피한다.
 
 ## 실행 진입점
@@ -54,3 +58,8 @@
 - [상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/07_05_Sphere.md)
 - [이전 단계: Chapter07 Step4](../07_Modeling_Step4_Cylinder/README.md)
 - [다음 단계: Chapter07 Step6 Subdivision](../07_Modeling_Step6_Subdivision/README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Chapter06 Step7 ResizingViewport
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 이 예제는 Step6의 textured lighting scene을 유지하면서 ImGui control panel과 scene rendering 영역을 하나의 render target 안에서 분리한다. Panel의 현재 너비를 기준으로 scene viewport의 시작점과 너비를 정하고 projection aspect ratio를 남은 영역에 맞춘다.
 
 ## 실행 진입점
@@ -77,3 +81,8 @@ Step6의 generated 목재 texture, box geometry와 Directional·Point·Spot ligh
 - [Step7 상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/07_ResizingViewport.md)
 - [Verification Index](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

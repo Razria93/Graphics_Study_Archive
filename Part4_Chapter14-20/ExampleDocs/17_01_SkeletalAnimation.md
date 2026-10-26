@@ -1,5 +1,9 @@
 # Chapter17 Ex1701 SkeletalAnimation
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `Ex1701_SkeletalAnimation`은 character mesh와 FBX animation clip을 분리해 읽고 bone transform을 structured buffer로 전달해 skinned mesh pose를 표시하는 예제다. `Examples.exe 1701`은 runtime character, animation, texture와 HDRI asset을 필요로 하며 원본 asset 대신 rendered storyboard를 evidence로 사용한다.
@@ -47,3 +51,7 @@
 - [Animation Physics And Gameplay Integration](../../Docs/01_Topics/AnimationAndPhysics/AnimationPhysicsAndGameplayIntegration.md)
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter17 Ex1701 SkeletalAnimation Demo](../../Docs/03_Demos/Part4_Chapter14-20/17_01_SkeletalAnimation.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

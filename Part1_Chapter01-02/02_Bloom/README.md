@@ -1,5 +1,9 @@
 # 02_Bloom
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `02_Bloom`은 CPU에서 이미지 기반 bloom 후처리를 계산하고, 계산된 픽셀 데이터를 DirectX11 dynamic texture로 업로드해 화면에 표시하는 예제다. 밝은 영역을 threshold로 분리하고 blur를 반복 적용한 뒤 원본 이미지와 합성하는 기본 bloom 흐름을 확인한다.
@@ -58,3 +62,8 @@ Input/result 비교와 결과 해석은 상세 Demo로 연결한다.
 - [Verification](../../Docs/02_Verification/Part1_Chapter01-02/verification-index.md)
 - [Detailed Demo](../../Docs/03_Demos/Part1_Chapter01-02/02_Bloom.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter01-02/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

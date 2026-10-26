@@ -1,5 +1,9 @@
 # Chapter16 Ex1606 HybridWater Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Particle simulation과 grid velocity projection을 결합하고, particle-to-grid density field를 volume rendering 또는 signed-distance raycasting으로 표시한다.
@@ -68,3 +72,7 @@ Storyboard는 raycasting surface 표시와 `RenderDensity` density volume 표시
 
 - [Demo Index](demo-index.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->

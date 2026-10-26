@@ -1,5 +1,9 @@
 # Step7 BackfaceCulling Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step7은 동일 square topology에 서로 다른 transform을 적용해 반대 post-transform winding을 만들고, CPU software rasterizer의 signed-area backface culling 결과를 비교한다. ImGui checkbox로 culling을 끄고 켜면서 primitive rejection이 최종 framebuffer에 미치는 영향을 확인한다.
@@ -168,3 +172,8 @@ Selected local video는 On → Off → On 순서로 checkbox와 결과가 전환
 - [Shader Stage](../../01_Topics/DirectX11Pipeline/ShaderStage.md)
 - [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->

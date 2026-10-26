@@ -1,5 +1,9 @@
 # Chapter15 Ex1501 ParticleSystem
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `Ex1501_ParticleSystem`은 fixed-size CPU particle pool을 spawn, gravity, collision으로 갱신한 뒤 structured buffer를 통해 geometry shader sprite로 그리는 예제다. `Examples.exe 1501`은 CPU simulation과 GPU sprite rendering의 역할 분리를 확인한다.
@@ -45,3 +49,7 @@
 - [Gpu Particle And Fluid Simulation](../../Docs/01_Topics/ComputeAndSimulation/GpuParticleAndFluidSimulation.md)
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter15 Ex1501 ParticleSystem Demo](../../Docs/03_Demos/Part4_Chapter14-20/15_01_ParticleSystem.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

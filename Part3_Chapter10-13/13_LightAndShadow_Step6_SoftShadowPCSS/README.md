@@ -1,5 +1,9 @@
 # Chapter13 Step6 SoftShadowPCSS
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 Blocker search와 penumbra 추정으로 가변 폭 PCF를 적용한다.
 
 ## 구현 요약
@@ -31,3 +35,8 @@ Blocker search와 penumbra 추정으로 가변 폭 PCF를 적용한다.
 - [상세 Demo](../../Docs/03_Demos/Part3_Chapter10-13/13_06_SoftShadowPCSS.md)
 - [Percentage Closer Filtering And PCSS](../../Docs/01_Topics/Shadows/PercentageCloserFilteringAndPCSS.md)
 - [Verification](../../Docs/02_Verification/Part3_Chapter10-13/verification-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

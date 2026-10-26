@@ -1,5 +1,9 @@
 # Shader Stage
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Shader stage는 graphics pipeline의 각 처리 단계가 어떤 입력을 받고 어떤 출력을 다음 단계로 전달하는지 설명한다. Vertex stage, rasterization과 pixel stage의 책임 경계를 중심으로 다루며 특정 예제 함수나 API 호출은 관련 Example과 Demo로 위임한다.

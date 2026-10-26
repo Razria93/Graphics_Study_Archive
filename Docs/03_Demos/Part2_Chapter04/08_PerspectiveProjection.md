@@ -1,5 +1,9 @@
 # Step8 PerspectiveProjection Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step8은 서로 다른 Z에 놓인 두 square를 사용해 orthographic과 perspective projection의 크기 차이를 확인하고, screen-space affine interpolation과 perspective-correct interpolation의 checker pattern을 비교한다. Projection과 attribute correction을 독립적인 runtime toggle로 제공해 각 단계가 최종 CPU framebuffer에 미치는 영향을 분리한다.
@@ -162,3 +166,8 @@ Affine 상태의 기울어진 square에서는 checker column과 row 간격이 su
 - [Triangle Rasterization](../../01_Topics/Rasterization/TriangleRasterization.md)
 - [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->

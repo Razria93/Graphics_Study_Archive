@@ -1,5 +1,9 @@
 # Mesh Topology And Wireframe Rasterization
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Mesh의 vertex와 index가 primitive를 구성하는 방식과 DirectX11 rasterizer fill mode가 triangle의 내부 채움만 바꾸는 관계를 설명한다. Line geometry와 triangle wireframe을 구분해 같은 선 모양의 결과가 서로 다른 pipeline 입력에서 나올 수 있음을 정리한다.

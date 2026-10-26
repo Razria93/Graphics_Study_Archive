@@ -1,5 +1,9 @@
 # Step13 Transparency
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 이 예제는 Step12의 recursive ray trace에 refraction path를 추가한다. IOR 1.5인 transparent sphere가 air와 glass 경계를 드나들 때 normal과 IOR ratio를 전환하고, `glm::refract`로 계산한 secondary ray를 재귀 추적한다.
@@ -71,3 +75,8 @@ Sphere 내부에서 background의 수평선과 구름, 수면 반사가 확대�
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
 - [Step13 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_13_Transparency.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Chapter08 Step6 BloomEffect
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 예제 목적
 
 Step5의 environment-lit scene을 GPU post-processing texture chain으로 전달하고 bright-pass, 반복 downsample·blur, 원본 합성을 수행해 bloom 결과를 만든다.
@@ -49,3 +53,8 @@ Step5의 environment-lit scene을 GPU post-processing texture chain으로 전달
 - [Verification](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [이전 단계: Chapter08 Step5 FresnelEffect](../08_ShaderToys_Step5_FresnelEffect/README.md)
 - 다음 단계: Chapter08 Step7 Shadertoy
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

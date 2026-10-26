@@ -1,5 +1,9 @@
 # Chapter14 Ex1405 ConsumeAppendBuffer
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `Ex1405_ConsumeAppendBuffer`는 consume buffer의 particle을 compute shader에서 읽어 append buffer에 기록하고, append counter를 draw count로 사용하는 예제다. `Examples.exe 1405`는 UAV counter 초기화, `CopyStructureCount`, CPU download와 매 frame buffer role swap을 연결한다.
@@ -46,3 +50,7 @@ tracked screenshot 후보의 point cloud와 `AppendBuffer count: 25600` stdout�
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter14 Ex1405 ConsumeAppendBuffer Demo](../../Docs/03_Demos/Part4_Chapter14-20/14_05_ConsumeAppendBuffer.md)
 - [Publication Candidate List](../../Docs/05_Publication/candidate-list.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Chapter19 Ex1901 PhysX Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 PhysX rigid-body scene을 fixed time step으로 갱신하고, actor shape pose를 render model world transform에 반영해 block wall collapse를 표시한다.
@@ -66,3 +70,7 @@ Storyboard는 static ground와 block stack이 gravity와 collision에 따라 col
 
 - [Demo Index](demo-index.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->

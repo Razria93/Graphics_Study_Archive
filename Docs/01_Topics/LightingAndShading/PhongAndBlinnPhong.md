@@ -1,5 +1,9 @@
 # Phong And Blinn-Phong
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Surface normal, light direction과 view direction으로 specular highlight를 계산할 때 Phong reflection vector와 Blinn half-vector가 어떤 기준을 사용하는지 비교한다. 두 모델이 공유하는 ambient와 Lambert diffuse 구성, shininess의 역할과 directional light 해석을 함께 설명한다.

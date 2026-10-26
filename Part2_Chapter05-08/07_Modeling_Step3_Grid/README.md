@@ -1,5 +1,9 @@
 # Chapter07 Step3 Grid
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 가로·세로 분할 수를 기준으로 XY plane의 vertex, normal, UV와 triangle index를 절차적으로 생성한다. Step2의 고정 box geometry에서 벗어나 입력 파라미터로 mesh topology를 구성하고 같은 surface·normal draw 경로에 연결하는 과정을 확인한다.
 
 ## 실행 진입점
@@ -50,3 +54,8 @@
 - [상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/07_03_Grid.md)
 - [이전 단계: Chapter07 Step2](../07_Modeling_Step2_DrawingNormals/README.md)
 - [다음 단계: Chapter07 Step4](../07_Modeling_Step4_Cylinder/README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

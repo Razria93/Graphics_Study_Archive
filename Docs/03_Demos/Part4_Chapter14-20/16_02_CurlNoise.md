@@ -1,5 +1,9 @@
 # Chapter16 Ex1602 CurlNoise Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Tileable noise gradient에서 만든 2D curl velocity로 particle을 갱신하고, geometry shader sprite와 accumulate blend로 colored density trail을 표시한다.
@@ -66,3 +70,7 @@ Tileable noise gradient에서 만든 2D curl velocity로 particle을 갱신하�
 
 - [Demo Index](demo-index.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->

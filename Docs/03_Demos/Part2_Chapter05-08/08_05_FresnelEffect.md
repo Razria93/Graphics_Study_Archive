@@ -1,5 +1,9 @@
 # Chapter08 Step5 FresnelEffect Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step4의 image based lighting에 Schlick Fresnel factor를 결합해 sphere를 바라보는 각도에 따라 environment reflection 기여가 달라지는 결과를 보여준다.
@@ -89,3 +93,8 @@ Stonewall environment가 sphere에 반사되며 view angle과 `fresnelR0`에 따
 - [Fresnel Reflectance](../../01_Topics/LightingAndShading/FresnelReflectance.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Rim Lighting
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Rim lighting은 view direction과 surface normal의 관계를 사용해 object silhouette을 강조하는 stylized shading 기법이다.

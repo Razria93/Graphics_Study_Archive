@@ -1,5 +1,9 @@
 # Geometry Shader And Billboards
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Geometry shader가 input primitive를 새로운 primitive stream으로 확장하는 구조와 camera-facing billboard 연결을 설명한다.

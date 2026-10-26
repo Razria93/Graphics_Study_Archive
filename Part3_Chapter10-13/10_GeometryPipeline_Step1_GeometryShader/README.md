@@ -1,5 +1,9 @@
 # Chapter10 Step1 GeometryShader
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 하나의 point primitive를 geometry shader에서 네 vertex의 quad strip으로 확장한다. 수정된 구현은 `TriangleStream`의 연결 규칙을 명확히 지키면서 기존 사각형 결과를 유지한다.
@@ -44,3 +48,8 @@
 - [Verification](../../Docs/02_Verification/Part3_Chapter10-13/verification-index.md)
 - [상세 Demo](../../Docs/03_Demos/Part3_Chapter10-13/10_01_GeometryShader.md)
 - [다음 단계](../10_GeometryPipeline_Step2_Billboards/README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

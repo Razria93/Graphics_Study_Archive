@@ -1,5 +1,9 @@
 # Chapter06 Step5 Texturing Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step5는 Step4의 UV 전달과 pixel constant buffer에 GPU texture resource, shader resource view와 sampler를 추가한다. 두 texture를 `xSplit`으로 선택해 CPU의 resource 생성부터 pixel shader sampling까지 이어지는 흐름을 확인한다.
@@ -156,3 +160,8 @@ Color SampleSplitTexture(Vector2 uv, float split)
 - [Shader Stage Topic](../../01_Topics/DirectX11Pipeline/ShaderStage.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

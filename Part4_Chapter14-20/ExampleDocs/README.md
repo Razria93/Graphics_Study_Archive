@@ -1,5 +1,9 @@
 # Part4 ExampleDocs
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 이 폴더는 `Examples.sln` 단일 project에 모인 Part4 Example의 근거리 안내 정본을 둔다. Part4는 예제별 코드 폴더를 만들지 않으므로, 이 폴더의 Markdown 문서가 다른 Part의 예제 폴더 `README.md`와 같은 책임을 맡는다.
 
 ## 작성 기준

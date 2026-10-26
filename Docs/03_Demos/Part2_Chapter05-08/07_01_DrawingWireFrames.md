@@ -1,5 +1,9 @@
 # Chapter07 Step1 DrawingWireFrames Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 절차적으로 생성한 indexed box가 triangle list로 조립된 뒤 rasterizer fill mode에 따라 solid 또는 wireframe으로 표시되는 흐름을 확인한다. 기본 결과는 box 외곽선과 각 face의 triangulation diagonal을 함께 보여준다.
@@ -121,3 +125,8 @@ UI에서 `Wireframe`이 선택되고 `Use Texture`가 해제된 상태를 함께
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Chapter10 Step2 Billboards
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 Step1의 geometry shader quad를 camera-facing billboard와 texture array로 확장한다. 각 point는 camera 방향 변화에도 정면을 유지하며 primitive ID로 서로 다른 tree texture를 선택한다.
@@ -50,3 +54,8 @@ CENTER → LEFT → RIGHT camera 위치 비교에서도 billboard quad가 camera
 - [상세 Demo](../../Docs/03_Demos/Part3_Chapter10-13/10_02_Billboards.md)
 - [이전 단계](../10_GeometryPipeline_Step1_GeometryShader/README.md)
 - [다음 단계](../10_GeometryPipeline_Step3_NormalLines/README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

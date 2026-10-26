@@ -1,5 +1,9 @@
 # Chapter05 Step2 Lights(GLM) Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step1에서 수치로 확인한 GLM affine transformation이 Step2의 object position, normal과 lighting 결과에 어떻게 연결되는지 보여준다. CPU rasterizer가 model·normal transform과 Blinn-Phong lighting을 처리하고 DirectX11이 그 결과를 표시하는 책임 경계를 함께 설명한다.
@@ -147,3 +151,8 @@ Capture는 inverse-transpose 계산 자체를 증명하지 않는다. 해당 사
 - [Light Types Topic](../../01_Topics/LightingAndShading/LightTypes.md)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

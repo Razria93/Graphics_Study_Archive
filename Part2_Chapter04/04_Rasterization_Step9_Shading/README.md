@@ -1,5 +1,9 @@
 # Step9 Shading
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 Step9은 Step8의 CPU software rasterizer에 box topology, face normal과 directional Blinn-Phong shading을 추가한다. Position과 normal을 CPU vertex stage에서 변환하고 perspective-correct barycentric weight로 fragment position과 normal을 보간한 뒤 ambient, diffuse와 specular를 합성한다.
@@ -70,3 +74,8 @@ Rasterizer는 projected triangle의 coverage와 depth를 계산한다. Perspecti
 - [Detailed Demo](../../Docs/03_Demos/Part2_Chapter04/09_Shading.md)
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter04/demo-index.md)
 - [Chapter README](../README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

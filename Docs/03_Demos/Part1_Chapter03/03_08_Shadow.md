@@ -1,5 +1,9 @@
 # Step8 Shadow Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step7의 primary ray와 closest-hit 이후에 point light visibility를 검사하여 sphere가 바닥에 만드는 cast shadow를 확인한다.
@@ -187,3 +191,8 @@ Ray tracing은 CPU에서 최초 frame에 한 번 실행한다. DirectX11과 HLSL
 - [Phong Shading](../../01_Topics/LightingAndShading/PhongShading.md)
 - [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->

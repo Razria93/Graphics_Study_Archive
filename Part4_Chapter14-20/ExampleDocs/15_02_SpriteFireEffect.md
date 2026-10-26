@@ -1,5 +1,9 @@
 # Chapter15 Ex1502 SpriteFireEffect
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 `Ex1502_SpriteFireEffect`는 CPU particle pool에 buoyancy를 적용하고 textured sprite를 accumulate blend로 그려 fire-like effect를 만드는 예제다. `Examples.exe 1502`는 runtime sprite texture binding과 rendered storyboard evidence를 분리해 확인한다.
@@ -47,3 +51,7 @@
 - [Gpu Particle And Fluid Simulation](../../Docs/01_Topics/ComputeAndSimulation/GpuParticleAndFluidSimulation.md)
 - [Part4 Verification](../../Docs/02_Verification/Part4_Chapter14-20/verification-index.md)
 - [Chapter15 Ex1502 SpriteFireEffect Demo](../../Docs/03_Demos/Part4_Chapter14-20/15_02_SpriteFireEffect.md)
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

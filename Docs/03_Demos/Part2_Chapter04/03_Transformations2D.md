@@ -1,5 +1,9 @@
 # Step3 Transformations2D Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step3은 원본 5-segment polygonal fan에 두 rotation, non-uniform scale과 두 translation을 순차 적용해 transform order가 orientation과 최종 위치에 미치는 영향을 보여준다. Identity 상태와 composed 상태를 비교해 원본 geometry 보존과 매-frame derived buffer 갱신을 설명한다.
@@ -117,3 +121,8 @@ Transform 결과는 GPU geometry pipeline이 아니라 기존 CPU indexed triang
 - [2D Transformations Topic](../../01_Topics/Rasterization/Transformations2D.md)
 - [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->

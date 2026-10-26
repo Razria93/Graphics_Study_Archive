@@ -1,5 +1,9 @@
 # Chapter14 Ex1401 Basic Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Back buffer UAV를 compute shader 출력 대상으로 사용하는 Chapter14의 최소 compute visual 기준선을 확인한다.
@@ -60,3 +64,8 @@ Back buffer UAV를 compute shader 출력 대상으로 사용하는 Chapter14의 
 
 - [Demo Index](demo-index.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->

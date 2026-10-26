@@ -1,5 +1,9 @@
 # Chapter13 Step6 SoftShadowPCSS Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Blocker search와 penumbra 추정으로 가변 폭 PCF를 적용한다.
@@ -61,3 +65,8 @@ Hard shadow, fixed-kernel PCF와 variable penumbra PCSS를 한 화면에서 비�
 - [Demo Index](demo-index.md)
 - [이전 Demo](13_05_SoftShadowPCF.md)
 - [다음 Demo](13_07_Halo.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
+<!-- portfolio-navigation:end -->

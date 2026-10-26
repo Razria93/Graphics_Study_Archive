@@ -1,5 +1,9 @@
 # Videos
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [문서 탐색](../../00_Index/README.md)
+<!-- portfolio-navigation:end -->
+
 이 폴더는 게시된 video reference와 video asset 운영 안내를 둔다. Raw, attempt와 selected video는 `local/`에 두고 published video는 GitHub Demo Issue 전용 댓글 attachment를 기본값으로 사용한다.
 
 ## 기준

@@ -1,5 +1,9 @@
 # Chapter07 Step2 DrawingNormals
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 Step1의 indexed box surface에 vertex normal 방향을 나타내는 별도 line geometry를 추가한다. Surface는 `TRIANGLELIST`, normal은 `LINELIST`로 그려 같은 mesh에서 topology와 draw 책임이 분리되는 과정을 확인한다.
 
 ## 실행 진입점
@@ -50,3 +54,8 @@ Step1의 indexed box surface에 vertex normal 방향을 나타내는 별도 line
 - [상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/07_02_DrawingNormals.md)
 - [이전 단계: Chapter07 Step1](../07_Modeling_Step1_DrawingWireFrames/README.md)
 - [다음 단계: Chapter07 Step3](../07_Modeling_Step3_Grid/README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

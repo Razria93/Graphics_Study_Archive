@@ -1,5 +1,9 @@
 # Step1A Triangle To Circle
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 Step1A는 Step1의 단일 triangle rasterization을 여러 triangle로 구성한 fan으로 확장해 polygon이 circle에 가까워지는 과정을 보여주는 Personal Extension이다. 강의 단계인 Step2 Circle과 달리 각 segment를 독립 `MyTriangle`로 저장하고 ImGui slider 변경 시 fan 전체를 다시 생성한다.
@@ -55,3 +59,8 @@ Step1A는 Step1의 단일 triangle rasterization을 여러 triangle로 구성한
 - [Detailed Demo](../../Docs/03_Demos/Part2_Chapter04/01_TriangleToCircle.md)
 - [Verification Index](../../Docs/02_Verification/Part2_Chapter04/verification-index.md)
 - [Chapter README](../README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

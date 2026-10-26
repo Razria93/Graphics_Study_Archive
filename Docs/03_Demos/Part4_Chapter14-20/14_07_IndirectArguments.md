@@ -1,5 +1,9 @@
 # Chapter14 Ex1407 IndirectArguments Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Indirect argument buffer를 생성하고 `DrawInstancedIndirect`로 GPU buffer에 저장된 draw argument를 사용한다.
@@ -63,3 +67,8 @@ Visual은 `Ex1406` 계열 density trail과 유사하므로, indirect draw 여부
 
 - [Demo Index](demo-index.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Procedural Primitive Generation
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [개념 목록](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Procedural primitive generation은 크기와 분할 수 같은 파라미터로 vertex attribute와 index topology를 계산해 mesh를 만드는 방식이다. 고정 vertex 배열을 복제하지 않고 동일한 생성 규칙을 Grid, cylinder와 sphere 같은 여러 primitive에 확장할 수 있다.

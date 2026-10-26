@@ -1,5 +1,9 @@
 # Chapter06 Step4 Shaders
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 이 예제는 Step3의 Model·View·Projection pipeline에 UV와 pixel shader constant buffer를 추가하고, square의 UV 좌표를 `xSplitPoint`와 비교해 네 색상 영역을 만든다. Vertex shader는 position transform과 attribute 전달을 담당하고 pixel shader는 fragment별 색상을 선택한다.
 
 ## 실행 진입점
@@ -69,3 +73,8 @@ CPU는 ImGui slider의 현재값을 매 frame pixel shader constant buffer에 �
 - [Step4 Shaders 상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/06_Shaders.md)
 - [Verification Index](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

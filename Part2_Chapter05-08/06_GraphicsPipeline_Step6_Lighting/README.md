@@ -1,5 +1,9 @@
 # Chapter06 Step6 Lighting
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 이 예제는 Step5A의 textured point-light shading을 Directional·Point·Spot Light 비교로 확장한다. 같은 box, texture, model·camera·material을 유지하고 Light type만 전환해 방향, 거리 감쇠와 cone factor가 GPU lighting 결과에 주는 차이를 확인한다.
 
 ## 실행 진입점
@@ -85,3 +89,8 @@ Spot Light는 Point와 같은 위치·falloff를 유지하고 `direction=(-0.557
 - [Step6 상세 Demo](../../Docs/03_Demos/Part2_Chapter05-08/06_Lighting.md)
 - [Verification Index](../../Docs/02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter05-08/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

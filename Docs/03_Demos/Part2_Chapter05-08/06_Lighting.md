@@ -1,5 +1,9 @@
 # Chapter06 Step6 Lighting Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step6는 Step5A의 단일 textured point light를 Directional·Point·Spot Light 비교로 확장한다. 같은 geometry·texture·model·camera·material을 유지한 상태에서 Light type과 해당 고유 parameter만 바꿔 방향, 거리 감쇠와 cone factor의 차이를 확인한다.
@@ -172,3 +176,8 @@ Point와 Spot의 공통 parameter를 유지했기 때문에 넓은 위치 중심
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

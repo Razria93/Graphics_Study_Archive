@@ -1,5 +1,9 @@
 # Step1A Triangle To Circle Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step1A는 단일 triangle rasterizer를 triangle fan으로 반복해 polygonal circle을 만들고 segment 수가 silhouette에 미치는 영향을 보여준다. 사용자가 Step1을 확장한 Personal Extension이며 강의 단계인 Step2 Circle과 별도 구현으로 유지한다.
@@ -108,3 +112,8 @@ if (currentCount != requestedCount)
 - [Triangle Rasterization Topic](../../01_Topics/Rasterization/TriangleRasterization.md)
 - [Verification Index](../../02_Verification/Part2_Chapter04/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter04/README.md)
+<!-- portfolio-navigation:end -->

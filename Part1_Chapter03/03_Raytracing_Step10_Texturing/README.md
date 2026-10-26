@@ -1,5 +1,9 @@
 # Step10 Texturing
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 이 예제는 triangle hit의 barycentric weight로 UV를 보간하고 CPU에서 image texture를 bilinear sampling한다. Textured Square와 별도 sphere를 같은 closest-hit·Phong shading 경로로 처리한 뒤 DirectX11 texture로 화면에 표시한다.
@@ -74,3 +78,8 @@ Square의 네 vertex는 image의 좌상단부터 시계 방향으로 `(0,0)`, `(
 - [Verification](../../Docs/02_Verification/Part1_Chapter03/verification-index.md)
 - [Step10 상세 Demo](../../Docs/03_Demos/Part1_Chapter03/03_10_Texturing.md)
 - [Demo Index](../../Docs/03_Demos/Part1_Chapter03/demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

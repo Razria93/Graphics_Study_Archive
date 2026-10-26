@@ -1,5 +1,9 @@
 # Step10 Lights
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 Step10은 Step9의 CPU Blinn-Phong shading 경로에 Directional, Point와 Spot Light를 추가한다. 같은 geometry, material과 view 조건에서 surface-to-light vector, distance attenuation과 spot factor를 바꾸어 공간적 Light model이 최종 fragment color에 미치는 차이를 비교한다.
@@ -70,3 +74,8 @@ Directional Light는 저장된 진행 방향의 반대를 surface-to-light vecto
 - [Detailed Demo](../../Docs/03_Demos/Part2_Chapter04/10_Lights.md)
 - [Demo Index](../../Docs/03_Demos/Part2_Chapter04/demo-index.md)
 - [Chapter README](../README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->

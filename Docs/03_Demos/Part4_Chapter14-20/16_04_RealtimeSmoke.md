@@ -1,5 +1,9 @@
 # Chapter16 Ex1604 RealtimeSmoke Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 3D velocity와 density field를 compute shader로 갱신하고, high-resolution density texture를 volume ray marching으로 표시한다.
@@ -68,3 +72,8 @@ Storyboard는 source 영역에서 시작한 density가 확산되고, buoyancy pa
 
 - [Demo Index](demo-index.md)
 - [WorkLog WU-Part4](../../04_WorkLogs/work-units/WU-Part4.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part4_Chapter14-20/README.md)
+<!-- portfolio-navigation:end -->

@@ -1,5 +1,9 @@
 # Chapter06 Step9 PhongVsBlinnPhong Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Step9은 같은 textured box, camera, Directional Light와 material 조건에서 Phong과 Blinn-Phong specular 계산을 전환해 reflection vector와 halfway vector 선택이 highlight에 미치는 차이를 확인한다.
@@ -138,3 +142,8 @@ EvaluateSpecular(light, view, normal, material, useBlinnPhong)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

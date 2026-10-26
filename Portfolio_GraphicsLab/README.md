@@ -1,5 +1,9 @@
 # Portfolio GraphicsLab
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../README.md) · [전체 예제](../Docs/00_Index/examples.md) · [문서 탐색](../Docs/00_Index/README.md)
+<!-- portfolio-navigation:end -->
+
 `Portfolio_GraphicsLab`은 RayTracing부터 graphics pipeline과 후속 rendering 기능까지 단계적으로 확장하는 개인 graphics 구현의 루트 코드 폴더다.
 
 첫 구현 축은 사용자가 2025년에 바닥부터 구현한 software ray tracer다. 당시 Git history는 남아 있지 않지만 단계별 raw/reference code, 실행 영상과 refactoring 전후 자료를 original development evidence로 보존한다. 이 저장소의 Git history는 해당 자료를 검증하며 canonical source로 재구성하는 과정이다.

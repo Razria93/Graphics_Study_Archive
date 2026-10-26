@@ -1,5 +1,9 @@
 # Chapter10 Step2 Billboards Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Point primitive를 camera-facing textured billboard로 확장하고 한 draw 경로에서 여러 tree variant를 출력한다.
@@ -65,3 +69,8 @@ Tree가 plane의 회전 방향을 드러내지 않고 camera를 향해 서 있�
 - [Demo Index](demo-index.md)
 - [이전 Demo](10_01_GeometryShader.md)
 - [다음 Demo](10_03_NormalLines.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part3_Chapter10-13/README.md)
+<!-- portfolio-navigation:end -->

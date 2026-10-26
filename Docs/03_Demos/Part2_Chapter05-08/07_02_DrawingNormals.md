@@ -1,5 +1,9 @@
 # Chapter07 Step2 DrawingNormals Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Indexed box surface와 vertex normal 방향의 별도 line geometry를 함께 그려 mesh attribute와 diagnostic geometry가 서로 다른 topology와 draw 경로를 사용하는 과정을 확인한다.
@@ -106,3 +110,8 @@ RenderScene(drawNormals)
 - [Verification Index](../../02_Verification/Part2_Chapter05-08/verification-index.md)
 - [Demo Index](demo-index.md)
 - [Publication Candidate List](../../05_Publication/candidate-list.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part2_Chapter05-08/README.md)
+<!-- portfolio-navigation:end -->

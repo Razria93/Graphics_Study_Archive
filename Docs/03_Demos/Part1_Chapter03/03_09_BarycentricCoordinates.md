@@ -1,5 +1,9 @@
 # Step9 Barycentric Coordinates Demo
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->
+
 ## 목적
 
 Triangle hit point의 barycentric coordinate로 RGB vertex color를 보간하고, 내부 위치에 따라 색이 연속적으로 변하는 결과를 확인한다.
@@ -164,3 +168,8 @@ Ray tracing과 color interpolation은 CPU에서 수행한다. DirectX11과 HLSL�
 - [Phong Shading](../../01_Topics/LightingAndShading/PhongShading.md)
 - [Verification Index](../../02_Verification/Part1_Chapter03/verification-index.md)
 - [Demo Index](demo-index.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../../README.md) · [전체 예제](../../00_Index/examples.md) · [해당 Part](../../../Part1_Chapter03/README.md)
+<!-- portfolio-navigation:end -->

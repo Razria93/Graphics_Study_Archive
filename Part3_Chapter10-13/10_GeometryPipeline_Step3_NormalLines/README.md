@@ -1,5 +1,9 @@
 # Chapter10 Step3 NormalLines
 
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
+
 ## Overview
 
 Mesh vertex의 position과 normal을 geometry shader의 line primitive로 시각화한다. 기본 실행 상태에서 diagnostic normal을 함께 표시해 vertex normal의 방향과 분포를 바로 확인한다.
@@ -46,3 +50,8 @@ Mesh vertex의 position과 normal을 geometry shader의 line primitive로 시각
 - [상세 Demo](../../Docs/03_Demos/Part3_Chapter10-13/10_03_NormalLines.md)
 - [이전 단계](../10_GeometryPipeline_Step2_Billboards/README.md)
 - [다음 단계](../10_GeometryPipeline_Step4_Fireball/README.md)
+
+
+<!-- portfolio-navigation:start -->
+[프로젝트 README](../../README.md) · [전체 예제](../../Docs/00_Index/examples.md) · [해당 Part](../README.md)
+<!-- portfolio-navigation:end -->
