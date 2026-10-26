@@ -77,6 +77,7 @@ CPU에서 반사·굴절 광선을 재귀적으로 추적해 유리 구체 너�
 [요약 · PDF 13쪽](https://razria93.github.io/files/pdf/graphics-review.pdf#page=13) · [실행 결과·구현 과정 · Demo](Docs/03_Demos/Part1_Chapter03/03_13_Transparency.md)
 
 <a id="learning-part2"></a>
+
 <a id="directx11-데이터셰이더-연결"></a>
 
 ### Part 2 · DirectX11 텍스처·조명
@@ -216,7 +217,9 @@ X 패스는 A 읽기·B 쓰기, Y 패스는 B 읽기·A 쓰기로 SRV/UAV를 교
 </details>
 
 <a id="예제-실행-시작하기"></a>
+
 <a id="quickstart"></a>
+
 <a id="local-run"></a>
 
 ## 로컬 실행
